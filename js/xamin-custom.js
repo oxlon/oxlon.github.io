@@ -295,3 +295,156 @@ Index Of Script
 		jQuery('.timer').countTo();
 	});
 })(jQuery);
+
+/*----------------------------------------------
+Oxlon Shared Navigation
+Single source of truth for header menu + footer quick links.
+Edit NAV_ITEMS once to update all pages.
+----------------------------------------------*/
+(function () {
+	"use strict";
+
+	var NAV_ITEMS = [{
+		label: "Home",
+		href: "index.html"
+	}, {
+		label: "About Us",
+		href: "about-us.html"
+	}, {
+		label: "Services",
+		href: "services.html",
+		children: [{
+			label: "Data Analytics",
+			href: "data-analytics.html"
+		}, {
+			label: "Managed Analytics",
+			href: "managed-analytics.html"
+		}, {
+			label: "Big Data Services",
+			href: "big-data-services.html"
+		}, {
+			label: "Data Science Consulting",
+			href: "data-science-consulting.html"
+		}, {
+			label: "Business Intelligence",
+			href: "business-intelligence.html"
+		}, {
+			label: "Data Visualization",
+			href: "data-visualization-services.html"
+		}, {
+			label: "Data Management",
+			href: "data-management.html"
+		}, {
+			label: "Artificial Intelligence",
+			href: "artificial-intelligence.html"
+		}]
+	}, {
+		label: "Contact",
+		href: "contact-us.html"
+	}];
+
+	function toPagePath(url) {
+		if (!url) {
+			return "index.html";
+		}
+
+		var cleaned = url.split("#")[0].split("?")[0];
+		var parts = cleaned.split("/");
+		var leaf = parts[parts.length - 1];
+		return leaf || "index.html";
+	}
+
+	function currentPagePath() {
+		return toPagePath(window.location.pathname);
+	}
+
+	function isActive(item, page) {
+		if (toPagePath(item.href) === page) {
+			return true;
+		}
+
+		if (!item.children || !item.children.length) {
+			return false;
+		}
+
+		for (var i = 0; i < item.children.length; i += 1) {
+			if (toPagePath(item.children[i].href) === page) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	function buildHeaderItem(item, page) {
+		var activeClass = isActive(item, page) ? " current-menu-item" : "";
+
+		if (item.children && item.children.length) {
+			var submenu = '<ul class="sub-menu">';
+			for (var i = 0; i < item.children.length; i += 1) {
+				var child = item.children[i];
+				var childActive = toPagePath(child.href) === page ? " current-menu-item" : "";
+				submenu += '<li class="menu-item' + childActive + '"><a href="' + child.href + '">' + child.label + "</a></li>";
+			}
+			submenu += "</ul>";
+
+			return '<li class="menu-item' + activeClass + '"><a href="' + item.href + '" class="isubmenu">' + item.label + '</a> <i class="fa fa-angle-down toggledrop" aria-hidden="true"></i>' + submenu + "</li>";
+		}
+
+		return '<li class="menu-item' + activeClass + '"><a href="' + item.href + '">' + item.label + "</a></li>";
+	}
+
+	function renderHeaderMenus() {
+		var page = currentPagePath();
+		var menus = document.querySelectorAll("ul#top-menu");
+		if (!menus.length) {
+			return;
+		}
+
+		var html = "";
+		for (var i = 0; i < NAV_ITEMS.length; i += 1) {
+			html += buildHeaderItem(NAV_ITEMS[i], page);
+		}
+
+		for (var m = 0; m < menus.length; m += 1) {
+			menus[m].innerHTML = html;
+		}
+	}
+
+	function renderFooterQuickLinks() {
+		var page = currentPagePath();
+		var wrappers = document.querySelectorAll(".menu-footer-menu-container");
+		if (!wrappers.length) {
+			return;
+		}
+
+		var links = "";
+		for (var i = 0; i < NAV_ITEMS.length; i += 1) {
+			var item = NAV_ITEMS[i];
+			var activeClass = toPagePath(item.href) === page ? " current-menu-item" : "";
+			links += '<li class="menu-item' + activeClass + '"><a href="' + item.href + '">' + item.label + "</a></li>";
+		}
+
+		for (var w = 0; w < wrappers.length; w += 1) {
+			var list = wrappers[w].querySelector("ul.menu");
+			if (!list) {
+				list = document.createElement("ul");
+				list.className = "menu";
+				wrappers[w].innerHTML = "";
+				wrappers[w].appendChild(list);
+			}
+			list.innerHTML = links;
+		}
+	}
+
+	function initSharedNavigation() {
+		renderHeaderMenus();
+		renderFooterQuickLinks();
+	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initSharedNavigation);
+	} else {
+		initSharedNavigation();
+	}
+})();
