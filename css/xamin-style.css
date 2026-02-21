@@ -2254,3 +2254,26 @@ transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;
 }
 .iq-minimal-tab .iq-portfolio{margin-bottom: 30px;}
 
+/* Improve readability for the long "What we do" bullet list on About page */
+.xamin-services .what-we-do-list li,
+.service-box .what-we-do-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.xamin-services .what-we-do-list li i,
+.service-box .what-we-do-list li i {
+    position: static;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 2px;
+    flex: 0 0 14px;
+}
+
+.xamin-services .what-we-do-list li span,
+.service-box .what-we-do-list li span {
+    display: block;
+    padding-left: 10px;
+}
+
