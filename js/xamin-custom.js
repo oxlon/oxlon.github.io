@@ -311,34 +311,6 @@ Edit NAV_ITEMS once to update all pages.
 		label: "About Us",
 		href: "about-us.html"
 	}, {
-		label: "Services",
-		href: "services.html",
-		children: [{
-			label: "Data Analytics",
-			href: "data-analytics.html"
-		}, {
-			label: "Managed Analytics",
-			href: "managed-analytics.html"
-		}, {
-			label: "Big Data Services",
-			href: "big-data-services.html"
-		}, {
-			label: "Data Science Consulting",
-			href: "data-science-consulting.html"
-		}, {
-			label: "Business Intelligence",
-			href: "business-intelligence.html"
-		}, {
-			label: "Data Visualization",
-			href: "data-visualization-services.html"
-		}, {
-			label: "Data Management",
-			href: "data-management.html"
-		}, {
-			label: "Artificial Intelligence",
-			href: "artificial-intelligence.html"
-		}]
-	}, {
 		label: "Contact",
 		href: "contact-us.html"
 	}];
