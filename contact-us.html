@@ -49,7 +49,6 @@
                   <div class="number-info">
                      <ul class="list-inline">
                         <li class="list-inline-item"><a href="mailto:info@oxlon.uk"> <i class="fa fa-envelope"></i>info@oxlon.uk</a> </li>
-                        <li class="list-inline-item"><a href="tel:+0123456789"> <i class="fa fa-phone"></i>+0123456789</a> </li>
                      </ul>
                   </div>
                </div>
@@ -129,12 +128,17 @@
                   <div class="col-sm-6">
                      <h2 class="text-left mb-4">Let's talk about for your<br> business.</h2>
                      <div class="response-output "></div>
-                     <form action="#" method="post" class="">
+                     <form action="https://formsubmit.co/info@oxlon.uk" method="post" class="">
+                        <input type="hidden" name="_subject" value="New Oxlon website enquiry">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none">
                         <div class="contact-form">
-                           <div class=""> <input type="text" name="your-name" class="form-control text " placeholder="Your Name"> </div>
-                           <div class=""> <input type="text" name="your-email" class="form-control text " placeholder="Your Email"> </div>
-                           <div class=""> <input type="text" name="your-subject" class="form-control text " placeholder="Subject"> </div>
-                           <div class=""> <textarea name="your-message" cols="40" rows="10" class="form-control textarea " placeholder="Your Message"></textarea> </div>
+                           <div class=""> <input type="text" name="name" class="form-control text " placeholder="Your Name" required> </div>
+                           <div class=""> <input type="email" name="email" class="form-control text " placeholder="Your Email" required> </div>
+                           <div class=""> <input type="text" name="phone" class="form-control text " placeholder="Phone (optional - for a callback)"> </div>
+                           <div class=""> <input type="text" name="subject" class="form-control text " placeholder="Subject" required> </div>
+                           <div class=""> <textarea name="message" cols="40" rows="10" class="form-control textarea " placeholder="Your Message" required></textarea> </div>
                            <div> <button id="submit-4" name="submit" type="submit" value="Send" class="button d-block w-100">Send Message</button> </div>
                         </div>
                      </form>
@@ -145,10 +149,7 @@
                            <i aria-hidden="true" class="ion ion-android-call"></i>
                            <div class="service-detail">
                               <h4 class="mb-2">Phone support</h4>
-                              <ul class="list-inline mb-0">
-                                 <li> <a href="tel:+0123456789"> +0123456789</a> </li>
-                                 <li> <a href="tel:+0123456789"> +0123456789</a> </li>
-                              </ul>
+                              <p class="mb-0">Share your phone number in the form and we can call you back.</p>
                            </div>
                         </div>
                         <div class="contact-box d-flex   ">
@@ -156,7 +157,6 @@
                            <div class="service-detail">
                               <h4 class="mb-2">Email us</h4>
                               <ul class="list-inline mb-0">
-                                 <li><a href="mailto:info@oxlon.uk"> info@oxlon.uk</a></li>
                                  <li><a href="mailto:info@oxlon.uk"> info@oxlon.uk</a></li>
                               </ul>
                            </div>
