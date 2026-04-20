@@ -1,455 +1,2183 @@
 <!doctype html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Oxlon - AI and Economic/Financial Consultancy</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Oxlon — AI for macroeconomic decision-making</title>
+<!-- Heading: Cormorant Garamond — editorial serif, institutional (Anthropic/DeepMind lineage). Body: IBM Plex Sans — technical, confident. Mono: IBM Plex Mono for labels. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:        #1A2038;
+    --ink-deep:   #0F1428;
+    --slate:      #2A3650;
+    --stone:      #E8E2D4;
+    --stone-warm: #DFD6C1;
+    --paper:      #F4EFE3;
+    --sage:       #B6BFA7;
+    --sage-pale:  #D5DBCA;
+    --powder:     #C8D1DC;
+    --powder-pale:#DFE4EB;
+    --clay:       #C9A78E;
+    --clay-pale:  #E3D2C2;
+    --cream:      #F6F1E6;
+    --rule:       rgba(26,32,56,.18);
+    --rule-light: rgba(246,241,230,.14);
+    --ink-soft:   #525B7A;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{
+    width:100vw; height:100vh;
+    overflow:hidden;
+    background:var(--ink-deep);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .deck{
+    width:100vw; height:100vh;
+    display:block;
+    overflow-x:hidden; overflow-y:auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+  }
+  .deck::-webkit-scrollbar{ display:none; }
+  section.slide{
+    width:100vw; height:100vh;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    position:relative;
+    overflow:hidden;
+    display:grid;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+  }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <!-- Fontawesome Fonts -->
-    <link rel="stylesheet" href="css/all.min.css"/>
-    <!-- ionicons CSS -->
-    <link rel="stylesheet" href="css/ionicons.min.css"/>
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css"/>
-    <!-- Chart CSS -->
-    <link rel="stylesheet" href="css/Chart.min.css"/>
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css"/>
-    <!-- owl-carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
-    <!-- wow -->
-    <link rel="stylesheet" href="css/wow.css"/>
-    <!-- Slick -->
-    <link rel="stylesheet" href="css/slick-theme.css"/>
-    <link rel="stylesheet" href="css/slick.css"/>
-    <!-- REVOLUTION STYLE SHEETS -->
-    <link rel="stylesheet" type="text/css" href="revslider/css/rs6.css">
-    <!-- Oxlon custom -->
-    <link rel="stylesheet" href="css/xamin-style.css"/>
-    <!-- Responsive -->
-    <link rel="stylesheet" href="css/responsive.css"/>
+  /* Fixed UI */
+  .navdots{
+    position:fixed;
+    top:50%; transform:translateY(-50%);
+    right:22px; z-index:50;
+    display:flex; flex-direction:column; gap:9px;
+    padding:16px 10px;
+    background:rgba(15,20,40,.6);
+    backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    border-radius:999px;
+    border:1px solid rgba(246,241,230,.08);
+  }
+  .navdots button{
+    appearance:none; border:0; padding:0;
+    width:7px; height:7px; border-radius:50%;
+    background:rgba(246,241,230,.3);
+    cursor:pointer;
+    transition:all .25s ease;
+  }
+  .navdots button:hover{ background:rgba(246,241,230,.6); }
+  .navdots button[aria-current="true"]{
+    background:var(--cream);
+    height:26px; border-radius:4px;
+  }
+  .arrow{
+    position:fixed; left:50%; transform:translateX(-50%);
+    z-index:50;
+    width:42px; height:42px; border-radius:50%;
+    background:rgba(246,241,230,.1);
+    border:1px solid rgba(246,241,230,.2);
+    color:var(--cream);
+    display:grid; place-items:center;
+    cursor:pointer;
+    backdrop-filter:blur(8px);
+    transition:background .2s;
+  }
+  .arrow:hover{ background:rgba(246,241,230,.22); }
+  .arrow.prev{ top:22px; }
+  .arrow.next{ bottom:22px; }
+  .arrow svg{ width:16px; height:16px; }
+  .arrow.prev svg{ transform:rotate(90deg); }
+  .arrow.next svg{ transform:rotate(90deg); }
+  .counter{
+    position:fixed; top:24px; right:26px; z-index:50;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:.14em;
+    color:rgba(246,241,230,.6);
+  }
+  .brand{
+    position:absolute;
+    top:24px; left:30px;
+    z-index:6;
+    display:flex; align-items:center; gap:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:19px; letter-spacing:.01em;
+    font-weight:500;
+  }
+  .brand .mark{
+    width:22px; height:22px; border-radius:50%;
+    border:1.5px solid currentColor;
+    display:grid; place-items:center;
+    font-family:'Cormorant Garamond', serif;
+    font-size:12px; font-style:italic;
+    font-weight:500;
+  }
+  .brand .mark::before{ content:"o"; }
+  .brand.light{ color:var(--cream); }
+  .brand.dark{ color:var(--ink); }
+
+  /* 1 · COVER */
+  .s-cover{
+    background: var(--ink-deep);
+    color: var(--cream);
+    grid-template-columns: 1.1fr .9fr;
+  }
+  .s-cover::before{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 25% 30%, rgba(201,167,142,.10), transparent 55%),
+      radial-gradient(ellipse at 80% 80%, rgba(182,191,167,.08), transparent 60%);
+    pointer-events:none;
+  }
+  .cover-l{
+    padding:72px 72px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    gap:28px; position:relative;
+    border-right:1px solid var(--rule-light);
+  }
+  .cover-title{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(54px, 7.8vw, 148px);
+    line-height:.92;
+    letter-spacing:-0.025em;
+    color: var(--cream);
+  }
+  .cover-title em{ font-style:italic; color: var(--clay-pale); font-weight:400; }
+  .cover-promise{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-weight:300;
+    font-size: clamp(20px, 1.6vw, 28px);
+    line-height:1.4;
+    color: rgba(246,241,230,.82);
+    max-width:520px;
+  }
+  .cover-meta{
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+    gap:24px 36px;
+    font-size:12px;
+    color: rgba(246,241,230,.6);
+  }
+  @media (max-width: 1280px), (max-height: 760px){
+    .cover-meta{ grid-template-columns: 1fr; gap:14px; }
+  }
+  .cover-meta .k{
+    display:block;
+    color: rgba(246,241,230,.42);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+  .cover-r{
+    position:relative;
+    background:
+      linear-gradient(135deg, var(--slate) 0%, var(--ink-deep) 100%);
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+  }
+  /* Abstract visual — layered dashboard as illustration */
+  .viz{
+    position:relative;
+    width:78%; aspect-ratio: 4/5;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1.4fr;
+    gap:14px;
+  }
+  .viz .panel{
+    background: rgba(246,241,230,.04);
+    border: 1px solid rgba(246,241,230,.12);
+    padding: 18px 22px;
+    position:relative; overflow:hidden;
+    backdrop-filter: blur(2px);
+  }
+  .viz .panel .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px; letter-spacing:.2em;
+    color: rgba(246,241,230,.55);
+    margin-bottom:8px;
+  }
+  .viz .panel .val{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300; font-size: 48px;
+    line-height:1; color: var(--cream);
+    letter-spacing:-0.02em;
+  }
+  .viz .panel .val em{ color: var(--clay-pale); font-style:italic; }
+  .viz .panel .delta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; color: var(--sage-pale);
+    margin-top:8px; letter-spacing:.08em;
+  }
+  .viz .row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .viz svg.chart{ width:100%; height:100%; display:block; }
+  .viz .chart-panel{ padding:14px 16px 10px; }
+  .viz .dots{
+    position:absolute; top:14px; right:18px;
+    display:flex; gap:5px;
+  }
+  .viz .dots i{ width:6px; height:6px; border-radius:50%; background:rgba(246,241,230,.22); }
+  .viz .dots i.on{ background: var(--clay-pale); }
+  .cover-r-foot{
+    position:absolute;
+    left:40px; right:40px; bottom:28px;
+    display:flex; justify-content:space-between;
+    color: var(--cream);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:.18em;
+    opacity:.7;
+  }
+
+  /* 2 · THESIS */
+  .s-thesis{
+    background: var(--stone);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  .thesis-main{
+    padding: 100px 80px 40px;
+    display:flex; flex-direction:column; justify-content:center;
+    max-width:1400px;
+  }
+  .thesis-main .eyebrow{ color: var(--slate); margin-bottom:32px; }
+  .thesis-main h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(56px, 7.6vw, 148px);
+    line-height:.94;
+    letter-spacing:-0.03em;
+    color: var(--ink);
+    max-width:1180px;
+  }
+  .thesis-main h1 em{ font-style:italic; color: var(--slate); }
+  .thesis-main .sub{
+    margin-top:36px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size: clamp(20px, 1.8vw, 30px);
+    line-height:1.4;
+    color: var(--ink-soft);
+    max-width:820px;
+  }
+  .thesis-foot{
+    padding: 22px 80px 26px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:48px;
+    border-top:1px solid var(--rule);
+    background: var(--stone-warm);
+  }
+  .thesis-foot .cell .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px; letter-spacing:.2em;
+    color: var(--slate); opacity:.7;
+    margin-bottom:6px;
+    text-transform:uppercase;
+  }
+  .thesis-foot .cell .v{
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px;
+    color: var(--ink);
+    font-weight:400;
+    line-height:1.25;
+  }
+
+  /* 3 · THREE PRACTICES (overview, dark) */
+  .s-three{
+    background: var(--ink-deep);
+    color: var(--cream);
+    grid-template-rows: auto 1fr;
+  }
+  .three-top{
+    padding: 58px 72px 22px;
+    display:grid; grid-template-columns: 1.2fr 1fr;
+    gap:48px; align-items:end;
+    border-bottom:1px solid var(--rule-light);
+  }
+  .three-top h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(52px, 5.6vw, 108px);
+    line-height:.92;
+    letter-spacing:-0.025em;
+  }
+  .three-top h2 em{ font-style:italic; color: var(--clay-pale); }
+  .three-top .side{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:19px;
+    line-height:1.5;
+    color: rgba(246,241,230,.72);
+    padding-bottom:12px;
+  }
+  .three-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    height:100%;
+  }
+  .three-col{
+    border-right:1px solid var(--rule-light);
+    padding: 52px 48px;
+    display:flex; flex-direction:column;
+    position:relative;
+    transition: background .3s;
+  }
+  .three-col:last-child{ border-right:0; }
+  .three-col:hover{ background: rgba(246,241,230,.03); }
+  .three-col .idx{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color: var(--clay-pale);
+    letter-spacing:.22em;
+    margin-bottom:24px;
+  }
+  .three-col .big{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: 148px;
+    line-height:.9;
+    color: var(--clay-pale);
+    opacity:.92;
+    margin-bottom:28px;
+    letter-spacing:-0.03em;
+  }
+  .three-col .t{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:34px;
+    line-height:1.05;
+    color: var(--cream);
+    margin-bottom:16px;
+    letter-spacing:-0.01em;
+  }
+  .three-col .d{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:15px; line-height:1.55;
+    color: rgba(246,241,230,.68);
+    max-width:340px;
+    margin-bottom:auto;
+  }
+  .three-col .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color: rgba(246,241,230,.55);
+    letter-spacing:.12em;
+    margin-top:36px;
+    padding-top:18px;
+    border-top:1px solid var(--rule-light);
+    text-transform:uppercase;
+  }
+
+  /* 4 · ECONAI — PRODUCT DEEP-DIVE (powder pastel, split) */
+  .s-econai{
+    background: var(--powder-pale);
+    grid-template-columns: 1fr 1fr;
+  }
+  .ea-l{
+    padding: 72px 64px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    background: var(--powder-pale);
+    position:relative;
+  }
+  .ea-l .eyebrow{ color: var(--slate); }
+  .ea-l h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(56px, 6.4vw, 128px);
+    line-height:.92;
+    letter-spacing:-0.025em;
+    color: var(--ink);
+    margin-top:22px;
+  }
+  .ea-l h2 em{ font-style:italic; color: var(--slate); }
+  .ea-l .lede{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+    font-size:23px;
+    line-height:1.4;
+    color: var(--ink-soft);
+    max-width:460px;
+    margin-top:28px;
+  }
+  .ea-l .caps{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:18px 28px;
+    margin-top:auto;
+    padding-top:28px;
+    border-top:1px solid var(--rule);
+  }
+  .ea-l .cap{
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .ea-l .cap .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px; letter-spacing:.2em;
+    color: var(--slate); opacity:.7;
+    text-transform:uppercase;
+  }
+  .ea-l .cap .v{
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px;
+    color: var(--ink);
+  }
+  .ea-r{
+    background: var(--ink-deep);
+    padding: 48px 48px;
+    position:relative;
+    display:grid; place-items:center;
+    border-left:1px solid var(--rule);
+  }
+  .ea-dash{
+    width:100%; height:100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap:16px;
+  }
+  .ea-dash .card{
+    background: rgba(246,241,230,.04);
+    border: 1px solid rgba(246,241,230,.12);
+    padding: 18px 22px;
+    color: var(--cream);
+    position:relative;
+  }
+  .ea-dash .card .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px; letter-spacing:.2em;
+    color: rgba(246,241,230,.55);
+    margin-bottom:8px;
+    text-transform:uppercase;
+  }
+  .ea-dash .card .val{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:42px; line-height:1;
+    letter-spacing:-0.02em;
+    color: var(--cream);
+  }
+  .ea-dash .card .val em{ color: var(--clay-pale); font-style:italic; }
+  .ea-dash .card .delta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; margin-top:8px;
+    color: var(--sage-pale);
+    letter-spacing:.08em;
+  }
+  .ea-dash .chart-big{
+    grid-column: span 2;
+    padding: 14px 18px 8px;
+  }
+  .ea-dash .chart-big .head{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:6px;
+  }
+  .ea-dash .chart-big .head .ttl{
+    font-family:'Cormorant Garamond', serif;
+    font-size:17px; color: var(--cream); font-weight:500;
+  }
+  .ea-dash .chart-big .head .rng{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px; color: rgba(246,241,230,.55);
+    letter-spacing:.12em;
+  }
+  .ea-dash .strip{
+    grid-column: span 2;
+    display:grid; grid-template-columns: repeat(4, 1fr);
+    gap:14px;
+  }
+  .ea-dash .strip .chip{
+    padding: 12px 14px;
+    background: rgba(246,241,230,.04);
+    border: 1px solid rgba(246,241,230,.12);
+  }
+  .ea-dash .strip .chip .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9px; letter-spacing:.18em;
+    color: rgba(246,241,230,.5); text-transform:uppercase;
+  }
+  .ea-dash .strip .chip .v{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px; color: var(--cream);
+    font-weight:500; margin-top:4px;
+  }
+
+  /* 5 · LEARNING PLATFORM (sage, 2x2 mix) */
+  .s-learn{
+    background: var(--sage-pale);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .q{
+    padding: 52px 48px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    position:relative;
+    border-right:1px solid rgba(26,32,56,.14);
+    border-bottom:1px solid rgba(26,32,56,.14);
+  }
+  .q:nth-child(2n){ border-right:0; }
+  .q:nth-last-child(-n+2){ border-bottom:0; }
+  .q.dark{ background: var(--ink-deep); color: var(--cream); border-color: rgba(246,241,230,.1); }
+  .q.stone{ background: var(--stone); color: var(--ink); }
+  .q.sage{ background: var(--sage-pale); color: var(--ink); }
+  .q.clay{ background: var(--clay-pale); color: var(--ink); }
+  .q .lab{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.2em;
+    margin-bottom:14px;
+    opacity:.7;
+    text-transform:uppercase;
+  }
+  .q.dark .lab{ color: var(--clay-pale); opacity:1; }
+  .q .h{
+    font-family:'Cormorant Garamond', serif;
+    font-size:40px;
+    font-weight:400;
+    line-height:1.05;
+    letter-spacing:-0.015em;
+    margin-bottom:18px;
+  }
+  .q .d{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:14.5px;
+    line-height:1.55;
+    opacity:.85;
+    max-width:420px;
+  }
+  .q .foot{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    opacity:.7;
+    margin-top:22px;
+    text-transform:uppercase;
+  }
+  .q.hero .mega{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(64px, 7.6vw, 148px);
+    line-height:.88;
+    letter-spacing:-0.03em;
+    margin: 10px 0 0;
+  }
+  .q.hero .mega em{ font-style:italic; color: var(--clay-pale); }
+
+  /* 6 · CONSULTANCY (stone, list-heavy split) */
+  .s-consult{
+    background: var(--stone);
+    grid-template-columns: 1fr 1fr;
+  }
+  .co-l{
+    padding: 72px 64px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    background: var(--cream);
+    border-right:1px solid var(--rule);
+  }
+  .co-l .eyebrow{ color: var(--slate); }
+  .co-l h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(50px, 5.8vw, 112px);
+    line-height:.92;
+    letter-spacing:-0.025em;
+    color: var(--ink);
+    margin-top:20px;
+  }
+  .co-l h2 em{ font-style:italic; color: var(--slate); }
+  .co-l .intro{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.45;
+    color: var(--ink-soft);
+    max-width:460px;
+    margin-top:26px;
+  }
+  .co-l .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:.2em;
+    color: var(--slate); opacity:.6;
+    text-transform:uppercase;
+  }
+  .co-r{
+    padding: 72px 64px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    background: var(--stone);
+  }
+  .co-r .eyebrow{ color: var(--slate); margin-bottom:16px; }
+  .co-list{ display:flex; flex-direction:column; border-top:1px solid var(--rule); }
+  .co-item{
+    display:grid;
+    grid-template-columns: 80px 1fr;
+    align-items:baseline;
+    gap:24px;
+    padding: 22px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .co-item .n{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+    font-size:34px;
+    color: var(--slate);
+    font-style:italic;
+    line-height:1;
+  }
+  .co-item .body{ display:flex; flex-direction:column; gap:6px; }
+  .co-item .h{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:22px; line-height:1.2;
+    color: var(--ink);
+  }
+  .co-item .d{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:13.5px; line-height:1.5;
+    color: var(--ink-soft);
+    max-width:440px;
+  }
+
+  /* 7 · HOW WE WORK — METHODOLOGY (dark, 4 stages) */
+  .s-how{
+    background: var(--ink);
+    color: var(--cream);
+    grid-template-rows: auto 1fr;
+  }
+  .how-top{
+    padding: 58px 72px 22px;
+    display:grid; grid-template-columns: 1.2fr 1fr;
+    gap:48px; align-items:end;
+    border-bottom:1px solid var(--rule-light);
+  }
+  .how-top h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(50px, 5.4vw, 104px);
+    line-height:.92;
+    letter-spacing:-0.025em;
+  }
+  .how-top h2 em{ font-style:italic; color: var(--clay-pale); }
+  .how-top .side{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-size:19px;
+    line-height:1.5;
+    color: rgba(246,241,230,.72);
+    padding-bottom:8px;
+  }
+  .how-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    height:100%;
+  }
+  .how-col{
+    border-right:1px solid var(--rule-light);
+    padding: 44px 34px;
+    display:flex; flex-direction:column;
+    position:relative;
+  }
+  .how-col:last-child{ border-right:0; }
+  .how-col .step{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:.22em;
+    color: var(--clay-pale);
+    margin-bottom:14px;
+  }
+  .how-col .big{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:108px; line-height:.9;
+    color: var(--cream); opacity:.92;
+    margin-bottom:24px;
+    letter-spacing:-0.03em;
+  }
+  .how-col .t{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:26px; line-height:1.1;
+    color: var(--cream);
+    margin-bottom:12px;
+  }
+  .how-col .d{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:13.5px; line-height:1.55;
+    color: rgba(246,241,230,.68);
+  }
+  .how-col .out{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:.14em;
+    color: rgba(246,241,230,.55);
+    margin-top:24px;
+    padding-top:16px;
+    border-top:1px solid var(--rule-light);
+    text-transform:uppercase;
+  }
+
+  /* 8 · WHO WE SERVE (clay pastel, asymmetric) */
+  .s-who{
+    background: var(--cream);
+    grid-template-columns: .8fr 1.2fr;
+  }
+  .who-l{
+    background: var(--clay-pale);
+    padding: 72px 56px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    position:relative;
+  }
+  .who-l .eyebrow{ color: var(--slate); }
+  .who-l h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(48px, 5.2vw, 96px);
+    line-height:.9;
+    letter-spacing:-0.025em;
+    color: var(--ink);
+    margin-top:20px;
+  }
+  .who-l h2 em{ font-style:italic; color: var(--slate); }
+  .who-l .intro{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:20px;
+    line-height:1.45;
+    color: var(--ink-soft);
+    margin-top:20px;
+  }
+  .who-r{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .who-cell{
+    padding: 44px 40px;
+    border-right:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    display:flex; flex-direction:column; justify-content:space-between;
+    background: var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .who-cell:nth-child(2n){ border-right:0; }
+  .who-cell:nth-last-child(-n+2){ border-bottom:0; }
+  .who-cell .glyph{
+    position:absolute;
+    right:24px; top:18px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:120px; line-height:1;
+    color: var(--ink); opacity:.06;
+  }
+  .who-cell .lab{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:.2em;
+    color: var(--slate); opacity:.8;
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .who-cell .h{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:28px; line-height:1.08;
+    color: var(--ink);
+    margin-bottom:10px;
+    letter-spacing:-0.01em;
+  }
+  .who-cell .d{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:13.5px;
+    line-height:1.55;
+    color: var(--ink-soft);
+    max-width:340px;
+  }
+
+  /* 9 · WHY OXLON (light, 3 principles with huge serif anchor) */
+  .s-why{
+    background: var(--paper);
+    grid-template-columns: 1fr 1.3fr;
+  }
+  .wy-l{
+    padding: 72px 56px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    background: var(--stone);
+    border-right:1px solid var(--rule);
+    position:relative;
+  }
+  .wy-l .eyebrow{ color: var(--slate); }
+  .wy-l h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(54px, 6vw, 112px);
+    line-height:.9;
+    letter-spacing:-0.025em;
+    color: var(--ink);
+    margin-top:22px;
+  }
+  .wy-l h2 em{ font-style:italic; color: var(--slate); }
+  .wy-l .pull{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:300;
+    font-size: clamp(24px, 2.2vw, 36px);
+    line-height:1.2;
+    color: var(--ink);
+    max-width:460px;
+  }
+  .wy-l .pull::before{
+    content:"“";
+    display:block;
+    font-size: 96px; line-height:.6;
+    color: var(--slate);
+    margin-bottom:10px;
+  }
+  .wy-r{
+    padding: 72px 56px;
+    display:flex; flex-direction:column; gap:0;
+    justify-content:center;
+    background: var(--paper);
+  }
+  .wy-row{
+    display:grid;
+    grid-template-columns: 140px 1fr;
+    padding: 26px 0;
+    border-bottom:1px solid var(--rule);
+    align-items:baseline;
+    gap:32px;
+  }
+  .wy-row:first-child{ border-top:1px solid var(--rule); }
+  .wy-row .n{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:68px; line-height:.9;
+    color: var(--slate);
+    letter-spacing:-0.02em;
+    font-style:italic;
+  }
+  .wy-row .body .h{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:30px;
+    line-height:1.1;
+    color: var(--ink);
+    margin-bottom:8px;
+    letter-spacing:-0.01em;
+  }
+  .wy-row .body .d{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:15px;
+    line-height:1.55;
+    color: var(--ink-soft);
+    max-width:640px;
+  }
+
+  /* TEAM SLIDE */
+  .s-team{
+    background: var(--paper);
+    grid-template-rows: auto 1fr auto;
+  }
+  .tm-top{
+    padding: 58px 72px 22px;
+    display:grid; grid-template-columns: 1.2fr 1fr;
+    gap:48px; align-items:end;
+    border-bottom:1px solid var(--rule);
+  }
+  .tm-top .eyebrow{ color: var(--slate); }
+  .tm-top h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(50px, 5.8vw, 112px);
+    line-height:.92;
+    letter-spacing:-0.025em;
+    color: var(--ink);
+    margin-top:18px;
+  }
+  .tm-top h2 em{ font-style:italic; color: var(--slate); }
+  .tm-top .side{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic; font-size:19px;
+    line-height:1.5;
+    color: var(--ink-soft);
+    padding-bottom:10px;
+    max-width:460px;
+  }
+  .tm-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    height:100%;
+  }
+  .tm-card{
+    border-right:1px solid var(--rule);
+    padding: 52px 48px;
+    display:flex; flex-direction:column;
+    position:relative;
+    background: var(--paper);
+    transition: background .3s;
+  }
+  .tm-card:last-child{ border-right:0; }
+  .tm-card:hover{ background: var(--stone); }
+  .tm-card .idx{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:.22em;
+    color: var(--slate); opacity:.7;
+    margin-bottom:20px;
+    text-transform:uppercase;
+  }
+  .tm-portrait{
+    width:92px; height:92px; border-radius:50%;
+    background: linear-gradient(135deg, var(--stone-warm), var(--clay-pale));
+    border: 1px solid var(--rule);
+    display:grid; place-items:center;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:38px;
+    color: var(--slate);
+    margin-bottom:22px;
+    letter-spacing:-0.02em;
+  }
+  .tm-card:nth-child(2) .tm-portrait{ background: linear-gradient(135deg, var(--sage-pale), var(--powder-pale)); }
+  .tm-card:nth-child(3) .tm-portrait{ background: linear-gradient(135deg, var(--powder-pale), var(--stone-warm)); }
+  .tm-card .name{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:34px;
+    line-height:1.05;
+    color: var(--ink);
+    margin-bottom:6px;
+    letter-spacing:-0.01em;
+  }
+  .tm-card .role{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:20px;
+    color: var(--slate);
+    margin-bottom:18px;
+    line-height:1.25;
+  }
+  .tm-card .bio{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:14.5px;
+    line-height:1.55;
+    color: var(--ink-soft);
+    max-width:340px;
+    margin-bottom:auto;
+  }
+  .tm-card .tags{
+    display:flex; flex-wrap:wrap; gap:6px;
+    margin-top:18px;
+  }
+  .tm-card .tags span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px; letter-spacing:.12em;
+    color: var(--slate);
+    text-transform:uppercase;
+    padding: 5px 9px;
+    border: 1px solid var(--rule);
+    background: rgba(246,241,230,.4);
+  }
+  .tm-card .lnk{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:22px;
+    padding-top:16px;
+    border-top:1px solid var(--rule);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:.16em;
+    color: var(--slate);
+    text-decoration:none;
+    text-transform:uppercase;
+  }
+  .tm-card .lnk:hover{ color: var(--ink); }
+  .tm-card .lnk svg{ width:13px; height:13px; }
+  .tm-foot{
+    padding: 20px 72px 22px;
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid var(--rule);
+    background: var(--stone-warm);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:.18em;
+    color: var(--slate);
+    text-transform:uppercase;
+  }
+  @media (max-height: 760px){
+    .tm-top{ padding:36px 56px 14px; gap:28px; }
+    .tm-top h2{ font-size: clamp(36px, 4.6vw, 76px); }
+    .tm-top .side{ font-size:15px; }
+    .tm-card{ padding:32px 30px; }
+    .tm-portrait{ width:72px; height:72px; font-size:30px; margin-bottom:16px; }
+    .tm-card .name{ font-size:26px; }
+    .tm-card .role{ font-size:16px; margin-bottom:12px; }
+    .tm-card .bio{ font-size:12.5px; line-height:1.5; }
+    .tm-foot{ padding:12px 56px 14px; }
+  }
+  @media (max-height: 600px){
+    .tm-top{ padding:22px 40px 10px; gap:20px; }
+    .tm-top h2{ font-size: clamp(28px, 3.6vw, 52px); }
+    .tm-top .side{ font-size:13px; }
+    .tm-card{ padding:18px 20px; }
+    .tm-portrait{ width:56px; height:56px; font-size:24px; margin-bottom:10px; }
+    .tm-card .idx{ margin-bottom:10px; }
+    .tm-card .name{ font-size:21px; }
+    .tm-card .role{ font-size:14px; margin-bottom:8px; }
+    .tm-card .bio{ font-size:11.5px; line-height:1.4; }
+    .tm-card .tags span{ padding:3px 7px; font-size:8.5px; }
+    .tm-card .lnk{ margin-top:12px; padding-top:8px; font-size:9.5px; }
+    .tm-foot{ padding:8px 40px 10px; font-size:9px; }
+  }
+
+  /* 10 · ENGAGE (dark → action) */
+  .s-engage{
+    background: var(--ink-deep);
+    color: var(--cream);
+    grid-template-columns: 1fr 1fr;
+  }
+  .eg-l{
+    padding: 80px 72px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    position:relative;
+    border-right:1px solid var(--rule-light);
+  }
+  .eg-l .eyebrow{ color: var(--clay-pale); }
+  .eg-l h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(56px, 6.6vw, 132px);
+    line-height:.9;
+    letter-spacing:-0.03em;
+    color: var(--cream);
+    margin-top:22px;
+  }
+  .eg-l h2 em{ font-style:italic; color: var(--clay-pale); }
+  .eg-l .pull{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:23px; line-height:1.45;
+    color: rgba(246,241,230,.78);
+    max-width:520px;
+    margin-top:24px;
+  }
+  .eg-l .sig{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:.2em;
+    color: var(--clay-pale);
+    text-transform:uppercase;
+  }
+  .eg-r{
+    padding: 72px 64px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    background: linear-gradient(160deg, var(--slate) 0%, var(--ink) 100%);
+  }
+  .eg-steps{ display:flex; flex-direction:column; }
+  .eg-step{
+    display:grid;
+    grid-template-columns: 64px 1fr auto;
+    gap:20px;
+    padding: 24px 0;
+    border-bottom:1px solid var(--rule-light);
+    align-items:center;
+  }
+  .eg-step:last-child{ border-bottom:0; }
+  .eg-step .n{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:44px;
+    color: var(--clay-pale);
+    line-height:1;
+  }
+  .eg-step .b .h{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500; font-size:22px;
+    color: var(--cream);
+    line-height:1.2; margin-bottom:4px;
+  }
+  .eg-step .b .d{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:13px; line-height:1.5;
+    color: rgba(246,241,230,.65);
+    max-width:380px;
+  }
+  .eg-step .arr{
+    font-family:'IBM Plex Mono', monospace;
+    color: rgba(246,241,230,.4);
+    font-size:16px;
+  }
+  .eg-contact{
+    display:flex; justify-content:space-between;
+    padding-top:20px;
+    border-top:1px solid var(--rule-light);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:.08em;
+    color: rgba(246,241,230,.72);
+  }
+  .eg-contact a{ color: var(--clay-pale); text-decoration:none; }
+
+  /* 11 · BACK COVER */
+  .s-back{
+    background: var(--ink-deep);
+    color: var(--cream);
+    grid-template-rows: 1fr auto;
+    position:relative;
+  }
+  .s-back::before{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(201,167,142,.08), transparent 60%),
+      radial-gradient(ellipse at 75% 70%, rgba(182,191,167,.06), transparent 60%);
+    pointer-events:none;
+  }
+  .back-main{
+    padding: 100px 80px 60px;
+    display:flex; flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
+    position:relative;
+    z-index:1;
+  }
+  .back-wordmark{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size: clamp(120px, 18vw, 360px);
+    line-height:.85;
+    letter-spacing:-0.04em;
+    color: var(--cream);
+  }
+  .back-wordmark em{ font-style:italic; color: var(--clay-pale); }
+  .back-tag{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size: clamp(22px, 2vw, 34px);
+    line-height:1.3;
+    color: rgba(246,241,230,.82);
+    max-width:680px;
+  }
+  .back-foot{
+    padding: 22px 80px 26px;
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid var(--rule-light);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:.16em;
+    color: rgba(246,241,230,.6);
+    position:relative; z-index:1;
+  }
+  .back-foot .r{ display:flex; gap:36px; }
+  .back-foot a{ color: rgba(246,241,230,.8); text-decoration:none; }
+  .back-foot a:hover{ color: var(--clay-pale); }
+
+  /* Height-based responsive scaling */
+  @media (max-height: 760px){
+    .cover-l{ padding:48px 56px; gap:18px; }
+    .co-l, .co-r{ padding:40px 44px; }
+    .co-item{ padding:12px 0; gap:18px; grid-template-columns:56px 1fr; }
+    .co-item .n{ font-size:24px; }
+    .co-item .h{ font-size:17px; }
+    .co-item .d{ font-size:12px; line-height:1.45; }
+    .cover-title{ font-size: clamp(40px, 6.4vw, 96px); }
+    .thesis-main{ padding:64px 64px 32px; }
+    .thesis-main h1{ font-size: clamp(42px, 6.4vw, 108px); }
+    .thesis-foot{ padding:16px 64px 20px; gap:32px; }
+    .three-top, .how-top, .three-top{ padding:36px 56px 16px; }
+    .three-col{ padding:32px 32px; }
+    .three-col .big{ font-size:104px; margin-bottom:18px; }
+    .three-col .t{ font-size:27px; }
+    .three-col .d{ font-size:13.5px; }
+    .ea-l, .ea-r{ padding:48px 44px; }
+    .ea-l h2{ font-size: clamp(40px, 5vw, 84px); }
+    .ea-l .lede{ font-size:18px; margin-top:18px; }
+    .ea-dash .card .val{ font-size:32px; }
+    .q{ padding:36px 36px; }
+    .q .h{ font-size:32px; }
+    .co-l, .co-r{ padding:48px 48px; }
+    .co-l h2{ font-size: clamp(36px, 4.6vw, 76px); }
+    .co-l .intro{ font-size:17px; margin-top:18px; }
+    .co-item{ padding:14px 0; gap:18px; grid-template-columns:60px 1fr; }
+    .co-item .n{ font-size:28px; }
+    .co-item .h{ font-size:19px; }
+    .co-item .d{ font-size:12.5px; }
+    .how-col{ padding:32px 28px; }
+    .how-col .big{ font-size:80px; margin-bottom:18px; }
+    .how-col .t{ font-size:22px; }
+    .how-col .d{ font-size:12.5px; }
+    .who-l, .who-cell{ padding:44px 36px; }
+    .who-l h2{ font-size: clamp(38px, 4.8vw, 78px); }
+    .who-cell .h{ font-size:23px; }
+    .who-cell .d{ font-size:12.5px; }
+    .wy-l, .wy-r{ padding:48px 44px; }
+    .wy-l h2{ font-size: clamp(40px, 5vw, 84px); }
+    .wy-row{ padding:18px 0; gap:24px; grid-template-columns:110px 1fr; }
+    .wy-row .n{ font-size:54px; }
+    .wy-row .body .h{ font-size:24px; }
+    .wy-row .body .d{ font-size:13.5px; }
+    .eg-l, .eg-r{ padding:52px 52px; }
+    .eg-l h2{ font-size: clamp(44px, 5.4vw, 96px); }
+    .eg-l .pull{ font-size:18px; margin-top:18px; }
+    .eg-step{ padding:16px 0; grid-template-columns:48px 1fr auto; gap:16px; }
+    .eg-step .n{ font-size:34px; }
+    .eg-step .b .h{ font-size:18px; }
+    .eg-step .b .d{ font-size:12px; }
+    .back-main{ padding:64px 64px 40px; gap:28px; }
+    .back-wordmark{ font-size: clamp(80px, 14vw, 240px); }
+    .back-tag{ font-size:18px; }
+    .back-foot{ padding:14px 64px 18px; }
+  }
+  @media (max-height: 600px){
+    .cover-l{ padding:28px 40px; gap:14px; }
+    .cover-title{ font-size: clamp(32px, 5vw, 64px); }
+    .cover-promise{ font-size:14px; }
+    .thesis-main{ padding:36px 48px 20px; }
+    .thesis-main h1{ font-size: clamp(32px, 4.6vw, 72px); }
+    .thesis-main .sub{ font-size:15px; margin-top:18px; }
+    .thesis-foot{ padding:10px 48px 14px; gap:24px; }
+    .three-top, .how-top{ padding:22px 40px 12px; gap:24px; }
+    .three-top h2, .how-top h2{ font-size: clamp(30px, 3.8vw, 56px); }
+    .three-col{ padding:20px 22px; }
+    .three-col .idx{ margin-bottom:12px; }
+    .three-col .big{ font-size:64px; margin-bottom:12px; }
+    .three-col .t{ font-size:20px; margin-bottom:10px; }
+    .three-col .d{ font-size:12px; line-height:1.4; }
+    .three-col .tag{ margin-top:18px; padding-top:10px; }
+    .ea-l, .ea-r{ padding:26px 30px; }
+    .ea-l h2{ font-size: clamp(30px, 3.8vw, 58px); margin-top:12px; }
+    .ea-l .lede{ font-size:14px; margin-top:12px; }
+    .ea-l .caps{ padding-top:14px; gap:10px 18px; }
+    .ea-l .cap .v{ font-size:15px; }
+    .ea-dash{ gap:10px; }
+    .ea-dash .card{ padding:12px 14px; }
+    .ea-dash .card .val{ font-size:24px; }
+    .q{ padding:22px 24px; }
+    .q .lab{ margin-bottom:8px; }
+    .q .h{ font-size:22px; margin-bottom:10px; }
+    .q .d{ font-size:12px; line-height:1.4; }
+    .q.hero .mega{ font-size: clamp(40px, 4.6vw, 72px); }
+    .co-l, .co-r{ padding:24px 28px; }
+    .co-l h2{ font-size: clamp(28px, 3.6vw, 54px); }
+    .co-item{ padding:8px 0; gap:12px; grid-template-columns:40px 1fr; }
+    .co-l .intro{ font-size:14px; margin-top:12px; }
+    .co-item{ padding:10px 0; gap:14px; grid-template-columns:48px 1fr; }
+    .co-item .n{ font-size:22px; }
+    .co-item .h{ font-size:16px; }
+    .co-item .d{ font-size:11.5px; line-height:1.4; }
+    .how-col{ padding:20px 20px; }
+    .how-col .step{ margin-bottom:10px; }
+    .how-col .big{ font-size:60px; margin-bottom:12px; }
+    .how-col .t{ font-size:18px; margin-bottom:8px; }
+    .how-col .d{ font-size:11.5px; line-height:1.4; }
+    .how-col .out{ margin-top:12px; padding-top:8px; font-size:9.5px; }
+    .who-l, .who-cell{ padding:26px 26px; }
+    .who-l h2{ font-size: clamp(28px, 3.6vw, 54px); }
+    .who-l .intro{ font-size:14px; margin-top:12px; }
+    .who-cell .h{ font-size:19px; margin-bottom:6px; }
+    .who-cell .d{ font-size:11.5px; line-height:1.4; }
+    .who-cell .glyph{ font-size:72px; right:14px; top:10px; }
+    .wy-l, .wy-r{ padding:28px 30px; }
+    .wy-l h2{ font-size: clamp(28px, 3.6vw, 54px); }
+    .wy-l .pull{ font-size:16px; }
+    .wy-l .pull::before{ font-size:60px; margin-bottom:4px; }
+    .wy-row{ padding:12px 0; gap:16px; grid-template-columns:80px 1fr; }
+    .wy-row .n{ font-size:40px; }
+    .wy-row .body .h{ font-size:18px; margin-bottom:4px; }
+    .wy-row .body .d{ font-size:12px; line-height:1.4; }
+    .eg-l, .eg-r{ padding:30px 32px; }
+    .eg-l h2{ font-size: clamp(32px, 4vw, 64px); margin-top:14px; }
+    .eg-l .pull{ font-size:14px; margin-top:12px; }
+    .eg-step{ padding:10px 0; grid-template-columns:36px 1fr auto; gap:12px; }
+    .eg-step .n{ font-size:24px; }
+    .eg-step .b .h{ font-size:16px; margin-bottom:2px; }
+    .eg-step .b .d{ font-size:11.5px; }
+    .eg-contact{ font-size:10px; padding-top:12px; }
+    .back-main{ padding:36px 48px 24px; gap:18px; }
+    .back-wordmark{ font-size: clamp(52px, 10vw, 168px); }
+    .back-tag{ font-size:14px; }
+    .back-foot{ padding:10px 48px 14px; font-size:9.5px; }
+    .back-foot .r{ gap:20px; }
+    .arrow{ width:36px; height:36px; }
+    .arrow.prev{ left:12px; }
+    .arrow.next{ right:12px; }
+  }
+
+  /* ============================================================
+   * MOBILE LAYOUT (≤ 768px)
+   * Restack side-by-side panels, allow slides to scroll internally.
+   * ============================================================ */
+  @media (max-width: 768px){
+    html, body{
+      -webkit-text-size-adjust:100%;
+    }
+    /* Slides become naturally scrollable internally; snap still per-slide */
+    .deck{ scroll-snap-type: y mandatory; }
+    section.slide{
+      display:flex !important;
+      flex-direction:column;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      height:auto;
+      min-height:100vh;
+    }
+    /* Force every grid split into a single-column stack */
+    .s-cover, .s-thesis, .s-three, .s-econai, .s-learn,
+    .s-consult, .s-how, .s-who, .s-why, .s-team, .s-engage, .s-back{
+      grid-template-columns: 1fr !important;
+      grid-template-rows: auto !important;
+    }
+
+    /* Fixed UI repositioned */
+    .navdots{
+      top:auto; bottom:18px; right:50%;
+      transform:translateX(50%);
+      flex-direction:row;
+      padding:9px 14px;
+    }
+    .navdots button[aria-current="true"]{
+      height:7px; width:26px; border-radius:4px;
+    }
+    .arrow{ display:none; }
+    .counter{
+      top:14px; right:16px;
+      font-size:10px;
+    }
+    .brand{
+      top:14px !important; left:18px !important;
+      font-size:16px;
+    }
+
+    /* 1 · COVER */
+    .cover-l{
+      padding:64px 24px 32px;
+      gap:16px;
+      border-right:0;
+      border-bottom:1px solid var(--rule-light);
+    }
+    .cover-title{ font-size: clamp(44px, 11vw, 64px); }
+    .cover-promise{ font-size:15px; max-width:none; }
+    .cover-meta{
+      grid-template-columns: 1fr;
+      gap:12px;
+      font-size:12px;
+    }
+    .cover-r{ padding:24px 20px 40px; }
+    .viz{ width:100%; aspect-ratio:auto; gap:10px; }
+    .viz .panel{ padding:14px 16px; }
+    .viz .panel .val{ font-size:36px; }
+    .cover-r-foot{
+      position:static;
+      margin-top:18px;
+      padding:14px 4px 0;
+      border-top:1px solid var(--rule-light);
+    }
+
+    /* 2 · THESIS */
+    .thesis-main{
+      padding:72px 24px 24px;
+    }
+    .thesis-main h1{ font-size: clamp(34px, 8vw, 48px); }
+    .thesis-main .sub{ font-size:16px; margin-top:20px; }
+    .thesis-foot{
+      padding:18px 24px 22px;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    .thesis-foot .cell .v{ font-size:16px; }
+
+    /* 3 · THREE PRACTICES */
+    .three-top{
+      padding:72px 24px 18px;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+    .three-top h2{ font-size: clamp(36px, 9vw, 52px); }
+    .three-top .side{ font-size:15px; padding-bottom:0; }
+    .three-grid{ grid-template-columns:1fr; }
+    .three-col{
+      border-right:0;
+      border-bottom:1px solid var(--rule-light);
+      padding:32px 24px;
+    }
+    .three-col:last-child{ border-bottom:0; }
+    .three-col .big{ font-size:72px; margin-bottom:14px; }
+    .three-col .t{ font-size:26px; }
+    .three-col .d{ font-size:14px; max-width:none; }
+    .three-col .tag{ margin-top:20px; padding-top:14px; }
+
+    /* 4 · ECONAI */
+    .ea-l{ padding:64px 24px 32px; }
+    .ea-l h2{ font-size: clamp(38px, 9vw, 56px); margin-top:14px; }
+    .ea-l .lede{ font-size:16px; margin-top:18px; max-width:none; }
+    .ea-l .caps{
+      grid-template-columns:1fr 1fr;
+      gap:14px 20px;
+      padding-top:22px;
+      margin-top:26px;
+    }
+    .ea-l .cap .v{ font-size:15px; }
+    .ea-r{
+      padding:28px 20px;
+      border-left:0;
+      border-top:1px solid var(--rule);
+      min-height:480px;
+    }
+    .ea-dash{ gap:10px; }
+    .ea-dash .card{ padding:14px 16px; }
+    .ea-dash .card .val{ font-size:30px; }
+    .ea-dash .strip{ grid-template-columns:1fr 1fr; gap:10px; }
+
+    /* 5 · LEARNING PLATFORM — stack 2x2 into 1x4 */
+    .s-learn{ grid-template-rows:auto !important; }
+    .q{
+      padding:32px 24px;
+      border-right:0 !important;
+      border-bottom:1px solid var(--rule) !important;
+    }
+    .q.dark{ border-color:rgba(246,241,230,.1) !important; }
+    .q:last-child{ border-bottom:0 !important; }
+    .q.hero{ padding-top:72px; }
+    .q.hero .mega{ font-size: clamp(40px, 10vw, 64px); }
+    .q .h{ font-size:26px; }
+    .q .d{ font-size:14px; max-width:none; }
+
+    /* 6 · CONSULTANCY */
+    .co-l{
+      padding:64px 24px 32px;
+      border-right:0;
+      border-bottom:1px solid var(--rule);
+    }
+    .co-l h2{ font-size: clamp(36px, 9vw, 54px); }
+    .co-l .intro{ font-size:16px; margin-top:16px; max-width:none; }
+    .co-r{ padding:32px 24px; }
+    .co-item{
+      padding:14px 0;
+      grid-template-columns:48px 1fr;
+      gap:16px;
+    }
+    .co-item .n{ font-size:22px; }
+    .co-item .h{ font-size:17px; }
+    .co-item .d{ font-size:13px; max-width:none; }
+
+    /* 7 · HOW WE WORK */
+    .how-top{
+      padding:72px 24px 18px;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+    .how-top h2{ font-size: clamp(36px, 9vw, 52px); }
+    .how-top .side{ font-size:15px; padding-bottom:0; }
+    .how-grid{ grid-template-columns:1fr; }
+    .how-col{
+      border-right:0;
+      border-bottom:1px solid var(--rule-light);
+      padding:28px 24px;
+    }
+    .how-col:last-child{ border-bottom:0; }
+    .how-col .big{ font-size:64px; margin-bottom:14px; }
+    .how-col .t{ font-size:22px; }
+    .how-col .d{ font-size:13.5px; }
+
+    /* 8 · WHO WE SERVE */
+    .who-l{
+      padding:64px 24px 32px;
+      border-bottom:1px solid var(--rule);
+    }
+    .who-l h2{ font-size: clamp(36px, 9vw, 52px); }
+    .who-l .intro{ font-size:15px; margin-top:14px; }
+    .who-r{
+      grid-template-columns:1fr;
+      grid-template-rows:auto;
+    }
+    .who-cell{
+      padding:28px 24px;
+      border-right:0 !important;
+      border-bottom:1px solid var(--rule);
+    }
+    .who-cell:last-child{ border-bottom:0; }
+    .who-cell .h{ font-size:22px; }
+    .who-cell .d{ font-size:13.5px; max-width:none; }
+    .who-cell .glyph{ font-size:96px; right:18px; top:14px; }
+
+    /* 9 · WHY OXLON */
+    .wy-l{
+      padding:64px 24px 32px;
+      border-right:0;
+      border-bottom:1px solid var(--rule);
+    }
+    .wy-l h2{ font-size: clamp(40px, 10vw, 60px); }
+    .wy-l .pull{ font-size:20px; margin-top:24px; max-width:none; }
+    .wy-l .pull::before{ font-size:60px; }
+    .wy-r{ padding:28px 24px 48px; }
+    .wy-row{
+      padding:18px 0;
+      grid-template-columns:56px 1fr;
+      gap:16px;
+    }
+    .wy-row .n{ font-size:40px; }
+    .wy-row .body .h{ font-size:20px; }
+    .wy-row .body .d{ font-size:13.5px; }
+
+    /* 10 · TEAM */
+    .tm-top{
+      padding:72px 24px 18px;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+    .tm-top h2{ font-size: clamp(38px, 9vw, 56px); }
+    .tm-top .side{ font-size:15px; padding-bottom:0; max-width:none; }
+    .tm-grid{ grid-template-columns:1fr; }
+    .tm-card{
+      border-right:0;
+      border-bottom:1px solid var(--rule);
+      padding:32px 24px;
+    }
+    .tm-card:last-child{ border-bottom:0; }
+    .tm-portrait{ width:72px; height:72px; font-size:30px; margin-bottom:18px; }
+    .tm-card .name{ font-size:26px; }
+    .tm-card .role{ font-size:16px; }
+    .tm-card .bio{ font-size:14px; max-width:none; }
+    .tm-foot{ padding:16px 24px 18px; font-size:10px; }
+
+    /* 11 · ENGAGE */
+    .eg-l{
+      padding:64px 24px 32px;
+      border-right:0;
+      border-bottom:1px solid var(--rule-light);
+    }
+    .eg-l h2{ font-size: clamp(40px, 10vw, 60px); }
+    .eg-l .pull{ font-size:17px; margin-top:18px; max-width:none; }
+    .eg-r{ padding:32px 24px 40px; }
+    .eg-step{
+      padding:18px 0;
+      grid-template-columns:40px 1fr auto;
+      gap:14px;
+    }
+    .eg-step .n{ font-size:28px; }
+    .eg-step .b .h{ font-size:17px; }
+    .eg-step .b .d{ font-size:13px; max-width:none; }
+    .eg-contact{
+      flex-direction:column;
+      gap:8px;
+      font-size:11px;
+      padding-top:18px;
+    }
+
+    /* 12 · BACK */
+    .back-main{
+      padding:72px 24px 40px;
+      gap:22px;
+    }
+    .back-wordmark{ font-size: clamp(72px, 22vw, 140px); }
+    .back-tag{ font-size:16px; }
+    .back-foot{
+      padding:16px 24px 20px;
+      flex-direction:column;
+      gap:10px;
+      align-items:flex-start;
+      font-size:10px;
+    }
+    .back-foot .r{
+      flex-direction:column;
+      gap:6px;
+    }
+  }
+
+  /* Very small phones */
+  @media (max-width: 380px){
+    .cover-l, .thesis-main, .three-top, .ea-l, .co-l, .how-top,
+    .who-l, .wy-l, .tm-top, .eg-l, .back-main{
+      padding-left:18px; padding-right:18px;
+    }
+    .thesis-foot, .tm-foot, .back-foot{
+      padding-left:18px; padding-right:18px;
+    }
+    .cover-title{ font-size:38px; }
+    .thesis-main h1{ font-size:30px; }
+  }
+</style>
 </head>
-
 <body>
-    <!-- Loader -->
-    <div id="loading">
-        <div id="loading-center">
-            <img src="images/loader.gif" alt="loader">
-        </div>
-    </div>
-    <!-- loading end -->
-    <!-- Header -->
-    <header class="style-one" id="main-header">
-        <div class="container-fluid sub-header">
-            <div class="row">
-                <div class="col-auto">
-                    <div class="number-info">
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a href="mailto:info@oxlon.uk"> <i class="fa fa-envelope"></i>info@oxlon.uk</a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-auto ml-auto sub-main">
-                    <div class="social-icone">
-                        <ul class="list-inline">
-                            <li class="d-inline">
-                                <a href="#"> <i class="fa fa-facebook-f"></i> </a>
-                            </li>
-                            <li class="d-inline">
-                                <a href="#"> <i class="fa fa-twitter"></i> </a>
-                            </li>
-                            <li class="d-inline">
-                                <a href="#"> <i class="fa fa-instagram"></i> </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid main-header">
-            <div class="row">
-                <div class="col-sm-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img class="img-fluid logo" src="images/oxlon-logo.svg" alt="Oxlon" /> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="ion-navicon"></i></span> </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <div class="menu-main-menu-container">
-                                <ul id="top-menu" class="navbar-nav ml-auto">
-                                    <li class="menu-item"><a href="index.html">Home</a></li>
-                                    <li class="menu-item"><a href="about-us.html">About Us</a></li>
-                                    <li class="menu-item"><a href="contact-us.html">Contact</a></li>
-                                </ul>
-                            </div>
+<div class="deck" id="deck">
 
-
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
-    <div class="iq-banner">
-        <!-- START xamin REVOLUTION SLIDER 0.1.0 -->
-        <p class="rs-p-wp-fix"></p>
-        <rs-module-wrap id="rev_slider_0_1_wrapper" data-alias="xamin" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-            <rs-module id="rev_slider_0_1" class=" rs-ov-hidden" style="display:none;" data-version="6.1.0">
-                <rs-slides>
-                    <rs-slide data-key="rs-6" data-title="Slide" data-anim="ei:d,d,d,d,d,d,d,d,d;eo:d,d,d,d,d,d,d,d,d;s:1000ms,d,d,d,d,d,d,d,d;r:0,0,0,0,0,0,0,0,0;t:fade,grayscale,blurlight,blurstrong,fade,crossfade,fadethroughlight,fadethroughdark,fadethroughtransparent;sl:d,d,d,d,d,d,d,d,d;" data-firstanim="t:fade;sl:12;">
-                        <img src="revslider/assets/dummy.png" alt="images" title="01" width="1600" height="758" data-lazyload="revslider/assets/01-2.jpg" data-parallax="2" class="rev-slidebg" data-no-retina>
-                        <!--
-                                -->
-                        <h2 id="slider-4-slide-6-layer-1" class="rs-layer" data-type="text" data-color="#313e5b" data-rsp_ch="on" data-xy="x:l,l,l,c;xo:95px,20px,37px,0;yo:221px,141px,40px,46px;" data-text="s:48,48,50,42;l:65,65,70,55;fw:700;a:inherit,inherit,inherit,center;" data-frame_0="y:-50;" data-frame_1="st:600;sp:1000;sR:600;" data-frame_999="o:0;tp:600;st:w;sR:7400;" style="z-index:9;font-family:Lato;text-transform:capitalize;">Practical AI For<br>Complex Business Environments
-                            </h2>
-                        <!--
-                                -->
-                        <p id="slider-4-slide-6-layer-3" class="rs-layer" data-type="text" data-color="#525f81" data-rsp_ch="on" data-xy="x:l,l,l,c;xo:95px,15px,40px,0;y:m;yo:94px,15px,-180px,-102px;" data-text="s:16,16,18,20;l:30;a:inherit,inherit,inherit,center;" data-frame_0="y:-50;" data-frame_1="st:900;sp:1000;sR:900;" data-frame_999="o:0;tp:600;st:w;sR:7100;" style="z-index:10;font-family:Karla;">UK-based AI and economic/financial consultancy delivering production-ready systems.
-                            <br> Built by Oxford-affiliated experts in economics, data science, and AI engineering.
-                        </p>
-                        <!--
-                                --><a id="slider-4-slide-6-layer-4" class="rs-layer button rev-btn" href="about-us.html" target="_self" rel="nofollow" data-type="button" data-xy="xo:95px,15px,40px,60px;y:m;yo:184px,95px,-90px,0;" data-text="s:16,18,20,22;l:24;a:inherit,inherit,inherit,center;" data-wrpcls="blue-btn" data-padding="t:15;r:30;b:15;l:30;" data-border="bor:90px,90px,90px,90px;" data-frame_0="y:-50;" data-frame_1="st:1350;sp:500;sR:1350;" data-frame_999="o:0;tp:600;st:w;sR:7150;" data-frame_hover="skX:0px;skY:0px;c:#fff;bgc:#313e5b;boc:#000;bor:90px,90px,90px,90px;bos:solid;oX:50;oY:50;sp:0;" style="z-index:12;background-color:#437eeb;font-family:Karla;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">About Us
-                            </a>
-                        <!--
-                                --><a id="slider-4-slide-6-layer-5" class="rs-layer button blue-btn rev-btn" href="contact-us.html" target="_self" rel="nofollow" data-type="button" data-xy="x:l,l,l,r;xo:241px,161px,196px,60px;y:m;yo:184px,96px,-90px,0;" data-text="s:16,18,20,22;l:24;a:inherit;" data-padding="t:15;r:30;b:15;l:30;" data-border="bor:90px,90px,90px,90px;" data-frame_0="y:-50;" data-frame_1="st:1350;sp:500;sR:1350;" data-frame_999="x:0;y:0;z:0;sX:1;sY:1;o:1;rX:0;rY:0;rZ:0;skX:0;skY:0;st:w;sp:1000;sR:7150;" data-frame_hover="skX:0px;skY:0px;c:#fff;bgc:#437eeb;boc:#000;bor:90px,90px,90px,90px;bos:solid;oX:50;oY:50;sp:0;" style="z-index:11;background-color:#313e5b;font-family:Karla;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">Contact Us
-                            </a>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-11" data-type="image" data-rsp_ch="on" data-xy="xo:865px,646px,230px,110px;yo:123px,47px,333px,333px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:494px,361px,338px,234px;h:494px,361px,338px,234px;" data-frame_0="y:top;" data-frame_1="st:1610;sp:1000;sR:1610;" data-frame_999="o:0;st:w;sR:6390;" style="z-index:24;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="445" height="445" data-lazyload="revslider/assets/01-4.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-12" data-type="image" data-rsp_ch="on" data-xy="xo:955px,698px,149px,212px;yo:-134px,-135px,275px,335px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:824px,602px,450px,281px;h:818px,598px,447px,279px;" data-frame_1="e:Power4.easeInOut;sp:1500;" data-frame_999="o:0;st:w;sR:7500;" style="z-index:8;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="824" height="818" data-lazyload="revslider/assets/10-2.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-13" class="rs-pxl-1" data-type="image" data-rsp_ch="on" data-xy="xo:874px,639px,197px,73px;yo:469px,306px,607px,505px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:129px,94px,93px,58px;h:86px,62px,62px,38px;" data-frame_0="y:top;" data-frame_1="st:2980;sp:1000;sR:2980;" data-frame_999="o:0;st:w;sR:5020;" style="z-index:14;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/03-5.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-14" class="rs-pxl-1" data-type="image" data-rsp_ch="on" data-xy="xo:842px,615px,181px,58px;yo:463px,301px,600px,496px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:77px,56px,59px,44px;h:51px,37px,39px,29px;" data-frame_0="y:top;" data-frame_1="st:2970;sp:1000;sR:2970;" data-frame_999="o:0;st:8900;sR:5030;" style="z-index:16;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/03-5.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-15" class="rs-pxl-1" data-type="image" data-rsp_ch="on" data-xy="xo:933px,682px,230px,112px;yo:497px,341px,634px,472px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:77px,56px,71px,44px;h:51px,37px,47px,29px;" data-frame_0="y:top;" data-frame_1="st:2980;sp:1000;sR:2980;" data-frame_999="o:0;st:w;sR:5020;" style="z-index:15;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/03-5.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-16" class="rs-pxl-2" data-type="image" data-rsp_ch="on" data-xy="x:r;xo:294px,212px,397px,263px;y:b;yo:-8px,173px,80px,12px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:110px,80px,81px,63px;h:73px,53px,54px,42px;" data-frame_0="y:top;" data-frame_1="st:3020;sp:1000;sR:3020;" data-frame_999="o:0;st:w;sR:4980;" data-tloop="u:true;" data-loop_0="xR:10px;yR:10px;" data-loop_999="xR:10px;yR:10px;crd:t;sp:3000;" style="z-index:17;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="img" width="300" height="200" data-lazyload="revslider/assets/08-3.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-18" data-type="image" data-rsp_ch="on" data-xy="xo:1099px,803px,424px,283px;yo:521px,358px,686px,503px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:155px,113px,84px,52px;h:103px,75px,56px,34px;" data-frame_0="y:top;" data-frame_1="st:3130;sp:1000;sR:3130;" data-frame_999="o:0;st:w;sR:4870;" style="z-index:18;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/07-4.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-19" data-type="image" data-rsp_ch="on" data-xy="xo:1172px,874px,456px,72px;yo:456px,296px,558px,481px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:195px,142px,156px,117px;h:130px,95px,104px,78px;" data-frame_0="y:top;" data-frame_1="st:3270;sp:1000;sR:3270;" data-frame_999="o:0;st:w;sR:4730;" style="z-index:19;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/05-4.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-20" class="rs-pxl-3" data-type="image" data-rsp_ch="on" data-xy="xo:924px,932px,193px,310px;yo:180px,222px,377px,426px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:154px,112px,119px,92px;h:103px,75px,79px,61px;" data-frame_0="y:-50,-36,-26,-16;" data-frame_1="st:3960;sp:1000;sR:3960;" data-frame_999="o:0;st:w;sR:4040;" data-tloop="u:true;" data-loop_999="sX:0.8;sY:0.8;sp:2000;e:Power0.easeInOut;yys:t;yyf:t;" style="z-index:26;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/06-6.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-21" class="rs-pxl-1" data-type="image" data-rsp_ch="on" data-xy="xo:765px,559px,128px,42px;yo:323px,199px,434px,444px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:156px,114px,116px,72px;h:104px,76px,77px,48px;" data-frame_0="y:top;" data-frame_1="st:3380;sp:1000;sR:3380;" data-frame_999="o:0;st:w;sR:4620;" style="z-index:20;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="img" width="300" height="200" data-lazyload="revslider/assets/04-5.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-22" class="rs-pxl-3" data-type="image" data-rsp_ch="on" data-xy="xo:886px,648px,363px,237px;yo:267px,158px,631px,530px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:123px,89px,90px,66px;h:82px,59px,60px,44px;" data-frame_0="y:top;" data-frame_1="st:3720;sp:1000;sR:3720;" data-frame_999="o:0;st:w;sR:4280;" data-tloop="u:true;" data-loop_0="y:-10;" data-loop_999="y:10;crd:t;sp:5000;e:Sine.easeInOut;yym:t;" style="z-index:22;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/09-3.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-23" class="rs-pxl-1" data-type="image" data-rsp_ch="on" data-xy="xo:1220px,892px,458px,124px;yo:264px,156px,446px,417px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:129px,94px,70px,43px;h:86px,62px,46px,28px;" data-frame_0="y:top;" data-frame_1="st:3480;sp:1000;sR:3480;" data-frame_999="o:0;st:w;sR:4520;" style="z-index:21;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/03-5.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-24" class="rs-pxl-1" data-type="image" data-rsp_ch="on" data-xy="xo:1279px,935px,491px,136px;yo:312px,191px,473px,398px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:77px,56px,41px,57px;h:51px,37px,27px,38px;" data-frame_0="y:top;" data-frame_1="st:2280;sp:1000;sR:2280;" data-frame_999="o:0;st:w;sR:5720;" style="z-index:13;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="300" height="200" data-lazyload="revslider/assets/03-5.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-25" class="rs-pxl-2" data-type="image" data-rsp_ch="on" data-xy="xo:1111px,923px,452px,271px;yo:130px,85px,308px,338px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:151px,110px,112px,77px;h:151px,110px,112px,77px;" data-frame_0="y:top;" data-frame_1="st:4080;sp:1000;sR:4080;" data-frame_999="o:0;st:w;sR:3920;" data-tloop="u:true;" data-loop_0="y:-10;" data-loop_999="y:10;sp:6000;e:Sine.easeInOut;yym:t;" style="z-index:23;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="200" height="200" data-lazyload="revslider/assets/02.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                        <rs-layer id="slider-4-slide-6-layer-26" data-type="image" data-rsp_ch="on" data-xy="xo:1077px,806px,369px,207px;yo:245px,139px,417px,388px;" data-text="w:normal;s:20,14,10,6;l:0,18,13,8;" data-dim="w:120px,87px,96px,69px;h:118px,86px,94px,68px;" data-frame_0="x:175%;o:1;" data-frame_0_mask="u:t;x:-100%;" data-frame_1="e:Power3.easeOut;st:4610;sp:1000;sR:4610;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:3390;" style="z-index:25;font-family:Roboto;"><img src="revslider/assets/dummy.png" alt="images" width="172" height="169" data-lazyload="revslider/assets/11.png" data-no-retina>
-                        </rs-layer>
-                        <!--
-                                -->
-                    </rs-slide>
-                </rs-slides>
-                <rs-static-layers>
-                    <!--
-                            -->
-                </rs-static-layers>
-                <rs-progress class="rs-bottom" style="visibility: hidden !important;"></rs-progress>
-            </rs-module>
-        </rs-module-wrap>
-        <!-- END REVOLUTION SLIDER -->
+  <!-- 1 · COVER -->
+  <section class="slide s-cover" data-screen-label="01 Cover">
+    <div class="brand light" style="position:absolute; top:28px; left:36px;"><span class="mark"></span><span>Oxlon</span></div>
+    <div class="cover-l">
+      <div></div>
+      <div class="cover-title">
+        Intelligence,<br>
+        <em>distilled</em> for<br>
+        decision-making.
+      </div>
+      <p class="cover-promise">Oxlon builds AI systems that turn complex macroeconomic data into policy-ready visual intelligence — for the institutions that cannot afford a wrong call.</p>
+      <div class="cover-meta">
+        <div><span class="k">Based</span>Oxford · London</div>
+        <div><span class="k">Focus</span>AI · Machine Learning · Macroeconomics</div>
+        <div><span class="k">For</span>CTOs · Heads of Data · Policy Teams</div>
+      </div>
     </div>
-<!-- MainContent -->
-    <div class="main-content">
-    <!-- About Us -->
-    <section class="position-relative">
-        <img src="images/about-us/02.png" class="about-box-img " alt="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6"> </div>
-                <div class="col-lg-6 wow fadeInUp align-items-center">
-                    <div class="title-box wow fadeInUp text-left">
-                        <span class="title-design">About Oxlon</span>
-                        <h2>Oxford-linked expertise with delivery focus</h2>
-                        <p>We build practical AI solutions for complex organisations, combining academic depth with hands-on implementation across automation, analytics, and decision systems.</p>
-                    </div>
-                    <div class="text-left">
-                        <ul class="iq-list">
-                            <li> <i class="fa fa-check-square-o"></i> <span>Oxford-affiliated founders and senior experts</span> </li>
-                            <li> <i class="fa fa-check-square-o"></i> <span>Cross-disciplinary team across economics, finance, data science, and engineering</span> </li>
-                            <li> <i class="fa fa-check-square-o"></i> <span>Production-ready AI delivery, not just proof-of-concept work</span> </li>
-                            <li> <i class="fa fa-check-square-o"></i> <span>Integration into existing business processes and platforms</span> </li>
-                        </ul>
-                    </div>
-                    <div class=" text-left mt-5 ">
-                        <a class="button button-icon" href="about-us.html"> <span class="btn-effect"> Learn More</span> </a>
-                    </div>
-                </div>
-            </div>
+    <div class="cover-r">
+      <div class="viz">
+        <div class="panel chart-panel">
+          <div class="lbl">GDP NOWCAST · UK</div>
+          <div class="dots"><i class="on"></i><i></i><i></i></div>
+          <svg class="chart" viewBox="0 0 400 110" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#C9A78E" stop-opacity=".4"/>
+                <stop offset="1" stop-color="#C9A78E" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 80 Q50 60 90 65 T180 48 T270 52 T360 30 L400 28 L400 110 L0 110 Z" fill="url(#g1)"/>
+            <path d="M0 80 Q50 60 90 65 T180 48 T270 52 T360 30 L400 28" stroke="#E3D2C2" stroke-width="1.5" fill="none"/>
+            <circle cx="400" cy="28" r="3" fill="#E3D2C2"/>
+          </svg>
         </div>
-    </section>
-    <!-- About Us  End-->
-    <!-- How We Works -->
-    <section id="how-it-works" class="iq-bg-over">
-        <div class="container">
-            <div class="row iq-how-it-works">
-                <div class="col-lg-5 col-md-12 mb-0 fadeInUp wow column align-items-center">
-                    <div class="title-box wow fadeInUp text-left">
-                        <span class="title-design">What we do</span>
-                        <h2>AI systems that improve operations and decision-making</h2>
-                        <p>We design and deliver AI agents, automation workflows, and intelligent analytics solutions for real business use cases.</p>
-                    </div>
-                    <div class="text-left">
-                        <ul class="iq-list what-we-do-list">
-                            <li><i class="fa fa-check-square-o"></i><span>Design and deliver AI agents for domain-specific workflows including HR, wealth management, and macroeconomic analysis.</span></li>
-                            <li><i class="fa fa-check-square-o"></i><span>Build and deploy AI automation that removes manual effort and reduces operational cost.</span></li>
-                            <li><i class="fa fa-check-square-o"></i><span>Integrate AI into existing systems and platforms with minimal disruption to business operations.</span></li>
-                            <li><i class="fa fa-check-square-o"></i><span>Apply GenAI, machine learning, natural language processing, and computer vision to real commercial use cases.</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="fadeInUp col-lg-7 col-md-12">
-                    <img width="1260" height="954" src="images/about-us/06.png" class="single_image-img attachment-full" alt="Oxlon consulting team">
-                </div>
-            </div>
+        <div class="row">
+          <div class="panel">
+            <div class="lbl">INFLATION (CORE)</div>
+            <div class="val">3.<em>1</em><span style="font-size:.5em;">%</span></div>
+            <div class="delta">↓ 40bps · QoQ</div>
+          </div>
+          <div class="panel">
+            <div class="lbl">UNCERTAINTY IDX</div>
+            <div class="val"><em>142</em></div>
+            <div class="delta" style="color:var(--clay-pale)">↑ elevated</div>
+          </div>
         </div>
-    </section>
-    <!-- How We Works End -->
-    <!-- How it Works -->
-    <section class="pt-0 bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="title-box wow fadeInUp text-center">
-                        <span class="title-design">Team strengths</span>
-                        <h2>Cross-disciplinary, delivery-focused expertise</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                    <div class="service-box mt-0 mb-4 wow fadeInUp text-left">
-                        <div class="service-detail align-self-center">
-                            <h4 class="mb-2">Academic pedigree</h4>
-                            <p class="mb-0">Founders and senior experts with teaching and research experience at Oxford and other Russell Group universities.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <div class="service-box mt-0 mb-4 wow fadeInUp text-left">
-                        <div class="service-detail align-self-center">
-                            <h4 class="mb-2">Cross-disciplinary expertise</h4>
-                            <p class="mb-0">Economics, quantitative finance, data science, and software engineering in a single team.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <div class="service-box mt-0 mb-0 wow fadeInUp text-left">
-                        <div class="service-detail align-self-center">
-                            <h4 class="mb-2">End-to-end delivery</h4>
-                            <p class="mb-0">From problem definition and data strategy to model development, integration, and ongoing optimisation.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <div class="service-box mt-0 mb-0 wow fadeInUp text-left">
-                        <div class="service-detail align-self-center">
-                            <h4 class="mb-2">Sector experience</h4>
-                            <p class="mb-0">Healthcare, financial services, retail, manufacturing, and HR/process-heavy functions across industries.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="panel chart-panel">
+          <div class="lbl">POLICY SCENARIO · 12-MO</div>
+          <svg class="chart" viewBox="0 0 400 140" preserveAspectRatio="none">
+            <path d="M0 100 L80 90 L160 75 L240 70 L320 55 L400 50" stroke="#D5DBCA" stroke-width="1.5" fill="none"/>
+            <path d="M0 100 L80 95 L160 85 L240 92 L320 88 L400 95" stroke="#C8D1DC" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
+            <path d="M0 100 L80 108 L160 118 L240 126 L320 130 L400 138" stroke="#E3D2C2" stroke-width="1.5" fill="none" stroke-dasharray="2 3"/>
+            <g font-family="IBM Plex Mono" font-size="8" fill="rgba(246,241,230,.5)">
+              <text x="4" y="14">HAWKISH</text>
+              <text x="4" y="60">BASELINE</text>
+              <text x="4" y="132">DOVISH</text>
+            </g>
+          </svg>
         </div>
-    </section>
-    <!-- How it Works End -->
-    <!-- Our Services -->
-    <section class="pt-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="title-box wow fadeInUp text-center">
-                        <span class="title-design">Selected outcomes</span>
-                        <h2>Production AI with measurable business outcomes</h2>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box d-inherit p-4 my-3 wow fadeInUp text-left">
-                        <div class="service-detail">
-                            <h4 class="mb-2">AI HR Agent</h4>
-                            <p>Integrated with HR and payroll systems to automate repetitive employee support workflows.</p>
-                        </div>
-                        <ul class="iq-list mb-0">
-                            <li><i class="fa fa-check-square-o"></i><span>Automated approximately 85% of key manual HR tasks.</span></li>
-                            <li><i class="fa fa-check-square-o"></i><span>Reduced HR operational costs by around 40%.</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box d-inherit p-4 my-3 wow fadeInUp text-left">
-                        <div class="service-detail">
-                            <h4 class="mb-2">Wealth Management AI Agent</h4>
-                            <p>Supports advisors with client briefing packs and first-draft personalised investment plans.</p>
-                        </div>
-                        <ul class="iq-list mb-0">
-                            <li><i class="fa fa-check-square-o"></i><span>Cut preparation time by roughly 2-3x per client review.</span></li>
-                            <li><i class="fa fa-check-square-o"></i><span>Delivered approximately 15% efficiency improvement.</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box d-inherit p-4 my-3 wow fadeInUp text-left">
-                        <div class="service-detail">
-                            <h4 class="mb-2">Macroeconomic Intelligence</h4>
-                            <p>Turns fragmented economic indicators, reports, and news into executive-ready strategic insight.</p>
-                        </div>
-                        <ul class="iq-list mb-0">
-                            <li><i class="fa fa-check-square-o"></i><span>Improved speed and consistency of strategy and risk analysis.</span></li>
-                            <li><i class="fa fa-check-square-o"></i><span>Delivered decision-ready outputs through natural language querying.</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-12 text-center mt-4">
-                    <a class="button button-icon" href="about-us.html"><span class="btn-effect">See Full About Page</span></a>
-                </div>
-            </div>
+      </div>
+      <div class="cover-r-foot">
+        <span>ECONAI · PREVIEW</span>
+        <span>↑ ↓ to navigate</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · THESIS -->
+  <section class="slide s-thesis" data-screen-label="02 Thesis">
+    <div class="brand dark"><span class="mark"></span><span>Oxlon</span></div>
+    <div class="thesis-main">
+      <span class="eyebrow">What we do</span>
+      <h1>We turn big, unruly economic data into <em>decisions you can defend</em> — in front of a board, a regulator, or a press conference.</h1>
+      <p class="sub">A dashboard product, a learning platform, and a consultancy — three ways into the same problem: complex economic signal, distilled into action.</p>
+    </div>
+    <div class="thesis-foot">
+      <div class="cell"><div class="k">Product</div><div class="v">EconAI — macroeconomic dashboard</div></div>
+      <div class="cell"><div class="k">Platform</div><div class="v">Tailored data-science learning</div></div>
+      <div class="cell"><div class="k">Services</div><div class="v">Macro consultancy · AI · trends</div></div>
+    </div>
+  </section>
+
+  <!-- 3 · THREE PRACTICES -->
+  <section class="slide s-three" data-screen-label="03 Three Practices">
+    <div class="brand light"><span class="mark"></span><span>Oxlon · Practices</span></div>
+    <div class="three-top">
+      <h2>One thesis.<br>Three <em>practices.</em></h2>
+      <p class="side">Each stands alone. Together they compound — a client buys the dashboard, upskills their team, and retains us for the questions the data cannot answer on its own.</p>
+    </div>
+    <div class="three-grid">
+      <div class="three-col">
+        <span class="idx">Practice 01</span>
+        <div class="big">01</div>
+        <div class="t">EconAI</div>
+        <div class="d">A dashboard product. Ingests heterogeneous macro and market data; outputs calibrated, policy-ready visualisations and scenarios.</div>
+        <div class="tag">Product · SaaS · Enterprise</div>
+      </div>
+      <div class="three-col">
+        <span class="idx">Practice 02</span>
+        <div class="big">02</div>
+        <div class="t">Learning Platform</div>
+        <div class="d">Tailored data-science curricula for economics and policy teams. Built around your data, your questions, your cadence.</div>
+        <div class="tag">Platform · Enablement</div>
+      </div>
+      <div class="three-col">
+        <span class="idx">Practice 03</span>
+        <div class="big">03</div>
+        <div class="t">Consultancy</div>
+        <div class="d">Macroeconomic advisory with an AI and technology lens. Trend reading, model review, custom research on the questions our products do not close.</div>
+        <div class="tag">Services · Bespoke · Retained</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · ECONAI -->
+  <section class="slide s-econai" data-screen-label="04 EconAI">
+    <div class="brand dark"><span class="mark"></span><span>Practice 01 · EconAI</span></div>
+    <div class="ea-l">
+      <div>
+        <span class="eyebrow">Practice 01 · Product</span>
+        <h2>EconAI.<br>The <em>dashboard</em>.</h2>
+        <p class="lede">A single surface for macro data that would otherwise sit across a dozen providers, spreadsheets, and analyst memos — with AI that translates it into what a decision-maker actually needs.</p>
+      </div>
+      <div class="caps">
+        <div class="cap"><span class="k">Ingestion</span><span class="v">Heterogeneous macro and market feeds</span></div>
+        <div class="cap"><span class="k">Modelling</span><span class="v">Calibrated nowcasts &amp; scenarios</span></div>
+        <div class="cap"><span class="k">Output</span><span class="v">Policy-ready visualisations</span></div>
+        <div class="cap"><span class="k">Deployment</span><span class="v">Cloud or on-prem</span></div>
+      </div>
+    </div>
+    <div class="ea-r">
+      <div class="ea-dash">
+        <div class="card">
+          <div class="lbl">GDP NOWCAST</div>
+          <div class="val">+1.<em>8</em><span style="font-size:.5em;">%</span></div>
+          <div class="delta">↑ 20bps vs consensus</div>
         </div>
-    </section>
-    <!-- Our Services -->
-    <section class="pt-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="title-box wow fadeInUp text-center mb-0">
-                        <span class="title-design">Technology stack</span>
-                        <h2 class="mb-3">Enterprise-grade, vendor-agnostic delivery</h2>
-                        <p class="mb-4">We work with a modern enterprise AI and cloud stack and choose the right platform for each client. Our experience spans IBM watsonx, Azure, AWS, Anthropic, and leading open-source models.</p>
-                        <a class="button button-icon" href="contact-us.html"><span class="btn-effect">Contact Us</span></a>
-                    </div>
-                </div>
-            </div>
+        <div class="card">
+          <div class="lbl">BANK RATE · IMPLIED</div>
+          <div class="val">4.<em>25</em><span style="font-size:.5em;">%</span></div>
+          <div class="delta" style="color:var(--clay-pale)">± 25bps · 12mo band</div>
         </div>
-    </section>
-    
+        <div class="card chart-big">
+          <div class="head">
+            <span class="ttl">Inflation fan — 8 quarter horizon</span>
+            <span class="rng">Q1 · 2026 → Q1 · 2028</span>
+          </div>
+          <svg viewBox="0 0 600 140" preserveAspectRatio="none" style="width:100%; height:calc(100% - 30px);">
+            <defs>
+              <linearGradient id="fan" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#C8D1DC" stop-opacity=".0"/>
+                <stop offset=".2" stop-color="#C8D1DC" stop-opacity=".35"/>
+                <stop offset="1" stop-color="#C8D1DC" stop-opacity=".55"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 70 Q150 68 300 66 T600 10 L600 130 Q450 120 300 110 T0 70 Z" fill="url(#fan)"/>
+            <path d="M0 70 Q150 68 300 66 T600 50" stroke="#E3D2C2" stroke-width="1.5" fill="none"/>
+            <line x1="0" y1="95" x2="600" y2="95" stroke="rgba(246,241,230,.18)" stroke-dasharray="2 4"/>
+            <text x="4" y="103" font-family="IBM Plex Mono" font-size="9" fill="rgba(246,241,230,.5)">TARGET · 2%</text>
+          </svg>
+        </div>
+        <div class="strip">
+          <div class="chip"><div class="k">Output Gap</div><div class="v">−0.4</div></div>
+          <div class="chip"><div class="k">Wage growth</div><div class="v">5.1%</div></div>
+          <div class="chip"><div class="k">Unemployment</div><div class="v">4.2%</div></div>
+          <div class="chip"><div class="k">Stress index</div><div class="v">0.73</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · LEARNING PLATFORM (2x2) -->
+  <section class="slide s-learn" data-screen-label="05 Learning Platform">
+    <div class="brand dark"><span class="mark"></span><span>Practice 02 · Learning</span></div>
+    <div class="q dark hero">
+      <div>
+        <span class="lab" style="color:var(--clay-pale)">Practice 02 · Platform</span>
+        <div class="mega">The <em>learning</em><br>platform.</div>
+      </div>
+      <div class="foot" style="color:rgba(246,241,230,.6)">Tailored · Live data · Your team</div>
+    </div>
+    <div class="q sage">
+      <div>
+        <span class="lab">Curriculum</span>
+        <div class="h">Built around your data — not a generic syllabus.</div>
+        <div class="d">We design the course with your team's analysts, using your actual feeds and open questions. The material is the work, and the work is the material.</div>
+      </div>
+      <div class="foot">Co-designed · Role-specific</div>
+    </div>
+    <div class="q stone">
+      <div>
+        <span class="lab">Format</span>
+        <div class="h">Live cohorts, async labs, on-demand review.</div>
+        <div class="d">Synchronous sessions with practitioner-instructors. Labs that sit inside your stack. A private review channel — so learning does not stop when the session does.</div>
+      </div>
+      <div class="foot">Hybrid · Practitioner-led</div>
+    </div>
+    <div class="q clay">
+      <div>
+        <span class="lab">Outcome</span>
+        <div class="h">Teams that can build, evaluate, and defend their models.</div>
+        <div class="d">Not certificates. Capability. We measure success by what participants ship in the weeks after — not by what they clicked during.</div>
+      </div>
+      <div class="foot">Capability · Evidenced</div>
+    </div>
+  </section>
+
+  <!-- 6 · CONSULTANCY -->
+  <section class="slide s-consult" data-screen-label="06 Consultancy">
+    <div class="brand dark"><span class="mark"></span><span>Practice 03 · Consultancy</span></div>
+    <div class="co-l">
+      <div>
+        <span class="eyebrow">Practice 03 · Advisory</span>
+        <h2>The <em>consultancy</em>.</h2>
+        <p class="intro">For the questions that do not close by running another model. Macro trend readings, methodology review, bespoke research — with a bench that has worked on AI systems, not only read about them.</p>
+      </div>
+      <span class="stamp">Retained &middot; Scoped engagements &middot; Private</span>
+    </div>
+    <div class="co-r">
+      <span class="eyebrow">Six ways we engage</span>
+      <div class="co-list">
+        <div class="co-item"><span class="n">i</span><div class="body"><div class="h">Macro trend readings</div><div class="d">Quarterly or on demand. Grounded in our models, interpreted by our economists.</div></div></div>
+        <div class="co-item"><span class="n">ii</span><div class="body"><div class="h">Model &amp; methodology review</div><div class="d">Independent challenge on your internal forecasting and AI stack. Findings, remediation, sign-off.</div></div></div>
+        <div class="co-item"><span class="n">iii</span><div class="body"><div class="h">Bespoke research</div><div class="d">Scoped projects on questions our products do not yet close. Delivered as publishable reports.</div></div></div>
+        <div class="co-item"><span class="n">iv</span><div class="body"><div class="h">AI system design</div><div class="d">Architecture for macro-aware ML pipelines, from ingestion through to governance.</div></div></div>
+        <div class="co-item"><span class="n">v</span><div class="body"><div class="h">Board &amp; policy briefings</div><div class="d">Readouts pitched to non-specialists who are accountable for the call.</div></div></div>
+        <div class="co-item"><span class="n">vi</span><div class="body"><div class="h">Secondments</div><div class="d">Our people, embedded in your team, for a defined window and a defined deliverable.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · HOW WE WORK -->
+  <section class="slide s-how" data-screen-label="07 How We Work">
+    <div class="brand light"><span class="mark"></span><span>Methodology</span></div>
+    <div class="how-top">
+      <h2>How <em>we work.</em></h2>
+      <p class="side">A four-stage method. We use the same four stages for every engagement, regardless of practice — because discipline is the only honest hedge against model risk.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-col">
+        <span class="step">Stage 01</span>
+        <div class="big">01</div>
+        <div class="t">Frame</div>
+        <div class="d">Define the decision the work has to support. No model is fit for a purpose that was never written down.</div>
+        <div class="out">Output · Decision memo</div>
+      </div>
+      <div class="how-col">
+        <span class="step">Stage 02</span>
+        <div class="big">02</div>
+        <div class="t">Ingest</div>
+        <div class="d">Pull data from the sources your decision actually depends on — including the unstructured ones analysts usually skip.</div>
+        <div class="out">Output · Reproducible pipeline</div>
+      </div>
+      <div class="how-col">
+        <span class="step">Stage 03</span>
+        <div class="big">03</div>
+        <div class="t">Model</div>
+        <div class="d">Classical and modern methods, chosen for the question — not for the buzz. Uncertainty is reported, not hidden.</div>
+        <div class="out">Output · Calibrated forecasts &amp; scenarios</div>
+      </div>
+      <div class="how-col">
+        <span class="step">Stage 04</span>
+        <div class="big">04</div>
+        <div class="t">Defend</div>
+        <div class="d">The last mile — documentation, challenge, board-readable narrative. Built to withstand the audit it will eventually face.</div>
+        <div class="out">Output · Defence pack</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · WHO WE SERVE -->
+  <section class="slide s-who" data-screen-label="08 Who We Serve">
+    <div class="brand dark"><span class="mark"></span><span>Clients</span></div>
+    <div class="who-l">
+      <div>
+        <span class="eyebrow">Who we serve</span>
+        <h2>Institutions that<br>cannot afford a<br><em>wrong call.</em></h2>
+        <p class="intro">We work with enterprise teams whose decisions have public weight — where 'it seemed right at the time' is not a defence.</p>
+      </div>
+      <span class="eyebrow" style="color:var(--slate); opacity:.6">Indicative, not exhaustive</span>
+    </div>
+    <div class="who-r">
+      <div class="who-cell">
+        <div>
+          <span class="lab">Segment 01</span>
+          <div class="h">Central banks &amp;<br>policy institutions</div>
+          <div class="d">Research, forecasting, and financial-stability teams working under public scrutiny.</div>
+        </div>
+        <div class="glyph">◐</div>
+      </div>
+      <div class="who-cell">
+        <div>
+          <span class="lab">Segment 02</span>
+          <div class="h">Asset managers &amp;<br>banks</div>
+          <div class="d">CIOs, economists and macro desks that need a signal their governance can sign off on.</div>
+        </div>
+        <div class="glyph">◈</div>
+      </div>
+      <div class="who-cell">
+        <div>
+          <span class="lab">Segment 03</span>
+          <div class="h">Sovereign &amp; pension<br>funds</div>
+          <div class="d">Long-horizon investors with mandates that force them to think about regimes, not quarters.</div>
+        </div>
+        <div class="glyph">◎</div>
+      </div>
+      <div class="who-cell">
+        <div>
+          <span class="lab">Segment 04</span>
+          <div class="h">Government &amp;<br>regulators</div>
+          <div class="d">Teams whose outputs become policy, and whose methods must survive parliamentary questioning.</div>
+        </div>
+        <div class="glyph">⌖</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · WHY OXLON -->
+  <section class="slide s-why" data-screen-label="09 Why Oxlon">
+    <div class="brand dark"><span class="mark"></span><span>Why Oxlon</span></div>
+    <div class="wy-l">
+      <div>
+        <span class="eyebrow">Three commitments</span>
+        <h2>Why <em>Oxlon</em>.</h2>
+      </div>
+      <p class="pull">We do not ship models we would not defend in front of a monetary policy committee — because we have been in that room.</p>
+    </div>
+    <div class="wy-r">
+      <div class="wy-row">
+        <span class="n">i</span>
+        <div class="body">
+          <div class="h">Institutional discipline.</div>
+          <div class="d">Our engineering meets the documentation, governance and reproducibility bar that central banks and regulators apply internally. It is the floor, not the ceiling.</div>
+        </div>
+      </div>
+      <div class="wy-row">
+        <span class="n">ii</span>
+        <div class="body">
+          <div class="h">Economics, not novelty.</div>
+          <div class="d">We combine modern ML with classical macroeconomic method. New techniques are used where they earn their place — never to replace a clearer story with a fancier one.</div>
+        </div>
+      </div>
+      <div class="wy-row">
+        <span class="n">iii</span>
+        <div class="body">
+          <div class="h">A bench that has shipped.</div>
+          <div class="d">Our team has built production AI systems and published macroeconomic research. The work is not delegated to juniors; the senior name on the proposal writes the code.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · TEAM -->
+  <section class="slide s-team" data-screen-label="10 Team">
+    <div class="brand dark"><span class="mark"></span><span>Team</span></div>
+    <div class="tm-top">
+      <div>
+        <span class="eyebrow">Founders</span>
+        <h2>Three <em>founders</em>.<br>One thesis.</h2>
+      </div>
+      <p class="side">Oxlon was founded by three operators with complementary backgrounds in AI engineering, macroeconomic research, and applied data science — the three ingredients the work actually needs.</p>
+    </div>
+    <div class="tm-grid">
+      <div class="tm-card">
+        <span class="idx">Founder 01</span>
+        <div class="tm-portrait">OE</div>
+        <div class="name">Osman Ersoy</div>
+        <div class="role">Co-founder · AI Engineering</div>
+        <div class="bio">Leads Oxlon's technical bench — from data engineering and pipeline architecture to the deep-learning systems behind EconAI. Builds the infrastructure that takes heterogeneous economic feeds and turns them into reproducible, production-grade intelligence.</div>
+        <div class="tags"><span>PhD · Physics</span><span>Data engineering</span><span>Deep learning</span></div>
+        <a class="lnk" href="https://www.linkedin.com/in/osmanersoy/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0H12v2.2h.07c.62-1.18 2.14-2.43 4.4-2.43 4.71 0 5.58 3.1 5.58 7.13V24h-5v-7.1c0-1.7-.03-3.88-2.36-3.88-2.37 0-2.73 1.85-2.73 3.76V24h-5V8z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="tm-card">
+        <span class="idx">Founder 02</span>
+        <div class="tm-portrait">FK</div>
+        <div class="name">Fatih Kansoy</div>
+        <div class="role">Co-founder · Macro &amp; ML Research</div>
+        <div class="bio">Anchors Oxlon's macro-financial research — labour-market dynamics, financial conditions, and the machine-learning methods that make sense of them. Works at the seam of text-as-data and econometrics, treating data as a liability to be governed, not just an asset to be mined.</div>
+        <div class="tags"><span>PhD · Economics &amp; Finance</span><span>Macro-financial</span><span>Text as data</span></div>
+        <a class="lnk" href="https://www.linkedin.com/in/kansoy/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0H12v2.2h.07c.62-1.18 2.14-2.43 4.4-2.43 4.71 0 5.58 3.1 5.58 7.13V24h-5v-7.1c0-1.7-.03-3.88-2.36-3.88-2.37 0-2.73 1.85-2.73 3.76V24h-5V8z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="tm-card">
+        <span class="idx">Founder 03</span>
+        <div class="tm-portrait">MI</div>
+        <div class="name">Mehman Ismayilli</div>
+        <div class="role">Co-founder · Applied Analytics &amp; Policy</div>
+        <div class="bio">Leads Oxlon's analytics and learning practice — competition, market structure, and the design of AI systems for regulatory and policy questions. Specialises in using granular micro-level data to inform macro-level policy choices.</div>
+        <div class="tags"><span>PhD · Economics</span><span>Market structure</span><span>Micro-to-macro</span></div>
+        <a class="lnk" href="https://www.linkedin.com/in/mismayilli/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0H12v2.2h.07c.62-1.18 2.14-2.43 4.4-2.43 4.71 0 5.58 3.1 5.58 7.13V24h-5v-7.1c0-1.7-.03-3.88-2.36-3.88-2.37 0-2.73 1.85-2.73 3.76V24h-5V8z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="tm-foot">
+      <span>Oxford · London</span>
+      <span><a href="mailto:info@oxlon.uk">info@oxlon.uk</a></span>
+    </div>
+  </section>
+
+  <!-- 11 · ENGAGE -->
+  <section class="slide s-engage" data-screen-label="11 Engage">
+    <div class="brand light"><span class="mark"></span><span>Engage</span></div>
+    <div class="eg-l">
+      <div>
+        <span class="eyebrow">Start a conversation</span>
+        <h2>A <em>single call</em><br>to scope the fit.</h2>
+        <p class="pull">Thirty minutes, under NDA if you want, with a partner — not a sales lead. We either see a fit within the call or we tell you who else you should be talking to.</p>
+      </div>
+      <div class="sig">Oxford &middot; London &middot; Remote</div>
+    </div>
+    <div class="eg-r">
+      <div class="eg-steps">
+        <div class="eg-step">
+          <span class="n">i</span>
+          <div class="b">
+            <div class="h">Scoping call</div>
+            <div class="d">Thirty minutes. What is the decision, what is the data, what has already been tried.</div>
+          </div>
+          <span class="arr">→</span>
+        </div>
+        <div class="eg-step">
+          <span class="n">ii</span>
+          <div class="b">
+            <div class="h">Written proposal</div>
+            <div class="d">A one-page memo with the framing, method, timeline and fee. No decks of generic capability slides.</div>
+          </div>
+          <span class="arr">→</span>
+        </div>
+        <div class="eg-step">
+          <span class="n">iii</span>
+          <div class="b">
+            <div class="h">Pilot or retainer</div>
+            <div class="d">Most engagements start as a bounded pilot so both sides can exit cleanly before scaling up.</div>
+          </div>
+          <span class="arr">→</span>
+        </div>
+        <div class="eg-step">
+          <span class="n">iv</span>
+          <div class="b">
+            <div class="h">Defence pack &amp; handover</div>
+            <div class="d">At the end, your team owns the work outright — code, models, and the narrative to defend them.</div>
+          </div>
+          <span class="arr">→</span>
+        </div>
+      </div>
+      <div class="eg-contact">
+        <span>Write to <a href="mailto:info@oxlon.uk">info@oxlon.uk</a></span>
+        <span>oxlon.uk</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · BACK COVER -->
+  <section class="slide s-back" data-screen-label="12 Back">
+    <div class="back-main">
+      <span class="eyebrow" style="color:var(--clay-pale)">Oxlon</span>
+      <div class="back-wordmark">Ox<em>lon</em>.</div>
+      <p class="back-tag">Intelligence, distilled for decision-making.<br>AI &middot; Machine Learning &middot; Macroeconomics.</p>
+    </div>
+    <div class="back-foot">
+      <div class="l">Oxlon Ltd · Oxford &middot; London</div>
+      <div class="r">
+        <a href="mailto:info@oxlon.uk">info@oxlon.uk</a>
+        <span>oxlon.uk</span>
+        <span>↑ ↓ or scroll</span>
+      </div>
+    </div>
+  </section>
+
 </div>
-<!-- MainContent End-->
-    <!-- Footer -->
-    <footer class="footer-one iq-bg-dark iq-over-dark-90" id="contact">
-        <div class="container">
-            <div class="footer-top">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <p class="footer-logo"><img alt="Oxlon" src="images/oxlon-logo-white.svg" width="180"></p>
-                        <p class="footer-logo">Oxlon is a UK-based AI and economic/financial consultancy delivering practical, production-ready solutions for complex business environments.</p>
-                        <ul class="info-share d-inline list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-4 mt-lg-0 mt-md-0">
-                        <h4 class="footer-title iq-rmt-30">Quick links</h4>
-                        <div class="menu-footer-menu-container">
-                            <ul class="menu">
-                                <li class="menu-item"><a href="index.html">Home</a></li>
-                                <li class="menu-item"><a href="about-us.html">About Us</a></li>
-                                <li class="menu-item"><a href="contact-us.html">Contact</a></li>
-                            </ul>
-                        </div>
 
-                    </div>
-                    <div class="col-lg-5 col-md-12 col-sm-12 mt-lg-0 mt-4">
-                        <h4 class="footer-title iq-rmt-30">Contact</h4>
-                        <ul class="iq-contact">
-                            <li><a href="mailto:info@oxlon.uk"><i class="fa fa-envelope"></i><span>info@oxlon.uk</span></a></li>
-                            <li><a><i class="fa fa-home"></i><span>Oxford + London, United Kingdom</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright-footer">
-                <div class="pt-3 pb-3">
-                    <div class="row flex-row-reverse justify-content-between">
-                        <div class="col-lg-12 col-md-12 text-lg-center text-md-center text-center"><span class="copyright">Copyright 2026 <a href="index.html">Oxlon</a> All Rights Reserved.</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!-- Fixed UI -->
+<div class="counter" id="counter">01 / 12</div>
+<button class="arrow prev" id="prev" aria-label="Previous slide">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<button class="arrow next" id="next" aria-label="Next slide">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="navdots" id="navdots" aria-label="Slide navigation"></nav>
 
+<script>
+(function(){
+  const deck = document.getElementById('deck');
+  const slides = Array.from(deck.querySelectorAll('section.slide'));
+  const nav = document.getElementById('navdots');
+  const counter = document.getElementById('counter');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  const KEY = 'oxlon-idx';
 
-    <!-- Footer End-->
-    <!-- back-to-top -->
-    <div id="back-to-top">
-        <a class="top" href="#top" id="top"> <i class="ion-ios-arrow-up"></i> </a>
-    </div>
-    <!-- back-to-top End -->
-    <!-- jQuery, Popper JS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Appear JS -->
-    <script src="js/appear.js"></script>
-    <!-- Countdown JS -->
-    <script src="js/countdown.js"></script>
-    <!-- CountTo JS -->
-    <script src="js/jquery.countTo.js"></script>
-    <!-- Magnific Popup JS -->
-    <script src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- Chart JS -->
-    <script src="js/Chart.min.js"></script>
-    <script src="js/Chart.bundle.min.js"></script>
-    <!-- Slick JS -->
-    <script src="js/slick.min.js"></script>
-    <!-- Wow JS -->
-    <script src="js/wow.min.js"></script>
-    <!-- Isotope JS-->
-    <script src="js/isotope.pkgd.min.js"></script>
-    <!-- REVOLUTION SLIDER JS-->
-    <script src="revslider/js/revolution.tools.min.js"></script>
-    <script src="revslider/js/rs6.min.js"></script>
-    <script src="js/revslider-custom.js"></script>
-    <!-- Custom JS-->
-    <script src="js/xamin-custom.js"></script>
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Slide ' + (i+1));
+    b.addEventListener('click', () => goTo(i));
+    nav.appendChild(b);
+  });
+
+  function current(){ return Math.round(deck.scrollTop / window.innerHeight); }
+  function goTo(i){
+    const idx = Math.max(0, Math.min(slides.length-1, i));
+    deck.scrollTo({ top: idx * window.innerHeight, behavior: 'smooth' });
+    setActive(idx);
+    try { localStorage.setItem(KEY, String(idx)); } catch(e){}
+  }
+  function setActive(idx){
+    Array.from(nav.children).forEach((b, i) => {
+      if(i === idx) b.setAttribute('aria-current','true');
+      else b.removeAttribute('aria-current');
+    });
+    counter.textContent = String(idx+1).padStart(2,'0') + ' / ' + String(slides.length).padStart(2,'0');
+    try { window.postMessage({ slideIndexChanged: idx }, '*'); } catch(e){}
+  }
+
+  let raf = 0;
+  deck.addEventListener('scroll', () => {
+    if(raf) return;
+    raf = requestAnimationFrame(() => {
+      raf = 0;
+      const idx = current();
+      setActive(idx);
+      try { localStorage.setItem(KEY, String(idx)); } catch(e){}
+    });
+  });
+
+  prev.addEventListener('click', () => goTo(current()-1));
+  next.addEventListener('click', () => goTo(current()+1));
+
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' '){ e.preventDefault(); goTo(current()+1); }
+    else if(e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); goTo(current()-1); }
+    else if(e.key === 'Home'){ goTo(0); }
+    else if(e.key === 'End'){ goTo(slides.length-1); }
+  });
+
+  let tx0 = null, ty0 = null;
+  deck.addEventListener('touchstart', (e) => { tx0 = e.touches[0].clientX; ty0 = e.touches[0].clientY; }, { passive:true });
+  deck.addEventListener('touchend', (e) => {
+    if(ty0 === null) return;
+    const tx = e.changedTouches[0].clientX, ty = e.changedTouches[0].clientY;
+    const dx = tx - tx0, dy = ty - ty0;
+    if(Math.abs(dy) > 50 && Math.abs(dy) > Math.abs(dx)){
+      if(dy < 0) goTo(current()+1); else goTo(current()-1);
+    }
+    tx0 = null; ty0 = null;
+  }, { passive:true });
+
+  window.addEventListener('resize', () => { deck.scrollTop = current() * window.innerHeight; });
+
+  let start = 0;
+  try {
+    const s = localStorage.getItem(KEY);
+    if(s !== null) start = Math.max(0, Math.min(slides.length-1, parseInt(s, 10) || 0));
+  } catch(e){}
+  requestAnimationFrame(() => {
+    deck.scrollTop = start * window.innerHeight;
+    setActive(start);
+  });
+})();
+</script>
 </body>
-
 </html>
