@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Start a conversation with Oxlon. A sixty-minute scoping call with a founder — no decks, no sales team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ─── Contact-specific ─── */
+
+/* Two paths */
+.paths{padding:110px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+.paths .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.path-card{padding:56px 48px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--cream);display:flex;flex-direction:column;gap:18px;min-height:520px;position:relative}
+.path-card.dark{background:var(--ink-deep);color:var(--cream);position:relative;overflow:hidden}
+.path-card.dark::before{content:"";position:absolute;top:-20%;right:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,167,142,.08),transparent 70%);pointer-events:none}
+.path-card.dark > *{position:relative;z-index:1}
+.path-card .px{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);display:flex;justify-content:space-between;align-items:center}
+.path-card.dark .px{color:var(--clay-pale)}
+.path-card h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(42px,5.5vw,76px);line-height:1;letter-spacing:-0.02em;color:var(--ink);margin-top:16px}
+.path-card.dark h2{color:var(--cream)}
+.path-card h2 em{font-style:italic;color:var(--slate)}
+.path-card.dark h2 em{color:var(--clay-pale)}
+.path-card .lede{margin-top:12px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:38ch}
+.path-card.dark .lede{color:rgba(246,241,230,.78)}
+.path-card ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.path-card ul li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:15px;line-height:1.55;color:var(--ink);padding:12px 0;border-top:1px solid var(--rule-soft)}
+.path-card.dark ul li{color:rgba(246,241,230,.85);border-top-color:var(--rule-light)}
+.path-card ul li::before{content:"→";color:var(--clay);font-family:'IBM Plex Mono',monospace;font-size:13px;padding-top:1px}
+.path-card .action{margin-top:auto;padding-top:28px}
+.path-card .action .btn{width:fit-content}
+.path-card .ft{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);opacity:.75}
+.path-card.dark .ft{color:rgba(246,241,230,.55);opacity:1}
+.path-card .ft a{color:inherit;border-bottom:1px solid currentColor;padding-bottom:1px;text-decoration:none}
+@media (max-width:960px){.paths .wrap{grid-template-columns:1fr;border-left:0}.path-card{border-right:0;padding:40px 28px;min-height:auto}}
+
+/* Form */
+.form-sec{padding:120px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
+.form-sec .wrap{display:grid;grid-template-columns:320px 1fr;gap:72px;align-items:start}
+.form-sec .side .eyebrow{margin-bottom:14px}
+.form-sec .side h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,5vw,72px);line-height:.98;letter-spacing:-0.025em;color:var(--ink);max-width:14ch}
+.form-sec .side h2 em{font-style:italic;color:var(--slate)}
+.form-sec .side .note{margin-top:20px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:28ch}
+.form-sec form{background:var(--paper);border:1px solid var(--rule);padding:48px 44px;display:flex;flex-direction:column;gap:28px}
+.form-sec .row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.form-sec .field{display:flex;flex-direction:column;gap:8px}
+.form-sec .field label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);opacity:.85}
+.form-sec .field input,.form-sec .field select,.form-sec .field textarea{font-family:'IBM Plex Sans',sans-serif;font-size:15px;background:var(--cream);border:1px solid var(--rule);color:var(--ink);padding:14px 16px;letter-spacing:.01em;width:100%}
+.form-sec .field input:focus,.form-sec .field select:focus,.form-sec .field textarea:focus{outline:none;border-color:var(--clay);background:var(--paper)}
+.form-sec .field textarea{min-height:140px;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.55;resize:vertical}
+.form-sec .field select{appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23525B7A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
+.form-sec .actions{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:8px;border-top:1px solid var(--rule-soft)}
+.form-sec .actions button{appearance:none;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:14px 24px;background:var(--ink);color:var(--cream);border:1px solid var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:background .2s}
+.form-sec .actions button:hover{background:var(--slate)}
+.form-sec .actions .privacy{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);opacity:.75;max-width:36ch;line-height:1.6}
+@media (max-width:960px){.form-sec .wrap{grid-template-columns:1fr;gap:32px}.form-sec form{padding:30px 24px}.form-sec .row{grid-template-columns:1fr}.form-sec{padding:70px 0}}
+
+/* What to bring */
+.bring{padding:110px 0;border-bottom:1px solid var(--rule);background:var(--paper)}
+.bring .head{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;margin-bottom:48px}
+.bring h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,4.8vw,70px);line-height:.98;letter-spacing:-0.025em;color:var(--ink)}
+.bring h2 em{font-style:italic;color:var(--slate)}
+.bring .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:48ch}
+.bring-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.bring-cell{padding:36px 32px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--cream);display:flex;flex-direction:column;gap:12px}
+.bring-cell .bn{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:42px;color:var(--clay);line-height:.9}
+.bring-cell h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;line-height:1.2;letter-spacing:-0.005em;color:var(--ink)}
+.bring-cell h4 em{font-style:italic;color:var(--slate)}
+.bring-cell p{font-size:14.5px;line-height:1.65;color:var(--ink-soft);max-width:46ch}
+@media (max-width:720px){.bring-grid{grid-template-columns:1fr;border-left:0}.bring-cell{border-right:0}.bring .head{grid-template-columns:1fr}}
+
+/* Offices */
+.offices{padding:100px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.offices .head{margin-bottom:40px}
+.offices h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,4.6vw,66px);line-height:.98;letter-spacing:-0.025em;color:var(--ink);margin-top:10px}
+.offices h2 em{font-style:italic;color:var(--slate)}
+.offices .o-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.office{padding:34px 30px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;gap:12px;min-height:260px}
+.office .city{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay)}
+.office .nm{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;line-height:1.15;letter-spacing:-0.005em;color:var(--ink);margin-top:2px}
+.office .nm em{font-style:italic;color:var(--slate)}
+.office .addr{font-size:14px;line-height:1.65;color:var(--ink-soft);font-style:normal}
+.office .addr br+span{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);opacity:.75}
+.office .meta{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule-soft);display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px}
+.office .meta div{display:flex;flex-direction:column}
+.office .meta .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);opacity:.75;margin-bottom:2px}
+.office .meta .v{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink);line-height:1.3;font-style:italic}
+@media (max-width:860px){.offices .o-grid{grid-template-columns:1fr;border-left:0}.office{border-right:0}}
+
+/* Direct lines */
+.direct{padding:90px 0;background:var(--ink-deep);color:var(--cream);position:relative;overflow:hidden}
+.direct::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 30%,rgba(201,167,142,.06),transparent 55%),radial-gradient(ellipse at 80% 70%,rgba(182,191,167,.05),transparent 55%);pointer-events:none}
+.direct .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:center}
+.direct h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,4.5vw,64px);line-height:.98;letter-spacing:-0.025em}
+.direct h2 em{font-style:italic;color:var(--clay-pale)}
+.direct .lines{display:grid;grid-template-columns:1fr 1fr;gap:24px 36px}
+.direct .l{padding:18px 0;border-top:1px solid var(--rule-light)}
+.direct .l .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-pale);margin-bottom:8px}
+.direct .l .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--cream);line-height:1.35}
+.direct .l .v em{font-style:italic;color:var(--clay-pale)}
+.direct .l .v a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(246,241,230,.3)}
+.direct .l .v a:hover{border-bottom-color:var(--clay-pale)}
+@media (max-width:860px){.direct .wrap{grid-template-columns:1fr;gap:24px}.direct .lines{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="contact" class="dark-chrome">
+
+<div id="site-bar-mount"></div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero dark-bg">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h1 class="fade-up">Begin with a <em>question.</em></h1>
+    <p class="lede fade-up">Sixty minutes, under NDA if you want, with a founder &mdash; not a sales lead. We either see a fit within the call, or we tell you who else you should be talking to.</p>
+    <div class="actions fade-up">
+      <a class="btn btn-primary" href="#form">Request a scoping call <span class="ar">↓</span></a>
+      <a class="btn btn-ghost" href="mailto:info@oxlon.uk">Email directly <span class="ar">↗</span></a>
+    </div>
+    <div class="hero-meta">
+      <div class="cell"><div class="k">Reply time</div><div class="v">Within 48 hours</div></div>
+      <div class="cell"><div class="k">Call duration</div><div class="v">Sixty minutes</div></div>
+      <div class="cell"><div class="k">Preparation</div><div class="v">None required</div></div>
+      <div class="cell"><div class="k">Cost</div><div class="v">Free, no commitment</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TWO PATHS ═══════════════ -->
+<section class="paths">
+  <div class="wrap">
+
+    <div class="path-card">
+      <div class="px"><span>Path · 01</span><span>Most common</span></div>
+      <h2>A <em>scoping</em> call.</h2>
+      <p class="lede">For potential engagements &mdash; EconAI, advisory, or Atlas. A single call to see whether the work makes sense on both sides.</p>
+      <ul>
+        <li>Sixty minutes, video or in person &mdash; Oxford, London, or your site.</li>
+        <li>A founder in the room, no junior sales team.</li>
+        <li>Mutual NDA on request, sent ahead of the call.</li>
+        <li>If we&rsquo;re not the right firm, we&rsquo;ll tell you &mdash; and often point you somewhere better.</li>
+      </ul>
+      <div class="action">
+        <a class="btn btn-ink" href="#form">Request the call <span class="ar">→</span></a>
+      </div>
+      <div class="ft">Booked via <a href="#form">the form below</a> · confirmed within 48 hours.</div>
+    </div>
+
+    <div class="path-card dark">
+      <div class="px"><span>Path · 02</span><span>Everything else</span></div>
+      <h2>A <em>direct</em> note.</h2>
+      <p class="lede">For press, research partnerships, speaking invitations, hiring, or a question that isn&rsquo;t yet an engagement. Write to us and the right founder will reply.</p>
+      <ul>
+        <li>Press &amp; media &mdash; <a href="mailto:press@oxlon.uk">press@oxlon.uk</a></li>
+        <li>Research partnerships &mdash; <a href="mailto:research@oxlon.uk">research@oxlon.uk</a></li>
+        <li>Hiring &amp; applications &mdash; <a href="mailto:hiring@oxlon.uk">hiring@oxlon.uk</a></li>
+        <li>Anything else &mdash; <a href="mailto:info@oxlon.uk">info@oxlon.uk</a></li>
+      </ul>
+      <div class="action">
+        <a class="btn btn-primary" href="mailto:info@oxlon.uk">Write directly <span class="ar">→</span></a>
+      </div>
+      <div class="ft">We read everything. We reply to everything genuine.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ FORM ═══════════════ -->
+<section class="form-sec" id="form">
+  <div class="wrap">
+    <div class="side">
+      <div class="eyebrow">Request a call</div>
+      <h2>Tell us what <em>you&rsquo;re working on.</em></h2>
+      <p class="note">A few short fields. No lead-scoring, no follow-up sequence, no newsletter enrolment by default. A founder reads every submission within two working days.</p>
+    </div>
+
+    <form onsubmit="event.preventDefault();const b=this.querySelector('button');b.textContent='Received · we will reply within 48 hours';b.disabled=true;this.querySelectorAll('input,select,textarea').forEach(f=>f.disabled=true);">
+
+      <div class="row">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" placeholder="Full name" required>
+        </div>
+        <div class="field">
+          <label for="f-role">Role &amp; institution</label>
+          <input id="f-role" type="text" placeholder="e.g. Chief Economist, Ministry of Finance" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="f-email">Institutional email</label>
+          <input id="f-email" type="email" placeholder="name@institution.gov" required>
+        </div>
+        <div class="field">
+          <label for="f-topic">Topic of the call</label>
+          <select id="f-topic" required>
+            <option value="" disabled selected>Select one</option>
+            <option>EconAI &middot; dashboard &amp; modelling platform</option>
+            <option>Advisory &middot; model review &amp; audit</option>
+            <option>Advisory &middot; macro stress &amp; scenario</option>
+            <option>Advisory &middot; Economics of AI</option>
+            <option>Advisory &middot; custom research</option>
+            <option>Atlas &middot; executive learning</option>
+            <option>Research &middot; partnership or data-sharing</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-question">The question on your desk</label>
+        <textarea id="f-question" placeholder="One or two paragraphs is plenty. What is the decision the work has to support? What has already been tried? What is the timeline?" required></textarea>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="f-horizon">Rough timeline</label>
+          <select id="f-horizon">
+            <option value="" disabled selected>If relevant</option>
+            <option>Exploratory &middot; no fixed horizon</option>
+            <option>Within the next quarter</option>
+            <option>Within six months</option>
+            <option>Within twelve months</option>
+            <option>Ongoing &middot; retained basis</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-nda">NDA required</label>
+          <select id="f-nda">
+            <option value="" disabled selected>Your preference</option>
+            <option>Send your standard mutual NDA</option>
+            <option>We will send our own NDA</option>
+            <option>Not required for the scoping call</option>
+            <option>Undecided</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="privacy">Stored privately. Never shared. Never used for marketing. Deleted on request &mdash; write to <a href="mailto:privacy@oxlon.uk" style="color:inherit;text-decoration:underline">privacy@oxlon.uk</a>.</div>
+        <button type="submit">Send request <span class="ar">→</span></button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════ WHAT TO BRING ═══════════════ -->
+<section class="bring">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">What happens on the call</div>
+        <h2>Sixty minutes, <em>used well.</em></h2>
+      </div>
+      <p class="note">A scoping call is not a sales call. It is a working session whose only purpose is to see whether an engagement is worth scoping in writing.</p>
+    </div>
+
+    <div class="bring-grid">
+      <div class="bring-cell">
+        <div class="bn">i.</div>
+        <h4>The <em>decision</em> the work has to support.</h4>
+        <p>We start by writing down the actual decision &mdash; a board paper, a policy choice, a methodology challenge. If it can&rsquo;t be written down, we help you write it down.</p>
+      </div>
+      <div class="bring-cell">
+        <div class="bn">ii.</div>
+        <h4>The <em>data</em> you have, and the data you don&rsquo;t.</h4>
+        <p>A quick map of what sources are in scope, what access constraints exist, and where the gaps are. No one needs to send data for the call.</p>
+      </div>
+      <div class="bring-cell">
+        <div class="bn">iii.</div>
+        <h4>What has <em>already been tried.</em></h4>
+        <p>Existing in-house work, previous consultancies, and the internal constraints on taking another swing at the problem. Full context saves a month.</p>
+      </div>
+      <div class="bring-cell">
+        <div class="bn">iv.</div>
+        <h4>An honest <em>view</em> from us.</h4>
+        <p>By the end of the call we&rsquo;ll tell you whether we think we can help, whether someone else is better suited, or whether the problem isn&rsquo;t yet well-formed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ OFFICES ═══════════════ -->
+<section class="offices">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Where we are</div>
+      <h2>Three <em>bases.</em></h2>
+    </div>
+    <div class="o-grid">
+      <div class="office">
+        <div class="city">Oxford</div>
+        <div class="nm">Oxford <em>headquarters</em></div>
+        <div class="addr">
+          Radcliffe Square area<br>
+          <span>By appointment</span>
+        </div>
+        <div class="meta">
+          <div><div class="k">Phone</div><div class="v">+44 (0) 1865</div></div>
+          <div><div class="k">Host</div><div class="v">Fatih Kansoy</div></div>
+        </div>
+      </div>
+      <div class="office">
+        <div class="city">London</div>
+        <div class="nm">London <em>operations</em></div>
+        <div class="addr">
+          Central London<br>
+          <span>By appointment</span>
+        </div>
+        <div class="meta">
+          <div><div class="k">Phone</div><div class="v">+44 (0) 20</div></div>
+          <div><div class="k">Host</div><div class="v">Mehman Ismayilli</div></div>
+        </div>
+      </div>
+      <div class="office">
+        <div class="city">Baku</div>
+        <div class="nm">Deployment <em>site</em></div>
+        <div class="addr">
+          Client-hosted<br>
+          <span>Ministry of Economy · Azerbaijan</span>
+        </div>
+        <div class="meta">
+          <div><div class="k">Contact</div><div class="v">via Oxford</div></div>
+          <div><div class="k">Status</div><div class="v">Live since 2024</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DIRECT LINES ═══════════════ -->
+<section class="direct">
+  <div class="wrap">
+    <div>
+      <h2>Direct <em>lines.</em></h2>
+    </div>
+    <div class="lines">
+      <div class="l">
+        <div class="k">General</div>
+        <div class="v"><a href="mailto:info@oxlon.uk">info@<em>oxlon.uk</em></a></div>
+      </div>
+      <div class="l">
+        <div class="k">Press &amp; media</div>
+        <div class="v"><a href="mailto:press@oxlon.uk">press@<em>oxlon.uk</em></a></div>
+      </div>
+      <div class="l">
+        <div class="k">Research &amp; data</div>
+        <div class="v"><a href="mailto:research@oxlon.uk">research@<em>oxlon.uk</em></a></div>
+      </div>
+      <div class="l">
+        <div class="k">Hiring</div>
+        <div class="v"><a href="mailto:hiring@oxlon.uk">hiring@<em>oxlon.uk</em></a></div>
+      </div>
+      <div class="l">
+        <div class="k">LinkedIn</div>
+        <div class="v"><a href="https://www.linkedin.com/company/oxlon/" target="_blank" rel="noopener">linkedin.com/company/<em>oxlon</em></a></div>
+      </div>
+      <div class="l">
+        <div class="k">Memo archive</div>
+        <div class="v"><a href="research.html#newsletter">research.<em>oxlon.uk</em></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

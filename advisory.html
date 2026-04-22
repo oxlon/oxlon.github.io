@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advisory — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Oxlon advisory: bespoke economic research engagements — model review, macro stress-testing, and the economics of AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* Practice grid */
+.practices{padding:110px 0;border-bottom:1px solid var(--rule)}
+.practice{display:grid;grid-template-columns:200px 1fr 320px;gap:48px;padding:48px 0;border-bottom:1px solid var(--rule);align-items:start}
+.practice:last-child{border-bottom:0}
+.practice .p-idx{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:88px;line-height:.85;color:var(--clay)}
+.practice h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:44px;line-height:1.02;letter-spacing:-0.015em;color:var(--ink)}
+.practice h3 em{font-style:italic;color:var(--slate)}
+.practice .p-desc{margin-top:14px;font-size:16px;line-height:1.7;color:var(--ink-soft);max-width:56ch}
+.practice ul{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:8px;font-size:14.5px;color:var(--ink);line-height:1.5}
+.practice ul li{padding-left:22px;position:relative}
+.practice ul li::before{content:"—";position:absolute;left:0;color:var(--clay);font-family:'IBM Plex Mono',monospace}
+.practice .aside{padding:22px 20px;background:var(--cream);border:1px solid var(--rule)}
+.practice .aside .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
+.practice .aside .v{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);line-height:1.35}
+.practice .aside .v em{font-style:italic;color:var(--slate)}
+.practice .aside hr{border:0;border-top:1px solid var(--rule);margin:14px 0}
+.practice .aside a.lnk{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--clay);padding-bottom:3px}
+@media (max-width:1040px){.practice{grid-template-columns:1fr;gap:18px}.practice .p-idx{font-size:56px}}
+
+/* Engagement formats */
+.formats{padding:110px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-top:48px}
+.f-card{padding:40px 32px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;gap:14px;min-height:300px}
+.f-card .f-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);display:flex;justify-content:space-between}
+.f-card h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;line-height:1.1;letter-spacing:-0.005em;color:var(--ink)}
+.f-card h4 em{font-style:italic;color:var(--slate)}
+.f-card p{font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
+.f-card .foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule-soft);display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+@media (max-width:860px){.f-grid{grid-template-columns:1fr;border-left:0}.f-card{border-right:0}}
+
+/* Featured EoAI block */
+.eoai{padding:120px 0;background:var(--ink-deep);color:var(--cream);border-bottom:1px solid var(--rule-light);position:relative;overflow:hidden}
+.eoai::before{content:"";position:absolute;top:-20%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(182,191,167,.08),transparent 70%);pointer-events:none}
+.eoai .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.eoai .eyebrow{color:var(--clay-pale);margin-bottom:14px}
+.eoai h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(48px,6vw,92px);line-height:.94;letter-spacing:-0.025em;color:var(--cream)}
+.eoai h2 em{font-style:italic;color:var(--clay-pale)}
+.eoai .lede{margin-top:24px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.45;color:rgba(246,241,230,.78);max-width:46ch}
+.eoai .cta-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.eoai .sheet{background:rgba(246,241,230,.04);border:1px solid var(--rule-light);padding:36px 32px}
+.eoai .sheet h4{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay-pale);margin-bottom:24px}
+.eoai .sheet ol{list-style:none;counter-reset:eo;display:flex;flex-direction:column;gap:18px}
+.eoai .sheet li{counter-increment:eo;display:grid;grid-template-columns:40px 1fr;gap:14px;padding-bottom:18px;border-bottom:1px solid var(--rule-light)}
+.eoai .sheet li:last-child{border-bottom:0;padding-bottom:0}
+.eoai .sheet li::before{content:counter(eo,lower-roman) ".";font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--clay-pale)}
+.eoai .sheet li b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px;color:var(--cream);margin-bottom:4px;letter-spacing:-0.005em}
+.eoai .sheet li b em{font-style:italic;color:var(--clay-pale)}
+.eoai .sheet li p{font-size:13.5px;line-height:1.55;color:rgba(246,241,230,.65)}
+@media (max-width:960px){.eoai .wrap{grid-template-columns:1fr;gap:40px}.eoai{padding:70px 0}}
+
+/* Clients/sectors strip */
+.sectors{padding:80px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.sectors .wrap{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:center}
+.sectors .label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)}
+.sectors ul{list-style:none;display:flex;gap:40px;flex-wrap:wrap}
+.sectors ul li{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:22px;color:var(--ink-soft);line-height:1.35}
+.sectors ul li em{font-style:italic;color:var(--slate)}
+@media (max-width:720px){.sectors .wrap{grid-template-columns:1fr;gap:18px}}
+
+/* FAQ */
+.faq{padding:110px 0;border-bottom:1px solid var(--rule)}
+.faq .head{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;margin-bottom:48px}
+.faq h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(44px,5vw,78px);line-height:.98;letter-spacing:-0.025em;color:var(--ink)}
+.faq h2 em{font-style:italic;color:var(--slate)}
+.faq .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:48ch}
+.faq-list{border-top:1px solid var(--rule)}
+.faq-item{border-bottom:1px solid var(--rule);padding:26px 0;display:grid;grid-template-columns:80px 1fr 40px;gap:20px;align-items:baseline;cursor:pointer}
+.faq-item .q-num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);opacity:.7}
+.faq-item .q{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;line-height:1.2;color:var(--ink);letter-spacing:-0.005em}
+.faq-item .q em{font-style:italic;color:var(--slate)}
+.faq-item .a{grid-column:2;font-size:15px;line-height:1.65;color:var(--ink-soft);max-width:62ch;margin-top:10px;display:none}
+.faq-item.open .a{display:block}
+.faq-item .plus{font-family:'IBM Plex Mono',monospace;font-size:20px;color:var(--clay);justify-self:end;transition:transform .25s}
+.faq-item.open .plus{transform:rotate(45deg)}
+@media (max-width:720px){.faq-item{grid-template-columns:1fr 40px}.faq-item .q-num{grid-column:1;grid-row:0}.faq .head{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="advisory">
+
+<div id="site-bar-mount"></div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Practice · Advisory</div>
+    <h1 class="fade-up">The <em>hard</em><br>questions<br>a board faces.</h1>
+    <p class="lede fade-up">Bespoke economic research for central banks, ministries, sovereign funds and strategy leaders at frontier firms. Senior-led, small-team, un-padded.</p>
+    <div class="actions fade-up">
+      <a class="btn btn-primary" href="contact.html">Request a scoping call <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="#practices">See practice areas <span class="ar">↓</span></a>
+    </div>
+    <div class="hero-meta">
+      <div class="cell"><div class="k">Team size</div><div class="v">1 principal + 1–3 analysts</div></div>
+      <div class="cell"><div class="k">Typical engagement</div><div class="v">6–16 weeks</div></div>
+      <div class="cell"><div class="k">Fee range</div><div class="v">£60k – £480k</div></div>
+      <div class="cell"><div class="k">Capacity</div><div class="v">~8 engagements / yr</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Sectors -->
+<section class="sectors">
+  <div class="wrap">
+    <div class="label">Who we work with</div>
+    <ul>
+      <li><em>Central banks</em> &amp; monetary authorities</li>
+      <li>Finance <em>ministries</em></li>
+      <li>Sovereign wealth funds</li>
+      <li>Regulators &amp; supervisors</li>
+      <li><em>Frontier</em> AI firms</li>
+      <li>Multilateral institutions</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Practices -->
+<section class="practices" id="practices">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="meta">
+        <div class="eyebrow">Practice areas</div>
+        <div class="num">02</div>
+      </div>
+      <div>
+        <h2>Four <em>practice areas.</em><br>One bar for quality.</h2>
+        <p>Each practice is run by a named principal. We don&rsquo;t rotate juniors onto senior problems.</p>
+      </div>
+    </div>
+
+    <div class="practice" id="model-review">
+      <div class="p-idx">i.</div>
+      <div>
+        <h3>Model <em>review &amp; audit.</em></h3>
+        <p class="p-desc">Independent review of macro-economic, financial-stability and climate-risk models — for central banks, regulators and institutions that must defend a methodology to an external board.</p>
+        <ul>
+          <li>Structural &amp; parameter-stability diagnostics</li>
+          <li>Back-testing &amp; out-of-sample performance</li>
+          <li>Written report suitable for technical committee</li>
+          <li>Remediation plan with concrete code changes</li>
+        </ul>
+      </div>
+      <div class="aside">
+        <div class="k">Typical engagement</div>
+        <div class="v"><em>8–12 weeks</em> · one principal, two quant analysts, your team embedded.</div>
+        <hr>
+        <div class="k">Output</div>
+        <div class="v">Review report · model documentation · remediation plan.</div>
+        <a class="lnk" href="contact.html">Discuss a review <span class="ar">→</span></a>
+      </div>
+    </div>
+
+    <div class="practice" id="stress">
+      <div class="p-idx">ii.</div>
+      <div>
+        <h3>Macro <em>stress &amp; scenario.</em></h3>
+        <p class="p-desc">Scenario design and stress-testing for regulators, supervisors and systemically-important institutions — aligned with BIS, IMF and NGFS methodologies.</p>
+        <ul>
+          <li>Scenario narrative &amp; pathway design</li>
+          <li>Macro-to-financial translation models</li>
+          <li>Climate, liquidity, FX, geopolitical shocks</li>
+          <li>Reverse stress-testing for board committees</li>
+        </ul>
+      </div>
+      <div class="aside">
+        <div class="k">Typical engagement</div>
+        <div class="v"><em>12–16 weeks</em> · intensive residency phase then hand-off.</div>
+        <hr>
+        <div class="k">Methodologies</div>
+        <div class="v">BIS · IMF FSAP · NGFS · Basel III/IV.</div>
+        <a class="lnk" href="contact.html">Discuss a stress test <span class="ar">→</span></a>
+      </div>
+    </div>
+
+    <div class="practice" id="eoai-practice">
+      <div class="p-idx">iii.</div>
+      <div>
+        <h3>Economics <em>of AI.</em></h3>
+        <p class="p-desc">The practice we&rsquo;re proudest of. Quantitative advisory on AI&rsquo;s macro and institutional impact — for governments asking what frontier AI means for productivity, inflation, employment and fiscal posture.</p>
+        <ul>
+          <li>Productivity-dividend estimation</li>
+          <li>Labour-market displacement modelling</li>
+          <li>Compute-spend fiscal forecasts</li>
+          <li>Institutional adoption roadmaps</li>
+        </ul>
+      </div>
+      <div class="aside">
+        <div class="k">Flagship programme</div>
+        <div class="v">Our <em>dedicated</em> programme with its own brief, method and deliverables.</div>
+        <hr>
+        <div class="k">Active since</div>
+        <div class="v">2024 · 4 live engagements.</div>
+        <a class="lnk" href="economics-of-ai.html">The full programme <span class="ar">→</span></a>
+      </div>
+    </div>
+
+    <div class="practice" id="custom">
+      <div class="p-idx">iv.</div>
+      <div>
+        <h3>Custom <em>research.</em></h3>
+        <p class="p-desc">Questions that don&rsquo;t fit a product. We take on six to eight of these a year: things that matter, where our small team can materially change an answer.</p>
+        <ul>
+          <li>Strategic counsel to CEOs and governors</li>
+          <li>Market-structure &amp; industry studies</li>
+          <li>White papers for public release</li>
+          <li>Discreet, single-question engagements</li>
+        </ul>
+      </div>
+      <div class="aside">
+        <div class="k">Engagement</div>
+        <div class="v"><em>Scoped individually.</em> Start with a conversation.</div>
+        <hr>
+        <div class="k">Discretion</div>
+        <div class="v">NDA-default; publication optional.</div>
+        <a class="lnk" href="contact.html">Bring a question <span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Engagement formats -->
+<section class="formats">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="meta">
+        <div class="eyebrow">Engagement formats</div>
+        <div class="num">03</div>
+      </div>
+      <div>
+        <h2>Three <em>shapes</em> of engagement.</h2>
+        <p>We don&rsquo;t pretend every problem fits a standard retainer. Pick the shape that fits the question.</p>
+      </div>
+    </div>
+
+    <div class="f-grid">
+      <div class="f-card">
+        <div class="f-tag"><span>Format / 01</span><span>Residency</span></div>
+        <h4>In-<em>residence</em></h4>
+        <p>Two to four Oxlon economists embedded on-site for 6–16 weeks, working from your building with your team. Deep problems, deep trust.</p>
+        <div class="foot"><span>Duration</span><span>6–16 wks</span></div>
+      </div>
+      <div class="f-card">
+        <div class="f-tag"><span>Format / 02</span><span>Project</span></div>
+        <h4>Fixed-<em>scope</em> project</h4>
+        <p>One defined question, one delivered artefact — a model, an audit report, a policy brief. Fixed fee, fixed timeline, senior-led throughout.</p>
+        <div class="foot"><span>Duration</span><span>4–10 wks</span></div>
+      </div>
+      <div class="f-card">
+        <div class="f-tag"><span>Format / 03</span><span>Counsel</span></div>
+        <h4>Standing <em>counsel</em></h4>
+        <p>Monthly standing calls with a principal, plus on-demand memos. For governors, CEOs and chief economists who want an outside brain on retainer.</p>
+        <div class="foot"><span>Duration</span><span>12 mo+</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Economics of AI featured -->
+<section class="eoai">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Flagship programme</div>
+      <h2 class="fade-up">The <em>Economics</em><br>of AI.</h2>
+      <p class="lede fade-up">Finance ministries are writing the cheques for frontier compute. Central banks are trying to measure a productivity shock in real time. Labour ministries are designing policy against a moving target. We help them think.</p>
+      <div class="cta-row fade-up">
+        <a class="btn btn-primary" href="economics-of-ai.html">Full programme <span class="ar">→</span></a>
+        <a class="btn btn-ghost" href="research.html">Related research <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="sheet fade-up">
+      <h4>What we answer</h4>
+      <ol>
+        <li>
+          <div>
+            <b>The <em>productivity dividend.</em></b>
+            <p>Quantifying realised and expected productivity gains from LLM diffusion — at sector, firm and task level.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>The <em>labour-market</em> path.</b>
+            <p>Displacement and complementarity effects, with scenario ranges your labour minister can use in a cabinet meeting.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>The <em>fiscal</em> implications.</b>
+            <p>Forecasting compute spend, sovereign-cloud economics, tax-base effects, and the option value of building vs. buying.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>The <em>institutional</em> adoption roadmap.</b>
+            <p>Where AI should and shouldn&rsquo;t be trusted inside an institution, sequenced into a programme your team can execute.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Common questions</div>
+        <h2>Answers, <em>before</em> the call.</h2>
+      </div>
+      <p class="note">If the answer to your question is here, save the meeting. If not, let&rsquo;s talk.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="q-num">Q / 01</div>
+        <div class="q">Who will <em>actually</em> do the work?</div>
+        <div class="plus">+</div>
+        <div class="a">A named principal leads every engagement and does meaningful hands-on modelling. Supported by one to three quant analysts. You will never be handed to a junior team while a senior partner watches from a distance.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q-num">Q / 02</div>
+        <div class="q">Do we <em>own</em> the models you build for us?</div>
+        <div class="plus">+</div>
+        <div class="a">Yes. All code, documentation, parameter estimates and model artefacts belong to you. We deliver an auditable pipeline, not a black box we can withdraw.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q-num">Q / 03</div>
+        <div class="q">How do you handle <em>classified</em> or sensitive data?</div>
+        <div class="plus">+</div>
+        <div class="a">We work on-prem where required, with cleared personnel and a security architecture reviewed by your CISO. SOC 2 Type II and ISO 27001 certified; air-gapped deployment available.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q-num">Q / 04</div>
+        <div class="q">What do you <em>not</em> do?</div>
+        <div class="plus">+</div>
+        <div class="a">Anything that a large consultancy will do acceptably. If your question can be answered by a PowerPoint deck and a gap analysis, we are the wrong firm. We take on questions that need a model, a defensible methodology, and senior-level authorship.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q-num">Q / 05</div>
+        <div class="q">How do we <em>start?</em></div>
+        <div class="plus">+</div>
+        <div class="a">With a 60-minute scoping call with a principal. No charge, no obligation. If we&rsquo;re the right fit, you receive a short proposal within a week. If not, we&rsquo;ll tell you and, often, point you somewhere better.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Begin</div>
+      <h2>Sixty <em>minutes.</em><br>No deck. A principal.</h2>
+      <p class="pull">The scoping call is how you find out whether we can help — and whether we should.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Request a scoping call <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="economics-of-ai.html">Economics of AI programme <span class="ar">→</span></a>
+      <div class="meta">Or write: <a href="mailto:advisory@oxlon.uk">advisory@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(it => {
+  it.addEventListener('click', () => it.classList.toggle('open'));
+});
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

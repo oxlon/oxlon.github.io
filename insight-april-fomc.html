@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reading the April FOMC — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="A word-level diff between the April FOMC statement and the press-conference Q&A. The gap is where the policy signal actually lives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ─── Insight-post layout ─── */
+.post-hero{padding:70px 0 50px;background:var(--paper);border-bottom:1px solid var(--rule)}
+.post-hero .crumbs{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);opacity:.75;margin-bottom:32px}
+.post-hero .crumbs a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
+.post-hero .meta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.post-hero .kind{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);padding:4px 10px;border:1px solid var(--clay);background:rgba(201,167,142,.08)}
+.post-hero .topic{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);padding:4px 10px;border:1px solid var(--rule);background:var(--cream)}
+.post-hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,5vw,76px);line-height:.98;letter-spacing:-0.025em;color:var(--ink);max-width:20ch;margin-bottom:20px}
+.post-hero h1 em{font-style:italic;color:var(--slate)}
+.post-hero .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,1.7vw,24px);line-height:1.5;color:var(--ink-soft);max-width:52ch;margin-bottom:32px}
+.post-hero .byline{display:flex;gap:20px;align-items:center;padding-top:22px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);flex-wrap:wrap}
+.post-hero .byline .avatar{width:38px;height:38px;border-radius:50%;background:var(--clay-pale);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--ink)}
+.post-hero .byline .sep{opacity:.4}
+
+/* Article body */
+.article{padding:70px 0 90px;background:var(--paper);border-bottom:1px solid var(--rule)}
+.article .wrap{max-width:920px;margin:0 auto;padding:0 44px;display:grid;grid-template-columns:1fr;gap:0}
+.article .prose{max-width:68ch;margin:0 auto}
+.article .prose p{font-size:17px;line-height:1.8;color:var(--ink);margin-bottom:1.3em}
+.article .prose p em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1em;color:var(--slate)}
+.article .prose p.lead{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.5;color:var(--ink);font-style:italic;margin-bottom:1.3em}
+.article .prose p.lead em{color:var(--clay);font-style:italic}
+.article .prose h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:32px;line-height:1.15;letter-spacing:-0.01em;color:var(--ink);margin-top:56px;margin-bottom:14px}
+.article .prose h2 em{font-style:italic;color:var(--slate)}
+.article .prose blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:26px;line-height:1.32;color:var(--ink);border-left:2px solid var(--clay);padding-left:28px;margin:32px 0;max-width:40ch}
+.article .prose blockquote em{color:var(--slate)}
+.article .prose .diff{background:var(--cream);border:1px solid var(--rule);padding:24px 28px;margin:28px 0;font-family:'IBM Plex Mono',monospace;font-size:13.5px;line-height:1.7;color:var(--ink)}
+.article .prose .diff .removed{background:rgba(233,165,143,.18);color:#7a3f2e;padding:1px 4px;text-decoration:line-through}
+.article .prose .diff .added{background:rgba(182,191,167,.25);color:#3a4a2d;padding:1px 4px;font-weight:500}
+.article .prose .diff .label{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);opacity:.75;margin-bottom:12px}
+.article .prose ul{list-style:none;margin:16px 0 24px}
+.article .prose ul li{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--rule-soft);font-size:16px;line-height:1.7}
+.article .prose ul li::before{content:"→";color:var(--clay);font-family:'IBM Plex Mono',monospace;padding-top:2px}
+.article .prose .takeaway{background:var(--ink-deep);color:var(--cream);padding:36px 40px;margin:40px 0;position:relative}
+.article .prose .takeaway::before{content:"";position:absolute;top:-1px;left:0;width:60px;height:2px;background:var(--clay)}
+.article .prose .takeaway .lab{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay-pale);margin-bottom:16px}
+.article .prose .takeaway p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.4;color:var(--cream);margin:0;max-width:40ch}
+.article .prose .takeaway p em{color:var(--clay-pale)}
+.article .end{max-width:68ch;margin:60px auto 0;padding-top:24px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);opacity:.8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.article .end a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--clay);padding-bottom:2px}
+
+/* Related insights footer */
+.related{padding:80px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.related .wrap{max-width:920px;margin:0 auto;padding:0 44px}
+.related h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:28px;line-height:1.2;letter-spacing:-0.005em;color:var(--ink);margin-bottom:28px}
+.related h3 em{font-style:italic;color:var(--slate)}
+.related .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.related a{display:block;padding:22px 24px;background:var(--paper);border:1px solid var(--rule);text-decoration:none;color:inherit;transition:background .2s}
+.related a:hover{background:rgba(201,167,142,.05)}
+.related .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-bottom:8px}
+.related h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px;line-height:1.22;letter-spacing:-0.005em;color:var(--ink)}
+.related h4 em{font-style:italic;color:var(--slate)}
+@media (max-width:720px){.related .grid{grid-template-columns:1fr}.post-hero h1{font-size:34px}}
+</style>
+</head>
+<body data-page="research">
+
+<div id="site-bar-mount"></div>
+
+<!-- ═══ POST HERO ═══ -->
+<section class="post-hero">
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="index.html">Oxlon</a> &nbsp;/&nbsp;
+      <a href="research.html">Research</a> &nbsp;/&nbsp;
+      Insights &nbsp;/&nbsp;
+      FOMC readout
+    </div>
+    <div class="meta-row">
+      <span class="kind">Readout</span>
+      <span class="topic">CB communication</span>
+      <span class="topic">Monetary policy</span>
+    </div>
+    <h1>Reading the April <em>FOMC</em>: what the press conference said that the statement did not.</h1>
+    <p class="lede">A word-level diff between the prepared remarks and the answered Q&amp;A. The gap is where the policy signal actually lives &mdash; and in April, the gap is wider than in any meeting since late 2023.</p>
+    <div class="byline">
+      <div class="avatar">f</div>
+      <div>Fatih Kansoy</div>
+      <div class="sep">/</div>
+      <div>Co-founder &middot; Oxlon</div>
+      <div class="sep">/</div>
+      <div>16 April 2026</div>
+      <div class="sep">/</div>
+      <div>7 min read</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ARTICLE ═══ -->
+<section class="article">
+  <div class="wrap">
+    <div class="prose">
+
+      <p class="lead">FOMC meetings produce two artefacts: the statement, which is a negotiated document the committee agrees on, and the press conference, where the Chair speaks extemporaneously within constraints the committee cannot fully police. When the two <em>agree</em>, the signal is settled. When they <em>disagree</em>, the signal is being written in real time &mdash; and the press conference is usually the version that matters.</p>
+
+      <p>Our text-as-data pipeline has tracked this gap for every FOMC meeting since 2015. On most days it is small, a few turns of phrase. On 16 April 2026, it was substantial. This is a short note on what the difference says.</p>
+
+      <h2>What the <em>statement</em> said</h2>
+
+      <p>The prepared statement made three minor edits relative to March. The language on the balance of risks was nudged from "elevated" to "elevated but more balanced". The reference to "labour-market imbalances" was dropped entirely. The forward-guidance paragraph was left unchanged &mdash; which, by itself, would have been the story on any other Wednesday.</p>
+
+      <div class="diff">
+        <span class="label">Statement &middot; paragraph 3 &middot; diff vs March</span>
+        The risks to the outlook remain <span class="removed">elevated</span><span class="added">elevated but more balanced</span>. <span class="removed">Labour-market imbalances persist and</span> Inflation remains above the Committee's longer-run objective&hellip;
+      </div>
+
+      <p>If a market participant read only the statement, the reasonable inference would be a small, managed softening. The policy path implied was roughly unchanged. A rate cut remained priced for the autumn.</p>
+
+      <h2>What the Chair <em>also</em> said</h2>
+
+      <p>The press conference, which ran 48 minutes, told a different story. Not in the prepared remarks &mdash; those tracked the statement &mdash; but in the Q&amp;A, where four specific exchanges revised the direction of travel.</p>
+
+      <p>In response to a question on the pace of services disinflation, the Chair answered in a way that, on our reading, was materially more dovish than the statement allowed for:</p>
+
+      <blockquote>The disinflationary trajectory in core services has, frankly, <em>exceeded what the committee expected</em> when it last met. Several of us have begun to re-examine the timing of further accommodation on the basis of that data.</blockquote>
+
+      <p>The construction is unusual in two respects. <em>Several of us</em> is a formulation the Chair uses only when signalling internal movement that the committee has not yet formalised. And the verb <em>re-examine the timing</em>, rather than the boilerplate <em>calibrate the stance</em>, is closer in register to pre-cut language in the 2019 and 2024 cycles than to the cautious reading that had dominated March.</p>
+
+      <p>Three other exchanges amplified the signal:</p>
+
+      <ul>
+        <li>Asked about labour-market slack, the Chair described the market as having &ldquo;returned to roughly neutral&rdquo; &mdash; a characterisation not present in the statement, which dropped the slack language entirely rather than redefining it.</li>
+        <li>On the Committee&rsquo;s reaction function, the Chair specifically declined to reaffirm the phrase <em>meaningfully above target</em> that has anchored policy language for the past four meetings. Omission, in that specific place, reads as repositioning.</li>
+        <li>In the final answer of the session, on the balance-sheet runoff, the Chair said &ldquo;the end of reductions is closer than it is further&rdquo; &mdash; again, not in the statement, and a concrete step beyond March&rsquo;s reference to the runoff as &ldquo;well-advanced&rdquo;.</li>
+      </ul>
+
+      <h2>Why this <em>matters</em> for the path</h2>
+
+      <p>Taken individually, each of these exchanges is the kind of imprecision that any extended press conference produces. Taken together, they form a pattern: the Chair reaching for language that the committee would not, at this meeting, put into the statement. That is characteristic of a committee in the last meeting before a decision is effectively made &mdash; not the last meeting before a decision is announced, which is different and later.</p>
+
+      <p>Markets caught this, though partially. Front-end rates fell 6 basis points in the hour after the press conference opened, then gave back about half of that as the statement was re-read. The delta between what a statement-only reader would conclude and what a press-conference-attentive reader would conclude is, for this meeting, around 12&ndash;14 basis points in the implied June rate path. That is our estimate of the <em>value</em> of reading beyond the statement for this particular Wednesday.</p>
+
+      <div class="takeaway">
+        <div class="lab">Takeaway</div>
+        <p>When the statement holds steady and the press conference doesn&rsquo;t, <em>the press conference is the policy.</em> On April&rsquo;s read, the committee is closer to its first cut than March&rsquo;s statement, taken alone, would suggest.</p>
+      </div>
+
+      <h2>A note on <em>method</em></h2>
+
+      <p>The diff shown above is not a manual transcript &mdash; it is the output of a pipeline that aligns prepared remarks with Q&amp;A answers, tokens-level, across every FOMC meeting in our corpus (106 meetings, 2007&ndash;present). The specific metric we use to score a &ldquo;gap-widening&rdquo; meeting combines four components: paragraph-level semantic divergence, committee-pronoun frequency, hedging-adverb density, and the presence of calibration verbs that are outside the rolling vocabulary of the statement. April&rsquo;s meeting scored in the 88th percentile of the sample.</p>
+
+      <p>The methodology is described in full in our <a href="research.html">working paper on FOMC transcript-statement gaps</a>, which also lays out the limits of the approach and the cases (and there are several) where the method misreads a quiet meeting as a loud one. We publish the score after every meeting, along with a one-paragraph reading.</p>
+
+      <p>Subscribers to <a href="research.html#newsletter">The Oxlon Memo</a> receive the score within 36 hours of each meeting, together with the four or five exchanges that moved the number. It is the shortest route we know of to a reading that treats the press conference as the primary document &mdash; which, most of the time, it is.</p>
+
+    </div>
+
+    <div class="end">
+      <span>&copy; Oxlon 2026 &middot; Written 16 April, Oxford</span>
+      <a href="research.html#newsletter">Subscribe to the memo &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RELATED ═══ -->
+<section class="related">
+  <div class="wrap">
+    <h3>Related <em>insights</em> and research.</h3>
+    <div class="grid">
+      <a href="research.html">
+        <div class="k">Working paper</div>
+        <h4>What the Fed <em>didn&rsquo;t</em> say: measuring transcript-statement gaps with large language models.</h4>
+      </a>
+      <a href="research.html">
+        <div class="k">Insight &middot; Feb 2026</div>
+        <h4>The <em>February MPC</em>: a split vote, a softer tone.</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Every meeting, a reading</div>
+      <h2>Subscribe to <em>the memo.</em></h2>
+      <p class="pull">Fortnightly. One chart. One paragraph. A full readout within 36 hours of every FOMC and MPC meeting.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="research.html#newsletter">Subscribe <span class="ar">&rarr;</span></a>
+      <a class="btn btn-ghost" href="research.html">All research <span class="ar">&rarr;</span></a>
+      <div class="meta">Or write: <a href="mailto:research@oxlon.uk">research@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

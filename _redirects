@@ -1,0 +1,46 @@
+# _redirects — works on Netlify and Cloudflare Pages.
+# Each line: <source> <destination> <status>
+# 301 = permanent redirect. These preserve SEO signal from the legacy URLs.
+
+# Legacy service URLs from the old site
+/artificial-intelligence.html     /advisory.html#economics-of-ai  301
+/artificial-intelligence          /advisory.html#economics-of-ai  301
+/big-data-services.html           /econai.html                     301
+/big-data-services                /econai.html                     301
+/business-intelligence.html       /econai.html                     301
+/business-intelligence            /econai.html                     301
+/data-analytics.html              /econai.html#methods             301
+/data-analytics                   /econai.html#methods             301
+/data-management.html             /econai.html#security            301
+/data-management                  /econai.html#security            301
+/data-science-consulting.html     /advisory.html                   301
+/data-science-consulting          /advisory.html                   301
+/data-visualization-services.html /econai.html                     301
+/data-visualization-services      /econai.html                     301
+
+# Old About URLs
+/about-us.html                    /about.html                      301
+/about-us-2.html                  /about.html                      301
+/about-us                         /about.html                      301
+
+# The pre-launch experimental home
+/indexa.html                      /                                301
+
+# Pretty URLs: strip trailing .html where the page exists
+/econai                           /econai.html                     301
+/advisory                         /advisory.html                   301
+/economics-of-ai                  /economics-of-ai.html            301
+/learning                         /learning.html                   301
+/atlas                            /learning.html                   301
+/research                         /research.html                   301
+/about                            /about.html                      301
+/contact                          /contact.html                    301
+/legal                            /legal.html                      301
+/privacy                          /legal.html#privacy              301
+/terms                            /legal.html#terms                301
+/cookies                          /legal.html#cookies              301
+/case/azerbaijan                  /case-azerbaijan.html            301
+/scoping-call                     /contact.html#form               301
+
+# 404 fallback (Netlify-style)
+/*                                /404.html                        404

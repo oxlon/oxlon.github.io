@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Not found — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="This page does not exist on oxlon.uk. Try the front door, or search the research archive.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.four{min-height:72vh;display:grid;place-items:center;background:var(--paper);padding:80px 0;border-bottom:1px solid var(--rule)}
+.four .wrap{text-align:center;max-width:60ch}
+.four .code{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(140px,18vw,280px);line-height:.85;letter-spacing:-0.04em;color:var(--clay);margin-bottom:24px}
+.four h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:20px}
+.four h1 em{font-style:italic;color:var(--slate)}
+.four p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--ink-soft);max-width:44ch;margin:0 auto 36px}
+.four .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.four .pathways{margin-top:64px;padding-top:32px;border-top:1px solid var(--rule);display:grid;grid-template-columns:repeat(3,1fr);gap:36px;text-align:left}
+.four .pathway{display:flex;flex-direction:column;gap:6px}
+.four .pathway .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);opacity:.75}
+.four .pathway .v a{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--clay);padding-bottom:2px}
+.four .pathway .v a em{font-style:italic;color:var(--slate)}
+.four .pathway .v a:hover{color:var(--slate)}
+.four .pathway .d{font-size:14px;line-height:1.55;color:var(--ink-soft);margin-top:4px}
+@media (max-width:720px){.four .pathways{grid-template-columns:1fr;gap:24px}.four{min-height:auto}}
+</style>
+</head>
+<body data-page="">
+
+<div id="site-bar-mount"></div>
+
+<section class="four">
+  <div class="wrap">
+    <div class="code">404</div>
+    <h1>Not <em>here.</em></h1>
+    <p>This page does not exist on oxlon.uk &mdash; most likely because a URL has moved or was typed in long-hand. Try one of the doors below.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="index.html">Front door <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="research.html">Research <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="contact.html">Contact <span class="ar">→</span></a>
+    </div>
+    <div class="pathways">
+      <div class="pathway">
+        <div class="k">Platform</div>
+        <div class="v"><a href="econai.html">Econ<em>AI</em></a></div>
+        <div class="d">The dashboard and modelling platform for ministries and central banks.</div>
+      </div>
+      <div class="pathway">
+        <div class="k">Advisory</div>
+        <div class="v"><a href="advisory.html">Advisory</a></div>
+        <div class="d">Senior-led engagements in macro, model review, and the Economics of AI.</div>
+      </div>
+      <div class="pathway">
+        <div class="k">Learning</div>
+        <div class="v"><a href="learning.html">At<em>las</em></a></div>
+        <div class="d">Executive residencies and team programmes for decision-makers.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Economics of AI — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="A dedicated Oxlon programme for governments and frontier firms: quantitative advisory on AI's macro and institutional impact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.eoai-hero{background:var(--ink-deep);color:var(--cream);padding:90px 0 100px;border-bottom:1px solid var(--rule-light);position:relative;overflow:hidden}
+.eoai-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(182,191,167,.10),transparent 55%),radial-gradient(ellipse at 75% 80%,rgba(201,167,142,.10),transparent 60%);pointer-events:none}
+.eoai-hero .wrap{position:relative;z-index:1}
+.eoai-hero .crumbs{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,241,230,.55);margin-bottom:40px}
+.eoai-hero .crumbs a{color:rgba(246,241,230,.55);text-decoration:none}
+.eoai-hero .eyebrow{color:var(--clay-pale)}
+.eoai-hero h1{margin-top:24px;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(56px,8vw,132px);line-height:.92;letter-spacing:-0.03em;color:var(--cream);max-width:14ch}
+.eoai-hero h1 em{font-style:italic;color:var(--clay-pale)}
+.eoai-hero .lede{margin-top:28px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,1.8vw,28px);line-height:1.4;color:rgba(246,241,230,.8);max-width:46ch}
+.eoai-hero .actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.eoai-hero .meta{margin-top:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding-top:22px;border-top:1px solid var(--rule-light)}
+.eoai-hero .meta .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--clay-pale);margin-bottom:6px;text-transform:uppercase}
+.eoai-hero .meta .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--cream);line-height:1.3}
+@media (max-width:720px){.eoai-hero .meta{grid-template-columns:1fr 1fr}}
+
+/* Thesis */
+.thesis{padding:130px 0;border-bottom:1px solid var(--rule);background:var(--paper)}
+.thesis .wrap{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start}
+.thesis .side .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:120px;line-height:.85;color:var(--clay)}
+.thesis .body p{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,2.6vw,36px);line-height:1.25;letter-spacing:-0.01em;color:var(--ink);margin-bottom:1em;max-width:26ch}
+.thesis .body p em{font-style:italic;color:var(--slate)}
+.thesis .body p .accent{color:var(--clay);font-style:italic}
+.thesis .body .sig{margin-top:24px;padding-top:20px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+@media (max-width:860px){.thesis .wrap{grid-template-columns:1fr;gap:24px}.thesis .side .num{font-size:72px}}
+
+/* Four questions */
+.questions{padding:120px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
+.q-list{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-top:48px}
+.q-card{padding:48px 36px;background:var(--paper);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:14px;min-height:340px;position:relative;overflow:hidden}
+.q-card .q-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:72px;line-height:.85;color:var(--clay);margin-bottom:6px}
+.q-card h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:36px;line-height:1.08;letter-spacing:-0.015em;color:var(--ink)}
+.q-card h3 em{font-style:italic;color:var(--slate)}
+.q-card p{font-size:15px;line-height:1.65;color:var(--ink-soft);max-width:48ch}
+.q-card .methods{margin-top:auto;padding-top:18px;border-top:1px solid var(--rule-soft);display:flex;flex-wrap:wrap;gap:6px}
+@media (max-width:860px){.q-list{grid-template-columns:1fr;border-left:0}.q-card{border-right:0}}
+
+/* Engagement path */
+.path{padding:120px 0;border-bottom:1px solid var(--rule)}
+.path .head{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;margin-bottom:48px}
+.path h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,5vw,76px);line-height:.98;letter-spacing:-0.02em;color:var(--ink)}
+.path h2 em{font-style:italic;color:var(--slate)}
+.path .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:52ch}
+.path-diag{border:1px solid var(--rule);background:var(--cream);padding:48px 40px;position:relative}
+.path-row{display:grid;grid-template-columns:80px 1fr 140px 1fr;gap:24px;align-items:center;padding:24px 0;border-bottom:1px solid var(--rule-soft)}
+.path-row:last-child{border-bottom:0}
+.path-row .p-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:44px;color:var(--clay);line-height:.9}
+.path-row .p-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;color:var(--ink);letter-spacing:-0.005em;line-height:1.2}
+.path-row .p-title em{font-style:italic;color:var(--slate)}
+.path-row .p-title .d{font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;font-weight:400;color:var(--ink-soft);margin-top:6px;line-height:1.5;display:block;letter-spacing:0}
+.path-row .p-dur{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);text-align:center;padding:8px 0;border:1px solid var(--rule)}
+.path-row .p-out{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink);line-height:1.4}
+@media (max-width:960px){.path-row{grid-template-columns:60px 1fr;gap:12px}.path-row .p-dur,.path-row .p-out{grid-column:2}.path .head{grid-template-columns:1fr}}
+
+/* Publications */
+.pubs{padding:110px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.pubs .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.pubs h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,4.8vw,72px);line-height:.98;letter-spacing:-0.025em;color:var(--ink);max-width:18ch}
+.pubs h2 em{font-style:italic;color:var(--slate)}
+.pub-list{border-top:1px solid var(--rule)}
+.pub{display:grid;grid-template-columns:100px 1fr 200px 40px;gap:30px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:background .2s}
+.pub:hover{background:rgba(201,167,142,.05)}
+.pub .idx{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);opacity:.7}
+.pub .ttl{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1.25;letter-spacing:-0.005em;color:var(--ink)}
+.pub .ttl em{font-style:italic;color:var(--slate)}
+.pub .date{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);text-align:right}
+.pub .ar{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--clay);text-align:right;transition:transform .2s}
+.pub:hover .ar{transform:translateX(4px)}
+@media (max-width:860px){.pub{grid-template-columns:1fr 40px;gap:8px}.pub .idx,.pub .date{grid-column:1}}
+</style>
+</head>
+<body data-page="advisory" class="dark-chrome">
+
+<div id="site-bar-mount"></div>
+
+<section class="eoai-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Oxlon</a> &nbsp;/&nbsp; <a href="advisory.html">Advisory</a> &nbsp;/&nbsp; Economics of AI</div>
+    <div class="eyebrow">Flagship advisory programme</div>
+    <h1 class="fade-up">The <em>Economics</em> of AI.</h1>
+    <p class="lede fade-up">A dedicated programme for governments and frontier firms asking what this decade of AI actually does to output, work, prices and the state.</p>
+    <div class="actions fade-up">
+      <a class="btn btn-primary" href="contact.html">Request a briefing <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="#questions">See the four questions <span class="ar">↓</span></a>
+    </div>
+    <div class="meta">
+      <div><div class="k">Active since</div><div class="v">2024 Q3</div></div>
+      <div><div class="k">Live engagements</div><div class="v">Select &middot; undisclosed</div></div>
+      <div><div class="k">Principal</div><div class="v">Fatih <em>Kansoy</em></div></div>
+      <div><div class="k">Fee range</div><div class="v">Scoped per engagement</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Thesis -->
+<section class="thesis">
+  <div class="wrap">
+    <div class="side">
+      <div class="eyebrow">Thesis</div>
+      <div class="num">i.</div>
+    </div>
+    <div class="body">
+      <p>For the next decade, <em>the macroeconomy</em> will be dominated by a single question: how fast does frontier AI diffuse through work.</p>
+      <p>Every finance ministry, every central bank, every chief economist will need a <span class="accent">defensible answer.</span> Most institutions are not ready to produce one.</p>
+      <p>We help them get ready — <em>with method,</em> not with posture.</p>
+      <div class="sig">— Fatih Kansoy · Programme Lead · Oxford, 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- Four questions -->
+<section class="questions" id="questions">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="meta">
+        <div class="eyebrow">Programme</div>
+        <div class="num">02</div>
+      </div>
+      <div>
+        <h2>The <em>four questions</em><br>we answer.</h2>
+        <p>Each answered with a defensible model, a written methodology, and a principal on the hook for the number.</p>
+      </div>
+    </div>
+
+    <div class="q-list">
+      <div class="q-card fade-up">
+        <div class="q-num">i.</div>
+        <h3>The <em>productivity</em> dividend.</h3>
+        <p>What fraction of the theoretical productivity gain from LLM adoption is actually being realised at firm and sector level — and which frictions are binding? We build the measurement stack your statistics office wishes it had.</p>
+        <div class="methods">
+          <span class="tag">Task-level matching</span>
+          <span class="tag">Firm surveys</span>
+          <span class="tag">Production fn est.</span>
+        </div>
+      </div>
+
+      <div class="q-card fade-up">
+        <div class="q-num">ii.</div>
+        <h3>The <em>labour</em>-market path.</h3>
+        <p>Which occupations complement frontier AI, which are displaced, and on what timeline. We give labour ministries a scenario range their cabinet can act on, not a single point estimate that ages in six months.</p>
+        <div class="methods">
+          <span class="tag">Occupation task-maps</span>
+          <span class="tag">Diffusion curves</span>
+          <span class="tag">Scenario ranges</span>
+        </div>
+      </div>
+
+      <div class="q-card fade-up">
+        <div class="q-num">iii.</div>
+        <h3>The <em>fiscal</em> implications.</h3>
+        <p>Compute spend, sovereign-cloud economics, depreciation cycles, tax-base effects, and whether a given state should be building, buying or renting its AI capacity over a ten-year horizon.</p>
+        <div class="methods">
+          <span class="tag">Compute macro model</span>
+          <span class="tag">TCO vs. option value</span>
+          <span class="tag">Tax-base sim</span>
+        </div>
+      </div>
+
+      <div class="q-card fade-up">
+        <div class="q-num">iv.</div>
+        <h3>The <em>institutional</em> adoption roadmap.</h3>
+        <p>Where AI should and shouldn&rsquo;t be trusted inside an institution, sequenced into a programme your team can actually execute — with accountability, audit and the right human in the loop at each step.</p>
+        <div class="methods">
+          <span class="tag">Governance design</span>
+          <span class="tag">Risk taxonomy</span>
+          <span class="tag">Execution plan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Engagement path -->
+<section class="path">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Engagement path</div>
+        <h2>From <em>scoping</em> to standing counsel.</h2>
+      </div>
+      <p class="note">A typical engagement runs across four phases over six to nine months. Some clients stay on as standing counsel; many do.</p>
+    </div>
+
+    <div class="path-diag">
+      <div class="path-row">
+        <div class="p-num">i.</div>
+        <div class="p-title">Scoping &amp; diagnostic <span class="d">90-minute call, followed by a two-week diagnostic to establish the question, data access, and whether the programme is right for you.</span></div>
+        <div class="p-dur">2 weeks</div>
+        <div class="p-out"><em>Fit memo &amp; proposal</em></div>
+      </div>
+      <div class="path-row">
+        <div class="p-num">ii.</div>
+        <div class="p-title">Method &amp; baseline <span class="d">We agree the methodology, assemble the data pipeline, and estimate the baseline models — with your research team working alongside ours.</span></div>
+        <div class="p-dur">6–8 weeks</div>
+        <div class="p-out"><em>Methodology note</em></div>
+      </div>
+      <div class="path-row">
+        <div class="p-num">iii.</div>
+        <div class="p-title">Scenarios &amp; recommendations <span class="d">Scenario generation, policy-relevant sensitivity analysis, and a written report suitable for the minister or board.</span></div>
+        <div class="p-dur">8–12 weeks</div>
+        <div class="p-out"><em>Full report</em></div>
+      </div>
+      <div class="path-row">
+        <div class="p-num">iv.</div>
+        <div class="p-title">Hand-over &amp; counsel <span class="d">We leave you with a model you own and can re-run, and — optionally — a standing monthly call with the principal.</span></div>
+        <div class="p-dur">ongoing</div>
+        <div class="p-out"><em>Standing counsel</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Publications -->
+<section class="pubs">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Programme publications</div>
+        <h2>What we&rsquo;ve <em>put on the record.</em></h2>
+      </div>
+      <a class="btn-text" href="research.html">All research <span class="ar">→</span></a>
+    </div>
+    <div class="pub-list">
+      <a class="pub" href="research.html">
+        <div class="idx">Paper / 01</div>
+        <div class="ttl">Estimating the <em>productivity dividend</em> of LLM adoption in the UK civil service.</div>
+        <div class="date">Feb 2026</div>
+        <div class="ar">→</div>
+      </a>
+      <a class="pub" href="research.html">
+        <div class="idx">Paper / 02</div>
+        <div class="ttl">Compute as <em>fixed capital</em> — a macro-accounting framework for frontier AI capex.</div>
+        <div class="date">Dec 2025</div>
+        <div class="ar">→</div>
+      </a>
+      <a class="pub" href="research.html">
+        <div class="idx">Paper / 03</div>
+        <div class="ttl">Task-level displacement in <em>mid-skill clerical work</em> — evidence from three pilot cohorts.</div>
+        <div class="date">Oct 2025</div>
+        <div class="ar">→</div>
+      </a>
+      <a class="pub" href="research.html">
+        <div class="idx">Paper / 04</div>
+        <div class="ttl">Sovereign cloud or sovereign debt? <em>Fiscal trade-offs</em> of state-scale compute.</div>
+        <div class="date">Aug 2025</div>
+        <div class="ar">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Begin</div>
+      <h2>Bring us <em>your</em><br>AI question.</h2>
+      <p class="pull">A 90-minute confidential briefing with the programme principal. No deck. No pitch. Start with the question you cannot yet answer.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Request a briefing <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="advisory.html">Back to advisory <span class="ar">←</span></a>
+      <div class="meta">Direct: <a href="mailto:eoai@oxlon.uk">eoai@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

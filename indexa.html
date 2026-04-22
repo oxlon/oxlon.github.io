@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oxlon — Intelligence, distilled for decision-making</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Oxford-founded economic research and AI platforms for central banks, ministries and strategy leaders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ─── Home-specific styles ─── */
+
+/* Hero */
+.home-hero{background:var(--paper);position:relative;overflow:hidden;padding:70px 0 110px}
+.home-hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:end;position:relative}
+.home-hero .meta-top{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--slate);display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;margin-bottom:48px;border-bottom:1px solid var(--rule)}
+.home-hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(64px,9vw,148px);line-height:.92;letter-spacing:-0.03em;color:var(--ink)}
+.home-hero h1 em{font-style:italic;color:var(--slate);font-weight:300}
+.home-hero h1 .ampers{color:var(--clay);font-style:italic}
+.home-hero .lede{margin-top:32px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,1.8vw,28px);line-height:1.4;color:var(--ink-soft);max-width:30ch}
+.home-hero .cta-row{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+
+.home-hero .card{background:var(--ink-deep);color:var(--cream);padding:36px 32px;position:relative;overflow:hidden;min-height:520px;display:flex;flex-direction:column;justify-content:space-between}
+.home-hero .card::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(201,167,142,.14),transparent 60%),radial-gradient(ellipse at 70% 90%,rgba(182,191,167,.08),transparent 55%);pointer-events:none}
+.home-hero .card > *{position:relative;z-index:1}
+.home-hero .card .tagline{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay-pale)}
+.home-hero .card h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:42px;line-height:1.02;letter-spacing:-0.015em;color:var(--cream);margin-top:12px}
+.home-hero .card h3 em{font-style:italic;color:var(--clay-pale)}
+.home-hero .card .viz{flex:1;display:flex;align-items:center;justify-content:center;margin:28px 0}
+.home-hero .card .foot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:20px;border-top:1px solid var(--rule-light);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,241,230,.7)}
+
+/* Oscillating viz */
+.osci{position:relative;width:100%;height:180px}
+.osci svg{width:100%;height:100%;overflow:visible}
+.osci .base{stroke:rgba(246,241,230,.12);stroke-width:1;fill:none}
+.osci .line{stroke:var(--clay);stroke-width:1.5;fill:none;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 3s ease-out forwards}
+.osci .line.l2{stroke:var(--sage-pale);stroke-width:1;opacity:.55;animation-delay:.4s}
+.osci .dot{fill:var(--clay);animation:pulse 2s ease-in-out infinite;animation-delay:3s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pulse{0%,100%{opacity:.6;r:3.5}50%{opacity:1;r:5}}
+
+@media (max-width:1040px){.home-hero .grid{grid-template-columns:1fr;gap:48px}.home-hero .card{min-height:380px}}
+@media (max-width:720px){.home-hero{padding:40px 0 60px}.home-hero .meta-top{flex-direction:column;align-items:flex-start;gap:8px}}
+
+/* Trust strip */
+.trust{background:var(--cream);border-bottom:1px solid var(--rule);padding:40px 0}
+.trust .wrap{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center}
+.trust .label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)}
+.trust .logos{display:flex;gap:48px;flex-wrap:wrap;align-items:center}
+.trust .logo{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;color:var(--ink-soft);letter-spacing:.01em;opacity:.8;white-space:nowrap}
+.trust .logo em{font-style:italic}
+.trust .logo .sub{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);opacity:.7;display:block;margin-top:2px}
+@media (max-width:720px){.trust .wrap{grid-template-columns:1fr;gap:16px}.trust .logos{gap:28px}}
+
+/* Manifesto section */
+.manifesto{padding:120px 0;border-bottom:1px solid var(--rule);background:var(--paper)}
+.manifesto .wrap{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:start}
+.manifesto .side .eyebrow{margin-bottom:14px}
+.manifesto .side .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:120px;line-height:.85;color:var(--clay)}
+.manifesto .body p{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,2.6vw,38px);line-height:1.25;letter-spacing:-0.01em;color:var(--ink);margin-bottom:.8em}
+.manifesto .body p em{font-style:italic;color:var(--slate)}
+.manifesto .body p .accent{color:var(--clay);font-style:italic}
+.manifesto .body .sig{margin-top:40px;padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+@media (max-width:860px){.manifesto{padding:70px 0}.manifesto .wrap{grid-template-columns:1fr;gap:28px}.manifesto .side .num{font-size:72px}}
+
+/* Pillars (Platform / Advisory / Learning) */
+.pillars{padding:120px 0;background:var(--ink-deep);color:var(--cream);border-bottom:1px solid var(--rule-light);position:relative;overflow:hidden}
+.pillars::before{content:"";position:absolute;top:-30%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,167,142,.06),transparent 70%);pointer-events:none}
+.pillars .wrap{position:relative;z-index:1}
+.pillars .head{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:baseline;margin-bottom:72px}
+.pillars .head h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(48px,6vw,92px);line-height:.96;letter-spacing:-0.025em}
+.pillars .head h2 em{font-style:italic;color:var(--clay-pale)}
+.pillars .head .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.5;color:rgba(246,241,230,.7);max-width:48ch}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule-light)}
+.pillar{padding:42px 0;border-bottom:1px solid var(--rule-light);position:relative;cursor:pointer;transition:background .3s ease}
+.pillar:not(:last-child){border-right:1px solid var(--rule-light)}
+.pillar{padding:44px 36px 44px 36px}
+.pillar:first-child{padding-left:0}
+.pillar:last-child{padding-right:0}
+.pillar:hover{background:rgba(201,167,142,.04)}
+.pillar .p-num{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay-pale);display:flex;justify-content:space-between;margin-bottom:24px}
+.pillar h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:44px;line-height:1;letter-spacing:-0.015em;color:var(--cream);margin-bottom:16px}
+.pillar h3 em{font-style:italic;color:var(--clay-pale)}
+.pillar .desc{font-size:14.5px;line-height:1.65;color:rgba(246,241,230,.72);margin-bottom:28px;max-width:36ch}
+.pillar ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(246,241,230,.85);text-transform:uppercase}
+.pillar ul li{display:flex;gap:10px;align-items:flex-start}
+.pillar ul li::before{content:"◦";color:var(--clay);font-family:serif;font-size:16px;line-height:1}
+.pillar .p-link{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-pale);text-decoration:none;border-bottom:1px solid rgba(227,210,194,.3);padding-bottom:4px;display:inline-flex;align-items:center;gap:10px;transition:color .2s,gap .2s}
+.pillar .p-link:hover{color:var(--cream);gap:14px}
+@media (max-width:1040px){.pillar-grid{grid-template-columns:1fr}.pillar{border-right:0!important;padding:40px 0!important}.pillar:first-child{padding-top:40px!important}}
+
+/* Deep-band quote */
+.deep-quote{padding:140px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
+.deep-quote .wrap-narrow{text-align:left}
+.deep-quote .mark{font-family:'Cormorant Garamond',serif;font-size:120px;line-height:.7;color:var(--clay);font-style:italic}
+.deep-quote blockquote{margin-top:12px;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(32px,4vw,58px);line-height:1.1;letter-spacing:-0.015em;color:var(--ink);max-width:22ch}
+.deep-quote blockquote em{font-style:italic;color:var(--slate)}
+.deep-quote .cite{margin-top:36px;padding-top:18px;border-top:1px solid var(--rule);display:flex;gap:16px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.deep-quote .cite .avatar{width:40px;height:40px;border-radius:50%;background:var(--clay);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--ink);font-style:italic}
+
+/* How we work */
+.how{padding:120px 0;border-bottom:1px solid var(--rule)}
+.how .head{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:end;margin-bottom:72px}
+.how h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(48px,6vw,92px);line-height:.96;letter-spacing:-0.025em;color:var(--ink)}
+.how h2 em{font-style:italic;color:var(--slate)}
+.how .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.5;color:var(--ink-soft);max-width:48ch}
+.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule)}
+.how-step{padding:32px 28px;border-right:1px solid var(--rule);position:relative}
+.how-step:last-child{border-right:0}
+.how-step .s-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:64px;line-height:.9;color:var(--clay);margin-bottom:12px}
+.how-step h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--ink);margin-bottom:8px}
+.how-step p{font-size:14px;line-height:1.6;color:var(--ink-soft)}
+.how-step .dur{margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);opacity:.7}
+@media (max-width:1040px){.how-steps{grid-template-columns:1fr 1fr}.how-step:nth-child(2){border-right:0}.how-step:nth-child(1),.how-step:nth-child(2){border-bottom:1px solid var(--rule)}}
+@media (max-width:720px){.how-steps{grid-template-columns:1fr}.how-step{border-right:0;border-bottom:1px solid var(--rule);padding:26px 0}.how-step:last-child{border-bottom:0}.how .head{grid-template-columns:1fr}}
+
+/* Research preview */
+.research-prev{padding:120px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.research-prev .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:56px;flex-wrap:wrap}
+.research-prev h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(44px,5.4vw,82px);line-height:.96;letter-spacing:-0.025em;color:var(--ink);max-width:16ch}
+.research-prev h2 em{font-style:italic;color:var(--slate)}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.r-card{padding:36px 32px 36px 0;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:16px;min-height:320px;text-decoration:none;color:inherit;transition:background .25s ease}
+.r-card:first-child{padding-left:0}
+.r-card:last-child{border-right:0}
+.r-card:hover{background:rgba(201,167,142,.06)}
+.r-card .tag-row{display:flex;gap:8px;flex-wrap:wrap}
+.r-card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;line-height:1.12;letter-spacing:-0.005em;color:var(--ink);margin-top:auto}
+.r-card h3 em{font-style:italic;color:var(--slate)}
+.r-card .byline{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);opacity:.7;padding-top:14px;border-top:1px solid var(--rule-soft)}
+@media (max-width:1040px){.research-grid{grid-template-columns:1fr 1fr}.r-card:nth-child(2){border-right:0}}
+@media (max-width:720px){.research-grid{grid-template-columns:1fr}.r-card{border-right:0!important;padding:30px 0!important}.r-card:first-child{padding-top:30px}.r-card:last-child{border-bottom:0}}
+</style>
+</head>
+<body data-page="home">
+
+<div id="site-bar-mount"></div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="home-hero">
+  <div class="wrap">
+    <div class="meta-top">
+      <span>Oxlon Ltd · Oxford · London · Est. 2024</span>
+      <span>Vol. <em style="font-family:'Cormorant Garamond',serif;font-style:italic">I</em> &nbsp; · &nbsp; Folio 01</span>
+    </div>
+    <div class="grid">
+      <div>
+        <div class="eyebrow">Economic research · AI-assisted intelligence</div>
+        <h1 class="fade-up">
+          Intelligence,<br>
+          <em>distilled</em><br>
+          <span class="ampers">&amp;</span> delivered.
+        </h1>
+        <p class="lede fade-up">
+          An Oxford-founded firm pairing rigorous economics with carefully-built AI, for institutions whose decisions move economies.
+        </p>
+        <div class="cta-row fade-up">
+          <a class="btn btn-primary" href="contact.html">Request scoping call <span class="ar">→</span></a>
+          <a class="btn btn-ghost" href="econai.html">Explore EconAI <span class="ar">→</span></a>
+        </div>
+      </div>
+
+      <!-- Dark showcase card -->
+      <div class="card fade-up">
+        <div>
+          <div class="tagline">Flagship · EconAI v2.4</div>
+          <h3>A <em>research partner</em> for central banks and ministries.</h3>
+        </div>
+        <div class="viz">
+          <div class="osci">
+            <svg viewBox="0 0 400 180" preserveAspectRatio="none">
+              <!-- gridlines -->
+              <line class="base" x1="0" y1="45" x2="400" y2="45"/>
+              <line class="base" x1="0" y1="90" x2="400" y2="90"/>
+              <line class="base" x1="0" y1="135" x2="400" y2="135"/>
+              <!-- path 2 (background) -->
+              <path class="line l2" d="M 0 100 C 40 80, 80 120, 120 95 S 200 70, 240 85 S 320 110, 400 92"/>
+              <!-- path 1 (foreground, clay) -->
+              <path class="line" d="M 0 110 C 30 60, 70 130, 120 80 S 200 40, 260 75 S 340 130, 400 60"/>
+              <!-- live dot -->
+              <circle class="dot" cx="400" cy="60" r="4"/>
+              <!-- labels -->
+              <text x="4" y="12" fill="rgba(246,241,230,.5)" font-family="IBM Plex Mono" font-size="8" letter-spacing="1">CPI · YoY</text>
+              <text x="350" y="175" fill="rgba(246,241,230,.5)" font-family="IBM Plex Mono" font-size="8" letter-spacing="1">2026·Q2</text>
+            </svg>
+          </div>
+        </div>
+        <div class="foot">
+          <span>↳ 9 models · 47 countries</span>
+          <span>Live</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TRUST ═══════════════ -->
+<section class="trust">
+  <div class="wrap">
+    <div class="label">Trusted by</div>
+    <div class="logos">
+      <div class="logo"><em>Ministry of Economy</em> <span class="sub">Republic of Azerbaijan · 2024</span></div>
+      <div class="logo">University of <em>Oxford</em> <span class="sub">Host institution</span></div>
+      <div class="logo">Sa&iuml;d <em>Business School</em> <span class="sub">Teaching affiliation</span></div>
+      <div class="logo">Brasenose <em>College</em> <span class="sub">Residency venue</span></div>
+      <div class="logo"><em>Economics</em> of AI programme <span class="sub">Research consortium</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ MANIFESTO ═══════════════ -->
+<section class="manifesto">
+  <div class="wrap">
+    <div class="side">
+      <div class="eyebrow">Position · 01</div>
+      <div class="num">01</div>
+    </div>
+    <div class="body">
+      <p>
+        AI will not replace economists. It will <em>amplify</em> the ones who understand what a model is doing — and <span class="accent">quietly discredit</span> those who don&rsquo;t.
+      </p>
+      <p>
+        We are building for the first camp: institutions that want intelligence that is <em>accountable,</em> auditable, and grounded in the discipline of economics.
+      </p>
+      <div class="sig">
+        <span>— The founders · Oxford</span>
+        <span>Kansoy · Ersoy · Ismayilli</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PILLARS ═══════════════ -->
+<section class="pillars dark-bg">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">What we do</div>
+        <h2 class="fade-up">Three <em>practices,</em><br>one discipline.</h2>
+      </div>
+      <p class="note fade-up">
+        Platform, advisory and learning — each rooted in the same commitment to rigour, and each reinforcing the others.
+      </p>
+    </div>
+
+    <div class="pillar-grid">
+      <div class="pillar fade-up">
+        <div class="p-num"><span>Practice 01</span><span>Platform</span></div>
+        <h3>Econ<em>AI</em></h3>
+        <div class="desc">Our flagship intelligence platform for economic modelling, nowcasting and policy simulation — built with and for central bank research teams.</div>
+        <ul>
+          <li>Forecasting &amp; nowcasting</li>
+          <li>DSGE &amp; VAR workbench</li>
+          <li>Secure on-prem option</li>
+        </ul>
+        <a class="p-link" href="econai.html">See the platform <span class="ar">→</span></a>
+      </div>
+
+      <div class="pillar fade-up">
+        <div class="p-num"><span>Practice 02</span><span>Advisory</span></div>
+        <h3>Advis<em>ory</em></h3>
+        <div class="desc">Bespoke research engagements — from model review and macro stress-testing to the economics of frontier AI adoption in government.</div>
+        <ul>
+          <li>Model review &amp; audit</li>
+          <li>Economics of AI</li>
+          <li>Strategic counsel</li>
+        </ul>
+        <a class="p-link" href="advisory.html">See advisory <span class="ar">→</span></a>
+      </div>
+
+      <div class="pillar fade-up">
+        <div class="p-num"><span>Practice 03</span><span>Learning</span></div>
+        <h3>At<em>las</em></h3>
+        <div class="desc">A programme of executive workshops and residencies teaching senior policymakers how modern AI actually works — and where it should and shouldn&rsquo;t be trusted.</div>
+        <ul>
+          <li>Executive residencies</li>
+          <li>Team-level programmes</li>
+          <li>Oxford &amp; on-site</li>
+        </ul>
+        <a class="p-link" href="learning.html">See Atlas <span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEEP QUOTE ═══════════════ -->
+<section class="deep-quote">
+  <div class="wrap-narrow">
+    <div class="mark">&ldquo;</div>
+    <blockquote>
+      The gap between <em>what AI can do</em> and what institutions know how to use is now the binding constraint.
+    </blockquote>
+    <div class="cite">
+      <div class="avatar">f</div>
+      <div>Fatih Kansoy · Co-founder · Oxford, 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ HOW WE WORK ═══════════════ -->
+<section class="how">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Method</div>
+        <h2>How an <em>engagement</em> unfolds.</h2>
+      </div>
+      <p class="note">
+        Every engagement begins with a conversation, not a proposal. We take on work only where we&rsquo;re confident the result will outperform an internal team or another consultancy.
+      </p>
+    </div>
+
+    <div class="how-steps">
+      <div class="how-step fade-up">
+        <div class="s-num">i.</div>
+        <h4>Scoping call</h4>
+        <p>A 60-minute conversation with a principal to understand the question, your data, and your constraints.</p>
+        <div class="dur">Typically 1 week</div>
+      </div>
+      <div class="how-step fade-up">
+        <div class="s-num">ii.</div>
+        <h4>Shaped proposal</h4>
+        <p>A short, un-padded proposal: the question, the method, the deliverable, the fee. No filler, no junior-written slides.</p>
+        <div class="dur">1–2 weeks</div>
+      </div>
+      <div class="how-step fade-up">
+        <div class="s-num">iii.</div>
+        <h4>Senior-led work</h4>
+        <p>Every engagement is led by a principal. You will speak directly with the economist doing the modelling.</p>
+        <div class="dur">4–16 weeks</div>
+      </div>
+      <div class="how-step fade-up">
+        <div class="s-num">iv.</div>
+        <h4>Handover &amp; hold</h4>
+        <p>We leave you with a model you can audit, a report that names its assumptions, and a standing line to the team.</p>
+        <div class="dur">Indefinite</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ RESEARCH PREVIEW ═══════════════ -->
+<section class="research-prev">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Recent research</div>
+        <h2>We publish <em>what we work on.</em></h2>
+      </div>
+      <a class="btn-text" href="research.html">All papers <span class="ar">→</span></a>
+    </div>
+
+    <div class="research-grid">
+      <a class="r-card" href="research.html">
+        <div class="tag-row"><span class="tag">Monetary policy</span><span class="tag">ESG &amp; climate</span></div>
+        <h3>Green <em>shields</em>: environmental performance and the transmission of US monetary policy.</h3>
+        <div class="byline">Kansoy &amp; Stasiulaitis · Mar 2026</div>
+      </a>
+      <a class="r-card" href="research.html">
+        <div class="tag-row"><span class="tag">Monetary policy</span><span class="tag">Working paper</span></div>
+        <h3>The immediate <em>global impact</em> of US monetary policy: evidence from country ETFs.</h3>
+        <div class="byline">Kansoy · Feb 2026</div>
+      </a>
+      <a class="r-card" href="research.html">
+        <div class="tag-row"><span class="tag">CB communication</span><span class="tag">LLM methods</span></div>
+        <h3>What the Fed <em>didn&rsquo;t say</em>: measuring transcript-statement gaps with LLMs.</h3>
+        <div class="byline">Kansoy · Jan 2026</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA BAND ═══════════════ -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Begin</div>
+      <h2>Bring us a <em>hard question.</em></h2>
+      <p class="pull">We decline most engagements. The ones we take, we stake our reputation on. Start with a scoping call.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Request a scoping call <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="about.html">Meet the team <span class="ar">→</span></a>
+      <div class="meta">Or write: <a href="mailto:info@oxlon.uk">info@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

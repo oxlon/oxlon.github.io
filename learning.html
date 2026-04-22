@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas — Oxlon Learning</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-top:48px}
+.prog{padding:40px 32px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;gap:14px;min-height:360px}
+.prog .pn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);display:flex;justify-content:space-between}
+.prog h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.08;letter-spacing:-0.005em;color:var(--ink)}
+.prog h3 em{font-style:italic;color:var(--slate)}
+.prog p{font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
+.prog .specs{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule-soft);display:grid;grid-template-columns:1fr 1fr;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--slate);text-transform:uppercase}
+.prog .specs b{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink);margin-top:2px;letter-spacing:0;text-transform:none;font-weight:400}
+@media (max-width:860px){.prog-grid{grid-template-columns:1fr;border-left:0}.prog{border-right:0}}
+
+/* Curriculum */
+.curric{padding:110px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
+.mod-list{border-top:1px solid var(--rule);margin-top:40px}
+.mod{display:grid;grid-template-columns:100px 1fr 2fr 100px;gap:32px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--rule)}
+.mod .m-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:44px;color:var(--clay);line-height:.9}
+.mod h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1.25;color:var(--ink);letter-spacing:-0.005em}
+.mod h4 em{font-style:italic;color:var(--slate)}
+.mod p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);max-width:58ch}
+.mod .dur{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);text-align:right}
+@media (max-width:860px){.mod{grid-template-columns:60px 1fr;gap:14px}.mod p,.mod .dur{grid-column:2}}
+
+/* Faculty */
+.fac{padding:110px 0;border-bottom:1px solid var(--rule)}
+.fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:48px}
+.fac .card{display:flex;flex-direction:column;gap:14px}
+.fac .avatar{aspect-ratio:3/4;background:var(--stone);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:96px;color:var(--slate);letter-spacing:-0.04em;border:1px solid var(--rule)}
+.fac .avatar.clay{background:var(--clay-pale);color:var(--ink)}
+.fac .avatar.sage{background:var(--sage-pale);color:var(--ink)}
+.fac .nm{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--ink);line-height:1.15;letter-spacing:-0.005em}
+.fac .nm em{font-style:italic;color:var(--slate)}
+.fac .rl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-top:-4px}
+.fac .bio{font-size:14px;line-height:1.55;color:var(--ink-soft);max-width:36ch}
+@media (max-width:860px){.fac-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media (max-width:500px){.fac-grid{grid-template-columns:1fr}}
+
+/* Schedule */
+.schedule{padding:110px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.s-list{border-top:1px solid var(--rule);margin-top:40px}
+.s-row{display:grid;grid-template-columns:140px 1fr 200px 180px 120px;gap:28px;align-items:center;padding:22px 0;border-bottom:1px solid var(--rule);font-family:'Cormorant Garamond',serif}
+.s-row .date{font-style:italic;font-size:20px;color:var(--clay);letter-spacing:-0.005em}
+.s-row .title{font-weight:500;font-size:18px;color:var(--ink);line-height:1.25}
+.s-row .title em{font-style:italic;color:var(--slate)}
+.s-row .loc,.s-row .seats{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.s-row .seats.full{color:#a76c60}
+.s-row a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid var(--ink);text-align:center;transition:all .2s}
+.s-row a:hover{background:var(--ink);color:var(--cream)}
+.s-row a.muted{color:var(--slate);border-color:var(--rule);pointer-events:none}
+@media (max-width:960px){.s-row{grid-template-columns:1fr}.s-row .seats,.s-row .loc{text-align:left}.s-row a{justify-self:start}}
+</style>
+</head>
+<body data-page="platform">
+
+<div id="site-bar-mount"></div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Practice · Learning</div>
+    <h1 class="fade-up">At<em>las.</em></h1>
+    <p class="lede fade-up">Executive programmes that teach senior policymakers and leaders how modern AI actually works — and where it should and shouldn&rsquo;t be trusted.</p>
+    <div class="actions fade-up">
+      <a class="btn btn-primary" href="contact.html">Apply for the next cohort <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="#schedule">See 2026 schedule <span class="ar">↓</span></a>
+    </div>
+    <div class="hero-meta">
+      <div class="cell"><div class="k">Format</div><div class="v">Residency + on-site</div></div>
+      <div class="cell"><div class="k">Cohort size</div><div class="v">12–20 per programme</div></div>
+      <div class="cell"><div class="k">Venues</div><div class="v">Oxford · London · client site</div></div>
+      <div class="cell"><div class="k">Faculty</div><div class="v">Oxlon + Oxford visiting</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Programmes -->
+<section class="section stone-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="meta"><div class="eyebrow">Programmes</div><div class="num">01</div></div>
+      <div>
+        <h2>Three <em>programmes,</em><br>three audiences.</h2>
+        <p>Designed around what decision-makers actually need to understand, taught by practitioners who build this technology.</p>
+      </div>
+    </div>
+
+    <div class="prog-grid">
+      <div class="prog fade-up">
+        <div class="pn"><span>Programme / 01</span><span>Residency</span></div>
+        <h3>The <em>Oxford</em> Residency</h3>
+        <p>Three non-consecutive weeks at Brasenose College for deputy governors, permanent secretaries and principals. Deep, Socratic, small.</p>
+        <div class="specs">
+          <div>Duration<b>3 wks</b></div>
+          <div>Cohort<b>12 max</b></div>
+          <div>Level<b>Principal</b></div>
+          <div>Fee<b>£28k</b></div>
+        </div>
+      </div>
+
+      <div class="prog fade-up">
+        <div class="pn"><span>Programme / 02</span><span>On-site</span></div>
+        <h3>Leadership <em>intensives</em></h3>
+        <p>Five days on your site for an executive committee. We design the programme around your actual portfolio — no generic case studies.</p>
+        <div class="specs">
+          <div>Duration<b>5 days</b></div>
+          <div>Cohort<b>20 max</b></div>
+          <div>Level<b>Exec cttee</b></div>
+          <div>Fee<b>£95k</b></div>
+        </div>
+      </div>
+
+      <div class="prog fade-up">
+        <div class="pn"><span>Programme / 03</span><span>Team</span></div>
+        <h3>Team <em>programmes</em></h3>
+        <p>Ten-week cohort programme for your research and policy teams. Weekly working sessions, a live project, and a final briefing to the board.</p>
+        <div class="specs">
+          <div>Duration<b>10 wks</b></div>
+          <div>Cohort<b>18 max</b></div>
+          <div>Level<b>Sr. analyst</b></div>
+          <div>Fee<b>£140k</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Curriculum -->
+<section class="curric">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="meta"><div class="eyebrow">Curriculum</div><div class="num">02</div></div>
+      <div>
+        <h2>What you&rsquo;ll <em>actually</em> learn.</h2>
+        <p>A composed curriculum. Not a menu of buzzwords. Every module is taught by someone who has shipped the underlying technology into production.</p>
+      </div>
+    </div>
+
+    <div class="mod-list">
+      <div class="mod">
+        <div class="m-num">i.</div>
+        <div><h4>What a <em>large model</em> is, exactly.</h4></div>
+        <p>Architecture, training, evaluation, cost curves. Not from analogy — from the maths and the numbers. By the end, you can read a model card.</p>
+        <div class="dur">2 days</div>
+      </div>
+      <div class="mod">
+        <div class="m-num">ii.</div>
+        <div><h4>Where AI <em>fails</em> (and how to see it coming).</h4></div>
+        <p>Hallucination, brittleness, distribution shift, adversarial inputs. A working taxonomy of failure modes — with institutional cases worth learning from.</p>
+        <div class="dur">1.5 days</div>
+      </div>
+      <div class="mod">
+        <div class="m-num">iii.</div>
+        <div><h4>The <em>economics</em> of frontier AI.</h4></div>
+        <p>Compute, scaling, diffusion, productivity. The macro-economics of the present decade, at the level your chief economist will question you on.</p>
+        <div class="dur">2 days</div>
+      </div>
+      <div class="mod">
+        <div class="m-num">iv.</div>
+        <div><h4>Institutional <em>adoption,</em> done properly.</h4></div>
+        <p>Governance, risk frameworks, human-in-the-loop design. A blueprint for introducing AI into a serious institution without later regret.</p>
+        <div class="dur">2 days</div>
+      </div>
+      <div class="mod">
+        <div class="m-num">v.</div>
+        <div><h4>A <em>live project</em> from your desk.</h4></div>
+        <p>You bring one real question from your institution. You leave with a defensible plan, co-authored with faculty, to put on a board&rsquo;s agenda.</p>
+        <div class="dur">Ongoing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Faculty -->
+<section class="fac">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="meta"><div class="eyebrow">Faculty</div><div class="num">03</div></div>
+      <div>
+        <h2>The people <em>in the room.</em></h2>
+        <p>Atlas faculty combine working practice with academic standing. No ghost-written slides, no borrowed case studies.</p>
+      </div>
+    </div>
+
+    <div class="fac-grid">
+      <div class="card">
+        <div class="avatar clay">f</div>
+        <div class="nm">Fatih <em>Kansoy</em></div>
+        <div class="rl">Programme director · Macro &amp; ML research</div>
+        <p class="bio">Lecturer in Economics at Oxford. Leads the Oxford residency weeks and the modules on monetary policy, central-bank communication, and text-as-data.</p>
+      </div>
+      <div class="card">
+        <div class="avatar sage">m</div>
+        <div class="nm">Mehman <em>Ismayilli</em></div>
+        <div class="rl">Economics of AI &amp; policy</div>
+        <p class="bio">PhD economist. Leads the applied-analytics modules &mdash; productivity, labour-market displacement, and institutional adoption roadmaps.</p>
+      </div>
+      <div class="card">
+        <div class="avatar">o</div>
+        <div class="nm">Osman <em>Ersoy</em></div>
+        <div class="rl">Methods &amp; engineering</div>
+        <p class="bio">PhD physicist, AI engineer. Teaches what a large model actually is, where it fails, and how institutions deploy one inside their own perimeter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Schedule -->
+<section class="schedule" id="schedule">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="meta"><div class="eyebrow">Schedule</div><div class="num">04</div></div>
+      <div>
+        <h2>2026 <em>cohorts.</em></h2>
+        <p>We run a small number of open programmes each year. Private cohorts can be commissioned on request.</p>
+      </div>
+    </div>
+
+    <div class="s-list">
+      <div class="s-row">
+        <div class="date">Apr 2026</div>
+        <div class="title">Oxford Residency · <em>spring cohort</em></div>
+        <div class="loc">Brasenose College · Oxford</div>
+        <div class="seats full">◉ Full · waitlist</div>
+        <a class="muted" href="contact.html">Join waitlist</a>
+      </div>
+      <div class="s-row">
+        <div class="date">Jun 2026</div>
+        <div class="title">Economics of AI · <em>intensive</em></div>
+        <div class="loc">London · Covent Garden</div>
+        <div class="seats">6 of 20 seats</div>
+        <a href="contact.html">Apply</a>
+      </div>
+      <div class="s-row">
+        <div class="date">Sep 2026</div>
+        <div class="title">Oxford Residency · <em>autumn cohort</em></div>
+        <div class="loc">Brasenose College · Oxford</div>
+        <div class="seats">3 of 12 seats</div>
+        <a href="contact.html">Apply</a>
+      </div>
+      <div class="s-row">
+        <div class="date">Nov 2026</div>
+        <div class="title">Leadership intensive · <em>on demand</em></div>
+        <div class="loc">Client site · global</div>
+        <div class="seats">Open dates</div>
+        <a href="contact.html">Commission</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Apply</div>
+      <h2>Three weeks of <em>real</em> learning.</h2>
+      <p class="pull">Application is by conversation. Tell us who you are, what you lead, and why now.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Apply for a cohort <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="about.html">Meet the faculty <span class="ar">→</span></a>
+      <div class="meta">Or write: <a href="mailto:atlas@oxlon.uk">atlas@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

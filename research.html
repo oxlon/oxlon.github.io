@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Research — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Working papers, policy notes and research from Oxlon — on monetary policy, ESG finance, central-bank communication, CBDCs and the economics of AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ─── Research-specific ─── */
+
+/* Filter bar */
+.topics{padding:28px 0;background:var(--cream);border-bottom:1px solid var(--rule);position:sticky;top:61px;z-index:40;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.topics .wrap{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.topics .lab{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);opacity:.75;padding-right:6px;border-right:1px solid var(--rule);margin-right:2px}
+.topics .list{display:flex;gap:4px;flex-wrap:wrap}
+.topics .list button{appearance:none;background:transparent;border:1px solid transparent;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);padding:8px 14px;cursor:pointer;transition:all .2s}
+.topics .list button:hover{color:var(--ink);background:rgba(201,167,142,.08)}
+.topics .list button.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+@media (max-width:720px){.topics{top:57px}.topics .wrap{gap:14px}.topics .lab{border-right:0;padding-right:0;width:100%}}
+
+/* Featured paper */
+.featured{padding:110px 0;border-bottom:1px solid var(--rule);background:var(--paper)}
+.featured .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:72px;align-items:end}
+.featured .side .eyebrow{margin-bottom:20px}
+.featured .side .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.featured .side h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(44px,5.4vw,80px);line-height:1.02;letter-spacing:-0.02em;color:var(--ink)}
+.featured .side h2 em{font-style:italic;color:var(--slate)}
+.featured .side .authors{margin-top:24px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--ink-soft);line-height:1.4}
+.featured .side .authors b{font-style:normal;font-weight:500;color:var(--ink)}
+.featured .side .date{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);opacity:.75}
+.featured .side .actions{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+.featured .abstract{background:var(--ink-deep);color:var(--cream);padding:40px 36px;position:relative;overflow:hidden}
+.featured .abstract::before{content:"";position:absolute;top:-20%;right:-10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,167,142,.10),transparent 70%);pointer-events:none}
+.featured .abstract > *{position:relative;z-index:1}
+.featured .abstract .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay-pale);margin-bottom:20px}
+.featured .abstract p{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.55;color:rgba(246,241,230,.85);margin-bottom:1em}
+.featured .abstract p em{font-style:italic;color:var(--clay-pale)}
+.featured .abstract p.key{font-style:italic;color:var(--cream);padding-left:18px;border-left:2px solid var(--clay);margin:24px 0}
+.featured .abstract .stats{margin-top:24px;padding-top:20px;border-top:1px solid var(--rule-light);display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.featured .abstract .stats .cell .v{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:34px;color:var(--clay-pale);line-height:.95}
+.featured .abstract .stats .cell .l{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,241,230,.55);margin-top:6px}
+@media (max-width:960px){.featured .wrap{grid-template-columns:1fr;gap:40px}.featured{padding:60px 0}.featured .side h2{font-size:44px}}
+
+/* Paper list */
+.papers{padding:110px 0;border-bottom:1px solid var(--rule);background:var(--cream)}
+.papers .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.papers h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,4.8vw,72px);line-height:.98;letter-spacing:-0.025em;color:var(--ink);max-width:18ch}
+.papers h2 em{font-style:italic;color:var(--slate)}
+.papers .count{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);opacity:.7}
+.paper-list{border-top:1px solid var(--rule)}
+.paper{display:grid;grid-template-columns:110px 1fr 220px 180px 44px;gap:32px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:background .25s ease;position:relative}
+.paper:hover{background:rgba(201,167,142,.05)}
+.paper .idx{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);opacity:.6;padding-top:4px}
+.paper .body{display:flex;flex-direction:column;gap:8px}
+.paper h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;line-height:1.2;letter-spacing:-0.005em;color:var(--ink);max-width:58ch}
+.paper h3 em{font-style:italic;color:var(--slate)}
+.paper .authors{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);line-height:1.4}
+.paper .tag-row{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start;padding-top:4px}
+.paper .date{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);text-align:right;opacity:.8}
+.paper .date .status{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--clay);text-transform:none;letter-spacing:0;margin-top:3px;opacity:1}
+.paper .ar{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--clay);text-align:right;transition:transform .25s;align-self:center}
+.paper:hover .ar{transform:translateX(4px)}
+@media (max-width:1100px){.paper{grid-template-columns:80px 1fr 140px 40px;gap:20px}.paper .tag-row{grid-column:2;grid-row:3}.paper .authors{grid-column:2}.paper .date{grid-column:3}}
+@media (max-width:720px){.paper{grid-template-columns:1fr 40px;gap:8px}.paper .idx,.paper .date{grid-column:1}.paper .ar{grid-column:2;grid-row:1;align-self:start;padding-top:6px}}
+
+/* Insights grid */
+.insights{padding:120px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+.insights .head{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;margin-bottom:56px}
+.insights h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,5vw,76px);line-height:.98;letter-spacing:-0.025em;color:var(--ink)}
+.insights h2 em{font-style:italic;color:var(--slate)}
+.insights .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:50ch}
+.in-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.in-card{padding:34px 30px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;gap:14px;min-height:300px;text-decoration:none;color:inherit;transition:background .25s}
+.in-card:hover{background:var(--cream)}
+.in-card .kind{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);display:flex;justify-content:space-between}
+.in-card h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;line-height:1.18;letter-spacing:-0.005em;color:var(--ink)}
+.in-card h4 em{font-style:italic;color:var(--slate)}
+.in-card p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);max-width:44ch}
+.in-card .foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule-soft);display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);opacity:.8}
+@media (max-width:960px){.in-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.in-grid{grid-template-columns:1fr;border-left:0}.in-card{border-right:0}.insights .head{grid-template-columns:1fr}}
+
+/* Newsletter sign-up */
+.newsletter{padding:110px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
+.newsletter .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.newsletter .left .eyebrow{margin-bottom:14px}
+.newsletter h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,4.8vw,72px);line-height:.98;letter-spacing:-0.02em;color:var(--ink);max-width:14ch}
+.newsletter h2 em{font-style:italic;color:var(--slate)}
+.newsletter .lede{margin-top:22px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:44ch}
+.newsletter .card{background:var(--paper);border:1px solid var(--rule);padding:40px 36px}
+.newsletter .card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.15;letter-spacing:-0.005em;color:var(--ink)}
+.newsletter .card h3 em{font-style:italic;color:var(--slate)}
+.newsletter .card p{margin-top:12px;font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
+.newsletter .form{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap}
+.newsletter .form input{flex:1;min-width:200px;padding:14px 16px;font-family:'IBM Plex Sans',sans-serif;font-size:15px;background:var(--cream);border:1px solid var(--rule);color:var(--ink);letter-spacing:.01em}
+.newsletter .form input:focus{outline:none;border-color:var(--clay)}
+.newsletter .form button{appearance:none;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:13px 22px;background:var(--ink);color:var(--cream);border:1px solid var(--ink);cursor:pointer;transition:background .2s}
+.newsletter .form button:hover{background:var(--slate)}
+.newsletter .card .ft{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);opacity:.7}
+@media (max-width:900px){.newsletter .wrap{grid-template-columns:1fr;gap:36px}.newsletter{padding:70px 0}}
+
+/* Topic row helpers */
+.tag.topic{border-color:var(--rule);color:var(--slate)}
+.tag.topic.mp{background:rgba(201,167,142,.15);border-color:var(--clay)}
+.tag.topic.esg{background:rgba(182,191,167,.22);border-color:var(--sage)}
+.tag.topic.comms{background:rgba(200,209,220,.3);border-color:var(--powder)}
+.tag.topic.ai{background:rgba(223,214,193,.6);border-color:var(--stone-warm);color:var(--ink)}
+.tag.topic.hist{background:rgba(246,241,230,.55)}
+.tag.topic.method{background:transparent;border-style:dashed}
+
+/* Working-paper status pill */
+.status-pill{display:inline-block;padding:3px 10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:rgba(201,167,142,.15);color:var(--slate);border:1px solid var(--clay)}
+</style>
+</head>
+<body data-page="research">
+
+<div id="site-bar-mount"></div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Research · working papers · insights</div>
+    <h1 class="fade-up">Re<em>search.</em></h1>
+    <p class="lede fade-up">We publish what we work on. Working papers on monetary policy, ESG finance, central-bank communication, CBDCs and the economics of AI — alongside shorter pieces for the weeks between them.</p>
+    <div class="actions fade-up">
+      <a class="btn btn-primary" href="#papers">Browse papers <span class="ar">↓</span></a>
+      <a class="btn btn-ghost" href="#newsletter">Get the memo <span class="ar">↓</span></a>
+    </div>
+    <div class="hero-meta">
+      <div class="cell"><div class="k">Papers</div><div class="v">12 working · 3 published</div></div>
+      <div class="cell"><div class="k">Cadence</div><div class="v">Fortnightly memo</div></div>
+      <div class="cell"><div class="k">Licence</div><div class="v">Free to cite &amp; circulate</div></div>
+      <div class="cell"><div class="k">Target venues</div><div class="v">REStud · JME · JF · JIE</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TOPIC FILTER ═══════════════ -->
+<section class="topics">
+  <div class="wrap">
+    <div class="lab">Filter by topic</div>
+    <div class="list" role="tablist">
+      <button class="on" data-filter="all">All</button>
+      <button data-filter="mp">Monetary policy</button>
+      <button data-filter="esg">ESG &amp; climate</button>
+      <button data-filter="comms">Central-bank communication</button>
+      <button data-filter="cbdc">CBDCs &amp; payments</button>
+      <button data-filter="ai">Economics of AI</button>
+      <button data-filter="method">Methodology</button>
+      <button data-filter="hist">Economic history</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FEATURED PAPER ═══════════════ -->
+<section class="featured">
+  <div class="wrap">
+    <div class="side">
+      <div class="eyebrow">Featured · this quarter</div>
+      <div class="tag-row">
+        <span class="tag topic mp">Monetary policy</span>
+        <span class="tag topic esg">ESG &amp; climate</span>
+        <span class="status-pill">Working paper</span>
+      </div>
+      <h2 class="fade-up">Green <em>shields.</em><br>How environmental performance<br>moderates monetary-policy<br><em>transmission.</em></h2>
+      <p class="authors"><b>Kansoy, F.</b> &amp; Stasiulaitis, D.</p>
+      <p class="date">Oxford working paper · Revised Mar 2026</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#">Download PDF <span class="ar">↓</span></a>
+        <a class="btn btn-ghost" href="#">BibTeX <span class="ar">↗</span></a>
+      </div>
+    </div>
+    <div class="abstract fade-up">
+      <div class="k">Abstract</div>
+      <p>We study how firms&rsquo; environmental performance reshapes the equity response to US monetary-policy surprises. Using high-frequency identification around every FOMC announcement since 2005, we separate the target channel from the path channel and document a structural break around the Paris Agreement.</p>
+      <p class="key">After 2015, the response of high-ESG firms to an expansionary path surprise is materially stronger than that of their low-ESG peers &mdash; even controlling for size, leverage and sector.</p>
+      <p>The result survives a battery of robustness checks: alternative ESG scoring, sectoral fixed effects, and reverse-causality tests. Implications are drawn for central-bank communication and for the design of green supporting factors in prudential policy.</p>
+      <div class="stats">
+        <div class="cell"><div class="v">37<span style="font-size:.6em;color:var(--clay-pale)">y</span></div><div class="l">Sample span</div></div>
+        <div class="cell"><div class="v">S&amp;P<span style="font-size:.6em"> 500</span></div><div class="l">Panel scope</div></div>
+        <div class="cell"><div class="v">2015</div><div class="l">Structural break</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ALL PAPERS ═══════════════ -->
+<section class="papers" id="papers">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Working papers &amp; publications</div>
+        <h2>Papers, in <em>reverse chronological</em> order.</h2>
+      </div>
+      <div class="count">Showing <span id="paper-count">12</span> of 12</div>
+    </div>
+
+    <div class="paper-list" id="paper-list">
+
+      <a class="paper" href="#" data-topic="mp esg">
+        <div class="idx">Paper / 01</div>
+        <div class="body">
+          <h3>Green shields: environmental performance and the <em>transmission</em> of US monetary policy.</h3>
+          <div class="authors">Kansoy, F. &amp; Stasiulaitis, D.</div>
+          <div class="tag-row">
+            <span class="tag topic mp">Monetary policy</span>
+            <span class="tag topic esg">ESG &amp; climate</span>
+          </div>
+        </div>
+        <div class="date">Mar 2026 <span class="status">Working</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="mp">
+        <div class="idx">Paper / 02</div>
+        <div class="body">
+          <h3>The <em>immediate global impact</em> of US monetary policy: evidence from country ETFs.</h3>
+          <div class="authors">Kansoy, F.</div>
+          <div class="tag-row">
+            <span class="tag topic mp">Monetary policy</span>
+            <span class="tag topic method">High-frequency ID</span>
+          </div>
+        </div>
+        <div class="date">Feb 2026 <span class="status">Under review · REStud</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="comms ai">
+        <div class="idx">Paper / 03</div>
+        <div class="body">
+          <h3>What the Fed <em>didn&rsquo;t</em> say: measuring transcript-statement gaps with large language models.</h3>
+          <div class="authors">Kansoy, F.</div>
+          <div class="tag-row">
+            <span class="tag topic comms">CB communication</span>
+            <span class="tag topic ai">LLM methods</span>
+          </div>
+        </div>
+        <div class="date">Jan 2026 <span class="status">Working</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="ai">
+        <div class="idx">Paper / 04</div>
+        <div class="body">
+          <h3>Estimating the <em>productivity dividend</em> of LLM adoption in the UK civil service.</h3>
+          <div class="authors">Kansoy, F. &amp; Ismayilli, M.</div>
+          <div class="tag-row">
+            <span class="tag topic ai">Economics of AI</span>
+          </div>
+        </div>
+        <div class="date">Feb 2026 <span class="status">Working</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="comms cbdc">
+        <div class="idx">Paper / 05</div>
+        <div class="body">
+          <h3>A decade of <em>central-bank speeches</em> on CBDCs: what 37,000 texts reveal about the path to digital money.</h3>
+          <div class="authors">Kansoy, F.</div>
+          <div class="tag-row">
+            <span class="tag topic cbdc">CBDCs</span>
+            <span class="tag topic comms">CB communication</span>
+          </div>
+        </div>
+        <div class="date">Dec 2025 <span class="status">Under review · JME</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="ai">
+        <div class="idx">Paper / 06</div>
+        <div class="body">
+          <h3>Compute as <em>fixed capital</em>: a macro-accounting framework for frontier-AI capex.</h3>
+          <div class="authors">Ismayilli, M. &amp; Kansoy, F.</div>
+          <div class="tag-row">
+            <span class="tag topic ai">Economics of AI</span>
+          </div>
+        </div>
+        <div class="date">Dec 2025 <span class="status">Working</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="comms">
+        <div class="idx">Paper / 07</div>
+        <div class="body">
+          <h3>Super Thursday on <em>social media</em>: market reactions to the Bank of England through Twitter.</h3>
+          <div class="authors">Kansoy, F.</div>
+          <div class="tag-row">
+            <span class="tag topic comms">CB communication</span>
+            <span class="tag topic method">Text as data</span>
+          </div>
+        </div>
+        <div class="date">Nov 2025 <span class="status">Working</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="ai">
+        <div class="idx">Paper / 08</div>
+        <div class="body">
+          <h3>Task-level displacement in <em>mid-skill clerical work</em>: evidence from three pilot cohorts.</h3>
+          <div class="authors">Ismayilli, M.</div>
+          <div class="tag-row">
+            <span class="tag topic ai">Economics of AI</span>
+          </div>
+        </div>
+        <div class="date">Oct 2025 <span class="status">Working</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="ai">
+        <div class="idx">Paper / 09</div>
+        <div class="body">
+          <h3>Sovereign cloud or sovereign debt? <em>Fiscal trade-offs</em> of state-scale compute.</h3>
+          <div class="authors">Kansoy, F., Ersoy, O. &amp; Ismayilli, M.</div>
+          <div class="tag-row">
+            <span class="tag topic ai">Economics of AI</span>
+          </div>
+        </div>
+        <div class="date">Aug 2025 <span class="status">Working</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="method ai">
+        <div class="idx">Paper / 10</div>
+        <div class="body">
+          <h3>Vintage-first data pipelines for <em>real-time macro</em>: a reference architecture.</h3>
+          <div class="authors">Ersoy, O.</div>
+          <div class="tag-row">
+            <span class="tag topic method">Methodology</span>
+            <span class="tag topic ai">ML engineering</span>
+          </div>
+        </div>
+        <div class="date">Jun 2025 <span class="status">Technical note</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="hist">
+        <div class="idx">Paper / 11</div>
+        <div class="body">
+          <h3>Bureaucrats&rsquo; pay, Ottoman prices: <em>real wages</em> in the late-imperial civil service, 1850&ndash;1914.</h3>
+          <div class="authors">Kansoy, F. &amp; co-author.</div>
+          <div class="tag-row">
+            <span class="tag topic hist">Economic history</span>
+          </div>
+        </div>
+        <div class="date">May 2025 <span class="status">Revise &amp; resubmit</span></div>
+        <div class="ar">→</div>
+      </a>
+
+      <a class="paper" href="#" data-topic="method mp">
+        <div class="idx">Paper / 12</div>
+        <div class="body">
+          <h3>When <em>local projections</em> beat VARs &mdash; and when they don&rsquo;t.</h3>
+          <div class="authors">Kansoy, F.</div>
+          <div class="tag-row">
+            <span class="tag topic method">Methodology</span>
+            <span class="tag topic mp">Monetary policy</span>
+          </div>
+        </div>
+        <div class="date">Feb 2025 <span class="status">Published · J. Econometric Methods</span></div>
+        <div class="ar">→</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ INSIGHTS ═══════════════ -->
+<section class="insights">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Shorter pieces</div>
+        <h2>Insights, <em>between</em> the papers.</h2>
+      </div>
+      <p class="note">Post-meeting readouts, methodology notes, and essays on what the data actually say &mdash; one thousand words or fewer, always signed, never ghost-written.</p>
+    </div>
+
+    <div class="in-grid">
+      <a class="in-card" href="insight-april-fomc.html">
+        <div class="kind"><span>Readout</span><span>Apr 2026</span></div>
+        <h4>Reading the <em>April FOMC</em>: what the press conference said that the statement did not.</h4>
+        <p>A word-level diff between prepared remarks and the answered Q&amp;A. The gap is where the policy signal actually lives.</p>
+        <div class="foot"><span>F. Kansoy</span><span>7 min</span></div>
+      </a>
+      <a class="in-card" href="#">
+        <div class="kind"><span>Methodology</span><span>Mar 2026</span></div>
+        <h4>Why our nowcasts report intervals, <em>not points.</em></h4>
+        <p>A short note on uncertainty quantification in mixed-frequency estimation &mdash; and why any honest nowcast has to publish both.</p>
+        <div class="foot"><span>O. Ersoy</span><span>6 min</span></div>
+      </a>
+      <a class="in-card" href="#">
+        <div class="kind"><span>Essay</span><span>Mar 2026</span></div>
+        <h4>Machine learning has <em>not</em> solved macro forecasting. Here&rsquo;s what it has done.</h4>
+        <p>Four domains where ML has earned its place in a macro toolkit, and three where a local projection still wins.</p>
+        <div class="foot"><span>F. Kansoy</span><span>9 min</span></div>
+      </a>
+      <a class="in-card" href="#">
+        <div class="kind"><span>Readout</span><span>Feb 2026</span></div>
+        <h4>The <em>February MPC</em>: a split vote, a softer tone.</h4>
+        <p>A chart, a paragraph, a single takeaway for anyone reading the minutes in the morning.</p>
+        <div class="foot"><span>F. Kansoy</span><span>5 min</span></div>
+      </a>
+      <a class="in-card" href="#">
+        <div class="kind"><span>Technical</span><span>Feb 2026</span></div>
+        <h4>Running a central bank&rsquo;s LLM <em>inside the perimeter.</em></h4>
+        <p>What open-weight deployment actually looks like when the data cannot leave the building &mdash; the practical notes.</p>
+        <div class="foot"><span>O. Ersoy</span><span>11 min</span></div>
+      </a>
+      <a class="in-card" href="#">
+        <div class="kind"><span>Essay</span><span>Jan 2026</span></div>
+        <h4>Three things a <em>chief economist</em> should read about frontier AI.</h4>
+        <p>Shortlist of papers, models and benchmarks worth the afternoon &mdash; for readers who need signal, not enthusiasm.</p>
+        <div class="foot"><span>M. Ismayilli</span><span>8 min</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ NEWSLETTER ═══════════════ -->
+<section class="newsletter" id="newsletter">
+  <div class="wrap">
+    <div class="left">
+      <div class="eyebrow">The Oxlon Memo</div>
+      <h2>A fortnightly <em>note.</em><br>One chart. One paragraph.</h2>
+      <p class="lede">Written by a founder, not a marketing team. Delivered twice a month. Read in three minutes. Unsubscribe in one click.</p>
+    </div>
+    <div class="card">
+      <h3>Sign up to <em>the memo</em></h3>
+      <p>The memo lands in your inbox every other Tuesday. No tracking pixels, no referral incentives, no upsell. Names and institutional addresses only &mdash; personal emails bounce.</p>
+      <form class="form" onsubmit="event.preventDefault();this.reset();this.querySelector('button').textContent='Received';">
+        <input type="email" placeholder="name@institution.edu" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="ft">GDPR-compliant · stored with Buttondown · no third-party sharing</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA BAND ═══════════════ -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Research partnership</div>
+      <h2>Collaborate with <em>us.</em></h2>
+      <p class="pull">If you have data we don&rsquo;t, a question we&rsquo;d want to work on, or a paper you&rsquo;d like co-authored &mdash; write. We reply within a week.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Start a conversation <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="about.html">Meet the team <span class="ar">→</span></a>
+      <div class="meta">Or write: <a href="mailto:research@oxlon.uk">research@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+
+<script>
+/* Filter by topic */
+(function(){
+  const buttons = document.querySelectorAll('.topics .list button');
+  const papers  = document.querySelectorAll('#paper-list .paper');
+  const count   = document.getElementById('paper-count');
+  const total   = papers.length;
+
+  buttons.forEach(b => b.addEventListener('click', () => {
+    buttons.forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    const f = b.dataset.filter;
+    let visible = 0;
+    papers.forEach(p => {
+      const topics = (p.dataset.topic || '').split(' ');
+      const show = (f === 'all') || topics.includes(f);
+      p.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    count.textContent = visible;
+  }));
+})();
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

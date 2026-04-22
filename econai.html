@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EconAI — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="EconAI: an AI-assisted research platform for forecasting, nowcasting and policy simulation at central banks and ministries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ─── Product hero ─── */
+.p-hero{background:var(--ink-deep);color:var(--cream);padding:88px 0 100px;position:relative;overflow:hidden;border-bottom:1px solid var(--rule-light)}
+.p-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,167,142,.10),transparent 55%),radial-gradient(ellipse at 80% 85%,rgba(182,191,167,.06),transparent 60%);pointer-events:none}
+.p-hero .wrap{position:relative;z-index:1}
+.p-hero .crumbs{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay-pale);margin-bottom:40px;opacity:.85}
+.p-hero .crumbs a{color:rgba(246,241,230,.55);text-decoration:none}
+.p-hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:72px;align-items:end}
+.p-hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(60px,8.5vw,128px);line-height:.92;letter-spacing:-0.03em;color:var(--cream)}
+.p-hero h1 em{font-style:italic;color:var(--clay-pale)}
+.p-hero .lede{margin-top:28px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,1.8vw,28px);line-height:1.4;color:rgba(246,241,230,.8);max-width:30ch}
+.p-hero .actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.p-hero .spec{border:1px solid var(--rule-light);padding:28px 24px;background:rgba(246,241,230,.03)}
+.p-hero .spec dl{display:grid;grid-template-columns:1fr;gap:0}
+.p-hero .spec div{padding:14px 0;border-bottom:1px solid var(--rule-light);display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.p-hero .spec div:last-child{border-bottom:0}
+.p-hero .spec dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,241,230,.55)}
+.p-hero .spec dd{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--cream);text-align:right}
+.p-hero .spec dd em{font-style:italic;color:var(--clay-pale)}
+@media (max-width:960px){.p-hero .grid{grid-template-columns:1fr;gap:40px}.p-hero{padding:60px 0 70px}}
+
+/* ─── App preview (mock screenshot) ─── */
+.app-preview{background:var(--paper);padding:0;border-bottom:1px solid var(--rule);margin-top:-70px;position:relative;z-index:2}
+.app-preview .wrap{transform:translateY(-30px)}
+.app-win{background:var(--ink);border-radius:8px;overflow:hidden;box-shadow:0 40px 80px -20px rgba(15,20,40,.45),0 20px 40px -15px rgba(15,20,40,.3);border:1px solid rgba(26,32,56,.2)}
+.app-bar{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#13182e;border-bottom:1px solid rgba(246,241,230,.06)}
+.app-bar .dots{display:flex;gap:6px}
+.app-bar .dots i{width:10px;height:10px;border-radius:50%;display:block}
+.app-bar .dots i:nth-child(1){background:#ff5f57}
+.app-bar .dots i:nth-child(2){background:#febc2e}
+.app-bar .dots i:nth-child(3){background:#28c840}
+.app-bar .url{flex:1;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(246,241,230,.55);letter-spacing:.08em}
+.app-bar .stat{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-pale)}
+.app-body{display:grid;grid-template-columns:220px 1fr 280px;min-height:540px;background:var(--ink-deep);color:var(--cream)}
+.app-side{border-right:1px solid rgba(246,241,230,.06);padding:24px 20px;font-size:12.5px}
+.app-side h5{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay-pale);margin:20px 0 10px;opacity:.85}
+.app-side h5:first-child{margin-top:0}
+.app-side ul{list-style:none;display:flex;flex-direction:column;gap:4px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:rgba(246,241,230,.7)}
+.app-side li{padding:6px 10px;border-radius:4px;cursor:default;display:flex;justify-content:space-between}
+.app-side li.on{background:rgba(201,167,142,.12);color:var(--cream)}
+.app-side li .badge{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--clay-pale);opacity:.8}
+.app-main{padding:28px 32px;display:flex;flex-direction:column;gap:20px;overflow:hidden}
+.app-main .m-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:14px;border-bottom:1px solid rgba(246,241,230,.08)}
+.app-main .m-head h6{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:24px;color:var(--cream)}
+.app-main .m-head h6 em{font-style:italic;color:var(--clay-pale)}
+.app-main .m-head .toolbar{display:flex;gap:8px}
+.app-main .m-head .tbtn{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border:1px solid rgba(246,241,230,.14);color:rgba(246,241,230,.7);background:transparent}
+.app-main .m-head .tbtn.on{background:var(--clay);color:var(--ink);border-color:var(--clay)}
+.app-chart{flex:1;min-height:260px;border:1px solid rgba(246,241,230,.06);padding:20px;position:relative;background:#0c1124}
+.app-chart svg{width:100%;height:260px}
+.app-legend{display:flex;gap:20px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(246,241,230,.7);letter-spacing:.08em;padding-top:12px;border-top:1px solid rgba(246,241,230,.06);text-transform:uppercase}
+.app-legend span{display:flex;align-items:center;gap:8px}
+.app-legend span i{width:10px;height:2px;display:block}
+.app-right{border-left:1px solid rgba(246,241,230,.06);padding:24px 20px;font-size:12.5px;display:flex;flex-direction:column;gap:22px}
+.app-right h5{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay-pale);margin-bottom:10px}
+.app-cell{padding:12px 14px;background:rgba(246,241,230,.03);border:1px solid rgba(246,241,230,.06)}
+.app-cell .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,241,230,.55);margin-bottom:4px}
+.app-cell .v{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--cream);line-height:1}
+.app-cell .v em{font-style:italic;color:var(--clay-pale)}
+.app-cell .d{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--sage);margin-top:6px;letter-spacing:.08em}
+.app-cell .d.neg{color:#e9a58f}
+.app-notes{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;line-height:1.5;color:rgba(246,241,230,.7);border-left:2px solid var(--clay);padding-left:14px}
+@media (max-width:1040px){.app-body{grid-template-columns:1fr}.app-side,.app-right{display:none}}
+
+/* ─── Alt product sections ─── */
+.capabilities{padding:120px 0;border-bottom:1px solid var(--rule);background:var(--paper)}
+.cap-intro{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:baseline;margin-bottom:64px}
+.cap-intro h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(44px,5.6vw,84px);line-height:.96;letter-spacing:-0.025em;color:var(--ink)}
+.cap-intro h2 em{font-style:italic;color:var(--slate)}
+.cap-intro .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.5;color:var(--ink-soft);max-width:50ch}
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.cap{padding:40px 36px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:14px;min-height:260px}
+.cap .c-num{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);opacity:.7}
+.cap h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.1;letter-spacing:-0.01em;color:var(--ink)}
+.cap h3 em{font-style:italic;color:var(--slate)}
+.cap p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);max-width:42ch}
+.cap .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:14px}
+@media (max-width:860px){.cap-grid{grid-template-columns:1fr;border-left:0}.cap{border-right:0}.cap-intro{grid-template-columns:1fr;gap:20px}}
+
+/* ─── Split content blocks ─── */
+.split{padding:120px 0;border-bottom:1px solid var(--rule)}
+.split .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.split.reverse .wrap{direction:rtl}
+.split.reverse .wrap > *{direction:ltr}
+.split .text h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,4.8vw,68px);line-height:.98;letter-spacing:-0.02em;color:var(--ink)}
+.split .text h3 em{font-style:italic;color:var(--slate)}
+.split .text p{font-size:16px;line-height:1.7;color:var(--ink-soft);margin-top:22px;max-width:52ch}
+.split .text ul{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.split .text ul li{display:grid;grid-template-columns:24px 1fr;gap:12px;font-size:15px;line-height:1.55;color:var(--ink);padding:10px 0;border-top:1px solid var(--rule-soft)}
+.split .text ul li::before{content:"→";color:var(--clay);font-family:'IBM Plex Mono',monospace;font-size:13px}
+.split.dark-bg{background:var(--ink-deep);color:var(--cream)}
+.split.dark-bg .text h3{color:var(--cream)}
+.split.dark-bg .text h3 em{color:var(--clay-pale)}
+.split.dark-bg .text p{color:rgba(246,241,230,.72)}
+.split.dark-bg .text ul li{color:rgba(246,241,230,.85);border-top-color:var(--rule-light)}
+
+.split-visual{background:var(--stone);aspect-ratio:4/3;position:relative;overflow:hidden;padding:32px;display:flex;flex-direction:column;justify-content:space-between}
+.split.dark-bg .split-visual{background:rgba(246,241,230,.04);border:1px solid var(--rule-light)}
+.split-visual .sv-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate)}
+.split.dark-bg .split-visual .sv-label{color:var(--clay-pale)}
+.split-visual .sv-big{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:200px;line-height:.8;color:var(--slate);letter-spacing:-0.04em}
+.split.dark-bg .split-visual .sv-big{color:var(--clay-pale)}
+.split-visual .sv-footer{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--ink);max-width:24ch}
+.split.dark-bg .split-visual .sv-footer{color:var(--cream)}
+.split-visual .sv-footer em{font-style:italic;color:var(--slate)}
+.split.dark-bg .split-visual .sv-footer em{color:var(--clay-pale)}
+@media (max-width:960px){.split .wrap{grid-template-columns:1fr;gap:36px}.split.reverse .wrap{direction:ltr}.split{padding:70px 0}}
+
+/* ─── Methods diagram ─── */
+.methods{padding:120px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.methods .head{margin-bottom:56px;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end}
+.methods h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,5vw,76px);line-height:.98;letter-spacing:-0.02em;color:var(--ink)}
+.methods h2 em{font-style:italic;color:var(--slate)}
+.methods .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:50ch}
+.method-diag{position:relative;padding:48px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.method-row{display:grid;grid-template-columns:160px 1fr 160px;gap:36px;align-items:center;padding:20px 0;border-bottom:1px solid var(--rule-soft)}
+.method-row:last-child{border-bottom:0}
+.method-row .side{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.method-row .side.r{text-align:right}
+.method-row .mid{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:26px;line-height:1.25;letter-spacing:-0.005em;color:var(--ink);text-align:center}
+.method-row .mid em{font-style:italic;color:var(--slate)}
+.method-row .mid .arrow{display:inline-block;margin:0 12px;color:var(--clay);font-family:'IBM Plex Mono',monospace;font-size:18px;vertical-align:middle}
+@media (max-width:720px){.method-row{grid-template-columns:1fr;gap:8px;text-align:left}.method-row .mid{text-align:left;font-size:20px}.method-row .side.r{text-align:left}.methods .head{grid-template-columns:1fr}}
+
+/* ─── Metrics strip ─── */
+.metrics{padding:90px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
+.metrics .eyebrow{margin-bottom:36px}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule)}
+.metric{padding:36px 24px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:8px}
+.metric:last-child{border-right:0}
+.metric .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(54px,6vw,86px);line-height:.92;letter-spacing:-0.025em;color:var(--ink)}
+.metric .big .unit{font-style:normal;font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:var(--slate);font-weight:400;margin-left:6px}
+.metric .lab{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink-soft);line-height:1.35;margin-top:6px}
+.metric .lab em{font-style:italic;color:var(--slate)}
+@media (max-width:860px){.metrics-grid{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}.metric:nth-child(1),.metric:nth-child(2){border-bottom:1px solid var(--rule)}}
+
+/* ─── Case study ─── */
+.case{padding:120px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+.case .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.case .side{position:sticky;top:100px}
+.case .side .eyebrow{margin-bottom:12px}
+.case .side .client{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:32px;line-height:1.1;color:var(--ink);margin-top:8px}
+.case .side .client em{font-style:italic;color:var(--slate)}
+.case .side .meta-list{margin-top:32px;display:flex;flex-direction:column;gap:14px;padding-top:20px;border-top:1px solid var(--rule)}
+.case .side .meta-list div{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.case .side .meta-list div b{color:var(--ink);font-weight:500}
+.case .body blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(28px,3vw,44px);line-height:1.15;color:var(--ink);max-width:22ch;letter-spacing:-0.01em}
+.case .body blockquote::before{content:"“";font-family:'Cormorant Garamond',serif;font-size:96px;line-height:.5;color:var(--clay);display:block;margin-bottom:8px}
+.case .body .cite{margin-top:28px;padding-top:18px;border-top:1px solid var(--rule);display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.case .body .cite .avatar{width:44px;height:44px;border-radius:50%;background:var(--clay);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);font-style:italic}
+.case .body .outcomes{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.case .outcomes .out{padding:24px 20px 0;border-right:1px solid var(--rule)}
+.case .outcomes .out:last-child{border-right:0}
+.case .outcomes .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:58px;color:var(--clay);line-height:.9}
+.case .outcomes .lab{font-size:13px;color:var(--ink-soft);margin-top:10px;line-height:1.45}
+@media (max-width:960px){.case .wrap{grid-template-columns:1fr;gap:40px}.case .side{position:static}.case .body .outcomes{grid-template-columns:1fr 1fr}.case .outcomes .out:nth-child(2){border-right:0}}
+</style>
+</head>
+<body data-page="platform" class="dark-chrome">
+
+<div id="site-bar-mount"></div>
+
+<!-- ═══ HERO ═══ -->
+<section class="p-hero dark-bg">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Oxlon</a> &nbsp;/&nbsp; Platform &nbsp;/&nbsp; EconAI</div>
+    <div class="grid">
+      <div>
+        <div class="eyebrow" style="color:var(--clay-pale)">Flagship platform · v2.4 · Released Mar 2026</div>
+        <h1 class="fade-up">Econ<em>AI.</em></h1>
+        <p class="lede fade-up">An AI-assisted research workbench for central banks, ministries and sovereign-scale investors — built by economists, not by a B2B SaaS playbook.</p>
+        <div class="actions fade-up">
+          <a class="btn btn-primary" href="contact.html">Request a demo <span class="ar">→</span></a>
+          <a class="btn btn-ghost" href="#case">See Azerbaijan case <span class="ar">↓</span></a>
+        </div>
+      </div>
+      <div class="spec fade-up">
+        <dl>
+          <div><dt>Deployment</dt><dd>On-prem <em>or</em> Oxlon cloud</dd></div>
+          <div><dt>Coverage</dt><dd><em>47</em> countries</dd></div>
+          <div><dt>Model library</dt><dd>DSGE · VAR · BVAR · FAVAR</dd></div>
+          <div><dt>Compliance</dt><dd>SOC 2 · ISO 27001 · FIPS 140-3</dd></div>
+          <div><dt>Starts from</dt><dd>£180k <em>p.a.</em></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APP PREVIEW ═══ -->
+<section class="app-preview">
+  <div class="wrap">
+    <div class="app-win fade-up">
+      <div class="app-bar">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="url">econai.oxlon.uk / workspaces / central-bank · inflation-nowcast · 2026q2</div>
+        <div class="stat">◉ Live · Synced 2m ago</div>
+      </div>
+      <div class="app-body">
+        <aside class="app-side">
+          <h5>Workspace</h5>
+          <ul>
+            <li>Overview</li>
+            <li class="on">Inflation nowcast <span class="badge">LIVE</span></li>
+            <li>Output gap <span class="badge">D.</span></li>
+            <li>FX pass-through</li>
+            <li>Policy rule</li>
+          </ul>
+          <h5>Models</h5>
+          <ul>
+            <li>DSGE · small open</li>
+            <li>BVAR · 18 vars</li>
+            <li>Mixed-frequency</li>
+            <li>LLM-aug text</li>
+          </ul>
+          <h5>Data sources</h5>
+          <ul>
+            <li>Internal · 12</li>
+            <li>IMF · WEO, IFS</li>
+            <li>Bloomberg</li>
+            <li>Custom scraper</li>
+          </ul>
+        </aside>
+
+        <main class="app-main">
+          <div class="m-head">
+            <h6>Headline CPI · <em>nowcast</em> · 2026 Q2</h6>
+            <div class="toolbar">
+              <button class="tbtn on">1Y</button>
+              <button class="tbtn">3Y</button>
+              <button class="tbtn">5Y</button>
+              <button class="tbtn">Max</button>
+            </div>
+          </div>
+          <div class="app-chart">
+            <svg viewBox="0 0 600 240" preserveAspectRatio="none">
+              <!-- gridlines -->
+              <line x1="0" y1="60"  x2="600" y2="60"  stroke="rgba(246,241,230,.06)" stroke-dasharray="2 4"/>
+              <line x1="0" y1="120" x2="600" y2="120" stroke="rgba(246,241,230,.06)" stroke-dasharray="2 4"/>
+              <line x1="0" y1="180" x2="600" y2="180" stroke="rgba(246,241,230,.06)" stroke-dasharray="2 4"/>
+              <!-- confidence band -->
+              <path d="M 320 80 C 380 75, 440 95, 520 70 L 600 60 L 600 110 C 520 130, 440 145, 380 130 Z" fill="rgba(201,167,142,.12)"/>
+              <!-- realized line (sage) -->
+              <path d="M 0 140 C 60 130, 120 155, 180 135 S 260 100, 320 105" stroke="#B6BFA7" stroke-width="1.5" fill="none"/>
+              <!-- nowcast line (clay) -->
+              <path d="M 320 105 C 380 92, 440 118, 520 85 L 600 82" stroke="#C9A78E" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+              <!-- target line -->
+              <line x1="0" y1="150" x2="600" y2="150" stroke="rgba(246,241,230,.3)" stroke-width="1" stroke-dasharray="1 3"/>
+              <text x="6" y="148" fill="rgba(246,241,230,.45)" font-family="IBM Plex Mono" font-size="9">TARGET · 3%</text>
+              <!-- vertical today -->
+              <line x1="320" y1="30" x2="320" y2="220" stroke="rgba(201,167,142,.35)" stroke-width="1" stroke-dasharray="3 3"/>
+              <text x="324" y="42" fill="#C9A78E" font-family="IBM Plex Mono" font-size="9" letter-spacing="1">TODAY</text>
+              <!-- end dot -->
+              <circle cx="600" cy="82" r="4" fill="#C9A78E"/>
+              <circle cx="600" cy="82" r="10" fill="#C9A78E" opacity=".2"/>
+            </svg>
+          </div>
+          <div class="app-legend">
+            <span><i style="background:#B6BFA7"></i>Realised</span>
+            <span><i style="background:#C9A78E;border-top:1px dashed #C9A78E"></i>Nowcast · 90% CI</span>
+            <span><i style="background:rgba(246,241,230,.4)"></i>Target band</span>
+          </div>
+        </main>
+
+        <aside class="app-right">
+          <div>
+            <h5>Current estimate</h5>
+            <div class="app-cell">
+              <div class="k">Headline CPI, YoY</div>
+              <div class="v">4.2<em>%</em></div>
+              <div class="d">+0.3 vs. BVAR baseline</div>
+            </div>
+          </div>
+          <div>
+            <h5>Model consensus</h5>
+            <div class="app-cell">
+              <div class="k">9 models agree within</div>
+              <div class="v">0.4<em>pp</em></div>
+              <div class="d">High coherence</div>
+            </div>
+          </div>
+          <div>
+            <h5>Analyst note</h5>
+            <div class="app-notes">
+              Services inflation persistence is the dominant driver this quarter. Recommend shock to wage-price spiral term.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CAPABILITIES ═══ -->
+<section class="capabilities">
+  <div class="wrap">
+    <div class="cap-intro">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">What it does</div>
+        <h2 class="fade-up">Six practical <em>capabilities,</em> built around one workflow.</h2>
+      </div>
+      <p class="note fade-up">EconAI is not a general-purpose tool. Every capability is grounded in the actual daily work of a central bank research department — forecasting, monitoring, advising the board.</p>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap fade-up">
+        <div class="c-num">Capability / 01</div>
+        <h3>Now<em>casting.</em></h3>
+        <p>Mixed-frequency estimation that ingests hard data, surveys and high-frequency indicators — with an uncertainty band your board can defend.</p>
+        <div class="tags"><span class="tag">Mixed-frequency</span><span class="tag">Bayesian</span></div>
+      </div>
+      <div class="cap fade-up">
+        <div class="c-num">Capability / 02</div>
+        <h3>Policy <em>simulation.</em></h3>
+        <p>Run DSGE and BVAR scenarios side-by-side. Swap shock paths, adjust the Taylor rule, compare welfare — without leaving the workbench.</p>
+        <div class="tags"><span class="tag">DSGE</span><span class="tag">BVAR</span><span class="tag">Scenario</span></div>
+      </div>
+      <div class="cap fade-up">
+        <div class="c-num">Capability / 03</div>
+        <h3>Text-augmented <em>signals.</em></h3>
+        <p>Structured extraction of sentiment, policy stance and risk from speeches, earnings calls and news, fed directly into your factor models.</p>
+        <div class="tags"><span class="tag">LLM</span><span class="tag">NLP</span><span class="tag">Auditable</span></div>
+      </div>
+      <div class="cap fade-up">
+        <div class="c-num">Capability / 04</div>
+        <h3>Model <em>review.</em></h3>
+        <p>Automated back-testing, shrinkage diagnostics and parameter-stability tests with pre-formatted appendices for your technical committee.</p>
+        <div class="tags"><span class="tag">Back-test</span><span class="tag">Audit</span></div>
+      </div>
+      <div class="cap fade-up">
+        <div class="c-num">Capability / 05</div>
+        <h3>Stress <em>testing.</em></h3>
+        <p>Climate, liquidity, FX and geopolitical scenarios, aligned with IMF and BIS methodologies. No more handing scenarios between teams.</p>
+        <div class="tags"><span class="tag">Macro-prudential</span><span class="tag">BIS</span></div>
+      </div>
+      <div class="cap fade-up">
+        <div class="c-num">Capability / 06</div>
+        <h3>Board <em>briefings.</em></h3>
+        <p>Narrative generation grounded in the model output — drafts your monthly briefing with full citations back to the underlying estimates.</p>
+        <div class="tags"><span class="tag">Narrative</span><span class="tag">Cited</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPLIT 1 — Built with economists ═══ -->
+<section class="split">
+  <div class="wrap">
+    <div class="text">
+      <div class="eyebrow" style="margin-bottom:16px">Position · 01</div>
+      <h3>Built <em>with</em><br>economists, not<br>against them.</h3>
+      <p>EconAI was designed in residence with the Ministry of Economy of the Republic of Azerbaijan, whose senior economists used the platform daily through its development. Every model that ships has been through their review.</p>
+      <ul>
+        <li>Full method transparency — every inference traces to its data, model and parameters.</li>
+        <li>Code &amp; weights exportable. Nothing is a black box you can&rsquo;t show the board.</li>
+        <li>Your economists stay in charge. EconAI is a lever, not a replacement.</li>
+      </ul>
+    </div>
+    <div class="split-visual">
+      <div class="sv-label">The team behind the model</div>
+      <div class="sv-big">01</div>
+      <div class="sv-footer">A <em>research residency</em> model — we work inside your building before we ever ship.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPLIT 2 — Security ═══ -->
+<section class="split dark-bg reverse" id="security">
+  <div class="wrap">
+    <div class="text">
+      <div class="eyebrow" style="margin-bottom:16px;color:var(--clay-pale)">Position · 02</div>
+      <h3>A <em>security posture</em> worthy of your<br>institution.</h3>
+      <p>Central banks are critical national infrastructure. We don&rsquo;t wave off your CISO. We hand them a detailed architecture and spend a week with them if needed.</p>
+      <ul>
+        <li>Full on-premise deployment option — data never leaves your perimeter.</li>
+        <li>SOC 2 Type II, ISO 27001, FIPS 140-3 cryptographic modules.</li>
+        <li>Customer-held KMS; Oxlon never sees plaintext credentials or queries.</li>
+        <li>Air-gapped model updates for classified environments.</li>
+      </ul>
+    </div>
+    <div class="split-visual">
+      <div class="sv-label">Posture</div>
+      <div class="sv-big">◯</div>
+      <div class="sv-footer"><em>Sovereign-grade</em> &mdash; deployed with a government ministry since 2024.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METHODS ═══ -->
+<section class="methods">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px">Under the hood</div>
+        <h2>Classical <em>method,</em> modern tooling.</h2>
+      </div>
+      <p class="note">Every inference is a composition of well-understood methods. No magical end-to-end black boxes — just the techniques your team already trusts, orchestrated faster.</p>
+    </div>
+
+    <div class="method-diag">
+      <div class="method-row">
+        <div class="side">Raw inputs</div>
+        <div class="mid">Hard data &amp; surveys <span class="arrow">→</span> <em>structured text</em> <span class="arrow">→</span> factor scores</div>
+        <div class="side r">Ingest layer</div>
+      </div>
+      <div class="method-row">
+        <div class="side">Statistical core</div>
+        <div class="mid">BVAR · FAVAR <span class="arrow">→</span> <em>DSGE calibration</em> <span class="arrow">→</span> ensemble</div>
+        <div class="side r">Estimation</div>
+      </div>
+      <div class="method-row">
+        <div class="side">LLM layer</div>
+        <div class="mid">Retrieval <span class="arrow">→</span> <em>cited narrative</em> <span class="arrow">→</span> audit trail</div>
+        <div class="side r">Composition</div>
+      </div>
+      <div class="method-row">
+        <div class="side">Human sign-off</div>
+        <div class="mid">Review &amp; override <span class="arrow">→</span> <em>publish</em> <span class="arrow">→</span> monitor drift</div>
+        <div class="side r">Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METRICS ═══ -->
+<section class="metrics">
+  <div class="wrap">
+    <div class="eyebrow">What customers measure</div>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="big">4.2<span class="unit">weeks</span></div>
+        <div class="lab">Typical <em>time-to-first-forecast</em> in a new institution.</div>
+      </div>
+      <div class="metric">
+        <div class="big">23<span class="unit">%</span></div>
+        <div class="lab">Median improvement in <em>RMSE</em> vs. client&rsquo;s incumbent pipeline.</div>
+      </div>
+      <div class="metric">
+        <div class="big">9</div>
+        <div class="lab">Model families run side-by-side for <em>every</em> nowcast.</div>
+      </div>
+      <div class="metric">
+        <div class="big">0</div>
+        <div class="lab">Production incidents involving customer <em>data egress</em> since launch.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CASE ═══ -->
+<section class="case" id="case">
+  <div class="wrap">
+    <div class="side">
+      <div class="eyebrow">Case study · 01</div>
+      <div class="client">Ministry of Economy<br><em>Republic of Azerbaijan</em></div>
+      <div class="meta-list">
+        <div><span>Engagement</span><b>On-prem deployment</b></div>
+        <div><span>Users</span><b>Senior staff &amp; advisers</b></div>
+        <div><span>Coverage</span><b>Hundreds of series</b></div>
+        <div><span>Deployment</span><b>On-prem · localised</b></div>
+        <div><span>Since</span><b>2024 Q4</b></div>
+      </div>
+    </div>
+    <div class="body">
+      <blockquote>A surface that turns <em>hundreds of disparate series</em> into a briefing a minister can read in five minutes.</blockquote>
+      <div class="cite">
+        <div class="avatar">m</div>
+        <div>Ministry of Economy · Baku · engagement brief, 2024</div>
+      </div>
+
+      <div class="outcomes">
+        <div class="out">
+          <div class="big">100s</div>
+          <div class="lab">Of economic series unified into one dashboard surface.</div>
+        </div>
+        <div class="out">
+          <div class="big">On-<em style="color:var(--clay)">prem</em></div>
+          <div class="lab">Data and LLM inference inside the Ministry&rsquo;s perimeter.</div>
+        </div>
+        <div class="out">
+          <div class="big">1st</div>
+          <div class="lab">AI-assisted briefing surface in the Ministry&rsquo;s history.</div>
+        </div>
+      </div>
+      <div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--rule-soft);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);opacity:.75">
+        <a href="case-azerbaijan.html" style="color:var(--ink);text-decoration:none;border-bottom:1px solid var(--clay);padding-bottom:3px">Read the full case study <span style="color:var(--clay)">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Next step</div>
+      <h2>See EconAI <em>on your data.</em></h2>
+      <p class="pull">We demo on a sanitised slice of your own series, not a canned dataset. 90 minutes, a principal on the call, no pitch deck.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Request a private demo <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="design-system.html">Design &amp; technical notes <span class="ar">→</span></a>
+      <div class="meta">Or write: <a href="mailto:econai@oxlon.uk">econai@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

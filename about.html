@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Oxlon is an Oxford- and London-based firm pairing rigorous economic research with production AI — founded by Osman Ersoy, Fatih Kansoy and Mehman Ismayilli.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ─── About-specific ─── */
+
+/* Thesis block */
+.thesis{padding:130px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+.thesis .wrap{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start}
+.thesis .side .eyebrow{margin-bottom:14px}
+.thesis .side .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:120px;line-height:.85;color:var(--clay)}
+.thesis .body p{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,2.6vw,36px);line-height:1.25;letter-spacing:-0.01em;color:var(--ink);margin-bottom:1em;max-width:28ch}
+.thesis .body p em{font-style:italic;color:var(--slate)}
+.thesis .body p .accent{color:var(--clay);font-style:italic}
+.thesis .body .sig{margin-top:28px;padding-top:20px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:860px){.thesis .wrap{grid-template-columns:1fr;gap:24px}.thesis .side .num{font-size:72px}.thesis{padding:70px 0}}
+
+/* Commitments (three) */
+.commits{padding:120px 0;background:var(--ink-deep);color:var(--cream);border-bottom:1px solid var(--rule-light);position:relative;overflow:hidden}
+.commits::before{content:"";position:absolute;top:-20%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,167,142,.08),transparent 70%);pointer-events:none}
+.commits .wrap{position:relative;z-index:1}
+.commits .head{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:end;margin-bottom:64px}
+.commits .head h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(46px,6vw,88px);line-height:.96;letter-spacing:-0.025em;color:var(--cream)}
+.commits .head h2 em{font-style:italic;color:var(--clay-pale)}
+.commits .head .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.5;color:rgba(246,241,230,.72);max-width:48ch}
+.commit-list{border-top:1px solid var(--rule-light)}
+.commit{display:grid;grid-template-columns:100px 1.2fr 2fr;gap:40px;align-items:baseline;padding:44px 0;border-bottom:1px solid var(--rule-light)}
+.commit .n{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:64px;line-height:.9;color:var(--clay-pale)}
+.commit h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:36px;line-height:1.05;letter-spacing:-0.015em;color:var(--cream)}
+.commit h3 em{font-style:italic;color:var(--clay-pale)}
+.commit p{font-size:16px;line-height:1.7;color:rgba(246,241,230,.78);max-width:62ch}
+.commit p em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.08em;color:var(--clay-pale)}
+@media (max-width:860px){.commit{grid-template-columns:1fr;gap:14px;padding:32px 0}.commit .n{font-size:44px}.commit h3{font-size:28px}}
+
+/* Founders grid */
+.founders{padding:120px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-top:52px}
+.f-card{padding:44px 36px 40px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--cream);display:flex;flex-direction:column;gap:18px}
+.f-card .f-idx{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);opacity:.75;display:flex;justify-content:space-between;align-items:center}
+.f-card .avatar{aspect-ratio:1/1;background:var(--stone);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(84px,9vw,128px);color:var(--slate);letter-spacing:-0.04em;position:relative;overflow:hidden;margin:12px 0}
+.f-card.clay .avatar{background:var(--clay-pale);color:var(--ink)}
+.f-card.sage .avatar{background:var(--sage-pale);color:var(--ink)}
+.f-card.powder .avatar{background:var(--powder-pale);color:var(--ink)}
+.f-card .avatar::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.3),transparent 50%);pointer-events:none}
+.f-card .name{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.1;letter-spacing:-0.01em;color:var(--ink)}
+.f-card .name em{font-style:italic;color:var(--slate)}
+.f-card .role{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-top:-8px}
+.f-card .bio{font-size:14.5px;line-height:1.65;color:var(--ink-soft)}
+.f-card .bio em{font-style:italic;color:var(--slate)}
+.f-card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:18px;border-top:1px solid var(--rule-soft)}
+.f-card .tags .tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);padding:4px 9px;border:1px solid var(--rule);background:transparent}
+.f-card .lnk{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding-bottom:3px;border-bottom:1px solid var(--clay);width:fit-content;transition:color .2s,gap .2s}
+.f-card .lnk:hover{color:var(--slate);gap:14px}
+@media (max-width:1040px){.f-grid{grid-template-columns:1fr}.f-grid{border-left:0}.f-card{border-right:0}}
+
+/* Origin story (two columns) */
+.origin{padding:120px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
+.origin .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}
+.origin h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(44px,5.4vw,82px);line-height:.96;letter-spacing:-0.025em;color:var(--ink);max-width:16ch}
+.origin h2 em{font-style:italic;color:var(--slate)}
+.origin .eyebrow{margin-bottom:16px}
+.origin .prose{font-family:'IBM Plex Sans',sans-serif}
+.origin .prose p{font-size:16.5px;line-height:1.75;color:var(--ink);margin-bottom:1.2em;max-width:62ch}
+.origin .prose p em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1em;color:var(--slate)}
+.origin .prose .lead{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.45;color:var(--ink);font-style:italic}
+.origin .prose .lead em{color:var(--clay);font-style:italic}
+.origin .cities{margin-top:28px;padding-top:24px;border-top:1px solid var(--rule);display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.origin .cities .c .lab{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
+.origin .cities .c .nm{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);font-weight:400;letter-spacing:-0.005em;line-height:1.2}
+.origin .cities .c .nm em{font-style:italic;color:var(--slate)}
+.origin .cities .c .dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px;opacity:.8}
+@media (max-width:960px){.origin .wrap{grid-template-columns:1fr;gap:36px}.origin{padding:70px 0}.origin .cities{grid-template-columns:1fr 1fr}}
+
+/* Affiliates / partners */
+.aff{padding:90px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.aff .wrap{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start}
+.aff .label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)}
+.aff .label .n{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:56px;color:var(--clay);display:block;margin-top:10px;line-height:.9}
+.aff ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:24px 48px}
+.aff ul li{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:22px;color:var(--ink);letter-spacing:-0.005em;line-height:1.35;padding:8px 0;border-top:1px solid var(--rule)}
+.aff ul li em{font-style:italic;color:var(--slate)}
+.aff ul li .sub{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-top:4px;opacity:.7}
+@media (max-width:860px){.aff .wrap{grid-template-columns:1fr;gap:22px}.aff ul{grid-template-columns:1fr}}
+
+/* Hiring strip */
+.hiring{padding:100px 0;border-bottom:1px solid var(--rule)}
+.hiring .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:end}
+.hiring h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,4.8vw,72px);line-height:.98;letter-spacing:-0.025em;color:var(--ink)}
+.hiring h2 em{font-style:italic;color:var(--slate)}
+.hiring .lede{margin-top:18px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.5;color:var(--ink-soft);max-width:46ch}
+.hiring .roles{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule)}
+.hiring .role{display:grid;grid-template-columns:60px 1fr 40px;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule)}
+.hiring .role .rn{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:30px;color:var(--clay);line-height:.9}
+.hiring .role .rt{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1.2;letter-spacing:-0.005em;color:var(--ink)}
+.hiring .role .rt em{font-style:italic;color:var(--slate)}
+.hiring .role .rd{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:400;color:var(--ink-soft);margin-top:6px;letter-spacing:0}
+.hiring .role .ra{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--clay);text-align:right;align-self:center;transition:transform .2s}
+.hiring .role:hover .ra{transform:translateX(4px)}
+@media (max-width:960px){.hiring .wrap{grid-template-columns:1fr;gap:36px}.hiring{padding:70px 0}}
+
+</style>
+</head>
+<body data-page="about">
+
+<div id="site-bar-mount"></div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">About Oxlon</div>
+    <h1 class="fade-up">A small firm, for the <em>hard</em><br>problems.</h1>
+    <p class="lede fade-up">Oxlon is an Oxford- and London-based firm pairing PhD-grade economic research with production AI engineering. We build EconAI, run an advisory practice, and teach a small set of executive programmes through Oxlon Atlas.</p>
+    <div class="actions fade-up">
+      <a class="btn btn-primary" href="contact.html">Start a conversation <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="#founders">Meet the founders <span class="ar">↓</span></a>
+    </div>
+    <div class="hero-meta">
+      <div class="cell"><div class="k">Founded</div><div class="v">2024 · Oxford</div></div>
+      <div class="cell"><div class="k">Founders</div><div class="v">Three · all PhDs</div></div>
+      <div class="cell"><div class="k">Headcount</div><div class="v">Nine · growing</div></div>
+      <div class="cell"><div class="k">Bases</div><div class="v">Oxford · London · Baku</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ THESIS ═══════════════ -->
+<section class="thesis">
+  <div class="wrap">
+    <div class="side">
+      <div class="eyebrow">Thesis · why we exist</div>
+      <div class="num">i.</div>
+    </div>
+    <div class="body">
+      <p>Most AI firms know <em>machine learning</em>. Most economics firms know <em>economics</em>. The overlap &mdash; where rigorous method and production engineering live under one roof &mdash; is where the work that matters sits.</p>
+      <p>Oxlon was founded to be a firm that sits in the overlap: <span class="accent">small, senior, and accountable for the number.</span></p>
+      <p>Every engagement is led by one of us. Every model we ship is one we would defend in front of a monetary policy committee &mdash; because we have been in that room.</p>
+      <div class="sig">
+        <span>The founders &middot; Oxford</span>
+        <span>2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ THREE COMMITMENTS ═══════════════ -->
+<section class="commits">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Commitments</div>
+        <h2 class="fade-up">Three <em>lines</em><br>we won&rsquo;t cross.</h2>
+      </div>
+      <p class="note fade-up">These are not values in a handbook. They are the operational rules we hold ourselves to before taking on any engagement &mdash; and the ones we decline work against.</p>
+    </div>
+
+    <div class="commit-list">
+      <div class="commit fade-up">
+        <div class="n">i.</div>
+        <div>
+          <h3>Institutional <em>discipline.</em></h3>
+        </div>
+        <p>Our engineering meets the documentation, governance and reproducibility bar that central banks apply internally &mdash; not as an aspiration, but as the floor. Every number we produce can be traced to its data vintage, its model version, and the economist who signed it. <em>If we cannot defend it on paper, we do not ship it.</em></p>
+      </div>
+      <div class="commit fade-up">
+        <div class="n">ii.</div>
+        <div>
+          <h3>Economics, <em>not novelty.</em></h3>
+        </div>
+        <p>We combine modern machine learning with classical macroeconomic method. New techniques are used where they earn their place &mdash; never to replace a clearer story with a fancier one. A local projection that answers the question beats a neural network that does not. <em>We tell you when the simpler method is the right method.</em></p>
+      </div>
+      <div class="commit fade-up">
+        <div class="n">iii.</div>
+        <div>
+          <h3>A bench that has <em>shipped.</em></h3>
+        </div>
+        <p>The senior name on the proposal writes the code. Our founders have built production AI systems and published peer-reviewed macroeconomic research. Work is not delegated to juniors with a partner watching from a distance. <em>You speak to the economist doing the modelling.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOUNDERS ═══════════════ -->
+<section class="founders" id="founders">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="meta">
+        <div class="eyebrow">The founders</div>
+        <div class="num">ii</div>
+      </div>
+      <div>
+        <h2>Three founders.<br>One <em>discipline.</em></h2>
+        <p>Oxlon was founded by three operators with complementary backgrounds in AI engineering, macro-financial research, and applied economic analysis &mdash; the three ingredients the work actually needs.</p>
+      </div>
+    </div>
+
+    <div class="f-grid">
+      <div class="f-card powder">
+        <div class="f-idx"><span>Founder · 01</span><span>AI &amp; engineering</span></div>
+        <div class="avatar">o</div>
+        <div>
+          <div class="name">Osman <em>Ersoy</em></div>
+          <div class="role">Co-founder · AI engineering</div>
+        </div>
+        <p class="bio">Leads Oxlon&rsquo;s technical bench &mdash; from data engineering and pipeline architecture to the deep-learning systems behind EconAI. Osman builds the infrastructure that turns heterogeneous economic feeds into reproducible, production-grade intelligence: vintage-aware ingestion, on-prem LLM deployments, and the orchestration layer under the econometric agent.</p>
+        <div class="tags">
+          <span class="tag">PhD · Physics</span>
+          <span class="tag">Data engineering</span>
+          <span class="tag">Deep learning</span>
+          <span class="tag">On-prem AI</span>
+        </div>
+        <a class="lnk" href="https://www.linkedin.com/in/osmanersoy/" target="_blank" rel="noopener">LinkedIn <span class="ar">→</span></a>
+      </div>
+
+      <div class="f-card clay">
+        <div class="f-idx"><span>Founder · 02</span><span>Macro &amp; ML research</span></div>
+        <div class="avatar">f</div>
+        <div>
+          <div class="name">Fatih <em>Kansoy</em></div>
+          <div class="role">Co-founder · Macro &amp; ML research</div>
+        </div>
+        <p class="bio">Anchors Oxlon&rsquo;s macro-financial research &mdash; monetary policy transmission, central-bank communication, ESG finance, and the text-as-data methods that extend classical econometrics. Lecturer in Economics at the University of Oxford, with teaching across the Department of Economics and Sa&iuml;d Business School. Fatih&rsquo;s work is the spine of Oxlon Advisory and of much of what EconAI ships.</p>
+        <div class="tags">
+          <span class="tag">PhD · Economics &amp; Finance</span>
+          <span class="tag">Oxford</span>
+          <span class="tag">Monetary policy</span>
+          <span class="tag">Text as data</span>
+        </div>
+        <a class="lnk" href="https://www.linkedin.com/in/kansoy/" target="_blank" rel="noopener">LinkedIn <span class="ar">→</span></a>
+      </div>
+
+      <div class="f-card sage">
+        <div class="f-idx"><span>Founder · 03</span><span>Applied &amp; policy</span></div>
+        <div class="avatar">m</div>
+        <div>
+          <div class="name">Mehman <em>Ismayilli</em></div>
+          <div class="role">Co-founder · Applied analytics &amp; policy</div>
+        </div>
+        <p class="bio">Leads Oxlon&rsquo;s applied-analytics practice and the Atlas learning programme &mdash; competition, market structure, and the design of AI systems for regulatory and policy questions. Mehman specialises in using granular micro-level data to inform macro-level policy choices, and runs the engagements with ministries and regulators where the question sits between economics and institutional design.</p>
+        <div class="tags">
+          <span class="tag">PhD · Economics</span>
+          <span class="tag">Market structure</span>
+          <span class="tag">Micro-to-macro</span>
+          <span class="tag">Policy design</span>
+        </div>
+        <a class="lnk" href="https://www.linkedin.com/in/mismayilli/" target="_blank" rel="noopener">LinkedIn <span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ORIGIN / CITIES ═══════════════ -->
+<section class="origin">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">How we got here</div>
+      <h2>Oxford and London.<br>Then <em>Baku.</em><br>Then, gradually, <em>further.</em></h2>
+    </div>
+    <div class="prose">
+      <p class="lead">Oxlon began in late 2024 as a working partnership between three former academics who had each, separately, reached the same conclusion &mdash; that the gap between what AI can now do, and what institutions know how to use, has become the binding constraint on serious economic work.</p>
+      <p>The firm was set up in Oxford, where Fatih had been teaching, with operations in London and an early engagement in Baku &mdash; where we now deploy EconAI inside the Ministry of Economy of the Republic of Azerbaijan. That project was the first test of the full thesis: that on-premise AI, built around a classical econometric core and reviewed by a real research team, is a materially better surface for policy work than anything currently on the market.</p>
+      <p>We grew deliberately from there. A second research track on the <em>Economics of AI</em> opened in 2025, and the Atlas learning programme ran its first executive cohort at Brasenose in the autumn. New engagements are taken selectively, on the basis of fit rather than fee.</p>
+      <p>We are not a fast-scaling firm. The work we do is the work we can defend &mdash; and defensible work, at our bar, takes the time it takes.</p>
+      <div class="cities">
+        <div class="c"><div class="lab">Oxford</div><div class="nm">Research &amp; <em>teaching</em></div><div class="dt">Founded · 2024</div></div>
+        <div class="c"><div class="lab">London</div><div class="nm">Client &amp; <em>operations</em></div><div class="dt">Est. · 2024</div></div>
+        <div class="c"><div class="lab">Baku</div><div class="nm">Sovereign <em>deployment</em></div><div class="dt">Live · 2024 Q4</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ AFFILIATIONS ═══════════════ -->
+<section class="aff">
+  <div class="wrap">
+    <div class="label">
+      Affiliations &amp; partners
+      <span class="n">iii</span>
+    </div>
+    <ul>
+      <li>University of <em>Oxford</em> <span class="sub">Host institution · Fatih Kansoy</span></li>
+      <li>Sa&iuml;d Business <em>School</em> <span class="sub">Teaching affiliation · MFE programme</span></li>
+      <li>Brasenose <em>College</em> <span class="sub">Residency venue for Atlas</span></li>
+      <li>Ministry of Economy of <em>Azerbaijan</em> <span class="sub">EconAI deployment partner</span></li>
+      <li>Select UK <em>ministries</em> <span class="sub">Advisory engagements · undisclosed</span></li>
+      <li><em>Private</em> research consortium <span class="sub">Economics of AI programme</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════ HIRING ═══════════════ -->
+<section class="hiring">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="margin-bottom:14px">Working with us</div>
+      <h2>We hire <em>selectively.</em></h2>
+      <p class="lede">A small number of open roles at any time. If you publish, ship, or both &mdash; we want to hear from you. Write directly to a founder; generic applications won&rsquo;t reach us.</p>
+    </div>
+    <div class="roles">
+      <a class="role" href="mailto:hiring@oxlon.uk?subject=Senior%20macro-econometrician">
+        <div class="rn">i.</div>
+        <div class="rt">Senior <em>macro-econometrician</em>
+          <span class="rd">PhD-level, with publications. Research lead on an advisory engagement within a year.</span>
+        </div>
+        <div class="ra">→</div>
+      </a>
+      <a class="role" href="mailto:hiring@oxlon.uk?subject=ML%20engineer%20%C2%B7%20data%20pipelines">
+        <div class="rn">ii.</div>
+        <div class="rt">ML engineer &middot; <em>data pipelines</em>
+          <span class="rd">Production-grade experience with time-series data, reproducibility tooling, and on-prem LLM deployments.</span>
+        </div>
+        <div class="ra">→</div>
+      </a>
+      <a class="role" href="mailto:hiring@oxlon.uk?subject=Client-facing%20research%20lead">
+        <div class="rn">iii.</div>
+        <div class="rt">Client-facing <em>research lead</em>
+          <span class="rd">Consulting background plus academic rigour. Runs engagements alongside a founder; moves to principal within 18 months.</span>
+        </div>
+        <div class="ra">→</div>
+      </a>
+      <a class="role" href="mailto:hiring@oxlon.uk?subject=Open%20application">
+        <div class="rn">iv.</div>
+        <div class="rt">Open <em>application</em>
+          <span class="rd">If none of the above fit, but you think the work is for you &mdash; tell us what you&rsquo;d do. We read everything.</span>
+        </div>
+        <div class="ra">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA BAND ═══════════════ -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Begin</div>
+      <h2>A conversation,<br><em>before</em> a proposal.</h2>
+      <p class="pull">Whether it&rsquo;s an engagement, a research partnership or a hiring conversation &mdash; start with a sixty-minute call. No decks.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Request a scoping call <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="research.html">Read the research <span class="ar">→</span></a>
+      <div class="meta">Or write: <a href="mailto:info@oxlon.uk">info@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

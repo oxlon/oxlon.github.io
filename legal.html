@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legal — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Oxlon's privacy notice, terms of use, and cookie policy. Written plainly, reviewed by counsel, updated when things change.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ─── Legal-page specific ─── */
+.doc{padding:80px 0 100px;background:var(--paper)}
+.doc .wrap{display:grid;grid-template-columns:260px 1fr;gap:72px;align-items:start}
+
+/* Sticky TOC */
+.toc{position:sticky;top:90px}
+.toc .lab{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);opacity:.75;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.toc ol{list-style:none;counter-reset:toc;display:flex;flex-direction:column;gap:4px}
+.toc ol li{counter-increment:toc;display:flex;gap:10px;padding:8px 0}
+.toc ol li::before{content:counter(toc,lower-roman) ".";font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--clay);min-width:24px}
+.toc ol li a{color:var(--ink-soft);text-decoration:none;font-size:14px;line-height:1.45;transition:color .2s}
+.toc ol li a:hover{color:var(--ink)}
+.toc .meta{margin-top:28px;padding-top:18px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);opacity:.75;line-height:1.8}
+.toc .meta b{color:var(--ink);font-weight:500}
+@media (max-width:960px){.doc .wrap{grid-template-columns:1fr;gap:32px}.toc{position:static}}
+
+/* Doc content */
+.doc .body{max-width:74ch}
+.doc .eyebrow{margin-bottom:14px}
+.doc h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(44px,5.4vw,82px);line-height:.96;letter-spacing:-0.025em;color:var(--ink);margin-bottom:20px}
+.doc h1 em{font-style:italic;color:var(--slate)}
+.doc .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,1.6vw,24px);line-height:1.5;color:var(--ink-soft);max-width:52ch;margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--rule)}
+.doc h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,3.8vw,56px);line-height:1.05;letter-spacing:-0.015em;color:var(--ink);margin-top:64px;margin-bottom:24px;padding-top:32px;border-top:1px solid var(--rule);display:flex;align-items:baseline;gap:18px}
+.doc h2 em{font-style:italic;color:var(--slate)}
+.doc h2::before{content:attr(data-n);font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:48px;color:var(--clay);line-height:1}
+.doc h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;line-height:1.2;letter-spacing:-0.005em;color:var(--ink);margin-top:36px;margin-bottom:14px}
+.doc h3 em{font-style:italic;color:var(--slate)}
+.doc p{font-size:16px;line-height:1.75;color:var(--ink);margin-bottom:1.1em}
+.doc p em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.08em;color:var(--slate)}
+.doc p a{color:var(--ink);border-bottom:1px solid var(--clay);text-decoration:none;padding-bottom:1px}
+.doc p a:hover{color:var(--slate)}
+.doc ul{list-style:none;margin:14px 0 20px;padding:0}
+.doc ul li{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:8px 0;font-size:15.5px;line-height:1.7;color:var(--ink)}
+.doc ul li::before{content:"—";color:var(--clay);font-family:'IBM Plex Mono',monospace;padding-top:2px}
+.doc .pull{background:var(--cream);border-left:2px solid var(--clay);padding:22px 26px;margin:24px 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.6;color:var(--ink)}
+.doc .pull em{color:var(--slate)}
+.doc .kv{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);margin:24px 0}
+.doc .kv .r{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--rule-soft)}
+.doc .kv .r .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);opacity:.75;padding-top:3px}
+.doc .kv .r .v{font-size:15px;line-height:1.55;color:var(--ink)}
+.doc .kv .r .v em{font-style:italic;color:var(--slate)}
+
+/* Cookie table */
+.ck-tbl{margin:24px 0;border:1px solid var(--rule);background:var(--cream)}
+.ck-tbl .hd{display:grid;grid-template-columns:140px 1fr 120px 100px;gap:16px;padding:14px 20px;background:var(--ink-deep);color:var(--cream);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+.ck-tbl .r{display:grid;grid-template-columns:140px 1fr 120px 100px;gap:16px;padding:18px 20px;border-bottom:1px solid var(--rule-soft);font-size:14px;line-height:1.5}
+.ck-tbl .r:last-child{border-bottom:0}
+.ck-tbl .r .nm{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px;color:var(--ink);letter-spacing:-0.005em}
+.ck-tbl .r .nm em{font-style:italic;color:var(--slate)}
+.ck-tbl .r .dur{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.ck-tbl .r .tp{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);padding:3px 8px;border:1px solid var(--clay);background:rgba(201,167,142,.08);width:fit-content;height:fit-content;margin-top:2px}
+@media (max-width:860px){.ck-tbl .hd,.ck-tbl .r{grid-template-columns:1fr}.ck-tbl .hd{display:none}.ck-tbl .r{padding:16px 18px}.doc .kv{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="about">
+
+<div id="site-bar-mount"></div>
+
+<!-- ═══════════════ DOC ═══════════════ -->
+<section class="doc">
+  <div class="wrap">
+
+    <aside class="toc">
+      <div class="lab">On this page</div>
+      <ol>
+        <li><a href="#about">About this document</a></li>
+        <li><a href="#privacy">Privacy notice</a></li>
+        <li><a href="#data">What data we hold</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#terms">Terms of use</a></li>
+        <li><a href="#ip">Intellectual property</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#updates">Changes &amp; disputes</a></li>
+      </ol>
+      <div class="meta">
+        Last updated<br>
+        <b>21 April 2026</b><br><br>
+        Version<br>
+        <b>1.0</b>
+      </div>
+    </aside>
+
+    <div class="body">
+      <div class="eyebrow">Privacy &middot; Terms &middot; Cookies</div>
+      <h1>Legal <em>notes.</em></h1>
+      <p class="lede">A single page for the three documents every responsible firm is asked for. Written plainly, reviewed by counsel, updated when things change.</p>
+
+      <!-- ABOUT -->
+      <h2 id="about" data-n="i">About this <em>document</em>.</h2>
+      <p>Oxlon Ltd is a private limited company registered in England and Wales (<em>registration number to follow</em>). Our registered office is in Oxford; our operating bases are in Oxford and London. This page sets out, in ordinary language, how we handle information about you when you interact with the oxlon.uk website or its successor domains, what rules govern your use of the site, and what cookies we rely on.</p>
+      <div class="pull">If something here is not clear, or if you think we have got something wrong, please write to <a href="mailto:privacy@oxlon.uk" style="color:inherit;border-bottom:1px solid currentColor">privacy@oxlon.uk</a>. We would rather be told.</div>
+
+      <!-- PRIVACY -->
+      <h2 id="privacy" data-n="ii"><em>Privacy</em> notice.</h2>
+      <p>This notice describes how Oxlon collects, uses, and protects personal data. It applies to the oxlon.uk website, the scoping-call form, the memo subscription, and any email you send us at an oxlon.uk address. It does not cover data processed under a specific client engagement &mdash; that is governed by the contract and data-processing agreement executed with each client.</p>
+
+      <div class="kv">
+        <div class="r"><div class="k">Data controller</div><div class="v">Oxlon Ltd, Oxford &middot; United Kingdom</div></div>
+        <div class="r"><div class="k">Contact</div><div class="v"><a href="mailto:privacy@oxlon.uk">privacy@oxlon.uk</a></div></div>
+        <div class="r"><div class="k">Regulator</div><div class="v">UK Information Commissioner&rsquo;s Office &middot; <em>ico.org.uk</em></div></div>
+        <div class="r"><div class="k">Legal basis</div><div class="v">UK GDPR &middot; Data Protection Act 2018</div></div>
+      </div>
+
+      <h3 id="data">What we collect, <em>when,</em> and why</h3>
+      <p>We keep the surface area as small as possible. Three categories only:</p>
+      <ul>
+        <li><em>Enquiry data.</em> When you submit the scoping-call form or email us, we hold your name, role, institution, email address, and the body of your message for as long as needed to run the engagement or, if no engagement follows, for two years as a reference record.</li>
+        <li><em>Subscriber data.</em> When you sign up to the Oxlon Memo, we hold your email address (and, if you supply it, your institution) for as long as you remain subscribed. You can unsubscribe at any time from any issue.</li>
+        <li><em>Site analytics.</em> We use a privacy-respecting analytics tool (Plausible) to measure aggregate page views. We do not hold IP addresses, and we do not run cross-site trackers.</li>
+      </ul>
+      <p>We do not sell, trade, or rent personal data. We do not use personal data to train any machine-learning model, whether our own or anyone else&rsquo;s. We do not share personal data with third parties except the essential processors listed below.</p>
+
+      <h3>Processors we rely on</h3>
+      <ul>
+        <li><em>Plausible Analytics</em> &mdash; aggregate analytics, hosted in the European Union.</li>
+        <li><em>Buttondown</em> &mdash; newsletter delivery.</li>
+        <li><em>Google Workspace</em> &mdash; corporate email, calendar, and document storage for operational communications.</li>
+        <li><em>Cloudflare</em> &mdash; content delivery, edge caching, and DDoS protection.</li>
+      </ul>
+      <p>We execute a data-processing agreement with each of these processors and review the arrangement annually. If a processor changes, this page is updated and &mdash; where the change is material &mdash; we notify active subscribers.</p>
+
+      <h3 id="rights">Your rights</h3>
+      <p>Under the UK GDPR you have the right to access the personal data we hold about you, to correct it, to have it erased, to restrict how we process it, to object to processing, and to have it ported to another controller. You can exercise any of these rights by writing to <a href="mailto:privacy@oxlon.uk">privacy@oxlon.uk</a>. We will respond within one month and, in almost all cases, within one week. If you are unhappy with our response, you can complain to the UK Information Commissioner&rsquo;s Office.</p>
+
+      <h3>Retention, security, and breach</h3>
+      <p>Enquiry records are held for two years from the date of last contact and deleted thereafter, unless an active engagement is in place. Subscriber records are held for the duration of the subscription plus a short grace period. Analytics records are held in aggregated form and are not tied to individuals.</p>
+      <p>Data is encrypted in transit (TLS 1.3) and at rest. Access is restricted to named staff and logged. In the event of a personal-data breach likely to result in risk to you, we will notify you without undue delay and, in parallel, notify the Information Commissioner&rsquo;s Office as required.</p>
+
+      <!-- TERMS -->
+      <h2 id="terms" data-n="iii">Terms of <em>use.</em></h2>
+      <p>These terms govern your use of the oxlon.uk website and any publicly accessible materials linked from it. They do not govern any engagement with Oxlon Ltd &mdash; engagements are covered by their own contract.</p>
+
+      <h3>Who the site is for</h3>
+      <p>The site is directed at institutional readers &mdash; staff at central banks, ministries, regulators, sovereign and pension funds, asset managers, and the research institutions that serve them. Content may be read and cited by anyone, but the advisory services described are not available to consumers and are not offered as personal financial or legal advice.</p>
+
+      <h3 id="ip">Intellectual property &amp; citation</h3>
+      <p>Written materials on oxlon.uk &mdash; working papers, insights, the memo archive, case studies &mdash; are the copyright of Oxlon Ltd and their respective authors. You are welcome to quote brief passages with attribution and a link to the original, and to share full PDFs of our working papers by URL. You may not republish long-form content in full without written permission. Commercial reuse (training data, derivative products, paid summarisation services) is specifically not permitted.</p>
+      <div class="pull">If you are a researcher or journalist and want broader permission than the default above allows, write to <a href="mailto:research@oxlon.uk" style="color:inherit;border-bottom:1px solid currentColor">research@oxlon.uk</a>. We default to <em>yes</em> for serious work.</div>
+
+      <h3>What we do not represent</h3>
+      <p>Nothing on the site is investment, legal, or tax advice. Forecasts, scenarios, and nowcasts are analytical outputs &mdash; presented with their assumptions and uncertainty bands &mdash; and are not recommendations. Figures in research papers and case studies are correct to the best of our knowledge at the time of publication, and are revised publicly when we find errors.</p>
+      <p>Third-party links are provided for the reader&rsquo;s convenience. Oxlon does not control, and is not responsible for, content hosted on third-party sites.</p>
+
+      <h3>Limitation of liability</h3>
+      <p>To the fullest extent permitted by English law, Oxlon&rsquo;s aggregate liability arising out of or in connection with your use of the website is limited to the greater of (a) fees paid by you directly to Oxlon in the twelve months preceding the event giving rise to the claim, or (b) one hundred pounds sterling. This limitation does not apply to liability that cannot be excluded by law &mdash; including liability for death or personal injury caused by negligence, for fraud, or for fraudulent misrepresentation.</p>
+
+      <!-- COOKIES -->
+      <h2 id="cookies" data-n="iv"><em>Cookies</em>.</h2>
+      <p>We use the minimum number of cookies that the site can function with, and we do not run advertising or tracking cookies. A short table of what is set, by whom, and why:</p>
+
+      <div class="ck-tbl">
+        <div class="hd"><div>Name</div><div>Purpose</div><div>Duration</div><div>Type</div></div>
+        <div class="r">
+          <div class="nm">oxlon_<em>session</em></div>
+          <div>Maintains your session state when using the site (e.g. filter selections on the research page). Stored client-side only. No identifier leaves your browser.</div>
+          <div class="dur">Session</div>
+          <div class="tp">Strictly necessary</div>
+        </div>
+        <div class="r">
+          <div class="nm">cf_<em>clearance</em></div>
+          <div>Set by Cloudflare to confirm that the request is coming from a human browser and not a hostile automated agent. Used across the site.</div>
+          <div class="dur">30 days</div>
+          <div class="tp">Strictly necessary</div>
+        </div>
+        <div class="r">
+          <div class="nm">plausible_<em>ignore</em></div>
+          <div>Optional: if you visit <em>oxlon.uk/settings</em> and click &ldquo;Exclude me from analytics&rdquo;, this cookie records that preference. Plausible itself does not set any cookie.</div>
+          <div class="dur">1 year</div>
+          <div class="tp">Preference</div>
+        </div>
+      </div>
+
+      <p>Because we do not run advertising, performance, or cross-site tracking cookies, this site does not display a cookie consent banner. Strictly-necessary cookies do not require consent under the UK&rsquo;s Privacy and Electronic Communications Regulations. If we ever introduce a cookie that would require consent, we will add a consent surface before we deploy it.</p>
+
+      <!-- UPDATES -->
+      <h2 id="updates" data-n="v">Changes &amp; <em>disputes.</em></h2>
+      <p>This document is reviewed at least annually. When we make substantive changes &mdash; a new processor, a new class of data, a material change in terms &mdash; we update the version and last-updated fields above and, for subscribers, note the change in the next memo. Minor editorial changes (typographical corrections, clarifications that do not change your rights) do not trigger notification.</p>
+      <p>These terms and any dispute arising from them are governed by the laws of England and Wales. The courts of England and Wales have exclusive jurisdiction, except that we may bring claims for injunctive relief in any competent court to protect our confidential information or intellectual property.</p>
+      <p><em>Thank you for reading this far.</em> If you have made it here, we probably owe you a conversation regardless of outcome &mdash; <a href="contact.html">say hello</a>.</p>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

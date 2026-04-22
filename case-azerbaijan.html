@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case: Ministry of Economy, Republic of Azerbaijan — Oxlon</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="How Oxlon deployed EconAI inside the Ministry of Economy of the Republic of Azerbaijan — on-premise, localised, and built around the daily work of senior policy staff.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ─── Case-study specific ─── */
+
+/* Narrative hero: paper, tall, quiet */
+.cs-hero{padding:70px 0 80px;background:var(--paper);border-bottom:1px solid var(--rule)}
+.cs-hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end}
+.cs-hero .crumbs{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);opacity:.75;grid-column:1 / -1;margin-bottom:32px}
+.cs-hero .crumbs a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
+.cs-hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(48px,6.4vw,104px);line-height:.96;letter-spacing:-0.025em;color:var(--ink);max-width:14ch}
+.cs-hero h1 em{font-style:italic;color:var(--slate)}
+.cs-hero .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,1.7vw,24px);line-height:1.5;color:var(--ink-soft);max-width:44ch}
+.cs-hero .lede em{font-style:normal;color:var(--slate)}
+.cs-hero .fs{margin-top:56px;grid-column:1 / -1;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule)}
+.cs-hero .fs .f{padding:24px 20px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:6px}
+.cs-hero .fs .f:last-child{border-right:0}
+.cs-hero .fs .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);opacity:.75}
+.cs-hero .fs .v{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--ink);line-height:1.3}
+.cs-hero .fs .v em{font-style:italic;color:var(--slate)}
+@media (max-width:960px){.cs-hero .wrap{grid-template-columns:1fr;gap:32px}.cs-hero .fs{grid-template-columns:1fr 1fr;border-left:0}.cs-hero .fs .f{border-right:0;border-bottom:1px solid var(--rule)}}
+
+/* Narrative sections */
+.story{padding:110px 0;border-bottom:1px solid var(--rule)}
+.story.paper-bg{background:var(--paper)}
+.story.cream-bg{background:var(--cream)}
+.story.stone-bg{background:var(--stone)}
+.story.dark-bg{background:var(--ink-deep);color:var(--cream);border-bottom-color:var(--rule-light);position:relative;overflow:hidden}
+.story.dark-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 25% 30%,rgba(201,167,142,.08),transparent 55%);pointer-events:none}
+.story .wrap{position:relative;z-index:1}
+.story .grid{display:grid;grid-template-columns:280px 1fr;gap:72px;align-items:start}
+.story .side .eyebrow{margin-bottom:14px}
+.story.dark-bg .side .eyebrow{color:var(--clay-pale)}
+.story .side .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:96px;line-height:.85;color:var(--clay);margin-bottom:22px}
+.story.dark-bg .side .num{color:var(--clay-pale)}
+.story .side .ttl{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.1;letter-spacing:-0.01em;color:var(--ink);max-width:12ch}
+.story.dark-bg .side .ttl{color:var(--cream)}
+.story .side .ttl em{font-style:italic;color:var(--slate)}
+.story.dark-bg .side .ttl em{color:var(--clay-pale)}
+.story .body p{font-size:17px;line-height:1.75;color:var(--ink);margin-bottom:1.2em;max-width:68ch}
+.story.dark-bg .body p{color:rgba(246,241,230,.82)}
+.story .body p em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.12em;color:var(--slate)}
+.story.dark-bg .body p em{color:var(--clay-pale)}
+.story .body blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(26px,3.2vw,42px);line-height:1.18;color:var(--ink);border-left:2px solid var(--clay);padding-left:30px;margin:32px 0;max-width:42ch;letter-spacing:-0.005em}
+.story.dark-bg .body blockquote{color:var(--cream)}
+.story .body blockquote cite{display:block;font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-top:20px;font-weight:500}
+.story.dark-bg .body blockquote cite{color:var(--clay-pale)}
+.story .body .sub{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1.3;color:var(--ink);margin-top:32px;margin-bottom:14px;letter-spacing:-0.005em}
+.story.dark-bg .body .sub{color:var(--cream)}
+.story .body .sub em{font-style:italic;color:var(--slate)}
+.story.dark-bg .body .sub em{color:var(--clay-pale)}
+.story .body ul{list-style:none;margin:18px 0 24px;padding:0}
+.story .body ul li{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--rule-soft);font-size:15px;line-height:1.65;color:var(--ink)}
+.story.dark-bg .body ul li{color:rgba(246,241,230,.85);border-top-color:var(--rule-light)}
+.story .body ul li::before{content:"→";color:var(--clay);font-family:'IBM Plex Mono',monospace;font-size:13px;padding-top:2px}
+@media (max-width:960px){.story .grid{grid-template-columns:1fr;gap:32px}.story{padding:70px 0}.story .side .num{font-size:60px}}
+
+/* Outcomes band */
+.results{padding:110px 0;background:var(--ink-deep);color:var(--cream);border-bottom:1px solid var(--rule-light);position:relative;overflow:hidden}
+.results::before{content:"";position:absolute;top:-10%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,167,142,.08),transparent 70%);pointer-events:none}
+.results .wrap{position:relative;z-index:1}
+.results .head{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;margin-bottom:48px}
+.results h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,5.4vw,78px);line-height:.98;letter-spacing:-0.025em;color:var(--cream)}
+.results h2 em{font-style:italic;color:var(--clay-pale)}
+.results .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:rgba(246,241,230,.7);max-width:48ch}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule-light)}
+.result{padding:32px 24px;border-right:1px solid var(--rule-light);display:flex;flex-direction:column;gap:10px}
+.result:last-child{border-right:0}
+.result .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(52px,6vw,84px);line-height:.92;letter-spacing:-0.025em;color:var(--clay-pale)}
+.result .big .u{font-style:normal;font-family:'IBM Plex Sans',sans-serif;font-size:18px;color:rgba(246,241,230,.55);font-weight:400;margin-left:6px}
+.result .lab{font-family:'Cormorant Garamond',serif;font-size:16px;color:rgba(246,241,230,.78);line-height:1.4;margin-top:8px;max-width:32ch}
+.result .lab em{font-style:italic;color:var(--clay-pale)}
+@media (max-width:860px){.results-grid{grid-template-columns:1fr 1fr}.result:nth-child(2){border-right:0}.result:nth-child(1),.result:nth-child(2){border-bottom:1px solid var(--rule-light)}}
+
+/* Diagram: the deployment */
+.diagram{padding:90px 0;background:var(--cream);border-bottom:1px solid var(--rule)}
+.diagram .head{margin-bottom:48px}
+.diagram h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(36px,4.4vw,60px);line-height:.98;letter-spacing:-0.02em;color:var(--ink);margin-top:10px;max-width:20ch}
+.diagram h2 em{font-style:italic;color:var(--slate)}
+.diag-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);background:var(--paper)}
+.diag-cell{padding:28px 24px;border-right:1px solid var(--rule);position:relative;min-height:220px;display:flex;flex-direction:column;gap:12px}
+.diag-cell:last-child{border-right:0}
+.diag-cell:nth-child(odd){background:rgba(201,167,142,.05)}
+.diag-cell .dn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
+.diag-cell h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-0.005em;color:var(--ink)}
+.diag-cell h4 em{font-style:italic;color:var(--slate)}
+.diag-cell .dl{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--slate);text-transform:uppercase}
+.diag-cell .dl li::before{content:"◦ ";color:var(--clay);margin-right:4px}
+.diag-cell::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);width:18px;height:18px;background:var(--paper);color:var(--clay);font-family:'IBM Plex Mono',monospace;font-size:14px;display:grid;place-items:center;z-index:2;border-radius:50%}
+.diag-cell:last-child::after{display:none}
+@media (max-width:860px){.diag-grid{grid-template-columns:1fr}.diag-cell{border-right:0;border-bottom:1px solid var(--rule)}.diag-cell:last-child{border-bottom:0}.diag-cell::after{right:50%;top:auto;bottom:-9px;transform:translateX(50%) rotate(90deg)}}
+
+/* Next case nav */
+.next-case{padding:60px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+.next-case .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.next-case .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);opacity:.75}
+.next-case .nav-links{display:flex;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.next-case .nav-links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--clay);padding-bottom:3px;transition:color .2s}
+.next-case .nav-links a:hover{color:var(--slate)}
+</style>
+</head>
+<body data-page="platform" class="dark-chrome">
+
+<div id="site-bar-mount"></div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="cs-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Oxlon</a> &nbsp;/&nbsp; <a href="econai.html">EconAI</a> &nbsp;/&nbsp; Case study &middot; Azerbaijan</div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:24px">Case study &middot; 01 &middot; Flagship deployment</div>
+      <h1 class="fade-up">Inside a <em>ministry.</em></h1>
+    </div>
+    <div>
+      <p class="lede fade-up">How Oxlon deployed EconAI on-premise at the <em>Ministry of Economy of the Republic of Azerbaijan</em> &mdash; turning hundreds of disparate economic series into a single, AI-assisted briefing surface used by senior policy staff.</p>
+    </div>
+    <div class="fs">
+      <div class="f"><div class="k">Institution</div><div class="v">Ministry of <em>Economy</em></div></div>
+      <div class="f"><div class="k">Country</div><div class="v">Azerbaijan</div></div>
+      <div class="f"><div class="k">Since</div><div class="v">2024 Q4</div></div>
+      <div class="f"><div class="k">Deployment</div><div class="v">On-prem &middot; localised</div></div>
+      <div class="f"><div class="k">Status</div><div class="v">Live &middot; expanding</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 01 · THE PROBLEM ═══════════════ -->
+<section class="story paper-bg">
+  <div class="wrap">
+    <div class="grid">
+      <div class="side">
+        <div class="eyebrow">Chapter 01</div>
+        <div class="num">i.</div>
+        <div class="ttl">The <em>problem</em> on the minister&rsquo;s desk.</div>
+      </div>
+      <div class="body">
+        <p>A serious finance or economy ministry does not lack data. What it lacks is a <em>single surface</em> on which the data can be read.</p>
+        <p>When we were first approached, senior staff at the Ministry of Economy were reconciling several hundred series across a dozen producers &mdash; national statistics, the central bank, sectoral regulators, international organisations, and the Ministry&rsquo;s own internal tracking. The reconciliation was happening, but it was happening in spreadsheets, in analyst memos, in the minutes before a briefing. The cost was paid every time a minister asked a question that cut across three domains at once: energy and inflation, budget and external balance, labour and demography. The answer existed. Assembling it took a day.</p>
+        <p>The brief we received was disarmingly simple. <em>Make it readable.</em> Not replace the analysts &mdash; amplify them. Not replace the published statistics &mdash; unify them. Not make decisions &mdash; surface the context in which decisions are made.</p>
+        <blockquote>The work was not forecasting. It was reading.
+        <cite>&mdash; engagement brief, Baku &middot; 2024</cite></blockquote>
+        <p>It is an unglamorous frame for a technology engagement, and it is the right one. Most of what a ministry does in a given week is read the data it already has. If the reading is slow, decisions are slow. If the reading is imprecise, decisions inherit the imprecision. The EconAI thesis is that reading is a tractable problem &mdash; that a well-built AI system, disciplined by an economist, can compress a day of assembly into an hour of judgement. That is the problem we were asked to solve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 02 · WHY ON-PREMISE ═══════════════ -->
+<section class="story cream-bg">
+  <div class="wrap">
+    <div class="grid">
+      <div class="side">
+        <div class="eyebrow">Chapter 02</div>
+        <div class="num">ii.</div>
+        <div class="ttl">Why it had to be <em>on-premise.</em></div>
+      </div>
+      <div class="body">
+        <p>Before any model is chosen, a sovereign deployment makes one architectural decision that governs everything else: where the data sits, and where inference runs.</p>
+        <p>For the Ministry, the answer was never in doubt. Macroeconomic data in preparation, cabinet-level briefings, and the underlying correspondence between departments cannot leave the building. Sending them to a commercial cloud endpoint was not an option, and anonymisation workarounds were worse than the original problem. Whatever we built had to run <em>inside the perimeter</em> &mdash; the data, the models, and the language model layer that narrates them.</p>
+        <p>That architectural choice is what EconAI is designed for. The ingestion layer, the modelling engine, the dashboard, and the explanatory LLM all run on hardware the Ministry controls, administered by staff the Ministry cleared. We commissioned the stack over a six-week residency in Baku, with our engineers working alongside the Ministry&rsquo;s IT directorate.</p>
+        <div class="sub">The deployment is, by design, <em>boring.</em></div>
+        <p>Nothing about it tries to be clever in the way a consumer AI product is clever. There is no external API the system phones home to. No training signal leaves the building. Model updates are signed, reviewed, and applied in air-gapped maintenance windows. The LLM underneath the explanation layer is an open-weight model we host, not a frontier commercial endpoint we route to. For the Ministry&rsquo;s CISO, this architecture is the only one that makes the project legible. For us, it is the only one that takes the client seriously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 03 · THE DEPLOYMENT (diagram) ═══════════════ -->
+<section class="diagram">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Architecture, one row</div>
+      <h2>Sources &mdash; <em>ingested, modelled, narrated, reviewed.</em></h2>
+    </div>
+    <div class="diag-grid">
+      <div class="diag-cell">
+        <div class="dn">Stage i</div>
+        <h4><em>Ingest.</em></h4>
+        <ul class="dl">
+          <li>National statistics</li>
+          <li>Central bank feeds</li>
+          <li>Sectoral regulators</li>
+          <li>Internal ministry tracking</li>
+          <li>Vintage-versioned storage</li>
+        </ul>
+      </div>
+      <div class="diag-cell">
+        <div class="dn">Stage ii</div>
+        <h4><em>Model.</em></h4>
+        <ul class="dl">
+          <li>Mixed-frequency nowcasts</li>
+          <li>Factor &amp; PCA</li>
+          <li>Time-series &amp; ML forecasts</li>
+          <li>Econometric-agent orchestration</li>
+        </ul>
+      </div>
+      <div class="diag-cell">
+        <div class="dn">Stage iii</div>
+        <h4><em>Narrate.</em></h4>
+        <ul class="dl">
+          <li>On-prem LLM explanation</li>
+          <li>Localised output</li>
+          <li>Per-panel briefings</li>
+          <li>Citations back to vintage</li>
+        </ul>
+      </div>
+      <div class="diag-cell">
+        <div class="dn">Stage iv</div>
+        <h4><em>Defend.</em></h4>
+        <ul class="dl">
+          <li>Full audit trail</li>
+          <li>Analyst override surface</li>
+          <li>Cabinet-ready export</li>
+          <li>Signed, reproducible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 04 · THE AGENT ═══════════════ -->
+<section class="story dark-bg">
+  <div class="wrap">
+    <div class="grid">
+      <div class="side">
+        <div class="eyebrow">Chapter 03</div>
+        <div class="num">iii.</div>
+        <div class="ttl">An <em>agent</em> that does the arithmetic.</div>
+      </div>
+      <div class="body">
+        <p>The technically distinctive piece of the deployment is what we call the <em>econometric agent</em> &mdash; an orchestrating layer that sits above a library of forecasting methods and chooses the right one for the series in front of it.</p>
+        <p>A typical working day for the agent: a senior adviser opens the dashboard and asks a question &mdash; what is inflation doing, given the latest energy-price print and the last retail-sales release? The agent does not answer from the LLM&rsquo;s parameters. It selects a candidate set of models given the series&rsquo; properties (length, seasonality, stationarity, regime breaks), runs them, cross-validates them on held-out windows, and returns a forecast with an interval and a diagnostic page. The LLM narrates the number. It does not produce it.</p>
+        <div class="sub">The division of labour is <em>deliberate.</em></div>
+        <p>LLMs are good at reading and writing. They are bad at arithmetic and bad at silent uncertainty. The architecture uses the language model for what it is strong at &mdash; compressing sources, framing trade-offs, drafting briefings &mdash; and routes every number to the econometric core. Every panel ships with a methods page that an analyst can strike through if they disagree with the model&rsquo;s choice. Most days, they do not need to. Some days, they do, and that override is part of the audit trail.</p>
+        <p>The agent has four model families at its disposal today &mdash; classical time-series, factor / principal-component, vector-autoregression with Bayesian priors, and a small set of machine-learning methods chosen for where they have been shown to earn their place. Which family is used, on which series, is a choice the agent makes and the analyst can overrule. It is not a black box. It is a well-governed reflex, reviewed at the end of each quarter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 05 · OUTCOMES ═══════════════ -->
+<section class="results">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Outcomes &middot; in their words</div>
+        <h2>What <em>actually changed.</em></h2>
+      </div>
+      <p class="note">Ministry colleagues have asked us not to attribute specific operational numbers publicly. The directional outcomes below are shared with permission.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result">
+        <div class="big">100s</div>
+        <div class="lab">Of economic series <em>unified</em> under one dashboard surface.</div>
+      </div>
+      <div class="result">
+        <div class="big">1<span class="u">hr</span></div>
+        <div class="lab">Typical briefing assembly time &mdash; <em>down from a day.</em></div>
+      </div>
+      <div class="result">
+        <div class="big">0</div>
+        <div class="lab">Data egress events. The deployment is <em>air-gapped by design.</em></div>
+      </div>
+      <div class="result">
+        <div class="big">1<span class="u">st</span></div>
+        <div class="lab">AI-assisted briefing surface in the Ministry&rsquo;s history.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 06 · WHAT IS NEXT ═══════════════ -->
+<section class="story stone-bg">
+  <div class="wrap">
+    <div class="grid">
+      <div class="side">
+        <div class="eyebrow">Chapter 04</div>
+        <div class="num">iv.</div>
+        <div class="ttl">Where it goes <em>from here.</em></div>
+      </div>
+      <div class="body">
+        <p>Two years in, the deployment is in its second phase of expansion. The first phase closed the gap between the Ministry&rsquo;s data holdings and the briefings built on them. The second is extending the surface laterally &mdash; onto questions the existing architecture does not yet close.</p>
+        <p>Three workstreams are active:</p>
+        <ul>
+          <li><strong>Sectoral coverage.</strong> Deepening the modelling of specific sectors &mdash; energy, trade, labour &mdash; with the production-function and input-output extensions the Ministry&rsquo;s analytical work requires.</li>
+          <li><strong>Scenario generation.</strong> Building a counterfactual engine on top of the existing forecasts, so that "what if an export tariff on hydrocarbons were to change" becomes a two-minute question rather than a two-week project.</li>
+          <li><strong>Localised narration.</strong> Moving more of the explanation layer into Azerbaijani directly, rather than relying on post-translation. The on-prem LLM stack is being extended to handle bilingual generation natively.</li>
+        </ul>
+        <p>Each of these is a contained extension rather than a rebuild. That is, in our view, the mark of a healthy production deployment: extensions feel like extensions, not like apology patches for an architecture that was always going to need rewriting.</p>
+        <p>The Ministry has given Oxlon permission to use this engagement as a reference case. We treat that permission as what it is &mdash; a privilege earned by being discreet and precise about what the system does and does not do. A longer technical write-up is available on request, under NDA, to institutional teams considering a comparable deployment. <em>Write to us if that is you.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--clay-pale);margin-bottom:18px">Your institution</div>
+      <h2>A deployment that <em>reads</em><br>the way you read.</h2>
+      <p class="pull">EconAI is built for ministries and central banks whose data cannot leave the building. If that is you, start with a scoping call &mdash; and ask for the technical write-up under NDA.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Request a scoping call <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="econai.html">Back to EconAI <span class="ar">←</span></a>
+      <div class="meta">Or write: <a href="mailto:info@oxlon.uk">info@oxlon.uk</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ NEXT CASE NAV ═══════════════ -->
+<section class="next-case">
+  <div class="wrap">
+    <div class="k">Case studies · 1 of 1 live</div>
+    <div class="nav-links">
+      <a href="research.html">See the research →</a>
+      <a href="econai.html">Back to EconAI ←</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot-mount"></div>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
