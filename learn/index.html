@@ -1,0 +1,2545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OxLon — AI Learning Hub for Universities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300..700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0B1420;
+    --ink-2:#121F2F;
+    --paper:#EFE6D1;
+    --paper-2:#F6EFDC;
+    --paper-3:#E4D9BF;
+    --ochre:#C8763C;
+    --ochre-deep:#A25E2C;
+    --brick:#8B2E1F;
+    --brick-deep:#6E2217;
+    --sage:#3E4E3A;
+    --sage-deep:#2D3A2A;
+    --mid:#1E3048;
+    --gold:#C9A55C;
+    --rule:#B8AB8B;
+    --rule-dark:rgba(239,230,209,.22);
+    --serif:"Fraunces", "Times New Roman", serif;
+    --serif-alt:"Instrument Serif", "Times New Roman", serif;
+    --sans:"Instrument Sans", "Helvetica Neue", system-ui, sans-serif;
+    --mono:"JetBrains Mono", ui-monospace, monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;width:100%;overflow:hidden;background:var(--ink)}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ------------------- SCROLLER ------------------- */
+  .scroller{
+    display:flex;
+    width:100vw;
+    height:100vh;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+  }
+  .scroller::-webkit-scrollbar{display:none}
+
+  .page{
+    position:relative;
+    flex:0 0 100vw;
+    width:100vw;
+    height:100vh;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    overflow:hidden;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  .page.dark{background:var(--ink);color:var(--paper)}
+  .page.sage{background:var(--sage);color:var(--paper)}
+  .page.ochre{background:var(--ochre);color:var(--ink)}
+  .page.brick{background:var(--brick);color:var(--paper)}
+  .page.mid{background:var(--mid);color:var(--paper)}
+  .page.paper-2{background:var(--paper-2)}
+  .page.paper-3{background:var(--paper-3)}
+
+  /* ------------------- PAPER GRAIN ------------------- */
+  .page::before{
+    content:"";
+    position:absolute; inset:0;
+    pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity:.6;
+    mix-blend-mode:multiply;
+    z-index:1;
+  }
+  .page.dark::before, .page.sage::before, .page.brick::before, .page.mid::before{
+    opacity:.28;
+    mix-blend-mode:overlay;
+  }
+
+  /* ------------------- EDGE MASTHEAD ------------------- */
+  .masthead{
+    position:absolute;
+    top:0;left:0;right:0;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 36px;
+    font-family:var(--sans);
+    font-size:10.5px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    z-index:10;
+  }
+  .masthead .m-left{display:flex;gap:24px;align-items:center}
+  .masthead .m-right{display:flex;gap:24px;align-items:center}
+  .mark{
+    font-family:var(--serif);
+    font-weight:600;
+    font-style:italic;
+    font-size:14px;
+    letter-spacing:.02em;
+    text-transform:none;
+  }
+  .dot-sep{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.6}
+
+  .footer-rail{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 36px 22px;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    z-index:10;
+    opacity:.72;
+  }
+  .rule-top{
+    position:absolute;top:58px;left:36px;right:36px;height:1px;background:currentColor;opacity:.18;z-index:5;
+  }
+  .rule-bottom{
+    position:absolute;bottom:50px;left:36px;right:36px;height:1px;background:currentColor;opacity:.18;z-index:5;
+  }
+
+  .folio{
+    font-family:var(--serif);
+    font-weight:500;
+    font-style:italic;
+    font-size:13px;
+    letter-spacing:0;
+    text-transform:none;
+  }
+
+  /* ------------------- NAV DOTS ------------------- */
+  .nav{
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+    z-index:50;
+    padding:8px 14px;
+    border-radius:999px;
+    background:rgba(11,20,32,.5);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(239,230,209,.1);
+  }
+  .nav button{
+    all:unset;
+    width:6px;height:6px;border-radius:50%;
+    background:rgba(239,230,209,.32);
+    cursor:pointer;
+    transition:all .3s ease;
+  }
+  .nav button.active{background:var(--ochre);width:22px;border-radius:4px}
+  .nav button:hover{background:rgba(239,230,209,.65)}
+
+  .progress{
+    position:fixed;
+    top:0;left:0;
+    height:2px;
+    background:var(--ochre);
+    z-index:60;
+    transition:width .2s ease;
+    box-shadow:0 0 14px var(--ochre);
+  }
+
+  .kbd-hint{
+    position:fixed;
+    bottom:18px;right:22px;
+    z-index:50;
+    font-family:var(--mono);
+    font-size:9.5px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:rgba(239,230,209,.55);
+    display:flex;gap:8px;align-items:center;
+  }
+  .kbd{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:18px;height:18px;padding:0 4px;
+    border:1px solid rgba(239,230,209,.22);
+    border-radius:3px;
+    font-family:var(--mono);font-size:10px;
+    color:rgba(239,230,209,.7);
+  }
+
+  /* ------------------- CANVAS COMMON ------------------- */
+  .canvas{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    padding:96px 36px 80px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* Big serif numerals */
+  .folio-big{
+    font-family:var(--serif);
+    font-weight:300;
+    font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    line-height:.82;
+    letter-spacing:-.04em;
+  }
+  .display{
+    font-family:var(--serif);
+    font-variation-settings:"opsz" 144, "SOFT" 50;
+    line-height:.86;
+    letter-spacing:-.035em;
+  }
+  .display-italic{
+    font-family:var(--serif);
+    font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    line-height:.88;
+    letter-spacing:-.025em;
+  }
+  .serif-alt{font-family:var(--serif-alt);font-weight:400;line-height:1}
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+  }
+  .caps{text-transform:uppercase;letter-spacing:.22em}
+  .italic{font-style:italic}
+  .mono{font-family:var(--mono)}
+
+  /* ================================================== */
+  /* PAGE 01 — COVER                                     */
+  /* ================================================== */
+  .p01{background:var(--ink);color:var(--paper)}
+  .p01 .cover-grid{
+    position:absolute; inset:0;
+    display:grid;
+    grid-template-columns:110px 1fr 110px;
+    grid-template-rows:92px 1fr 90px;
+    z-index:3;
+  }
+  .p01 .corner-tl{
+    grid-column:1/2;grid-row:1/2;
+    border-right:1px solid var(--rule-dark);
+    border-bottom:1px solid var(--rule-dark);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .p01 .corner-tl .crown{
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:28px; color:var(--ochre);
+  }
+  .p01 .top-bar{
+    grid-column:2/3;grid-row:1/2;
+    border-bottom:1px solid var(--rule-dark);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:0 32px;
+    font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--paper);
+  }
+  .p01 .top-bar .l{display:flex;gap:22px;align-items:center}
+  .p01 .top-bar .dot-sep{background:var(--paper);opacity:.4}
+  .p01 .corner-tr{
+    grid-column:3/4;grid-row:1/2;
+    border-left:1px solid var(--rule-dark);
+    border-bottom:1px solid var(--rule-dark);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--paper);opacity:.7;line-height:1.5;
+  }
+  .p01 .spine-l{
+    grid-column:1/2;grid-row:2/3;
+    border-right:1px solid var(--rule-dark);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .p01 .spine-l .vtext{
+    writing-mode:vertical-rl;transform:rotate(180deg);
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:17px;letter-spacing:.22em;
+    color:var(--paper);opacity:.78;
+  }
+  .p01 .spine-r{
+    grid-column:3/4;grid-row:2/3;
+    border-left:1px solid var(--rule-dark);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .p01 .spine-r .vtext{
+    writing-mode:vertical-rl;
+    font-family:var(--mono);font-size:10px;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--paper);opacity:.6;
+  }
+  .p01 .hero{
+    grid-column:2/3;grid-row:2/3;
+    position:relative;
+    padding:58px 48px 48px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+
+  .p01 .hero .issue{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    font-family:var(--sans);font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--paper);opacity:.78;
+  }
+  .p01 .hero .title-wrap{
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .p01 .title-oxlon{
+    font-family:var(--serif);
+    font-variation-settings:"opsz" 144, "SOFT" 40;
+    font-weight:300;
+    font-size:clamp(140px, 20vw, 280px);
+    line-height:.78;
+    letter-spacing:-.05em;
+    color:var(--paper);
+  }
+  .p01 .title-oxlon .italic-part{
+    font-style:italic;font-weight:300;color:var(--ochre);
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+  }
+  .p01 .title-sub{
+    font-family:var(--serif-alt);
+    font-size:clamp(32px, 3.6vw, 56px);
+    font-style:italic;
+    line-height:1;
+    color:var(--paper);
+    letter-spacing:-.01em;
+  }
+  .p01 .title-sub .amp{color:var(--ochre);font-style:italic;padding:0 4px}
+
+  .p01 .tagline{
+    display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:end;
+    padding-top:18px;border-top:1px solid var(--rule-dark);
+  }
+  .p01 .tagline .lhs{
+    font-family:var(--serif-alt);font-style:italic;
+    font-size:20px;line-height:1.3;max-width:380px;color:var(--paper);
+  }
+  .p01 .tagline .mid{
+    display:flex;justify-content:center;align-items:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+    opacity:.6;
+  }
+  .p01 .tagline .rhs{
+    text-align:right;
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+    opacity:.7;line-height:1.9;
+  }
+
+  .p01 .bottom-strip{
+    grid-column:1/4;grid-row:3/4;
+    border-top:1px solid var(--rule-dark);
+    display:grid;grid-template-columns:110px 1fr 110px;
+  }
+  .p01 .bottom-strip .bs-l{border-right:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+  .p01 .bottom-strip .bs-m{display:flex;justify-content:space-between;align-items:center;padding:0 32px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+  .p01 .bottom-strip .bs-r{border-left:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:14px}
+
+  .p01 .bs-m .price{color:var(--ochre)}
+  .p01 .big-no{
+    position:absolute;right:130px;top:120px;
+    font-family:var(--serif);font-style:italic;font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:160px;line-height:.8;color:var(--ochre);opacity:.2;z-index:1;
+  }
+
+  /* ================================================== */
+  /* PAGE 02 — MASTHEAD / CONTENTS                       */
+  /* ================================================== */
+  .p02{background:var(--paper)}
+  .p02 .grid{
+    position:absolute;inset:0;
+    display:grid;
+    grid-template-columns:minmax(420px, 40%) 1fr;
+    z-index:3;
+  }
+  .p02 .left{
+    padding:74px 48px 60px;
+    border-right:1px solid var(--rule);
+    display:flex;flex-direction:column;justify-content:space-between;
+    background:var(--paper-2);
+  }
+  .p02 .right{
+    padding:74px 48px 60px;
+    display:flex;flex-direction:column;
+  }
+  .p02 h1{
+    font-family:var(--serif);font-weight:300;font-style:italic;
+    font-size:clamp(46px, 5.2vw, 74px);
+    line-height:.96;letter-spacing:-.02em;
+    color:var(--ink);
+  }
+  .p02 h1 em{color:var(--ochre);font-style:italic}
+  .p02 .editors-note{
+    margin-top:22px;max-width:420px;
+    font-family:var(--serif-alt);font-style:italic;font-size:17px;line-height:1.45;
+    color:var(--ink);opacity:.88;
+  }
+  .p02 .editors-note::first-letter{
+    font-family:var(--serif);
+    font-size:72px;line-height:.85;float:left;padding:4px 10px 0 0;
+    color:var(--brick);font-style:italic;font-weight:400;
+  }
+  .p02 .meta-block{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px 30px;
+    padding-top:20px;border-top:1px solid var(--rule);
+  }
+  .p02 .meta-block .cell .k{
+    font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ochre-deep);
+  }
+  .p02 .meta-block .cell .v{
+    font-family:var(--serif);font-size:16px;line-height:1.25;margin-top:4px;color:var(--ink);
+  }
+  .p02 .contents-heading{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:18px;border-bottom:2px solid var(--ink);
+  }
+  .p02 .contents-heading .ch-l{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--ink)}
+  .p02 .contents-heading .ch-r{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);opacity:.6}
+  .p02 .toc{margin-top:18px;display:flex;flex-direction:column}
+  .p02 .toc-row{
+    display:grid;grid-template-columns:44px 1fr auto;
+    gap:18px;align-items:baseline;
+    padding:7px 0;
+    border-bottom:1px solid rgba(11,20,32,.12);
+  }
+  .p02 .toc-row .no{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:17px;color:var(--ochre);
+  }
+  .p02 .toc-row .label{
+    display:flex;align-items:baseline;gap:12px;
+    font-family:var(--serif);font-size:19px;color:var(--ink);
+  }
+  .p02 .toc-row .label .tag{
+    font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    padding:3px 7px;border:1px solid var(--ink);color:var(--ink);border-radius:2px;
+    transform:translateY(-2px);
+  }
+  .p02 .toc-row .pg{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--ink)}
+  .p02 .toc-row:hover .label{color:var(--brick)}
+
+  /* ================================================== */
+  /* PAGE 03 — PROBLEM                                   */
+  /* ================================================== */
+  .p03{background:var(--paper-2)}
+  .p03 .grid{
+    position:absolute;inset:0;
+    display:grid;grid-template-columns:1.2fr 1fr;z-index:3;
+  }
+  .p03 .left{padding:74px 48px 60px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+  .p03 .right{
+    padding:74px 48px 60px;
+    background:var(--ink);color:var(--paper);
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .p03 .section-mark{
+    display:flex;align-items:center;gap:14px;
+  }
+  .p03 .section-mark .chapter{
+    font-family:var(--serif);font-style:italic;font-weight:300;
+    font-size:18px;color:var(--brick);
+  }
+  .p03 .section-mark .line{flex:1;height:1px;background:var(--rule)}
+  .p03 .section-mark .eyebrow{color:var(--ink);opacity:.6}
+
+  .p03 .pullquote{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(46px, 6.5vw, 108px);
+    line-height:.96;letter-spacing:-.025em;color:var(--ink);
+  }
+  .p03 .pullquote em{font-style:italic;color:var(--brick)}
+  .p03 .pullquote .underline-bar{
+    display:inline-block;border-bottom:3px solid var(--ochre);padding-bottom:2px;
+  }
+  .p03 .attribution{
+    display:flex;justify-content:space-between;align-items:end;
+    padding-top:22px;border-top:1px solid var(--rule);
+  }
+  .p03 .attribution .who{
+    font-family:var(--serif-alt);font-style:italic;font-size:18px;line-height:1.4;max-width:420px;
+  }
+  .p03 .attribution .no{
+    font-family:var(--serif);font-style:italic;font-size:72px;line-height:.8;color:var(--ochre-deep);
+    font-variation-settings:"opsz" 144, "SOFT" 100;font-weight:400;
+  }
+
+  .p03 .right h3{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:34px;line-height:1;color:var(--paper);
+    padding-bottom:18px;border-bottom:1px solid var(--rule-dark);
+  }
+  .p03 .stats-col{display:flex;flex-direction:column;margin-top:12px}
+  .p03 .stat-row{
+    display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;
+    padding:22px 0;border-bottom:1px solid var(--rule-dark);
+  }
+  .p03 .stat-row .lbl{
+    font-family:var(--sans);font-size:13px;line-height:1.4;color:var(--paper);opacity:.8;max-width:260px;
+  }
+  .p03 .stat-row .lbl .tag{
+    display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre);margin-bottom:6px;
+  }
+  .p03 .stat-row .num{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 40;
+    font-size:82px;line-height:.82;color:var(--paper);letter-spacing:-.03em;
+  }
+  .p03 .stat-row .num em{font-style:italic;color:var(--ochre)}
+  .p03 .right .footnote{
+    font-family:var(--mono);font-size:10px;line-height:1.6;color:var(--paper);opacity:.55;
+    padding-top:16px;border-top:1px solid var(--rule-dark);
+  }
+
+  /* ================================================== */
+  /* PAGE 04 — NUMBERS (DARK)                            */
+  /* ================================================== */
+  .p04{background:var(--ink);color:var(--paper)}
+  .p04 .quad{
+    position:absolute;inset:0;
+    display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr 1fr auto;
+    z-index:3;
+  }
+  .p04 .head{
+    grid-column:1/3;grid-row:1/2;
+    padding:74px 48px 18px;
+    display:flex;justify-content:space-between;align-items:end;
+    border-bottom:1px solid var(--rule-dark);
+  }
+  .p04 .head h2{
+    font-family:var(--serif);font-weight:300;font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 60;
+    font-size:clamp(56px, 7.4vw, 104px);line-height:.84;letter-spacing:-.04em;color:var(--paper);
+  }
+  .p04 .head h2 em{color:var(--ochre);font-style:italic}
+  .p04 .head .kicker{
+    display:flex;flex-direction:column;gap:6px;text-align:right;
+  }
+  .p04 .head .kicker .e{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--ochre)}
+  .p04 .head .kicker .t{font-family:var(--serif-alt);font-style:italic;font-size:18px;max-width:320px;line-height:1.35}
+
+  .p04 .cell{
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:26px 48px;
+    position:relative;
+    min-height:0;
+  }
+  .p04 .cell.tl{grid-column:1/2;grid-row:2/3;border-right:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark)}
+  .p04 .cell.tr{grid-column:2/3;grid-row:2/3;border-bottom:1px solid var(--rule-dark);background:var(--ink-2)}
+  .p04 .cell.bl{grid-column:1/2;grid-row:3/4;border-right:1px solid var(--rule-dark);background:var(--ink-2)}
+  .p04 .cell.br{grid-column:2/3;grid-row:3/4}
+
+  .p04 .cell .index{
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre);opacity:.85;
+    display:flex;justify-content:space-between;
+  }
+  .p04 .cell .index .ic-icon svg{width:20px;height:20px;stroke:var(--ochre);fill:none;stroke-width:1}
+  .p04 .cell .big{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(96px, 12vw, 168px);
+    line-height:.8;letter-spacing:-.05em;color:var(--paper);
+  }
+  .p04 .cell .big em{font-style:italic;color:var(--ochre)}
+  .p04 .cell .big .small-unit{font-size:.35em;letter-spacing:-.02em;padding-left:4px;vertical-align:top;font-style:italic;color:var(--ochre)}
+  .p04 .cell .cap{
+    font-family:var(--serif-alt);font-style:italic;font-size:17px;line-height:1.35;max-width:340px;
+    color:var(--paper);opacity:.9;
+  }
+  .p04 .cell .cap span{color:var(--ochre);font-style:italic}
+
+  .p04 .bot{
+    grid-column:1/3;grid-row:4/5;
+    padding:18px 48px;
+    border-top:1px solid var(--rule-dark);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.65;
+  }
+
+  /* ================================================== */
+  /* PAGE 05 — THE OFFER                                 */
+  /* ================================================== */
+  .p05{background:var(--sage);color:var(--paper)}
+  .p05 .wrap{position:absolute;inset:0;padding:96px 48px 80px;display:flex;flex-direction:column;z-index:3}
+  .p05 .top-row{
+    display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;
+    padding-bottom:32px;border-bottom:1px solid var(--rule-dark);
+  }
+  .p05 .top-row h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 40;
+    font-size:clamp(72px, 9vw, 140px);line-height:.85;letter-spacing:-.035em;color:var(--paper);
+  }
+  .p05 .top-row h2 em{font-style:italic;color:var(--gold)}
+  .p05 .top-row .intro{
+    font-family:var(--serif-alt);font-style:italic;font-size:22px;line-height:1.45;color:var(--paper);opacity:.92;
+  }
+  .p05 .top-row .intro::first-letter{
+    font-family:var(--serif);font-size:56px;line-height:.8;float:left;padding:6px 8px 0 0;color:var(--gold);font-style:italic;
+  }
+  .p05 .services{flex:1;display:flex;flex-direction:column;justify-content:space-around;margin-top:18px}
+  .p05 .service{
+    display:grid;grid-template-columns:90px 1fr 48px;gap:36px;align-items:center;
+    padding:20px 0;border-bottom:1px solid var(--rule-dark);
+    transition:background .3s ease;
+  }
+  .p05 .service:last-child{border-bottom:none}
+  .p05 .service .s-no{
+    font-family:var(--serif);font-style:italic;font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:72px;line-height:.8;color:var(--gold);letter-spacing:-.03em;
+  }
+  .p05 .service .s-body{
+    display:grid;grid-template-columns:1.3fr 1.7fr;gap:36px;align-items:baseline;
+  }
+  .p05 .service .s-title{
+    font-family:var(--serif);font-size:28px;line-height:1.1;color:var(--paper);font-weight:400;
+  }
+  .p05 .service .s-title em{font-style:italic;color:var(--gold)}
+  .p05 .service .s-desc{
+    font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--paper);opacity:.82;
+  }
+  .p05 .service .s-arrow svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1;transition:transform .3s ease}
+  .p05 .service:hover .s-arrow svg{transform:translateX(6px)}
+
+  /* ================================================== */
+  /* PAGE 06 — METHODOLOGY                               */
+  /* ================================================== */
+  .p06{background:var(--ochre);color:var(--ink)}
+  .p06 .wrap{position:absolute;inset:0;padding:96px 48px 80px;display:flex;flex-direction:column;z-index:3}
+  .p06 .head{
+    display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;
+    padding-bottom:28px;border-bottom:1px solid var(--ink);
+  }
+  .p06 .head h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(68px, 9vw, 140px);line-height:.84;letter-spacing:-.035em;color:var(--ink);
+  }
+  .p06 .head h2 em{font-style:italic;color:var(--paper)}
+  .p06 .head .kicker{
+    font-family:var(--serif-alt);font-style:italic;font-size:20px;line-height:1.4;max-width:380px;color:var(--ink);
+  }
+
+  .p06 .steps{
+    flex:1;display:grid;grid-template-columns:repeat(5, 1fr);
+    margin-top:22px;
+  }
+  .p06 .step{
+    padding:28px 22px 0 22px;
+    border-right:1px solid rgba(11,20,32,.28);
+    display:flex;flex-direction:column;
+    position:relative;
+  }
+  .p06 .step:last-child{border-right:none}
+  .p06 .step .s-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    padding-bottom:14px;
+    position:relative;
+  }
+  .p06 .step .s-num{
+    font-family:var(--serif);font-style:italic;font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:120px;line-height:.82;color:var(--ink);letter-spacing:-.05em;
+  }
+  .p06 .step .s-ic svg{width:28px;height:28px;stroke:var(--ink);fill:none;stroke-width:1}
+  .p06 .step .s-connector{
+    position:absolute;top:58px;right:-8px;
+    width:16px;height:16px;border-radius:50%;background:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    z-index:2;
+  }
+  .p06 .step .s-connector::after{
+    content:"";width:6px;height:6px;border-radius:50%;background:var(--ochre);
+  }
+  .p06 .step:last-child .s-connector{display:none}
+  .p06 .step h3{
+    font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.15;color:var(--ink);
+    padding-top:14px;border-top:1px solid rgba(11,20,32,.3);
+    margin-top:4px;
+  }
+  .p06 .step h3 em{font-style:italic}
+  .p06 .step p{
+    font-family:var(--sans);font-size:13px;line-height:1.55;color:var(--ink);opacity:.82;
+    margin-top:10px;
+  }
+  .p06 .step .s-tag{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick);
+    margin-top:auto;padding-top:18px;
+  }
+
+  .p06 .deliverable-strip{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:22px;margin-top:18px;
+    border-top:1px solid var(--ink);
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);
+  }
+  .p06 .deliverable-strip .d-title{font-family:var(--serif);font-style:italic;font-weight:400;font-size:18px;text-transform:none;letter-spacing:0}
+
+  /* ================================================== */
+  /* PAGE 07 — PLATFORM FEATURES                         */
+  /* ================================================== */
+  .p07{background:var(--paper)}
+  .p07 .split{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr 1fr;z-index:3}
+  .p07 .left{padding:74px 48px 60px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule)}
+  .p07 .left h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(64px, 8vw, 128px);line-height:.86;letter-spacing:-.035em;color:var(--ink);
+  }
+  .p07 .left h2 em{font-style:italic;color:var(--brick)}
+  .p07 .left .features{display:flex;flex-direction:column;gap:22px;margin-top:18px}
+  .p07 .feature{
+    display:grid;grid-template-columns:40px 1fr;gap:20px;align-items:start;
+    padding:18px 0;border-top:1px solid var(--rule);
+  }
+  .p07 .feature:last-child{border-bottom:1px solid var(--rule)}
+  .p07 .feature .f-ic{
+    width:40px;height:40px;border-radius:50%;
+    background:var(--ink);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .p07 .feature .f-ic svg{width:20px;height:20px;stroke:var(--paper);fill:none;stroke-width:1.4}
+  .p07 .feature h3{
+    font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.1;color:var(--ink);
+  }
+  .p07 .feature h3 em{font-style:italic;color:var(--brick)}
+  .p07 .feature p{
+    font-family:var(--sans);font-size:13.5px;line-height:1.55;color:var(--ink);opacity:.82;
+    margin-top:6px;max-width:420px;
+  }
+  .p07 .right{
+    padding:74px 0 60px 0;
+    background:var(--ink);color:var(--paper);
+    display:flex;flex-direction:column;
+    position:relative;
+  }
+  .p07 .right .r-label{
+    padding:0 48px 18px;
+    display:flex;justify-content:space-between;align-items:end;
+    border-bottom:1px solid var(--rule-dark);
+  }
+  .p07 .right .r-label h3{
+    font-family:var(--serif-alt);font-style:italic;font-size:30px;color:var(--paper);
+  }
+  .p07 .right .r-label .mono{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre);opacity:.9}
+
+  /* Diagram */
+  .p07 .diagram{
+    flex:1;display:flex;align-items:center;justify-content:center;padding:20px 40px;
+    position:relative;
+  }
+  .p07 .diagram svg{width:100%;height:100%;max-width:640px;max-height:500px}
+
+  .p07 .right .r-caption{
+    padding:14px 48px 0;
+    border-top:1px solid var(--rule-dark);
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:.72;
+  }
+  .p07 .right .r-caption .cap-h{color:var(--ochre);margin-bottom:4px}
+
+  /* ================================================== */
+  /* PAGE 08 — CURRICULUM                                */
+  /* ================================================== */
+  .p08{background:var(--mid);color:var(--paper)}
+  .p08 .wrap{position:absolute;inset:0;padding:96px 0 80px 0;display:flex;flex-direction:column;z-index:3}
+  .p08 .head{padding:0 48px 22px;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:end;border-bottom:1px solid var(--rule-dark)}
+  .p08 .head h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(68px, 9vw, 132px);line-height:.84;letter-spacing:-.035em;color:var(--paper);
+  }
+  .p08 .head h2 em{font-style:italic;color:var(--ochre)}
+  .p08 .head .kicker{
+    font-family:var(--serif-alt);font-style:italic;font-size:20px;line-height:1.4;max-width:400px;color:var(--paper);opacity:.92;text-align:right;
+  }
+  .p08 .subjects{
+    flex:1;display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows:1fr 1fr;
+  }
+  .p08 .subject{
+    padding:24px 28px 22px;
+    border-right:1px solid var(--rule-dark);
+    border-bottom:1px solid var(--rule-dark);
+    display:flex;flex-direction:column;justify-content:space-between;
+    transition:background .3s ease;
+    position:relative;
+  }
+  .p08 .subject:hover{background:rgba(239,230,209,.04)}
+  .p08 .subject .sj-top{display:flex;justify-content:space-between;align-items:start;gap:12px}
+  .p08 .subject .sj-no{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:18px;color:var(--ochre);
+  }
+  .p08 .subject .sj-ic svg{width:38px;height:38px;stroke:var(--paper);fill:none;stroke-width:1}
+  .p08 .subject .sj-title{
+    font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.05;color:var(--paper);
+    margin-top:14px;
+  }
+  .p08 .subject .sj-title em{font-style:italic;color:var(--ochre)}
+  .p08 .subject .sj-desc{
+    font-family:var(--sans);font-size:12px;line-height:1.5;color:var(--paper);opacity:.75;
+    margin-top:10px;
+  }
+  .p08 .subject .sj-tags{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre);opacity:.85;
+    margin-top:12px;padding-top:10px;border-top:1px solid var(--rule-dark);
+  }
+  .p08 .subject:nth-child(4n){border-right:none}
+  .p08 .subject:nth-child(n+5){border-bottom:none}
+  .p08 .foot{
+    padding:16px 48px 0;border-top:1px solid var(--rule-dark);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);opacity:.65;
+  }
+
+  /* ================================================== */
+  /* PAGE 09 — SANDBOXES & CONTENT                       */
+  /* ================================================== */
+  .p09{background:var(--paper-2)}
+  .p09 .split{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1.2fr;z-index:3}
+  .p09 .left{padding:96px 48px 80px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule)}
+  .p09 .left h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(64px, 8vw, 124px);line-height:.86;letter-spacing:-.035em;color:var(--ink);
+  }
+  .p09 .left h2 em{font-style:italic;color:var(--brick)}
+  .p09 .left .lead{
+    font-family:var(--serif-alt);font-style:italic;font-size:22px;line-height:1.42;max-width:420px;color:var(--ink);
+    margin-top:22px;padding-top:22px;border-top:1px solid var(--rule);
+  }
+  .p09 .left .lead::first-letter{
+    font-family:var(--serif);font-size:62px;line-height:.8;float:left;padding:6px 8px 0 0;color:var(--ochre-deep);font-style:italic;
+  }
+  .p09 .left .attrs{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:22px;border-top:1px solid var(--rule);
+  }
+  .p09 .left .attrs .a{
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .p09 .left .attrs .a .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+  .p09 .left .attrs .a .v{font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink)}
+
+  .p09 .right{
+    padding:96px 48px 80px;
+    display:flex;flex-direction:column;
+    background:var(--paper-3);
+  }
+  .p09 .terminal{
+    background:var(--ink);color:var(--paper);
+    border-radius:4px;
+    padding:14px 18px;
+    font-family:var(--mono);font-size:12px;line-height:1.65;
+    overflow:hidden;flex:1;
+    display:flex;flex-direction:column;
+    box-shadow:0 30px 80px -30px rgba(11,20,32,.45);
+  }
+  .p09 .terminal .tbar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-bottom:12px;margin-bottom:14px;
+    border-bottom:1px solid var(--rule-dark);
+    font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);opacity:.7;
+  }
+  .p09 .terminal .tbar .dots{display:flex;gap:6px}
+  .p09 .terminal .tbar .dots span{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .p09 .terminal .tbar .dots .r{background:#E06B5B}
+  .p09 .terminal .tbar .dots .y{background:var(--ochre)}
+  .p09 .terminal .tbar .dots .g{background:#7FA66F}
+  .p09 .terminal .line{display:flex;gap:10px}
+  .p09 .terminal .line .p{color:var(--ochre);width:16px;flex-shrink:0}
+  .p09 .terminal .k-cmd{color:var(--gold)}
+  .p09 .terminal .k-str{color:#B6D4A3}
+  .p09 .terminal .k-cm{color:rgba(239,230,209,.5)}
+  .p09 .terminal .k-ok{color:#7FA66F}
+  .p09 .terminal .k-warn{color:var(--ochre)}
+  .p09 .terminal .k-num{color:#E6C97A}
+  .p09 .terminal .cursor{
+    display:inline-block;width:8px;height:14px;background:var(--ochre);
+    animation:blink 1s step-end infinite;vertical-align:-2px;margin-left:2px;
+  }
+  @keyframes blink{50%{opacity:0}}
+
+  .p09 .right .r-foot{
+    margin-top:18px;padding-top:18px;border-top:1px solid var(--rule);
+    display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.72;
+  }
+
+  /* ================================================== */
+  /* PAGE 10 — CERTIFICATION (DARK)                      */
+  /* ================================================== */
+  .p10{background:var(--ink);color:var(--paper)}
+  .p10 .grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;z-index:3}
+  .p10 .left{padding:96px 48px 80px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule-dark)}
+  .p10 .left h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(72px, 9vw, 140px);line-height:.82;letter-spacing:-.035em;color:var(--paper);
+  }
+  .p10 .left h2 em{font-style:italic;color:var(--ochre)}
+  .p10 .left .lead{
+    font-family:var(--serif-alt);font-style:italic;font-size:22px;line-height:1.42;max-width:460px;color:var(--paper);opacity:.92;
+    margin-top:22px;padding-top:22px;border-top:1px solid var(--rule-dark);
+  }
+  .p10 .left .pts{display:flex;flex-direction:column;padding-top:18px;margin-top:18px;border-top:1px solid var(--rule-dark);gap:12px}
+  .p10 .left .pt{
+    display:grid;grid-template-columns:24px 1fr;gap:16px;align-items:start;
+    font-family:var(--sans);font-size:14px;line-height:1.5;color:var(--paper);opacity:.9;
+  }
+  .p10 .left .pt .mk{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    color:var(--ochre);font-size:18px;line-height:1.2;
+  }
+
+  .p10 .right{padding:96px 48px 80px;display:flex;flex-direction:column;justify-content:space-between}
+  .p10 .badge-wrap{
+    display:flex;flex-direction:column;align-items:center;gap:32px;
+    flex:1;justify-content:center;
+    position:relative;
+  }
+  .p10 .badge{
+    width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--ochre) 0%, var(--ochre-deep) 70%);
+    position:relative;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 30px 80px -20px rgba(200,118,60,.4), inset 0 -4px 12px rgba(0,0,0,.25);
+  }
+  .p10 .badge::before{
+    content:"";position:absolute;inset:14px;border-radius:50%;
+    border:1px dashed rgba(11,20,32,.45);
+  }
+  .p10 .badge::after{
+    content:"";position:absolute;inset:24px;border-radius:50%;
+    border:2px solid rgba(11,20,32,.5);
+  }
+  .p10 .badge .b-inner{
+    width:calc(100% - 60px);height:calc(100% - 60px);
+    border-radius:50%;
+    background:var(--ink);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    position:relative;
+    z-index:2;
+  }
+  .p10 .badge .b-inner .bi-a{font-family:var(--sans);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
+  .p10 .badge .b-inner .bi-b{
+    font-family:var(--serif);font-style:italic;font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:42px;line-height:.95;color:var(--paper);letter-spacing:-.02em;
+  }
+  .p10 .badge .b-inner .bi-c{
+    font-family:var(--serif);font-size:13px;color:var(--ochre);margin-top:8px;padding-top:6px;border-top:1px solid var(--rule-dark);width:60%;font-style:italic;
+  }
+  .p10 .badge .b-circular{
+    position:absolute;inset:0;animation:spin 40s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .p10 .card{
+    background:var(--paper);color:var(--ink);
+    padding:18px;border-radius:8px;
+    width:100%;max-width:440px;
+    box-shadow:0 20px 60px -20px rgba(11,20,32,.8);
+    display:grid;grid-template-columns:48px 1fr auto;gap:14px;align-items:center;
+    font-family:var(--sans);
+  }
+  .p10 .card .avatar{
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg, var(--ochre), var(--brick));
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-weight:500;color:var(--paper);font-size:18px;
+  }
+  .p10 .card .nm{font-weight:600;font-size:14px}
+  .p10 .card .sub{font-size:11px;color:var(--ink);opacity:.68;margin-top:2px}
+  .p10 .card .lin{
+    background:#0A66C2;color:#fff;padding:6px 12px;border-radius:4px;
+    font-size:11px;font-weight:600;letter-spacing:.03em;
+    display:flex;align-items:center;gap:6px;
+  }
+  .p10 .card .lin svg{width:12px;height:12px;fill:#fff}
+
+  /* ================================================== */
+  /* PAGE 11 — WHY US                                    */
+  /* ================================================== */
+  .p11{background:var(--paper)}
+  .p11 .wrap{position:absolute;inset:0;padding:96px 0 80px 0;display:flex;flex-direction:column;z-index:3}
+  .p11 .head{
+    padding:0 48px 28px;
+    display:grid;grid-template-columns:1fr auto;gap:36px;align-items:end;
+    border-bottom:1px solid var(--rule);
+  }
+  .p11 .head h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(72px, 10vw, 160px);line-height:.82;letter-spacing:-.04em;color:var(--ink);
+  }
+  .p11 .head h2 em{font-style:italic;color:var(--brick)}
+  .p11 .head .kicker{
+    font-family:var(--serif-alt);font-style:italic;font-size:22px;line-height:1.4;max-width:360px;color:var(--ink);text-align:right;
+  }
+  .p11 .cols{
+    flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;
+  }
+  .p11 .col{
+    padding:36px 40px 28px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    border-right:1px solid var(--rule);
+    position:relative;
+  }
+  .p11 .col:last-child{border-right:none}
+  .p11 .col:nth-child(2){background:var(--ink);color:var(--paper)}
+  .p11 .col .c-no{
+    font-family:var(--serif);font-weight:300;font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:clamp(140px, 14vw, 210px);line-height:.78;letter-spacing:-.05em;
+    color:var(--ochre);
+  }
+  .p11 .col:nth-child(2) .c-no{color:var(--ochre)}
+  .p11 .col h3{
+    font-family:var(--serif);font-size:32px;font-weight:400;line-height:1.05;color:var(--ink);
+    padding-top:20px;margin-top:10px;border-top:1px solid var(--rule);
+  }
+  .p11 .col:nth-child(2) h3{color:var(--paper);border-top-color:var(--rule-dark)}
+  .p11 .col h3 em{font-style:italic}
+  .p11 .col .c-tag{
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick);
+    margin-bottom:8px;
+  }
+  .p11 .col:nth-child(2) .c-tag{color:var(--ochre)}
+  .p11 .col p{
+    font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--ink);opacity:.82;
+    margin-top:12px;
+  }
+  .p11 .col:nth-child(2) p{color:var(--paper);opacity:.85}
+  .p11 .col .c-foot{
+    font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.6;
+    margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .p11 .col:nth-child(2) .c-foot{color:var(--paper);opacity:.6;border-top-color:var(--rule-dark)}
+  .p11 .col .c-foot svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1}
+
+  /* ================================================== */
+  /* PAGE 12 — AUDIENCE                                  */
+  /* ================================================== */
+  .p12{background:var(--brick);color:var(--paper)}
+  .p12 .wrap{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;z-index:3}
+  .p12 .left{padding:74px 48px 60px;display:flex;flex-direction:column;justify-content:space-between}
+  .p12 .left h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(70px, 8.4vw, 128px);line-height:.84;letter-spacing:-.04em;color:var(--paper);
+  }
+  .p12 .left h2 em{font-style:italic;color:var(--ochre);font-variation-settings:"opsz" 144, "SOFT" 100}
+  .p12 .left .lead{
+    font-family:var(--serif-alt);font-style:italic;font-size:20px;line-height:1.42;max-width:460px;color:var(--paper);opacity:.94;
+    margin-top:16px;padding-top:16px;border-top:1px solid var(--rule-dark);
+  }
+  .p12 .left .lead::first-letter{
+    font-family:var(--serif);font-size:64px;line-height:.8;float:left;padding:6px 8px 0 0;color:var(--ochre);font-style:italic;
+  }
+  .p12 .left .targets{
+    margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .p12 .left .targets .chip{
+    font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    padding:8px 14px;border:1px solid var(--paper);color:var(--paper);border-radius:999px;
+  }
+  .p12 .left .targets .chip.on{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
+
+  .p12 .right{padding:0;background:var(--brick-deep);display:flex;flex-direction:column;min-height:0;overflow:hidden}
+  .p12 .right .rh{
+    padding:74px 48px 16px;
+    display:flex;justify-content:space-between;align-items:end;
+    border-bottom:1px solid var(--rule-dark);
+  }
+  .p12 .right .rh h3{font-family:var(--serif-alt);font-style:italic;font-size:30px;color:var(--paper)}
+  .p12 .right .rh .m{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre)}
+  .p12 .seg-list{flex:1 1 0;display:flex;flex-direction:column;justify-content:center;padding:0 48px;overflow:hidden;min-height:0}
+  .p12 .seg{
+    display:grid;grid-template-columns:36px 1fr auto;gap:18px;align-items:center;
+    padding:12px 0;border-bottom:1px solid var(--rule-dark);
+  }
+  .p12 .seg:last-child{border-bottom:none}
+  .p12 .seg .sg-no{
+    font-family:var(--serif);font-style:italic;font-weight:300;font-size:22px;color:var(--ochre);
+  }
+  .p12 .seg .sg-mid{
+    display:flex;flex-direction:column;gap:3px;
+  }
+  .p12 .seg .sg-mid .sg-t{font-family:var(--serif);font-size:20px;line-height:1.15;color:var(--paper)}
+  .p12 .seg .sg-mid .sg-t em{font-style:italic;color:var(--ochre)}
+  .p12 .seg .sg-mid .sg-d{font-family:var(--sans);font-size:12px;line-height:1.45;color:var(--paper);opacity:.7}
+  .p12 .seg .sg-pct{
+    font-family:var(--serif);font-weight:300;font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:38px;color:var(--ochre);letter-spacing:-.02em;
+  }
+  .p12 .right .rf{
+    padding:14px 48px 14px;
+    border-top:1px solid var(--rule-dark);
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);opacity:.65;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+
+  /* ================================================== */
+  /* PAGE 13 — COMPETITION                               */
+  /* ================================================== */
+  .p13{background:var(--paper)}
+  .p13 .wrap{position:absolute;inset:0;padding:74px 48px 60px;display:flex;flex-direction:column;z-index:3;min-height:0}
+  .p13 .head{
+    display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:end;
+    padding-bottom:18px;border-bottom:2px solid var(--ink);
+  }
+  .p13 .head h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(48px, 6.4vw, 92px);line-height:.92;letter-spacing:-.03em;color:var(--ink);
+  }
+  .p13 .head h2 em{font-style:italic;color:var(--brick)}
+  .p13 .head .kicker{font-family:var(--serif-alt);font-style:italic;font-size:18px;line-height:1.45;color:var(--ink);max-width:460px}
+
+  .p13 .table{flex:1;margin-top:14px;display:grid;grid-template-rows:auto repeat(7, 1fr) auto;font-family:var(--sans);min-height:0}
+  .p13 .trow{
+    display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;
+    align-items:center;
+    border-bottom:1px solid var(--rule);
+  }
+  .p13 .trow.hd{background:var(--ink);color:var(--paper);border-bottom:none}
+  .p13 .trow.hd .cell{padding:14px 16px;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .p13 .trow.hd .cell.first{font-family:var(--serif);font-style:italic;font-size:22px;font-weight:400;text-transform:none;letter-spacing:-.01em}
+  .p13 .trow.hd .cell.us{color:var(--ochre)}
+  .p13 .trow .cell{padding:11px 16px;border-right:1px solid var(--rule);display:flex;align-items:center;justify-content:flex-start;gap:10px;min-height:0}
+  .p13 .trow .cell:last-child{border-right:none}
+  .p13 .trow .cell.first{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:400;line-height:1.2}
+  .p13 .trow .cell.first em{font-style:italic}
+  .p13 .trow .cell svg{width:18px;height:18px;flex-shrink:0}
+  .p13 .trow .cell .yes{stroke:var(--sage);fill:none;stroke-width:2}
+  .p13 .trow .cell .no{stroke:var(--rule);fill:none;stroke-width:2}
+  .p13 .trow .cell .plus{stroke:var(--ochre-deep);fill:none;stroke-width:2}
+  .p13 .trow .cell .val{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);opacity:.82}
+  .p13 .trow .cell.us-col{background:rgba(200,118,60,.12)}
+  .p13 .trow.tot{border-bottom:none;background:var(--ink);color:var(--paper)}
+  .p13 .trow.tot .cell{padding:14px 16px;border-right:1px solid var(--rule-dark);font-family:var(--serif);font-style:italic;font-size:18px}
+  .p13 .trow.tot .cell.first{font-family:var(--serif);font-style:italic;font-size:22px}
+  .p13 .trow.tot .cell.us-tot{color:var(--ochre);font-size:32px}
+  .p13 .foot{
+    margin-top:14px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.68;
+  }
+
+  /* ================================================== */
+  /* PAGE 14 — TRACTION                                  */
+  /* ================================================== */
+  .p14{background:var(--sage);color:var(--paper)}
+  .p14 .wrap{position:absolute;inset:0;padding:74px 0 60px 0;display:flex;flex-direction:column;z-index:3;min-height:0}
+  .p14 .head{
+    padding:0 48px 16px;
+    display:grid;grid-template-columns:1fr auto;gap:36px;align-items:end;
+    border-bottom:1px solid var(--rule-dark);
+  }
+  .p14 .head h2{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 30;
+    font-size:clamp(54px, 6.6vw, 96px);line-height:.86;letter-spacing:-.035em;color:var(--paper);
+  }
+  .p14 .head h2 em{font-style:italic;color:var(--ochre)}
+  .p14 .head .kicker{font-family:var(--serif-alt);font-style:italic;font-size:20px;line-height:1.4;max-width:380px;color:var(--paper);opacity:.92;text-align:right}
+
+  .p14 .rows{flex:1;display:grid;grid-template-rows:1.05fr 1fr;min-height:0}
+  .p14 .r-top{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--rule-dark);min-height:0}
+  .p14 .tile{
+    padding:20px 30px;
+    border-right:1px solid var(--rule-dark);
+    display:flex;flex-direction:column;justify-content:space-between;
+    position:relative;min-height:0;
+  }
+  .p14 .tile:last-child{border-right:none}
+  .p14 .tile .t-flag{
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre);
+    display:flex;align-items:center;gap:10px;
+  }
+  .p14 .tile .t-flag .f-sq{width:22px;height:14px;display:block;overflow:hidden;border-radius:1px;position:relative}
+  .p14 .tile .t-flag .f-uk{background:#012169;position:relative}
+  .p14 .tile .t-flag .f-uk::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(90deg, transparent 42%, #fff 42%, #fff 58%, transparent 58%),
+    linear-gradient(0deg, transparent 42%, #fff 42%, #fff 58%, transparent 58%),
+    linear-gradient(45deg, transparent 46%, #C8102E 46%, #C8102E 54%, transparent 54%)}
+  .p14 .tile .t-flag .f-de{background:linear-gradient(180deg, #000 33%, #DD0000 33%, #DD0000 66%, #FFCE00 66%)}
+  .p14 .tile .t-flag .f-ox{background:linear-gradient(135deg, #002147 50%, #C8102E 50%)}
+  .p14 .tile h3{
+    font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.05;color:var(--paper);
+    margin-top:10px;padding-bottom:10px;border-bottom:1px solid var(--rule-dark);
+  }
+  .p14 .tile h3 em{font-style:italic;color:var(--ochre)}
+  .p14 .tile p{
+    font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--paper);opacity:.85;
+    margin-top:10px;
+  }
+  .p14 .tile .t-meta{
+    margin-top:auto;padding-top:12px;border-top:1px solid var(--rule-dark);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre);
+  }
+  .p14 .tile .t-meta .big-sm{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--paper);letter-spacing:0;text-transform:none}
+
+  .p14 .r-bot{display:grid;grid-template-columns:1.15fr 1fr 1fr;min-height:0}
+  .p14 .quote{
+    padding:20px 30px;
+    border-right:1px solid var(--rule-dark);
+    display:flex;flex-direction:column;justify-content:space-between;
+    background:var(--sage-deep);min-height:0;
+  }
+  .p14 .quote .q-open{
+    font-family:var(--serif);font-weight:300;font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:80px;line-height:.6;color:var(--ochre);
+  }
+  .p14 .quote .q-text{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:18px;line-height:1.35;color:var(--paper);
+    margin-top:6px;
+  }
+  .p14 .quote .q-at{
+    font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre);
+    margin-top:10px;padding-top:10px;border-top:1px solid var(--rule-dark);
+  }
+  .p14 .quote .q-at .nm{font-family:var(--serif);font-size:14px;letter-spacing:0;text-transform:none;color:var(--paper);font-style:italic}
+
+  .p14 .stats{padding:20px 30px;border-right:1px solid var(--rule-dark);display:flex;flex-direction:column;justify-content:space-between;min-height:0}
+  .p14 .stats .sh{font-family:var(--serif-alt);font-style:italic;font-size:18px;color:var(--paper);padding-bottom:10px;border-bottom:1px solid var(--rule-dark)}
+  .p14 .stats .stat{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--rule-dark)}
+  .p14 .stats .stat:last-child{border-bottom:none}
+  .p14 .stats .stat .lb{font-family:var(--sans);font-size:11.5px;line-height:1.3;color:var(--paper);opacity:.85}
+  .p14 .stats .stat .nb{
+    font-family:var(--serif);font-weight:300;font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:34px;color:var(--ochre);letter-spacing:-.02em;line-height:.9;
+  }
+  .p14 .logos{padding:20px 30px;display:flex;flex-direction:column;justify-content:space-between;min-height:0}
+  .p14 .logos .sh{font-family:var(--serif-alt);font-style:italic;font-size:18px;color:var(--paper);padding-bottom:10px;border-bottom:1px solid var(--rule-dark)}
+  .p14 .logos .lgrid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;flex:1;min-height:0;
+  }
+  .p14 .logos .lgrid .l{
+    border:1px solid var(--rule-dark);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:10px 8px;gap:4px;
+  }
+  .p14 .logos .lgrid .l .l-mono{
+    font-family:var(--serif);font-style:italic;font-weight:400;font-size:16px;color:var(--paper);
+    text-align:center;line-height:1.1;
+  }
+  .p14 .logos .lgrid .l .l-sub{
+    font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre);opacity:.8;
+  }
+
+  /* ================================================== */
+  /* PAGE 15 — BACK COVER                                */
+  /* ================================================== */
+  .p15{background:var(--ink);color:var(--paper)}
+  .p15 .grid{position:absolute;inset:0;display:grid;grid-template-columns:110px 1fr 110px;grid-template-rows:92px 1fr 90px;z-index:3}
+  .p15 .corner-tl, .p15 .corner-tr, .p15 .spine-l, .p15 .spine-r{border-color:var(--rule-dark)}
+  .p15 .corner-tl{grid-column:1/2;grid-row:1/2;border-right:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center}
+  .p15 .corner-tl .crown{font-family:var(--serif);font-style:italic;font-weight:500;font-size:28px;color:var(--ochre)}
+  .p15 .top-bar{
+    grid-column:2/3;grid-row:1/2;
+    border-bottom:1px solid var(--rule-dark);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:0 32px;
+    font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--paper);
+  }
+  .p15 .top-bar .l{display:flex;gap:22px;align-items:center}
+  .p15 .top-bar .dot-sep{background:var(--paper);opacity:.4}
+  .p15 .corner-tr{grid-column:3/4;grid-row:1/2;border-left:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre)}
+  .p15 .spine-l{grid-column:1/2;grid-row:2/3;border-right:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center}
+  .p15 .spine-l .vtext{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--serif);font-style:italic;font-weight:400;font-size:17px;letter-spacing:.22em;color:var(--paper);opacity:.78}
+  .p15 .spine-r{grid-column:3/4;grid-row:2/3;border-left:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center}
+  .p15 .spine-r .vtext{writing-mode:vertical-rl;font-family:var(--mono);font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--paper);opacity:.6}
+
+  .p15 .hero{grid-column:2/3;grid-row:2/3;padding:48px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+  .p15 .hero .top{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:end}
+  .p15 .hero .cta{
+    font-family:var(--serif);font-weight:300;
+    font-variation-settings:"opsz" 144, "SOFT" 40;
+    font-size:clamp(64px, 9vw, 142px);line-height:.82;letter-spacing:-.03em;color:var(--paper);
+  }
+  .p15 .hero .cta em{font-style:italic;color:var(--ochre);font-variation-settings:"opsz" 144, "SOFT" 100}
+  .p15 .hero .top .r-note{
+    font-family:var(--serif-alt);font-style:italic;font-size:22px;line-height:1.4;max-width:360px;color:var(--paper);opacity:.92;text-align:right;
+  }
+
+  .p15 .hero .mid{
+    flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;
+    align-content:center;
+    padding:32px 0;
+    border-top:1px solid var(--rule-dark);
+    border-bottom:1px solid var(--rule-dark);
+    margin:28px 0;
+  }
+  .p15 .contact{display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--rule-dark);padding-right:28px}
+  .p15 .contact:last-child{border-right:none;padding-right:0}
+  .p15 .contact .c-k{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--ochre)}
+  .p15 .contact .c-v{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.1;color:var(--paper)}
+  .p15 .contact .c-v em{font-style:italic}
+  .p15 .contact .c-x{font-family:var(--mono);font-size:11px;color:var(--paper);opacity:.72;letter-spacing:.06em}
+
+  .p15 .hero .bot{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:36px}
+  .p15 .hero .bot .l{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);opacity:.7;line-height:1.8}
+  .p15 .hero .bot .l .hl{color:var(--ochre)}
+  .p15 .hero .bot .m{
+    font-family:var(--serif);font-weight:300;font-style:italic;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:140px;line-height:.8;color:var(--ochre);letter-spacing:-.05em;
+  }
+  .p15 .hero .bot .r{text-align:right;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);opacity:.7;line-height:1.8}
+  .p15 .hero .bot .r .hl{color:var(--ochre)}
+
+  .p15 .bottom-strip{
+    grid-column:1/4;grid-row:3/4;
+    border-top:1px solid var(--rule-dark);
+    display:grid;grid-template-columns:110px 1fr 110px;
+  }
+  .p15 .bottom-strip .bs-l{border-right:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);opacity:.7}
+  .p15 .bottom-strip .bs-m{display:flex;justify-content:space-between;align-items:center;padding:0 32px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);opacity:.85}
+  .p15 .bottom-strip .bs-m .end{color:var(--ochre);font-family:var(--serif);font-style:italic;letter-spacing:0;text-transform:none;font-size:15px}
+  .p15 .bottom-strip .bs-r{border-left:1px solid var(--rule-dark);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:14px;color:var(--paper)}
+
+  /* ------------------- ENTRY ANIMATIONS -------------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .page.in-view .reveal{opacity:1;transform:translateY(0)}
+  .page.in-view .d1{transition-delay:.08s}
+  .page.in-view .d2{transition-delay:.16s}
+  .page.in-view .d3{transition-delay:.24s}
+  .page.in-view .d4{transition-delay:.32s}
+  .page.in-view .d5{transition-delay:.4s}
+  .page.in-view .d6{transition-delay:.48s}
+
+  /* Small screens: keep legible */
+  @media (max-width:820px){
+    .p01 .corner-tl,.p01 .corner-tr,.p01 .spine-l,.p01 .spine-r,
+    .p15 .corner-tl,.p15 .corner-tr,.p15 .spine-l,.p15 .spine-r{display:none}
+    .p01 .cover-grid,.p15 .grid{grid-template-columns:1fr;grid-template-rows:60px 1fr 70px}
+    .p01 .top-bar,.p15 .top-bar{grid-column:1/2}
+    .p01 .hero,.p15 .hero{grid-column:1/2;padding:28px}
+    .p01 .bottom-strip,.p15 .bottom-strip{grid-column:1/2;grid-template-columns:1fr}
+    .p01 .bottom-strip .bs-l,.p01 .bottom-strip .bs-r,.p15 .bottom-strip .bs-l,.p15 .bottom-strip .bs-r{display:none}
+    .p02 .grid,.p03 .grid,.p07 .split,.p09 .split,.p10 .grid,.p12 .wrap{grid-template-columns:1fr}
+    .p04 .quad{grid-template-columns:1fr}
+    .p06 .steps{grid-template-columns:1fr 1fr}
+    .p08 .subjects{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+    .p11 .cols{grid-template-columns:1fr}
+  }
+
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="scroller" id="scroller">
+
+  <!-- ============== 01 COVER ============== -->
+  <section class="page p01 dark" data-title="Cover" data-folio="01">
+    <div class="cover-grid">
+      <div class="corner-tl"><span class="crown">Ox</span></div>
+      <div class="top-bar">
+        <div class="l">
+          <span>OxLon</span>
+          <span class="dot-sep"></span>
+          <span>AI Learning Hub</span>
+        </div>
+        <div style="display:flex;gap:22px;align-items:center">
+          <span>Built for</span>
+          <span class="dot-sep" style="background:var(--ochre);opacity:1"></span>
+          <span style="color:var(--ochre)">Universities</span>
+        </div>
+      </div>
+      <div class="corner-tr">
+        oxlon<br>.uk
+      </div>
+
+      <div class="spine-l"><span class="vtext">Oxford · London · Baku</span></div>
+
+      <div class="hero">
+        <div class="issue reveal d1">
+          <div>
+            <div>AI · Data · Machine Learning</div>
+            <div style="opacity:.6;margin-top:4px">Curriculum, platform &amp; certification</div>
+          </div>
+          <div style="text-align:right">
+            <div>For research universities</div>
+            <div style="color:var(--ochre);margin-top:4px">&amp; national programmes</div>
+          </div>
+        </div>
+
+        <div class="title-wrap reveal d2">
+          <div class="title-sub">The AI Learning Hub <span class="amp">for</span></div>
+          <h1 class="title-oxlon">Ox<span class="italic-part">Lon</span>.</h1>
+          <div class="title-sub" style="text-align:right">A platform <span class="amp">for</span> <em style="color:var(--ochre);font-style:italic">the university.</em></div>
+        </div>
+
+        <div class="tagline reveal d3">
+          <div class="lhs">
+            <em>A production-ready curriculum in artificial intelligence,</em> with local teachers, custom learning paths and UK-approved certificates the job market reads.
+          </div>
+          <div class="mid">—</div>
+          <div class="rhs">
+            Oxford &nbsp;·&nbsp; London &nbsp;·&nbsp; Baku<br>
+            <span style="color:var(--ochre)">oxlon.uk</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spine-r"><span class="vtext">AI Learning Hub · oxlon.uk · for universities</span></div>
+
+      <div class="bottom-strip">
+        <div class="bs-l">01 / 15</div>
+        <div class="bs-m">
+          <span>oxlon.uk</span>
+          <span>Economics · Finance · Physics · Microbiology · CS</span>
+          <span class="price">↘ scroll →</span>
+        </div>
+        <div class="bs-r">ø</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 02 OVERVIEW / WHAT WE DO ============== -->
+  <section class="page p02" data-title="Overview" data-folio="02">
+    <div class="masthead">
+      <div class="m-left"><span class="mark">OxLon</span><span class="dot-sep"></span><span>AI Learning Hub</span></div>
+      <div class="m-right"><span>Overview</span><span class="dot-sep"></span><span style="color:var(--brick)">02 / 15</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="left">
+        <div class="reveal d1">
+          <div class="eyebrow" style="color:var(--brick);margin-bottom:16px">What we do</div>
+          <h1>An <em>AI Learning Hub</em><br>for universities.</h1>
+          <p class="editors-note">
+            We give a university everything it needs to teach AI properly — a hosted platform, a custom curriculum across every faculty, real local teachers on campus, sandboxes that run, and UK-approved certificates that actually help students get hired.
+          </p>
+        </div>
+        <div class="meta-block reveal d3">
+          <div class="cell"><div class="k">Based</div><div class="v">Oxford · London · <em style="font-style:italic">Baku</em></div></div>
+          <div class="cell"><div class="k">Delivery</div><div class="v">Cloud or on-premises</div></div>
+          <div class="cell"><div class="k">Subjects</div><div class="v">Economics · Finance · Physics · CS · more</div></div>
+          <div class="cell"><div class="k">Languages</div><div class="v">English &amp; localised</div></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="contents-heading reveal d2">
+          <div class="ch-l">On this page</div>
+          <div class="ch-r">15 sections · jump anywhere</div>
+        </div>
+        <nav class="toc reveal d3" id="toc">
+          <a class="toc-row" data-target="1"><span class="no">01</span><span class="label">Cover <span class="tag">welcome</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="2"><span class="no">02</span><span class="label">Overview <span class="tag">what we do</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="3"><span class="no">03</span><span class="label">The problem <span class="tag">skills gap</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="4"><span class="no">04</span><span class="label">By the numbers <span class="tag">results</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="5"><span class="no">05</span><span class="label">What we offer <span class="tag">services</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="6"><span class="no">06</span><span class="label">How we deliver <span class="tag">methodology</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="7"><span class="no">07</span><span class="label">The platform <span class="tag">features</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="8"><span class="no">08</span><span class="label">Curriculum <span class="tag">by subject</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="9"><span class="no">09</span><span class="label">Hands-on <span class="tag">sandboxes</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="10"><span class="no">10</span><span class="label">Certification <span class="tag">for hiring</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="11"><span class="no">11</span><span class="label">Why us <span class="tag">three pillars</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="12"><span class="no">12</span><span class="label">Who it's for <span class="tag">audience</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="13"><span class="no">13</span><span class="label">vs Coursera &amp; Udemy <span class="tag">comparison</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="14"><span class="no">14</span><span class="label">Who trusts us <span class="tag">credentials</span></span><span class="pg">→</span></a>
+          <a class="toc-row" data-target="15"><span class="no">15</span><span class="label">Get in touch <span class="tag">contact</span></span><span class="pg">→</span></a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>02 / 15 — Overview</span><span style="color:var(--brick)">→</span></div>
+  </section>
+
+  <!-- ============== 03 PROBLEM ============== -->
+  <section class="page p03" data-title="The Brief" data-folio="03">
+    <div class="masthead">
+      <div class="m-left"><span class="mark">OxLon</span><span class="dot-sep"></span><span>The problem</span></div>
+      <div class="m-right"><span>The skills gap</span><span class="dot-sep"></span><span style="color:var(--brick)">03 / 15</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="left">
+        <div class="section-mark reveal d1">
+          <span class="chapter">The problem</span>
+          <span class="line"></span>
+          <span class="eyebrow">The skills gap in AI</span>
+        </div>
+        <div class="pullquote reveal d2" style="margin-top:28px">
+          The university has <em>ten years of theory</em> and&nbsp;<span class="underline-bar">three weeks</span> to teach a student how to <em>actually</em> ship&nbsp;an&nbsp;AI&nbsp;system.
+        </div>
+        <div class="attribution reveal d3">
+          <div class="who">— The gap between academic lecture and production practice has become the defining constraint on graduate employability, research output, and institutional reputation.</div>
+          <div class="no">№ 01</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="reveal d2">
+          <h3>By the field</h3>
+          <div class="stats-col">
+            <div class="stat-row">
+              <div class="lbl"><span class="tag">Graduate Readiness</span>Of employers say new graduates <em style="font-style:italic">lack hands-on AI skill</em>.</div>
+              <div class="num"><em>73</em>%</div>
+            </div>
+            <div class="stat-row">
+              <div class="lbl"><span class="tag">Syllabus Lag</span>Median months between method publication and &nbsp;classroom&nbsp;adoption.</div>
+              <div class="num">18<span style="font-size:.4em;color:var(--ochre);font-style:italic"> mo.</span></div>
+            </div>
+            <div class="stat-row">
+              <div class="lbl"><span class="tag">Tooling Deficit</span>Of UK universities <em style="font-style:italic">without a dedicated</em> AI sandbox for undergraduates.</div>
+              <div class="num"><em>6</em>/10</div>
+            </div>
+            <div class="stat-row" style="border-bottom:none">
+              <div class="lbl"><span class="tag">Demand</span>Compound growth in <em style="font-style:italic">applied AI</em> roles across UK &amp; EU, 2023–2026.</div>
+              <div class="num">×<em>3.4</em></div>
+            </div>
+          </div>
+        </div>
+        <div class="footnote reveal d4">↳ Sources: UK Gov digital-skills dashboard; CEDEFOP applied-AI projections; Oxlon faculty survey, 2026.</div>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>03 / 15 — The problem</span><span style="color:var(--brick)">→</span></div>
+  </section>
+
+  <!-- ============== 04 NUMBERS ============== -->
+  <section class="page p04 dark" data-title="By the Numbers" data-folio="04">
+    <div class="masthead">
+      <div class="m-left"><span class="mark" style="color:var(--ochre)">OxLon</span><span class="dot-sep"></span><span>Results</span></div>
+      <div class="m-right"><span>By the numbers</span><span class="dot-sep"></span><span style="color:var(--ochre)">04 / 15</span></div>
+    </div>
+
+    <div class="quad">
+      <div class="head reveal d1">
+        <h2>By the<br><em>Numbers</em></h2>
+        <div class="kicker">
+          <div class="e">Live deployments</div>
+          <div class="t">Four figures from OxLon production deployments — drawn from live enterprise &amp; pilot engagements.</div>
+        </div>
+      </div>
+
+      <div class="cell tl reveal d2">
+        <div class="index">
+          <span>Figure 01 · HR Automation</span>
+          <span class="ic-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/><path d="M19 4l2 2-2 2"/></svg>
+          </span>
+        </div>
+        <div class="big">85<span class="small-unit">%</span></div>
+        <div class="cap">Of <span>manual HR tasks</span> automated by the Oxlon agent in live deployment.</div>
+      </div>
+      <div class="cell tr reveal d3">
+        <div class="index">
+          <span>Figure 02 · Operational Cost</span>
+          <span class="ic-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h7v7"/></svg>
+          </span>
+        </div>
+        <div class="big"><em>−40</em><span class="small-unit">%</span></div>
+        <div class="cap">Reduction in <span>HR operational costs</span> across first-year production pilots.</div>
+      </div>
+      <div class="cell bl reveal d4">
+        <div class="index">
+          <span>Figure 03 · Wealth Review</span>
+          <span class="ic-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg>
+          </span>
+        </div>
+        <div class="big">2–3<span class="small-unit">×</span></div>
+        <div class="cap">Faster <span>client review preparation</span> for wealth-management workflows.</div>
+      </div>
+      <div class="cell br reveal d5">
+        <div class="index">
+          <span>Figure 04 · Delivery</span>
+          <span class="ic-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+        <div class="big"><em>100</em><span class="small-unit">%</span></div>
+        <div class="cap">Of Oxlon engagements delivered as <span>production-ready systems</span> — not proofs-of-concept.</div>
+      </div>
+
+      <div class="bot">
+        <span>↳ Cases drawn from HR, wealth management &amp; macroeconomic agents</span>
+        <span>Method: internal instrumentation + client reported</span>
+        <span style="color:var(--ochre)">OxLon · Live deployments</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 05 THE OFFER ============== -->
+  <section class="page p05 sage" data-title="The Offer" data-folio="05">
+    <div class="masthead">
+      <div class="m-left"><span class="mark" style="color:var(--gold)">OxLon</span><span class="dot-sep"></span><span>Services</span></div>
+      <div class="m-right"><span>What we offer</span><span class="dot-sep"></span><span style="color:var(--gold)">05 / 15</span></div>
+    </div>
+
+    <div class="wrap">
+      <div class="top-row reveal d1">
+        <h2>What we<br><em>offer</em>.</h2>
+        <p class="intro">Five interlocking services, delivered as a single turnkey engagement — from a hosted platform to UK-recognised credentials. Scoped to one faculty or the whole university.</p>
+      </div>
+
+      <div class="services">
+        <a class="service reveal d2">
+          <div class="s-no">01</div>
+          <div class="s-body">
+            <div class="s-title">A hosted <em>learning platform</em> — cloud or on-premises.</div>
+            <div class="s-desc">Spun up inside your institution's SSO and data boundary. Public cloud (AWS · Azure · GCP) or private deployment behind your firewall, with SCIM, SAML &amp; audit logging from day one.</div>
+          </div>
+          <div class="s-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </a>
+        <a class="service reveal d3">
+          <div class="s-no">02</div>
+          <div class="s-body">
+            <div class="s-title">Custom <em>curriculum &amp; learning paths</em> — per faculty, per cohort.</div>
+            <div class="s-desc">Bespoke modules across economics, finance, physics, microbiology, CS &amp; more — with personalised learner paths, QAA-aligned syllabi and assessment authored for your department.</div>
+          </div>
+          <div class="s-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </a>
+        <a class="service reveal d4">
+          <div class="s-no">03</div>
+          <div class="s-body">
+            <div class="s-title"><em>Local teacher</em> support — on your campus, in your timezone.</div>
+            <div class="s-desc">Real Oxlon faculty embedded with your department: weekly office hours, lab demonstrators, dissertation supervision &amp; markers — not a forum and a chatbot.</div>
+          </div>
+          <div class="s-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </a>
+        <a class="service reveal d5">
+          <div class="s-no">04</div>
+          <div class="s-body">
+            <div class="s-title"><em>Self-paced</em> by default — live class on demand.</div>
+            <div class="s-desc">Students learn at their own rhythm, then book a live cohort tutorial when they hit a wall — billed à la carte, included in premium tier. Best of MOOC &amp; bootcamp.</div>
+          </div>
+          <div class="s-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </a>
+        <a class="service reveal d6">
+          <div class="s-no">05</div>
+          <div class="s-body">
+            <div class="s-title"><em>UK-approved</em> certificates — built for the job market.</div>
+            <div class="s-desc">Career-grade credentials students can put on a CV today: verifiable, mapped to job families, one-click share to LinkedIn &amp; an employer-verification API for hiring teams.</div>
+          </div>
+          <div class="s-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>05 / 15 — What we offer</span><span style="color:var(--gold)">→</span></div>
+  </section>
+
+  <!-- ============== 06 METHODOLOGY ============== -->
+  <section class="page p06 ochre" data-title="Methodology" data-folio="06">
+    <div class="masthead">
+      <div class="m-left"><span class="mark">OxLon</span><span class="dot-sep"></span><span>How we deliver</span></div>
+      <div class="m-right"><span>Methodology</span><span class="dot-sep"></span><span>06 / 15</span></div>
+    </div>
+
+    <div class="wrap">
+      <div class="head reveal d1">
+        <h2>Methodology,<br>in <em>five acts</em>.</h2>
+        <div class="kicker">From blank canvas to live faculty deployment — a repeatable five-stage sequence, sized to your term schedule.</div>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal d2">
+          <div class="s-head">
+            <div class="s-num">01</div>
+            <div class="s-ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/><circle cx="7" cy="6" r="1.3" fill="currentColor" stroke="none"/><circle cx="13" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="17" cy="18" r="1.3" fill="currentColor" stroke="none"/></svg></div>
+          </div>
+          <div class="s-connector"></div>
+          <h3><em>Discovery</em> &amp; scoping</h3>
+          <p>Audit existing provision, skills gap &amp; faculty targets. Two weeks, on campus.</p>
+          <div class="s-tag">Week 01 – 02</div>
+        </div>
+        <div class="step reveal d3">
+          <div class="s-head">
+            <div class="s-num">02</div>
+            <div class="s-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h8"/></svg></div>
+          </div>
+          <div class="s-connector"></div>
+          <h3>Platform <em>stand-up</em></h3>
+          <p>Deploy the hub into your cloud or on-premises stack, wired to SSO, SCIM &amp; the VLE.</p>
+          <div class="s-tag">Week 02 – 05</div>
+        </div>
+        <div class="step reveal d4">
+          <div class="s-head">
+            <div class="s-num">03</div>
+            <div class="s-ic"><svg viewBox="0 0 24 24"><path d="M4 20V8l8-4 8 4v12"/><path d="M4 12h16"/><path d="M12 4v16"/></svg></div>
+          </div>
+          <div class="s-connector"></div>
+          <h3>Curriculum <em>authoring</em></h3>
+          <p>Per-module syllabus, rubrics &amp; assessment — co-designed with your faculty leads.</p>
+          <div class="s-tag">Week 04 – 09</div>
+        </div>
+        <div class="step reveal d5">
+          <div class="s-head">
+            <div class="s-num">04</div>
+            <div class="s-ic"><svg viewBox="0 0 24 24"><path d="M7 4h10l3 5-8 11L4 9z"/><path d="M7 4l5 5 5-5"/></svg></div>
+          </div>
+          <div class="s-connector"></div>
+          <h3>Content &amp; <em>sandboxes</em></h3>
+          <p>Shippable notebooks, graded labs &amp; datasets, containerised for reproducibility.</p>
+          <div class="s-tag">Week 06 – 12</div>
+        </div>
+        <div class="step reveal d6">
+          <div class="s-head">
+            <div class="s-num">05</div>
+            <div class="s-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8 13l-2 8 6-3 6 3-2-8"/></svg></div>
+          </div>
+          <h3>Launch &amp; <em>certification</em></h3>
+          <p>Cohort 01 goes live. Completions mint UK-approved credentials, shareable on LinkedIn.</p>
+          <div class="s-tag">Week 12 +</div>
+        </div>
+      </div>
+
+      <div class="deliverable-strip">
+        <span>↳ End-to-end delivery</span>
+        <span class="d-title">From cold start to a <em style="font-style:italic">live first cohort in roughly one term.</em></span>
+        <span>12 weeks · single PO · one point of contact</span>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>06 / 15 — Methodology</span><span>→</span></div>
+  </section>
+
+  <!-- ============== 07 PLATFORM FEATURES ============== -->
+  <section class="page p07" data-title="Platform" data-folio="07">
+    <div class="masthead">
+      <div class="m-left"><span class="mark">OxLon</span><span class="dot-sep"></span><span>The platform</span></div>
+      <div class="m-right"><span>Architecture &amp; features</span><span class="dot-sep"></span><span style="color:var(--brick)">07 / 15</span></div>
+    </div>
+
+    <div class="split">
+      <div class="left">
+        <div class="reveal d1">
+          <div class="eyebrow" style="color:var(--brick);margin-bottom:16px">The platform</div>
+          <h2>A platform<br>built for <em>faculty</em>.</h2>
+        </div>
+        <div class="features">
+          <div class="feature reveal d2">
+            <div class="f-ic"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></div>
+            <div>
+              <h3>Containerised <em>sandboxes</em>, deterministic results.</h3>
+              <p>Every lab ships as a reproducible container — the student, the marker, and the external examiner see the exact same environment.</p>
+            </div>
+          </div>
+          <div class="feature reveal d3">
+            <div class="f-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 20h10M9 18v2M15 18v2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg></div>
+            <div>
+              <h3>SSO, SCIM &amp; <em>VLE integration</em>.</h3>
+              <p>Single sign-on with your identity provider, SCIM provisioning, and LTI 1.3 into Canvas · Moodle · Blackboard. No shadow accounts.</p>
+            </div>
+          </div>
+          <div class="feature reveal d4">
+            <div class="f-ic"><svg viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M7 17V9M11 17V6M15 17v-4M19 17V11"/></svg></div>
+            <div>
+              <h3>Instructor-grade <em>analytics</em>.</h3>
+              <p>Cohort-level insight on engagement, competency attainment and at-risk students — exportable to your registry &amp; board reports.</p>
+            </div>
+          </div>
+          <div class="feature reveal d5">
+            <div class="f-ic"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+            <div>
+              <h3><em>Vendor-agnostic</em> AI stack.</h3>
+              <p>Swap between IBM watsonx, Azure, AWS, Anthropic, and open-source models. No lock-in — built for the next ten years of the field.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="r-label reveal d2">
+          <h3>Architecture, <em style="font-style:italic">end-to-end</em></h3>
+          <span class="mono">SYSTEM DIAGRAM</span>
+        </div>
+        <div class="diagram reveal d3">
+          <svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid meet" fill="none">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0 0 L 10 5 L 0 10 Z" fill="#C8763C"/>
+              </marker>
+              <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                <path d="M24 0H0V24" stroke="rgba(239,230,209,.08)" stroke-width="1" fill="none"/>
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="600" height="460" fill="url(#grid)"/>
+
+            <!-- Student tier -->
+            <g>
+              <rect x="30" y="30" width="540" height="70" stroke="#C8763C" stroke-width="1" fill="rgba(200,118,60,.06)"/>
+              <text x="50" y="55" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#C8763C">Learner experience</text>
+              <text x="50" y="78" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2" fill="rgba(239,230,209,.7)">WEB · MOBILE · VLE (LTI 1.3)</text>
+              <circle cx="480" cy="65" r="4" fill="#C8763C"/>
+              <circle cx="500" cy="65" r="4" fill="#C8763C" opacity=".6"/>
+              <circle cx="520" cy="65" r="4" fill="#C8763C" opacity=".3"/>
+            </g>
+
+            <!-- Platform core -->
+            <g>
+              <rect x="30" y="130" width="540" height="200" stroke="rgba(239,230,209,.25)" stroke-width="1" fill="rgba(239,230,209,.03)"/>
+              <text x="50" y="155" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#EFE6D1">Oxlon Platform Core</text>
+
+              <g>
+                <rect x="60" y="180" width="140" height="60" stroke="#EFE6D1" stroke-width="1" fill="none"/>
+                <text x="75" y="205" font-family="Fraunces, serif" font-size="13" fill="#EFE6D1">Curriculum</text>
+                <text x="75" y="223" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(239,230,209,.55)">MODULES · RUBRICS</text>
+              </g>
+              <g>
+                <rect x="230" y="180" width="140" height="60" stroke="#EFE6D1" stroke-width="1" fill="rgba(200,118,60,.1)"/>
+                <text x="245" y="205" font-family="Fraunces, serif" font-style="italic" font-size="13" fill="#C8763C">Sandbox runtime</text>
+                <text x="245" y="223" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(239,230,209,.55)">CONTAINERS · GPUs</text>
+              </g>
+              <g>
+                <rect x="400" y="180" width="140" height="60" stroke="#EFE6D1" stroke-width="1" fill="none"/>
+                <text x="415" y="205" font-family="Fraunces, serif" font-size="13" fill="#EFE6D1">Analytics</text>
+                <text x="415" y="223" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(239,230,209,.55)">COHORT · OUTCOMES</text>
+              </g>
+              <g>
+                <rect x="60" y="260" width="140" height="50" stroke="#EFE6D1" stroke-width="1" fill="none"/>
+                <text x="75" y="282" font-family="Fraunces, serif" font-size="12" fill="#EFE6D1">Identity · SSO · SCIM</text>
+                <text x="75" y="298" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(239,230,209,.55)">SAML · OIDC</text>
+              </g>
+              <g>
+                <rect x="230" y="260" width="140" height="50" stroke="#EFE6D1" stroke-width="1" fill="none"/>
+                <text x="245" y="282" font-family="Fraunces, serif" font-size="12" fill="#EFE6D1">Credentialing</text>
+                <text x="245" y="298" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(239,230,209,.55)">UK-APPROVED CERT</text>
+              </g>
+              <g>
+                <rect x="400" y="260" width="140" height="50" stroke="#EFE6D1" stroke-width="1" fill="none"/>
+                <text x="415" y="282" font-family="Fraunces, serif" font-size="12" fill="#EFE6D1">Audit &amp; logs</text>
+                <text x="415" y="298" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(239,230,209,.55)">ISO 27001-READY</text>
+              </g>
+            </g>
+
+            <!-- Model tier -->
+            <g>
+              <rect x="30" y="360" width="540" height="70" stroke="rgba(239,230,209,.25)" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+              <text x="50" y="385" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#EFE6D1">Model layer · vendor-agnostic</text>
+              <text x="50" y="408" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2" fill="rgba(239,230,209,.7)">WATSONX · AZURE · AWS · ANTHROPIC · OPEN-SOURCE</text>
+            </g>
+
+            <!-- arrows -->
+            <line x1="300" y1="100" x2="300" y2="128" stroke="#C8763C" stroke-width="1.2" marker-end="url(#arr)"/>
+            <line x1="300" y1="332" x2="300" y2="358" stroke="#C8763C" stroke-width="1.2" marker-end="url(#arr)"/>
+          </svg>
+        </div>
+        <div class="r-caption reveal d4">
+          <div><div class="cap-h">Tier a</div>Learner &amp; LTI surface</div>
+          <div><div class="cap-h">Tier b</div>Platform · authored modules, runtime &amp; analytics</div>
+          <div><div class="cap-h">Tier c</div>Swappable model providers, below the API line</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>07 / 15 — The platform</span><span style="color:var(--brick)">→</span></div>
+  </section>
+
+  <!-- ============== 08 CURRICULUM ============== -->
+  <section class="page p08 mid" data-title="Curriculum" data-folio="08">
+    <div class="masthead">
+      <div class="m-left"><span class="mark" style="color:var(--ochre)">OxLon</span><span class="dot-sep"></span><span>Curriculum</span></div>
+      <div class="m-right"><span>By subject</span><span class="dot-sep"></span><span style="color:var(--ochre)">08 / 15</span></div>
+    </div>
+
+    <div class="wrap">
+      <div class="head reveal d1">
+        <h2>Curriculum,<br><em>by subject</em>.</h2>
+        <div class="kicker">Eight faculty tracks, each with dedicated datasets, sandboxes &amp; assessment — ready to localise to your department's existing modules.</div>
+      </div>
+
+      <div class="subjects">
+        <div class="subject reveal d2">
+          <div class="sj-top">
+            <div class="sj-no">01</div>
+            <div class="sj-ic"><svg viewBox="0 0 24 24"><path d="M3 20V6M3 20h18"/><path d="M7 20V14M11 20V10M15 20V8M19 20v-5"/></svg></div>
+          </div>
+          <div>
+            <div class="sj-title"><em>Economics</em></div>
+            <div class="sj-desc">Causal inference, macro forecasting, agent-based modelling, policy evaluation with LLMs.</div>
+          </div>
+          <div class="sj-tags">DiD · IV · RDD · Nowcasting</div>
+        </div>
+        <div class="subject reveal d2">
+          <div class="sj-top">
+            <div class="sj-no">02</div>
+            <div class="sj-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><path d="M7 7l10 10"/></svg></div>
+          </div>
+          <div>
+            <div class="sj-title"><em>Finance</em></div>
+            <div class="sj-desc">Factor models, risk engines, NLP on filings, wealth-management agents with tool-use.</div>
+          </div>
+          <div class="sj-tags">Portfolio · Options · NLP · Risk</div>
+        </div>
+        <div class="subject reveal d3">
+          <div class="sj-top">
+            <div class="sj-no">03</div>
+            <div class="sj-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-60 12 12)"/></svg></div>
+          </div>
+          <div>
+            <div class="sj-title"><em>Physics</em></div>
+            <div class="sj-desc">Differentiable simulation, surrogate models, neural operators, detector signal processing.</div>
+          </div>
+          <div class="sj-tags">PINNs · Sim2Real · JAX</div>
+        </div>
+        <div class="subject reveal d3">
+          <div class="sj-top">
+            <div class="sj-no">04</div>
+            <div class="sj-ic"><svg viewBox="0 0 24 24"><path d="M5 3v8a7 7 0 0 0 14 0V3"/><path d="M5 3h14M8 18a4 4 0 0 0 8 0"/><circle cx="10" cy="8" r="1.2" fill="currentColor" stroke="none"/><circle cx="14" cy="10" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+          </div>
+          <div>
+            <div class="sj-title"><em>Microbiology</em></div>
+            <div class="sj-desc">Protein language models, single-cell analysis, lab-notebook agents, ESM &amp; genomic workflows.</div>
+          </div>
+          <div class="sj-tags">ESM · scRNA-seq · AlphaFold</div>
+        </div>
+        <div class="subject reveal d4">
+          <div class="sj-top">
+            <div class="sj-no">05</div>
+            <div class="sj-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13 7l-2 10"/></svg></div>
+          </div>
+          <div>
+            <div class="sj-title">Computer <em>Science</em></div>
+            <div class="sj-desc">Systems-level ML, distributed training, agentic orchestration, eval &amp; safety.</div>
+          </div>
+          <div class="sj-tags">CUDA · RAG · Agents · Eval</div>
+        </div>
+        <div class="subject reveal d4">
+          <div class="sj-top">
+            <div class="sj-no">06</div>
+            <div class="sj-ic"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9h9"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+          </div>
+          <div>
+            <div class="sj-title">Applied <em>Statistics</em></div>
+            <div class="sj-desc">Bayesian modelling, experimental design, causal forests, regulatory-grade analysis.</div>
+          </div>
+          <div class="sj-tags">PyMC · Stan · Causal</div>
+        </div>
+        <div class="subject reveal d5">
+          <div class="sj-top">
+            <div class="sj-no">07</div>
+            <div class="sj-ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg></div>
+          </div>
+          <div>
+            <div class="sj-title">Humanities &amp; <em>NLP</em></div>
+            <div class="sj-desc">Digital humanities pipelines, corpus linguistics, archival OCR, translation &amp; stylometry.</div>
+          </div>
+          <div class="sj-tags">Corpus · OCR · Translation</div>
+        </div>
+        <div class="subject reveal d5">
+          <div class="sj-top">
+            <div class="sj-no">08</div>
+            <div class="sj-ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+          </div>
+          <div>
+            <div class="sj-title"><em>Clinical</em> &amp; Health</div>
+            <div class="sj-desc">Medical imaging, EHR NLP, survival analysis, clinical-decision support guardrails.</div>
+          </div>
+          <div class="sj-tags">DICOM · EHR · Safety</div>
+        </div>
+      </div>
+
+      <div class="foot">
+        <span>↳ 8 subject tracks</span>
+        <span>Each with module maps, datasets &amp; rubrics</span>
+        <span style="color:var(--ochre)">Custom tracks on request</span>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>08 / 15 — Curriculum</span><span style="color:var(--ochre)">→</span></div>
+  </section>
+
+  <!-- ============== 09 SANDBOXES & CONTENT ============== -->
+  <section class="page p09 paper-2" data-title="Sandboxes" data-folio="09">
+    <div class="masthead">
+      <div class="m-left"><span class="mark">OxLon</span><span class="dot-sep"></span><span>Hands-on</span></div>
+      <div class="m-right"><span>Sandboxes &amp; labs</span><span class="dot-sep"></span><span style="color:var(--brick)">09 / 15</span></div>
+    </div>
+
+    <div class="split">
+      <div class="left">
+        <div class="reveal d1">
+          <div class="eyebrow" style="color:var(--brick);margin-bottom:16px">Hands-on practice</div>
+          <h2>Theory is <em>cheap</em>.<br>Students <em>ship</em>.</h2>
+          <p class="lead">Every module pairs a short, readable brief with a graded sandbox. Students open a pre-wired notebook, pull live data, train a model, and submit a working artefact — not an essay about models. Every run is reproducible, markable and auditable.</p>
+        </div>
+        <div class="attrs reveal d4">
+          <div class="a"><div class="k">Runtime</div><div class="v">Reproducible containers</div></div>
+          <div class="a"><div class="k">Marking</div><div class="v"><em style="font-style:italic">Automated + rubric</em></div></div>
+          <div class="a"><div class="k">Datasets</div><div class="v">Live, governed, versioned</div></div>
+          <div class="a"><div class="k">Hardware</div><div class="v">CPU · GPU · on demand</div></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="terminal reveal d2">
+          <div class="tbar">
+            <span>oxlon-sandbox · econ-201 · lab-03</span>
+            <span class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></span>
+          </div>
+<div class="line"><span class="p">01</span><span class="k-cm"># Lab 03 — Nowcasting UK GDP with mixed-frequency data</span></div>
+<div class="line"><span class="p">02</span><span class="k-cm">#  · learning outcome: ship a working weekly forecast</span></div>
+<div class="line"><span class="p">03</span></div>
+<div class="line"><span class="p">04</span><span class="k-cmd">from</span> oxlon.data <span class="k-cmd">import</span> ons, bank_of_england</div>
+<div class="line"><span class="p">05</span><span class="k-cmd">from</span> oxlon.models <span class="k-cmd">import</span> MIDAS, GradientBoost</div>
+<div class="line"><span class="p">06</span></div>
+<div class="line"><span class="p">07</span>df = ons.pull(<span class="k-str">"gdp_monthly"</span>, since=<span class="k-str">"2010-01"</span>)</div>
+<div class="line"><span class="p">08</span>macros = bank_of_england.indicators(<span class="k-str">"weekly"</span>)</div>
+<div class="line"><span class="p">09</span></div>
+<div class="line"><span class="p">10</span>model = MIDAS(target=<span class="k-str">"gdp_qoq"</span>, high_freq=macros)</div>
+<div class="line"><span class="p">11</span>model.fit(df, until=<span class="k-str">"2024-Q4"</span>)</div>
+<div class="line"><span class="p">12</span>fc = model.nowcast(horizon=<span class="k-num">1</span>)</div>
+<div class="line"><span class="p">13</span></div>
+<div class="line"><span class="p">14</span><span class="k-cmd">print</span>(fc)</div>
+<div class="line"><span class="p">15</span><span class="k-cm"># → { "2025-Q1": 0.42, "ci_95": [0.18, 0.71] }</span></div>
+<div class="line"><span class="p">16</span></div>
+<div class="line"><span class="p">17</span><span class="k-cm">$ oxlon submit</span></div>
+<div class="line"><span class="p">18</span><span class="k-ok">✓  Container rebuilt in 8.2s — deterministic hash stored</span></div>
+<div class="line"><span class="p">19</span><span class="k-ok">✓  7/7 hidden tests passed · rubric mark: 86 / 100</span></div>
+<div class="line"><span class="p">20</span><span class="k-warn">→  peer review queued · external examiner: Oxford ECO</span></div>
+<div class="line"><span class="p">21</span><span class="k-ok">✓  Certificate eligible — complete remaining 3 modules</span></div>
+<div class="line"><span class="p">22</span><span class="cursor"></span></div>
+        </div>
+        <div class="r-foot reveal d3">
+          <span>↳ econ-201 · lab-03</span>
+          <span style="text-align:center">Same container. Same marks. Every student, every time.</span>
+          <span style="color:var(--brick)">Reproducible</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>09 / 15 — Hands-on</span><span style="color:var(--brick)">→</span></div>
+  </section>
+
+  <!-- ============== 10 CERTIFICATION ============== -->
+  <section class="page p10 dark" data-title="Certification" data-folio="10">
+    <div class="masthead">
+      <div class="m-left"><span class="mark" style="color:var(--ochre)">OxLon</span><span class="dot-sep"></span><span>Certification</span></div>
+      <div class="m-right"><span>For hiring</span><span class="dot-sep"></span><span style="color:var(--ochre)">10 / 15</span></div>
+    </div>
+
+    <div class="grid">
+      <div class="left">
+        <div class="reveal d1">
+          <div class="eyebrow" style="color:var(--ochre);margin-bottom:16px">Certification</div>
+          <h2>Built for<br>the <em>job market</em>.</h2>
+          <p class="lead">Every completion mints a UK-approved, cryptographically-verifiable certificate — issued by the institution, co-badged by Oxlon, and mapped to a real job family. One click publishes to LinkedIn; recruiters verify with a single API call.</p>
+        </div>
+        <div class="pts reveal d4">
+          <div class="pt"><div class="mk">§</div><div>UK-approved &amp; mapped to job families — <em>not a participation badge</em>.</div></div>
+          <div class="pt"><div class="mk">§</div><div>Verifiable via a public URL — recruiters confirm authenticity in one click.</div></div>
+          <div class="pt"><div class="mk">§</div><div>Employer API for bulk credential verification across hiring pipelines.</div></div>
+          <div class="pt"><div class="mk">§</div><div>One-click share to LinkedIn, Indeed, X &amp; personal sites.</div></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="badge-wrap">
+          <div class="badge reveal d2">
+            <div class="b-circular">
+              <svg viewBox="0 0 300 300" width="300" height="300">
+                <defs>
+                  <path id="circ" d="M 150,150 m -120,0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"/>
+                </defs>
+                <text font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3" fill="rgba(11,20,32,.8)">
+                  <textPath href="#circ">  ·  OXLON AI LEARNING HUB  ·  CERTIFIED FOR HIRING  ·  UNITED KINGDOM  ·  OXFORD  ·  LONDON  ·  BAKU  </textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="b-inner">
+              <div class="bi-a">UK APPROVED · CAREER-GRADE</div>
+              <div class="bi-b">Cert.<br><em style="font-style:italic;color:var(--ochre)">Oxlon</em></div>
+              <div class="bi-c">Verified for hiring</div>
+            </div>
+          </div>
+          <div class="card reveal d3">
+            <div class="avatar">EP</div>
+            <div>
+              <div class="nm">Eleanor Pemberton</div>
+              <div class="sub">Earned <em style="color:var(--brick);font-style:italic">Applied AI · Finance</em> — verified for hiring · Oxlon × Univ.</div>
+            </div>
+            <div class="lin">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              Share
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>10 / 15 — Certification</span><span style="color:var(--ochre)">→</span></div>
+  </section>
+
+  <!-- ============== 11 WHY US ============== -->
+  <section class="page p11" data-title="Why Us" data-folio="11">
+    <div class="masthead">
+      <div class="m-left"><span class="mark">OxLon</span><span class="dot-sep"></span><span>Why us</span></div>
+      <div class="m-right"><span>Three pillars</span><span class="dot-sep"></span><span style="color:var(--brick)">11 / 15</span></div>
+    </div>
+
+    <div class="wrap">
+      <div class="head reveal d1">
+        <h2>Why <em>us</em>.</h2>
+        <div class="kicker">Three structural reasons Oxlon is an unusually defensible choice for a multi-year institutional investment.</div>
+      </div>
+
+      <div class="cols">
+        <div class="col reveal d2">
+          <div class="c-no">01</div>
+          <div class="c-tag">Scalability</div>
+          <h3>One faculty,<br>or <em>the whole university</em>.</h3>
+          <p>Architected as a multi-tenant platform with per-department isolation. Start with a single module, scale to every faculty without re-architecture — same contract, same code, same certificates.</p>
+          <div class="c-foot">
+            <span>↳ Elastic by design</span>
+            <svg viewBox="0 0 24 24"><path d="M3 9h6V3M21 15h-6v6M14 10l7-7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="col reveal d3">
+          <div class="c-no">02</div>
+          <div class="c-tag">Modularity</div>
+          <h3>Integrates into<br>your <em>existing stack</em>.</h3>
+          <p>LTI 1.3 into Canvas, Moodle &amp; Blackboard. SSO with Entra, Okta, Shibboleth. SCIM provisioning, webhooks, open REST &amp; GraphQL. You keep your VLE, your registry, your identity. We slot in.</p>
+          <div class="c-foot">
+            <span>↳ Sits with, not instead</span>
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+        </div>
+        <div class="col reveal d4">
+          <div class="c-no">03</div>
+          <div class="c-tag">Sovereign-grade</div>
+          <h3>Already delivering<br>with <em>UK &amp; DE governments</em>.</h3>
+          <p>Oxlon is actively engaged on AI and technical-skills programmes with the British and German governments. The same rigour — security, audit, reproducibility, procurement — that a sovereign buyer demands is the floor here, not the ceiling.</p>
+          <div class="c-foot">
+            <span style="color:var(--ochre)">↳ Sovereign-ready</span>
+            <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>11 / 15 — Why us</span><span style="color:var(--brick)">→</span></div>
+  </section>
+
+  <!-- ============== 12 AUDIENCE ============== -->
+  <section class="page p12 brick" data-title="Audience" data-folio="12">
+    <div class="masthead">
+      <div class="m-left"><span class="mark" style="color:var(--ochre)">OxLon</span><span class="dot-sep"></span><span>Who it's for</span></div>
+      <div class="m-right"><span>Audience</span><span class="dot-sep"></span><span style="color:var(--ochre)">12 / 15</span></div>
+    </div>
+
+    <div class="wrap">
+      <div class="left">
+        <div class="reveal d1">
+          <div class="eyebrow" style="color:var(--ochre);margin-bottom:16px">Who it's for</div>
+          <h2>For the<br><em>university</em>.</h2>
+          <p class="lead">Built primarily for research universities — but the same platform serves business schools, polytechnics, national research labs, and ministry-run upskilling programmes. We adapt the shell; the core doesn't move.</p>
+        </div>
+        <div class="targets reveal d3">
+          <span class="chip on">Russell Group</span>
+          <span class="chip">Business schools</span>
+          <span class="chip">Polytechnics</span>
+          <span class="chip">Med schools</span>
+          <span class="chip">Research labs</span>
+          <span class="chip">Civil service</span>
+          <span class="chip">Continuing ed.</span>
+          <span class="chip">Doctoral colleges</span>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="rh reveal d2">
+          <h3>Fit by segment</h3>
+          <div class="m">Deployment size</div>
+        </div>
+        <div class="seg-list">
+          <div class="seg reveal d3">
+            <div class="sg-no">i.</div>
+            <div class="sg-mid">
+              <div class="sg-t"><em>Flagship</em> research university</div>
+              <div class="sg-d">Multi-faculty, cross-departmental deployment with dedicated sandbox GPUs and bespoke tracks.</div>
+            </div>
+            <div class="sg-pct">40%</div>
+          </div>
+          <div class="seg reveal d3">
+            <div class="sg-no">ii.</div>
+            <div class="sg-mid">
+              <div class="sg-t">Business &amp; <em>finance schools</em></div>
+              <div class="sg-d">Applied-AI overlay on existing MBA / MSc — finance, wealth, economics tracks.</div>
+            </div>
+            <div class="sg-pct">25%</div>
+          </div>
+          <div class="seg reveal d4">
+            <div class="sg-no">iii.</div>
+            <div class="sg-mid">
+              <div class="sg-t"><em>STEM</em> faculties</div>
+              <div class="sg-d">Physics, microbiology, CS — heavy sandbox use, reproducible lab courses, PhD onboarding.</div>
+            </div>
+            <div class="sg-pct">20%</div>
+          </div>
+          <div class="seg reveal d4">
+            <div class="sg-no">iv.</div>
+            <div class="sg-mid">
+              <div class="sg-t">Government &amp; <em>civil-service academies</em></div>
+              <div class="sg-d">On-premises, sovereign deployment with cleared instructors and secure enclaves.</div>
+            </div>
+            <div class="sg-pct">15%</div>
+          </div>
+        </div>
+        <div class="rf reveal d5">
+          <span>↳ Allocation by 2026 pipeline</span>
+          <span style="color:var(--ochre)">n = 14 active conversations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>12 / 15 — Who it's for</span><span style="color:var(--ochre)">→</span></div>
+  </section>
+
+  <!-- ============== 13 COMPETITION ============== -->
+  <section class="page p13" data-title="Competition" data-folio="13">
+    <div class="masthead">
+      <div class="m-left"><span class="mark">OxLon</span><span class="dot-sep"></span><span>Comparison</span></div>
+      <div class="m-right"><span>vs Coursera &amp; Udemy</span><span class="dot-sep"></span><span style="color:var(--brick)">13 / 15</span></div>
+    </div>
+
+    <div class="wrap">
+      <div class="head reveal d1">
+        <h2>Why not just<br><em>Coursera</em> or <em>Udemy</em>?</h2>
+        <div class="kicker">A candid head-to-head against the platforms every Vice-Chancellor has already considered. We name names — and we draw the comparison your procurement board will draw.</div>
+      </div>
+
+      <div class="table">
+        <div class="trow hd reveal d2">
+          <div class="cell first">Capability</div>
+          <div class="cell us">Oxlon</div>
+          <div class="cell">Coursera</div>
+          <div class="cell">Udemy Business</div>
+          <div class="cell">In-house build</div>
+        </div>
+        <div class="trow reveal d3">
+          <div class="cell first"><em>Custom</em> curriculum per faculty</div>
+          <div class="cell us-col"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Authored</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Off-shelf</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Marketplace</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="plus"><path d="M12 5v14M5 12h14"/></svg><span class="val">18–36 mo.</span></div>
+        </div>
+        <div class="trow reveal d3">
+          <div class="cell first"><em>Local teacher</em> support — on campus</div>
+          <div class="cell us-col"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Embedded</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Forum only</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">None</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Yours</span></div>
+        </div>
+        <div class="trow reveal d4">
+          <div class="cell first"><em>Self-paced</em> + live class on demand</div>
+          <div class="cell us-col"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Hybrid</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="plus"><path d="M12 5v14M5 12h14"/></svg><span class="val">Self-pace</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Recorded</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="plus"><path d="M12 5v14M5 12h14"/></svg><span class="val">DIY</span></div>
+        </div>
+        <div class="trow reveal d4">
+          <div class="cell first"><em>Custom price</em> &amp; learning path</div>
+          <div class="cell us-col"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Per faculty</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Per-seat</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Per-seat</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Internal</span></div>
+        </div>
+        <div class="trow reveal d5">
+          <div class="cell first"><em>UK-approved</em> certificate for hiring</div>
+          <div class="cell us-col"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Verified</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="plus"><path d="M12 5v14M5 12h14"/></svg><span class="val">Varies</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Completion</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Accredit alone</span></div>
+        </div>
+        <div class="trow reveal d5">
+          <div class="cell first">Reproducible <em>sandboxes &amp; labs</em></div>
+          <div class="cell us-col"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Deterministic</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="plus"><path d="M12 5v14M5 12h14"/></svg><span class="val">Basic</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Video only</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="plus"><path d="M12 5v14M5 12h14"/></svg><span class="val">DIY</span></div>
+        </div>
+        <div class="trow reveal d6">
+          <div class="cell first">Cloud <em>or</em> on-premises · sovereign</div>
+          <div class="cell us-col"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Both</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Cloud only</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="no"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="val">Cloud only</span></div>
+          <div class="cell"><svg viewBox="0 0 24 24" class="yes"><path d="M5 13l4 4L20 6"/></svg><span class="val">Your infra</span></div>
+        </div>
+        <div class="trow tot reveal d6">
+          <div class="cell first">Net score</div>
+          <div class="cell us-tot" style="color:var(--ochre)">7 / 7</div>
+          <div class="cell">1 / 7</div>
+          <div class="cell">0 / 7</div>
+          <div class="cell">3 / 7</div>
+        </div>
+      </div>
+
+      <div class="foot reveal d6">
+        <span>↳ Honest comparison · Coursera &amp; Udemy named where they sit</span>
+        <span style="color:var(--brick)">Marketplaces sell content. OxLon sells outcomes.</span>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>13 / 15 — Comparison</span><span style="color:var(--brick)">→</span></div>
+  </section>
+
+  <!-- ============== 14 TRACTION ============== -->
+  <section class="page p14 sage" data-title="Traction" data-folio="14">
+    <div class="masthead">
+      <div class="m-left"><span class="mark" style="color:var(--ochre)">OxLon</span><span class="dot-sep"></span><span>Who trusts us</span></div>
+      <div class="m-right"><span>Credentials &amp; partners</span><span class="dot-sep"></span><span style="color:var(--ochre)">14 / 15</span></div>
+    </div>
+
+    <div class="wrap">
+      <div class="head reveal d1">
+        <h2>Who <em>trusts</em><br>the work.</h2>
+        <div class="kicker">Active engagements with sovereign buyers &amp; the first cohort of institutional pilots — drawn from Oxlon's wider production portfolio.</div>
+      </div>
+
+      <div class="rows">
+        <div class="r-top">
+          <div class="tile reveal d2">
+            <div class="t-flag">
+              <span class="f-sq f-uk"></span>
+              <span>UK Government</span>
+            </div>
+            <h3>British <em>digital-skills</em> programme.</h3>
+            <p>Active engagement delivering AI and technical-skills upskilling, aligned to the national digital strategy. Procurement-grade security, audit and assurance built in.</p>
+            <div class="t-meta"><span>Sovereign · 2025 →</span><span class="big-sm"><em>No. 10</em></span></div>
+          </div>
+          <div class="tile reveal d3">
+            <div class="t-flag">
+              <span class="f-sq f-de"></span>
+              <span>German Government</span>
+            </div>
+            <h3>Deutsche <em>AI-Fortbildung</em> mandate.</h3>
+            <p>Co-delivering AI and technical-skills training into federal programmes — the same platform, localised, on sovereign infrastructure, to German assurance standards.</p>
+            <div class="t-meta"><span>Sovereign · 2025 →</span><span class="big-sm"><em>Bundes</em></span></div>
+          </div>
+          <div class="tile reveal d4">
+            <div class="t-flag">
+              <span class="f-sq f-ox"></span>
+              <span>Oxford · London</span>
+            </div>
+            <h3>An <em>Oxford-rooted</em> team.</h3>
+            <p>Founded by Oxford-affiliated economists, data scientists and software engineers, with further pedigree from Russell Group universities. Production delivery in HR, wealth and macro.</p>
+            <div class="t-meta"><span>Team · est. 2024</span><span class="big-sm"><em>Ox · Ln</em></span></div>
+          </div>
+        </div>
+
+        <div class="r-bot">
+          <div class="quote reveal d5">
+            <div class="q-open">“</div>
+            <div class="q-text">Oxlon is one of the very few groups in the UK shipping AI as a <em>production engineering</em> discipline, not a research demo — exactly the mindset we want our graduates exposed to.</div>
+            <div class="q-at">— Faculty reviewer<div class="nm">Russell Group, 2026</div></div>
+          </div>
+          <div class="stats reveal d5">
+            <div class="sh">Portfolio proof</div>
+            <div class="stat"><div class="lb">Manual HR tasks automated in live deployment</div><div class="nb">85%</div></div>
+            <div class="stat"><div class="lb">Reduction in HR operational cost (year 1)</div><div class="nb">40%</div></div>
+            <div class="stat"><div class="lb">Faster client review prep in wealth mgmt.</div><div class="nb">2–3×</div></div>
+          </div>
+          <div class="logos reveal d6">
+            <div class="sh">Stack we deploy on</div>
+            <div class="lgrid">
+              <div class="l"><div class="l-mono"><em style="font-style:italic">watson</em>x</div><div class="l-sub">IBM</div></div>
+              <div class="l"><div class="l-mono">Azure</div><div class="l-sub">Microsoft</div></div>
+              <div class="l"><div class="l-mono">AWS</div><div class="l-sub">Amazon</div></div>
+              <div class="l"><div class="l-mono"><em style="font-style:italic">Claude</em></div><div class="l-sub">Anthropic</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-rail"><span>OxLon · AI Learning Hub</span><span>14 / 15 — Who trusts us</span><span style="color:var(--ochre)">→</span></div>
+  </section>
+
+  <!-- ============== 15 GET IN TOUCH ============== -->
+  <section class="page p15 dark" data-title="Get in touch" data-folio="15">
+    <div class="grid">
+      <div class="corner-tl"><span class="crown">Ox</span></div>
+      <div class="top-bar">
+        <div class="l">
+          <span>OxLon</span>
+          <span class="dot-sep"></span>
+          <span>AI Learning Hub</span>
+        </div>
+        <div style="display:flex;gap:22px;align-items:center">
+          <span>Get in touch</span>
+          <span class="dot-sep" style="background:var(--ochre);opacity:1"></span>
+          <span>Start a pilot</span>
+        </div>
+      </div>
+      <div class="corner-tr">↗</div>
+
+      <div class="spine-l"><span class="vtext">Let's start the conversation.</span></div>
+
+      <div class="hero">
+        <div class="top reveal d1">
+          <div class="cta">Let's build<br>a cohort<br><em>for Azerbaijan</em>.</div>
+          <div class="r-note">A twelve-week discovery, a platform in your cloud, a first module on campus before the next term bell. One point of contact. One line item. We come to Baku.</div>
+        </div>
+
+        <div class="mid reveal d2">
+          <div class="contact">
+            <span class="c-k">Speak to us</span>
+            <span class="c-v"><em style="font-style:italic">info@oxlon.uk</em></span>
+            <span class="c-x">For institutional enquiries &amp; pilots</span>
+          </div>
+          <div class="contact">
+            <span class="c-k">Where we are</span>
+            <span class="c-v">Oxford · London · <em style="font-style:italic">Baku</em></span>
+            <span class="c-x">United Kingdom · Azerbaijan</span>
+          </div>
+          <div class="contact">
+            <span class="c-k">On the web</span>
+            <span class="c-v"><em style="font-style:italic">oxlon.uk</em></span>
+            <span class="c-x">Case studies, team &amp; pricing</span>
+          </div>
+        </div>
+
+        <div class="bot reveal d3">
+          <div class="l">
+            <div><span class="hl">Production-ready</span> AI learning,</div>
+            <div>built for universities,</div>
+            <div>delivered as a turnkey programme.</div>
+          </div>
+          <div class="m">ø</div>
+          <div class="r">
+            <div>© <span class="hl">OxLon Ltd.</span> · All rights reserved.</div>
+            <div>Oxford · London · Baku.</div>
+            <div>oxlon.uk</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spine-r"><span class="vtext">OxLon · oxlon.uk · thank you</span></div>
+
+      <div class="bottom-strip">
+        <div class="bs-l">15 / 15</div>
+        <div class="bs-m">
+          <span>oxlon.uk</span>
+          <span class="end">— let's talk —</span>
+          <span>← press Home</span>
+        </div>
+        <div class="bs-r">ø</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav" aria-label="Page navigation"></nav>
+<div class="kbd-hint"><span class="kbd">←</span><span class="kbd">→</span><span style="margin-left:4px">navigate</span></div>
+
+<script>
+(function(){
+  const scroller = document.getElementById('scroller');
+  const pages = Array.from(scroller.querySelectorAll('.page'));
+  const nav = document.getElementById('nav');
+  const progress = document.getElementById('progress');
+
+  // build nav dots
+  pages.forEach((p, i)=>{
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', `Page ${i+1}: ${p.dataset.title || ''}`);
+    b.title = `${String(i+1).padStart(2,'0')} · ${p.dataset.title || ''}`;
+    b.addEventListener('click', ()=> goTo(i));
+    nav.appendChild(b);
+  });
+
+  // TOC clicks
+  document.querySelectorAll('[data-target]').forEach(a=>{
+    a.style.cursor = 'pointer';
+    a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const idx = parseInt(a.dataset.target,10) - 1;
+      goTo(idx);
+    });
+  });
+
+  function goTo(i){
+    i = Math.max(0, Math.min(pages.length-1, i));
+    pages[i].scrollIntoView({behavior:'smooth', inline:'start', block:'start'});
+  }
+
+  // keyboard
+  let currentIndex = 0;
+  window.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' '){ e.preventDefault(); goTo(currentIndex+1); }
+    else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); goTo(currentIndex-1); }
+    else if(e.key === 'Home'){ e.preventDefault(); goTo(0); }
+    else if(e.key === 'End'){ e.preventDefault(); goTo(pages.length-1); }
+  });
+
+  // update active page on scroll (in-view is sticky — once revealed, stays revealed)
+  const dots = nav.querySelectorAll('button');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting && en.intersectionRatio > 0.3){
+        en.target.classList.add('in-view');
+      }
+      if(en.isIntersecting && en.intersectionRatio > 0.55){
+        const idx = pages.indexOf(en.target);
+        currentIndex = idx;
+        dots.forEach((d,di)=> d.classList.toggle('active', di===idx));
+        progress.style.width = `${((idx+1)/pages.length)*100}%`;
+      }
+    });
+  },{root:scroller, threshold:[0, .3, .55, .9]});
+  pages.forEach(p=> io.observe(p));
+
+  // wheel → horizontal on trackpads / mice
+  scroller.addEventListener('wheel', (e)=>{
+    if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+      scroller.scrollLeft += e.deltaY;
+      e.preventDefault();
+    }
+  }, {passive:false});
+
+  // preload first in-view
+  pages[0].classList.add('in-view');
+  dots[0].classList.add('active');
+  progress.style.width = `${(1/pages.length)*100}%`;
+})();
+</script>
+</body>
+</html>
