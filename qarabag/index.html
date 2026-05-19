@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Qarabağ Universiteti · BSc Economics — Curriculum Proposal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- ============================================================
+     PERSISTENT CHROME — logo, slide indicator, nav dots
+     ============================================================ -->
+<div class="chrome">
+  <a class="brand-mark" href="#" onclick="event.preventDefault();document.getElementById('deck').scrollTo({left:0,behavior:'smooth'});">
+    <img class="logo-img logo-img--chrome" src="assets/qarabaglogo.png" alt="" />
+    <span class="brand-name"><strong>Qarabağ Universiteti</strong><span>BSc Economics · Proposal</span></span>
+  </a>
+
+  <div class="slide-indicator" id="slideIndicator"></div>
+
+  <div class="nav-bar" role="navigation" aria-label="Slide navigation">
+    <button class="nav-arrow" id="navPrev" aria-label="Previous slide">
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1 L3 6 L8 11"/></svg>
+    </button>
+    <div class="nav-dots" id="navDots"></div>
+    <span class="nav-counter" id="navCounter"></span>
+    <button class="nav-arrow" id="navNext" aria-label="Next slide">
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 1 L9 6 L4 11"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================
+     COURSE MODAL
+     ============================================================ -->
+<div class="modal-backdrop" id="modalBackdrop"></div>
+<div class="modal" id="courseModal" role="dialog" aria-modal="true">
+  <div class="modal-panel"></div>
+</div>
+
+<!-- ============================================================
+     DECK
+     ============================================================ -->
+<div class="deck" id="deck">
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 01 — COVER
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide" data-tone="dark" data-screen-label="01 Cover" data-title="Cover" data-section="Proposal · 2026">
+    <div class="tex-grid" style="opacity:.025"></div>
+
+    <div style="position:absolute; inset:0; display:grid; grid-template-columns: 1.55fr 1fr;">
+
+      <!-- LEFT: typographic stack -->
+      <div style="padding: 120px 64px 100px 96px; display:flex; flex-direction:column; justify-content:space-between; position: relative;">
+        <div class="eyebrow" style="color: var(--green-pale);"><span class="dot"></span>Curriculum Proposal · v 1.0</div>
+
+        <div>
+          <div style="font-family: var(--font-mono); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--sand); margin-bottom: 28px;">
+            School of Business and Economics · Department of Economics
+          </div>
+          <h1 class="display" style="font-size: clamp(72px, 8.4vw, 156px); color: var(--off-white); line-height: .92; letter-spacing: -0.015em;">
+            BSc<br/><em style="font-style:italic; color: var(--green-pale);">Economics.</em>
+          </h1>
+          <div style="margin-top: 36px; max-width: 580px;">
+            <p class="lede" style="color: var(--green-pale); font-size: clamp(20px, 1.6vw, 26px); line-height: 1.3;">
+              A four-year, data-first economics degree for a newly founded university — internationally calibrated, regionally rooted in Azerbaijan and the South Caucasus.
+            </p>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 28px; align-items: end; padding-top: 36px; border-top: 1px solid rgba(255,255,255,.16);">
+          <div>
+            <div class="eyebrow" style="opacity:.55; margin-bottom: 6px; font-size: 10px;">Programme</div>
+            <div class="mono" style="font-size: 12px; opacity:.9;">BSc (Hons) Economics</div>
+          </div>
+          <div>
+            <div class="eyebrow" style="opacity:.55; margin-bottom: 6px; font-size: 10px;">Duration</div>
+            <div class="mono" style="font-size: 12px; opacity:.9;">4 yrs · 8 sem.</div>
+          </div>
+          <div>
+            <div class="eyebrow" style="opacity:.55; margin-bottom: 6px; font-size: 10px;">Credits</div>
+            <div class="mono" style="font-size: 12px; opacity:.9;">240 ECTS</div>
+          </div>
+          <div>
+            <div class="eyebrow" style="opacity:.55; margin-bottom: 6px; font-size: 10px;">Language</div>
+            <div class="mono" style="font-size: 12px; opacity:.9;">English</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: logo block on darker panel -->
+      <div style="background: var(--green); padding: 120px 96px 100px 64px; display:flex; flex-direction:column; justify-content:space-between; position: relative; border-left: 1px solid rgba(255,255,255,.08);">
+        <div class="eyebrow" style="color: var(--green-pale); text-align: right; opacity:.7;">
+          Prepared by OxLon and submitted to<br/><span style="opacity:.92;">School of Business and Economics</span><br/><span style="opacity:.72;">Submitted to University Senate · 2026</span>
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:center; flex-direction:column;">
+          <img class="cover-logo-img" src="assets/qarabaglogo.png" alt="Qarabağ University logo" />
+          <div style="text-align:center; margin-top: 30px;">
+            <div class="mono" style="margin-top: 16px; font-size: 10px; letter-spacing: .22em; color: var(--green-pale); opacity: .8;">EST. 2024 · QARABAĞ · AZ</div>
+          </div>
+        </div>
+
+        <div class="mono" style="font-size: 10px; letter-spacing: .18em; text-align: right; opacity: .55;">
+          Calibrated against LSE, UCL,<br/>Bocconi, Tilburg, Oxford,<br/>Warwick &amp; Rice.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 02 — VISION (Why this program)
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide vision-slide" data-tone="cream" data-screen-label="02 Vision" data-title="Vision" data-section="Why this programme">
+    <div class="split-46">
+
+      <div class="pad-l vision-hero" style="display:flex; flex-direction:column; justify-content:space-between; background: var(--green-deep); color: var(--off-white); padding: 96px 64px;">
+        <div class="eyebrow"><span class="dot"></span>Section 01 · Vision</div>
+        <div>
+          <h2 class="display vision-title" style="font-size: clamp(54px, 6vw, 92px); line-height: .96;">
+            A modern<br/>economics<br/>department,<br/>built from<br/><em style="font-style:italic; color: var(--green-pale);">first principles.</em>
+          </h2>
+        </div>
+        <div class="mono vision-meta" style="font-size: 11px; letter-spacing: .18em; opacity:.7;">
+          ↳ Calibrated against LSE, UCL, Bocconi, Tilburg, Oxford, Warwick &amp; Rice core sequences
+        </div>
+      </div>
+
+      <div class="pad-r vision-content" style="padding: 120px 120px 120px 96px; display:flex; flex-direction:column; gap: 40px; justify-content:center;">
+        <p class="lede vision-lede" style="font-size: clamp(24px, 2vw, 32px); max-width: 30ch;">
+          Qarabağ Universiteti is being founded at a moment when economics itself is changing — the discipline has become unmistakably <em style="font-style:italic;">empirical, computational and policy-engaged.</em>
+        </p>
+        <p class="body-text vision-statement" style="font-size: 17px; line-height: 1.55; max-width: 56ch;">
+          This proposal builds the BSc Economics around four convictions: that <strong>data and code</strong> are now core literacies of the economist, not optional electives; that <strong>theory must be applied</strong>, including to Azerbaijan's own diversification and post-conflict reconstruction; that <strong>graduates need a portfolio</strong> — a thesis, a replication package, a reading log — not just a transcript; and that the programme should remain <strong>internationally legible</strong>, so a Karabakh BSc transfers cleanly to a master's at any peer institution.
+        </p>
+
+        <div class="vision-pillars" style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 24px 36px; margin-top: 12px;">
+          <div class="vision-pillar">
+            <div class="mono vision-pillar__label" style="font-size: 10px; letter-spacing: .2em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">Pillar 01</div>
+            <div class="vision-pillar__title" style="font-family: var(--font-display); font-size: 22px; line-height: 1.15; color: var(--green-ink);">Theory with rigour</div>
+            <div class="body-text vision-pillar__copy" style="font-size: 14px; margin-top: 4px;">A full intermediate sequence and a three-course econometrics spine.</div>
+          </div>
+          <div class="vision-pillar">
+            <div class="mono vision-pillar__label" style="font-size: 10px; letter-spacing: .2em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">Pillar 02</div>
+            <div class="vision-pillar__title" style="font-family: var(--font-display); font-size: 22px; line-height: 1.15; color: var(--green-ink);">Data as native language</div>
+            <div class="body-text vision-pillar__copy" style="font-size: 14px; margin-top: 4px;">Python, R and Stata from Year 1; ML and deep learning by Year 3.</div>
+          </div>
+          <div class="vision-pillar">
+            <div class="mono vision-pillar__label" style="font-size: 10px; letter-spacing: .2em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">Pillar 03</div>
+            <div class="vision-pillar__title" style="font-family: var(--font-display); font-size: 22px; line-height: 1.15; color: var(--green-ink);">Rooted in the region</div>
+            <div class="body-text vision-pillar__copy" style="font-size: 14px; margin-top: 4px;">A flagship course on the economy of Azerbaijan; Caucasus cases throughout.</div>
+          </div>
+          <div class="vision-pillar">
+            <div class="mono vision-pillar__label" style="font-size: 10px; letter-spacing: .2em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">Pillar 04</div>
+            <div class="vision-pillar__title" style="font-family: var(--font-display); font-size: 22px; line-height: 1.15; color: var(--green-ink);">A defended thesis</div>
+            <div class="body-text vision-pillar__copy" style="font-size: 14px; margin-top: 4px;">Two-semester capstone with a public defence and replication package.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 03 — PROGRAMME ARCHITECTURE (4 phases)
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide architecture-slide" data-tone="paper" data-screen-label="03 Architecture" data-title="Architecture" data-section="The four-phase model">
+    <div class="architecture-layout" style="position:absolute; inset:0; padding: 80px 96px 96px;">
+      <div class="architecture-header" style="display:flex; justify-content: space-between; align-items: baseline; margin-bottom: 60px;">
+        <div class="architecture-heading">
+          <div class="eyebrow" style="color: var(--green);"><span class="dot"></span>Section 02 · Architecture</div>
+          <h2 class="display architecture-title" style="font-size: clamp(58px, 6vw, 96px); color: var(--green-ink); margin-top: 14px; line-height: .98;">
+            A four-phase arc, <em style="font-style:italic; color: var(--green);">one progression.</em>
+          </h2>
+        </div>
+        <div class="architecture-note" style="font-size: 11px; letter-spacing: .18em; color: var(--ink-mute); text-align:right; max-width: 28ch;">
+          Each year answers a different question, and every year stands on the one before it.
+        </div>
+      </div>
+
+      <div class="architecture-phases" style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 0; flex: 1; height: calc(100vh - 360px);">
+
+        <div class="architecture-phase architecture-phase--y1" style="border-left: 3px solid var(--green); padding: 32px 28px; position: relative; display:flex; flex-direction:column;">
+          <div class="mono architecture-phase__label" style="font-size: 12px; letter-spacing: .2em; color: var(--green); margin-bottom: 16px;">PHASE 01</div>
+          <div class="display architecture-phase__year" style="font-size: 160px; color: var(--green-ink); line-height: 1; margin-bottom: 8px;">Y1</div>
+          <h3 class="architecture-phase__title" style="font-family: var(--font-display); font-size: 32px; line-height: 1.1; color: var(--green-ink); margin-bottom: 16px;">Foundations</h3>
+          <p class="body-text architecture-phase__copy" style="font-size: 14px;">Students build the runway: C1-level English, academic literacy, computer fluency, statistics, and the historical context needed before formal economics begins.</p>
+          <ul class="architecture-phase__courses" style="list-style: none; margin-top: auto; padding-top: 24px; border-top: 1px dashed rgba(20,32,30,.18); font-family: var(--font-mono); font-size: 11px; line-height: 1.8; color: var(--ink-soft);">
+            <li>English to C1</li>
+            <li>Statistics with Python / R / Stata</li>
+            <li>Global Economic History</li>
+            <li>History of Economic Thought</li>
+          </ul>
+        </div>
+
+        <div class="architecture-phase architecture-phase--y2" style="border-left: 3px solid var(--green); padding: 32px 28px; position: relative; display:flex; flex-direction:column;">
+          <div class="mono architecture-phase__label" style="font-size: 12px; letter-spacing: .2em; color: var(--green); margin-bottom: 16px;">PHASE 02</div>
+          <div class="display architecture-phase__year" style="font-size: 160px; color: var(--green-ink); line-height: 1; margin-bottom: 8px;">Y2</div>
+          <h3 class="architecture-phase__title" style="font-family: var(--font-display); font-size: 32px; line-height: 1.1; color: var(--green-ink); margin-bottom: 16px;">Core Theory</h3>
+          <p class="body-text architecture-phase__copy" style="font-size: 14px;">The analytical toolkit locks in: principles, intermediate micro and macro, mathematical methods, research design, and first econometrics.</p>
+          <ul class="architecture-phase__courses" style="list-style: none; margin-top: auto; padding-top: 24px; border-top: 1px dashed rgba(20,32,30,.18); font-family: var(--font-mono); font-size: 11px; line-height: 1.8; color: var(--ink-soft);">
+            <li>Principles + Intermediate Micro</li>
+            <li>Principles + Intermediate Macro</li>
+            <li>Econometrics I: Cross-section</li>
+            <li>Data Lab: Fundamentals + ML</li>
+          </ul>
+        </div>
+
+        <div class="architecture-phase architecture-phase--y3" style="border-left: 3px solid var(--green); padding: 32px 28px; position: relative; display:flex; flex-direction:column;">
+          <div class="mono architecture-phase__label" style="font-size: 12px; letter-spacing: .2em; color: var(--green); margin-bottom: 16px;">PHASE 03</div>
+          <div class="display architecture-phase__year" style="font-size: 160px; color: var(--green-ink); line-height: 1; margin-bottom: 8px;">Y3</div>
+          <h3 class="architecture-phase__title" style="font-family: var(--font-display); font-size: 32px; line-height: 1.1; color: var(--green-ink); margin-bottom: 16px;">Quantitative &amp; Applied</h3>
+          <p class="body-text architecture-phase__copy" style="font-size: 14px;">Students move into applied economics: time-series and panel econometrics, strategy, industrial organization, development, finance, and deep learning.</p>
+          <ul class="architecture-phase__courses" style="list-style: none; margin-top: auto; padding-top: 24px; border-top: 1px dashed rgba(20,32,30,.18); font-family: var(--font-mono); font-size: 11px; line-height: 1.8; color: var(--ink-soft);">
+            <li>Econometrics II + III</li>
+            <li>Game Theory + Industrial Organization</li>
+            <li>Development + Financial Economics</li>
+            <li>Data Lab: Deep Learning</li>
+          </ul>
+        </div>
+
+        <div class="architecture-phase architecture-phase--y4" style="border-left: 3px solid var(--sand); padding: 32px 28px; position: relative; display:flex; flex-direction:column;">
+          <div class="mono architecture-phase__label" style="font-size: 12px; letter-spacing: .2em; color: var(--sand-deep); margin-bottom: 16px;">PHASE 04</div>
+          <div class="display architecture-phase__year" style="font-size: 160px; color: var(--green-ink); line-height: 1; margin-bottom: 8px;">Y4</div>
+          <h3 class="architecture-phase__title" style="font-family: var(--font-display); font-size: 32px; line-height: 1.1; color: var(--green-ink); margin-bottom: 16px;">Synthesis</h3>
+          <p class="body-text architecture-phase__copy" style="font-size: 14px;">The final year turns the degree into a portfolio: thesis, Azerbaijan-focused applied work, international trade, political economy, and a chosen elective track.</p>
+          <ul class="architecture-phase__courses" style="list-style: none; margin-top: auto; padding-top: 24px; border-top: 1px dashed rgba(20,32,30,.18); font-family: var(--font-mono); font-size: 11px; line-height: 1.8; color: var(--ink-soft);">
+            <li>Defended Thesis</li>
+            <li>Economy of Azerbaijan</li>
+            <li>International Trade + Political Economy</li>
+            <li>Five electives from the Year 4 library</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 04 — STATS AT A GLANCE
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide" data-tone="green" data-screen-label="04 Stats" data-title="At a glance" data-section="Programme by numbers">
+    <div class="tex-grid"></div>
+    <div style="position:absolute; inset:0; padding: 96px;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom: 72px;">
+        <div class="eyebrow" style="color: var(--green-pale);"><span class="dot"></span>Section 03 · By the numbers</div>
+        <div class="mono" style="font-size: 11px; letter-spacing: .18em; opacity:.7; text-align:right;">↳ Indicative · subject to senate approval</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,.2);">
+        <div style="padding: 36px 32px; border-right: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2);">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; opacity:.7; margin-bottom: 12px;">DURATION</div>
+          <div class="display tabular" style="font-size: clamp(120px, 13vw, 200px); line-height: .9; color: var(--off-white);">4</div>
+          <div style="font-family: var(--font-display); font-size: 22px; opacity:.9;">years</div>
+        </div>
+        <div style="padding: 36px 32px; border-right: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2);">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; opacity:.7; margin-bottom: 12px;">SEMESTERS</div>
+          <div class="display tabular" style="font-size: clamp(120px, 13vw, 200px); line-height: .9; color: var(--off-white);">8</div>
+          <div style="font-family: var(--font-display); font-size: 22px; opacity:.9;">15 weeks each</div>
+        </div>
+        <div style="padding: 36px 32px; border-right: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2);">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; opacity:.7; margin-bottom: 12px;">CORE MODULES</div>
+          <div class="display tabular" style="font-size: clamp(120px, 13vw, 200px); line-height: .9; color: var(--off-white);">36</div>
+          <div style="font-family: var(--font-display); font-size: 22px; opacity:.9;">across all four years</div>
+        </div>
+        <div style="padding: 36px 32px; border-bottom: 1px solid rgba(255,255,255,.2);">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; opacity:.7; margin-bottom: 12px;">ELECTIVES</div>
+          <div class="display tabular" style="font-size: clamp(120px, 13vw, 200px); line-height: .9; color: var(--off-white);">10</div>
+          <div style="font-family: var(--font-display); font-size: 22px; opacity:.9;">choose 5 in Year 4</div>
+        </div>
+
+        <div style="padding: 36px 32px; border-right: 1px solid rgba(255,255,255,.2);">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; opacity:.7; margin-bottom: 12px;">TOTAL ECTS</div>
+          <div class="display tabular" style="font-size: clamp(120px, 13vw, 200px); line-height: .9; color: var(--off-white);">240</div>
+          <div style="font-family: var(--font-display); font-size: 22px; opacity:.9;">Bologna-aligned</div>
+        </div>
+        <div style="padding: 36px 32px; border-right: 1px solid rgba(255,255,255,.2);">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; opacity:.7; margin-bottom: 12px;">DATA SPINE</div>
+          <div class="display tabular" style="font-size: clamp(120px, 13vw, 200px); line-height: .9; color: var(--off-white);">4</div>
+          <div style="font-family: var(--font-display); font-size: 22px; opacity:.9;">staged programming courses</div>
+        </div>
+        <div style="padding: 36px 32px; border-right: 1px solid rgba(255,255,255,.2);">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; opacity:.7; margin-bottom: 12px;">THESIS</div>
+          <div class="display tabular" style="font-size: clamp(120px, 13vw, 200px); line-height: .9; color: var(--off-white);">21</div>
+          <div style="font-family: var(--font-display); font-size: 22px; opacity:.9;">ECTS, two-semester, defended</div>
+        </div>
+        <div style="padding: 36px 32px;">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; opacity:.7; margin-bottom: 12px;">ENGLISH MEDIUM</div>
+          <div class="display tabular" style="font-size: clamp(120px, 13vw, 200px); line-height: .9; color: var(--off-white);">100<span style="font-size:.4em; vertical-align: .25em;">%</span></div>
+          <div style="font-family: var(--font-display); font-size: 22px; opacity:.9;">from Year 2 onward</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 05 — PROGRAMME MAP MATRIX
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide programme-map-slide" data-tone="off" data-screen-label="05 Programme Map" data-title="Programme map" data-section="Programme map">
+    <div class="programme-map">
+      <header class="programme-map__header">
+        <div>
+          <div class="eyebrow" style="color: var(--green);"><span class="dot"></span>Section 04 · Programme map</div>
+          <h2 class="display programme-map__title">
+            The whole degree, on <em>one canvas.</em>
+          </h2>
+        </div>
+        <div class="programme-map__legend" aria-label="Course type legend">
+          <span><svg class="legend-icon legend-icon--core" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5C5.4 5.6 7.1 5 9 5c1.4 0 2.5.3 3 .8 0-.5 1.6-.8 3-.8 1.9 0 3.6.6 5 1.5v12c-1.4-.9-3.1-1.5-5-1.5-1.4 0-3 .3-3 .8 0-.5-1.6-.8-3-.8-1.9 0-3.6.6-5 1.5v-12Z"/><path d="M12 5.8v12"/></svg>Core</span>
+          <span><svg class="legend-icon legend-icon--oblig" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.8 19 7v5.2c0 4.1-2.7 6.8-7 8-4.3-1.2-7-3.9-7-8V7l7-3.2Z"/><path d="m8.8 12.2 2 2 4.4-4.6"/></svg>Obligatory</span>
+          <span><svg class="legend-icon legend-icon--data" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>Data Spine</span>
+          <span><svg class="legend-icon legend-icon--thesis" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l3 3V20H7V3.5Z"/><path d="M14 3.5V7h3"/><path d="M9.4 14.2 11 16l3.6-4.2"/></svg>Thesis</span>
+          <span><svg class="legend-icon legend-icon--elective" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14"/><path d="M5 12h10"/><path d="M5 18h6"/><path d="m15 16 4 2-4 2v-4Z"/></svg>Elective</span>
+        </div>
+      </header>
+
+      <div class="programme-matrix" aria-label="Four-year programme matrix">
+        <div class="programme-year programme-year--foundations">
+          <div class="programme-year__rail">
+            <span class="programme-year__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6.5C5.4 5.6 7.1 5 9 5c1.4 0 2.5.3 3 .8 0-.5 1.6-.8 3-.8 1.9 0 3.6.6 5 1.5v12c-1.4-.9-3.1-1.5-5-1.5-1.4 0-3 .3-3 .8 0-.5-1.6-.8-3-.8-1.9 0-3.6.6-5 1.5v-12Z"/><path d="M12 5.8v12"/></svg></span>
+            <span class="programme-year__label">Year 1</span>
+            <strong>Foundations</strong>
+            <span>Language, literacy, first data tools</span>
+          </div>
+
+          <div class="programme-semester programme-semester--cream">
+            <div class="programme-semester__head">
+              <span>Semester 1</span>
+              <small>6 modules</small>
+            </div>
+            <div class="programme-courses">
+              <button class="course compact" data-type="oblig" data-course="ict-101"><span class="course-title">Information &amp; Communication Technologies</span><span class="course-type">Obligatory</span></button>
+              <button class="course compact" data-type="oblig" data-course="az-lang"><span class="course-title">Azerbaijani Communication Skills</span><span class="course-type">Obligatory</span></button>
+              <button class="course compact" data-type="oblig" data-course="eng-int-1"><span class="course-title">Intensive English I</span><span class="course-type">Obligatory</span></button>
+              <button class="course compact" data-type="oblig" data-course="eng-pra-1"><span class="course-title">Practical English I</span><span class="course-type">Obligatory</span></button>
+              <button class="course compact" data-type="core" data-course="glob-hist"><span class="course-title">Global Economic History</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="eco-modern"><span class="course-title">Economics in the Modern World</span><span class="course-type">Core</span></button>
+            </div>
+          </div>
+
+          <div class="programme-semester programme-semester--cream">
+            <div class="programme-semester__head">
+              <span>Semester 2</span>
+              <small>5 modules</small>
+            </div>
+            <div class="programme-courses">
+              <button class="course compact" data-type="oblig" data-course="az-hist"><span class="course-title">Azerbaijani History &amp; Culture</span><span class="course-type">Obligatory</span></button>
+              <button class="course compact" data-type="oblig" data-course="eng-int-2"><span class="course-title">Intensive English II</span><span class="course-type">Obligatory</span></button>
+              <button class="course compact" data-type="oblig" data-course="eng-pra-2"><span class="course-title">Practical English II</span><span class="course-type">Obligatory</span></button>
+              <button class="course compact" data-type="core" data-course="stats-intro"><span class="course-title">Statistics with Python / R / Stata</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="thought-hist"><span class="course-title">History of Economic Thought</span><span class="course-type">Core</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="programme-year programme-year--core">
+          <div class="programme-year__rail">
+            <span class="programme-year__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17 10 11l4 4 6-8"/><path d="M20 7v5h-5"/></svg></span>
+            <span class="programme-year__label">Year 2</span>
+            <strong>Core theory</strong>
+            <span>Micro, macro, econometrics begin</span>
+          </div>
+
+          <div class="programme-semester programme-semester--mist">
+            <div class="programme-semester__head">
+              <span>Semester 1</span>
+              <small>5 modules</small>
+            </div>
+            <div class="programme-courses">
+              <button class="course compact" data-type="core" data-course="micro-1"><span class="course-title">Principles of Microeconomics</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="macro-1"><span class="course-title">Principles of Macroeconomics</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="maths-eco"><span class="course-title">Essential Maths for Economics</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="research-methods"><span class="course-title">Research Methods &amp; Academic Writing</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="data" data-course="data-1"><span class="course-title">Data Lab: Fundamentals</span><span class="course-type">Data Spine I</span></button>
+            </div>
+          </div>
+
+          <div class="programme-semester programme-semester--mist">
+            <div class="programme-semester__head">
+              <span>Semester 2</span>
+              <small>5 modules</small>
+            </div>
+            <div class="programme-courses">
+              <button class="course compact" data-type="core" data-course="micro-2"><span class="course-title">Intermediate Microeconomics</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="macro-2"><span class="course-title">Intermediate Macroeconomics</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="econ-1"><span class="course-title">Econometrics I: Cross-sectional</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="fin-risk"><span class="course-title">Financial Risk Management</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="data" data-course="data-2"><span class="course-title">Data Lab: Machine Learning</span><span class="course-type">Data Spine II</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="programme-year programme-year--applied">
+          <div class="programme-year__rail">
+            <span class="programme-year__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 9-4 3 4 3"/><path d="m16 9 4 3-4 3"/><path d="m13.5 5-3 14"/></svg></span>
+            <span class="programme-year__label">Year 3</span>
+            <strong>Applied methods</strong>
+            <span>Time-series, panel data, finance</span>
+          </div>
+
+          <div class="programme-semester programme-semester--pale">
+            <div class="programme-semester__head">
+              <span>Semester 1</span>
+              <small>5 modules</small>
+            </div>
+            <div class="programme-courses">
+              <button class="course compact" data-type="core" data-course="game-theory"><span class="course-title">Strategic Thinking &amp; Game Theory</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="int-fin"><span class="course-title">International Finance</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="econ-2"><span class="course-title">Econometrics II: Time-series</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="data" data-course="data-3"><span class="course-title">Data Lab: Deep Learning</span><span class="course-type">Data Spine III</span></button>
+              <button class="course compact" data-type="core" data-course="dev-econ"><span class="course-title">Development Economics</span><span class="course-type">Core</span></button>
+            </div>
+          </div>
+
+          <div class="programme-semester programme-semester--pale">
+            <div class="programme-semester__head">
+              <span>Semester 2</span>
+              <small>5 modules</small>
+            </div>
+            <div class="programme-courses">
+              <button class="course compact" data-type="core" data-course="public-econ"><span class="course-title">Public Economics</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="econ-3"><span class="course-title">Econometrics III: Panel Data</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="io"><span class="course-title">Industrial Organization</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="behav"><span class="course-title">Behavioural Economics</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="fin-econ"><span class="course-title">Financial Economics</span><span class="course-type">Core</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="programme-year programme-year--synthesis">
+          <div class="programme-year__rail">
+            <span class="programme-year__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 3 9l9 5 9-5-9-5Z"/><path d="M6.5 11v4.5c1.5 1.5 3.3 2.2 5.5 2.2s4-.7 5.5-2.2V11"/><path d="M21 9v5"/></svg></span>
+            <span class="programme-year__label">Year 4</span>
+            <strong>Synthesis</strong>
+            <span>Thesis, Azerbaijan economy, electives</span>
+          </div>
+
+          <div class="programme-semester programme-semester--linen">
+            <div class="programme-semester__head">
+              <span>Semester 1</span>
+              <small>3 core + 2 elective slots</small>
+            </div>
+            <div class="programme-courses">
+              <button class="course compact" data-type="thesis" data-course="thesis-1"><span class="course-title">Thesis Project I</span><span class="course-type">Thesis</span></button>
+              <button class="course compact" data-type="core" data-course="energy-az"><span class="course-title">Economy of Azerbaijan</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="core" data-course="int-trade"><span class="course-title">International Trade</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});"><span class="course-title">Elective slot 1</span><span class="course-type">Choose from library</span></button>
+              <button class="course compact" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});"><span class="course-title">Elective slot 2</span><span class="course-type">Choose from library</span></button>
+            </div>
+          </div>
+
+          <div class="programme-semester programme-semester--linen">
+            <div class="programme-semester__head">
+              <span>Semester 2</span>
+              <small>2 core + 3 elective slots</small>
+            </div>
+            <div class="programme-courses">
+              <button class="course compact" data-type="thesis" data-course="thesis-2"><span class="course-title">Thesis Project II</span><span class="course-type">Thesis</span></button>
+              <button class="course compact" data-type="core" data-course="pol-econ"><span class="course-title">Political Economy</span><span class="course-type">Core</span></button>
+              <button class="course compact" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});"><span class="course-title">Elective slot 3</span><span class="course-type">Choose from library</span></button>
+              <button class="course compact" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});"><span class="course-title">Elective slot 4</span><span class="course-type">Choose from library</span></button>
+              <button class="course compact" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});"><span class="course-title">Elective slot 5</span><span class="course-type">Choose from library</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="programme-map__footer">
+        <span>Years read top to bottom</span>
+        <span>Tap any module to read full details</span>
+        <span>Elective slots jump to library</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 06 — YEAR 1: FOUNDATIONS
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide year-detail-slide" data-tone="cream" data-screen-label="06 Year 1" data-title="Year 1" data-section="Foundations">
+    <div class="split-37">
+
+      <div style="background: var(--green-deep); color: var(--off-white); padding: 96px 64px 64px; display:flex; flex-direction:column; justify-content: space-between;">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>Phase 01 · Foundations</div>
+          <div class="display" style="font-size: clamp(180px, 22vw, 380px); color: var(--off-white); line-height: .82; margin-top: 24px;">Y1</div>
+          <h2 class="display" style="font-size: clamp(36px, 3.6vw, 56px); color: var(--green-pale); margin-top: 24px; line-height: 1;">
+            <em style="font-style:italic;">Foundations.</em>
+          </h2>
+        </div>
+        <div style="max-width: 28ch;">
+          <p class="lede" style="font-size: 22px; color: var(--green-pale); line-height: 1.3; margin-bottom: 20px;">
+            Before the discipline. Language, literacy, history, and a first conversation about what economics is for.
+          </p>
+          <div class="mono" style="font-size: 11px; letter-spacing: .18em; opacity:.7;">
+            ↳ 11 modules · 56 ECTS<br/>
+            ↳ Azerbaijani + English bilingual delivery
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 64px 80px 64px 64px; display:grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(20,32,30,.18);">
+            <h3 style="font-family: var(--font-display); font-size: 36px; color: var(--green-ink); line-height: 1;">Semester 1</h3>
+            <span class="mono" style="font-size: 11px; letter-spacing: .14em; color: var(--ink-mute);">6 MODULES · 30 ECTS</span>
+          </div>
+          <div class="stack-12">
+            <button class="course" data-type="oblig" data-course="ict-101">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Information &amp; Communication Technologies</span><br/><span class="course-type">Core</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="oblig" data-course="az-lang">
+              <span class="course-num">02</span>
+              <span><span class="course-title">Communication Skills · Azerbaijani Language</span><br/><span class="course-type">Core · Obligatory</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="oblig" data-course="eng-int-1">
+              <span class="course-num">03</span>
+              <span><span class="course-title">Intensive English I</span><br/><span class="course-type">Core · Obligatory</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="oblig" data-course="eng-pra-1">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Practical English I</span><br/><span class="course-type">Core · Obligatory</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="glob-hist">
+              <span class="course-num">05</span>
+              <span><span class="course-title">Global Economic History</span><br/><span class="course-type">Core</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="eco-modern">
+              <span class="course-num">06</span>
+              <span><span class="course-title">Economics in the Modern World</span><br/><span class="course-type">Core</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(20,32,30,.18);">
+            <h3 style="font-family: var(--font-display); font-size: 36px; color: var(--green-ink); line-height: 1;">Semester 2</h3>
+            <span class="mono" style="font-size: 11px; letter-spacing: .14em; color: var(--ink-mute);">5 MODULES · 26 ECTS</span>
+          </div>
+          <div class="stack-12">
+            <button class="course" data-type="oblig" data-course="az-hist">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Azerbaijani History &amp; Culture</span><br/><span class="course-type">Core · Obligatory</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="oblig" data-course="eng-int-2">
+              <span class="course-num">02</span>
+              <span><span class="course-title">Intensive English II</span><br/><span class="course-type">Core · Obligatory</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="oblig" data-course="eng-pra-2">
+              <span class="course-num">03</span>
+              <span><span class="course-title">Practical English II</span><br/><span class="course-type">Core · Obligatory</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="stats-intro">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Introduction to Statistics · Python / R / Stata</span><br/><span class="course-type">Core</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="thought-hist">
+              <span class="course-num">05</span>
+              <span><span class="course-title">History of Economic Thought</span><br/><span class="course-type">Core</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+          </div>
+
+          <div class="takeaway-card" style="margin-top: 36px; padding: 20px 22px; background: rgba(61,111,98,.08); border-left: 3px solid var(--green);">
+            <div class="mono takeaway-label" style="font-size: 10px; letter-spacing: .2em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">Year 1 take-away</div>
+            <p class="takeaway-text" style="font-family: var(--font-display); font-size: 18px; line-height: 1.35; color: var(--green-ink);">
+              Students end Year 1 with C1-level English, a first reproducible statistics project, and a panoramic view of the discipline — ready to dive into intermediate theory.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 07 — YEAR 2: CORE THEORY
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide year-detail-slide" data-tone="mist" data-screen-label="07 Year 2" data-title="Year 2" data-section="Core theory">
+    <div class="split-37">
+
+      <div style="background: var(--green); color: var(--off-white); padding: 96px 64px 64px; display:flex; flex-direction:column; justify-content: space-between;">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>Phase 02 · Core Theory</div>
+          <div class="display" style="font-size: clamp(180px, 22vw, 380px); color: var(--off-white); line-height: .82; margin-top: 24px;">Y2</div>
+          <h2 class="display" style="font-size: clamp(36px, 3.6vw, 56px); color: var(--green-pale); margin-top: 24px; line-height: 1;">
+            <em style="font-style:italic;">The bedrock.</em>
+          </h2>
+        </div>
+        <div style="max-width: 28ch;">
+          <p class="lede" style="font-size: 22px; color: var(--green-pale); line-height: 1.3; margin-bottom: 20px;">
+            Principles, then intermediates, then the first econometrics course — the year every later course will assume.
+          </p>
+          <div class="mono" style="font-size: 11px; letter-spacing: .18em; opacity:.7;">
+            ↳ 10 modules · 64 ECTS<br/>
+            ↳ Data Spine begins · 2 stages
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 64px 80px 64px 64px; display:grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(20,32,30,.18);">
+            <h3 style="font-family: var(--font-display); font-size: 36px; color: var(--green-ink); line-height: 1;">Semester 1</h3>
+            <span class="mono" style="font-size: 11px; letter-spacing: .14em; color: var(--ink-mute);">5 MODULES · 30 ECTS</span>
+          </div>
+          <div class="stack-12">
+            <button class="course" data-type="core" data-course="micro-1">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Principles of Microeconomics</span><br/><span class="course-type">Core · 7 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="macro-1">
+              <span class="course-num">02</span>
+              <span><span class="course-title">Principles of Macroeconomics</span><br/><span class="course-type">Core · 7 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="maths-eco">
+              <span class="course-num">03</span>
+              <span><span class="course-title">Essential Maths for Economics</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="research-methods">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Research Methods &amp; Academic Writing</span><br/><span class="course-type">Core · 4 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="data" data-course="data-1">
+              <span class="course-num">05</span>
+              <span><span class="course-title">Data Lab &amp; Programming · Fundamentals</span><br/><span class="course-type">Data Spine I · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(20,32,30,.18);">
+            <h3 style="font-family: var(--font-display); font-size: 36px; color: var(--green-ink); line-height: 1;">Semester 2</h3>
+            <span class="mono" style="font-size: 11px; letter-spacing: .14em; color: var(--ink-mute);">5 MODULES · 34 ECTS</span>
+          </div>
+          <div class="stack-12">
+            <button class="course" data-type="core" data-course="micro-2">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Intermediate Microeconomics</span><br/><span class="course-type">Core · 7 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="macro-2">
+              <span class="course-num">02</span>
+              <span><span class="course-title">Intermediate Macroeconomics</span><br/><span class="course-type">Core · 7 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="econ-1">
+              <span class="course-num">03</span>
+              <span><span class="course-title">Econometrics I · Cross-sectional</span><br/><span class="course-type">Core · 7 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="fin-risk">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Financial Risk Management</span><br/><span class="course-type">Core · 5 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="data" data-course="data-2">
+              <span class="course-num">05</span>
+              <span><span class="course-title">Data Lab &amp; Programming · Machine Learning</span><br/><span class="course-type">Data Spine II · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+          </div>
+
+          <div class="takeaway-card" style="margin-top: 36px; padding: 20px 22px; background: rgba(61,111,98,.08); border-left: 3px solid var(--green);">
+            <div class="mono takeaway-label" style="font-size: 10px; letter-spacing: .2em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">Year 2 take-away</div>
+            <p class="takeaway-text" style="font-family: var(--font-display); font-size: 18px; line-height: 1.35; color: var(--green-ink);">
+              A complete intermediate sequence and the ability to run a clean OLS regression — and explain what it does and does not show.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 08 — YEAR 3: QUANTITATIVE & APPLIED
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide year-detail-slide" data-tone="pale" data-screen-label="08 Year 3" data-title="Year 3" data-section="Quantitative &amp; applied">
+    <div class="split-37">
+
+      <div style="background: var(--green-ink); color: var(--off-white); padding: 96px 64px 64px; display:flex; flex-direction:column; justify-content: space-between;">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>Phase 03 · Quantitative &amp; Applied</div>
+          <div class="display" style="font-size: clamp(180px, 22vw, 380px); color: var(--off-white); line-height: .82; margin-top: 24px;">Y3</div>
+          <h2 class="display" style="font-size: clamp(36px, 3.6vw, 56px); color: var(--green-pale); margin-top: 24px; line-height: 1;">
+            <em style="font-style:italic;">The applied year.</em>
+          </h2>
+        </div>
+        <div style="max-width: 28ch;">
+          <p class="lede" style="font-size: 22px; color: var(--green-pale); line-height: 1.3; margin-bottom: 20px;">
+            Time-series and panel methods, game theory, development, finance — the year that builds the muscle for a defended thesis.
+          </p>
+          <div class="mono" style="font-size: 11px; letter-spacing: .18em; opacity:.7;">
+            ↳ 10 modules · 62 ECTS<br/>
+            ↳ Data Spine: Deep Learning
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 64px 80px 64px 64px; display:grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(20,32,30,.18);">
+            <h3 style="font-family: var(--font-display); font-size: 36px; color: var(--green-ink); line-height: 1;">Semester 1</h3>
+            <span class="mono" style="font-size: 11px; letter-spacing: .14em; color: var(--ink-mute);">5 MODULES · 31 ECTS</span>
+          </div>
+          <div class="stack-12">
+            <button class="course" data-type="core" data-course="game-theory">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Strategic Thinking &amp; Game Theory</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="int-fin">
+              <span class="course-num">02</span>
+              <span><span class="course-title">International Finance</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="econ-2">
+              <span class="course-num">03</span>
+              <span><span class="course-title">Econometrics II · Time-series</span><br/><span class="course-type">Core · 7 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="data" data-course="data-3">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Data Lab &amp; Programming · Deep Learning</span><br/><span class="course-type">Data Spine III · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="dev-econ">
+              <span class="course-num">05</span>
+              <span><span class="course-title">Development Economics</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(20,32,30,.18);">
+            <h3 style="font-family: var(--font-display); font-size: 36px; color: var(--green-ink); line-height: 1;">Semester 2</h3>
+            <span class="mono" style="font-size: 11px; letter-spacing: .14em; color: var(--ink-mute);">5 MODULES · 31 ECTS</span>
+          </div>
+          <div class="stack-12">
+            <button class="course" data-type="core" data-course="public-econ">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Public Economics</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="econ-3">
+              <span class="course-num">02</span>
+              <span><span class="course-title">Econometrics III · Panel Data</span><br/><span class="course-type">Core · 7 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="io">
+              <span class="course-num">03</span>
+              <span><span class="course-title">Industrial Organization</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="behav">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Behavioural Economics</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="fin-econ">
+              <span class="course-num">05</span>
+              <span><span class="course-title">Financial Economics</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+          </div>
+
+          <div class="takeaway-card" style="margin-top: 36px; padding: 20px 22px; background: rgba(61,111,98,.08); border-left: 3px solid var(--green);">
+            <div class="mono takeaway-label" style="font-size: 10px; letter-spacing: .2em; color: var(--green); text-transform: uppercase; margin-bottom: 6px;">Year 3 take-away</div>
+            <p class="takeaway-text" style="font-family: var(--font-display); font-size: 18px; line-height: 1.35; color: var(--green-ink);">
+              The full econometrics suite, deep-learning literacy, and four applied fields — students are ready to identify a thesis question and the strategy to answer it.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 09 — YEAR 4: SYNTHESIS
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide year-detail-slide" data-tone="linen" data-screen-label="09 Year 4" data-title="Year 4" data-section="Synthesis &amp; specialisation">
+    <div class="split-37">
+
+      <div style="background: var(--sand-deep); color: var(--off-white); padding: 96px 64px 64px; display:flex; flex-direction:column; justify-content: space-between;">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>Phase 04 · Synthesis</div>
+          <div class="display" style="font-size: clamp(180px, 22vw, 380px); color: var(--off-white); line-height: .82; margin-top: 24px;">Y4</div>
+          <h2 class="display" style="font-size: clamp(36px, 3.6vw, 56px); color: var(--cream); margin-top: 24px; line-height: 1;">
+            <em style="font-style:italic;">Become a specialist.</em>
+          </h2>
+        </div>
+        <div style="max-width: 28ch;">
+          <p class="lede" style="font-size: 22px; color: var(--cream); line-height: 1.3; margin-bottom: 20px;">
+            A two-semester thesis, the flagship Economy of Azerbaijan course, and five electives — Year 4 is where the curriculum bends to the student.
+          </p>
+          <div class="mono" style="font-size: 11px; letter-spacing: .18em; opacity:.8;">
+            ↳ 10 modules · 60 ECTS<br/>
+            ↳ Thesis: 21 ECTS · defended
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 64px 80px 64px 64px; display:grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(20,32,30,.18);">
+            <h3 style="font-family: var(--font-display); font-size: 36px; color: var(--green-ink); line-height: 1;">Semester 1</h3>
+            <span class="mono" style="font-size: 11px; letter-spacing: .14em; color: var(--ink-mute);">5 MODULES · 30 ECTS</span>
+          </div>
+          <div class="stack-12">
+            <button class="course" data-type="thesis" data-course="thesis-1">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Thesis Project · Part I</span><br/><span class="course-type">Thesis · 9 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="energy-az">
+              <span class="course-num">02</span>
+              <span><span class="course-title">Economy of Azerbaijan · Energy &amp; Resources</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="int-trade">
+              <span class="course-num">03</span>
+              <span><span class="course-title">International Trade</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Elective 1 — choose from list</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">→</span>
+            </button>
+            <button class="course" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});">
+              <span class="course-num">05</span>
+              <span><span class="course-title">Elective 2 — choose from list</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(20,32,30,.18);">
+            <h3 style="font-family: var(--font-display); font-size: 36px; color: var(--green-ink); line-height: 1;">Semester 2</h3>
+            <span class="mono" style="font-size: 11px; letter-spacing: .14em; color: var(--ink-mute);">5 MODULES · 30 ECTS</span>
+          </div>
+          <div class="stack-12">
+            <button class="course" data-type="thesis" data-course="thesis-2">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Thesis Project · Part II</span><br/><span class="course-type">Thesis · 12 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="core" data-course="pol-econ">
+              <span class="course-num">02</span>
+              <span><span class="course-title">Political Economy</span><br/><span class="course-type">Core · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+            </button>
+            <button class="course" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});">
+              <span class="course-num">03</span>
+              <span><span class="course-title">Elective 1 — choose from list</span><br/><span class="course-type">Elective · 4 ECTS</span></span>
+              <span class="course-arrow">→</span>
+            </button>
+            <button class="course" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Elective 2 — choose from list</span><br/><span class="course-type">Elective · 4 ECTS</span></span>
+              <span class="course-arrow">→</span>
+            </button>
+            <button class="course" data-type="elective" onclick="document.getElementById('deck').scrollTo({left: 10 * window.innerWidth, behavior: 'smooth'});">
+              <span class="course-num">05</span>
+              <span><span class="course-title">Elective 3 — choose from list</span><br/><span class="course-type">Elective · 4 ECTS</span></span>
+              <span class="course-arrow">→</span>
+            </button>
+          </div>
+
+          <div class="takeaway-card takeaway-card--sand" style="margin-top: 36px; padding: 20px 22px; background: rgba(180, 138, 75, .12); border-left: 3px solid var(--sand-deep);">
+            <div class="mono takeaway-label" style="font-size: 10px; letter-spacing: .2em; color: var(--sand-deep); text-transform: uppercase; margin-bottom: 6px;">Year 4 take-away</div>
+            <p class="takeaway-text" style="font-family: var(--font-display); font-size: 18px; line-height: 1.35; color: var(--green-ink);">
+              A defended thesis, a regional specialism in Azerbaijani economic development, and a chosen track of five electives — the student leaves with a portfolio, not just a transcript.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 10 — THE DATA SPINE
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide data-spine-slide" data-tone="deep" data-screen-label="10 Data Spine" data-title="The data spine" data-section="The programming thread">
+    <div class="tex-grid" style="opacity:.025"></div>
+    <div class="data-spine-layout" style="position:absolute; inset:0; padding: 96px;">
+
+      <div class="data-spine-header" style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom: 56px;">
+        <div>
+          <div class="eyebrow" style="color: var(--green-pale);"><span class="dot"></span>Section 05 · The Data Spine</div>
+          <h2 class="display" style="font-size: clamp(58px, 6vw, 92px); color: var(--off-white); margin-top: 14px; line-height: .98;">
+            One continuous <em style="font-style:italic; color: var(--green-pale);">thread of code.</em>
+          </h2>
+        </div>
+        <div class="data-spine-intro" style="max-width: 32ch; font-family: var(--font-display); font-size: 22px; line-height: 1.3; color: var(--green-pale);">
+          Four staged courses — running from Year 1 to Year 3 — turn data and code into a second native language for every graduate.
+        </div>
+      </div>
+
+      <div class="data-spine-stages" style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative;">
+        <!-- connecting line -->
+        <div class="data-spine-line" style="position:absolute; left:0; right:0; top: 38px; height:1px; background: var(--clay); opacity:.5;"></div>
+
+        <div class="data-stage" style="position:relative;">
+          <div class="data-stage__meta" style="display:flex; align-items:center; gap: 12px; margin-bottom: 26px;">
+            <div class="data-stage__dot" style="width: 14px; height: 14px; background: var(--clay); border-radius: 50%; position: relative; z-index:1;"></div>
+            <div class="mono" style="font-size: 10px; letter-spacing: .2em; color: var(--clay); text-transform: uppercase;">Stage 01 · Y1S2</div>
+          </div>
+          <h3 class="data-stage__title" style="font-family: var(--font-display); font-size: 28px; color: var(--off-white); line-height: 1.1; margin-bottom: 14px;">Introduction to Statistics</h3>
+          <p class="data-stage__copy" style="font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.7); margin-bottom: 20px;">From spreadsheets to a first reproducible Python/R notebook — the ladder onto the data spine.</p>
+          <div class="mono data-stage__tools" style="font-size: 11px; letter-spacing: .1em; color: var(--green-pale); line-height: 1.7;">
+            Python · R · Stata<br/>
+            Descriptive stats<br/>
+            Hypothesis testing<br/>
+            Reproducibility
+          </div>
+        </div>
+
+        <div class="data-stage" style="position:relative;">
+          <div class="data-stage__meta" style="display:flex; align-items:center; gap: 12px; margin-bottom: 26px;">
+            <div class="data-stage__dot" style="width: 14px; height: 14px; background: var(--clay); border-radius: 50%; position: relative; z-index:1;"></div>
+            <div class="mono" style="font-size: 10px; letter-spacing: .2em; color: var(--clay); text-transform: uppercase;">Stage 02 · Y2S1</div>
+          </div>
+          <h3 class="data-stage__title" style="font-family: var(--font-display); font-size: 28px; color: var(--off-white); line-height: 1.1; margin-bottom: 14px;">Data Lab · Fundamentals</h3>
+          <p class="data-stage__copy" style="font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.7); margin-bottom: 20px;">Python as the working tool. pandas, visualisation, scraping, git. The notebook becomes a primary deliverable.</p>
+          <div class="mono data-stage__tools" style="font-size: 11px; letter-spacing: .1em; color: var(--green-pale); line-height: 1.7;">
+            pandas / tidy data<br/>
+            matplotlib · ggplot<br/>
+            Web scraping<br/>
+            Git &amp; reproducibility
+          </div>
+        </div>
+
+        <div class="data-stage" style="position:relative;">
+          <div class="data-stage__meta" style="display:flex; align-items:center; gap: 12px; margin-bottom: 26px;">
+            <div class="data-stage__dot" style="width: 14px; height: 14px; background: var(--clay); border-radius: 50%; position: relative; z-index:1;"></div>
+            <div class="mono" style="font-size: 10px; letter-spacing: .2em; color: var(--clay); text-transform: uppercase;">Stage 03 · Y2S2</div>
+          </div>
+          <h3 class="data-stage__title" style="font-family: var(--font-display); font-size: 28px; color: var(--off-white); line-height: 1.1; margin-bottom: 14px;">Data Lab · Machine Learning</h3>
+          <p class="data-stage__copy" style="font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.7); margin-bottom: 20px;">Supervised &amp; unsupervised learning framed as a natural extension of econometric thinking — with strict guards on the prediction-vs-causation line.</p>
+          <div class="mono data-stage__tools" style="font-size: 11px; letter-spacing: .1em; color: var(--green-pale); line-height: 1.7;">
+            Trees · forests · boosting<br/>
+            Regularisation<br/>
+            Cross-validation<br/>
+            Interpretability (SHAP)
+          </div>
+        </div>
+
+        <div class="data-stage" style="position:relative;">
+          <div class="data-stage__meta" style="display:flex; align-items:center; gap: 12px; margin-bottom: 26px;">
+            <div class="data-stage__dot" style="width: 14px; height: 14px; background: var(--clay); border-radius: 50%; position: relative; z-index:1;"></div>
+            <div class="mono" style="font-size: 10px; letter-spacing: .2em; color: var(--clay); text-transform: uppercase;">Stage 04 · Y3S1</div>
+          </div>
+          <h3 class="data-stage__title" style="font-family: var(--font-display); font-size: 28px; color: var(--off-white); line-height: 1.1; margin-bottom: 14px;">Data Lab · Deep Learning</h3>
+          <p class="data-stage__copy" style="font-size: 14px; line-height: 1.55; color: rgba(255,255,255,.7); margin-bottom: 20px;">Neural networks for text, images and high-dimensional economic data — and an honest discussion of where they don't belong.</p>
+          <div class="mono data-stage__tools" style="font-size: 11px; letter-spacing: .1em; color: var(--green-pale); line-height: 1.7;">
+            Feed-forward &amp; CNN<br/>
+            NLP embeddings<br/>
+            PyTorch / JAX<br/>
+            Causal-ML caveats
+          </div>
+        </div>
+      </div>
+
+      <div class="data-spine-summary" style="margin-top: 64px; display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.15);">
+        <div class="data-summary-item">
+          <div class="mono data-summary-label" style="font-size: 10px; letter-spacing: .2em; color: var(--green-pale); text-transform: uppercase; margin-bottom: 8px;">Underpinning every course</div>
+          <p class="data-summary-copy" style="font-family: var(--font-display); font-size: 20px; line-height: 1.25; color: var(--off-white);">Every empirical exercise from Year 2 onward is delivered as a versioned, reproducible notebook.</p>
+        </div>
+        <div class="data-summary-item">
+          <div class="mono data-summary-label" style="font-size: 10px; letter-spacing: .2em; color: var(--green-pale); text-transform: uppercase; margin-bottom: 8px;">Tooling</div>
+          <p class="data-summary-copy" style="font-family: var(--font-display); font-size: 20px; line-height: 1.25; color: var(--off-white);">Python is the lingua franca. R is used in statistics &amp; econometrics. Stata is taught as a literacy.</p>
+        </div>
+        <div class="data-summary-item">
+          <div class="mono data-summary-label" style="font-size: 10px; letter-spacing: .2em; color: var(--green-pale); text-transform: uppercase; margin-bottom: 8px;">Outcome</div>
+          <p class="data-summary-copy" style="font-family: var(--font-display); font-size: 20px; line-height: 1.25; color: var(--off-white);">A graduate who can do real economic data work on the first day of a master's, a job or a policy role.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 11 — ELECTIVES LIBRARY
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide electives-slide" data-tone="paper" data-screen-label="11 Electives" data-title="Electives" data-section="Year 4 specialisation menu">
+    <div class="electives-layout" style="position:absolute; inset:0; padding: 80px 96px 96px;">
+
+      <header class="electives-header" style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom: 48px;">
+        <div class="electives-heading">
+          <div class="eyebrow" style="color: var(--green);"><span class="dot"></span>Section 06 · Electives library</div>
+          <h2 class="display electives-title" style="font-size: clamp(58px, 6vw, 92px); color: var(--green-ink); margin-top: 14px; line-height: .98;">
+            A specialisation <em style="font-style:italic; color: var(--green);">menu</em>, not a loose list.
+          </h2>
+        </div>
+        <div class="electives-choice" style="max-width: 32ch; font-family: var(--font-display); font-size: 20px; line-height: 1.3; color: var(--ink-soft);">
+          <span class="electives-choice__number">5/10</span>
+          <span>Students choose five Year 4 electives, using the menu to build a thesis-facing specialism.</span>
+        </div>
+      </header>
+
+      <div class="electives-body" style="display:grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+
+        <aside class="electives-rail">
+          <div class="mono electives-rail__label">Selection logic</div>
+          <div class="display electives-rail__number">10</div>
+          <p class="electives-rail__lede">available electives, grouped so students can specialise without making the final year feel random.</p>
+
+          <div class="electives-routes">
+            <div class="electives-route">
+              <span>Policy-facing path</span>
+              <p>Applied micro courses plus one finance or money course for system context.</p>
+            </div>
+            <div class="electives-route">
+              <span>Finance-facing path</span>
+              <p>Banking, corporate finance, asset pricing, monetary policy, fintech.</p>
+            </div>
+            <div class="electives-route">
+              <span>Hybrid path</span>
+              <p>Two applied micro electives and three finance or macro electives.</p>
+            </div>
+          </div>
+        </aside>
+
+        <div class="electives-menu">
+
+          <section class="electives-track electives-track--policy">
+            <div class="electives-track__intro">
+              <div class="mono electives-track__kicker">Track A · 4 electives</div>
+              <h3>Applied Micro &amp; Policy</h3>
+              <p>Public choices, labour markets, technology, health and climate-facing policy.</p>
+            </div>
+            <div class="electives-list">
+              <button class="course elective-course" data-type="elective" data-course="el-health">
+              <span class="course-num">01</span>
+              <span><span class="course-title">Health Economics</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+              <button class="course elective-course" data-type="elective" data-course="el-env">
+              <span class="course-num">02</span>
+              <span><span class="course-title">Environmental Economics</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+              <button class="course elective-course" data-type="elective" data-course="el-ai">
+              <span class="course-num">03</span>
+              <span><span class="course-title">Economics of AI · Digital Economics</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+              <button class="course elective-course" data-type="elective" data-course="el-labour">
+              <span class="course-num">04</span>
+              <span><span class="course-title">Labour Economics</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="electives-track electives-track--finance">
+            <div class="electives-track__intro">
+              <div class="mono electives-track__kicker">Track B · 6 electives</div>
+              <h3>Finance, Money &amp; Macro</h3>
+              <p>Markets, central banking, corporate finance, asset pricing and the future of money.</p>
+            </div>
+            <div class="electives-list">
+              <button class="course elective-course" data-type="elective" data-course="el-mbf">
+              <span class="course-num">05</span>
+              <span><span class="course-title">Money, Banking &amp; Financial Markets</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+              <button class="course elective-course" data-type="elective" data-course="el-corpfin">
+              <span class="course-num">06</span>
+              <span><span class="course-title">Corporate Finance</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+              <button class="course elective-course" data-type="elective" data-course="el-intfin">
+              <span class="course-num">07</span>
+              <span><span class="course-title">International Finance · Advanced</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+              <button class="course elective-course" data-type="elective" data-course="el-bfap">
+              <span class="course-num">08</span>
+              <span><span class="course-title">Behavioural Finance &amp; Asset Pricing</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+              <button class="course elective-course" data-type="elective" data-course="el-monetary">
+              <span class="course-num">09</span>
+              <span><span class="course-title">Monetary Economics &amp; Central Banking</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+              <button class="course elective-course" data-type="elective" data-course="el-fintech">
+              <span class="course-num">10</span>
+              <span><span class="course-title">Fintech &amp; the Future of Money</span><br/><span class="course-type">Elective · 6 ECTS</span></span>
+              <span class="course-arrow">↗</span>
+              </button>
+            </div>
+          </section>
+
+          <div class="electives-footer" style="position:absolute; bottom: 96px; left: 96px; right: 96px; display:flex; justify-content:space-between; align-items:center; font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-mute); padding-top: 20px; border-top: 1px solid rgba(20,32,30,.12);">
+            <span>Two clusters, five choices · no double-counting with Year 3 cores</span>
+            <span>Click any elective for details</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 12 — OUTCOMES & CAREERS
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide" data-tone="cream" data-screen-label="12 Outcomes" data-title="Outcomes" data-section="What the graduate leaves with">
+    <div style="position:absolute; inset:0; padding: 80px 96px 96px;">
+
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom: 56px;">
+        <div>
+          <div class="eyebrow" style="color: var(--green);"><span class="dot"></span>Section 07 · Outcomes &amp; careers</div>
+          <h2 class="display" style="font-size: clamp(58px, 6vw, 92px); color: var(--green-ink); margin-top: 14px; line-height: .98;">
+            What the graduate <em style="font-style:italic; color: var(--green);">walks away with.</em>
+          </h2>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap: 64px;">
+
+        <div>
+          <div class="mono" style="font-size: 11px; letter-spacing: .2em; color: var(--green); text-transform: uppercase; margin-bottom: 22px;">Programme-level learning outcomes</div>
+
+          <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 28px 36px;">
+            <div>
+              <div class="display" style="font-size: 64px; color: var(--green); line-height: 1;">01</div>
+              <h4 style="font-family: var(--font-display); font-size: 22px; color: var(--green-ink); margin-top: 6px;">Theoretical fluency</h4>
+              <p class="body-text" style="font-size: 14px; margin-top: 4px;">A working command of micro, macro and the major applied fields at intermediate level.</p>
+            </div>
+            <div>
+              <div class="display" style="font-size: 64px; color: var(--green); line-height: 1;">02</div>
+              <h4 style="font-family: var(--font-display); font-size: 22px; color: var(--green-ink); margin-top: 6px;">Empirical method</h4>
+              <p class="body-text" style="font-size: 14px; margin-top: 4px;">Three econometrics courses — cross-section, time-series, panel — plus a complete data pipeline.</p>
+            </div>
+            <div>
+              <div class="display" style="font-size: 64px; color: var(--green); line-height: 1;">03</div>
+              <h4 style="font-family: var(--font-display); font-size: 22px; color: var(--green-ink); margin-top: 6px;">Code &amp; data literacy</h4>
+              <p class="body-text" style="font-size: 14px; margin-top: 4px;">Python, R and Stata; reproducible workflows; ML and deep learning as part of the toolbox.</p>
+            </div>
+            <div>
+              <div class="display" style="font-size: 64px; color: var(--green); line-height: 1;">04</div>
+              <h4 style="font-family: var(--font-display); font-size: 22px; color: var(--green-ink); margin-top: 6px;">Regional command</h4>
+              <p class="body-text" style="font-size: 14px; margin-top: 4px;">Deep familiarity with the Azerbaijani economy — its energy base, its institutions, its future.</p>
+            </div>
+            <div>
+              <div class="display" style="font-size: 64px; color: var(--green); line-height: 1;">05</div>
+              <h4 style="font-family: var(--font-display); font-size: 22px; color: var(--green-ink); margin-top: 6px;">A defended thesis</h4>
+              <p class="body-text" style="font-size: 14px; margin-top: 4px;">An original research project with replication package and public viva.</p>
+            </div>
+            <div>
+              <div class="display" style="font-size: 64px; color: var(--green); line-height: 1;">06</div>
+              <h4 style="font-family: var(--font-display); font-size: 22px; color: var(--green-ink); margin-top: 6px;">English at C1</h4>
+              <p class="body-text" style="font-size: 14px; margin-top: 4px;">Fluent academic and professional English — every international door remains open.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--green-deep); color: var(--off-white); padding: 48px 44px; display:flex; flex-direction:column; gap: 32px;">
+          <div>
+            <div class="mono" style="font-size: 10px; letter-spacing: .2em; opacity:.7; text-transform: uppercase; margin-bottom: 16px;">Onward paths</div>
+            <h3 style="font-family: var(--font-display); font-size: 36px; line-height: 1.05;"><em style="font-style:italic; color: var(--green-pale);">Master's</em>, public sector, finance, &amp; tech.</h3>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap: 14px;">
+            <div style="display:grid; grid-template-columns: 90px 1fr; gap: 14px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,.2);">
+              <span class="mono" style="font-size: 11px; letter-spacing: .12em; opacity:.7;">MSc / PhD</span>
+              <span style="font-size: 14px; line-height: 1.4;">LSE, UCL, Bocconi, Tilburg, Pompeu Fabra, Toulouse, Zurich.</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 90px 1fr; gap: 14px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,.2);">
+              <span class="mono" style="font-size: 11px; letter-spacing: .12em; opacity:.7;">PUBLIC</span>
+              <span style="font-size: 14px; line-height: 1.4;">CBAR, Ministry of Economy, SOFAZ, IMF / WB young-professional tracks.</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 90px 1fr; gap: 14px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,.2);">
+              <span class="mono" style="font-size: 11px; letter-spacing: .12em; opacity:.7;">FINANCE</span>
+              <span style="font-size: 14px; line-height: 1.4;">Pasha Bank, Kapital Bank, ADB, BSTDB; regional &amp; global investment banking.</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 90px 1fr; gap: 14px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,.2);">
+              <span class="mono" style="font-size: 11px; letter-spacing: .12em; opacity:.7;">CONSULTING</span>
+              <span style="font-size: 14px; line-height: 1.4;">McKinsey, BCG, EY, PwC — economic-consulting and policy-advisory practices.</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 90px 1fr; gap: 14px;">
+              <span class="mono" style="font-size: 11px; letter-spacing: .12em; opacity:.7;">TECH</span>
+              <span style="font-size: 14px; line-height: 1.4;">Data-science &amp; economist roles at platforms, fintechs and energy-tech firms.</span>
+            </div>
+          </div>
+
+          <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.15);">
+            <p style="font-family: var(--font-display); font-size: 18px; line-height: 1.35; color: var(--green-pale);">
+              "A Karabakh BSc should be a passport, not a checkpoint."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────
+       SLIDE 13 — CLOSING
+       ──────────────────────────────────────────────────────── -->
+  <section class="slide" data-tone="dark" data-screen-label="13 Close" data-title="Close" data-section="Thank you">
+    <div class="tex-grid" style="opacity:.03"></div>
+
+    <div style="position:absolute; inset:0; padding: 120px 96px; display:flex; flex-direction:column; justify-content:space-between;">
+
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div class="eyebrow" style="color: var(--green-pale);"><span class="dot"></span>End · v 1.0 · Open for discussion</div>
+        <div class="mono" style="font-size: 11px; letter-spacing: .18em; opacity:.6; text-align:right;">Prepared by OxLon · Submitted to University Senate · 2026</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items:end;">
+        <div>
+          <img class="closing-logo-img" src="assets/qarabaglogo.png" alt="Qarabağ University logo" />
+          <h2 class="display" style="font-size: clamp(72px, 9vw, 160px); color: var(--off-white); line-height: .92;">
+            <em style="font-style:italic; color: var(--green-pale);">Thank you.</em>
+          </h2>
+          <p class="lede" style="color: var(--green-pale); margin-top: 24px; max-width: 32ch; font-size: 22px;">
+            We invite the Senate, faculty colleagues and the wider university community into the conversation.
+          </p>
+        </div>
+
+        <div style="border-left: 1px solid rgba(255,255,255,.18); padding-left: 48px;">
+          <div class="mono" style="font-size: 10px; letter-spacing: .22em; color: var(--green-pale); text-transform: uppercase; margin-bottom: 24px; opacity:.7;">Contact &amp; next steps</div>
+          <div style="display:flex; flex-direction:column; gap: 22px;">
+            <div>
+              <div class="mono" style="font-size: 10px; letter-spacing: .14em; opacity:.5; text-transform: uppercase; margin-bottom: 4px;">Programme lead</div>
+              <div style="font-family: var(--font-display); font-size: 24px; color: var(--off-white);">kamran.malikov@karabakh.edu.az</div>
+            </div>
+            <div>
+              <div class="mono" style="font-size: 10px; letter-spacing: .14em; opacity:.5; text-transform: uppercase; margin-bottom: 4px;">Review timeline</div>
+              <div style="font-family: var(--font-display); font-size: 24px; color: var(--off-white);">Senate review · Q3 2026</div>
+              <div style="font-family: var(--font-mono); font-size: 13px; opacity:.7;">First intake · September 2026</div>
+            </div>
+            <div>
+              <div class="mono" style="font-size: 10px; letter-spacing: .14em; opacity:.5; text-transform: uppercase; margin-bottom: 4px;">Reference</div>
+              <div style="font-family: var(--font-display); font-size: 24px; color: var(--off-white);">qu.edu.az/en/business/programs/economics</div>
+            </div>
+            <div>
+              <div class="mono" style="font-size: 10px; letter-spacing: .14em; opacity:.5; text-transform: uppercase; margin-bottom: 4px;">Questions?</div>
+              <div style="font-family: var(--font-display); font-size: 24px; color: var(--off-white);">info@oxlon.uk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; opacity:.5;">
+        <span>Qarabağ Universiteti · BSc Economics</span>
+        <span>← Use arrow keys, dots, or click to navigate</span>
+        <span>End</span>
+      </div>
+    </div>
+
+    <!-- Faint logo watermark left -->
+    <img class="closing-watermark-logo" src="assets/qarabaglogo.png" alt="" />
+  </section>
+
+</div>
+
+<script src="courses.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
