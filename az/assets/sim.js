@@ -1,55 +1,49 @@
-// Multi-variable, multi-year macro-fiscal scenario simulator (first-order, documented).
+// Interactive macro-fiscal simulator — recomputes client-side from estimated coefficients.
 (async function(){
-  const D=await window.AZ.data(); if(!D.sim2) return;
-  const B=D.sim2.base, C=D.sim2.coef, P=window.AZ.palette;
-  const baseOil=D.sim2.base_oil, vatBase=D.sim2.vat_base, yrs=B.year;
-  const el=id=>document.getElementById(id), v=id=>parseFloat(el(id).value);
-  const LEV=[["oil","oilv",x=>"$"+x],["oilprod","oilprodv",x=>(x>0?"+":"")+x+"%"],
-    ["fx","fxv",x=>x+"%"],["vat","vatv",x=>x+"%"],["gov","govv",x=>(x>0?"+":"")+x+"%"],
-    ["rate","ratev",x=>(x>0?"+":"")+x+" pp"],["glob","globv",x=>(x>0?"+":"")+x+"%"]];
+  const D = await window.AZ.data(); const S = D.sim, SR = D.series;
+  const P = window.AZ.palette;
+  const fY = SR.year.filter(y=>y>=2025);
+  const baseGDP = SR.year.map((y,i)=>({y,g:SR.gdp_nom[i]})).filter(o=>o.y>=2025);
+  const els = id=>document.getElementById(id);
+  const get = id=>parseFloat(els(id).value);
 
   function compute(){
-    const oil=v("oil"),oilprod=v("oilprod"),fx=v("fx"),vat=v("vat"),gov=v("gov"),rate=v("rate"),glob=v("glob");
-    LEV.forEach(([id,lab,f])=>el(lab).textContent=f(id==="oil"?oil:id==="oilprod"?oilprod:id==="fx"?fx:id==="vat"?vat:id==="gov"?gov:id==="rate"?rate:glob));
-    const oilDev=(Math.pow(oil/baseOil,C.e_oilgdp)*(1+oilprod/100)-1)*100;            // oil VA, %
-    const nonoilDev=C.gov_mult*gov+C.rate_demand*rate+C.global_exports*glob+C.vat_demand*(vat-vatBase); // non-oil GDP, %
-    const inflDev=C.fx_passthrough*fx+C.vat_inflation*(vat-vatBase)+C.rate_inflation*rate;             // pp
-    const balDev=(oilDev/100)*C.oil_rev_share+C.vat_rev_coef*(vat-vatBase)+C.gov_bal_coef*gov;          // %GDP
-    const cabDev=(oilDev/100)*C.oil_export_share+0.05*fx;                                               // %GDP
-    const gdpScn=[],inflScn=[],balScn=[],debtScn=[],gdpDev=[]; let dcum=0;
-    for(let i=0;i<yrs.length;i++){
-      const gd=B.oil_share[i]*oilDev+(1-B.oil_share[i])*nonoilDev; gdpDev.push(gd);
-      gdpScn.push(B.gdp_nom[i]*(1+gd/100));
-      inflScn.push(B.inflation[i]+inflDev);
-      balScn.push(B.fiscal_bal[i]+balDev);
-      dcum+=-balDev; debtScn.push(B.debt[i]+dcum);
-    }
-    return {oilDev,nonoilDev,inflDev,balDev,cabDev,gdpDev,gdpScn,inflScn,balScn,debtScn};
+    const oil=get("oil"), vat=get("vat"), fx=get("fx"), gov=get("gov");
+    els("oilv").textContent="$"+oil; els("vatv").textContent=vat+"%";
+    els("fxv").textContent=fx+"%"; els("govv").textContent=(gov>0?"+":"")+gov+"%";
+    // --- channels (first-order, documented) ---
+    const oilGDP = (Math.pow(oil/S.base_oil, S.e_oilgdp)-1)*S.oil_share_2030*100; // %GDP via oil
+    const vatDrag = -0.10*(vat-S.vat_base);            // demand drag: -0.1%GDP per +1pp VAT
+    const govPush =  0.45*gov*(1-S.oil_share_2030);    // spending multiplier on non-oil GDP
+    const gdpDev = oilGDP + vatDrag + govPush;
+    const inflFX = fx*S.fx_passthrough;                // FX pass-through to CPI (estimated)
+    const inflVAT = 0.35*(vat-S.vat_base);             // ~0.35pp CPI per +1pp VAT (consumption weight)
+    const inflDev = inflFX + inflVAT;
+    const oilFisc = (Math.max(oil-25,0)/Math.max(S.base_oil-25,0)-1)*100; // oil take vs base
+    const vatRev = (vat/S.vat_base-1)*S.vat_rev_share_gdp;                // %GDP revenue
+    const fiscBal = oilFisc*S.oil_share_2030*0.6 + vatRev - gov*0.30;     // %GDP balance change (stylised)
+    return {gdpDev,inflDev,fiscBal,oil};
   }
-  const sgn=(x,d=1)=>(x>0?"+":"")+x.toFixed(d);
-  function path(div,base,scn,yt){
-    Plotly.react(div,[
-      {x:yrs,y:base,name:"Baseline",mode:"lines+markers",line:{color:P.muted,dash:"dot",width:2},marker:{size:5,symbol:"circle"}},
-      {x:yrs,y:scn,name:"Scenario",mode:"lines+markers",line:{color:"#b03a2e",width:2.6},marker:{size:6,symbol:"diamond"}}
-    ],window.AZ.layout({margin:{l:52,r:10,t:8,b:30},yaxis:{title:yt},legend:{orientation:"h",y:-0.22,font:{size:10}}}),window.AZ.cfg);
-  }
+  function fmt(x,s=1){return (x>0?"+":"")+x.toFixed(s);}
   function paint(){
-    const r=compute(), L=yrs.length-1;
-    el("s_gdp").textContent=sgn(r.gdpDev[L])+"%"; el("s_gdp").style.color=r.gdpDev[L]<0?P.bad:P.good;
-    el("s_infl").textContent=r.inflScn[L].toFixed(1)+"%"; el("s_infl").style.color=r.inflDev>0?P.bad:(r.inflDev<0?P.good:P.navy);
-    el("s_bal").textContent=sgn(r.balScn[L])+"%"; el("s_bal").style.color=r.balScn[L]<0?P.bad:P.good;
-    el("s_debt").textContent=r.debtScn[L].toFixed(0)+"%"; el("s_debt").style.color=r.debtScn[L]>B.debt[L]+0.5?P.bad:P.navy;
-    el("s_cab").textContent=sgn(B.cab[L]+r.cabDev)+"%"; el("s_cab").style.color=(B.cab[L]+r.cabDev)<0?P.bad:P.good;
-    path("simGdp",B.gdp_nom,r.gdpScn,"Nominal GDP (AZN mn)");
-    path("simInfl",B.inflation,r.inflScn,"Inflation (%)");
-    path("simBal",B.fiscal_bal,r.balScn,"Fiscal balance (% GDP)");
-    path("simDebt",B.debt,r.debtScn,"Govt debt (% GDP)");
+    const r=compute();
+    els("s_gdp").textContent=fmt(r.gdpDev)+"%"; els("s_gdp").style.color=r.gdpDev<0?P.bad:P.good;
+    els("s_infl").textContent=fmt(r.inflDev)+" pp"; els("s_infl").style.color=r.inflDev>0?P.bad:P.good;
+    els("s_fisc").textContent=fmt(r.fiscBal)+"% GDP"; els("s_fisc").style.color=r.fiscBal<0?P.bad:P.good;
+    const scen=baseGDP.map(o=>o.g*(1+r.gdpDev/100));
+    Plotly.react("simPlot",[
+      {x:fY,y:baseGDP.map(o=>o.g),name:"Base forecast",mode:"lines+markers",line:{color:P.muted,dash:"dot"}},
+      {x:fY,y:scen,name:"Scenario",mode:"lines+markers",line:{color:P.accent,width:3}}
+    ],window.AZ.layout({yaxis:{title:"Nominal GDP (mln AZN)",gridcolor:"#eee"}}),{displayModeBar:false,responsive:true});
+    Plotly.react("simBars",[{
+      type:"bar",orientation:"h",
+      y:["GDP level","Inflation","Fiscal balance"],x:[r.gdpDev,r.inflDev,r.fiscBal],
+      marker:{color:[r.gdpDev<0?P.bad:P.good,r.inflDev>0?P.bad:P.good,r.fiscBal<0?P.bad:P.good]},
+      text:[fmt(r.gdpDev)+"%",fmt(r.inflDev)+"pp",fmt(r.fiscBal)+"%"],textposition:"auto"
+    }],window.AZ.layout({margin:{l:100,r:20,t:10,b:30},height:200,xaxis:{zeroline:true,zerolinecolor:"#999"}}),{displayModeBar:false,responsive:true});
   }
-  function set(o){const d={oil:baseOil,oilprod:0,fx:0,vat:vatBase,gov:0,rate:0,glob:0,...o};
-    Object.entries(d).forEach(([k,val])=>{if(el(k))el(k).value=val;}); paint();}
-  LEV.forEach(([id])=>el(id).addEventListener("input",paint));
-  const presets={reset:{},p_oil50:{oil:50},p_deval:{oil:45,fx:30},
-    p_recession:{oil:45,glob:-4,gov:-3},p_consol:{gov:-10,vat:20,rate:1}};
-  Object.entries(presets).forEach(([id,o])=>{const b=el(id); if(b)b.addEventListener("click",()=>set(o));});
+  ["oil","vat","fx","gov"].forEach(id=>els(id).addEventListener("input",paint));
+  const rb=els("reset"); if(rb) rb.addEventListener("click",()=>{
+    els("oil").value=S.base_oil; els("vat").value=S.vat_base; els("fx").value=0; els("gov").value=0; paint();});
   paint();
 })();

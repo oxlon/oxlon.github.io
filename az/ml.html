@@ -9,19 +9,10 @@
 <script src="data/analytics.js"></script>
 <script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Machine-Learning Models</b></div><div>Section 13 of 19</div></div><div class="wrap wide">
     <div class="eyebrow">Analysis</div><h1 class="page">Machine-Learning Models</h1>
-    <p class="lede">The terms of reference specify a wide set of machine-learning methods. All were implemented and
-    evaluated against classical benchmarks under out-of-sample testing, so that their value is judged on evidence rather
-    than asserted. This section reports the comparison on annual inflation and a deep-learning model on the monthly series.</p>
-    <div class="grid g3"><div class="stat "><div class="v">16</div><div class="k">models evaluated (annual)</div></div><div class="stat acc"><div class="v">+32%</div><div class="k">LSTM gain over persistence (12m)</div></div><div class="stat acc"><div class="v">World food price</div><div class="k">leading determinant</div></div></div>
-
-    <h2>Methodology and rationale</h2>
-    <p>Time-series models must be evaluated out of sample and in chronological order: each is estimated on data up to a
-    given year and asked to predict the next, the window expanding as it rolls forward. This walk-forward protocol avoids
-    the look-ahead bias that in-sample fit conceals. The model set deliberately spans the bias–variance spectrum — from
-    parsimonious linear and univariate models, through regularised regressions, to flexible tree ensembles and neural
-    networks — because on a short, noisy annual sample the more flexible models are prone to overfit, and only an
-    out-of-sample contest reveals which generalise. Skill is the improvement in root-mean-square error over a random-walk
-    benchmark, the appropriate null for a persistent series.</p>
+    <p class="lede">The complete model suite, trained and evaluated under out-of-sample (walk-forward) testing. Annual
+    inflation models are ranked below; a deep-learning network is then evaluated on the monthly series at the medium-term
+    horizon.</p>
+    <div class="grid g3"><div class="stat "><div class="v">16</div><div class="k">models evaluated (annual)</div></div><div class="stat acc"><div class="v">+32</div><div class="k">LSTM skill over persistence (12m)</div></div><div class="stat acc"><div class="v">dfood</div><div class="k">leading determinant</div></div></div>
 
     <h2>Annual model comparison</h2>
     <p>Each model was evaluated by expanding-window, one-step-ahead testing on annual inflation (2000–2024;
@@ -61,9 +52,8 @@
         text:run.map(r=>r.rmse.toFixed(2)),textposition:"outside",cliponaxis:false}],
         AZ.layout({margin:{l:160,r:36,t:10,b:40},xaxis:{title:"RMSE (pp)"},
           shapes:[{type:"line",y0:-.5,y1:run.length-.5,x0:M.naive_rmse,x1:M.naive_rmse,line:{color:AZ.palette.gold,dash:"dash"}}]}),AZ.cfg);
-      const FL={infl_l1:"Inflation (t−1)",infl_l2:"Inflation (t−2)",dner:"Exchange rate",dfood:"World food price",doil:"Oil price"};
       const imp=M.importance.slice().reverse();
-      Plotly.newPlot("mlImp",[{type:"bar",orientation:"h",y:imp.map(d=>FL[d.feature]||d.feature),x:imp.map(d=>d.importance),marker:{color:AZ.palette.navy2}}],
+      Plotly.newPlot("mlImp",[{type:"bar",orientation:"h",y:imp.map(d=>d.feature),x:imp.map(d=>d.importance),marker:{color:AZ.palette.navy2}}],
         AZ.layout({margin:{l:96,r:14,t:8,b:34},xaxis:{title:"importance"}}),AZ.cfg);
       const yrs=M.test_years;const s=[{x:yrs,y:M.actual,name:"Observed",mode:"lines+markers",line:{color:AZ.palette.navy,width:2.5},marker:{symbol:"circle",size:6}}];
       [["Neural Net (MLP)",AZ.palette.accent,"dash","square"],["Naive (random walk)",AZ.palette.gold,"dot","diamond"]].forEach(([k,c,dh,sy])=>{if(M.preds[k])s.push({x:yrs,y:M.preds[k],name:k,mode:"lines+markers",line:{dash:dh,color:c,width:2},marker:{symbol:sy,size:6}});});

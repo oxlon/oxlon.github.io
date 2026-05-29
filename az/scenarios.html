@@ -9,38 +9,27 @@
 <script src="data/analytics.js"></script>
 <script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Scenario Analysis</b></div><div>Section 11 of 19</div></div><div class="wrap">
     <div class="eyebrow">Analysis</div><h1 class="page">Scenario Analysis</h1>
-    <p class="lede">The medium-term outlook is conditioned on assumptions that may not hold. Scenario analysis quantifies
-    the consequences of the principal risks — above all the oil price — for output, inflation and the public finances.</p>
+    <p class="lede">The oil price is treated as a scenario parameter rather than a forecast. Three statutory paths, and a
+    continuous sensitivity surface, are propagated to output, oil-related revenue and inflation.</p>
 
-    <h2>Why scenarios, not a single forecast</h2>
-    <p>No model forecasts the oil price reliably at budget-relevant horizons; the futures curve and survey forecasts are,
-    in practice, little better than a random walk (Kilian, 2009). The disciplined response is not to predict the price but
-    to condition on a small set of plausible paths and report the outcomes of each. Decree No. 75 institutionalises this
-    in requiring three scenarios — baseline, pessimistic and optimistic — and the system reports them together throughout.</p>
-
-    <h2>The three oil-price paths</h2>
+    <h2>The three scenarios</h2>
     <div class="grid g3"><div class="stat "><div class="v">USD 65</div><div class="k">baseline</div></div><div class="stat gold"><div class="v">−15%</div><div class="k">conservative</div></div><div class="stat bad"><div class="v">−30%</div><div class="k">stress</div></div></div>
-    <p>The conservative path corresponds to approximately one standard deviation of annual oil-price changes; the stress
-    path to the experience of the 2015–16 collapse. The sensitivity surface traces the continuum between them.</p>
-    <div class="fig"><div id="scenChart" class="plot" style="height:380px"></div><div class="cap">Figure 10.1. Sensitivity surface: deviation of output and of oil-related revenue from the baseline across the oil-price range.</div></div>
+    <p>The calibration follows the established practice: the conservative path corresponds to approximately one standard
+    deviation of annual oil-price changes, and the stress path to the experience of 2015–16.</p>
+    <div class="fig"><div id="scenChart" class="plot" style="height:380px"></div><div class="cap">Figure 10.1. Sensitivity surface: deviation of output and oil-related revenue from the baseline across the oil-price range.</div></div>
 
-    <h2>A comparison of named scenarios</h2>
-    <p>The simulator's transmission channels are applied to a set of policy-relevant scenarios, reporting the 2030 outcome
-    for each. The oil-driven scenarios dominate the fiscal result; a devaluation is principally an inflation event; fiscal
-    consolidation improves the balance at a modest cost to output.</p>
-    <table class="dt"><caption>2030 outcomes under each scenario, relative to the baseline where indicated. Computed from the documented channels of the Scenario Simulator.</caption>
-    <thead><tr><th>Scenario</th><th class="num">Output vs baseline (%)</th><th class="num">Inflation (%)</th><th class="num">Fiscal balance (% GDP)</th></tr></thead>
-    <tbody><tr><td>Baseline (oil $65)</td><td class="num">+0.0</td><td class="num">7.2</td><td class="num">-0.6</td></tr><tr><td><span class="tag gold">Oil at $50</span></td><td class="num">-4.1</td><td class="num">7.2</td><td class="num">-3.8</td></tr><tr><td><span class="tag bad">Oil at $45 (stress)</span></td><td class="num">-5.4</td><td class="num">7.2</td><td class="num">-4.8</td></tr><tr><td><span class="tag bad">2015-style devaluation</span></td><td class="num">-5.4</td><td class="num">13.5</td><td class="num">-4.8</td></tr><tr><td><span class="tag bad">Global recession</span></td><td class="num">-7.1</td><td class="num">7.2</td><td class="num">-4.1</td></tr><tr><td><span class="tag gold">Fiscal consolidation</span></td><td class="num">-1.8</td><td class="num">7.8</td><td class="num">+2.7</td></tr></tbody></table>
-    <p>These are first-order, comparative-static outcomes. The dynamic, multi-year propagation — and the full set of levers
-    — are explored interactively in the <a href="simulator.html">Scenario Simulator</a>; the time profile of an oil shock
-    is given by the structural vector autoregression in the Impulse Responses.</p>
+    <h2>Sensitivity</h2>
+    <table class="dt"><caption>First-order transmission, using an elasticity of 0.90 of oil-sector value added to the oil price. The inflation column reflects the pass-through from the depreciation that a low oil price would entail.</caption>
+    <thead><tr><th class="num">Oil price (USD/bbl)</th><th class="num">Output vs baseline (%)</th><th class="num">Oil revenue vs baseline (%)</th><th class="num">Additional inflation (pp)</th></tr></thead>
+    <tbody><tr><td class="num">45</td><td class="num">-5.4</td><td class="num">-50.0</td><td class="num">+1.3</td></tr><tr><td class="num">55</td><td class="num">-2.7</td><td class="num">-25.0</td><td class="num">+0.6</td></tr><tr><td class="num">65</td><td class="num">+0.0</td><td class="num">+0.0</td><td class="num">+0.0</td></tr><tr><td class="num">75</td><td class="num">+2.6</td><td class="num">+25.0</td><td class="num">+0.0</td></tr><tr><td class="num">85</td><td class="num">+5.3</td><td class="num">+50.0</td><td class="num">+0.0</td></tr></tbody></table>
+    <p>These are first-order, static responses. The dynamic, second-round propagation from oil to the non-oil economy, to
+    wages and to revenue over time is the function of the structural vector autoregression presented in the next section.</p>
     <script>window.AZ.data().then(D=>{const g=D.sim.grid;
       Plotly.newPlot("scenChart",[
         {x:g.map(o=>o.oil),y:g.map(o=>o.gdp_dev),name:"Output deviation (%)",mode:"lines+markers",line:{color:AZ.palette.accent,width:2.5},marker:{symbol:"circle",size:5}},
         {x:g.map(o=>o.oil),y:g.map(o=>o.oil_fiscal_dev),name:"Oil revenue deviation (%, right)",yaxis:"y2",mode:"lines+markers",line:{color:AZ.palette.gold,dash:"dash",width:2},marker:{symbol:"diamond",size:5}}
       ],AZ.layout({margin:{l:56,r:58,t:24,b:56},xaxis:{title:"Oil price (USD/bbl)"},yaxis:{title:"output, %"},
         yaxis2:{overlaying:"y",side:"right",showgrid:false,title:"revenue, %"},
-        shapes:[{type:"line",x0:65,x1:65,y0:0,y1:1,yref:"paper",line:{color:"#aaa",dash:"dot"}}],
-        annotations:[{x:65,y:1.05,yref:"paper",showarrow:false,text:"baseline",font:{size:10,color:"#8a93a0"}}]}),AZ.cfg);});
+        shapes:[{type:"line",x0:65,x1:65,y0:0,y1:1,yref:"paper",line:{color:"#aaa",dash:"dot"}}]}),AZ.cfg);});
     </script>
     </div><div class="pager"><a href="fiscal.html"><div class="d">Previous</div><div class="t">Fiscal and Budget</div></a><a class="next" href="irf.html"><div class="d">Next</div><div class="t">Impulse Responses</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="scenarios")a.classList.add("active")});</script></body></html>

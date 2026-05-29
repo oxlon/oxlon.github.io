@@ -9,59 +9,32 @@
 <script src="data/analytics.js"></script>
 <script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Scenario Simulator</b></div><div>Section 15 of 19</div></div><div class="wrap wide">
     <div class="eyebrow">Analysis</div><h1 class="page">Scenario Simulator</h1>
-    <p class="lede">An interactive macro-fiscal simulator. Seven policy and external levers are propagated, through
-    documented transmission channels, to the 2025–2030 paths of output, inflation, the fiscal balance, public debt and the
-    current account. The calculation runs in the browser from the estimated coefficients and the baseline projection;
-    move a control, or load a preset shock, to see the effect.</p>
-
-    <div class="grid" style="grid-template-columns:repeat(5,1fr);gap:14px">
-      <div class="stat acc"><div class="v"><span id="s_gdp">+0.0%</span></div><div class="k">2030 output vs baseline</div></div>
-      <div class="stat "><div class="v"><span id="s_infl">0.0%</span></div><div class="k">2030 inflation</div></div>
-      <div class="stat "><div class="v"><span id="s_bal">+0.0%</span></div><div class="k">2030 fiscal balance, % GDP</div></div>
-      <div class="stat "><div class="v"><span id="s_debt">20%</span></div><div class="k">2030 govt debt, % GDP</div></div>
-      <div class="stat acc"><div class="v"><span id="s_cab">+0.0%</span></div><div class="k">2030 current account, % GDP</div></div>
-    </div>
-
-    <div class="sim" style="margin-top:18px">
+    <p class="lede">An interactive instrument linking the principal policy and external variables to output, inflation and
+    the fiscal balance. The calculations are performed in the browser from the estimated coefficients.</p>
+    <div class="sim">
       <div class="controls">
-        <div class="ctl"><label>Oil price <span class="val" id="oilv">$65</span></label>
-          <input type="range" id="oil" min="30" max="110" step="1" value="65"><div class="hint">Brent, USD/bbl · baseline 65</div></div>
-        <div class="ctl"><label>Oil production <span class="val" id="oilprodv">+0%</span></label>
-          <input type="range" id="oilprod" min="-10" max="10" step="1" value="0"><div class="hint">volume vs baseline</div></div>
-        <div class="ctl"><label>Exchange-rate depreciation <span class="val" id="fxv">0%</span></label>
-          <input type="range" id="fx" min="0" max="40" step="1" value="0"><div class="hint">manat vs US dollar</div></div>
+        <div class="ctl"><label>Oil price <span class="val" id="oilv">USD 65</span></label>
+          <input type="range" id="oil" min="30" max="110" step="1" value="65">
+          <div class="hint">Brent, USD per barrel; baseline 65</div></div>
         <div class="ctl"><label>Value-added tax rate <span class="val" id="vatv">18%</span></label>
-          <input type="range" id="vat" min="10" max="22" step="0.5" value="18.0"><div class="hint">statutory rate 18%</div></div>
+          <input type="range" id="vat" min="10" max="22" step="0.5" value="18.0">
+          <div class="hint">statutory rate 18 per cent</div></div>
+        <div class="ctl"><label>Exchange-rate depreciation <span class="val" id="fxv">0%</span></label>
+          <input type="range" id="fx" min="0" max="40" step="1" value="0">
+          <div class="hint">manat against the US dollar</div></div>
         <div class="ctl"><label>Government expenditure <span class="val" id="govv">+0%</span></label>
-          <input type="range" id="gov" min="-15" max="15" step="1" value="0"><div class="hint">non-oil primary expenditure</div></div>
-        <div class="ctl"><label>Policy rate <span class="val" id="ratev">+0 pp</span></label>
-          <input type="range" id="rate" min="-3" max="5" step="0.25" value="0"><div class="hint">change vs baseline</div></div>
-        <div class="ctl"><label>Trading-partner demand <span class="val" id="globv">+0%</span></label>
-          <input type="range" id="glob" min="-5" max="5" step="0.5" value="0"><div class="hint">external demand</div></div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
-          <button class="btn ghost" id="reset">Baseline</button>
-          <button class="btn ghost" id="p_oil50">Oil to $50</button>
-          <button class="btn ghost" id="p_deval">2015 devaluation</button>
-          <button class="btn ghost" id="p_recession">Global recession</button>
-          <button class="btn ghost" id="p_consol">Fiscal consolidation</button>
-        </div>
+          <input type="range" id="gov" min="-15" max="15" step="1" value="0">
+          <div class="hint">non-oil primary expenditure</div></div>
+        <button class="btn ghost" id="reset">Reset to baseline</button>
       </div>
-      <div class="simout"><div class="grid g2">
-        <div class="fig"><div id="simGdp" class="plot" style="height:230px"></div><div class="cap">Figure 14.1. Nominal output: baseline and scenario, 2025–2030.</div></div>
-        <div class="fig"><div id="simInfl" class="plot" style="height:230px"></div><div class="cap">Figure 14.2. Inflation: baseline and scenario.</div></div>
-        <div class="fig"><div id="simBal" class="plot" style="height:230px"></div><div class="cap">Figure 14.3. Fiscal balance (% GDP): baseline and scenario.</div></div>
-        <div class="fig"><div id="simDebt" class="plot" style="height:230px"></div><div class="cap">Figure 14.4. Government debt (% GDP): baseline and scenario.</div></div>
-      </div></div>
+      <div class="simout">
+        <div class="grid g3"><div class="stat "><div class="v"><span id="s_gdp">+0.0%</span></div><div class="k">output relative to baseline</div></div>
+          <div class="stat "><div class="v"><span id="s_infl">+0.0 pp</span></div><div class="k">inflation effect</div></div>
+          <div class="stat "><div class="v"><span id="s_fisc">+0.0% GDP</span></div><div class="k">fiscal balance</div></div></div>
+        <div class="fig"><div id="simPlot" class="plot" style="height:340px"></div><div class="cap">Figure 14.1. Output path: baseline projection and selected scenario, 2025–2030.</div></div>
+        <div class="fig"><div id="simBars" class="plot" style="height:210px"></div><div class="cap">Figure 14.2. Decomposition of the combined effect.</div></div>
+      </div>
     </div>
-
-    <h2>How the simulator works</h2>
-    <p>The engine is a transparent, first-order representation of the principal channels in the Azerbaijani economy. Each
-    lever maps to a coefficient that is either estimated in this report or calibrated from the national accounts; the
-    output paths are deviations from the Ministry baseline, with public debt accumulating the implied deficits. The design
-    favours transparency over sophistication: every number can be traced to the coefficient below, which is the property a
-    decision-support tool used in budget preparation requires.</p>
-    <table class="dt"><caption>Transmission channels and their coefficients. Output and inflation effects are first-order; the dynamic, multi-year propagation is the province of the structural vector autoregression and the DSGE.</caption>
-    <thead><tr><th>Channel</th><th class="num">Coefficient</th><th>Basis</th></tr></thead><tbody><tr><td>Oil price → oil-sector value added</td><td class="num">elasticity 0.90</td><td>Value added moves with the price, holding production fixed; production is a separate control.</td></tr><tr><td>Exchange rate → inflation</td><td class="num">0.21 pp per 1%</td><td>Estimated pass-through coefficient (Regression Results).</td></tr><tr><td>VAT rate → inflation</td><td class="num">0.35 pp per 1 pp</td><td>Consumption-weighted direct price effect.</td></tr><tr><td>VAT rate → demand</td><td class="num">-0.10% per 1 pp</td><td>Demand drag on non-oil output.</td></tr><tr><td>Expenditure → non-oil output</td><td class="num">0.15% per 1%</td><td>Fiscal multiplier of roughly 0.6 on a base of about 25 per cent of output.</td></tr><tr><td>Policy rate → demand</td><td class="num">-0.50% per 1 pp</td><td>Interest-rate channel to non-oil output.</td></tr><tr><td>Partner demand → exports</td><td class="num">0.40% per 1%</td><td>External demand for non-oil exports.</td></tr><tr><td>Oil → fiscal balance</td><td class="num">15% of GDP base</td><td>Oil-related revenue share; the balance moves with oil value added.</td></tr><tr><td>Oil → current account</td><td class="num">25% of GDP base</td><td>Oil-export share of output.</td></tr></tbody></table>
-    <div class="callout "><div class="h">Interpretation and caveats</div>The presets illustrate the principal risks: an oil price of USD 50 erodes the fiscal surplus and weakens output; a 2015-style devaluation raises inflation sharply through the pass-through; a global recession compounds the oil and external channels. The effects are proportional and do not capture non-linearities, regime changes or the full dynamic feedback; for those, the structural models in this section are the appropriate instruments. The simulator is intended for rapid, auditable what-if analysis, not point prediction.</div>
+    <div class="callout "><div class="h">Transmission channels</div>The channels are first-order and documented: the oil price affects output through the oil share and an elasticity of 0.90; the exchange rate affects prices through the estimated pass-through of 0.21; the value-added tax affects demand and revenue; and expenditure operates through a multiplier of 0.45. Each control corresponds to a coefficient reported elsewhere in this document.</div>
     <script defer src="assets/sim.js"></script>
     </div><div class="pager"><a href="structural.html"><div class="d">Previous</div><div class="t">Structural Models</div></a><a class="next" href="technical.html"><div class="d">Next</div><div class="t">Technical Report</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="simulator")a.classList.add("active")});</script></body></html>
