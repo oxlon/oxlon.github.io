@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Econometric Models — Ministry of Economy of the Republic of Azerbaijan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="data/analytics.js"></script>
+<script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Econometric Models</b></div><div>Section 06 of 19</div></div><div class="wrap">
+    <div class="eyebrow">Data and Models</div><h1 class="page">Econometric Models</h1>
+    <p class="lede">This section sets out the variables and their construction, the theoretical form of each block, and the
+    corresponding estimated equation as deployed in the Ministry's models. The full set comprises ninety-two equations;
+    representative relationships are shown for each block.</p>
+
+    <h2>Variables and their construction</h2>
+    <table class="dt"><caption>Principal variables of the behavioural block, their role and construction.</caption>
+    <thead><tr><th>Series</th><th>Definition</th><th>Role</th><th>Construction</th></tr></thead><tbody><tr><td><code>RHC</code></td><td>Real household final consumption</td><td>Principal private demand component</td><td>Constant-price expenditure</td></tr><tr><td><code>RIEA</code></td><td>Real gross fixed capital formation</td><td>Private investment demand</td><td>Constant-price expenditure on fixed assets</td></tr><tr><td><code>NONOILGDP</code></td><td>Real non-oil value added</td><td>Core measure of domestic activity</td><td>Sum of non-oil sectoral value added</td></tr><tr><td><code>CPI</code></td><td>Consumer price index</td><td>Headline price level</td><td>Month-on-month index, cumulated to a level</td></tr><tr><td><code>NEER</code></td><td>Nominal effective exchange rate</td><td>Imported-price channel</td><td>Trade-weighted manat index</td></tr><tr><td><code>OPIWTI</code></td><td>Oil price index</td><td>External terms-of-trade driver</td><td>Indexed crude price</td></tr><tr><td><code>FPI_WEO</code></td><td>World food price index</td><td>Imported food inflation</td><td>IMF commodity index</td></tr><tr><td><code>M2</code></td><td>Broad money</td><td>Monetary conditions</td><td>Central Bank aggregate</td></tr><tr><td><code>W_AGR…</code></td><td>Average wage by activity</td><td>Labour-cost and income channel</td><td>Average monthly wage, by sector</td></tr><tr><td><code>POP</code></td><td>Population</td><td>Demographic scale</td><td>Annual average</td></tr></tbody></table>
+    <div class="callout "><div class="h">Notation</div>In the estimated equations below, <code>DLOG</code> denotes the log-difference (a growth rate), a lag is written <code>(−1)</code>, and a term such as <code>(T&gt;2017)</code> is a regime indicator active from that year. The reported coefficients are the deployed estimates; the literature is cited in the Literature section.</div>
+
+    <h2>National accounts</h2>
+    <p>The real expenditure components combine short-run dynamics with convergence to a long-run equilibrium, in the
+    error-correction form (Engle and Granger, 1987; Pesaran, Shin and Smith, 2001):</p>
+    <div class="eq">$$ \Delta\log C_t=\alpha\,\Delta\log Y^d_t-\gamma\,\hat r^{L}_t-\lambda\,(\log C_{t-1}-\beta\log Y^d_{t-1})+\varepsilon_t $$<span class="num">(M1)</span></div>
+    <div class="eqc"><span class="lbl">Household consumption</span><code>DLOG(RHC) = -0.556·DLOG(RHC(-1))*(T>2002) + 0.336·DLOG(W(-1)*L(-1)/CPI(-1))*(T>1998) − 0.284·DLOG(CPI)*(T>2008) − 0.747·DLOG(CPI(-1))*(T<2009) + 0.0208·D(PBCRHC) + 0.214·DLOG(RIEA(-1)) − 1.19·ECM_RHC(-1) + 0.348·DLOG(OPIWTI)*(T<2011) + 0.145·(T>2005)*(T<2010) + 0.0518·(T>2013) + 0.0471·(T<2017) + 0.0777·(T=2010) + 0.081·(T=2022)</code></div>
+    <div class="eqc"><span class="lbl">Private investment</span><code>DLOG(RIEA) = 0.559·DLOG(OPIWTI)*(T>2017) − 0.997·DLOG(RIEA(-2))*(T>2011) + 0.309·DLOG(M3/CPI)*(T>2005) + 0.872·DLOG(RHC) + 0.486·ECM_RIEANEW2020*(T=2005) + 0.728·DLOG(VA_DIGER/CPI)*(T>2011) − 0.187·(T=2019) − 0.231·(T=2018) − 0.507·(T>2020) + 0.57·(T=2023) − 0.0745·((T=2013)-(T=2016))</code></div>
+    <p>Consumption responds to real labour income and a correction towards its long-run relationship; investment responds
+    to the oil-price index, domestic demand and real money, reflecting the dependence of capital formation on oil revenue.</p>
+
+    <h2>Inflation and monetary</h2>
+    <p>Consumer-price inflation is an open-economy Phillips curve combining inertia, imported inflation and the output gap
+    (Galí and Gertler, 1999):</p>
+    <div class="eq">$$ \pi_t=\phi\,\pi_{t-1}+(1-\phi)\,\pi^{e}_t+\kappa\,\hat y_t+\theta\big(\Delta s_t+\Delta p^{*}_t\big)+\varepsilon_t $$<span class="num">(M2)</span></div>
+    <div class="eqc"><span class="lbl">Consumer prices</span><code>DLOG(CPI) = 0.187·DLOG(CPI(-1)) − 0.258·DLOG(NEER) − 0.0707·DLOG(NEER(-1)) + 0.0891·DLOG(FPI_WEO)*(T>2007) + 0.167·DLOG(M1) + 0.107·(T=2015) − 0.0396·(T=2012) + 0.118·(T=2022) + 0.156·DLOG(OPIWTI) − 0.000874·(LOG(CPI(-1))-LCPI_HP(-1))*(T>2013) + 0.00658 − 0.0505·(T=2003) + 0.0681·(T=2023)</code></div>
+    <div class="eqc"><span class="lbl">Broad money</span><code>DLOG(M2_M1) = 0.15·DLOG(M2_M1(-1))*(T>2007) − 2.53·DLOG(CPI(-1)) + 0.793·DLOG(MB) + 0.464·DLOG(OPIWTI) + 0.0109·D(RIRD) + 0.365·DLOG(REER) + 0.149 + 0.326·(T=2023) + 0.756·(T>2005)*(T<2008) + 0.181·DLOG(MW)*(T<2014) − 0.277·(T=2021)</code></div>
+    <p>The estimated price equation is dominated by the exchange rate, the world food price and lagged inflation; it is
+    re-estimated, with alternative specifications, in the Regression Results section.</p>
+
+    <h2>Labour and social</h2>
+    <p>Wages follow a Phillips relationship in productivity and prices; Okun's law (1962) links unemployment to the
+    non-oil output gap:</p>
+    <div class="eq">$$ \Delta W_t=\delta+\zeta\,\Delta(\text{productivity})_t-\eta\,\pi_{t-1}+\varepsilon_t $$<span class="num">(M3)</span></div>
+    <div class="eqc"><span class="lbl">Wage, agriculture</span><code>DLOG(W_AGR) = 0.355·DLOG(LP_AGR) − 0.864·DLOG(CPI(-1))*(T>2009) − 0.223·DLOG(W_AGR(-1))*(T>2007) + 0.6·DLOG(FPI_AZ(-1))*(T>2011) + 0.412·DLOG(MW)*(T>2006) + 0.206 − 0.145·(T>2011)</code></div>
+    <p>Sectoral wage equations of this form are estimated for each activity; the deployed model contains thirty labour and
+    social relationships.</p>
+
+    <h2>External sector</h2>
+    <p>Trade volumes are modelled with elasticities to foreign demand, the real exchange rate and domestic activity:</p>
+    <div class="eqc"><span class="lbl">Non-oil goods exports</span><code>DLOG(RXGNO) = -0.48·DLOG(RXGNO(-1)) − 0.217·DLOG(REER)*(T>2002) + 4.58·DLOG(RGDPMTP) − 0.891·ECM_RXGNO(-1) − 0.474·DLOG(RXGNO(-2))*(T<2008) − 0.667·(T=2010) + 0.0365 − 0.0755·(T>1999)*(T<2003) − 0.154·(T>2006)*(T<2012) + 0.092·(T>2012)*(T<2015) − 0.109·(T=2011) − 0.0792·(T=2017) + 0.271·(T=2020)</code></div>
+    <div class="eqc"><span class="lbl">Non-oil goods imports</span><code>DLOG(MGNO) = 1.22·DLOG(HC/ER) − 0.338·DLOG(HC(-1)/ER(-1)) − 0.737·DLOG(NEER) + 0.248·DLOG(NEER(-1)) + 0.753·DLOG((INO/ER(-1))*(T=2009) + 0.124·DLOG(OPIWTI(-1)) − 0.404·ECM_MGNO_NEW(-1) + 0.141·T=1997 − 0.238·T=2014 + 0.193·T=2011 + 0.116·(T=1999)+(T=2000) − 0.034·T<2005 + 0.135·(T=2018)</code></div>
+    <p>Sixteen equations cover trade in goods and services, the income account and the balance-of-payments closure.</p>
+
+    <h2>Industry, trade and communications</h2>
+    <div class="eqc"><span class="lbl">Transport value added</span><code>DLOG(TRANS_P) = 0.377·DLOG(TRANS_P(-1)) + 0.123·DLOG(RVA_CONST) + 2.02·DLOG(POP) − 0.87·ECM_TRANS_P(-1) − 0.513·(T=2020) − 0.0327·(T=2008) + 0.0165·(T=2016) − 0.0182·(T=2014) + 0.00574</code></div>
+    <p>Branch-level output equations and the transport relationship complete the production-side detail.</p>
+
+    <h2>Oil revenue and the sovereign fund</h2>
+    <div class="eq">$$ T^{SOFAZ}_t=q^{oil}_t\big(p^{oil}_t e_t-c\big)\,\sigma^{gov}\,\kappa_t,\qquad \kappa_t=f(\text{non-oil deficit gap}_{t-1}) $$<span class="num">(M4)</span></div>
+    <p>The transfer from the State Oil Fund is the single largest revenue line. Production is exogenous, following
+    production-sharing-agreement profiles; the transfer ratio responds to the prior-year non-oil deficit. The dependence
+    on this discretionary parameter is discussed in the Limitations section.</p>
+
+    <h2>The catalogue</h2>
+    <p>Every estimated equation embedded in the sectoral workbooks, with its coefficients, was extracted into a single
+    machine-readable catalogue, which forms the calibration basis for the behavioural block.</p>
+    <table class="dt"><caption>The ninety-two estimated equations, by block.</caption>
+    <thead><tr><th>Block</th><th class="num">Equations</th><th>Examples</th></tr></thead><tbody>
+    <tr><td>National accounts</td><td class="num">38</td><td>consumption, investment, deflators, productivity</td></tr>
+    <tr><td>Labour and social</td><td class="num">30</td><td>sectoral wages, employment</td></tr>
+    <tr><td>External and balance of payments</td><td class="num">16</td><td>trade, services, income, closure</td></tr>
+    <tr><td>Inflation and monetary</td><td class="num">4</td><td>consumer prices, money</td></tr>
+    <tr><td>Industry, trade and communications</td><td class="num">4</td><td>branch output, transport</td></tr>
+    </tbody></table>
+    </div><div class="pager"><a href="data.html"><div class="d">Previous</div><div class="t">Data Foundation</div></a><a class="next" href="regressions.html"><div class="d">Next</div><div class="t">Regression Results</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="models")a.classList.add("active")});</script></body></html>

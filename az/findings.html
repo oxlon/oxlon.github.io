@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Principal Findings — Ministry of Economy of the Republic of Azerbaijan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="data/analytics.js"></script>
+<script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Principal Findings</b></div><div>Section 02 of 19</div></div><div class="wrap">
+    <div class="eyebrow">Overview</div><h1 class="page">Principal Findings</h1>
+    <p class="lede">The findings that bear directly on budget and policy decisions, organised by forecast direction. Each
+    figure is produced from the Ministry's data by the accompanying analytical code and is documented in the corresponding
+    section.</p>
+    <div class="grid g4"><div class="stat acc"><div class="v">2.5%</div><div class="k">baseline real output growth, 2025–2030</div></div><div class="stat "><div class="v">1.7→7.2%</div><div class="k">projected inflation, 2025 to 2030</div></div><div class="stat "><div class="v">−7.8%</div><div class="k">output under a 30 per cent oil decline</div></div><div class="stat acc"><div class="v">32%</div><div class="k">reduction in 12-month inflation error</div></div></div>
+
+    <h2>1 · Output: moderate growth and a continuing structural shift</h2>
+    <p>The baseline projects average real output growth of 2.5 per cent over 2025–2030. The composition of output
+    continues to shift towards the non-oil economy, whose share rises from 68 to 81 per cent by 2030 as
+    oil and gas production declines in real terms. The reconstructed national-accounts identities reconcile to within 0.05
+    per cent and the engine reproduces the official projection, establishing that the annual statutory forecast can be
+    operated on the data already held.</p>
+
+    <h2>2 · Inflation: an external, pass-through process</h2>
+    <p>Consumer-price inflation is determined principally by exchange-rate and import-price pass-through. A one per cent
+    depreciation of the manat raises prices by approximately 0.21 percentage points (coefficient of determination
+    0.62 over 25 years), and a one-standard-deviation oil-price shock raises inflation by about
+    2.2 percentage points on impact before dissipating within three years. The baseline path rises from
+    1.7 per cent in 2025 to 7.2 per cent in 2030. Under the managed exchange-rate regime the parity is the
+    dominant transmission channel, and the exchange rate is accordingly a primary scenario control.</p>
+
+    <h2>3 · Oil and the fiscal accounts: the principal risk</h2>
+    <p>Oil-price movements are the dominant source of macro-fiscal risk. A thirty per cent fall in the oil price reduces
+    nominal output by approximately 7.8 per cent relative to the baseline and contracts oil-related revenue, including the
+    transfer from the State Oil Fund, substantially. The price is not forecast; it is specified as three scenarios —
+    baseline, conservative and stress — which are reported together throughout.</p>
+
+    <h2>4 · Forecast performance across the model suite</h2>
+    <p>The econometric models, the machine-learning toolkit (including the gradient-boosting libraries) and a deep-learning
+    network were implemented and compared under out-of-sample testing. On the short annual sample a parsimonious neural
+    network and a univariate time-series model are most accurate, with tree-based ensembles close behind; the leading
+    annual model improves upon a no-change benchmark by 38%. On the monthly series a long short-term memory
+    network forecasts inflation twelve months ahead with a root-mean-square error of 4.547, against
+    6.678 for the benchmark, a reduction of 32%.</p>
+
+    <h2>5 · Structural validation</h2>
+    <p>A three-equation New-Keynesian model yields responses consistent with theory: a monetary tightening reduces output
+    by 1.13 per cent and inflation by 0.29 per cent on impact while raising
+    the policy rate. It provides an internally-coherent cross-check on the empirical estimates.</p>
+
+    <h2>Recommendations</h2>
+    <ol>
+      <li>Adopt the consolidated system as the statutory forecasting engine; it reproduces the official projection and is fully documented.</li>
+      <li>Forecast inflation from a combination of the better-performing models, and apply machine learning at the monthly and transaction-level frequencies, where its advantage is established.</li>
+      <li>Report all three oil scenarios in budget documentation, in view of the centrality of the oil price to the outlook.</li>
+      <li>Obtain the quarterly national accounts, the implementing regulation of the fiscal rule, and the disaggregated revenue and expenditure data, in order to complete the quarterly structural model and the budget-execution module.</li>
+      <li>Establish the production environment: an automated data pipeline, executive reporting, and a programme of staff training.</li>
+    </ol>
+    </div><div class="pager"><a href="index.html"><div class="d">Previous</div><div class="t">Executive Summary</div></a><a class="next" href="mandate.html"><div class="d">Next</div><div class="t">Mandate and Legal Basis</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="findings")a.classList.add("active")});</script></body></html>

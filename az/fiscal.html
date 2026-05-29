@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fiscal and Budget — Ministry of Economy of the Republic of Azerbaijan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="data/analytics.js"></script>
+<script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Fiscal and Budget</b></div><div>Section 10 of 19</div></div><div class="wrap">
+    <div class="eyebrow">Forecasts</div><h1 class="page">Fiscal and Budget</h1>
+    <p class="lede">The fiscal position is strong but oil-dependent: a surplus and low public debt today, narrowing as oil
+    revenue declines. This section presents the fiscal and external balances, the revenue architecture, and the legal
+    constraints the budget module enforces.</p>
+    <div class="grid g4"><div class="stat acc"><div class="v">+2.6%</div><div class="k">fiscal balance 2025 (% GDP)</div></div><div class="stat "><div class="v">20%</div><div class="k">government debt (% GDP)</div></div><div class="stat acc"><div class="v">+5.5%</div><div class="k">current account 2025 (% GDP)</div></div><div class="stat "><div class="v">-0.6%</div><div class="k">fiscal balance 2030 (% GDP)</div></div></div>
+
+    <h2>The fiscal and debt position</h2>
+    <p>The consolidated balance is in surplus — +2.6 per cent of output in 2025 on the IMF estimate — but the
+    surplus narrows to -0.6 per cent by 2030 as oil revenue falls. Public debt is low and stable at about
+    20 per cent of output, which affords the State considerable fiscal space. The external current account remains in
+    surplus throughout, though it too narrows.</p>
+    <div class="fig"><div id="fiscChart" class="plot" style="height:380px"></div><div class="cap">Figure 9.1. Consolidated fiscal balance (bars, left) and general government debt (line, right), per cent of output, 2015–2030 (IMF World Economic Outlook).</div></div>
+    <div class="fig"><div id="cabChart" class="plot" style="height:380px"></div><div class="cap">Figure 9.2. Current account balance, per cent of output, 2015–2030 (IMF World Economic Outlook).</div></div>
+
+    <h2>Revenue architecture</h2>
+    <p>Each revenue head is modelled on its own base, net of refunds in accordance with clause 2.10.6-1, and aggregated.
+    Customs duties and the transfer from the State Oil Fund are the oil-linked components:</p>
+    <div class="eq">$$ R^{cust}_t=M_t\,\tau^{cust}_t\,e_t,\qquad T^{j}_t=B^{j}_t\,\tau^{j}_t\;\;(j\in\{VAT,CIT,PIT,excise,\dots\}) $$<span class="num">(F1)</span></div>
+
+    <h2>The fiscal rule</h2>
+    <p>The expenditure ceiling is defined in Article 11-1 of the Budget System Law. Pending receipt of the implementing
+    regulation, the working specification is</p>
+    <div class="eq">$$ FRC^{ceil}_t=\min\Big(\text{ceiling path}_t,\;\;\text{permitted oil use}(NFA_t)+R^{nonoil}_t\Big) $$<span class="num">(F2)</span></div>
+    <div class="eq">$$ \text{subject to}\quad \frac{\text{non-oil base deficit}_t}{\text{non-oil GDP}_t} < \frac{\text{non-oil base deficit}_{t-1}}{\text{non-oil GDP}_{t-1}} $$<span class="num">(F3)</span></div>
+    <p>This is implemented as an explicit constraint, evaluated on each run, that reports any breach with the corresponding
+    clause reference. The sequestration thresholds of clause 6.3-1 — receipts below target by 5 or 10 per cent — govern the
+    execution-stage monitor. The consolidated deficit excluding the State Oil Fund is the primary anchor under clause
+    3.4.2.17; the transfer ratio is set by decision rather than formula, and the resulting approximation is documented in
+    the Limitations section.</p>
+
+    <h2>Fiscal indicators</h2>
+    <table class="dt"><caption>Fiscal balance, government debt and the current account, per cent of output (IMF World Economic Outlook). 2024 is the latest outturn estimate; later years are projections.</caption>
+    <thead><tr><th class="num">Year</th><th class="num">Fiscal balance</th><th class="num">Govt debt</th><th class="num">Current account</th></tr></thead><tbody><tr><td class="num">2024</td><td class="num">+4.1</td><td class="num">21.6</td><td class="num">+6.3</td></tr><tr><td class="num">2025</td><td class="num">+2.6</td><td class="num">20.1</td><td class="num">+5.5</td></tr><tr><td class="num">2026</td><td class="num">+1.8</td><td class="num">20.0</td><td class="num">+9.7</td></tr><tr><td class="num">2027</td><td class="num">+0.2</td><td class="num">20.0</td><td class="num">+5.4</td></tr><tr><td class="num">2028</td><td class="num">-0.6</td><td class="num">19.9</td><td class="num">+2.0</td></tr><tr><td class="num">2029</td><td class="num">-0.5</td><td class="num">19.9</td><td class="num">+1.6</td></tr><tr><td class="num">2030</td><td class="num">-0.6</td><td class="num">20.0</td><td class="num">+1.0</td></tr></tbody></table>
+    <div class="callout key"><div class="h">The central fiscal risk</div>The surplus and the external position rest on oil revenue. The Scenario Analysis shows that a sustained fall in the oil price erodes both quickly; the fiscal rule, by capping the use of oil revenue and anchoring the non-oil deficit, is the instrument that protects the position. Completing the budget-execution module requires the disaggregated revenue and expenditure data set out in the data request.</div>
+    <script>window.AZ.data().then(D=>{const W=D.weo.indicators;
+      const bal=W.GGXCNL_NGDP.series,debt=W.GGXWDG_NGDP.series,cab=W.BCA_NGDPD.series;
+      const yrs=Object.keys(bal).map(Number).filter(y=>y>=2015&&y<=2030).sort((a,b)=>a-b);
+      const bdy=[{type:"line",x0:2024.5,x1:2024.5,y0:0,y1:1,yref:"paper",line:{color:"#9aa3ad",dash:"dot"}}];
+      const ann=[{x:2024.5,y:1.06,yref:"paper",xanchor:"right",showarrow:false,text:"outturn  ",font:{size:10,color:"#8a93a0"}},
+        {x:2024.5,y:1.06,yref:"paper",xanchor:"left",showarrow:false,text:"  forecast",font:{size:10,color:"#8a93a0"}}];
+      Plotly.newPlot("fiscChart",[
+        {x:yrs,y:yrs.map(y=>bal[y]),type:"bar",name:"Fiscal balance (% GDP)",marker:{color:yrs.map(y=>bal[y]<0?AZ.palette.bad:AZ.palette.accent)}},
+        {x:yrs,y:yrs.map(y=>debt[y]),yaxis:"y2",mode:"lines+markers",name:"Govt debt (% GDP, right)",line:{color:AZ.palette.navy,width:2.5,dash:"dash"},marker:{symbol:"square",size:5}}
+      ],AZ.layout({margin:{l:54,r:54,t:26,b:44},yaxis:{title:"balance, % GDP"},yaxis2:{overlaying:"y",side:"right",showgrid:false,title:"debt, % GDP",rangemode:"tozero"},shapes:bdy,annotations:ann}),AZ.cfg);
+      Plotly.newPlot("cabChart",[{x:yrs,y:yrs.map(y=>cab[y]),mode:"lines+markers",name:"Current account (% GDP)",line:{color:AZ.palette.accent,width:2.5},marker:{symbol:"circle",size:5},fill:"tozeroy",fillcolor:"rgba(29,122,140,.08)"}],
+        AZ.layout({margin:{l:54,r:18,t:26,b:44},yaxis:{title:"% of GDP"},shapes:bdy,annotations:ann}),AZ.cfg);});
+    </script>
+    </div><div class="pager"><a href="inflation.html"><div class="d">Previous</div><div class="t">Inflation and Monetary</div></a><a class="next" href="scenarios.html"><div class="d">Next</div><div class="t">Scenario Analysis</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="fiscal")a.classList.add("active")});</script></body></html>

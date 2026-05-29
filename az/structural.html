@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Structural Models — Ministry of Economy of the Republic of Azerbaijan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="data/analytics.js"></script>
+<script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Structural Models</b></div><div>Section 14 of 19</div></div><div class="wrap wide">
+    <div class="eyebrow">Analysis</div><h1 class="page">Structural Models</h1>
+    <p class="lede">The econometric models describe the data; the structural models explain it. A micro-founded
+    New-Keynesian DSGE and an input-output block provide theory-consistent cross-checks and support the policy
+    counterfactuals that reduced-form models cannot address.</p>
+
+    <h2>Why a structural model</h2>
+    <p>Reduced-form regressions and vector autoregressions summarise historical correlations, but they are silent on the
+    effect of a policy that has no historical precedent, and they are vulnerable to the Lucas critique. A
+    dynamic stochastic general equilibrium (DSGE) model is built from the optimising behaviour of households and firms, so
+    its parameters are structural and its responses can be interpreted as causal under the stated assumptions. The
+    canonical three-equation New-Keynesian model (Galí, 2008) is the standard such framework and the natural complement to
+    the empirical work here.</p>
+
+    <h2>A three-equation New-Keynesian model</h2>
+    <p>The model comprises a forward-looking investment-saving relation (from the household's consumption-saving choice), a
+    New-Keynesian Phillips curve (from staggered price-setting), and a Taylor rule for monetary policy. It is solved under
+    rational expectations by the method of undetermined coefficients.</p>
+    <div class="eq">$$ \tilde y_t = \mathbb{E}_t \tilde y_{t+1} - \tfrac{1}{\sigma}\big(i_t-\mathbb{E}_t\pi_{t+1}-r^n_t\big)+\varepsilon^d_t $$<span class="num">(D1)</span></div>
+    <div class="eq">$$ \pi_t=\beta\,\mathbb{E}_t\pi_{t+1}+\kappa\,\tilde y_t+\varepsilon^s_t $$<span class="num">(D2)</span></div>
+    <div class="eq">$$ i_t=\phi_\pi\,\pi_t+\phi_y\,\tilde y_t+\varepsilon^m_t $$<span class="num">(D3)</span></div>
+    <p class="fn">Calibrated at conventional values for a small economy: sigma = 1.0, beta = 0.99, kappa = 0.13, phi_pi = 1.5, phi_y = 0.125, rho = 0.5. The discount factor and the
+    inflation-response coefficient follow the standard literature; the slope of the Phillips curve and the
+    interest-elasticity are set to the mid-range of published estimates.</p>
+    <div class="grid g3"><div class="fig"><div id="dsgeMon" class="plot" style="height:280px"></div><div class="cap">Figure 13.1. Monetary tightening (+100 bp).</div></div>
+      <div class="fig"><div id="dsgeCost" class="plot" style="height:280px"></div><div class="cap">Figure 13.2. Cost-push (supply) shock.</div></div>
+      <div class="fig"><div id="dsgeDem" class="plot" style="height:280px"></div><div class="cap">Figure 13.3. Demand shock.</div></div></div>
+    <p>The responses are correctly signed and economically interpretable. A monetary tightening lowers output and
+    inflation while raising the rate — the conventional cost of disinflation. A cost-push shock confronts the central bank
+    with the output-inflation trade-off: inflation rises while output falls. A demand shock raises output, inflation and
+    the policy rate together. These are theory-consistent benchmarks against which the empirical impulse responses can be
+    assessed.</p>
+
+    <h2>Input-output propagation</h2>
+    <p>Where the DSGE captures aggregate dynamics, the input-output block captures the structural linkages between
+    sectors. Output is determined by final demand through the Leontief relation, $X=(I-A)^{-1}F$, where $A$ is the matrix
+    of inter-industry technical coefficients and $(I-A)^{-1}$ is the Leontief inverse, whose columns sum to the output
+    multipliers.</p>
+    <table class="dt"><caption>The Leontief inverse $(I-A)^{-1}$. Element (i,j) is the total output of sector i required per unit of final demand for sector j.</caption>
+    <thead><tr><th></th><th class="num">Oil & gas</th><th class="num">Non-oil</th></tr></thead><tbody><tr><td>Oil & gas</td><td class="num">1.154</td><td class="num">0.087</td></tr><tr><td>Non-oil</td><td class="num">0.315</td><td class="num">1.539</td></tr></tbody></table>
+    <table class="dt"><caption>Output multipliers and the propagation of a ten-unit contraction in oil final demand. The technical coefficients are illustrative pending the official supply-use table.</caption>
+    <thead><tr><th>Sector</th><th class="num">Oil & gas</th><th class="num">Non-oil</th></tr></thead><tbody>
+    <tr><td>Output multiplier</td><td class="num">1.469</td><td class="num">1.626</td></tr>
+    <tr><td>−10 units oil final demand, change in output</td><td class="num">-11.54</td><td class="num">-3.15</td></tr>
+    </tbody></table>
+    <p>A ten-unit contraction in oil final demand reduces total output by 14.69 units once inter-industry
+    linkages are accounted for; the multiplier exceeds the direct effect because the non-oil sectors supply inputs to the
+    oil sector. A full computable general equilibrium model would extend this with prices, factor markets and substitution,
+    and is the natural vehicle for analysing the structural transition away from oil.</p>
+    <script>window.AZ.data().then(D=>{const S=D.dsge.shocks,H=[...Array(D.dsge.horizon+1).keys()];
+      function draw(div,key){const o=S[key];Plotly.newPlot(div,[
+        {x:H,y:o.output,name:"Output",mode:"lines",line:{color:AZ.palette.navy,width:2.5}},
+        {x:H,y:o.inflation,name:"Inflation",mode:"lines",line:{color:"#b03a2e",dash:"dash",width:2}},
+        {x:H,y:o.rate,name:"Policy rate",mode:"lines",line:{color:AZ.palette.gold,dash:"dot",width:2}},
+        {x:[0,D.dsge.horizon],y:[0,0],mode:"lines",line:{color:"#888",dash:"dot"},showlegend:false}
+      ],AZ.layout({margin:{l:48,r:12,t:10,b:46},legend:{orientation:"h",y:-0.28,font:{size:9}},xaxis:{title:"quarters"},yaxis:{title:"% deviation"}}),AZ.cfg);}
+      draw("dsgeMon","Monetary tightening (+100bp)");draw("dsgeCost","Cost-push (supply)");draw("dsgeDem","Demand");
+    });</script>
+    </div><div class="pager"><a href="ml.html"><div class="d">Previous</div><div class="t">Machine-Learning Models</div></a><a class="next" href="simulator.html"><div class="d">Next</div><div class="t">Scenario Simulator</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="structural")a.classList.add("active")});</script></body></html>

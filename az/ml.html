@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Machine-Learning Models — Ministry of Economy of the Republic of Azerbaijan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="data/analytics.js"></script>
+<script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Machine-Learning Models</b></div><div>Section 13 of 19</div></div><div class="wrap wide">
+    <div class="eyebrow">Analysis</div><h1 class="page">Machine-Learning Models</h1>
+    <p class="lede">The terms of reference specify a wide set of machine-learning methods. All were implemented and
+    evaluated against classical benchmarks under out-of-sample testing, so that their value is judged on evidence rather
+    than asserted. This section reports the comparison on annual inflation and a deep-learning model on the monthly series.</p>
+    <div class="grid g3"><div class="stat "><div class="v">16</div><div class="k">models evaluated (annual)</div></div><div class="stat acc"><div class="v">+32%</div><div class="k">LSTM gain over persistence (12m)</div></div><div class="stat acc"><div class="v">World food price</div><div class="k">leading determinant</div></div></div>
+
+    <h2>Methodology and rationale</h2>
+    <p>Time-series models must be evaluated out of sample and in chronological order: each is estimated on data up to a
+    given year and asked to predict the next, the window expanding as it rolls forward. This walk-forward protocol avoids
+    the look-ahead bias that in-sample fit conceals. The model set deliberately spans the bias–variance spectrum — from
+    parsimonious linear and univariate models, through regularised regressions, to flexible tree ensembles and neural
+    networks — because on a short, noisy annual sample the more flexible models are prone to overfit, and only an
+    out-of-sample contest reveals which generalise. Skill is the improvement in root-mean-square error over a random-walk
+    benchmark, the appropriate null for a persistent series.</p>
+
+    <h2>Annual model comparison</h2>
+    <p>Each model was evaluated by expanding-window, one-step-ahead testing on annual inflation (2000–2024;
+    13 out-of-sample years). Skill denotes the improvement in root-mean-square error over a random-walk
+    benchmark. The gradient-boosting results use the XGBoost and LightGBM libraries.</p>
+    <div class="fig"><div id="mlRmse" class="plot" style="height:520px"></div><div class="cap">Figure 12.1. Out-of-sample root-mean-square error by model. The vertical line marks the random-walk benchmark; bars to its left have positive skill.</div></div>
+
+    <table class="dt"><caption>Walk-forward comparison on annual inflation. Skill equals one minus the ratio of the model error to the benchmark error.</caption>
+    <thead><tr><th>Model</th><th>Family</th><th class="num">RMSE</th><th class="num">MAE</th><th class="num">Skill</th></tr></thead><tbody><tr><td>OLS / ARDL</td><td>Classical linear</td><td class="num ">8.31</td><td class="num">5.35</td><td class="num ">-0.66</td></tr><tr><td>Ridge (L2)</td><td>Regularized</td><td class="num ">8.41</td><td class="num">5.81</td><td class="num ">-0.68</td></tr><tr><td>LASSO (L1)</td><td>Regularized</td><td class="num ">8.83</td><td class="num">5.92</td><td class="num ">-0.76</td></tr><tr><td>Elastic Net</td><td>Regularized</td><td class="num ">8.66</td><td class="num">5.80</td><td class="num ">-0.73</td></tr><tr><td>Random Forest</td><td>Tree ensemble</td><td class="num sig">3.95</td><td class="num">3.07</td><td class="num sig">+0.21</td></tr><tr><td>Extra Trees</td><td>Tree ensemble</td><td class="num sig">4.02</td><td class="num">3.03</td><td class="num sig">+0.20</td></tr><tr><td>Gradient Boosting</td><td>Boosting</td><td class="num sig">4.05</td><td class="num">2.82</td><td class="num sig">+0.19</td></tr><tr><td>HistGradientBoosting</td><td>Boosting</td><td class="num sig">4.47</td><td class="num">4.10</td><td class="num sig">+0.11</td></tr><tr><td>SVR (RBF)</td><td>Kernel</td><td class="num sig">4.30</td><td class="num">3.15</td><td class="num sig">+0.14</td></tr><tr><td>k-NN</td><td>Instance</td><td class="num sig">4.67</td><td class="num">3.54</td><td class="num sig">+0.07</td></tr><tr><td>Neural Net (MLP)</td><td>Neural / deep</td><td class="num sig">3.12</td><td class="num">2.72</td><td class="num sig">+0.38</td></tr><tr><td>XGBoost</td><td>Boosting</td><td class="num sig">4.11</td><td class="num">2.92</td><td class="num sig">+0.18</td></tr><tr><td>LightGBM</td><td>Boosting</td><td class="num sig">4.47</td><td class="num">4.10</td><td class="num sig">+0.11</td></tr><tr><td>ARIMA(1,0,1)</td><td>Classical TS</td><td class="num sig">3.59</td><td class="num">3.17</td><td class="num sig">+0.28</td></tr><tr><td>ETS / Holt (Prophet-class)</td><td>Classical TS</td><td class="num ">5.74</td><td class="num">4.80</td><td class="num ">-0.14</td></tr><tr><td>Naive (random walk)</td><td>Benchmark</td><td class="num ">5.01</td><td class="num">3.92</td><td class="num ">+0.00</td></tr><tr><td>LSTM</td><td>Deep / sequence</td><td class="num ">—</td><td class="num">—</td><td class="num ">—</td></tr><tr><td>Temporal Fusion Transformer</td><td>Deep / sequence</td><td class="num ">—</td><td class="num">—</td><td class="num ">—</td></tr><tr><td>Prophet (native)</td><td>Deep / sequence</td><td class="num ">—</td><td class="num">—</td><td class="num ">—</td></tr></tbody></table>
+
+    <div class="grid g2"><div class="fig"><div id="mlImp" class="plot" style="height:340px"></div><div class="cap">Figure 12.2. Determinant importance from a random forest: the world food price, the exchange rate and the oil price lead.</div></div>
+      <div class="fig"><div id="mlPred" class="plot" style="height:340px"></div><div class="cap">Figure 12.3. Observed and predicted inflation: the leading model against the benchmark.</div></div></div>
+
+    <h2>Findings on the annual sample</h2>
+    <p>On approximately 25 annual observations, parsimony is decisive. A small neural
+    network and a univariate time-series model generalise best; tree-based ensembles are competitive; multivariate linear
+    regressions with collinear regressors perform well in sample but extrapolate poorly out of sample. The importance
+    ranking corroborates the structural pass-through relationship, placing the world food price, the exchange rate and the
+    oil price foremost.</p>
+
+    <h2>Deep learning on the monthly series</h2>
+    <p>A long short-term memory network was trained on the monthly panel (1997-01–2024-12; 211 months for
+    training, 96 for testing) to forecast inflation 12 months ahead from a multivariate
+    sequence of inflation, oil-price growth and money growth. At this horizon, persistence is a weak benchmark and the
+    network's use of the additional series is informative.</p>
+    <div class="fig"><div id="lstmChart" class="plot" style="height:380px"></div><div class="cap">Figure 12.4. Twelve-month-ahead inflation: observed values, the LSTM forecast, and the random-walk benchmark, 2017–2024.</div></div>
+    <table class="dt"><caption>Twelve-month-ahead forecast error on the monthly series, 2017–2024.</caption>
+    <thead><tr><th>Model</th><th class="num">RMSE</th></tr></thead><tbody><tr><td>LSTM</td><td class="num">4.547</td></tr><tr><td>AR(1) 12-step</td><td class="num">5.835</td></tr><tr><td>Random walk</td><td class="num">6.678</td></tr></tbody></table>
+    <p>The network reduces the forecast error by 32% relative to persistence, confirming that the
+    value of these methods rises with data frequency and forecast horizon. The deployment of machine learning is therefore
+    directed to high-frequency forecasting and, prospectively, to the transaction-level applications described in the
+    Delivery section.</p>
+    <script>window.AZ.data().then(D=>{const M=D.ml,L=D.lstm;
+      const run=M.results.filter(r=>r.rmse!=null).sort((a,b)=>b.rmse-a.rmse);
+      Plotly.newPlot("mlRmse",[{type:"bar",orientation:"h",x:run.map(r=>r.rmse),y:run.map(r=>r.model),
+        marker:{color:run.map(r=>r.skill>0?AZ.palette.accent:AZ.palette.bad)},
+        text:run.map(r=>r.rmse.toFixed(2)),textposition:"outside",cliponaxis:false}],
+        AZ.layout({margin:{l:160,r:36,t:10,b:40},xaxis:{title:"RMSE (pp)"},
+          shapes:[{type:"line",y0:-.5,y1:run.length-.5,x0:M.naive_rmse,x1:M.naive_rmse,line:{color:AZ.palette.gold,dash:"dash"}}]}),AZ.cfg);
+      const FL={infl_l1:"Inflation (t−1)",infl_l2:"Inflation (t−2)",dner:"Exchange rate",dfood:"World food price",doil:"Oil price"};
+      const imp=M.importance.slice().reverse();
+      Plotly.newPlot("mlImp",[{type:"bar",orientation:"h",y:imp.map(d=>FL[d.feature]||d.feature),x:imp.map(d=>d.importance),marker:{color:AZ.palette.navy2}}],
+        AZ.layout({margin:{l:96,r:14,t:8,b:34},xaxis:{title:"importance"}}),AZ.cfg);
+      const yrs=M.test_years;const s=[{x:yrs,y:M.actual,name:"Observed",mode:"lines+markers",line:{color:AZ.palette.navy,width:2.5},marker:{symbol:"circle",size:6}}];
+      [["Neural Net (MLP)",AZ.palette.accent,"dash","square"],["Naive (random walk)",AZ.palette.gold,"dot","diamond"]].forEach(([k,c,dh,sy])=>{if(M.preds[k])s.push({x:yrs,y:M.preds[k],name:k,mode:"lines+markers",line:{dash:dh,color:c,width:2},marker:{symbol:sy,size:6}});});
+      Plotly.newPlot("mlPred",s,AZ.layout({margin:{l:54,r:14,t:8,b:40},yaxis:{title:"Inflation (%)"}}),AZ.cfg);
+      Plotly.newPlot("lstmChart",[
+        {x:L.test_dates,y:L.actual,name:"Observed",mode:"lines",line:{color:AZ.palette.navy,width:2.5}},
+        {x:L.test_dates,y:L.lstm,name:"LSTM (12m ahead)",mode:"lines",line:{color:AZ.palette.accent,dash:"dash",width:2}},
+        {x:L.test_dates,y:L.naive,name:"Random walk",mode:"lines",line:{color:AZ.palette.gold,dash:"dot",width:2}}
+      ],AZ.layout({margin:{l:54,r:14,t:10,b:60},yaxis:{title:"YoY inflation (%)"},xaxis:{nticks:10}}),AZ.cfg);
+    });</script>
+    </div><div class="pager"><a href="irf.html"><div class="d">Previous</div><div class="t">Impulse Responses</div></a><a class="next" href="structural.html"><div class="d">Next</div><div class="t">Structural Models</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="ml")a.classList.add("active")});</script></body></html>

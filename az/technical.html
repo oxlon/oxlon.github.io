@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Technical Report — Ministry of Economy of the Republic of Azerbaijan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="data/analytics.js"></script>
+<script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Technical Report</b></div><div>Section 16 of 19</div></div><div class="wrap">
+    <div class="eyebrow">Reports</div><h1 class="page">Technical Report</h1>
+    <p class="lede">A complete account of the methods and results: estimation, diagnostics, interpretation, and the
+    boundaries of each model's validity.</p>
+
+    <h2>1 · Data and identities</h2>
+    <p>The annual dataset is reconstructed from the Ministry's workbooks: the statutory tables under clause 2.4.1 (9,356
+    observations, 2013–2024 actual and 2025–2030 projected) and an annual inflation block from 1995, supplemented by a
+    monthly panel of 360 observations. Two accounting identities were verified on the Ministry's data — gross domestic
+    product as the sum of oil and non-oil value added (maximum error 0.05 per cent) and the nominal reconstruction from
+    real growth and the deflator (0.00 per cent). The forward engine reproduces the official 2025–2030 path exactly. The
+    annual core is therefore sound and ready for operation.</p>
+
+    <h2>2 · The inflation equation</h2>
+    <p>The pass-through equation explains 62% of the in-sample variance of annual inflation, with a positive,
+    well-determined exchange-rate coefficient (+0.21 percentage points per one per cent depreciation),
+    consistent with the literature on oil-exporting economies. The out-of-sample comparison (section 4) shows that the
+    multivariate linear specification extrapolates poorly on the short sample; explanatory fit and forecast accuracy are
+    distinct objectives, and the equation is best used for interpretation while forecasting draws on the model
+    combination.</p>
+
+    <h2>3 · Vector-autoregression impulse responses</h2>
+    <p>A reduced-form vector autoregression over 2000–2024 (25 observations), identified by the recursive
+    ordering oil price, exchange rate, inflation, yields an impact inflation response of approximately
+    2.2 percentage points to a one-standard-deviation oil shock, decaying within about three
+    years. The ordering rests on standard timing assumptions. With twenty-five annual observations the responses are
+    directionally reliable but imprecisely estimated; the bands are correspondingly wide. The quarterly structural model
+    of five variables is the appropriate refinement and is described in the Limitations section.</p>
+
+    <h2>4 · Model comparison</h2>
+    <p>Every model was evaluated by expanding-window walk-forward testing. The most accurate annual model is
+    Neural Net (MLP) (root-mean-square error 3.12, skill +0.38 over a random walk), with the
+    univariate time-series model and tree-based ensembles close behind; the over-parameterised linear models record
+    negative skill. On the monthly series, a long short-term memory network forecasts inflation twelve months ahead with a
+    root-mean-square error of 4.547, against 6.678 for persistence, an improvement
+    of 32%. The determinant ranking places the world food price, the exchange rate and the oil
+    price foremost, corroborating the structural relationship.</p>
+
+    <h2>5 · Structural models</h2>
+    <p>The three-equation New-Keynesian model, solved by undetermined coefficients, returns correctly-signed responses (a
+    monetary tightening lowers output and inflation; a cost-push shock generates the output-inflation trade-off). The
+    input-output block yields output multipliers and propagates an oil final-demand shock through inter-industry linkages.
+    These models serve as theory-consistent cross-checks; the supply-use coefficients are illustrative pending the
+    official table.</p>
+
+    <h2>6 · Scenarios</h2>
+    <p>The oil price enters as a parameter rather than a forecast. The three statutory paths (baseline USD 65, conservative
+    −15 per cent, stress −30 per cent) map, through an oil-sector elasticity of 0.90 and the oil share, to output
+    deviations of approximately 0, −3.9 and −7.8 per cent in 2025. These are first-order responses; the dynamic
+    second-round propagation is the function of the structural vector autoregression.</p>
+
+    <h2>7 · Estimation conventions</h2>
+    <p>Error-correction specifications require unit-root and cointegration testing; the medium-term core is calibrated and
+    then validated; the structural vector autoregression is identified recursively. Acceptance requires reproduction of
+    the official forecast and a non-oil growth root-mean-square error below 1.5 percentage points before any extension.
+    Re-estimation is annual, timed ahead of the September submission, with a monthly refresh during execution.</p>
+    </div><div class="pager"><a href="simulator.html"><div class="d">Previous</div><div class="t">Scenario Simulator</div></a><a class="next" href="literature.html"><div class="d">Next</div><div class="t">Literature</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="technical")a.classList.add("active")});</script></body></html>

@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inflation and Monetary — Ministry of Economy of the Republic of Azerbaijan</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="data/analytics.js"></script>
+<script src="assets/app.js"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="crest">Ministry of Economy · Republic of Azerbaijan</div><h1>Medium-Term Macroeconomic and Fiscal Forecasting System</h1><div class="sub">Prepared under Cabinet of Ministers Decree No. 75</div></div><nav class="nav"><div class="group">Overview</div><a href="index.html" data-slug="index"><span class="n">01</span>Executive Summary</a><a href="findings.html" data-slug="findings"><span class="n">02</span>Principal Findings</a><a href="mandate.html" data-slug="mandate"><span class="n">03</span>Mandate and Legal Basis</a><a href="methodology.html" data-slug="methodology"><span class="n">04</span>Modelling Framework</a><div class="group">Data and Models</div><a href="data.html" data-slug="data"><span class="n">05</span>Data Foundation</a><a href="models.html" data-slug="models"><span class="n">06</span>Econometric Models</a><a href="regressions.html" data-slug="regressions"><span class="n">07</span>Regression Results</a><div class="group">Forecasts</div><a href="gdp.html" data-slug="gdp"><span class="n">08</span>Output and Growth</a><a href="inflation.html" data-slug="inflation"><span class="n">09</span>Inflation and Monetary</a><a href="fiscal.html" data-slug="fiscal"><span class="n">10</span>Fiscal and Budget</a><div class="group">Analysis</div><a href="scenarios.html" data-slug="scenarios"><span class="n">11</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">12</span>Impulse Responses</a><a href="ml.html" data-slug="ml"><span class="n">13</span>Machine-Learning Models</a><a href="structural.html" data-slug="structural"><span class="n">14</span>Structural Models</a><a href="simulator.html" data-slug="simulator"><span class="n">15</span>Scenario Simulator</a><div class="group">Reports</div><a href="technical.html" data-slug="technical"><span class="n">16</span>Technical Report</a><a href="literature.html" data-slug="literature"><span class="n">17</span>Literature</a><a href="limitations.html" data-slug="limitations"><span class="n">18</span>Limitations and Data Requirements</a><a href="roadmap.html" data-slug="roadmap"><span class="n">19</span>Delivery and Next Steps</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menu</button> Forecasting System &nbsp;›&nbsp; <b>Inflation and Monetary</b></div><div>Section 09 of 19</div></div><div class="wrap">
+    <div class="eyebrow">Forecasts</div><h1 class="page">Inflation and Monetary</h1>
+    <p class="lede">Inflation in Azerbaijan is principally an external, pass-through process. This section sets out the
+    projection and its uncertainty, decomposes inflation into its drivers, and reports the dynamic response to an
+    oil-price shock.</p>
+    <div class="grid g4"><div class="stat acc"><div class="v">5.6%</div><div class="k">2025 inflation (IMF estimate)</div></div><div class="stat "><div class="v">7.2%</div><div class="k">baseline inflation by 2030</div></div><div class="stat acc"><div class="v">0.10–0.21</div><div class="k">exchange-rate pass-through (pp)</div></div><div class="stat "><div class="v">0.53</div><div class="k">inflation persistence</div></div></div>
+
+    <h2>The projection</h2>
+    <p>The baseline path rises from the 5.6 per cent estimated for 2025 towards 7.2 per cent by 2030. The IMF
+    World Economic Outlook is materially higher in the near term, which reflects a divergence worth noting: the Ministry's
+    forecast for 2025, prepared in 2024, was 1.7 per cent, whereas the IMF now estimates 5.6 per cent for the
+    same year. The 2025 outturn from the State Statistics Committee should be ingested to resolve this.</p>
+    <div class="fig"><div id="inflHist" class="plot" style="height:380px"></div><div class="cap">Figure 8.1. Consumer-price inflation: outturns to 2024, the 2025 IMF estimate, and the Ministry baseline for 2026–2030 with 50% and 80% probability bands; the IMF World Economic Outlook is the external comparator.</div></div>
+
+    <h2>The drivers of inflation</h2>
+    <p>The estimated equation decomposes inflation into the contributions of persistence, the exchange rate, world food
+    prices and oil. The 2008 and 2022 episodes are dominated by world food prices, and the 2015–16 episode by the
+    exchange rate following the devaluation. This composition is the basis for the pass-through coefficient of
+    approximately 0.21 (bounded by the endogeneity analysis to roughly 0.10–0.21) reported in the Regression Results.</p>
+    <div class="fig"><div id="inflDecomp" class="plot" style="height:380px"></div><div class="cap">Figure 8.2. Decomposition of inflation into estimated contributions (percentage points): persistence, the exchange rate, world food prices and oil, against actual inflation.</div></div>
+
+    <h2>The static relationship and its dynamics</h2>
+    <div class="eq">$$ \pi_t=\phi\,\pi_{t-1}+(1-\phi)\,\pi^{e}_t+\kappa\,\hat y_t+\theta\big(\Delta s_t+\Delta p^{*}_t\big)+\varepsilon_t $$<span class="num">(8)</span></div>
+    <p>The static equation above is estimated in the Regression Results; its dynamic counterpart is the vector-autoregression
+    impulse response, under which a one-standard-deviation oil-price shock raises inflation by approximately
+    2.2 percentage points on impact before dissipating (Impulse Responses).</p>
+    <div class="callout key"><div class="h">The exchange rate is the central channel</div>A large share of consumption is imported and the exchange rate is managed; movements in the parity, as in 2015–16, transmit to prices rapidly. The exchange rate is therefore a primary scenario control, and money-demand equations support the consistency of the monetary survey rather than the headline projection.</div>
+
+    <h2>Projection against the external benchmark</h2>
+    <table class="dt"><caption>Consumer-price inflation: the Ministry baseline and the IMF World Economic Outlook (per cent).</caption>
+    <thead><tr><th class="num">Year</th><th class="num">Ministry</th><th class="num">IMF WEO</th></tr></thead><tbody><tr><td class="num">2024</td><td class="num">2.2</td><td class="num">2.2</td></tr><tr><td class="num">2025</td><td class="num">1.7</td><td class="num">5.6</td></tr><tr><td class="num">2026</td><td class="num">2.7</td><td class="num">6.0</td></tr><tr><td class="num">2027</td><td class="num">5.1</td><td class="num">5.1</td></tr><tr><td class="num">2028</td><td class="num">6.7</td><td class="num">4.1</td></tr><tr><td class="num">2029</td><td class="num">7.1</td><td class="num">4.0</td></tr><tr><td class="num">2030</td><td class="num">7.2</td><td class="num">4.0</td></tr></tbody></table>
+    <script>window.AZ.data().then(D=>{
+      AZ.fan("inflHist",D.fan.inflation,{ytitle:"Inflation (%)"});
+      const d=D.infl_decomp,X=d.map(o=>o.year);
+      Plotly.newPlot("inflDecomp",[
+        {x:X,y:d.map(o=>o.persistence),type:"bar",name:"Persistence",marker:{color:AZ.palette.navy2}},
+        {x:X,y:d.map(o=>o.fx),type:"bar",name:"Exchange rate",marker:{color:AZ.palette.accent}},
+        {x:X,y:d.map(o=>o.food),type:"bar",name:"World food prices",marker:{color:AZ.palette.gold}},
+        {x:X,y:d.map(o=>o.oil),type:"bar",name:"Oil",marker:{color:"#b03a2e"}},
+        {x:X,y:d.map(o=>o.actual),mode:"lines+markers",name:"Actual inflation",line:{color:"#16202c",width:2},marker:{symbol:"circle",size:4}}
+      ],AZ.layout({barmode:"relative",margin:{l:54,r:16,t:14,b:44},yaxis:{title:"percentage points"}}),AZ.cfg);});
+    </script>
+    </div><div class="pager"><a href="gdp.html"><div class="d">Previous</div><div class="t">Output and Growth</div></a><a class="next" href="fiscal.html"><div class="d">Next</div><div class="t">Fiscal and Budget</div></a></div><div class="footer"><span>Ministry of Economy of the Republic of Azerbaijan — medium-term forecasting system</span><span>Sources: Decree No. 75 · IMF technical assistance · CBAR · State Statistics Committee</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="inflation")a.classList.add("active")});</script></body></html>
