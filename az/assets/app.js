@@ -1,6 +1,6 @@
 // shared helpers: KaTeX auto-render, mobile nav, Plotly theming, data loader
 window.AZ = {
-  palette:{navy:"#0d2842",navy2:"#143861",accent:"#1d7a8c",gold:"#b9852a",bad:"#b13f2e",good:"#2f7d54",muted:"#5c6a78"},
+  palette:{navy:"#1a2038",navy2:"#2a3650",accent:"#1d7a8c",gold:"#b9852a",bad:"#b13f2e",good:"#2f7d54",muted:"#525b7a"},
   layout(extra={}){
     return Object.assign({
       font:{family:"-apple-system,Segoe UI,Inter,system-ui,sans-serif",size:12,color:"#17212e"},
@@ -30,6 +30,18 @@ window.AZ = {
       shapes:[{type:"line",x0:bx,x1:bx,y0:0,y1:1,yref:"paper",line:{color:"#9aa3ad",dash:"dot"}}],
       annotations:[{x:bx,y:1.06,yref:"paper",xanchor:"right",showarrow:false,text:"outturn  ",font:{size:10,color:"#8a93a0"}},
         {x:bx,y:1.06,yref:"paper",xanchor:"left",showarrow:false,text:"  forecast",font:{size:10,color:"#8a93a0"}}]}),this.cfg);
+  },
+  // generic forecast line chart: outturn (navy) bridged to one or more forecast lines
+  fc(div,hist,lines,opts){
+    opts=opts||{}; const P=this.palette;
+    const hx=hist.map(d=>d.x), hy=hist.map(d=>d.y);
+    const last=hx.length?hx[hx.length-1]:null, lastv=hy.length?hy[hy.length-1]:null;
+    const tr=[{x:hx,y:hy,mode:"lines+markers",name:opts.histName||"Outturn",line:{color:P.navy,width:2.4},marker:{size:5,symbol:"circle"}}];
+    lines.forEach(L=>{const br=(L.bridge!==false&&last!=null);
+      tr.push({x:(br?[last]:[]).concat(L.x),y:(br?[lastv]:[]).concat(L.y),mode:"lines+markers",name:L.name,
+        line:{color:L.color||P.accent,width:L.width||2.3,dash:L.dash||"solid"},marker:{size:5,symbol:L.symbol||"diamond"}});});
+    Plotly.newPlot(div,tr,this.layout(Object.assign({margin:{l:60,r:14,t:10,b:54},yaxis:{title:opts.ytitle||""},
+      legend:{orientation:"h",y:-0.2,font:{size:10}}},opts.layout||{})),this.cfg);
   }
 };
 document.addEventListener("DOMContentLoaded",()=>{
