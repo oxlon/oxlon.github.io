@@ -87,7 +87,7 @@ async function init() {
   try { const j = CAEM.run({}); BASE = j.baseline; FAN0 = j.fan; } catch (e) { BASE = {}; FAN0 = {}; }
   $("#meta").innerHTML = `${NFIG} figures · ${NLIVE} live · forecast <b>${META.first_forecast}+</b>`;
   const seen = {};
-  FIGS.forEach(f => { (seen[f.sheet] = seen[f.sheet] || []).push(f); });
+  FIGS.forEach(f => { const k = groupOf(f.sheet); (seen[k] = seen[k] || []).push(f); });   // combine the 3 price-risk sheets
   GROUPS = Object.keys(seen).map((s, i) => ({ sheet: s, figs: seen[s], hue: HUES[i % HUES.length] }));
   buildNav(); wireRun(); applyI18n();
   $("#brand").style.cursor = "pointer"; $("#brand").onclick = showHome;
@@ -98,6 +98,10 @@ async function init() {
 }
 
 const SUMMARY_SHEETS = new Set(["6b. Forecasts Summary", "A1. At a glance", "Fancharts", "7. Scenario", "8b. Summary"]);
+// the 3 single-figure price-risk sheets are shown together on one page (figures keep their own .sheet)
+const RISK_COMBINED = "Risk: Oil / Food / Import price";
+const RISK_SHEETS = ["Risk-oil price", "Risk-food price", "Risk-import price"];
+const groupOf = s => RISK_SHEETS.includes(s) ? RISK_COMBINED : s;
 function buildNav() {
   const navlink = g => {
     const live = g.figs.filter(f => isLive(f)).length, sm = SUMMARY_SHEETS.has(g.sheet);
@@ -304,16 +308,21 @@ function showGroup(sheet) {
   CUR = sheet; setActive(sheet);
   const g = GROUPS.find(x => x.sheet === sheet);
   const live = g.figs.filter(f => isLive(f)).length;
-  const solo = g.figs.length <= 2;            // 1–2 figures → render large for detail
+  const isRisk = sheet === RISK_COMBINED;
+  const solo = !isRisk && g.figs.length <= 2;            // 1–2 figures → render large for detail
+  const sub = isRisk
+    ? `Three price-risk scenarios — <b>oil</b>, <b>food</b> and <b>import</b> prices — each shown as a fan around the baseline path (the band widens with the horizon). Shock the matching console input (Oil price, Import price) to re-centre its fan. Shaded band = forecast (${LIVE_FF || META.first_forecast}+); 2025 = last actual.`
+    : `${g.figs.length} figures from CAEM sheet “${esc(sheet)}”${live ? ` · ${live} recompute live` : ""}.
+    ${RUN ? "Dashed red = current scenario." : "Run a scenario above to overlay it."} Shaded band = forecast (${LIVE_FF || META.first_forecast}+); 2025 = last actual.`;
   $("#view").innerHTML = `<div class="ghead" style="color:${headCol(g.hue)};border-color:${headCol(g.hue)}">${esc(sheet)}</div>
-    <div class="gsub">${g.figs.length} figures from CAEM sheet “${esc(sheet)}”${live ? ` · ${live} recompute live` : ""}.
-    ${RUN ? "Dashed red = current scenario." : "Run a scenario above to overlay it."} Shaded band = forecast (${LIVE_FF || META.first_forecast}+); 2025 = last actual.</div>
+    <div class="gsub">${sub}</div>
     <div class="figgrid${solo ? " solo" : ""}" id="grid"></div>`;
   const grid = $("#grid");
   g.figs.forEach((f, i) => {
     const t = tone(g.hue, i);
+    const title = isRisk ? f.title.replace(/^Risk-/i, "").replace(/^./, c => c.toUpperCase()) : f.title;
     const card = document.createElement("div"); card.className = "figcard" + (solo ? " big" : ""); card.style.borderTopColor = t;
-    card.innerHTML = `<div class="ft">${esc(f.title)}${isLive(f) ? '<span class="live">LIVE</span>' : ""}</div>
+    card.innerHTML = `<div class="ft">${esc(title)}${isLive(f) ? '<span class="live">LIVE</span>' : ""}</div>
       ${f.unit ? `<div class="fu">${esc(f.unit)}</div>` : ""}<div class="fc" id="fc${i}"></div>`;
     grid.appendChild(card);
     drawFig(`fc${i}`, f, t, solo);
@@ -334,10 +343,22 @@ function showMethods() {
       <td>${esc(x.source || "")}${x.url ? ` · <a href="${esc(x.url)}" target="_blank" rel="noopener">link</a>` : ""}</td><td>${esc(x.date || "")}</td></tr>`;
   }).join("");
   const eqs = [
-    ["Potential output / output gap", "HP filter (λ = " + 100 + ") on the log of real non-oil GDP; gap = actual − trend (CAEM sheet B1a, endpoint-extended with the forecast).", "≈ 0.18 pp vs CAEM"],
-    ["Inflation — open-economy Phillips curve", `π<sub>t</sub> = c₁·π<sub>t−1</sub> + (1−c₁−c₂)·E[π] + c₂·(imported inflation + ΔER − import-price trend) + c₃·gap + shock.  c₁=${ph[0]}, c₂=${ph[1]}, c₃=${ph[2]} (CAEM 1b).`, "≈ 0.01 pp"],
-    ["Policy rate — smoothed Taylor rule", `i<sub>t</sub> = ρ·i<sub>t−1</sub> + (1−ρ)·(r* + π* + a·(π−π*) + b·gap) + shock.  a=${ty[0]}, b=${ty[1]}, ρ=${ty[2]} (CAEM 1c).`, "≈ 0.07 pp"],
-    ["Public debt — ratio recursion", "d<sub>t</sub> = d<sub>t−1</sub>·(1+i)/((1+g)(1+π)) − primary balance (CAEM 3b form).", "dynamics"],
+    ["Potential output / output gap",
+      "\\hat y_t = 100\\,(\\ln Y_t - \\ln Y^*_t),\\quad Y^*=\\mathrm{HP}_{\\lambda=100}(\\ln Y)",
+      "gap = 100·(lnY − lnY*),  Y* = HP(λ=100)",
+      "HP filter on log real non-oil GDP; gap = actual − trend (CAEM sheet B1a, endpoint-extended with the forecast).", "≈ 0.18 pp"],
+    ["Inflation — open-economy Phillips curve",
+      "\\pi_t = c_1\\pi_{t-1} + (1{-}c_1{-}c_2)\\,E[\\pi] + c_2(\\pi^{m}{+}\\Delta e{-}\\bar\\pi^{m}) + c_3\\,\\hat y_t + \\varepsilon_t",
+      "π = c1·π(-1)+(1-c1-c2)·E[π]+c2·(import push)+c3·gap+shock",
+      `Persistence, inflation expectations, import-price pass-through and the output gap. c₁=${ph[0]}, c₂=${ph[1]}, c₃=${ph[2]} (CAEM 1b).`, "≈ 0.01 pp"],
+    ["Policy rate — smoothed Taylor rule",
+      "i_t = \\rho\\,i_{t-1} + (1{-}\\rho)\\big(r^*{+}\\pi^*{+}a(\\pi_t{-}\\pi^*){+}b\\,\\hat y_t\\big) + \\varepsilon_t",
+      "i = ρ·i(-1)+(1-ρ)·(r*+π*+a(π-π*)+b·gap)+shock",
+      `Smoothing toward a neutral rate, plus an inflation-gap and output-gap response. a=${ty[0]}, b=${ty[1]}, ρ=${ty[2]} (CAEM 1c).`, "≈ 0.07 pp"],
+    ["Public debt — ratio recursion",
+      "d_t = d_{t-1}\\,\\dfrac{1+i}{(1+g)(1+\\pi)} - pb_t",
+      "d = d(-1)·(1+i)/((1+g)(1+π)) − primary balance",
+      "Debt ratio evolves with the effective interest rate i, growth g, inflation π and the primary balance pb (CAEM 3b).", "dynamics"],
   ];
   const els = [["Oil price → non-oil growth", "0.02 pp / 1%"], ["Oil price → fiscal balance", "0.12 pp of GDP / 1%"],
     ["Oil price → inflation", "0.01 pp / 1%"], ["Partner growth → non-oil growth", "0.30 pp / 1pp"],
@@ -350,7 +371,7 @@ function showMethods() {
 
     <h3 class="lh">1 · Core equations (reproduced from CAEM, validated)</h3>
     <div class="mtbl"><table class="dt"><thead><tr><th>Block</th><th>Specification</th><th>Validation</th></tr></thead><tbody>
-      ${eqs.map(([n, s, v]) => `<tr><td><b>${n}</b></td><td>${s}</td><td class="sc-ok">${esc(v)}</td></tr>`).join("")}
+      ${eqs.map(([n, tex, plain, note, v]) => `<tr><td><b>${n}</b></td><td>${kx(tex, plain)}${note ? `<div class="eqcal">${esc(note)}</div>` : ""}</td><td class="sc-ok">${esc(v)}</td></tr>`).join("")}
     </tbody></table></div>
 
     <h3 class="lh">2 · Scenario channels (transparent, Azerbaijan-calibrated elasticities)</h3>
@@ -379,21 +400,56 @@ function showMethods() {
       Methodology references: IMF Financial Programming &amp; Policies; Cabinet of Ministers Decree No. 75.</div>`;
   window.scrollTo({ top: 0 });
 }
+/* a compact, accurate reading guide for the EViews variable names — convention, not invented per-variable meanings */
+function eqDecoderHTML() {
+  const ops = [
+    ["DLOG(x)", "annual change in the natural log of x — i.e. its growth rate (Δln x)"],
+    ["LOG(x)", "natural log of x — used to write the long-run (level) relationships"],
+    ["ECM_x , ECM_x(−1)", "error-correction term for x: how far x sits from its estimated long-run equilibrium; the lagged term pulls x back toward it"],
+    ["x(−1), x(−2)", "one- and two-year lags of x"],
+    ["@BEFORE(\"y\") · @DURING(\"y₁ y₂\") · @AFTER(\"y\") · (T=y) · (T&gt;y)", "EViews date dummies — they switch coefficients on for structural breaks / regime shifts"],
+  ];
+  const morph = [
+    ["M / X", "imports / exports"],
+    ["G / S", "goods / services"],
+    ["O / NO", "oil / non-oil"],
+    ["R… / VA_…", "real (constant-price) / sector value added"],
+    ["ER · NEER · REER", "manat/USD rate · nominal · real effective exchange rate"],
+    ["CPI · OPWTI/OPIWTI", "consumer price index · WTI crude oil price"],
+    ["W · L · HC", "wage · employment · household consumption"],
+    ["TIKINTI · TICARET", "Azerbaijani sector names: construction · trade"],
+  ];
+  const cell = arr => `<div class="mtbl"><table class="dt eqdec"><tbody>${arr.map(([k, v]) => `<tr><td class="eqdec-k">${k}</td><td>${v}</td></tr>`).join("")}</tbody></table></div>`;
+  return `<div class="eqdecwrap"><div class="eqdec-h">Reading the names</div>
+    <div class="eqdec-grid"><div><div class="eqdec-sub">Transformations &amp; dummies</div>${cell(ops)}</div>
+      <div><div class="eqdec-sub">Variable naming convention</div>${cell(morph)}</div></div>
+    <p class="mp eqdec-ex"><b>Worked example — ECM_MGNO.</b> Read it as <b>ECM</b> (error-correction) of <b>M·G·NO</b> = non-oil goods imports.
+      Its long run, <span class="mono">LOG(MGNO) = f(HC, I−IO, NEER)</span>, ties non-oil imports to household consumption and non-oil investment
+      (total investment I minus oil investment IO) and the nominal effective exchange rate; the lag <span class="mono">ECM_MGNO(−1)</span> then
+      enters the short-run growth equation <span class="mono">DLOG(MGNO)</span> and corrects deviations from that equilibrium.</p></div>`;
+}
 /* the Ministry's own estimated econometric equations (Databiz / EViews model book) — real coefficients */
 function ministryModelsHTML() {
   const EQ = (typeof CAEM !== "undefined" && CAEM.equations) ? CAEM.equations() : { equations: [] };
   const eqs = EQ.equations || [];
   if (!eqs.length) return "";
   const byWb = {}; eqs.forEach(e => { (byWb[e.workbook] = byWb[e.workbook] || []).push(e); });
-  const blocks = Object.keys(byWb).map(wb => `<h4 class="eqwb">${esc(wb)} <span class="tagi">${byWb[wb].length} equations</span></h4>
-    <div class="mtbl"><table class="dt"><tbody>${byWb[wb].map(e =>
-      `<tr><td class="eqlhs">${esc(e.lhs)}</td><td class="eqrhs">= ${esc(e.rhs)}${e.desc ? `<div class="eqdesc">${esc(e.desc)}</div>` : ""}</td></tr>`).join("")}</tbody></table></div>`).join("");
+  const eqItem = e => {
+    const lhs = clean(e.lhs), rhs = clean(e.rhs), d = (e.desc || "").trim();
+    return `<div class="eqit"><div class="eqit-h"><span class="eqit-lhs">${esc(lhs)}</span>${d ? `<span class="eqit-d">${esc(d)}</span>` : ""}</div>
+      ${rhs ? `<div class="eqit-rhs">= ${esc(rhs)}</div>` : ""}</div>`;
+  };
+  const blocks = Object.keys(byWb).map(wb =>
+    `<h4 class="eqwb">${esc(wb)} <span class="tagi">${byWb[wb].length} equations</span></h4>
+     <div class="eqlist">${byWb[wb].map(eqItem).join("")}</div>`).join("");
   return `<h3 class="lh">6 · Ministry econometric models (Databiz model book)</h3>
-    <div class="note-eco">The Ministry's own estimated equations — error-correction &amp; regime-switching specifications from the
-      SNA, BoP, Inflation, Social, Industry and Trade workbooks (real coefficients, ${eqs.length} equations). The Databiz design
-      specifies, e.g., trade as <span class="mono">TIC = b₀ + b₁·GDP<sub>AZ</sub> + b₂·GDP<sub>partner</sub> + b₃·realFX + b₄·oil + b₅·openness + b₆·inflation + b₇·tariffs + dummy</span>.
-      Documented here for continuity with the Ministry's methods; CAEM remains the live forecasting spine, and wiring these as
-      live satellite forecasters (EViews-equation engine) is the defined next phase.</div>
+    <div class="note-eco">These are the Ministry's <b>own</b> estimated equations — single-equation error-correction and
+      regime-switching specifications (EViews) from six workbooks (SNA, BoP, Inflation, Social, Industry, Trade; ${eqs.length}
+      equations with their actual coefficients). Each one forecasts a single series — a sector's output, an import/export
+      category, a price or a monetary aggregate — from its own drivers and a long-run anchor. They are documented here for
+      continuity with the Ministry's methods; CAEM remains the live forecasting spine, and wiring these as live satellite
+      forecasters is the defined next phase.</div>
+    ${eqDecoderHTML()}
     ${blocks}`;
 }
 
@@ -598,41 +654,81 @@ function attachInfo(card, f) {
     if (gd && window.Plotly) Plotly.downloadImage(gd, { format: "png", scale: 3, filename: "caem_" + (f.title || "figure").replace(/[^\w]+/g, "_").slice(0, 44) });
   };
 }
+function kx(latex, plain) {
+  if (window.katex) { try { return `<div class="id-eq">${katex.renderToString(latex, { throwOnError: false, displayMode: false })}</div>`; } catch (e) { } }
+  return `<div class="id-eq mono">${esc(plain || latex)}</div>`;
+}
+const VARDESC = {
+  real_gdp_growth: "Total real GDP growth — oil and non-oil sectors combined; the headline output measure.",
+  nonoil_growth: "Non-oil real GDP growth — the part of the economy policy most affects; it drives the output gap.",
+  inflation: "Headline CPI inflation, generated by the open-economy Phillips curve.",
+  policy_rate: "Nominal policy (refinancing) rate, set by the smoothed Taylor rule.",
+  output_gap: "Output gap: actual minus HP-filter potential, % of potential non-oil GDP — the cyclical position.",
+  trend_growth: "HP-filter trend (potential) growth of non-oil GDP.",
+  gross_debt: "Gross public debt, % of GDP, from the debt-dynamics recursion.",
+  fiscal_balance: "Fiscal (primary) balance, % of GDP.",
+  primary_balance: "Primary fiscal balance, % of GDP — the overall balance excluding interest payments.",
+  terms_of_trade: "Terms of trade — export prices relative to import prices; oil-dominated for Azerbaijan.",
+};
+const VAREQ = {
+  inflation: ["\\pi_t = c_1\\pi_{t-1} + (1{-}c_1{-}c_2)\\,E[\\pi] + c_2(\\pi^{m}{+}\\Delta e{-}\\bar\\pi^{m}) + c_3\\,\\hat y_t + \\varepsilon_t", "π = c1·π(-1)+(1-c1-c2)·E[π]+c2·(import push)+c3·gap+shock"],
+  policy_rate: ["i_t = \\rho\\,i_{t-1} + (1{-}\\rho)\\,(r^*{+}\\pi^*{+}a(\\pi_t{-}\\pi^*){+}b\\,\\hat y_t)", "i = ρ·i(-1)+(1-ρ)·(r*+π*+a(π-π*)+b·gap)"],
+  output_gap: ["\\hat y_t = 100(\\ln Y_t-\\ln Y^*_t),\\; Y^*=\\mathrm{HP}_{\\lambda=100}(\\ln Y)", "gap = 100·(lnY − lnY*),  Y* = HP(λ=100)"],
+  trend_growth: ["g^*_t = e^{\\,\\ln Y^*_t-\\ln Y^*_{t-1}}-1,\\; Y^*=\\mathrm{HP}_{\\lambda=100}", "trend growth from HP(λ=100) of lnY"],
+  gross_debt: ["d_t = d_{t-1}\\dfrac{1+i}{(1+g)(1+\\pi)} - pb_t", "d = d(-1)·(1+i)/((1+g)(1+π)) − primary balance"],
+};
+const TITLEDESC = [[/required to close the output gap/i, "Normative calculation (not a forecast): the constant annual real GDP growth that would close the current output gap over each horizon — the 1-, 2-, … 5-year lines."]];
 function figInfo(f) {
   const P = META.params || {}, ph = P.phillips || [], ty = P.taylor || [], v = f.engine_var, sheet = f.sheet || "";
-  const series = (f.series || []).map(s => clean(s.name)).filter(Boolean);
-  const blocks = {
-    inflation: `Open-economy <b>Phillips curve</b> (CAEM sheet 1b): π = c₁·π₋₁ + (1−c₁−c₂)·E[π] + c₂·(imported inflation + ΔER − import-price trend) + c₃·output gap + shock. Calibrated c₁=${ph[0]}, c₂=${ph[1]}, c₃=${ph[2]}.`,
-    policy_rate: `Smoothed <b>Taylor rule</b> (CAEM sheet 1c): i = ρ·i₋₁ + (1−ρ)·(r* + π* + a·(π−π*) + b·gap). Calibrated a=${ty[0]}, b=${ty[1]}, ρ=${ty[2]}.`,
-    output_gap: `<b>HP filter</b> (λ=100) on log real non-oil GDP (CAEM sheet B1a); the gap is actual minus trend.`,
-    trend_growth: `<b>HP-filter trend</b> (λ=100) of log real non-oil GDP (CAEM B1a).`,
-    gross_debt: `<b>Debt-dynamics recursion</b> (CAEM 3b): dₜ = dₜ₋₁·(1+i)/((1+g)(1+π)) − primary balance.`,
-    fiscal_balance: `<b>Primary fiscal balance.</b> In scenarios it responds to the oil price (≈0.12 pp of GDP per 1% oil), tax measures and the exchange rate.`,
-    real_gdp_growth: `<b>Real GDP growth</b> = non-oil growth (HP/Phillips block) plus the oil sector; scenarios apply oil-price, partner-growth and FX elasticities.`,
-    nonoil_growth: `<b>Non-oil real GDP growth</b> — the assumption path driving the output gap, with scenario elasticities for oil, partner growth and FX.`,
-  };
-  let model = v && blocks[v] ? blocks[v] : (f.fan
-    ? `<b>Fan chart.</b> Central path from the engine; the 50/80/90% bands widen with the horizon as σ·z·√h, where σ is the variable's historical annual-change standard deviation (one extreme outlier dropped). A calibrated uncertainty range, not a prediction of the band edges.`
-    : `Reproduced directly from CAEM sheet “${esc(sheet)}” — the values are CAEM’s own computed output.`);
-  if (!f.fan && f.series && f.series.length >= 3 && (COMPO.test(f.title) || detectTotalIdx(f.series) >= 0))
-    model += ` Drawn as a <b>stacked decomposition</b>: the components sum to the total (overlaid line).`;
-  const live = v ? `<h4>Live</h4><p>Recomputes when you change a Scenario-console input and press <b>Run</b>; the dashed red line is the scenario versus the solid baseline.</p>` : "";
-  const vintage = (v || f.fan)
-    ? `2025 is the official SSC outturn; the model forecasts <b>2026+</b> (shaded).`
-    : `Shaded region = forecast <b>2026+</b>; 2025 is the last actual year. This figure's 2025 value is CAEM's own estimate — official 2025 outturns are in the “2025 scorecard” (Live forecast) and drive the live engine.`;
+  let shows = VARDESC[v];
+  for (const [re, d] of TITLEDESC) if (re.test(f.title)) { shows = d; break; }
+  if (!shows) shows = f.fan ? "Engine central forecast with confidence bands that widen over the horizon."
+    : f.radar ? "Risk scores across dimensions, compared year-on-year."
+      : (f.series && f.series.length >= 3 && (COMPO.test(f.title) || detectTotalIdx(f.series) >= 0))
+        ? `Decomposition — the components (${(f.series || []).map(s => clean(s.name)).filter(Boolean).slice(0, 4).join(", ")}) sum to the total.`
+        : `Reproduced from CAEM sheet “${esc(sheet)}”.`;
+  const calib = { inflation: `c₁=${ph[0]}, c₂=${ph[1]}, c₃=${ph[2]} (CAEM 1b).`, policy_rate: `a=${ty[0]}, b=${ty[1]}, ρ=${ty[2]} (CAEM 1c).`,
+    output_gap: "CAEM sheet B1a.", trend_growth: "CAEM B1a.", gross_debt: "CAEM 3b; effective rate ≈ 3%.",
+    fiscal_balance: "Scenario response: oil ≈ 0.12 pp/1%, tax, FX.", primary_balance: "Scenario response: oil, tax, FX.", terms_of_trade: "Scenario response: oil ± export/import prices." }[v] || "";
+  let model = v ? ((VAREQ[v] ? kx(VAREQ[v][0], VAREQ[v][1]) : "") + (calib ? `<p>${calib}</p>` : ""))
+    : f.fan ? `<p>Fan chart. Central path from the engine; 50/80/90% bands widen as σ·z·√h — σ from the equation's robust in-sample residuals (inflation &amp; policy rate) or the variable's historical annual-change σ.</p>`
+      : `<p>Reproduced directly from CAEM sheet “${esc(sheet)}” — the values are CAEM's own computed output.</p>`;
+  const yrs = [...new Set((f.series || []).flatMap(s => s.x))].filter(y => typeof y === "number").sort((a, b) => a - b);
+  let table = "";
+  if ((f.series || []).length && yrs.length) {
+    const names = f.series.map((s, i) => clean(s.name) || ("Series " + (i + 1)));
+    const idx = f.series.map(s => { const m = {}; s.x.forEach((x, i) => m[x] = s.y[i]); return m; });
+    const body = yrs.map(y => `<tr><td>${y}</td>${idx.map(m => `<td>${m[y] == null ? "" : Math.round(m[y] * 100) / 100}</td>`).join("")}</tr>`).join("");
+    table = `<h4>Data <button id="infocsv" class="lk">⤓ CSV</button></h4>
+      <div class="id-tblwrap"><table class="id-tbl"><thead><tr><th>Year</th>${names.map(n => `<th>${esc(n.slice(0, 16))}</th>`).join("")}</tr></thead><tbody>${body}</tbody></table></div>`;
+  }
   const prov = (META.provenance && META.provenance.actuals) || {}, pv = prov[v];
   const src = pv
     ? `<b>2025 actual:</b> ${esc(pv.value)}${pv.unit ? " " + esc(pv.unit) : ""} — ${esc(pv.source)}${pv.date ? ` (released ${esc(pv.date)})` : ""}${pv.url ? ` · <a href="${esc(pv.url)}" target="_blank" rel="noopener">source</a>` : ""}. Other years: CAEM model.`
     : esc((META.provenance && META.provenance.caem_default) || "CAEM.xlsb workbook.");
+  const live = v ? `<h4>Live</h4><p>Recomputes when you change a Scenario-console input and press <b>Run</b>; the dashed red line is the scenario vs the solid baseline.</p>` : "";
+  const vintage = (v || f.fan) ? `2025 = official outturn; the model forecasts <b>2026+</b> (shaded).`
+    : `Shaded = forecast <b>2026+</b>; 2025 = last actual. This figure's 2025 point is CAEM's estimate — official 2025 outturns are in the scorecard.`;
   const html = `${f.unit ? `<p class="id-unit">${esc(f.unit)}</p>` : ""}
-    <h4>What it shows</h4><p>${esc(f.title)}${series.length ? ` — series: ${series.map(esc).join(", ")}.` : "."}</p>
-    <h4>Model &amp; data</h4><p>${model}</p>
+    <h4>What it shows</h4><p>${shows}</p>
+    <h4>Model &amp; data</h4>${model}
     <h4>How to read it</h4><p>${vintage}</p>${live}
+    ${table}
     <h4>Source &amp; provenance</h4><p class="id-src">${src} · CAEM sheet “${esc(sheet)}”.</p>`;
-  return { title: f.title, html };
+  return { title: f.title, html, f };
+}
+function downloadFigData(f) {
+  const yrs = [...new Set((f.series || []).flatMap(s => s.x))].filter(y => typeof y === "number").sort((a, b) => a - b);
+  const names = f.series.map((s, i) => clean(s.name) || ("series" + (i + 1)));
+  const idx = f.series.map(s => { const m = {}; s.x.forEach((x, i) => m[x] = s.y[i]); return m; });
+  const rows = [["year"].concat(names)].concat(yrs.map(y => [y].concat(idx.map(m => m[y] == null ? "" : m[y]))));
+  const csv = "# " + (f.title || "figure") + "\n" + rows.map(r => r.join(",")).join("\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+  a.download = "caem_" + (f.title || "data").replace(/[^\w]+/g, "_").slice(0, 40) + ".csv"; a.click(); URL.revokeObjectURL(a.href);
 }
 function openInfo(info) {
   $("#infotitle").textContent = info.title; $("#infobody").innerHTML = info.html;
+  const csv = $("#infocsv"); if (csv && info.f) csv.onclick = () => downloadFigData(info.f);
   $("#infodrawer").classList.add("open"); $("#infoscrim").classList.add("show");
 }
 function closeInfo() { $("#infodrawer").classList.remove("open"); $("#infoscrim").classList.remove("show"); }

@@ -275,14 +275,42 @@ a{color:inherit;text-decoration:none}
 .langtog b:not(.on):hover{color:#fff}
 .langtog span{color:#5a6377}
 /* ministry econometric model book */
-.eqwb{font-size:12.5px;color:var(--ink);margin:16px 0 6px;font-weight:700}
-.eqlhs{font-family:var(--mono);font-size:11px;color:var(--ink2);white-space:nowrap;font-weight:600;vertical-align:top}
-.eqrhs{font-family:var(--mono);font-size:10.5px;color:#5a626e;line-height:1.5;word-break:break-word}
-.eqdesc{font-family:var(--sans);font-size:11px;color:#9aa1ad;margin-top:2px}
+.eqwb{font-size:12.5px;color:var(--ink);margin:18px 0 4px;font-weight:700}
 .mono{font-family:var(--mono);font-size:11.5px;color:var(--ink2)}
+/* calibration note under a KaTeX-rendered core equation */
+.eqcal{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.45}
+/* ministry equation list — LHS on its own line, the long formula wraps freely below it */
+.eqlist{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.eqit{padding:7px 11px;border-bottom:1px solid #f0f2f5}
+.eqit:last-child{border-bottom:0}
+.eqit:nth-child(even){background:#fafbfc}
+.eqit-h{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+.eqit-lhs{font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--ink)}
+.eqit-d{font-size:11px;color:#9aa1ad;font-style:italic}
+.eqit-rhs{font-family:var(--mono);font-size:11px;color:#5a626e;line-height:1.55;margin-top:3px;
+  white-space:normal;word-break:break-word;overflow-wrap:anywhere}
+/* variable-name decoder */
+.eqdecwrap{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:6px 0 4px;background:#fcfcfb}
+.eqdec-h{font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.eqdec-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.eqdec-grid{grid-template-columns:1fr}}
+.eqdec-sub{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.eqdec td{font-size:11px;padding:3px 8px 3px 0;vertical-align:top;color:#4b5563}
+.eqdec-k{font-family:var(--mono);font-weight:600;color:var(--ink2);white-space:nowrap}
+.eqdec-ex{margin-top:10px;padding-top:9px;border-top:1px solid var(--line);font-size:11.5px;line-height:1.55}
 /* per-figure PNG button (left of info) */
 .figpng{position:absolute;top:9px;right:64px;z-index:3;border:1px solid var(--line);background:#fff;color:var(--ink2);
   font-size:10px;font-weight:600;border-radius:7px;padding:2px 7px;cursor:pointer;opacity:.5;transition:.12s}
 .figcard:hover .figpng{opacity:1}
 .figpng:hover{background:var(--ink2);color:#fff;border-color:var(--ink2)}
 .figcard .ft{padding-right:120px}
+/* info drawer: equation + data table */
+.id-eq{font-size:13.5px;margin:7px 0;color:#1a2038;overflow-x:auto;padding:2px 0}
+.id-eq.mono{font-family:var(--mono);font-size:11px;color:#5a626e}
+.id-tblwrap{max-height:240px;overflow:auto;border:1px solid var(--line);border-radius:8px;margin:4px 0 6px}
+.id-tbl{width:100%;border-collapse:collapse;font-size:11px;font-variant-numeric:tabular-nums}
+.id-tbl th{position:sticky;top:0;background:#f7f8fa;color:var(--muted);font-weight:600;padding:4px 7px;text-align:right;border-bottom:1px solid var(--line)}
+.id-tbl th:first-child{text-align:left}
+.id-tbl td{padding:3px 7px;text-align:right;border-bottom:1px solid #f4f5f7;color:#374151}
+.id-tbl td:first-child{text-align:left;color:var(--ink2);font-weight:500}
+#infobody h4 .lk{float:right;margin-top:-2px}
