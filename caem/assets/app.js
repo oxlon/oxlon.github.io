@@ -73,12 +73,13 @@ const AZ = {
   // home / overview
   "home.eyebrow": "MALİYYƏ PROQRAMLAŞDIRMASI · MAKRO-FİSKAL MODEL",
   "home.h1": "Azərbaycan Respublikası — canlı makro-fiskal proqnozlaşdırma",
-  "home.cta": "📈 Canlı proqnozu və yelpik qrafiklərini açın →",
+  "home.cta": "Canlı proqnozu və yelpik qrafiklərini açın →",
   "home.baseline": "Bazis proqnoz — modelin mərkəzi trayektoriyası",
   "home.baseline.tag": "model proqnozları (2026+), faktiki nəticə deyil",
   "home.engine": "Mühərrik — CAEM-dən təkrar yaradılıb və yoxlanılıb",
   "home.howto": "İstifadə qaydası", "home.explore": "CAEM panellərini araşdırın",
   "home.figs": "qrafik", "home.live": "canlı",
+  "home.methodslink": "Metodologiya və mənbələr", "home.vintage": "Proqnoz buraxılışı", "home.lastactual": "Son faktiki",
   // engine mini-cards
   "eng.gap": "Məhsul buraxılışı kəsiri", "eng.gap.d": "Loqarifmik qeyri-neft ÜDM üzrə HP filtri (λ=100) — CAEM B1a vərəqi.",
   "eng.inf": "İnflyasiya", "eng.inf.d": "Açıq iqtisadiyyat Phillips əyrisi: davamlılıq, gözləntilər, idxal ötürülməsi, kəsir (1b).",
@@ -267,10 +268,20 @@ function showHome() {
       `Export any forecast to <b>CSV</b>, <b>Excel</b> or <b>PDF</b> from the Live page.`];
   $("#view").innerHTML = `
     <div class="home-hero">
-      <div class="he-eyebrow">${tx("home.eyebrow", "FINANCIAL PROGRAMMING · MACRO-FISCAL MODEL")}</div>
-      <h1>${tx("home.h1", "Republic of Azerbaijan — live macro-fiscal forecasting")}</h1>
-      <p>${intro}</p>
-      <div class="he-cta" id="ctaLive">${tx("home.cta", "📈 Open the Live forecast &amp; fan charts →")}</div>
+      <div class="he-inner">
+        <div class="he-eyebrow">${tx("home.eyebrow", "FINANCIAL PROGRAMMING · MACRO-FISCAL MODEL")}</div>
+        <h1>${tx("home.h1", "Republic of Azerbaijan — live macro-fiscal forecasting")}</h1>
+        <p>${intro}</p>
+        <div class="he-actions">
+          <span class="he-cta" id="ctaLive">${tx("home.cta", "Open the live forecast &amp; fan charts →")}</span>
+          <span class="he-link" id="ctaMethods">${tx("home.methodslink", "Methods &amp; data sources")}</span>
+        </div>
+        <div class="he-stamp">
+          <span>${tx("home.vintage", "Forecast vintage")} <b>${META.first_forecast}+</b></span>
+          <span>${tx("home.lastactual", "Last actual")} <b>2025</b></span>
+          <span><b>${NFIG}</b> ${tx("home.figs", "figures")} · <b>${NLIVE}</b> ${tx("home.live", "live")}</span>
+        </div>
+      </div>
     </div>
     <div class="hsec"><h2>${tx("home.baseline", "Baseline forecast — model central path")} <span class="tagi">${tx("home.baseline.tag", "model projections (2026+), not outturns")}</span></h2>
       <div class="kpis">
@@ -297,6 +308,7 @@ function showHome() {
     <div class="hfoot">CAEM Financial-Programming model · phillips ${(p.phillips || []).join("/")} · taylor ${(p.taylor || []).join("/")} · reproduced &amp; extended in Python. ${tx("grp.shade", "Shaded region = forecast")} (${META.first_forecast}+).</div>`;
   document.querySelectorAll(".gcard").forEach(c => c.onclick = () => showGroup(dec(c.dataset.go)));
   $("#ctaLive").onclick = showLive;
+  if ($("#ctaMethods")) $("#ctaMethods").onclick = showMethods;
   window.scrollTo({ top: 0 });
 }
 
@@ -511,6 +523,8 @@ function showMethods() {
 
     ${ministryModelsHTML()}
 
+    ${accountingHTML()}
+
     <div class="hfoot">${az ? "Python-da CAEM.xlsb-dən təkrar yaradılıb və genişləndirilib; canlı panel eyni mühərriki brauzerdə işlədir (identik olduğu doğrulanıb). Metodologiya istinadları: IMF Maliyyə Proqramlaşdırması və Siyasətləri; Nazirlər Kabinetinin 75 saylı Qərarı." : "Reproduced &amp; extended from CAEM.xlsb in Python; the live dashboard runs the same engine in the browser (validated identical). Methodology references: IMF Financial Programming &amp; Policies; Cabinet of Ministers Decree No. 75."}</div>`;
   window.scrollTo({ top: 0 });
 }
@@ -565,6 +579,41 @@ function ministryModelsHTML() {
     <div class="note-eco">${note}</div>
     ${eqDecoderHTML()}
     ${blocks}`;
+}
+
+/* T1.2 — FPP accounting identities. The public-debt-dynamics decomposition is exact and recomputes live;
+   the BoP/monetary identities are honestly scoped (the extracted components sit on different bases). */
+function accountingHTML() {
+  const az = LANG === "az";
+  const onScn = RUN && Object.values(RUN.shock || {}).some(v => typeof v === "number" && v);
+  const D = onScn ? RUN.scenario : (BASE || {});
+  const debt = D.gross_debt || {}, gg = D.real_gdp_growth || {}, pi = D.inflation || {}, pb = D.primary_balance || {};
+  const ff = (RUN && RUN.first_forecast) || META.first_forecast, i = 0.03;
+  const yrs = Object.keys(debt).map(Number).sort((a, b) => a - b).filter(y => y >= ff);
+  const dprev = y => { if (debt[y - 1] != null) return debt[y - 1]; const g = (gg[y] || 0) / 100, p = (pi[y] || 0) / 100; return debt[y] != null ? (debt[y] + (pb[y] || 0)) * (1 + g) * (1 + p) / (1 + i) : null; };
+  const sgn = v => (v > 0 ? "+" : "") + v.toFixed(2);
+  const rows = yrs.map(y => {
+    const dp = dprev(y); if (dp == null || debt[y] == null) return "";
+    const g = (gg[y] || 0) / 100, p = (pi[y] || 0) / 100, Dn = (1 + g) * (1 + p);
+    const interest = dp * i / Dn, erosion = -dp * (g + p + g * p) / Dn, prim = -(pb[y] || 0), dd = debt[y] - dp;
+    return `<tr><td>${y}</td><td>${dp.toFixed(1)}</td><td>${sgn(interest)}</td><td>${sgn(erosion)}</td><td>${sgn(prim)}</td><td class="${dd > 0.05 ? "sc-bad" : dd < -0.05 ? "sc-ok" : ""}"><b>${sgn(dd)}</b></td><td>${debt[y].toFixed(1)}</td></tr>`;
+  }).join("");
+  const eq = kx("\\Delta d_t = \\underbrace{\\tfrac{i}{(1+g)(1+\\pi)}\\,d_{t-1}}_{\\text{interest}} \\;\\underbrace{-\\,\\tfrac{g+\\pi+g\\pi}{(1+g)(1+\\pi)}\\,d_{t-1}}_{\\text{growth \\& inflation}}\\;\\underbrace{-\\;pb_t}_{\\text{primary balance}}", "Δd = interest − (growth & inflation erosion) − primary balance");
+  const heads = az
+    ? ["İl", "Borc (əvvəl)", "Faiz (+)", "Artım və inflyasiya (−)", "İlkin balans", "Δ Borc", "Borc (son)"]
+    : ["Year", "Debt (start)", "Interest (+)", "Growth & inflation (−)", "Primary balance", "Δ Debt", "Debt (end)"];
+  const intro = az
+    ? "Maliyyə proqramlaşdırmasının əsas dayanıqlılıq eyniliyi: borc nisbətinin illik dəyişməsi faiz xərcinə, artım və inflyasiyanın aşınmasına və ilkin balansa <b>dəqiq</b> ayrılır (sütunlar Δ Borcu verir) və hər ssenari ilə canlı yenidən hesablanır."
+    : "The core financial-programming sustainability identity: the annual change in the debt ratio decomposes <b>exactly</b> into the interest cost, the growth-and-inflation erosion, and the primary balance (the columns sum to Δ Debt) — and recomputes live under any scenario.";
+  const bop = az
+    ? "<b>Tədiyə balansı və monetar icmal.</b> Cari hesab artıq neft şokuna canlı reaksiya verir (etiketlənmiş elastiklik). Tam TB eyniliyi (cari hesab + maliyyə hesabı = ehtiyatların dəyişməsi) və monetar icmal (geniş pul = xalis xarici aktivlər + xalis daxili aktivlər) komponentlərin CAEM.xlsb-dən tam çıxarılmasını tələb edir — çıxarılmış göstəricilər fərqli uçot bazalarındadır, ona görə hələ sıfıra uyğunlaşmır (dürüst şəkildə təxirə salınıb)."
+    : "<b>Balance of payments &amp; monetary survey.</b> The current account already responds live to an oil shock (labelled elasticity). The full BoP identity (current account + financial account = change in reserves) and the monetary survey (broad money = net foreign assets + net domestic assets) require the components re-extracted from CAEM.xlsb — the extracted figures sit on different accounting bases, so they do not yet reconcile to zero (honestly deferred).";
+  return `<h3 class="lh">${az ? "7 · Uçot eynilikləri (FPP)" : "7 · Accounting identities (FPP)"}</h3>
+    <p class="mp">${intro}</p>
+    <div class="id-eq" style="margin:8px 0 12px;overflow-x:auto">${eq}</div>
+    <div class="mtbl"><table class="dt"><thead><tr>${heads.map(h => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="mp">${az ? "Faiz xərci ≈ effektiv dərəcə (3%) × əvvəlki ilin borcu; ümumi balans = ilkin balans − faiz xərci. Bütün dəyərlər % ÜDM." : "Interest cost ≈ effective rate (3%) × prior-year debt; the overall balance = primary balance − interest cost. All values in % of GDP."}${onScn ? ` <span class="tagi">${az ? "cari ssenari" : "current scenario"}</span>` : ""}</p>
+    <div class="note-eco">${bop}</div>`;
 }
 
 /* ---------------- saved scenarios + compare (localStorage) ---------------- */
@@ -646,9 +695,9 @@ function drawQuarterly(div, periods, vals, color) {
     line: { color, width: 2 }, marker: { size: 3, color }, hovertemplate: "%{x}: %{y:.2f}<extra></extra>"
   };
   Plotly.react(div, [trace], {
-    height: 196, margin: { l: 42, r: 10, t: 8, b: 26 }, font: { family: "Inter,sans-serif", size: 10, color: "#4a4a4a" },
+    height: 196, margin: { l: 42, r: 10, t: 8, b: 26 }, font: { family: "IBM Plex Sans,sans-serif", size: 10, color: "#4a4a4a" },
     plot_bgcolor: "#fff", paper_bgcolor: "#fff", showlegend: false, hovermode: "x unified",
-    hoverlabel: { font: { size: 10.5, family: "Inter,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
+    hoverlabel: { font: { size: 10.5, family: "IBM Plex Sans,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
     xaxis: { type: "category", tickvals, ticktext, tickangle: 0, showgrid: false, ticklen: 3 },
     yaxis: { gridcolor: "#eef1f4", zeroline: true, zerolinecolor: "#d2d7dd", automargin: true }
   }, { responsive: true, displayModeBar: false });
@@ -710,9 +759,9 @@ function fcShapes(xs, vintage) {
 const tickStep = xs => (xs.length && (Math.max(...xs) - Math.min(...xs)) > 22) ? 4 : 2;  // consistent: 2-yr ticks (4 only for very long histories)
 const hexA = (h, a) => { const n = parseInt(h.slice(1), 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
 const baseLayout = (xyear, shapes, h, b, dtick) => ({
-  height: h, margin: { l: 46, r: 12, t: 8, b: b }, font: { family: "Inter,sans-serif", size: 10, color: "#4a4a4a" },
+  height: h, margin: { l: 46, r: 12, t: 8, b: b }, font: { family: "IBM Plex Sans,sans-serif", size: 10, color: "#4a4a4a" },
   plot_bgcolor: "#fff", paper_bgcolor: "#fff", barmode: "relative", bargap: 0.16, showlegend: false, shapes,
-  hovermode: "x unified", hoverlabel: { font: { size: 10.5, family: "Inter,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
+  hovermode: "x unified", hoverlabel: { font: { size: 10.5, family: "IBM Plex Sans,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
   xaxis: xyear ? { tickformat: "d", showgrid: false, dtick: dtick || 2, tick0: 2026, ticklen: 3 } : { showgrid: false, ticklen: 3 },
   yaxis: { gridcolor: "#eef1f4", zeroline: true, zerolinecolor: "#d2d7dd", automargin: true }
 });
@@ -727,7 +776,7 @@ function drawRadar(div, f) {
     };
   });
   Plotly.react(div, traces, {
-    height: 380, margin: { l: 64, r: 64, t: 22, b: 30 }, font: { family: "Inter,sans-serif", size: 10.5, color: "#4a4a4a" },
+    height: 380, margin: { l: 64, r: 64, t: 22, b: 30 }, font: { family: "IBM Plex Sans,sans-serif", size: 10.5, color: "#4a4a4a" },
     paper_bgcolor: "#fff", showlegend: false,
     polar: { bgcolor: "#fff", radialaxis: { angle: 90, tickfont: { size: 9 }, gridcolor: "#eef1f4" }, angularaxis: { tickfont: { size: 11 }, rotation: 90, direction: "clockwise" } }
   }, { responsive: true, displayModeBar: false });
@@ -847,7 +896,7 @@ function exportPNG(card, f) {
   const m = gd.layout.margin || {}, prevT = m.t || 8;
   const prevY = (gd.layout.yaxis && gd.layout.yaxis.title && gd.layout.yaxis.title.text) || "";
   Plotly.relayout(gd, {
-    "title.text": title, "title.font.size": 15, "title.font.family": "Inter,sans-serif", "title.font.color": "#1a2038",
+    "title.text": title, "title.font.size": 15, "title.font.family": "IBM Plex Sans,sans-serif", "title.font.color": "#1a2038",
     "title.x": 0.01, "title.xanchor": "left", "title.y": 0.97, "title.yanchor": "top", "margin.t": 42,
     "yaxis.title.text": unit, "yaxis.title.font.size": 11, "yaxis.title.font.color": "#6b7280"
   }).then(() => Plotly.downloadImage(gd, { format: "png", scale: 3, width: 920, height: 540, filename: "caem_" + title.replace(/[^\w]+/g, "_").slice(0, 44) }))
