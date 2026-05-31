@@ -155,6 +155,8 @@ const AZ = {
   "id.fan": "Yelpik qrafiki. Mərkəzi trayektoriya mühərrikdən; 50/80/90% zolaqları σ·z·√h kimi genişlənir — σ tənliyin daxili qalıqlarından (inflyasiya və uçot dərəcəsi) və ya dəyişənin tarixi illik dəyişmə σ-sından.",
   // quarterly & nowcast view
   "nav.qtr": "📅 Rüblük və nowcast", "qtr.h": "📅 Rüblük göstəricilər və nowcast",
+  "nav.nb": "📓 Dəftərlər (Colab)", "nb.h": "📓 Təkrar istehsal oluna bilən dəftərlər",
+  "nb.open": "Colab-da aç ↗", "nb.pending": "Colab linki gözlənilir",
   "qtr.nowcast": "Nowcast körpüsü", "qtr.implied": "rüblük əsasda nəzərdə tutulan illik", "qtr.official": "rəsmi illik",
   "qtr.q": "rüb", "qtr.observed": "müşahidə olunub",
   // per-figure buttons
@@ -196,6 +198,7 @@ function rerender() {
   if (CURMODE === "home") showHome(); else if (CURMODE === "live") showLive();
   else if (CURMODE === "methods") showMethods(); else if (CURMODE === "scenarios") showScenarios();
   else if (CURMODE === "quarterly") showQuarterly();
+  else if (CURMODE === "notebooks") showNotebooks();
   else showGroup(CURMODE);
 }
 function setLang(l) { LANG = l; try { localStorage.setItem("caem_lang", l); } catch (e) { } applyI18n(); buildNav(); renderPresets(); rerender(); }
@@ -237,6 +240,7 @@ function buildNav() {
      <div class="navlive" id="navlive">${tx("nav.live", "📈 Live forecast &amp; fan charts")}</div>
      <div class="navlive navmethods" id="navmethods">${tx("nav.methods", "📐 Methods &amp; data sources")}</div>
      <div class="navlive navqtr" id="navqtr">${tx("nav.qtr", "📅 Quarterly &amp; nowcast")}</div>
+     <div class="navlive navnb" id="navnb">${tx("nav.nb", "📓 Notebooks (Colab)")}</div>
      <div class="navlive navscen" id="navscen">${tx("nav.scen", "📂 Saved scenarios &amp; compare")}</div>
      <div class="navsec">${tx("nav.summary", "★ Summary dashboards")} <span>${tx("nav.detailsub", "figures · live ▲")}</span></div>` + summ.map(navlink).join("") +
     `<div class="navsec">${tx("nav.detail", "Detailed analysis")} <span>${tx("nav.detailsub", "figures · live ▲")}</span></div>` + detail.map(navlink).join("");
@@ -245,6 +249,7 @@ function buildNav() {
   $("#navlive").onclick = showLive;
   $("#navmethods").onclick = showMethods;
   $("#navqtr").onclick = showQuarterly;
+  $("#navnb").onclick = showNotebooks;
   $("#navscen").onclick = showScenarios;
 }
 
@@ -254,6 +259,7 @@ function setActive(mode) {
   $("#navlive").classList.toggle("active", mode === "live");
   $("#navmethods").classList.toggle("active", mode === "methods");
   $("#navqtr").classList.toggle("active", mode === "quarterly");
+  $("#navnb").classList.toggle("active", mode === "notebooks");
   $("#navscen").classList.toggle("active", mode === "scenarios");
   document.querySelectorAll("#nav .navlink").forEach(a => {
     const h = +a.style.getPropertyValue("--hue"), on = mode === dec(a.dataset.s);
@@ -747,6 +753,69 @@ function drawQuarterly(div, periods, actual, fc, color, boundary) {
     xaxis: { type: "category", tickvals, ticktext, tickangle: 0, showgrid: false, ticklen: 3 },
     yaxis: { gridcolor: "#eef1f4", zeroline: true, zerolinecolor: "#d2d7dd", automargin: true }
   }, { responsive: true, displayModeBar: false });
+}
+/* ---------------- reproducible notebooks (Colab) ---------------- */
+// After uploading the project folder to Google Drive and opening each notebook in Colab, paste its
+// Colab share link here (slug -> url). Until then, cards show a "link pending" chip.
+const NB_LINKS = {
+  "00_index": "https://colab.research.google.com/drive/1439-ucgBbWzb0ERlLNEY04I-lMizcNaC",
+  "01_data_foundation": "https://colab.research.google.com/drive/1DFftEyOo7vKSXahPjxVGeIlVjxhDkdlA",
+  "02_output_growth": "https://colab.research.google.com/drive/1I_p8uK14UY4WR31kAFKqPghWoQEebq0X",
+  "03_inflation_monetary": "https://colab.research.google.com/drive/1IrPAHqKPfZ1FEjSSh1gXordQFXO08hIa",
+  "04_regression_library": "https://colab.research.google.com/drive/1jSpQaXIwyCNkOj4sC2hl3tSN5Y_PSE6o",
+  "05_structural_var": "https://colab.research.google.com/drive/1nXtBBYKhU1GWrTslwLFj-bwwf39DoEUW",
+  "06_cointegration_vecm": "https://colab.research.google.com/drive/1bPAic4HgnT_vvm75lZBjjCBYzhoPiEgV",
+  "07_fiscal_budget_debt": "https://colab.research.google.com/drive/1RlqEuzLJZs-Bp45_Psj-bt4qDGZ4mgBS",
+  "08_external_bop": "https://colab.research.google.com/drive/1tpkYX9gCIdigpqk3_-CtABPAM995hF0m",
+  "09_labour_demography": "https://colab.research.google.com/drive/1evETxBciF0hYicS0B9hxglcBFONIXMxB",
+  "10_machine_learning": "https://colab.research.google.com/drive/1USgPoYzfL6Kbf26h1_Dbhflb-B9YzMdA",
+  "11_deep_learning": "https://colab.research.google.com/drive/1qIE38uEz72M3zrt-MSudoJRRJqzarlft",
+  "12_bayesian_statespace": "https://colab.research.google.com/drive/1DLz10Uy8WDCme8ZxHXCJJyyO34u3VIEP",
+  "13_structural_models": "https://colab.research.google.com/drive/1Fr_LzLCqhZPIKW6WpcSkmN5iBrzugPrl",
+  "14_scenarios_risk": "https://colab.research.google.com/drive/1pZiUq4vMDbwgPlOR0DSz88l06HS03G7K",
+  "15_caem_summary": "https://colab.research.google.com/drive/1W4DUNRYUOr2oH1HRva9dN6K_Fy72Tqz2",
+};
+const NOTEBOOKS = [
+  ["00", "00_index", "Index & reproducibility", "İndeks və təkrar istehsal", "Table of contents, environment, the data-provenance catalogue.", "Mündəricat, mühit, məlumat mənbələri kataloqu.", "provenance"],
+  ["01", "01_data_foundation", "Data foundation & the Decree-75 mandate", "Məlumat bazası və 75 saylı mandat", "Statutory indicators, the 3-frequency data architecture, the 2025 outturn.", "Statutar göstəricilər, məlumat arxitekturası, 2025 nəticəsi.", "EDA · sources"],
+  ["02", "02_output_growth", "Output, growth & potential", "Məhsul, artım və potensial", "Production-side GDP identity, sector ECMs, HP-filter output gap.", "İstehsal tərəfi ÜDM eyniliyi, sektor ECM, HP kəsiri.", "HP filter · ECM"],
+  ["03", "03_inflation_monetary", "Inflation & monetary policy", "İnflyasiya və monetar siyasət", "Open-economy Phillips curve, pass-through, smoothed Taylor rule.", "Açıq iqtisadiyyat Phillips əyrisi, ötürülmə, Taylor qaydası.", "Phillips · Taylor"],
+  ["04", "04_regression_library", "Econometric regression library", "Ekonometrik reqressiya kitabxanası", "Nested OLS/ARDL/ECM, HAC inference, the 92 Ministry equations.", "OLS/ARDL/ECM, HAC, 92 Nazirlik tənliyi.", "OLS · ARDL · HAC"],
+  ["05", "05_structural_var", "Structural VAR & impulse responses", "Struktur VAR və impuls reaksiyaları", "SVAR (oil·FX·inflation), Cholesky IRFs, variance decomposition.", "SVAR, Cholesky IRF, dispersiya dekompozisiyası.", "SVAR · IRF · FEVD"],
+  ["06", "06_cointegration_vecm", "Cointegration & VECM", "Kointeqrasiya və VECM", "Johansen test and revenue–expenditure error-correction.", "Johansen testi və gəlir–xərc xəta korreksiyası.", "Johansen · VECM"],
+  ["07", "07_fiscal_budget_debt", "Fiscal, budget & debt dynamics", "Fiskal, büdcə və borc dinamikası", "Debt-dynamics decomposition, revenue/expenditure, customs.", "Borc dinamikası, gəlir/xərc, gömrük.", "debt · ARDL"],
+  ["08", "08_external_bop", "External sector & balance of payments", "Xarici sektor və tədiyə balansı", "Trade/gravity elasticities, UIP+PPP, the BoP identity.", "Ticarət elastiklikləri, UIP+PPP, TB eyniliyi.", "elasticities · BoP"],
+  ["09", "09_labour_demography", "Labour, demography & consumption", "Əmək, demoqrafiya və istehlak", "Okun's law, wage Phillips curve, consumption, population.", "Okun qanunu, əmək haqqı, istehlak, əhali.", "Okun · wages"],
+  ["10", "10_machine_learning", "Machine-learning forecasting", "Maşın öyrənməsi proqnozu", "Walk-forward horse-race: Ridge/Lasso/RF/GB/MLP vs random walk.", "Walk-forward: Ridge/Lasso/RF/GB/MLP.", "ML · backtest"],
+  ["11", "11_deep_learning", "Deep learning (monthly)", "Dərin öyrənmə (aylıq)", "Neural net + LSTM / Prophet / TFT for monthly inflation.", "Neyron şəbəkə + LSTM / Prophet / TFT.", "LSTM · Prophet · TFT"],
+  ["12", "12_bayesian_statespace", "Bayesian & state-space", "Bayes və vəziyyət-fəza", "SARIMA, Kalman potential output, dynamic factor, Bayesian VAR.", "SARIMA, Kalman, dinamik amil, Bayes VAR.", "SARIMA · Kalman · DFM"],
+  ["13", "13_structural_models", "Structural macro models", "Struktur makro modellər", "3-equation New-Keynesian DSGE and input–output multipliers.", "Yeni-Keynsçi DSGE və xərc-buraxılış multiplikatorları.", "DSGE · IO"],
+  ["14", "14_scenarios_risk", "Scenarios, fan charts & risk", "Ssenarilər, yelpik qrafikləri və risk", "Oil scenarios, Bank-of-England fan charts, a risk heat-map.", "Neft ssenariləri, yelpik qrafikləri, risk istilik xəritəsi.", "scenarios · fans"],
+  ["15", "15_caem_summary", "Integrated CAEM & forecast summary", "İnteqrasiya olunmuş CAEM və xülasə", "The full semi-structural model, 2026–2030 forecast, scorecard, nowcast.", "Tam yarı-struktur model, 2026–2030 proqnoz, hesab kartı.", "CAEM · summary"],
+];
+function showNotebooks() {
+  CUR = null; setActive("notebooks");
+  const az = LANG === "az";
+  const intro = az
+    ? "On altı akademik keyfiyyətli, təkrar istehsal oluna bilən Jupyter dəftəri — hər biri bir təhlil bölməsini real məlumatdan başlayaraq qiymətləndirilmiş modelə, qrafiklərə və proqnoza qədər izah edir (LaTeX riyaziyyatı ilə). İki veb məhsulunun analitik onurğası."
+    : "Sixteen academic-quality, reproducible Jupyter notebooks — each works one analytical section end-to-end, from the real data through the estimated model to the figures and the forecast, with the mathematics derived in LaTeX. The analytical backbone of the two web products.";
+  const howto = az
+    ? "<b>Colab-da işə salmaq:</b> layihə qovluğunu Google Drive-a <code>MyDrive/azerbaijan-macrofiscal-notebooks/</code> kimi yükləyin, sonra istənilən dəftəri Colab-da açın — ilk xana Drive-ı qoşur, məlumatı tapır və üslubu tətbiq edir."
+    : "<b>To run in Colab:</b> upload the project folder to Google Drive as <code>MyDrive/azerbaijan-macrofiscal-notebooks/</code>, then open any notebook in Colab — the first cell mounts Drive, locates the data and applies the house style.";
+  const cards = NOTEBOOKS.map(([n, slug, en, aze, be, ba, m]) => {
+    const link = NB_LINKS[slug];
+    const btn = link
+      ? `<a class="nb-open" href="${esc(link)}" target="_blank" rel="noopener">${tx("nb.open", "Open in Colab ↗")}</a>`
+      : `<span class="nb-open pending">${tx("nb.pending", "Colab link pending")}</span>`;
+    return `<div class="nbcard"><div class="nb-n">${n}</div><div class="nb-b">
+      <div class="nb-t">${esc(az ? aze : en)}</div><div class="nb-d">${esc(az ? ba : be)}</div>
+      <div class="nb-m">${m.split(" · ").map(x => `<span>${esc(x)}</span>`).join("")}</div></div>${btn}</div>`;
+  }).join("");
+  $("#view").innerHTML = `<div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${tx("nb.h", "📓 Reproducible notebooks")}</div>
+    <div class="gsub">${intro}</div>
+    <div class="note-eco">${howto}</div>
+    <div class="nbgrid">${cards}</div>`;
+  window.scrollTo({ top: 0 });
 }
 async function showQuarterly() {
   CUR = null; setActive("quarterly");

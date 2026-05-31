@@ -46,57 +46,7 @@ window.AZ = {
 };
 document.addEventListener("DOMContentLoaded",()=>{
   const mb=document.querySelector(".menu-btn"), nav=document.querySelector(".nav");
-  if(mb && nav) mb.addEventListener("click",()=>{
-    const open=nav.classList.toggle("open");
-    mb.setAttribute("aria-expanded", String(open));
-  });
-
-  const currentFile=(window.location.pathname.split("/").pop()||"index.html").replace(/\.html$/,"")||"index";
-  const active=document.querySelector(`.nav a[data-slug="${currentFile}"]`);
-  if(active){
-    document.querySelectorAll(".nav a.active").forEach(a=>a.classList.remove("active"));
-    active.classList.add("active");
-    active.setAttribute("aria-current","page");
-    active.scrollIntoView({block:"nearest"});
-  }
-
-  const topbar=document.querySelector(".topbar");
-  if(topbar && !topbar.querySelector(".topbar-actions")){
-    const actions=document.createElement("div");
-    actions.className="topbar-actions";
-    const print=document.createElement("button");
-    print.type="button";
-    print.className="report-action";
-    print.textContent="Print";
-    print.addEventListener("click",()=>window.print());
-    actions.appendChild(print);
-    topbar.appendChild(actions);
-  }
-
-  document.querySelectorAll('a[href^="http"]').forEach(a=>{
-    if(a.hostname && a.hostname!==window.location.hostname){
-      a.target="_blank";
-      a.rel="noopener";
-    }
-  });
-
-  const pagerPrev=document.querySelector(".pager a:not(.next)");
-  const pagerNext=document.querySelector(".pager a.next");
-  window.addEventListener("keydown",(e)=>{
-    if(e.defaultPrevented || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
-    if(e.key==="ArrowLeft" && pagerPrev) window.location.href=pagerPrev.href;
-    if(e.key==="ArrowRight" && pagerNext) window.location.href=pagerNext.href;
-  });
-
-  let resizeTimer=0;
-  window.addEventListener("resize",()=>{
-    if(!window.Plotly) return;
-    clearTimeout(resizeTimer);
-    resizeTimer=setTimeout(()=>{
-      document.querySelectorAll(".js-plotly-plot").forEach(el=>Plotly.Plots.resize(el));
-    },120);
-  });
-
+  if(mb) mb.addEventListener("click",()=>nav.classList.toggle("open"));
   if(window.renderMathInElement){
     renderMathInElement(document.body,{delimiters:[
       {left:"$$",right:"$$",display:true},{left:"\\(",right:"\\)",display:false},
