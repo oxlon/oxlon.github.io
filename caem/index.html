@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-<link rel="stylesheet" href="assets/style.css?v=31">
+<link rel="stylesheet" href="assets/style.css?v=32">
 </head>
 <body>
 <header id="top">
@@ -58,6 +58,14 @@
   <main id="main"><div id="view"></div></main>
 </div>
 
+<div id="figscrim"></div>
+<div id="figmodal" aria-label="Enlarged figure">
+  <button id="figmodalclose" title="Close">✕</button>
+  <div id="figmodaltitle"></div>
+  <div id="figmodalplot"></div>
+  <div id="figmodallegend"></div>
+</div>
+
 <div id="infoscrim"></div>
 <aside id="infodrawer" aria-label="Figure information">
   <button id="infoclose" title="Close">✕</button>
@@ -66,7 +74,7 @@
   <div id="infobody"></div>
 </aside>
 
-<script src="assets/engine.js?v=4"></script>
-<script src="assets/app.js?v=33"></script>
+<script src="assets/engine.js?v=5"></script>
+<script src="assets/app.js?v=34"></script>
 </body>
 </html>

@@ -56,6 +56,19 @@ const CAEM = (() => {
       dpb: sdMap(S.series.debt_primary_balance), tot: sdMap(S.series.terms_of_trade),
     };
   }
+  // extend the forecast horizon to H (=2030): the exogenous input series end 2029, so carry the last
+  // value forward one year (a transparent flat-extension of the assumptions) and trim beyond H so every
+  // engine figure/fan ends on the same year rather than at 2028/2029.
+  // The exogenous input series end 2029, so carry the last value forward to the horizon H (=2030) — a
+  // transparent flat-extension of the assumptions — so every engine figure/fan reaches 2030 instead of
+  // 2028/2029. The level series (and thus the HP filter) is left untouched, so validated values are preserved;
+  // output beyond H is trimmed in pack()/run() via HORIZON.
+  function extendHorizon(e, H) {
+    const carry = m => { const ys = Object.keys(m).map(Number); if (!ys.length) return; const last = Math.max(...ys); for (let y = last + 1; y <= H; y++) if (!(y in m)) m[y] = m[last]; };
+    ["exp", "imp", "er", "trd", "rstar", "ptgt", "dg", "dpi", "dpb", "tot"].forEach(k => { if (e[k]) carry(e[k]); });
+    e.horizon = H;
+    return e;
+  }
   function clone(e) {
     const c = Object.assign({}, e);
     ["base_level", "base_growth", "infl_act", "dg", "dpb"].forEach(k => c[k] = Object.assign({}, e[k]));
@@ -142,9 +155,9 @@ const CAEM = (() => {
       trend: pot.trend, output_gap: pot.gap, trend_growth: pot.trend_growth, inflation: infl, policy_rate: rate,
       gross_debt: gdebt, fiscal_balance: pb, primary_balance: Object.assign({}, pb), terms_of_trade: tot };
   }
-  function pack(res) {
+  function pack(res, H) {
     const o = {};
-    KEYS.forEach(k => { if (res[k]) { o[k] = {}; for (const [y, v] of Object.entries(res[k])) if (v != null) o[k][y] = r3(v); } });
+    KEYS.forEach(k => { if (res[k]) { o[k] = {}; for (const [y, v] of Object.entries(res[k])) if (v != null && (!H || +y <= H)) o[k][y] = r3(v); } });
     return o;
   }
   const pstdev = a => { if (a.length < 2) return 0; const m = a.reduce((x, y) => x + y, 0) / a.length; return Math.sqrt(a.reduce((x, y) => x + (y - m) ** 2, 0) / a.length); };
@@ -191,7 +204,7 @@ const CAEM = (() => {
       S = await (await fetch("data/series.json")).json();
       FIGS = await (await fetch("data/figures.json")).json();
       try { EQ = await (await fetch("data/equations.json")).json(); } catch (e) { EQ = { equations: [] }; }
-      E = buildEngine();
+      E = extendHorizon(buildEngine(), 2030);
     },
     equations() { return EQ || { equations: [] }; },
     meta() {
@@ -210,7 +223,7 @@ const CAEM = (() => {
       ["real_gdp_growth", "inflation", "policy_rate", "fiscal_balance", "gross_debt"].forEach(k => {
         if (sc[k] && Object.keys(sc[k]).length) f[k] = fan(sc[k], eng.first_fc, rs[k]);
       });
-      return { baseline: pack(base), scenario: pack(sc), shock, fan: f, first_forecast: eng.first_fc };
+      return { baseline: pack(base, eng.horizon), scenario: pack(sc, eng.horizon), shock, fan: f, first_forecast: eng.first_fc };
     }
   };
 })();

@@ -122,6 +122,9 @@ const AZ = {
   "nav.qtr": "📅 Rüblük və nowcast", "qtr.h": "📅 Rüblük göstəricilər və nowcast",
   "qtr.nowcast": "Nowcast körpüsü", "qtr.implied": "rüblük əsasda nəzərdə tutulan illik", "qtr.official": "rəsmi illik",
   "qtr.q": "rüb", "qtr.observed": "müşahidə olunub",
+  // per-figure buttons
+  "fig.enlarge": "Böyüt", "fig.png": "Yüksək keyfiyyətli PNG yüklə", "fig.info": "Bu qrafik haqqında", "fig.infolbl": "məlumat",
+  "id.terms": "Bu qrafikdəki terminlər",
 };
 // per-variable descriptions in Azerbaijani (mirror of VARDESC)
 const VARDESC_AZ = {
@@ -176,7 +179,8 @@ async function init() {
   $("#brand").style.cursor = "pointer"; $("#brand").onclick = showHome;
   $("#lang").onclick = e => { const l = e.target.dataset.l; if (l && l !== LANG) setLang(l); };
   $("#infoscrim").onclick = closeInfo; $("#infoclose").onclick = closeInfo;
-  document.addEventListener("keydown", e => { if (e.key === "Escape") closeInfo(); });
+  $("#figscrim").onclick = closeFigModal; $("#figmodalclose").onclick = closeFigModal;
+  document.addEventListener("keydown", e => { if (e.key === "Escape") { closeInfo(); closeFigModal(); } });
   showHome();
 }
 
@@ -323,11 +327,17 @@ function showLive() {
   const fg = $("#fangrid");
   Object.keys(labels).forEach(k => {
     if (!fan[k]) return;
+    const lbl = tInd(labels[k]), fk = fan[k];
     const card = document.createElement("div"); card.className = "figcard"; card.style.borderTopColor = "#7d1620";
-    card.innerHTML = `<div class="ft">${esc(labels[k])}<span class="live live-fan">FAN</span></div>
+    card.innerHTML = `<div class="ft">${esc(lbl)}<span class="live live-fan">FAN</span></div>
       <div class="fu">${esc(units[k] || "")}</div><div class="fc" id="fan_${k}"></div>`;
     fg.appendChild(card); drawFan(`fan_${k}`, fan[k]);
-    attachInfo(card, { title: labels[k], unit: units[k], sheet: "Live engine", engine_var: k, fan: true, series: [] });
+    const fanSeries = [
+      { name: lbl, x: fk.years, y: fk.central },
+      { name: (LANG === "az" ? "Aşağı 90%" : "Low 90%"), x: fk.years, y: fk.lo90 },
+      { name: (LANG === "az" ? "Yuxarı 90%" : "High 90%"), x: fk.years, y: fk.hi90 },
+    ];
+    attachInfo(card, { title: lbl, unit: units[k], sheet: "Live engine", engine_var: k, fan: true, series: fanSeries });
   });
   const lg = $("#livegrid");
   engFigs.forEach((f, i) => {
@@ -825,14 +835,41 @@ function impactHTML() {
 /* ---------------- per-figure info + PNG export ---------------- */
 function attachInfo(card, f) {
   card.insertAdjacentHTML("beforeend",
-    `<button class="figpng" title="Download high-resolution PNG">⤓ PNG</button><button class="finfo" title="About this figure">ⓘ info</button>`);
+    `<div class="figbtns"><button class="figbtn figbig" title="${tx("fig.enlarge", "Enlarge")}">⛶</button><button class="figbtn figpng" title="${tx("fig.png", "Download high-resolution PNG")}">⤓ PNG</button><button class="figbtn finfo" title="${tx("fig.info", "About this figure")}">ⓘ ${tx("fig.infolbl", "info")}</button></div>`);
   card.querySelector(".finfo").onclick = e => { e.stopPropagation(); openInfo(figInfo(f)); };
-  card.querySelector(".figpng").onclick = e => {
-    e.stopPropagation();
-    const gd = card.querySelector(".fc");
-    if (gd && window.Plotly) Plotly.downloadImage(gd, { format: "png", scale: 3, filename: "caem_" + (f.title || "figure").replace(/[^\w]+/g, "_").slice(0, 44) });
-  };
+  card.querySelector(".figpng").onclick = e => { e.stopPropagation(); exportPNG(card, f); };
+  card.querySelector(".figbig").onclick = e => { e.stopPropagation(); enlargeFig(card, f); };
 }
+// export a clean, titled PNG (figure name as title, unit on the y-axis; no FAN/LIVE badges)
+function exportPNG(card, f) {
+  const gd = card.querySelector(".fc"); if (!gd || !window.Plotly) return;
+  const title = clean(f.title || "figure"), unit = f.unit ? clean(f.unit) : "";
+  const m = gd.layout.margin || {}, prevT = m.t || 8;
+  const prevY = (gd.layout.yaxis && gd.layout.yaxis.title && gd.layout.yaxis.title.text) || "";
+  Plotly.relayout(gd, {
+    "title.text": title, "title.font.size": 15, "title.font.family": "Inter,sans-serif", "title.font.color": "#1a2038",
+    "title.x": 0.01, "title.xanchor": "left", "title.y": 0.97, "title.yanchor": "top", "margin.t": 42,
+    "yaxis.title.text": unit, "yaxis.title.font.size": 11, "yaxis.title.font.color": "#6b7280"
+  }).then(() => Plotly.downloadImage(gd, { format: "png", scale: 3, width: 920, height: 540, filename: "caem_" + title.replace(/[^\w]+/g, "_").slice(0, 44) }))
+    .then(() => Plotly.relayout(gd, { "title.text": "", "margin.t": prevT, "yaxis.title.text": prevY }));
+}
+// open a large overlay of the figure by cloning the rendered traces+layout (works for any chart type)
+function enlargeFig(card, f) {
+  const gd = card.querySelector(".fc"); if (!gd || !window.Plotly || !gd.data) return;
+  const title = clean(f.title || "figure"), unit = f.unit ? clean(f.unit) : "";
+  $("#figmodaltitle").innerHTML = `<b>${esc(title)}</b>${unit ? `<span class="fm-unit">${esc(unit)}</span>` : ""}`;
+  const data = JSON.parse(JSON.stringify(gd.data)), layout = JSON.parse(JSON.stringify(gd.layout));
+  layout.height = Math.max(360, Math.min(window.innerHeight - 220, 660));
+  layout.margin = Object.assign(layout.margin || {}, { t: 16, r: 26, l: 58, b: 42 });
+  layout.font = Object.assign(layout.font || {}, { size: 13 });
+  layout.autosize = true; delete layout.width;
+  ["xaxis", "yaxis"].forEach(ax => { if (layout[ax]) layout[ax].tickfont = { size: 12 }; });
+  Plotly.newPlot($("#figmodalplot"), data, layout, { responsive: true, displayModeBar: true, displaylogo: false });
+  const lg = card.querySelector(".flgd");
+  $("#figmodallegend").innerHTML = lg ? lg.outerHTML : "";
+  $("#figmodal").classList.add("open"); $("#figscrim").classList.add("show");
+}
+function closeFigModal() { $("#figmodal").classList.remove("open"); $("#figscrim").classList.remove("show"); const p = $("#figmodalplot"); if (p && window.Plotly) Plotly.purge(p); }
 function kx(latex, plain) {
   if (window.katex) { try { return `<div class="id-eq">${katex.renderToString(latex, { throwOnError: false, displayMode: false })}</div>`; } catch (e) { } }
   return `<div class="id-eq mono">${esc(plain || latex)}</div>`;
@@ -857,6 +894,34 @@ const VAREQ = {
   gross_debt: ["d_t = d_{t-1}\\dfrac{1+i}{(1+g)(1+\\pi)} - pb_t", "d = d(-1)·(1+i)/((1+g)(1+π)) − primary balance"],
 };
 const TITLEDESC = [[/required to close the output gap/i, "Normative calculation (not a forecast): the constant annual real GDP growth that would close the current output gap over each horizon — the 1-, 2-, … 5-year lines."]];
+// plain-language definitions of the technical terms that appear in figure/series names (academic but clear, non-fabricated)
+const GLOSSARY = [
+  { re: /partner growth|trading.?partner/i, term: "Partner growth", en: "Weighted GDP growth of Azerbaijan's main trading partners — a proxy for external demand for non-oil exports.", az: "Azərbaycanın əsas ticarət tərəfdaşlarının çəkili ÜDM artımı — qeyri-neft ixracına xarici tələbin göstəricisi." },
+  { re: /relative .*price|relative (export|import)/i, term: "Relative price", en: "An export/import price expressed relative to domestic prices — a competitiveness and pass-through measure.", az: "İxrac/idxal qiymətinin daxili qiymətlərə nisbəti — rəqabətqabiliyyətlilik və ötürülmə göstəricisi." },
+  { re: /output gap/i, term: "Output gap", en: "Actual output minus potential (HP-filter trend), as % of potential — the economy's cyclical position.", az: "Faktiki məhsul minus potensial (HP-filtr trendi), potensialın %-i — iqtisadiyyatın tsiklik mövqeyi." },
+  { re: /potential/i, term: "Potential output", en: "The HP-filter trend level of output — the economy's non-inflationary capacity.", az: "Məhsulun HP-filtr trend səviyyəsi — iqtisadiyyatın inflyasiyasız tutumu." },
+  { re: /terms of trade/i, term: "Terms of trade", en: "Export prices relative to import prices; oil-dominated for Azerbaijan.", az: "İxrac qiymətlərinin idxal qiymətlərinə nisbəti; Azərbaycan üçün neft üstünlüklü." },
+  { re: /real effective exchange|\bREER\b/i, term: "Real effective exchange rate (REER)", en: "The trade-weighted exchange rate adjusted for relative prices — external price competitiveness.", az: "Nisbi qiymətlərə görə düzəlişlə ticarət-çəkili məzənnə — xarici qiymət rəqabətqabiliyyətliliyi." },
+  { re: /primary balance/i, term: "Primary balance", en: "The fiscal balance excluding interest payments, % of GDP.", az: "Faiz ödənişləri istisna olmaqla fiskal balans, ÜDM-in %-i." },
+  { re: /current account/i, term: "Current account", en: "Net external transactions (trade + income + transfers), % of GDP; a surplus adds to reserves.", az: "Xalis xarici əməliyyatlar (ticarət + gəlir + transfertlər), ÜDM-in %-i; profisit ehtiyatları artırır." },
+  { re: /broad money|\bM2\b|\bM3\b/i, term: "Broad money", en: "Currency in circulation plus bank deposits (M2/M3).", az: "Dövriyyədəki nağd pul üstəgəl bank əmanətləri (M2/M3)." },
+  { re: /expected inflation|inflation expectation/i, term: "Expected inflation", en: "Forward-looking inflation expectations entering the Phillips curve.", az: "Phillips əyrisinə daxil olan gələcəyə yönəlik inflyasiya gözləntiləri." },
+  { re: /imported inflation|import price/i, term: "Imported inflation", en: "The contribution of import prices and the exchange rate to domestic CPI.", az: "İdxal qiymətlərinin və məzənnənin daxili İQİ-yə töhfəsi." },
+  { re: /neutral.*rate|natural.*rate/i, term: "Neutral (natural) rate", en: "The real interest rate consistent with output at potential and stable inflation.", az: "Məhsulun potensialda və inflyasiyanın sabit olması ilə uyğun real faiz dərəcəsi." },
+  { re: /interest rate gap/i, term: "Interest rate gap", en: "The real policy rate minus the neutral rate — positive = restrictive policy.", az: "Real uçot dərəcəsi minus neytral dərəcə — müsbət = sərt siyasət." },
+  { re: /non-?oil/i, term: "Non-oil", en: "The economy excluding the hydrocarbon (oil & gas) sector — what fiscal and monetary policy most affect.", az: "Karbohidrogen (neft-qaz) sektoru istisna olmaqla iqtisadiyyat — fiskal və monetar siyasətin ən çox təsir etdiyi." },
+  { re: /reserves/i, term: "Reserves", en: "Official FX reserves; shown as % of GDP, months of imports, or vs short-term debt.", az: "Rəsmi valyuta ehtiyatları; ÜDM-in %-i, idxal ayları və ya qısamüddətli borca nisbətdə." },
+  { re: /fiscal balance|budget balance/i, term: "Fiscal balance", en: "Government revenue minus expenditure, % of GDP (a deficit if negative).", az: "Dövlət gəlirləri minus xərclər, ÜDM-in %-i (mənfi olarsa kəsir)." },
+  { re: /gross.*debt|public debt/i, term: "Gross public debt", en: "Total outstanding general-government debt, % of GDP.", az: "Ümumi dövlət borcunun cəmi, ÜDM-in %-i." },
+  { re: /policy rate|refinanc/i, term: "Policy rate", en: "The central bank's refinancing rate — the main monetary-policy instrument.", az: "Mərkəzi bankın yenidən maliyyələşdirmə dərəcəsi — əsas monetar siyasət aləti." },
+];
+function glossaryFor(f) {
+  const az = LANG === "az";
+  const hay = [f.title || ""].concat((f.series || []).map(s => s.name || "")).join(" · ");
+  const seen = new Set(), out = [];
+  for (const g of GLOSSARY) { if (g.re.test(hay) && !seen.has(g.term)) { seen.add(g.term); out.push([g.term, az ? g.az : g.en]); } if (out.length >= 6) break; }
+  return out;
+}
 function figInfo(f) {
   const P = META.params || {}, ph = P.phillips || [], ty = P.taylor || [], v = f.engine_var, sheet = f.sheet || "";
   const az = LANG === "az";
@@ -882,7 +947,7 @@ function figInfo(f) {
   if (allNum) xs.sort((a, b) => a - b); else xs.sort();
   let table = "";
   if ((f.series || []).length && xs.length) {
-    const names = f.series.map((s, i) => clean(s.name) || ("Series " + (i + 1)));
+    const names = f.series.map((s, i) => clean(s.name) || (f.series.length === 1 ? clean(f.title) : "Series " + (i + 1)));
     const idx = f.series.map(s => { const m = {}; s.x.forEach((x, i) => m[x] = s.y[i]); return m; });
     const body = xs.map(x => `<tr><td>${x}</td>${idx.map(m => `<td>${m[x] == null ? "" : Math.round(m[x] * 100) / 100}</td>`).join("")}</tr>`).join("");
     const xhdr = isQ ? (az ? "Rüb" : "Quarter") : tx("id.year", "Year");
@@ -899,11 +964,14 @@ function figInfo(f) {
     : (v || f.fan) ? tx("id.vintage", "2025 = official outturn; the model forecasts <b>2026+</b> (shaded).")
     : tx("id.vintage2", "Shaded = forecast <b>2026+</b>; 2025 = last actual. This figure's 2025 point is CAEM's estimate — official 2025 outturns are in the scorecard.");
   const srcSuffix = isQ ? "" : ` · ${az ? "CAEM vərəqi" : "CAEM sheet"} “${esc(sheet)}”.`;
+  const terms = glossaryFor(f);
+  const termsHtml = terms.length ? `<h4>${tx("id.terms", "Terms in this figure")}</h4><dl class="id-gloss">${terms.map(([t, d]) => `<dt>${esc(t)}</dt><dd>${esc(d)}</dd>`).join("")}</dl>` : "";
   const html = `${f.unit ? `<p class="id-unit">${esc(f.unit)}</p>` : ""}
     <h4>${tx("id.shows", "What it shows")}</h4><p>${shows}</p>
     <h4>${tx("id.model", "Model &amp; data")}</h4>${model}
     <h4>${tx("id.read", "How to read it")}</h4><p>${vintage}</p>${live}
     ${table}
+    ${termsHtml}
     <h4>${tx("id.src", "Source &amp; provenance")}</h4><p class="id-src">${src}${srcSuffix}</p>`;
   return { title: f.title, html, f };
 }
@@ -911,7 +979,7 @@ function downloadFigData(f) {
   const xs = [...new Set((f.series || []).flatMap(s => s.x))].filter(x => x != null);
   const allNum = xs.every(x => typeof x === "number");
   if (allNum) xs.sort((a, b) => a - b); else xs.sort();
-  const names = f.series.map((s, i) => clean(s.name) || ("series" + (i + 1)));
+  const names = f.series.map((s, i) => clean(s.name) || (f.series.length === 1 ? clean(f.title) : "series" + (i + 1)));
   const idx = f.series.map(s => { const m = {}; s.x.forEach((x, i) => m[x] = s.y[i]); return m; });
   const rows = [[f.quarterly ? "period" : "year"].concat(names)].concat(xs.map(x => [x].concat(idx.map(m => m[x] == null ? "" : m[x]))));
   const csv = "# " + (f.title || "figure") + "\n" + rows.map(r => r.join(",")).join("\n");
