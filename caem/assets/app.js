@@ -156,6 +156,7 @@ const AZ = {
   // quarterly & nowcast view
   "nav.qtr": "📅 Rüblük və nowcast", "qtr.h": "📅 Rüblük göstəricilər və nowcast",
   "nav.nb": "📓 Dəftərlər (Colab)", "nb.h": "📓 Təkrar istehsal oluna bilən dəftərlər",
+  "nav.bench": "📊 Proqnoz müqayisəsi", "bench.h": "📊 Proqnoz müqayisəsi — bizim metodumuz IMF, CAEM və bazaya qarşı",
   "nb.open": "Colab-da aç ↗", "nb.pending": "Colab linki gözlənilir",
   "qtr.nowcast": "Nowcast körpüsü", "qtr.implied": "rüblük əsasda nəzərdə tutulan illik", "qtr.official": "rəsmi illik",
   "qtr.q": "rüb", "qtr.observed": "müşahidə olunub",
@@ -241,6 +242,7 @@ function buildNav() {
      <div class="navlive navmethods" id="navmethods">${tx("nav.methods", "📐 Methods &amp; data sources")}</div>
      <div class="navlive navqtr" id="navqtr">${tx("nav.qtr", "📅 Quarterly &amp; nowcast")}</div>
      <div class="navlive navnb" id="navnb">${tx("nav.nb", "📓 Notebooks (Colab)")}</div>
+     <div class="navlive navbench" id="navbench">${tx("nav.bench", "📊 Forecast benchmark")}</div>
      <div class="navlive navscen" id="navscen">${tx("nav.scen", "📂 Saved scenarios &amp; compare")}</div>
      <div class="navsec">${tx("nav.summary", "★ Summary dashboards")} <span>${tx("nav.detailsub", "figures · live ▲")}</span></div>` + summ.map(navlink).join("") +
     `<div class="navsec">${tx("nav.detail", "Detailed analysis")} <span>${tx("nav.detailsub", "figures · live ▲")}</span></div>` + detail.map(navlink).join("");
@@ -250,6 +252,7 @@ function buildNav() {
   $("#navmethods").onclick = showMethods;
   $("#navqtr").onclick = showQuarterly;
   $("#navnb").onclick = showNotebooks;
+  $("#navbench").onclick = showBenchmark;
   $("#navscen").onclick = showScenarios;
 }
 
@@ -260,6 +263,7 @@ function setActive(mode) {
   $("#navmethods").classList.toggle("active", mode === "methods");
   $("#navqtr").classList.toggle("active", mode === "quarterly");
   $("#navnb").classList.toggle("active", mode === "notebooks");
+  $("#navbench").classList.toggle("active", mode === "benchmark");
   $("#navscen").classList.toggle("active", mode === "scenarios");
   document.querySelectorAll("#nav .navlink").forEach(a => {
     const h = +a.style.getPropertyValue("--hue"), on = mode === dec(a.dataset.s);
@@ -792,6 +796,7 @@ const NOTEBOOKS = [
   ["13", "13_structural_models", "Structural macro models", "Struktur makro modellər", "3-equation New-Keynesian DSGE and input–output multipliers.", "Yeni-Keynsçi DSGE və xərc-buraxılış multiplikatorları.", "DSGE · IO"],
   ["14", "14_scenarios_risk", "Scenarios, fan charts & risk", "Ssenarilər, yelpik qrafikləri və risk", "Oil scenarios, Bank-of-England fan charts, a risk heat-map.", "Neft ssenariləri, yelpik qrafikləri, risk istilik xəritəsi.", "scenarios · fans"],
   ["15", "15_caem_summary", "Integrated CAEM & forecast summary", "İnteqrasiya olunmuş CAEM və xülasə", "The full semi-structural model, 2026–2030 forecast, scorecard, nowcast.", "Tam yarı-struktur model, 2026–2030 proqnoz, hesab kartı.", "CAEM · summary"],
+  ["16", "16_forecast_benchmark", "Forecast benchmark", "Proqnoz müqayisəsi", "Our skill-weighted multi-model ensemble vs IMF Article IV, CAEM, and the prior baseline.", "Çoxmodelli ansambl IMF Article IV, CAEM və əvvəlki bazaya qarşı.", "ensemble · benchmark"],
 ];
 function showNotebooks() {
   CUR = null; setActive("notebooks");
@@ -815,6 +820,64 @@ function showNotebooks() {
     <div class="gsub">${intro}</div>
     <div class="note-eco">${howto}</div>
     <div class="nbgrid">${cards}</div>`;
+  window.scrollTo({ top: 0 });
+}
+/* ---------------- Forecast benchmark: our ensemble vs IMF / CAEM / prior baseline ---------------- */
+let BENCH = null, REFS = null;
+const REFMETA = [["IMF_ArticleIV_26_112", "IMF", "#c0392b", null],
+                 ["CAEM_xlsb", "CAEM.xlsb", "#b9852a", "dash"],
+                 ["AZ_baseline", "Prior baseline", "#69758a", "dot"]];
+function benchTraces(v) {
+  const ours = BENCH[v].ensemble, bands = BENCH[v].bands, fy = [2026, 2027, 2028, 2029, 2030, 2031], ex = [2025].concat(fy), tr = [];
+  const bcol = s => fy.map(y => bands[String(y)] ? bands[String(y)][s] : null);
+  const lo90 = bcol("p90").map(b => b ? b[0] : null), hi90 = bcol("p90").map(b => b ? b[1] : null);
+  const lo50 = bcol("p50").map(b => b ? b[0] : null), hi50 = bcol("p50").map(b => b ? b[1] : null);
+  tr.push({ x: fy, y: lo90, mode: "lines", line: { width: 0 }, hoverinfo: "skip", showlegend: false });
+  tr.push({ x: fy, y: hi90, mode: "lines", line: { width: 0 }, fill: "tonexty", fillcolor: "rgba(14,124,139,0.10)", hoverinfo: "skip", showlegend: false });
+  tr.push({ x: fy, y: lo50, mode: "lines", line: { width: 0 }, hoverinfo: "skip", showlegend: false });
+  tr.push({ x: fy, y: hi50, mode: "lines", line: { width: 0 }, fill: "tonexty", fillcolor: "rgba(14,124,139,0.20)", hoverinfo: "skip", showlegend: false });
+  REFMETA.forEach(([k, lab, c, dash]) => {
+    const d = REFS[k] && REFS[k][v]; if (!d) return;
+    const xs = ex.filter(y => d[String(y)] != null);
+    tr.push({ x: xs, y: xs.map(y => d[String(y)]), mode: "lines+markers", name: lab, line: { color: c, width: 1.7, dash: dash || undefined }, marker: { size: 5, symbol: "square" }, hovertemplate: "%{x}: %{y:.1f}%<extra>" + lab + "</extra>" });
+  });
+  tr.push({ x: ex, y: ex.map(y => ours[String(y)]), mode: "lines+markers", name: "Our ensemble", line: { color: "#0e7c8b", width: 3 }, marker: { size: 6 }, hovertemplate: "%{x}: %{y:.1f}%<extra>Our ensemble</extra>" });
+  return tr;
+}
+async function showBenchmark() {
+  CUR = null; setActive("benchmark");
+  try {
+    if (!BENCH) BENCH = await (await fetch("data/canonical_forecast.json")).json();
+    if (!REFS) REFS = await (await fetch("data/reference_forecasts.json")).json();
+  } catch (e) { $("#view").innerHTML = `<div class="ghead">${tx("bench.h", "📊 Forecast benchmark")}</div><p class="gsub">data/canonical_forecast.json not found</p>`; return; }
+  const az = LANG === "az";
+  const intro = az
+    ? "Bizim müstəqil, bacarıqla-çəkilmiş çoxmodelli ansamblımız (doqquz model, hər biri geriyə-test edilib) IMF Article IV (26/112), Nazirliyin CAEM.xlsb modeli və əvvəlki sayt bazası ilə yanaşı göstərilir. 2025 faktiki nəticəsinə əsaslanan ansambl IMF/CAEM mənzərəsini təkrar istehsal edir (artım üzrə ≈0.1 f.b., inflyasiya üzrə ≈0.6 f.b. orta fərq) — bu da metodu doğrulayır — əvvəlki baza isə kənar nəticədir."
+    : "Our independent, skill-weighted multi-model ensemble (nine models, each back-tested), now anchored on the 2025 outturn, shown beside the IMF Article IV (26/112), the Ministry's CAEM.xlsb, and the prior site baseline. The ensemble reproduces the IMF/CAEM picture closely (mean gaps of about 0.1 point on growth and 0.6 on inflation over 2026–29) — validating the method — while the prior baseline is the outlier.";
+  const tbl = (v, lab) => {
+    const ours = BENCH[v].ensemble, yrs = [2025, 2026, 2027, 2028, 2029, 2030, 2031];
+    const cols = [["OURS", null], ["IMF", "IMF_ArticleIV_26_112"], ["CAEM", "CAEM_xlsb"], ["Prior", "AZ_baseline"]];
+    const cell = x => (x == null) ? "·" : (+x).toFixed(1);
+    let h = `<table style="border-collapse:collapse;font-size:11px;margin:0 14px 6px 0"><caption style="text-align:left;font-weight:600;color:var(--ink);padding:3px 0">${esc(lab)} (%)</caption><tr style="color:var(--muted)"><td style="padding:2px 9px">Year</td>${cols.map(c => `<td style="padding:2px 9px;text-align:right">${esc(c[0])}</td>`).join("")}</tr>`;
+    yrs.forEach(y => {
+      h += `<tr><td style="padding:2px 9px;color:var(--muted)">${y}</td>` + cols.map(([l2, k]) => {
+        let val; if (k === null) val = ours[String(y)]; else { const d = REFS[k] && REFS[k][v]; val = d ? d[String(y)] : null; }
+        return `<td style="padding:2px 9px;text-align:right;${k === null ? "font-weight:700;color:var(--accent)" : ""}">${cell(val)}</td>`;
+      }).join("") + "</tr>";
+    });
+    return h + "</table>";
+  };
+  $("#view").innerHTML = `<div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${tx("bench.h", "📊 Forecast benchmark — our method vs IMF, CAEM, baseline")}</div>
+    <div class="gsub">${intro}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px">
+      <div class="figcard"><div class="ft">${az ? "Real ÜDM artımı" : "Real GDP growth"} <span class="fcbadge">+ 50/90% fan</span></div><div class="fc" id="benchgdp" style="height:300px"></div></div>
+      <div class="figcard"><div class="ft">${az ? "İnflyasiya (İQİ)" : "CPI inflation"} <span class="fcbadge">+ 50/90% fan</span></div><div class="fc" id="benchcpi" style="height:300px"></div></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">${tbl("gdp_realg", az ? "Real ÜDM artımı" : "Real GDP growth")}${tbl("cpi_infl", az ? "İnflyasiya" : "CPI inflation")}</div>
+    <div class="note-eco" style="margin-top:12px"><b>${az ? "Nəticə" : "Result"}:</b> ${esc(BENCH.method_note || "")}</div>`;
+  const lay = () => { const L = baseLayout(true, [], 286, 40, 1); L.showlegend = true; L.legend = { orientation: "h", y: -0.22, font: { size: 9 } }; L.margin = { l: 40, r: 10, t: 6, b: 40 }; return L; };
+  Plotly.newPlot($("#benchgdp"), benchTraces("gdp_realg"), lay(), { responsive: true, displaylogo: false, displayModeBar: false });
+  Plotly.newPlot($("#benchcpi"), benchTraces("cpi_infl"), lay(), { responsive: true, displaylogo: false, displayModeBar: false });
   window.scrollTo({ top: 0 });
 }
 async function showQuarterly() {
