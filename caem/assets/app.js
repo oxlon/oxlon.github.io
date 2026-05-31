@@ -18,6 +18,39 @@ const FAN_BANDS = [["lo90", "hi90", "rgba(173,42,53,0.13)", "90%"], ["lo80", "hi
 const FAN_CENTRAL = "#7d1620";
 const FIELDS = ["oil_price", "import_price", "export_price", "inflation_shock", "nonoil_growth",
   "partner_growth", "potential_growth", "tax", "policy_rate", "exchange_rate", "foreign_rate", "risk_premium"];
+// single source for each scenario input: label, unit, and a plain-language definition (EN/AZ) — drives the
+// scenario descriptor on figures and the per-field info buttons.
+const FIELD_META = {
+  oil_price: { en: "Oil price", az: "Neft qiyməti", u: "%", den: "Brent / Azeri crude price. Azerbaijan's exports and state budget are oil-dependent, so this is the dominant external driver of growth, the fiscal balance and the external accounts.", daz: "Brent / Azəri xam neft qiyməti. Azərbaycanın ixracı və dövlət büdcəsi neftdən asılıdır, ona görə bu — artımın, büdcə balansının və xarici hesabların əsas xarici amilidir." },
+  import_price: { en: "Import price", az: "İdxal qiyməti", u: "%", den: "World price of imported goods (in foreign currency); feeds domestic inflation through import pass-through.", daz: "İdxal mallarının dünya qiyməti (xarici valyutada); idxal ötürülməsi ilə daxili inflyasiyaya təsir edir." },
+  export_price: { en: "Export price", az: "İxrac qiyməti", u: "%", den: "World price of Azerbaijan's exports; together with import prices it sets the terms of trade.", daz: "Azərbaycan ixracının dünya qiyməti; idxal qiymətləri ilə birlikdə ticarət şərtlərini müəyyən edir." },
+  inflation_shock: { en: "Supply-side price shock", az: "Təklif tərəfli qiymət şoku", u: "pp", den: "An exogenous supply-side price shock (e.g. food, energy or administered prices), in percentage points added to inflation.", daz: "Ekzogen təklif tərəfli qiymət şoku (məs. ərzaq, enerji və ya tənzimlənən qiymətlər), inflyasiyaya əlavə edilən faiz bəndi ilə." },
+  nonoil_growth: { en: "Non-oil growth", az: "Qeyri-neft artımı", u: "pp", den: "A direct shock to non-oil real GDP growth — e.g. a structural reform or a sectoral shock.", daz: "Qeyri-neft real ÜDM artımına birbaşa şok — məs. struktur islahat və ya sektoral şok." },
+  partner_growth: { en: "Partner growth", az: "Tərəfdaş artımı", u: "pp", den: "GDP growth of Azerbaijan's main trading partners — a proxy for external demand for non-oil exports.", daz: "Azərbaycanın əsas ticarət tərəfdaşlarının ÜDM artımı — qeyri-neft ixracına xarici tələbin göstəricisi." },
+  potential_growth: { en: "Potential growth", az: "Potensial artım", u: "pp", den: "A shift in trend (potential) output growth — the economy's non-inflationary capacity.", daz: "Trend (potensial) məhsul artımında dəyişiklik — iqtisadiyyatın inflyasiyasız tutumu." },
+  tax: { en: "Fiscal measures", az: "Fiskal tədbirlər", u: "%GDP", den: "Discretionary fiscal measures (revenue or spending), in % of GDP applied to the budget balance.", daz: "Diskresion fiskal tədbirlər (gəlir və ya xərc), büdcə balansına tətbiq olunan % ÜDM ilə." },
+  policy_rate: { en: "Policy rate", az: "Uçot dərəcəsi", u: "pp", den: "A shift in the Central Bank refinancing rate beyond the smoothed Taylor-rule path.", daz: "Mərkəzi Bankın yenidən maliyyələşdirmə dərəcəsində hamarlanmış Taylor qaydası trayektoriyasından kənar dəyişiklik." },
+  exchange_rate: { en: "Manat depreciation", az: "Manatın dəyərsizləşməsi", u: "%", den: "A depreciation of the manat against the US dollar (a higher value = weaker manat).", daz: "Manatın ABŞ dollarına qarşı dəyərsizləşməsi (yüksək dəyər = zəif manat)." },
+  foreign_rate: { en: "Foreign rate", az: "Xarici faiz", u: "pp", den: "The foreign (US / global) interest rate — it passes through to the domestic rate and affects capital flows.", daz: "Xarici (ABŞ / qlobal) faiz dərəcəsi — daxili dərəcəyə ötürülür və kapital axınlarına təsir edir." },
+  risk_premium: { en: "Risk premium", az: "Risk mükafatı", u: "pp", den: "The sovereign risk premium added to the domestic interest rate.", daz: "Daxili faiz dərəcəsinə əlavə edilən suveren risk mükafatı." },
+};
+const fieldLabel = f => { const m = FIELD_META[f]; return m ? (LANG === "az" ? m.az : m.en) : f.replace(/_/g, " "); };
+const fieldUnit = f => (FIELD_META[f] && FIELD_META[f].u) || "";
+// human-readable description of the active scenario, e.g. "Oil price −20%, Partner growth −2pp"
+function scenarioText() {
+  if (!RUN || !RUN.shock) return "";
+  return FIELDS.filter(f => RUN.shock[f]).map(f => `${fieldLabel(f)} ${RUN.shock[f] > 0 ? "+" : "−"}${Math.abs(RUN.shock[f])}${fieldUnit(f)}`).join(", ");
+}
+// a Plotly annotation (top-left, inside canvas) naming the active scenario — visible on-screen AND in PNG exports
+function scnAnno() {
+  const t = scenarioText(); if (!t) return null;
+  return {
+    text: (LANG === "az" ? "Ssenari: " : "Scenario: ") + t + (LANG === "az" ? "  (punktir)" : "  (dashed)"),
+    xref: "paper", yref: "paper", x: 0.01, y: 0.99, xanchor: "left", yanchor: "top", showarrow: false,
+    font: { size: 10, color: "#b1322a", family: "var(--sans), sans-serif" }, align: "left",
+    bgcolor: "rgba(255,255,255,0.82)", bordercolor: "rgba(177,50,42,0.5)", borderwidth: 1, borderpad: 3
+  };
+}
 // figures that ARE a scenario input — shocking it transforms the figure's own path (exact, not modelled).
 // kind "level" = the shock is a % change to the level; "rate" = a sustained pp change to a rate series.
 const SHOCK_FIG = [
