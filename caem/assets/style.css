@@ -159,12 +159,12 @@ a{color:inherit;text-decoration:none}
   background:var(--brass-soft);border-radius:5px;padding:2px 8px;align-self:flex-start;text-transform:uppercase;letter-spacing:.03em}
 
 .how{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:11px}
-.how li{position:relative;padding-left:42px;font-size:13px;color:#4a4332;line-height:1.55;max-width:94ch;counter-increment:s;min-height:28px;display:flex;align-items:center}
+.how li{position:relative;padding-left:42px;font-size:13px;color:var(--ink2);line-height:1.6;max-width:94ch;counter-increment:s;min-height:28px;display:block;padding-top:3px}
 .how li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;
   background:var(--ink);color:var(--brass2);font-family:var(--display);font-weight:600;font-size:14px;
   display:flex;align-items:center;justify-content:center}
 .how li b{color:var(--ink)}
-.livechip{font-size:9px;font-weight:700;color:#fff;background:var(--good);border-radius:4px;padding:1px 5px;letter-spacing:.04em}
+.livechip{font-size:9px;font-weight:700;color:#fff;background:var(--good);border-radius:4px;padding:1px 5px;letter-spacing:.04em;margin:0 3px;display:inline-block}
 
 .gc .gcard{cursor:pointer}
 .gcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:.13s;border-left:3px solid var(--line)}
