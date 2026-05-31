@@ -221,3 +221,68 @@ a{color:inherit;text-decoration:none}
 .imp-ar{color:#c0392b;font-size:11px;margin:0 1px}
 .imp-u{font-size:10px;color:#9aa1ad;margin-left:2px}
 .imp-d{font-size:11px;color:#6b7280;font-family:var(--mono);margin-top:3px}
+
+/* methods & data manual */
+.mp{font-size:13px;color:#33424c;line-height:1.55;margin:0 0 12px;max-width:96ch}
+.mp code{font-family:var(--mono);font-size:12px;background:#eef1f4;padding:1px 5px;border-radius:4px}
+.mtbl{overflow-x:auto;margin:0 0 18px;border:1px solid var(--line);border-radius:10px}
+.mtbl table.dt{width:100%;border-collapse:collapse;font-size:12.5px}
+.mtbl table.dt th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;padding:7px 12px;background:#f7f8fa;border-bottom:1px solid var(--line)}
+.mtbl table.dt td{padding:7px 12px;border-bottom:1px solid #f0f2f5;color:#374151;vertical-align:top;line-height:1.5}
+.mtbl table.dt td b{color:var(--ink)}
+.mtbl table.dt tr:last-child td{border-bottom:0}
+.mtbl table.dt sub{font-size:9px}
+.navmethods{color:#8a6d1f;background:#f7f1e2;border-color:#e7d6ad}
+.navmethods:hover{background:#f0e6cf}
+.navmethods.active{background:#8a6d1f;color:#fff;border-color:#8a6d1f}
+
+/* saved scenarios + compare */
+.navscen{color:#16548a;background:#e8f1f8;border-color:#cfe1ef}
+.navscen:hover{background:#dceaf5}
+.navscen.active{background:#1f5a8c;color:#fff;border-color:#1f5a8c}
+.lk{font-size:11px;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--teal);border-radius:6px;padding:2px 9px;cursor:pointer;margin-right:3px}
+.lk:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.lk.del{color:var(--bad)}
+.lk.del:hover{background:var(--bad);border-color:var(--bad)}
+.sc-sub{font-size:10.5px;color:#9aa1ad;font-family:var(--mono)}
+.scchk{cursor:pointer;width:15px;height:15px}
+
+/* export buttons + print report */
+.dlgrp{float:right;display:inline-flex;gap:6px}
+#report{display:none}
+.rep-head{border-bottom:2px solid #1a2038;padding-bottom:10px;margin-bottom:16px}
+.rep-eyebrow{font-size:10px;font-weight:700;letter-spacing:.10em;color:#8a6d1f}
+.rep-head h1{font-size:22px;margin:6px 0 4px;color:#1a2038}
+.rep-meta{font-size:11px;color:#555}
+#report h2{font-size:14px;color:#1a2038;margin:16px 0 8px;border-bottom:1px solid #ddd;padding-bottom:3px}
+.rep-t{width:100%;border-collapse:collapse;font-size:11.5px;font-variant-numeric:tabular-nums}
+.rep-t th,.rep-t td{border:1px solid #d8dde3;padding:4px 8px;text-align:right}
+.rep-t th:first-child,.rep-t td:first-child{text-align:left}
+.rep-t thead th{background:#f2f4f7;color:#2a3650}
+.rep-t .fc{background:#fbf6ec}
+.rep-foot{margin-top:18px;font-size:10px;color:#777;border-top:1px solid #ddd;padding-top:8px}
+@media print {
+  body.printing #top, body.printing #runbar, body.printing #layout, body.printing #infodrawer,
+  body.printing #infoscrim, body.printing #datamodal, body.printing #datascrim { display:none !important; }
+  body.printing #report { display:block; position:static; padding:0 8px; }
+  body.printing { background:#fff; }
+}
+.sc-t tr.sc-mae td{border-top:2px solid var(--line);padding-top:6px}
+/* language toggle */
+.langtog{display:inline-flex;align-items:center;gap:4px;font-size:11px}
+.langtog b{cursor:pointer;font-weight:700;padding:2px 6px;border-radius:5px;color:#8b95a7}
+.langtog b.on{background:#e8c98b;color:#1a2038}
+.langtog b:not(.on):hover{color:#fff}
+.langtog span{color:#5a6377}
+/* ministry econometric model book */
+.eqwb{font-size:12.5px;color:var(--ink);margin:16px 0 6px;font-weight:700}
+.eqlhs{font-family:var(--mono);font-size:11px;color:var(--ink2);white-space:nowrap;font-weight:600;vertical-align:top}
+.eqrhs{font-family:var(--mono);font-size:10.5px;color:#5a626e;line-height:1.5;word-break:break-word}
+.eqdesc{font-family:var(--sans);font-size:11px;color:#9aa1ad;margin-top:2px}
+.mono{font-family:var(--mono);font-size:11.5px;color:var(--ink2)}
+/* per-figure PNG button (left of info) */
+.figpng{position:absolute;top:9px;right:64px;z-index:3;border:1px solid var(--line);background:#fff;color:var(--ink2);
+  font-size:10px;font-weight:600;border-radius:7px;padding:2px 7px;cursor:pointer;opacity:.5;transition:.12s}
+.figcard:hover .figpng{opacity:1}
+.figpng:hover{background:var(--ink2);color:#fff;border-color:var(--ink2)}
+.figcard .ft{padding-right:120px}

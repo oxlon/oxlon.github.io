@@ -1,5 +1,5 @@
 /* CAEM interactive dashboard — CAEM figures + live FPP engine (scenario recompute + fan charts). */
-let FIGS = [], GROUPS = [], CUR = null, RUN = null, META = null, BASE = null, FAN0 = null, STATIC_RUN0 = null, NFIG = 0, NLIVE = 0;
+let FIGS = [], GROUPS = [], CUR = null, RUN = null, META = null, BASE = null, FAN0 = null, NFIG = 0, NLIVE = 0;
 let ACTUALS = {}, LIVE_FF = null;   // editable data: user-entered actuals + effective first-forecast year
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
@@ -37,99 +37,6 @@ function shockSeries(yArr, xArr, sf, val, ff, isPct) {
         : yArr[i] * (1 + val / 100));
 }
 
-const loadJSON = async path => {
-  const r = await fetch(path);
-  if (!r.ok) throw new Error(`Cannot load ${path}`);
-  return r.json();
-};
-const clone = obj => JSON.parse(JSON.stringify(obj || {}));
-const keysOf = obj => Object.keys(obj || {}).map(Number).sort((a, b) => a - b);
-const valAt = (obj, y) => obj && obj[String(y)] != null ? obj[String(y)] : null;
-const setAt = (obj, y, v) => { if (obj && v != null && Number.isFinite(v)) obj[String(y)] = Math.round(v * 1000) / 1000; };
-function fanFromMap(map, firstForecast) {
-  const years = keysOf(map);
-  const values = years.map(y => valAt(map, y));
-  const hist = years.map((y, i) => y < firstForecast ? values[i] : null).filter(v => v != null);
-  let diffs = [];
-  for (let i = 1; i < hist.length; i++) diffs.push(hist[i] - hist[i - 1]);
-  if (diffs.length >= 4) {
-    let ix = 0; diffs.forEach((v, i) => { if (Math.abs(v) > Math.abs(diffs[ix])) ix = i; });
-    diffs.splice(ix, 1);
-  }
-  const mean = diffs.length ? diffs.reduce((a, v) => a + v, 0) / diffs.length : 0;
-  let sd = diffs.length >= 2 ? Math.sqrt(diffs.reduce((a, v) => a + (v - mean) ** 2, 0) / diffs.length) : 1.3;
-  sd = Math.max(0.4, Math.min(sd || 1.3, 1.8));
-  const out = { years, central: values.map(v => Math.round(v * 1000) / 1000), lo50: [], hi50: [], lo80: [], hi80: [], lo90: [], hi90: [] };
-  [[50, 0.674], [80, 1.282], [90, 1.645]].forEach(([lvl, z]) => {
-    years.forEach((y, i) => {
-      const h = y >= firstForecast ? y - firstForecast + 1 : 0;
-      const hw = h > 0 ? sd * z * Math.sqrt(h) : 0;
-      out[`lo${lvl}`].push(Math.round((values[i] - hw) * 1000) / 1000);
-      out[`hi${lvl}`].push(Math.round((values[i] + hw) * 1000) / 1000);
-    });
-  });
-  return out;
-}
-function staticRun(body = {}) {
-  const baseRun = clone(STATIC_RUN0);
-  const baseline = clone(baseRun.baseline);
-  const scenario = clone(baseline);
-  const shock = {};
-  FIELDS.forEach(f => shock[f] = +body[f] || 0);
-
-  let firstForecast = baseRun.first_forecast || META.first_forecast || 2026;
-  const actuals = body.actuals || {};
-  const actualYears = Object.keys(actuals).map(Number).filter(Number.isFinite);
-  if (actualYears.length) firstForecast = Math.max(firstForecast, Math.max(...actualYears) + 1);
-  actualYears.forEach(y => {
-    const rec = actuals[String(y)] || {};
-    if (rec.gdp_growth != null) setAt(baseline.real_gdp_growth, y, +rec.gdp_growth);
-    if (rec.nonoil_growth != null) setAt(baseline.nonoil_growth, y, +rec.nonoil_growth);
-    if (rec.inflation != null) setAt(baseline.inflation, y, +rec.inflation);
-    if (rec.fiscal != null) {
-      setAt(baseline.fiscal_balance, y, +rec.fiscal);
-      setAt(baseline.primary_balance, y, +rec.fiscal);
-    }
-  });
-  Object.assign(scenario, clone(baseline));
-
-  const start = +body.start || firstForecast, end = +body.end || 2030;
-  const inRange = y => y >= firstForecast && y >= start && y <= end;
-  const growthDelta = shock.nonoil_growth + 0.30 * shock.partner_growth + 0.02 * shock.oil_price + 0.05 * shock.exchange_rate + shock.potential_growth;
-  const gdpDelta = 0.71 * growthDelta;
-  const inflationDelta = shock.inflation_shock + 0.01 * shock.oil_price + 0.20 * (shock.import_price + shock.exchange_rate);
-  const fiscalDelta = 0.12 * shock.oil_price + shock.tax + 0.06 * shock.exchange_rate;
-  const rateDelta = shock.policy_rate + 0.50 * shock.foreign_rate + shock.risk_premium;
-  const termsDelta = 0.30 * shock.oil_price + shock.export_price - shock.import_price;
-  const deltas = {
-    nonoil_growth: growthDelta,
-    real_gdp_growth: gdpDelta,
-    output_gap: 0.35 * growthDelta,
-    trend_growth: shock.potential_growth,
-    inflation: inflationDelta,
-    policy_rate: rateDelta + 0.20 * inflationDelta,
-    fiscal_balance: fiscalDelta,
-    primary_balance: fiscalDelta,
-    terms_of_trade: termsDelta
-  };
-  Object.entries(deltas).forEach(([name, delta]) => {
-    if (!scenario[name] || !Number.isFinite(delta) || delta === 0) return;
-    keysOf(scenario[name]).forEach(y => { if (inRange(y)) setAt(scenario[name], y, valAt(scenario[name], y) + delta); });
-  });
-  if (scenario.gross_debt) {
-    let cumulative = 0;
-    keysOf(scenario.gross_debt).forEach(y => {
-      if (!inRange(y)) return;
-      cumulative += fiscalDelta;
-      const debtDelta = -0.85 * cumulative - 0.20 * gdpDelta + 0.08 * rateDelta;
-      setAt(scenario.gross_debt, y, valAt(baseline.gross_debt, y) + debtDelta);
-    });
-  }
-  const fan = {};
-  Object.keys(META.fan_labels || {}).forEach(k => { if (scenario[k]) fan[k] = fanFromMap(scenario[k], firstForecast); });
-  return { baseline, scenario, shock, fan, first_forecast: firstForecast };
-}
-
 function detectTotalIdx(series) {
   for (let k = 0; k < series.length; k++) {
     let ok = 0, cnt = 0;
@@ -143,18 +50,48 @@ function detectTotalIdx(series) {
   return -1;
 }
 
+/* ---------------- bilingual EN / AZ (primary chrome) ---------------- */
+let LANG = "en", CURMODE = "home";
+try { LANG = localStorage.getItem("caem_lang") || "en"; } catch (e) { }
+const AZ = {
+  "hdr.title": "Makro-Fiskal Model", "hdr.sub": "Azərbaycan Respublikası · Maliyyə Proqramlaşdırma mühərriki",
+  "con.title": "⚙ Ssenari paneli",
+  "con.hint": "Proqnoza şok tətbiq edin və Hesabla düyməsini basın — CANLI qrafiklər və yelpik qrafikləri yenidən hesablanır, ssenari bazis xəttinin üzərinə qırmızı punktirlə düşür. Neft, qiymətlər və məzənnə %-lə; qalanları faiz bəndi ilə.",
+  "con.apply": "Tətbiq", "con.to": "–", "con.editdata": "✎ Məlumatı yenilə", "con.save": "💾 Yadda saxla",
+  "con.run": "Hesabla ▸", "con.reset": "Sıfırla", "con.presets": "Hazır ssenarilər",
+  "cat.external": "Xarici", "cat.real": "Real iqtisadiyyat və fiskal", "cat.mon": "Monetar və məzənnə",
+  "fld.oil": "Neft qiyməti", "fld.partner": "Tərəfdaş artımı", "fld.import": "İdxal qiyməti", "fld.export": "İxrac qiyməti",
+  "fld.nonoil": "Qeyri-neft artımı", "fld.potential": "Potensial artım", "fld.supply": "Təklif şoku", "fld.tax": "Vergi tədbirləri",
+  "fld.policy": "Uçot dərəcəsi", "fld.fx": "Məzənnə (dəyərsizləşmə)", "fld.foreign": "Xarici faiz", "fld.risk": "Risk mükafatı",
+  "nav.home": "🏠 Əsas səhifə və icmal", "nav.live": "📈 Canlı proqnoz və yelpik qrafikləri",
+  "nav.methods": "📐 Metodologiya və mənbələr", "nav.scen": "📂 Saxlanmış ssenarilər",
+  "nav.summary": "★ İcmal panelləri", "nav.detail": "Ətraflı təhlil",
+};
+const tx = (k, def) => (LANG === "az" && AZ[k]) ? AZ[k] : def;     // translate-or-default
+function applyI18n() {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    if (el.dataset.en === undefined) el.dataset.en = el.textContent;
+    const az = AZ[el.dataset.i18n];
+    el.textContent = (LANG === "az" && az) ? az : el.dataset.en;
+  });
+  const lg = document.getElementById("lang");
+  if (lg) lg.innerHTML = `<b class="${LANG === "en" ? "on" : ""}" data-l="en">EN</b><span>·</span><b class="${LANG === "az" ? "on" : ""}" data-l="az">AZ</b>`;
+}
+function setLang(l) { LANG = l; try { localStorage.setItem("caem_lang", l); } catch (e) { } applyI18n(); buildNav(); setActive(CURMODE); }
+
 async function init() {
-  META = await loadJSON("data/meta.json");
-  const data = await loadJSON("data/figures.json");
+  await CAEM.load();                       // static client-side engine — no backend
+  META = CAEM.meta();
+  const data = CAEM.figures();
   FIGS = data.figures; NFIG = data.n; NLIVE = data.engine_driven;
-  STATIC_RUN0 = await loadJSON("data/run_baseline.json");
-  BASE = STATIC_RUN0.baseline || {}; FAN0 = STATIC_RUN0.fan || {};
+  try { const j = CAEM.run({}); BASE = j.baseline; FAN0 = j.fan; } catch (e) { BASE = {}; FAN0 = {}; }
   $("#meta").innerHTML = `${NFIG} figures · ${NLIVE} live · forecast <b>${META.first_forecast}+</b>`;
   const seen = {};
   FIGS.forEach(f => { (seen[f.sheet] = seen[f.sheet] || []).push(f); });
   GROUPS = Object.keys(seen).map((s, i) => ({ sheet: s, figs: seen[s], hue: HUES[i % HUES.length] }));
-  buildNav(); wireRun();
+  buildNav(); wireRun(); applyI18n();
   $("#brand").style.cursor = "pointer"; $("#brand").onclick = showHome;
+  $("#lang").onclick = e => { const l = e.target.dataset.l; if (l && l !== LANG) setLang(l); };
   $("#infoscrim").onclick = closeInfo; $("#infoclose").onclick = closeInfo;
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeInfo(); });
   showHome();
@@ -170,18 +107,25 @@ function buildNav() {
   };
   const summ = GROUPS.filter(g => SUMMARY_SHEETS.has(g.sheet)), detail = GROUPS.filter(g => !SUMMARY_SHEETS.has(g.sheet));
   $("#nav").innerHTML =
-    `<div class="navhome" id="navhome">🏠 Home &amp; overview</div>
-     <div class="navlive" id="navlive">📈 Live forecast &amp; fan charts</div>
-     <div class="navsec">★ Summary dashboards</div>` + summ.map(navlink).join("") +
-    `<div class="navsec">Detailed analysis <span>figures · live ▲</span></div>` + detail.map(navlink).join("");
+    `<div class="navhome" id="navhome">${tx("nav.home", "🏠 Home &amp; overview")}</div>
+     <div class="navlive" id="navlive">${tx("nav.live", "📈 Live forecast &amp; fan charts")}</div>
+     <div class="navlive navmethods" id="navmethods">${tx("nav.methods", "📐 Methods &amp; data sources")}</div>
+     <div class="navlive navscen" id="navscen">${tx("nav.scen", "📂 Saved scenarios &amp; compare")}</div>
+     <div class="navsec">${tx("nav.summary", "★ Summary dashboards")}</div>` + summ.map(navlink).join("") +
+    `<div class="navsec">${tx("nav.detail", "Detailed analysis")} <span>figures · live ▲</span></div>` + detail.map(navlink).join("");
   document.querySelectorAll("#nav .navlink").forEach(a => a.onclick = () => showGroup(dec(a.dataset.s)));
   $("#navhome").onclick = showHome;
   $("#navlive").onclick = showLive;
+  $("#navmethods").onclick = showMethods;
+  $("#navscen").onclick = showScenarios;
 }
 
 function setActive(mode) {
+  CURMODE = mode;
   $("#navhome").classList.toggle("active", mode === "home");
   $("#navlive").classList.toggle("active", mode === "live");
+  $("#navmethods").classList.toggle("active", mode === "methods");
+  $("#navscen").classList.toggle("active", mode === "scenarios");
   document.querySelectorAll("#nav .navlink").forEach(a => {
     const h = +a.style.getPropertyValue("--hue"), on = mode === dec(a.dataset.s);
     a.classList.toggle("active", on);
@@ -264,7 +208,7 @@ function showLive() {
   const shockTxt = onScn ? FIELDS.filter(f => RUN.shock[f]).map(f => `${f.replace(/_/g, " ")} ${RUN.shock[f] > 0 ? "+" : ""}${RUN.shock[f]}`).join(", ") : "";
   const engFigs = FIGS.filter(f => f.engine_var);
   $("#view").innerHTML = `
-    <div class="ghead" style="color:#1f5a8c;border-color:#1f5a8c">📈 Live forecast <button id="dlcsv" class="dlbtn">⤓ Download CSV</button></div>
+    <div class="ghead" style="color:#1f5a8c;border-color:#1f5a8c">📈 Live forecast <span class="dlgrp"><button id="prpdf" class="dlbtn">🖨 PDF report</button><button id="dlxls" class="dlbtn">⤓ Excel</button><button id="dlcsv" class="dlbtn">⤓ CSV</button></span></div>
     <div class="gsub">The engine's central forecast with <b>fan charts</b> (confidence bands that widen with the horizon), then every
       live figure. <b>2025 = official outturn; forecast 2026+.</b> ${onScn ? `Scenario active: <b>${esc(shockTxt)}</b> — dashed red overlays the baseline.` : "Run a scenario above to overlay it."}</div>
     ${impactHTML()}
@@ -290,7 +234,7 @@ function showLive() {
       ${f.unit ? `<div class="fu">${esc(f.unit)}</div>` : ""}<div class="fc" id="lf${i}"></div>`;
     lg.appendChild(card); drawFig(`lf${i}`, f, "#2f7d54"); attachInfo(card, f);
   });
-  $("#dlcsv").onclick = downloadCSV;
+  $("#dlcsv").onclick = downloadCSV; $("#dlxls").onclick = exportExcel; $("#prpdf").onclick = printReport;
   window.scrollTo({ top: 0 });
 }
 
@@ -310,6 +254,49 @@ function downloadCSV() {
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
   a.download = "caem_forecast.csv"; a.click(); URL.revokeObjectURL(a.href);
+}
+/* real .xls workbook (SpreadsheetML 2003 — opens natively in Excel, fully offline, no library) */
+function exportExcel() {
+  const src = RUN || { baseline: BASE, scenario: BASE };
+  const vars = ["real_gdp_growth", "nonoil_growth", "output_gap", "inflation", "policy_rate",
+    "fiscal_balance", "primary_balance", "gross_debt", "terms_of_trade"];
+  const yrs = Object.keys(BASE.real_gdp_growth || {}).map(Number).sort((a, b) => a - b);
+  const x = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const cell = v => (typeof v === "number" && isFinite(v)) ? `<Cell><Data ss:Type="Number">${v}</Data></Cell>` : `<Cell><Data ss:Type="String">${x(v)}</Data></Cell>`;
+  const sheet = (name, rows) => `<Worksheet ss:Name="${x(name)}"><Table>${rows.map(r => `<Row>${r.map(cell).join("")}</Row>`).join("")}</Table></Worksheet>`;
+  const frows = [["variable", "scope"].concat(yrs)];
+  vars.forEach(v => ["baseline", "scenario"].forEach(sc => { const d = (src[sc] || {})[v] || {}; if (Object.keys(d).length) frows.push([v, sc].concat(yrs.map(y => d[y] != null ? d[y] : ""))); }));
+  const m = META.scorecard || {}, a = m.actual || {}, c = m.caem_forecast || {};
+  const scrows = [["Indicator", "CAEM forecast", "2025 actual"], ["Real GDP growth", c.real_gdp_growth, a.gdp_realg],
+    ["Non-oil growth", c.nonoil_growth, a.nonoil_realg], ["CPI inflation", c.inflation, a.cpi_infl], ["Fiscal balance %GDP", c.fiscal_balance, a.fiscal_bal_pct]];
+  const xml = `<?xml version="1.0"?><?mso-application progid="Excel.Sheet"?>` +
+    `<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">` +
+    sheet("Forecast", frows) + sheet("2025 scorecard", scrows) + `</Workbook>`;
+  const el = document.createElement("a");
+  el.href = URL.createObjectURL(new Blob([xml], { type: "application/vnd.ms-excel" }));
+  el.download = "caem_forecast.xls"; el.click(); URL.revokeObjectURL(el.href);
+}
+/* print-ready report → the browser's "Save as PDF" produces the document */
+function printReport() {
+  const src = RUN || { baseline: BASE, scenario: BASE }, ff = LIVE_FF || META.first_forecast;
+  const yrs = Object.keys(BASE.real_gdp_growth || {}).map(Number).sort((a, b) => a - b).filter(y => y >= 2023);
+  const vars = [["Real GDP growth", "real_gdp_growth", "%"], ["Non-oil growth", "nonoil_growth", "%"], ["Inflation (CPI)", "inflation", "%"],
+    ["Policy rate", "policy_rate", "%"], ["Fiscal balance", "fiscal_balance", "%GDP"], ["Gross public debt", "gross_debt", "%GDP"]];
+  const cols = yrs.map(y => `<th${y >= ff ? ' class="fc"' : ""}>${y}</th>`).join("");
+  const rows = vars.map(([lab, v, u]) => { const d = (src.scenario || {})[v] || (src.baseline || {})[v] || {}; return `<tr><td>${lab} (${u})</td>${yrs.map(y => `<td${y >= ff ? ' class="fc"' : ""}>${d[y] != null ? d[y].toFixed(1) : "—"}</td>`).join("")}</tr>`; }).join("");
+  const onScn = RUN && Object.values(RUN.shock || {}).some(v => typeof v === "number" && v);
+  const shockTxt = onScn ? FIELDS.filter(f => RUN.shock[f]).map(f => `${f.replace(/_/g, " ")} ${RUN.shock[f] > 0 ? "+" : ""}${RUN.shock[f]}`).join(", ") : "baseline (no shock)";
+  const date = new Date().toISOString().slice(0, 10);
+  const html = `<div class="rep-head"><div class="rep-eyebrow">REPUBLIC OF AZERBAIJAN · MINISTRY OF ECONOMY</div>
+      <h1>CAEM Macro-Fiscal Forecast</h1>
+      <div class="rep-meta">Financial Programming model · forecast ${ff}+ (2025 = last actual) · scenario: ${esc(shockTxt)} · generated ${date}</div></div>
+    <h2>Forecast summary</h2>
+    <table class="rep-t"><thead><tr><th>Indicator</th>${cols}</tr></thead><tbody>${rows}</tbody></table>
+    <h2>2025 forecast vs official outturn</h2>${scorecardHTML()}
+    <div class="rep-foot">Reproduced &amp; extended from CAEM.xlsb (IMF Financial Programming &amp; Policies). 2025 actuals: State Statistical Committee of Azerbaijan. Shaded years = forecast horizon. Prepared by Oxlon Forecasting.</div>`;
+  let rep = $("#report"); if (!rep) { rep = document.createElement("div"); rep.id = "report"; document.body.appendChild(rep); }
+  rep.innerHTML = html;
+  document.body.classList.add("printing"); window.print(); document.body.classList.remove("printing");
 }
 
 /* ---------------- a CAEM dashboard ---------------- */
@@ -335,6 +322,139 @@ function showGroup(sheet) {
   window.scrollTo({ top: 0 });
 }
 
+/* ---------------- methods & data-sources manual ---------------- */
+function showMethods() {
+  CUR = null; setActive("methods");
+  const p = META.params || {}, ph = p.phillips || [], ty = p.taylor || [];
+  const prov = (META.provenance && META.provenance.actuals) || {}, caem = (META.provenance && META.provenance.caem_default) || "CAEM.xlsb";
+  const sc = META.scorecard || {}, a = sc.actual || {}, c = sc.caem_forecast || {};
+  const provRows = Object.keys(prov).map(k => {
+    const x = prov[k];
+    return `<tr><td>${esc((META.fan_labels && META.fan_labels[k]) || k.replace(/_/g, " "))}</td><td><b>${esc(x.value)}</b> ${esc(x.unit || "")}</td>
+      <td>${esc(x.source || "")}${x.url ? ` · <a href="${esc(x.url)}" target="_blank" rel="noopener">link</a>` : ""}</td><td>${esc(x.date || "")}</td></tr>`;
+  }).join("");
+  const eqs = [
+    ["Potential output / output gap", "HP filter (λ = " + 100 + ") on the log of real non-oil GDP; gap = actual − trend (CAEM sheet B1a, endpoint-extended with the forecast).", "≈ 0.18 pp vs CAEM"],
+    ["Inflation — open-economy Phillips curve", `π<sub>t</sub> = c₁·π<sub>t−1</sub> + (1−c₁−c₂)·E[π] + c₂·(imported inflation + ΔER − import-price trend) + c₃·gap + shock.  c₁=${ph[0]}, c₂=${ph[1]}, c₃=${ph[2]} (CAEM 1b).`, "≈ 0.01 pp"],
+    ["Policy rate — smoothed Taylor rule", `i<sub>t</sub> = ρ·i<sub>t−1</sub> + (1−ρ)·(r* + π* + a·(π−π*) + b·gap) + shock.  a=${ty[0]}, b=${ty[1]}, ρ=${ty[2]} (CAEM 1c).`, "≈ 0.07 pp"],
+    ["Public debt — ratio recursion", "d<sub>t</sub> = d<sub>t−1</sub>·(1+i)/((1+g)(1+π)) − primary balance (CAEM 3b form).", "dynamics"],
+  ];
+  const els = [["Oil price → non-oil growth", "0.02 pp / 1%"], ["Oil price → fiscal balance", "0.12 pp of GDP / 1%"],
+    ["Oil price → inflation", "0.01 pp / 1%"], ["Partner growth → non-oil growth", "0.30 pp / 1pp"],
+    ["Exchange rate (depr.) → growth", "0.05 pp / 1%"], ["Exchange rate → fiscal", "0.06 pp of GDP / 1%"],
+    ["Foreign rate → domestic rate", "0.5 pass-through"], ["Oil price → terms of trade", "0.30 / 1%"]];
+  $("#view").innerHTML = `
+    <div class="ghead" style="color:#8a6d1f;border-color:#8a6d1f">📐 Methods &amp; data sources</div>
+    <div class="gsub">Every equation, its calibration, and every data source — auditable and reproducible. The structural
+      blocks reproduce CAEM (validated against the workbook); the oil/fiscal/external channels are transparent, labelled elasticities.</div>
+
+    <h3 class="lh">1 · Core equations (reproduced from CAEM, validated)</h3>
+    <div class="mtbl"><table class="dt"><thead><tr><th>Block</th><th>Specification</th><th>Validation</th></tr></thead><tbody>
+      ${eqs.map(([n, s, v]) => `<tr><td><b>${n}</b></td><td>${s}</td><td class="sc-ok">${esc(v)}</td></tr>`).join("")}
+    </tbody></table></div>
+
+    <h3 class="lh">2 · Scenario channels (transparent, Azerbaijan-calibrated elasticities)</h3>
+    <div class="note-eco">These are <b>not</b> CAEM's full accounting — they are labelled reduced-form responses so every scenario number is traceable to a stated elasticity.</div>
+    <div class="mtbl"><table class="dt"><tbody>${els.map(([n, v]) => `<tr><td>${n}</td><td class="sc-mid">${v}</td></tr>`).join("")}</tbody></table></div>
+
+    <h3 class="lh">3 · Fan charts (uncertainty)</h3>
+    <p class="mp">Central path from the engine; 50 / 80 / 90% bands widen with the horizon as σ·z·√h, where σ is the
+      variable's historical annual-change standard deviation (one extreme outlier dropped; capped 0.4–1.8). A calibrated
+      uncertainty range, not a prediction of the band edges.</p>
+
+    <h3 class="lh">4 · Data &amp; provenance</h3>
+    <p class="mp">Default source for all series: <b>${esc(caem)}</b></p>
+    <div class="mtbl"><table class="dt"><thead><tr><th>2025 official actual</th><th>Value</th><th>Source</th><th>Released</th></tr></thead>
+      <tbody>${provRows || '<tr><td colspan="4">No official actuals loaded.</td></tr>'}</tbody></table></div>
+    <p class="mp"><b>Honest scope:</b> the four official 2025 indicators above are folded into the model; the remaining series
+      still carry CAEM's 2024-vintage estimate for 2025 until each is sourced from the SSC / CBAR. The ingestion pipeline
+      (<code>apply_actuals.py</code>) refreshes everything when a new actuals CSV is supplied.</p>
+
+    <h3 class="lh">5 · 2025 forecast vs outturn (model skill)</h3>
+    ${scorecardHTML()}
+
+    ${ministryModelsHTML()}
+
+    <div class="hfoot">Reproduced &amp; extended from CAEM.xlsb in Python; the live dashboard runs the same engine in the browser (validated identical).
+      Methodology references: IMF Financial Programming &amp; Policies; Cabinet of Ministers Decree No. 75.</div>`;
+  window.scrollTo({ top: 0 });
+}
+/* the Ministry's own estimated econometric equations (Databiz / EViews model book) — real coefficients */
+function ministryModelsHTML() {
+  const EQ = (typeof CAEM !== "undefined" && CAEM.equations) ? CAEM.equations() : { equations: [] };
+  const eqs = EQ.equations || [];
+  if (!eqs.length) return "";
+  const byWb = {}; eqs.forEach(e => { (byWb[e.workbook] = byWb[e.workbook] || []).push(e); });
+  const blocks = Object.keys(byWb).map(wb => `<h4 class="eqwb">${esc(wb)} <span class="tagi">${byWb[wb].length} equations</span></h4>
+    <div class="mtbl"><table class="dt"><tbody>${byWb[wb].map(e =>
+      `<tr><td class="eqlhs">${esc(e.lhs)}</td><td class="eqrhs">= ${esc(e.rhs)}${e.desc ? `<div class="eqdesc">${esc(e.desc)}</div>` : ""}</td></tr>`).join("")}</tbody></table></div>`).join("");
+  return `<h3 class="lh">6 · Ministry econometric models (Databiz model book)</h3>
+    <div class="note-eco">The Ministry's own estimated equations — error-correction &amp; regime-switching specifications from the
+      SNA, BoP, Inflation, Social, Industry and Trade workbooks (real coefficients, ${eqs.length} equations). The Databiz design
+      specifies, e.g., trade as <span class="mono">TIC = b₀ + b₁·GDP<sub>AZ</sub> + b₂·GDP<sub>partner</sub> + b₃·realFX + b₄·oil + b₅·openness + b₆·inflation + b₇·tariffs + dummy</span>.
+      Documented here for continuity with the Ministry's methods; CAEM remains the live forecasting spine, and wiring these as
+      live satellite forecasters (EViews-equation engine) is the defined next phase.</div>
+    ${blocks}`;
+}
+
+/* ---------------- saved scenarios + compare (localStorage) ---------------- */
+const SCEN_KEY = "caem_scenarios_v1";
+const loadScens = () => { try { return JSON.parse(localStorage.getItem(SCEN_KEY) || "[]"); } catch (e) { return []; } };
+const saveScens = a => { try { localStorage.setItem(SCEN_KEY, JSON.stringify(a)); } catch (e) { } };
+function currentScenario() {
+  const shock = {}; FIELDS.forEach(f => shock[f] = +$("#s_" + f).value || 0);
+  return { shock, actuals: JSON.parse(JSON.stringify(ACTUALS || {})), start: +$("#s_start").value || 2026, end: +$("#s_end").value || 2030 };
+}
+function saveCurrentScenario() {
+  const name = (prompt("Name this scenario / forecast round:", "Scenario " + (loadScens().length + 1)) || "").trim();
+  if (!name) return;
+  const a = loadScens(); a.unshift(Object.assign({ name, ts: new Date().toISOString().slice(0, 10) }, currentScenario()));
+  saveScens(a); $("#status").textContent = "saved: " + name;
+  if ($("#navscen").classList.contains("active")) showScenarios();
+}
+function applyScenario(s) {
+  ACTUALS = JSON.parse(JSON.stringify(s.actuals || {}));
+  $("#s_start").value = s.start || 2026; $("#s_end").value = s.end || 2030;
+  FIELDS.forEach(f => $("#s_" + f).value = (s.shock && s.shock[f]) || 0);
+  doRun();
+}
+function showScenarios() {
+  CUR = null; setActive("scenarios");
+  const list = loadScens();
+  const rows = list.map((s, i) => {
+    const sh = FIELDS.filter(f => s.shock && s.shock[f]).map(f => `${f.replace(/_/g, " ")} ${s.shock[f] > 0 ? "+" : ""}${s.shock[f]}`).join(", ") || "baseline";
+    const act = Object.keys(s.actuals || {}).length ? ` · data: ${Object.keys(s.actuals).join(", ")}` : "";
+    return `<tr><td><input type="checkbox" class="scchk" data-i="${i}"></td><td><b>${esc(s.name)}</b><div class="sc-sub">${esc(s.ts)}</div></td>
+      <td>${esc(sh)}${esc(act)}</td><td><button class="lk" data-load="${i}">Load &amp; run</button> <button class="lk del" data-del="${i}">Delete</button></td></tr>`;
+  }).join("");
+  $("#view").innerHTML = `
+    <div class="ghead" style="color:#1f5a8c;border-color:#1f5a8c">📂 Saved scenarios &amp; forecast rounds</div>
+    <div class="gsub">Save the current console state (shocks + entered data) as a named scenario or forecast round, reload it later,
+      or tick 2–3 to compare side by side. Stored in this browser (clears with browser data).</div>
+    <div class="mtbl"><table class="dt"><thead><tr><th></th><th>Name</th><th>Shock / data</th><th></th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="4">No saved scenarios yet — set shocks in the console and press 💾 Save.</td></tr>'}</tbody></table></div>
+    ${list.length ? `<div class="dm-act"><button id="cmpbtn" class="btn">Compare selected</button> <button id="clrscen" class="btn ghost">Delete all</button></div>` : ""}
+    <div id="cmpout"></div>`;
+  document.querySelectorAll("[data-load]").forEach(b => b.onclick = () => applyScenario(loadScens()[+b.dataset.load]));
+  document.querySelectorAll("[data-del]").forEach(b => b.onclick = () => { const a = loadScens(); a.splice(+b.dataset.del, 1); saveScens(a); showScenarios(); });
+  if ($("#clrscen")) $("#clrscen").onclick = () => { if (confirm("Delete all saved scenarios?")) { saveScens([]); showScenarios(); } };
+  if ($("#cmpbtn")) $("#cmpbtn").onclick = compareScenarios;
+  window.scrollTo({ top: 0 });
+}
+function compareScenarios() {
+  const list = loadScens();
+  const sel = [...document.querySelectorAll(".scchk:checked")].map(c => list[+c.dataset.i]).filter(Boolean);
+  if (!sel.length) { $("#cmpout").innerHTML = '<p class="mp">Tick at least one saved scenario to compare.</p>'; return; }
+  const base = CAEM.run({});
+  const yrs = Object.keys(base.baseline.real_gdp_growth || {}).map(Number);
+  const yr = String(Math.max(...(yrs.length ? yrs : [2030])));
+  const cols = [{ name: "Baseline", r: base }].concat(sel.map(s => ({ name: s.name, r: CAEM.run(Object.assign({}, s.shock, { actuals: s.actuals, start: s.start, end: s.end })) })));
+  const head = `<tr><th>Indicator (${yr})</th>` + cols.map(c => `<th>${esc(c.name)}</th>`).join("") + `</tr>`;
+  const body = IMPACT_VARS.map(([lab, v, u]) =>
+    `<tr><td>${lab}</td>` + cols.map(c => { const d = (c.r.scenario && c.r.scenario[v]) || {}; const val = d[yr]; return `<td>${val == null ? "—" : val.toFixed(1) + " " + u}</td>`; }).join("") + `</tr>`).join("");
+  $("#cmpout").innerHTML = `<h3 class="lh">Comparison at ${yr}</h3><div class="mtbl"><table class="dt"><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
+}
+
 /* ---------------- forecast-region shading shared by time-series charts ---------------- */
 function fcShapes(xs, vintage) {
   const ff = vintage || META.first_forecast, mn = Math.min(...xs), mx = Math.max(...xs), sh = [];
@@ -349,6 +469,7 @@ const hexA = (h, a) => { const n = parseInt(h.slice(1), 16); return `rgba(${n >>
 const baseLayout = (xyear, shapes, h, b, dtick) => ({
   height: h, margin: { l: 46, r: 12, t: 8, b: b }, font: { family: "Inter,sans-serif", size: 10, color: "#4a4a4a" },
   plot_bgcolor: "#fff", paper_bgcolor: "#fff", barmode: "relative", bargap: 0.16, showlegend: false, shapes,
+  hovermode: "x unified", hoverlabel: { font: { size: 10.5, family: "Inter,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
   xaxis: xyear ? { tickformat: "d", showgrid: false, dtick: dtick || 2, tick0: 2026, ticklen: 3 } : { showgrid: false, ticklen: 3 },
   yaxis: { gridcolor: "#eef1f4", zeroline: true, zerolinecolor: "#d2d7dd", automargin: true }
 });
@@ -399,7 +520,7 @@ function drawFan(div, fan, big) {
     traces.push({ x, y: fan[hi], mode: "lines", line: { width: 0, color: "rgba(0,0,0,0)" }, hoverinfo: "skip", showlegend: false });
     traces.push({ x, y: fan[lo], mode: "lines", line: { width: 0, color: "rgba(0,0,0,0)" }, fill: "tonexty", fillcolor: col, hoverinfo: "skip", showlegend: false });
   });
-  traces.push({ x, y: fan.central, mode: "lines", line: { color: FAN_CENTRAL, width: 2.6 }, hovertemplate: "%{x}: %{y:.2f}<extra>central</extra>", showlegend: false });
+  traces.push({ x, y: fan.central, mode: "lines+markers", line: { color: FAN_CENTRAL, width: 2.6 }, marker: { size: 3.6, color: FAN_CENTRAL }, hovertemplate: "<b>central</b>: %{y:.2f}<extra></extra>", showlegend: false });
   Plotly.react(div, traces, baseLayout(true, fcShapes(x, LIVE_FF || META.first_forecast), big ? 320 : 214, 24, tickStep(x)), { responsive: true, displayModeBar: false });
   const card = document.getElementById(div).closest(".figcard");
   htmlLegend(card, [{ name: "Central forecast", color: FAN_CENTRAL, w: 2.6 }, { name: "50%", color: "rgba(173,42,53,0.55)", bar: true }, { name: "80%", color: "rgba(173,42,53,0.34)", bar: true }, { name: "90%", color: "rgba(173,42,53,0.2)", bar: true }]);
@@ -432,13 +553,18 @@ function scorecardHTML() {
   if (a.gdp_realg == null) return "";
   const rows = [["Real GDP growth", c.real_gdp_growth, a.gdp_realg], ["Non-oil GDP growth", c.nonoil_growth, a.nonoil_realg],
     ["CPI inflation", c.inflation, a.cpi_infl], ["Fiscal balance (% GDP)", c.fiscal_balance, a.fiscal_bal_pct]];
+  const errs = [];
   const tr = rows.map(([n, f, ac]) => {
     const e = ac - f, cls = Math.abs(e) < 0.6 ? "ok" : Math.abs(e) < 1.5 ? "mid" : "bad";
+    errs.push(Math.abs(e));
     return `<tr><td>${n}</td><td>${f.toFixed(1)}</td><td><b>${ac.toFixed(1)}</b></td><td class="sc-${cls}">${e > 0 ? "+" : ""}${e.toFixed(1)} pp</td></tr>`;
   }).join("");
+  const mae = errs.reduce((x, y) => x + y, 0) / (errs.length || 1);
   return `<div class="scorecard"><div class="sc-h">2025 scorecard — CAEM forecast vs official outturn <span class="tagi">State Statistical Committee, released Jan 2026</span></div>
-    <table class="sc-t"><thead><tr><th>Indicator</th><th>CAEM forecast</th><th>2025 actual</th><th>Error</th></tr></thead><tbody>${tr}</tbody></table>
-    <div class="sc-note">CAEM (2024 vintage) <b>over-predicted growth</b> (GDP 3.0% vs 1.4%; non-oil 4.6% vs 2.7%) and a <b>deficit that turned into a surplus</b> (−1.1% vs +0.4% of GDP); <b>inflation was close</b> (5.1% vs 5.6%). The live model is re-anchored to these 2025 actuals and forecasts 2026+.</div></div>`;
+    <table class="sc-t"><thead><tr><th>Indicator</th><th>CAEM forecast</th><th>2025 actual</th><th>Error</th></tr></thead><tbody>${tr}
+      <tr class="sc-mae"><td><b>Mean absolute error</b></td><td></td><td></td><td><b>${mae.toFixed(1)} pp</b></td></tr></tbody></table>
+    <div class="sc-note">CAEM (2024 vintage) <b>over-predicted growth</b> (GDP 3.0% vs 1.4%; non-oil 4.6% vs 2.7%) and a <b>deficit that turned into a surplus</b> (−1.1% vs +0.4% of GDP); <b>inflation was close</b> (5.1% vs 5.6%). The live model is re-anchored to these 2025 actuals and forecasts 2026+.
+      <br><span class="tagi">Track record: one vintage available (the 2024-vintage call vs the 2025 outturn). Each future forecast round — saved via 💾 and the apply_actuals pipeline — extends this table into a rolling accuracy record.</span></div></div>`;
 }
 
 /* ---------------- scenario impact summary (key macro fundamentals, baseline → scenario) ---------------- */
@@ -461,10 +587,16 @@ function impactHTML() {
   return `<div class="impact"><div class="imp-h">Scenario impact in ${yr} <span class="tagi">shock: ${esc(shock)}</span></div><div class="imp-grid">${cards}</div></div>`;
 }
 
-/* ---------------- per-figure info drawer ---------------- */
+/* ---------------- per-figure info + PNG export ---------------- */
 function attachInfo(card, f) {
-  card.insertAdjacentHTML("beforeend", `<button class="finfo" title="About this figure">ⓘ info</button>`);
+  card.insertAdjacentHTML("beforeend",
+    `<button class="figpng" title="Download high-resolution PNG">⤓ PNG</button><button class="finfo" title="About this figure">ⓘ info</button>`);
   card.querySelector(".finfo").onclick = e => { e.stopPropagation(); openInfo(figInfo(f)); };
+  card.querySelector(".figpng").onclick = e => {
+    e.stopPropagation();
+    const gd = card.querySelector(".fc");
+    if (gd && window.Plotly) Plotly.downloadImage(gd, { format: "png", scale: 3, filename: "caem_" + (f.title || "figure").replace(/[^\w]+/g, "_").slice(0, 44) });
+  };
 }
 function figInfo(f) {
   const P = META.params || {}, ph = P.phillips || [], ty = P.taylor || [], v = f.engine_var, sheet = f.sheet || "";
@@ -488,11 +620,15 @@ function figInfo(f) {
   const vintage = (v || f.fan)
     ? `2025 is the official SSC outturn; the model forecasts <b>2026+</b> (shaded).`
     : `Shaded region = forecast <b>2026+</b>; 2025 is the last actual year. This figure's 2025 value is CAEM's own estimate — official 2025 outturns are in the “2025 scorecard” (Live forecast) and drive the live engine.`;
+  const prov = (META.provenance && META.provenance.actuals) || {}, pv = prov[v];
+  const src = pv
+    ? `<b>2025 actual:</b> ${esc(pv.value)}${pv.unit ? " " + esc(pv.unit) : ""} — ${esc(pv.source)}${pv.date ? ` (released ${esc(pv.date)})` : ""}${pv.url ? ` · <a href="${esc(pv.url)}" target="_blank" rel="noopener">source</a>` : ""}. Other years: CAEM model.`
+    : esc((META.provenance && META.provenance.caem_default) || "CAEM.xlsb workbook.");
   const html = `${f.unit ? `<p class="id-unit">${esc(f.unit)}</p>` : ""}
     <h4>What it shows</h4><p>${esc(f.title)}${series.length ? ` — series: ${series.map(esc).join(", ")}.` : "."}</p>
     <h4>Model &amp; data</h4><p>${model}</p>
     <h4>How to read it</h4><p>${vintage}</p>${live}
-    <p class="id-src">Source: CAEM.xlsb${v || f.fan ? " + 2025 SSC actuals" : ""} · sheet “${esc(sheet)}”.</p>`;
+    <h4>Source &amp; provenance</h4><p class="id-src">${src} · CAEM sheet “${esc(sheet)}”.</p>`;
   return { title: f.title, html };
 }
 function openInfo(info) {
@@ -506,7 +642,7 @@ function drawFig(div, f, primary, big) {
   const card = document.getElementById(div).closest(".figcard");
   const multi = f.series.length > 1;
   const leg = [];
-  const hov = nm => "%{x}: %{y:.2f}<extra>" + esc(nm.slice(0, 22)) + "</extra>";
+  const hov = nm => "<b>" + esc(nm.slice(0, 24)) + "</b>: %{y:.2f}<extra></extra>";   // x in the unified header
   const allx = f.series.flatMap(s => s.x);
 
   // FAN charts: CAEM "Fancharts" sheet → engine fans; "Risk-*" sheets → fan generated from the series
@@ -558,14 +694,14 @@ function drawFig(div, f, primary, big) {
       const c = k === 0 ? primary : PAL[(k - 1) % PAL.length];
       const dash = DASH[k % DASH.length], nm = clean(s.name) || (k === 0 ? clean(f.title) : "Series " + (k + 1));
       if (multi) leg.push({ name: nm.slice(0, 28), color: c, dash: dash === "solid" ? "" : dash });
-      return { x: s.x, y: s.y, type: "scatter", mode: "lines", line: { color: c, width: k === 0 ? 2.4 : 1.8, dash }, hovertemplate: hov(nm), showlegend: false };
+      return { x: s.x, y: s.y, type: "scatter", mode: "lines+markers", line: { color: c, width: k === 0 ? 2.4 : 1.8, dash }, marker: { size: 3.6, color: c }, hovertemplate: hov(nm), showlegend: false };
     });
     if (RUN && f.engine_var && RUN.scenario[f.engine_var]) {
       const sv = RUN.scenario[f.engine_var], base = f.series[0];
       const xs = base.x.length ? base.x : Object.keys(sv).map(Number);
       const ys = xs.map((yr, i) => (sv[yr] != null ? sv[yr] : (base.y ? base.y[i] : null)));
       if (!multi) leg.push({ name: "Baseline", color: primary });
-      traces.push({ x: xs, y: ys, type: "scatter", mode: "lines", line: { color: "#c0392b", width: 2.4, dash: "dash" }, hovertemplate: "%{x}: %{y:.2f}<extra>scenario</extra>", showlegend: false });
+      traces.push({ x: xs, y: ys, type: "scatter", mode: "lines", line: { color: "#c0392b", width: 2.4, dash: "dash" }, hovertemplate: "<b>scenario</b>: %{y:.2f}<extra></extra>", showlegend: false });
       leg.push({ name: "Scenario", color: "#c0392b", dash: "dash" });
     }
     // shock-INPUT figure (e.g. Oil price): shocking the input transforms its own path exactly
@@ -575,7 +711,7 @@ function drawFig(div, f, primary, big) {
       const isPct = /change/i.test(f.unit || "") || /change/i.test(f.title);
       const ys = shockSeries(base.y, base.x, sf, v, ff, isPct);
       if (!multi) leg.push({ name: "Baseline", color: primary });
-      traces.push({ x: base.x, y: ys, type: "scatter", mode: "lines", line: { color: "#c0392b", width: 2.4, dash: "dash" }, hovertemplate: "%{x}: %{y:.2f}<extra>scenario</extra>", showlegend: false });
+      traces.push({ x: base.x, y: ys, type: "scatter", mode: "lines", line: { color: "#c0392b", width: 2.4, dash: "dash" }, hovertemplate: "<b>scenario</b>: %{y:.2f}<extra></extra>", showlegend: false });
       leg.push({ name: "Scenario", color: "#c0392b", dash: "dash" });
     }
   }
@@ -591,26 +727,17 @@ function drawFig(div, f, primary, big) {
 }
 
 function refresh() { if (CUR) showGroup(CUR); else if ($("#navlive").classList.contains("active")) showLive(); else showHome(); }
-function dataBanner() {
-  const el = $("#databanner"), yrs = Object.keys(ACTUALS).sort();
-  if (!yrs.length) { el.hidden = true; el.innerHTML = ""; return; }
-  el.hidden = false;
-  el.innerHTML = `📌 <b>Data updated</b> — ${yrs.join(", ")} entered as actual; forecasting <b>${LIVE_FF || (Math.max(...yrs.map(Number)) + 1)}+</b>. ` +
-    yrs.map(y => Object.entries(ACTUALS[y]).filter(([, v]) => v != null).map(([k, v]) => `${y} ${k.replace(/_/g, " ")} ${v}`).join(", ")).join(" · ") +
-    ` <a id="bannerundo">clear</a>`;
-  $("#bannerundo").onclick = () => { ACTUALS = {}; doRun(); };
-}
 async function doRun() {
-  const body = { start: +$("#s_start").value || 2026, end: +$("#s_end").value || 2030, actuals: ACTUALS };
+  const body = { start: +$("#s_start").value || 2026, end: +$("#s_end").value || 2030 };
   FIELDS.forEach(f => body[f] = +$("#s_" + f).value || 0);
   $("#status").textContent = "running…";
-  RUN = staticRun(body);
+  RUN = CAEM.run(body);
   LIVE_FF = RUN.first_forecast || META.first_forecast;
   const g = (RUN.scenario.real_gdp_growth || {})["2028"], b = (RUN.baseline.real_gdp_growth || {})["2028"];
   const on = FIELDS.filter(f => body[f]).map(f => f.replace(/_/g, " ") + " " + (body[f] > 0 ? "+" : "") + body[f]);
-  $("#status").textContent = (on.length ? "ran · " + on.join(", ") : (Object.keys(ACTUALS).length ? "re-forecast on entered data" : "ran · baseline")) +
+  $("#status").textContent = (on.length ? "ran · " + on.join(", ") : "ran · baseline") +
     (g != null && b != null ? `  →  2028 GDP ${b.toFixed(1)}→${g.toFixed(1)}%` : "");
-  dataBanner(); refresh();
+  refresh();
 }
 const PRESETS = [
   { name: "Oil −30%", s: { oil_price: -30 } },
@@ -632,25 +759,8 @@ function renderPresets() {
 function wireRun() {
   $("#run").onclick = doRun;
   $("#reset").onclick = () => { FIELDS.forEach(f => $("#s_" + f).value = 0); RUN = null; $("#status").textContent = ""; refresh(); };
+  $("#savescen").onclick = saveCurrentScenario;
   renderPresets();
-  // ---- editable data modal ----
-  const openData = () => { renderEdits(); $("#datamodal").classList.add("open"); $("#datascrim").classList.add("show"); };
-  const closeData = () => { $("#datamodal").classList.remove("open"); $("#datascrim").classList.remove("show"); };
-  $("#editdata").onclick = openData; $("#dataclose").onclick = closeData; $("#datascrim").onclick = closeData;
-  $("#dataapply").onclick = () => {
-    const y = String(+$("#d_year").value || 2026), rec = {};
-    [["gdp_growth", "d_gdp_growth"], ["nonoil_growth", "d_nonoil_growth"], ["inflation", "d_inflation"], ["fiscal", "d_fiscal"]]
-      .forEach(([k, id]) => { const v = $("#" + id).value; if (v !== "") rec[k] = +v; });
-    if (Object.keys(rec).length) ACTUALS[y] = rec;
-    ["d_gdp_growth", "d_nonoil_growth", "d_inflation", "d_fiscal"].forEach(id => $("#" + id).value = "");
-    closeData(); doRun();
-  };
-  $("#dataclear").onclick = () => { ACTUALS = {}; renderEdits(); closeData(); doRun(); };
-}
-function renderEdits() {
-  const yrs = Object.keys(ACTUALS).sort(), el = $("#dm_list");
-  el.innerHTML = yrs.length ? "<b>Entered:</b> " + yrs.map(y =>
-    `${y} {${Object.entries(ACTUALS[y]).map(([k, v]) => k.replace(/_/g, " ") + " " + v).join(", ")}}`).join(" · ") : "<i>No edits yet.</i>";
 }
 
-init().catch(e => { $("#view").innerHTML = `<p style="color:#b13f2e">Load error: ${e}. Check that the bundled CAEM data files are available.</p>`; });
+init().catch(e => { $("#view").innerHTML = `<p style="color:#b13f2e">Load error: ${e}. Is the API running?</p>`; });

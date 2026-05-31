@@ -1,0 +1,657 @@
+{
+"n": 92,
+"by_workbook": {
+"INDUSTRY.xlsx": 2,
+"MOE BOP.xlsx": 16,
+"MOE INF.xlsx": 4,
+"MOE SNA.xlsx": 38,
+"MOE SOCIAL.xlsx": 30,
+"MOE T&C.xlsx": 2
+},
+"equations": [
+{
+"workbook": "INDUSTRY.xlsx",
+"name": "eq_pi_ind3_1, DLOG(PI_IND3_1)",
+"desc": "Qida məhsullarının istehsalı",
+"lhs": "DLOG(PI_IND3_1)",
+"rhs": "@BEFORE(\"2010\") * 0.100885 + @DURING(\"2010 2012\") * 0.216665 + @AFTER(\"2013\") * 0.0337208 + -0.448452 * DLOG(PI_IND3_1(-1)) + 0.349343 * DLOG(FPI_WEO) + -0.0222025 * D(T=2011)"
+},
+{
+"workbook": "INDUSTRY.xlsx",
+"name": "eq_pi_ind3_2, DLOG(PI_IND3_2)",
+"desc": "İçki istehsalı",
+"lhs": "DLOG(PI_IND3_2)",
+"rhs": "@BEFORE(\"2011\") * 0.0305638 + @DURING(\"2011 2013\") * -0.0567056 + @DURING(\"2014 2018\") * 0.045881 + 0.122915 * @AFTER(\"2020\") + -0.395704 * DLOG(PI_IND3_2(-1)) + 1.20603 * DLOG(CPI(-1)) + -0.363041 * DLOG(NEER) + -0.0692089 * D(T=2012) + 0.178844 * (T=2022)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(MS_TP)",
+"rhs": "0.813854 * DLOG(XS_TP) + -0.756245 * ECM_MS_TP1(-1) + -0.623574 * (T=1997) + 0.496598 * (T>2020)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "",
+"desc": "",
+"lhs": "ECM_MS_TP",
+"rhs": "LOG(MS_TP) + -0.929318 * LOG(XS_TP)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(MS_TRAVB)",
+"rhs": "@BEFORE(\"2009\") * -0.055936 + @DURING(\"2009 2011\") * 0.281107 + @DURING(\"2012 2015\") * -0.860394 + @AFTER(\"2016\") * 0.185415 + D(T=2019) * 0.499952 + 0.397695 * dLOG(XS_TRAVB) + 0.3821 * dLOG(OPIWTI)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(MS_TRAVP)",
+"rhs": "@BEFORE(\"2003\") * -0.191483 + @DURING(\"2003+2009\") * -0.0589229 + @DURING(\"2010 2012\") * 0.352428 + @DURING(\"2013 2018\") * 0.131261 + @AFTER(\"2019\") * -0.214456 + -0.396427 * DLOG(MS_TRAVP(-1)) + 1.00588 * DLOG(HI/ER) + -0.115899 * D(T=1999) + -0.8478 * D(T=2020)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(XS_IFORM)",
+"rhs": "0.573485 * DLOG(VA_INFORM/ER) + -2.57198 * (T=2006) + 2.22298 * (T>2007)*(T<2009) + -0.439054 * (T=2019) + 0.0455186"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "",
+"desc": "",
+"lhs": "OI_L_OS",
+"rhs": "-0.438277 * OI_L_OS(-1) + -0.722655 * OI_L_OS(-2) + -0.0944951 * MGNO + 0.556629 * MGO + 949.597 + -713.861 * (T=2003)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_dmgo",
+"desc": "",
+"lhs": "DLOG(MGO)",
+"rhs": "0.53361 * DLOG(IOF/ER) + 0.183953 * DLOG(IOD/ER) + -0.866051 * ECM_MGO12(-1) + -0.515341 * (T>2011)*(T<2015) + -0.319265 * (T<2003) + -0.280692 * (T>2006)*(T<2011) + 0.619553 + -0.492322 * (T>2016)*(T<2018) + -0.4747 * (T<2019)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_mgo",
+"desc": "",
+"lhs": "ECM_MGO",
+"rhs": "LOG(MGO) + -1.04114 * LOG(IOF/ER) + 1.1095"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_drxgno",
+"desc": "",
+"lhs": "DLOG(RXGNO)",
+"rhs": "-0.480349 * DLOG(RXGNO(-1)) + -0.216648 * DLOG(REER)*(T>2002) + 4.57968 * DLOG(RGDPMTP) + -0.891357 * ECM_RXGNO(-1) + -0.473635 * DLOG(RXGNO(-2))*(T<2008) + -0.667129 * (T=2010) + 0.0365484 + -0.0755021 * (T>1999)*(T<2003) + -0.153634 * (T>2006)*(T<2012) + 0.0919709 * (T>2012)*(T<2015) + -0.108532 * (T=2011) + -0.0792302 * (T=2017) + 0.270768 * (T=2020)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_rxgno",
+"desc": "",
+"lhs": "ecm_rxgno",
+"rhs": "log(rxgno) + 0.604033 * log(reer) + -3.00154 * log(rgdpmtp) + -7.25591 + -0.450747 * (T<1998) + 0.527929 * T=2010"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_dmgno_fin",
+"desc": "",
+"lhs": "DLOG(MGNO)",
+"rhs": "1.21718 * DLOG(HC/ER) + -0.337554 * DLOG(HC(-1)/ER(-1)) + -0.736728 * DLOG(NEER) + 0.248328 * DLOG(NEER(-1)) + 0.752572 * DLOG((INO/ER(-1))*(T=2009) + 0.123522 * DLOG(OPIWTI(-1)) + -0.404297 * ECM_MGNO_NEW(-1) + 0.141326 * T=1997 + -0.238088 * T=2014 + 0.193148 * T=2011 + 0.11575 * (T=1999)+(T=2000) + -0.0339776 * T<2005 + 0.134809 * (T=2018)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_mgno",
+"desc": "",
+"lhs": "ECM_MGNO",
+"rhs": "LOG(MGNO) + -0.642542 * LOG(HC/ER) + -0.185264 * LOG((I-IO)/ER) + 0.602591 * LOG(NEER) + -0.679165"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_msc_fin",
+"desc": "",
+"lhs": "MSC",
+"rhs": "0.092598 * MSC(-1) + 0.585968 * IFOC + 1.65269 * OPWTI + -605.634 * @BEFORE(\"2010\") + -2279.1 * @DURING(\"2010 2013\") + -991.192 * @DURING(\"2014 2016\") + -558.63 * @AFTER(\"2017\") + -565.051 * D(T=2010)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(RACBAR)",
+"rhs": "0.127873 + 0.492575 * DLOG(OPIWTI) + -1.56085 * DLOG(NER) + -0.519956 * D(T=1996) + -0.393222 * D(T=2015) + -0.304499 * D(T=2005) + 0.16694 * (T<2001)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_drmngo",
+"desc": "",
+"lhs": "DLOG(MGNO/CPICMTP)",
+"rhs": "0.586638 * @BEFORE(\"2002\") + 0.364755 * @DURING(\"2002 2012\") + 0.0605766 * @AFTER(\"2013\") + -0.441956 * dLOG(MGNO(-1)*ER(-1)/CPI(-1)) + 2.02862 * dLOG(HC/CPI) + 0.292991 * dLOG(RXGNO) + -0.695498 * dLOG(NEER) + 0.190574 * dLOG(OPWTI(-1)/@SUM(OPWTI*(T=2015),\"1995_2022\")) + -3.74526 * dLOG(CPIMTP) + -0.507225 * T<2017 + 0.218265 * (T=2005)"
+},
+{
+"workbook": "MOE BOP.xlsx",
+"name": "eq_drmngo_new",
+"desc": "",
+"lhs": "DLOG(MGNO/(CPIMTP/NERMTP))",
+"rhs": "-0.257008 * DLOG(MGNO(-1)/(CPIMTP(-1)/NERMTP(-1))) + 0.668629 * DLOG(REALFINALC) + 1.30342 * DLOG(REER) + 0.122147 * DLOG(OPIWTI) + -0.140469 * DLOG(CPIMTP/NERMTP)*(T>2010) + -0.343973 * (T=2014) + 0.24657 * (T=2011) + -0.177742 * (T>2007)*(T<2011) + 0.311419 * (T=2016) + -0.163694 * (T=2021) + 0.0173411"
+},
+{
+"workbook": "MOE INF.xlsx",
+"name": "eq_m2_m1",
+"desc": "M2-M1",
+"lhs": "DLOG(M2_M1)",
+"rhs": "0.150097 * DLOG(M2_M1(-1))*(T>2007) + -2.53095 * DLOG(CPI(-1)) + 0.792823 * DLOG(MB) + 0.463621 * DLOG(OPIWTI) + 0.0108526 * D(RIRD) + 0.364804 * DLOG(REER) + 0.149226 + 0.326348 * (T=2023) + 0.756442 * (T>2005)*(T<2008) + 0.180681 * DLOG(MW)*(T<2014) + -0.277146 * (T=2021)"
+},
+{
+"workbook": "MOE INF.xlsx",
+"name": "eq_m3_m2usd_fin",
+"desc": "M3-M2, USD",
+"lhs": "DLOG(M3_M2USD)",
+"rhs": "-0.742205 * DLOG(M3_M2USD(-1)) + 0.678711 * DLOG(W(-1)/ER(-1)) + 0.160195 * D(NIRDFC) + 1.50784 * DLOG(NER) + 0.149493 + 0.256503 * (T<2006) + -0.307944 * T>2017 + 0.373613 * (T=2022) + 0.203539 * (T=2019)"
+},
+{
+"workbook": "MOE INF.xlsx",
+"name": "eq_dcpi",
+"desc": "İQİ, indeks, 2015=1",
+"lhs": "DLOG(CPI)",
+"rhs": "0.187177 * DLOG(CPI(-1)) + -0.257578 * DLOG(NEER) + -0.0706768 * DLOG(NEER(-1)) + 0.0890854 * DLOG(FPI_WEO)*(T>2007) + 0.16719 * DLOG(M1) + 0.106808 * (T=2015) + -0.0395697 * (T=2012) + 0.117693 * (T=2022) + 0.156107 * DLOG(OPIWTI) + -0.000874246 * (LOG(CPI(-1))-LCPI_HP(-1))*(T>2013) + 0.00658309 + -0.0504965 * (T=2003) + 0.0680622 * (T=2023)"
+},
+{
+"workbook": "MOE INF.xlsx",
+"name": "eq_m1",
+"desc": "M1",
+"lhs": "M1/MB",
+"rhs": "@BEFORE(\"2001\") * 1.13431 + @DURING(\"2001 2004\") * 0.991836 + @DURING(\"2005 2014\") * 1.07475 + @DURING(\"2015 2018\") * 1.00019 + @AFTER(\"2019\") * 1.25509 + 0.169301 * LOG(REER(-1)) + 0.183338 * (T=1996) + 0.0484362 * DLOG(MW) + 0.0550449 * (T=1997) + 0.0913046 * D(T=2018)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_driea",
+"desc": "sahibkarlıq fəaliyyətindən gəlirlər",
+"lhs": "DLOG(RIEA)",
+"rhs": "0.55926 * DLOG(OPIWTI)*(T>2017) + -0.997325 * DLOG(RIEA(-2))*(T>2011) + 0.309284 * DLOG(M3/CPI)*(T>2005) + 0.871782 * DLOG(RHC) + 0.485866 * ECM_RIEANEW2020*(T=2005) + 0.727957 * DLOG(VA_DIGER/CPI)*(T>2011) + -0.1872 * (T=2019) + -0.230973 * (T=2018) + -0.506871 * (T>2020) + 0.56965 * (T=2023) + -0.0745129 * ((T=2013)-(T=2016))"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_riea_tmp",
+"desc": "",
+"lhs": "ECM_RIEA",
+"rhs": "LOG(RIEA) + -0.939101 * LOG(RHC) + -0.341303 * LOG(REER) + -0.263659 * LOG(OPIWTI)*(T>2009) + 0.386618 * (T=2022) + -0.373929 * (T<2018)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drhc_none",
+"desc": "Ev təsərrüfatlarında",
+"lhs": "DLOG(RHC)",
+"rhs": "-0.555857 * DLOG(RHC(-1))*(T>2002) + 0.335933 * DLOG(W(-1)*L(-1)/CPI(-1))*(T>1998) + -0.284283 * DLOG(CPI)*(T>2008) + -0.747393 * DLOG(CPI(-1))*(T<2009) + 0.0208318 * D(PBCRHC) + 0.214166 * DLOG(RIEA(-1)) + -1.18771 * ECM_RHC(-1) + 0.347942 * DLOG(OPIWTI)*(T<2011) + 0.145439 * (T>2005)*(T<2010) + 0.0517704 * (T>2013) + 0.0471425 * (T<2017) + 0.0776911 * (T=2010) + 0.08103 * (T=2022)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_rhc_tmp",
+"desc": "",
+"lhs": "ECM_RHC",
+"rhs": "LOG(RHC) + -0.359344 * LOG(RIEA) + -0.115076 * LOG(RW) + -3.61901 * LOG(L) + -0.00876846 * PBCRHC + 24.601 + -0.0862331 * (T>2019)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_pbcrhc",
+"desc": "",
+"lhs": "PBCRHC",
+"rhs": "0.924293 * PBCRHC(-1) + -3.09473 * PBCRHC(-2) + 1.77844 * PBCRHC(-3) + -2.95932 * PBCRHC(-4) + 0.844149 * PBCRHC(-5) + -0.870939 * PBCRHC(-6)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drva_const",
+"desc": "Tikinti",
+"lhs": "DLOG(RVA_CONST)",
+"rhs": "0.349657 * DLOG(RID) + 0.329391 * DLOG(RIF) + -0.425966 * DLOG(NER) + -1.05529 * ECM_RVA_CONST(-1) + 0.115756 * DLOG(OPIWTI)*(T>2009) + 0.0658824 + -0.0692503 * T>2016 + -0.114058 * (T>2004)*(T<2008) + -0.0844754 * D(T=2001) + 0.1111 * (T=2023)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_rva_const_tmp",
+"desc": "",
+"lhs": "ECM_RVA_CONST",
+"rhs": "LOG(RVA_CONST) + -0.356654 * LOG(RID) + -0.52436 * LOG(RIF) + -0.422381 * LOG(REER) + -0.123348 * LOG(OPIWTI)*(T>2009) + -0.94877 + 0.191912 * (t>2004)*(t<2008)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_dridns",
+"desc": "domestic non-state investment, const. prices of 2015",
+"lhs": "DLOG(RIDNS)",
+"rhs": "-0.361312 * DLOG(RIDNS(-2)) + 0.737181 * DLOG(M3/CPI) + -0.799175 * DLOG(NER) + -0.0102647 * D(RIRL) + -0.818002 * ECM_RIDNS2020(-1) + 0.129664 + 0.500841 * T=2004 + -0.663491 * T=2007 + -0.187208 * (T=2020) + -0.342304 * (T=2022)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_ridns",
+"desc": "",
+"lhs": "ecm_ridns",
+"rhs": "LOG(RIDNS) + -0.923465 * LOG(M3/CPI) + -0.432114 * (t>2003)*(t<2007) + 0.862932"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq01",
+"desc": "Tikinti son",
+"lhs": "eq01",
+"rhs": "@BEFORE(\"2005\") * 0.196743 + @DURING(\"2005 2007\") * -0.143576 + @DURING(\"2008 2014\") * 0.075657 + @AFTER(\"2015\") * -0.00169916 + 0.545134 * DLOG(RID) + 0.272971 * DLOG(RIF)*(T>2014)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drva_trade",
+"desc": "Ticarət; nəqliyyat vasitələrinin təmiri",
+"lhs": "DLOG(RVA_TRADE)",
+"rhs": "0.428823 * DLOG(RVA_TRADE(-1)) + 0.230585 * DLOG(RHC) + -0.160685 * DLOG(NER)*(T>2015) + -0.243783 * ECM_RVA_TRADEFIN(-1) + 0.0530792 * DLOG(RGDPO) + 0.0378 + -0.0491587 * T=2009 + -0.0332945 * T>2017 + 0.055215 * (T=2021)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_rva_trade",
+"desc": "",
+"lhs": "ECM_RVA_TRADEFIN",
+"rhs": "LOG(RVA_TRADE) + -1.14343 * LOG(HC/CPI) + -0.0588285 * LOG(OPWTI/@SUM(OPWTI*(T=2015))) + -0.00620548 * DLOG(RGDPO) + 3.22938 + -0.123043 * (t>2004)*(t<2006)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drva_accom",
+"desc": "Turistlərin yerləşdirilməsi və ictimai iaşə",
+"lhs": "DLOG(RVA_ACCOM)",
+"rhs": "0.191708 * DLOG(RVA_ACCOM(-1)) + 0.885931 * DLOG(RVA_TRADE) + -0.710089 * DLOG(RVA_TRADE(-1)) + 0.567583 * DLOG(CPI) + -0.436174 * ECM_RVA_ACCOM2020(-1) + -0.0878724 * (T=2015) + -0.877774 * (T=2020) + -0.0734452 * ((T=2002)-(T=2004)) + 0.109417 + -0.0755244 * (T=2023)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_rva_accom",
+"desc": "",
+"lhs": "ecm_rva_accom",
+"rhs": "LOG(RVA_ACCOM) + -2.03881 * LOG(RVA_TRADE) + 10.198 + 0.128935 * (T>2014)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drva_rest",
+"desc": "Daşınmaz əmlakla əlaqədar əməliyyatlar",
+"lhs": "DLOG(RVA_REST)",
+"rhs": "-0.206508 * DLOG(RVA_REST(-1)) + 0.498978 * DLOG(RHC) + -0.078156 * DLOG(NER(-1)) + 0.013415 + -0.079114 * (T=2002) + 0.069946 * (T=2011) + 0.056885 * (T>=2012)*(T=<2014)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_defid",
+"desc": "deflator, domestic investment",
+"lhs": "DLOG(DEFID)",
+"rhs": "-0.0662722 * @BEFORE(\"2003\") + -0.00255233 * @DURING(\"2003 2009\") + 0.0344791 * @AFTER(\"2010\") + -0.374221 * DLOG(DEFID(-1)) + -0.101836 * DLOG(NEER(-1))"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_ci",
+"desc": "Maddi dövriyyə vəsaitlərinin dəyişməsi",
+"lhs": "CI",
+"rhs": "0.45436 * CI(-1) + -0.633192 * CI(-4) + 0.402786 * D(VA_MANU) + -0.222101 * D(VA_MANU(-1)) + 0.0492095 * D(MGNO*ER) + -0.0240102 * D(MGNO(-1)*ER(-1)) + -78.2033 + 136.659 * T>2013 + 290.68 * T=2009 + -810.55 * T=2018 + -530.77 * (T=2019) + 1290.2 * (T=2020) + -969.817 * (T=2022) + 363.543 * (T=2023)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_dgfcf",
+"desc": "Əsas fondların ümumi yığımı",
+"lhs": "DLOG(GFCF)",
+"rhs": "0.334124 * DLOG(IF) + 0.340075 * DLOG(ID) + 0.19747 * DLOG(GFCF(-1)) + -0.151702 * T=1998 + 0.150852 * (T=2011) + 0.180781 * (T=2002)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "",
+"desc": "Əsas fondların ümumi yığımı",
+"lhs": "DLOG(GFCF)",
+"rhs": "0.846905 * DLOG(I) + 0.00568877"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(GFCF)",
+"rhs": "0.338837 * DLOG(IF) + 0.342481 * DLOG(ID) + 0.193905 * DLOG(GFCF(-1)) + -0.151692 * T=1998 + 0.15025 * (T=2011) + 0.177073 * (T=2002)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_hc_test",
+"desc": "",
+"lhs": "DLOG(HC)",
+"rhs": "0.282164 * DLOG(IEA) + 0.206606 * DLOG(W)*(T>2006) + 0.235311 * DLOG(VA_DIGER) + -0.0859477 * DLOG(OPWTI/@SUM(OPWTI*(T=2015),\"1995 2022\"))*(T>2009)+ + 0.207002 * NIRD + 0.0464774 + -0.143397 * (T=2020) + 0.076911 * (T=2016)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drxgno",
+"desc": "",
+"lhs": "DLOG(RXGNO)",
+"rhs": "-0.480349 * DLOG(RXGNO(-1)) + -0.216648 * DLOG(REER)*(T>2002) + 4.57968 * DLOG(RGDPMTP) + -0.891357 * ECM_RXGNO(-1) + -0.473635 * DLOG(RXGNO(-2))*(T<2008) + -0.667129 * (T=2010) + 0.0365484 + -0.0755021 * (T>1999)*(T<2003) + -0.153634 * (T>2006)*(T<2012) + 0.0919709 * (T>2012)*(T<2015) + -0.108532 * (T=2011) + -0.0792302 * (T=2017) + 0.270768 * (T=2020)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_rxgno",
+"desc": "",
+"lhs": "ecm_rxgno",
+"rhs": "log(rxgno) + 0.604033 * log(reer) + -3.00154 * log(rgdpmtp) + -7.25591 + -0.450747 * (T<1998) + 0.527929 * T=2010"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drxgno_new",
+"desc": "",
+"lhs": "DLOG(RXGNO)",
+"rhs": "-0.727475 + 1.71084 * DLOG(AGRI)*(T=2015) + 2.22697 * DLOG(NONOILIND) + -0.255687 * DLOG(NEER) + 0.545381 * (T>2001) + 0.326008 * (T=2013) + -0.277435 * (T=2004) + 0.237023 * (T=2011) + 2.32362 * DLOG(RGDPMTP)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drva_accom",
+"desc": "Turistlərin yerləşdirilməsi və ictimai iaşə",
+"lhs": "DLOG(RVA_ACCOM)",
+"rhs": "0.01878 + 0.351404 * DLOG(ADDVALUE(-1))*(T=2015) + 0.532928 * DLOG(FOREIGNTURIST) + 0.847681 * DLOG(NONOILGDP(-1))*(T=2009) + 0.135995 * (T=2014) + 0.058022 * (T=2021)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_tikinti",
+"desc": "Tikinti",
+"lhs": "DLOG(RVA_CONST)",
+"rhs": "0.00591363 * c + 0.462554 * DLOG(RID) + 0.3771 * DLOG(RIF)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "",
+"desc": "Tikinti",
+"lhs": "DLOG(RVA_CONST)",
+"rhs": "before 2005 * 0.0419645 + during 2005-2007 * -0.118047 + during 2008-2014 * 0.0503278 + after 2015 * -0.0141096 + 0.337721 * DLOG(neft) + 0.527223 * DLOG(q-neft) + -0.093582 * D(t=2005) + 0.120632 * t=2002"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_dlog_rhc",
+"desc": "",
+"lhs": "DLOG(RHC)",
+"rhs": "0.0357417 + 0.130856 * DLOG(RHC(-1)) + 0.512695 * DLOG(POPINCOME) + -0.0473574 * (T=2010) + -0.111205 * (T=2020)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq0201",
+"desc": "tikinti",
+"lhs": "DLOG(TIKINTI) = 0.0157401339192 + 0.388120544769*DLOG(RIO) + 0.523320713218*DLOG(RINO) - 0.260651744716*(T=2005)",
+"rhs": "DLOG(TIKINTI) = 0.0157401339192 + 0.388120544769*DLOG(RIO) + 0.523320713218*DLOG(RINO) - 0.260651744716*(T=2005) = 0.01204 + 0.415179 * DLOG(RIO) + 0.443765 * DLOG(RINO)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_drxgno_new",
+"desc": "",
+"lhs": "DLOG(RXGNO)",
+"rhs": "-0.179709 + 1.25665 * DLOG(AGRI)*(T=2015) + 2.15986 * DLOG(NONOILIND) + -0.226463 * DLOG(NEER) + 2.29934 * DLOG(RGDPMTP) + 0.268529 * (T=2011) + 0.348465 * (T=2013)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_dfpi_az",
+"desc": "Kənd, meşə və balıqçılıq təsərrüfatı",
+"lhs": "DLOG(FPI_AZ)",
+"rhs": "@BEFORE(\"2005\") * -0.0307051 + @DURING(\"2005 2007\") * 0.168331 + @DURING(\"2008 2018\") * 0.0594636 + @DURING(\"2019 2021\") * 0.0286246 + @AFTER(\"2022\") * 0.0952376 + -0.258717 * DLOG(FPI_AZ(-1)) + 0.259273 * DLOG(FPI_WEO) + 0.310448 * DLOG(CPI/NER)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_ddef_constr",
+"desc": "Tikinti",
+"lhs": "DLOG(DEF_CONSTR)",
+"rhs": "-0.280595 * DLOG(DEF_CONSTR(-1)) + -0.352331 * DLOG(NEER) + 0.0843086 + 0.120174 * DLOG(OPIWTI) + 0.164407 * (T<2005) + -0.130864 * (T=2021)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_ddef_accom",
+"desc": "Turistlərin yerləşdirilməsi və ictimai iaşə",
+"lhs": "DLOG(DEF_ACCOM)",
+"rhs": "0.721629 * DLOG(CPI)*(T>2009) + 1.54719 * DLOG(CPI)*(T<2010) + -0.105467 * (T=2000) + 0.210659 * (T=2011) + -0.447492 * (T=2009) + 0.103788 * (T=2010) + -0.837236 * DLOG(NEER(-1))*(T>2007) + -0.0724109 * (T=2002) + -0.0599422 * (T=2005) + 0.0279723 * (T=2003) + -0.0236937 * (T=2016)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_ddef_transp",
+"desc": "Nəqliyyat və anbar təsərrüfatı",
+"lhs": "DLOG(DEF_TRANSP)",
+"rhs": "-0.21373 * DLOG(DEF_TRANSP(-1))*(t<2016) + 0.75353 * DLOG(CPI) + -0.456071 * DLOG(NEER) + 0.167815 * DLOG(CPI(-1))*(T<2017) + -0.0441452 + 0.195485 * (T=2015) + 0.340226 * (T=2007) + 0.0909848 * (T>2018)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_def_ntp",
+"desc": "Məhsula və idxala xalis vergilər",
+"lhs": "LOG(DEF_NTP)",
+"rhs": "1.08336 * DLOG(CPI) + 0.33822 * LOG(OPIWTI) + 0.230223 * LOG(CPIMTP)*(T>2010) + -0.112882 + -0.211726 * (T<2006) + 0.209904 * (T=2019)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_ddef_finance",
+"desc": "Maliyyə və sığorta fəaliyyəti",
+"lhs": "DLOG(DEF_FINANCE)",
+"rhs": "5.89322 * D(NIRR(-1)/100)*(T<2017) + 1.20612 * DLOG(CPI) + 0.175135 * DLOG(OPIWTI) + 0.181441 * (T<2017) + -0.0664352"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_ddef_rest",
+"desc": "Daşınmaz əmlakla əlaqədar əməliyyatlar",
+"lhs": "DLOG(DEF_REST)",
+"rhs": "@BEFORE(\"2005\") * 0.158983 + @DURING(\"2005 2012\") * -0.0708051 + @DURING(\"2013 2018\") * 0.179969 + @AFTER(\"2019\") * -0.0209929 + -0.653151 * DLOG(DEF_REST(-1)) + 2.28319 * DLOG(CPI) + -0.965571 * DLOG(NER(-1)) + -0.130692 * D(T=2022)"
+},
+{
+"workbook": "MOE SNA.xlsx",
+"name": "eq_ddef_accom",
+"desc": "Turistlərin yerləşdirilməsi və ictimai iaşə",
+"lhs": "DLOG(DEF_ACCOM)",
+"rhs": "-0.0359073 + 1.31229 * DLOG(CPI)*(T>2009) + 2.20326 * DLOG(CPI(-1))*(T<2011) + -1.7547 * DLOG(NEER(-1))*(T=2015) + -0.467243 * (T=2009)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_agr",
+"desc": "Kənd, meşə və balıqçılıq təsərrüfatı",
+"lhs": "DLOG(W_AGR)",
+"rhs": "0.355436 * DLOG(LP_AGR) + -0.863913 * DLOG(CPI(-1))*(T>2009) + -0.223247 * DLOG(W_AGR(-1))*(T>2007) + 0.600242 * DLOG(FPI_AZ(-1))*(T>2011) + 0.411952 * DLOG(MW)*(T>2006) + 0.205792 + -0.144671 * (T>2011)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_mine",
+"desc": "Mədənçıxarma sənayesi",
+"lhs": "DLOG(W_MINE)",
+"rhs": "0.491983 * DLOG(NER) + 1.3546 * DLOG(L_MINE(-1)) + 0.271006 + -0.182392 * (T>2003)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_manu",
+"desc": "Emal sənayesi",
+"lhs": "DLOG(W_MANU)",
+"rhs": "0.287373 * DLOG(W_MANU(-1)) + -2.22787 * DLOG(L_MANU) + 0.354212 * DLOG(VA_MANU) + 0.13457 * DLOG(CPI)*(t=2016) + 0.209554 * DLOG(MW)*(T>2005) + 0.0742577 + -0.209142 * (T=2020) + -0.0933402 * (T=2018) + 0.0464317 * (T=2013)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_elec",
+"desc": "Elektrik enerjisi, qaz və buxar istehsalı, bölüşdürülməsi və təchizatı",
+"lhs": "DLOG(W_ELEC)",
+"rhs": "@BEFORE(\"2004\") * -0.0302176 + @DURING(\"2004_2008\") * 0.0726597 + @DURING(\"2009 2011\") * -0.0135329 + @DURING(\"2012 2016\") * 0.0294966 + @AFTER(\"2017\") * 0.0496928 + 0.71606 * DLOG(W_MANU) + 0.0420548 * D(T=2018) + 0.0616095 * DLOG(MW)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_wate",
+"desc": "Su təchizatı; tullantıların təmizlənməsi və emalı",
+"lhs": "LOG(W_WATE)",
+"rhs": "0.502492 * LOG CPI + -0.171819 * LOG(ER/@SUM(ER*(T=2015),\"1995 2022\")) + -0.550938 * DLOG(L_WATE)*(T>2010) + 0.873976 * DLOG(W_ELEC) + 0.120113 * (T=2013) + 0.0494326 + 0.00199191 * D(MW)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_const_fin",
+"desc": "Tikinti",
+"lhs": "DLOG(W_CONST)",
+"rhs": "0.304374 * DLOG(VA_CONST) + 0.412694 * DLOG(NER) + 0.0678597 * DLOG(OPIWTI(-1)) + -0.777963 * DLOG(L_CONST(-1)) + 0.152983 + -0.119179 * (T>2011) + -0.173501 * (T=2008)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_trade",
+"desc": "Ticarət; nəqliyyat vasitələrinin təmiri",
+"lhs": "DLOG(W_TRADE)",
+"rhs": "0.74155 * DLOG(CPI) + -0.168237 * DLOG(NER) + 0.152259 * DLOG(MW) + 1.11491 * T=2002 + 0.225205 * (T=2010)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_accom",
+"desc": "Turistlərin yerləşdirilməsi və ictimai iaşə",
+"lhs": "DLOG(W_ACCOM)",
+"rhs": "0.0983947 * @BEFORE(\"2006\") + 0.0446561 * @DURING(\"2006 2019\") + -0.00426505 * @AFTER(\"2020\") + 0.742778 * DLOG(CPI) + -0.128068 * DLOG(NER) + 0.106789 * DLOG(MW(-1)) + -0.0990621 * D(T=2006)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_trans",
+"desc": "Nəqliyyat və anbar təsərrüfatı",
+"lhs": "DLOG(W_TRANS)",
+"rhs": "0.233488 * DLOG(LP_TRANS) + 0.121356 + -0.0583416 * (T>2012) + 0.091497 * (T>2003)*(T<2009)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_inform",
+"desc": "İnformasiya və rabitə",
+"lhs": "DLOG(W_INFORM)",
+"rhs": "0.374295 * DLOG(LP_INFORM) + 0.682571 * DLOG(CPI) + 0.0392616 + 0.406094 * (T=2003) + 0.337666 * (T=2007) + -0.073528 * (T=2016) + 0.0961962 * DLOG(W_INFORM(-1))*(T<2015)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_finance",
+"desc": "Maliyyə və sığorta fəaliyyəti",
+"lhs": "DLOG(W_FINANCE)",
+"rhs": "0.603459 * DLOG(CPI) + -0.297944 * DLOG(NER) + -0.521384 * DLOG(W(-1)) + 0.241704 * (T>2000)*(T<2003) + 0.407043 * (T>2004)*(T<2007) + 0.0965313 * T>2006 + 0.100037 * T<2011"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_prof",
+"desc": "Peşə, elmi və texniki fəaliyyət",
+"lhs": "DLOG(W_PROF)",
+"rhs": "-0.215549 + DLOG(W_PROF(-1)) + 0.900675 * DLOG(CPI) + 0.106595 * DLOG(NER) + 0.121208 * DLOG(W(-1)) + 0.15081 * (T>2001)*(T<2008) + -0.0981104 * (T>2007)*(T<2012) + 0.0392867 + -0.0922381 * (T=2021) + 0.0510134 * (T=2019) + -0.0513499 * (T=2020)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_admn",
+"desc": "İnzibati və yardımçı xidmətlərin göstərilməsi",
+"lhs": "DLOG(W_ADMN)",
+"rhs": "-0.452971 * DLOG(MW)*(T>2010) + 0.378647 * DLOG(VA_ADMN/L_ADMN) + 0.25154 * (T=2020)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_rest",
+"desc": "Daşınmaz əmlakla əlaqədar əməliyyatlar",
+"lhs": "DLOG(W_REST)",
+"rhs": "-0.331514 * dLOG(W_REST(-1))*(T>2013) + 0.0944406 * dLOG(OPIWTI) + 0.619824 * dLOG(W(-1)) + 0.103675 + -0.365825 * (T=2010) + -0.22315 * (T=2003) + 0.201963 * (T=2019) + -0.661618 * DLOG(L_REST)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_stmanag_fin",
+"desc": "Dövlət idarəetmə və müdafiə; sosial təminat",
+"lhs": "DLOG(W_STMANAG)",
+"rhs": "0.446255 * DLOG(W_STMANAG(-1)) + 0.174753 * DLOG(BE_NONEC-GC) + -0.080548 * ECM_W_STMANAG2020(-1) + 0.277593 * DLOG(MW) + -0.0107703 + -0.0775216 * (T=2013) + 0.123338 * (T=2019) + 0.156868 * (T=2022) + -0.167153 * (T=2006)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_w_stmanag",
+"desc": "",
+"lhs": "ECM_W_STMANAGSON",
+"rhs": "LOG(W_STMANAG) + -0.701348 * LOG(BE_NONEC-GC) + -0.276854"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_educ",
+"desc": "Təhsil",
+"lhs": "DLOG(W_EDUC)",
+"rhs": "0.00313385 * @BEFORE(\"2005\") + 0.0267229 * @DURING(\"2005 2009\") + -0.0607996 * @DURING(\"2010 2013\") + -0.0223725 * @AFTER(\"2014\") + 0.784675 * DLOG(LP_EDUC) + 0.209909 * DLOG(MW(-1)) + -0.140907 * ((T=2006)-(T=2007)) + 0.0185565 * D(T=2007) + -0.274467 * D(T=2002)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_health",
+"desc": "Əhaliyə səhiyyə və sosial xidmətlərin göstərilməsi",
+"lhs": "DLOG(W_HEALTH)",
+"rhs": "0.506596 * DLOG(W_HEALTH(-1)) + 0.125117 * DLOG(MW(-1)) + 0.176352 * DLOG(LP_HEALTH) + 0.0319979 + -0.170414 * T=2010 + 0.282073 * (T=2019)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_art",
+"desc": "İstirahət əyləncə və incəsənət sahəsində  fəaliyyət",
+"lhs": "DLOG(W_ART)",
+"rhs": "-0.248743 * @BEFORE(\"2007\") + 0.0852988 * @DURING(\"2007 2009\") + -0.0672876 * @DURING(\"2010 2012\") + 0.0227262 * @DURING(\"2013 2017\") + 0.0607727 * @AFTER(\"2018\") + 0.590362 * DLOG(MW) + 0.209566 * DLOG(MW(-1)) + 0.348716 * DLOG(MW(-2)) + -0.200195 * DLOG(W_ART(-1)) -0.0374452"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dw_other",
+"desc": "Digər sahələrdə xidmətlərin göstərilməsi",
+"lhs": "DLOG(W_OTHER)",
+"rhs": "-0.20591 * @BEFORE(\"2004\") + 0.0408104 * @DURING(\"2004 2015\") + -0.0400693 * @DURING(\"2016 2019\") + 0.0298482 * @AFTER(\"2020\") + 1.60492 * DLOG(CPI) + 0.152993 * DLOG(MW) + 0.0139616 * DLOG(OPIWTI(-1)) + 0.248821 * (T=2002) + 0.11588 * D(T=2017)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_driea",
+"desc": "sahibkarlıq fəaliyyətindən gəlirlər",
+"lhs": "DLOG(RIEA)",
+"rhs": "0.554517 * DLOG(OPIWTI)*(T>2017) + -0.52305 * DLOG(RIEA(-2)) + 0.308598 * DLOG(M3/CPI)*(T>2005) + 0.873534 * DLOG(HC/CPI) + 0.568057 * ECM_RIEA_NEW_2020 + 0.732998 * DLOG(VA_DIGER/CPI)*(T>2011) + -0.18942 * (T=2019) + -0.230418 * (T=2018) + -0.504944 * (T>2020) + -0.0747995 * ((T=2013)-(T=2016))"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_riea_tmp",
+"desc": "",
+"lhs": "ECM_RIEA",
+"rhs": "LOG(RIEA) + -0.939987 * LOG(RHC) + -0.471266 * LOG(REER) + -0.148672 * LOG(OPIWTI)*(T>2009) + -0.412618 * (T>2018)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(NONOILWAGE)",
+"rhs": "0.00534521 + 0.252432 * DLOG(NONOILWAGE(-1)) + 0.310768 * DLOG(NONOILGDP) + 0.376451 * DLOG(MINWAGE) + -0.269069 * DLOG(INFLATION)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(SERVICES_PAID) = -0.0055219162031 + 0.779733104285*DLOG(TRADE) + 0.140233190678*DLOG(WAGE)",
+"rhs": "-0.00552192 + 1.07042 * DLOG(TRADE) + 0.377245 * DLOG(WAGE)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(L_MINE)",
+"rhs": "0.0652754 * DLOG(OPIWTI) + -0.931117 * ECM_L_MINE(-1) + 0.0857586 * (T=2006) + -0.0265555 * (T=2010) + 0.0196136 * (T<2004) + 0.0222672 * (T=2013) + -0.00807558"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "",
+"desc": "",
+"lhs": "ecm_l_mine",
+"rhs": "LOG(L_MINE) + -0.0989845 * LOG(OPIWTI) + -3.66242 + -0.0572592 * (T>2005)*(T<2010)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dl_mine_fin",
+"desc": "Mədənçıxarma sənayesi",
+"lhs": "DLOG(L_MINE)",
+"rhs": "-0.180832 * DLOG(L_MINE(-2)) + 0.0295894 * DLOG(OPIWTI) + 0.0312083 * DLOG(OPIWTI(-1)) + -0.010313 + 0.0723597 * (T=2006) + 0.0580253 * DLOG(RVA_MINE) + 0.0545405 * T=2018 + 0.0354537 * (T=2020)"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dl_trans",
+"desc": "Nəqliyyat və anbar təsərrüfatı",
+"lhs": "DLOG(L_TRANS)",
+"rhs": "0.337779 * DLOG(TRANS_TURN_G)*(T=2006) + 0.0573798 * (T=2015) + 0.0328709 * (T=2009) + 0.00543524"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "",
+"desc": "",
+"lhs": "DLOG(L_MANU)",
+"rhs": "@BEFORE(\"2004\") * 0.00704507 + @DURING(\"2004_2009\") * 0.0392447 + @DURING(\"2010_2011\") * -0.00570176 + @DURING(\"2012_2015\") * 0.0333601 + @AFTER(\"2016\") * 0.0575713 + -0.535899 * DLOG(L_MANU(-1))"
+},
+{
+"workbook": "MOE SOCIAL.xlsx",
+"name": "eq_dl_manu",
+"desc": "Emal sənayesi",
+"lhs": "DLOG(L_MANU)",
+"rhs": "-0.0929901 * DLOG(RVA_MANU) + 0.149715 * DLOG(RVA_MANU(-1)) + 0.01212 + 0.0173802 * (T>2015) + -0.0520755 * (T=2020)"
+},
+{
+"workbook": "MOE T&C.xlsx",
+"name": "eq_dtrans_p",
+"desc": "Nəqliyyat sektorunda sərnişinin daşınması, avtomobil",
+"lhs": "DLOG(TRANS_P)",
+"rhs": "0.377023 * DLOG(TRANS_P(-1)) + 0.123131 * DLOG(RVA_CONST) + 2.01865 * DLOG(POP) + -0.869646 * ECM_TRANS_P(-1) + -0.512601 * (T=2020) + -0.0327059 * (T=2008) + 0.0164814 * (T=2016) + -0.0181693 * (T=2014) + 0.00574181"
+},
+{
+"workbook": "MOE T&C.xlsx",
+"name": "eq_trans_p",
+"desc": "",
+"lhs": "ECM_TRANS_P",
+"rhs": "LOG(TRANS_P) + -0.148241 * LOG(RVA_CONST) + -4.06277 * LOG(POP) + 24.7833 + -0.509093 * (T<2020)"
+}
+]
+}
