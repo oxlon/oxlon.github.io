@@ -47,10 +47,11 @@ function scnAnno() {
   return {
     text: (LANG === "az" ? "Ssenari: " : "Scenario: ") + t + (LANG === "az" ? "  (punktir)" : "  (dashed)"),
     xref: "paper", yref: "paper", x: 0.01, y: 0.99, xanchor: "left", yanchor: "top", showarrow: false,
-    font: { size: 10, color: "#b1322a", family: "var(--sans), sans-serif" }, align: "left",
+    font: { size: 10, color: "#b1322a", family: "Hanken Grotesk, sans-serif" }, align: "left",
     bgcolor: "rgba(255,255,255,0.82)", bordercolor: "rgba(177,50,42,0.5)", borderwidth: 1, borderpad: 3
   };
 }
+function scnLegName() { const t = scenarioText(), s = (LANG === "az" ? "Ssenari" : "Scenario"); return t ? s + " · " + (t.length > 26 ? t.slice(0, 25) + "…" : t) : s; }
 // figures that ARE a scenario input — shocking it transforms the figure's own path (exact, not modelled).
 // kind "level" = the shock is a % change to the level; "rate" = a sustained pp change to a rate series.
 const SHOCK_FIG = [
@@ -158,7 +159,7 @@ const AZ = {
   "qtr.q": "rüb", "qtr.observed": "müşahidə olunub",
   // per-figure buttons
   "fig.enlarge": "Böyüt", "fig.png": "Yüksək keyfiyyətli PNG yüklə", "fig.info": "Bu qrafik haqqında", "fig.infolbl": "məlumat",
-  "id.terms": "Bu qrafikdəki terminlər",
+  "id.terms": "Bu qrafikdəki terminlər", "leg.baseline": "Bazis",
 };
 // per-variable descriptions in Azerbaijani (mirror of VARDESC)
 const VARDESC_AZ = {
@@ -209,7 +210,7 @@ async function init() {
   const seen = {};
   FIGS.forEach(f => { const k = groupOf(f.sheet); (seen[k] = seen[k] || []).push(f); });   // combine the 3 price-risk sheets
   GROUPS = Object.keys(seen).map((s, i) => ({ sheet: s, figs: seen[s], hue: HUES[i % HUES.length] }));
-  buildNav(); wireRun(); applyI18n();
+  buildNav(); wireRun(); wireFieldInfo(); applyI18n();
   $("#brand").style.cursor = "pointer"; $("#brand").onclick = showHome;
   $("#lang").onclick = e => { const l = e.target.dataset.l; if (l && l !== LANG) setLang(l); };
   $("#infoscrim").onclick = closeInfo; $("#infoclose").onclick = closeInfo;
@@ -329,7 +330,7 @@ function showHome() {
 
     <div class="hsec"><h2>${tx("home.engine", "The engine — reproduced from CAEM, validated")}</h2>
       <div class="grid3">
-        ${mc.map(([t, d, v]) => `<div class="mcard"><b>${t}</b><span>${d}</span><i>${v}</i></div>`).join("")}
+        ${mc.map(([t, d, v]) => `<div class="mcard mcard-go"><b>${t}</b><span>${d}</span><i>${v}</i></div>`).join("")}
       </div>
     </div>
 
@@ -340,6 +341,7 @@ function showHome() {
     <div class="hsec"><h2>${tx("home.explore", "Explore the CAEM dashboards")}</h2><div class="grid3 gc">${gcards}</div></div>
     <div class="hfoot">CAEM Financial-Programming model · phillips ${(p.phillips || []).join("/")} · taylor ${(p.taylor || []).join("/")} · reproduced &amp; extended in Python. ${tx("grp.shade", "Shaded region = forecast")} (${META.first_forecast}+).</div>`;
   document.querySelectorAll(".gcard").forEach(c => c.onclick = () => showGroup(dec(c.dataset.go)));
+  document.querySelectorAll(".mcard-go").forEach(c => c.onclick = showLive);
   $("#ctaLive").onclick = showLive;
   if ($("#ctaMethods")) $("#ctaMethods").onclick = showMethods;
   window.scrollTo({ top: 0 });
@@ -360,7 +362,7 @@ function showLive() {
     ? `Ötürülmə: neft qiyməti → qeyri-neft artımı, büdcə balansı və borc, və daxili inflyasiya; Phillips əyrisi inflyasiyanı məhsul kəsiri və idxal qiymətlərindən təyin edir; Taylor qaydası uçot dərəcəsini müəyyən edir; borc artım, inflyasiya və ilkin balansla dəyişir.`
     : `Transmission: oil price → non-oil growth, the budget balance &amp; debt, and domestic inflation; the Phillips curve sets inflation from the output gap &amp; import prices; the Taylor rule sets the policy rate; debt evolves with growth, inflation &amp; the primary balance.`;
   $("#view").innerHTML = `
-    <div class="ghead" style="color:#1f5a8c;border-color:#1f5a8c">${tx("live.h", "📈 Live forecast")} <span class="dlgrp"><button id="prpdf" class="dlbtn">${tx("btn.pdf", "🖨 PDF report")}</button><button id="dlxls" class="dlbtn">${tx("btn.xls", "⤓ Excel")}</button><button id="dlcsv" class="dlbtn">${tx("btn.csv", "⤓ CSV")}</button></span></div>
+    <div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${tx("live.h", "📈 Live forecast")} <span class="dlgrp"><button id="prpdf" class="dlbtn">${tx("btn.pdf", "🖨 PDF report")}</button><button id="dlxls" class="dlbtn">${tx("btn.xls", "⤓ Excel")}</button><button id="dlcsv" class="dlbtn">${tx("btn.csv", "⤓ CSV")}</button></span></div>
     <div class="gsub">${liveSub}</div>
     ${impactHTML()}
     ${scorecardHTML()}
@@ -376,7 +378,7 @@ function showLive() {
     const card = document.createElement("div"); card.className = "figcard"; card.style.borderTopColor = "#7d1620";
     card.innerHTML = `<div class="ft">${esc(lbl)}<span class="live live-fan">FAN</span></div>
       <div class="fu">${esc(units[k] || "")}</div><div class="fc" id="fan_${k}"></div>`;
-    fg.appendChild(card); drawFan(`fan_${k}`, fan[k]);
+    fg.appendChild(card); drawFan(`fan_${k}`, fan[k], false, true);
     const fanSeries = [
       { name: lbl, x: fk.years, y: fk.central },
       { name: (LANG === "az" ? "Aşağı 90%" : "Low 90%"), x: fk.years, y: fk.lo90 },
@@ -530,7 +532,7 @@ function showMethods() {
       ["Foreign rate → domestic rate", "0.5 pass-through"], ["Oil price → terms of trade", "0.30 / 1%"],
       ["Oil price → current account", "0.12 pp of GDP / 1%"]];
   $("#view").innerHTML = `
-    <div class="ghead" style="color:#8a6d1f;border-color:#8a6d1f">${tx("m.h", "📐 Methods &amp; data sources")}</div>
+    <div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${tx("m.h", "📐 Methods &amp; data sources")}</div>
     <div class="gsub">${az ? "Hər tənlik, onun kalibrlənməsi və hər məlumat mənbəyi — yoxlanıla və təkrar istehsal oluna bilən. Struktur bloklar CAEM-i təkrar yaradır (iş kitabına qarşı doğrulanıb); neft/fiskal/xarici kanallar şəffaf, etiketlənmiş elastiklik əmsallarıdır." : "Every equation, its calibration, and every data source — auditable and reproducible. The structural blocks reproduce CAEM (validated against the workbook); the oil/fiscal/external channels are transparent, labelled elasticities."}</div>
 
     <h3 class="lh">${tx("m.h1", "1 · Core equations (reproduced from CAEM, validated)")}</h3>
@@ -539,7 +541,7 @@ function showMethods() {
     </tbody></table></div>
 
     <h3 class="lh">${tx("m.h2", "2 · Scenario channels (transparent, Azerbaijan-calibrated elasticities)")}</h3>
-    <div class="note-eco">${az ? "Bunlar CAEM-in tam uçotu <b>deyil</b> — onlar etiketlənmiş ixtisar olunmuş reaksiyalardır ki, hər ssenari rəqəmi göstərilən elastikliyə qədər izlənə bilsin." : "These are <b>not</b> CAEM's full accounting — they are labelled reduced-form responses so every scenario number is traceable to a stated elasticity."}</div>
+    <div class="note-eco">${az ? "Şəffaf, etiketlənmiş ixtisar olunmuş reaksiyalar: hər ssenari rəqəmi göstərilən elastikliyə qədər izlənə bilir və CAEM-in tam uçot çərçivəsini tamamlayır." : "Transparent, labelled reduced-form responses: every scenario number is traceable to a stated elasticity, complementing CAEM's full accounting framework."}</div>
     <div class="mtbl"><table class="dt"><tbody>${els.map(([n, v]) => `<tr><td>${n}</td><td class="sc-mid">${v}</td></tr>`).join("")}</tbody></table></div>
 
     <h3 class="lh">${tx("m.h3", "3 · Fan charts (uncertainty)")}</h3>
@@ -549,7 +551,7 @@ function showMethods() {
     <p class="mp">${az ? "Bütün seriyalar üçün standart mənbə" : "Default source for all series"}: <b>${esc(caem)}</b></p>
     <div class="mtbl"><table class="dt"><thead><tr><th>${az ? "2025 rəsmi faktiki" : "2025 official actual"}</th><th>${az ? "Dəyər" : "Value"}</th><th>${az ? "Mənbə" : "Source"}</th><th>${az ? "Dərc olunub" : "Released"}</th></tr></thead>
       <tbody>${provRows || `<tr><td colspan="4">${az ? "Rəsmi faktiki məlumat yüklənməyib." : "No official actuals loaded."}</td></tr>`}</tbody></table></div>
-    <p class="mp">${az ? "<b>Dürüst əhatə dairəsi:</b> yuxarıdakı dörd rəsmi 2025 göstəricisi modelə daxil edilib; qalan seriyalar hər biri DSK / AMB-dən mənbələnənə qədər CAEM-in 2024 buraxılışı qiymətləndirməsini saxlayır. Daxiletmə ardıcıllığı (<code>apply_actuals.py</code>) yeni faktiki CSV təqdim edildikdə hər şeyi yeniləyir." : "<b>Honest scope:</b> the four official 2025 indicators above are folded into the model; the remaining series still carry CAEM's 2024-vintage estimate for 2025 until each is sourced from the SSC / CBAR. The ingestion pipeline (<code>apply_actuals.py</code>) refreshes everything when a new actuals CSV is supplied."}</p>
+    <p class="mp">${az ? "<b>Məlumat əhatəsi:</b> yuxarıdakı dörd rəsmi 2025 göstəricisi modelə daxil edilib; qalan seriyalar DSK / AMB tərəfindən dərc olunana qədər CAEM-in 2024 buraxılışı qiymətləndirməsini saxlayır. Daxiletmə ardıcıllığı (<code>apply_actuals.py</code>) yeni rəsmi məlumat dərc olunduqda bütün məlumat bazasını yeniləyir." : "<b>Data coverage:</b> the four official 2025 indicators above are incorporated into the model; the remaining series retain CAEM's 2024-vintage estimate for 2025 pending their release by the SSC / CBAR. The ingestion pipeline (<code>apply_actuals.py</code>) updates the full dataset as new official figures are published."}</p>
 
     <h3 class="lh">${tx("m.h5", "5 · 2025 forecast vs outturn (model skill)")}</h3>
     ${scorecardHTML()}
@@ -639,8 +641,8 @@ function accountingHTML() {
     ? "Maliyyə proqramlaşdırmasının əsas dayanıqlılıq eyniliyi: borc nisbətinin illik dəyişməsi faiz xərcinə, artım və inflyasiyanın aşınmasına və ilkin balansa <b>dəqiq</b> ayrılır (sütunlar Δ Borcu verir) və hər ssenari ilə canlı yenidən hesablanır."
     : "The core financial-programming sustainability identity: the annual change in the debt ratio decomposes <b>exactly</b> into the interest cost, the growth-and-inflation erosion, and the primary balance (the columns sum to Δ Debt) — and recomputes live under any scenario.";
   const bop = az
-    ? "<b>Tədiyə balansı və monetar icmal.</b> Cari hesab artıq neft şokuna canlı reaksiya verir (etiketlənmiş elastiklik). Tam TB eyniliyi (cari hesab + maliyyə hesabı = ehtiyatların dəyişməsi) və monetar icmal (geniş pul = xalis xarici aktivlər + xalis daxili aktivlər) komponentlərin CAEM.xlsb-dən tam çıxarılmasını tələb edir — çıxarılmış göstəricilər fərqli uçot bazalarındadır, ona görə hələ sıfıra uyğunlaşmır (dürüst şəkildə təxirə salınıb)."
-    : "<b>Balance of payments &amp; monetary survey.</b> The current account already responds live to an oil shock (labelled elasticity). The full BoP identity (current account + financial account = change in reserves) and the monetary survey (broad money = net foreign assets + net domestic assets) require the components re-extracted from CAEM.xlsb — the extracted figures sit on different accounting bases, so they do not yet reconcile to zero (honestly deferred).";
+    ? "<b>Tədiyə balansı və monetar icmal.</b> Cari hesab neft şokuna canlı reaksiya verir (etiketlənmiş elastiklik). Tam tədiyə balansı eyniliyi (cari hesab + maliyyə hesabı = ehtiyatların dəyişməsi) və monetar icmal (geniş pul = xalis xarici aktivlər + xalis daxili aktivlər) müəyyən edilmiş genişləndirmədir: komponent seriyalarının CAEM.xlsb-dən yenidən çıxarılmasını tələb edir, çünki hazırda göstərilən rəqəmlər ayrı uçot bazalarında tərtib olunub."
+    : "<b>Balance of payments &amp; monetary survey.</b> The current account responds live to an oil shock (labelled elasticity). The full balance-of-payments identity (current account + financial account = change in reserves) and the monetary survey (broad money = net foreign assets + net domestic assets) are a defined extension: they require the component series to be re-extracted from CAEM.xlsb, as the figures currently displayed are compiled on separate accounting bases.";
   return `<h3 class="lh">${az ? "7 · Uçot eynilikləri (FPP)" : "7 · Accounting identities (FPP)"}</h3>
     <p class="mp">${intro}</p>
     <div class="id-eq" style="margin:8px 0 12px;overflow-x:auto">${eq}</div>
@@ -682,7 +684,7 @@ function showScenarios() {
   }).join("");
   const emptyMsg = az ? "Hələ saxlanmış ssenari yoxdur — paneldə şoklar təyin edin və 💾 Yadda saxla düyməsini basın." : "No saved scenarios yet — set shocks in the console and press 💾 Save.";
   $("#view").innerHTML = `
-    <div class="ghead" style="color:#1f5a8c;border-color:#1f5a8c">${tx("scn.h", "📂 Saved scenarios &amp; forecast rounds")}</div>
+    <div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${tx("scn.h", "📂 Saved scenarios &amp; forecast rounds")}</div>
     <div class="gsub">${az ? "Cari panel vəziyyətini (şoklar + daxil edilmiş məlumat) adlandırılmış ssenari və ya proqnoz dövrü kimi saxlayın, sonra yenidən yükləyin, ya da yan-yana müqayisə üçün 2–3-nü işarələyin. Bu brauzerdə saxlanılır (brauzer məlumatı ilə silinir)." : "Save the current console state (shocks + entered data) as a named scenario or forecast round, reload it later, or tick 2–3 to compare side by side. Stored in this browser (clears with browser data)."}</div>
     <div class="mtbl"><table class="dt"><thead><tr><th></th><th>${tx("scn.name", "Name")}</th><th>${tx("scn.shock", "Shock / data")}</th><th></th></tr></thead>
       <tbody>${rows || `<tr><td colspan="4">${emptyMsg}</td></tr>`}</tbody></table></div>
@@ -721,16 +723,27 @@ const QSERIES = [
   ["policy_rate", "Policy rate", "Uçot dərəcəsi", "#b5683f"],
 ];
 const QUNIT_AZ = { "% y-o-y": "% illik", "USD/barrel": "USD/barel", "%": "%" };
-function drawQuarterly(div, periods, vals, color) {
+// quarterly indicator key → engine annual-forecast variable (the engine forecasts these four)
+const QVAR = { gdp_yoy: "real_gdp_growth", nonoil_yoy: "nonoil_growth", cpi_yoy: "inflation", policy_rate: "policy_rate" };
+function drawQuarterly(div, periods, actual, fc, color, boundary) {
   const tickvals = periods.filter(p => p.endsWith("Q1") && (+p.slice(0, 4)) % 2 === 0), ticktext = tickvals.map(p => p.slice(0, 4));
-  const trace = {
-    x: periods, y: vals, type: "scatter", mode: "lines+markers", connectgaps: false,
+  const traces = [{
+    x: periods, y: actual, type: "scatter", mode: "lines+markers", connectgaps: false,
     line: { color, width: 2 }, marker: { size: 3, color }, hovertemplate: "%{x}: %{y:.2f}<extra></extra>"
-  };
-  Plotly.react(div, [trace], {
-    height: 196, margin: { l: 42, r: 10, t: 8, b: 26 }, font: { family: "IBM Plex Sans,sans-serif", size: 10, color: "#4a4a4a" },
-    plot_bgcolor: "#fff", paper_bgcolor: "#fff", showlegend: false, hovermode: "x unified",
-    hoverlabel: { font: { size: 10.5, family: "IBM Plex Sans,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
+  }];
+  if (fc && fc.some(v => v != null)) traces.push({
+    x: periods, y: fc, type: "scatter", mode: "lines", connectgaps: true,
+    line: { color: "#b1322a", width: 2, dash: "dash" }, hovertemplate: "%{x}: %{y:.2f} ★<extra></extra>"
+  });
+  const shapes = [];
+  if (boundary != null) {
+    shapes.push({ type: "rect", xref: "x", yref: "paper", x0: boundary - 0.5, x1: periods.length - 0.5, y0: 0, y1: 1, fillcolor: "rgba(120,130,145,0.08)", line: { width: 0 }, layer: "below" });
+    shapes.push({ type: "line", xref: "x", yref: "paper", x0: boundary - 0.5, x1: boundary - 0.5, y0: 0, y1: 1, line: { color: "#c2c8d0", width: 1, dash: "dot" } });
+  }
+  Plotly.react(div, traces, {
+    height: 196, margin: { l: 42, r: 10, t: 8, b: 26 }, font: { family: "Hanken Grotesk,sans-serif", size: 10, color: "#4a4a4a" },
+    plot_bgcolor: "#fff", paper_bgcolor: "#fff", showlegend: false, hovermode: "x unified", shapes,
+    hoverlabel: { font: { size: 10.5, family: "Hanken Grotesk,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
     xaxis: { type: "category", tickvals, ticktext, tickangle: 0, showgrid: false, ticklen: 3 },
     yaxis: { gridcolor: "#eef1f4", zeroline: true, zerolinecolor: "#d2d7dd", automargin: true }
   }, { responsive: true, displayModeBar: false });
@@ -738,8 +751,11 @@ function drawQuarterly(div, periods, vals, color) {
 async function showQuarterly() {
   CUR = null; setActive("quarterly");
   const az = LANG === "az";
-  $("#view").innerHTML = `<div class="ghead" style="color:#1f5a8c;border-color:#1f5a8c">${tx("qtr.h", "📅 Quarterly indicators &amp; nowcast")}</div>
-    <div class="gsub">${az ? "Yüksək tezlikli real göstəricilər — DSK rüblük milli hesablar və aylıq DSK/AMB göstəriciləri (rüblərə ortalanmış). İllik model bunu əldə etmir; rüblük axın il-içi dinamikanı və <b>nowcast</b>-ı (illik rəqəm dərc olunmadan əvvəl cari ilin qiymətləndirilməsi) mümkün edir." : "Real higher-frequency indicators — SSC quarterly national accounts and monthly SSC/CBAR indicators (averaged to quarters). The annual model does not capture these; the quarterly flow enables within-year dynamics and a <b>nowcast</b> (an estimate of the current year before the annual figure is published)."} <span id="qstatus"></span></div>
+  const intro = az
+    ? "Yüksək tezlikli real göstəricilər — DSK rüblük milli hesablar və aylıq DSK/AMB göstəriciləri (rüblərə ortalanmış) — sonra modelin <b>illik proqnozu</b> (2026–2030, qırmızı punktir, kölgələnmiş) faktiki rüblük axına calanır. Bu, il-içi dinamikanı və cari ilin proqnozunu (nowcast) bir yerdə göstərir."
+    : "Real higher-frequency indicators — SSC quarterly national accounts and monthly SSC/CBAR indicators (averaged to quarters) — joined to the model's <b>annual forecast</b> (2026–2030, dashed red, shaded). This shows within-year dynamics and the current-year projection (nowcast) together.";
+  $("#view").innerHTML = `<div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${tx("qtr.h", "📅 Quarterly indicators &amp; forecast")}</div>
+    <div class="gsub">${intro} <span id="qstatus"></span></div>
     <div id="qnow"></div>
     <div class="figgrid" id="qgrid"></div>`;
   const grid = $("#qgrid");
@@ -747,34 +763,38 @@ async function showQuarterly() {
     if (!QDATA) QDATA = await (await fetch("data/quarterly.json")).json();
   } catch (e) { $("#qstatus").textContent = "— data/quarterly.json not found"; return; }
   const Q = QDATA, P = Q.periods, U = (Q.meta && Q.meta.units) || {};
-  // nowcast bridge
-  const nc = Q.nowcast;
-  if (nc) {
-    const row = (lab, impl, off, proxy) => {
-      const d = (impl != null && off != null) ? impl - off : null;
-      return `<div class="nc-row"><div class="nc-lab">${esc(lab)}${proxy ? ` <span class="tagi">${az ? "non-extractive proxy" : "non-extractive proxy"}</span>` : ""}</div>
-        <div class="nc-val"><span>${tx("qtr.implied", "quarterly-implied annual")}: <b>${impl == null ? "—" : impl.toFixed(1)}%</b></span>
-        <span>${tx("qtr.official", "official annual")}: <b>${off == null ? "—" : off.toFixed(1)}%</b></span>
-        ${d == null ? "" : `<span class="nc-d sc-${Math.abs(d) < 0.6 ? "ok" : Math.abs(d) < 1.5 ? "mid" : "bad"}">${d > 0 ? "+" : ""}${d.toFixed(1)} pp</span>`}</div></div>`;
-    };
-    const expl = az
-      ? `İllik göstərici ilin rüblük illik artımlarının ortalamasıdır. <b>${nc.year}</b> üçün hər ${nc.quarters_observed} rüb müşahidə olunub, beləliklə körpü dərc olunmuş illik nəticəni təkrar istehsal edir (metodu doğrulayır). 2026 rübləri dərc olunduqca eyni körpü illik rəqəmdən əvvəl canlı nowcast verəcək.`
-      : `The implied annual is the average of the year's quarterly year-on-year readings. For <b>${nc.year}</b> all ${nc.quarters_observed} quarters are observed, so the bridge reproduces the published annual outturn (validating the method). When 2026 quarters publish, the same bridge gives a live nowcast ahead of the annual figure.`;
-    $("#qnow").innerHTML = `<div class="nowcast"><div class="nc-h">${tx("qtr.nowcast", "Nowcast bridge")} — ${nc.year} <span class="tagi">${nc.quarters_observed} ${tx("qtr.q", "quarters")} ${tx("qtr.observed", "observed")}</span></div>
-      ${row(az ? "Real ÜDM artımı" : "Real GDP growth", nc.gdp_implied, nc.gdp_official, false)}
-      ${row(az ? "Qeyri-neft ÜDM artımı" : "Non-oil GDP growth", nc.nonoil_implied, nc.nonoil_official, true)}
-      <div class="nc-note">${expl}</div></div>`;
-  }
+  const FCP = []; for (let y = 2026; y <= 2030; y++) for (let q = 1; q <= 4; q++) FCP.push(y + "Q" + q);
+  const allP = P.concat(FCP), boundary = P.length;
+  // nowcast box: the model's current-year (2026) projection + the 2025 quarterly→annual method check
+  const g26 = (BASE.real_gdp_growth || {})["2026"], i26 = (BASE.inflation || {})["2026"], p26 = (BASE.policy_rate || {})["2026"], nc = Q.nowcast;
+  const ncRow = (lab, val, u) => `<div class="nc-row"><div class="nc-lab">${esc(lab)}</div><div class="nc-val"><span>${az ? "model proqnozu" : "model projection"}: <b>${val == null ? "—" : val.toFixed(1) + (u || "%")}</b></span></div></div>`;
+  const check = nc
+    ? (az ? `<b>Metod yoxlanışı.</b> 2025 rüblük göstəriciləri orta hesabla ${nc.gdp_implied.toFixed(1)}% təşkil edir və rəsmi illik nəticəni (${nc.gdp_official.toFixed(1)}%) təkrar istehsal edir — bu, rüblükdən-illiyə körpünü doğrulayır. 2026 rüblük məlumatı dərc olunduqca bu proqnoz dəqiqləşəcək.`
+      : `<b>Method check.</b> The 2025 quarterly readings average ${nc.gdp_implied.toFixed(1)}%, reproducing the official annual outturn (${nc.gdp_official.toFixed(1)}%) — validating the quarterly-to-annual bridge. As 2026 quarterly data is published this projection will be refined.`)
+    : "";
+  $("#qnow").innerHTML = `<div class="nowcast"><div class="nc-h">${az ? "Cari ilin proqnozu — 2026" : "Current-year nowcast — 2026"} <span class="tagi">${az ? "model · illik" : "model · annual"}</span></div>
+    ${ncRow(az ? "Real ÜDM artımı" : "Real GDP growth", g26)}
+    ${ncRow(az ? "İnflyasiya (İQİ)" : "Inflation (CPI)", i26)}
+    ${ncRow(az ? "Uçot dərəcəsi" : "Policy rate", p26)}
+    <div class="nc-note">${check}</div></div>`;
   QSERIES.forEach((s, i) => {
     const [key, en, azl, color] = s, vals = (Q.series && Q.series[key]) || [];
     if (!vals.some(v => v != null)) return;
     const label = az ? azl : en, unit = (az ? (QUNIT_AZ[U[key]] || U[key]) : U[key]) || "";
+    const ev = QVAR[key], fa = ev && BASE[ev] ? BASE[ev] : null;   // engine annual forecast for this indicator
+    let actualY = vals, fcY = null, px = P;
+    if (fa) {
+      px = allP; actualY = vals.concat(FCP.map(() => null)); fcY = P.map(() => null);
+      let li = -1; for (let k = vals.length - 1; k >= 0; k--) if (vals[k] != null) { li = k; break; }
+      if (li >= 0) fcY[li] = vals[li];                             // connect the dashed forecast to the last actual
+      FCP.forEach(p => { const v = fa[p.slice(0, 4)]; fcY.push(v != null ? v : null); });
+    }
     const card = document.createElement("div"); card.className = "figcard"; card.style.borderTopColor = color;
-    card.innerHTML = `<div class="ft">${esc(label)}</div><div class="fu">${esc(unit)}</div><div class="fc" id="q${i}"></div>`;
+    card.innerHTML = `<div class="ft">${esc(label)}${fa ? ` <span class="fcbadge">${az ? "+ proqnoz" : "+ forecast"}</span>` : ""}</div><div class="fu">${esc(unit)}</div><div class="fc" id="q${i}"></div>`;
     grid.appendChild(card);
-    drawQuarterly(`q${i}`, P, vals, color);
-    // info + PNG, reusing the figure plumbing (build a pseudo-figure with the quarterly series)
+    drawQuarterly(`q${i}`, px, actualY, fcY, color, fa ? boundary : null);
     const series = [{ name: label, x: P, y: vals }];
+    if (fa) series.push({ name: (az ? "Model proqnozu (illik)" : "Model forecast (annual)"), x: ["2026", "2027", "2028", "2029", "2030"], y: ["2026", "2027", "2028", "2029", "2030"].map(y => fa[y] != null ? fa[y] : null) });
     attachInfo(card, { title: label, unit, sheet: "Quarterly (SSC)", series, quarterly: true });
   });
   window.scrollTo({ top: 0 });
@@ -792,9 +812,9 @@ function fcShapes(xs, vintage) {
 const tickStep = xs => (xs.length && (Math.max(...xs) - Math.min(...xs)) > 22) ? 4 : 2;  // consistent: 2-yr ticks (4 only for very long histories)
 const hexA = (h, a) => { const n = parseInt(h.slice(1), 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
 const baseLayout = (xyear, shapes, h, b, dtick) => ({
-  height: h, margin: { l: 46, r: 12, t: 8, b: b }, font: { family: "IBM Plex Sans,sans-serif", size: 10, color: "#4a4a4a" },
+  height: h, margin: { l: 46, r: 12, t: 8, b: b }, font: { family: "Hanken Grotesk,sans-serif", size: 10, color: "#4a4a4a" },
   plot_bgcolor: "#fff", paper_bgcolor: "#fff", barmode: "relative", bargap: 0.16, showlegend: false, shapes,
-  hovermode: "x unified", hoverlabel: { font: { size: 10.5, family: "IBM Plex Sans,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
+  hovermode: "x unified", hoverlabel: { font: { size: 10.5, family: "Hanken Grotesk,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
   xaxis: xyear ? { tickformat: "d", showgrid: false, dtick: dtick || 2, tick0: 2026, ticklen: 3 } : { showgrid: false, ticklen: 3 },
   yaxis: { gridcolor: "#eef1f4", zeroline: true, zerolinecolor: "#d2d7dd", automargin: true }
 });
@@ -809,7 +829,7 @@ function drawRadar(div, f) {
     };
   });
   Plotly.react(div, traces, {
-    height: 380, margin: { l: 64, r: 64, t: 22, b: 30 }, font: { family: "IBM Plex Sans,sans-serif", size: 10.5, color: "#4a4a4a" },
+    height: 380, margin: { l: 64, r: 64, t: 22, b: 30 }, font: { family: "Hanken Grotesk,sans-serif", size: 10.5, color: "#4a4a4a" },
     paper_bgcolor: "#fff", showlegend: false,
     polar: { bgcolor: "#fff", radialaxis: { angle: 90, tickfont: { size: 9 }, gridcolor: "#eef1f4" }, angularaxis: { tickfont: { size: 11 }, rotation: 90, direction: "clockwise" } }
   }, { responsive: true, displayModeBar: false });
@@ -838,7 +858,7 @@ function boundaryAnchor(fan, ff) {
   return out;
 }
 /* ---------------- fan chart ---------------- */
-function drawFan(div, fan, big) {
+function drawFan(div, fan, big, scn) {
   fan = boundaryAnchor(fan, LIVE_FF || META.first_forecast);
   const x = fan.years, traces = [];
   FAN_BANDS.forEach(([lo, hi, col]) => {
@@ -846,7 +866,9 @@ function drawFan(div, fan, big) {
     traces.push({ x, y: fan[lo], mode: "lines", line: { width: 0, color: "rgba(0,0,0,0)" }, fill: "tonexty", fillcolor: col, hoverinfo: "skip", showlegend: false });
   });
   traces.push({ x, y: fan.central, mode: "lines+markers", line: { color: FAN_CENTRAL, width: 2.6 }, marker: { size: 3.6, color: FAN_CENTRAL }, hovertemplate: "<b>central</b>: %{y:.2f}<extra></extra>", showlegend: false });
-  Plotly.react(div, traces, baseLayout(true, fcShapes(x, LIVE_FF || META.first_forecast), big ? 320 : 214, 24, tickStep(x)), { responsive: true, displayModeBar: false });
+  const layout = baseLayout(true, fcShapes(x, LIVE_FF || META.first_forecast), big ? 320 : 214, 24, tickStep(x));
+  const an = scnAnno(); if (scn && an) layout.annotations = [an];
+  Plotly.react(div, traces, layout, { responsive: true, displayModeBar: false });
   const card = document.getElementById(div).closest(".figcard");
   htmlLegend(card, [{ name: "Central forecast", color: FAN_CENTRAL, w: 2.6 }, { name: "50%", color: "rgba(173,42,53,0.55)", bar: true }, { name: "80%", color: "rgba(173,42,53,0.34)", bar: true }, { name: "90%", color: "rgba(173,42,53,0.2)", bar: true }]);
 }
@@ -929,7 +951,7 @@ function exportPNG(card, f) {
   const m = gd.layout.margin || {}, prevT = m.t || 8;
   const prevY = (gd.layout.yaxis && gd.layout.yaxis.title && gd.layout.yaxis.title.text) || "";
   Plotly.relayout(gd, {
-    "title.text": title, "title.font.size": 15, "title.font.family": "IBM Plex Sans,sans-serif", "title.font.color": "#1a2038",
+    "title.text": title, "title.font.size": 15, "title.font.family": "Hanken Grotesk,sans-serif", "title.font.color": "#1a2038",
     "title.x": 0.01, "title.xanchor": "left", "title.y": 0.97, "title.yanchor": "top", "margin.t": 42,
     "yaxis.title.text": unit, "yaxis.title.font.size": 11, "yaxis.title.font.color": "#6b7280"
   }).then(() => Plotly.downloadImage(gd, { format: "png", scale: 3, width: 920, height: 540, filename: "caem_" + title.replace(/[^\w]+/g, "_").slice(0, 44) }))
@@ -981,7 +1003,12 @@ const GLOSSARY = [
   { re: /partner growth|trading.?partner/i, term: "Partner growth", en: "Weighted GDP growth of Azerbaijan's main trading partners — a proxy for external demand for non-oil exports.", az: "Azərbaycanın əsas ticarət tərəfdaşlarının çəkili ÜDM artımı — qeyri-neft ixracına xarici tələbin göstəricisi." },
   { re: /relative .*price|relative (export|import)/i, term: "Relative price", en: "An export/import price expressed relative to domestic prices — a competitiveness and pass-through measure.", az: "İxrac/idxal qiymətinin daxili qiymətlərə nisbəti — rəqabətqabiliyyətlilik və ötürülmə göstəricisi." },
   { re: /output gap/i, term: "Output gap", en: "Actual output minus potential (HP-filter trend), as % of potential — the economy's cyclical position.", az: "Faktiki məhsul minus potensial (HP-filtr trendi), potensialın %-i — iqtisadiyyatın tsiklik mövqeyi." },
-  { re: /potential/i, term: "Potential output", en: "The HP-filter trend level of output — the economy's non-inflationary capacity.", az: "Məhsulun HP-filtr trend səviyyəsi — iqtisadiyyatın inflyasiyasız tutumu." },
+  { re: /potential/i, term: "Potential output", en: "The trend level of output — the economy's non-inflationary capacity. CAEM estimates it two ways: a statistical HP filter and a production-function (growth-accounting) decomposition.", az: "Məhsulun trend səviyyəsi — iqtisadiyyatın inflyasiyasız tutumu. CAEM onu iki üsulla qiymətləndirir: statistik HP filtri və istehsal funksiyası (artım uçotu) dekompozisiyası." },
+  { re: /growth accounting|growth decomp|production function/i, term: "Growth accounting", en: "A production-function decomposition of GDP growth into the contributions of capital, labour and total factor productivity; \"Potential growth (Growth decomp)\" is potential built up from the trends of these inputs.", az: "ÜDM artımının kapital, əmək və məcmu amil məhsuldarlığının töhfələrinə istehsal funksiyası dekompozisiyası; \"Potensial artım (Growth decomp)\" bu amillərin trendlərindən qurulan potensialdır." },
+  { re: /\bTFP\b|total factor productivity/i, term: "Total factor productivity (TFP)", en: "The part of output growth not explained by measured capital and labour — broadly, efficiency and technology.", az: "Ölçülən kapital və əməklə izah olunmayan məhsul artımının hissəsi — geniş mənada səmərəlilik və texnologiya." },
+  { re: /HP filter|HP-filter/i, term: "HP filter", en: "The Hodrick–Prescott statistical filter (λ=100) that separates a series' trend (potential) from its cycle (gap).", az: "Seriyanın trendini (potensial) tsiklindən (kəsir) ayıran Hodrick–Prescott statistik filtri (λ=100)." },
+  { re: /\bcapital\b/i, term: "Capital", en: "The contribution of the capital stock (accumulated investment) to growth in the production-function decomposition.", az: "İstehsal funksiyası dekompozisiyasında kapital ehtiyatının (yığılmış investisiya) artıma töhfəsi." },
+  { re: /\blabou?r\b/i, term: "Labour", en: "The contribution of employment (and hours) to growth in the production-function decomposition.", az: "İstehsal funksiyası dekompozisiyasında məşğulluğun (və saatların) artıma töhfəsi." },
   { re: /terms of trade/i, term: "Terms of trade", en: "Export prices relative to import prices; oil-dominated for Azerbaijan.", az: "İxrac qiymətlərinin idxal qiymətlərinə nisbəti; Azərbaycan üçün neft üstünlüklü." },
   { re: /real effective exchange|\bREER\b/i, term: "Real effective exchange rate (REER)", en: "The trade-weighted exchange rate adjusted for relative prices — external price competitiveness.", az: "Nisbi qiymətlərə görə düzəlişlə ticarət-çəkili məzənnə — xarici qiymət rəqabətqabiliyyətliliyi." },
   { re: /primary balance/i, term: "Primary balance", en: "The fiscal balance excluding interest payments, % of GDP.", az: "Faiz ödənişləri istisna olmaqla fiskal balans, ÜDM-in %-i." },
@@ -1005,6 +1032,19 @@ function glossaryFor(f) {
   return out;
 }
 function figInfo(f) {
+  // Fancharts-sheet figures are drawn as the engine fan, so describe THAT (central + 90% interval) rather
+  // than the anonymous percentile-band series that would otherwise show as "Series 1…6".
+  if (f.sheet === "Fancharts" && !f.fan) {
+    const fv = /inflation/i.test(f.title) ? "inflation" : /gdp|growth/i.test(f.title) ? "real_gdp_growth" : null;
+    const fd = (((typeof RUN !== "undefined" && RUN && RUN.fan) || FAN0 || {}))[fv];
+    if (fv && fd) {
+      const lbl = tInd((META.fan_labels && META.fan_labels[fv]) || clean(f.title));
+      f = {
+        title: f.title, unit: f.unit || (META.fan_units && META.fan_units[fv]) || "", sheet: f.sheet, engine_var: fv, fan: true,
+        series: [{ name: lbl, x: fd.years, y: fd.central }, { name: (LANG === "az" ? "Aşağı 90%" : "Low 90%"), x: fd.years, y: fd.lo90 }, { name: (LANG === "az" ? "Yuxarı 90%" : "High 90%"), x: fd.years, y: fd.hi90 }]
+      };
+    }
+  }
   const P = META.params || {}, ph = P.phillips || [], ty = P.taylor || [], v = f.engine_var, sheet = f.sheet || "";
   const az = LANG === "az";
   const compoNames = (f.series || []).map(s => clean(s.name)).filter(Boolean).slice(0, 4).join(", ");
@@ -1016,7 +1056,11 @@ function figInfo(f) {
     : f.radar ? (az ? "Ölçülər üzrə risk balları, ildən-ilə müqayisə olunur." : "Risk scores across dimensions, compared year-on-year.")
       : (f.series && f.series.length >= 3 && (COMPO.test(f.title) || detectTotalIdx(f.series) >= 0))
         ? (az ? `Dekompozisiya — komponentlər (${compoNames}) cəmlənərək ümumi göstəricini verir.` : `Decomposition — the components (${compoNames}) sum to the total.`)
-        : (az ? `“${esc(sheet)}” CAEM vərəqindən təkrar yaradılıb.` : `Reproduced from CAEM sheet “${esc(sheet)}”.`);
+        : (() => {
+          const nm = (f.series || []).map(s => clean(s.name)).filter(Boolean);
+          if (nm.length >= 2) return az ? `Bu qrafik müqayisə edir: ${nm.join(", ")}. Hər seriyanın izahı aşağıdakı «Terminlər» bölməsindədir.` : `This figure compares ${nm.join(", ")}. Each series is defined under "Terms" below.`;
+          return az ? `“${esc(sheet)}” CAEM vərəqindən təkrar yaradılıb.` : `Reproduced from CAEM sheet “${esc(sheet)}”.`;
+        })();
   const calib = { inflation: `c₁=${ph[0]}, c₂=${ph[1]}, c₃=${ph[2]} (CAEM 1b).`, policy_rate: `a=${ty[0]}, b=${ty[1]}, ρ=${ty[2]} (CAEM 1c).`,
     output_gap: "CAEM sheet B1a.", trend_growth: "CAEM B1a.", gross_debt: "CAEM 3b; effective rate ≈ 3%.",
     fiscal_balance: "Scenario response: oil ≈ 0.12 pp/1%, tax, FX.", primary_balance: "Scenario response: oil, tax, FX.", terms_of_trade: "Scenario response: oil ± export/import prices." }[v] || "";
@@ -1080,6 +1124,7 @@ function drawFig(div, f, primary, big) {
   const card = document.getElementById(div).closest(".figcard");
   const multi = f.series.length > 1;
   const leg = [];
+  let hasScn = false;
   const hov = nm => "<b>" + esc(nm.slice(0, 24)) + "</b>: %{y:.2f}<extra></extra>";   // x in the unified header
   const allx = f.series.flatMap(s => s.x);
 
@@ -1138,9 +1183,9 @@ function drawFig(div, f, primary, big) {
       const sv = RUN.scenario[f.engine_var], base = f.series[0];
       const xs = base.x.length ? base.x : Object.keys(sv).map(Number);
       const ys = xs.map((yr, i) => (sv[yr] != null ? sv[yr] : (base.y ? base.y[i] : null)));
-      if (!multi) leg.push({ name: "Baseline", color: primary });
+      if (!multi) leg.push({ name: tx("leg.baseline", "Baseline"), color: primary });
       traces.push({ x: xs, y: ys, type: "scatter", mode: "lines", line: { color: "#c0392b", width: 2.4, dash: "dash" }, hovertemplate: "<b>scenario</b>: %{y:.2f}<extra></extra>", showlegend: false });
-      leg.push({ name: "Scenario", color: "#c0392b", dash: "dash" });
+      hasScn = true; leg.push({ name: scnLegName(), color: "#c0392b", dash: "dash" });
     }
     // shock-INPUT figure (e.g. Oil price): shocking the input transforms its own path exactly
     const sf = !f.engine_var && shockMatch(f.title);
@@ -1148,17 +1193,17 @@ function drawFig(div, f, primary, big) {
       const base = f.series[0], ff = LIVE_FF || META.first_forecast, v = RUN.shock[sf.field];
       const isPct = /change/i.test(f.unit || "") || /change/i.test(f.title);
       const ys = shockSeries(base.y, base.x, sf, v, ff, isPct);
-      if (!multi) leg.push({ name: "Baseline", color: primary });
+      if (!multi) leg.push({ name: tx("leg.baseline", "Baseline"), color: primary });
       traces.push({ x: base.x, y: ys, type: "scatter", mode: "lines", line: { color: "#c0392b", width: 2.4, dash: "dash" }, hovertemplate: "<b>scenario</b>: %{y:.2f}<extra></extra>", showlegend: false });
-      leg.push({ name: "Scenario", color: "#c0392b", dash: "dash" });
+      hasScn = true; leg.push({ name: scnLegName(), color: "#c0392b", dash: "dash" });
     }
     // current-account figures respond to an oil-price shock (labelled elasticity: oil +1% → CA +0.12 pp of GDP)
     if (RUN && caElas(f) && RUN.shock.oil_price) {
       const base = f.series[0], ff = LIVE_FF || META.first_forecast, v = RUN.shock.oil_price;
       const ys = base.x.map((yr, i) => base.y[i] == null ? null : (yr < ff ? base.y[i] : base.y[i] + CA_ELAS * v));
-      if (!multi) leg.push({ name: "Baseline", color: primary });
+      if (!multi) leg.push({ name: tx("leg.baseline", "Baseline"), color: primary });
       traces.push({ x: base.x, y: ys, type: "scatter", mode: "lines", line: { color: "#c0392b", width: 2.4, dash: "dash" }, hovertemplate: "<b>scenario</b>: %{y:.2f}<extra></extra>", showlegend: false });
-      leg.push({ name: "Scenario", color: "#c0392b", dash: "dash" });
+      hasScn = true; leg.push({ name: scnLegName(), color: "#c0392b", dash: "dash" });
     }
   }
   const hasBars = traces.some(t => t.type === "bar");
@@ -1168,6 +1213,7 @@ function drawFig(div, f, primary, big) {
   const layout = baseLayout(f.xyear && !yearCat, shapes, big ? baseH + 140 : baseH, 24, tickStep(allx));
   if (yearCat) layout.barmode = "group";
   if (hasBars) layout.yaxis.rangemode = "tozero";       // bars must sit on a zero baseline (fixes oil/gas overflow)
+  const an = scnAnno(); if (hasScn && an) layout.annotations = [an];   // name the active scenario, in-canvas (shows in PNG too)
   Plotly.react(div, traces, layout, { responsive: true, displayModeBar: false });
   htmlLegend(card, leg);
 }
@@ -1185,13 +1231,14 @@ async function doRun() {
     (g != null && b != null ? `  →  2028 GDP ${b.toFixed(1)}→${g.toFixed(1)}%` : "");
   refresh();
 }
+// realistic, historically-grounded named scenarios (global & domestic, positive & negative)
 const PRESETS = [
-  { name: "Oil −30%", az: "Neft −30%", s: { oil_price: -30 } },
-  { name: "Oil +20%", az: "Neft +20%", s: { oil_price: 20 } },
-  { name: "Global slowdown", az: "Qlobal yavaşlama", s: { oil_price: -15, partner_growth: -2 } },
-  { name: "Manat −15%", az: "Manat −15%", s: { exchange_rate: 15 } },
-  { name: "Tightening +2pp", az: "Sərtləşmə +2pp", s: { policy_rate: 2 } },
-  { name: "Supply shock +3pp", az: "Təklif şoku +3pp", s: { inflation_shock: 3 } },
+  { name: "Oil price crash", az: "Neft qiymətinin çökməsi", s: { oil_price: -35 } },              // 2014-15 / 2020 collapse
+  { name: "Commodity upswing", az: "Əmtəə qiymətlərinin yüksəlişi", s: { oil_price: 25, partner_growth: 1.5 } }, // 2021-22 boom
+  { name: "Global recession", az: "Qlobal tənəzzül", s: { oil_price: -15, partner_growth: -2.5 } },// 2009-style
+  { name: "Manat devaluation", az: "Manatın devalvasiyası", s: { exchange_rate: 20 } },            // 2015 devaluation
+  { name: "Non-oil reform boom", az: "Qeyri-neft islahat artımı", s: { nonoil_growth: 2, potential_growth: 1 } },
+  { name: "Fiscal consolidation", az: "Fiskal konsolidasiya", s: { tax: 1.5 } },
 ];
 function renderPresets() {
   const el = $("#presets");
@@ -1201,6 +1248,26 @@ function renderPresets() {
     b.onclick = () => { FIELDS.forEach(f => $("#s_" + f).value = p.s[f] || 0); doRun(); };
     el.appendChild(b);
   });
+}
+// small ⓘ button on each scenario field → a popover defining that input (from FIELD_META)
+function wireFieldInfo() {
+  let pop = $("#fieldpop");
+  if (!pop) { pop = document.createElement("div"); pop.id = "fieldpop"; document.body.appendChild(pop); pop.onclick = e => e.stopPropagation(); }
+  FIELDS.forEach(f => {
+    const inp = $("#s_" + f); if (!inp) return;
+    const fld = inp.closest(".fld"); if (!fld || fld.querySelector(".fldi")) return;
+    const b = document.createElement("button"); b.className = "fldi"; b.type = "button"; b.textContent = "ⓘ"; b.setAttribute("aria-label", "info");
+    fld.appendChild(b);
+    b.onclick = e => {
+      e.stopPropagation(); const m = FIELD_META[f]; if (!m) return;
+      pop.innerHTML = `<b>${esc(fieldLabel(f))}</b> <span class="fp-u">${esc(fieldUnit(f))}</span><p>${LANG === "az" ? m.daz : m.den}</p>`;
+      pop.classList.add("show");
+      const r = b.getBoundingClientRect();
+      pop.style.left = Math.max(8, Math.min(r.left - 6, window.innerWidth - pop.offsetWidth - 10)) + "px";
+      pop.style.top = (r.bottom + 6 + window.scrollY) + "px";
+    };
+  });
+  document.addEventListener("click", () => { const p = $("#fieldpop"); if (p) p.classList.remove("show"); });
 }
 function wireRun() {
   $("#run").onclick = doRun;
