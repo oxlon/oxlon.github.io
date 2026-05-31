@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CAEM — Financial Programming Model · Azerbaijan</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=22">
+</head>
+<body>
+<header id="top">
+  <span class="brand" id="brand"><b>CAEM</b> · Macro-Fiscal Model</span>
+  <span class="tag">Republic of Azerbaijan · Financial Programming engine</span>
+  <span class="sp"></span>
+  <span class="meta" id="meta"></span>
+</header>
+
+<div id="runbar">
+  <div class="rb-top">
+    <span class="rb-title">⚙ Scenario console</span>
+    <span class="rb-hint">Shock the forecast and press <b>Run</b> — the <b>LIVE</b> figures &amp; fan charts recompute and the scenario overlays the baseline (dashed&nbsp;red). Oil, prices &amp; FX in <b>%</b>; everything else in <b>percentage points</b>.</span>
+    <span class="rb-act">
+      <span class="yrs"><label>Apply</label><input id="s_start" type="number" value="2026"><label>to</label><input id="s_end" type="number" value="2030"></span>
+      <button id="editdata" class="btn ghost">✎ Update data</button>
+      <button id="run" class="btn">Run&nbsp;▸</button><button id="reset" class="btn ghost">Reset</button>
+    </span>
+  </div>
+  <div id="databanner" class="databanner" hidden></div>
+  <div class="rb-presets" id="presets"><span class="pp-lab">Quick scenarios</span></div>
+  <div class="rb-cats">
+    <div class="cat"><div class="cat-h">External</div><div class="cat-f">
+      <div class="fld"><span class="fl">Oil price</span><input id="s_oil_price" type="number" value="0" step="5"><span class="u">%</span></div>
+      <div class="fld"><span class="fl">Partner growth</span><input id="s_partner_growth" type="number" value="0" step="0.5"><span class="u">pp</span></div>
+      <div class="fld"><span class="fl">Import price</span><input id="s_import_price" type="number" value="0" step="1"><span class="u">%</span></div>
+      <div class="fld"><span class="fl">Export price</span><input id="s_export_price" type="number" value="0" step="1"><span class="u">%</span></div>
+    </div></div>
+    <div class="cat"><div class="cat-h">Real economy &amp; fiscal</div><div class="cat-f">
+      <div class="fld"><span class="fl">Non-oil growth</span><input id="s_nonoil_growth" type="number" value="0" step="0.5"><span class="u">pp</span></div>
+      <div class="fld"><span class="fl">Potential growth</span><input id="s_potential_growth" type="number" value="0" step="0.5"><span class="u">pp</span></div>
+      <div class="fld"><span class="fl">Supply shock</span><input id="s_inflation_shock" type="number" value="0" step="0.5"><span class="u">pp</span></div>
+      <div class="fld"><span class="fl">Tax measures</span><input id="s_tax" type="number" value="0" step="0.5"><span class="u">%GDP</span></div>
+    </div></div>
+    <div class="cat"><div class="cat-h">Monetary &amp; FX</div><div class="cat-f">
+      <div class="fld"><span class="fl">Policy rate</span><input id="s_policy_rate" type="number" value="0" step="0.25"><span class="u">pp</span></div>
+      <div class="fld"><span class="fl">Exchange rate</span><input id="s_exchange_rate" type="number" value="0" step="1"><span class="u">%↓</span></div>
+      <div class="fld"><span class="fl">Foreign rate</span><input id="s_foreign_rate" type="number" value="0" step="0.25"><span class="u">pp</span></div>
+      <div class="fld"><span class="fl">Risk premium</span><input id="s_risk_premium" type="number" value="0" step="0.5"><span class="u">pp</span></div>
+    </div></div>
+  </div>
+  <div id="status" class="status"></div>
+</div>
+
+<div id="layout">
+  <aside id="side"><nav id="nav"></nav></aside>
+  <main id="main"><div id="view"></div></main>
+</div>
+
+<div id="infoscrim"></div>
+<aside id="infodrawer" aria-label="Figure information">
+  <button id="infoclose" title="Close">✕</button>
+  <div class="id-eyebrow">ABOUT THIS FIGURE</div>
+  <h3 id="infotitle"></h3>
+  <div id="infobody"></div>
+</aside>
+
+<div id="datascrim"></div>
+<div id="datamodal" aria-label="Update data">
+  <button id="dataclose" title="Close">✕</button>
+  <div class="id-eyebrow">UPDATE DATA — ENTER A NEW ACTUAL YEAR</div>
+  <h3>Re-anchor the forecast to newly-released data</h3>
+  <p class="dm-help">Enter the official outturn for a year (e.g. 2026 once published). The model treats it as the
+    last <b>actual</b> year and re-forecasts everything from the next year. Leave a field blank to keep the model's value.</p>
+  <div class="dm-grid">
+    <label>Year<input id="d_year" type="number" value="2026"></label>
+    <label>Real GDP growth (%)<input id="d_gdp_growth" type="number" step="0.1" placeholder="—"></label>
+    <label>Non-oil growth (%)<input id="d_nonoil_growth" type="number" step="0.1" placeholder="—"></label>
+    <label>CPI inflation (%)<input id="d_inflation" type="number" step="0.1" placeholder="—"></label>
+    <label>Fiscal balance (% GDP)<input id="d_fiscal" type="number" step="0.1" placeholder="—"></label>
+  </div>
+  <div class="dm-list" id="dm_list"></div>
+  <div class="dm-act">
+    <button id="dataapply" class="btn">Apply &amp; re-forecast</button>
+    <button id="dataclear" class="btn ghost">Clear all edits</button>
+  </div>
+  <p class="dm-note">Tip: this is the "add 2026 data → everything updates" workflow. Entries persist for the session.</p>
+</div>
+<script src="assets/app.js?v=22"></script>
+</body>
+</html>
