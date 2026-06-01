@@ -174,8 +174,15 @@ a{color:inherit;text-decoration:none}
 .hfoot{margin-top:28px;color:#9a917e;font-size:11px;font-family:var(--mono);border-top:1px solid var(--line);padding-top:15px;line-height:1.6}
 
 /* ---- figure groups ---- */
-.ghead{font-family:var(--display);font-size:25px;font-weight:600;margin:2px 0 4px;display:inline-block;border-bottom:2px solid;padding-bottom:5px;letter-spacing:-.01em}
+.ghead{font-family:var(--display);font-size:26px;font-weight:600;margin:2px 0 4px;display:inline-flex;align-items:center;gap:11px;border-bottom:2px solid;padding-bottom:6px;letter-spacing:-.015em}
 .gsub{font-size:12.5px;color:var(--muted);margin:9px 0 18px;max-width:96ch;line-height:1.55}
+/* refined line-icons in the nav + section titles (replace the old emoji) */
+.nico{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;vertical-align:-2px}
+.navhome .nico,.navlive .nico{width:18px;height:18px;margin-right:10px;opacity:.92}
+.navhome .nico svg,.navlive .nico svg{width:18px;height:18px;display:block}
+.ghead .nico{width:24px;height:24px}
+.ghead .nico svg{width:24px;height:24px;display:block;stroke-width:1.6}
+.ghead .dlgrp{margin-left:2px}
 .figgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:15px}
 .figcard{position:relative;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--line);
   border-radius:11px;padding:11px 14px 6px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
