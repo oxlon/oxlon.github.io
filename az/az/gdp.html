@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>Output and Growth · Oxlon Proqnozlaşdırma</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1428'/><circle cx='50' cy='50' r='29' fill='none' stroke='%23f6f1e6' stroke-width='5'/><circle cx='50' cy='50' r='8.5' fill='%23c9a78e'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css?v=319bb194">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="../data/analytics.js?v=319bb194"></script>
+<script src="../assets/app.js?v=319bb194"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="lockup"><svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="6" y1="50" x2="94" y2="50" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="50" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="94" cy="50" r="5.2" fill="#c9a78e"/></svg><div><div class="wordmark">Ox<em>lon</em><span class="dot">.</span></div><div class="tag">Proqnozlaşdırma</div></div></div><div class="ctx">İqtisadiyyat Nazirliyi · Azərbaycan Respublikası<span>Prepared under Cabinet / Ministers Decree No.&nbsp;75</span></div></div><nav class="nav"><a href="/caem/" target="_blank" rel="noopener" style="display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:11px;background:linear-gradient(135deg,#1a2038,#27406b);color:#fff;text-decoration:none;box-shadow:0 4px 13px rgba(16,24,40,.20)"><span style="font-weight:700;font-size:13px;letter-spacing:.01em">▶ CAEM Makro-Fiskal Paneli</span><span style="display:block;font-weight:400;font-size:10.5px;color:#bcc8dc;margin-top:3px;line-height:1.4">Canlı IMF-tipli model: ssenarilər, yelpik qrafikləri və 2025 proqnoz hesab kartı</span></a><div class="group">İcmal</div><a href="index.html" data-slug="index"><span class="n">01</span>İcmal Hesabatı</a><a href="mandate.html" data-slug="mandate"><span class="n">02</span>Mandat və Modelləşdirmə Çərçivəsi</a><div class="group">Məlumat və Modellər</div><a href="data.html" data-slug="data"><span class="n">03</span>Məlumat Bazası</a><a href="models.html" data-slug="models"><span class="n">04</span>Ekonometrik Modellər və Nəticələr</a><div class="group">Proqnozlar</div><a href="gdp.html" data-slug="gdp"><span class="n">05</span>Məhsul və Artım</a><a href="inflation.html" data-slug="inflation"><span class="n">06</span>İnflyasiya və Monetar Siyasət</a><a href="fiscal.html" data-slug="fiscal"><span class="n">07</span>Fiskal və Büdcə</a><a href="labour.html" data-slug="labour"><span class="n">08</span>Əmək Bazarı</a><a href="investment.html" data-slug="investment"><span class="n">09</span>İnvestisiya</a><a href="external.html" data-slug="external"><span class="n">10</span>Xarici Sektor</a><a href="demography.html" data-slug="demography"><span class="n">11</span>Demoqrafiya və İstehlak</a><div class="group">Təhlil</div><a href="scenarios.html" data-slug="scenarios"><span class="n">12</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">13</span>İmpuls Reaksiyaları</a><a href="ml.html" data-slug="ml"><span class="n">14</span>Maşın Öyrənməsi Modelləri</a><a href="structural.html" data-slug="structural"><span class="n">15</span>Struktur Modellər</a><a href="simulator.html" data-slug="simulator"><span class="n">16</span>Ssenari Simulyatoru</a><a href="bayesian.html" data-slug="bayesian"><span class="n">17</span>Bayes və Vəziyyət-Fəza Modelləri</a><div class="group">Əməliyyatlar və Məlumat Alətləri</div><a href="budget.html" data-slug="budget"><span class="n">18</span>Büdcə Mühərriki</a><a href="risk.html" data-slug="risk"><span class="n">19</span>Risk Kəşfiyyatı</a><a href="catalogue.html" data-slug="catalogue"><span class="n">20</span>Məlumat Kataloqu</a><a href="ai.html" data-slug="ai"><span class="n">21</span>Süni İntellekt Platforması (Nümayiş)</a><div class="group">Hesabatlar</div><a href="technical.html" data-slug="technical"><span class="n">22</span>Texniki Hesabat</a><a href="literature.html" data-slug="literature"><span class="n">23</span>Ədəbiyyat</a><a href="limitations.html" data-slug="limitations"><span class="n">24</span>Məhdudiyyətlər və Məlumat Tələbləri</a><a href="roadmap.html" data-slug="roadmap"><span class="n">25</span>Təhvil və Növbəti Addımlar</a><a href="notebooks.html" data-slug="notebooks"><span class="n">26</span>Təkrar İstehsal Oluna Bilən Dəftərlər</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menyu</button> <span class="tb-brand">Oxlon Proqnozlaşdırma</span> &nbsp;›&nbsp; <b>Məhsul və Artım</b></div><div class="tb-right"><div class="langtog"><a href="../gdp.html" class="">EN</a><span>·</span><a href="gdp.html" class="on">AZ</a></div><span class="tb-sec">Bölmə 05 / 26</span></div></div><div class="wrap">
+    <div class="eyebrow">Proqnozlar</div><h1 class="page">Məhsul və Artım</h1>
+    <p class="lede">The output projection combines a sectoral, production-side build-up with the national-accounts
+    identities. This section reports the baseline path and its uncertainty, the composition / growth, and the position /
+    the economy in the cycle.</p>
+    <div class="grid g4"><div class="stat acc"><div class="v">81%</div><div class="k">non-oil share / output by 2030</div></div><div class="stat "><div class="v">1.4%</div><div class="k">2025 growth (actual)</div></div><div class="stat acc"><div class="v">2.6%</div><div class="k">baseline growth, 2026–2030</div></div><div class="stat "><div class="v">-0.2 pp</div><div class="k">oil contribution to 2030 growth</div></div></div>
+
+    <h2>How output is modelled</h2>
+    <p>Output is built from the supply side and tied together by the national-accounts identities. Total real output is the
+    sum / the oil-and-gas and non-oil sectors, and its growth is the share-weighted sum / the two sectoral growth rates:</p>
+    <div class="eq">$$ Y_t=Y^{oil}_t+Y^{non}_t,\qquad g_t=s^{oil}_{t-1}\,g^{oil}_t+\big(1-s^{oil}_{t-1}\big)\,g^{non}_t $$<span class="num">(G1)</span></div>
+    <p class="fn">where <i>Y</i> is real value added, <i>g</i> the real growth rate, <i>s</i><sup>oil</sup> the oil sector's
+    share / output and the superscripts denote the oil-and-gas and non-oil sectors; each sector's nominal value added is its
+    real path times a sector deflator.</p>
+    <p>The non-oil sector — the engine / the forecast — is governed by an error-correction relation: output returns to a
+    long-run path set by the capital stock, the real exchange rate and external demand, correcting deviations at a speed λ.
+    The oil sector follows an exogenous production pr/ile as mature fields decline.</p>
+    <div class="eq">$$ \Delta y^{non}_t=\alpha+\textstyle\sum_i \beta_i\,\Delta x_{i,t}-\lambda\big(y^{non}_{t-1}-\gamma'x_{t-1}\big)+\varepsilon_t $$<span class="num">(G2)</span></div>
+    <p class="fn">where <i>y</i><sup>non</sup> is log non-oil output, <i>x</i> the long-run determinants (capital, the real
+    exchange rate, partner demand), β the short-run responses, γ the long-run elasticities and λ the speed / adjustment.</p>
+
+    <h2>The baseline and its uncertainty</h2>
+    <p>Real output growth is projected by aggregating sectoral value added, with the identities above enforced. The fan in
+    Figure 5.1 sets the central path against 50 and 80 per cent probability bands and against the IMF World Economic Outlook.
+    The Ministry's baseline is more optimistic than the IMF's for the near term — 2026 growth / 2.3 per cent
+    against the IMF's lower path — a difference that matters for revenue planning and is examined in the Scenario Analysis.</p>
+    <div class="fig"><div id="fanGdp" class="plot" style="height:380px"></div><div class="cap">Figure 5.1. Real GDP growth: outturns to 2025 (State Statistical Committee) and the Ministry baseline for 2026–2030 with 50% and 80% probability bands; the IMF World Economic Outlook is the external comparator.</div></div>
+
+    <h2>The composition / growth</h2>
+    <p>Growth is decomposed into the contributions / the oil-and-gas and non-oil sectors, each weighted by its share in
+    output. The non-oil economy is the sole engine / growth across the horizon; the oil sector subtracts from growth as
+    mature fields decline, contributing -0.2 percentage points in 2030. This is the central structural fact / the
+    outlook and the reason the non-oil base is the focus / policy.</p>
+    <div class="fig"><div id="gContrib" class="plot" style="height:380px"></div><div class="cap">Figure 5.2. Contributions to real GDP growth (percentage points): the oil-and-gas and non-oil sectors, with total growth.</div></div>
+
+    <h2>Baseline projection</h2>
+    <table class="dt"><caption>Real GDP growth and its sectoral contributions (percentage points), with the non-oil share / output. 2025 is the actual outturn (State Statistical Committee); 2026–2030 is the Ministry baseline.</caption>
+    <thead><tr><th class="num">Year</th><th class="num">Real growth</th><th class="num">Non-oil contribution</th><th class="num">Oil contribution</th><th class="num">Non-oil share (%)</th></tr></thead>
+    <tbody><tr><td class="num">2023</td><td class="num">+1.4</td><td class="num">+2.4</td><td class="num">-0.9</td><td class="num">64</td></tr><tr><td class="num">2024</td><td class="num">+4.1</td><td class="num">+4.0</td><td class="num">+0.1</td><td class="num">68</td></tr><tr><td class="num">2025</td><td class="num">+1.4</td><td class="num">+1.8</td><td class="num">-0.5</td><td class="num">72</td></tr><tr><td class="num">2026</td><td class="num">+2.3</td><td class="num">+3.0</td><td class="num">-0.7</td><td class="num">75</td></tr><tr><td class="num">2027</td><td class="num">+2.5</td><td class="num">+3.3</td><td class="num">-0.3</td><td class="num">77</td></tr><tr><td class="num">2028</td><td class="num">+2.6</td><td class="num">+3.5</td><td class="num">-0.7</td><td class="num">79</td></tr><tr><td class="num">2029</td><td class="num">+2.7</td><td class="num">+3.7</td><td class="num">+1.0</td><td class="num">80</td></tr><tr><td class="num">2030</td><td class="num">+2.9</td><td class="num">+3.9</td><td class="num">-0.2</td><td class="num">81</td></tr></tbody></table>
+
+    <h2>The cyclical position</h2>
+    <p>Potential output and the output gap are estimated with a Hodrick-Prescott filter, which extracts the trend τ
+    minimising the deviation / output from trend subject to a penalty on changes in the trend's slope; the gap is the
+    residual:</p>
+    <div class="eq">$$ \min_{\{\tau_t\}}\ \sum_t (y_t-\tau_t)^2+\lambda\sum_t\big[(\tau_{t+1}-\tau_t)-(\tau_t-\tau_{t-1})\big]^2,\qquad \mathrm{gap}_t=100\,(y_t-\tau_t) $$<span class="num">(G3)</span></div>
+    <p class="fn">where <i>y</i><sub>t</sub> is log non-oil output, τ<sub>t</sub> the latent trend (potential output) and λ
+    the smoothing parameter (100 for annual data, per the IMF convention). A Kalman-filter alternative is reported, as a
+    cross-check, in the Bayesian and State-Space section.</p>
+    <p>The resulting gap is economically coherent — a trough / −7.4 per cent in the 2020 pandemic contraction and a return to
+    around trend by the mid-2020s — providing a consistent basis for the inflation and revenue projections.</p>
+    <div class="fig"><div id="gapChart" class="plot" style="height:380px"></div><div class="cap">Figure 5.3. Non-oil output gap, per cent / potential (Hodrick-Prescott filter, smoothing parameter 100).</div></div>
+    <div class="callout key"><div class="h">Critical evaluation</div>Three caveats bound the projection. It reproduces the Ministry's published path by construction, so it inherits that path's optimism relative to the IMF — about half a point in 2026, which the scenarios stress-test. The short annual sample / about twenty-five observations limits the precision / the non-oil error-correction estimates and widens the fan. And the oil sector is an exogenous production pr/ile, not a behavioural model, so it does not respond to price within this block — that linkage is supplied by the scenario engine and the structural VAR. The projection is best read as a consistent central path with appropriately wide bands, not a point prediction.</div>
+    <script>window.AZ.data().then(D=>{
+      AZ.fan("fanGdp",D.fan.gdp_growth,{ytitle:"Real GDP growth (%)"});
+      const c=D.gdp_contrib;
+      Plotly.newPlot("gContrib",[
+        {x:c.map(d=>d.year),y:c.map(d=>d.nonoil),type:"bar",name:"Non-oil",marker:{color:AZ.palette.accent}},
+        {x:c.map(d=>d.year),y:c.map(d=>d.oil),type:"bar",name:"Oil and gas",marker:{color:AZ.palette.gold}},
+        {x:c.map(d=>d.year),y:c.map(d=>d.gdp),mode:"lines+markers",name:"Total growth",line:{color:AZ.palette.navy,width:2.5},marker:{symbol:"circle",size:5}}
+      ],AZ.layout({barmode:"relative",margin:{l:54,r:16,t:24,b:44},yaxis:{title:"percentage points"},
+        shapes:[{type:"line",x0:2025.5,x1:2025.5,y0:0,y1:1,yref:"paper",line:{color:"#9aa3ad",dash:"dot"}}],
+        annotations:[{x:2025.5,y:1.06,yref:"paper",xanchor:"left",showarrow:false,text:"  forecast",font:{size:10,color:"#8a93a0"}}]}),AZ.cfg);
+      const S=D.series;const g=S.output_gap.map((v,i)=>({x:S.year[i],y:v})).filter(o=>!isNaN(o.y));
+      Plotly.newPlot("gapChart",[{x:g.map(o=>o.x),y:g.map(o=>o.y),type:"bar",
+        marker:{color:g.map(o=>o.y<0?AZ.palette.bad:AZ.palette.accent)},name:"Output gap (%)"}],
+        AZ.layout({margin:{l:54,r:18,t:14,b:44},yaxis:{title:"% / potential"}}),AZ.cfg);});
+    </script>
+    </div><div class="pager"><a href="models.html"><div class="d">Əvvəlki</div><div class="t">Ekonometrik Modellər və Nəticələr</div></a><a class="next" href="inflation.html"><div class="d">Növbəti</div><div class="t">İnflyasiya və Monetar Siyasət</div></a></div><div class="footer"><span><b>Oxlon Proqnozlaşdırma</b>, prepared for the Ministry / Economy / the Republic / Azerbaijan</span><span>Mənbələr: 75 saylı Qərar · IMF texniki yardımı · AMB · Dövlət Statistika Komitəsi</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="gdp")a.classList.add("active")});</script></body></html>

@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>Limitations and Data Requirements · Oxlon Proqnozlaşdırma</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1428'/><circle cx='50' cy='50' r='29' fill='none' stroke='%23f6f1e6' stroke-width='5'/><circle cx='50' cy='50' r='8.5' fill='%23c9a78e'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css?v=319bb194">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="../data/analytics.js?v=319bb194"></script>
+<script src="../assets/app.js?v=319bb194"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="lockup"><svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="6" y1="50" x2="94" y2="50" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="50" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="94" cy="50" r="5.2" fill="#c9a78e"/></svg><div><div class="wordmark">Ox<em>lon</em><span class="dot">.</span></div><div class="tag">Proqnozlaşdırma</div></div></div><div class="ctx">İqtisadiyyat Nazirliyi · Azərbaycan Respublikası<span>Prepared under Cabinet / Ministers Decree No.&nbsp;75</span></div></div><nav class="nav"><a href="/caem/" target="_blank" rel="noopener" style="display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:11px;background:linear-gradient(135deg,#1a2038,#27406b);color:#fff;text-decoration:none;box-shadow:0 4px 13px rgba(16,24,40,.20)"><span style="font-weight:700;font-size:13px;letter-spacing:.01em">▶ CAEM Makro-Fiskal Paneli</span><span style="display:block;font-weight:400;font-size:10.5px;color:#bcc8dc;margin-top:3px;line-height:1.4">Canlı IMF-tipli model: ssenarilər, yelpik qrafikləri və 2025 proqnoz hesab kartı</span></a><div class="group">İcmal</div><a href="index.html" data-slug="index"><span class="n">01</span>İcmal Hesabatı</a><a href="mandate.html" data-slug="mandate"><span class="n">02</span>Mandat və Modelləşdirmə Çərçivəsi</a><div class="group">Məlumat və Modellər</div><a href="data.html" data-slug="data"><span class="n">03</span>Məlumat Bazası</a><a href="models.html" data-slug="models"><span class="n">04</span>Ekonometrik Modellər və Nəticələr</a><div class="group">Proqnozlar</div><a href="gdp.html" data-slug="gdp"><span class="n">05</span>Məhsul və Artım</a><a href="inflation.html" data-slug="inflation"><span class="n">06</span>İnflyasiya və Monetar Siyasət</a><a href="fiscal.html" data-slug="fiscal"><span class="n">07</span>Fiskal və Büdcə</a><a href="labour.html" data-slug="labour"><span class="n">08</span>Əmək Bazarı</a><a href="investment.html" data-slug="investment"><span class="n">09</span>İnvestisiya</a><a href="external.html" data-slug="external"><span class="n">10</span>Xarici Sektor</a><a href="demography.html" data-slug="demography"><span class="n">11</span>Demoqrafiya və İstehlak</a><div class="group">Təhlil</div><a href="scenarios.html" data-slug="scenarios"><span class="n">12</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">13</span>İmpuls Reaksiyaları</a><a href="ml.html" data-slug="ml"><span class="n">14</span>Maşın Öyrənməsi Modelləri</a><a href="structural.html" data-slug="structural"><span class="n">15</span>Struktur Modellər</a><a href="simulator.html" data-slug="simulator"><span class="n">16</span>Ssenari Simulyatoru</a><a href="bayesian.html" data-slug="bayesian"><span class="n">17</span>Bayes və Vəziyyət-Fəza Modelləri</a><div class="group">Əməliyyatlar və Məlumat Alətləri</div><a href="budget.html" data-slug="budget"><span class="n">18</span>Büdcə Mühərriki</a><a href="risk.html" data-slug="risk"><span class="n">19</span>Risk Kəşfiyyatı</a><a href="catalogue.html" data-slug="catalogue"><span class="n">20</span>Məlumat Kataloqu</a><a href="ai.html" data-slug="ai"><span class="n">21</span>Süni İntellekt Platforması (Nümayiş)</a><div class="group">Hesabatlar</div><a href="technical.html" data-slug="technical"><span class="n">22</span>Texniki Hesabat</a><a href="literature.html" data-slug="literature"><span class="n">23</span>Ədəbiyyat</a><a href="limitations.html" data-slug="limitations"><span class="n">24</span>Məhdudiyyətlər və Məlumat Tələbləri</a><a href="roadmap.html" data-slug="roadmap"><span class="n">25</span>Təhvil və Növbəti Addımlar</a><a href="notebooks.html" data-slug="notebooks"><span class="n">26</span>Təkrar İstehsal Oluna Bilən Dəftərlər</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menyu</button> <span class="tb-brand">Oxlon Proqnozlaşdırma</span> &nbsp;›&nbsp; <b>Məhdudiyyətlər və Məlumat Tələbləri</b></div><div class="tb-right"><div class="langtog"><a href="../limitations.html" class="">EN</a><span>·</span><a href="limitations.html" class="on">AZ</a></div><span class="tb-sec">Bölmə 24 / 26</span></div></div><div class="wrap">
+    <div class="eyebrow">Hesabatlar</div><h1 class="page">Məhdudiyyətlər və Məlumat Tələbləri</h1>
+    <p class="lede">The constraints on the present analysis and the data that would extend it. These are factual and bear
+    directly on the accuracy and scope / the forecast.</p>
+
+    <h2>Data limitations</h2>
+    <p>The principal constraint is the length and frequency / the available series. The status column below records not
+    whether a series exists (almost all / it does) but whether it is presently <em>in the model</em>, and if not, what
+    single step would bring it in. The three categories are defined in the legend beneath the table.</p>
+    <table class="dt"><caption>Series bearing on the analysis, their current status, and the consequence / their absence.</caption>
+    <thead><tr><th>Series</th><th>Status</th><th>Holder · route to acquisition</th><th>Consequence while absent</th></tr></thead><tbody>
+    <tr><td>Quarterly national accounts (output by activity and expenditure)</td><td><span class="tag gold">awaiting transfer</span></td><td>State Statistics Committee · data-sharing schedule under the MİİS integration</td><td>The five-variable structural vector autoregression cannot be estimated at quarterly frequency. The series is published by the Committee but was not retrievable through open interfaces, and the IMF International Financial Statistics endpoint did not return it; a direct feed resolves both.</td></tr>
+    <tr><td>Government non-oil primary expenditure and private credit, quarterly</td><td><span class="tag gold">awaiting transfer</span></td><td>Ministry / Finance · Central Bank · MİİS feed</td><td>Two / the five variables / the structural model are unavailable at quarterly frequency, so it runs annually rather than quarterly.</td></tr>
+    <tr><td>Net tax revenue by head; assessed, refunded and exempt amounts</td><td><span class="tag gold">awaiting transfer</span></td><td>State Tax Service · clause 2.10.6-1 data exchange</td><td>The revenue module operates on aggregates rather than the net, head-level detail / clause 2.10.6-1, so revenue is projected in the aggregate rather than head by head.</td></tr>
+    <tr><td>Customs receipts and imports at tariff-line level</td><td><span class="tag gold">awaiting transfer</span></td><td>State Customs Committee · tariff-line extract</td><td>The customs-revenue equation cannot use effective duty rates by category and instead applies an average effective rate.</td></tr>
+    <tr><td>Paragraph-level expenditure execution; debt registry; treasury balances</td><td><span class="tag gold">awaiting transfer</span></td><td>Ministry / Finance · treasury and debt systems</td><td>The budget-execution and sequestration modules require these for full operation; at present they run on the published aggregates.</td></tr>
+    <tr><td>Final (revised) 2025 national accounts</td><td><span class="tag good">in use (provisional)</span></td><td>State Statistics Committee · final revision due later 2026</td><td>The provisional 2025 outturns (State Statistical Committee, January 2026: real GDP +1.4 per cent, CPI 5.6 per cent, a state-budget surplus / AZN 527.6 million) are incorporated as the last actual year and anchor the forecast; the fully revised national accounts, due later in 2026, will refine rather than replace them.</td></tr>
+    <tr><td>Implementing regulation / the fiscal rule (Article 11-1)</td><td><span class="tag slate">pending publication</span></td><td>Ministry / Finance · secondary legislation</td><td>The legal structure is established and modelled; the exact expenditure-ceiling coefficients await the implementing regulation and are currently set to the law's stated reference values.</td></tr>
+    <tr><td>Annual macroeconomic series, 1991–2025 (actual)</td><td><span class="tag good">in use</span></td><td>Held and incorporated (World Bank · IMF · FRED · SSC)</td><td>The headline aggregates now span 1991–2025; the multivariate estimates still use the post-2000 window (about twenty-six observations), which limits their precision.</td></tr>
+    <tr><td>Monthly prices, money and interest rates; Brent to April 2026</td><td><span class="tag good">in use</span></td><td>Held and incorporated</td><td>Sufficient for high-frequency forecasting and the deep-learning model.</td></tr>
+    </tbody></table>
+    <p class="fn"><strong>Status key.</strong>
+    <span class="tag good">in use</span> the series is held and is incorporated into the running system.
+    <span class="tag gold">awaiting transfer</span> the series exists within a named state body and is unblocked by a single
+    inter-agency data feed, precisely the exchange the MİİS integration is designed to establish.
+    <span class="tag slate">pending publication</span> the series does not yet exist and will follow on a known schedule,
+    from the final 2025 outturns or the fiscal-rule regulation; it enters the model on release. No item is simply
+    unavailable: each carries a named holder and a defined route to acquisition.</p>
+
+    <h2>Why longer and higher-frequency data matters</h2>
+    <p>The annual sample / about twenty-five usable observations is the binding constraint on the precision / every
+    multivariate estimate. It widens the impulse-response bands, limits the number / regressors that can be identified,
+    leaves the exchange-rate pass-through bounded rather than point-identified, and prevents estimation / the quarterly
+    structural model. Quarterly national accounts would roughly quadruple the effective sample and permit the
+    five-variable model / the technical design; reliable, revision-managed series with consistent definitions across the
+    statistical transitions / the 1990s and 2000s would further improve the estimates, and several early observations
+    were excluded for this reason.</p>
+
+    <h2>Model limitations</h2>
+    <ul>
+      <li><b>Small-sample imprecision.</b> The vector autoregression and its variance decomposition rest on twenty-five
+      annual observations; the responses are directionally reliable but the bands are wide, and the decomposition shares
+      should be read as orders / magnitude.</li>
+      <li><b>Pass-through is bounded, not point-identified.</b> Simultaneity between the exchange rate and inflation means
+      the causal pass-through is estimated as a range (about 0.10–0.21); resolving it to a point requires an instrument,
+      which the quarterly data would support.</li>
+      <li><b>The simulator is first-order.</b> Its channels are proportional and contemporaneous: it omits non-linearities,
+      dynamic feedback and regime changes, and the debt path simply accumulates the implied deficits. It is built for
+      rapid, auditable what-if analysis; the dynamic and structural questions are the province / the vector
+      autoregression and the DSGE.</li>
+      <li><b>Fan-chart bands are empirical.</b> The probability intervals are derived from the historical dispersion /
+      forecast errors, not from a structural predictive density; they are deliberately wide by 2030, reflecting the
+      economy's dependence on the oil price.</li>
+      <li><b>The external benchmark is an independent comparator.</b> The IMF World Economic Outlook is shown alongside the
+      Oxlon forecast as an independent cross-check, constructed at a different date and on different assumptions; across the
+      forecast horizon the two are nonetheless closely aligned (mean gaps / about 0.1 point on growth and 0.6 on inflation
+      over 2026–29), which is documented on the Forecast Benchmark page.</li>
+      <li><b>Structural models are calibrated.</b> The DSGE is calibrated at conventional values rather than estimated, and
+      the input-output coefficients are illustrative pending the /ficial supply-use table.</li>
+      <li><b>The oil-fund transfer is discretionary.</b> The transfer from the State Oil Fund is set by decision, not
+      formula; its representation as a function / the non-oil deficit is an approximation, disclosed in the fiscal
+      outputs.</li>
+      <li><b>The oil price is not forecast.</b> No model forecasts it reliably at budget-relevant horizons; the scenario
+      approach is the appropriate response, and all three paths are reported together.</li>
+    </ul>
+    </div><div class="pager"><a href="literature.html"><div class="d">Əvvəlki</div><div class="t">Ədəbiyyat</div></a><a class="next" href="roadmap.html"><div class="d">Növbəti</div><div class="t">Təhvil və Növbəti Addımlar</div></a></div><div class="footer"><span><b>Oxlon Proqnozlaşdırma</b>, prepared for the Ministry / Economy / the Republic / Azerbaijan</span><span>Mənbələr: 75 saylı Qərar · IMF texniki yardımı · AMB · Dövlət Statistika Komitəsi</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="limitations")a.classList.add("active")});</script></body></html>

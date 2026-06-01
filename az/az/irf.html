@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>Impulse Responses · Oxlon Proqnozlaşdırma</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1428'/><circle cx='50' cy='50' r='29' fill='none' stroke='%23f6f1e6' stroke-width='5'/><circle cx='50' cy='50' r='8.5' fill='%23c9a78e'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css?v=319bb194">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<script src="../data/analytics.js?v=319bb194"></script>
+<script src="../assets/app.js?v=319bb194"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="lockup"><svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="6" y1="50" x2="94" y2="50" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="50" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="94" cy="50" r="5.2" fill="#c9a78e"/></svg><div><div class="wordmark">Ox<em>lon</em><span class="dot">.</span></div><div class="tag">Proqnozlaşdırma</div></div></div><div class="ctx">İqtisadiyyat Nazirliyi · Azərbaycan Respublikası<span>Prepared under Cabinet / Ministers Decree No.&nbsp;75</span></div></div><nav class="nav"><a href="/caem/" target="_blank" rel="noopener" style="display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:11px;background:linear-gradient(135deg,#1a2038,#27406b);color:#fff;text-decoration:none;box-shadow:0 4px 13px rgba(16,24,40,.20)"><span style="font-weight:700;font-size:13px;letter-spacing:.01em">▶ CAEM Makro-Fiskal Paneli</span><span style="display:block;font-weight:400;font-size:10.5px;color:#bcc8dc;margin-top:3px;line-height:1.4">Canlı IMF-tipli model: ssenarilər, yelpik qrafikləri və 2025 proqnoz hesab kartı</span></a><div class="group">İcmal</div><a href="index.html" data-slug="index"><span class="n">01</span>İcmal Hesabatı</a><a href="mandate.html" data-slug="mandate"><span class="n">02</span>Mandat və Modelləşdirmə Çərçivəsi</a><div class="group">Məlumat və Modellər</div><a href="data.html" data-slug="data"><span class="n">03</span>Məlumat Bazası</a><a href="models.html" data-slug="models"><span class="n">04</span>Ekonometrik Modellər və Nəticələr</a><div class="group">Proqnozlar</div><a href="gdp.html" data-slug="gdp"><span class="n">05</span>Məhsul və Artım</a><a href="inflation.html" data-slug="inflation"><span class="n">06</span>İnflyasiya və Monetar Siyasət</a><a href="fiscal.html" data-slug="fiscal"><span class="n">07</span>Fiskal və Büdcə</a><a href="labour.html" data-slug="labour"><span class="n">08</span>Əmək Bazarı</a><a href="investment.html" data-slug="investment"><span class="n">09</span>İnvestisiya</a><a href="external.html" data-slug="external"><span class="n">10</span>Xarici Sektor</a><a href="demography.html" data-slug="demography"><span class="n">11</span>Demoqrafiya və İstehlak</a><div class="group">Təhlil</div><a href="scenarios.html" data-slug="scenarios"><span class="n">12</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">13</span>İmpuls Reaksiyaları</a><a href="ml.html" data-slug="ml"><span class="n">14</span>Maşın Öyrənməsi Modelləri</a><a href="structural.html" data-slug="structural"><span class="n">15</span>Struktur Modellər</a><a href="simulator.html" data-slug="simulator"><span class="n">16</span>Ssenari Simulyatoru</a><a href="bayesian.html" data-slug="bayesian"><span class="n">17</span>Bayes və Vəziyyət-Fəza Modelləri</a><div class="group">Əməliyyatlar və Məlumat Alətləri</div><a href="budget.html" data-slug="budget"><span class="n">18</span>Büdcə Mühərriki</a><a href="risk.html" data-slug="risk"><span class="n">19</span>Risk Kəşfiyyatı</a><a href="catalogue.html" data-slug="catalogue"><span class="n">20</span>Məlumat Kataloqu</a><a href="ai.html" data-slug="ai"><span class="n">21</span>Süni İntellekt Platforması (Nümayiş)</a><div class="group">Hesabatlar</div><a href="technical.html" data-slug="technical"><span class="n">22</span>Texniki Hesabat</a><a href="literature.html" data-slug="literature"><span class="n">23</span>Ədəbiyyat</a><a href="limitations.html" data-slug="limitations"><span class="n">24</span>Məhdudiyyətlər və Məlumat Tələbləri</a><a href="roadmap.html" data-slug="roadmap"><span class="n">25</span>Təhvil və Növbəti Addımlar</a><a href="notebooks.html" data-slug="notebooks"><span class="n">26</span>Təkrar İstehsal Oluna Bilən Dəftərlər</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menyu</button> <span class="tb-brand">Oxlon Proqnozlaşdırma</span> &nbsp;›&nbsp; <b>İmpuls Reaksiyaları</b></div><div class="tb-right"><div class="langtog"><a href="../irf.html" class="">EN</a><span>·</span><a href="irf.html" class="on">AZ</a></div><span class="tb-sec">Bölmə 13 / 26</span></div></div><div class="wrap wide">
+    <div class="eyebrow">Təhlil</div><h1 class="page">İmpuls Reaksiyaları</h1>
+    <p class="lede">How does a shock propagate through the economy over time? This section estimates a structural vector
+    autoregression in three variables — the oil price, the exchange rate and inflation — and reports the full set /
+    dynamic responses and the variance decomposition, with the identifying assumptions stated.</p>
+
+    <h2>Why a structural vector autoregression</h2>
+    <p>Single equations describe one relationship at a time and cannot trace how a disturbance to one variable works
+    through the others over several years. The vector autoregression (Sims, 1980) treats the variables as a system and,
+    once the reduced-form residuals are mapped to economically-meaningful structural shocks, yields impulse responses —
+    the dynamic effect / a one-/f shock — and a variance decomposition — the share / each variable's fluctuations
+    attributable to each shock. For an oil economy the natural questions are precisely / this form: what does an
+    oil-price shock do to the exchange rate and to inflation, and over what horizon.</p>
+
+    <h2>Model and identification</h2>
+    <p>Let $z_t=(\,\Delta\log p^{oil}_t,\ \Delta\log e_t,\ \pi_t\,)'$ collect oil-price growth, the change in the
+    exchange rate and inflation. The reduced-form model / order one is</p>
+    <div class="eq">$$ z_t = c + A\,z_{t-1} + u_t,\qquad \mathbb{E}[u_t u_t']=\Sigma $$<span class="num">(V1)</span></div>
+    <p>Structural shocks $\varepsilon_t$ are identified by a recursive (Cholesky) decomposition $\Sigma=PP'$, with
+    $u_t=P\varepsilon_t$ and $P$ lower-triangular, under the ordering oil price → exchange rate → inflation:</p>
+    <div class="eq">$$ u_t = P\,\varepsilon_t,\qquad P=\begin{bmatrix} p_{11} & 0 & 0 \\ p_{21} & p_{22} & 0 \\ p_{31} & p_{32} & p_{33} \end{bmatrix} $$<span class="num">(V2)</span></div>
+    <p>The ordering encodes defensible timing assumptions: the world oil price is not contemporaneously influenced by
+    domestic variables (Azerbaijan is a price-taker); the managed exchange rate adjusts next; and consumer prices respond
+    last. This is the identification / the oil-shock literature (Kilian, 2009). The model is estimated on annual data
+    (2000–2025, 26 observations) and responses are shown with two-standard-error bands.</p>
+
+    <h2>Headline responses to an oil-price shock</h2>
+    <p>A one-standard-deviation rise in the oil price raises inflation by approximately 2.2
+    percentage points on impact and is associated with an appreciation / the managed parity; both effects decay within
+    about three years. This is the signature / an economy that imports much / its consumption while exporting oil.</p>
+    <div class="grid g2"><div class="fig"><div id="irfInfl" class="plot" style="height:300px"></div><div class="cap">Figure 13.1. Response / inflation to a one-standard-deviation oil-price shock (±2 s.e.).</div></div>
+      <div class="fig"><div id="irfFx" class="plot" style="height:300px"></div><div class="cap">Figure 13.2. Response / the exchange rate to the same shock (±2 s.e.).</div></div></div>
+
+    <h2>The full response matrix</h2>
+    <p>The complete set / responses — every variable's reaction to every structural shock — is shown below, the standard
+    presentation for a vector autoregression. Each row is a shock; each panel within a row is the response / one variable.
+    The diagonal panels are own responses; the /f-diagonal panels are the cross-effects that matter for policy, notably
+    the response / inflation to the oil and exchange-rate shocks (bottom rows).</p>
+    <h3>Shock to the oil price</h3><div class="grid g3"><div class="fig" style="margin:0"><div id="irf_doil_doil" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Oil price</div></div><div class="fig" style="margin:0"><div id="irf_doil_dner" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Exchange rate</div></div><div class="fig" style="margin:0"><div id="irf_doil_infl" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Inflation</div></div></div><h3>Shock to the exchange rate</h3><div class="grid g3"><div class="fig" style="margin:0"><div id="irf_dner_doil" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Oil price</div></div><div class="fig" style="margin:0"><div id="irf_dner_dner" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Exchange rate</div></div><div class="fig" style="margin:0"><div id="irf_dner_infl" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Inflation</div></div></div><h3>Shock to the inflation</h3><div class="grid g3"><div class="fig" style="margin:0"><div id="irf_infl_doil" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Oil price</div></div><div class="fig" style="margin:0"><div id="irf_infl_dner" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Exchange rate</div></div><div class="fig" style="margin:0"><div id="irf_infl_infl" class="plot" style="height:170px"></div><div class="cap" style="text-align:center">→ Inflation</div></div></div>
+
+    <h2>Variance decomposition</h2>
+    <p>The forecast-error variance decomposition reports the share / each variable's fluctuations explained by each shock
+    at the 10-year horizon. Oil-price and exchange-rate shocks together account for about
+    41 per cent / the variance / inflation, with the remainder its own
+    persistence; the oil shock alone explains roughly 55 per cent / exchange-rate fluctuations.
+    This quantifies the external, oil-driven character / Azerbaijani inflation.</p>
+    <table class="dt"><caption>Forecast-error variance decomposition at the 10-year horizon (per cent / variance explained, by shock).</caption>
+    <thead><tr><th>Variance /</th><th class="num">Oil price</th><th class="num">Exchange rate</th><th class="num">Inflation</th></tr></thead><tbody><tr><td>Oil price</td><td class="num">100</td><td class="num">0</td><td class="num">0</td></tr><tr><td>Exchange rate</td><td class="num">55</td><td class="num">42</td><td class="num">3</td></tr><tr><td>Inflation</td><td class="num">19</td><td class="num">22</td><td class="num">59</td></tr></tbody></table>
+
+    <div class="callout "><div class="h">High-frequency cross-check</div>A monetary vector autoregression on the monthly panel (2005-02–2024-12, 239 observations) confirms the limited monthly pass-through under the managed regime and exhibits the price puzzle common to such systems; this absence / the exchange-rate and activity channels at monthly frequency motivates the quarterly five-variable structural model set out in the Limitations and Delivery sections.</div>
+    <script>window.AZ.data().then(D=>{const V=D.var,VF=D.var_full,H=[...Array(V.horizon+1).keys()];
+      function big(div,o,title){Plotly.newPlot(div,[
+        {x:H.concat([...H].reverse()),y:o.hi.concat([...o.lo].reverse()),fill:"toself",fillcolor:"rgba(29,122,140,.15)",line:{color:"transparent"},name:"±2 s.e."},
+        {x:H,y:o.mean,mode:"lines+markers",line:{color:AZ.palette.accent,width:3},marker:{symbol:"circle",size:6},name:"Response"},
+        {x:[0,V.horizon],y:[0,0],mode:"lines",line:{color:"#888",dash:"dot"},showlegend:false}
+      ],AZ.layout({margin:{l:52,r:14,t:10,b:46},xaxis:{title:"years after the shock"},yaxis:{title:title}}),AZ.cfg);}
+      big("irfInfl",V.irf.infl,"Inflation (pp)"); big("irfFx",V.irf.dner,"Exchange rate (Δlog)");
+      const Hf=[...Array(VF.horizon+1).keys()];
+      VF.order.forEach(sh=>VF.order.forEach(rp=>{const o=VF.irf[sh][rp];
+        Plotly.newPlot("irf_"+sh+"_"+rp,[
+          {x:Hf.concat([...Hf].reverse()),y:o.hi.concat([...o.lo].reverse()),fill:"toself",fillcolor:"rgba(29,122,140,.12)",line:{color:"transparent"},hoverinfo:"skip",showlegend:false},
+          {x:Hf,y:o.mean,mode:"lines",line:{color:AZ.palette.accent,width:2.2},showlegend:false},
+          {x:[0,VF.horizon],y:[0,0],mode:"lines",line:{color:"#999",dash:"dot"},showlegend:false}
+        ],AZ.layout({margin:{l:36,r:8,t:6,b:22},xaxis:{showticklabels:true,tickfont:{size:9}},yaxis:{tickfont:{size:9}}}),AZ.cfg);}));
+    });</script>
+    </div><div class="pager"><a href="scenarios.html"><div class="d">Əvvəlki</div><div class="t">Scenario Analysis</div></a><a class="next" href="ml.html"><div class="d">Növbəti</div><div class="t">Maşın Öyrənməsi Modelləri</div></a></div><div class="footer"><span><b>Oxlon Proqnozlaşdırma</b>, prepared for the Ministry / Economy / the Republic / Azerbaijan</span><span>Mənbələr: 75 saylı Qərar · IMF texniki yardımı · AMB · Dövlət Statistika Komitəsi</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="irf")a.classList.add("active")});</script></body></html>
