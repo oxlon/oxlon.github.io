@@ -171,3 +171,28 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:30px 0}
   .nav{display:none}.nav.open{display:block}.menu-btn{display:inline-block}
   .wrap{padding:24px}
 }
+
+/* ---- section 2.4.1 comparison page (statutory) ---- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:14px 0 20px}
+.stat.ok .v{color:var(--good)} .stat.warn .v{color:var(--gold)}
+.tw{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:12px}
+.tw table.dt{margin:0;border:0}
+table.dt td.fc{background:#eef5fb}
+.u-in{color:var(--muted);font-size:.85em;font-weight:400;font-family:var(--mono)}
+.cmp td.src{font-size:12px;color:var(--muted);white-space:nowrap;text-align:left}
+.cmp tr.s-our td,table.dt tr.s-our td{background:#eef5fb}
+.cmp tr.s-our td.src{color:var(--accent-d);font-weight:600}
+.cmp tr.s-min td.src{color:var(--gold);font-weight:600}
+.cmp tr.s-imf td.src{color:#8a5a82;font-weight:600}
+.chip{display:inline-block;margin-left:8px;font-size:10px;font-weight:600;border-radius:5px;padding:1px 7px;vertical-align:middle;font-family:var(--mono)}
+.chip.our{background:var(--accent);color:#fff}
+.chip.min{background:#f3e8d2;color:#8a6a30}
+b.g{color:var(--good)} b.a{color:var(--gold)} b.r{color:var(--bad)}
+/* centered layout for the statutory page — prose/headings/figures centered, data left for legibility */
+.statpage{text-align:center}
+.statpage .lede{margin-left:auto;margin-right:auto}
+.statpage .dt{margin-left:auto;margin-right:auto}
+.statpage .dt th,.statpage .dt td{text-align:left}
+.statpage .dt td.num,.statpage .dt th.num{text-align:right}
+.statpage .dt td.src{text-align:left}
+.statpage .callout,.statpage .eqc{text-align:left}
