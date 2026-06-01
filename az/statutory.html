@@ -38,7 +38,7 @@
     <p class="fn">Every figure in these four cards is computed from the data, not typed in: the counts are the row counts of the
     equation catalogue and of sheet&nbsp;2.4.1.4, and the 0.14&nbsp;pp is the mean absolute error with
     which Oxlon's financial-programming engine reproduces the trend non-oil growth on the Ministry's own CAEM&nbsp;“A1” sheet over
-    2014–2029. It is worth being precise about because it is the only part of the structural engine that is
+    2014–2029. It is the only part of the structural engine that is
     <i>validated</i>: the output <i>gap</i> itself reproduces to ≈0.42&nbsp;pp, and the Phillips, Taylor and
     debt blocks are <i>not</i> validated to anything like this tolerance — the debt block in particular is a reduced-form
     recursion, treated below as illustrative rather than authoritative.</p>
@@ -82,11 +82,11 @@
 
     <h2>The financial-programming engine (structural cross-check)</h2>
     <p>Alongside the ensemble, Oxlon runs a compact financial-programming model in the IMF tradition — the same engine that
-    drives the live CAEM dashboard. Its reliability is uneven, and it is worth being exact about which part is trustworthy. The
-    output-gap block reproduces the Ministry's own published CAEM trend-growth series to a mean 0.14&nbsp;pp over 2014–2029 — that
-    is the engine's validated core. The Phillips and Taylor blocks use CAEM's own calibration but are not independently checked,
-    and the debt block, discussed under the fiscal cross-check below, is a reduced-form recursion whose level depends entirely on
-    a single seed. The engine is therefore a <i>corroborating</i> instrument, not a competing forecast: the ensemble remains the
+    drives the live CAEM dashboard. Its blocks are not equally reliable. The output-gap block reproduces the Ministry's own
+    published CAEM trend-growth series to a mean 0.14&nbsp;pp over 2014–2029, and is
+    the engine's validated core. The Phillips and Taylor blocks use CAEM's own calibration but are not independently checked, and
+    the debt block, set out under public debt below, is a reduced-form recursion whose level depends entirely on a single seed.
+    The engine corroborates rather than competes: the ensemble remains the
     headline number for the real economy (2.9 per cent for 2026, against which the engine agrees), and the engine's job is to
     supply the fiscal balance and the debt ratio the ensemble does not produce. Its four blocks are the output gap as a deviation
     from the Hodrick–Prescott trend, an open-economy Phillips curve, a smoothed Taylor rule and the debt recursion:</p>
@@ -118,31 +118,30 @@
     actual, and forecasting an already-known year would not be meaningful). Two features stand out: Oxlon and the IMF track one
     another closely and hold near two-and-a-half per cent growth, while the Ministry's path runs stronger and more volatile; and
     the Ministry's inflation path climbs above seven per cent by 2030, far above Oxlon's projection and the IMF, both of which
-    settle near four. The report records the divergence; it does not reconcile it.</p>
+    settle near four. These differences are reported as they stand.</p>
     <div class="fig"><div id="st_gdp" class="plot" style="height:380px"></div><div class="cap">Figure 23.1. Real GDP growth, 2026–2030 forecasts (per cent): Oxlon, the Ministry (Decree-75) and the IMF.</div></div>
     <div class="fig"><div id="st_cpi" class="plot" style="height:380px"></div><div class="cap">Figure 23.2. Consumer-price inflation, 2026–2030 forecasts (per cent): the Ministry path diverges sharply upward after 2027, well above Oxlon and the IMF.</div></div>
     <div class="fig"><div id="st_noil" class="plot" style="height:360px"></div><div class="cap">Figure 23.3. Non-oil GDP growth, 2026–2030 forecasts (per cent): Oxlon, the Ministry and the IMF.</div></div>
     <div class="tw"><table class="dt cmp"><caption>The three independently-modelled series over the forecast horizon 2026–2030 — the Oxlon forecast, the Ministry (Decree-75) table and the IMF — three values for every year. The realised 2025 base on which all three are anchored is shown in the charts above.</caption><thead><tr><th class="lbl">Indicator</th><th>Source</th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th><th class="num">2030</th></tr></thead><tbody><tr class="s-our"><td class="lbl" rowspan="3">Real GDP growth<span class='u-in'> (%)</span></td><td class="src">Oxlon</td><td class="num">2.3</td><td class="num">2.5</td><td class="num">2.6</td><td class="num">2.7</td><td class="num">2.9</td></tr><tr class="s-min"><td class="src">Ministry</td><td class="num">2.5</td><td class="num">2.6</td><td class="num">2.3</td><td class="num">3.8</td><td class="num">1.0</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">2.2</td><td class="num">2.5</td><td class="num">2.5</td><td class="num">2.5</td><td class="num">2.5</td></tr><tr class="s-our"><td class="lbl" rowspan="3">Non-oil GDP growth<span class='u-in'> (%)</span></td><td class="src">Oxlon</td><td class="num">4.3</td><td class="num">4.4</td><td class="num">4.6</td><td class="num">4.7</td><td class="num">4.8</td></tr><tr class="s-min"><td class="src">Ministry</td><td class="num">4.4</td><td class="num">3.9</td><td class="num">4.0</td><td class="num">3.6</td><td class="num">1.5</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">3.7</td><td class="num">3.6</td><td class="num">3.5</td><td class="num">3.5</td><td class="num">3.5</td></tr><tr class="s-our"><td class="lbl" rowspan="3">CPI inflation (avg)<span class='u-in'> (%)</span></td><td class="src">Oxlon</td><td class="num">5.1</td><td class="num">4.9</td><td class="num">4.8</td><td class="num">4.7</td><td class="num">4.7</td></tr><tr class="s-min"><td class="src">Ministry</td><td class="num">2.7</td><td class="num">5.1</td><td class="num">6.7</td><td class="num">7.1</td><td class="num">7.2</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">6.0</td><td class="num">5.1</td><td class="num">4.1</td><td class="num">4.0</td><td class="num">4.0</td></tr></tbody></table></div>
     <div class="callout "><div class="h">Reading the table</div>Every cell is a forecast for 2026–2030 — Oxlon's forecast, the Ministry's Decree-75 table and the IMF, three values per year. Oxlon's real-economy figures come from its model ensemble; 2025 and earlier are realised actuals and are not re-forecast.</div>
 
-    <h2>Fiscal sustainability cross-check — and why the debt line moved</h2>
-    <p>This block deserves the most scrutiny on the page, because an earlier version of it diverged sharply from the IMF and that
-    divergence turned out to be an error, not a finding. It is documented here rather than quietly corrected.</p>
-    <div class="callout warn"><div class="h">What was wrong, and the fix</div>Public debt is a stock: the recursion that rolls it forward must be seeded with the actual debt level in the last realised year. The series extracted from the CAEM workbook ends in 2024, so the engine had no 2025 stock to start from and silently fell back to a hard-coded placeholder of 15 per cent of GDP. The whole debt path inherited that wrong starting point and ran roughly eight points below the IMF — purely an artefact of the missing seed. The recursion is now anchored on the 2025 gross-debt stock of 20.1 per cent of GDP (consistent with the IMF), which is the correct, non-controversial starting level; only the 2026–2030 path is a forecast.</div>
-    <p>With the seed corrected, Oxlon's engine puts gross debt at roughly 19.7 per cent of GDP in 2026, easing to about 16.4 per
-    cent by 2030, against the IMF's near-flat 20.0 per cent. The remaining gap is now small and, more importantly,
-    <i>explained</i>: Oxlon's primary balance is close to zero across the horizon, so nominal growth and inflation in the
-    denominator gently erode the ratio, whereas the IMF builds in a mild fiscal deficit by the end of the horizon that holds the
-    ratio flat. The engine also assumes a constant 3 per cent effective interest rate on the
-    stock; a higher rate would lift the path toward the IMF's. Neither path is implausible — the difference is an assumption about
-    the primary balance and the cost of debt, not a modelling disagreement.</p>
-    <p>The fiscal-balance line carries a second, definitional caveat. Oxlon's figure is the <i>state-budget</i> balance — its
-    +0.4 per cent-of-GDP surplus for 2025 matches the official state-budget outturn — whereas the IMF reports the wider
-    <i>general-government</i> balance, which includes the State Oil Fund and so starts far higher (about +2.6 per cent in 2025)
-    before turning to deficit. The two series measure different perimeters and should not be read as rival forecasts of the same
-    number.</p>
-    <div class="tw"><table class="dt cmp"><caption>Fiscal sustainability cross-check over 2026–2030: Oxlon's financial-programming engine against the IMF. The Decree-75 tables report revenue and expenditure in manat rather than the balance, so the Ministry line is omitted here.</caption><thead><tr><th class="lbl">Indicator</th><th>Source</th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th><th class="num">2030</th></tr></thead><tbody><tr class="s-our"><td class="lbl" rowspan="2">Fiscal balance<span class='u-in'> (% of GDP)</span></td><td class="src">Oxlon (FP engine)</td><td class="num">-0.5</td><td class="num">0.4</td><td class="num">0.1</td><td class="num">0.7</td><td class="num">0.0</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">1.8</td><td class="num">0.2</td><td class="num">-0.6</td><td class="num">-0.5</td><td class="num">-0.6</td></tr><tr class="s-our"><td class="lbl" rowspan="2">Gross public debt<span class='u-in'> (% of GDP)</span></td><td class="src">Oxlon (FP engine)</td><td class="num">19.7</td><td class="num">18.4</td><td class="num">17.6</td><td class="num">16.0</td><td class="num">16.4</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">20.0</td><td class="num">20.0</td><td class="num">19.9</td><td class="num">19.9</td><td class="num">20.0</td></tr></tbody></table></div>
-    <div class="callout "><div class="h">Status of this block</div>Treat the fiscal and debt figures as an illustrative reduced-form cross-check, not as validated output. Unlike the output-gap block (mean error 0.14 pp against CAEM), the debt recursion is sensitive to its seed, its assumed interest rate and the primary-balance path, and the fiscal balance depends on which government perimeter is used. Where Oxlon and the IMF differ here, the IMF is the safer external benchmark.</div>
+    <h2>Public debt and the budget balance</h2>
+    <p>Oxlon does not estimate the debt stock independently. It takes the 20.1 per cent-of-GDP gross
+    debt recorded for 2025 — the general-government measure the IMF and the fiscal accounts use — and projects it with the
+    debt-dynamics identity of equation&nbsp;C4, driven by its own growth and inflation forecasts, the primary balance from the
+    budget, and an effective interest rate of 3 per cent. On that basis gross debt falls from
+    19.7 per cent of GDP in 2026 to 16.0 per cent in 2029, against the IMF's flat 20.0 per cent. The decline follows from a
+    primary balance near zero while nominal growth widens the denominator; the IMF holds the ratio level on a small assumed
+    deficit. The block stops in 2029: the engine's growth, inflation and primary-balance inputs do not run past that year, and a
+    later value would be the recursion advancing on the interest rate alone.</p>
+    <p>The budget-balance line is not comparable with the IMF's, because the two cover different parts of the public sector.
+    Oxlon reports the state-budget balance, a surplus of about 0.4 per cent of GDP in 2025 that matches the official outturn. The
+    IMF reports the general-government balance, which consolidates the State Oil Fund and so stands several points higher in 2025
+    before turning to deficit later in the decade.</p>
+    <div class="tw"><table class="dt cmp"><caption>Public debt and the budget balance, 2026–2029: Oxlon's financial-programming engine against the IMF. The Decree-75 tables give revenue and expenditure in manat, not a balance, so there is no Ministry line. Figures end in 2029, the last year the engine's inputs cover.</caption><thead><tr><th class="lbl">Indicator</th><th>Source</th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th></tr></thead><tbody><tr class="s-our"><td class="lbl" rowspan="2">Fiscal balance<span class='u-in'> (% of GDP)</span></td><td class="src">Oxlon (FP engine)</td><td class="num">-0.5</td><td class="num">0.4</td><td class="num">0.1</td><td class="num">0.7</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">1.8</td><td class="num">0.2</td><td class="num">-0.6</td><td class="num">-0.5</td></tr><tr class="s-our"><td class="lbl" rowspan="2">Gross public debt<span class='u-in'> (% of GDP)</span></td><td class="src">Oxlon (FP engine)</td><td class="num">19.7</td><td class="num">18.4</td><td class="num">17.6</td><td class="num">16.0</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">20.0</td><td class="num">20.0</td><td class="num">19.9</td><td class="num">19.9</td></tr></tbody></table></div>
+    <p class="fn">The debt path is a reduced-form recursion, not an estimated model: its level is fixed by the 2025 seed and its
+    slope by the growth, inflation, interest-rate and primary-balance assumptions stated above. The IMF figure is the external
+    reference where the two differ.</p>
 
     <h2>Reconstructed statutory sheets</h2>
     <p>Each sheet is reproduced in the workbook's own layout over the forecast years 2026–2030, with the unit shown in
