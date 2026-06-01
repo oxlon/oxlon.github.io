@@ -6,10 +6,10 @@ const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", 
 const enc = encodeURIComponent, dec = decodeURIComponent;
 const clean = n => (n || "").replace(/\s+/g, " ").trim();
 const HUES = [210, 28, 264, 150, 344, 190, 45, 122, 232, 14, 300, 168, 255, 86, 200, 320, 38, 175, 270, 100, 8, 220];
-const tone = (h, j) => `hsl(${h},54%,${36 + (j % 6) * 7}%)`;
-const headCol = h => `hsl(${h},48%,40%)`;
-const softBg = h => `hsl(${h},60%,96%)`;
-const PAL = ["#2f6f8f", "#c98a3c", "#5b8c5a", "#9b5d8a", "#3f9fa6", "#b5683f", "#7585bd", "#94a14a", "#a0526d", "#6a8caf", "#caa45a"];
+const tone = (h, j) => `hsl(${h},44%,${36 + (j % 6) * 7}%)`;
+const headCol = h => `hsl(${h},40%,38%)`;
+const softBg = h => `hsl(${h},30%,96%)`;
+const PAL = ["#0f6b62", "#b07d3c", "#3f6f8f", "#b23b30", "#5f7d52", "#8a5d7a", "#2f8a7e", "#9a7b3c", "#6a6f8f", "#c0683f", "#4e8d80"];
 const DASH = ["solid", "dash", "dot", "dashdot", "longdash", "longdashdot"];
 const isTotal = n => /\b(total|gdp growth|real gdp|overall balance|headline|sum|net|forecast)\b/i.test(n || "");
 const COMPO = /contribution|share of|sources of|composition|decompos|expenditure item|revenue item|financing|by sector|use of|breakdown|growth accounting/i;
@@ -47,7 +47,7 @@ function scnAnno() {
   return {
     text: (LANG === "az" ? "Ssenari: " : "Scenario: ") + t + (LANG === "az" ? "  (punktir)" : "  (dashed)"),
     xref: "paper", yref: "paper", x: 0.01, y: 0.99, xanchor: "left", yanchor: "top", showarrow: false,
-    font: { size: 10, color: "#b1322a", family: "Hanken Grotesk, sans-serif" }, align: "left",
+    font: { size: 10, color: "#b23b30", family: "Hanken Grotesk, sans-serif" }, align: "left",
     bgcolor: "rgba(255,255,255,0.82)", bordercolor: "rgba(177,50,42,0.5)", borderwidth: 1, borderpad: 3
   };
 }
@@ -573,9 +573,11 @@ function showMethods() {
     <div class="gsub">${az ? "Hər tənlik, onun kalibrlənməsi və hər məlumat mənbəyi yoxlanıla və təkrar istehsal oluna biləndir. Struktur bloklar CAEM-i təkrar yaradır (iş kitabına qarşı doğrulanıb), neft, fiskal və xarici kanallar isə şəffaf, etiketlənmiş elastiklik əmsallarıdır." : "Every equation, its calibration and every data source is auditable and reproducible. The structural blocks reproduce CAEM, validated against the workbook, and the oil, fiscal and external channels are transparent, labelled elasticities."}</div>
 
     <h3 class="lh">${tx("m.h1", "1 · Core equations (reproduced from CAEM, validated)")}</h3>
-    <div class="mtbl"><table class="dt"><thead><tr><th>${tx("m.col.block", "Block")}</th><th>${tx("m.col.spec", "Specification")}</th><th>${tx("m.col.valid", "Validation")}</th></tr></thead><tbody>
-      ${eqs.map(([n, tex, plain, note, v]) => `<tr><td><b>${n}</b></td><td>${kx(tex, plain)}${note ? `<div class="eqcal">${esc(note)}</div>` : ""}</td><td class="sc-ok">${esc(v)}</td></tr>`).join("")}
-    </tbody></table></div>
+    ${eqs.map(([n, tex, plain, note, v], i) => `<div class="methodeq">
+      <div class="me-h"><b>${esc(n)}</b><span class="me-v">${esc(v)}</span></div>
+      ${kx(tex, plain, "(" + (i + 1) + ")")}
+      ${note ? `<div class="eqcal">${esc(note)}</div>` : ""}
+    </div>`).join("")}
 
     <h3 class="lh">${tx("m.h2", "2 · Scenario channels (transparent, Azerbaijan-calibrated elasticities)")}</h3>
     <div class="note-eco">${az ? "Şəffaf, etiketlənmiş ixtisar olunmuş reaksiyalar: hər ssenari rəqəmi göstərilən elastikliyə qədər izlənə bilir və CAEM-in tam uçot çərçivəsini tamamlayır." : "Transparent, labelled reduced-form responses: every scenario number is traceable to a stated elasticity, complementing CAEM's full accounting framework."}</div>
@@ -770,7 +772,7 @@ function drawQuarterly(div, periods, actual, fc, color, boundary) {
   }];
   if (fc && fc.some(v => v != null)) traces.push({
     x: periods, y: fc, type: "scatter", mode: "lines", connectgaps: true,
-    line: { color: "#b1322a", width: 2, dash: "dash" }, hovertemplate: "%{x}: %{y:.2f} ★<extra></extra>"
+    line: { color: "#b23b30", width: 2, dash: "dash" }, hovertemplate: "%{x}: %{y:.2f} ★<extra></extra>"
   });
   const shapes = [];
   if (boundary != null) {
@@ -778,11 +780,11 @@ function drawQuarterly(div, periods, actual, fc, color, boundary) {
     shapes.push({ type: "line", xref: "x", yref: "paper", x0: boundary - 0.5, x1: boundary - 0.5, y0: 0, y1: 1, line: { color: "#c2c8d0", width: 1, dash: "dot" } });
   }
   Plotly.react(div, traces, {
-    height: 196, margin: { l: 42, r: 10, t: 8, b: 26 }, font: { family: "Hanken Grotesk,sans-serif", size: 10, color: "#4a4a4a" },
+    height: 196, margin: { l: 42, r: 10, t: 8, b: 26 }, font: { family: "Hanken Grotesk,sans-serif", size: 10, color: "#4e4a43" },
     plot_bgcolor: "#fff", paper_bgcolor: "#fff", showlegend: false, hovermode: "x unified", shapes,
-    hoverlabel: { font: { size: 10.5, family: "Hanken Grotesk,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
+    hoverlabel: { font: { size: 10.5, family: "Hanken Grotesk,sans-serif" }, bgcolor: "#fff", bordercolor: "rgba(26,26,23,0.16)" },
     xaxis: { type: "category", tickvals, ticktext, tickangle: 0, showgrid: false, ticklen: 3 },
-    yaxis: { gridcolor: "#eef1f4", zeroline: true, zerolinecolor: "#d2d7dd", automargin: true }
+    yaxis: { gridcolor: "rgba(26,26,23,0.06)", zeroline: true, zerolinecolor: "rgba(26,26,23,0.16)", automargin: true }
   }, { responsive: true, displayModeBar: false });
 }
 /* ---------------- reproducible notebooks (Colab) ---------------- */
@@ -863,7 +865,7 @@ function benchTraces(v) {
     const xs = ex.filter(y => d[String(y)] != null);
     tr.push({ x: xs, y: xs.map(y => d[String(y)]), mode: "lines+markers", name: lab, line: { color: c, width: 1.7, dash: dash || undefined }, marker: { size: 5, symbol: "square" }, hovertemplate: "%{x}: %{y:.1f}%<extra>" + lab + "</extra>" });
   });
-  tr.push({ x: ex, y: ex.map(y => ours[String(y)]), mode: "lines+markers", name: "Oxlon ensemble", line: { color: "#0e7c8b", width: 3 }, marker: { size: 6 }, hovertemplate: "%{x}: %{y:.1f}%<extra>Oxlon ensemble</extra>" });
+  tr.push({ x: ex, y: ex.map(y => ours[String(y)]), mode: "lines+markers", name: "Oxlon ensemble", line: { color: "#0f6b62", width: 3 }, marker: { size: 6 }, hovertemplate: "%{x}: %{y:.1f}%<extra>Oxlon ensemble</extra>" });
   return tr;
 }
 async function showBenchmark() {
@@ -966,11 +968,11 @@ function fcShapes(xs, vintage) {
 const tickStep = xs => (xs.length && (Math.max(...xs) - Math.min(...xs)) > 22) ? 4 : 2;  // consistent: 2-yr ticks (4 only for very long histories)
 const hexA = (h, a) => { const n = parseInt(h.slice(1), 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
 const baseLayout = (xyear, shapes, h, b, dtick) => ({
-  height: h, margin: { l: 46, r: 12, t: 8, b: b }, font: { family: "Hanken Grotesk,sans-serif", size: 10, color: "#4a4a4a" },
+  height: h, margin: { l: 46, r: 12, t: 8, b: b }, font: { family: "Hanken Grotesk,sans-serif", size: 10, color: "#4e4a43" },
   plot_bgcolor: "#fff", paper_bgcolor: "#fff", barmode: "relative", bargap: 0.16, showlegend: false, shapes,
-  hovermode: "x unified", hoverlabel: { font: { size: 10.5, family: "Hanken Grotesk,sans-serif" }, bgcolor: "#fff", bordercolor: "#d2d7dd" },
+  hovermode: "x unified", hoverlabel: { font: { size: 10.5, family: "Hanken Grotesk,sans-serif" }, bgcolor: "#fff", bordercolor: "rgba(26,26,23,0.16)" },
   xaxis: xyear ? { tickformat: "d", showgrid: false, dtick: dtick || 2, tick0: 2026, ticklen: 3 } : { showgrid: false, ticklen: 3 },
-  yaxis: { gridcolor: "#eef1f4", zeroline: true, zerolinecolor: "#d2d7dd", automargin: true }
+  yaxis: { gridcolor: "rgba(26,26,23,0.06)", zeroline: true, zerolinecolor: "rgba(26,26,23,0.16)", automargin: true }
 });
 /* radar / spider chart — e.g. Balance of risks across dimensions */
 function drawRadar(div, f) {
@@ -983,9 +985,9 @@ function drawRadar(div, f) {
     };
   });
   Plotly.react(div, traces, {
-    height: 380, margin: { l: 64, r: 64, t: 22, b: 30 }, font: { family: "Hanken Grotesk,sans-serif", size: 10.5, color: "#4a4a4a" },
+    height: 380, margin: { l: 64, r: 64, t: 22, b: 30 }, font: { family: "Hanken Grotesk,sans-serif", size: 10.5, color: "#4e4a43" },
     paper_bgcolor: "#fff", showlegend: false,
-    polar: { bgcolor: "#fff", radialaxis: { angle: 90, tickfont: { size: 9 }, gridcolor: "#eef1f4" }, angularaxis: { tickfont: { size: 11 }, rotation: 90, direction: "clockwise" } }
+    polar: { bgcolor: "#fff", radialaxis: { angle: 90, tickfont: { size: 9 }, gridcolor: "rgba(26,26,23,0.06)" }, angularaxis: { tickfont: { size: 11 }, rotation: 90, direction: "clockwise" } }
   }, { responsive: true, displayModeBar: false });
   htmlLegend(document.getElementById(div).closest(".figcard"), f.series.map((s, k) => ({ name: clean(s.name) || ("Series " + (k + 1)), color: PAL[k % PAL.length], w: 2.4 })));
 }
@@ -1105,7 +1107,7 @@ function exportPNG(card, f) {
   const m = gd.layout.margin || {}, prevT = m.t || 8;
   const prevY = (gd.layout.yaxis && gd.layout.yaxis.title && gd.layout.yaxis.title.text) || "";
   Plotly.relayout(gd, {
-    "title.text": title, "title.font.size": 15, "title.font.family": "Hanken Grotesk,sans-serif", "title.font.color": "#1a2038",
+    "title.text": title, "title.font.size": 15, "title.font.family": "Hanken Grotesk,sans-serif", "title.font.color": "#1a1a17",
     "title.x": 0.01, "title.xanchor": "left", "title.y": 0.97, "title.yanchor": "top", "margin.t": 42,
     "yaxis.title.text": unit, "yaxis.title.font.size": 11, "yaxis.title.font.color": "#6b7280"
   }).then(() => Plotly.downloadImage(gd, { format: "png", scale: 3, width: 920, height: 540, filename: "caem_" + title.replace(/[^\w]+/g, "_").slice(0, 44) }))
@@ -1128,9 +1130,12 @@ function enlargeFig(card, f) {
   $("#figmodal").classList.add("open"); $("#figscrim").classList.add("show");
 }
 function closeFigModal() { $("#figmodal").classList.remove("open"); $("#figscrim").classList.remove("show"); const p = $("#figmodalplot"); if (p && window.Plotly) Plotly.purge(p); }
-function kx(latex, plain) {
-  if (window.katex) { try { return `<div class="id-eq">${katex.renderToString(latex, { throwOnError: false, displayMode: false })}</div>`; } catch (e) { } }
-  return `<div class="id-eq mono">${esc(plain || latex)}</div>`;
+// LaTeX → a clean, display-mode equation block in the /az/models.html style
+// (teal-spined .eq card, optional right-aligned equation number).
+function kx(latex, plain, num) {
+  const tag = num ? `<span class="num">${esc(num)}</span>` : "";
+  if (window.katex) { try { return `<div class="eq">${katex.renderToString(latex, { throwOnError: false, displayMode: true })}${tag}</div>`; } catch (e) { } }
+  return `<div class="eq mono">${esc(plain || latex)}${tag}</div>`;
 }
 const VARDESC = {
   real_gdp_growth: "Total real GDP growth — oil and non-oil sectors combined; the headline output measure.",
@@ -1312,7 +1317,7 @@ function drawFig(div, f, primary, big) {
   if (compo) {                                              // stacked-bar decomposition
     let pi = 0;
     traces = f.series.map((s, k) => {
-      const tot = k === totIdx, c = tot ? "#1a2038" : PAL[pi++ % PAL.length];
+      const tot = k === totIdx, c = tot ? "#1a1a17" : PAL[pi++ % PAL.length];
       const nm = clean(s.name) || (tot ? "Total" : "Component " + (k + 1));
       leg.push(tot ? { name: nm.slice(0, 28), color: c, w: 2.4 } : { name: nm.slice(0, 28), color: c, bar: true });
       return tot
