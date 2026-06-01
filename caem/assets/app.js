@@ -796,14 +796,14 @@ const NOTEBOOKS = [
   ["13", "13_structural_models", "Structural macro models", "Struktur makro modellər", "3-equation New-Keynesian DSGE and input–output multipliers.", "Yeni-Keynsçi DSGE və xərc-buraxılış multiplikatorları.", "DSGE · IO"],
   ["14", "14_scenarios_risk", "Scenarios, fan charts & risk", "Ssenarilər, yelpik qrafikləri və risk", "Oil scenarios, Bank-of-England fan charts, a risk heat-map.", "Neft ssenariləri, yelpik qrafikləri, risk istilik xəritəsi.", "scenarios · fans"],
   ["15", "15_caem_summary", "Integrated CAEM & forecast summary", "İnteqrasiya olunmuş CAEM və xülasə", "The full semi-structural model, 2026–2030 forecast, scorecard, nowcast.", "Tam yarı-struktur model, 2026–2030 proqnoz, hesab kartı.", "CAEM · summary"],
-  ["16", "16_forecast_benchmark", "Forecast benchmark", "Proqnoz müqayisəsi", "Our skill-weighted multi-model ensemble vs IMF Article IV, CAEM, and the prior baseline.", "Çoxmodelli ansambl IMF Article IV, CAEM və əvvəlki bazaya qarşı.", "ensemble · benchmark"],
+  ["16", "16_forecast_benchmark", "Forecast benchmark", "Proqnoz müqayisəsi", "A skill-weighted multi-model ensemble against IMF Article IV and the CAEM dashboard, with backtest skill scores.", "İMF Article IV və CAEM dashboard ilə müqayisədə bacarıq-çəkili çoxmodelli ansambl, geriyə-test bacarıq balları ilə.", "ensemble · benchmark"],
 ];
 function showNotebooks() {
   CUR = null; setActive("notebooks");
   const az = LANG === "az";
   const intro = az
-    ? "On altı akademik keyfiyyətli, təkrar istehsal oluna bilən Jupyter dəftəri — hər biri bir təhlil bölməsini real məlumatdan başlayaraq qiymətləndirilmiş modelə, qrafiklərə və proqnoza qədər izah edir (LaTeX riyaziyyatı ilə). İki veb məhsulunun analitik onurğası."
-    : "Sixteen academic-quality, reproducible Jupyter notebooks — each works one analytical section end-to-end, from the real data through the estimated model to the figures and the forecast, with the mathematics derived in LaTeX. The analytical backbone of the two web products.";
+    ? "On yeddi akademik keyfiyyətli, təkrar istehsal oluna bilən Jupyter dəftəri — hər biri bir təhlil bölməsini real məlumatdan başlayaraq qiymətləndirilmiş modelə, qrafiklərə və proqnoza qədər izah edir (LaTeX riyaziyyatı ilə). İki veb məhsulunun analitik onurğası."
+    : "Seventeen academic-quality, reproducible Jupyter notebooks — each works one analytical section end-to-end, from the real data through the estimated model to the figures and the forecast, with the mathematics derived in LaTeX. The analytical backbone of the two web products.";
   const howto = az
     ? "<b>Colab-da işə salmaq:</b> layihə qovluğunu Google Drive-a <code>MyDrive/azerbaijan-macrofiscal-notebooks/</code> kimi yükləyin, sonra istənilən dəftəri Colab-da açın — ilk xana Drive-ı qoşur, məlumatı tapır və üslubu tətbiq edir."
     : "<b>To run in Colab:</b> upload the project folder to Google Drive as <code>MyDrive/azerbaijan-macrofiscal-notebooks/</code>, then open any notebook in Colab — the first cell mounts Drive, locates the data and applies the house style.";
