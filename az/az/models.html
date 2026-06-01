@@ -15,121 +15,79 @@
 <script src="../data/analytics.js?v=319bb194"></script>
 <script src="../assets/app.js?v=319bb194"></script></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="lockup"><svg class="mark" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="6" y1="50" x2="94" y2="50" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="50" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="94" cy="50" r="5.2" fill="#c9a78e"/></svg><div><div class="wordmark">Ox<em>lon</em><span class="dot">.</span></div><div class="tag">Proqnozlaşdırma</div></div></div><div class="ctx">İqtisadiyyat Nazirliyi · Azərbaycan Respublikası<span>Prepared under Cabinet / Ministers Decree No.&nbsp;75</span></div></div><nav class="nav"><a href="/caem/" target="_blank" rel="noopener" style="display:block;margin:6px 14px 14px;padding:12px 14px;border-radius:11px;background:linear-gradient(135deg,#1a2038,#27406b);color:#fff;text-decoration:none;box-shadow:0 4px 13px rgba(16,24,40,.20)"><span style="font-weight:700;font-size:13px;letter-spacing:.01em">▶ CAEM Makro-Fiskal Paneli</span><span style="display:block;font-weight:400;font-size:10.5px;color:#bcc8dc;margin-top:3px;line-height:1.4">Canlı IMF-tipli model: ssenarilər, yelpik qrafikləri və 2025 proqnoz hesab kartı</span></a><div class="group">İcmal</div><a href="index.html" data-slug="index"><span class="n">01</span>İcmal Hesabatı</a><a href="mandate.html" data-slug="mandate"><span class="n">02</span>Mandat və Modelləşdirmə Çərçivəsi</a><div class="group">Məlumat və Modellər</div><a href="data.html" data-slug="data"><span class="n">03</span>Məlumat Bazası</a><a href="models.html" data-slug="models"><span class="n">04</span>Ekonometrik Modellər və Nəticələr</a><div class="group">Proqnozlar</div><a href="gdp.html" data-slug="gdp"><span class="n">05</span>Məhsul və Artım</a><a href="inflation.html" data-slug="inflation"><span class="n">06</span>İnflyasiya və Monetar Siyasət</a><a href="fiscal.html" data-slug="fiscal"><span class="n">07</span>Fiskal və Büdcə</a><a href="labour.html" data-slug="labour"><span class="n">08</span>Əmək Bazarı</a><a href="investment.html" data-slug="investment"><span class="n">09</span>İnvestisiya</a><a href="external.html" data-slug="external"><span class="n">10</span>Xarici Sektor</a><a href="demography.html" data-slug="demography"><span class="n">11</span>Demoqrafiya və İstehlak</a><div class="group">Təhlil</div><a href="scenarios.html" data-slug="scenarios"><span class="n">12</span>Scenario Analysis</a><a href="irf.html" data-slug="irf"><span class="n">13</span>İmpuls Reaksiyaları</a><a href="ml.html" data-slug="ml"><span class="n">14</span>Maşın Öyrənməsi Modelləri</a><a href="structural.html" data-slug="structural"><span class="n">15</span>Struktur Modellər</a><a href="simulator.html" data-slug="simulator"><span class="n">16</span>Ssenari Simulyatoru</a><a href="bayesian.html" data-slug="bayesian"><span class="n">17</span>Bayes və Vəziyyət-Fəza Modelləri</a><div class="group">Əməliyyatlar və Məlumat Alətləri</div><a href="budget.html" data-slug="budget"><span class="n">18</span>Büdcə Mühərriki</a><a href="risk.html" data-slug="risk"><span class="n">19</span>Risk Kəşfiyyatı</a><a href="catalogue.html" data-slug="catalogue"><span class="n">20</span>Məlumat Kataloqu</a><a href="ai.html" data-slug="ai"><span class="n">21</span>Süni İntellekt Platforması (Nümayiş)</a><div class="group">Hesabatlar</div><a href="technical.html" data-slug="technical"><span class="n">22</span>Texniki Hesabat</a><a href="literature.html" data-slug="literature"><span class="n">23</span>Ədəbiyyat</a><a href="limitations.html" data-slug="limitations"><span class="n">24</span>Məhdudiyyətlər və Məlumat Tələbləri</a><a href="roadmap.html" data-slug="roadmap"><span class="n">25</span>Təhvil və Növbəti Addımlar</a><a href="notebooks.html" data-slug="notebooks"><span class="n">26</span>Təkrar İstehsal Oluna Bilən Dəftərlər</a></nav></aside><main class="main"><div class="topbar"><div class="crumbs"><button class="menu-btn btn ghost">Menyu</button> <span class="tb-brand">Oxlon Proqnozlaşdırma</span> &nbsp;›&nbsp; <b>Ekonometrik Modellər və Nəticələr</b></div><div class="tb-right"><div class="langtog"><a href="../models.html" class="">EN</a><span>·</span><a href="models.html" class="on">AZ</a></div><span class="tb-sec">Bölmə 04 / 26</span></div></div><div class="wrap">
     <div class="eyebrow">Məlumat və Modellər</div><h1 class="page">Ekonometrik Modellər və Nəticələr</h1>
-    <p class="lede">This section sets out the variables and their construction, the form / each model block, the estimated
-    equation as deployed, and the result that follows it. The deployed system comprises ninety-two equations; the
-    representative relationship for each block is shown with its estimated coefficients, and the inflation equation, which is
-    re-estimated here, is reported in full with its specification table, robustness checks and fit.</p>
+    <p class="lede">Bu bölmə dəyişənləri və onların qurulmasını, hər model blokunun formasını, tətbiq edilən qiymətləndirilmiş tənliyi, və ondan çıxan nəticəni təqdim edir. Tətbiq edilən sistem doxsan iki tənlikdən ibarətdir; hər blok üçün təmsilçi əlaqə öz qiymətləndirilmiş əmsalları ilə göstərilir, burada yenidən qiymətləndirilən inflyasiya tənliyi isə spesifikasiya cədvəli, etibarlılıq yoxlamaları və uyğunluğu ilə tam təqdim olunur.</p>
 
-    <h2>Variables and their construction</h2>
-    <table class="dt"><caption>Principal variables / the behavioural block, their role and construction.</caption>
-    <thead><tr><th>Series</th><th>Definition</th><th>Rol</th><th>Construction</th></tr></thead><tbody><tr><td><code>RHC</code></td><td>Real household final consumption</td><td>Principal private demand component</td><td>Constant-price expenditure</td></tr><tr><td><code>RIEA</code></td><td>Real gross fixed capital formation</td><td>Private investment demand</td><td>Constant-price expenditure on fixed assets</td></tr><tr><td><code>NONOILGDP</code></td><td>Real non-oil value added</td><td>Core measure / domestic activity</td><td>Sum / non-oil sectoral value added</td></tr><tr><td><code>CPI</code></td><td>Consumer price index</td><td>Headline price level</td><td>Month-on-month index, cumulated to a level</td></tr><tr><td><code>NEER</code></td><td>Nominal effective exchange rate</td><td>Imported-price channel</td><td>Trade-weighted manat index</td></tr><tr><td><code>OPIWTI</code></td><td>Oil price index</td><td>External terms-/-trade driver</td><td>Indexed crude price</td></tr><tr><td><code>FPI_WEO</code></td><td>World food price index</td><td>Imported food inflation</td><td>IMF commodity index</td></tr><tr><td><code>M2</code></td><td>Broad money</td><td>Monetary conditions</td><td>Central Bank aggregate</td></tr><tr><td><code>W_s</code></td><td>Average wage in sector s</td><td>Labour-cost and income channel</td><td>Average monthly wage, by activity</td></tr><tr><td><code>POP</code></td><td>Population</td><td>Demographic scale</td><td>Annual average</td></tr></tbody></table>
-    <div class="callout "><div class="h">Notation</div>In the estimated equations below, <code>DLOG</code> denotes the log-difference (a growth rate), a lag is written <code>(−1)</code>, and a term such as <code>(T&gt;2017)</code> is a regime indicator active from that year. The reported coefficients are the deployed estimates; the literature is cited in the Literature section.</div>
+    <h2>Dəyişənlər və onların qurulması</h2>
+    <table class="dt"><caption>Davranış blokunun əsas dəyişənləri, onların rolu və qurulması.</caption>
+    <thead><tr><th>Seriya</th><th>Tərif</th><th>Rol</th><th>Qurulması</th></tr></thead><tbody><tr><td><code>RHC</code></td><td>Real household final consumption</td><td>Principal private demand component</td><td>Constant-price expenditure</td></tr><tr><td><code>RIEA</code></td><td>Real gross fixed capital formation</td><td>Private investment demand</td><td>Constant-price expenditure on fixed assets</td></tr><tr><td><code>NONOILGDP</code></td><td>Real non-oil value added</td><td>Core measure / domestic activity</td><td>Sum / non-oil sectoral value added</td></tr><tr><td><code>CPI</code></td><td>Consumer price index</td><td>Headline price level</td><td>Month-on-month index, cumulated to a level</td></tr><tr><td><code>NEER</code></td><td>Nominal effective exchange rate</td><td>Imported-price channel</td><td>Trade-weighted manat index</td></tr><tr><td><code>OPIWTI</code></td><td>Oil price index</td><td>External terms-/-trade driver</td><td>Indexed crude price</td></tr><tr><td><code>FPI_WEO</code></td><td>World food price index</td><td>Imported food inflation</td><td>IMF commodity index</td></tr><tr><td><code>M2</code></td><td>Broad money</td><td>Monetary conditions</td><td>Central Bank aggregate</td></tr><tr><td><code>W_s</code></td><td>Average wage in sector s</td><td>Labour-cost and income channel</td><td>Average monthly wage, by activity</td></tr><tr><td><code>POP</code></td><td>Population</td><td>Demographic scale</td><td>Annual average</td></tr></tbody></table>
+    <div class="callout "><div class="h">İşarələmə</div>In the estimated equations below, <code>DLOG</code> denotes the log-difference (a growth rate), a lag is written <code>(−1)</code>, and a term such as <code>(T&gt;2017)</code> is a regime indicator active from that year. The reported coefficients are the deployed estimates; the literature is cited in the Literature section.</div>
 
-    <h2>National accounts</h2>
-    <p>The forecast directions are tied together by the national-accounts identities, which are enforced as explicit checks
-    rather than assumed. Output is the sum / oil and non-oil value added, and headline real growth is the previous year's
-    nominal shares applied to the two sectoral growth rates:</p>
+    <h2>Milli hesablar</h2>
+    <p>Proqnoz istiqamətləri milli hesablar eynilikləri ilə bir-birinə bağlanır; bunlar fərz edilmir, açıq yoxlamalar kimi tətbiq olunur. Məhsul neft və qeyri-neft əlavə dəyərinin cəmidir, əsas real artım isə əvvəlki ilin nominal paylarının iki sektoral artım dərəcəsinə tətbiqidir:</p>
     <div class="eq">$$ GDP_t = VA^{oil}_t + VA^{nonoil}_t,\qquad \hat g^{GDP}_t=\omega^{oil}_{t-1}\,\hat g^{oil}_t+\omega^{nonoil}_{t-1}\,\hat g^{nonoil}_t $$<span class="num">(N1)</span></div>
-    <p class="fn">where <i>VA</i> is sector value added, <i>ĝ</i> the real growth rate and ω the nominal output share. Both
-    identities were verified against the Ministry's data to within 0.05 per cent, which confirms the directions reconcile to
-    one consistent national-accounts framework. The behavioural equations below are estimated subject to these identities.</p>
-    <p>The real expenditure components combine short-run dynamics with convergence to a long-run equilibrium, in the
-    error-correction form that has been the workhorse / applied macro-modelling since cointegration was formalised (Engle
-    and Granger, 1987; Pesaran, Shin and Smith, 2001). Private consumption, for example, is</p>
+    <p class="fn">burada <i>VA</i> sektor əlavə dəyəri, <i>ĝ</i> real artım dərəcəsi, ω isə nominal məhsul payıdır. Hər iki eynilik Nazirliyin məlumatı ilə 0,05 faiz dəqiqliklə yoxlanılıb, bu da istiqamətlərin vahid uzlaşmış milli hesablar çərçivəsinə uyğunlaşdığını təsdiqləyir. Aşağıdakı davranış tənlikləri bu eyniliklərə tabe olaraq qiymətləndirilir.</p>
+    <p>Real xərc komponentləri qısamüddətli dinamikanı uzunmüddətli tarazlığa yaxınlaşma ilə birləşdirir; bu, kointeqrasiya formallaşdırıldıqdan bəri tətbiqi makro-modelləşdirmənin əsas aləti olan error-correction formasındadır (Engle and Granger, 1987; Pesaran, Shin and Smith, 2001). Məsələn, özəl istehlak belədir:</p>
     <div class="eq">$$ \Delta\log C_t=\alpha\,\Delta\log Y^d_t-\gamma\,\hat r^{L}_t-\lambda\,(\log C_{t-1}-\beta\log Y^d_{t-1})+\varepsilon_t $$<span class="num">(M1)</span></div>
-    <p class="fn">where <i>C</i> is real household consumption, <i>Y</i><sup>d</sup> disposable income, <i>r̂</i><sup>L</sup>
-    the real lending-rate gap and ε the disturbance; the term in brackets is the deviation from the long-run consumption–income
-    relationship, which the model corrects at speed λ. The coefficients α, γ, β are short-run elasticities.</p>
+    <p class="fn">burada <i>C</i> real ev təsərrüfatı istehlakı, <i>Y</i><sup>d</sup> sərəncamda qalan gəlir, <i>r̂</i><sup>L</sup> real kredit-dərəcəsi kəsiri və ε təsadüfi kənarlaşmadır; mötərizədəki üzv uzunmüddətli istehlak–gəlir əlaqəsindən kənarlaşmadır, modelin λ sürəti ilə düzəltdiyi. α, γ, β əmsalları qısamüddətli elastikliklərdir.</p>
     <div class="eqc"><span class="lbl">Household consumption</span><code>DLOG(RHC) = -0.556·DLOG(RHC(-1))*(T>2002) + 0.336·DLOG(W(-1)*L(-1)/CPI(-1))*(T>1998) − 0.284·DLOG(CPI)*(T>2008) − 0.747·DLOG(CPI(-1))*(T<2009) + 0.0208·D(PBCRHC) + 0.214·DLOG(RIEA(-1)) − 1.19·ECM_RHC(-1) + 0.348·DLOG(OPIWTI)*(T<2011) + 0.145·(T>2005)*(T<2010) + 0.0518·(T>2013) + 0.0471·(T<2017) + 0.0777·(T=2010) + 0.081·(T=2022)</code></div>
     <div class="eqc"><span class="lbl">Private investment</span><code>DLOG(RIEA) = 0.559·DLOG(OPIWTI)*(T>2017) − 0.997·DLOG(RIEA(-2))*(T>2011) + 0.309·DLOG(M3/CPI)*(T>2005) + 0.872·DLOG(RHC) + 0.486·ECM_RIEANEW2020*(T=2005) + 0.728·DLOG(VA_DIGER/CPI)*(T>2011) − 0.187·(T=2019) − 0.231·(T=2018) − 0.507·(T>2020) + 0.57·(T=2023) − 0.0745·((T=2013)-(T=2016))</code></div>
-    <p>The deployed equations have exactly this form: consumption responds to real labour income and corrects towards its
-    long-run level, while investment responds to the oil-price index, domestic demand and real money — reflecting the
-    dependence / capital formation on oil revenue.</p>
+    <p>Tətbiq edilən tənliklər məhz bu formadadır: istehlak real əmək gəlirinə reaksiya verir və uzunmüddətli səviyyəsinə doğru düzəlir, investisiya isə neft-qiyməti indeksinə, daxili tələbə və real pula reaksiya verir, kapital formalaşmasının neft gəlirindən asılılığını əks etdirməklə.</p>
 
-    <h2>Inflation and monetary</h2>
-    <p>Consumer-price inflation is modelled as an open-economy Phillips curve, the standard New-Keynesian relationship
-    augmented with imported prices (Galí and Gertler, 1999):</p>
+    <h2>İnflyasiya və monetar</h2>
+    <p>İstehlak qiyməti inflyasiyası açıq iqtisadiyyat Phillips curve kimi modelləşdirilir; bu, idxal qiymətləri ilə genişləndirilmiş standart New-Keynesian əlaqədir (Galí and Gertler, 1999):</p>
     <div class="eq">$$ \pi_t=\phi\,\pi_{t-1}+(1-\phi)\,\pi^{e}_t+\kappa\,\hat y_t+\theta\big(\Delta s_t+\Delta p^{*}_t\big)+\varepsilon_t $$<span class="num">(M2)</span></div>
-    <p class="fn">where π is inflation, π<sup>e</sup> expected inflation, <i>ŷ</i> the output gap, Δ<i>s</i> the change in
-    the exchange rate and Δ<i>p</i><sup>*</sup> world (import) price inflation; φ is the weight on past inflation, κ the
-    slope / the curve and θ the pass-through coefficient.</p>
+    <p class="fn">burada π inflyasiya, π<sup>e</sup> gözlənilən inflyasiya, <i>ŷ</i> məhsul kəsiri, Δ<i>s</i> məzənnənin dəyişməsi və Δ<i>p</i><sup>*</sup> dünya (idxal) qiymət inflyasiyasıdır; φ keçmiş inflyasiyanın çəkisi, κ əyrinin meyli və θ ötürülmə (pass-through) əmsalıdır.</p>
     <div class="eqc"><span class="lbl">Consumer prices</span><code>DLOG(CPI) = 0.187·DLOG(CPI(-1)) − 0.258·DLOG(NEER) − 0.0707·DLOG(NEER(-1)) + 0.0891·DLOG(FPI_WEO)*(T>2007) + 0.167·DLOG(M1) + 0.107·(T=2015) − 0.0396·(T=2012) + 0.118·(T=2022) + 0.156·DLOG(OPIWTI) − 0.000874·(LOG(CPI(-1))-LCPI_HP(-1))*(T>2013) + 0.00658 − 0.0505·(T=2003) + 0.0681·(T=2023)</code></div>
     <div class="eqc"><span class="lbl">Broad money</span><code>DLOG(M2_M1) = 0.15·DLOG(M2_M1(-1))*(T>2007) − 2.53·DLOG(CPI(-1)) + 0.793·DLOG(MB) + 0.464·DLOG(OPIWTI) + 0.0109·D(RIRD) + 0.365·DLOG(REER) + 0.149 + 0.326·(T=2023) + 0.756·(T>2005)*(T<2008) + 0.181·DLOG(MW)*(T<2014) − 0.277·(T=2021)</code></div>
 
-    <h3>Result: the inflation equation re-estimated</h3>
-    <p>The price equation is re-estimated here on the annual data as a nested sequence / specifications, so that the
-    contribution / each driver and the stability / the estimates can be judged. The dependent variable is annual
-    consumer-price inflation over 2000–2025, and standard errors are heteroskedasticity-consistent. Each column adds
-    one block / regressors to the previous, so the table reads as one model built up term by term.</p>
-    <table class="dt"><caption>Dependent variable: annual CPI inflation. Coefficients with heteroskedasticity-consistent standard errors in parentheses. *** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1.</caption>
-    <thead><tr><th>Regressor</th><th class="num">(1)</th><th class="num">(2)</th><th class="num">(3)</th><th class="num">(4)</th><th class="num">(5)</th></tr></thead><tbody>
+    <h3>Nəticə: inflyasiya tənliyi yenidən qiymətləndirilib</h3>
+    <p>Qiymət tənliyi burada illik məlumat üzərində iç-içə spesifikasiyalar ardıcıllığı kimi yenidən qiymətləndirilir ki, hər amilin töhfəsi və qiymətlərin sabitliyi mühakimə oluna bilsin. Asılı dəyişən 2000–2025 üzrə illik istehlak qiyməti inflyasiyasıdır, standart xətalar isə heteroskedastisizmə davamlıdır (heteroskedasticity-consistent). Hər sütun əvvəlkinə bir bölmə reqressor əlavə edir, beləliklə cədvəl üzv-üzv qurulan vahid model kimi oxunur.</p>
+    <table class="dt"><caption>Asılı dəyişən: illik İQİ inflyasiyası. Əmsallar mötərizədə heteroskedasticity-consistent standart xətalarla. *** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1.</caption>
+    <thead><tr><th>Reqressor</th><th class="num">(1)</th><th class="num">(2)</th><th class="num">(3)</th><th class="num">(4)</th><th class="num">(5)</th></tr></thead><tbody>
     <tr><td>Constant</td><td class="num">+3.965***<br><span style="color:#5c6a78;font-size:11px">(0.908)</span></td><td class="num">+3.492***<br><span style="color:#5c6a78;font-size:11px">(0.976)</span></td><td class="num">+1.433*<br><span style="color:#5c6a78;font-size:11px">(0.825)</span></td><td class="num">+1.397*<br><span style="color:#5c6a78;font-size:11px">(0.755)</span></td><td class="num">+1.157<br><span style="color:#5c6a78;font-size:11px">(0.942)</span></td></tr><tr><td>Inflation (t−1)</td><td class="num">+0.350<br><span style="color:#5c6a78;font-size:11px">(0.215)</span></td><td class="num">+0.392*<br><span style="color:#5c6a78;font-size:11px">(0.222)</span></td><td class="num">+0.516***<br><span style="color:#5c6a78;font-size:11px">(0.125)</span></td><td class="num">+0.523***<br><span style="color:#5c6a78;font-size:11px">(0.124)</span></td><td class="num">+0.513***<br><span style="color:#5c6a78;font-size:11px">(0.139)</span></td></tr><tr><td>Δlog exchange rate</td><td class="num">·</td><td class="num">+0.086<br><span style="color:#5c6a78;font-size:11px">(0.063)</span></td><td class="num">+0.201***<br><span style="color:#5c6a78;font-size:11px">(0.039)</span></td><td class="num">+0.207***<br><span style="color:#5c6a78;font-size:11px">(0.040)</span></td><td class="num">+0.217***<br><span style="color:#5c6a78;font-size:11px">(0.048)</span></td></tr><tr><td>Δlog exchange rate (t−1)</td><td class="num">·</td><td class="num">·</td><td class="num">·</td><td class="num">·</td><td class="num">·</td></tr><tr><td>Δlog world food price</td><td class="num">·</td><td class="num">·</td><td class="num">+0.355***<br><span style="color:#5c6a78;font-size:11px">(0.081)</span></td><td class="num">+0.326**<br><span style="color:#5c6a78;font-size:11px">(0.132)</span></td><td class="num">+0.306**<br><span style="color:#5c6a78;font-size:11px">(0.132)</span></td></tr><tr><td>Δlog oil price</td><td class="num">·</td><td class="num">·</td><td class="num">·</td><td class="num">+0.014<br><span style="color:#5c6a78;font-size:11px">(0.042)</span></td><td class="num">+0.013<br><span style="color:#5c6a78;font-size:11px">(0.044)</span></td></tr><tr><td>Δlog broad money</td><td class="num">·</td><td class="num">·</td><td class="num">·</td><td class="num">·</td><td class="num">+0.016<br><span style="color:#5c6a78;font-size:11px">(0.034)</span></td></tr>
     <tr><td><b>R²</b></td><td class="num">0.161</td><td class="num">0.192</td><td class="num">0.629</td><td class="num">0.631</td><td class="num">0.626</td></tr>
     <tr><td><b>Observations</b></td><td class="num">26</td><td class="num">26</td><td class="num">26</td><td class="num">26</td><td class="num">25</td></tr>
     </tbody></table>
-    <p>Persistence alone (column 1) explains only about a sixth / the variation. Adding the exchange rate (column 2) adds
-    little, but adding the world food price (column 3) raises the fit to about sixty-three per cent, which identifies
-    imported prices, and food in particular, as the dominant proximate driver / Azerbaijani inflation. Once the exchange
-    rate and food prices are present, the oil price (column 4) and broad money (column 5) add essentially nothing, so they
-    work through those channels rather than directly. The exchange-rate coefficient is stable at about 0.20 to 0.22 across
-    columns (3) to (5).</p>
-    <table class="dt"><caption>Robustness: variants / specification (4). The exchange-rate coefficient is reported with its standard error.</caption>
-    <thead><tr><th>Variant</th><th class="num">Exchange rate</th><th class="num">R²</th><th class="num">N</th><th>Note</th></tr></thead>
+    <p>Tək davamlılıq (sütun 1) dəyişkənliyin yalnız altıda birini izah edir. Məzənnənin əlavəsi (sütun 2) az şey qatır, lakin dünya ərzaq qiymətinin əlavəsi (sütun 3) uyğunluğu təxminən altmış üç faizə qaldırır, bu da idxal qiymətlərini, xüsusən ərzağı, Azərbaycan inflyasiyasının əsas yaxın amili kimi müəyyən edir. Məzənnə və ərzaq qiymətləri mövcud olduqdan sonra neft qiyməti (sütun 4) və geniş pul (sütun 5) faktiki olaraq heç nə qatmır, ona görə birbaşa deyil, həmin kanallar vasitəsilə işləyir. Məzənnə əmsalı (3)–(5) sütunlarında təxminən 0,20–0,22 səviyyəsində sabitdir.</p>
+    <table class="dt"><caption>Etibarlılıq: (4) spesifikasiyasının variantları. Məzənnə əmsalı öz standart xətası ilə təqdim olunur.</caption>
+    <thead><tr><th>Variant</th><th class="num">Məzənnə</th><th class="num">R²</th><th class="num">N</th><th>Qeyd</th></tr></thead>
     <tbody><tr><td>(4) sub-sample 2008–2025</td><td class="num">+0.217 <span style="color:#5c6a78;font-size:11px">(0.049)</span></td><td class="num">0.725</td><td class="num">18</td><td>excludes the post-transition decade</td></tr><tr><td>(4) lagged exchange rate</td><td class="num">+0.096 <span style="color:#5c6a78;font-size:11px">(0.055)</span></td><td class="num">0.523</td><td class="num">26</td><td>contemporaneous depreciation replaced by its lag to mitigate simultaneity</td></tr><tr><td>(4) HAC standard errors</td><td class="num">+0.207 <span style="color:#5c6a78;font-size:11px">(0.026)</span></td><td class="num">0.631</td><td class="num">26</td><td>Newey–West errors robust to serial correlation</td></tr></tbody></table>
-    <p>The contemporaneous exchange rate is plausibly determined jointly with inflation, which would bias its coefficient.
-    Replacing it with its lagged value lowers the estimate to about 0.10, so part / the contemporaneous coefficient
-    reflects simultaneity, and the causal pass-through is best read as a range / roughly 0.10 to 0.21. The oil price, by
-    contrast, is exogenous to a price-taking economy and serves as a clean external regressor. The relationship strengthens
-    in the post-2008 sub-sample (R² / about 0.72) and is unaffected by Newey–West standard errors, so the result is not
-    driven by the early-transition years or by residual serial correlation.</p>
+    <p>Eyni dövrlü məzənnə çox güman ki inflyasiya ilə birlikdə müəyyən olunur, bu da onun əmsalını qərəzli edər. Onu gecikmiş (lagged) dəyəri ilə əvəz etmək qiyməti təxminən 0,10-a endirir, ona görə eyni dövrlü əmsalın bir hissəsi eyni-zamanlılığı (simultaneity) əks etdirir, və səbəbiyyət ötürülməsini təxminən 0,10–0,21 aralığı kimi oxumaq düzgündür. Neft qiyməti, əksinə, qiymət-qəbuledən iqtisadiyyat üçün ekzogendir və təmiz xarici reqressor rolunu oynayır. Əlaqə 2008-sonrası alt-nümunədə güclənir (R² təxminən 0,72) və Newey–West standart xətalarından təsirlənmir, ona görə nəticə nə erkən-keçid illərindən, nə də qalıq serial korrelyasiyasından qaynaqlanmır.</p>
     <div class="fig"><div id="cpiFit" class="plot" style="height:380px"></div><div class="cap">Figure 4.1. Observed and fitted consumer-price inflation under specification (4). The equation captures the 2008, 2016 and 2022 episodes.</div></div>
-    <p>One caveat carries into the forecast: in-sample fit overstates forecasting accuracy. The out-/-sample comparison in
-    the Machine-Learning section shows the multivariate linear specification does not forecast well on this short sample,
-    which is why the headline projection rests on a combination / models and on the monthly panel rather than on this
-    single equation.</p>
+    <p>Bir qeyd proqnoza keçir: nümunədaxili uyğunluq proqnoz dəqiqliyini şişirdir. Maşın Öyrənməsi bölməsindəki nümunədənkənar müqayisə göstərir ki, çoxdəyişənli xətti spesifikasiya bu qısa nümunədə yaxşı proqnoz vermir, bu səbəbdən əsas proqnoz bu tək tənliyə deyil, modellərin birləşməsinə və aylıq panelə əsaslanır.</p>
 
-    <h2>Labour and social</h2>
-    <p>Wages follow a Phillips relationship in productivity and prices, and Okun's law (1962) links unemployment to the
-    non-oil output gap:</p>
+    <h2>Əmək və sosial</h2>
+    <p>Əmək haqqı məhsuldarlıq və qiymətlərdə Phillips əlaqəsini izləyir, Okun qanunu (1962) isə işsizliyi qeyri-neft məhsul kəsirinə bağlayır:</p>
     <div class="eq">$$ \Delta W_t=\delta+\zeta\,\Delta(\text{productivity})_t-\eta\,\pi_{t-1}+\varepsilon_t $$<span class="num">(M3)</span></div>
-    <p class="fn">where <i>W</i> is the average wage (estimated separately for each activity), productivity is sectoral
-    labour productivity, and π<sub>t−1</sub> is lagged inflation; ζ and η are the productivity and price elasticities.</p>
+    <p class="fn">burada <i>W</i> orta əmək haqqı (hər fəaliyyət üçün ayrıca qiymətləndirilir), məhsuldarlıq sektoral əmək məhsuldarlığı, π<sub>t−1</sub> isə gecikmiş inflyasiyadır; ζ və η məhsuldarlıq və qiymət elastiklikləridir.</p>
     <div class="eqc"><span class="lbl">Wage, agriculture</span><code>DLOG(W_AGR) = 0.355·DLOG(LP_AGR) − 0.864·DLOG(CPI(-1))*(T>2009) − 0.223·DLOG(W_AGR(-1))*(T>2007) + 0.6·DLOG(FPI_AZ(-1))*(T>2011) + 0.412·DLOG(MW)*(T>2006) + 0.206 − 0.145·(T>2011)</code></div>
-    <p>Sectoral wage equations / this form are estimated for each activity; the deployed model contains thirty labour and
-    social relationships.</p>
+    <p>Bu formada sektoral əmək haqqı tənlikləri hər fəaliyyət üçün qiymətləndirilir; tətbiq edilən model otuz əmək və sosial əlaqə ehtiva edir.</p>
 
     <h2>External sector</h2>
-    <p>Trade volumes are modelled with constant elasticities to foreign demand, the real exchange rate and domestic
-    activity — exports rising with trading-partner demand, imports with domestic demand:</p>
+    <p>Ticarət həcmləri xarici tələbə, real məzənnəyə və daxili fəaliyyətə sabit elastikliklərlə modelləşdirilir — ixrac ticarət-tərəfdaş tələbi ilə, idxal isə daxili tələb ilə artır:</p>
     <div class="eqc"><span class="lbl">Non-oil goods exports</span><code>DLOG(RXGNO) = -0.48·DLOG(RXGNO(-1)) − 0.217·DLOG(REER)*(T>2002) + 4.58·DLOG(RGDPMTP) − 0.891·ECM_RXGNO(-1) − 0.474·DLOG(RXGNO(-2))*(T<2008) − 0.667·(T=2010) + 0.0365 − 0.0755·(T>1999)*(T<2003) − 0.154·(T>2006)*(T<2012) + 0.092·(T>2012)*(T<2015) − 0.109·(T=2011) − 0.0792·(T=2017) + 0.271·(T=2020)</code></div>
     <div class="eqc"><span class="lbl">Non-oil goods imports</span><code>DLOG(MGNO) = 1.22·DLOG(HC/ER) − 0.338·DLOG(HC(-1)/ER(-1)) − 0.737·DLOG(NEER) + 0.248·DLOG(NEER(-1)) + 0.753·DLOG((INO/ER(-1))*(T=2009) + 0.124·DLOG(OPIWTI(-1)) − 0.404·ECM_MGNO_NEW(-1) + 0.141·T=1997 − 0.238·T=2014 + 0.193·T=2011 + 0.116·(T=1999)+(T=2000) − 0.034·T<2005 + 0.135·(T=2018)</code></div>
-    <p>Sixteen equations cover trade in goods and services, the income account and the balance-/-payments closure.</p>
+    <p>On altı tənlik mal və xidmətlər ticarətini, gəlir hesabını və tədiyə balansının bağlanmasını əhatə edir.</p>
 
-    <h2>Industry, trade and communications</h2>
+    <h2>Sənaye, ticarət və rabitə</h2>
     <div class="eqc"><span class="lbl">Transport value added</span><code>DLOG(TRANS_P) = 0.377·DLOG(TRANS_P(-1)) + 0.123·DLOG(RVA_CONST) + 2.02·DLOG(POP) − 0.87·ECM_TRANS_P(-1) − 0.513·(T=2020) − 0.0327·(T=2008) + 0.0165·(T=2016) − 0.0182·(T=2014) + 0.00574</code></div>
-    <p>Branch-level output equations and the transport relationship complete the production-side detail.</p>
+    <p>Sahə səviyyəsində məhsul tənlikləri və nəqliyyat əlaqəsi istehsal tərəfi təfərrüatını tamamlayır.</p>
 
-    <h2>Oil revenue and the sovereign fund</h2>
-    <p>The transfer from the State Oil Fund — the single largest revenue line — is an identity in production, price and
-    the government's share, with a behavioural transfer ratio:</p>
+    <h2>Neft gəliri və suveren fond</h2>
+    <p>Dövlət Neft Fondundan köçürmə — ən böyük tək gəlir maddəsi — istehsal, qiymət və dövlətin payında bir eynilikdir, davranış köçürmə nisbəti ilə:</p>
     <div class="eq">$$ T^{SOFAZ}_t=q^{oil}_t\big(p^{oil}_t e_t-c\big)\,\sigma^{gov}\,\kappa_t,\qquad \kappa_t=f(\text{non-oil deficit gap}_{t-1}) $$<span class="num">(M4)</span></div>
-    <p class="fn">where <i>T</i><sup>SOFAZ</sup> is the transfer, <i>q</i><sup>oil</sup> oil-and-gas production, <i>p</i><sup>oil</sup>
-    the world price, <i>e</i> the AZN/USD rate, <i>c</i> the unit extraction cost, σ<sup>gov</sup> the government's
-    production share and κ the transfer ratio to the budget.</p>
-    <p>Production is exogenous, following production-sharing-agreement pr/iles; the transfer ratio κ responds to the
-    prior-year non-oil deficit — a political-economy regularity. The dependence on this discretionary parameter is
-    discussed in the Limitations section.</p>
+    <p class="fn">burada <i>T</i><sup>SOFAZ</sup> köçürmə, <i>q</i><sup>oil</sup> neft-qaz hasilatı, <i>p</i><sup>oil</sup> dünya qiyməti, <i>e</i> AZN/USD məzənnəsi, <i>c</i> vahid hasilat xərci, σ<sup>gov</sup> dövlətin hasilat payı, κ isə büdcəyə köçürmə nisbətidir.</p>
+    <p>Hasilat ekzogendir və hasilatın bölüşdürülməsi sazişi pr/illərini izləyir; köçürmə nisbəti κ əvvəlki ilin qeyri-neft defisitinə reaksiya verir — siyasi-iqtisadi qanunauyğunluq. Bu diskresion parametrdən asılılıq Məhdudiyyətlər bölməsində müzakirə olunur.</p>
 
-    <h2>The catalogue</h2>
-    <p>Every estimated equation embedded in the sectoral workbooks, with its coefficients, was extracted into a single
-    machine-readable catalogue, which forms the calibration basis for the behavioural block.</p>
-    <table class="dt"><caption>The ninety-two estimated equations, by block.</caption>
-    <thead><tr><th>Block</th><th class="num">Equations</th><th>Examples</th></tr></thead><tbody>
-    <tr><td>National accounts</td><td class="num">38</td><td>consumption, investment, deflators, productivity</td></tr>
-    <tr><td>Labour and social</td><td class="num">30</td><td>sectoral wages, employment</td></tr>
+    <h2>Kataloq</h2>
+    <p>Sektoral iş kitablarına yerləşdirilmiş hər qiymətləndirilmiş tənlik, öz əmsalları ilə, vahid maşınla-oxunan kataloqa çıxarılıb; bu kataloq davranış blokunun kalibrləmə əsasını təşkil edir.</p>
+    <table class="dt"><caption>Blok üzrə doxsan iki qiymətləndirilmiş tənlik.</caption>
+    <thead><tr><th>Blok</th><th class="num">Tənliklər</th><th>Nümunələr</th></tr></thead><tbody>
+    <tr><td>Milli hesablar</td><td class="num">38</td><td>consumption, investment, deflators, productivity</td></tr>
+    <tr><td>Əmək və sosial</td><td class="num">30</td><td>sectoral wages, employment</td></tr>
     <tr><td>External and balance / payments</td><td class="num">16</td><td>trade, services, income, closure</td></tr>
-    <tr><td>Inflation and monetary</td><td class="num">4</td><td>consumer prices, money</td></tr>
-    <tr><td>Industry, trade and communications</td><td class="num">4</td><td>branch output, transport</td></tr>
+    <tr><td>İnflyasiya və monetar</td><td class="num">4</td><td>consumer prices, money</td></tr>
+    <tr><td>Sənaye, ticarət və rabitə</td><td class="num">4</td><td>branch output, transport</td></tr>
     </tbody></table>
     <script>window.AZ.data().then(D=>{const f=D.cpi_regression.fitted;
       Plotly.newPlot("cpiFit",[
