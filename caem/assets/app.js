@@ -96,7 +96,7 @@ const AZ = {
   "con.title": "Ssenari paneli",
   "con.hint": "Proqnoza şok tətbiq edin və Hesabla düyməsini basın. CANLI qrafiklər və yelpik qrafikləri yenidən hesablanır, ssenari bazis xəttinin üzərinə qırmızı punktirlə düşür. Neft, qiymətlər və məzənnə %-lə, qalanları faiz bəndi ilə.",
   "con.apply": "Tətbiq", "con.to": "–", "con.editdata": "✎ Məlumatı yenilə", "con.save": "💾 Yadda saxla",
-  "con.run": "Hesabla ▸", "con.reset": "Sıfırla", "con.presets": "Hazır ssenarilər",
+  "con.run": "Hesabla ▸", "con.reset": "Sıfırla", "con.presets": "Hazır ssenarilər", "con.adjust": "Şokları tənzimlə",
   "cat.external": "Xarici", "cat.real": "Real iqtisadiyyat və fiskal", "cat.mon": "Monetar və məzənnə",
   "fld.oil": "Neft qiyməti", "fld.partner": "Tərəfdaş artımı", "fld.import": "İdxal qiyməti", "fld.export": "İxrac qiyməti",
   "fld.nonoil": "Qeyri-neft artımı", "fld.potential": "Potensial artım", "fld.supply": "Təklif şoku", "fld.tax": "Vergi tədbirləri",
@@ -108,9 +108,9 @@ const AZ = {
   "home.eyebrow": "MALİYYƏ PROQRAMLAŞDIRMASI · MAKRO-FİSKAL MODEL",
   "home.h1": "Azərbaycan Respublikası üçün canlı makro-fiskal proqnozlaşdırma",
   "home.cta": "Canlı proqnozu və yelpik qrafiklərini açın →",
-  "home.baseline": "Bazis proqnoz, modelin mərkəzi trayektoriyası",
+  "home.baseline": "Bazis — modelin mərkəzi trayektoriyası", "home.baseline.k": "ƏSAS PROQNOZ",
   "home.baseline.tag": "model proqnozları (2026+), faktiki nəticə deyil",
-  "home.engine": "CAEM-dən təkrar yaradılmış və yoxlanılmış mühərrik",
+  "home.engine": "Mühərrik necə işləyir", "home.engine.tag": "CAEM-dən təkrar yaradılıb, iş kitabına qarşı yoxlanılıb",
   "home.built": "Oxlon nə qurub", "home.howto": "İstifadə qaydası", "home.explore": "CAEM panellərini araşdırın",
   "home.figs": "qrafik", "home.live": "canlı",
   "home.methodslink": "Metodologiya və mənbələr", "home.vintage": "Proqnoz buraxılışı", "home.lastactual": "Son faktiki",
@@ -144,7 +144,7 @@ const AZ = {
   "scn.cmp": "Seçilmişləri müqayisə et", "scn.delall": "Hamısını sil",
   // group / figure scaffolding
   "grp.figs": "qrafik", "grp.live": "canlı yenilənir", "grp.dashed": "Qırmızı punktir = cari ssenari.",
-  "grp.runhint": "Yuxarıda ssenari işə salaraq əlavə edin.", "grp.shade": "Kölgələnmiş zolaq = proqnoz",
+  "grp.runhint": "Bazis üzərinə əlavə etmək üçün yuxarıdakı paneldə ssenari təyin edin.", "grp.shade": "Kölgələnmiş zolaq = proqnoz",
   "grp.lastact": "2025 = son faktiki", "u.forecast": "proqnoz",
   // info drawer
   "id.eyebrow": "BU QRAFİK HAQQINDA", "id.shows": "Nə göstərir", "id.model": "Model və məlumat", "id.read": "Necə oxunmalı",
@@ -303,8 +303,8 @@ function showHome() {
       <div class="gn">${esc(g.sheet)}</div><div class="gs">${g.figs.length} ${tx("home.figs", "figures")}${live ? ` · ${live} ${tx("home.live", "live")}` : ""}</div></div>`;
   }).join("");
   const intro = LANG === "az"
-    ? `IMF CAEM Maliyyə Proqramlaşdırma modelinin veb tətbiqi, Azərbaycana uyğunlaşdırılıb və <b>yenidən hesablama mühərriki</b> ilə təchiz olunub. Ssenari panelində fərziyyəni dəyişin və proqnoz (məhsul buraxılışı kəsiri, inflyasiya, faiz dərəcəsi, borc və büdcə balansı) yenidən hesablanıb qrafiklərə əlavə olunur. ${GROUPS.length} CAEM paneli üzrə ${NFIG} qrafik, bunlardan ${NLIVE} canlı yenilənir, üstəlik yelpik qrafikləri olan <b>Canlı proqnoz</b> görünüşü.`
-    : `A web implementation of the IMF CAEM Financial-Programming model, calibrated to Azerbaijan, with a <b>recompute engine</b>. Change an assumption in the Scenario console and the forecast (output gap, inflation, interest rate, debt and the fiscal balance) recomputes and overlays the charts. ${NFIG} figures across ${GROUPS.length} CAEM dashboards, of which ${NLIVE} recompute live, plus a <b>Live forecast</b> view with fan charts.`;
+    ? `IMF CAEM Maliyyə Proqramlaşdırma modelinin Azərbaycana uyğunlaşdırılmış veb tətbiqi. Ssenari panelində fərziyyəni dəyişin və mərkəzi proqnoz — məhsul kəsiri, inflyasiya, uçot dərəcəsi, borc və büdcə balansı — yenidən hesablanıb qrafiklərə əlavə olunur.`
+    : `A web implementation of the IMF CAEM Financial-Programming model, calibrated to Azerbaijan. Change an assumption in the Scenario console and the central forecast — output gap, inflation, the policy rate, debt and the fiscal balance — recomputes and overlays the charts.`;
   const mc = [
     [tx("eng.gap", "Output gap"), tx("eng.gap.d", "HP filter (λ=100) on log non-oil GDP, CAEM sheet B1a."), "≈0.18 pp"],
     [tx("eng.inf", "Inflation"), tx("eng.inf.d", "Open-economy Phillips curve: persistence, expectations, import pass-through, gap (1b)."), "≈0.01 pp"],
@@ -314,14 +314,14 @@ function showHome() {
     [tx("eng.fan", "Fan charts"), tx("eng.fan.d", "Confidence bands widen with the forecast horizon around the engine's central path."), tx("eng.unc", "uncertainty")],
   ];
   const how = LANG === "az"
-    ? [`<b>Görünüş seçin.</b> Mühərrikin proqnozları və yelpik qrafikləri üçün <b>Canlı proqnoz</b>, ya da soldakı istənilən CAEM paneli.`,
-      `<b>Şokları daxil edin</b> Ssenari panelində (məs. Neft qiyməti −30%), illəri təyin edin və <b>Hesabla</b> düyməsini basın.`,
-      `<span class="livechip">LIVE</span> qrafiklər yenidən hesablanır və <b>ssenarini</b> (qırmızı punktir) bazis üzərinə qoyur; <b>Sıfırla</b> onu təmizləyir.`,
-      `İstənilən proqnozu Canlı səhifədən <b>CSV</b>, <b>Excel</b> və ya <b>PDF</b> kimi ixrac edin.`]
-    : [`<b>Pick a view.</b> <b>Live forecast</b> gives the engine's projections and fan charts, or any CAEM dashboard on the left.`,
-      `<b>Enter shocks</b> in the Scenario console (e.g. Oil price −30%), set the years, and press <b>Run</b>.`,
-      `The <span class="livechip">LIVE</span> figures recompute and overlay the <b>scenario</b> (dashed red) on the baseline; <b>Reset</b> clears it.`,
-      `Export any forecast to <b>CSV</b>, <b>Excel</b> or <b>PDF</b> from the Live page.`];
+    ? [`<b>Görünüş seçin.</b> <b>Canlı proqnoz</b> mühərrikin mərkəzi trayektoriyasını və yelpik qrafiklərini təqdim edir; soldakı panellər qrafikləri mövzu üzrə qruplaşdırır.`,
+      `Ssenari panelində <b>ssenari təyin edin</b> — məsələn, neft qiymətinin 30% düşməsi — üfüqü seçin və işə salın.`,
+      `Canlı qrafiklər yenidən hesablanır və <b>ssenari</b> bazis xəttinin üzərinə qırmızı punktir kimi düşür; <b>Sıfırla</b> bazisi bərpa edir.`,
+      `İstənilən proqnoz Canlı görünüşdən <b>CSV</b>, <b>Excel</b> və ya <b>PDF</b> kimi ixrac edilə bilər.`]
+    : [`<b>Select a view.</b> The <b>Live forecast</b> presents the engine’s central path and fan charts; the dashboards listed on the left group the figures by theme.`,
+      `<b>Define a scenario</b> in the console — for example a 30% fall in the oil price — set the horizon and run it.`,
+      `The live figures recompute and the <b>scenario</b> is overlaid on the baseline as a dashed red line; <b>Reset</b> restores the baseline.`,
+      `Any forecast can be exported to <b>CSV</b>, <b>Excel</b> or <b>PDF</b> from the Live view.`];
   const built = LANG === "az" ? [
     ["Məlumat bazası", "Rəsmi seriyalar (Dövlət Statistika Komitəsi, Mərkəzi Bank, Maliyyə Nazirliyi və Gömrük) harmonlaşdırılıb və 2025 son faktiki il kimi əsaslanıb."],
     ["Model dəsti", "Struktur CAEM blokları (məhsul kəsiri, Phillips əyrisi, Taylor qaydası, borc dinamikası), üstəgəl ekonometrik və maşın öyrənməsi ansamblı, hər seriya üçün nümunədənkənar bacarığa görə seçilir."],
@@ -350,7 +350,7 @@ function showHome() {
         </div>
       </div>
     </div>
-    <div class="hsec"><h2>${tx("home.baseline", "Baseline forecast, model central path")} <span class="tagi">${tx("home.baseline.tag", "model projections (2026+), not outturns")}</span></h2>
+    <div class="hsec hsec-lead"><div class="lead-h"><span class="lead-k">${tx("home.baseline.k", "HEADLINE FORECAST")}</span><h2>${tx("home.baseline", "Baseline — model central path")} <span class="tagi">${tx("home.baseline.tag", "model projections (2026+), not outturns")}</span></h2></div>
       <div class="kpis">
         ${kpi("Real GDP growth", "real_gdp_growth", 2026, "%", true)}
         ${kpi("Inflation (CPI)", "inflation", 2026, "%", false)}
@@ -361,18 +361,10 @@ function showHome() {
     </div>
     <div class="hsec">${scorecardHTML()}</div>
 
-    <div class="hsec"><h2>${tx("home.built", "What Oxlon built")}</h2>
-      <div class="grid3">${built.map(([t, d]) => `<div class="mcard"><b>${esc(t)}</b><span>${esc(d)}</span></div>`).join("")}</div>
-    </div>
-
-    <div class="hsec"><h2>${tx("home.engine", "The engine, reproduced from CAEM and validated")}</h2>
+    <div class="hsec"><h2>${tx("home.engine", "How the engine works")} <span class="tagi">${tx("home.engine.tag", "reproduced from CAEM, validated against the workbook")}</span></h2>
       <div class="grid3">
         ${mc.map(([t, d, v]) => `<div class="mcard mcard-go"><b>${t}</b><span>${d}</span><i>${v}</i></div>`).join("")}
       </div>
-    </div>
-
-    <div class="hsec"><h2>${tx("home.howto", "How to use it")}</h2>
-      <ol class="how">${how.map(li => `<li>${li}</li>`).join("")}</ol>
     </div>
 
     <div class="hsec"><h2>${tx("home.explore", "Explore the CAEM dashboards")}</h2><div class="grid3 gc">${gcards}</div></div>
@@ -393,13 +385,13 @@ function showLive() {
   const shockTxt = onScn ? FIELDS.filter(f => RUN.shock[f]).map(f => `${f.replace(/_/g, " ")} ${RUN.shock[f] > 0 ? "+" : ""}${RUN.shock[f]}`).join(", ") : "";
   const engFigs = FIGS.filter(f => f.engine_var);
   const liveSub = LANG === "az"
-    ? `Mühərrikin mərkəzi proqnozu <b>yelpik qrafikləri</b> ilə (üfüq boyunca genişlənən etibarlılıq zolaqları), sonra hər bir canlı qrafik. <b>2025 = rəsmi faktiki; proqnoz 2026+.</b> ${onScn ? `Aktiv ssenari: <b>${esc(shockTxt)}</b> — qırmızı punktir bazis üzərinə düşür.` : "Yuxarıda ssenari işə salaraq əlavə edin."}`
-    : `The engine's central forecast with <b>fan charts</b> (confidence bands that widen with the horizon), then every live figure. <b>2025 = official outturn; forecast 2026+.</b> ${onScn ? `Scenario active: <b>${esc(shockTxt)}</b> — dashed red overlays the baseline.` : "Run a scenario above to overlay it."}`;
+    ? `Mühərrikin mərkəzi proqnozu <b>yelpik qrafikləri</b> ilə (üfüq boyunca genişlənən etibarlılıq zolaqları), sonra hər bir canlı qrafik. <b>2025 = rəsmi faktiki; proqnoz 2026+.</b> ${onScn ? `Aktiv ssenari: <b>${esc(shockTxt)}</b> — qırmızı punktir bazis üzərinə düşür.` : "Bazis üzərinə əlavə etmək üçün yuxarıdakı paneldə ssenari təyin edin."}`
+    : `The engine's central forecast with <b>fan charts</b> (confidence bands that widen with the horizon), then every live figure. <b>2025 = official outturn; forecast 2026+.</b> ${onScn ? `Scenario active: <b>${esc(shockTxt)}</b> — dashed red overlays the baseline.` : "Define a scenario in the console above to overlay it on the baseline."}`;
   const transmission = LANG === "az"
     ? `Ötürülmə: neft qiyməti → qeyri-neft artımı, büdcə balansı və borc, və daxili inflyasiya; Phillips əyrisi inflyasiyanı məhsul kəsiri və idxal qiymətlərindən təyin edir; Taylor qaydası uçot dərəcəsini müəyyən edir; borc artım, inflyasiya və ilkin balansla dəyişir.`
     : `Transmission: oil price → non-oil growth, the budget balance &amp; debt, and domestic inflation; the Phillips curve sets inflation from the output gap &amp; import prices; the Taylor rule sets the policy rate; debt evolves with growth, inflation &amp; the primary balance.`;
   $("#view").innerHTML = `
-    <div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${ic("live")}${deLead(tx("live.h", "📈 Live forecast"))} <span class="dlgrp"><button id="prpdf" class="dlbtn">${tx("btn.pdf", "🖨 PDF report")}</button><button id="dlxls" class="dlbtn">${tx("btn.xls", "⤓ Excel")}</button><button id="dlcsv" class="dlbtn">${tx("btn.csv", "⤓ CSV")}</button></span></div>
+    <div class="ghead" style="color:var(--ink);border-color:var(--accent)">${ic("live")}${deLead(tx("live.h", "📈 Live forecast"))} <span class="dlgrp"><button id="prpdf" class="dlbtn">${tx("btn.pdf", "🖨 PDF report")}</button><button id="dlxls" class="dlbtn">${tx("btn.xls", "⤓ Excel")}</button><button id="dlcsv" class="dlbtn">${tx("btn.csv", "⤓ CSV")}</button></span></div>
     <div class="gsub">${liveSub}</div>
     ${impactHTML()}
     ${scorecardHTML()}
@@ -508,9 +500,9 @@ function showGroup(sheet) {
       ? `Üç qiymət-riski ssenarisi — <b>neft</b>, <b>ərzaq</b> və <b>idxal</b> qiymətləri — hər biri bazis trayektoriyası ətrafında yelpik kimi göstərilir (zolaq üfüqlə genişlənir). Uyğun panel girişini (Neft qiyməti, İdxal qiyməti) şoklayaraq onun yelpiyini yenidən mərkəzləşdirin. ${tx("grp.shade", "Shaded band = forecast")} (${ff}+); ${tx("grp.lastact", "2025 = last actual")}.`
       : `Three price-risk scenarios — <b>oil</b>, <b>food</b> and <b>import</b> prices — each shown as a fan around the baseline path (the band widens with the horizon). Shock the matching console input (Oil price, Import price) to re-centre its fan. Shaded band = forecast (${ff}+); 2025 = last actual.`)
     : (LANG === "az"
-      ? `“${esc(sheet)}” CAEM vərəqindən ${g.figs.length} ${tx("grp.figs", "figures")}${live ? ` · ${live} ${tx("grp.live", "recompute live")}` : ""}. ${RUN ? tx("grp.dashed", "Dashed red = current scenario.") : tx("grp.runhint", "Run a scenario above to overlay it.")} ${tx("grp.shade", "Shaded band = forecast")} (${ff}+); ${tx("grp.lastact", "2025 = last actual")}.`
-      : `${g.figs.length} figures from CAEM sheet “${esc(sheet)}”${live ? ` · ${live} recompute live` : ""}. ${RUN ? "Dashed red = current scenario." : "Run a scenario above to overlay it."} Shaded band = forecast (${ff}+); 2025 = last actual.`);
-  $("#view").innerHTML = `<div class="ghead" style="color:${headCol(g.hue)};border-color:${headCol(g.hue)}">${esc(sheet)}</div>
+      ? `“${esc(sheet)}” CAEM vərəqindən ${g.figs.length} ${tx("grp.figs", "figures")}${live ? ` · ${live} ${tx("grp.live", "recompute live")}` : ""}. ${RUN ? tx("grp.dashed", "Dashed red = current scenario.") : tx("grp.runhint", "Define a scenario in the console above to overlay it on the baseline.")} ${tx("grp.shade", "Shaded band = forecast")} (${ff}+); ${tx("grp.lastact", "2025 = last actual")}.`
+      : `${g.figs.length} figures from CAEM sheet “${esc(sheet)}”${live ? ` · ${live} recompute live` : ""}. ${RUN ? "Dashed red = current scenario." : "Define a scenario in the console above to overlay it on the baseline."} Shaded band = forecast (${ff}+); 2025 = last actual.`);
+  $("#view").innerHTML = `<div class="ghead" style="color:var(--ink);border-color:${headCol(g.hue)}">${esc(sheet)}</div>
     <div class="gsub">${sub}</div>
     <div class="figgrid${solo ? " solo" : ""}" id="grid"></div>`;
   const grid = $("#grid");
@@ -569,7 +561,7 @@ function showMethods() {
       ["Foreign rate → domestic rate", "0.5 pass-through"], ["Oil price → terms of trade", "0.30 / 1%"],
       ["Oil price → current account", "0.12 pp of GDP / 1%"]];
   $("#view").innerHTML = `
-    <div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${ic("methods")}${deLead(tx("m.h", "📐 Methods &amp; data sources"))}</div>
+    <div class="ghead" style="color:var(--ink);border-color:var(--accent)">${ic("methods")}${deLead(tx("m.h", "📐 Methods &amp; data sources"))}</div>
     <div class="gsub">${az ? "Hər tənlik, onun kalibrlənməsi və hər məlumat mənbəyi yoxlanıla və təkrar istehsal oluna biləndir. Struktur bloklar CAEM-i təkrar yaradır (iş kitabına qarşı doğrulanıb), neft, fiskal və xarici kanallar isə şəffaf, etiketlənmiş elastiklik əmsallarıdır." : "Every equation, its calibration and every data source is auditable and reproducible. The structural blocks reproduce CAEM, validated against the workbook, and the oil, fiscal and external channels are transparent, labelled elasticities."}</div>
 
     <h3 class="lh">${tx("m.h1", "1 · Core equations (reproduced from CAEM, validated)")}</h3>
@@ -723,7 +715,7 @@ function showScenarios() {
   }).join("");
   const emptyMsg = az ? "Hələ saxlanmış ssenari yoxdur — paneldə şoklar təyin edin və 💾 Yadda saxla düyməsini basın." : "No saved scenarios yet — set shocks in the console and press 💾 Save.";
   $("#view").innerHTML = `
-    <div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${ic("scen")}${deLead(tx("scn.h", "📂 Saved scenarios &amp; forecast rounds"))}</div>
+    <div class="ghead" style="color:var(--ink);border-color:var(--accent)">${ic("scen")}${deLead(tx("scn.h", "📂 Saved scenarios &amp; forecast rounds"))}</div>
     <div class="gsub">${az ? "Cari panel vəziyyətini (şoklar + daxil edilmiş məlumat) adlandırılmış ssenari və ya proqnoz dövrü kimi saxlayın, sonra yenidən yükləyin, ya da yan-yana müqayisə üçün 2–3-nü işarələyin. Bu brauzerdə saxlanılır (brauzer məlumatı ilə silinir)." : "Save the current console state (shocks + entered data) as a named scenario or forecast round, reload it later, or tick 2–3 to compare side by side. Stored in this browser (clears with browser data)."}</div>
     <div class="mtbl"><table class="dt"><thead><tr><th></th><th>${tx("scn.name", "Name")}</th><th>${tx("scn.shock", "Shock / data")}</th><th></th></tr></thead>
       <tbody>${rows || `<tr><td colspan="4">${emptyMsg}</td></tr>`}</tbody></table></div>
@@ -834,14 +826,14 @@ function showNotebooks() {
     ? "On yeddi akademik keyfiyyətli, təkrar istehsal oluna bilən Jupyter dəftəri — hər biri bir təhlil bölməsini real məlumatdan başlayaraq qiymətləndirilmiş modelə, qrafiklərə və proqnoza qədər izah edir (LaTeX riyaziyyatı ilə). İki veb məhsulunun analitik onurğası."
     : "Seventeen academic-quality, reproducible Jupyter notebooks — each works one analytical section end-to-end, from the real data through the estimated model to the figures and the forecast, with the mathematics derived in LaTeX. The analytical backbone of the two web products.";
   const howto = az
-    ? "<b>Colab-da işə salmaq:</b> layihə qovluğunu Google Drive-a <code>MyDrive/azerbaijan-macrofiscal-notebooks/</code> kimi yükləyin, sonra istənilən dəftəri Colab-da açın — ilk xana Drive-ı qoşur, məlumatı tapır və üslubu tətbiq edir."
-    : "<b>To run in Colab:</b> upload the project folder to Google Drive as <code>MyDrive/azerbaijan-macrofiscal-notebooks/</code>, then open any notebook in Colab — the first cell mounts Drive, locates the data and applies the house style.";
+    ? "<b>Təkrar istehsal.</b> Bu paneldəki və texniki hesabatdakı hər qrafik, cədvəl və əmsal bu dəftərlər tərəfindən mənbə məlumatından bir keçidlə yenidən yaradılır. Hər dəftər özü-özünə kifayət edir və kartındakı linkdən Google Colab-da açılır."
+    : "<b>Reproducibility.</b> Every figure, table and coefficient in this dashboard and in the technical report is regenerated by these notebooks from the source data in a single pass. Each notebook is self-contained and opens in Google Colab from the link on its card.";
   const cards = NOTEBOOKS.map(([n, slug, en, aze, be, ba, m]) => {
     return `<div class="nbcard"><div class="nb-n">${n}</div><div class="nb-b">
       <div class="nb-t">${esc(az ? aze : en)}</div><div class="nb-d">${esc(az ? ba : be)}</div>
       <div class="nb-m">${m.split(" · ").map(x => `<span>${esc(x)}</span>`).join("")}</div></div></div>`;
   }).join("");
-  $("#view").innerHTML = `<div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${ic("nb")}${deLead(tx("nb.h", "📓 Reproducible notebooks"))}</div>
+  $("#view").innerHTML = `<div class="ghead" style="color:var(--ink);border-color:var(--accent)">${ic("nb")}${deLead(tx("nb.h", "📓 Reproducible notebooks"))}</div>
     <div class="gsub">${intro}</div>
     <div class="note-eco">${howto}</div>
     <div class="nbgrid">${cards}</div>`;
@@ -891,7 +883,7 @@ async function showBenchmark() {
     });
     return h + "</table>";
   };
-  $("#view").innerHTML = `<div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${ic("bench")}${deLead(tx("bench.h", "📊 Forecast benchmark against IMF and CAEM"))}</div>
+  $("#view").innerHTML = `<div class="ghead" style="color:var(--ink);border-color:var(--accent)">${ic("bench")}${deLead(tx("bench.h", "📊 Forecast benchmark against IMF and CAEM"))}</div>
     <div class="gsub">${intro}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px">
       <div class="figcard"><div class="ft">${az ? "Real ÜDM artımı" : "Real GDP growth"} <span class="fcbadge">+ 50/90% fan</span></div><div class="fc" id="benchgdp" style="height:300px"></div></div>
@@ -910,7 +902,7 @@ async function showQuarterly() {
   const intro = az
     ? "Yüksək tezlikli real göstəricilər — DSK rüblük milli hesablar və aylıq DSK/AMB göstəriciləri (rüblərə ortalanmış) — sonra modelin <b>illik proqnozu</b> (2026–2030, qırmızı punktir, kölgələnmiş) faktiki rüblük axına calanır. Bu, il-içi dinamikanı və cari ilin proqnozunu (nowcast) bir yerdə göstərir."
     : "Real higher-frequency indicators — SSC quarterly national accounts and monthly SSC/CBAR indicators (averaged to quarters) — joined to the model's <b>annual forecast</b> (2026–2030, dashed red, shaded). This shows within-year dynamics and the current-year projection (nowcast) together.";
-  $("#view").innerHTML = `<div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${ic("qtr")}${deLead(tx("qtr.h", "📅 Quarterly indicators &amp; forecast"))}</div>
+  $("#view").innerHTML = `<div class="ghead" style="color:var(--ink);border-color:var(--accent)">${ic("qtr")}${deLead(tx("qtr.h", "📅 Quarterly indicators &amp; forecast"))}</div>
     <div class="gsub">${intro} <span id="qstatus"></span></div>
     <div id="qnow"></div>
     <div class="figgrid" id="qgrid"></div>`;
@@ -1244,7 +1236,7 @@ function figInfo(f) {
     ? `<b>${az ? "2025 faktiki" : "2025 actual"}:</b> ${esc(pv.value)}${pv.unit ? " " + esc(pv.unit) : ""} — ${esc(pv.source)}${pv.date ? ` (${az ? "dərc" : "released"} ${esc(pv.date)})` : ""}${pv.url ? ` · <a href="${esc(pv.url)}" target="_blank" rel="noopener">${az ? "mənbə" : "source"}</a>` : ""}. ${az ? "Digər illər: CAEM modeli." : "Other years: CAEM model."}`
     : isQ ? (az ? "Dövlət Statistika Komitəsi / Azərbaycan Mərkəzi Bankı." : "State Statistical Committee / Central Bank of Azerbaijan.")
     : esc((META.provenance && META.provenance.caem_default) || "CAEM.xlsb workbook.");
-  const live = v ? `<h4>${tx("id.live", "Live")}</h4><p>${tx("id.live.p", "Recomputes when you change a Scenario-console input and press <b>Run</b>; the dashed red line is the scenario vs the solid baseline.")}</p>` : "";
+  const live = v ? `<h4>${tx("id.live", "Live")}</h4><p>${tx("id.live.p", "Recomputes when a Scenario-console input is changed and the forecast is run; the dashed red line is the scenario against the solid baseline.")}</p>` : "";
   const vintage = isQ ? (az ? "Bütün nöqtələr faktiki nəticələrdir; ən son rüblər nowcast-ı təyin edir." : "All points are observed outturns; the most recent quarters anchor the nowcast.")
     : (v || f.fan) ? tx("id.vintage", "2025 = official outturn; the model forecasts <b>2026+</b> (shaded).")
     : tx("id.vintage2", "Shaded = forecast <b>2026+</b>; 2025 = last actual. This figure's 2025 point is CAEM's estimate — official 2025 outturns are in the scorecard.");
