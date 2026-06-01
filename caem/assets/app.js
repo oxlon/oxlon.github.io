@@ -364,7 +364,7 @@ function showHome() {
     <div class="hsec">${scorecardHTML()}</div>
 
     <div class="hsec"><h2>${tx("home.engine", "How the engine works")} <span class="tagi">${tx("home.engine.tag", "reproduced from CAEM, validated against the workbook")}</span></h2>
-      <div class="grid3">
+      <div class="enggrid">
         ${mc.map(([t, d, v]) => `<div class="mcard mcard-go"><b>${t}</b><span>${d}</span><i>${v}</i></div>`).join("")}
       </div>
     </div>
@@ -578,7 +578,7 @@ function showMethods() {
     <div class="mtbl"><table class="dt"><tbody>${els.map(([n, v]) => `<tr><td>${n}</td><td class="sc-mid">${v}</td></tr>`).join("")}</tbody></table></div>
 
     <h3 class="lh">${tx("m.h3", "3 · Fan charts (uncertainty)")}</h3>
-    <p class="mp">${az ? "Mərkəzi trayektoriya mühərrikdən; 50 / 80 / 90% zolaqları üfüqlə σ·z·√h kimi genişlənir, burada σ dəyişənin tarixi illik dəyişməsinin standart kənarlaşmasıdır (bir kəskin kənar dəyər çıxarılıb; 0.4–1.8 ilə məhdudlaşdırılıb). Kalibrlənmiş qeyri-müəyyənlik diapazonu, zolaq kənarlarının proqnozu deyil." : "Central path from the engine; 50 / 80 / 90% bands widen with the horizon as σ·z·√h, where σ is the variable's historical annual-change standard deviation (one extreme outlier dropped; capped 0.4–1.8). A calibrated uncertainty range, not a prediction of the band edges."}</p>
+    <p class="mp">${az ? "Mərkəzi trayektoriya mühərrikdən; 50 / 80 / 90% zolaqları üfüqlə " + kxi("\\sigma\\cdot z\\cdot\\sqrt{h}") + " kimi genişlənir, burada σ dəyişənin tarixi illik dəyişməsinin standart kənarlaşmasıdır (bir kəskin kənar dəyər çıxarılıb; 0.4–1.8 ilə məhdudlaşdırılıb). Kalibrlənmiş qeyri-müəyyənlik diapazonu, zolaq kənarlarının proqnozu deyil." : "Central path from the engine; 50 / 80 / 90% bands widen with the horizon as " + kxi("\\sigma\\cdot z\\cdot\\sqrt{h}") + ", where σ is the variable's historical annual-change standard deviation (one extreme outlier dropped; capped 0.4–1.8). A calibrated uncertainty range, not a prediction of the band edges."}</p>
 
     <h3 class="lh">${tx("m.h4", "4 · Data &amp; provenance")}</h3>
     <p class="mp">${az ? "Bütün seriyalar üçün standart mənbə" : "Default source for all series"}: <b>${esc(caem)}</b></p>
@@ -615,12 +615,12 @@ function eqDecoderHTML() {
     ["W · L · HC", "wage · employment · household consumption"],
     ["TIKINTI · TICARET", "Azerbaijani sector names: construction · trade"],
   ];
-  const cell = arr => `<div class="mtbl"><table class="dt eqdec"><tbody>${arr.map(([k, v]) => `<tr><td class="eqdec-k">${k}</td><td>${v}</td></tr>`).join("")}</tbody></table></div>`;
+  const cell = arr => `<div class="mtbl"><table class="dt eqdec"><tbody>${arr.map(([k, v]) => `<tr><td class="eqdec-k">${k}</td></tr><tr><td class="eqdec-v">${v}</td></tr>`).join("")}</tbody></table></div>`;
   return `<div class="eqdecwrap"><div class="eqdec-h">Reading the names</div>
     <div class="eqdec-grid"><div><div class="eqdec-sub">Transformations &amp; dummies</div>${cell(ops)}</div>
       <div><div class="eqdec-sub">Variable naming convention</div>${cell(morph)}</div></div>
     <p class="mp eqdec-ex"><b>Worked example — ECM_MGNO.</b> Read it as <b>ECM</b> (error-correction) of <b>M·G·NO</b> = non-oil goods imports.
-      Its long run, <span class="mono">LOG(MGNO) = f(HC, I−IO, NEER)</span>, ties non-oil imports to household consumption and non-oil investment
+      Its long run, ${kxi("\\log(\\mathrm{MGNO}) = f(\\mathrm{HC},\\, I-\\mathrm{IO},\\, \\mathrm{NEER})")}, ties non-oil imports to household consumption and non-oil investment
       (total investment I minus oil investment IO) and the nominal effective exchange rate; the lag <span class="mono">ECM_MGNO(−1)</span> then
       enters the short-run growth equation <span class="mono">DLOG(MGNO)</span> and corrects deviations from that equilibrium.</p></div>`;
 }
@@ -1131,6 +1131,8 @@ function kx(latex, plain, num) {
   if (window.katex) { try { return `<div class="eq">${katex.renderToString(latex, { throwOnError: false, displayMode: true })}${tag}</div>`; } catch (e) { } }
   return `<div class="eq mono">${esc(plain || latex)}${tag}</div>`;
 }
+// inline KaTeX for math inside prose
+function kxi(latex){ if(window.katex){ try{ return `<span class="kxi">${katex.renderToString(latex,{throwOnError:false,displayMode:false})}</span>`; }catch(e){} } return esc(latex); }
 const VARDESC = {
   real_gdp_growth: "Total real GDP growth — oil and non-oil sectors combined; the headline output measure.",
   nonoil_growth: "Non-oil real GDP growth — the part of the economy policy most affects; it drives the output gap.",
