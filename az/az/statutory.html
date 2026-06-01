@@ -126,22 +126,24 @@
     <div class="callout "><div class="h">Reading the table</div>Every cell is a forecast for 2026–2030 — Oxlon's forecast, the Ministry's Decree-75 table and the IMF, three values per year. Oxlon's real-economy figures come from its model ensemble; 2025 and earlier are realised actuals and are not re-forecast.</div>
 
     <h2>Public debt and the budget balance</h2>
-    <p>Oxlon does not estimate the debt stock independently. It takes the 20.1 per cent-of-GDP gross
-    debt recorded for 2025 — the general-government measure the IMF and the fiscal accounts use — and projects it with the
-    debt-dynamics identity of equation&nbsp;C4, driven by its own growth and inflation forecasts, the primary balance from the
-    budget, and an effective interest rate of 3 per cent. On that basis gross debt falls from
-    19.7 per cent of GDP in 2026 to 16.0 per cent in 2029, against the IMF's flat 20.0 per cent. The decline follows from a
-    primary balance near zero while nominal growth widens the denominator; the IMF holds the ratio level on a small assumed
-    deficit. The block stops in 2029: the engine's growth, inflation and primary-balance inputs do not run past that year, and a
-    later value would be the recursion advancing on the interest rate alone.</p>
-    <p>The budget-balance line is not comparable with the IMF's, because the two cover different parts of the public sector.
-    Oxlon reports the state-budget balance, a surplus of about 0.4 per cent of GDP in 2025 that matches the official outturn. The
-    IMF reports the general-government balance, which consolidates the State Oil Fund and so stands several points higher in 2025
-    before turning to deficit later in the decade.</p>
-    <div class="tw"><table class="dt cmp"><caption>Public debt and the budget balance, 2026–2029: Oxlon's financial-programming engine against the IMF. The Decree-75 tables give revenue and expenditure in manat, not a balance, so there is no Ministry line. Figures end in 2029, the last year the engine's inputs cover.</caption><thead><tr><th class="lbl">Göstərici</th><th>Mənbə</th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th></tr></thead><tbody><tr class="s-our"><td class="lbl" rowspan="2">Fiscal balance<span class='u-in'> (% of GDP)</span></td><td class="src">Oxlon (FP engine)</td><td class="num">-0.5</td><td class="num">0.4</td><td class="num">0.1</td><td class="num">0.7</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">1.8</td><td class="num">0.2</td><td class="num">-0.6</td><td class="num">-0.5</td></tr><tr class="s-our"><td class="lbl" rowspan="2">Gross public debt<span class='u-in'> (% of GDP)</span></td><td class="src">Oxlon (FP engine)</td><td class="num">19.7</td><td class="num">18.4</td><td class="num">17.6</td><td class="num">16.0</td></tr><tr class="s-imf"><td class="src">IMF</td><td class="num">20.0</td><td class="num">20.0</td><td class="num">19.9</td><td class="num">19.9</td></tr></tbody></table></div>
-    <p class="fn">The debt path is a reduced-form recursion, not an estimated model: its level is fixed by the 2025 seed and its
-    slope by the growth, inflation, interest-rate and primary-balance assumptions stated above. The IMF figure is the external
-    reference where the two differ.</p>
+    <p>Across the report's real-economy variables Oxlon and the IMF stay close. On the public finances they do not, and these two
+    lines alone have no Ministry column. Both differences have specific causes.</p>
+    <p>There is no Ministry column because the 2.4.1 tables do not contain one. They project output, prices, incomes and trade,
+    not the government budget — their revenue and expenditure lines are household and economy-wide flows, not the state accounts —
+    so there is no Decree-75 fiscal-balance or debt figure to reproduce. The comparison here is Oxlon against the IMF.</p>
+    <p>The debt paths diverge for a structural reason particular to Azerbaijan. Gross public debt is low, near 20.0 per cent of
+    GDP, and the IMF holds it flat. The budget runs a large surplus, but that surplus is saved in the State Oil Fund (SOFAZ)
+    rather than used to repay debt, and the existing stock is rolled over. The standard debt-dynamics recursion treats a surplus
+    as repayment, so run mechanically on Oxlon's growth and inflation it eases the ratio to about 16.0 per cent by 2029. For a
+    state that saves rather than deleverages, the IMF's flat path is the right one; Oxlon's recursion is shown for transparency,
+    not as the preferred figure.</p>
+    <p>The balance lines measure different things. Oxlon reports the state-budget balance, near zero and consistent with the
+    official 2025 outturn. The IMF reports the general-government balance, which consolidates the Oil Fund and so runs several
+    points higher before moving into deficit late in the decade. They are not rival forecasts of one number.</p>
+    <div class="tw"><table class="dt cmp"><caption>Public debt and the budget balance, 2026–2029. There is no Ministry line because the 2.4.1 tables carry no government budget; the IMF is the reference, with Oxlon's engine shown alongside. Figures end in 2029, the last year the engine's inputs cover.</caption><thead><tr><th class="lbl">Göstərici</th><th>Mənbə</th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th></tr></thead><tbody><tr class="s-imf"><td class="lbl" rowspan="2">Fiscal balance<span class='u-in'> (% of GDP)</span></td><td class="src">IMF — general government</td><td class="num">1.8</td><td class="num">0.2</td><td class="num">-0.6</td><td class="num">-0.5</td></tr><tr class="s-our"><td class="src">Oxlon — state budget</td><td class="num">-0.5</td><td class="num">0.4</td><td class="num">0.1</td><td class="num">0.7</td></tr><tr class="s-imf"><td class="lbl" rowspan="2">Gross public debt<span class='u-in'> (% of GDP)</span></td><td class="src">IMF (reference)</td><td class="num">20.0</td><td class="num">20.0</td><td class="num">19.9</td><td class="num">19.9</td></tr><tr class="s-our"><td class="src">Oxlon — mechanical recursion</td><td class="num">19.7</td><td class="num">18.4</td><td class="num">17.6</td><td class="num">16.0</td></tr></tbody></table></div>
+    <p class="fn">Oxlon does not model the public finances independently. On debt it adopts the IMF's low, flat profile; the
+    engine's recursion is a mechanical illustration, sensitive to its 2025 seed and its interest-rate and primary-balance
+    assumptions, not a forecast. Where Oxlon and the IMF differ here, the IMF figure is the reference.</p>
 
     <h2>Reconstructed statutory sheets</h2>
     <p>Each sheet is reproduced in the workbook's own layout over the forecast years 2026–2030, with the unit shown in
