@@ -150,6 +150,15 @@ table.dt tbody tr.hl td:first-child{font-weight:600}
 .pager a.next{text-align:right}
 hr.sep{border:none;border-top:1px solid var(--line);margin:30px 0}
 .menu-btn{display:none}
+/* reproducible-notebooks tiles — house card style, consistent with other Reports pages */
+.nbgrid{margin-top:18px}
+.nbcard{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-left:3px solid var(--accent)}
+.nbcard .nbnum{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1;color:var(--accent);min-width:34px;text-align:center}
+.nbcard .nbbody{flex:1;min-width:0}
+.nbcard .nbbody h3{margin:0 0 5px;font-size:15.5px;color:var(--ink)}
+.nbcard .nbbody p{margin:0 0 9px;font-size:13.5px;color:var(--muted);line-height:1.5}
+.nbtags{display:flex;flex-wrap:wrap;gap:5px}
+.nbtag{font-family:var(--mono);font-size:10px;color:var(--accent-d);background:rgba(29,122,140,.08);border-radius:4px;padding:2px 8px}
 @media(max-width:860px){
   .shell{flex-direction:column}.sidebar{position:static;width:100%;height:auto}
   .nav{display:none}.nav.open{display:block}.menu-btn{display:inline-block}
