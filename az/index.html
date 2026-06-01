@@ -98,17 +98,44 @@
     <table class="dt"><caption>Out-of-sample forecasting performance by target and frequency. Skill is the reduction in error relative to a naive benchmark.</caption>
     <thead><tr><th>Target</th><th>Best approach</th><th class="num">Skill</th></tr></thead><tbody><tr><td>Annual inflation</td><td>Neural Net (MLP) (best of 14 models)</td><td class="num sig">+38%</td></tr><tr><td>Monthly inflation</td><td>Seasonal ARIMA (SARIMA)</td><td class="num sig">+63%</td></tr><tr><td>Monthly inflation</td><td>Temporal Fusion Transformer</td><td class="num sig">+50%</td></tr><tr><td>Monthly inflation</td><td>Long short-term memory (12-month)</td><td class="num sig">+32%</td></tr></tbody></table>
 
-    <h2>Scope and method</h2>
-    <p>Decree No. 75 specifies ten forecast directions, a defined set of econometric and machine-learning models, and four
-    cross-cutting capabilities. This work consolidates the Ministry's sectoral models and Financial-Programming framework
-    into one reproducible system, re-estimates the behavioural relationships against the data, and implements the full model
-    suite: classical time-series, Bayesian and large Bayesian VARs, error-correction and Kalman state-space models, the
-    DSGE, the input-output and computable general-equilibrium models, and the machine-learning and deep-learning
-    forecasters. The system reproduces the official medium-term projection, and every result is reproducible from the source
-    data.</p>
-    <p class="fn">Each finding is documented, with its diagnostics, in the sections that follow: the forecast in Output,
-    Inflation and Fiscal; the drivers in Regression Results and Impulse Responses; the model evidence in Machine-Learning,
-    Bayesian and State-Space, and Structural Models; and the constraints in Limitations and Data Requirements.</p>
+    <h2>How the Oxlon forecast is built</h2>
+    <p>The Oxlon forecast is not a single model but a <b>skill-weighted combination</b> of several. For each indicator a
+    panel of candidate models is estimated on the full history through the 2025 actual: a structural <b>potential-output</b>
+    (production-function) model, an <b>error-correction</b> (ECM) model, a first-order <b>autoregression</b> (AR1), a
+    <b>vector autoregression</b> (VAR) and a shrinkage <b>Bayesian VAR</b> (BVAR), and for inflation a CAEM-style
+    <b>Phillips curve</b> and an expectations <b>anchor</b>. Machine-learning models (regularised regression, random
+    forests, gradient boosting, neural nets) are run in parallel and reported separately, because on the short annual
+    sample they overfit and add no out-of-sample skill.</p>
+    <p>Each model is scored by <b>expanding-window, one-step-ahead back-testing</b> over 2012–2024: at every year the
+    model is re-estimated on earlier data only and made to predict the next, and its accuracy is summarised by the
+    root-mean-square error (RMSE) against the outturn,</p>
+    <div class="eq">$$ \mathrm{{RMSE}}_m=\sqrt{{\tfrac1H\sum_{{h=1}}^{{H}}\bigl(\hat y_{{m,h}}-y_h\bigr)^2}} $$<span class="num">(1)</span></div>
+    <p>where \(\hat y_{m,h}\) is model \(m\)'s one-step forecast and \(y_h\) the realised value over the \(H\)
+    test years. The forecast is then the weighted average of the models that beat a random walk, with weights
+    <b>inversely proportional to squared error</b>, so a model that forecasts twice as accurately receives four times the
+    weight:</p>
+    <div class="eq">$$ \hat y^{{\,\text{{Oxlon}}}}_t=\sum_{{m}} w_m\,\hat y_{{m,t}},\qquad w_m=\frac{{\mathrm{{RMSE}}_m^{{-2}}}}{{\sum_{{k}}\mathrm{{RMSE}}_k^{{-2}}}} $$<span class="num">(2)</span></div>
+    <p class="fn">This inverse-variance rule is the standard, theoretically optimal way to pool unbiased forecasts: under
+    independent errors it is the combination that minimises the variance of the pooled forecast (Bates and Granger, 1969;
+    Timmermann, 2006). Models with no skill against the random-walk benchmark are dropped, so the average is taken only over
+    models that demonstrably help. The resulting weights are <b>67 per cent Potential and 33 per cent AR1</b> for real GDP growth and <b>50 per cent AR1 and 50 per cent Anchor</b> for
+    inflation: the structural potential-output model dominates growth, while inflation leans on the autoregressive and
+    expectations-anchor terms.</p>
+    <p>The combination is more accurate than any single model. The GDP ensemble's back-tested RMSE is 3.42
+    points against 4.21 for a random walk, a 19 per cent reduction; for inflation it is 4.52
+    against 5.38, a 16 per cent reduction. The 50 and 90 per cent fan bands shown above are built from
+    these back-tested error variances, widening with the forecast horizon. Crucially, the whole procedure uses
+    <b>only data available before each test year</b>, so the reported skill is genuine out-of-sample performance, not
+    in-sample fit.</p>
+    <p>Finally the forecast is <b>validated against two independent benchmarks</b>: the IMF Article IV projection and the
+    Ministry's own CAEM model. The Oxlon path reproduces the IMF picture to within 0.12 of a point on growth and
+    0.61 on inflation on average over 2026–2029 (Figures 1.2–1.3), without being fitted to either: agreement with
+    two independently-constructed forecasts is evidence the method is sound, while the small, explicable differences (chiefly
+    a higher near-term oil price than the IMF assumed) are where Oxlon adds value.</p>
+    <p class="fn">Each finding is documented, with its diagnostics and equations, in the sections that follow: the forecast
+    in Output, Inflation and Fiscal; the drivers in Econometric Models and Results and Impulse Responses; the model evidence
+    in Machine-Learning, Bayesian and State-Space, and Structural Models; the benchmarking in Forecast Benchmark; and the
+    constraints in Limitations and Data Requirements.</p>
     <script>window.AZ.data().then(D=>{const P=AZ.palette;
       AZ.fan("growthFan",D.fan.gdp_growth,{ytitle:"Real GDP growth (%)"});
       try{Plotly.relayout("growthFan",{"xaxis.dtick":5,"xaxis.tick0":1995});}catch(e){}
