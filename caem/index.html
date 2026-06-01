@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-<link rel="stylesheet" href="assets/style.css?v=40">
+<link rel="stylesheet" href="assets/style.css?v=42">
 </head>
 <body>
 <header id="top">
@@ -22,10 +22,10 @@
 
 <div id="runbar">
   <div class="rb-top">
-    <span class="rb-title" data-i18n="con.title">⚙ Scenario console</span>
+    <span class="rb-titlewrap"><span class="rb-gear"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M19 7h1M4 17h1M11 17h9"/><circle cx="15.5" cy="7" r="2.4"/><circle cx="7.5" cy="17" r="2.4"/></svg></span><span class="rb-title" data-i18n="con.title">Scenario console</span></span>
     <span class="rb-hint" data-i18n="con.hint">Shock the forecast and press Run. The LIVE figures and fan charts recompute and the scenario overlays the baseline (dashed red). Oil, prices and FX are in %, everything else in percentage points.</span>
     <span class="rb-act">
-      <span class="yrs"><label data-i18n="con.apply">Apply</label><input id="s_start" type="number" value="2026"><label data-i18n="con.to">to</label><input id="s_end" type="number" value="2030"></span>
+      <span class="yrs"><label data-i18n="con.apply">Apply</label><input id="s_start" type="number" value="2026"><span class="yrsep">→</span><input id="s_end" type="number" value="2030"></span>
       <button id="savescen" class="btn ghost" data-i18n="con.save">💾 Save</button>
       <button id="run" class="btn" data-i18n="con.run">Run&nbsp;▸</button><button id="reset" class="btn ghost" data-i18n="con.reset">Reset</button>
     </span>
@@ -76,6 +76,6 @@
 </aside>
 
 <script src="assets/engine.js?v=5"></script>
-<script src="assets/app.js?v=46"></script>
+<script src="assets/app.js?v=49"></script>
 </body>
 </html>

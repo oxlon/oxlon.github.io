@@ -93,7 +93,7 @@ let LANG = "en", CURMODE = "home";
 try { LANG = localStorage.getItem("caem_lang") || "en"; } catch (e) { }
 const AZ = {
   "hdr.title": "Makro-Fiskal Model", "hdr.sub": "Azərbaycan Respublikası · Maliyyə Proqramlaşdırma mühərriki",
-  "con.title": "⚙ Ssenari paneli",
+  "con.title": "Ssenari paneli",
   "con.hint": "Proqnoza şok tətbiq edin və Hesabla düyməsini basın. CANLI qrafiklər və yelpik qrafikləri yenidən hesablanır, ssenari bazis xəttinin üzərinə qırmızı punktirlə düşür. Neft, qiymətlər və məzənnə %-lə, qalanları faiz bəndi ilə.",
   "con.apply": "Tətbiq", "con.to": "–", "con.editdata": "✎ Məlumatı yenilə", "con.save": "💾 Yadda saxla",
   "con.run": "Hesabla ▸", "con.reset": "Sıfırla", "con.presets": "Hazır ssenarilər",
@@ -110,15 +110,15 @@ const AZ = {
   "home.cta": "Canlı proqnozu və yelpik qrafiklərini açın →",
   "home.baseline": "Bazis proqnoz, modelin mərkəzi trayektoriyası",
   "home.baseline.tag": "model proqnozları (2026+), faktiki nəticə deyil",
-  "home.engine": "Mühərrik — CAEM-dən təkrar yaradılıb və yoxlanılıb",
-  "home.howto": "İstifadə qaydası", "home.explore": "CAEM panellərini araşdırın",
+  "home.engine": "CAEM-dən təkrar yaradılmış və yoxlanılmış mühərrik",
+  "home.built": "Oxlon nə qurub", "home.howto": "İstifadə qaydası", "home.explore": "CAEM panellərini araşdırın",
   "home.figs": "qrafik", "home.live": "canlı",
   "home.methodslink": "Metodologiya və mənbələr", "home.vintage": "Proqnoz buraxılışı", "home.lastactual": "Son faktiki",
   // engine mini-cards
-  "eng.gap": "Məhsul buraxılışı kəsiri", "eng.gap.d": "Loqarifmik qeyri-neft ÜDM üzrə HP filtri (λ=100) — CAEM B1a vərəqi.",
+  "eng.gap": "Məhsul buraxılışı kəsiri", "eng.gap.d": "Loqarifmik qeyri-neft ÜDM üzrə HP filtri (λ=100), CAEM B1a vərəqi.",
   "eng.inf": "İnflyasiya", "eng.inf.d": "Açıq iqtisadiyyat Phillips əyrisi: davamlılıq, gözləntilər, idxal ötürülməsi, kəsir (1b).",
   "eng.rate": "Faiz dərəcəsi", "eng.rate.d": "İnflyasiya və məhsul kəsirinə reaksiya verən hamarlanmış Taylor qaydası (1c).",
-  "eng.debt": "Dövlət borcu", "eng.debt.d": "Standart nisbət rekursiyası — artım, inflyasiya, ilkin balans (3b).",
+  "eng.debt": "Dövlət borcu", "eng.debt.d": "Standart nisbət rekursiyası, artım, inflyasiya və ilkin balans əsasında (3b).",
   "eng.fisc": "Fiskal və neft", "eng.fisc.d": "Neft qiyməti → gəlir/balans/borc və artım, şəffaf elastiklik əmsalları vasitəsilə.",
   "eng.fan": "Yelpik qrafikləri", "eng.fan.d": "Etibarlılıq zolaqları proqnoz üfüqü boyunca mərkəzi trayektoriya ətrafında genişlənir.",
   "eng.valid": "doğrulama", "eng.scn": "ssenari", "eng.dyn": "dinamika", "eng.unc": "qeyri-müəyyənlik",
@@ -127,7 +127,7 @@ const AZ = {
   "live.all": "Bütün canlı qrafiklər (ssenari ilə yenidən hesablanır)",
   "btn.pdf": "🖨 PDF hesabat", "btn.xls": "⤓ Excel", "btn.csv": "⤓ CSV",
   // scorecard
-  "sc.h": "2025 hesab kartı — CAEM proqnozu faktiki nəticəyə qarşı", "sc.tag": "Dövlət Statistika Komitəsi, yanvar 2026-da dərc olunub",
+  "sc.h": "2025 hesab kartı, CAEM proqnozu faktiki nəticəyə qarşı", "sc.tag": "Dövlət Statistika Komitəsi, yanvar 2026-da dərc olunub",
   "sc.indicator": "Göstərici", "sc.forecast": "CAEM proqnozu", "sc.actual": "2025 faktiki", "sc.error": "Xəta", "sc.mae": "Orta mütləq xəta",
   // impact + compare
   "imp.h": "Ssenari təsiri", "imp.shock": "şok", "cmp.at": "Müqayisə",
@@ -306,10 +306,10 @@ function showHome() {
     ? `IMF CAEM Maliyyə Proqramlaşdırma modelinin veb tətbiqi, Azərbaycana uyğunlaşdırılıb və <b>yenidən hesablama mühərriki</b> ilə təchiz olunub. Ssenari panelində fərziyyəni dəyişin və proqnoz (məhsul buraxılışı kəsiri, inflyasiya, faiz dərəcəsi, borc və büdcə balansı) yenidən hesablanıb qrafiklərə əlavə olunur. ${GROUPS.length} CAEM paneli üzrə ${NFIG} qrafik, bunlardan ${NLIVE} canlı yenilənir, üstəlik yelpik qrafikləri olan <b>Canlı proqnoz</b> görünüşü.`
     : `A web implementation of the IMF CAEM Financial-Programming model, calibrated to Azerbaijan, with a <b>recompute engine</b>. Change an assumption in the Scenario console and the forecast (output gap, inflation, interest rate, debt and the fiscal balance) recomputes and overlays the charts. ${NFIG} figures across ${GROUPS.length} CAEM dashboards, of which ${NLIVE} recompute live, plus a <b>Live forecast</b> view with fan charts.`;
   const mc = [
-    [tx("eng.gap", "Output gap"), tx("eng.gap.d", "HP filter (λ=100) on log non-oil GDP — CAEM sheet B1a."), "≈0.18 pp"],
+    [tx("eng.gap", "Output gap"), tx("eng.gap.d", "HP filter (λ=100) on log non-oil GDP, CAEM sheet B1a."), "≈0.18 pp"],
     [tx("eng.inf", "Inflation"), tx("eng.inf.d", "Open-economy Phillips curve: persistence, expectations, import pass-through, gap (1b)."), "≈0.01 pp"],
     [tx("eng.rate", "Interest rate"), tx("eng.rate.d", "Smoothed Taylor rule with inflation &amp; output-gap response (1c)."), "≈0.07 pp"],
-    [tx("eng.debt", "Public debt"), tx("eng.debt.d", "Standard ratio recursion — growth, inflation, primary balance (3b)."), tx("eng.dyn", "dynamics")],
+    [tx("eng.debt", "Public debt"), tx("eng.debt.d", "Standard ratio recursion in growth, inflation and the primary balance (3b)."), tx("eng.dyn", "dynamics")],
     [tx("eng.fisc", "Fiscal &amp; oil"), tx("eng.fisc.d", "Oil-price → revenue/balance/debt and growth, via transparent elasticities."), tx("eng.scn", "scenario")],
     [tx("eng.fan", "Fan charts"), tx("eng.fan.d", "Confidence bands widen with the forecast horizon around the engine's central path."), tx("eng.unc", "uncertainty")],
   ];
@@ -322,6 +322,17 @@ function showHome() {
       `<b>Enter shocks</b> in the Scenario console (e.g. Oil price −30%), set the years, and press <b>Run</b>.`,
       `The <span class="livechip">LIVE</span> figures recompute and overlay the <b>scenario</b> (dashed red) on the baseline; <b>Reset</b> clears it.`,
       `Export any forecast to <b>CSV</b>, <b>Excel</b> or <b>PDF</b> from the Live page.`];
+  const built = LANG === "az" ? [
+    ["Məlumat bazası", "Rəsmi seriyalar (Dövlət Statistika Komitəsi, Mərkəzi Bank, Maliyyə Nazirliyi və Gömrük) harmonlaşdırılıb və 2025 son faktiki il kimi əsaslanıb."],
+    ["Model dəsti", "Struktur CAEM blokları (məhsul kəsiri, Phillips əyrisi, Taylor qaydası, borc dinamikası), üstəgəl ekonometrik və maşın öyrənməsi ansamblı, hər seriya üçün nümunədənkənar bacarığa görə seçilir."],
+    ["Doğrulama", "Nüvə CAEM iş kitabına təxminən 0.1 faiz bəndi dəqiqliklə təkrar istehsal olunub, proqnoz isə IMF Article IV ilə müqayisə edilib."],
+    ["Nə edir", "Canlı ssenari yenidən hesablanması, Bank-of-England yelpik qrafikləri və CSV, Excel, PDF ixracı."],
+  ] : [
+    ["Data foundation", "Official series from the Statistics Committee, the Central Bank, the Ministry of Finance and Customs, harmonised, with 2025 anchored as the last actual year."],
+    ["Model suite", "Structural CAEM blocks (output gap, Phillips curve, Taylor rule, debt dynamics), plus an econometric and machine-learning ensemble selected per series on out-of-sample skill."],
+    ["Validation", "The core is reproduced to about 0.1 of a percentage point against the CAEM workbook, and the forecast is benchmarked against the IMF Article IV projection."],
+    ["What it does", "Live scenario recompute, Bank-of-England fan charts, and export to CSV, Excel and PDF, all in the browser with no backend."],
+  ];
   $("#view").innerHTML = `
     <div class="home-hero">
       <div class="he-inner">
@@ -350,7 +361,11 @@ function showHome() {
     </div>
     <div class="hsec">${scorecardHTML()}</div>
 
-    <div class="hsec"><h2>${tx("home.engine", "The engine — reproduced from CAEM, validated")}</h2>
+    <div class="hsec"><h2>${tx("home.built", "What Oxlon built")}</h2>
+      <div class="grid3">${built.map(([t, d]) => `<div class="mcard"><b>${esc(t)}</b><span>${esc(d)}</span></div>`).join("")}</div>
+    </div>
+
+    <div class="hsec"><h2>${tx("home.engine", "The engine, reproduced from CAEM and validated")}</h2>
       <div class="grid3">
         ${mc.map(([t, d, v]) => `<div class="mcard mcard-go"><b>${t}</b><span>${d}</span><i>${v}</i></div>`).join("")}
       </div>
@@ -820,13 +835,9 @@ function showNotebooks() {
     ? "<b>Colab-da işə salmaq:</b> layihə qovluğunu Google Drive-a <code>MyDrive/azerbaijan-macrofiscal-notebooks/</code> kimi yükləyin, sonra istənilən dəftəri Colab-da açın — ilk xana Drive-ı qoşur, məlumatı tapır və üslubu tətbiq edir."
     : "<b>To run in Colab:</b> upload the project folder to Google Drive as <code>MyDrive/azerbaijan-macrofiscal-notebooks/</code>, then open any notebook in Colab — the first cell mounts Drive, locates the data and applies the house style.";
   const cards = NOTEBOOKS.map(([n, slug, en, aze, be, ba, m]) => {
-    const link = NB_LINKS[slug];
-    const btn = link
-      ? `<a class="nb-open" href="${esc(link)}" target="_blank" rel="noopener">${tx("nb.open", "Open in Colab ↗")}</a>`
-      : `<span class="nb-open pending">${tx("nb.pending", "Colab link pending")}</span>`;
     return `<div class="nbcard"><div class="nb-n">${n}</div><div class="nb-b">
       <div class="nb-t">${esc(az ? aze : en)}</div><div class="nb-d">${esc(az ? ba : be)}</div>
-      <div class="nb-m">${m.split(" · ").map(x => `<span>${esc(x)}</span>`).join("")}</div></div>${btn}</div>`;
+      <div class="nb-m">${m.split(" · ").map(x => `<span>${esc(x)}</span>`).join("")}</div></div></div>`;
   }).join("");
   $("#view").innerHTML = `<div class="ghead" style="color:var(--accent2);border-color:var(--accent)">${ic("nb")}${deLead(tx("nb.h", "📓 Reproducible notebooks"))}</div>
     <div class="gsub">${intro}</div>
@@ -837,8 +848,7 @@ function showNotebooks() {
 /* ---------------- Forecast benchmark: our ensemble vs IMF / CAEM / prior baseline ---------------- */
 let BENCH = null, REFS = null;
 const REFMETA = [["IMF_ArticleIV_26_112", "IMF", "#c0392b", null],
-                 ["CAEM_xlsb", "CAEM.xlsb", "#b9852a", "dash"],
-                 ["AZ_baseline", "Prior baseline", "#69758a", "dot"]];
+                 ["CAEM_xlsb", "CAEM.xlsb", "#b9852a", "dash"]];
 function benchTraces(v) {
   const ours = BENCH[v].ensemble, bands = BENCH[v].bands, fy = [2026, 2027, 2028, 2029, 2030, 2031], ex = [2025].concat(fy), tr = [];
   const bcol = s => fy.map(y => bands[String(y)] ? bands[String(y)][s] : null);
@@ -853,7 +863,7 @@ function benchTraces(v) {
     const xs = ex.filter(y => d[String(y)] != null);
     tr.push({ x: xs, y: xs.map(y => d[String(y)]), mode: "lines+markers", name: lab, line: { color: c, width: 1.7, dash: dash || undefined }, marker: { size: 5, symbol: "square" }, hovertemplate: "%{x}: %{y:.1f}%<extra>" + lab + "</extra>" });
   });
-  tr.push({ x: ex, y: ex.map(y => ours[String(y)]), mode: "lines+markers", name: "Our ensemble", line: { color: "#0e7c8b", width: 3 }, marker: { size: 6 }, hovertemplate: "%{x}: %{y:.1f}%<extra>Our ensemble</extra>" });
+  tr.push({ x: ex, y: ex.map(y => ours[String(y)]), mode: "lines+markers", name: "Oxlon ensemble", line: { color: "#0e7c8b", width: 3 }, marker: { size: 6 }, hovertemplate: "%{x}: %{y:.1f}%<extra>Oxlon ensemble</extra>" });
   return tr;
 }
 async function showBenchmark() {
@@ -864,11 +874,11 @@ async function showBenchmark() {
   } catch (e) { $("#view").innerHTML = `<div class="ghead">${ic("bench")}${deLead(tx("bench.h", "📊 Forecast benchmark"))}</div><p class="gsub">data/canonical_forecast.json not found</p>`; return; }
   const az = LANG === "az";
   const intro = az
-    ? "Bizim müstəqil, bacarıqla-çəkilmiş çoxmodelli ansamblımız (doqquz model, hər biri geriyə-test edilib) IMF Article IV (26/112), Nazirliyin CAEM.xlsb modeli və əvvəlki sayt bazası ilə yanaşı göstərilir. 2025 faktiki nəticəsinə əsaslanan ansambl IMF/CAEM mənzərəsini təkrar istehsal edir (artım üzrə ≈0.1 f.b., inflyasiya üzrə ≈0.6 f.b. orta fərq) — bu da metodu doğrulayır — əvvəlki baza isə kənar nəticədir."
-    : "Our independent, skill-weighted multi-model ensemble (nine models, each back-tested), now anchored on the 2025 outturn, shown beside the IMF Article IV (26/112), the Ministry's CAEM.xlsb, and the prior site baseline. The ensemble reproduces the IMF/CAEM picture closely (mean gaps of about 0.1 point on growth and 0.6 on inflation over 2026–29) — validating the method — while the prior baseline is the outlier.";
+    ? "Oxlon ansamblı müstəqil və bacarıqla-çəkilmişdir: doqquz model üzrə qurulub, hər biri geriyə-test edilib və 2025 faktiki nəticəsinə əsaslanır. IMF Article IV (26/112) və Nazirliyin CAEM.xlsb modeli ilə yanaşı göstərilir. Ansambl IMF və CAEM mənzərəsini yaxından təkrar istehsal edir (2026-2029 üzrə artımda ≈0.1 f.b., inflyasiyada ≈0.6 f.b. orta fərq), bu da metodu doğrulayır."
+    : "The Oxlon ensemble is independent and skill-weighted across nine models, each back-tested and anchored on the 2025 outturn, shown beside the IMF Article IV (26/112) and the Ministry's CAEM.xlsb. It reproduces the IMF and CAEM picture closely, with mean gaps of about 0.1 point on growth and 0.6 on inflation over 2026 to 2029, which validates the method.";
   const tbl = (v, lab) => {
     const ours = BENCH[v].ensemble, yrs = [2025, 2026, 2027, 2028, 2029, 2030, 2031];
-    const cols = [["OURS", null], ["IMF", "IMF_ArticleIV_26_112"], ["CAEM", "CAEM_xlsb"], ["Prior", "AZ_baseline"]];
+    const cols = [["Oxlon", null], ["IMF", "IMF_ArticleIV_26_112"], ["CAEM", "CAEM_xlsb"]];
     const cell = x => (x == null) ? "·" : (+x).toFixed(1);
     let h = `<table style="border-collapse:collapse;font-size:11px;margin:0 14px 6px 0"><caption style="text-align:left;font-weight:600;color:var(--ink);padding:3px 0">${esc(lab)} (%)</caption><tr style="color:var(--muted)"><td style="padding:2px 9px">Year</td>${cols.map(c => `<td style="padding:2px 9px;text-align:right">${esc(c[0])}</td>`).join("")}</tr>`;
     yrs.forEach(y => {
@@ -1052,9 +1062,9 @@ function scorecardHTML() {
   }).join("");
   const mae = errs.reduce((x, y) => x + y, 0) / (errs.length || 1);
   const note = LANG === "az"
-    ? `CAEM (2024 buraxılışı) <b>artımı yüksək proqnozlaşdırdı</b> (ÜDM 3.0% / 1.4%; qeyri-neft 4.6% / 2.7%) və <b>kəsirin profisitə çevrildiyini</b> (−1.1% / +0.4% ÜDM); <b>inflyasiya yaxın idi</b> (5.1% / 5.6%). Canlı model bu 2025 faktiki göstəricilərinə yenidən bağlanıb və 2026+ proqnozlaşdırır.<br><span class="tagi">Dəqiqlik tarixçəsi: bir buraxılış mövcuddur (2024 buraxılışı proqnozu 2025 nəticəsinə qarşı). Hər gələcək proqnoz dövrü — 💾 və apply_actuals ardıcıllığı ilə saxlanılan — bu cədvəli davamlı dəqiqlik qeydinə çevirir.</span>`
-    : `CAEM (2024 vintage) <b>over-predicted growth</b> (GDP 3.0% vs 1.4%; non-oil 4.6% vs 2.7%) and a <b>deficit that turned into a surplus</b> (−1.1% vs +0.4% of GDP); <b>inflation was close</b> (5.1% vs 5.6%). The live model is re-anchored to these 2025 actuals and forecasts 2026+.<br><span class="tagi">Track record: one vintage available (the 2024-vintage call vs the 2025 outturn). Each future forecast round — saved via 💾 and the apply_actuals pipeline — extends this table into a rolling accuracy record.</span>`;
-  return `<div class="scorecard"><div class="sc-h">${tx("sc.h", "2025 scorecard — CAEM forecast vs official outturn")} <span class="tagi">${tx("sc.tag", "State Statistical Committee, released Jan 2026")}</span></div>
+    ? `CAEM (2024 buraxılışı) <b>artımı yüksək proqnozlaşdırdı</b> (ÜDM 3.0% / 1.4%; qeyri-neft 4.6% / 2.7%) və <b>kəsirin profisitə çevrildiyini</b> (−1.1% / +0.4% ÜDM); <b>inflyasiya yaxın idi</b> (5.1% / 5.6%). Canlı model bu 2025 faktiki göstəricilərinə yenidən bağlanıb və 2026+ proqnozlaşdırır.<br><span class="tagi">Dəqiqlik tarixçəsi: bir buraxılış mövcuddur (2024 buraxılışı proqnozu 2025 nəticəsinə qarşı). Hər gələcək proqnoz dövrü, 💾 və apply_actuals ardıcıllığı ilə saxlanılaraq, bu cədvəli davamlı dəqiqlik qeydinə çevirir.</span>`
+    : `CAEM (2024 vintage) <b>over-predicted growth</b> (GDP 3.0% vs 1.4%; non-oil 4.6% vs 2.7%) and a <b>deficit that turned into a surplus</b> (−1.1% vs +0.4% of GDP); <b>inflation was close</b> (5.1% vs 5.6%). The live model is re-anchored to these 2025 actuals and forecasts 2026+.<br><span class="tagi">Track record: one vintage available (the 2024-vintage call vs the 2025 outturn). Each future forecast round, saved via 💾 and the apply_actuals pipeline, extends this table into a rolling accuracy record.</span>`;
+  return `<div class="scorecard"><div class="sc-h">${tx("sc.h", "2025 scorecard, CAEM forecast versus official outturn")} <span class="tagi">${tx("sc.tag", "State Statistical Committee, released Jan 2026")}</span></div>
     <table class="sc-t"><thead><tr><th>${tx("sc.indicator", "Indicator")}</th><th>${tx("sc.forecast", "CAEM forecast")}</th><th>${tx("sc.actual", "2025 actual")}</th><th>${tx("sc.error", "Error")}</th></tr></thead><tbody>${tr}
       <tr class="sc-mae"><td><b>${tx("sc.mae", "Mean absolute error")}</b></td><td></td><td></td><td><b>${mae.toFixed(1)} pp</b></td></tr></tbody></table>
     <div class="sc-note">${note}</div></div>`;
