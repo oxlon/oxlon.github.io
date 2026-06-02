@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
-<title>Output and Growth · Oxlon Proqnozlaşdırma</title>
+<title>Çıxış və Artım · Oxlon Proqnozlaşdırma</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1428'/><circle cx='50' cy='50' r='29' fill='none' stroke='%23f6f1e6' stroke-width='5'/><circle cx='50' cy='50' r='8.5' fill='%23c9a78e'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,11 +28,11 @@
 
     <h2>Bazis və onun qeyri-müəyyənliyi</h2>
     <p>Real məhsul artımı sektoral əlavə dəyəri toplamaqla, yuxarıdakı eyniliklər tətbiq olunaraq proqnozlaşdırılır. Şəkil 5.1-dəki yelpik mərkəzi trayektoriyanı 50 və 80 faizlik ehtimal zolaqları ilə və IMF World Economic Outlook ilə tutuşdurur. Nazirliyin bazisi qısamüddət üçün IMF-dən daha optimistdir — 2026 artımı IMF-in daha aşağı trayektoriyasına qarşı 2,3 faiz — gəlir planlaşdırması üçün əhəmiyyətli olan və Ssenari Təhlilində araşdırılan fərq.</p>
-    <div class="fig"><div id="fanGdp" class="plot" style="height:380px"></div><div class="cap">Figure 5.1. Real ÜDM artımı: outturns to 2025 (State Statistical Committee) and the Ministry baseline for 2026–2030 with 50% and 80% probability bands; the IMF World Economic Outlook is the external comparator.</div></div>
+    <div class="fig"><div id="fanGdp" class="plot" style="height:380px"></div><div class="cap">Şəkil 5.1. Real ÜDM artımı: 2025-ə qədər faktiki nəticələr (State Statistical Committee) və Nazirliyin 2026–2030 üçün baza ssenarisi 50% və 80% ehtimal zolaqları ilə; IMF World Economic Outlook xarici müqayisədir.</div></div>
 
     <h2>Artımın tərkibi</h2>
     <p>Artım neft-qaz və qeyri-neft sektorlarının töhfələrinə ayrılır, hər biri məhsuldakı payı ilə çəkilir. Qeyri-neft iqtisadiyyatı üfüq boyunca artımın yeganə mühərrikidir; neft sektoru yetkin yataqlar tükəndikcə artımdan çıxır, 2030-da -0,2 faiz bənd töhfə verir. Bu, mənzərənin əsas struktur faktıdır və qeyri-neft bazasının siyasətin diqqət mərkəzində olmasının səbəbidir.</p>
-    <div class="fig"><div id="gContrib" class="plot" style="height:380px"></div><div class="cap">Figure 5.2. Contributions to real GDP growth (percentage points): the oil-and-gas and non-oil sectors, with total growth.</div></div>
+    <div class="fig"><div id="gContrib" class="plot" style="height:380px"></div><div class="cap">Şəkil 5.2. Real ÜDM artımına töhfələr (faiz bəndi): neft-qaz və qeyri-neft sektorları, ümumi artımla birlikdə.</div></div>
 
     <h2>Bazis proqnozu</h2>
     <table class="dt"><caption>Real ÜDM artımı və onun sektoral töhfələri (faiz bəndi), məhsulun qeyri-neft payı ilə. 2025 faktiki nəticədir (Dövlət Statistika Komitəsi); 2026–2030 Nazirlik bazisidir.</caption>
@@ -44,8 +44,8 @@
     <div class="eq">$$ \min_{\{\tau_t\}}\ \sum_t (y_t-\tau_t)^2+\lambda\sum_t\big[(\tau_{t+1}-\tau_t)-(\tau_t-\tau_{t-1})\big]^2,\qquad \mathrm{gap}_t=100\,(y_t-\tau_t) $$<span class="num">(G3)</span></div>
     <p class="fn">burada <i>y</i><sub>t</sub> loqarifmik qeyri-neft məhsulu, τ<sub>t</sub> gizli trend (potensial məhsul), λ isə hamarlama parametridir (illik məlumat üçün 100, IMF konvensiyasına görə). Kalman-filtri alternativi, çarpaz yoxlama kimi, Bayes və Vəziyyət-Fəza bölməsində təqdim olunur.</p>
     <p>Alınan kəsir iqtisadi cəhətdən uyğundur — 2020 pandemiya tənəzzülündə −7,4 faizlik dib və 2020-ci illərin ortalarına trendə yaxın qayıdış — inflyasiya və gəlir proqnozları üçün uzlaşmış əsas təmin edir.</p>
-    <div class="fig"><div id="gapChart" class="plot" style="height:380px"></div><div class="cap">Figure 5.3. Non-oil output gap, per cent of potential (Hodrick-Prescott filter, smoothing parameter 100).</div></div>
-    <div class="callout key"><div class="h">Tənqidi qiymətləndirmə</div>Three caveats bound the projection. It reproduces the Ministry's published path by construction, so it inherits that path's optimism relative to the IMF — about half a point in 2026, which the scenarios stress-test. The short annual sample of about twenty-five observations limits the precision of the non-oil error-correction estimates and widens the fan. And the oil sector is an exogenous production profile, not a behavioural model, so it does not respond to price within this block — that linkage is supplied by the scenario engine and the structural VAR. The projection is best read as a consistent central path with appropriately wide bands, not a point prediction.</div>
+    <div class="fig"><div id="gapChart" class="plot" style="height:380px"></div><div class="cap">Şəkil 5.3. Qeyri-neft çıxış həcmi fərqi, potensialda faiz (Hodrick-Prescott filtri, hamarlama parametri 100).</div></div>
+    <div class="callout key"><div class="h">Tənqidi qiymətləndirmə</div>Proyeksiyanı üç qeyd-şərt məhdudlaşdırır. O, Nazirliyin dərc edilmiş trayektoriyasını qurma etibarı ilə təkrar istehsal edir, buna görə həmin trayektoriyanın IMF-ə nisbətən optimizmini, yəni 2026-cı ildə təxminən yarım faiz bəndini, miras alır, ki, ssenarilər bunu stress-testdən keçirir. Təxminən iyirmi beş müşahidədən ibarət qısa illik seçmə qeyri-neft xəta-korreksiyası qiymətləndirmələrinin dəqiqliyini məhdudlaşdırır və yelpiyi genişləndirir. Neft sektoru isə davranış modeli deyil, ekzogen istehsal profilidir, buna görə bu blok daxilində qiymətə cavab vermir: həmin əlaqə ssenari mühərriki və struktur VAR tərəfindən təmin olunur. Proyeksiya nöqtə proqnozu kimi deyil, müvafiq olaraq geniş zolaqlara malik ardıcıl mərkəzi trayektoriya kimi oxunmalıdır.</div>
     <script>window.AZ.data().then(D=>{
       AZ.fan("fanGdp",D.fan.gdp_growth,{ytitle:"Real ÜDM artımı (%)"});
       const c=D.gdp_contrib;
@@ -61,4 +61,4 @@
         marker:{color:g.map(o=>o.y<0?AZ.palette.bad:AZ.palette.accent)},name:"Output gap (%)"}],
         AZ.layout({margin:{l:54,r:18,t:14,b:44},yaxis:{title:"% of potential"}}),AZ.cfg);});
     </script>
-    </div><div class="pager"><a href="models.html"><div class="d">Əvvəlki</div><div class="t">Ekonometrik Modellər və Nəticələr</div></a><a class="next" href="inflation.html"><div class="d">Növbəti</div><div class="t">İnflyasiya və Monetar Siyasət</div></a></div><div class="footer"><span><b>Oxlon Proqnozlaşdırma</b>, prepared for the Ministry of Economy of the Republic of Azerbaijan</span><span>Mənbələr: 75 saylı Qərar · IMF texniki yardımı · AMB · Dövlət Statistika Komitəsi</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="gdp")a.classList.add("active")});</script></body></html>
+    </div><div class="pager"><a href="models.html"><div class="d">Əvvəlki</div><div class="t">Ekonometrik Modellər və Nəticələr</div></a><a class="next" href="inflation.html"><div class="d">Növbəti</div><div class="t">İnflyasiya və Monetar Siyasət</div></a></div><div class="footer"><span><b>Oxlon Proqnozlaşdırma</b>, Azərbaycan Respublikasının İqtisadiyyat Nazirliyi üçün hazırlanıb</span><span>Mənbələr: 75 saylı Qərar · IMF texniki yardımı · AMB · Dövlət Statistika Komitəsi</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="gdp")a.classList.add("active")});</script></body></html>

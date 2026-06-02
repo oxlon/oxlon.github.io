@@ -29,8 +29,8 @@
 
     <h2>Neft-qiyməti şokuna əsas reaksiyalar</h2>
     <p>Neft qiymətinin bir standart-kənarlaşmalı artması inflyasiyanı təsir anında təxminən 2,2 faiz bəndi qaldırır və idarə olunan paritetin möhkəmlənməsi ilə əlaqələndirilir; hər iki təsir təxminən üç il ərzində sönür. Bu, istehlakının çoxunu idxal edən, eyni zamanda neft ixrac edən iqtisadiyyatın imzasıdır.</p>
-    <div class="grid g2"><div class="fig"><div id="irfInfl" class="plot" style="height:300px"></div><div class="cap">Figure 13.1. Response of inflation to a one-standard-deviation oil-price shock (±2 s.e.).</div></div>
-      <div class="fig"><div id="irfFx" class="plot" style="height:300px"></div><div class="cap">Figure 13.2. Response of the exchange rate to the same shock (±2 s.e.).</div></div></div>
+    <div class="grid g2"><div class="fig"><div id="irfInfl" class="plot" style="height:300px"></div><div class="cap">Şəkil 13.1. İnflyasiyanın bir standart kənarlaşma neft qiyməti şokuna reaksiyası (±2 s.e.).</div></div>
+      <div class="fig"><div id="irfFx" class="plot" style="height:300px"></div><div class="cap">Şəkil 13.2. Eyni şoka məzənnənin reaksiyası (±2 s.e.).</div></div></div>
 
     <h2>Tam reaksiya matrisi</h2>
     <p>Reaksiyaların tam dəsti — hər dəyişənin hər struktur şoka reaksiyası — aşağıda göstərilir, vector autoregression üçün standart təqdimat. Hər sətir bir şokdur; sətirdəki hər panel bir dəyişənin reaksiyasıdır. Diaqonal panellər öz reaksiyalardır; diaqonaldan kənar panellər siyasət üçün əhəmiyyətli olan çarpaz təsirlərdir, xüsusən inflyasiyanın neft və məzənnə şoklarına reaksiyası (alt sətirlər).</p>
@@ -41,7 +41,7 @@
     <table class="dt"><caption>10 illik üfüqdə proqnoz-xəta dispersiyasının ayrılması (şok üzrə izah olunan dispersiyanın faizi).</caption>
     <thead><tr><th>Dispersiya:</th><th class="num">Neft qiyməti</th><th class="num">Məzənnə</th><th class="num">İnflyasiya</th></tr></thead><tbody><tr><td>Neft qiyməti</td><td class="num">100</td><td class="num">0</td><td class="num">0</td></tr><tr><td>Məzənnə</td><td class="num">55</td><td class="num">42</td><td class="num">3</td></tr><tr><td>İnflyasiya</td><td class="num">19</td><td class="num">22</td><td class="num">59</td></tr></tbody></table>
 
-    <div class="callout "><div class="h">Yüksək-tezlikli çarpaz yoxlama</div>A monetary vector autoregression on the monthly panel (2005-02–2024-12, 239 observations) confirms the limited monthly pass-through under the managed regime and exhibits the price puzzle common to such systems; this absence of the exchange-rate and activity channels at monthly frequency motivates the quarterly five-variable structural model set out in the Limitations and Delivery sections.</div>
+    <div class="callout "><div class="h">Yüksək-tezlikli çarpaz yoxlama</div>Aylıq panel üzrə pul vektor avtoreqressiyası (2005-02–2024-12, 239 müşahidə) idarə olunan rejim şəraitində məhdud aylıq pass-through təsirini təsdiqləyir və bu tip sistemlər üçün xarakterik olan qiymət tapmacasını nümayiş etdirir; aylıq tezlikdə məzənnə və aktivlik kanallarının bu cür olmaması Limitations və Delivery bölmələrində təqdim olunan rüblük beş dəyişənli struktur modeli zəruri edir.</div>
     <script>window.AZ.data().then(D=>{const V=D.var,VF=D.var_full,H=[...Array(V.horizon+1).keys()];
       function big(div,o,title){Plotly.newPlot(div,[
         {x:H.concat([...H].reverse()),y:o.hi.concat([...o.lo].reverse()),fill:"toself",fillcolor:"rgba(29,122,140,.15)",line:{color:"transparent"},name:"±2 s.e."},
@@ -57,4 +57,4 @@
           {x:[0,VF.horizon],y:[0,0],mode:"lines",line:{color:"#999",dash:"dot"},showlegend:false}
         ],AZ.layout({margin:{l:36,r:8,t:6,b:22},xaxis:{showticklabels:true,tickfont:{size:9}},yaxis:{tickfont:{size:9}}}),AZ.cfg);}));
     });</script>
-    </div><div class="pager"><a href="scenarios.html"><div class="d">Əvvəlki</div><div class="t">Ssenari Təhlili</div></a><a class="next" href="ml.html"><div class="d">Növbəti</div><div class="t">Maşın Öyrənməsi Modelləri</div></a></div><div class="footer"><span><b>Oxlon Proqnozlaşdırma</b>, prepared for the Ministry of Economy of the Republic of Azerbaijan</span><span>Mənbələr: 75 saylı Qərar · IMF texniki yardımı · AMB · Dövlət Statistika Komitəsi</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="irf")a.classList.add("active")});</script></body></html>
+    </div><div class="pager"><a href="scenarios.html"><div class="d">Əvvəlki</div><div class="t">Ssenari Təhlili</div></a><a class="next" href="ml.html"><div class="d">Növbəti</div><div class="t">Maşın Öyrənməsi Modelləri</div></a></div><div class="footer"><span><b>Oxlon Proqnozlaşdırma</b>, Azərbaycan Respublikasının İqtisadiyyat Nazirliyi üçün hazırlanıb</span><span>Mənbələr: 75 saylı Qərar · IMF texniki yardımı · AMB · Dövlət Statistika Komitəsi</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="irf")a.classList.add("active")});</script></body></html>
