@@ -49,11 +49,13 @@
     </tbody></table>
 
     <h2>Oxlon's forecast is skill-weighted, not an average</h2>
-    <p>Oxlon's headline projections are not a simple mean of model outputs. Each candidate model is estimated, its out-of-sample
-    accuracy is measured by rolling pseudo-real-time evaluation, and the models are then combined in proportion to that
-    measured accuracy, with models that fail to beat a naïve random walk receiving no weight. Forecast combination of this kind
-    has been shown to dominate any single model in expectation (Bates and Granger, 1969; Timmermann, 2006), because it
-    diversifies away model-specific error. The candidate set spans five complementary representations of the same series:</p>
+    <p>Oxlon's headline projections are not a simple mean of model outputs. Each candidate model is estimated, then scored by its
+    <i>out-of-sample</i> (OOS) accuracy — its root-mean-square error (RMSE, the typical size of a forecast miss) measured only on
+    years the model was <i>not</i> fitted to, by rolling pseudo-real-time evaluation. The models are combined in proportion to
+    that measured accuracy, with any model that fails to beat a naïve random walk (this year equals last year) receiving no
+    weight. Forecast combination of this kind has been shown to dominate any single model in expectation (Bates and Granger,
+    1969; Timmermann, 2006), because it diversifies away model-specific error. The candidate set spans five complementary
+    representations of the same series:</p>
     <div class="eq">$$ \textbf{AR(1):}\quad y_t = c + \rho\,y_{t-1} + \varepsilon_t $$<span class="num">(E1)</span></div>
     <div class="eq">$$ \textbf{ECM:}\quad \Delta y_t = \alpha\,\Delta x_t - \lambda\big(y_{t-1}-\beta x_{t-1}\big) + \varepsilon_t $$<span class="num">(E2)</span></div>
     <div class="eq">$$ \textbf{Potential output:}\quad \hat g_t = \exp\!\big(\tau_t-\tau_{t-1}\big)-1,\qquad \tau=\arg\min_\tau \sum_t (y_t-\tau_t)^2+\lambda\sum_t(\Delta^2\tau_t)^2 $$<span class="num">(E3)</span></div>
@@ -61,7 +63,7 @@
     <p class="fn">where <i>y</i> is the target series (real growth or inflation), <i>x</i> a cointegrating driver, τ the
     Hodrick–Prescott trend (λ=100 on annual data), and <b>Y</b> the vector of jointly-modelled macro variables; the BVAR adds a
     Minnesota prior (Litterman, 1986) to control the dimensionality of the short sample. For inflation the set also includes a
-    target/expectations <i>anchor</i> and the financial-programming Phillips curve described below.</p>
+    target/expectations <i>anchor</i> and the structural Phillips curve described below.</p>
     <p>The combination assigns each model a weight inversely proportional to its mean-squared forecast error, restricted to the
     models that are themselves skilful:</p>
     <div class="eq">$$ w_i=\frac{\text{RMSE}_i^{-2}\,\mathbb{1}\{\text{RMSE}_i<\text{RMSE}_{\text{RW}}\}}{\sum_j \text{RMSE}_j^{-2}\,\mathbb{1}\{\cdot\}},\qquad \hat y^{\,\text{Oxlon}}_t=\sum_i w_i\,\hat y^{(i)}_t $$<span class="num">(E5)</span></div>
@@ -78,11 +80,12 @@
 
     <h2>A structural cross-check</h2>
     <p>The ensemble is cross-checked against a compact structural model — Oxlon's reproduction of the Ministry's own CAEM engine.
-    Two blocks bear on the tables here: the output gap, the deviation of activity from its Hodrick–Prescott trend, and an
-    open-economy Phillips curve for inflation. The output-gap block reproduces the trend non-oil growth published on the
-    Ministry's CAEM&nbsp;“A1” sheet to a mean 0.14&nbsp;pp over 2014–2029, and the
-    engine puts 2026 growth at 2.9 per cent, in line with the ensemble. It corroborates the ensemble rather than competing
-    with it.</p>
+    Two blocks bear on the tables here: the output gap (the deviation of activity from its Hodrick–Prescott trend — a standard
+    statistical filter that separates trend from cycle) and an open-economy Phillips curve for inflation. The output-gap block
+    reproduces the trend non-oil growth published on the Ministry's CAEM&nbsp;“A1” sheet to a mean 0.14&nbsp;pp
+    over 2014–2029 — its validated strength. Its own 2026 growth, 2.9 per cent, sits a little above the
+    ensemble (2.3) and the IMF (2.2) but in the same low-single-digit range, so it corroborates the ensemble's order of
+    magnitude rather than competing with it as the headline figure.</p>
     <div class="eq">$$ \hat y_t=\big(\ln Q_t-\tau_t\big)\times100,\qquad \tau=\text{HP}_{\lambda=100}(\ln Q) $$<span class="num">(C1)</span></div>
     <div class="eq">$$ \pi_t=c_1\pi_{t-1}+(1-c_1-c_2)\,\mathbb{E}_t\pi+c_2\big(\pi^{m}_t+\Delta e_t-\bar\pi^{m}_t\big)+c_3\,\hat y_t+a_t $$<span class="num">(C2)</span></div>
     <p class="fn">with calibration read from the workbook: <i>c</i><sub>1</sub>=0.10, <i>c</i><sub>2</sub>=0.20,
@@ -109,10 +112,10 @@
     <h2>Headline comparison</h2>
     <p>The three series Oxlon forecasts with an independent model are shown over the forecast horizon 2026–2030 against the
     Ministry and the IMF, on a scale tight enough to separate the lines (realised years are not plotted — 2025 is the last
-    actual, and forecasting an already-known year would not be meaningful). Two features stand out: Oxlon and the IMF track one
-    another closely and hold near two-and-a-half per cent growth, while the Ministry's path runs stronger and more volatile; and
-    the Ministry's inflation path climbs above seven per cent by 2030, far above Oxlon's projection and the IMF, both of which
-    settle near four. These differences are reported as they stand.</p>
+    actual, and forecasting an already-known year would not be meaningful). Two features stand out: Oxlon and the IMF stay close
+    on growth — both in the mid-two-per-cent range, with Oxlon drifting a little higher by 2030 — while the Ministry's path is
+    stronger and more volatile; and the Ministry's inflation path climbs above seven per cent by 2030, far above Oxlon (which
+    eases below five) and the IMF (which settles at four). These differences are reported as they stand.</p>
     <div class="fig"><div id="st_gdp" class="plot" style="height:380px"></div><div class="cap">Figure 23.1. Real GDP growth, 2026–2030 forecasts (per cent): Oxlon, the Ministry (Decree-75) and the IMF.</div></div>
     <div class="fig"><div id="st_cpi" class="plot" style="height:380px"></div><div class="cap">Figure 23.2. Consumer-price inflation, 2026–2030 forecasts (per cent): the Ministry path diverges sharply upward after 2027, well above Oxlon and the IMF.</div></div>
     <div class="fig"><div id="st_noil" class="plot" style="height:360px"></div><div class="cap">Figure 23.3. Non-oil GDP growth, 2026–2030 forecasts (per cent): Oxlon, the Ministry and the IMF.</div></div>
@@ -133,9 +136,9 @@
     <div class="tw"><table class="dt"><caption>Each line reproduces the Ministry’s Decree-75 table; the three headline lines Oxlon can model independently are tagged <span class="chip our">Oxlon ↓</span> and followed by an <i>Oxlon model forecast</i> row giving Oxlon’s own figure for every year. Columns are the forecast years 2026–2030.</caption><thead><tr><th class="lbl">Göstərici</th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th><th class="num">2030</th></tr></thead><tbody><tr><td class="lbl">Malların ixracı<span class='u-in'> (mln USD)</span></td><td class="num">20,367.5</td><td class="num">19,457.2</td><td class="num">19,581.9</td><td class="num">20,709.5</td><td class="num">20,393.9</td></tr><tr><td class="lbl">Neft və qaz<span class='u-in'> (mln USD)</span></td><td class="num">2,547.5</td><td class="num">2,220.5</td><td class="num">2,273.1</td><td class="num">2,275.1</td><td class="num">1,371.5</td></tr><tr><td class="lbl">Digər sektorlar<span class='u-in'> (mln USD)</span></td><td class="num">547.8</td><td class="num">697.0</td><td class="num">1,068.9</td><td class="num">1,176.5</td><td class="num">1,052.4</td></tr><tr><td class="lbl">Malların idxalı<span class='u-in'> (mln USD)</span></td><td class="num">17,254.3</td><td class="num">17,411.1</td><td class="num">18,423.0</td><td class="num">19,372.1</td><td class="num">19,445.2</td></tr><tr><td class="lbl">Xidmətlərin ixracı<span class='u-in'> (mln USD)</span></td><td class="num">9,257.3</td><td class="num">9,891.1</td><td class="num">10,531.2</td><td class="num">10,919.1</td><td class="num">11,046.1</td></tr><tr><td class="lbl">Xidmətlərin idxalı<span class='u-in'> (mln USD)</span></td><td class="num">10,055.6</td><td class="num">10,581.8</td><td class="num">10,949.7</td><td class="num">11,261.9</td><td class="num">10,314.4</td></tr><tr><td class="lbl">CARİ ƏMƏLİYYATLAR HESABI<span class='u-in'> (mln USD)</span></td><td class="num">2,283.7</td><td class="num">1,685.7</td><td class="num">1,189.8</td><td class="num">1,537.5</td><td class="num">2,154.1</td></tr><tr><td class="lbl">XARİCİ TİCARƏT BALANSI<span class='u-in'> (mln USD)</span></td><td class="num">3,113.1</td><td class="num">2,046.0</td><td class="num">1,159.0</td><td class="num">1,337.4</td><td class="num">948.7</td></tr><tr><td class="lbl">Neft-qaz sektoru<span class='u-in'> (mln USD)</span></td><td class="num">-1,346.1</td><td class="num">-1,387.8</td><td class="num">-1,487.4</td><td class="num">-1,519.3</td><td class="num">-320.7</td></tr><tr><td class="lbl">XİDMƏTLƏR BALANSI<span class='u-in'> (mln USD)</span></td><td class="num">-798.3</td><td class="num">-690.8</td><td class="num">-418.5</td><td class="num">-342.8</td><td class="num">731.7</td></tr><tr><td class="lbl">İLKİN GƏLİRLƏR<span class='u-in'> (mln USD)</span></td><td class="num">-757.3</td><td class="num">-500.7</td><td class="num">-461.6</td><td class="num">-439.7</td><td class="num">-580.4</td></tr><tr><td class="lbl">TƏKRAR GƏLİRLƏR<span class='u-in'> (mln USD)</span></td><td class="num">726.2</td><td class="num">831.2</td><td class="num">911.0</td><td class="num">982.6</td><td class="num">1,054.0</td></tr></tbody></table></div>
 
     <h2>What could not be calculated, and why</h2>
-    <div class="callout warn"><div class="h">2.4.1.2 production structure and 2.4.1.3 sectoral structure</div>Oxlon has catalogued the thirty-eight national-accounts equations but not the live per-industry series they require (gross output, intermediate consumption and value added by NACE branch). Until those arrive the sheets are reproduced from Decree-75, not forecast.</div>
+    <div class="callout warn"><div class="h">2.4.1.2 production structure and 2.4.1.3 sectoral structure</div>Oxlon has catalogued the thirty-eight national-accounts equations but not the live per-industry series they require (gross output, intermediate consumption and value added by branch of activity, classified on NACE Rev. 2 — the EU standard industry classification). Until those arrive the sheets are reproduced from Decree-75, not forecast.</div>
     <div class="callout warn"><div class="h">2.4.1.4 physical output — the largest gap</div>The 165 physical-output items (wheat in tonnes, livestock in head, gold in kilograms, manufacturing volumes) have a history but essentially no estimated production models, so they can only be trend-carried — which Oxlon does not present as a forecast.</div>
-    <div class="callout warn"><div class="h">2.4.1.5–7 and 2.4.1.13–14 are reproduced, not forecast</div>These sheets are shown in the Ministry's own figures. To forecast them Oxlon needs the sectoral investment, wage and employment series behind 2.4.1.5–7, and the disaggregated trade (oil / non-oil) and full BPM6 balance-of-payments series behind 2.4.1.13–14 — including the financial account (direct investment, the oil bonus, portfolio and reserve assets).</div>
+    <div class="callout warn"><div class="h">2.4.1.5–7 and 2.4.1.13–14 are reproduced, not forecast</div>These sheets are shown in the Ministry's own figures. To forecast them Oxlon needs the sectoral investment, wage and employment series behind 2.4.1.5–7, and the disaggregated trade (oil / non-oil) and the full balance of payments on the IMF's BPM6 standard (the sixth Balance of Payments Manual) behind 2.4.1.13–14 — including the financial account (direct investment, the oil bonus, portfolio and reserve assets).</div>
     <p>The complete list of series required to close every gap — with units, frequency, history and source — is set out in the
     data request at the foot of this page.</p>
 
@@ -143,23 +146,25 @@
     <div class="callout "><div class="h">What is computed, and what is hand-set</div>Every value in the tables and figures on this page is either produced by Oxlon's models or carried from a cited source — none is hand-entered to make a line look right, and the counts and validation figures above are read straight from the data at build time. The few hand-set numbers are <i>assumptions</i>, not results: the Phillips-curve calibration read from the CAEM workbook (c₁=0.10, c₂=0.20, c₃=0.40), and the oil-price and exchange-rate paths noted below. Change any of these and the affected lines recompute.</div>
     <p class="fn">Conditioning assumptions: oil price 2026: $90 · 2027: $84 · 2028: $80 · 2029: $78 · 2030: $78 · 2031: $78 (USD/bbl); exchange rate de-facto peg 1.7 AZN/USD (delta=0). No live WRDS
     access in this build — the report draws on Oxlon's local data and already-downloaded public sources: the State Statistical
-    Committee / Decree-75 statutory tables, World Bank World Development Indicators for history, FRED for the Brent series, and the
-    IMF (World Economic Outlook and Article IV report 26/112) as the external benchmark. Nothing is fabricated: every blank is a
-    genuine data or model gap, documented above.</p>
+    Committee / Decree-75 statutory tables; World Bank World Development Indicators for history; FRED for the Brent series; and,
+    as the external benchmark, the IMF. The IMF comparison figures are taken from <b>IMF Country Report No.&nbsp;26/112</b> — the
+    Staff Report for the 2026 Article IV Consultation (issued May&nbsp;2026), table “Selected Economic and Financial Indicators,
+    2023–31” — and agree with the World Economic Outlook. Nothing is fabricated: every figure traces to one of these sources or
+    to Oxlon's models, and every blank is a genuine data or model gap, documented above.</p>
 
     <h2>Data request — what Oxlon would need to close the remaining sheets</h2>
     <p>To <i>forecast</i> rather than reproduce the sheets it cannot yet model, Oxlon would need the series set out below. The
     list is deliberately restricted: anything Oxlon already holds is used directly and is <b>not</b> re-requested. For each line
     Oxlon would specify units, native frequency, the history required (from 2000) and the issuing agency; what follows is the
     core of that request, grouped by block and filtered to the genuine gaps.</p>
-    <div class="callout "><div class="h">Already saxlanılır və istifadədə — not requested</div>Total GDP at market prices (nominal, real and deflator; total, oil and non-oil); headline consumer prices; the Brent oil price; population; household money income and expenditure; total fixed-capital investment; total goods exports and imports; and public debt through the financial-programming engine — these already drive every forecast shown above and are not requested again.</div>
+    <div class="callout "><div class="h">Already saxlanılır və istifadədə — not requested</div>Total GDP at market prices (nominal, real and deflator; total, oil and non-oil); headline consumer prices; the Brent oil price; population; household money income and expenditure; total fixed-capital investment; and total goods exports and imports. These are already in hand — the request below is only for what is missing — so they are not requested again.</div>
     <table class="dt cmp"><caption>The series Oxlon must obtain to forecast — not trend-fill — the sheets it cannot yet close.
     Status: NEW = not currently held; partial = the headline is held but components or history are missing.</caption>
     <thead><tr><th class="lbl">Block</th><th>Series still required</th><th>Status</th><th>Mənbə</th></tr></thead><tbody>
     <tr><td class="lbl">A · Milli hesablar</td><td>GDP by production approach per NACE branch — gross output, intermediate consumption and value added; net taxes on products; expenditure-side detail (consumption, fixed capital formation, inventories, exports, imports); foreign-visitor numbers</td><td><b class="r">NEW / partial</b></td><td>SSC</td></tr>
-    <tr><td class="lbl">B · Industry &amp; physical output</td><td>Crop and livestock volumes with their sown-area, yield and herd drivers; mining volumes (crude, gas, gold, copper, construction minerals); ~120 manufacturing output items with branch production-volume and producer-price indices</td><td><b class="r">NEW</b></td><td>SSC · SOCAR / Energy Ministry</td></tr>
+    <tr><td class="lbl">B · Industry &amp; physical output</td><td>Crop and livestock volumes with their sown-area, yield and herd drivers; mining volumes (crude, gas, gold, copper, construction minerals); manufacturing output by branch, with branch production-volume and producer-price indices</td><td><b class="r">NEW</b></td><td>SSC · SOCAR / Energy Ministry</td></tr>
     <tr><td class="lbl">C · Prices, money &amp; external</td><td>CPI components and full history; producer-price and import/export unit-value indices; monetary aggregates M1–M3; deposit and lending rates; AZN/USD and AZN/EUR, NEER and REER history; trading-partner growth and inflation</td><td><b class="r">NEW / partial</b></td><td>SSC · CBAR</td></tr>
-    <tr><td class="lbl">D · Labour, wages &amp; incomes</td><td>Employment and average monthly wage for the ~19 NACE sectors; sectoral labour productivity</td><td><b class="r">NEW / partial</b></td><td>SSC</td></tr>
+    <tr><td class="lbl">D · Labour, wages &amp; incomes</td><td>Employment and average monthly wage by NACE sector; sectoral labour productivity</td><td><b class="r">NEW / partial</b></td><td>SSC</td></tr>
     <tr><td class="lbl">E · Investment</td><td>Fixed-capital investment split by source (domestic / foreign), sector (oil / non-oil) and ownership (state / non-state); national-accounts gross fixed capital formation</td><td><b class="a">partial</b></td><td>SSC</td></tr>
     <tr><td class="lbl">F · External / balance of payments</td><td>Goods trade split oil / non-oil; services by category; the full BPM6 financial account (direct investment including the oil bonus, portfolio and reserve assets); SOFAZ assets, inflows and transfers to budget</td><td><b class="r">NEW / partial</b></td><td>CBAR · SSC / Customs · SOFAZ</td></tr>
     <tr><td class="lbl">G · Fiscal</td><td>Consolidated and state-budget revenue (oil / non-oil, by tax type) and expenditure (current / capital)</td><td><b class="a">partial</b></td><td>Ministry of Finance · SOFAZ</td></tr>
