@@ -8,45 +8,45 @@
 :root{--ink:#1a2038;--navy:#1a2038;--paper:#f4efe3;--panel:#fff;--accent:#1d7a8c;--accent-d:#155e6c;
 --clay:#c9a78e;--clay-d:#a8794f;--muted:#5b6280;--line:#e2dccd;--good:#2f7d54;--bad:#a8794f;}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;background:#cfcabd;color:var(--ink);font-size:13px;line-height:1.5}
-.wrap{max-width:1240px;margin:18px auto;background:var(--panel);box-shadow:0 8px 40px rgba(0,0,0,.18)}
-.head{background:var(--navy);color:#f4ece0;padding:22px 36px}
-.head .wm{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:34px;line-height:.9}
+body{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;background:#cfcabd;color:var(--ink);font-size:15px;line-height:1.55}
+.wrap{max-width:1300px;margin:18px auto;background:var(--panel);box-shadow:0 8px 40px rgba(0,0,0,.18)}
+.head{background:var(--navy);color:#f4ece0;padding:24px 40px}
+.head .wm{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:40px;line-height:.9}
 .head .wm em{font-style:italic;color:#e3d2c2}.head .wm .dot{color:var(--clay)}
-.head .tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#b9c0d6;margin-top:8px}
-.head .sub{font-family:"Cormorant Garamond",serif;font-size:20px;margin-top:14px}
+.head .tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#b9c0d6;margin-top:9px}
+.head .sub{font-family:"Cormorant Garamond",serif;font-size:24px;margin-top:14px}
 .rule{height:2px;background:var(--accent-d)}
-.body{display:grid;grid-template-columns:312px 1fr}
-.controls{background:var(--paper);padding:20px 22px;border-right:1px solid var(--line)}
-.controls h3{font-family:"Cormorant Garamond",serif;font-size:17px;color:var(--accent-d)}
-.presets{display:flex;gap:6px;margin:8px 0 14px}
-.presets button{flex:1;padding:7px 4px;border:1px solid var(--accent-d);background:#fff;color:var(--accent-d);
-font-family:inherit;font-size:10px;border-radius:5px;cursor:pointer;letter-spacing:.02em}
+.body{display:grid;grid-template-columns:352px 1fr}
+.controls{background:var(--paper);padding:22px 24px;border-right:1px solid var(--line)}
+.controls h3{font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--accent-d)}
+.presets{display:flex;gap:7px;margin:10px 0 18px}
+.presets button{flex:1;padding:10px 4px;border:1px solid var(--accent-d);background:#fff;color:var(--accent-d);
+font-family:inherit;font-size:13px;border-radius:6px;cursor:pointer;letter-spacing:.02em}
 .presets button.on{background:var(--accent-d);color:#fff}
-.grp{font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-d);margin:14px 0 8px;border-bottom:1px solid var(--line);padding-bottom:3px}
-.ctl{margin-bottom:13px}
-.ctl label{display:flex;justify-content:space-between;font-size:10.5px;font-weight:600;margin-bottom:4px}
-.ctl label .val{color:var(--accent-d);font-variant-numeric:tabular-nums}
-.ctl input[type=range]{width:100%;accent-color:var(--accent-d)}
-.ctl .hint{font-size:9px;color:var(--muted);margin-top:2px}
-.btn{width:100%;margin-top:8px;padding:9px;border:1px solid var(--accent-d);background:#fff;color:var(--accent-d);
-font-family:inherit;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;cursor:pointer;text-decoration:none;display:block;text-align:center}
-.main{padding:20px 28px}
-.lead{font-size:11.5px;color:#3a4061;line-height:1.55;margin-bottom:8px}.lead b{color:var(--ink)}
-.prov{font-size:10px;background:#eef6f6;border-left:3px solid var(--accent-d);padding:8px 11px;margin-bottom:14px;line-height:1.5}
+.grp{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--clay-d);margin:18px 0 10px;border-bottom:1px solid var(--line);padding-bottom:4px;font-weight:600}
+.ctl{margin-bottom:16px}
+.ctl label{display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;margin-bottom:6px}
+.ctl label .val{color:var(--accent-d);font-variant-numeric:tabular-nums;font-weight:700}
+.ctl input[type=range]{width:100%;accent-color:var(--accent-d);height:6px}
+.ctl .hint{font-size:11.5px;color:var(--muted);margin-top:4px}
+.btn{width:100%;margin-top:10px;padding:12px;border:1px solid var(--accent-d);background:#fff;color:var(--accent-d);
+font-family:inherit;font-size:13px;letter-spacing:.05em;text-transform:uppercase;border-radius:6px;cursor:pointer;text-decoration:none;display:block;text-align:center}
+.main{padding:24px 32px}
+.lead{font-size:15px;color:#3a4061;line-height:1.62;margin-bottom:12px}.lead b{color:var(--ink)}
+.prov{font-size:13.5px;background:#eef6f6;border-left:4px solid var(--accent-d);padding:13px 16px;margin-bottom:18px;line-height:1.62}
 .prov b{color:var(--accent-d)}
-table.rt{width:100%;border-collapse:collapse;margin:4px 0 12px}
-table.rt th{font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);text-align:right;padding:6px 8px;border-bottom:1.4px solid var(--ink)}
+table.rt{width:100%;border-collapse:collapse;margin:8px 0 16px}
+table.rt th{font-size:12.5px;letter-spacing:.02em;text-transform:uppercase;color:var(--accent-d);text-align:right;padding:9px 11px;border-bottom:1.6px solid var(--ink)}
 table.rt th:first-child{text-align:left}
-table.rt td{padding:5px 8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
-table.rt td:first-child{text-align:left;font-weight:600;color:var(--ink)}
+table.rt td{padding:8px 11px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;font-size:15.5px}
+table.rt td:first-child{text-align:left;font-weight:600;color:var(--ink);font-size:14px}
 table.rt tr.hl td{background:#eef6f6}
-.tagS{display:inline-block;font-size:8px;background:#1d7a8c;color:#fff;padding:1px 5px;border-radius:3px;margin-left:6px;letter-spacing:.04em;vertical-align:middle}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.fig{border:1px solid var(--line);border-radius:6px;padding:6px}
-.cap{font-size:9px;color:var(--muted);padding:2px 6px 4px}
-.foot{padding:13px 28px;border-top:1px solid var(--line);font-size:9px;color:var(--muted);display:flex;justify-content:space-between}
-.foot .wm{font-family:"Cormorant Garamond",serif;font-size:13px;color:var(--ink)}.foot .wm em{font-style:italic;color:var(--clay-d)}
+.tagS{display:inline-block;font-size:11.5px;background:#1d7a8c;color:#fff;padding:2px 9px;border-radius:3px;margin-left:9px;letter-spacing:.04em;vertical-align:middle}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fig{border:1px solid var(--line);border-radius:6px;padding:8px}
+.cap{font-size:12.5px;color:var(--muted);padding:5px 7px 7px}
+.foot{padding:16px 32px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+.foot .wm{font-family:"Cormorant Garamond",serif;font-size:16px;color:var(--ink)}.foot .wm em{font-style:italic;color:var(--clay-d)}
 @media(max-width:860px){.body{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
 </style></head>
 <body><div class="wrap">
@@ -75,17 +75,21 @@ table.rt tr.hl td{background:#eef6f6}
   </div>
   <div class="main">
     <div class="lead">Oxlon-un <b>11.1.1</b> açıq iqtisadiyyat yarı-struktur mühərriki, CAEM/BVF ailəsinə kalibrlənib. Buraxılış kəsri = qeyri-neft indeksinə HP filtri (λ=100); inflyasiya = lövbərlənmiş Phillips əyrisi; uçot dərəcəsi = Taylor qaydası; baş ÜDM = neft/qeyri-neft eyniliyi (səviyyə-zəncirli). <b>Risk mükafatı</b> toplanmış Azərbaycan suveren evrobond spredindən istifadə edir. Bu səhifə <code>src/oxlon/engine_core.py</code> ilə eynidir.</div>
-    <div class="prov"><b>Rəqəmlər haradandır.</b> <b>Aşağıdakı cədvəl 100% Oxlon-dur</b> — hər xana sürüşdürücülərdən canlı hesablanır. <b>Qrafik xətləri</b> üç xarici <b>etalonu göstərir (hesablanmayıb, köçürülüb)</b>: <b>BVF</b> = Maddə IV Hesabatı 26/112 (May 2026); <b>CAEM</b> = Nazirliyin BVF-nin qurduğu yarı-struktur modeli (<code>CAEM.xlsb</code>, Büdcə-2026 mühərriki); <b>Nazirlik</b> = rəsmi 75 saylı Qərar statutar təqdimatı (8 vərəq). CAEM və 75 saylı Qərar təqdimatı <i>fərqlənir</i> — Nazirliyin öz təqdimatı öz modelindən kənarlaşır; Oxlon BVF/CAEM ailəsinə uyğunlaşdırır.</div>
+    <div class="prov"><b>Etalon xətlərinin oxunması.</b> <b>Cədvəl 100% Oxlon-dur</b> (sürüşdürücülərdən canlı hesablanır). Qrafik xətləri xarici etalonlardır — hesablanmayıb, mənbədən köçürülüb:
+<br>&nbsp;•&nbsp;<b>BVF</b> — Maddə IV hesabatı 26/112 (May 2026), Fondun öz heyət proqnozu.
+<br>&nbsp;•&nbsp;<b>CAEM (Nazirlik modeli)</b> — Nazirliyin BVF-nin qurduğu yarı-struktur modeli, <code>CAEM.xlsb</code>, 2026 Büdcəsini yaradan mühərrik. İnflyasiyası ~4%-ə yaxınlaşır.
+<br>&nbsp;•&nbsp;<b>Nazirlik (75 saylı Qərar)</b> — Nazirliyin rəsmi statutar təqdimatı, 8 vərəq cədvəlləri. İnflyasiyası 7.2%-ə qalxır.
+<br><b>Beləliklə, iki fərqli Nazirlik rəqəmi var</b> — onun <i>modeli</i> (CAEM) və <i>statutar təqdimatı</i> (75 saylı Qərar) — və onlar fərqlənir. Oxlon BVF/CAEM ailəsinə uyğunlaşır, 75 saylı Qərar kənarlaşmasına yox.</div>
     <table class="rt"><thead><tr><th>Indicator <span class="tagS">Oxlon</span></th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody id="tbody"></tbody></table>
     <div class="grid2">
-      <div><div class="fig"><div id="cGdp" style="height:252px"></div></div><div class="cap">Şəkil 1. Real ÜDM artımı (%): Oxlon (80% yelpik) və etalonlar.</div></div>
-      <div><div class="fig"><div id="cCpi" style="height:252px"></div></div><div class="cap">Şəkil 2. İQİ inflyasiyası (%): Oxlon (80% yelpik) və etalonlar.</div></div>
+      <div><div class="fig"><div id="cGdp" style="height:300px"></div></div><div class="cap">Şəkil 1. Real ÜDM artımı (%): Oxlon (80% yelpik) və etalonlar.</div></div>
+      <div><div class="fig"><div id="cCpi" style="height:300px"></div></div><div class="cap">Şəkil 2. İQİ inflyasiyası (%): Oxlon (80% yelpik) və etalonlar.</div></div>
     </div>
-    <div class="fig" style="margin-top:14px"><div id="cPol" style="height:210px"></div></div>
+    <div class="fig" style="margin-top:16px"><div id="cPol" style="height:258px"></div></div>
     <div class="cap">Şəkil 3. Taylor uçot dərəcəsi (%, sol) və suveren risk mükafatı (f.b., sağ) — Oxlon.</div>
   </div>
 </div>
-<div class="foot"><span class="wm">Ox<em>lon</em>.</span><span>11.1.1 solver · engine = src/oxlon/engine_core.py · table = Oxlon computed · charts overlay IMF/CAEM/Ministry benchmarks · 2025 = last actual</span></div>
+<div class="foot"><span class="wm">Ox<em>lon</em>.</span><span>Proqnozlaşdırma · İqtisadi Kəşfiyyat</span></div>
 </div>
 <script>
 const YR=[2026,2027,2028,2029,2030];
@@ -131,15 +135,15 @@ function run(){
     ['Risk mükafatı f.b.',rp,0],['REER indeksi',reer,0],['İdxal inflyasiyası %',imp,0]];
   P('tbody').innerHTML=rows.map(([n,a,hl])=>`<tr class="${hl?'hl':''}"><td>${n}</td>`+
     a.map(v=>`<td>${v==null?'—':(Math.round(v*100)/100)}</td>`).join('')+`</tr>`).join('');
-  const L=(t,suf)=>({margin:{l:38,r:38,t:18,b:24},font:{family:'IBM Plex Mono',size:10,color:'#525b7a'},
-    paper_bgcolor:'#fff',plot_bgcolor:'#fff',showlegend:true,legend:{orientation:'h',y:-0.16,font:{size:8.5}},
-    xaxis:{dtick:1,showgrid:false},yaxis:{ticksuffix:suf||'%',gridcolor:'#eef1f4'},title:{text:t,font:{size:11,color:'#1a2038'}}});
+  const L=(t,suf)=>({margin:{l:46,r:44,t:24,b:30},font:{family:'IBM Plex Mono',size:12,color:'#525b7a'},
+    paper_bgcolor:'#fff',plot_bgcolor:'#fff',showlegend:true,legend:{orientation:'h',y:-0.2,font:{size:11.5}},
+    xaxis:{dtick:1,showgrid:false},yaxis:{ticksuffix:suf||'%',gridcolor:'#eef1f4'},title:{text:t,font:{size:14,color:'#1a2038'}}});
   const cfg={displayModeBar:false,responsive:true};
   const ln=(name,y,c,dash)=>({x:YR,y,name,mode:'lines+markers',line:{color:c,width:name=='Oxlon'?2.8:1.6,dash:dash||'solid'},marker:{size:name=='Oxlon'?6:4}});
   const fan=(c,half)=>({x:YR.concat([...YR].reverse()),y:c.map((v,i)=>v+half[i]).concat(c.map((v,i)=>v-half[i]).reverse()),
     fill:'toself',fillcolor:'rgba(29,122,140,.10)',line:{width:0},name:'Oxlon 80% fan',hoverinfo:'skip'});
-  Plotly.react('cGdp',[fan(gdp,FANg),ln('Oxlon',gdp,'#1d7a8c'),ln('IMF',REF.imf_g,'#7a5ba6','dot'),ln('CAEM',REF.caem_g,'#b9852a','dash'),ln('Ministry',REF.min_g,'#a8794f','dashdot')],L('Real GDP growth'),cfg);
-  Plotly.react('cCpi',[fan(cpi,FANc),ln('Oxlon',cpi,'#1d7a8c'),ln('IMF',REF.imf_c,'#7a5ba6','dot'),ln('CAEM',REF.caem_c,'#b9852a','dash'),ln('Ministry',REF.min_c,'#a8794f','dashdot')],L('CPI inflation'),cfg);
+  Plotly.react('cGdp',[fan(gdp,FANg),ln('Oxlon',gdp,'#1d7a8c'),ln('IMF',REF.imf_g,'#7a5ba6','dot'),ln('CAEM (Nazirlik modeli)',REF.caem_g,'#b9852a','dash'),ln('Nazirlik (75 saylı Qərar)',REF.min_g,'#a8794f','dashdot')],L('Real GDP growth'),cfg);
+  Plotly.react('cCpi',[fan(cpi,FANc),ln('Oxlon',cpi,'#1d7a8c'),ln('IMF',REF.imf_c,'#7a5ba6','dot'),ln('CAEM (Nazirlik modeli)',REF.caem_c,'#b9852a','dash'),ln('Nazirlik (75 saylı Qərar)',REF.min_c,'#a8794f','dashdot')],L('CPI inflation'),cfg);
   const l3=L('Policy rate & risk premium'); l3.yaxis2={overlaying:'y',side:'right',ticksuffix:'pp',showgrid:false,range:[0,6]};
   Plotly.react('cPol',[ln('Policy rate',pol,'#155e6c'),{x:YR,y:rp,name:'Risk premium',yaxis:'y2',mode:'lines+markers',line:{color:'#c9a78e',width:2,dash:'dot'},marker:{size:4}}],l3,cfg);
 }
