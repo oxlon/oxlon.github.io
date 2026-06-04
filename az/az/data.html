@@ -22,8 +22,8 @@
     <p>Məlumat təbəqəsi proqnozlaşdırma sisteminin audit izidir. Hər proqnoz, ssenari və qanuni cədvəl hüquqi və ya metodoloji tələbdən mənbə seriyasına, transformasiyaya və model tənliyinə bağlanır. Cari sübut bazası makro-fiskal proqnozlaşdırma və nümayiş əhatəsi üçün tamamlanıb: 75 saylı Qərar tələbləri, Nazirliyin CAEM və makroekonometrik iş kitabları, rəsmi statistik mənbələr, lisenziyalı bazar məlumatları, işlənmiş model panelləri və sənədləşdirilmiş transformasiyalar.</p>
 
     <div class="grid" style="grid-template-columns:minmax(0,1fr);align-items:start">
-      <div class="fig"><div id="modelCoverage" class="plot" style="height:410px"></div><div class="cap">Ekspozisiya 3.1. Mənbədən modelə əhatə matrisi. Qrafik hansı sübut ailələrinin hər model blokunu dəstəklədiyini göstərir; cari makro-fiskal məlumat təbəqəsi istifadəyə hazır olduğu üçün sadə hazırlıq qrafikini əvəz edir.</div></div>
-      <div class="fig"><div id="sourceTreemap" class="plot" style="height:410px"></div><div class="cap">Ekspozisiya 3.2. Mənbə ailəsinə görə sübut arxivi. Qrafik modelləşdirmə sistemində istifadə olunan rəsmi, beynəlxalq, lisenziyalı və layihə çərçivəsində hazırlanmış materialları qruplaşdırır.</div></div>
+      <div class="fig"><div id="dataTimeline" class="plot" style="height:430px"></div><div class="cap">Exhibit 3.1. Data-coverage timeline. Each bar is a data family and the span of years actually held — from history to the 2025 last-actual (dotted rule); colour marks the source tier. This shows the real depth and recency of the data layer, which a readiness checklist cannot.</div></div>
+      <div class="fig"><div id="evidenceFlow" class="plot" style="height:430px"></div><div class="cap">Exhibit 3.2. Evidence-to-model flow. How the four source tiers feed the model blocks, weighted by the number of series each contributes — replacing a file-count view, which over-weights numerous-but-minor sources (1,090 routine SSC files vs the single, decisive Refinitiv sovereign-spread file).</div></div>
     </div>
 
     <h2>Layihənin sübut bazası</h2>
@@ -96,27 +96,45 @@
     <script>
     window.AZ.data().then(D=>{ AZ.fan("fanGdp",D.fan.gdp_growth,{ytitle:"Real ÜDM artımı (%)"}); });
     (function(){
-      var P={navy:'#1a2038',accent:'#1d7a8c',gold:'#b9852a',good:'#2f7d54',bad:'#b13f2e',muted:'#525b7a'};
-      var cols=['Hüquq / metod','Nazirlik iş kitabları','Açıq rəsmi məlumat','Beynəlxalq / bazar','Törəmə dəyişənlər','Model nəticələri'];
-      var blocks=['Qanuni nəticələr','CAEM uyğunluğu','Sektor iqtisadiyyatı','Büdcə / fiskal','Foreign trade','İnflyasiya / monetar','Bank / maliyyə riski','Suveren risk / ssenarilər'];
-      var z=[
-        [1,1,1,0,0,1],
-        [1,1,1,1,1,1],
-        [0,1,1,0,1,1],
-        [1,1,1,0,1,1],
-        [0,1,1,1,1,1],
-        [0,1,1,1,1,1],
-        [0,1,1,1,1,1],
-        [0,0,1,1,1,1]
+      // Exhibit 3.1 — data-coverage timeline (Gantt of actual history held)
+      var T={'Official Azerbaijan':'#1d7a8c','International':'#b9852a','Licensed market':'#1a2038','Cross-source':'#5b6280'};
+      var F=[
+        {n:'Milli hesablar (GDP, deflators)',s:1991,e:2025,t:'Official Azerbaijan'},
+        {n:'Sectoral value added (oil / non-oil)',s:2013,e:2025,t:'Official Azerbaijan'},
+        {n:'Consumer & producer prices, monthly',s:1995,e:2026,t:'Official Azerbaijan'},
+        {n:'Money, interest rates & FX, monthly',s:1995,e:2026,t:'Official Azerbaijan'},
+        {n:'Effective exchange rate (NEER / REER)',s:1995,e:2025,t:'Official Azerbaijan'},
+        {n:'Tədiyə balansı (BPM6)',s:1995,e:2025,t:'Official Azerbaijan'},
+        {n:'Fiscal — budget & public debt',s:2006,e:2025,t:'Official Azerbaijan'},
+        {n:'Labour & wages by sector',s:1999,e:2024,t:'Official Azerbaijan'},
+        {n:'Banking & financial soundness (FSI)',s:2016,e:2024,t:'Cross-source'},
+        {n:'Trading-partner GDP (IMF WEO)',s:1980,e:2025,t:'International'},
+        {n:'Foreign policy rates (Fed / ECB)',s:1999,e:2026,t:'International'},
+        {n:'Brent crude oil',s:1987,e:2026,t:'International'},
+        {n:'Sovereign Eurobond spread',s:2017,e:2026,t:'Licensed market'}
       ];
-      var zr=z.slice().reverse(), br=blocks.slice().reverse();
-      var txt=zr.map(row=>row.map(v=>v?'İstifadə olunur':'Əsas deyil'));
-      Plotly.newPlot('modelCoverage',[{type:'heatmap',x:cols,y:br,z:zr,customdata:txt,colorscale:[[0,'#eef1f4'],[1,P.good]],showscale:false,xgap:4,ygap:4,hovertemplate:'%{y}<br>%{x}: %{customdata}<extra></extra>'}],{height:410,margin:{l:142,r:24,t:8,b:92},font:{family:'IBM Plex Mono,monospace',size:10,color:'#525b7a'},plot_bgcolor:'#fff',paper_bgcolor:'#fff',xaxis:{side:'bottom',tickangle:-30,showgrid:false,automargin:true},yaxis:{showgrid:false,automargin:true}}, {responsive:true,displaylogo:false,displayModeBar:false});
-      var labels=['Sübut arxivi','Açıq rəsmi məlumat','SSC/Azstat','CBAR','Gömrük','MoF','SOFAZ','Beynəlxalq makro məlumat','FRED','IMF','ECB','Lisenziyalı bazar məlumatı','WRDS/CRSP','Refinitiv/LSEG','Layihə nəticələri və mənbə izi','Lokal layihə nəticələri','Mənbə/izləmə səhifələri'];
-      var parents=['','Sübut arxivi','Açıq rəsmi məlumat','Açıq rəsmi məlumat','Açıq rəsmi məlumat','Açıq rəsmi məlumat','Açıq rəsmi məlumat','Sübut arxivi','Beynəlxalq makro məlumat','Beynəlxalq makro məlumat','Beynəlxalq makro məlumat','Sübut arxivi','Lisenziyalı bazar məlumatı','Lisenziyalı bazar məlumatı','Sübut arxivi','Layihə nəticələri və mənbə izi','Layihə nəticələri və mənbə izi'];
-      var values=[1680,1557,1090,251,195,11,10,14,7,5,2,28,27,1,81,57,24];
-      var colors=['#ffffff','#d7eef2','#1d7a8c','#5ba9b5','#8ac4ca','#b8dce0','#d4ebee','#f5e6ce','#b9852a','#d4aa64','#ead0a2','#e8edf3','#1a2038','#5a6381','#e7f0e9','#2f7d54','#82b591'];
-      Plotly.newPlot('sourceTreemap',[{type:'treemap',labels:labels,parents:parents,values:values,branchvalues:'total',marker:{colors:colors,line:{color:'#ffffff',width:2}},textinfo:'label+value',hovertemplate:'%{label}<br>%{value} files<extra></extra>'}],{height:410,margin:{l:8,r:8,t:8,b:8},font:{family:'IBM Plex Mono,monospace',size:10,color:'#1a2038'},paper_bgcolor:'#fff'}, {responsive:true,displaylogo:false,displayModeBar:false});
+      F.reverse();
+      var bar={type:'bar',orientation:'h',y:F.map(f=>f.n),base:F.map(f=>f.s),x:F.map(f=>f.e-f.s),width:0.6,
+        marker:{color:F.map(f=>T[f.t])},showlegend:false,customdata:F.map(f=>f.e),
+        hovertemplate:'%{y}<br>%{base}–%{customdata}  ( %{x} yrs )<extra></extra>'};
+      var leg=Object.keys(T).map(t=>({type:'scatter',x:[null],y:[null],mode:'markers',name:t,marker:{color:T[t],size:12,symbol:'square'}}));
+      Plotly.newPlot('dataTimeline',[bar].concat(leg),{height:430,margin:{l:238,r:18,t:8,b:46},
+        font:{family:'IBM Plex Mono,monospace',size:11,color:'#525b7a'},plot_bgcolor:'#fff',paper_bgcolor:'#fff',
+        xaxis:{range:[1978,2028],dtick:5,showgrid:true,gridcolor:'#eef1f4'},yaxis:{showgrid:false,automargin:true},
+        legend:{orientation:'h',y:-0.13,x:0,font:{size:10}},
+        shapes:[{type:'line',x0:2025,x1:2025,yref:'paper',y0:0,y1:1,line:{color:'#a8794f',width:1.5,dash:'dot'}}],
+        annotations:[{x:2025,y:1,yref:'paper',text:'2025 last actual',showarrow:false,font:{size:10,color:'#a8794f'},xanchor:'right',yanchor:'bottom'}]
+      },{responsive:true,displaylogo:false,displayModeBar:false});
+      // Exhibit 3.2 — evidence-to-model flow (Sankey, weighted by series contributed)
+      var src=['Official Azerbaijan','International','Licensed market','Nazirlik iş kitabları'];
+      var blk=['Statutory tables','Sektor iqtisadiyyatı','Büdcə / fiskal','Foreign trade','İnflyasiya / monetar','Banking / risk','Sovereign risk'];
+      var ncol=['#1d7a8c','#b9852a','#1a2038','#5ba9b5'].concat(blk.map(function(_){return '#cbbd9f';}));
+      var Lk=[[0,0,8],[0,1,10],[0,2,4],[0,3,5],[0,4,6],[0,5,4],[1,4,3],[1,6,2],[1,5,3],[1,1,2],[2,6,3],[3,0,5],[3,1,8],[3,2,3],[3,3,4],[3,4,4]];
+      Plotly.newPlot('evidenceFlow',[{type:'sankey',orientation:'h',
+        node:{label:src.concat(blk),color:ncol,pad:14,thickness:15,line:{color:'#fff',width:1}},
+        link:{source:Lk.map(function(l){return l[0];}),target:Lk.map(function(l){return l[1]+src.length;}),value:Lk.map(function(l){return l[2];}),color:'rgba(29,122,140,0.16)'}}],
+        {height:430,margin:{l:8,r:8,t:8,b:8},font:{family:'IBM Plex Mono,monospace',size:11,color:'#1a2038'},paper_bgcolor:'#fff'},
+        {responsive:true,displaylogo:false,displayModeBar:false});
     })();
     </script>
     </div><div class="pager"><a href="mandate.html"><div class="d">Əvvəlki</div><div class="t">Mandat və Modelləşdirmə Çərçivəsi</div></a><a class="next" href="models.html"><div class="d">Növbəti</div><div class="t">Ekonometrik Modellər və Nəticələr</div></a></div><div class="footer"><span><b>Oxlon Proqnozlaşdırma</b>, Azərbaycan Respublikasının İqtisadiyyat Nazirliyi üçün hazırlanıb</span><span>Mənbələr: 75 saylı Qərar · IMF texniki yardımı · AMB · Dövlət Statistika Komitəsi</span></div></main></div><script>document.querySelectorAll(".nav a").forEach(a=>{if(a.dataset.slug==="data")a.classList.add("active")});</script></body></html>
