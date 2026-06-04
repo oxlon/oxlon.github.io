@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oxlon · 11.1.1 New-Keynesian Solver</title>
+<title>Oxlon · 11.1.1 Yeni-Keynsçi Həlledici</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
@@ -51,38 +51,38 @@ table.rt tr.hl td{background:#eef6f6}
 </style></head>
 <body><div class="wrap">
 <div class="head"><div class="wm">Ox<em>lon</em><span class="dot">.</span></div>
-<div class="tag">Forecasting · Economic Intelligence</div>
-<div class="sub">Section 11.1.1 — AI New-Keynesian Solver</div></div><div class="rule"></div>
+<div class="tag">Proqnozlaşdırma · İqtisadi Kəşfiyyat</div>
+<div class="sub">Bölmə 11.1.1 — Süni İntellekt Yeni-Keynsçi Həlledici</div></div><div class="rule"></div>
 <div class="body">
   <div class="controls">
-    <h3>Scenario</h3>
+    <h3>Ssenari</h3>
     <div class="presets">
-      <button id="pBase" class="on">Baseline</button><button id="pPess">Pessimistic</button><button id="pOpt">Optimistic</button>
+      <button id="pBase" class="on">Baza</button><button id="pPess">Pessimist</button><button id="pOpt">Optimist</button>
     </div>
-    <div class="grp">External</div>
-    <div class="ctl"><label>Brent oil, 2026 <span class="val" id="vBrent">68</span> USD/bbl</label><input type="range" id="brent" min="35" max="110" value="68" step="1"><div class="hint">−2/yr thereafter</div></div>
-    <div class="ctl"><label>Oil-sector real growth <span class="val" id="vOil">−1.5</span> %/yr</label><input type="range" id="oilg" min="-6" max="3" value="-1.5" step="0.1"></div>
-    <div class="ctl"><label>Partner-demand shock <span class="val" id="vPart">0.0</span> pp</label><input type="range" id="part" min="-4" max="3" value="0" step="0.1"><div class="hint">deviation from WEO baseline (~2.5%)</div></div>
-    <div class="ctl"><label>One-off devaluation <span class="val" id="vDev">0</span> %</label><input type="range" id="dev" min="0" max="40" value="0" step="1"><div class="hint">manat vs USD (peg break); 0 = peg held</div></div>
-    <div class="grp">Domestic policy</div>
-    <div class="ctl"><label>Fiscal impulse <span class="val" id="vFisc">0.0</span> % GDP</label><input type="range" id="fisc" min="-3" max="3" value="0" step="0.1"></div>
-    <div class="ctl"><label>Sovereign risk premium <span class="val" id="vRisk">1.5</span> pp</label><input type="range" id="risk" min="0.5" max="6" value="1.5" step="0.1"><div class="hint">collected: 2025≈1.4, 2026≈0.7</div></div>
-    <div class="ctl"><label>CBAR inflation aim <span class="val" id="vTgt">4.0</span> %</label><input type="range" id="target" min="2" max="6" value="4" step="0.1"></div>
-    <div class="ctl"><label>Neutral real rate <span class="val" id="vNeu">2.0</span> pp</label><input type="range" id="neutral" min="0" max="4" value="2" step="0.1"></div>
-    <div class="ctl"><label>Imported inflation, 2026 <span class="val" id="vImp">5.0</span> %</label><input type="range" id="imp" min="1" max="10" value="5" step="0.1"></div>
-    <button class="btn" id="reset">Reset to baseline</button>
-    <a class="btn" href="statutory.html">← Statutory tables (8 vərəq)</a>
+    <div class="grp">Xarici</div>
+    <div class="ctl"><label>Brent neft, 2026 <span class="val" id="vBrent">68</span> USD/barel</label><input type="range" id="brent" min="35" max="110" value="68" step="1"><div class="hint">sonra −2/il</div></div>
+    <div class="ctl"><label>Neft sektoru real artımı <span class="val" id="vOil">−1.5</span> %/il</label><input type="range" id="oilg" min="-6" max="3" value="-1.5" step="0.1"></div>
+    <div class="ctl"><label>Tərəfdaş tələbi şoku <span class="val" id="vPart">0.0</span> f.b.</label><input type="range" id="part" min="-4" max="3" value="0" step="0.1"><div class="hint">BVF/WEO bazasından kənarlaşma (~2.5%)</div></div>
+    <div class="ctl"><label>Birdəfəlik devalvasiya <span class="val" id="vDev">0</span> %</label><input type="range" id="dev" min="0" max="40" value="0" step="1"><div class="hint">manat/USD (bağ qırılması); 0 = bağ saxlanılır</div></div>
+    <div class="grp">Daxili siyasət</div>
+    <div class="ctl"><label>Fiskal impuls <span class="val" id="vFisc">0.0</span> % ÜDM</label><input type="range" id="fisc" min="-3" max="3" value="0" step="0.1"></div>
+    <div class="ctl"><label>Suveren risk mükafatı <span class="val" id="vRisk">1.5</span> f.b.</label><input type="range" id="risk" min="0.5" max="6" value="1.5" step="0.1"><div class="hint">toplanıb: 2025≈1.4, 2026≈0.7</div></div>
+    <div class="ctl"><label>AMB inflyasiya hədəfi <span class="val" id="vTgt">4.0</span> %</label><input type="range" id="target" min="2" max="6" value="4" step="0.1"></div>
+    <div class="ctl"><label>Neytral real faiz <span class="val" id="vNeu">2.0</span> f.b.</label><input type="range" id="neutral" min="0" max="4" value="2" step="0.1"></div>
+    <div class="ctl"><label>İdxal inflyasiyası, 2026 <span class="val" id="vImp">5.0</span> %</label><input type="range" id="imp" min="1" max="10" value="5" step="0.1"></div>
+    <button class="btn" id="reset">Bazaya qaytar</button>
+    <a class="btn" href="statutory.html">← Statutar cədvəllər (8 vərəq)</a>
   </div>
   <div class="main">
-    <div class="lead">Oxlon's <b>11.1.1</b> open-economy semi-structural engine, calibrated to the CAEM/IMF family. Output gap = HP filter (λ=100) on the non-oil index; inflation = anchored Phillips curve; policy rate = Taylor rule; headline GDP = oil/non-oil identity (level-chained). The <b>risk premium</b> uses the collected Azerbaijan sovereign-Eurobond spread. This page mirrors <code>src/oxlon/engine_core.py</code> exactly.</div>
-    <div class="prov"><b>Where the numbers come from.</b> The <b>table below is 100% Oxlon</b> — every cell is computed live by this engine from your sliders. The <b>chart lines</b> overlay three external <b>benchmarks, transcribed (not computed)</b> from their sources: <b>IMF</b> = Article IV Country Report 26/112 (May 2026); <b>CAEM</b> = the Ministry's IMF-built semi-structural model (<code>CAEM.xlsb</code>, the Budget-2026 engine); <b>Ministry</b> = the official Decree-75 statutory submission (the 8 vərəq tables). CAEM and the Decree-75 submission <i>differ</i> — the Ministry's own submission diverges from its own model; Oxlon reconciles to the IMF/CAEM family.</div>
+    <div class="lead">Oxlon-un <b>11.1.1</b> açıq iqtisadiyyat yarı-struktur mühərriki, CAEM/BVF ailəsinə kalibrlənib. Buraxılış kəsri = qeyri-neft indeksinə HP filtri (λ=100); inflyasiya = lövbərlənmiş Phillips əyrisi; uçot dərəcəsi = Taylor qaydası; baş ÜDM = neft/qeyri-neft eyniliyi (səviyyə-zəncirli). <b>Risk mükafatı</b> toplanmış Azərbaycan suveren evrobond spredindən istifadə edir. Bu səhifə <code>src/oxlon/engine_core.py</code> ilə eynidir.</div>
+    <div class="prov"><b>Rəqəmlər haradandır.</b> <b>Aşağıdakı cədvəl 100% Oxlon-dur</b> — hər xana sürüşdürücülərdən canlı hesablanır. <b>Qrafik xətləri</b> üç xarici <b>etalonu göstərir (hesablanmayıb, köçürülüb)</b>: <b>BVF</b> = Maddə IV Hesabatı 26/112 (May 2026); <b>CAEM</b> = Nazirliyin BVF-nin qurduğu yarı-struktur modeli (<code>CAEM.xlsb</code>, Büdcə-2026 mühərriki); <b>Nazirlik</b> = rəsmi 75 saylı Qərar statutar təqdimatı (8 vərəq). CAEM və 75 saylı Qərar təqdimatı <i>fərqlənir</i> — Nazirliyin öz təqdimatı öz modelindən kənarlaşır; Oxlon BVF/CAEM ailəsinə uyğunlaşdırır.</div>
     <table class="rt"><thead><tr><th>Indicator <span class="tagS">Oxlon</span></th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody id="tbody"></tbody></table>
     <div class="grid2">
-      <div><div class="fig"><div id="cGdp" style="height:252px"></div></div><div class="cap">Fig 1. Real GDP growth (%): Oxlon (with 80% fan) vs benchmarks.</div></div>
-      <div><div class="fig"><div id="cCpi" style="height:252px"></div></div><div class="cap">Fig 2. CPI inflation (%): Oxlon (with 80% fan) vs benchmarks.</div></div>
+      <div><div class="fig"><div id="cGdp" style="height:252px"></div></div><div class="cap">Şəkil 1. Real ÜDM artımı (%): Oxlon (80% yelpik) və etalonlar.</div></div>
+      <div><div class="fig"><div id="cCpi" style="height:252px"></div></div><div class="cap">Şəkil 2. İQİ inflyasiyası (%): Oxlon (80% yelpik) və etalonlar.</div></div>
     </div>
     <div class="fig" style="margin-top:14px"><div id="cPol" style="height:210px"></div></div>
-    <div class="cap">Fig 3. Taylor-rule policy rate (%, left) and sovereign risk premium (pp, right) — Oxlon.</div>
+    <div class="cap">Şəkil 3. Taylor uçot dərəcəsi (%, sol) və suveren risk mükafatı (f.b., sağ) — Oxlon.</div>
   </div>
 </div>
 <div class="foot"><span class="wm">Ox<em>lon</em>.</span><span>11.1.1 solver · engine = src/oxlon/engine_core.py · table = Oxlon computed · charts overlay IMF/CAEM/Ministry benchmarks · 2025 = last actual</span></div>
@@ -126,9 +126,9 @@ function run(){
     cpi.push(+pi.toFixed(2)); pol.push(+pr.toFixed(2)); cpiP=pi; polP=pr;
   }
   const rp=YR.map(_=>risk);
-  const rows=[['Real GDP growth %',gdp,1],['Non-oil GDP growth %',nonoil,0],['Oil-sector growth %',YR.map(_=>oilg),0],
-    ['Oil share of GDP %',osh,0],['CPI inflation %',cpi,1],['Output gap %',gap,0],['Policy rate %',pol,0],
-    ['Risk premium pp',rp,0],['REER index',reer,0],['Imported inflation %',imp,0]];
+  const rows=[['Real ÜDM artımı %',gdp,1],['Qeyri-neft ÜDM artımı %',nonoil,0],['Neft sektoru artımı %',YR.map(_=>oilg),0],
+    ['Neftin ÜDM-də payı %',osh,0],['İQİ inflyasiyası %',cpi,1],['Buraxılış kəsri %',gap,0],['Uçot dərəcəsi %',pol,0],
+    ['Risk mükafatı f.b.',rp,0],['REER indeksi',reer,0],['İdxal inflyasiyası %',imp,0]];
   P('tbody').innerHTML=rows.map(([n,a,hl])=>`<tr class="${hl?'hl':''}"><td>${n}</td>`+
     a.map(v=>`<td>${v==null?'—':(Math.round(v*100)/100)}</td>`).join('')+`</tr>`).join('');
   const L=(t,suf)=>({margin:{l:38,r:38,t:18,b:24},font:{family:'IBM Plex Mono',size:10,color:'#525b7a'},
