@@ -81,11 +81,11 @@ table.rt tr.hl td{background:#eef6f6}
 <br>&nbsp;•&nbsp;<b>Nazirlik (75 saylı Qərar)</b> — Nazirliyin rəsmi statutar təqdimatı, 8 vərəq cədvəlləri. İnflyasiyası 7.2%-ə qalxır.
 <br><b>Beləliklə, iki fərqli Nazirlik rəqəmi var</b> — onun <i>modeli</i> (CAEM) və <i>statutar təqdimatı</i> (75 saylı Qərar) — və onlar fərqlənir. Oxlon BVF/CAEM ailəsinə uyğunlaşır, 75 saylı Qərar kənarlaşmasına yox.</div>
     <table class="rt"><thead><tr><th>Indicator <span class="tagS">Oxlon</span></th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody id="tbody"></tbody></table>
-    <div class="grid2">
-      <div><div class="fig"><div id="cGdp" style="height:300px"></div></div><div class="cap">Şəkil 1. Real ÜDM artımı (%): Oxlon (80% yelpik) və etalonlar.</div></div>
-      <div><div class="fig"><div id="cCpi" style="height:300px"></div></div><div class="cap">Şəkil 2. İQİ inflyasiyası (%): Oxlon (80% yelpik) və etalonlar.</div></div>
-    </div>
-    <div class="fig" style="margin-top:16px"><div id="cPol" style="height:258px"></div></div>
+    <div class="fig"><div id="cGdp" style="height:360px"></div></div>
+    <div class="cap">Şəkil 1. Real ÜDM artımı (%): Oxlon (80% yelpik) və etalonlar.</div>
+    <div class="fig" style="margin-top:18px"><div id="cCpi" style="height:360px"></div></div>
+    <div class="cap">Şəkil 2. İQİ inflyasiyası (%): Oxlon (80% yelpik) və etalonlar.</div>
+    <div class="fig" style="margin-top:18px"><div id="cPol" style="height:340px"></div></div>
     <div class="cap">Şəkil 3. Taylor uçot dərəcəsi (%, sol) və suveren risk mükafatı (f.b., sağ) — Oxlon.</div>
   </div>
 </div>
@@ -135,16 +135,19 @@ function run(){
     ['Risk mükafatı f.b.',rp,0],['REER indeksi',reer,0],['İdxal inflyasiyası %',imp,0]];
   P('tbody').innerHTML=rows.map(([n,a,hl])=>`<tr class="${hl?'hl':''}"><td>${n}</td>`+
     a.map(v=>`<td>${v==null?'—':(Math.round(v*100)/100)}</td>`).join('')+`</tr>`).join('');
-  const L=(t,suf)=>({margin:{l:46,r:44,t:24,b:30},font:{family:'IBM Plex Mono',size:12,color:'#525b7a'},
-    paper_bgcolor:'#fff',plot_bgcolor:'#fff',showlegend:true,legend:{orientation:'h',y:-0.2,font:{size:11.5}},
-    xaxis:{dtick:1,showgrid:false},yaxis:{ticksuffix:suf||'%',gridcolor:'#eef1f4'},title:{text:t,font:{size:14,color:'#1a2038'}}});
+  const L=(t,suf)=>({margin:{l:62,r:62,t:48,b:78},font:{family:'IBM Plex Mono',size:13,color:'#525b7a'},
+    paper_bgcolor:'#fff',plot_bgcolor:'#fff',showlegend:true,
+    legend:{orientation:'h',y:-0.30,x:0.5,xanchor:'center',font:{size:13},bgcolor:'rgba(255,255,255,0)'},
+    xaxis:{dtick:1,showgrid:false,tickfont:{size:13},automargin:true},
+    yaxis:{ticksuffix:suf||'%',gridcolor:'#eef1f4',tickfont:{size:13},automargin:true},
+    title:{text:t,font:{size:16,color:'#1a2038'},x:0.01,xanchor:'left',y:0.97}});
   const cfg={displayModeBar:false,responsive:true};
   const ln=(name,y,c,dash)=>({x:YR,y,name,mode:'lines+markers',line:{color:c,width:name=='Oxlon'?2.8:1.6,dash:dash||'solid'},marker:{size:name=='Oxlon'?6:4}});
   const fan=(c,half)=>({x:YR.concat([...YR].reverse()),y:c.map((v,i)=>v+half[i]).concat(c.map((v,i)=>v-half[i]).reverse()),
-    fill:'toself',fillcolor:'rgba(29,122,140,.10)',line:{width:0},name:'Oxlon 80% fan',hoverinfo:'skip'});
+    fill:'toself',fillcolor:'rgba(29,122,140,.10)',line:{width:0},name:'Oxlon 80% fan',showlegend:false,hoverinfo:'skip'});
   Plotly.react('cGdp',[fan(gdp,FANg),ln('Oxlon',gdp,'#1d7a8c'),ln('IMF',REF.imf_g,'#7a5ba6','dot'),ln('CAEM (Nazirlik modeli)',REF.caem_g,'#b9852a','dash'),ln('Nazirlik (75 saylı Qərar)',REF.min_g,'#a8794f','dashdot')],L('Real GDP growth'),cfg);
   Plotly.react('cCpi',[fan(cpi,FANc),ln('Oxlon',cpi,'#1d7a8c'),ln('IMF',REF.imf_c,'#7a5ba6','dot'),ln('CAEM (Nazirlik modeli)',REF.caem_c,'#b9852a','dash'),ln('Nazirlik (75 saylı Qərar)',REF.min_c,'#a8794f','dashdot')],L('CPI inflation'),cfg);
-  const l3=L('Policy rate & risk premium'); l3.yaxis2={overlaying:'y',side:'right',ticksuffix:'pp',showgrid:false,range:[0,6]};
+  const l3=L('Policy rate & risk premium'); l3.yaxis2={overlaying:'y',side:'right',ticksuffix:'pp',showgrid:false,range:[0,6],tickfont:{size:13},automargin:true};
   Plotly.react('cPol',[ln('Policy rate',pol,'#155e6c'),{x:YR,y:rp,name:'Risk premium',yaxis:'y2',mode:'lines+markers',line:{color:'#c9a78e',width:2,dash:'dot'},marker:{size:4}}],l3,cfg);
 }
 const IDS=['brent','oilg','part','dev','fisc','risk','target','neutral','imp'];
