@@ -1,0 +1,138 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oxlon · 11.1.1 New-Keynesian Solver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+:root{--ink:#1a2038;--navy:#1a2038;--paper:#f4efe3;--panel:#fff;--accent:#1d7a8c;--accent-d:#155e6c;
+--clay:#c9a78e;--clay-d:#a8794f;--muted:#5b6280;--line:#e2dccd;
+--serif:"Cormorant Garamond",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--mono);background:#cfcabd;color:var(--ink);font-size:13px;line-height:1.5}
+.wrap{max-width:1180px;margin:18px auto;background:var(--panel);box-shadow:0 8px 40px rgba(0,0,0,.18)}
+.head{background:var(--navy);color:#f4ece0;padding:22px 36px}
+.head .wm{font-family:var(--serif);font-weight:600;font-size:34px;line-height:.9}
+.head .wm em{font-style:italic;color:#e3d2c2}.head .wm .dot{color:var(--clay)}
+.head .tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#b9c0d6;margin-top:8px}
+.head .sub{font-family:var(--serif);font-size:20px;margin-top:14px;color:#f4ece0}
+.rule{height:2px;background:var(--accent-d)}
+.body{display:grid;grid-template-columns:300px 1fr;gap:0}
+.controls{background:var(--paper);padding:22px 24px;border-right:1px solid var(--line)}
+.controls h3{font-family:var(--serif);font-size:17px;color:var(--accent-d);margin-bottom:4px}
+.controls .note{font-size:10.5px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.ctl{margin-bottom:17px}
+.ctl label{display:flex;justify-content:space-between;font-size:11px;font-weight:600;margin-bottom:5px}
+.ctl label .val{color:var(--accent-d);font-variant-numeric:tabular-nums}
+.ctl input[type=range]{width:100%;accent-color:var(--accent-d)}
+.ctl .hint{font-size:9.5px;color:var(--muted);margin-top:3px}
+.btn{width:100%;margin-top:6px;padding:9px;border:1px solid var(--accent-d);background:var(--accent-d);
+color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--accent-d);margin-top:8px}
+.main{padding:22px 30px}
+.lead{font-size:12px;color:#3a4061;line-height:1.6;margin-bottom:14px}
+.lead b{color:var(--ink)}
+table.rt{width:100%;border-collapse:collapse;margin:6px 0 14px}
+table.rt th{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-d);text-align:right;padding:7px 9px;border-bottom:1.4px solid var(--ink)}
+table.rt th:first-child{text-align:left}
+table.rt td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+table.rt td:first-child{text-align:left;font-weight:600;color:var(--ink)}
+table.rt tr.hl td{background:#eef6f6}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fig{border:1px solid var(--line);border-radius:6px;padding:6px}
+.cap{font-size:9.5px;color:var(--muted);padding:2px 6px 4px}
+.foot{padding:14px 30px;border-top:1px solid var(--line);font-size:9.5px;color:var(--muted);display:flex;justify-content:space-between}
+.foot .wm{font-family:var(--serif);font-size:13px;color:var(--ink)}.foot .wm em{font-style:italic;color:var(--clay-d)}
+.badge{display:inline-block;background:#e3f1f2;color:var(--accent-d);font-size:9px;font-weight:600;padding:2px 7px;border-radius:3px;letter-spacing:.05em}
+@media(max-width:820px){.body{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+<div class="head">
+  <div class="wm">Ox<em>lon</em><span class="dot">.</span></div>
+  <div class="tag">Forecasting · Economic Intelligence</div>
+  <div class="sub">Section 11.1.1 — AI New-Keynesian Solver <span class="badge">live</span></div>
+</div><div class="rule"></div>
+<div class="body">
+  <div class="controls">
+    <h3>Scenario controls</h3>
+    <div class="note">Adjust the conditioning assumptions; the semi-structural engine (output gap → Phillips → Taylor → oil/non-oil identity) recomputes the 2026–2030 path live.</div>
+    <div class="ctl"><label>Brent oil, 2026 <span class="val" id="vBrent">68</span> USD/bbl</label>
+      <input type="range" id="brent" min="40" max="100" value="68" step="1"><div class="hint">declines −2/yr thereafter</div></div>
+    <div class="ctl"><label>Oil-sector real growth <span class="val" id="vOil">−1.5</span> %/yr</label>
+      <input type="range" id="oilg" min="-5" max="2" value="-1.5" step="0.1"><div class="hint">maturing fields; 2025 outturn −1.6%</div></div>
+    <div class="ctl"><label>CBAR inflation aim <span class="val" id="vTgt">4.0</span> %</label>
+      <input type="range" id="target" min="2" max="6" value="4" step="0.1"></div>
+    <div class="ctl"><label>Imported inflation, 2026 <span class="val" id="vImp">5.0</span> %</label>
+      <input type="range" id="imp" min="1" max="9" value="5" step="0.1"><div class="hint">decays toward 3.5% (peg pass-through)</div></div>
+    <div class="ctl"><label>Neutral real rate <span class="val" id="vNeu">2.0</span> pp</label>
+      <input type="range" id="neutral" min="0" max="4" value="2" step="0.1"></div>
+    <button class="btn" id="reset">Reset to baseline</button>
+    <a class="btn ghost" style="display:block;text-align:center;text-decoration:none" href="statutory.html">← Statutory tables (8 vərəq)</a>
+  </div>
+  <div class="main">
+    <div class="lead">This is Oxlon's <b>11.1.1</b> engine — an open-economy semi-structural model calibrated to the CAEM/IMF family. The output gap comes from an HP filter on the non-oil index; inflation from an anchored Phillips curve; the policy rate from a Taylor rule; headline GDP from the oil/non-oil identity. The <b>risk premium</b> uses the collected Azerbaijan sovereign-Eurobond spread. Baseline reproduces the canonical run; move a slider to see the response.</div>
+    <table class="rt"><thead><tr><th>Indicator</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead>
+      <tbody id="tbody"></tbody></table>
+    <div class="grid2">
+      <div><div class="fig"><div id="cGdp" style="height:250px"></div></div><div class="cap">Figure 1. Real GDP growth (%) — your run vs IMF Art IV, CAEM, Ministry.</div></div>
+      <div><div class="fig"><div id="cCpi" style="height:250px"></div></div><div class="cap">Figure 2. CPI inflation (%) — your run vs the canonical family.</div></div>
+    </div>
+    <div class="fig" style="margin-top:14px"><div id="cPol" style="height:215px"></div></div>
+    <div class="cap">Figure 3. Taylor-rule policy rate (%) and the sovereign risk premium (pp, right axis).</div>
+  </div>
+</div>
+<div class="foot"><span class="wm">Ox<em>lon</em>.</span><span>11.1.1 New-Keynesian solver · engine mirrors src/oxlon/engine_core.py · 2025 = last actual, 2026 = first forecast</span></div>
+</div>
+<script>
+const YR=[2026,2027,2028,2029,2030];
+// baseline embedded from engine_core.py / forecast_core.json
+const GAP=[1.048,0.587,0.214,-0.11,-0.402], NONOIL=[3.52,3.66,3.74,3.78,3.81],
+      OILSH=[27.5,26.5,25.5,24.5,23.6], RP=[1.12,1.5,1.5,1.5,1.5],
+      REER=[103.0,104.0,104.5,104.8,105.2], PART=[2.46,2.48,2.56,2.50,2.44];
+const REF={imf_g:[2.2,2.5,2.5,2.5,2.5],caem_g:[2.93,3.32,3.15,4.84,null],min_g:[2.5,2.6,2.3,3.8,1.0],
+           imf_c:[6.0,5.1,4.1,4.0,4.0],caem_c:[4.79,4.32,4.15,4.01,null],min_c:[2.7,5.1,6.7,7.1,7.2]};
+const P=v=>document.getElementById(v);
+function run(){
+  const target=+P('target').value, neutral=+P('neutral').value, oilg=+P('oilg').value,
+        brent0=+P('brent').value, imp0=+P('imp').value;
+  const SHAPE=[1,0.467,0.2,0.067,0];                 // matches engine_core import path [5,4.2,3.8,3.6,3.5]@imp0=5
+  const imp=YR.map((y,i)=> +(3.5+(imp0-3.5)*SHAPE[i]).toFixed(2));
+  let cpiP=5.6, polP=7.25; const cpi=[],pol=[],gdp=[],ev=[];
+  for(let i=0;i<5;i++){
+    const pe=0.2*cpiP+0.8*target;
+    const pi=0.10*cpiP+0.70*pe+0.20*imp[i]+0.40*GAP[i];
+    const istar=neutral+pe+0.5*(pi-target)+0.5*GAP[i];
+    const pr=0.75*polP+0.25*istar;
+    const g=OILSH[i]/100*oilg+(1-OILSH[i]/100)*NONOIL[i];
+    cpi.push(+pi.toFixed(2)); pol.push(+pr.toFixed(2)); gdp.push(+g.toFixed(2)); ev.push(+pe.toFixed(2));
+    cpiP=pi; polP=pr;
+  }
+  // table
+  const rows=[['Real GDP growth %',gdp,1],['Non-oil GDP growth %',NONOIL,0],['Oil-sector growth %',YR.map(_=>oilg),0],
+    ['CPI inflation %',cpi,1],['Output gap %',GAP,0],['Policy rate %',pol,0],['Risk premium pp',RP,0],
+    ['REER index',REER,0],['Partner demand %',PART,0]];
+  P('tbody').innerHTML=rows.map(([n,a,hl])=>`<tr class="${hl?'hl':''}"><td>${n}</td>`+
+    a.map(v=>`<td>${v==null?'—':(Math.round(v*100)/100)}</td>`).join('')+`</tr>`).join('');
+  // charts
+  const L=(t,suf)=>({margin:{l:38,r:38,t:18,b:26},font:{family:'IBM Plex Mono',size:10,color:'#525b7a'},
+    paper_bgcolor:'#fff',plot_bgcolor:'#fff',showlegend:true,legend:{orientation:'h',y:-0.18,font:{size:9}},
+    xaxis:{dtick:1,showgrid:false},yaxis:{ticksuffix:suf||'%',gridcolor:'#eef1f4'},title:{text:t,font:{size:11,color:'#1a2038'}}});
+  const cfg={displayModeBar:false,responsive:true};
+  const ln=(name,y,c,dash)=>({x:YR,y,name,mode:'lines+markers',line:{color:c,width:name=='Oxlon'?2.8:1.8,dash:dash||'solid'},marker:{size:name=='Oxlon'?6:4}});
+  Plotly.react('cGdp',[ln('Oxlon',gdp,'#1d7a8c'),ln('IMF',REF.imf_g,'#7a5ba6','dot'),ln('CAEM',REF.caem_g,'#b9852a','dash'),ln('Ministry',REF.min_g,'#a8794f','dashdot')],L('Real GDP growth'),cfg);
+  Plotly.react('cCpi',[ln('Oxlon',cpi,'#1d7a8c'),ln('IMF',REF.imf_c,'#7a5ba6','dot'),ln('CAEM',REF.caem_c,'#b9852a','dash'),ln('Ministry',REF.min_c,'#a8794f','dashdot')],L('CPI inflation'),cfg);
+  const lay3=L('Policy rate & risk premium'); lay3.yaxis2={overlaying:'y',side:'right',ticksuffix:'pp',showgrid:false,range:[0,3]};
+  Plotly.react('cPol',[ln('Policy rate',pol,'#155e6c'),{x:YR,y:RP,name:'Risk premium',yaxis:'y2',mode:'lines+markers',line:{color:'#c9a78e',width:2,dash:'dot'},marker:{size:4}}],lay3,cfg);
+}
+['target','neutral','oilg','brent','imp'].forEach(id=>P(id).addEventListener('input',()=>{
+  P('vTgt').textContent=(+P('target').value).toFixed(1);
+  P('vNeu').textContent=(+P('neutral').value).toFixed(1);
+  P('vOil').textContent=(+P('oilg').value).toFixed(1).replace('-','−');
+  P('vBrent').textContent=P('brent').value;
+  P('vImp').textContent=(+P('imp').value).toFixed(1);
+  run();
+}));
+P('reset').addEventListener('click',()=>{P('target').value=4;P('neutral').value=2;P('oilg').value=-1.5;P('brent').value=68;P('imp').value=5;
+  P('vTgt').textContent='4.0';P('vNeu').textContent='2.0';P('vOil').textContent='−1.5';P('vBrent').textContent='68';P('vImp').textContent='5.0';run();});
+run();
+</script></body></html>
