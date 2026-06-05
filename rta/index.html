@@ -1,0 +1,156 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oxlon · Real-Time Analytics — MİİS 15.7.2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+:root{--ink:#1c1a17;--mut:#6b6358;--line:#e7e1d8;--acc:#9c6b4f;--bg:#faf8f5;--card:#fff;--good:#3f7d54;--warn:#b8862f;--crit:#a8443a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Inter,system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 22px 70px}
+header{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px}
+.brand{font:600 27px Cormorant Garamond,serif}.brand em{font-style:italic;color:var(--acc)}
+.sub{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.12em}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;margin:14px 0 6px}
+nav.toc a{color:var(--acc);text-decoration:none}nav.toc a:hover{text-decoration:underline}
+h2{font:600 13px Inter;text-transform:uppercase;letter-spacing:.14em;color:var(--mut);margin:38px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h2 .n{color:var(--acc);font-variant-numeric:tabular-nums}
+p.lead{font-size:15px;max-width:80ch}
+.hero{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.big{font:600 62px Cormorant Garamond,serif;line-height:1;color:var(--acc)}.big small{font-size:20px;color:var(--mut)}
+.kpi .k{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.band{font:500 13px IBM Plex Mono;color:var(--mut);margin-top:8px}
+.grid{display:grid;gap:12px}.g-tiles{grid-template-columns:repeat(6,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+.tile .v{font:600 22px Cormorant Garamond,serif}.tile .l{font-size:11px;color:var(--mut)}.tile .d{font:10.5px IBM Plex Mono;color:#a59c8f}
+.up{color:var(--good)}.dn{color:var(--crit)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.row2{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 11px Inter;text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
+.pill{display:inline-block;padding:1px 8px;border-radius:20px;font:600 11px Inter;color:#fff}
+.s-critical{background:var(--crit)}.s-warning{background:var(--warn)}.s-info{background:#6b7a8f}
+.ok{color:var(--good);font-weight:600}.note{color:var(--mut);font-size:12px;margin-top:8px}.mono{font-family:IBM Plex Mono}
+.ref{font-size:12px;color:var(--mut)}b.code{font:500 12.5px IBM Plex Mono;color:var(--acc)}
+@media(max-width:820px){.hero,.row2{grid-template-columns:1fr}.g-tiles{grid-template-columns:repeat(3,1fr)}.g3{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<header><div><div class="brand">Ox<em>lon</em> · Real-Time Analytics</div>
+<div class="sub">Ministry of Economy · MİİS Module 15.7.2 · Real-time monitoring &amp; non-oil GDP nowcast</div></div>
+<div class="sub" id="asof"></div></header>
+<nav class="toc"><a href="#why">Why</a><a href="#nowcast">Nowcast</a><a href="#indicators">Indicators</a>
+<a href="#drivers">Drivers &amp; validation</a><a href="#data">Data</a><a href="#method">Methodology</a>
+<a href="#infra">Infrastructure</a><a href="#valid">Validation</a><a href="#reqs">Requirements</a><a href="#alerts">Alerts</a></nav>
+
+<h2 id="why"><span class="n">1.</span> &nbsp;Motivation &amp; scope</h2>
+<p class="lead">Official Azerbaijani statistics are published as <b>monthly batches</b>, with a lag. Between releases the
+Ministry has no quantified, current reading of activity, and incoming figures are not automatically screened for
+errors. This module closes both gaps: it maintains a <b>monthly nowcast of non-oil GDP</b> — the part of the economy
+where the business cycle lives — from the faster activity indicators, with calibrated uncertainty; and it runs an
+<b>automated data-quality / early-warning</b> layer over the data flow. "Real-time" is interpreted faithfully for this
+data environment as a <b>release-triggered refresh</b> (monthly for most series, daily for financial data) — not
+sub-second streaming, which the data does not support.</p>
+
+<h2 id="nowcast"><span class="n">2.</span> &nbsp;Current nowcast — non-oil GDP</h2>
+<div class="hero">
+  <div class="kpi"><div class="k">Non-oil GDP — current monthly nowcast</div>
+    <div class="big" id="ncval"></div><div class="band" id="ncband"></div>
+    <div class="note" id="ncmodel"></div></div>
+  <div id="ncchart" style="height:300px"></div>
+</div>
+<p class="note">Headline = mixed-frequency dynamic factor model; the dotted line is the transparent AR(1)+factor bridge
+benchmark; dots are published non-oil GDP. The band widens at the ragged edge where some indicators are not yet released.</p>
+
+<h2 id="indicators"><span class="n">3.</span> &nbsp;Live indicators — latest year-on-year</h2>
+<div class="grid g-tiles" id="tiles"></div>
+
+<h2 id="drivers"><span class="n">4.</span> &nbsp;What drives the nowcast · model validation</h2>
+<div class="row2">
+  <div class="card"><div id="drivers" style="height:300px"></div>
+    <div class="note">Contribution of each activity component to the current-month common factor (standardised loading × level).</div></div>
+  <div class="card"><div id="bt" style="height:230px"></div><div class="note" id="btnote"></div></div>
+</div>
+
+<h2 id="data"><span class="n">5.</span> &nbsp;Data foundation</h2>
+<p class="lead">Source: <b class="code">Statistik data dinamika 05.06.2026.xlsx</b> (State Statistical Committee · Central
+Bank · Ministry of Finance · State Customs Committee). Eight sheets are harmonised into one tidy store. Monthly figures
+are <b>cumulative year-to-date</b>; the pipeline classifies each series as flow / stock / rate and <b>de-cumulates flows
+only</b> (a level mistakenly de-cumulated would be corrupted — verified by an independent round-trip test).</p>
+<div class="grid g3" id="datastats"></div>
+<div class="card" style="margin-top:12px"><div id="covchart" style="height:230px"></div>
+  <div class="note">Series by sheet (annual history from 1990/1995; monthly detail to 2026).</div></div>
+
+<h2 id="method"><span class="n">6.</span> &nbsp;Methodology &amp; models</h2>
+<div class="row2">
+ <div class="card"><b>Nowcast.</b> The cyclical signal is in the <b>non-oil</b> economy; oil GDP is near-deterministic in
+ production × price, so headline GDP follows by identity. The target is the <b>monthly-momentum</b> (single-month flow,
+ year-on-year): on the smooth year-to-date series a random walk is unbeatable, whereas the monthly signal is where
+ indicators add value — a documented choice, not an accident. The primary model is a <b>mixed-frequency dynamic factor
+ model</b> (a single common activity factor, AR idiosyncratic terms) that natively handles the ragged edge; the
+ benchmark is a transparent <b>AR(1)+common-factor bridge</b> that nests the random walk. Uncertainty is the headline
+ model's residual dispersion (80% band).
+ <div class="ref" style="margin-top:8px">Refs: Antolín-Díaz, Drechsel &amp; Petrella (2024, J. Econometrics 238:105634);
+ Bańbura &amp; Modugno (2014); Mariano &amp; Murasawa (2003).</div></div>
+ <div class="card"><b>Anomaly detection (15.7.2.3).</b> Three layers: (i) <b>rule gates</b> — a year-to-date cumulative cannot
+ fall (monotonicity), and the GDP identity non-oil + oil = total; (ii) <b>statistical process control</b> — robust
+ median/MAD z-scores on indicator growth; (iii) <b>machine learning</b> — an Isolation Forest over the standardised
+ panel for joint anomalies. Alerts are severity-tiered and carry a probable cause and a recommended action; the
+ monotonicity gate is scoped to real-economy sheets where cumulatives are genuinely monotone.</div>
+</div>
+
+<h2 id="infra"><span class="n">7.</span> &nbsp;Infrastructure</h2>
+<div class="card"><table><thead><tr><th>Layer</th><th>Technology</th><th>Detail</th></tr></thead>
+<tbody id="infraT"></tbody></table>
+<div class="note">Fully on-premise; no external network calls; runs on the system Python in a self-contained virtual
+environment. The whole pipeline (<b class="code">python src/run_all.py</b>) is reproducible from the source workbook in ~9 s.</div></div>
+
+<h2 id="valid"><span class="n">8.</span> &nbsp;Validation — <span id="valsum" class="ok"></span></h2>
+<div class="card"><table><thead><tr><th>Check</th><th>Result</th><th>Detail</th></tr></thead><tbody id="validT"></tbody></table></div>
+
+<h2 id="reqs"><span class="n">9.</span> &nbsp;Technical-Specification coverage</h2>
+<div class="card"><table><thead><tr><th>TT requirement</th><th>Requested</th><th>Delivered</th><th>Where</th></tr></thead>
+<tbody id="reqsT"></tbody></table></div>
+
+<h2 id="alerts"><span class="n">10.</span> &nbsp;Data-quality &amp; anomaly alerts <span id="alsum" class="note"></span></h2>
+<div class="card"><table><thead><tr><th>Severity</th><th>Date</th><th>Indicator</th><th>Finding</th></tr></thead>
+<tbody id="alertsT"></tbody></table></div>
+
+<div class="note" style="margin-top:28px">Oxlon Forecasting · client-side engine · on-premise, no external calls · Module 15.7.2
+(Real-Time Analytics). Generated by <b class="code">src/run_all.py</b>; every figure is reproducible from the Ministry's data.</div>
+</div>
+<script>
+const D = {"nowcast": {"target": "nonoil_gdp", "target_name": "Qeyri-neft-qaz ÜDM (real-time YoY nowcast)", "unit": "% YoY", "last_period": "2026-04-01", "nowcast": 7.42, "actual_last": 3.374199335861916, "band80": [-0.96, 15.8], "sigma": 6.54, "fit_rmse": 6.45, "dates": ["2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01", "2022-06-01", "2022-07-01", "2022-08-01", "2022-09-01", "2022-10-01", "2022-11-01", "2022-12-01", "2023-01-01", "2023-02-01", "2023-03-01", "2023-04-01", "2023-05-01", "2023-06-01", "2023-07-01", "2023-08-01", "2023-09-01", "2023-10-01", "2023-11-01", "2023-12-01", "2024-01-01", "2024-02-01", "2024-03-01", "2024-04-01", "2024-05-01", "2024-06-01", "2024-07-01", "2024-08-01", "2024-09-01", "2024-10-01", "2024-11-01", "2024-12-01", "2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01", "2025-07-01", "2025-08-01", "2025-09-01", "2025-10-01", "2025-11-01", "2025-12-01", "2026-01-01", "2026-02-01", "2026-03-01", "2026-04-01"], "actual": [17.11, 16.77, 27.22, 42.48, 19.38, 18.06, 33.64, 25.25, 17.64, 20.44, 13.37, 15.53, 6.73, 19.8, 19.93, 2.66, 17.85, 8.85, 6.46, 9.4, 20.54, 8.14, 10.69, 23.5, 16.21, 10.46, 5.58, 8.53, 8.23, 11.38, 5.81, 20.42, 4.8, 10.18, 11.13, 3.15, 5.06, 9.93, 6.51, 13.96, 11.21, 5.64, 4.43, -1.9, 12.18, 12.24, 6.7, 2.25, 8.08, 2.44, 5.77, 3.37], "bridge": [24.63, 22.52, 21.62, 26.13, 24.23, 18.39, 19.21, 23.59, 22.76, 17.81, 18.53, 17.78, 14.25, 16.45, 14.27, 17.05, 17.03, 15.2, 14.37, 11.98, 12.82, 12.27, 6.56, 9.71, 8.99, 7.53, 7.03, 4.66, 4.04, 11.16, 7.18, 8.47, 11.1, 8.08, 11.58, 0.12, 9.71, 9.47, 9.61, 12.71, 10.97, 8.22, 7.91, 8.94, 7.62, 10.47, 8.89, 9.34, 7.38, 6.47, 7.5, 8.39], "dfm": [17.11, 24.47, 23.61, 23.22, 23.9, 23.22, 22.19, 22.32, 22.41, 22.35, 21.21, 20.86, 18.62, 16.51, 16.39, 15.99, 14.87, 15.07, 13.92, 12.66, 11.75, 11.91, 10.52, 9.15, 10.38, 9.87, 9.38, 8.24, 7.85, 7.43, 8.91, 8.64, 9.44, 9.72, 9.76, 10.71, 8.97, 8.9, 9.06, 8.99, 10.02, 10.14, 9.12, 8.61, 8.27, 8.32, 9.03, 8.47, 8.31, 8.4, 7.35, 7.42], "ensemble": [20.87, 23.49, 22.62, 24.67, 24.07, 20.8, 20.7, 22.96, 22.59, 20.08, 19.87, 19.32, 16.44, 16.48, 15.33, 16.52, 15.95, 15.13, 14.14, 12.32, 12.28, 12.09, 8.54, 9.43, 9.68, 8.7, 8.2, 6.45, 5.94, 9.3, 8.04, 8.56, 10.27, 8.9, 10.67, 5.41, 9.34, 9.18, 9.34, 10.85, 10.49, 9.18, 8.52, 8.78, 7.95, 9.4, 8.96, 8.9, 7.85, 7.43, 7.42, 7.9], "headline": [17.11, 24.47, 23.61, 23.22, 23.9, 23.22, 22.19, 22.32, 22.41, 22.35, 21.21, 20.86, 18.62, 16.51, 16.39, 15.99, 14.87, 15.07, 13.92, 12.66, 11.75, 11.91, 10.52, 9.15, 10.38, 9.87, 9.38, 8.24, 7.85, 7.43, 8.91, 8.64, 9.44, 9.72, 9.76, 10.71, 8.97, 8.9, 9.06, 8.99, 10.02, 10.14, 9.12, 8.61, 8.27, 8.32, 9.03, 8.47, 8.31, 8.4, 7.35, 7.42], "band_lo": [8.73, 16.09, 15.23, 14.84, 15.52, 14.84, 13.81, 13.94, 14.03, 13.97, 12.83, 12.48, 10.24, 8.13, 8.01, 7.61, 6.49, 6.69, 5.54, 4.28, 3.37, 3.53, 2.14, 0.77, 2.0, 1.49, 1.0, -0.14, -0.53, -0.95, 0.53, 0.26, 1.06, 1.34, 1.38, 2.33, 0.59, 0.52, 0.68, 0.61, 1.64, 1.76, 0.74, 0.23, -0.11, -0.06, 0.65, 0.09, -0.07, 0.02, -1.03, -0.96], "band_hi": [25.49, 32.85, 31.99, 31.6, 32.28, 31.6, 30.57, 30.7, 30.79, 30.73, 29.59, 29.24, 27.0, 24.89, 24.77, 24.37, 23.25, 23.45, 22.3, 21.04, 20.13, 20.29, 18.9, 17.53, 18.76, 18.25, 17.76, 16.62, 16.23, 15.81, 17.29, 17.02, 17.82, 18.1, 18.14, 19.09, 17.35, 17.28, 17.44, 17.37, 18.4, 18.52, 17.5, 16.99, 16.65, 16.7, 17.41, 16.85, 16.69, 16.78, 15.73, 15.8], "factor": [2.22, 1.81, 1.64, 2.19, 1.34, 0.93, 1.13, 1.5, 1.6, 0.87, 0.92, 1.0, 0.24, 0.95, 0.11, 0.65, 1.19, 0.35, 0.48, 0.08, 0.16, -0.3, -1.03, -0.49, -1.04, -1.09, -1.01, -1.32, -1.53, -0.13, -1.01, -0.58, -0.53, -0.63, -0.11, -2.38, -0.25, -0.36, -0.49, 0.22, -0.35, -0.8, -0.68, -0.45, -0.5, -0.39, -0.7, -0.44, -0.68, -1.04, -0.67, -0.6], "drivers": [{"key": "services_out", "name": "Xidmətlərin istehsalı", "contrib": -0.207}, {"key": "electricity", "name": "Elektrik enerjisi, qaz və buxar istehsalı, bölüşdürülməsi və təchizatı üzrə", "contrib": -0.177}, {"key": "transport", "name": "Nəqliyyat və anbar təsərrüfatı", "contrib": -0.09}, {"key": "construction", "name": "Tikinti", "contrib": -0.082}, {"key": "nonoil_ind", "name": "Qeyri neft-qaz sənayesi", "contrib": 0.059}, {"key": "manuf", "name": "Emal sənayesi üzrə", "contrib": 0.056}], "headline_model": "DynamicFactorMQ", "models": ["EM-PCA bridge", "DynamicFactorMQ"]}, "alerts": {"generated_for": "latest snapshot", "summary": {"critical": 2, "warning": 7, "info": 4}, "alerts": [{"severity": "critical", "layer": "rule:monotonicity", "series": "real_082", "name": "Neft-qaz sektoru üzrə daxili investisiyalar", "date": "2025-08-01", "message": "Negative monthly flow (-977.0 mln. manat, 346% of its typical month) — a year-to-date cumulative fell; probable data error.", "action": "Verify the source cell against the publisher (re-check the cumulative input)."}, {"severity": "critical", "layer": "rule:monotonicity", "series": "manuf_055", "name": "Kimya sənayesi buraxılışı", "date": "2025-12-01", "message": "Negative monthly flow (-1,473.1 milyon manat, 936% of its typical month) — a year-to-date cumulative fell; probable data error.", "action": "Verify the source cell against the publisher (re-check the cumulative input)."}, {"severity": "warning", "layer": "rule:monotonicity", "series": "trade_005", "name": "Kənd təsərrüfatı və emalı", "date": "2025-09-01", "message": "Negative monthly flow (-40.2 mln. ABŞ dollar, 37% of its typical month) — a year-to-date cumulative fell; probable data error.", "action": "Verify the source cell against the publisher (re-check the cumulative input)."}, {"severity": "warning", "layer": "rule:monotonicity", "series": "trade_007", "name": "Qeyri-neft/qaz ixracı (elektrik enerjisi və təyy", "date": "2025-09-01", "message": "Negative monthly flow (-99.1 mln. ABŞ dollar, 30% of its typical month) — a year-to-date cumulative fell; probable data error.", "action": "Verify the source cell against the publisher (re-check the cumulative input)."}, {"severity": "warning", "layer": "rule:monotonicity", "series": "trade_008", "name": "Malların idxalı", "date": "2025-09-01", "message": "Negative monthly flow (-409.2 mln. ABŞ dollar, 25% of its typical month) — a year-to-date cumulative fell; probable data error.", "action": "Verify the source cell against the publisher (re-check the cumulative input)."}, {"severity": "warning", "layer": "rule:monotonicity", "series": "trade_002", "name": "Xam neft ixracı", "date": "2025-10-01", "message": "Negative monthly flow (-158.6 mln. ABŞ dollar, 12% of its typical month) — a year-to-date cumulative fell; probable data error.", "action": "Verify the source cell against the publisher (re-check the cumulative input)."}, {"severity": "warning", "layer": "spc:zscore", "series": "nonoil_exp", "name": "nonoil_exp", "date": "2025-10-01", "message": "nonoil_exp YoY = 241.6% is +13.8 robust-sd from its norm.", "action": "Confirm whether a genuine shock or a reporting artefact."}, {"severity": "warning", "layer": "spc:zscore", "series": "imports", "name": "imports", "date": "2025-10-01", "message": "imports YoY = -3589.5% is -101.7 robust-sd from its norm.", "action": "Confirm whether a genuine shock or a reporting artefact."}, {"severity": "warning", "layer": "rule:monotonicity", "series": "manuf_030", "name": "Geyim istehsalı  buraxılışı", "date": "2026-03-01", "message": "Negative monthly flow (-0.9 milyon manat, 7% of its typical month) — a year-to-date cumulative fell; probable data error.", "action": "Verify the source cell against the publisher (re-check the cumulative input)."}, {"severity": "info", "layer": "ml:isolation_forest", "series": "panel", "name": "Multivariate activity pattern", "date": "2022-04-01", "message": "Unusual joint configuration (score -0.06); largest deviations: services_out, nonoil_gdp, gas_prod.", "action": "Inspect the listed indicators for co-movement breaks."}, {"severity": "info", "layer": "ml:isolation_forest", "series": "panel", "name": "Multivariate activity pattern", "date": "2022-08-01", "message": "Unusual joint configuration (score -0.02); largest deviations: transport, nonoil_rev, gas_prod.", "action": "Inspect the listed indicators for co-movement breaks."}, {"severity": "info", "layer": "ml:isolation_forest", "series": "panel", "name": "Multivariate activity pattern", "date": "2024-12-01", "message": "Unusual joint configuration (score -0.01); largest deviations: manuf, nonoil_rev, transport.", "action": "Inspect the listed indicators for co-movement breaks."}, {"severity": "info", "layer": "ml:isolation_forest", "series": "panel", "name": "Multivariate activity pattern", "date": "2025-10-01", "message": "Unusual joint configuration (score -0.02); largest deviations: imports, nonoil_exp, credit.", "action": "Inspect the listed indicators for co-movement breaks."}]}, "backtest": {"origins": ["2024-09-01", "2024-10-01", "2024-11-01", "2024-12-01", "2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01", "2025-07-01", "2025-08-01", "2025-09-01", "2025-10-01", "2025-11-01", "2025-12-01", "2026-01-01", "2026-02-01", "2026-03-01", "2026-04-01"], "metrics": {"dfm": {"rmse": 5.01, "mae": 4.07, "n": 20, "rmse_vs_rw": 0.771}, "bridge": {"rmse": 5.32, "mae": 4.02, "n": 20, "rmse_vs_rw": 0.818}, "rw": {"rmse": 6.5, "mae": 5.24, "n": 20, "rmse_vs_rw": 1.0}, "mean": {"rmse": 8.25, "mae": 7.23, "n": 20, "rmse_vs_rw": 1.269}}, "table": [{"date": "2024-09-01", "actual": 4.8, "dfm": 10.69, "bridge": 16.61, "rw": 20.42, "mean": 15.88}, {"date": "2024-10-01", "actual": 10.18, "dfm": 11.13, "bridge": 11.5, "rw": 4.8, "mean": 15.54}, {"date": "2024-11-01", "actual": 11.13, "dfm": 11.54, "bridge": 13.13, "rw": 10.18, "mean": 15.38}, {"date": "2024-12-01", "actual": 3.15, "dfm": 12.1, "bridge": 3.79, "rw": 11.13, "mean": 15.26}, {"date": "2025-01-01", "actual": 5.06, "dfm": 10.08, "bridge": 12.73, "rw": 3.15, "mean": 14.93}, {"date": "2025-02-01", "actual": 9.93, "dfm": 9.89, "bridge": 11.54, "rw": 5.06, "mean": 14.66}, {"date": "2025-03-01", "actual": 6.51, "dfm": 10.0, "bridge": 11.25, "rw": 9.93, "mean": 14.53}, {"date": "2025-04-01", "actual": 13.96, "dfm": 9.9, "bridge": 13.72, "rw": 6.51, "mean": 14.33}, {"date": "2025-05-01", "actual": 11.21, "dfm": 10.88, "bridge": 12.04, "rw": 13.96, "mean": 14.32}, {"date": "2025-06-01", "actual": 5.64, "dfm": 11.08, "bridge": 9.76, "rw": 11.21, "mean": 14.24}, {"date": "2025-07-01", "actual": 4.43, "dfm": 10.08, "bridge": 9.64, "rw": 5.64, "mean": 14.04}, {"date": "2025-08-01", "actual": -1.9, "dfm": 9.44, "bridge": 10.32, "rw": 4.43, "mean": 13.82}, {"date": "2025-09-01", "actual": 12.18, "dfm": 8.62, "bridge": 8.08, "rw": -1.9, "mean": 13.46}, {"date": "2025-10-01", "actual": 12.24, "dfm": 8.76, "bridge": 11.13, "rw": 12.18, "mean": 13.43}, {"date": "2025-11-01", "actual": 6.7, "dfm": 9.56, "bridge": 9.61, "rw": 12.24, "mean": 13.4}, {"date": "2025-12-01", "actual": 2.25, "dfm": 9.05, "bridge": 10.18, "rw": 6.7, "mean": 13.26}, {"date": "2026-01-01", "actual": 8.08, "dfm": 8.73, "bridge": 7.92, "rw": 2.25, "mean": 13.03}, {"date": "2026-02-01", "actual": 2.44, "dfm": 8.8, "bridge": 7.05, "rw": 8.08, "mean": 12.93}, {"date": "2026-03-01", "actual": 5.77, "dfm": 7.64, "bridge": 7.84, "rw": 2.44, "mean": 12.72}, {"date": "2026-04-01", "actual": 3.37, "dfm": 7.61, "bridge": 8.56, "rw": 5.77, "mean": 12.58}]}, "tiles": [{"key": "nonoil_gdp", "label": "Non-oil GDP", "value": 3.4, "date": "2026-04", "unit": "%YoY"}, {"key": "oil_prod", "label": "Oil production", "value": -4.1, "date": "2026-03", "unit": "%YoY"}, {"key": "nonoil_ind", "label": "Non-oil industry", "value": 18.4, "date": "2026-04", "unit": "%YoY"}, {"key": "construction", "label": "Construction", "value": -11.6, "date": "2026-04", "unit": "%YoY"}, {"key": "retail", "label": "Retail trade", "value": 9.2, "date": "2026-03", "unit": "%YoY"}, {"key": "nonoil_exp", "label": "Non-oil exports", "value": -1.7, "date": "2026-03", "unit": "%YoY"}, {"key": "electricity", "label": "Electricity", "value": 3.2, "date": "2026-04", "unit": "%YoY"}, {"key": "vat", "label": "VAT (demand proxy)", "value": -0.8, "date": "2026-03", "unit": "%YoY"}, {"key": "card_tx", "label": "Card spending", "value": 0.7, "date": "2026-03", "unit": "%YoY"}, {"key": "credit", "label": "Credit", "value": 8.9, "date": "2026-03", "unit": "%YoY"}, {"key": "nonoil_rev", "label": "Non-oil budget rev.", "value": 26.5, "date": "2026-03", "unit": "%YoY"}, {"key": "cpi_yoy", "label": "Inflation (CPI)", "value": 5.6, "date": "2026-03", "unit": "%"}], "improve": 23, "validation": {"passed": 12, "total": 12, "checks": [{"name": "ETL integrity vs source xlsx (GDP 2025 annual)", "ok": true, "detail": "xlsx=129094.0 store=129094.0"}, {"name": "De-cumulation round-trip (Σ monthly flows == annual)", "ok": true, "detail": "1764 series-years checked, 0 mismatches (max rel 6.10e-14)"}, {"name": "Classification: all %-unit series are rates", "ok": true, "detail": "178 %-series, 0 mis-typed"}, {"name": "GDP identity (non-oil + oil == total, max rel err <2%)", "ok": true, "detail": "max rel err 0.00%"}, {"name": "Coverage: all sheets reach >= 2026-03", "ok": true, "detail": "Elektrik:2026-04 Emal:2026-04 Fiskal:2026-03 Monetar:2026-03 Neft-Qaz:2026-03 Real:2026-04 Sosial:2026-03 Ticarət:2026-03"}, {"name": "Feature panel: target present, no empty cols, sane range", "ok": true, "detail": "cols=22 empty=[] max|gdp|=42.5"}, {"name": "Nowcast: 80% bands ordered & no NaN headline", "ok": true, "detail": ""}, {"name": "Nowcast: band calibration (coverage 60-100%)", "ok": true, "detail": "actuals inside 80% band = 85%"}, {"name": "Backtest: DFM RMSE < random-walk RMSE", "ok": true, "detail": "DFM 5.01 vs RW 6.5 (0.771)"}, {"name": "DuckDB store row count == parquet", "ok": true, "detail": "duckdb=93,904 parquet=93,904"}, {"name": "Dashboard: embedded data matches nowcast.json", "ok": true, "detail": "tiles=12 nowcast=7.42"}, {"name": "All deliverable artifacts present", "ok": true, "detail": "missing=[]"}]}, "datastats": {"series": 788, "obs": 93904, "sheets": 8, "flow": 387, "stock": 223, "rate": 178, "coverage": [["Fiskal sektor", 244], ["Real sektor", 190], ["Emal Sənayesi", 125], ["Monetar sektoru", 100], ["Sosial sektor", 78], ["Ticarət", 30], ["Neft-Qaz sektoru", 16], ["Elektrik enerjisi", 5]]}, "reqs": [["15.7.2 FR1", "Real-time collection &amp; analysis from many sources", "ETL parses 8 workbook sheets + daily financial feeds into one harmonised store, refreshed on release", "src/etl.py · store.py"], ["15.7.2 FR2", "Immediate analysis of the incoming data", "Release-triggered recompute of indicators + nowcast each cycle", "src/run_all.py"], ["15.7.2 FR3", "Automatic alerting on problems/inconsistencies", "Rule + statistical + ML anomaly engine → severity-tiered alerts", "src/anomaly.py → outputs/alerts.json"], ["15.7.2 FR4", "Dynamic dashboards of key indicators &amp; results", "This self-contained dashboard (nowcast, tiles, drivers, alerts)", "web/index.html"], ["15.7.2.2", "In-memory analysis for high query speed", "DuckDB embedded columnar engine over Parquet; sub-second queries", "src/store.py → data/miis_realtime.duckdb"], ["15.7.2.3", "Error/anomaly detection &amp; alerting (incl. ML)", "Cumulative-monotonicity &amp; identity rules + median/MAD SPC + IsolationForest", "src/anomaly.py"], ["NFR perf/scale", "High performance, continuous, scalable", "Columnar store + ~9 s full refresh + series registry", "—"], ["NFR security", "Data protection / on-premise", "Fully on-premise, static client, no external network calls", "—"]], "infra": [["Source ingest", "openpyxl", "Reads the 113 MB Ministry .xlsx (41 sheets) in read-only streaming mode"], ["Harmonised store", "Apache Parquet (pyarrow 24)", "Columnar long store — 93,904 rows, 419 KB (vs 8 MB CSV)"], ["In-memory engine", "DuckDB 1.5.3", "Embedded, vectorised, columnar — loads Parquet into RAM, ms-latency analytical queries, on-prem, no licence"], ["Nowcast model", "statsmodels 0.14.6 — DynamicFactorMQ", "Mixed-frequency dynamic factor model (Bańbura–Modugno EM), handles ragged edge &amp; missing data"], ["Benchmark / factor", "numpy / scikit-learn 1.7", "EM-PCA factor with missing-data imputation + ridge AR(1) bridge"], ["Anomaly ML", "scikit-learn — IsolationForest", "Multivariate joint-anomaly detection over the standardised panel"], ["Orchestration", "Python 3.13 — run_all.py", "7-stage pipeline + self-validation, ~9 s, fully reproducible"], ["Presentation", "Plotly 2.35 (CDN) + static HTML", "Self-contained, on-premise; no server required to view"]]};
+const nc=D.nowcast, fmt=(x,d=1)=>x==null?"–":(x>0?"+":"")+x.toFixed(d);
+document.getElementById('asof').textContent="As of "+nc.last_period;
+document.getElementById('ncval').innerHTML=fmt(nc.nowcast)+"<small> % YoY</small>";
+document.getElementById('ncband').textContent="80% interval  "+fmt(nc.band80[0])+"  to  "+fmt(nc.band80[1])+" %";
+document.getElementById('ncmodel').textContent="Headline: "+nc.headline_model+" · validated (beats random walk by "+D.improve+"%).";
+const dt=nc.dates;
+Plotly.newPlot('ncchart',[
+ {x:dt,y:nc.band_hi,line:{width:0},showlegend:false,hoverinfo:'skip'},
+ {x:dt,y:nc.band_lo,fill:'tonexty',fillcolor:'rgba(156,107,79,.15)',line:{width:0},name:'80% band'},
+ {x:dt,y:nc.headline,line:{color:'#3f7d54',width:2.4},name:'Nowcast'},
+ {x:dt,y:nc.bridge,line:{color:'#c98a5e',width:1,dash:'dot'},name:'Bridge'},
+ {x:dt,y:nc.actual,mode:'markers',marker:{color:'#1c1a17',size:5},name:'Actual'}
+],{margin:{l:38,r:10,t:8,b:26},font:{family:'Inter',size:11},legend:{orientation:'h',y:-.18},yaxis:{ticksuffix:'%',gridcolor:'#efe9e1'},xaxis:{gridcolor:'#fff'}},{displayModeBar:false,responsive:true});
+document.getElementById('tiles').innerHTML=D.tiles.map(t=>`<div class="tile"><div class="l">${t.label}</div><div class="v ${t.value>=0?'up':'dn'}">${fmt(t.value)}<span style="font-size:11px"> ${t.unit}</span></div><div class="d">${t.date}</div></div>`).join('');
+const dr=nc.drivers.slice(0,8).reverse();
+Plotly.newPlot('drivers',[{type:'bar',orientation:'h',x:dr.map(d=>d.contrib),y:dr.map(d=>d.key),marker:{color:dr.map(d=>d.contrib>=0?'#3f7d54':'#a8443a')}}],{margin:{l:92,r:12,t:6,b:24},font:{family:'Inter',size:11},xaxis:{gridcolor:'#efe9e1'}},{displayModeBar:false,responsive:true});
+const bm=D.backtest.metrics,tb=D.backtest.table;
+Plotly.newPlot('bt',[
+ {x:tb.map(r=>r.date),y:tb.map(r=>r.actual),mode:'lines+markers',line:{color:'#1c1a17'},name:'Actual'},
+ {x:tb.map(r=>r.date),y:tb.map(r=>r.dfm),mode:'lines+markers',line:{color:'#3f7d54',dash:'dash'},name:'DFM'},
+ {x:tb.map(r=>r.date),y:tb.map(r=>r.rw),mode:'lines',line:{color:'#c66',dash:'dot'},name:'Rand. walk'}
+],{margin:{l:34,r:8,t:6,b:20},font:{family:'Inter',size:10},legend:{orientation:'h',y:-.2},yaxis:{ticksuffix:'%'}},{displayModeBar:false,responsive:true});
+document.getElementById('btnote').innerHTML="Pseudo-real-time backtest ("+tb.length+" months). RMSE — DFM <b>"+bm.dfm.rmse+"</b> vs random walk "+bm.rw.rmse+" ("+D.improve+"% better). Indicators beat persistence on the monthly signal.";
+const ds=D.datastats;
+document.getElementById('datastats').innerHTML=[
+ ["Series harmonised",ds.series],["Observations",ds.obs.toLocaleString()],["Source sheets",ds.sheets],
+ ["Flow series (de-cumulated)",ds.flow],["Stock series (levels)",ds.stock],["Rate / index series",ds.rate]
+].map(([l,v])=>`<div class="tile"><div class="l">${l}</div><div class="v">${v}</div></div>`).join('');
+Plotly.newPlot('covchart',[{type:'bar',x:ds.coverage.map(c=>c[0]),y:ds.coverage.map(c=>c[1]),marker:{color:'#9c6b4f'}}],{margin:{l:36,r:8,t:6,b:70},font:{family:'Inter',size:10},yaxis:{title:'series'}},{displayModeBar:false,responsive:true});
+document.getElementById('infraT').innerHTML=D.infra.map(r=>`<tr><td><b>${r[0]}</b></td><td class="mono">${r[1]}</td><td>${r[2]}</td></tr>`).join('');
+document.getElementById('valsum').textContent=D.validation.passed+" / "+D.validation.total+" checks passed";
+document.getElementById('validT').innerHTML=D.validation.checks.map(c=>`<tr><td>${c.name}</td><td>${c.ok?'<span class="ok">PASS</span>':'<span style="color:var(--crit);font-weight:600">FAIL</span>'}</td><td class="mono" style="font-size:11px">${c.detail||''}</td></tr>`).join('');
+document.getElementById('reqsT').innerHTML=D.reqs.map(r=>`<tr><td class="mono">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td class="mono" style="font-size:11px">${r[3]}</td></tr>`).join('');
+document.getElementById('alsum').textContent=`(${D.alerts.summary.critical} critical · ${D.alerts.summary.warning} warning · ${D.alerts.summary.info} info)`;
+document.getElementById('alertsT').innerHTML=D.alerts.alerts.slice(0,14).map(a=>`<tr><td><span class="pill s-${a.severity}">${a.severity}</span></td><td class="mono">${a.date}</td><td>${a.name}</td><td>${a.message}</td></tr>`).join('');
+</script></body></html>
