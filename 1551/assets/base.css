@@ -3,7 +3,8 @@
 
    REDESIGN SPEC v2 (RD1 layout, RD3 tables) supersedes blueprint §4/§5 layout.
 
-   RD1  content area 1080px beside the sidebar; prose measures ~72ch inside it;
+   RD1  content area 1080px beside the sidebar; prose measures ~97ch inside it
+        (RD7 — the text uses its column, it does not sit in a 72ch well);
         tables, figures and equation blocks span the full 1080px block; no
         page-level horizontal scroll at any width; dense tables scroll inside
         their own container below 820px; section headers numbered.
@@ -44,7 +45,14 @@
 
   /* --- RD1 measures ------------------------------------------------------ */
   --block:   1080px;   /* the content BLOCK: tables, figures, equations       */
-  --measure: 72ch;     /* the TEXT measure inside it (~720px at 17px)         */
+  /* RD7: prose takes the column, not a 72ch well inside it. 97ch ≈ 1039px at
+     17px — the block minus a ~40px optical inset, so the text never runs to
+     the raw 1080px edge, and below the design width it simply fills whatever
+     the column has (868px at a 1280 viewport). No justification anywhere. */
+  --measure: 97ch;
+  /* captions, equation notes, QA lists and the footer are secondary type and
+     keep the tighter measure they already had */
+  --measure-note: 72ch;
   --sidebar: 268px;
   --gutter:  48px;
 }
@@ -213,7 +221,7 @@ body {
 
 .content > * { max-width: 100%; }
 
-/* RD1: PROSE takes the 72ch measure. Blocks are emitted flat by the builder,
+/* RD1/RD7: PROSE takes the measure. Blocks are emitted flat by the builder,
    so a direct-child selector is exact — it can never reach inside a table,
    a figure caption or a stacked data row. */
 .content > p,
@@ -413,6 +421,27 @@ th.c-impl, td.c-impl { width: 15%; font-size: 14px; color: var(--ink-2); }
 .tbl-register th:nth-child(5), .tbl-register td:nth-child(5) { width: 19%; }
 .tbl-register th:nth-child(6), .tbl-register td:nth-child(6) { width: auto; line-height: 1.55; }
 .tbl-register .reg-series code { overflow-wrap: anywhere; }
+
+/* RD8: COMPACT tables — a table whose content is narrow shrinks to that
+   content instead of being stretched across the block, which is what opened
+   the chasm between "Basket" and "Rows | Status" on FR13. The builder decides
+   (column count + longest cell per column → estimated natural width) and emits
+   .tbl-compact; here the table simply stops growing. Left-aligned with the
+   prose because the first cell keeps its zero left padding. Register,
+   backtest and data-row tables never get the class, so they still span. */
+.tbl-compact {
+  width: auto;
+  max-width: 100%;
+  table-layout: auto;
+}
+/* the width hints that force a spread layout are exactly what must not apply:
+   inside a compact table every column is sized by its own content */
+.tbl-compact th, .tbl-compact td { width: auto; padding-right: 26px; }
+.tbl-compact th:last-child, .tbl-compact td:last-child { padding-right: 0; }
+.tbl-compact th.c-num,   .tbl-compact td.c-num   { width: auto; }
+.tbl-compact th.c-tight, .tbl-compact td.c-tight { width: auto; }
+.tbl-compact th.c-id,    .tbl-compact td.c-id    { width: auto; }
+.tbl-compact th.c-impl,  .tbl-compact td.c-impl  { width: auto; }
 
 /* dense tables keep their shape and scroll inside the wrap below 820px */
 @media (max-width: 820px) {
@@ -714,7 +743,7 @@ figcaption {
   font-size: 14px;
   line-height: 1.55;
   color: var(--ink-2);
-  max-width: var(--measure);
+  max-width: var(--measure-note);
 }
 figcaption .fig-cap { display: block; }
 figcaption .fig-window {
@@ -823,7 +852,7 @@ figcaption .fig-id {
   font-size: 13.5px;
   color: var(--ink-2);
   line-height: 1.5;
-  max-width: var(--measure);
+  max-width: var(--measure-note);
 }
 
 .eq-chips { margin-top: 6px; }
@@ -889,7 +918,7 @@ figcaption .fig-id {
   color: var(--ink-2);
   padding-top: 3px;
 }
-.qa-list dd { margin: 0; min-width: 0; line-height: 1.6; max-width: var(--measure); }
+.qa-list dd { margin: 0; min-width: 0; line-height: 1.6; max-width: var(--measure-note); }
 
 /* ==========================================================================
    10. Page furniture: cards, boxes, filter bar, footer
@@ -943,7 +972,7 @@ figcaption .fig-id {
   font-size: 13px;
   color: var(--ink-2);
   line-height: 1.6;
-  max-width: var(--measure);
+  max-width: var(--measure-note);
 }
 .site-footer code { font-size: 12px; background: none; padding: 0; }
 .site-footer .stamp-row { display: block; }
@@ -997,6 +1026,8 @@ figcaption .fig-id {
   table { font-size: 14px; }
   th, td { padding: 9px 10px; }
   th:first-child, td:first-child { padding-left: 0; }
+  .tbl-compact th, .tbl-compact td { padding-right: 18px; }
+  .tbl-compact th:last-child, .tbl-compact td:last-child { padding-right: 0; }
 
   .eq-display { grid-template-columns: minmax(0, 1fr); }
   .eq-display .eq-num { justify-self: start; order: -1; padding: 0 0 4px; }
