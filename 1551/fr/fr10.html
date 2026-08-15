@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exchange rates against the US dollar and the euro — MİİS §15.5.1</title>
+<meta name="description" content="Exchange rates against the US dollar and the euro — MİİS §15.5.1 forecasting module, Edition W">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/katex/katex.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" data-sprite="miis-1551">
+  <!--
+    icons.svg — line icon sprite for the §15.5.1 site (blueprint §4).
+    Style: 24×24 box, 1.6 stroke set by CSS (.icon), fill none, stroke currentColor,
+    round caps and joins. Used small (15-18px), functional only.
+    build_site.py inlines this file into every page so <use href="#icon-…"> resolves
+    when the page is opened directly from disk (file://), where an external sprite
+    reference is blocked.
+  -->
+
+  <symbol id="icon-document" viewBox="0 0 24 24">
+    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+    <path d="M14 3v5h5"/>
+    <path d="M9 13h6M9 17h6"/>
+  </symbol>
+
+  <symbol id="icon-data" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="6" rx="7" ry="3"/>
+    <path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/>
+    <path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"/>
+  </symbol>
+
+  <symbol id="icon-equation" viewBox="0 0 24 24">
+    <path d="M4 19c1.8 0 2.6-1.1 3-3l2.2-9.6C9.6 4.6 10.5 4 12 4"/>
+    <path d="M6 11h7"/>
+    <path d="M15 10.5l5 8M20 10.5l-5 8"/>
+  </symbol>
+
+  <symbol id="icon-chart" viewBox="0 0 24 24">
+    <path d="M4 4v15a1 1 0 0 0 1 1h15"/>
+    <path d="M8 16v-4M12 16v-7M16 16v-3M20 16V7"/>
+  </symbol>
+
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M4 12.6l5 5L20 6.5"/>
+  </symbol>
+
+  <symbol id="icon-warning" viewBox="0 0 24 24">
+    <path d="M10.3 3.9 2.5 17.4a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    <path d="M12 9v4.5"/>
+    <path d="M12 17.2h.01"/>
+  </symbol>
+
+  <symbol id="icon-download" viewBox="0 0 24 24">
+    <path d="M12 3v11"/>
+    <path d="M7.5 10 12 14.5 16.5 10"/>
+    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+  </symbol>
+
+  <symbol id="icon-external-link" viewBox="0 0 24 24">
+    <path d="M14 4h6v6"/>
+    <path d="M20 4 11 13"/>
+    <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>
+  </symbol>
+
+  <symbol id="icon-flask" viewBox="0 0 24 24">
+    <path d="M9.5 3h5"/>
+    <path d="M10.5 3v6.2L5.2 18a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3l-5.3-8.8V3"/>
+    <path d="M7.7 14h8.6"/>
+  </symbol>
+
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+<button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="sidebar">
+<svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>Contents</button>
+<div class="shell">
+<nav class="sidebar" id="sidebar" aria-label="Site sections">
+  <div class="sidebar-head">
+    <a class="mark" href="../index.html">MİİS §15.5.1
+      <span class="mark-sub">Macroeconomic indicators — forecasting module</span></a>
+  </div>
+  <div class="lang-toggle">
+    <span class="lang-on">EN</span>
+    <span class="lang-off" title="Azerbaijani mirror in preparation">AZ <small>hazırlanır</small></span>
+  </div>
+  <div class="nav-group"><span class="nav-title">Overview</span><ul><li><a href="../index.html">Overview</a></li><li><a href="../methodology.html">Method</a></li><li><a href="../data.html">Data</a></li></ul></div><div class="nav-group"><span class="nav-title">Requirements</span><ul><li><a href="../fr/fr1.html"><span class="nav-num">FR1</span>GDP: growth, deflator, structure</a></li><li><a href="../fr/fr2.html"><span class="nav-num">FR2</span>Production structure, 11 sectors</a></li><li><a href="../fr/fr3.html"><span class="nav-num">FR3</span>Activity structure</a></li><li><a href="../fr/fr4.html"><span class="nav-num">FR4</span>Product forecasts</a></li><li><a href="../fr/fr5.html"><span class="nav-num">FR5</span>Oil price</a></li><li><a href="../fr/fr6.html"><span class="nav-num">FR6</span>Investment and fiscal block</a></li><li><a href="../fr/fr7.html"><span class="nav-num">FR7</span>Foreign trade</a></li><li><a href="../fr/fr8.html"><span class="nav-num">FR8</span>Income, wages, unemployment</a></li><li><a href="../fr/fr9.html"><span class="nav-num">FR9</span>Consumer prices</a></li><li><a class="current" href="../fr/fr10.html"><span class="nav-num">FR10</span>Exchange rate</a><ul class="nav-sections"><li><a href="#teleb">Requirement</a></li><li><a href="#model">Model and why it was chosen</a></li><li><a href="#econometrics">Econometric approach</a></li><li><a href="#data">Data</a></li><li><a href="#results">Results</a></li><li><a href="#interpretation">Reading</a></li><li><a href="#backtest">Backtest</a></li><li><a href="#reproduce">Reproduce</a></li><li><a href="#status">Status</a></li></ul></li><li><a href="../fr/fr11.html"><span class="nav-num">FR11</span>Trade and income balances</a></li><li><a href="../fr/fr12.html"><span class="nav-num">FR12</span>Balance of payments</a></li><li><a href="../fr/fr13.html"><span class="nav-num">FR13</span>Ministry specification scenario</a></li></ul></div><div class="nav-group"><span class="nav-title">Delivery</span><ul><li><a href="../response.html">Review response</a></li><li><a href="../register.html">Requirement register</a></li><li><a href="../results.html">Results and files</a></li></ul></div>
+</nav>
+<main class="content" id="main">
+<h1>Exchange rates against the US dollar and the euro</h1>
+<p class="page-kicker">FR10 · notebook <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-flask"/></svg>FR10.ipynb</span> · statutory sheet 2.4.1.5.-7.</p>
+<h2 id="teleb"><a class="anchor" href="#teleb" aria-hidden="true">#</a>Requirement (Tələb)</h2>
+<blockquote><p><strong>AZ, verbatim (MİİS TT §15.5.1, FR10):</strong> "Milli valyutanın ABŞ dollarına və avroya nisbətdə orta illik məzənnəsinin təhlili və proqnozlaşdırılması."</p><p><strong>English:</strong> "Analysis and forecasting of the average annual exchange rate of the national currency against the US dollar and the euro."</p><p>Source: <code>MİİS_TT_.pdf</code>, pp. 36–40. Legal basis: Cabinet of Ministers decision No. 75 of 24.05.2004, clause 2.4.1.</p></blockquote>
+<p>Two series on one definition: the <strong>average annual</strong> manat rate against the dollar and the euro. Neither is estimated elsewhere in the package and almost every other requirement consumes them, so this stage runs near the top of the execution order.</p>
+<h2 id="model"><a class="anchor" href="#model" aria-hidden="true">#</a>Model and why it was chosen (Model və seçim səbəbi)</h2>
+<p>The manat has been fixed against the dollar since 2017: a declared regime, not a behavioural relation, so the horizon path is set as a regime assumption and its skill against the random walk is measured rather than asserted. The euro rate is arithmetically the EUR/USD cross, and two readings were raced — peg arithmetic and the random-walk family. On the full window the peg rule loses heavily, because applying the current parity to pre-2017 years produces a large systematic error; on the peg sub-window the three-year cross rule beats the benchmark from four different start years, and the central path is built from those sub-window weights, since the horizon is conditional on the regime continuing.</p>
+<h2 id="econometrics"><a class="anchor" href="#econometrics" aria-hidden="true">#</a>Econometric approach (Ekonometrik yanaşma)</h2>
+<div class="math-display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mtext>AZN/EUR</mtext><mi>t</mi></msub><mo>=</mo><mn>1.70</mn><mo>×</mo><mo stretchy="false">(</mo><mtext>EUR/USD</mtext><msub><mo stretchy="false">)</mo><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">\text{AZN/EUR}_t = 1.70 \times (\text{EUR/USD})_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mord"><span class="mord text"><span class="mord">AZN/EUR</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1309em;"><span style="top:-2.4003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1.70</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord text"><span class="mord">EUR/USD</span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></div>
+<p>No behavioural equation is estimated here and this requirement writes no row to the equation catalogue: the published quantity is a path rule plus its test result. The unit-root test supports that — the euro level does not reject a unit root, its difference is stationary. The band is not calibrated from the literature: the annual sigma is estimated from the actual series over the peg period; a full-sample sigma would be about twice as large, because it contains the devaluation.</p>
+<h2 id="data"><a class="anchor" href="#data" aria-hidden="true">#</a>Data (Məlumat)</h2>
+<div class="table-wrap"><table><thead><tr><th>Code</th><th>Description</th><th>Source</th><th class="col-cov">Coverage</th><th class="col-basis">Price basis</th><th class="col-src">Source file</th></tr></thead><tbody><tr><td><code>fx_usd_azn_avg</code></td><td>Official <strong>average annual</strong> USD rate</td><td>Central bank, table 2.16, column B</td><td class="col-cov">1995–2025</td><td class="col-basis">indeks</td><td class="col-src"><span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>public_sources_provenance.csv</span></td></tr><tr><td><code>fx_eur_azn</code></td><td>Official <strong>average annual</strong> EUR rate</td><td>Central bank, table 2.16, column C</td><td class="col-cov">1999–2025</td><td class="col-basis">indeks</td><td class="col-src"><span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>public_sources_provenance.csv</span></td></tr><tr><td><code>fx_usd_azn_eop</code></td><td>USD rate, end of period</td><td>Monetar sektoru sheet, row 114</td><td class="col-cov">1995–2025</td><td class="col-basis">cari</td><td class="col-src"><span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>Statistik data dinamika 05.06.2026 +.xlsx</span></td></tr><tr><td><code>fx_usd_azn</code></td><td>Average of monthly end-of-period observations</td><td>Monetar sektoru sheet, row 114</td><td class="col-cov">2021–2025</td><td class="col-basis">cari</td><td class="col-src"><span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>Statistik data dinamika 05.06.2026 +.xlsx</span></td></tr></tbody></table></div>
+<p>Coverage and price basis are rendered from <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>series_dictionary.csv</span> at build time.</p>
+<p><strong>Two changes in this release.</strong> First, an accounting correction: the specification asks for the average annual rate, and the previous release estimated and published on the end-of-period row. The two coincide under the peg but not before it — in 2015 the end-of-period rate reads <span class="val">1.56</span> against an average of <span class="val">1.03</span> — so estimation, testing and publication now run on the average annual series. Second, the external triangulation is retired: the euro rate is no longer computed from an outside EUR/USD reference, because the central bank publishes the actual average annual series, cross-checked against the statistical office's implicit rates. The template's own rows for both series return <code>#REF!</code> — a broken reference, not a missing series.</p>
+<h2 id="results"><a class="anchor" href="#results" aria-hidden="true">#</a>Results (Nəticələr)</h2>
+<p><figure class="fig" id="fig-fr10_usd_azn_history"><div class="fig-mount is-loading" data-fig="fr10_usd_azn_history" data-src="../assets/figdata/fr10_usd_azn_history.json">loading chart…</div><script type="application/json" id="figdata-fr10_usd_azn_history">{"data":[{"type":"scatter","mode":"lines","name":"USD/AZN, annual average (actual)","line":{"color":"#0f6b6b","dash":"solid","width":2.4},"connectgaps":false,"x":[1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"y":[0.8828158922171019,0.860515208256087,0.7973310061443932,0.7737576164874553,0.8236363069636458,0.8948455419602027,0.9312913965693804,0.9721533602150537,0.9821477752176141,0.9826863095238098,0.945933675486844,0.8927377598566308,0.8579387186379929,0.8216245775764208,0.8037749256393055,0.8026468312096054,0.7896857437269876,0.7856437943393896,0.7845465143369178,0.7843575870455713,1.0261412090373785,1.595877923000865,1.721151002944188,1.7000182795698928,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7000000000000004]}],"layout":{"height":420,"autosize":true,"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"family":"-apple-system, 'Segoe UI', Roboto, Inter, sans-serif","size":13,"color":"#1c1e21"},"margin":{"l":56,"r":24,"t":36,"b":44},"hovermode":"x unified","legend":{"orientation":"h","y":-0.2,"x":0,"font":{"size":12,"color":"#5f6368"}},"colorway":["#0f6b6b","#5f6368"],"xaxis":{"title":{"text":"Year"},"gridcolor":"#eceff1","zeroline":false},"yaxis":{"gridcolor":"#eceff1","zeroline":true,"zerolinecolor":"#dadce0","title":{"text":"AZN per USD"}}}}</script><figcaption>USD/AZN, history <span class="fig-id">[fr10_usd_azn_history]</span></figcaption></figure> <figure class="fig" id="fig-fr10_fx_forecast"><div class="fig-mount is-loading" data-fig="fr10_fx_forecast" data-src="../assets/figdata/fr10_fx_forecast.json">loading chart…</div><script type="application/json" id="figdata-fr10_fx_forecast">{"data":[{"type":"scatter","mode":"lines","name":"USD/AZN, annual average","line":{"color":"#0f6b6b","dash":"solid","width":2.8},"connectgaps":false,"x":[1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030],"y":[0.8828158922171019,0.860515208256087,0.7973310061443932,0.7737576164874553,0.8236363069636458,0.8948455419602027,0.9312913965693804,0.9721533602150537,0.9821477752176141,0.9826863095238098,0.945933675486844,0.8927377598566308,0.8579387186379929,0.8216245775764208,0.8037749256393055,0.8026468312096054,0.7896857437269876,0.7856437943393896,0.7845465143369178,0.7843575870455713,1.0261412090373785,1.595877923000865,1.721151002944188,1.7000182795698928,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7000000000000004,1.7,1.7,1.7,1.7,1.7]},{"type":"scatter","mode":"lines","name":"EUR/AZN, 80% band (upper)","line":{"width":0,"color":"rgba(15,107,107,0.14)"},"showlegend":false,"hoverinfo":"skip","x":[2026,2027,2028,2029,2030],"y":[2.001558397267433,2.0723465384355384,2.135793399353574,2.1614482516899027,2.20987364974993]},{"type":"scatter","mode":"lines","name":"EUR/AZN, 80% band","line":{"width":0,"color":"rgba(15,107,107,0.14)"},"fill":"tonexty","fillcolor":"rgba(15,107,107,0.14)","hoverinfo":"skip","x":[2026,2027,2028,2029,2030],"y":[1.7381421363982692,1.6924206150877834,1.6677532866866762,1.6290182345007795,1.6029430801220665]},{"type":"scatter","mode":"lines","name":"EUR/AZN, annual average","line":{"color":"#5f6368","dash":"solid","width":2.4},"connectgaps":false,"yaxis":"y2","x":[1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030],"y":[0.878124668043466,0.829619182437276,0.8339794673195081,0.9182846681515615,1.110445700844854,1.2218809199185867,1.1799189641095131,1.1231102056151432,1.1768602836948927,1.2099503093067814,1.1204167221535182,1.0656879440683713,1.0994913536948157,1.0102096785332624,1.0422336173697515,1.043017300702605,1.1380661614643177,1.7658935033890282,1.9422979012846262,2.009349931898202,1.9037410078084995,1.9402105688419231,2.012473966973887,1.7928871908602153,1.83835018817204,1.8399965470893587,1.9210033813364058,1.8664500388659344,1.8758166557638996,1.8877566919887467,1.876674462206194,1.8800826033196134]}],"layout":{"height":420,"autosize":true,"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"family":"-apple-system, 'Segoe UI', Roboto, Inter, sans-serif","size":13,"color":"#1c1e21"},"margin":{"l":56,"r":24,"t":36,"b":44},"hovermode":"x unified","legend":{"orientation":"h","y":-0.2,"x":0,"font":{"size":12,"color":"#5f6368"}},"colorway":["#0f6b6b","#5f6368"],"xaxis":{"title":{"text":"Year"},"gridcolor":"#eceff1","zeroline":false},"yaxis":{"gridcolor":"#eceff1","zeroline":true,"zerolinecolor":"#dadce0","title":{"text":"AZN per USD"}},"yaxis2":{"title":{"text":"AZN per EUR"},"overlaying":"y","side":"right","showgrid":false}}}</script><figcaption>Exchange rate forecast <span class="fig-id">[fr10_fx_forecast]</span></figcaption></figure></p>
+<div class="table-wrap"><table><thead><tr><th>Series</th><th>Unit</th><th>2026</th><th>2030</th><th>2030 80% band</th></tr></thead><tbody><tr><td><code>fx_usd_azn_avg</code></td><td>AZN/USD</td><td><span class="val">1.70</span></td><td><span class="val">1.70</span></td><td>not published — regime assumption</td></tr><tr><td><code>fx_eur_azn</code></td><td>AZN/EUR</td><td><span class="val">1.87</span></td><td><span class="val">1.88</span></td><td><span class="val">1.60</span> – <span class="val">2.21</span></td></tr></tbody></table></div>
+<p>Downstream stages read these as the assumption keys <code>usd_azn</code> (<span class="val">1.70</span>) and <code>eur_azn</code> (<span class="val">1.87</span>). The dollar row carries no band on purpose: an interval around a declared regime would suggest precision that does not exist.</p>
+<h2 id="interpretation"><a class="anchor" href="#interpretation" aria-hidden="true">#</a>Reading (Şərh)</h2>
+<p>The dollar path is flat by assumption, and the horizon is conditional on that assumption holding; the 2015–2016 precedent shows it is a policy decision, not a statistical property. The euro path moves only with the cross rate, from <span class="val">1.87</span> to <span class="val">1.88</span> AZN/EUR, with a band from the measured volatility of the peg period; it is exposed twice, through the manat-dollar link and through the cross.</p>
+<h2 id="backtest"><a class="anchor" href="#backtest" aria-hidden="true">#</a>Backtest (Geriyə Sınaq)</h2>
+<div class="table-wrap"><table><thead><tr><th>Series and window</th><th>Model</th><th>Skill vs RW</th></tr></thead><tbody><tr><td><code>fx_usd_azn_avg</code>, full window</td><td>REJIM_1.70</td><td><span class="val">−374%</span></td></tr><tr><td><code>fx_usd_azn_avg_peg</code>, peg sub-window</td><td>REJIM_1.70</td><td><span class="val">+100%</span></td></tr><tr><td><code>fx_usd_azn_eop</code>, full window</td><td>REJIM_1.70</td><td><span class="val">−267%</span></td></tr><tr><td><code>fx_eur_azn</code>, full window</td><td>PEG_ORTA3_KROS</td><td><span class="val">−373%</span></td></tr><tr><td><code>fx_eur_azn</code>, full window</td><td>SURUSME</td><td><span class="val">−2%</span></td></tr><tr><td><code>fx_eur_azn</code>, full window</td><td>AR1_LOQ</td><td><span class="val">−4%</span></td></tr><tr><td><code>fx_eur_azn_peg</code>, peg sub-window</td><td>PEG_ORTA3_KROS</td><td><span class="val">+13%</span></td></tr><tr><td><code>fx_eur_azn_peg</code>, peg sub-window</td><td>PEG_SON_KROS</td><td><span class="val">−2%</span></td></tr></tbody></table></div>
+<p>Both races are written to the ledger in full, negative rows included. The accounting correction changed a measured result, not only a label: on the end-of-period series the regime rule and the benchmark were indistinguishable inside the peg; on the average annual series the rule scores clearly better.</p>
+<h2 id="reproduce"><a class="anchor" href="#reproduce" aria-hidden="true">#</a>Reproduce (Təkrar istehsal)</h2>
+<p>To obtain these results again:</p>
+<pre><code class="lang-bash">cd 14August_Macroeconomic_Model_v2
+python3 run_all.py --stage FR10</code></pre>
+<p>Notebook: <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-flask"/></svg>FR10.ipynb</span>. Inputs: the central bank monetary-indicators workbook (table 2.16), the statistical office cross-check table, the Ministry workbook (Monetar sektoru). Written: the <code>usd_azn</code> and <code>eur_azn</code> assumption keys, <code>outputs/forecast_long.csv</code>, <code>outputs/validation_backtest.csv</code>. Runtime: about <span class="val">3–6</span> seconds for this notebook, about <span class="val">85</span> seconds for the full pipeline.</p>
+<h2 id="status"><a class="anchor" href="#status" aria-hidden="true">#</a>Status</h2>
+<div class="table-wrap"><table><thead><tr><th>Row</th><th>Requirement</th><th>Status</th></tr></thead><tbody><tr><td>FR10.a</td><td>Average annual rate against the US dollar</td><td><span class="pill pill-done" title="register value: TAM">complete</span></td></tr><tr><td>FR10.b</td><td>Average annual rate against the euro</td><td><span class="pill pill-done" title="register value: TAM">complete</span></td></tr></tbody></table></div>
+<p>Both rows closed for the same reason: the actual average annual series were located and wired, so the statutory concept is met by its own series rather than a proxy, and the euro row can be tested at all — previously no race was possible. No comparison overlay is shown here: the workbook carries no forecast column for the exchange rate.</p>
+<footer class="site-footer">
+  <span class="stamp-row">Content pack v3.4 · built 2026-08-15 · pipeline hash <code>eeec7c0d1aac</code> · edition W</span>
+  <span class="stamp-row">Every number on this page is read at build time from
+    <code>outputs/forecast_long.csv</code>, <code>outputs/equations_catalog.csv</code>,
+    <code>outputs/validation_backtest.csv</code>, <code>outputs/series_dictionary.csv</code>
+    and <code>data/assumptions.csv</code>. The hash is the md5 of those five files.</span>
+</footer>
+</main>
+</div>
+<script src="../assets/plotly.min.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

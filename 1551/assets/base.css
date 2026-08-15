@@ -1,0 +1,607 @@
+/* ============================================================================
+   base.css — design system for the MİİS §15.5.1 module site (Edition L / W)
+   Implements WEBSITE_BLUEPRINT.md §4 exactly. Readability first.
+   Deliberately NOT the print-shell (Oxlon) aesthetic: no rules, no serif
+   display faces, no dense two-column tables, no decorative chrome.
+   ========================================================================= */
+
+:root {
+  /* --- palette (blueprint §4) ------------------------------------------- */
+  --bg:            #ffffff;
+  --ink:           #1c1e21;
+  --ink-2:         #5f6368;   /* secondary text */
+  --accent:        #0f6b6b;   /* the ONE accent: links, active nav, numbers */
+  --accent-soft:   #e6f0f0;
+  --rule:          #e6e7e9;   /* hairlines only */
+  --rule-strong:   #d3d5d8;
+
+  --status-done:    #1e7e34;
+  --status-partial: #9a6700;
+  --status-gap:     #b3261e;
+  --status-done-bg:    #eaf4ec;
+  --status-partial-bg: #fbf3e2;
+  --status-gap-bg:     #fbeceb;
+
+  /* --- type ------------------------------------------------------------- */
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+          "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+          "Liberation Mono", monospace;
+
+  --fs-base: 17px;
+  --lh-base: 1.65;
+
+  /* --- measure ---------------------------------------------------------- */
+  --column: 780px;
+  --sidebar: 268px;
+  --gutter: 40px;
+}
+
+/* --- reset-ish ------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  font-feature-settings: "tnum" 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   1. Shell: sticky left sidebar + single content column
+   ========================================================================== */
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  align-items: start;
+  max-width: calc(var(--sidebar) + var(--column) + 3 * var(--gutter));
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  gap: var(--gutter);
+}
+
+/* --- sidebar -------------------------------------------------------------- */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 30px 0 48px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.sidebar-head { margin-bottom: 22px; }
+
+.sidebar-head a.mark {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.sidebar-head a.mark:hover { color: var(--accent); }
+.sidebar-head .mark-sub {
+  display: block;
+  color: var(--ink-2);
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.nav-group { margin-bottom: 20px; }
+
+.nav-group > .nav-title {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-2);
+  margin: 0 0 8px;
+}
+
+.nav-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-group li { margin: 0; }
+
+.nav-group a {
+  display: block;
+  padding: 3px 10px 3px 11px;
+  margin-left: -11px;
+  color: var(--ink);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+}
+.nav-group a:hover { color: var(--accent); background: var(--accent-soft); }
+
+.nav-group a.current {
+  color: var(--accent);
+  font-weight: 600;
+  border-left-color: var(--accent);
+}
+
+.nav-group a .nav-num {
+  display: inline-block;
+  min-width: 2.9em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.nav-group a.current .nav-num { color: var(--accent); }
+
+/* in-page section list, shown under the current page in the sidebar */
+.nav-sections {
+  list-style: none;
+  margin: 6px 0 6px 0;
+  padding: 0 0 0 12px;
+  border-left: 1px solid var(--rule);
+}
+.nav-sections a {
+  padding: 2px 8px;
+  margin-left: -1px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  border-left: 2px solid transparent;
+}
+.nav-sections a:hover { color: var(--accent); background: none; }
+.nav-sections a.active { color: var(--accent); border-left-color: var(--accent); }
+
+/* --- language toggle ------------------------------------------------------ */
+
+.lang-toggle {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 22px;
+  font-size: 12.5px;
+}
+.lang-toggle span {
+  padding: 2px 8px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px;
+}
+.lang-toggle .lang-on {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.lang-toggle .lang-off {
+  color: var(--ink-2);
+  background: transparent;
+  cursor: default;
+}
+.lang-toggle .lang-off small { font-size: 11px; opacity: .85; }
+
+/* --- mobile menu button (hidden on desktop) ------------------------------- */
+
+.menu-button {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  padding: 11px 16px;
+  background: var(--bg);
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.menu-button .icon { vertical-align: -3px; margin-right: 8px; color: var(--accent); }
+
+/* ==========================================================================
+   2. Content column
+   ========================================================================== */
+
+.content {
+  max-width: var(--column);
+  padding: 34px 0 90px;
+  min-width: 0;              /* allows children to scroll instead of the page */
+}
+
+.content > * { max-width: 100%; }
+
+/* --- headings ------------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  margin: 0;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 46px 0 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+h2:first-of-type { border-top: 0; padding-top: 0; }
+
+h3 { font-size: 18px; margin: 30px 0 8px; }
+h4 { font-size: 16px; margin: 24px 0 6px; color: var(--ink-2); }
+
+.section-num {
+  color: var(--accent);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-right: 10px;
+}
+
+/* anchor links on headings */
+.anchor {
+  float: right;
+  margin-left: 12px;
+  color: var(--rule-strong);
+  text-decoration: none;
+  font-size: 0.7em;
+  line-height: 2.2;
+  opacity: 0;
+  transition: opacity .12s ease;
+}
+h2:hover .anchor, h3:hover .anchor { opacity: 1; }
+.anchor:hover { color: var(--accent); }
+
+/* --- prose ---------------------------------------------------------------- */
+
+p { margin: 0 0 16px; }
+
+.page-kicker {
+  color: var(--ink-2);
+  font-size: 15px;
+  margin: 0 0 26px;
+}
+.page-kicker a { color: var(--ink-2); }
+.page-kicker a:hover { color: var(--accent); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+strong { font-weight: 600; }
+
+ul, ol { margin: 0 0 16px; padding-left: 22px; }
+li { margin: 0 0 6px; }
+li > ul, li > ol { margin-top: 6px; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 34px 0; }
+
+blockquote {
+  margin: 0 0 18px;
+  padding: 2px 0 2px 18px;
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+}
+blockquote p:last-child { margin-bottom: 0; }
+blockquote strong { color: var(--accent); }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.87em;
+  background: #f5f6f7;
+  padding: 1px 4px;
+  border-radius: 3px;
+  word-break: break-word;
+}
+
+pre {
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  background: #f7f8f8;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.5;
+}
+pre code { background: none; padding: 0; font-size: 14px; word-break: normal; }
+
+/* ==========================================================================
+   3. Tables — airy (blueprint §4: 10px padding, hairline separators only)
+   ========================================================================== */
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 22px;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+th:first-child, td:first-child { padding-left: 0; }
+th:last-child,  td:last-child  { padding-right: 0; }
+
+thead th {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--rule-strong);
+  white-space: nowrap;
+}
+
+tbody tr:last-child td { border-bottom: 0; }
+
+td code { font-size: 13px; }
+
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* the three columns the builder appends to every data table */
+th.col-cov, td.col-cov,
+th.col-basis, td.col-basis { white-space: nowrap; font-size: 14px; color: var(--ink-2); }
+td.col-src a { font-size: 14px; }
+
+/* ==========================================================================
+   4. Value spans, pills, icons
+   ========================================================================== */
+
+.val { font-variant-numeric: tabular-nums; }
+.val-missing { color: var(--status-gap); font-weight: 600; }
+
+.pill {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 11px;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.pill-done    { color: var(--status-done);    background: var(--status-done-bg); }
+.pill-partial { color: var(--status-partial); background: var(--status-partial-bg); }
+.pill-gap     { color: var(--status-gap);     background: var(--status-gap-bg); }
+
+.icon {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  vertical-align: -3px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.icon-sm { width: 15px; height: 15px; vertical-align: -2px; }
+
+.file-link .icon { color: var(--ink-2); margin-right: 5px; }
+.file-link:hover .icon { color: var(--accent); }
+
+/* Edition W: an artefact that is not published carries a name, never a href */
+.file-held {
+  color: var(--ink-2);
+  border-bottom: 1px dotted var(--rule-strong);
+  cursor: help;
+}
+.file-held .icon { color: var(--rule-strong); margin-right: 5px; }
+
+.selfcollected { color: var(--accent); font-weight: 600; }
+
+/* ==========================================================================
+   5. Figures
+   ========================================================================== */
+
+figure.fig {
+  margin: 0 0 26px;
+  padding: 0;
+}
+
+.fig-mount {
+  width: 100%;
+  min-height: 420px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fig-mount.is-loading,
+.fig-mount.is-pending {
+  color: var(--ink-2);
+  font-size: 14px;
+  background:
+    repeating-linear-gradient(135deg, #fafbfb 0 12px, #f5f6f7 12px 24px);
+}
+
+.fig-mount.is-ready { display: block; min-height: 0; border-color: var(--rule); }
+
+figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+figcaption .fig-id { font-family: var(--mono); font-size: 12.5px; }
+
+/* ==========================================================================
+   6. Mathematics (KaTeX, pre-rendered at build time)
+   ========================================================================== */
+
+.math-display {
+  margin: 0 0 20px;
+  padding: 4px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.katex { font-size: 1.02em; }
+.katex-display { margin: 0; }
+
+/* frozen equation extracts quoted from the notebooks */
+.eq-raw { font-size: 0.97em; }
+.eq-tests {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-2);
+  word-break: break-word;
+}
+
+/* ==========================================================================
+   7. Page furniture: cards, grids, boxes, footer
+   ========================================================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+  margin: 0 0 26px;
+}
+
+.card {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 14px 15px;
+  background: var(--bg);
+}
+.card a.card-title {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.card .card-line { font-size: 14px; color: var(--ink-2); }
+
+.box {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  padding: 14px 16px;
+  margin: 0 0 22px;
+  background: #fbfcfc;
+}
+.box p:last-child { margin-bottom: 0; }
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+.filter-bar label { color: var(--ink-2); }
+.filter-bar select {
+  font: inherit;
+  font-size: 14px;
+  padding: 4px 8px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px;
+}
+.filter-bar .count { color: var(--ink-2); margin-left: auto; }
+
+.site-footer {
+  margin-top: 56px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+.site-footer code { font-size: 12px; background: none; padding: 0; }
+.site-footer .stamp-row { display: block; }
+
+/* skip link, keyboard only */
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 8px; top: 8px;
+  z-index: 40;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   8. Responsive — sidebar collapses to a top menu (blueprint §4)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  :root { --gutter: 20px; }
+
+  .shell {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .menu-button { display: block; }
+
+  .sidebar {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    display: none;
+    padding: 18px var(--gutter) 24px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+  }
+  .sidebar.open { display: block; }
+
+  .sidebar-head { display: none; }
+
+  .content {
+    padding: 26px var(--gutter) 70px;
+    max-width: var(--column);
+    margin: 0 auto;
+  }
+
+  h1 { font-size: 26px; }
+  h2 { font-size: 20px; margin-top: 38px; }
+
+  table { font-size: 14px; }
+  th, td { padding: 9px 8px; }
+  th:first-child, td:first-child { padding-left: 0; }
+}
+
+@media (max-width: 460px) {
+  body { font-size: 16px; }
+  h1 { font-size: 23px; }
+  .fig-mount { min-height: 320px; }
+}
+
+@media print {
+  .sidebar, .menu-button, .anchor { display: none; }
+  .shell { display: block; padding: 0; }
+  .content { max-width: 100%; padding: 0; }
+  a { color: var(--ink); }
+}

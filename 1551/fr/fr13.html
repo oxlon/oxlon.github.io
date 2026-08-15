@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ministry specification as a runnable scenario — MİİS §15.5.1</title>
+<meta name="description" content="The Ministry specification as a runnable scenario — MİİS §15.5.1 forecasting module, Edition W">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/katex/katex.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" data-sprite="miis-1551">
+  <!--
+    icons.svg — line icon sprite for the §15.5.1 site (blueprint §4).
+    Style: 24×24 box, 1.6 stroke set by CSS (.icon), fill none, stroke currentColor,
+    round caps and joins. Used small (15-18px), functional only.
+    build_site.py inlines this file into every page so <use href="#icon-…"> resolves
+    when the page is opened directly from disk (file://), where an external sprite
+    reference is blocked.
+  -->
+
+  <symbol id="icon-document" viewBox="0 0 24 24">
+    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+    <path d="M14 3v5h5"/>
+    <path d="M9 13h6M9 17h6"/>
+  </symbol>
+
+  <symbol id="icon-data" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="6" rx="7" ry="3"/>
+    <path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/>
+    <path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"/>
+  </symbol>
+
+  <symbol id="icon-equation" viewBox="0 0 24 24">
+    <path d="M4 19c1.8 0 2.6-1.1 3-3l2.2-9.6C9.6 4.6 10.5 4 12 4"/>
+    <path d="M6 11h7"/>
+    <path d="M15 10.5l5 8M20 10.5l-5 8"/>
+  </symbol>
+
+  <symbol id="icon-chart" viewBox="0 0 24 24">
+    <path d="M4 4v15a1 1 0 0 0 1 1h15"/>
+    <path d="M8 16v-4M12 16v-7M16 16v-3M20 16V7"/>
+  </symbol>
+
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M4 12.6l5 5L20 6.5"/>
+  </symbol>
+
+  <symbol id="icon-warning" viewBox="0 0 24 24">
+    <path d="M10.3 3.9 2.5 17.4a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    <path d="M12 9v4.5"/>
+    <path d="M12 17.2h.01"/>
+  </symbol>
+
+  <symbol id="icon-download" viewBox="0 0 24 24">
+    <path d="M12 3v11"/>
+    <path d="M7.5 10 12 14.5 16.5 10"/>
+    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+  </symbol>
+
+  <symbol id="icon-external-link" viewBox="0 0 24 24">
+    <path d="M14 4h6v6"/>
+    <path d="M20 4 11 13"/>
+    <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>
+  </symbol>
+
+  <symbol id="icon-flask" viewBox="0 0 24 24">
+    <path d="M9.5 3h5"/>
+    <path d="M10.5 3v6.2L5.2 18a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3l-5.3-8.8V3"/>
+    <path d="M7.7 14h8.6"/>
+  </symbol>
+
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+<button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="sidebar">
+<svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>Contents</button>
+<div class="shell">
+<nav class="sidebar" id="sidebar" aria-label="Site sections">
+  <div class="sidebar-head">
+    <a class="mark" href="../index.html">MİİS §15.5.1
+      <span class="mark-sub">Macroeconomic indicators — forecasting module</span></a>
+  </div>
+  <div class="lang-toggle">
+    <span class="lang-on">EN</span>
+    <span class="lang-off" title="Azerbaijani mirror in preparation">AZ <small>hazırlanır</small></span>
+  </div>
+  <div class="nav-group"><span class="nav-title">Overview</span><ul><li><a href="../index.html">Overview</a></li><li><a href="../methodology.html">Method</a></li><li><a href="../data.html">Data</a></li></ul></div><div class="nav-group"><span class="nav-title">Requirements</span><ul><li><a href="../fr/fr1.html"><span class="nav-num">FR1</span>GDP: growth, deflator, structure</a></li><li><a href="../fr/fr2.html"><span class="nav-num">FR2</span>Production structure, 11 sectors</a></li><li><a href="../fr/fr3.html"><span class="nav-num">FR3</span>Activity structure</a></li><li><a href="../fr/fr4.html"><span class="nav-num">FR4</span>Product forecasts</a></li><li><a href="../fr/fr5.html"><span class="nav-num">FR5</span>Oil price</a></li><li><a href="../fr/fr6.html"><span class="nav-num">FR6</span>Investment and fiscal block</a></li><li><a href="../fr/fr7.html"><span class="nav-num">FR7</span>Foreign trade</a></li><li><a href="../fr/fr8.html"><span class="nav-num">FR8</span>Income, wages, unemployment</a></li><li><a href="../fr/fr9.html"><span class="nav-num">FR9</span>Consumer prices</a></li><li><a href="../fr/fr10.html"><span class="nav-num">FR10</span>Exchange rate</a></li><li><a href="../fr/fr11.html"><span class="nav-num">FR11</span>Trade and income balances</a></li><li><a href="../fr/fr12.html"><span class="nav-num">FR12</span>Balance of payments</a></li><li><a class="current" href="../fr/fr13.html"><span class="nav-num">FR13</span>Ministry specification scenario</a><ul class="nav-sections"><li><a href="#teleb">Requirement</a></li><li><a href="#model">Model and why it was chosen</a></li><li><a href="#econometrics">Econometric approach</a></li><li><a href="#data">Data</a></li><li><a href="#results">Results</a></li><li><a href="#interpretation">Reading</a></li><li><a href="#backtest">Backtest</a></li><li><a href="#reproduce">Reproduce</a></li><li><a href="#status">Status</a></li></ul></li></ul></div><div class="nav-group"><span class="nav-title">Delivery</span><ul><li><a href="../response.html">Review response</a></li><li><a href="../register.html">Requirement register</a></li><li><a href="../results.html">Results and files</a></li></ul></div>
+</nav>
+<main class="content" id="main">
+<h1>The Ministry specification as a runnable scenario</h1>
+<p class="page-kicker">FR13 · notebook <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-flask"/></svg>FR13_nazirlik_spes.ipynb</span> · out of the FR1–FR12 scope, delivered</p>
+<p>against review item A1</p>
+<h2 id="teleb"><a class="anchor" href="#teleb" aria-hidden="true">#</a>Requirement (Tələb)</h2>
+<blockquote><p><strong>AZ, verbatim (review item A1, 14.08.2026):</strong> "…təqdim olunmuş modul şöbənin təqdim etdiyi modellərdən qismən istifadə olunmaqla hazırlanmış tamamilə fərqli tənliklərdən ibarətdir… alınan nəticələr şöbənin modellərindən fərqli olduğu üçün ayrıca qiymətləndirmə tələb edir."</p><p><strong>English:</strong> "…the submitted module consists of entirely different equations, prepared using only part of the models the department provided… since the results differ from the department's models, they require separate assessment."</p><p>Source: <code>MINISTRY_FEEDBACK_2026-08-14.md</code>. The FR1–FR12 list defines what must be forecast, never whose equations must be used, so this is out of scope — and was executed anyway, as a separate scenario, not a replacement.</p></blockquote>
+<h2 id="model"><a class="anchor" href="#model" aria-hidden="true">#</a>Model and why it was chosen (Model və seçim səbəbi)</h2>
+<p>The department's own equation catalogue — <span class="val">92</span> rows, as received — is parsed and solved inside this package as a second runnable specification: its coefficients, its variable names, over our data layer. Two components make that possible: a parser for the EViews syntax it is written in, and a block-recursive Gauss–Seidel solver that resolves the system year by year. Describing the catalogue would have produced an opinion; running it produces numbers that can be raced. The results carry their own source label beside ours and never enter the central path.</p>
+<h2 id="econometrics"><a class="anchor" href="#econometrics" aria-hidden="true">#</a>Econometric approach (Ekonometrik yanaşma)</h2>
+<p>Nothing is re-estimated: the coefficients are used exactly as submitted. Four parser clarifications were needed and each is recorded in the code, the largest being that unparenthesised regime dummies had to be bracketed — otherwise a whole right-hand side collapsed into a single comparison and the equation returned zero growth in silence. One substantive change: the earlier engine extended drivers with arbitrary constants, and this module substitutes this package's published paths, so both specifications run on <strong>the same exogenous assumptions</strong> and any difference comes from the equations alone.</p>
+<div class="table-wrap"><table><thead><tr><th>Basket</th><th>Rows</th><th>Status</th></tr></thead><tbody><tr><td>Runs as submitted</td><td><span class="val">66</span></td><td>live</td></tr><tr><td>Runs on a documented substitute or short sample</td><td><span class="val">14</span></td><td>live, flagged</td></tr><tr><td>Runs on an assumed error-correction equivalence</td><td><span class="val">1</span></td><td>live, flagged</td></tr><tr><td>Awaits an error-correction level definition</td><td><span class="val">7</span></td><td>held</td></tr><tr><td>Blocked on undefined variables</td><td><span class="val">3</span></td><td>held</td></tr><tr><td>Prose, not syntax</td><td><span class="val">1</span></td><td>held</td></tr></tbody></table></div>
+<p><span class="val">91</span> of the <span class="val">92</span> rows pass syntax analysis and <span class="val">81</span> are live. An explosion guard rejects any solved step whose log change exceeds a set threshold and writes the rejected row to the log rather than publishing it.</p>
+<h2 id="data"><a class="anchor" href="#data" aria-hidden="true">#</a>Data (Məlumat)</h2>
+<div class="table-wrap"><table><thead><tr><th>Source</th><th>Content</th><th>Guardrail</th></tr></thead><tbody><tr><td>Ministry sample-model workbooks</td><td>Historical panel behind the catalogue, frozen to <code>data/moe_spec_panel.csv</code></td><td>Row-level provenance; labels re-verifiable against the source</td></tr><tr><td>Same workbooks, forecast columns</td><td>Not read</td><td>Only actual columns are loaded; the annotation row marks later columns as expected or forecast</td></tr><tr><td><code>model</code> and <code>add factor</code> rows</td><td>Not read</td><td>These are the sample model's own output and judgement, not observations</td></tr><tr><td>This package's assumption set and forecast paths</td><td>Exogenous paths from the first forecast year</td><td>The same paths our own specification uses</td></tr></tbody></table></div>
+<p>Two catalogue names have no series of their own and are flagged: one is treated as an alias, the other as the real value added of construction. The panel agrees with an earlier extract of the same workbooks to within rounding.</p>
+<p><span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>moe_spec_panel.csv</span> · <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>moe_spec_provenance.csv</span></p>
+<h2 id="results"><a class="anchor" href="#results" aria-hidden="true">#</a>Results (Nəticələr)</h2>
+<figure class="fig" id="fig-fr13_ssenari_muqayise"><div class="fig-mount is-loading" data-fig="fr13_ssenari_muqayise" data-src="../assets/figdata/fr13_ssenari_muqayise.json">loading chart…</div><script type="application/json" id="figdata-fr13_ssenari_muqayise">{"data":[{"type":"bar","name":"Ours","marker":{"color":"#0f6b6b"},"showlegend":true,"legendgroup":"ours","x":[2026,2027,2028,2029,2030],"y":[5.2991,5.7416,5.8752,5.9149,5.9278]},{"type":"bar","name":"Ministry-specification scenario","marker":{"color":"#9aa0a6"},"showlegend":true,"legendgroup":"ms","x":[2026,2027,2028,2029,2030],"y":[3.011765912710085,3.870401682268243,4.185419482452146,4.214444432300701,4.176096637420024]},{"type":"bar","name":"Ours","marker":{"color":"#0f6b6b"},"showlegend":false,"legendgroup":"ours","xaxis":"x2","yaxis":"y2","x":[2026,2027,2028,2029,2030],"y":[3679.8465750807454,3905.2976400005414,4151.457192618261,4407.160582445235,4672.991604749591]},{"type":"bar","name":"Ministry-specification scenario","marker":{"color":"#9aa0a6"},"showlegend":false,"legendgroup":"ms","xaxis":"x2","yaxis":"y2","x":[2026,2027,2028,2029,2030],"y":[3638.0329406734268,4195.949505742673,4877.339870347601,5672.217414971243,6606.801834767145]},{"type":"bar","name":"Ours","marker":{"color":"#0f6b6b"},"showlegend":false,"legendgroup":"ours","xaxis":"x3","yaxis":"y3","x":[2026,2027,2028,2029,2030],"y":[16145.898554994024,17246.137956251907,18436.4106911014,19716.731047892543,21094.271726808845]},{"type":"bar","name":"Ministry-specification scenario","marker":{"color":"#9aa0a6"},"showlegend":false,"legendgroup":"ms","xaxis":"x3","yaxis":"y3","x":[2026,2027,2028,2029,2030],"y":[17782.915806387256,20046.222179091612,23003.54866653345,26224.204060619824,29872.4964945666]},{"type":"bar","name":"Ours","marker":{"color":"#0f6b6b"},"showlegend":false,"legendgroup":"ours","xaxis":"x4","yaxis":"y4","x":[2026,2027,2028,2029,2030],"y":[1142.094814,1246.244359,1354.707029,1470.181482,1596.013956]},{"type":"bar","name":"Ministry-specification scenario","marker":{"color":"#9aa0a6"},"showlegend":false,"legendgroup":"ms","xaxis":"x4","yaxis":"y4","x":[2026,2027,2028,2029,2030],"y":[816.8445852156308,858.9754068249972,923.5510800398613,1003.3680311123558,1094.7919582165646]},{"type":"bar","name":"Ours","marker":{"color":"#0f6b6b"},"showlegend":false,"legendgroup":"ours","xaxis":"x5","yaxis":"y5","x":[2026,2027,2028,2029,2030],"y":[2.1413466744775156,2.2276830915797996,2.2468514667645216,2.2512913908814522,2.2531594655460987]},{"type":"bar","name":"Ministry-specification scenario","marker":{"color":"#9aa0a6"},"showlegend":false,"legendgroup":"ms","xaxis":"x5","yaxis":"y5","x":[2026,2027,2028,2029,2030],"y":[3.2605877833925323,2.272639745385696,2.6412390116566042,2.5031461323906212,2.5548016203096546]}],"layout":{"height":420,"autosize":true,"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","font":{"family":"-apple-system, 'Segoe UI', Roboto, Inter, sans-serif","size":13,"color":"#1c1e21"},"margin":{"l":56,"r":24,"t":36,"b":44},"hovermode":"x unified","legend":{"orientation":"h","y":-0.22,"x":0,"font":{"size":12,"color":"#5f6368"}},"colorway":["#0f6b6b","#5f6368"],"showlegend":true,"grid":{"rows":1,"columns":5,"pattern":"independent"},"barmode":"group","xaxis":{"domain":[0.0,0.152],"anchor":"y","gridcolor":"#eceff1","tickfont":{"size":10}},"yaxis":{"domain":[0,0.86],"anchor":"x","gridcolor":"#eceff1","tickfont":{"size":9}},"annotations":[{"text":"CPI inflation, %","showarrow":false,"xref":"x domain","yref":"y domain","x":0,"y":1.14,"xanchor":"left","font":{"size":10,"color":"#5f6368"}},{"text":"Non-oil goods exports, mln USD","showarrow":false,"xref":"x2 domain","yref":"y2 domain","x":0,"y":1.14,"xanchor":"left","font":{"size":10,"color":"#5f6368"}},{"text":"Non-oil goods imports, mln USD","showarrow":false,"xref":"x3 domain","yref":"y3 domain","x":0,"y":1.14,"xanchor":"left","font":{"size":10,"color":"#5f6368"}},{"text":"Non-oil wage, AZN","showarrow":false,"xref":"x4 domain","yref":"y4 domain","x":0,"y":1.14,"xanchor":"left","font":{"size":10,"color":"#5f6368"}},{"text":"Investment deflator growth, %","showarrow":false,"xref":"x5 domain","yref":"y5 domain","x":0,"y":1.14,"xanchor":"left","font":{"size":10,"color":"#5f6368"}}],"xaxis2":{"domain":[0.212,0.364],"anchor":"y2","gridcolor":"#eceff1","tickfont":{"size":10}},"yaxis2":{"domain":[0,0.86],"anchor":"x2","gridcolor":"#eceff1","tickfont":{"size":9}},"xaxis3":{"domain":[0.424,0.576],"anchor":"y3","gridcolor":"#eceff1","tickfont":{"size":10}},"yaxis3":{"domain":[0,0.86],"anchor":"x3","gridcolor":"#eceff1","tickfont":{"size":9}},"xaxis4":{"domain":[0.636,0.788],"anchor":"y4","gridcolor":"#eceff1","tickfont":{"size":10}},"yaxis4":{"domain":[0,0.86],"anchor":"x4","gridcolor":"#eceff1","tickfont":{"size":9}},"xaxis5":{"domain":[0.848,1.0],"anchor":"y5","gridcolor":"#eceff1","tickfont":{"size":10}},"yaxis5":{"domain":[0,0.86],"anchor":"x5","gridcolor":"#eceff1","tickfont":{"size":9}}}}</script><figcaption>Scenario comparison: ours against the Ministry specification <span class="fig-id">[fr13_ssenari_muqayise]</span></figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Indicator</th><th>Unit</th><th>Ours, 2026</th><th>Scenario, 2026</th><th>Ours, 2030</th><th>Scenario, 2030</th></tr></thead><tbody><tr><td><code>cpi_infl</code></td><td>%</td><td><span class="val">5.3</span></td><td><span class="val">3.0</span></td><td><span class="val">5.9</span></td><td><span class="val">4.2</span></td></tr><tr><td><code>exp_goods_nonoil</code></td><td>mln USD</td><td><span class="val">3,680</span></td><td><span class="val">3,638</span></td><td><span class="val">4,673</span></td><td><span class="val">6,607</span></td></tr><tr><td><code>imp_goods_nonoil</code></td><td>mln USD</td><td><span class="val">16,146</span></td><td><span class="val">17,783</span></td><td><span class="val">21,094</span></td><td><span class="val">29,872</span></td></tr><tr><td><code>wage_nonoil</code></td><td>AZN</td><td><span class="val">1,142</span></td><td><span class="val">816.84</span></td><td><span class="val">1,596</span></td><td><span class="val">1,095</span></td></tr><tr><td><code>inv_defl_g</code></td><td>%</td><td><span class="val">2.1</span></td><td><span class="val">3.3</span></td><td><span class="val">2.3</span></td><td><span class="val">2.6</span></td></tr></tbody></table></div>
+<p>The scenario publishes <span class="val">80</span> forecast rows over <span class="val">16</span> indicators and <span class="val">164</span> backtest rows over <span class="val">14</span> series, and contributes its <span class="val">92</span> rows to the <span class="val">478</span>-row equation catalogue under its own scope.</p>
+<h2 id="interpretation"><a class="anchor" href="#interpretation" aria-hidden="true">#</a>Reading (Şərh)</h2>
+<p>On the same exogenous assumptions the two specifications disagree in level more than in direction: the scenario runs inflation and non-oil wages lower and non-oil imports higher by the end of the horizon. Neither is offered as the better reading — the comparison that counts is the tested one below, available only where both forecast the same defined quantity.</p>
+<h2 id="backtest"><a class="anchor" href="#backtest" aria-hidden="true">#</a>Backtest (Geriyə Sınaq)</h2>
+<p>Both specifications are scored the same way: one step ahead, expanding window, drivers actual in the year forecast, random walk as benchmark. Two concessions are declared, both favouring the department: their coefficients are full-sample, so their forecasts are in-sample, while ours are re-estimated at every vintage; and our <strong>best</strong> form is entered for each series. A definition check drops any pair whose historical series differ by more than one standard deviation.</p>
+<div class="table-wrap"><table><thead><tr><th>Series</th><th>NAZIRLIK_SPES skill vs RW</th><th>Our selected model</th></tr></thead><tbody><tr><td><code>g_trade</code></td><td><span class="val">+73%</span></td><td>—</td></tr><tr><td><code>inv_defl_g</code></td><td><span class="val">+72%</span></td><td>TIKINTI_IDXAL <span class="val">+99%</span></td></tr><tr><td><code>final_consumption</code></td><td><span class="val">+64%</span></td><td>—</td></tr><tr><td><code>d_constr</code></td><td><span class="val">+63%</span></td><td>—</td></tr><tr><td><code>imp_goods_nonoil</code></td><td><span class="val">+35%</span></td><td>ABSORBSİYA <span class="val">+15%</span></td></tr><tr><td><code>exp_goods_nonoil</code></td><td><span class="val">+33%</span></td><td>TƏRƏFDAŞ+BRENT <span class="val">+24%</span></td></tr><tr><td><code>cpi_infl</code></td><td><span class="val">+2%</span></td><td>AR1 <span class="val">+14%</span></td></tr><tr><td><code>imp_serv_transport</code></td><td><span class="val">−75%</span></td><td>TİCARƏT_HƏCMİ <span class="val">+21%</span></td></tr></tbody></table></div>
+<p>On <code>inv_defl_g</code>, where both meet the same benchmark on the same definition, the department's equation beats the random walk by a clear margin while scoring below our selected form. The negative row is shown as it came out.</p>
+<h2 id="reproduce"><a class="anchor" href="#reproduce" aria-hidden="true">#</a>Reproduce (Təkrar istehsal)</h2>
+<p>To obtain these results again:</p>
+<pre><code class="lang-bash">cd 14August_Macroeconomic_Model_v2
+python3 run_all.py --stage FR13</code></pre>
+<p>Notebook: <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-flask"/></svg>FR13_nazirlik_spes.ipynb</span> · engine <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-document"/></svg>ministry_spec.py</span>. Inputs: <code>data/ministry_equations_catalog.csv</code>, <code>data/moe_spec_panel.csv</code>, <code>data/assumptions.csv</code>, <code>outputs/forecast_long.csv</code>. Written: only its own rows — <code>ministry_spec</code> in the forecast file, <code>NAZIRLIK_SPES</code> in the backtest ledger, <code>fr=FR13</code> in the catalogue. The notebook stops if it writes outside that scope. Runtime: about <span class="val">3–6</span> seconds for this notebook, about <span class="val">85</span> seconds for the full pipeline.</p>
+<h2 id="status"><a class="anchor" href="#status" aria-hidden="true">#</a>Status</h2>
+<p>This scenario has no row in the requirement register: it sits outside the FR1–FR12 list and is recorded as delivered extra work against review item A1. What is held is defined, not vague. <span class="val">7</span> rows wait for the definition of the error-correction levels they reference, and one more runs on an assumed equivalence between two of them, flagged as such. <span class="val">3</span> rows are blocked on four undefined balance-of-payments variables whose equations exist but whose data rows do not, and <span class="val">1</span> row is prose rather than syntax. Supplying those definitions would move up to eleven further rows into the live set and remove the flagged assumption — the difference between running most of the catalogue and running all of it.</p>
+<footer class="site-footer">
+  <span class="stamp-row">Content pack v3.4 · built 2026-08-15 · pipeline hash <code>eeec7c0d1aac</code> · edition W</span>
+  <span class="stamp-row">Every number on this page is read at build time from
+    <code>outputs/forecast_long.csv</code>, <code>outputs/equations_catalog.csv</code>,
+    <code>outputs/validation_backtest.csv</code>, <code>outputs/series_dictionary.csv</code>
+    and <code>data/assumptions.csv</code>. The hash is the md5 of those five files.</span>
+</footer>
+</main>
+</div>
+<script src="../assets/plotly.min.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method — MİİS §15.5.1</title>
+<meta name="description" content="Method — MİİS §15.5.1 forecasting module, Edition W">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/katex/katex.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" data-sprite="miis-1551">
+  <!--
+    icons.svg — line icon sprite for the §15.5.1 site (blueprint §4).
+    Style: 24×24 box, 1.6 stroke set by CSS (.icon), fill none, stroke currentColor,
+    round caps and joins. Used small (15-18px), functional only.
+    build_site.py inlines this file into every page so <use href="#icon-…"> resolves
+    when the page is opened directly from disk (file://), where an external sprite
+    reference is blocked.
+  -->
+
+  <symbol id="icon-document" viewBox="0 0 24 24">
+    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+    <path d="M14 3v5h5"/>
+    <path d="M9 13h6M9 17h6"/>
+  </symbol>
+
+  <symbol id="icon-data" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="6" rx="7" ry="3"/>
+    <path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/>
+    <path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"/>
+  </symbol>
+
+  <symbol id="icon-equation" viewBox="0 0 24 24">
+    <path d="M4 19c1.8 0 2.6-1.1 3-3l2.2-9.6C9.6 4.6 10.5 4 12 4"/>
+    <path d="M6 11h7"/>
+    <path d="M15 10.5l5 8M20 10.5l-5 8"/>
+  </symbol>
+
+  <symbol id="icon-chart" viewBox="0 0 24 24">
+    <path d="M4 4v15a1 1 0 0 0 1 1h15"/>
+    <path d="M8 16v-4M12 16v-7M16 16v-3M20 16V7"/>
+  </symbol>
+
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M4 12.6l5 5L20 6.5"/>
+  </symbol>
+
+  <symbol id="icon-warning" viewBox="0 0 24 24">
+    <path d="M10.3 3.9 2.5 17.4a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    <path d="M12 9v4.5"/>
+    <path d="M12 17.2h.01"/>
+  </symbol>
+
+  <symbol id="icon-download" viewBox="0 0 24 24">
+    <path d="M12 3v11"/>
+    <path d="M7.5 10 12 14.5 16.5 10"/>
+    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+  </symbol>
+
+  <symbol id="icon-external-link" viewBox="0 0 24 24">
+    <path d="M14 4h6v6"/>
+    <path d="M20 4 11 13"/>
+    <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>
+  </symbol>
+
+  <symbol id="icon-flask" viewBox="0 0 24 24">
+    <path d="M9.5 3h5"/>
+    <path d="M10.5 3v6.2L5.2 18a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3l-5.3-8.8V3"/>
+    <path d="M7.7 14h8.6"/>
+  </symbol>
+
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+<button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="sidebar">
+<svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>Contents</button>
+<div class="shell">
+<nav class="sidebar" id="sidebar" aria-label="Site sections">
+  <div class="sidebar-head">
+    <a class="mark" href="index.html">MİİS §15.5.1
+      <span class="mark-sub">Macroeconomic indicators — forecasting module</span></a>
+  </div>
+  <div class="lang-toggle">
+    <span class="lang-on">EN</span>
+    <span class="lang-off" title="Azerbaijani mirror in preparation">AZ <small>hazırlanır</small></span>
+  </div>
+  <div class="nav-group"><span class="nav-title">Overview</span><ul><li><a href="index.html">Overview</a></li><li><a class="current" href="methodology.html">Method</a><ul class="nav-sections"><li><a href="#dag">The execution chain</a></li><li><a href="#discipline">Five disciplines</a></li><li><a href="#assumptions">The assumption set</a></li></ul></li><li><a href="data.html">Data</a></li></ul></div><div class="nav-group"><span class="nav-title">Requirements</span><ul><li><a href="fr/fr1.html"><span class="nav-num">FR1</span>GDP: growth, deflator, structure</a></li><li><a href="fr/fr2.html"><span class="nav-num">FR2</span>Production structure, 11 sectors</a></li><li><a href="fr/fr3.html"><span class="nav-num">FR3</span>Activity structure</a></li><li><a href="fr/fr4.html"><span class="nav-num">FR4</span>Product forecasts</a></li><li><a href="fr/fr5.html"><span class="nav-num">FR5</span>Oil price</a></li><li><a href="fr/fr6.html"><span class="nav-num">FR6</span>Investment and fiscal block</a></li><li><a href="fr/fr7.html"><span class="nav-num">FR7</span>Foreign trade</a></li><li><a href="fr/fr8.html"><span class="nav-num">FR8</span>Income, wages, unemployment</a></li><li><a href="fr/fr9.html"><span class="nav-num">FR9</span>Consumer prices</a></li><li><a href="fr/fr10.html"><span class="nav-num">FR10</span>Exchange rate</a></li><li><a href="fr/fr11.html"><span class="nav-num">FR11</span>Trade and income balances</a></li><li><a href="fr/fr12.html"><span class="nav-num">FR12</span>Balance of payments</a></li><li><a href="fr/fr13.html"><span class="nav-num">FR13</span>Ministry specification scenario</a></li></ul></div><div class="nav-group"><span class="nav-title">Delivery</span><ul><li><a href="response.html">Review response</a></li><li><a href="register.html">Requirement register</a></li><li><a href="results.html">Results and files</a></li></ul></div>
+</nav>
+<main class="content" id="main">
+<h1>Method</h1>
+<h2 id="dag"><a class="anchor" href="#dag" aria-hidden="true">#</a>The execution chain</h2>
+<figure class="fig" id="fig-method_dag"><div class="fig-mount is-ready"><svg viewBox="0 0 700 724" width="100%" height="724" role="img" aria-label="Pipeline DAG: 15 stages over 14 notebooks" style="max-width:100%"><defs><marker id="dag-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5f6368"/></marker></defs><rect x="275" y="12" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="36" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR05</text><line x1="350" y1="52" x2="350" y2="70" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="72" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="96" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR10</text><line x1="350" y1="112" x2="350" y2="130" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="132" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="156" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR05b</text><line x1="350" y1="172" x2="350" y2="190" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="192" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="216" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR09</text><line x1="350" y1="232" x2="350" y2="250" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="252" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="276" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR01</text><line x1="350" y1="292" x2="350" y2="310" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="312" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="336" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR02</text><line x1="350" y1="352" x2="350" y2="370" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="372" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="396" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR01 (2)</text><line x1="350" y1="412" x2="350" y2="430" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="29" y="432" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="104" y="456" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR03</text><rect x="193" y="432" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="268" y="456" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR04</text><rect x="357" y="432" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="432" y="456" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR06</text><rect x="521" y="432" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="596" y="456" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR08</text><line x1="350" y1="472" x2="350" y2="490" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="492" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="516" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR07</text><line x1="350" y1="532" x2="350" y2="550" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="552" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="576" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR11</text><line x1="350" y1="592" x2="350" y2="610" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="612" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="636" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR12</text><line x1="350" y1="652" x2="350" y2="670" stroke="#5f6368" stroke-width="1.1" marker-end="url(#dag-arrow)"/><rect x="275" y="672" width="150" height="40" rx="4" fill="#ffffff" stroke="#0f6b6b" stroke-width="1.2"/><text x="350" y="696" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" fill="#1c1e21">FR13</text></svg></div><figcaption>Pipeline DAG: stage order and dependencies <span class="fig-id">[method_dag]</span></figcaption></figure>
+<p>The module is one directed pipeline, not a folder of independent spreadsheets. The oil price is estimated first, then the exchange rate, then the oil-gas volume-and-price block, then consumer prices; those four write the driver paths that everything downstream consumes. The GDP core runs next and solves the simultaneous non-oil block (growth, investment, consumption, income) by year-by-year fixed-point iteration. The eleven-sector production block then builds non-oil value added from the bottom up, and the GDP notebook runs a second time to take the headline aggregate from that sum rather than from its own demand equation — the inversion the Ministry's review asked for. Branch structure, product volumes, investment and household income follow in a parallel group, then trade, then the balance-of-payments structure and closure, and last the Ministry-specification scenario, which reads every upstream output. That is <span class="val">15</span> stages over <span class="val">14</span> notebooks; the GDP notebook appears twice because its core does not depend on the production block, so the two passes write identical keys and the pipeline closes exactly.</p>
+<h2 id="discipline"><a class="anchor" href="#discipline" aria-hidden="true">#</a>Five disciplines</h2>
+<h3 id="backtest-gate"><a class="anchor" href="#backtest-gate" aria-hidden="true">#</a>1. The backtest gate</h3>
+<p>Every behavioural equation is raced against a random walk on an expanding, one-step-ahead, out-of-sample window — Geriyə Sınaq (backtest) — and all candidates for one series are scored on the same window, so the comparison is fair. Skill is reported as</p>
+<div class="math-display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>skill</mtext><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><msubsup><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mi>h</mi><mtext>model</mtext></msubsup><msubsup><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">M</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">E</mi></mrow><mi>h</mi><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">W</mi></mrow></msubsup></mfrac></mrow><annotation encoding="application/x-tex">\text{skill} = 1 - \frac{\mathrm{RMSE}^{\text{model}}_h}{\mathrm{RMSE}^{\mathrm{RW}}_h}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">skill</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.6509em;vertical-align:-1.0516em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5993em;"><span style="top:-2.1954em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathrm">RMSE</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9146em;"><span style="top:-2.453em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">h</span></span></span><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight" style="margin-right:0.0139em;">RW</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathrm">RMSE</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9223em;"><span style="top:-2.453em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">h</span></span></span><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">model</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.0516em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div>
+<p>and an equation that cannot beat the benchmark does not carry the published path. Losers are published rather than deleted: the ledger holds <span class="val">6,709</span> rows across <span class="val">168</span> series and <span class="val">111</span> model labels, and it includes the fixed-share investment rule at <span class="val">−73%</span> and every oil-gas goods-import candidate, none of which beat the benchmark.</p>
+<h3 id="identity-chain"><a class="anchor" href="#identity-chain" aria-hidden="true">#</a>2. The identity chain</h3>
+<p>Aggregates are built by identity and the identities are asserted in every year, not only in the base year: output equals intermediate consumption plus value added by activity, the eleven activities plus net taxes equal GDP, oil plus non-oil equals the total, and the net-tax split parameter stays inside its admissible range. The production block's verifier runs <span class="val">108</span> such checks and the GDP block's <span class="val">29</span>, each printing the maximum residual it found. Where two independent readings of the same quantity disagree, the difference is published as its own series instead of being reconciled away.</p>
+<h3 id="lookahead"><a class="anchor" href="#lookahead" aria-hidden="true">#</a>3. The look-ahead guard</h3>
+<p>Estimation samples end at <span class="val">2,025</span> centrally, in configuration, never by a slice inside a notebook; the forecast horizon is <span class="val">2,026</span>–<span class="val">2,030</span>. No regression may see a value from the Ministry's own forecast columns — the data layer keeps actuals and overlay paths in separate objects — and each estimated equation carries an explicit no-look-ahead check in its notebook's verifier. Three test modules guard the contract: <span class="val">36</span> loader checks, <span class="val">8</span> output-contract checks and <span class="val">9</span> named econometric suites.</p>
+<h3 id="assumption-set"><a class="anchor" href="#assumption-set" aria-hidden="true">#</a>4. One assumption set</h3>
+<p>Every forecast-horizon input enters through a single file, <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>assumptions.csv</span>, written by the upstream stages in DAG order: <span class="val">63</span> keys × five years = <span class="val">315</span> rows. Nothing in the horizon is typed in by hand, and the IMF reference paths are structurally barred from becoming inputs. Because the file is the only channel, an official path can replace a modelled one by substituting a key, without touching an equation.</p>
+<h3 id="dynamics"><a class="anchor" href="#dynamics" aria-hidden="true">#</a>5. The dynamics metric</h3>
+<p>The review's charge that sector forecasts were too flat is answered with a measurement rather than an assertion. For each series the module publishes</p>
+<div class="math-display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>dynamism</mtext><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>σ</mi><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mtext>forecast over the horizon</mtext><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><mrow><mi>σ</mi><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mtext>actual over the estimation window</mtext><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\text{dynamism}(s)=\frac{\sigma\big(\text{forecast over the horizon}\big)}{\sigma\big(\text{actual over the estimation window}\big)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">dynamism</span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.68em;vertical-align:-1.09em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.59em;"><span style="top:-2.26em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">σ</span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord text"><span class="mord">actual over the estimation window</span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.74em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">σ</span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord text"><span class="mord">forecast over the horizon</span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.09em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div>
+<p>as <span class="val">43</span> rows in the backtest ledger. The result is not flattering everywhere and is printed as found: the production block's own acceptance check reports <span class="val">1</span>/<span class="val">24</span> series inside the internal band and the GDP block <span class="val">1</span>/<span class="val">7</span>, with a recorded reason for each series outside it.</p>
+<h2 id="assumptions"><a class="anchor" href="#assumptions" aria-hidden="true">#</a>The assumption set</h2>
+<p>The table below is generated from <span class="file-held" title="available in the delivery package"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>assumptions.csv</span> itself: one row per key, with unit, the five-year path, the stage that writes it and a note stating whether the key drives a central path or is held for comparison. It is the place to look for what the forecast assumes — production volumes, partner growth, the exchange-rate regime, sector driver profiles and sector price terms — and it is the place where an official forecast would be substituted.</p>
+<footer class="site-footer">
+  <span class="stamp-row">Content pack v3.4 · built 2026-08-15 · pipeline hash <code>eeec7c0d1aac</code> · edition W</span>
+  <span class="stamp-row">Every number on this page is read at build time from
+    <code>outputs/forecast_long.csv</code>, <code>outputs/equations_catalog.csv</code>,
+    <code>outputs/validation_backtest.csv</code>, <code>outputs/series_dictionary.csv</code>
+    and <code>data/assumptions.csv</code>. The hash is the md5 of those five files.</span>
+</footer>
+</main>
+</div>
+<script src="assets/plotly.min.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
