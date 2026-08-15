@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What was added — MİİS §15.5.1</title>
+<meta name="description" content="What was added — MİİS §15.5.1 forecasting module, Edition W">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/katex/katex.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" data-sprite="miis-1551">
+  <!--
+    icons.svg — line icon sprite for the §15.5.1 site (blueprint §4).
+    Style: 24×24 box, 1.6 stroke set by CSS (.icon), fill none, stroke currentColor,
+    round caps and joins. Used small (15-18px), functional only.
+    build_site.py inlines this file into every page so <use href="#icon-…"> resolves
+    when the page is opened directly from disk (file://), where an external sprite
+    reference is blocked.
+  -->
+
+  <symbol id="icon-document" viewBox="0 0 24 24">
+    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+    <path d="M14 3v5h5"/>
+    <path d="M9 13h6M9 17h6"/>
+  </symbol>
+
+  <symbol id="icon-data" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="6" rx="7" ry="3"/>
+    <path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/>
+    <path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"/>
+  </symbol>
+
+  <symbol id="icon-equation" viewBox="0 0 24 24">
+    <path d="M4 19c1.8 0 2.6-1.1 3-3l2.2-9.6C9.6 4.6 10.5 4 12 4"/>
+    <path d="M6 11h7"/>
+    <path d="M15 10.5l5 8M20 10.5l-5 8"/>
+  </symbol>
+
+  <symbol id="icon-chart" viewBox="0 0 24 24">
+    <path d="M4 4v15a1 1 0 0 0 1 1h15"/>
+    <path d="M8 16v-4M12 16v-7M16 16v-3M20 16V7"/>
+  </symbol>
+
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M4 12.6l5 5L20 6.5"/>
+  </symbol>
+
+  <symbol id="icon-warning" viewBox="0 0 24 24">
+    <path d="M10.3 3.9 2.5 17.4a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    <path d="M12 9v4.5"/>
+    <path d="M12 17.2h.01"/>
+  </symbol>
+
+  <symbol id="icon-download" viewBox="0 0 24 24">
+    <path d="M12 3v11"/>
+    <path d="M7.5 10 12 14.5 16.5 10"/>
+    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+  </symbol>
+
+  <symbol id="icon-external-link" viewBox="0 0 24 24">
+    <path d="M14 4h6v6"/>
+    <path d="M20 4 11 13"/>
+    <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>
+  </symbol>
+
+  <symbol id="icon-flask" viewBox="0 0 24 24">
+    <path d="M9.5 3h5"/>
+    <path d="M10.5 3v6.2L5.2 18a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3l-5.3-8.8V3"/>
+    <path d="M7.7 14h8.6"/>
+  </symbol>
+
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+<button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="sidebar">
+<svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>Contents</button>
+<div class="shell">
+<nav class="sidebar" id="sidebar" aria-label="Site sections">
+  <div class="sidebar-head">
+    <a class="mark" href="index.html">MİİS §15.5.1
+      <span class="mark-sub">Macroeconomic indicators — forecasting module</span></a>
+  </div>
+  <div class="lang-toggle">
+    <span class="lang-on">EN</span>
+    <span class="lang-off" title="Azerbaijani mirror in preparation">AZ <small>hazırlanır</small></span>
+  </div>
+  <div class="nav-group"><span class="nav-title">Overview</span><ul><li><a href="index.html">Overview</a></li><li><a href="methodology.html">Method</a></li><li><a href="data.html">Data</a></li></ul></div><div class="nav-group"><span class="nav-title">Requirements (§15.5.1)</span><ul><li><a href="fr/fr1.html"><span class="nav-num">FR1</span>GDP: growth, deflator, structure</a></li><li><a href="fr/fr2.html"><span class="nav-num">FR2</span>Production structure, 11 sectors</a></li><li><a href="fr/fr3.html"><span class="nav-num">FR3</span>Activity structure</a></li><li><a href="fr/fr4.html"><span class="nav-num">FR4</span>Product forecasts</a></li><li><a href="fr/fr5.html"><span class="nav-num">FR5</span>Oil price</a></li><li><a href="fr/fr6.html"><span class="nav-num">FR6</span>Investment and fiscal block</a></li><li><a href="fr/fr7.html"><span class="nav-num">FR7</span>Foreign trade</a></li><li><a href="fr/fr8.html"><span class="nav-num">FR8</span>Income, wages, unemployment</a></li><li><a href="fr/fr9.html"><span class="nav-num">FR9</span>Consumer prices</a></li><li><a href="fr/fr10.html"><span class="nav-num">FR10</span>Exchange rate</a></li><li><a href="fr/fr11.html"><span class="nav-num">FR11</span>Trade and income balances</a></li><li><a href="fr/fr12.html"><span class="nav-num">FR12</span>Balance of payments</a></li></ul></div><div class="nav-group"><span class="nav-title">Additions (Əlavələr)</span><ul><li><a class="current" href="additions.html">What was added</a><ul class="nav-sections"><li><a href="#intro">Why this page exists</a></li><li><a href="#additions">The additions</a></li><li><a href="#collected">Data collected by us</a></li></ul></li><li><a href="fr/fr13.html"><span class="nav-num nav-num-add">FR13</span>Ministry specification scenario</a></li></ul></div><div class="nav-group"><span class="nav-title">Delivery</span><ul><li><a href="equations.html">Equation catalogue</a></li><li><a href="response.html">Review response</a></li><li><a href="register.html">Requirement register</a></li><li><a href="results.html">Results and files</a></li></ul></div>
+</nav>
+<main class="content" id="main">
+<h1>What was added</h1>
+<p class="page-kicker">Work delivered beyond the twelve functional requirements of §15.5.1, kept on its own page so that it is never counted as part of them</p>
+
+<h2 id="intro"><a class="anchor" href="#intro" aria-hidden="true">#</a><span class="section-num">1</span>Why this page exists</h2>
+<p>The specification states twelve functional requirements. Those twelve are the requirement pages, and they are the only thing the register scores. Ten further pieces of work were delivered that the twelve sentences do not ask for — some because a review item asked for them, some because a requirement could not be served honestly without them — and they are listed here rather than mixed into the requirement list, so that nothing on this site is presented as a requirement that is not one. Each row states what the addition is, what it produced as a measured result, and where it can be read or opened. The sequence below is the delivery order, not a ranking.</p>
+<h2 id="additions"><a class="anchor" href="#additions" aria-hidden="true">#</a><span class="section-num">2</span>The additions</h2>
+<div class="table-wrap"><table class="tbl"><thead><tr><th class="c-text">Addition</th><th class="c-wide">Result</th><th class="c-text">Where</th></tr></thead><tbody><tr><td class="c-text"><strong>E1 — the Ministry specification as a runnable scenario.</strong> The department's own equation catalogue is parsed and solved inside this package as a second specification, over the same data and the same exogenous paths.</td><td class="c-wide"><span class="val">92</span> rows as received, <span class="val">91</span> parse and <span class="val">81</span> run live. <span class="val">7</span> wait on error-correction levels the specification does not define, <span class="val">3</span> on variables it does not define, and <span class="val">1</span> is prose rather than syntax. It publishes <span class="val">80</span> forecast rows over <span class="val">16</span> indicators and <span class="val">164</span> backtest rows, under its own source label, never on the central path.</td><td class="c-text"><a href="fr/fr13.html">Ministry specification scenario</a> · <a href="equations.html#ministry">equation catalogue</a></td></tr><tr><td class="c-text"><strong>E2 — the fiscal block: a data layer and three live transmission channels.</strong> Budget and investment-programme data were not in the module at all; they are now loaded under label assertion and wired to the places they act on.</td><td class="c-wide">The fiscal sheet of the Ministry workbook carries <span class="val">244</span> series over <span class="val val-year">2010</span>–<span class="val val-year">2026</span> and the investment-programme sheet a further <span class="val">18</span>. Three channels are live: budget capital expenditure into state investment, two fiscal indicators into the sector drivers, and the social-protection and pension flows into household transfers.</td><td class="c-text"><a href="fr/fr6.html">Investment and fiscal block</a></td></tr><tr><td class="c-text"><strong>E3 — the backtest ledger as a shipped artefact.</strong> Every candidate that was raced is written to the ledger, including the ones that lost, so a claim of skill can be checked and a loss cannot be quietly dropped.</td><td class="c-wide"><span class="val">6,709</span> rows over <span class="val">168</span> series and <span class="val">111</span> model labels. Losing candidates are published rather than deleted, which is how the negative verdicts on this site can be read against the same file as the positive ones.</td><td class="c-text"><span class="file-held" title="delivery package · 2_neticeler/validation_backtest.csv"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>2_neticeler/validation_backtest.csv</span> · <a href="results.html#contract">Results and files</a></td></tr><tr><td class="c-text"><strong>E4 — the production-versus-demand gap, published instead of reconciled.</strong> The two readings of GDP are not forced to agree by construction.</td><td class="c-wide">The difference between them is published as its own series, and the tolerance is breached in <span class="val">4</span> of the <span class="val">5</span> forecast years. The warning is printed and no series is corrected to hide it.</td><td class="c-text"><a href="fr/fr1.html">GDP: growth, deflator, structure</a></td></tr><tr><td class="c-text"><strong>E5 — a dynamics metric, published per series.</strong> Forecast paths can be accurate and still be flat, so variability is measured and written to the ledger beside the error rows.</td><td class="c-wide">The ratio of forecast to actual variability is recorded for <span class="val">43</span> series under its own model label. On the internal acceptance band, <span class="val">1</span> of <span class="val">7</span> core series and <span class="val">1</span> of <span class="val">24</span> sector series sit inside it — a result stated plainly rather than presented as a pass.</td><td class="c-text"><span class="file-held" title="delivery package · 2_neticeler/validation_backtest.csv"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>2_neticeler/validation_backtest.csv</span></td></tr><tr><td class="c-text"><strong>E6 — the results workbook.</strong> One Excel file carrying the same numbers as the machine-readable contract, for readers who work in a spreadsheet.</td><td class="c-wide"><span class="val">18</span> sheets: contents, the statutory sheet layout, one sheet per requirement including the addition, the assumption set and the backtest ledger. Built only from the five contract files, with no hand-placed value and no external link, and rebuilt as a post-stage step so it cannot hold a number the contract does not.</td><td class="c-text"><span class="file-held" title="delivery package · 2_neticeler/neticeler_15_5_1.xlsx"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>2_neticeler/neticeler_15_5_1.xlsx</span> · <a href="results.html#workbook">Results and files</a></td></tr><tr><td class="c-text"><strong>E7 — the reference comparison.</strong> A published external forecast to read the central paths against, frozen at one vintage.</td><td class="c-wide">A read-only extract of <span class="val">15</span> rows, restricted to the three series that match definitionally, published without bands and structurally barred from the assumption set: it can be compared against, never forecast from.</td><td class="c-text"><a href="fr/fr9.html">Consumer prices</a> · <span class="file-held" title="delivery package · 4_melumat/reference_forecasts.json"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-data"/></svg>4_melumat/reference_forecasts.json</span></td></tr><tr><td class="c-text"><strong>E8 — the requirement register and the negative proof.</strong> The twelve sentences were decomposed into atomic sub-demands and each traced twice, to the data that serves it and to the module that implements it.</td><td class="c-wide"><span class="val">58</span> atomic rows: <span class="val">42</span> complete, <span class="val">14</span> partial and <span class="val">2</span> gaps. A gap is recorded only after a concept-first search in all three languages of the source material, with cell-level re-reads of the candidate sheets; where the proof holds, the row names the data request that would close it.</td><td class="c-text"><a href="register.html">Requirement register</a></td></tr><tr><td class="c-text"><strong>E9 — the review response.</strong> Every item of the review of 14.08.2026 answered in one place, in the same shape: what was said, what was done, what the measured result was.</td><td class="c-wide">Each item carries its own result read from the live output files rather than asserted, and the items that were tested and lost say so. The screen-to-file content pack that accompanies it is versioned at <span class="val">v3.4</span>.</td><td class="c-text"><a href="response.html">Review response</a></td></tr><tr><td class="c-text"><strong>E10 — reproducibility as one command.</strong> One command rebuilds every number in the delivery from the input data, so the site, the report and the workbook cannot drift from the model.</td><td class="c-wide"><span class="val">15</span> stages over <span class="val">14</span> notebooks in dependency order, plus the workbook rebuild; the pipeline stops at the first failing stage rather than continuing on stale inputs, and two consecutive full runs are byte-identical. <span class="val">36</span> loader checks, <span class="val">8</span> output-contract checks and <span class="val">9</span> named econometric suites guard it.</td><td class="c-text"><span class="file-held" title="delivery package · 3_model/run_all.py"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-document"/></svg>3_model/run_all.py</span> · <a href="methodology.html">Method</a></td></tr></tbody></table></div>
+<h2 id="collected"><a class="anchor" href="#collected" aria-hidden="true">#</a><span class="section-num">3</span>Data collected by us</h2>
+<p>Several requirements could not be served from the files supplied with them. Where that happened the data was obtained from published sources, provenanced per series rather than per file, and recorded with its retrieval date. The last column is the point of the table: collecting data is not itself a result, and each row states what the collection changed in the published numbers — including where it changed them for the worse.</p>
+<div class="table-wrap"><table class="tbl tbl-dense"><thead><tr><th class="c-text">Source</th><th class="c-num">Series</th><th class="c-num">Coverage</th><th class="c-tight">Serves</th><th class="c-wide">What it changed</th></tr></thead><tbody><tr><td class="c-text">State Customs Committee, annual bulletins, table 7 (energy product headings)</td><td class="c-num"><span class="val">18</span></td><td class="c-num"><span class="val val-year">2016</span>–<span class="val val-year">2025</span></td><td class="c-tight">Foreign trade</td><td class="c-wide">Closed the trade data gap the review named. The coverage break at the start of the window is documented rather than smoothed, so the series is honest about the level shift instead of hiding it in a spliced path.</td></tr><tr><td class="c-text">Central Bank, monetary indicators, table 2.16</td><td class="c-num"><span class="val">2</span></td><td class="c-num"><span class="val val-year">1995</span>–<span class="val val-year">2025</span></td><td class="c-tight">Exchange rate</td><td class="c-wide">An accounting correction, not an improvement in fit: the statutory concept is the period average, not the end-of-period value, and the two differ materially in the years of the devaluation. The euro rate is now read directly instead of built as a cross-rate.</td></tr><tr><td class="c-text">Statistical office, national accounts, table 013en</td><td class="c-num"><span class="val">93</span></td><td class="c-num"><span class="val val-year">2005</span>–<span class="val val-year">2025</span></td><td class="c-tight">Production structure</td><td class="c-wide">Intermediate consumption is read directly instead of derived. Almost every sector-year is unchanged; the handful that differ are published as exceptions rather than reconciled away, and the derived ratio moved in five sectors.</td></tr><tr><td class="c-text">Statistical office, industry table 018en and agriculture tables 1.46 and 1.47</td><td class="c-num"><span class="val">11</span></td><td class="c-num"><span class="val val-year">1985</span>–<span class="val val-year">2024</span></td><td class="c-tight">Product forecasts</td><td class="c-wide">Revived <span class="val">10</span> of the <span class="val">11</span> product rows frozen by broken references in the statutory template, all of them beating the random walk and adding <span class="val">480</span> backtest rows. One row was deliberately not revived: the template's unit and the statistical office's unit are different measures.</td></tr><tr><td class="c-text">Statistical office, national accounts, table 027en</td><td class="c-num"><span class="val">4</span></td><td class="c-num"><span class="val val-year">1993</span>–<span class="val val-year">2025</span></td><td class="c-tight">GDP and expenditure</td><td class="c-wide">Government final consumption existed in none of the delivered files. It is now published over the full history and forecast horizon and carries a weighted share of the expenditure split.</td></tr><tr><td class="c-text">Statistical office, labour tables 4.5–4.8 and 2.12</td><td class="c-num"><span class="val">120</span></td><td class="c-num"><span class="val val-year">2005</span>–<span class="val val-year">2024</span></td><td class="c-tight">Income, wages</td><td class="c-wide">An activity-by-ownership panel, which made a share model possible where before there was only an untested trend rule. The panel model beats that rule by roughly twice on every share series and still does not clear the random walk, so the random walk keeps the path and the reported skill is zero.</td></tr><tr><td class="c-text">opendata.az, investment in fixed capital by financing source</td><td class="c-num"><span class="val">3</span></td><td class="c-num"><span class="val val-year">1995</span>–<span class="val val-year">2024</span></td><td class="c-tight">Investment</td><td class="c-wide">Extended the own-funds series from three observations to twenty-six, matching exactly in the overlap with no scaling. That is what made an honest negative verdict possible: the second state-investment term the review asked for was tested on the longer sample and lost.</td></tr><tr><td class="c-text">Central Bank payments statistics and the Ministry payments workbook</td><td class="c-num"><span class="val">4</span></td><td class="c-num"><span class="val val-year">1996</span>–<span class="val val-year">2025</span></td><td class="c-tight">Balance of payments</td><td class="c-wide">Remittances are published as their own series instead of sitting inside a residual, and on one income item a model now beats the benchmark where previously none did.</td></tr><tr><td class="c-text">Statistical office, national accounts, table 010en</td><td class="c-num"><span class="val">2</span></td><td class="c-num"><span class="val val-year">1990</span>–<span class="val val-year">2025</span></td><td class="c-tight">Exchange rate</td><td class="c-wide">An independent confirmation rather than a new input: it agrees with the central bank series in the last actual year, which is why the exchange-rate correction above could be made without a second judgement call.</td></tr></tbody></table></div>
+<p>Provenance for every row above is recorded series by series, with the source file, the retrieval date and the coverage window. The <a href="data.html">data page</a> carries that ledger and explains how these panels are kept apart from the Ministry's own workbook. The reference forecast described in E7 is not on this table: it is not collected data but a frozen extract of someone else's published numbers, and it is read-only by construction.</p>
+<footer class="site-footer">
+  <span class="stamp-row">Content pack v3.4 · built 2026-08-16 · pipeline hash <code>eeec7c0d1aac</code> · edition W</span>
+  <span class="stamp-row">Every number on this page is read at build time from
+    <code>2_neticeler/forecast_long.csv</code>, <code>2_neticeler/equations_catalog.csv</code>,
+    <code>2_neticeler/validation_backtest.csv</code>, <code>2_neticeler/series_dictionary.csv</code>
+    and <code>2_neticeler/assumptions.csv</code>. The hash is the md5 of those five files.</span>
+</footer>
+</main>
+</div>
+<script src="assets/plotly.min.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

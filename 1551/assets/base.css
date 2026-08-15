@@ -163,6 +163,18 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* AD1 — the code of an addition is the same code, at a different standing:
+   outlined rather than plain, no second colour spent on it. */
+.nav-group a .nav-num-add {
+  min-width: 0;
+  margin-right: 0.55em;
+  padding: 0 4px;
+  color: var(--ink-2);
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px;
+  font-size: 12px;
+}
+
 .nav-sections {
   list-style: none;
   margin: 6px 0 6px 0;
@@ -233,6 +245,7 @@ body {
 .content > h3,
 .content > h4,
 .content > .page-kicker,
+.content > .badge-addition,
 .content > .box { max-width: var(--measure); }
 
 /* TABLES, FIGURES, EQUATION BLOCKS and generated structures take the full
@@ -820,6 +833,22 @@ figcaption .fig-id {
 .eq-card > .eq-main { min-width: 0; }
 
 .eq-desc { font-size: 14.5px; color: var(--ink); margin-bottom: 5px; }
+/* the card's description is the catalogue's own Azerbaijani, quoted verbatim;
+   the marker says so at a glance, the way the register's column headers do */
+.eq-desc .eq-lang {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 0 4px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+  vertical-align: 1.5px;
+}
+/* an explanatory line under a generated section's opening paragraph */
+p.note { font-size: 14px; color: var(--ink-2); }
 /* the catalogue's own equation name — long enough to overflow a phone, so it
    folds like any other identifier rather than widening the page */
 .eq-desc .eq-lhs {
@@ -887,6 +916,22 @@ figcaption .fig-id {
   text-decoration: none;
 }
 .eq-jump:hover { background: var(--accent-soft); text-decoration: none; }
+/* AD1 — the chip that is not a requirement stands off the requirement row */
+.eq-jump-add { margin-left: 10px; border-style: dashed; color: var(--ink-2); }
+
+/* AD1 — the standing tag beside a section heading that is an addition */
+.h2-tag {
+  margin-left: 8px;
+  padding: 1px 6px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-2);
+  vertical-align: middle;
+}
 .eq-jump .jump-n {
   font-size: 11.5px;
   color: var(--ink-2);
@@ -944,6 +989,22 @@ figcaption .fig-id {
   background: var(--wash);
 }
 .box p:last-child { margin-bottom: 0; }
+
+/* AD1 — the addition banner.
+   It has to be unmissable above the fold and must not read as an alarm: this
+   is scope information, not a status. So it borrows the box rule rather than a
+   status colour, and takes its weight from the rule and the wash alone. */
+.badge-addition {
+  margin: 0 0 24px;
+  padding: 11px 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--wash);
+  border: 1px solid var(--rule-strong);
+  border-left: 3px solid var(--ink-2);
+  border-radius: 0 4px 4px 0;
+}
 
 .filter-bar {
   display: flex;
