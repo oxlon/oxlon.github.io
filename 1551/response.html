@@ -148,7 +148,7 @@
 <h3 id="b21"><a class="anchor" href="#b21" aria-hidden="true">#</a>B21 — Flexible integration of official forecasts</h3>
 <dl class="qa-list"><div><dt>They said</dt><dd>the model should allow official forecast indicators from the responsible institutions to be integrated flexibly.</dd></div><div><dt>Maps to</dt><dd>outside the FR list — delivered (governance).</dd></div><div><dt>Done</dt><dd>the mechanism was already architectural — one file is the single source of every forecast-horizon input, by construction — so the work was to write the contract that makes it usable: key, unit, supplying institution, effective date and source stamp, plus the empty official slot for the numbers themselves.</dd></div><div><dt>Result</dt><dd>the substitution contract ships with the content pack; the assumption set is <span class="val">63</span> keys × five years = <span class="val">315</span> rows, four official or exogenous inputs already enter this way, and the acceptance test for the scenario-builder screen states that no reference-only key may appear in the substitutable list — which is what makes an override safe.</dd></div></dl>
 <footer class="site-footer">
-  <span class="stamp-row">Content pack v3.4 · built 2026-08-18 · pipeline hash <code>dce2422083b2</code> · edition W</span>
+  <span class="stamp-row">Content pack v3.4 · built 2026-08-22 · pipeline hash <code>dce2422083b2</code> · edition W</span>
   <span class="stamp-row">Every number on this page is read at build time from
     <code>2_neticeler/forecast_long.csv</code>, <code>2_neticeler/equations_catalog.csv</code>,
     <code>2_neticeler/validation_backtest.csv</code>, <code>2_neticeler/series_dictionary.csv</code>
