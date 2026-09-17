@@ -344,3 +344,4 @@ body{font-size:16px;line-height:1.5;font-family:"Helvetica Neue",Arial,sans-seri
 /* Keep complete display equations readable inside methods and notebooks. */
 .reader, .cell-md, .cell-out {min-width:0;max-width:100%}
 .katex-display {max-width:100%;overflow-x:auto;overflow-y:hidden;padding:4px 0}
+.reader .math-inline {display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding:4px 0}
