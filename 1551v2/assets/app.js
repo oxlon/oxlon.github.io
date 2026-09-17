@@ -58,9 +58,9 @@ function literalTex(text) {
 const I18N = {
   en: {
     nav_workbench:'Forecasts', nav_evidence:'Models and data',
-    nav_overview:'Overview', nav_forecasts:'Forecast explorer', nav_scenarios:'Saved scenarios',
+    nav_caem:'CAEM', nav_ministry:'Ministry macro', nav_oxlon:'Oxlon', nav_terminology:'Terminology', nav_caem_overview:'Forecast overview', nav_caem_real:'Real economy', nav_caem_prices:'Prices and exchange rates', nav_caem_fiscal:'Fiscal accounts and debt', nav_caem_monetary:'Monetary accounts', nav_caem_external:'External accounts', nav_caem_labour:'Employment and incomes', nav_caem_scenarios:'Saved scenarios', nav_caem_methods:'Methods and equations', nav_caem_data:'Original workbook data', nav_caem_checks:'Calculation checks', nav_caem_records:'All forecast records', nav_overview:'Overview', nav_forecasts:'Forecast explorer', nav_scenarios:'Saved scenarios',
     nav_models:'Models and methods', nav_equations:'Equations', nav_workbook:'Results workbook', nav_library:'Data library',
-    nav_methods:'Methodology and sources', nav_requirements:'FR1–FR12', nav_differences:'Method differences', nav_delivery:'Ministry delivery files',
+    nav_methods:'Methodology and sources', nav_requirements:'Functional requirements', nav_differences:'Method differences', nav_delivery:'Ministry delivery files',
     search_button:'Find a table or method', menu:'Menu', close:'Close', retry:'Retry',
     reset:'Reset filters', search:'Search', loading:'Loading saved content', rows:'rows',
     page:'Page', of:'of', page_size:'Rows per page', all:'All', unavailable:'Unavailable',
@@ -70,10 +70,10 @@ const I18N = {
     strip_status:'Data definitions', strip_note:'Source vintages and definitions differ between engines; displayed differences are not a pure method comparison. This presentation does not renew the prior review or grant Ministry acceptance.'
   },
   az: {
-    nav_workbench:'İş masası', nav_evidence:'Sübutlar və mənbələr',
-    nav_overview:'İcmal', nav_forecasts:'Proqnoz tədqiqatı', nav_scenarios:'Saxlanmış ssenarilər',
+    nav_workbench:'Proqnozlar', nav_evidence:'Modellər və məlumatlar',
+    nav_caem:'CAEM', nav_ministry:'Nazirliyin makro modeli', nav_oxlon:'Oxlon', nav_terminology:'Terminologiya', nav_caem_overview:'Proqnoz icmalı', nav_caem_real:'Real iqtisadiyyat', nav_caem_prices:'Qiymətlər və məzənnələr', nav_caem_fiscal:'Fiskal hesablar və borc', nav_caem_monetary:'Pul-kredit hesabları', nav_caem_external:'Xarici sektor hesabları', nav_caem_labour:'Məşğulluq və gəlirlər', nav_caem_scenarios:'Saxlanmış ssenarilər', nav_caem_methods:'Metodlar və tənliklər', nav_caem_data:'İlkin iş kitabı məlumatları', nav_caem_checks:'Hesablama yoxlamaları', nav_caem_records:'Bütün proqnoz qeydləri', nav_overview:'İcmal', nav_forecasts:'Proqnoz tədqiqatı', nav_scenarios:'Saxlanmış ssenarilər',
     nav_models:'Modellər', nav_equations:'Tənliklər', nav_workbook:'İş kitabı', nav_library:'Məlumat kitabxanası',
-    nav_methods:'Metodologiya və mənbələr', nav_requirements:'Tələblər FR1-12', nav_differences:'Metod fərqləri', nav_delivery:'CSV təhvil faylları',
+    nav_methods:'Metodologiya və mənbələr', nav_requirements:'Funksional tələblər', nav_differences:'Metod fərqləri', nav_delivery:'CSV təhvil faylları',
     search_button:'Cədvəl və ya metod axtar', menu:'Menyu', close:'Bağla', retry:'Yenidən cəhd et',
     reset:'Filtrləri sıfırla', search:'Axtarış', loading:'Saxlanmış məzmun yüklənir', rows:'sətir',
     page:'Səhifə', of:'/', page_size:'Səhifədə sətir', all:'Hamısı', unavailable:'Mövcud deyil',
@@ -264,10 +264,16 @@ function compareValues(a, b, dir) {
   return dir === 'desc' ? -c : c;
 }
 
+const FIELD_LABELS={fr:'Functional requirement',fr_id:'Functional requirement reference',fr_ids:'Functional requirement references',FR:'Functional requirement',model_id:'Model',scenario_id:'Scenario',vintage_id:'Source data vintage',series_id:'Source series identifier',concept_id:'Economic concept identifier',concept:'Economic indicator',frequency:'Frequency',year:'Year',value:'Value',status:'Calculation status',data_status:'Observation status',source_file:'Source file',source_sheet:'Source worksheet',source_cell:'Source cell',method:'Recorded calculation method',source_value_type:'Source value type',reporting_role:'Role of this output',parent_vintage_id:'Parent source vintage',input_vintage_id:'Input source vintage',primary_source_file:'Underlying source file',primary_source_sheet:'Underlying source worksheet',primary_source_cell:'Underlying source address',unit:'Unit',mapped_unit:'Mapped comparison unit',price_basis:'Price basis',coverage_scope:'Output coverage',source_series:'Mapped source series',all_period_rows:'Records across all periods',forecast_rows:'Forecast records',forecast_error_rows:'Forecast records with calculation errors',source_sheets:'Source worksheets',meaning:'Interpretation',error:'Recorded calculation error',detail:'Error details',source_formula:'Original source formula',source_atom_id:'Original source-output reference',unit_scale_unresolved:'Unit scale requires confirmation',caveat:'Interpretation limit',baseline_value:'Baseline value',difference:'Change from baseline',difference_unit:'Unit of the change',comparison_status:'Comparison status',gdp_diff:'GDP reconciliation difference',gdp_difference:'GDP reconciliation difference',deflator_diff:'GDP deflator reconciliation difference',deflator_difference:'GDP deflator reconciliation difference',tolerance:'Recorded numerical tolerance',check_result:'Consistency check result',records:'Output records',unavailable_values:'Unavailable values',run_errors:'Recorded calculation errors',observation_statuses:'Observation-status counts',source_files:'Source files',log_index_contribution:'Contribution to log-index change',contribution_pp:'Contribution (percentage points)',coefficient_source:'Source coefficient cell',driver_expression:'Source driver expression',difference_from_observed_pp:'Difference from observed (percentage points)',interpretation:'Interpretation',scope:'Statistical coverage',result_available:'Mapped source record available',observation_status:'Observation status',definition_group:'Economic definition group',sign_convention:'Source sign convention',time_aggregation:'Time aggregation',assumption_key:'Forecast assumption',source_sha256:'Original source checksum'};
+function fieldLabel(key){return FIELD_LABELS[key]||String(key).replace(/_/g,' ')}
+const STATUS_LABELS={original_formula_expected:'Retained workbook expected value',original_formula_forecast:'Calculated workbook forecast',original_forecast:'Retained model forecast',model_forecast:'Saved model forecast',observed_official:'Recorded official observation',observed_source:'Source historical observation',derived_model_history:'Derived historical value',derived_identity:'Accounting-derived value',source_historical:'Original source history',literal_source_historical:'Original historical input',legacy_historical_input:'Retained legacy historical input',run_calculated:'Calculated from supplied formulas',source_input:'Retained source input',run_error:'Calculation error',staff_estimate:'IMF staff estimate',staff_projection:'IMF staff projection',formula_calculated:'Calculated formula value'};
+function friendlyValue(value,key){return ['status','data_status','observation_status','Baseline evaluation status'].includes(key)&&typeof value==='string'?(STATUS_LABELS[value]||value):value}
+function requireLabel(id){return /^FR\d+$/.test(String(id))?'Functional requirement '+id.slice(2)+' ('+id+')':id}
+
 class DataTable {
   constructor(opts) {
     this.opts = opts;
-    this.state = opts.state || {q: '', sort: null, dir: 'asc', page: 1, size: opts.pageSize || 25};
+    this.state = opts.state || {q: '', sort: null, dir: 'asc', page: 1, size: opts.pageSize || 50};
     this.filtered = null;
     this.root = document.createElement('div');
     this.root.className = 'dt';
@@ -297,7 +303,7 @@ class DataTable {
     if (o.searchable !== false) html += '<input type="search" data-role="q" aria-label="' + escapeHTML(t('search')) + '" placeholder="' + escapeHTML(t('search')) + '" value="' + escapeHTML(state.q) + '">';
     html += '<span data-role="count">' + fmtInt(this.filtered.length) + ' ' + escapeHTML(t('rows')) + (this.filtered.length !== o.rows.length ? ' · ' + fmtInt(o.rows.length) + ' ' + escapeHTML(t('all')).toLowerCase() : '') + '</span><span class="spacer"></span>';
     if (o.extraTools) html += o.extraTools;
-    html += '<label>' + escapeHTML(t('page_size')) + ' <select data-role="size">' + (o.pageSizes || [25, 50, 100, 250]).map(s => '<option' + (s === state.size ? ' selected' : '') + '>' + s + '</option>').join('') + '</select></label></div>';
+    html += '<label>' + escapeHTML(t('page_size')) + ' <select data-role="size">' + (o.pageSizes || [50, 100, 250]).map(s => '<option' + (s === state.size ? ' selected' : '') + '>' + s + '</option>').join('') + '</select></label></div>';
     html += '<div class="table-scroll' + (o.tall === false ? '' : ' tall') + '"><table class="data">';
     if (o.caption) html += '<caption>' + escapeHTML(o.caption) + '</caption>';
     html += '<thead><tr>';
@@ -305,7 +311,7 @@ class DataTable {
       const active = state.sort === (col.key || col.label);
       const mark = active ? (state.dir === 'asc' ? '▲' : '▼') : '';
       const aria = active ? (state.dir === 'asc' ? 'ascending' : 'descending') : 'none';
-      html += '<th' + ' class="' + [col.num?'num':'',col.sticky?'sticky-col':''].filter(Boolean).join(' ') + '"' + ' aria-sort="' + aria + '"><button type="button" class="th-btn" data-sort="' + escapeHTML(col.key || col.label) + '">' + escapeHTML(col.label) + '<span class="sort-mark">' + mark + '</span></button></th>';
+      html += '<th' + ' class="' + [col.num?'num':'',col.sticky?'sticky-col':''].filter(Boolean).join(' ') + '"' + ' aria-sort="' + aria + '"><button type="button" class="th-btn" data-sort="' + escapeHTML(col.key || col.label) + '">' + escapeHTML(fieldLabel(col.label)) + '<span class="sort-mark">' + mark + '</span></button></th>';
     }
     html += '</tr></thead><tbody>';
     if (!slice.length) {
@@ -404,7 +410,7 @@ function propsTable(obj, order) {
     else if (Array.isArray(v)) shown = escapeHTML(v.join(', ')) || '<span class="unavail">' + escapeHTML(t('unavailable')) + '</span>';
     else if (typeof v === 'object') shown = '<code>' + escapeHTML(JSON.stringify(v)) + '</code>';
     else shown = escapeHTML(String(v));
-    html += '<tr><th>' + escapeHTML(k) + '</th><td>' + shown + '</td></tr>';
+    html += '<tr><th>' + escapeHTML(fieldLabel(k)) + '</th><td>' + shown + '</td></tr>';
   }
   return html + '</tbody></table>';
 }
@@ -510,6 +516,8 @@ async function loadNotebookCells(entry, onP) {
 const SECTIONS = [
   {path:'overview', label:()=>t('nav_overview'), group:'nav_workbench'},
   {path:'forecasts', label:()=>t('nav_forecasts'), group:'nav_workbench'},
+  {path:'ministry',label:()=>t('nav_ministry'),group:'nav_workbench'},
+  {path:'oxlon',label:()=>t('nav_oxlon'),group:'nav_workbench'},
   {path:'scenarios', label:()=>t('nav_scenarios'), group:'nav_workbench'},
   {path:'models', label:()=>t('nav_models'), group:'nav_workbench'},
   {path:'equations', label:()=>t('nav_equations'), group:'nav_evidence'},
@@ -518,18 +526,18 @@ const SECTIONS = [
   {path:'methods', label:()=>t('nav_methods'), group:'nav_evidence'},
   {path:'differences', label:()=>t('nav_differences'), group:'nav_evidence'},
   {path:'delivery', label:()=>t('nav_delivery'), group:'nav_evidence'},
-  {path:'requirements', label:()=>t('nav_requirements'), group:'nav_evidence'}
+  {path:'requirements', label:()=>t('nav_requirements'), group:'nav_evidence'},
+  {path:'terminology',label:()=>t('nav_terminology'),group:'nav_evidence'},
+  {path:'caem',label:()=>t('nav_caem_overview'),group:'nav_caem'},  {path:'caem-real',label:()=>t('nav_caem_real'),group:'nav_caem'},  {path:'caem-prices',label:()=>t('nav_caem_prices'),group:'nav_caem'},  {path:'caem-fiscal',label:()=>t('nav_caem_fiscal'),group:'nav_caem'},  {path:'caem-monetary',label:()=>t('nav_caem_monetary'),group:'nav_caem'},  {path:'caem-external',label:()=>t('nav_caem_external'),group:'nav_caem'},  {path:'caem-labour',label:()=>t('nav_caem_labour'),group:'nav_caem'},  {path:'caem-scenarios',label:()=>t('nav_caem_scenarios'),group:'nav_caem'},  {path:'caem-methods',label:()=>t('nav_caem_methods'),group:'nav_caem'},  {path:'caem-data',label:()=>t('nav_caem_data'),group:'nav_caem'},  {path:'caem-checks',label:()=>t('nav_caem_checks'),group:'nav_caem'},  {path:'caem-records',label:()=>t('nav_caem_records'),group:'nav_caem'}
 ];
 function renderNav(current) {
-  const nav = $('#navigation');
-  let html = '';
-  let lastGroup = null;
-  for (const s of SECTIONS) {
-    if (s.group !== lastGroup) { html += '<div class="nav-group">' + escapeHTML(t(s.group)) + '</div>'; lastGroup = s.group; }
-    html += '<a href="#/' + s.path + '"' + (current === s.path ? ' class="active" aria-current="page"' : '') + '><span class="nav-dot"></span>' + escapeHTML(s.label()) + '</a>';
-  }
-  nav.innerHTML = html;
-  $('#sidebar-release').innerHTML = 'MİİS 15.5.1<br>17 September 2026';
+ const nav=$('#navigation'),activeGroup=SECTIONS.find(s=>s.path===current)?.group||'nav_workbench';let html='';
+ for(const group of [...new Set(SECTIONS.map(s=>s.group))]){
+  html+='<details class="nav-section"'+(group===activeGroup?' open':'')+'><summary class="nav-group">'+escapeHTML(t(group))+'</summary>';
+  for(const section of SECTIONS.filter(s=>s.group===group))html+='<a href="#/'+section.path+'"'+(current===section.path?' class="active" aria-current="page"':'')+'><span class="nav-dot"></span>'+escapeHTML(section.label())+'</a>';
+  html+='</details>';
+ }
+ nav.innerHTML=html;$('#sidebar-release').innerHTML='MİİS 15.5.1<br>17 September 2026';
 }
 function breadcrumb(items) {
   $('#breadcrumb').innerHTML = items.map((it, i) => {
@@ -611,9 +619,10 @@ async function viewOverview(params, ticket) {
 
 const FORECAST_MODELS = () => [...new Set(catalogue.result_groups.map(g => g.model_id))];
 function groupKeyOf(r) { return r.model_id + '|' + r.scenario_id; }
-function scenarioLabel(id,model) { const g=catalogue.result_groups.find(g=>g.model_id===model&&g.scenario_id===id); return g&&g.label || (id==='baseline'?'Baseline':id.replace(/_/g,' ')); }
+function scenarioLabel(id,model) { const g=catalogue.result_groups.find(g=>g.model_id===model&&g.scenario_id===id);const n=catalogue.result_groups.filter(g=>g.model_id===model).findIndex(g=>g.scenario_id===id)+1;if(g?.label)return g.label.replace(/ · [a-f0-9]{10}$/, ' · saved case '+n);return id==='baseline'?'Baseline':id.startsWith('interactive_')?'Saved source-input scenario · case '+n:id.replace(/_/g,' '); }
 
-async function viewForecasts(params, ticket) {
+async function viewForecasts(params, ticket, scope) {
+  const scopedRoute=scope?.route||'forecasts';
   const model = params.get('model') || 'ministry_macro';
   const scenario = params.get('scenario') || 'baseline';
   const state = {
@@ -639,7 +648,7 @@ async function viewForecasts(params, ticket) {
   if (!fresh(ticket)) return;
   const units = [...new Set(rows.map(r => r.unit).filter(Boolean))].sort();
   const scenarios = [...new Set(catalogue.result_groups.filter(g => model === '*' || g.model_id === model).map(g => g.scenario_id))];
-  let html = head('Forecast explorer', 'Every saved record from the executed runs. Baseline ministry run is the default selection.');
+  let html = head(scope?.title||'Forecast explorer',scope?'Saved source results, with recorded observation statuses, units, methods and calculation limits.':'Every saved record from the executed runs. Baseline ministry run is the default selection.');
   html += statusStrip(release);
   html += '<div class="filterbar" id="ff">';
   html += selectField('Model', 'model', [{value:'*',label:t('all') + ' (' + fmtInt(catalogue.counts.forecast_records) + ')'}].concat(FORECAST_MODELS().map(m => ({value:m,label:modelMeta(m).short + ' · ' + m}))), model);
@@ -655,6 +664,7 @@ async function viewForecasts(params, ticket) {
   html += '<button type="button" class="btn" id="f-reset">' + escapeHTML(t('reset')) + '</button></div>';
   html += '<div id="fcount" class="table-tools"></div><div id="ftable"></div>';
   view().innerHTML = html;
+  if(scope)$('#f-model').disabled=true;
   const currentFilters = () => ({model: model === '*' ? '' : model, scenario: scenario === '*' ? '' : scenario, fr: state.fr, unit: state.unit, start: state.start, end: state.end, q: state.q});
   function syncUrl() {
     const p = new URLSearchParams();
@@ -663,7 +673,7 @@ async function viewForecasts(params, ticket) {
     for (const k of ['fr','unit','q','start','end']) if (state[k]) p.set(k, state[k]);
     if (state.exact) p.set('exact', '1');
     p.set('wide', state.wide ? '1':'0');
-    setParams('forecasts', p, false);
+    setParams(scopedRoute, p, false);
   }
   let liveTable = null;
   function renderResult() {
@@ -712,7 +722,7 @@ async function viewForecasts(params, ticket) {
         return recs.map(x => escapeHTML(displayValue(x.value, state.exact))).join('<br>');
       }});
       const table = new DataTable({
-        rows: gridRows, columns, pageSize: 25, exact: state.exact, searchable: false,
+        rows: gridRows, columns, pageSize:50, exact: state.exact, searchable: false,
         caption: 'Grouped by engine, run, series, unit and source identity. Multiple original records in one cell are shown stacked.',
         onActivate: r => {
           const list = [...r.years.entries()].sort((a, b) => a[0] - b[0]);
@@ -726,7 +736,7 @@ async function viewForecasts(params, ticket) {
       host.appendChild(table.root);
     } else {
       const table = new DataTable({
-        rows: filtered, pageSize: 25, exact: state.exact, searchable: false,
+        rows: filtered, pageSize:50, exact: state.exact, searchable: false,
         columns: [
           {key:'model_id', label:'Engine', sticky:true, render:r=>modelTag(r.model_id)},
           {key:'scenario_id', label:'Scenario', render:r=>'<span class="' + (isTestScenario(r.scenario_id) ? 'scenario-test' : '') + '">' + escapeHTML(r.scenario_id) + '</span>'},
@@ -763,7 +773,7 @@ async function viewForecasts(params, ticket) {
     if (stillValid && sc !== 'baseline') p.set('scenario', sc);
     else if (!catalogue.result_groups.some(g=>g.model_id===m&&g.scenario_id==='baseline') && first) p.set('scenario', first.scenario_id);
     for (const k of localKeys) if (state[k]) p.set(k, state[k]); p.set('wide',state.wide?'1':'0'); if(state.exact)p.set('exact','1');
-    setParams('forecasts', p, true);
+    setParams(scopedRoute, p, true);
   });
   $('#f-scenario').addEventListener('change', () => {
     const p = new URLSearchParams();
@@ -771,7 +781,7 @@ async function viewForecasts(params, ticket) {
     const sc = $('#f-scenario').value;
     if (sc !== 'baseline') p.set('scenario', sc);
     for (const k of localKeys) if (state[k]) p.set(k, state[k]); p.set('wide',state.wide?'1':'0'); if(state.exact)p.set('exact','1');
-    setParams('forecasts', p, true);
+    setParams(scopedRoute, p, true);
   });
   let localTimer = null;
   const scheduleLocal = () => { clearTimeout(localTimer); localTimer = setTimeout(localApply, 300); };
@@ -783,7 +793,7 @@ async function viewForecasts(params, ticket) {
   }
   $('#f-exact').addEventListener('change', () => { state.exact = $('#f-exact').checked; syncUrl(); renderResult(); });
   $('#f-wide').addEventListener('change', () => { state.wide = $('#f-wide').checked; syncUrl(); renderResult(); });
-  $('#f-reset').addEventListener('click', () => setParams('forecasts', new URLSearchParams(), true));
+  $('#f-reset').addEventListener('click', () => setParams(scopedRoute, new URLSearchParams(), true));
   renderResult();
 }
 
@@ -830,7 +840,7 @@ async function viewScenarios(params, ticket) {
       ];
       host.innerHTML = '<div class="panel"><h2>' + escapeHTML(scenarioLabel(s,m)) + ' <span class="badge">Saved calculation</span>' + (isTestScenario(s) ? ' <span class="badge test">TEST ONLY</span>' : '') + '</h2><div id="sd-table"></div></div>';
       if(g.scenario_detail) host.insertAdjacentHTML('afterbegin','<section class="panel"><h2>Scenario definition and source inputs</h2>'+propsTable(g.scenario_detail)+'</section>');
-      const table = new DataTable({rows, columns: dcols, pageSize: 25, caption: 'Precomputed differences against the same-engine baseline. Source identities join exactly.',
+      const table = new DataTable({rows, columns: dcols, pageSize:50, caption: 'Precomputed differences against the same-engine baseline. Source identities join exactly.',
         onActivate: row => openDetail(row.series_id + ' · ' + row.year, recordDetail(row, RECORD_FIELDS.concat(['baseline_value','difference','difference_unit','comparison_status'])))});
       host.querySelector('#sd-table').appendChild(table.root);
     }
@@ -907,7 +917,7 @@ async function viewEquations(params, ticket) {
     };
     const filteredRows = rows.filter(r => (!modelFilter || r.model_id === modelFilter) && (!frFilter || r.fr === frFilter));
     const table = new DataTable({
-      rows: filteredRows, pageSize: 25,
+      rows: filteredRows, pageSize:50,
       columns: [
         {key:'eq_name', label:'Name', sticky:true, wrap:true},
         {key:'fr', label:'FR'},
@@ -953,7 +963,7 @@ async function viewEquations(params, ticket) {
     body.innerHTML = h;
     mathAfterRender(body.querySelector('.panel'));
     const table = new DataTable({
-      rows: math, pageSize: 25,
+      rows: math, pageSize:50,
       columns: [
         {key:'source_index', label:'Index', num:true, sticky:true},
         {key:'tex', label:'Expression', wrap:true, get:r=>r.source_text||r.tex, render:r=>'<span data-math="'+escapeHTML(r.tex)+'"></span>'},
@@ -996,7 +1006,7 @@ async function viewEquations(params, ticket) {
       render: i === entry.formula_column ? (r => '<code>' + escapeHTML(String(r[i] ?? '')) + '</code>') : undefined
     }));
     const table = new DataTable({
-      rows, columns: cols, pageSize: 25,
+      rows, columns: cols, pageSize:50,
       caption: entry.title + ' · ' + fmtInt(entry.row_count) + ' rows. Cache values are references, not substituted results.',
       onActivate: row => {
         let d = '<table class="props"><tbody>';
@@ -1029,7 +1039,7 @@ async function viewWorkbook(params,ticket){
  function mount(){
   const full=$('#wb-all-columns')?.checked;const indices=headers.map((_,i)=>i).filter(i=>headers[i]!==null&&headers[i]!==undefined&&headers[i]!==''&&(!/^FR\d+$/.test(entry.sheet)||full||[0,3,4,5,6,7,8,9,10,11].includes(i)));
   const columns=indices.map(i=>({key:'c'+i,label:String(headers[i]),get:r=>r.values[i],num:typeof headers[i]==='number'||['Year','Value','GDP residual','Deflator residual','Tolerance','Bytes'].includes(headers[i]),wrap:['Concept','Method','Source file','Source sheet','Rule','Result','Provenance / role','Source boundary / vintage'].includes(headers[i]),sticky:i===indices[0],render:r=>{const v=r.values[i];return v===null||v===undefined||v===''?'<span class="unavail">—</span>':escapeHTML(displayValue(v));}}));
-  const host=$('#wb-grid');host.innerHTML='';host.appendChild(new DataTable({rows:data,columns,pageSize:25,caption:entry.path+' · '+fmtInt(data.length)+' original source rows after the heading. Empty cells remain empty.',onActivate:r=>{const obj={'Workbook':'MIIS_1551_RESULTS.xlsx','Sheet':entry.sheet,'Original row':r.row};headers.forEach((v,i)=>{obj[String(v||entry.columns[i])+' ['+entry.columns[i]+']']=r.values[i]});openDetail(entry.sheet+' · row '+r.row,propsTable(obj));}}).root);
+  const host=$('#wb-grid');host.innerHTML='';host.appendChild(new DataTable({rows:data,columns,pageSize:50,caption:entry.path+' · '+fmtInt(data.length)+' original source rows after the heading. Empty cells remain empty.',onActivate:r=>{const obj={'Workbook':'MIIS_1551_RESULTS.xlsx','Sheet':entry.sheet,'Original row':r.row};headers.forEach((v,i)=>{obj[String(v||entry.columns[i])+' ['+entry.columns[i]+']']=r.values[i]});openDetail(entry.sheet+' · row '+r.row,propsTable(obj));}}).root);
  }
  $('#wb-all-columns')?.addEventListener('change',mount);mount();
 }
@@ -1051,16 +1061,16 @@ async function viewLibrary(params, ticket) {
   view().innerHTML = html;
   const rows = catalogue.tables.filter(x => (!kind || x.kind === kind) && (!scope || x.scope === scope) && (!model || x.model_id === model));
   const table = new DataTable({
-    rows, pageSize: 25,
+    rows, pageSize:50,
     columns: [
       {key:'title', label:'Dataset', sticky:true, wrap:true},
-      {key:'path', label:'Source path', wrap:true, render:r=>'<code>'+escapeHTML(r.path)+'</code>'},
+      {key:'description',label:'Contents and interpretation',wrap:true,get:r=>r.description||r.note||'Original source records; inspect the dataset for all source fields.'},
       {key:'kind', label:'Kind', render:r=>'<span class="badge">'+escapeHTML(r.kind)+'</span>'},
       {key:'scope', label:'Scope', wrap:true, render:r=>'<span class="' + (/Verification|historical|Original/i.test(r.scope) ? 'badge pending' : 'badge') + '">'+escapeHTML(r.scope)+'</span>'},
       {key:'model_id', label:'Engine', render:r=>r.model_id?modelTag(r.model_id):'<span class="unavail">-</span>'},
       {key:'row_count', label:'Rows', num:true},
       {key:'cols', label:'Columns', num:true, get:r=>r.columns.length},
-      {key:'parts', label:'Parts', num:true, get:r=>r.parts.length}
+      {key:'source',label:'Original file',get:r=>r.path,render:r=>'<details><summary>Source details</summary><code>'+escapeHTML(r.path)+'</code></details>'}
     ],
     caption: 'Verification, historical and archived sources are labelled and never mixed into current forecasts.',
     onActivate: row => {
@@ -1085,24 +1095,24 @@ async function viewTable(params, ticket) {
   loadingView();
   const rows = await loadTableRows(entry, (d, n) => progressView(d, n));
   if (!fresh(ticket)) return;
-  let html = head(entry.title, entry.note || null, entry.path);
+  let html = head(entry.title, entry.description||entry.note || null);
   html += '<div class="counters"><span class="counter"><span class="n">' + fmtInt(entry.row_count) + '</span><span class="l">' + escapeHTML(t('rows')) + '</span></span><span class="counter"><span class="n">' + entry.columns.length + '</span><span class="l">columns</span></span><span class="counter"><span class="n">' + escapeHTML(entry.kind) + '</span><span class="l">kind</span></span><span class="counter"><span class="n" style="font-size:13px">' + escapeHTML(entry.scope) + '</span><span class="l">scope</span></span></div>';
-  html += '<div id="t-host"></div>';
+  html += '<details class="source-provenance"><summary>Original file and source details</summary><p>'+escapeHTML(entry.path)+'</p></details><div id="t-host"></div>';
   view().innerHTML = html;
   const cols = entry.columns.map((label, i) => ({
-    key: 'c' + i, label, wrap: String(label).length > 24 || i === entry.formula_column,
+    key: 'c' + i, label:fieldLabel(label), originalLabel:label, wrap: String(label).length > 24 || i === entry.formula_column,
     get: r => r[i],
     render: i === entry.formula_column ? (r => '<code>' + escapeHTML(String(r[i] ?? '').slice(0, 160)) + '</code>') : (r => {
       const v = r[i];
       if (v === '') return '';
       if (isUnavailable(v)) return '<span class="unavail">' + escapeHTML(t('unavailable')) + '</span>';
-      return escapeHTML(displayValue(v));
+      return escapeHTML(displayValue(friendlyValue(v,label)));
     })
   }));
   const q0 = params.get('q') || '';
   const table = new DataTable({
-    rows, columns: cols, pageSize: 25,
-    state: {q: q0, sort: null, dir: 'asc', page: 1, size: 25},
+    rows, columns: cols, pageSize:50,
+    state: {q: q0, sort: null, dir: 'asc', page: 1, size:50},
     caption: entry.row_count + ' source rows. Empty source strings stay empty; missing values are marked unavailable.',
     onActivate: row => {
       const obj = {};
@@ -1126,9 +1136,9 @@ async function viewMethods(params,ticket){
  h+='<section class="panel"><h2>Recorded model notebooks</h2><div id="notebook-index"></div></section><section class="panel"><h2>Model documentation and calculation sources</h2><div id="doc-table"></div></section>';
  view().innerHTML=h;
  const docColumns=[{key:'title',label:'Document',sticky:true,wrap:true},{key:'path',label:'Source',wrap:true},{key:'format',label:'Format'},{key:'scope',label:'Scope',wrap:true}];
- $('#original-documents').appendChild(new DataTable({rows:originals,columns:docColumns,tall:false,pageSize:25,onActivate:r=>setParams('document',new URLSearchParams('id='+r.id),true)}).root);
+ $('#original-documents').appendChild(new DataTable({rows:originals,columns:docColumns,tall:false,pageSize:50,onActivate:r=>setParams('document',new URLSearchParams('id='+r.id),true)}).root);
  $('#notebook-index').appendChild(new DataTable({rows:catalogue.notebooks,columns:[{key:'title',label:'Notebook',sticky:true},{key:'path',label:'Source',wrap:true},{key:'cell_count',label:'Cells',num:true},{key:'note',label:'Scope',wrap:true}],tall:false,onActivate:r=>setParams('notebook',new URLSearchParams('id='+r.id),true)}).root);
- $('#doc-table').appendChild(new DataTable({rows:catalogue.documents.filter(d=>!originals.includes(d)),columns:docColumns,pageSize:25,onActivate:r=>setParams('document',new URLSearchParams('id='+r.id),true)}).root);
+ $('#doc-table').appendChild(new DataTable({rows:catalogue.documents.filter(d=>!originals.includes(d)),columns:docColumns,pageSize:50,onActivate:r=>setParams('document',new URLSearchParams('id='+r.id),true)}).root);
 }
 
 
@@ -1173,7 +1183,7 @@ function mountPagedJSON(root) {
     } else {
       columns = [{key: 'value', label: 'value', wrap: true, get: r => r, render: r => typeof r === 'object' ? '<code>' + escapeHTML(JSON.stringify(r)) + '</code>' : escapeHTML(String(r))}];
     }
-    const table = new DataTable({rows: arr, columns, pageSize: 25, tall: false, caption: fmtInt(arr.length) + ' array items'});
+    const table = new DataTable({rows: arr, columns, pageSize:50, tall: false, caption: fmtInt(arr.length) + ' array items'});
     slot.appendChild(table.root);
   });
 }
@@ -1327,14 +1337,15 @@ async function viewRequirements(params,ticket){
  loadingView();const release=await releaseP();if(!fresh(ticket))return;
  const reqs=release.requirements,req=reqs.find(r=>r.id===params.get('fr'))||reqs[0];
  let h=head(lang==='az'?'Funksional tələblər FR1–FR12':'Functional requirements FR1–FR12',lang==='az'?'Nazirliyin dəqiq tələbi, model üzrə nəticələr və tələb olunan mənbə məlumatları.':'The exact Ministry requirement, model results and required source inputs.');
- h+='<div class="fr-rail">'+reqs.map(r=>'<a href="#/requirements?fr='+r.id+'"'+(r.id===req.id?' class="active" aria-current="page"':'')+'>'+r.id+'</a>').join('')+'</div>';
- h+='<section class="panel"><h2>'+req.id+'</h2><p class="req-az" lang="az">'+escapeHTML(req.requested_text_az)+'</p><p class="req-en">'+escapeHTML(req.faithful_english)+'</p><table class="props"><tbody><tr><th>Requirement source</th><td>'+escapeHTML(req.source.file.split('/').pop())+' · '+escapeHTML(req.source.locator)+'</td></tr><tr><th>Source inputs still required</th><td>'+escapeHTML(req.outstanding_official_inputs)+'</td></tr></tbody></table></section>';
- h+='<section class="panel"><h2>'+req.id+' · '+(lang==='az'?'Baza proqnoz cədvəli':'Baseline forecast table')+'</h2><p class="notice-line">'+(lang==='az'?'Sütun başlıqlarına klikləyərək sıralayın. Sətirə klikləyərək bütün illərin dəqiq qiymətlərini və mənbələrini görün.':'Sort using column headings. Select a row for exact values and sources across all years.')+'</p><div class="filterbar" id="reqfilters">'+selectField('Model','req-model',[{value:'*',label:t('all')},...release.models.map(m=>({value:m.id,label:modelMeta(m.id).short}))],params.get('model')||'*')+'<div class="field"><label for="req-q">'+t('search')+'</label><input id="req-q" type="search" placeholder="series, concept, source"></div></div><div id="requirement-results" class="loading">'+t('loading')+'</div></section>';
+ h+='<p class="definition-note">FR means <strong>functional requirement</strong>. FR1–FR12 are the twelve contractual requirement references in Ministry specification §15.5.1. <a href="#/terminology">Terminology and column meanings</a></p>';
+ h+='<div class="fr-rail">'+reqs.map(r=>'<a href="#/requirements?fr='+r.id+'"'+(r.id===req.id?' class="active" aria-current="page"':'')+' title="'+escapeHTML(requireLabel(r.id))+'">'+r.id+'</a>').join('')+'</div>';
+ h+='<section class="panel"><h2>'+requireLabel(req.id)+'</h2><p class="req-az" lang="az">'+escapeHTML(req.requested_text_az)+'</p><p class="req-en">'+escapeHTML(req.faithful_english)+'</p><table class="props"><tbody><tr><th>Requirement source</th><td>'+escapeHTML(req.source.file.split('/').pop())+' · '+escapeHTML(req.source.locator)+'</td></tr><tr><th>Source inputs still required</th><td>'+escapeHTML(req.outstanding_official_inputs)+'</td></tr></tbody></table></section>';
+ h+='<section class="panel"><h2>'+requireLabel(req.id)+' · '+(lang==='az'?'Baza proqnoz cədvəli':'Baseline forecast table')+'</h2><p class="notice-line">'+(lang==='az'?'Sütun başlıqlarına klikləyərək sıralayın. Sətirə klikləyərək bütün illərin dəqiq qiymətlərini və mənbələrini görün.':'Sort using column headings. Select a row for exact values and sources across all years.')+'</p><div class="filterbar" id="reqfilters">'+selectField('Model','req-model',[{value:'*',label:t('all')},...release.models.map(m=>({value:m.id,label:modelMeta(m.id).short}))],params.get('model')||'*')+'<div class="field"><label for="req-q">'+t('search')+'</label><input id="req-q" type="search" placeholder="series, concept, source"></div></div><div id="requirement-results" class="loading">'+t('loading')+'</div></section>';
  const xs=catalogue.tables.find(x=>/FR_ATOMIC_CROSSWALK/.test(x.path));const fb=catalogue.tables.find(x=>/FEEDBACK_25_CROSSWALK/.test(x.path));
  h+='<section class="panel"><h2>Detailed requirement mapping</h2><div class="actions-row"><a class="btn" href="#/workbook?sheet='+req.id+'">'+req.id+' results workbook table</a><a class="btn" href="#/forecasts?model=*&scenario=baseline&fr='+req.id+'&wide=1&start=2024">All original '+req.id+' records</a>'+(xs?'<a class="btn" href="#/table?id='+xs.id+'&q='+req.id+' ">Atomic requirement definitions</a>':'')+(fb?'<a class="btn" href="#/table?id='+fb.id+'">Ministry feedback: 25 items</a>':'')+'</div></section>';
  h+='<section class="panel"><h2>All requirements</h2><div id="requirements-index"></div></section>';
  view().innerHTML=h;
- $('#requirements-index').appendChild(new DataTable({rows:reqs,columns:[{key:'id',label:'FR',sticky:true},{key:'faithful_english',label:'Required output',wrap:true},{key:'outstanding_official_inputs',label:'Required official inputs',wrap:true}],tall:false,pageSize:25,onActivate:r=>setParams('requirements',new URLSearchParams('fr='+r.id),true)}).root);
+ $('#requirements-index').appendChild(new DataTable({rows:reqs,columns:[{key:'id',label:'FR',sticky:true},{key:'faithful_english',label:'Required output',wrap:true},{key:'outstanding_official_inputs',label:'Required official inputs',wrap:true}],tall:false,pageSize:50,onActivate:r=>setParams('requirements',new URLSearchParams('fr='+r.id),true)}).root);
  const all=(await Promise.all(release.models.map(m=>loadGroupRows(m.id,'baseline')))).flat().filter(r=>(r.fr_ids||[]).includes(req.id)&&Number(r.year)>=2024&&Number(r.year)<=2030);
  if(!fresh(ticket))return;
  function show(){
@@ -1343,7 +1354,7 @@ async function viewRequirements(params,ticket){
   const map=new Map();for(const r of rs){const k=JSON.stringify([r.model_id,r.series_id,r.unit,r.source_file,r.source_sheet,r.reporting_role]);if(!map.has(k))map.set(k,{meta:r,years:new Map()});const g=map.get(k);if(!g.years.has(Number(r.year)))g.years.set(Number(r.year),[]);g.years.get(Number(r.year)).push(r);}
   const grid=[...map.values()],years=[2024,2025,2026,2027,2028,2029,2030];
   const columns=[{key:'model',label:'Model',sticky:true,get:r=>r.meta.model_id,render:r=>modelTag(r.meta.model_id)},{key:'indicator',label:'Indicator',wrap:true,get:r=>r.meta.concept},{key:'series',label:'Series',get:r=>r.meta.series_id},{key:'unit',label:'Unit',get:r=>r.meta.unit},...years.map(y=>({key:'y'+y,label:String(y),num:true,get:r=>{const xs=r.years.get(y);return xs&&xs.length===1?xs[0].value:xs?xs.map(x=>x.value).join(' | '):null;},render:r=>{const xs=r.years.get(y);return xs?xs.map(x=>escapeHTML(displayValue(x.value))).join('<br>'):'<span class="unavail">—</span>';}})),{key:'source',label:'Source',wrap:true,get:r=>[r.meta.source_file,r.meta.source_sheet].join(' / ')}];
-  const host=$('#requirement-results');host.className='';host.innerHTML='';host.appendChild(new DataTable({rows:grid,columns,searchable:false,pageSize:25,caption:fmtInt(rs.length)+' baseline source records; '+fmtInt(grid.length)+' indicator/source rows. Missing values are not replaced by zeros.',onActivate:r=>{let detail=recordDetail(r.meta);const vals=[...r.years.values()].flat();detail+='<table class="data"><thead><tr><th>Year</th><th>Exact value</th><th>Source cell</th><th>Data status</th></tr></thead><tbody>'+vals.map(x=>'<tr><td>'+x.year+'</td><td class="num">'+escapeHTML(displayValue(x.value,true))+'</td><td>'+escapeHTML(x.source_cell)+'</td><td>'+escapeHTML(x.data_status)+'</td></tr>').join('')+'</tbody></table>';openDetail(r.meta.concept,detail);}}).root);
+  const host=$('#requirement-results');host.className='';host.innerHTML='';host.appendChild(new DataTable({rows:grid,columns,searchable:false,pageSize:50,caption:fmtInt(rs.length)+' baseline source records; '+fmtInt(grid.length)+' indicator/source rows. Missing values are not replaced by zeros.',onActivate:r=>{let detail=recordDetail(r.meta);const vals=[...r.years.values()].flat();detail+='<table class="data"><thead><tr><th>Year</th><th>Exact value</th><th>Source cell</th><th>Data status</th></tr></thead><tbody>'+vals.map(x=>'<tr><td>'+x.year+'</td><td class="num">'+escapeHTML(displayValue(x.value,true))+'</td><td>'+escapeHTML(x.source_cell)+'</td><td>'+escapeHTML(x.data_status)+'</td></tr>').join('')+'</tbody></table>';openDetail(r.meta.concept,detail);}}).root);
  }
  $('#f-req-model').addEventListener('change',show);let tm;$('#req-q').addEventListener('input',()=>{clearTimeout(tm);tm=setTimeout(show,250);});show();
 }
@@ -1359,8 +1370,9 @@ function buildSearchIndex() {
   for (const x of catalogue.workbook) searchIndex.push({kind:'sheet', label:'Workbook · ' + x.sheet, sub:x.path, route:'#/workbook?sheet=' + encodeURIComponent(x.sheet)});
   for (const x of catalogue.equation_catalogues) searchIndex.push({kind:'equations', label:x.title, sub:x.path + ' · ' + x.count + ' rows', route:'#/equations'});
   searchIndex.push({kind:'view', label:'CAEM methodology expressions', sub:'283 original methodology expressions', route:'#/equations?tab=caem'});
-  for (const g of catalogue.result_groups) searchIndex.push({kind:'run', label:g.model_id + ' · ' + g.scenario_id, sub:g.row_count + ' records', route:'#/forecasts?model=' + encodeURIComponent(g.model_id) + '&scenario=' + encodeURIComponent(g.scenario_id)});
-  for (let i = 1; i <= 12; i++) searchIndex.push({kind:'requirement', label:'FR' + i, sub:'Supplied requirement wording and coverage', route:'#/requirements?fr=FR' + i});
+  for (const section of SECTIONS)searchIndex.push({kind:'page',label:section.label(),sub:t(section.group),route:'#/'+section.path});
+  for (const g of catalogue.result_groups) searchIndex.push({kind:'run', label:modelMeta(g.model_id).short + ' · ' + scenarioLabel(g.scenario_id,g.model_id), sub:g.row_count + ' records', route:'#/forecasts?model=' + encodeURIComponent(g.model_id) + '&scenario=' + encodeURIComponent(g.scenario_id)});
+  for (let i = 1; i <= 12; i++) searchIndex.push({kind:'requirement', label:'Functional requirement '+i+' (FR'+i+')', sub:'Supplied requirement wording and saved output inventory', route:'#/requirements?fr=FR' + i});
 }
 function runGlobalSearch(q) {
   buildSearchIndex();
@@ -1400,13 +1412,13 @@ function comparisonStatus(r) {
 }
 const methodEvidenceP=()=>loadAsset(catalogue.method_evidence_key);
 const deliveryP=()=>loadAsset(catalogue.delivery_key);
-function evidenceColumns(keys) {return keys.map(k=>({key:k,label:k.replace(/_/g,' '),wrap:!['value','year','coefficient','driver','contribution_pp','log_index_contribution'].includes(k),num:['value','year','coefficient','driver','contribution_pp','log_index_contribution','difference_from_observed_pp'].includes(k),render:r=>escapeHTML(displayValue(r[k],true))}));}
+function evidenceColumns(keys) {return keys.map(k=>({key:k,label:fieldLabel(k),wrap:!['value','year','coefficient','driver','contribution_pp','log_index_contribution'].includes(k),num:['value','year','coefficient','driver','contribution_pp','log_index_contribution','difference_from_observed_pp'].includes(k),render:r=>escapeHTML(displayValue(friendlyValue(r[k],k),true))}));}
 function renderAllIndicatorAudit(e,params) {
  const definitions=e.all_indicator_definitions,selected=params.get('indicator')||'gdp_real_growth_market',year=Number(params.get('year')||2025),d=definitions.find(x=>x.concept_id===selected)||definitions[0];
  const host=$('#all-indicator-audit');
  host.innerHTML='<h2>All 25 indicators · definitions, methods and source audit</h2><p>Read each economic target separately. The same units or similar names do not establish matching statistical boundaries, classification, source inputs or forecast origins. This audit retains every mapped saved value and its provenance for 2024–2031.</p><div id="indicator-definition-index"></div><div class="filterbar" id="indicator-controls">'+selectField('Detailed indicator','audit-indicator',definitions.map(x=>({value:x.concept_id,label:x.indicator})),d.concept_id)+selectField('Reference year','audit-year',[2024,2025,2026,2027,2028,2029,2030,2031],year)+'</div><h3>'+escapeHTML(d.indicator)+' · '+year+'</h3><p>'+escapeHTML(d.technical_interpretation)+'</p>'+(d.original_mapping_notes?'<p class="definition-note">'+escapeHTML(d.original_mapping_notes)+'</p>':'')+'<div id="indicator-source-results"></div><p>Select a source row to inspect its exact saved value, original formula, recorded method, source address, price basis, classification, sign convention and vintage. A missing mapped result remains unavailable; a source formula is not an authenticated updated Ministry forecast.</p><div id="indicator-definition-decisions"></div><a class="btn" href="#/overview?concept='+encodeURIComponent(d.concept_id)+'&start=2024&end=2031">Open this indicator’s complete comparison →</a> <a class="btn" href="#/delivery?file=all-comparisons">All indicator/year audit · HTML and CSV →</a>';
  const change=(indicator,refYear=year)=>{const p=new URLSearchParams(params);p.set('indicator',indicator);p.set('year',refYear);setParams('differences',p,true)};
- $('#indicator-definition-index').appendChild(new DataTable({rows:definitions,columns:[{key:'indicator',label:'Indicator',wrap:true},{key:'technical_interpretation',label:'Definition and comparison limit',wrap:true}],caption:'Complete 25-indicator register · select any row for its numerical/source audit',tall:false,pageSize:25,onActivate:r=>change(r.concept_id)}).root);
+ $('#indicator-definition-index').appendChild(new DataTable({rows:definitions,columns:[{key:'indicator',label:'Indicator',wrap:true},{key:'technical_interpretation',label:'Definition and comparison limit',wrap:true}],caption:'Complete 25-indicator register · select any row for its numerical/source audit',tall:false,pageSize:50,onActivate:r=>change(r.concept_id)}).root);
  $('#f-audit-indicator').addEventListener('change',()=>change($('#f-audit-indicator').value,$('#f-audit-year').value));
  $('#f-audit-year').addEventListener('change',()=>change($('#f-audit-indicator').value,$('#f-audit-year').value));
  const rows=e.all_comparison_rows.filter(r=>r.concept_id===d.concept_id&&r.year===year);
@@ -1478,8 +1490,30 @@ async function viewDelivery(params,ticket) {
  }
 }
 
+const CAEM_INDICATOR_LABELS={output_gap:'Non-oil output gap / non-oil potential output',investment_growth:'Real fixed-capital formation growth',gdp_nom:'Nominal GDP at market prices · expenditure framework',gdp_nom_production_source:'Nominal GDP at market prices · production account',nonoil_gdp_nom:'Non-oil GDP at market prices · source partition',nonoil_gdp_growth:'Real non-oil GDP growth'};
+const CAEM_SECTORS={
+ real:{en:'Real economy',az:'Real iqtisadiyyat',sheets:['1a. Real GDP - Production','1d. Real GDP - Expenditure','5a.  GDP Nominal + (S+I)','Oil_and_gas_sector'],series:['gdp_growth','output_gap','domestic_demand_growth','consumption_growth','private_consumption_growth','public_consumption_growth','investment_growth','exports_growth','imports_growth'],note:'Production and expenditure accounts, oil/non-oil GDP and demand growth. The retained production and expenditure nominal GDP totals are separate source results.'},
+ prices:{en:'Prices and exchange rates',az:'Qiymətlər və məzənnələr',sheets:['1b. Infl and Ex rates','1c. Interest rates'],series:['cpi_avg','gdp_deflator','policy_rate','reer','reer_growth'],note:'Annual-average CPI, the implicit GDP deflator, bilateral dollar exchange rate and effective exchange-rate indices are different measures. Missing policy-rate outputs remain unavailable.'},
+ fiscal:{en:'Fiscal accounts and debt',az:'Fiskal hesablar və borc',sheets:['3a. Fiscal ','Fiscal sector','3b. OUT for debt dynamics'],series:['fiscal_revenue_ratio','fiscal_expenditure_ratio','overall_fiscal_balance','government_domestic_debt','government_external_debt','government_total_debt'],note:'The saved summary outputs are general-government/consolidated fiscal ratios and government debt as percentages of GDP. They must remain separate from state-budget amounts and perimeters.'},
+ monetary:{en:'Monetary accounts',az:'Pul-kredit hesabları',sheets:['4.  Monetary-Financial','1c. Interest rates'],series:['monetary_nfa','monetary_nda','private_credit_ratio','broad_money_ratio','reserves_broad_money','policy_rate'],note:'Monetary net foreign/domestic assets, private-sector credit, broad money, reserves and interest-rate outputs retain their original units. A ratio to GDP is distinct from a currency amount.'},
+ external:{en:'External accounts',az:'Xarici sektor hesabları',sheets:['2a.  External USD','2b. External LCU'],series:['current_account','net_fdi','portfolio_other_investment','reserves_ratio','net_iip','external_debt','saving_investment'],note:'Balance-of-payments amounts in USD and summary ratios to GDP are presented separately. Financial flows retain the source asset/liability sign convention; reserve changes remain a distinct category.'},
+ labour:{en:'Employment and incomes',az:'Məşğulluq və gəlirlər',sheets:['1e. Social sector'],series:[],note:'The original CAEM social-sector workbook formulas are available below. No separate normalized employment or wage output series is exported in this saved CAEM baseline; cached source values are not presented as new forecasts.'}
+};
+function caemSourceLinks(sheets){const entries=catalogue.tables.filter(x=>x.kind==='native'&&x.model_id==='ministry_caem'&&sheets.includes(x.sheet));return '<div class="actions-row">'+entries.map(x=>'<a class="btn" href="#/table?id='+x.id+'">'+escapeHTML(x.sheet.trim())+' · original formulas</a>').join('')+'</div>'}
+function caemBoundary(){return '<p class="definition-note">'+(lang==='az'?'Nazirliyin CAEM modeli · son faktiki il 2024 · saxlanmış proqnozlar 2025–2029.':'Ministry CAEM · last historical boundary: 2024 · saved forecasts: 2025–2029.')+' The original workbook, selected source assumptions and saved calculation results are retained. Latest-official common-input recalculation requires approved owner-supplied inputs.</p>'}
+function caemResultGrid(rows){const groups=new Map();for(const r of rows){const key=JSON.stringify([r.series_id,r.unit,r.source_sheet]);if(!groups.has(key))groups.set(key,{meta:r,years:new Map()});groups.get(key).years.set(Number(r.year),r)}return [...groups.values()]}
+function mountCaemForecasts(rows,host,caption){const years=[2024,2025,2026,2027,2028,2029];const grid=caemResultGrid(rows);host.appendChild(new DataTable({rows:grid,columns:[{key:'indicator',label:'Indicator',sticky:true,wrap:true,get:r=>CAEM_INDICATOR_LABELS[r.meta.series_id]||r.meta.concept},{key:'unit',label:'Unit',get:r=>r.meta.unit,render:r=>escapeHTML(r.meta.unit+(r.meta.unit_scale_unresolved?' · scale requires confirmation':''))},...years.map(y=>({key:'y'+y,label:String(y),num:true,get:r=>r.years.get(y)?.value,render:r=>{const v=r.years.get(y);return v?escapeHTML(displayValue(v.value)):'<span class="unavail">—</span>'}})),{key:'source',label:'Source worksheet',wrap:true,get:r=>r.meta.source_sheet}],caption:caption+' · 2024 source history; 2025–2029 saved forecasts. Select a row for statuses and exact source records.',tall:false,onActivate:r=>{let h=recordDetail(r.meta);h+='<table class="data"><thead><tr><th>Year</th><th>Exact saved value</th><th>Observation status</th><th>Source cell</th></tr></thead><tbody>'+[...r.years.values()].map(v=>'<tr><td>'+v.year+'</td><td class="num">'+escapeHTML(displayValue(v.value,true))+'</td><td>'+escapeHTML(friendlyValue(v.data_status||v.status,'data_status'))+'</td><td>'+escapeHTML(v.source_cell)+'</td></tr>').join('')+'</tbody></table>';openDetail(r.meta.concept,h)}}).root)}
+async function viewCaem(params,ticket){loadingView();const rows=await loadGroupRows('ministry_caem','baseline');if(!fresh(ticket))return;const canonical=rows.filter(r=>!r.series_id.startsWith('source:')&&r.series_id!=='gdp_nom_production_source');let h=head('CAEM · '+(lang==='az'?'Proqnoz icmalı':'Forecast overview'),'Comprehensive Adaptive Expectations Model · supplied Ministry of Economy system, developed with IMF technical assistance.');h+=caemBoundary();h+='<section class="panel"><h2>Key economic indicators</h2><div id="caem-summary-results"></div><a class="btn" href="#/caem-records">All saved CAEM output records →</a> <a class="btn" href="#/delivery?file=ministry_caem">CAEM baseline · HTML and CSV →</a></section><section class="panel"><h2>Sector accounts</h2><div class="caem-sectors">'+Object.entries(CAEM_SECTORS).map(([k,s])=>'<a class="sector-card" href="#/caem-'+k+'"><strong>'+escapeHTML(lang==='az'?s.az:s.en)+'</strong><span>'+escapeHTML(s.note)+'</span></a>').join('')+'</div></section><section class="panel"><h2>Methods, scenarios and checks</h2><div class="actions-row"><a class="btn" href="#/caem-scenarios">Saved scenarios</a><a class="btn" href="#/caem-methods">Structural methods and equations</a><a class="btn" href="#/caem-data">Original workbook data</a><a class="btn" href="#/caem-checks">Calculation consistency checks</a><a class="btn" href="#/differences">Differences across Ministry macro, CAEM, Oxlon and IMF</a></div></section>';view().innerHTML=h;mountCaemForecasts(canonical,$('#caem-summary-results'),'Saved CAEM summary')}
+async function viewCaemSector(params,ticket){const key=parseHash().path.replace('caem-',''),s=CAEM_SECTORS[key];loadingView();const all=await loadGroupRows('ministry_caem','baseline');if(!fresh(ticket))return;const rows=all.filter(r=>s.sheets.includes(r.source_sheet)||s.series.includes(r.series_id));let h=head('CAEM · '+(lang==='az'?s.az:s.en),s.note);h+=caemBoundary();h+='<section class="panel"><h2>Saved model outputs</h2><div id="caem-sector-results"></div></section><section class="panel"><h2>Original sector worksheets and formulas</h2><p>Read the source formulas, saved evaluation status and separately retained cached values. Cached values and unexecuted cells are distinguished from evaluated baseline calculations.</p>'+caemSourceLinks(s.sheets)+'</section><section class="panel"><h2>Related material</h2><a class="btn" href="#/caem-methods">CAEM methods</a> <a class="btn" href="#/differences">Indicator definitions and comparison limits</a> <a class="btn" href="#/terminology">Terminology and column meanings</a></section>';view().innerHTML=h;if(rows.length)mountCaemForecasts(rows,$('#caem-sector-results'),s.en);else $('#caem-sector-results').innerHTML='<p>No separate normalized output series is available for this sector in the saved baseline. The original source worksheets remain available below.</p>'}
+async function viewCaemScenarios(params,ticket){loadingView();const ids=['oil_plus10','partner_minus1','wages_plus10'],groups=catalogue.result_groups.filter(g=>g.model_id==='ministry_caem'&&ids.includes(g.scenario_id));const selected=groups.find(g=>g.scenario_id===params.get('case'));let h=head('CAEM · Saved scenarios','Recorded conditional calculations using the supplied Ministry CAEM model and its source controls.');h+=caemBoundary();h+='<section class="panel"><h2>Available conditional scenarios</h2><div id="caem-scenario-register"></div><p>Each scenario compares with the same saved CAEM baseline. Percentage price-level shocks and percentage-point growth shocks are different controls. These records are saved calculations with declared inputs and closure settings.</p></section><div id="caem-scenario-detail"></div>';view().innerHTML=h;$('#caem-scenario-register').appendChild(new DataTable({rows:groups,columns:[{key:'label',label:'Scenario and source control',wrap:true},{key:'row_count',label:'Saved output records',num:true},{key:'open',label:'Open',render:r=>'<a href="#/caem-scenarios?case='+r.scenario_id+'">Compare with baseline</a>'}],tall:false}).root);if(selected){const rows=await loadParts(selected.difference_parts||[]);if(!fresh(ticket))return;const host=$('#caem-scenario-detail');host.innerHTML='<section class="panel"><h2>'+escapeHTML(selected.label)+'</h2><div id="caem-scenario-values"></div></section>';if(selected.scenario_detail)host.firstChild.insertAdjacentHTML('afterbegin','<details><summary>Original scenario settings and source changes</summary>'+propsTable(selected.scenario_detail)+'</details>');$('#caem-scenario-values').appendChild(new DataTable({rows,columns:[{key:'concept',label:'Indicator',wrap:true},...evidenceColumns(['year','unit','baseline_value','value','difference','difference_unit','comparison_status'])],caption:'Exact saved scenario and same-engine baseline comparison',tall:false,onActivate:r=>openDetail(r.concept+' · '+r.year,recordDetail(r,RECORD_FIELDS.concat(['baseline_value','difference','difference_unit','comparison_status'])))}).root)}}
+async function viewCaemData(params,ticket){let h=head('CAEM · Original workbook data','Source inputs, original formulas, summary worksheets and retained calculation records.');h+=caemBoundary();h+='<section class="panel"><h2>Original formula worksheets</h2><div id="caem-original-worksheets"></div></section><section class="panel"><h2>Complete original source cells · all worksheets</h2><p>These source inventories retain original literal cells and cached formula references. They are distinguished from executed model outputs.</p><div id="caem-source-cell-sheets"></div></section><section class="panel"><h2>Read data and source definitions</h2><div class="actions-row"><a class="btn" href="#/caem-records">All saved CAEM output records</a><a class="btn" href="#/delivery?file=caem-input">Blank input collection form</a><a class="btn" href="#/delivery?file=ministry_caem">Baseline CSV and HTML</a><a class="btn" href="#/caem-methods">Source methods and equations</a></div></section>';view().innerHTML=h;const rows=catalogue.tables.filter(x=>x.kind==='native'&&x.model_id==='ministry_caem');$('#caem-original-worksheets').appendChild(new DataTable({rows,columns:[{key:'sheet',label:'Original worksheet',wrap:true},{key:'row_count',label:'Source formula records',num:true},{key:'note',label:'Meaning of displayed values',wrap:true},{key:'open',label:'Open',render:r=>'<a href="#/table?id='+r.id+'">Read worksheet</a>'}],tall:false}).root);const sources=catalogue.tables.filter(x=>x.kind==='source-cells'&&x.model_id==='ministry_caem');$('#caem-source-cell-sheets').appendChild(new DataTable({rows:sources,columns:[{key:'sheet',label:'Original worksheet',wrap:true},{key:'row_count',label:'Original source cells',num:true},{key:'open',label:'Open',render:r=>'<a href="#/table?id='+r.id+'">Read all original cells</a>'}],tall:false}).root)}
+async function viewCaemChecks(params,ticket){loadingView();const e=await methodEvidenceP(),table=catalogue.tables.find(x=>x.path==='results/caem/baseline/residuals.csv');const source=await loadTableRows(table);if(!fresh(ticket))return;const rows=source.map(r=>({year:r[0],gdp_difference:r[1],deflator_difference:r[2],tolerance:.001,check_result:Math.abs(Number(r[1]))<=.001&&Math.abs(Number(r[2]))<=.001?'Within recorded tolerance':'Requires review'}));const a=e.caem_nominal_account_check;view().innerHTML=head('CAEM · Calculation consistency checks','GDP-growth and deflator reconciliation, current-price account differences and source-data limits.')+caemBoundary()+'<section class="panel"><h2>Saved GDP-growth and deflator residuals</h2><p>A residual is the remaining difference in an accounting/reconciliation equation. The recorded tolerance is 0.001; these checks assess the saved solver equations and do not prove forecast accuracy or formal Ministry acceptance.</p><div id="caem-residual-checks"></div></section><section class="panel"><h2>Current-price GDP accounts require separate reconciliation</h2><p>For 2025, production-source GDP is '+escapeHTML(displayValue(a.production.value))+' million AZN; expenditure-framework GDP is '+escapeHTML(displayValue(a.expenditure.value))+' million AZN. Their retained difference is <strong>'+escapeHTML(displayValue(a.difference_mln_AZN))+' million AZN</strong>.</p><p>Passing the GDP-growth and deflator residual checks does not eliminate this nominal-account difference.</p><a class="btn" href="#/differences?indicator=gdp_nominal_market&year=2025">Inspect definitions and exact sources →</a></section><section class="panel"><h2>Source limits</h2><p>CAEM’s last actual boundary is 2024 and its original forecast horizon ends in 2029. Source unit flags, unavailable values and regime selections remain part of the saved records. Approved dated owner inputs are required for a latest-official common-input comparison.</p><a class="btn" href="#/delivery?file=fr-coverage">Functional requirement output inventory</a> <a class="btn" href="#/terminology">What these terms mean</a></section>';$('#caem-residual-checks').appendChild(new DataTable({rows,columns:evidenceColumns(['year','gdp_difference','deflator_difference','tolerance','check_result']),tall:false}).root)}
+async function viewCaemMethods(params,ticket){const p=new URLSearchParams(params);p.set('tab','caem');await viewEquations(p,ticket);if(!fresh(ticket))return;$('#view .tabs')?.remove();$('.view-head h1').textContent='CAEM · Methods and equations';$('.view-head .lede').textContent='Original structural equations and methodological expressions from the supplied Ministry CAEM documentation.';const doc=catalogue.documents.find(d=>d.path==='sources/caem/CAEM_documentation.docx');$('.view-head').insertAdjacentHTML('afterend','<div class="actions-row">'+(doc?'<a class="btn" href="#/document?id='+doc.id+'">Read the original CAEM technical document</a>':'')+'<a class="btn" href="#/caem-data">Original workbook formulas</a><a class="btn" href="#/terminology">Terminology</a></div>')}
+function scopedForecasts(params,ticket,model,route,title){const p=new URLSearchParams(params);p.set('model',model);return viewForecasts(p,ticket,{route,title})}
+async function viewTerminology(params,ticket){const entries=[['FR · Functional requirement','A required system function or output in the Ministry specification. FR1–FR12 are retained contractual references, not variable names or grades. “Requirement output inventory” counts the saved records mapped to them.'],['CAEM','Comprehensive Adaptive Expectations Model. The supplied Ministry model was developed with IMF technical assistance; Article IV staff projections are a separate published reference.'],['Ministry macro','The linked bottom-up Ministry workbook system, including source behavioural equations, branch accounts, product/company inputs, prices and taxes.'],['Oxlon','The independent modelling pipeline with recorded input histories, estimation specifications, forecast methods and backtests.'],['Baseline','A model’s recorded reference case before a specified scenario change. Different models can retain different baseline assumptions and source vintages.'],['Observed / historical','A saved source observation or historical input. Its source release and precision must be inspected before treating it as an authenticated official observation.'],['Expected / forecast','An expected value retained in a source workbook, or a saved model projection. Its issue date, information set and horizon matter for evaluation.'],['Derived / proxy','A value calculated from other records or used as a stand-in. It is distinguished from a separately observed statistical release.'],['Data vintage / snapshot','The dated information set or saved copy used in a calculation. A saved-copy timestamp is not an official statistical release date.'],['Source cells with formula errors','Spreadsheet cells with recorded errors such as #REF! (an invalid reference) or #DIV/0! (division by zero). This is different from a statistical forecast error.'],['Forecast error / backtest','A difference between a prediction and the corresponding observation, evaluated at a stated forecast origin and horizon. Comparing differently dated actual/expected/forecast records does not by itself establish a forecast-accuracy ranking.'],['Residual / consistency check','The remaining difference in an equation or accounting reconciliation. A numerical tolerance check assesses that saved calculation, not source-data completeness or contractual acceptance.'],['CP / YP','Original CAEM reconciliation selector labels. In the recorded solver, CP adjusts the named demand–supply wedge (WedgeSD), while YP adjusts named GDP growth; both reconcile the GDP deflator. The precise source controls remain available in the model documents.'],['% versus percentage points','A move from 4% to 5% is an increase of 1 percentage point. Increasing a price or amount by 10% is a proportional level change.'],['GDP / value added / deflator','Market-price GDP includes taxes less subsidies on products. Basic-price value added has a different perimeter. The implicit GDP deflator compares compatible nominal and volume GDP and differs from CPI.'],['CPI · Consumer Price Index','Annual-average inflation compares average index levels across years. December-on-December compares the two December index levels. These are separate series.'],['BoP · Balance of payments','Resident/nonresident goods, services, income and financial flows. BoP, national-account trade and customs merchandise statistics have distinct measurement rules.'],['GFCF · Gross fixed capital formation','Fixed-capital formation excludes inventory change. Statistical investment directed to fixed capital can have a different measurement perimeter.'],['NEER / REER','Nominal / real effective exchange-rate indices. They are weighted measures and are distinct from bilateral AZN/USD or AZN/EUR exchange rates.'],['HS chapter 27','The customs commodity chapter for mineral fuels, oils and related products. The source HS coverage must be retained when comparing product trade.'],['Scenario','A recorded conditional change to specified source inputs or policy controls. Saved sensitivity tests and declared scenarios are identified separately from baseline results.'],['Current-price / constant-price / % GDP','Current-price amounts, volume measures and ratios to GDP are different units. Match period, currency, scale and statistical perimeter before comparing them.']].map(([term,meaning])=>({term,meaning}));view().innerHTML=head('Terminology and column meanings','Plain explanations of requirement references, model names, data statuses and technical checks.')+'<section class="panel"><h2>Terms used in this website</h2><div id="terms-table"></div></section><section class="panel"><h2>Column headings</h2><div id="column-meanings"></div><p>Column headings use readable descriptions. Original field keys, source filenames and values remain available in source details and CSV exports.</p></section>';$('#terms-table').appendChild(new DataTable({rows:entries,columns:[{key:'term',label:'Term',sticky:true,wrap:true},{key:'meaning',label:'Meaning and interpretation',wrap:true}],tall:false}).root);$('#column-meanings').appendChild(new DataTable({rows:Object.entries(FIELD_LABELS).map(([key,label])=>({key,label})),columns:[{key:'label',label:'Displayed heading',wrap:true},{key:'key',label:'Original source field',wrap:true}],tall:false}).root)}
+
 const VIEWS = {
-  overview: viewOverview, forecasts: viewForecasts, scenarios: viewScenarios, models: viewModels,
+  overview: viewOverview, forecasts: viewForecasts, ministry:(p,t)=>scopedForecasts(p,t,'ministry_macro','ministry','Ministry macro · Forecasts'),oxlon:(p,t)=>scopedForecasts(p,t,'oxlon.corrected.20260917','oxlon','Oxlon · Forecasts'),terminology:viewTerminology,caem:viewCaem,'caem-real':viewCaemSector,'caem-prices':viewCaemSector,'caem-fiscal':viewCaemSector,'caem-monetary':viewCaemSector,'caem-external':viewCaemSector,'caem-labour':viewCaemSector,'caem-scenarios':viewCaemScenarios,'caem-data':viewCaemData,'caem-checks':viewCaemChecks,'caem-methods':viewCaemMethods,'caem-records':(p,t)=>scopedForecasts(p,t,'ministry_caem','caem-records','CAEM · All forecast records'), scenarios: viewScenarios, models: viewModels,
   equations: viewEquations, workbook: viewWorkbook, library: viewLibrary, table: viewTable,
   methods: viewMethods, differences:viewDifferences, delivery:viewDelivery, document: viewDocument, notebook: viewNotebook, requirements: viewRequirements
 };
