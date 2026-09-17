@@ -345,3 +345,11 @@ body{font-size:16px;line-height:1.5;font-family:"Helvetica Neue",Arial,sans-seri
 .reader, .cell-md, .cell-out {min-width:0;max-width:100%}
 .katex-display {max-width:100%;overflow-x:auto;overflow-y:hidden;padding:4px 0}
 .reader .math-inline {display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding:4px 0}
+
+/* Source status is visible without relying on colour. */
+.cell-status{display:block;font-size:11px;line-height:1.35;font-weight:400;color:#607487;margin-top:3px;white-space:nowrap}
+.comparison-matrix td.reference{background:#f0f2f6}.comparison-matrix td.derived{background:#f4eff8}
+.comparison-actions{margin:16px 0}.section-jumps{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0 24px}.section-jumps a{font-size:14px;border-bottom:1px solid #a8c0cd;padding:4px 0}
+#ownership,#cpi-case,#technical-methods,#fair-comparison{scroll-margin-top:80px}
+.delivery-table{min-width:800px}.delivery-table th:first-child{min-width:480px}.delivery-table td:last-child{min-width:145px;line-height:1.9}.delivery-table p{font-size:14px;line-height:1.6;margin:8px 0}
+.csv-provenance{font-family:var(--mono);font-size:12px;color:#607487;overflow-wrap:anywhere;word-break:break-word}.full-column-control{display:block;margin:16px 0;font-size:14px}

@@ -1,0 +1,7 @@
+﻿term,coefficient,driver,contribution_pp,source
+Lagged annual-average inflation,0.1,2.1999999999999744,0.21999999999999745,O30 × N19
+Adaptive expected inflation,0.7,3.6399999999999952,2.5479999999999965,(1−O30−O32) × O11
+"Imported inflation (USD), exchange-rate change and trend relative import-price adjustment",0.2,10.125828063822496,2.0251656127644995,O32 × (O8+O9−O10)
+Non-oil output gap,0.4,0.6495550577312992,0.25982202309251967,O33 × O14
+Calibration term,1,0.0,0.0,O36
+Scenario add-factor,1,0.0,0.0,O20
