@@ -372,3 +372,5 @@ body{font-size:16px;line-height:1.5;font-family:"Helvetica Neue",Arial,sans-seri
 .calculation-fold>summary{font-size:18px;font-weight:650;padding:4px 0;cursor:pointer;line-height:1.5}.calculation-fold[open]>summary{margin-bottom:16px}.calculation-fold .fold-body{padding:0}.workflow-steps li{padding:5px 0;line-height:1.6}
 .why-intro{border-top:3px solid #4d7f82}
 @media(max-width:700px){.topic-cards{grid-template-columns:1fr}.topic-nav{gap:5px}.topic-nav a{font-size:12px}}
+
+.review-warning{border-left:4px solid #9b581a;background:#fff5e8;padding:16px 20px;margin:18px 0;color:#593b20}.review-warning p{margin:8px 0 12px;max-width:92ch}.language-scope{background:#edf3f6;color:#344c5b;padding:10px 14px;font-size:13px;border:1px solid #d7e2e8}.source-error{color:#984016}.review-warning .btn{background:#fff}
