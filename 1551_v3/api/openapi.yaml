@@ -253,6 +253,8 @@ paths:
                       code: { type: string }
                       period: { type: integer }
                       value: { type: [number, "null"] }
+                      label: { type: string, description: Göstəricinin adı — kod kataloqda olmaya bilər }
+                      unit: { type: string }
       responses:
         "201":
           description: Dərc olundu

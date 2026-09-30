@@ -1558,11 +1558,14 @@ details.faq p { margin: 8px 0 0; }
         return -1;
       },
       outputs: function () {
-        return KPI.map(function (k) { return { code: k.k, resolve: function (y) { return kpiCell(k, y); } }; });
+        return KPI.map(function (k) { return { code: k.k, label: k.t, unit: k.u || '', resolve: function (y) { return kpiCell(k, y); } }; });
       },
       value: function (id) { return M.V[id]; },
       setCell: function (id, v, quiet) { return setCell(id, v, quiet); },
-      changed: changed, nf: nf, toast: toast
+      // CAEM's changed() only re-renders; persist() is what writes the scenario to storage,
+      // so without this the values pulled from the warehouse vanish on reload
+      changed: function () { persist(); changed(); },
+      nf: nf, toast: toast
     });
   }
   var API_INP = {};

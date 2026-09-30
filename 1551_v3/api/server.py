@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS observation_history (
 );
 CREATE TABLE IF NOT EXISTS forecast (
   vintage TEXT NOT NULL, model TEXT NOT NULL, code TEXT NOT NULL, period INTEGER NOT NULL,
-  value REAL, PRIMARY KEY (vintage, model, code, period)
+  value REAL, label TEXT, unit TEXT, PRIMARY KEY (vintage, model, code, period)
 );
 CREATE TABLE IF NOT EXISTS vintage (
   name TEXT PRIMARY KEY, model TEXT, created_at TEXT, actor TEXT, note TEXT, points INTEGER
@@ -57,10 +57,23 @@ def now_iso():
     return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 def connect(db):
-    c = sqlite3.connect(db, check_same_thread=False)
+    c = sqlite3.connect(db, check_same_thread=False, timeout=30)
     c.row_factory = sqlite3.Row
     c.execute("PRAGMA journal_mode=WAL")
+    c.execute("PRAGMA busy_timeout=30000")
     c.executescript(SCHEMA)
+    return c
+
+# Each worker thread gets its own connection. WAL lets readers run while a writer commits;
+# sharing one connection across threads is not safe and fails under load.
+_local = threading.local()
+def conn_for(db):
+    c = getattr(_local, "con", None)
+    if c is None:
+        c = sqlite3.connect(db, check_same_thread=False, timeout=30)
+        c.row_factory = sqlite3.Row
+        c.execute("PRAGMA busy_timeout=30000")
+        _local.con = c
     return c
 
 def next_seq(con):
@@ -187,7 +200,12 @@ class Handler(BaseHTTPRequestHandler):
         p = [x for x in u.path.strip("/").split("/") if x]
         q = parse_qs(u.query)
         one = lambda k, d=None: (q.get(k, [d])[0])
-        con = self.server.con
+        def num(k, d):
+            v = one(k, None)
+            if v is None or v == "": return d
+            try: return int(v)
+            except ValueError: raise ApiError(400, "bad_parameter", "«%s» tam ədəd olmalıdır: %r" % (k, v))
+        con = conn_for(self.server.db)
 
         if p == ["v1", "health"] and method == "GET":
             r = con.execute("SELECT COUNT(*) n FROM series").fetchone()
@@ -215,7 +233,7 @@ class Handler(BaseHTTPRequestHandler):
             if one("q"):
                 where.append("(code LIKE ? OR IFNULL(label_az,'') LIKE ?)")
                 args += ["%" + one("q") + "%"] * 2
-            lim = max(1, min(2000, int(one("limit", "500")))); off = max(0, int(one("offset", "0")))
+            lim = max(1, min(2000, num("limit", 500))); off = max(0, num("offset", 0))
             sql = "SELECT * FROM series" + (" WHERE " + " AND ".join(where) if where else "") + " ORDER BY model, code LIMIT ? OFFSET ?"
             rows = [dict(r) for r in con.execute(sql, args + [lim, off])]
             for r in rows:
@@ -244,11 +262,11 @@ class Handler(BaseHTTPRequestHandler):
             if one("code"):
                 codes = [c for c in one("code").split(",") if c]
                 where.append("code IN (%s)" % ",".join("?" * len(codes))); args += codes
-            if one("from"): where.append("period>=?"); args.append(int(one("from")))
-            if one("to"): where.append("period<=?"); args.append(int(one("to")))
+            if one("from"): where.append("period>=?"); args.append(num("from", 0))
+            if one("to"): where.append("period<=?"); args.append(num("to", 0))
             if one("updated_since"): where.append("updated_at>=?"); args.append(one("updated_since"))
-            if one("since_seq"): where.append("seq>?"); args.append(int(one("since_seq")))
-            lim = max(1, min(50000, int(one("limit", "10000")))); off = max(0, int(one("offset", "0")))
+            if one("since_seq"): where.append("seq>?"); args.append(num("since_seq", 0))
+            lim = max(1, min(50000, num("limit", 10000))); off = max(0, num("offset", 0))
             sql = "SELECT model,code,period,value,source,actor,note,revision,updated_at,seq FROM observation"
             sql += (" WHERE " + " AND ".join(where) if where else "") + " ORDER BY seq LIMIT ? OFFSET ?"
             rows = [dict(r) for r in con.execute(sql, args + [lim, off])]
@@ -309,8 +327,8 @@ class Handler(BaseHTTPRequestHandler):
             where, args = [], []
             for k, col in (("model", "model"), ("code", "code")):
                 if one(k): where.append(col + "=?"); args.append(one(k))
-            if one("period"): where.append("period=?"); args.append(int(one("period")))
-            lim = max(1, min(5000, int(one("limit", "500"))))
+            if one("period"): where.append("period=?"); args.append(num("period", 0))
+            lim = max(1, min(5000, num("limit", 500)))
             sql = "SELECT * FROM observation_history" + (" WHERE " + " AND ".join(where) if where else "") + " ORDER BY id DESC LIMIT ?"
             return self._send(200, {"items": [dict(r) for r in con.execute(sql, args + [lim])]})
 
@@ -318,7 +336,7 @@ class Handler(BaseHTTPRequestHandler):
             where, args = [], []
             for k in ("model", "code", "vintage"):
                 if one(k): where.append(k + "=?"); args.append(one(k))
-            lim = max(1, min(50000, int(one("limit", "10000"))))
+            lim = max(1, min(50000, num("limit", 10000)))
             sql = "SELECT * FROM forecast" + (" WHERE " + " AND ".join(where) if where else "") + " ORDER BY vintage, model, code, period LIMIT ?"
             return self._send(200, {"items": [dict(r) for r in con.execute(sql, args + [lim])]})
 
@@ -331,10 +349,12 @@ class Handler(BaseHTTPRequestHandler):
             with DB_LOCK:
                 for it in items:
                     try:
-                        con.execute("INSERT INTO forecast(vintage,model,code,period,value) VALUES(?,?,?,?,?) "
-                                    "ON CONFLICT(vintage,model,code,period) DO UPDATE SET value=excluded.value",
+                        con.execute("INSERT INTO forecast(vintage,model,code,period,value,label,unit) VALUES(?,?,?,?,?,?,?) "
+                                    "ON CONFLICT(vintage,model,code,period) DO UPDATE SET "
+                                    "value=excluded.value, label=excluded.label, unit=excluded.unit",
                                     (name, str(it["model"]), str(it["code"]), int(it["period"]),
-                                     None if it.get("value") is None else float(it["value"])))
+                                     None if it.get("value") is None else float(it["value"]),
+                                     it.get("label"), it.get("unit")))
                         n += 1
                     except Exception: pass
                 con.execute("INSERT INTO vintage(name,model,created_at,actor,note,points) VALUES(?,?,?,?,?,?) "
@@ -355,12 +375,20 @@ def main():
     ap.add_argument("--db", default=DEFAULT_DB)
     ap.add_argument("--seed", help="catalogue.json faylından bazanı doldur və çıx")
     a = ap.parse_args()
+    # Refuse to expose a writable service with the built-in demo tokens.
+    if not os.environ.get("API_TOKENS") and a.host not in ("127.0.0.1", "localhost", "::1"):
+        sys.exit("XƏTA: standart sınaq nişanları ilə şəbəkəyə açıla bilməz.\n"
+                 "      Əvvəlcə nişanları təyin edin, məsələn:\n"
+                 '      export API_TOKENS="anbar-oxu:read,anbar-yaz:write"')
     con = connect(a.db)
     if a.seed:
         s, o = seed(con, a.seed)
         print("seeded: %d series, %d observations -> %s" % (s, o, a.db)); return
-    httpd = ThreadingHTTPServer((a.host, a.port), Handler)
-    httpd.con = con
+    class Server(ThreadingHTTPServer):
+        daemon_threads = True
+        request_queue_size = 128        # default is 5 — too small, connections get reset
+    httpd = Server((a.host, a.port), Handler)
+    httpd.db = a.db
     print("MİİS API %s  http://%s:%d/v1/health   (db: %s)" % (API_VERSION, a.host, a.port, a.db))
     print("tokens: %s" % ", ".join("%s=%s" % (k, "|".join(sorted(v))) for k, v in TOKENS.items()))
     try: httpd.serve_forever()

@@ -1459,7 +1459,8 @@ details.faq p { margin: 8px 0 0; }
       },
       outputs: function () {
         return IND.slice(0, 200).map(function (it) {
-          return { code: 'b60_' + it.r, resolve: function (y) { var c = colForYear(B60, it.r, y); return c ? cellId(B60, it.r, c) : -1; } };
+          return { code: 'b60r' + it.r, label: it.name, unit: it.unit || '',
+                   resolve: function (y) { var c = colForYear(B60, it.r, y); return c ? cellId(B60, it.r, c) : -1; } };
         });
       },
       value: function (id) { return M.V[id]; },

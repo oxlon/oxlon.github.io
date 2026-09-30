@@ -87,7 +87,7 @@
       for (var y = Y.lastActual + 1; y <= Y.last; y++) {
         var id = o.resolve(y); if (id == null || id < 0) continue;
         var v = CFG.value(id); if (!isNum(v)) continue;
-        items.push({ model: CFG.model, code: o.code, period: y, value: v });
+        items.push({ model: CFG.model, code: o.code, period: y, value: v, label: o.label || '', unit: o.unit || '' });
       }
     });
     if (!items.length) { CFG.toast('Göndəriləcək nöqtə tapılmadı'); return; }
