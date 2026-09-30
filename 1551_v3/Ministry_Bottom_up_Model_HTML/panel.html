@@ -327,6 +327,7 @@ details.faq p { margin: 8px 0 0; }
 <script src="ev-engine.js"></script>
 <script src="data/econ.js"></script>
 <script src="econ-ui.js"></script>
+<script src="api-client.js"></script>
 <script>
 (function () {
   'use strict';
@@ -1182,7 +1183,9 @@ details.faq p { margin: 8px 0 0; }
       '<p class="small muted" style="margin:0">' + (nEd ? '<b>' + nEd + ' ssenari dəyişikliyi</b> fayla daxil ediləcək. ' : 'Hazırda ssenari dəyişikliyi yoxdur — fayl baza modelin nəticələrini əks etdirəcək. ') +
       'Fayl brauzerin «Yükləmələr» qovluğuna düşür. Orijinal fayldakı <b>düsturlar, diaqramlar və şəkillər köçürülmür</b> — yalnız vərəqlər, dəyərlər və format. Ona görə bunu hesabat/paylaşım nüsxəsi kimi istifadə edin, iş faylının üzərinə yazmazdan əvvəl isə orijinalın nüsxəsini saxlayın.</p></div></section>';
     h += '<div id="mu-host" style="margin-top:18px"></div>';
+    if (window.ApiClient) h += window.ApiClient.section('Məlumat mübadiləsi (API)');
     v.innerHTML = h;
+    if (window.ApiClient) window.ApiClient.render();
     $('#xl-go').onclick = function () { exportXlsx(+$('#xl-book').value, $('#xl-base').checked); };
     $('#xl-all').onclick = function () { exportAllXlsx($('#xl-base').checked); };
     window.MakroUpdate.render($('#mu-host'), M, INFO);
@@ -1441,6 +1444,28 @@ details.faq p { margin: 8px 0 0; }
   }
 
   // ---------------------------------------------------------------- econometrics
+  function initApi() {
+    if (!window.ApiClient) return;
+    window.ApiClient.init({
+      ns: 'makroModel', model: 'bum', mount: 'api-mount',
+      years: function () { return { first: 1995, last: END, lastActual: LA }; },
+      // the API addresses data by EViews variable code; the model knows where each one lives
+      resolve: function (code, year) {
+        var D = window.ECON_DATA; if (!D) return -1;
+        var v = D.vars[code] || D.vars[(D.alias || {})[code]]; if (!v) return -1;
+        var gs = sheetIdx(v.b, v.s); if (gs < 0) return -1;
+        var c = colForYear(gs, v.r, year); if (c == null) return -1;
+        return cellId(gs, v.r, c);
+      },
+      outputs: function () {
+        return IND.slice(0, 200).map(function (it) {
+          return { code: 'b60_' + it.r, resolve: function (y) { var c = colForYear(B60, it.r, y); return c ? cellId(B60, it.r, c) : -1; } };
+        });
+      },
+      value: function (id) { return M.V[id]; },
+      setCell: setCell, changed: changed, nf: nf, toast: toast
+    });
+  }
   function initEcon() {
     if (!window.EconUI) return;
     window.EconUI.init({
@@ -1480,6 +1505,7 @@ details.faq p { margin: 8px 0 0; }
     buildIndicators();
     initReport();
     initEcon();
+    initApi();
     renderScenBar();
     window.addEventListener('hashchange', route);
     $('#open-pal').onclick = openPal;

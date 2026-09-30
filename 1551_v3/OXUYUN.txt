@@ -30,6 +30,15 @@ PAKETDƏ NƏ VAR
         index.html  — klassik görünüş
         panel.html  — iş paneli (nəticələr, fərziyyələr, uzlaşdırma, hesabat)
 
+  api/
+      Baza məlumatı API-si — Nazirliyin məlumat anbarı ilə inteqrasiya.
+        OXUYUN.md        — işə salma və istifadə təlimatı
+        openapi.yaml     — rəsmi müqavilə (OpenAPI 3.1)
+        server.py        — istinad serveri (yalnız Python 3, paket lazım deyil)
+        catalogue.json   — 559 sıra, 5 172 başlanğıc nöqtəsi
+        sync_example.py  — anbara artımlı yükləmə nümunəsi
+      Panellərdə «Məlumat mübadiləsi (API)» bölməsi bu xidmətə qoşulur.
+
   alternativ_model/
       Alternativ model (Oxlon §15.5.1) — müstəqil metodla eyni göstəricilər.
         index.html      — modelin saytı (metod, məlumat, tənliklər, nəticələr)

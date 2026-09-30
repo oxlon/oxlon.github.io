@@ -434,6 +434,7 @@ details.faq p { margin: 8px 0 0; }
 <script src="caem-update.js"></script>
 <script src="xlsxwriter.js"></script>
 <script src="report.js"></script>
+<script src="api-client.js"></script>
 <script>
 (function () {
   'use strict';
@@ -1491,6 +1492,7 @@ details.faq p { margin: 8px 0 0; }
     RERENDER = null;
     v.innerHTML = '<div class="eyebrow">Yeniləmə</div><h1 class="h1" style="margin-top:6px">Faktiki məlumat, yeni il və yeni fayl</h1><p class="lead">İl başa çatanda faktiki rəqəmləri daxil edin və proqnozun ilk ilini irəli çəkin, və ya Nazirliyin yenilənmiş CAEM faylını yükləyin. Dəyişikliklər hər iki görünüşdə (iş paneli və klassik görünüş) tətbiq olunur.</p><div id="mu-host" style="margin-top:18px"></div>';
     window.CaemUpdate.render($('#mu-host'), M, INFO);
+    if (window.ApiClient) { v.insertAdjacentHTML('beforeend', window.ApiClient.section('Məlumat mübadiləsi (API)')); window.ApiClient.render(); }
   }
 
   // ------------------------------------------------------------------ GUIDE
@@ -1539,6 +1541,37 @@ details.faq p { margin: 8px 0 0; }
   }
 
   // ------------------------------------------------------------------ report
+  function initApi() {
+    if (!window.ApiClient) return;
+    window.ApiClient.init({
+      ns: 'caemModel', model: 'caem', mount: 'api-mount',
+      years: function () { return { first: 1995, last: INFO.endYear, lastActual: INFO.firstYear - 1 }; },
+      // CAEM inputs are addressed by their Excel name (or item id) plus the year
+      resolve: function (code, year) {
+        var it = API_INP[code]; if (!it) return -1;
+        var gs = gsOf(it.sheet); if (gs < 0) return -1;
+        for (var i = 0; i < it.cells.length; i++) {
+          var m = /^([A-Z]+)(\d+)$/.exec(it.cells[i]); if (!m) continue;
+          var r = +m[2], c = colNum(m[1]), id = cellId(gs, r, c); if (id < 0) continue;
+          if (cellYear(id) === year) return id;
+        }
+        return -1;
+      },
+      outputs: function () {
+        return KPI.map(function (k) { return { code: k.k, resolve: function (y) { return kpiCell(k, y); } }; });
+      },
+      value: function (id) { return M.V[id]; },
+      setCell: function (id, v, quiet) { return setCell(id, v, quiet); },
+      changed: changed, nf: nf, toast: toast
+    });
+  }
+  var API_INP = {};
+  function buildApiIndex() {
+    API_INP = {};
+    ((META.inputs && META.inputs.groups) || []).forEach(function (g) {
+      g.items.forEach(function (it) { API_INP[it.excel_name || it.id] = it; });
+    });
+  }
   function initReport() {
     if (!window.MakroReport) return;
     window.MakroReport.init({
@@ -1582,7 +1615,9 @@ details.faq p { margin: 8px 0 0; }
         M.dependents();
         buildInputs();
         LAST_MACRO = loadMacro();
+        buildApiIndex();
         initReport();
+        initApi();
         try { var saved = JSON.parse(lsGet(LS_EDITS) || 'null'); if (saved) loadEdits(saved); } catch (e) { /* ignore corrupt storage */ }
         $('#brand-sub').textContent = 'İş paneli · proqnoz ' + INFO.firstYear + '–' + INFO.endYear;
         window.addEventListener('hashchange', route);
