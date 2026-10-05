@@ -19,7 +19,7 @@ D3_xnon,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too s
 D4_mnon,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too small)",7,rejected/free,,True,"ln_cons=+1.047, ln_relprice=-0.245","ln_cons=+0.614, ln_relprice=-0.722"
 E1_emp,DOLS(+/-1),DOLS(+/-1),13,,,True,ln_gdpnon_pc=+0.034,ln_gdpnon_pc=+0.056
 E2_wage,DOLS(+/-1),DOLS(0: contemporaneous dX only),13,,,True,"ln_prod_non=+0.817, ln_cpi=+0.617, ln_minwage=+0.186","ln_prod_non=+0.871, ln_cpi=+0.642, ln_minwage=+0.211"
-E3_hhdisp,DOLS(+/-1),DOLS(+/-1),13,IMPOSED,IMPOSED,True,"ln_gdpnon=+0.895, ln_pens_r=+0.105","ln_gdpnon=+0.703, ln_pens_r=+0.297"
+E3_hhdisp,DOLS(+/-1),DOLS(0: contemporaneous dX only),15,IMPOSED,IMPOSED,True,"ln_gdpnon=+0.603, ln_pens_r=+0.021, ln_wagebill_r=+0.377","ln_gdpnon=+0.690, ln_pens_r=+0.208, ln_wagebill_r=+0.102"
 E4_lf,OLS (no stochastic regressor),OLS (no stochastic regressor),24,,,True,trend=+0.000,trend=+0.001
 F1_revoil,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too small)",9,,,True,ln_xoil_azn=+0.611,ln_xoil_azn=+0.459
 F2_revnon,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too small)",9,IMPOSED,IMPOSED,True,"ln_gdpnon=+1.000, ln_m_non=+0.560","ln_gdpnon=+1.000, ln_m_non=+0.441"

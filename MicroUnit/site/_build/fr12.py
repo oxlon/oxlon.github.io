@@ -1,6 +1,6 @@
 """fr12.py — FR12 page: competition environment."""
 from . import html, req, common, synth
-from .core import v, esc
+from .core import v, esc, esc_az
 from .common import SCEN
 from .labels import GROUP_AZ, CHANGE_AZ
 from . import fr12_data as D
@@ -80,7 +80,7 @@ def scenarios(d):
         src = a.iloc[i].structure_source if i < len(a) else ""
         kind = html.pill("partial", "fərziyyə") if str(src).startswith("ASSUMPTION") else html.pill("done", "A qatı hədləri")
         rows.append([esc(r.scenario), esc(GROUP_AZ.get(r.market, r.market)), esc(CHANGE_AZ.get(a.iloc[i].change, a.iloc[i].change)),
-                     f'<span class="src-en">{esc(r.assumption)}</span>', kind,
+                     f'<span class="src-en">{esc_az(r.assumption)}</span>', kind,
                      f"{v(r.hhi_min, 0)} – {v(r.hhi_max, 0)}", f"{v(r.d_price_min, 2)} … {v(r.d_price_max, 2)}",
                      f"{v(r.d_output_min, 2)} … {v(r.d_output_max, 2)}", f"{v(r.d_cs_pct_min, 2)} … {v(r.d_cs_pct_max, 2)}"])
     return [html.h2("scenarios", 5, "Ssenari təhlili (sənaye iqtisadiyyatı)"), T.scen_intro(),

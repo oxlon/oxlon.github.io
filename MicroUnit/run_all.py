@@ -37,9 +37,12 @@ BUILD = [("panel", "panel/build_panel.py"), ("site", "site/build_site.py")]
 WB_DEFAULT = "Statistik data dinamika 05.06.2026 +.xlsx"
 # data inputs besides the workbook (glob patterns relative to ROOT)
 DATA_INPUTS = {
-    "FR1": [], "FR3": [],
-    "FR4": ["data/dsk/*.xls"],
-    "FR5": ["data/dsk_services/*.xls"],
+    # data/macro_module/: copies from the Ministry's macro module (v2.2; README_FR1.md, README_fr345.md)
+    "FR1": ["data/macro_module/8_vereq_original.xlsx", "data/macro_module/dsmf_sspf_budget_1995_2024.csv",
+            "data/macro_module/external_block_annual.csv"],
+    "FR3": ["data/macro_module/fr345_public_sources_panel.csv"],
+    "FR4": ["data/dsk/*.xls", "data/macro_module/fr345_moe_spec_panel.csv"],
+    "FR5": ["data/dsk_services/*.xls", "data/macro_module/fr345_ministry_equations_catalog.csv"],
     "FR10": ["data/dsk_enterprise/*/*.xls", "data/firm_panel/FR10_firm_panel.csv",
              "data/firm_panel/FR10_firm_panel.xlsx", "data/firm_panel/FR10_firm_panel_SYNTHETIC.csv"],
     "FR12": ["data/dsk_enterprise/*/*.xls", "data/dsk_competition/*/*.xls",
@@ -47,6 +50,7 @@ DATA_INPUTS = {
              "data/business_register/FR12_business_register.xlsx",
              "data/business_register/FR12_business_register_SYNTHETIC.csv"],
 }
+DOC_REFRESH = ("FR1", "FR3", "FR4", "FR5")     # stages followed by `python3 -m microlib.docrefresh <stage>`
 EXTRA_OUTPUTS = {"FR10": ["data/firm_panel/FR10_firm_panel_*"],
                  "FR12": ["data/business_register/FR12_business_register_*"]}
 BUILD_OUTPUTS = {"panel": ["panel/data/*.js", "panel/coverage_report.csv", "index.html"],
@@ -235,6 +239,24 @@ def nbconvert_cmd(nb, timeout, kernel=None):
     return cmd + [str(nb)]
 
 
+def resolve_kernel(name):
+    """Tələb olunan kernel bu kompüterdə yoxdursa standart 'python3' kernel-ə keçir (başqa kompüterdə 'miis-model' olmaya bilər)."""
+    if not name:
+        return name
+    try:
+        from jupyter_client.kernelspec import KernelSpecManager
+        specs = KernelSpecManager().find_kernel_specs()
+    except Exception:                                    # jupyter_client yoxdursa: dəyişmədən saxla
+        return name
+    if name in specs:
+        return name
+    alt = "python3" if "python3" in specs else ""
+    print("XƏBƏRDARLIQ: '%s' kernel-i tapılmadı; %s istifadə olunur. Layihə mühitini qeydiyyatdan keçirmək üçün: "
+          "python3 -m ipykernel install --user --name miis-model" % (name, "'python3' kernel-i" if alt else "dəftərin öz kernel-i"),
+          file=sys.stderr)
+    return alt
+
+
 def error_tail(log_path, n=40):
     try:
         txt = ANSI.sub("", Path(log_path).read_text(encoding="utf-8", errors="replace"))
@@ -390,6 +412,50 @@ class Runner:
             self.log("[%s] %s: %s (%.0f s) — jurnal: %s" % (name, status.upper(), rec["error"], secs, rec["log"]))
             return False
         self.log("[%s] uğurla bitdi (%.0f s, %d çıxış faylı)" % (name, secs, len(rec["outputs"])))
+        # FR10/FR12: the notebooks rewrite the AUTO blocks of the ENGLISH document only; copy them, in Azerbaijani,
+        # into docs/az/<name>_Metodologiya.md (microlib/docgen_az_fr10_fr12.py; the notebooks are not changed).
+        # A missing AUTO marker makes the script fail, and then the stage is marked failed.
+        if name in ("FR10", "FR12"):
+            return self.sync_az_doc(name, rec)
+        # FR1/FR3/FR4/FR5: the notebooks refresh only their own AUTO blocks; the v2.2 notes and v2.2 figures
+        # (AUTO:v22_* / AUTO:fr4v22_* blocks, EN + AZ) are regenerated from this run's outputs by microlib/docrefresh.
+        # A failing refresh (missing output, missing marker) marks the stage failed.
+        if name in DOC_REFRESH:
+            return self.refresh_v22_doc(name, rec)
+        return True
+
+    def refresh_v22_doc(self, name, rec):
+        if not (self.root / "microlib" / "docrefresh" / "__init__.py").is_file():   # e.g. a minimal test root
+            rec["doc_refresh"] = {"returncode": None, "summary": "microlib/docrefresh yoxdur — keçildi"}
+            self.log("[%s] %s" % (name, rec["doc_refresh"]["summary"]))
+            return True
+        cmd = [sys.executable, "-m", "microlib.docrefresh", name]
+        p = subprocess.run(cmd, cwd=str(self.root), capture_output=True, text=True)
+        with open(self.root / rec["log"], "a", encoding="utf-8") as f:
+            f.write("\n$ " + " ".join(cmd) + "\n" + p.stdout + p.stderr)
+        rec["doc_refresh"] = {"returncode": p.returncode, "summary": (p.stdout.strip().splitlines() or [""])[0]}
+        if p.returncode != 0:
+            rec["status"] = "failed"
+            rec["error"] = "docs/%s_Methodology.md v2.2 bloklarının yenilənməsi uğursuz oldu: %s" % (
+                name, (p.stderr.strip().splitlines() or ["naməlum xəta"])[-1])
+            self.log("[%s] FAILED: %s" % (name, rec["error"]))
+            return False
+        self.log("[%s] %s" % (name, rec["doc_refresh"]["summary"]))
+        return True
+
+    def sync_az_doc(self, name, rec):
+        cmd = [sys.executable, "-m", "microlib.docgen_az_fr10_fr12", name]
+        p = subprocess.run(cmd, cwd=str(self.root), capture_output=True, text=True)
+        with open(self.root / rec["log"], "a", encoding="utf-8") as f:
+            f.write("\n$ " + " ".join(cmd) + "\n" + p.stdout + p.stderr)
+        rec["az_doc_sync"] = {"returncode": p.returncode, "summary": (p.stdout.strip().splitlines() or [""])[0]}
+        if p.returncode != 0:
+            rec["status"] = "failed"
+            rec["error"] = "docs/az/%s_Metodologiya.md sinxronizasiyası uğursuz oldu: %s" % (
+                name, (p.stderr.strip().splitlines() or ["naməlum xəta"])[-1])
+            self.log("[%s] FAILED: %s" % (name, rec["error"]))
+            return False
+        self.log("[%s] %s" % (name, rec["az_doc_sync"]["summary"]))
         return True
 
     # ---- after the run
@@ -504,6 +570,10 @@ def print_graph(root):
         print("  %-5s ← %-14s  dəftərdə: %-14s %s" % (s, ",".join(r["declared"]) or "-", ",".join(r["detected"]) or "-", mark))
         for m, fs in r["files"].items():
             print("          %s: %s" % (m, ", ".join(fs)))
+        if DATA_INPUTS.get(s):
+            print("          məlumat: %s" % ", ".join(DATA_INPUTS[s]))
+        if s in DOC_REFRESH:
+            print("          sonra: python3 -m microlib.docrefresh %s (v2.2 sənəd blokları)" % s)
     print("Sonra: " + " → ".join(b for b, _ in BUILD))
 
 
@@ -528,6 +598,8 @@ def main(argv=None):
     ap.add_argument("--root", default=str(ROOT), help=argparse.SUPPRESS)
     ap.add_argument("--sleep", type=float, default=0.0, help=argparse.SUPPRESS)   # tests: simulate a slow dry-run step
     a = ap.parse_args(argv)
+    if not a.list and not a.dry_run:
+        a.kernel = resolve_kernel(a.kernel)
     if a.list:
         print_graph(Path(a.root))
         return 0

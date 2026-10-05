@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API və avtomatlaşdırma — MİİS §15.5.2</title>
+<meta name="description" content="API və avtomatlaşdırma">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/micro.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" data-sprite="miis-1551">
+  <!--
+    icons.svg — line icon sprite for the §15.5.1 site (blueprint §4).
+    Style: 24×24 box, 1.6 stroke set by CSS (.icon), fill none, stroke currentColor,
+    round caps and joins. Used small (15-18px), functional only.
+    build_site.py inlines this file into every page so <use href="#icon-…"> resolves
+    when the page is opened directly from disk (file://), where an external sprite
+    reference is blocked.
+  -->
+
+  <symbol id="icon-document" viewBox="0 0 24 24">
+    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+    <path d="M14 3v5h5"/>
+    <path d="M9 13h6M9 17h6"/>
+  </symbol>
+
+  <symbol id="icon-data" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="6" rx="7" ry="3"/>
+    <path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/>
+    <path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"/>
+  </symbol>
+
+  <symbol id="icon-equation" viewBox="0 0 24 24">
+    <path d="M4 19c1.8 0 2.6-1.1 3-3l2.2-9.6C9.6 4.6 10.5 4 12 4"/>
+    <path d="M6 11h7"/>
+    <path d="M15 10.5l5 8M20 10.5l-5 8"/>
+  </symbol>
+
+  <symbol id="icon-chart" viewBox="0 0 24 24">
+    <path d="M4 4v15a1 1 0 0 0 1 1h15"/>
+    <path d="M8 16v-4M12 16v-7M16 16v-3M20 16V7"/>
+  </symbol>
+
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M4 12.6l5 5L20 6.5"/>
+  </symbol>
+
+  <symbol id="icon-warning" viewBox="0 0 24 24">
+    <path d="M10.3 3.9 2.5 17.4a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    <path d="M12 9v4.5"/>
+    <path d="M12 17.2h.01"/>
+  </symbol>
+
+  <symbol id="icon-download" viewBox="0 0 24 24">
+    <path d="M12 3v11"/>
+    <path d="M7.5 10 12 14.5 16.5 10"/>
+    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+  </symbol>
+
+  <symbol id="icon-external-link" viewBox="0 0 24 24">
+    <path d="M14 4h6v6"/>
+    <path d="M20 4 11 13"/>
+    <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>
+  </symbol>
+
+  <symbol id="icon-flask" viewBox="0 0 24 24">
+    <path d="M9.5 3h5"/>
+    <path d="M10.5 3v6.2L5.2 18a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3l-5.3-8.8V3"/>
+    <path d="M7.7 14h8.6"/>
+  </symbol>
+
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+</svg>
+<a class="skip" href="#main">Məzmuna keç</a>
+<button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="sidebar">
+<svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>Mündəricat</button>
+<div class="shell">
+<nav class="sidebar" id="sidebar" aria-label="Saytın bölmələri">
+  <div class="sidebar-head">
+    <a class="mark" href="index.html">MİİS §15.5.2
+      <span class="mark-sub">Mikroiqtisadi təhlil və proqnozlaşdırma modulu · Klassik görünüş</span></a>
+    <a class="panel-cta" href="../panel/index.html">İş panelinə keç →</a>
+  </div>
+  <div class="nav-group"><span class="nav-title">İş paneli (interaktiv)</span><ul><li><a href="../panel/index.html">İş paneli</a></li><li><a href="../panel/index.html#/ssenari">Ssenari qurucusu</a></li><li><a href="../panel/index.html#/hesabat">Hesabat qurucusu</a></li></ul></div><div class="nav-group"><span class="nav-title">Ümumi</span><ul><li><a href="index.html">Ümumi baxış</a></li><li><a href="dayaniqliq.html">Modellərin dayanıqlığı</a></li><li><a href="methodology.html">Metod</a></li><li><a href="data.html">Məlumat mənbələri</a></li><li><a href="synthetic.html">Sintetik məlumat</a></li><li><a href="notebooks.html">Jupyter dəftərləri</a></li><li><a class="current" href="api.html">API və avtomatlaşdırma</a><ul class="nav-sections"><li><a href="#baslat">Bir kliklə işə salmaq</a></li><li><a href="#yukle">Məlumat yükləmək</a></li><li><a href="#avtonom">Avtonom rejim</a></li><li><a href="#icra">Modelləri yenidən icra etmək</a></li><li><a href="#ssenari">Ssenarilər və hesabatlar</a></li><li><a href="#miis">MİİS ilə inteqrasiya</a></li><li><a href="#tehlukesizlik">Təhlükəsizlik</a></li></ul></li></ul></div><div class="nav-group"><span class="nav-title">Funksional tələblər (§15.5.2)</span><ul><li><a href="fr/fr1.html"><span class="nav-num">FR1</span>Sektorlar və bazarlar</a></li><li><a href="fr/fr3.html"><span class="nav-num">FR3</span>Orta aylıq əmək haqqı</a></li><li><a href="fr/fr4.html"><span class="nav-num">FR4</span>Məşğulluq</a></li><li><a href="fr/fr5.html"><span class="nav-num">FR5</span>Pullu xidmətlər</a></li><li><a href="fr/fr10.html"><span class="nav-num">FR10</span>Müəssisələr: maliyyə, effektivlik, bazar payı</a></li><li><a href="fr/fr12.html"><span class="nav-num">FR12</span>Rəqabət mühiti</a></li></ul></div><div class="nav-group"><span class="nav-title">Təhvil</span><ul><li><a href="results.html">Nəticələr və fayllar</a></li></ul></div>
+</nav>
+<main class="content" id="main">
+<h1>API və avtomatlaşdırma</h1>
+<p class="lead-in">Modul yalnız bu sayt deyil: onun məlumatını yeniləmək, modelləri yenidən icra etmək və nəticələri Nazirliyin sistemlərinə ötürmək üçün yerli server və JSON API var. Bu səhifə ən vacib addımları sadə dillə izah edir; texniki təfərrüat <a class="file-link" href="../api/OXUYUN.md"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-document"/></svg>api/OXUYUN.md</a> sənədində, müqavilə <a class="file-link" href="../api/openapi.yaml"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-document"/></svg>api/openapi.yaml</a> faylındadır.</p>
+<h2 id="baslat"><a class="anchor" href="#baslat" aria-hidden="true">#</a><span class="section-num">1</span>Bir kliklə işə salmaq</h2>
+<p>Modulun qovluğunda iki başladıcı fayl var: <strong>macOS</strong> üçün <a class="file-link" href="../MikroModel_Baslat.command"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-document"/></svg>MikroModel_Baslat.command</a>, <strong>Windows</strong> üçün <a class="file-link" href="../MikroModel_Baslat.bat"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-document"/></svg>MikroModel_Baslat.bat</a>. İki dəfə klikləyin — server başlayır və brauzerdə <code>http://127.0.0.1:8790/panel/</code> açılır. Server işləyəndə İş panelinin ssenari qurucusu canlı hesablayır; server olmadan (fayl kimi açılanda) panel və bu sayt yalnız hazır nəticələri göstərir.</p>
+<div class="table-wrap"><table class="tbl tbl-dense"><thead><tr><th class="c-tight">Ünvan</th><th class="c-text">Nədir</th></tr></thead><tbody><tr><td class="c-tight"><code>/</code></td><td class="c-text">Mərkəz səhifəsi</td></tr><tr><td class="c-tight"><code>/panel/</code></td><td class="c-text">İş paneli</td></tr><tr><td class="c-tight"><code>/site/</code></td><td class="c-text">Klassik görünüş (bu sayt)</td></tr><tr><td class="c-tight"><code>/api/v1/…</code></td><td class="c-text">JSON API</td></tr></tbody></table></div>
+<p><a href="../panel/index.html">İş panelini aç →</a> · <a href="../panel/index.html#/ssenari">Ssenari qurucusu →</a> · <a href="../panel/index.html#/hesabat">Hesabat qurucusu →</a></p>
+<h2 id="yukle"><a class="anchor" href="#yukle" aria-hidden="true">#</a><span class="section-num">2</span>Məlumat yükləmək</h2>
+<p>Yeni məlumat iki addımla daxil edilir: <strong>yükləmə və yoxlama</strong>, sonra <strong>tətbiq</strong>. Hər fayl dəftərlərin öz qaydaları ilə yoxlanılır (vərəqlər, ünvanlar, vahidlər, illər, məcburi sütunlar, təkrarlar); səhvlər sətir və sahə üzrə Azərbaycan dilində qaytarılır. Rədd edilən fayl heç nəyi dəyişmir. Tətbiq zamanı köhnə fayl <code>data/_replaced/</code> qovluğuna köçürülür — istənilən vaxt geri qaytarmaq olar.</p>
+<div class="table-wrap"><table class="tbl tbl-dense"><thead><tr><th class="c-tight">Növ</th><th class="c-text">Fayl</th><th class="c-text">Hansı modullara təsir edir</th></tr></thead><tbody><tr><td class="c-tight"><code>workbook</code></td><td class="c-text">Nazirliyin iş kitabı (<code>Statistik data dinamika *.xlsx</code>)</td><td class="c-text">FR1 və bütün asılı modullar</td></tr><tr><td class="c-tight"><code>dsk</code></td><td class="c-text">DSK cədvəli (<code>.xls</code>)</td><td class="c-text">FR4, FR5, FR10, FR12 — faylın bölməsinə görə</td></tr><tr><td class="c-tight"><code>firm_panel</code></td><td class="c-text">FR10 müəssisə paneli (<code>.csv</code> / <code>.xlsx</code>)</td><td class="c-text">FR10 (B qatı sintetikdən reala keçir)</td></tr><tr><td class="c-tight"><code>business_register</code></td><td class="c-text">FR12 biznes reyestri (<code>.csv</code> / <code>.xlsx</code>)</td><td class="c-text">FR12 (B qatı)</td></tr><tr><td class="c-tight"><code>series</code></td><td class="c-text">Ayrı müşahidələr (JSON)</td><td class="c-text">yalnız saxlanılır, dəftərlərin girişi deyil</td></tr></tbody></table></div>
+<p>Sintetik nişanlı fayllar (<code>*_SYNTHETIC*</code>, <code>*_TEMPLATE*</code>) heç vaxt əvəz edilmir və sintetik nişanlı panel real məlumat kimi qəbul olunmur.</p>
+<h2 id="avtonom"><a class="anchor" href="#avtonom" aria-hidden="true">#</a><span class="section-num">3</span>Avtonom rejim</h2>
+<p>Server bir qovluğu izləyə bilər: ora atılan fayl özü tanınır (adına görə), yoxlanılır, tətbiq olunur və təsirlənən modullar yenidən icra edilir. Qəbul edilən fayl <code>_applied/</code>, rədd edilən <code>_rejected/</code> alt qovluğuna köçürülür, yanında Azərbaycan dilində hesabat qalır. Əlavə olaraq hər gün müəyyən saatda tam icra və DSK saytından cədvəllərin yenilənməsi (yalnız dəyişiklik olduqda icra) qurula bilər.</p>
+<pre>python3 api/server.py --watch data/inbox_drop --auto-run \
+    --poll 30 --schedule 06:30 --dsk-refresh --snapshot</pre>
+<p>Serveri kompüter açılanda başlatmaq üçün macOS-da <code>launchd</code>, Windows-da tapşırıq planlayıcısı (Task Scheduler) istifadə olunur.</p>
+<h2 id="icra"><a class="anchor" href="#icra" aria-hidden="true">#</a><span class="section-num">4</span>Modelləri yenidən icra etmək</h2>
+<p><code>run_all.py</code> altı dəftəri asılılıq ardıcıllığı ilə icra edir (FR1 → FR3 → FR4 → FR5 → FR10 → FR12), sonra İş panelini və bu saytı yenidən yığır. İlk xətada dayanır — asılı modullar köhnə girişlərlə icra edilmir. Hər icranın jurnalı, girişlərin və çıxışların yoxlama cəmləri və əvvəlki icra ilə bayt-bayt müqayisə <code>logs/</code> qovluğunda saxlanılır.</p>
+<pre>python3 run_all.py                 # hamısı
+python3 run_all.py --stage FR4     # FR4 və asılıları
+python3 run_all.py --dry-run       # plan, icrasız</pre>
+<h2 id="ssenari"><a class="anchor" href="#ssenari" aria-hidden="true">#</a><span class="section-num">5</span>Ssenarilər və hesabatlar</h2>
+<p>Ssenari qurucusu ekzogen fərziyyələri (2026–2030), qiymətləndirilmiş əmsalları (standart xəta və 95 % etibarlılıq intervalı daxilində) və modul rıçaqlarını dəyişməyə imkan verir. FR1-dəki dəyişiklik zəncirvari olaraq FR3, FR4, FR5, FR10 və FR12-yə ötürülür. Ssenarilər saxlanılır, açılır, surəti çıxarılır və JSON kimi ixrac olunur. Hesabat qurucusu seçilmiş modullar, göstəricilər, ssenarilər və illər üzrə PDF (çap), Excel, Word və CSV hesabatı hazırlayır.</p>
+<h2 id="miis"><a class="anchor" href="#miis" aria-hidden="true">#</a><span class="section-num">6</span>MİİS ilə inteqrasiya</h2>
+<ol><li>MİİS yeni faylı göndərir və yoxlama hesabatını alır.</li><li>Fayl tətbiq olunur və icra başlayır.</li><li>İcranın vəziyyəti izlənilir; «ok» olduqda proqnozlar və tənliklər API ilə götürülür.</li></ol><p>Göstərici identifikatorları sabitdir: <code>fr&lt;k&gt;:&lt;kod&gt;</code> (məsələn, <code>fr1:rgdp</code>); kataloq hər modulun <code>FRx_indicator_catalog.csv</code> faylındadır. FR10/FR12 nəticələri sintetik məlumatla işlədikcə «SİNTETİK» nişanlıdır.</p>
+<h2 id="tehlukesizlik"><a class="anchor" href="#tehlukesizlik" aria-hidden="true">#</a><span class="section-num">7</span>Təhlükəsizlik</h2>
+<ul><li>Oxu və yazı nişanları mühit dəyişəni ilə verilir; standart sınaq nişanları ilə server şəbəkəyə açılmır — istehsalda mütləq dəyişdirin.</li><li>İstehsalda server HTTPS ilə əks proksi arxasında işlədilir.</li><li>Statik fayllar yalnız <code>panel/</code> və <code>site/</code> qovluqlarından verilir; yükləmə ölçüsü məhdudlaşdırılıb.</li></ul>
+<footer class="site-footer">
+  <span class="stamp-row">MİİS §15.5.2 · yığılıb 2026-10-05 · möhür <code>770ffeb52051</code></span>
+  <span class="stamp-row">Bu səhifədəki hər rəqəm yığım anında bu 1 fayldan oxunur: <code>api/OXUYUN.md</code>. Möhür həmin faylların md5 cəmidir.</span>
+  <span class="stamp-row">Sayt <code>site/build_site.py</code> ilə yenidən qurulur; əl ilə redaktə edilmir.</span>
+</footer>
+</main>
+</div>
+<script src="assets/plotly.min.js"></script>
+<script src="assets/plotly-az.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

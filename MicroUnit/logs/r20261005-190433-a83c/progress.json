@@ -1,0 +1,82 @@
+{
+ "run_id": "r20261005-190433-a83c",
+ "status": "dry-run",
+ "current": null,
+ "dry_run": true,
+ "updated": "2026-10-05T18:04:33Z",
+ "started": "2026-10-05T18:04:33Z",
+ "steps": [
+  {
+   "name": "FR1",
+   "kind": "notebook",
+   "status": "planned",
+   "started": "2026-10-05T18:04:33Z",
+   "finished": "2026-10-05T18:04:33Z",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR3",
+   "kind": "notebook",
+   "status": "planned",
+   "started": "2026-10-05T18:04:33Z",
+   "finished": "2026-10-05T18:04:33Z",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR4",
+   "kind": "notebook",
+   "status": "planned",
+   "started": "2026-10-05T18:04:33Z",
+   "finished": "2026-10-05T18:04:33Z",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR5",
+   "kind": "notebook",
+   "status": "planned",
+   "started": "2026-10-05T18:04:33Z",
+   "finished": "2026-10-05T18:04:33Z",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR10",
+   "kind": "notebook",
+   "status": "planned",
+   "started": "2026-10-05T18:04:33Z",
+   "finished": "2026-10-05T18:04:33Z",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR12",
+   "kind": "notebook",
+   "status": "planned",
+   "started": "2026-10-05T18:04:33Z",
+   "finished": "2026-10-05T18:04:33Z",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "panel",
+   "kind": "build",
+   "status": "planned",
+   "started": "2026-10-05T18:04:33Z",
+   "finished": "2026-10-05T18:04:33Z",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "site",
+   "kind": "build",
+   "status": "planned",
+   "started": "2026-10-05T18:04:33Z",
+   "finished": "2026-10-05T18:04:33Z",
+   "seconds": null,
+   "error": null
+  }
+ ]
+}

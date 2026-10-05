@@ -1,24 +1,21 @@
 {
- "run_id": "r20261005-112759-e3d2",
- "status": "dry-run",
- "dry_run": true,
+ "run_id": "r20261005-233533-fb7f",
+ "status": "ok",
+ "dry_run": false,
  "trigger": "cli",
  "root": "/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit",
  "argv": [
-  "--dry-run"
+  "--stage",
+  "FR10"
  ],
  "python": "/Users/econ0757/venvs/miis-model/bin/python3",
  "python_version": "3.13.15",
  "kernel": "miis-model",
  "timeout_s": 3600,
- "started": "2026-10-05T10:27:59Z",
- "finished": "2026-10-05T10:27:59Z",
- "seconds": 0.2,
+ "started": "2026-10-05T22:35:33Z",
+ "finished": "2026-10-05T22:37:08Z",
+ "seconds": 94.9,
  "plan": [
-  "FR1",
-  "FR3",
-  "FR4",
-  "FR5",
   "FR10",
   "FR12",
   "panel",
@@ -159,55 +156,64 @@
   }
  },
  "snapshot": null,
- "reproducibility": null,
+ "reproducibility": {
+  "previous_run": "r20261005-232952-d160",
+  "compared_steps": [
+   "FR10",
+   "FR12",
+   "panel",
+   "site"
+  ],
+  "files_compared": 221,
+  "identical": false,
+  "changed": [
+   "data/firm_panel/FR10_firm_panel_TEMPLATE.xlsx",
+   "output/FR10_equations.json",
+   "data/business_register/FR12_business_register_TEMPLATE.xlsx",
+   "output/FR12_equations.json",
+   "index.html",
+   "panel/data/meta.js",
+   "panel/data/saved.js",
+   "site/dayaniqliq.html",
+   "site/fr/fr10-proqnoz.html",
+   "site/fr/fr10-sintetik.html",
+   "site/fr/fr10-tenlikler.html",
+   "site/fr/fr10.html",
+   "site/fr/fr12-proqnoz.html",
+   "site/fr/fr12-sintetik.html",
+   "site/fr/fr12-tenlikler.html",
+   "site/fr/fr12.html",
+   "site/index.html",
+   "site/methodology.html",
+   "site/notebooks.html"
+  ],
+  "added": [],
+  "removed": []
+ },
  "error": null,
  "steps": [
   {
-   "name": "FR1",
-   "status": "planned",
-   "seconds": null,
-   "error": null
-  },
-  {
-   "name": "FR3",
-   "status": "planned",
-   "seconds": null,
-   "error": null
-  },
-  {
-   "name": "FR4",
-   "status": "planned",
-   "seconds": null,
-   "error": null
-  },
-  {
-   "name": "FR5",
-   "status": "planned",
-   "seconds": null,
-   "error": null
-  },
-  {
    "name": "FR10",
-   "status": "planned",
-   "seconds": null,
+   "status": "ok",
+   "seconds": 42.8,
    "error": null
   },
   {
    "name": "FR12",
-   "status": "planned",
-   "seconds": null,
+   "status": "ok",
+   "seconds": 33.3,
    "error": null
   },
   {
    "name": "panel",
-   "status": "planned",
-   "seconds": null,
+   "status": "ok",
+   "seconds": 5.1,
    "error": null
   },
   {
    "name": "site",
-   "status": "planned",
-   "seconds": null,
+   "status": "ok",
+   "seconds": 11.6,
    "error": null
   }
  ]

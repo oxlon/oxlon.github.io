@@ -14,7 +14,9 @@ qaydada qurulub: yalnız Python standart kitabxanası, SQLite, `API_TOKENS` ilə
 
 ## 1. İşə salmaq
 
-Python 3.10+ (layihənin mühiti: openpyxl, xlrd, pandas — dəftərlər onsuz da bunları tələb edir).
+Python 3.10+ (layihənin mühiti: numpy, pandas, scipy, statsmodels, openpyxl, xlrd, nbconvert, ipykernel — dəftərlər və
+ssenari mühərrikləri bunları tələb edir). Başladıcı Python-u bu ardıcıllıqla seçir: `MIKRO_PYTHON` dəyişəni →
+layihədəki `.venv` → `~/venvs/miis-model` → `python3`; paketlər yoxdursa xəbərdarlıq verir.
 
 ```bash
 cd MicroUnit
@@ -128,6 +130,10 @@ Asılılıqlar: FR3 ← FR1; FR4 ← FR1, FR3; FR5 ← FR1; FR10 ← FR1, FR3, F
 dəftərlərin kodu ilə yoxlanılır, fərq olarsa xəbərdarlıq). Hər dəftər `jupyter nbconvert --to notebook --execute
 --inplace` ilə icra olunur. **İlk xətada dayanır** — asılı mərhələlər köhnə girişlərlə icra edilmir («skipped»).
 Eyni anda yalnız bir icra (`logs/.run_all.lock`).
+
+Kernel: standart `miis-model` (layihə mühiti). Bu kernel kompüterdə qeydiyyatda deyilsə, `run_all.py` xəbərdarlıq
+verib standart `python3` kernel-ə keçir. Layihə mühitini qeydiyyatdan keçirmək üçün:
+`python3 -m ipykernel install --user --name miis-model` (və ya `MICRO_KERNEL=<ad>`).
 
 API ilə:
 

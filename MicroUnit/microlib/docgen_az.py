@@ -153,14 +153,21 @@ def translator(module, extra=None):
     d.update(LOCAL)
     d.update(extra or {})
     low = {k.lower(): v for k, v in d.items()}
+    vals = set(d.values())
+
+    def fix(s):
+        return s.replace("Tier 1", "1-ci pillə").replace("Tier 2", "2-ci pillə")
 
     def tr(x):
         s = str(x)
+        if s in vals and s not in d:
+            return s
         if s in d:
-            return d[s]
+            return fix(d[s])
         if s.lower() in low:
-            return low[s.lower()]
-        if re.search(r"[A-Za-z]{3,}", s) and not re.fullmatch(r"[\w.:|/-]+", s):
+            return fix(low[s.lower()])
+        if (re.search(r"[A-Za-z]{3,}", s) and not re.search(r"[əğışöüçİƏ]", s)
+                and not re.fullmatch(r"[\w.:|/-]+", s)):
             UNTRANSLATED.add((module, s))
         return s
     return tr
@@ -205,5 +212,5 @@ def fr4_v2(ns):
 
 
 def fr5_blocks(ns):
-    from ._docgen_az_fr5 import blocks
-    return write_blocks("FR5", blocks(ns))
+    from ._docgen_az_fr5b import blocks
+    return write_blocks("FR5", {k: "\n" + v + "\n" for k, v in blocks(ns).items()})

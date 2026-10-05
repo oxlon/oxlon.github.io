@@ -1,0 +1,82 @@
+{
+ "run_id": "r20261005-190507-d1cd",
+ "status": "failed",
+ "current": null,
+ "dry_run": false,
+ "updated": "2026-10-05T18:09:48Z",
+ "started": "2026-10-05T18:05:07Z",
+ "steps": [
+  {
+   "name": "FR1",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T18:05:07Z",
+   "finished": "2026-10-05T18:06:49Z",
+   "seconds": 101.3,
+   "error": null
+  },
+  {
+   "name": "FR3",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T18:06:50Z",
+   "finished": "2026-10-05T18:07:17Z",
+   "seconds": 26.2,
+   "error": null
+  },
+  {
+   "name": "FR4",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T18:07:18Z",
+   "finished": "2026-10-05T18:07:35Z",
+   "seconds": 17.1,
+   "error": null
+  },
+  {
+   "name": "FR5",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T18:07:36Z",
+   "finished": "2026-10-05T18:08:24Z",
+   "seconds": 47.9,
+   "error": null
+  },
+  {
+   "name": "FR10",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T18:08:25Z",
+   "finished": "2026-10-05T18:09:08Z",
+   "seconds": 43.4,
+   "error": null
+  },
+  {
+   "name": "FR12",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T18:09:10Z",
+   "finished": "2026-10-05T18:09:42Z",
+   "seconds": 32.8,
+   "error": null
+  },
+  {
+   "name": "panel",
+   "kind": "build",
+   "status": "failed",
+   "started": "2026-10-05T18:09:43Z",
+   "finished": "2026-10-05T18:09:48Z",
+   "seconds": 5.0,
+   "error": "möhür c7f3cd545bee 2026-10-05"
+  },
+  {
+   "name": "site",
+   "kind": "build",
+   "status": "skipped",
+   "started": null,
+   "finished": null,
+   "seconds": null,
+   "error": "əvvəlki mərhələ uğursuz oldu — köhnə girişlərlə icra edilmədi"
+  }
+ ]
+}

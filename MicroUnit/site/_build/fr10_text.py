@@ -1,6 +1,6 @@
 """fr10_text.py — FR10 prose blocks (numbers injected from the outputs)."""
 from . import html
-from .core import v, esc
+from .core import v, esc, esc_az
 from .labels import status
 
 MEAS_AZ = {"nominal": "nominal", "real": "real", "shares_pp": "paylar, f.b."}
@@ -70,13 +70,13 @@ def check_outro(h):
 def layerb_text(d, s, pre):
     pipe = d["pipe"]
     swap = d["swap"]
-    rows = [[esc(r.test), esc(str(r.value)), html.pill("done", "keçdi") if r.passed else html.pill("gap", "keçmədi")]
+    rows = [[esc_az(r.test), esc_az(str(r.value)), html.pill("done", "keçdi") if r.passed else html.pill("gap", "keçmədi")]
             for r in pipe.itertuples()]
     return ("<p>B qatı müəssisə panelini <code>data/firm_panel/</code> qovluğundan oxuyur. Təhvil verilən fayl "
             "sintetikdir: təsadüfi yaradılıb, lakin DSK sahə aqreqatları (müəssisə sayı, buraxılış, işçi sayı və əmək "
             "haqqı) ilə uzlaşdırılıb. Onun nəticələri (<code>FR10_SYNTHETIC_*.csv</code>, su nişanlı) heç bir tapıntıda "
             "işlədilmir və bu saytda qrafik kimi göstərilmir. Aşağıdakı cədvəl yalnız mühərrikin düzgün işlədiyini "
-            "yoxlayır (ingilis dilində test adları çıxış faylından olduğu kimi):</p>"
+            "yoxlayır:</p>"
             + html.table(["Boru xətti testi", "Dəyər", "Nəticə"], rows, cols=["c-wide", "c-text", "c-tight"])
             + f"<p>Əvəzetmə testləri: {v(int(swap.passed.sum()), 0)}/{v(len(swap), 0)} keçir; real fayl üzrə validator "
             f"hesabatı hazırda {v(len(d['val']), 0)} sətir ehtiva edir (sintetik rejimdə boşdur). Faylın necə əvəz "
@@ -85,7 +85,7 @@ def layerb_text(d, s, pre):
 
 LIMITS = ["Əlaqəli sektor elastikliyi nümunə daxilində əhəmiyyətlidir, lakin onun sabit paylar üzərində nümunədən kənar "
           "üstünlüyü təsdiqlənməyib; baza kombinasiyası əvvəlcədən sabitlənmiş qaydaya əsaslanır.",
-          "Real sahə məhsulu hold-out-da sabit artımdan əhəmiyyətli dərəcədə pisdir.",
+          "Real sahə məhsulu nümunədən kənar yoxlamada sabit artımdan əhəmiyyətli dərəcədə pisdir.",
           "Neft emalı qaydası yeni güc olmadığını fərz edir; rıçaq 2015–25 maksimumunu göstərir.",
           "B qatının məlumatı gələnə qədər maliyyə vəziyyəti aqreqat səviyyədədir; sahə üzrə ümumi mənfəət göstəricisi "
           "yuxarı həddir (qeyri-formal buraxılış, nəzərə alınmayan vergilər).",

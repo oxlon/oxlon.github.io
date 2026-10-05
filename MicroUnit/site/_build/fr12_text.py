@@ -1,6 +1,6 @@
 """fr12_text.py — FR12 prose blocks (numbers injected from the outputs)."""
 from . import html, common
-from .core import v, esc, num
+from .core import v, esc, num, esc_az
 from .labels import status, GROUP_AZ
 
 PANEL_AZ = {"activity": "fəaliyyət qrupları", "region": "regionlar", "sme": "KOS payı"}
@@ -53,7 +53,7 @@ def scen_intro():
 def scen_outro(d):
     m = d["merger"]
     rows = [[esc(GROUP_AZ.get(r.market, r.market)), f"{v(r.hhi_post_min, 0)} – {v(r.hhi_post_max, 0)}", v(r.d_hhi, 0),
-             f'<span class="src-en">{esc(r.us)}</span>', f'<span class="src-en">{esc(r.eu)}</span>'] for r in m.itertuples()]
+             f'<span class="src-en">{esc_az(r.us)}</span>', f'<span class="src-en">{esc_az(r.eu)}</span>'] for r in m.itertuples()]
     return ("<p><strong>Birləşmə skrininqi (S2)</strong> — ABŞ 2010 və Aİ hədləri ilə:</p>"
             + html.table(["Bazar", "Birləşmədən sonra HHI", "ΔHHI", "ABŞ 2010", "Aİ"], rows,
                          cols=["c-tight", "c-num", "c-num", "c-text", "c-text"]))
@@ -88,7 +88,7 @@ def check(d):
     rows = [[esc(PANEL_AZ.get(r.panel, r.panel)), esc(METRIC_AZ.get(r.metric, r.metric)), esc(str(r.targets)), v(r.n, 0),
              common.u_cell(r.theil_rule_vs_rw), common.u_cell(r.theil_rule_vs_constant), v(r.dm_p_rule_vs_rw, 2),
              v(r.dm_p_rule_vs_constant, 2)] for r in h.itertuples()]
-    return ["<p>Seçim yalnız 2022-yə qədərki məlumatla aparılıb; hold-out heç bir seçim üçün işlədilməyib (fəaliyyət: hədəf "
+    return ["<p>Seçim yalnız 2022-yə qədərki məlumatla aparılıb; nümunədən kənar yoxlama heç bir seçim üçün işlədilməyib (fəaliyyət: hədəf "
             "2024, regionlar: 2024–2025). Etalonlar: təsadüfi gəzişmə (son müşahidə) və sabit (təlim illərinin ortası). "
             "Hədəf illəri çox az olduğundan DM testi vahidlər üzrə cütləşdirilir və göstərici xarakterlidir.</p>",
             html.table(["Panel", "Göstərici", "Hədəf", "n", "U: təsadüfi gəzişmə", "U: sabit", "DM p (TG)", "DM p (sabit)"],
@@ -103,8 +103,8 @@ def check(d):
 
 def layerb(d, pre):
     c = d["cal"]
-    rows = [[f'<span class="src-en">{esc(r.target)}</span>', f'<span class="src-en">{esc(r.dimension)}</span>',
-             f'<span class="src-en">{esc(r.status)}</span>', v(r.cells, 0), v(r.max_abs_rel_error_pct, 2)] for r in c.itertuples()]
+    rows = [[f'<span class="src-en">{esc_az(r.target)}</span>', f'<span class="src-en">{esc_az(r.dimension)}</span>',
+             f'<span class="src-en">{esc_az(r.status)}</span>', v(r.cells, 0), v(r.max_abs_rel_error_pct, 2)] for r in c.itertuples()]
     sw = d["swap"]
     pp = d["pipe"]
     return ("<p>Sintetik reyestr DSK aqreqatlarına kalibrlənib (bölmələr və regionlar üzrə doğulan və ləğv edilən vahidlər, "
@@ -117,7 +117,7 @@ def layerb(d, pre):
             f"Testlərin tam cədvəli və faylın əvəz edilməsi: <a href=\"{pre}synthetic.html#replace\">Sintetik məlumat</a>.</p>")
 
 
-LIMITS = ["Hər fəaliyyət qrupu və region üzrə cəmi beş illik müşahidə: seçim və hold-out testlərinin gücü çox aşağıdır, "
+LIMITS = ["Hər fəaliyyət qrupu və region üzrə cəmi beş illik müşahidə: seçim və nümunədən kənar yoxlama testlərinin gücü çox aşağıdır, "
           "uyğunluq yoxlaması zəifdir, zolaqlar hər üfüq üzrə 1–4 tarixi xəta cütünə əsaslanır.",
           "006 cədvəlində 2022 tərif dəyişikliyi üç illik məlumatla qiymətləndirilən bir qırılma termi ilə nəzərə alınır.",
           "Fəaliyyət paneli bazara girişi deyil, qeydiyyatları (fərdi sahibkarlar daxil) sayır; reyestrdən çıxış bazardan "

@@ -1,0 +1,19 @@
+{
+ "run_id": "r20261005-225303-4652",
+ "status": "ok",
+ "current": null,
+ "dry_run": false,
+ "updated": "2026-10-05T21:53:53Z",
+ "started": "2026-10-05T21:53:03Z",
+ "steps": [
+  {
+   "name": "FR5",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T21:53:03Z",
+   "finished": "2026-10-05T21:53:52Z",
+   "seconds": 48.9,
+   "error": null
+  }
+ ]
+}

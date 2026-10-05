@@ -1,3 +1,5 @@
+> **Azərbaycan dilində:** [az/FR1_Metodologiya.md](az/FR1_Metodologiya.md)
+
 # FR1 — Structural Econometric Methodology for Sector and Market Analysis and Five-Year Forecasting
 
 **Module:** 15.5.2 Microeconomic analysis and forecasting
@@ -6,7 +8,7 @@
 **Data source:** `Statistik data dinamika 05.06.2026 +.xlsx` (41 sheets, Ministry of Economy statistical dynamics database)
 **Vintage:** annual actuals through 2025; cumulative monthly actuals through April 2026
 **Forecast horizon:** 2026–2030
-**Implementation:** `FR1.ipynb` (runs end to end, no errors; Parts 1–17 = 64 code cells, Part 18 (v2) = registry, engine export, catalogue and self-test; kernel `miis-model`) and the scenario engine `microlib/engines/fr1.py`
+**Implementation:** `FR1.ipynb` (runs end to end, no errors; <!-- AUTO:v23_cells -->Parts 1–17 = 68 code cells<!-- /AUTO:v23_cells -->, Part 18 (v2) = registry, engine export, catalogue and self-test; kernel `miis-model`) and the scenario engine `microlib/engines/fr1.py`
 **Outputs:** CSV files `FR1_*.csv` in `MicroUnit/output/`, including `FR1_forecast_full.csv` (now with a `pop` column,
 thousand persons) and `FR1_fan_draws.csv` (500 baseline replications for FR3–FR5)
 
@@ -63,7 +65,7 @@ statsmodels ilə müstəqil yenidən qiymətləndirilib, əmsalların notebook-u
 formalarda reyestr əmsalları `to_cf` vasitəsilə həlledici əmsallarına (CF) dəqiq çevrilir. Məhdudiyyət testləri yenidən
 hesablanıb və notebook mətni ilə yoxlanılıb. ≤2020 məlumatla yenidən qiymətləndirmə və 2021–2025 dinamik nümunədən kənar
 yoxlama (RMSE, Theil U təsadüfi gəzişmə və sabit artıma qarşı, HLN-DM p) hər proqnoz tənliyinin `holdout` blokundadır
-(46 tənlik üzrə median U: təsadüfi gəzişməyə qarşı 0,71, sabit artıma qarşı 1,21). Yalnız bir müqayisə spesifikasiyası
+(46 tənlik üzrə median U: təsadüfi gəzişməyə qarşı 0,74, sabit artıma qarşı 1,20). Yalnız bir müqayisə spesifikasiyası
 (sosial xərclərlə E3, ≤2020, n = 2 < k) qeydə alınmayıb — dəqiq uyğunlaşmadır.
 
 **Dayanıqlıq** (`output/FR1_robustness_summary.csv`; qayda reyestr başlığında): 47 proqnoz tənliyindən 15 stabil,
@@ -77,7 +79,7 @@ ankor artımlarının 0,5 əmsalı ilə sönməsi, dövlət investisiyasının s
 TFP əlavəsi, əhali yolu, hesablar (real, deflyator, nominal), töhfələr və dekompozisiya. Redaktə edilə bilən: 16 baza fərziyyəsi
 yolu (2026–2030, hər ssenari), 122 həlledici əmsalı (dəyər, SE, 95% etibarlılıq intervalı reyestrdən), 10 rıçaq (rejim
 `shock`/`reanchor`, ankor və sönmə, ρ ilə sönmə, düzəliş əmsalının yenidən kalibrlənməsi, dövlət investisiyası qaydası, kredit
-əlavəsi, homogenlik). Standart `shock` rejimi notebook-un Part 14 konvensiyasıdır; mühərrik Part 14-ün beş multiplikator
+əlavəsi, homogenlik; v2.1-dən 11-ci: sektor bölgüsü payları `alloc_shares`). Standart `shock` rejimi notebook-un Part 14 konvensiyasıdır; mühərrik Part 14-ün beş multiplikator
 təcrübəsini 10⁻¹⁴ dəqiqliklə təkrarlayır. Son xana `selftest()`-i assert edir: hər üç ssenari üzrə hər iki rejimdə
 `FR1_forecast_full.csv`, `FR1_accounts_*` və bütün ssenarilər üzrə töhfə/dekompozisiya cədvəlləri maks. nisbi fərq ~10⁻¹⁴ ilə
 təkrarlanır; bir ssenari ~0,06 s.
@@ -85,13 +87,13 @@ təkrarlanır; bir ssenari ~0,06 s.
 **Tamlıq** — `FR1_indicator_catalog.csv` və `FR1_forecast_tidy.csv`: 471 komponent × 3 ssenari × 2026–2030 (tam), tarix
 1990-dan, 43 komponent üçün Əsas ssenari 5–95% zolağı. Töhfələr və dekompozisiya artıq bütün ssenarilər üçündür
 (`FR1_gdp_growth_contributions_all.csv`, `FR1_sector_decomposition_all.csv`). Yeni bölgülər: sektorlar üzrə kreditlər
-(`FR1_credit_by_sector.csv`; ev təsərrüfatları G2, qalan kreditlər 2023–25 orta payları ilə) və sektorlar üzrə real investisiya
-(`FR1_investment_by_sector.csv`; kapital eyniliyinin istifadə etdiyi axın). Proqnozlaşdırılmayanlar səbəbi ilə
+(`FR1_credit_by_sector.csv`; ev təsərrüfatları G2, qalan kreditlər 2023–25 orta payları ilə; v2.1-dən 2025-ci ilin faktiki payları ilə — aşağıya bax) və sektorlar üzrə real investisiya
+(`FR1_investment_by_sector.csv`; kapital eyniliyinin istifadə etdiyi axın; v2.1-dən 2025-ci ilin payları ilə). Proqnozlaşdırılmayanlar səbəbi ilə
 `FR1_not_forecast.csv`-dədir. İngilis mətnləri: `FR1_strings_az.csv` (240 sətir).
 
 **Əmsal həssaslığı** (`FR1_coef_sensitivity.csv`, ±1 SE, 2030, Əsas ssenari): ən güclü təsir E3 homogenlik əmsalı
-(ev təsərrüfatlarının gəliri −3,3/+4,3%), D1 gəlir elastikliyi (qeyri-neft ÜDM −2,5/+3,9%), D3 emal elastikliyi, C3 ixrac
-elastikliyi; İQİ üçün G4 əmək haqqı ötürülməsi (+2,2/−2,6%); məşğulluq üçün E4 iştirak trendi (±0,6%).
+(ev təsərrüfatlarının gəliri −3,2/+4,1%), D1 gəlir elastikliyi (qeyri-neft ÜDM −2,3/+3,7%), D3 emal elastikliyi, C3 ixrac
+elastikliyi; İQİ üçün G4 əmək haqqı ötürülməsi (+2,3/−2,8%); məşğulluq üçün E4 iştirak trendi (±0,6%).
 
 **v2-də düzəldilmiş iki xəta (yalnız diaqnostika / həssaslıq çıxışları dəyişir).** (1) `FR1_iv_dwh.csv`: E2 və G1-də daxil
 edilmiş ekzogen dəyişən (`ln_minwage`, `polrate`) həm də xaric edilmiş alət kimi sayılırdı (təkrarlanan sütun). İndi daxil edilmiş
@@ -100,9 +102,139 @@ ekzogen dəyişənlər yalnız özləri üçün alətdir. Endogen 2SLS əmsallar
 DWH p 0,123 → 0,111. Heç bir DWH/2SLS qərarı dəyişmir — nə tam nümunədə, nə də ≤2020 nümunədən kənar yoxlama modelində (orada D2 və
 G2 əvvəlki kimi 2SLS ilə). (2) Part 13-ün ρ həssaslığı (`FR1_addfactor_sensitivity.csv`) əsas proqondan qalmış neft gəlirləri
 istinad yolunu təkrar istifadə edirdi; indi öz istinad yolu ilə hesablanır (yeni dəyərlər §7.4-də). (3) Dəyişdirilməyib: 2026
-ankor dövrü 20 iterasiya ilə məhdudlaşır və hədəflərə ən çoxu 0,13% (turizm; Mənfi ssenaridə 0,08%, İslahatda 0,17%) fərqlə
+ankor dövrü 20 iterasiya ilə məhdudlaşır və hədəflərə ən çoxu 0,12% (turizm; Mənfi ssenaridə 0,07%, İslahatda 0,16%) fərqlə
 çatır — 0,5% dözümlülük həddinin daxilindədir; mühərrikdə `anchor_maxit` rıçağı ilə artırıla bilər.
 <!-- v2-end -->
+
+<!-- v2.1-begin -->
+## v2.1 (2026-10-05): sector allocations anchored on the last actual year
+
+**Defect.** An audit found that 2026 real investment by sector (`FR1_investment_by_sector.csv`, ids `fr1:inv:*`) jumped against
+the 2025 actual — trade +58%, manufacturing +49%, tourism −25%, electricity −23%, water −22%, ICT +22% — while total real
+investment is flat (−0.1%). Cause: 2023–25 *average* shares of total real investment were applied from 2026 to a total whose
+2025 composition differs from the average. Credit by sector (`FR1_credit_by_sector.csv`) had the same problem: energy +25.2%
+(Reform +28.2%) while business credit grew 3.7%.
+
+**Rule.** As everywhere in the project (FR3 branch wages, FR12 section allocation, the add-factor convention) the allocation is
+anchored on the last actual year: each sector's **2025 share is held through 2030** — of total real investment (Part 11.2,
+`calibrate`) and of business (non-household) credit (Part 9.7, `CRED_SHARE_ANCH`; "other" remains the exact remainder). 2026
+sector values now move exactly with the total: investment −0.1% in every sector (Adverse −3.8%, Reform +2.2%); credit +3.7%
+(Adverse −6.0%, Reform +6.3%). No convergence to the averages is imposed: the notebook's reason for averaging is smoothing, not a
+long-run share, and the hold-out below gives no clear case for one. The sector history (investment 2000–2025, credit 2006–2025,
+`is_forecast = False`) was already in `FR1_forecast_tidy.csv`; it is now continuous with 2026.
+
+**Consequence for the model.** The investment shares are the flows of the capital-stock identity
+K<sub>s,t</sub> = (1−δ<sub>s</sub>)K<sub>s,t−1</sub> + share<sub>s</sub>·I<sub>t</sub>, so the same anchored shares are used there
+(published sector investment and published capital stocks stay consistent). K<sub>man</sub> (C3) and K<sub>ict</sub> (C10)
+matter: with the 2025 shares (manufacturing 3.0% vs 4.5% average, ICT 1.8% vs 2.1%) both stocks are ~9.6% lower in 2030, and
+Baseline 2030 value added is lower — manufacturing −3.2%, ICT −7.6%, non-oil GDP −0.93%, real GDP −0.78% (2026 is unchanged:
+it is anchored on January–April data). Average growth 2026–30: real GDP 2.56 → **2.40%** (Adverse 1.51 → 1.37, Reform
+3.50 → 3.32); non-oil 4.18 → **3.99%** (3.07 → 2.90, 5.26 → 5.03). All run-dependent figures in §6–§9 and in the v2 note
+above quoted the v2.1 run (§6–§9 now quote v2.2) (refreshed by script from the output CSVs and the executed notebook). FR3, FR4 and FR5 (which read
+`FR1_forecast_full.csv` and `FR1_fan_draws.csv`) were re-run; FR10 and FR12 read the same files.
+
+**Hold-out (same rule at the 2020 cut).** Median Theil U vs RW2020 / constant growth 2010–19, 14 variables:
+
+| Share rule in the capital identity | median U RW2020 | median U CG 2010–19 | real GDP U RW2020 | manufacturing U | ICT U |
+|---|---|---|---|---|---|
+| 3-year average (pre-v2.1) | 0.578 | 1.024 | 0.595 | 0.677 | 0.282 |
+| **cut-year share held (v2.1)** | 0.585 | 1.019 | 0.624 | 0.577 | 0.820 |
+| linear convergence to the average over 4 years | 0.594 | 1.026 | 0.613 | 0.611 | 0.596 |
+| convergence at the anchor decay 0.5 | 0.580 | 1.026 | 0.609 | 0.625 | 0.516 |
+
+The rules are close except for ICT, whose 2020 investment share was a trough (1.1% vs 2.2% average). The two convergent rules
+were not adopted: one is no better on the medians, the other only moves the jump to 2027 (trade +30%).
+
+**Lever and engine.** The 3-year averages are kept (`CAL['inv_share_avg3']`, `CRED_SHARE_FIX`) and printed; engine lever
+`alloc_shares='avg3'` restores the pre-v2.1 rule (with `mode='reanchor'` it reproduces the pre-v2.1 forecast to 8·10⁻¹⁶).
+`selftest()` now also reproduces `FR1_investment_by_sector.csv` and `FR1_credit_by_sector.csv` (max. rel. diff. 2·10⁻¹⁶).
+
+**Other allocation outputs checked.** `FR1_gdp_growth_contributions_all.csv` and `FR1_sector_decomposition_all.csv` are growth
+rates (pp), not share allocations: contributions use the 2025 actual nominal weights; their 2026 values come from the sector
+equations and the January–April 2026 anchor (construction −19% real → −1.24 pp), so nothing was changed. Consumer-market shares
+show no jump > 25%. The only other 2025→2026 level jump > 25% is the budget balance (difference of two large aggregates).
+FR1's 14 Driscoll–Kraay panels already use t(T−1) for both p-values and intervals (checked).
+<!-- v2.1-end -->
+
+<!-- AUTO:v23_note -->
+## v2.3 (2026-10-05): final FR1 clean-up — fixed add-factor decay, import price term, wage bill in income, fiscal ordering
+
+Four specification questions, each estimated on data ≤ 2020 by the model's own builders and tested in the untouched dynamic
+2021–2025 hold-out against the v2.2 specification (new notebook Part 11.7, `FR1_v23_candidates.csv`); the scenario consequences
+and the decisions are in Part 14.1 (`FR1_v23_forecast_checks.csv`, `FR1_v23_fiscal_diagnosis.csv`, `FR1_v23_decisions.csv`).
+Rule: correct (or neutral) signs on both samples, Theil U of the key variable at most 10% above the v2.2 specification, for E3 a
+coherent wage elasticity, and for the fiscal candidates the ordering Adverse < Baseline < Reform of the 2030 budget balance.
+Rejected candidates are registered with `used_in_forecast = false`.
+
+| Item | Decision | Evidence |
+|---|---|---|
+| 1. Add-factor decay sensitivity | **Changed.** Until v2.2 the lever `base_addf_decay` decayed the base add-factors at each equation's *estimated* residual autocorrelation ρ̂ — an estimated residual-AR process, excluded by the client's constraints. Now a fixed, non-estimated half-life: lever `addf_halflife` (default 1 year, factor 0.50 a year — the rule of the January–April anchor increments); ρ̂ is no longer estimated anywhere in the forecast path (DW and BG remain as diagnostic tests) | The forecast (constant add-factors) is unchanged by this item. `FR1_addfactor_sensitivity.csv`, average growth 2026–30 with the decay: real GDP 2.14 / 1.06 / 3.04% (Baseline / Adverse / Reform; constant add-factors 2.74%), non-oil 3.34 / 2.33 / 4.31% (4.00%); with ρ̂ (v2.2 run) real GDP 2.42%, non-oil 3.67% |
+| 2. D4 non-oil imports: relative price ln(p_gdp/fx), coefficient −0.245 | **Re-parametrised (adopted).** Real imports are USD imports × exchange rate / GDP deflator (Part 3), so ln(p_gdp/fx) enters the dependent variable with −1 by construction. Estimated in import-volume terms (constant USD prices), the same fit gives the volume elasticity **c = +0.755** (p = 0.0001; ≤ 2020: +0.278) — correctly signed: a real appreciation raises import volumes. The solver keeps c − 1 for real imports at GDP prices, so forecasts and hold-out are identical. Dropping the term (= bounding it at 0, which binds) is rejected | Imports U 0.85 / 0.56 (identical to v2.2). Without the term: imports 0.95 / 0.63 (+12%, material), non-oil revenue U 0.87 vs 0.43, budget balance 0.94 vs 0.61. In first differences the volume elasticity is +0.08 [−0.26, +0.42], so the long-run value lies outside that interval — as for the v2.2 form (reported) |
+| 3. E3 household income: + real wage bill | **Adopted.** ln(income / pension bill) on ln(non-oil GDP / pension bill) and ln(wage bill / pension bill), homogeneity imposed: elasticities non-oil GDP 0.603, **real wage bill 0.377** (the 2025 wage share of household income is 0.425), pension bill 0.021; ≤ 2020: 0.690, 0.102, 0.208. Homogeneity is not rejected on the selection sample (p = 0.16) but is on the full sample (p = 0.001), where the free form has a wrongly signed non-oil GDP elasticity (−1.34) — so the test-and-impose variant is rejected. Wage elasticity coherent (first differences 0.20 [−0.20, +0.59]) | Hold-out real disposable income U 1.31 / 1.04 vs 1.23 / 0.98 (+5.8%, below 10%); consumption U 0.08 vs 0.14. **Minimum wage +10%** (Baseline 2030, shock convention): real disposable income −0.05% → **+0.94%**, consumption −0.05% → +1.03%, non-oil GDP −0.05% → +0.41% (wage +2.61%, CPI +0.78%; income-legs lever +0.84%) |
+| 4. Fiscal block: Adverse ends with the best budget balance | **Kept — no candidate passes.** Diagnosis, Adverse vs Baseline 2030: revenue −8.4 bn AZN (oil −3.9, non-oil −4.5), spending −9.8 bn (current −5.2, capital −4.6): **1.17 AZN of spending is cut per AZN of revenue lost**. Two links do it: F3 (current spending on total real revenue, elasticity 0.99, 95% CI [0.52, 1.46]) and the scenarios' state-investment paths (Adverse −4% a year: real state investment −23.3% vs real oil revenue −16.9%; F4 unit elasticity, free estimate 0.90 [0.22, 1.58]). With the Baseline state-investment level Adverse would end at −1.74% of GDP | Every structural fix that restores the ordering loses heavily on the hold-out balance (U 0.61 in v2.2, RMSE 1.1 pp of GDP) — table below. The ordering is therefore a property of the estimated fiscal reaction (spending follows revenue, capital spending follows oil revenue), not a coding error; it is disclosed rather than tuned away |
+
+| Fiscal candidate (in the v2.2 model, as in the hold-out) | 2030 balance, % of GDP (Baseline / Adverse / Reform) | Adverse < Baseline < Reform | Hold-out U of the balance (change) | Decision |
+|---|---|---|---|---|
+| F3: non-oil and oil revenue separately | +1.53 / +2.64 / +1.12 | no | 0.88 (+46%) | rejected |
+| F3: non-oil revenue only (oil revenue saved) | −0.18 / −0.96 / +0.76 | yes | 1.31 (+116%) | rejected |
+| F3: revenue elasticity at its 95% CI lower bound | +0.30 / +0.35 / +0.64 | no | 1.25 (+107%) | rejected |
+| F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity | +0.22 / +0.41 / +0.29 | no | 0.61 (+0%) | rejected |
+| F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound | +0.22 / −1.12 / +1.30 | yes | 0.72 (+19%) | rejected |
+
+**Effect on the forecast (Baseline 2030, vs the v2.2 run)** — all from the E3 wage-bill term (items 1 and 2 leave the forecast
+unchanged): real GDP −0.76%, non-oil GDP −0.93%, nominal GDP −1.01%, CPI −0.27%, real disposable income
+−1.88%, consumption −2.07%, non-oil imports −2.10%: the real wage bill grows more slowly than non-oil GDP in the forecast. Average growth
+2026–30: real GDP **2.74%** (v2.2 2.90; Adverse 1.62, Reform 3.67), non-oil **4.00%** (4.20; 2.92, 5.01). Budget balance
+2030: Baseline +0.09, Adverse +0.99, Reform −0.26% of GDP (v2.2 +0.22 / +1.10 / −0.12). Median hold-out U of the 14 variables
+of §6.2: 0.592 vs RW (0.592 in v2.2), 1.023 vs constant growth (1.022).
+
+**Registry, engine, documentation.** `FR1_equations.json`: 164 equations (47 used in the forecast; 157 in v2.2), new: 7
+v2.3 specifications (the replaced v2.2 forms of D4 and E3 and the rejected candidates), each with its hold-out comparison and
+decision row. Engine: lever `addf_halflife`; the E3 homogeneity tie now has three members (pension-bill elasticity = 1 − non-oil
+GDP − wage bill), so a changed coefficient keeps the restriction; self-test passes for every scenario in both modes. The
+run-dependent figures that no CSV holds (solver iterations §7.1, the January–April anchor §7.2, the fan diagnostics §7.5, the
+v2.2 comparison figures) are exported to `FR1_doc_figures.json` (Part 18.17) and rendered here by `microlib.docrefresh`.
+FR3, FR4 and FR5 were re-run on the v2.3 forecast. §6–§9 quote the v2.3 run.
+<!-- /AUTO:v23_note -->
+
+<!-- AUTO:v22_note -->
+## v2.2 (2026-10-05): what was taken from the Ministry's macro module (15.5.1)
+
+The macro module (`18august/model`, read-only) covers FR1–FR5 from the macro side. Its data and official plan figures were
+reviewed for FR1; every candidate was **re-estimated in FR1's framework** (same sample conventions, small-sample HAC, coherence
+rule), selected on data ≤ 2020 and tested in the **untouched dynamic 2021–2025 hold-out** of §6.2, against the pre-v2.2 model
+(new notebook Part 11.6, `FR1_v22_macro_candidates.csv`). Data copies with source path and MD5: `data/macro_module/README_FR1.md`.
+Nothing from the macro module's own forecasting (AR(1)/five-year-average profiles, CPI/wage/unemployment ensembles, ECM/AR(6)
+specifications, Okun equation, its 2026 GDP path that ignores the January–April 2026 actuals) is used.
+
+| Item | Decision | Hold-out evidence (Theil U vs RW 2020 / vs constant growth 2010–19; RMSE) |
+|---|---|---|
+| 1. Oil and gas output | **Adopted** (assumption): Baseline growth 2027–30 = Ministry plan (`8_vereq_original.xlsx`, 2.4.1.4) on the 2026 level from the January–March outturn; Adverse = pre-v2.2 Baseline oil decline (−4.2…−3.0%), gas plan − 1 pp; Reform = plan + the pre-v2.2 Reform gaps | Plan, not an estimate. The plan over-stated 2025 oil output (28.45 vs 27.68 mt, +2.8%; gas −1.0%). Baseline oil 2030: 26.0 mt (pre-v2.2 22.8) |
+| 2. Household income by source (wage bill + DSMF transfers + other income, Δln legs) | **Rejected** for the forecast; engine lever `income_block = legs` | In sample the legs fit better (one-step RMSE of real income growth ≤ 2020: 3.5 vs 5.0 pp; elasticities 0.83 wage bill, 0.52 DSMF, 1.24 other income — as in the macro module). Dynamic hold-out, real disposable income: U 1.76 / 1.40, RMSE 11.4% vs **1.27 / 1.01, 8.2%**; consumption 0.24 vs 0.13. The legs are nominal: the pre-cut model under-predicts the 2025 price level by 30%, and the under-indexed nominal legs turn that into too much real income. Deflated by consumer prices: 1.53 / 1.21 (rejected). Nominal disposable income is better with the legs (U 0.49 vs 0.61) |
+| 3. Mining deflator on the export-value-weighted oil+gas export price index + exchange rate | **Adopted** (the macro module's form, no CPI term) | Mining deflator U **0.13 / 0.16** (RMSE 6.8%) vs 0.50 / 0.61 (26.5%); nominal GDP 0.46 / 0.72 vs 0.61 / 0.96; GDP deflator 0.34 vs 0.58. Side effects: real GDP 0.72 / 1.11 vs 0.62 / 0.96 (chain weights), imports 0.85 vs 0.66 (the wrong-signed relative price in D4). The CPI-augmented variant (smallest pre-cut s.e.) is worse (0.60) and rejected. New fit: 2.5 + 1.02 Δln XPI + 0.51 Δln FX, adj. R² 0.80; robustness *qeyri-stabil* (Chow at the 2016 mid-point, p = 0.005) |
+| 4. State Investment Programme 2026 | **Adopted**: 2 700 mln AZN (own workbook, `DİP 2016-2026`, planned; 2025 actual 2 305; the macro module cites the same cell) | Assumption. Its 2025 share of real state investment (20.4%) is replaced in 2026 by the programme at the model's 2026 investment deflator (fixed point); 2026 real state investment +3.9% (pre-v2.2 +1.5%). Published as `fr1:exp_pubinv_n` (= 2 700 in 2026 in every scenario) |
+| 5. Fiscal closure: non-oil balance held at its cut-year ratio to non-oil GDP | **Rejected**; engine lever `fiscal_rule = nobd`; the ratio is published (`fr1:nobd_pct`) | Total spending improves (U 0.30 vs 0.53) but the budget balance, the purpose of the rule, is much worse: RMSE 4.9 vs 1.1 pp of GDP (U 2.66 vs 0.61), because oil-revenue errors pass 1:1 into the balance. Under F3 Adverse keeps the best 2030 balance (+1.1% of GDP; Baseline +0.2, Reform −0.1): spending follows revenue and Adverse cuts state investment 4% a year. With the lever, 2030 balances are −12.3 / −14.4 / −10.5 bn AZN (Adverse worst) |
+| 6. Imports on absorption + REER | **Rejected** | REER wrongly signed in both samples (≤ 2020 −1.06, p = 0.02; full −0.32, p = 0.12); imports U 1.32 / 0.87 vs 0.66 / 0.44. D4 unchanged |
+| 7. Sector deflators on sector price drivers | **Skipped** | The drivers (agricultural producer prices, transport and communication tariffs, construction deflator) have no exogenous 2026–30 paths: the macro module projects them with AR/average profiles (`pdrv_*`), and several exist only from 2021 |
+
+**Effect on the forecast (Baseline, vs v2.1).** 2026 is unchanged in real terms (anchored on January–April); the changes come
+from 2027: real GDP 2030 +2.5% (oil-gas GDP +11.8%), non-oil GDP +1.0%, nominal GDP +4.4% (mining deflator), CPI 2030 +0.3%,
+real disposable income +0.9%. Average growth 2026–30: real GDP **2.90%** (v2.1 2.40; Adverse 1.76, Reform 3.85), non-oil **4.20%**
+(3.99; 3.09, 5.23). Scenario ordering of activity is unchanged (Adverse < Baseline < Reform). Budget balance 2030 +0.22% of GDP
+(Baseline), the 2026 balance is lower (+636 vs +948 mln AZN: the programme). Median hold-out U of the 14 variables of §6.2: 0.59
+vs RW (0.58 before), 1.02 vs constant growth (1.02); median RMSE 13.0% (14.3%).
+
+**Registry and engine.** `FR1_equations.json`: 157 equations (47 used in the forecast): new — the four income legs
+(E3a–E3d, estimated and registered, `used_in_forecast = false`, with their hold-out comparison), their CPI-deflated variants, the
+pre-v2.2 and CPI-augmented mining deflators, D4 with absorption + REER; G5_defl_min replaced. Engine (`microlib/engines/fr1.py`,
+`_fr1_*.py`): new inputs `sip_n` (programme, nominal) and `dsmf_add_g`; levers `income_block`, `fiscal_rule`; new series
+`fr1:gdpnon_n`, `hhdisp_n`, `nobd_pct`, `exp_pubinv_n`, `gas_exp_price`, `xsh_oil`, `dln_xpi` (478 catalogue components).
+With `income_block = legs` a 10% higher minimum wage raises real disposable income by ~0.8% by 2030; in the forecast model
+(E3) it does not (−0.05%, via prices). Self-test passes for all scenarios in both modes; FR3, FR4 and FR5 were re-run.
+This note records the v2.2 stage (its forecast figures are those of the v2.2 run, as are the v2 and v2.1 notes' of theirs);
+§6–§9 quote the current (v2.3) run.
+<!-- /AUTO:v22_note -->
+
 
 ## 0. Requirement traceability
 
@@ -152,7 +284,7 @@ any variable. Each is flagged in the notebook where it appears:
 | `debt_t = debt_{t−1} − balance_t` | Stock-flow accounting |
 | Chain-linked aggregation | The official aggregator requires last year's nominal weights |
 | DOLS leads/lags | Leads and lags of the **differenced regressors** only; the dependent variable's own lags never enter |
-| Constant base add-factors | Each equation's own 2025 residual, held fixed — consistent with the finding that residuals are generally **not** shown to be stationary; a sensitivity decays them at each residual's autocorrelation ρ̂ |
+| Constant base add-factors | Each equation's own 2025 residual, held fixed — consistent with the finding that residuals are generally **not** shown to be stationary; a sensitivity decays them at a fixed, user-set half-life (v2.3; until v2.2 at each residual's estimated autocorrelation ρ̂, now removed) |
 | Decay of the 2026 anchor increment | A **judgemental rule**: the add-factor increment derived from Jan–Apr 2026 data applies fully in 2026 and decays by a fixed 0.5 a year (half-life one year); nothing is estimated from a variable's history |
 | Jan–Apr → full-year bridge | Relates two measurements of the same year |
 | Fan-chart shocks | Historical five-year residual *paths* are replayed (u_{s+h} − u_s); nothing is estimated on the residual dynamics |
@@ -321,10 +453,15 @@ it), and technical progress is carried by an **explicit trend** rather than smug
 
 - **Consumption** — per-capita disposable income (long-run elasticity 0.93) and household credit (0.12, insignificant). The
   ex-post real lending rate was dropped (Section 5).
-- **Household income (E3)** — a share relation: ln(income / pension bill) on ln(non-oil GDP / pension bill), elasticity 0.89 on
-  non-oil GDP and 0.11 on the pension bill (homogeneity not rejected, p = 0.12, imposed). Non-oil GDP stands for all market income
-  (wages, entrepreneurial and property income). The pension bill is a **proxy**: average pension × total population (the workbook
-  has no count of pensioners). Pensions are a policy variable, CPI-indexed in the forecast.
+<!-- AUTO:v23_e3 -->
+- **Household income (E3)** — a share relation (v2.3: with the real wage bill): ln(income / pension bill) on ln(non-oil GDP /
+  pension bill) and ln(wage bill / pension bill), elasticities 0.60 on non-oil GDP, 0.38 on the real wage bill (average
+  wage × employment / consumer prices; the 2025 wage share of household income is 0.43) and 0.02 on the pension bill
+  (homogeneity imposed: not rejected on data ≤ 2020, p = 0.16; rejected on the full sample, p = 0.001, where the free form
+  has a wrongly signed non-oil GDP term). Non-oil GDP stands for the remaining market income (entrepreneurial and property
+  income); the wage bill carries the wage and minimum-wage channel. The pension bill is a **proxy**: average pension × total
+  population (the workbook has no count of pensioners). Pensions are a policy variable, CPI-indexed in the forecast.
+<!-- /AUTO:v23_e3 -->
 - **Investment** — accelerator on non-oil output (0.20) and state investment (0.89). No credit term: its free estimate is wrongly
   signed and the regional-panel value is rejected by the aggregate data.
 - **Public investment (F4)** — real state investment on real oil revenue, estimate 0.90; unit elasticity **not rejected (low
@@ -334,7 +471,8 @@ it), and technical progress is carried by an **explicit trend** rather than smug
 - **Credit (G1)** — real deposits (0.52) and the policy rate (−0.043); non-oil GDP removed (wrong sign, −0.67).
 - **Inflation** — a structural cost markup: exchange-rate change (0.057) and wage growth (0.31), both significant only at 10%
   (R² 0.20): the weakest-fitting equation, which is why the CPI fan is wide.
-- **Deflators** — each sector's deflator inflation on CPI inflation (mining also on the manat oil price). For social & other
+- **Deflators** — each sector's deflator inflation on CPI inflation; mining (v2.2, macro-module form) on the export-value-weighted
+  oil + gas export price index (USD) and the exchange rate, without a CPI term. For social & other
   services the free estimate (drift 6.6 pp, pass-through 0.59) implied ~9% a year; the joint hypothesis "no drift, unit
   pass-through" is rejected (p = 0.001) but unit pass-through alone is not (p = 0.22), so unit pass-through is imposed and the
   drift kept. Deflator log changes are now applied exactly (exp), fixing a units bug.
@@ -440,7 +578,7 @@ evidence, and replaced — all documented in the notebook with the rejected outp
 | **Policy-rate pass-through** to market rates | Wrongly signed. In 2016–17 the policy rate was raised to 15% defensively while lending rates *fell* (20.7% in 2010 → 16.4% in 2016): over this sample it is a crisis instrument, not a steering rate. | Lending rate on the **deposit rate** (long-run pass-through 1.40) plus an NPL risk premium; the deposit rate is a scenario variable. The policy rate acts on credit **quantities**, where it is correctly signed (−0.043). |
 | **Labour demand in levels** | VIF above 20; extrapolated, it moved unemployment more than a percentage point in the first forecast year. | An Okun-type **employment-rate** relation: `ln(emp/lf)` on non-oil GDP per capita, long-run elasticity 0.034, single regressor. Measured unemployment has been 4.9–5.6% every year since 2010 except 2020. |
 | **Free labour-force equation** | Population elasticity collapses to 0.05 with a 1.1%-a-year trend (VIF > 100), implying unemployment drifting up 3 pp. | Unit population elasticity imposed; only participation drift estimated (+0.045% a year). The participation rate is in fact flat: 51.35% in 2010, 52.56% in 2025. |
-| **Import equation without relative price** | Investment coefficient *negative* — impossible where capital goods are nearly all imported. The 2015–16 devaluation compressed imports while investment moved. | A real-exchange-rate term added. It restores the sign only in static OLS; in the long-run DOLS fit the investment coefficient is wrongly signed and insignificant, so it is dropped: imports depend on consumption and the relative price. |
+| **Import equation without relative price** | Investment coefficient *negative* — impossible where capital goods are nearly all imported. The 2015–16 devaluation compressed imports while investment moved. | A real-exchange-rate term added. It restores the sign only in static OLS; in the long-run DOLS fit the investment coefficient is wrongly signed and insignificant, so it is dropped: imports depend on consumption and the relative price (v2.3: estimated in import-volume form, where its elasticity is positive — see the v2.3 note). |
 | **Hydrocarbon export value as a regression** | Elasticity of 1.285 on oil revenue — impossible, since value *is* volume × price. A unit error: volume in tonnes, price per barrel. | Replaced by an **identity** with the recovered 7.400 barrels-per-tonne conversion (exact) and a calibrated 1.002 ratio (2021–25) to the balance-of-payments measure. |
 | **Mechanical resource rule for public investment** | Applying the estimated unit elasticity over a declining-oil horizon cuts real public investment ~30% by 2030 and produces a ~3%-of-GDP surplus — a projection of pro-cyclical austerity, not a neutral baseline, and not what a country with a sovereign wealth fund would do. | Public investment is set as a **policy level** (stated openly in each scenario) while oil-revenue *deviations* from the scenario's own reference path move it with the estimated elasticity — so the oil transmission channel operates at full strength in the multiplier experiments. |
 
@@ -481,29 +619,37 @@ their actual real increase. Coefficient signs agree between the pre-2021 and ful
 G3). DM tests use the HLN correction with h = 3 (the errors are 1–5-step errors of one path; with five observations the
 correction is defined only up to h = 3) and are indicative only.
 
+<!-- AUTO:v22_holdout -->
 | | Result (14 variables) |
 |---|---|
-| Beats a random walk from 2020 (pandemic trough) | 13 of 14, median U **0.58** |
-| Beats a random walk from 2019 | 11 of 14, median U 0.54 |
+| Beats a random walk from 2020 (pandemic trough) | 14 of 14, median U **0.59** |
+| Beats a random walk from 2019 | 12 of 14, median U 0.58 |
 | Beats constant growth 2010–2019 (pre-pandemic) | **6 of 14, median U 1.02** |
-| Beats constant growth 2010–2020 | 9 of 14, median U 0.96 |
-| Significant wins (HLN-DM p < 0.10) | 2 vs RW2020; 2 vs constant growth 2010–19 |
-| Real GDP level error after 5 years | **−9.1%** (U 0.60 vs RW2020, 0.92 vs CG 2010–19) |
-| Real non-oil GDP level error after 5 years | −9.6% (U 0.45 vs RW2020, 1.31 vs CG 2010–19) |
-| Policy-level variant | median U 0.51 vs RW2020, 0.95 vs CG 2010–19 |
+| Beats constant growth 2010–2020 | 7 of 14, median U 0.95 |
+| Significant wins (HLN-DM p < 0.10) | 2 vs RW2020; 1 vs constant growth 2010–19 |
+| Real GDP level error after 5 years | **−11.4%** (U 0.70 vs RW2020, 1.09 vs CG 2010–19) |
+| Real non-oil GDP level error after 5 years | −10.8% (U 0.48 vs RW2020, 1.40 vs CG 2010–19) |
+| Policy-level variant | median U 0.54 vs RW2020, 0.90 vs CG 2010–19 |
 
+*(v2.2 figures: the mining deflator on the hydrocarbon export price index — see the v2.2 note. Its own hold-out error falls
+from 26.5% to 6.8% and nominal GDP's from 24.6% to 18.4%, but real GDP's rises from 7.3% to 8.4% because the more accurate
+2021–22 mining prices give mining, whose volume fell, a larger chain weight.)*
+<!-- /AUTO:v22_holdout -->
+
+<!-- AUTO:v22_headline62 -->
 **Headline:** the random walk from 2020 flatters the model (2020 was the pandemic trough). Against constant growth estimated over
-the pre-pandemic decade the model is roughly **on par** (median U 1.02; 2 significant wins). Tracked well: consumption (RMSE
-1.8%), trade 3.0%, employment 3.0%, agriculture 4.3%, real GDP 7.0%. Tracked poorly: construction 19.4%, transport 17.6%,
-manufacturing 16.6%, state investment 20.0% — sectors transformed after 2020 (new manufacturing capacity, the Karabakh and East
-Zangezur reconstruction, the Middle Corridor). Real current spending is over-predicted by 38% by 2025.
+the pre-pandemic decade the model is roughly **on par** (median U 1.02; 1 significant win). Tracked well: consumption (RMSE
+1.1%), trade 2.2%, employment 3.0%, agriculture 4.3%, real GDP 8.3%. Tracked poorly: construction 21.1%, transport 17.6%,
+manufacturing 14.5%, state investment 17.4%, ICT 25.8% (v2.1: 2020, the cut year, was an ICT investment trough) — sectors transformed after 2020 (new manufacturing capacity, the Karabakh and East
+Zangezur reconstruction, the Middle Corridor). Real current spending is over-predicted by 32% by 2025.
+<!-- /AUTO:v22_headline62 -->
 
 ### 6.3 Other checks
 
 Per equation: sign and magnitude against theory; small-sample HAC significance; residual-based cointegration; first-difference
 cross-check; heteroskedasticity; normality; VIF and condition number; and Chow tests at 2015, 2020 and 2022 on the final
 specifications (**10 of 20** tested coefficient sets show instability). System-wide: identity closure, convergence for every
-solved year, and a static solution check (mean |real GDP error| 1.7%; consumption within ±10% except 2016–18).
+solved year, and a static solution check (mean |real GDP error| 1.7%; consumption within ±10% except 2016–19).
 
 ---
 
@@ -511,26 +657,31 @@ solved year, and a static solution check (mean |real GDP error| 1.7%; consumptio
 
 ### 7.1 Solver
 
-Each year is solved by **damped Gauss–Seidel** iteration to a fixed point (residual < 1e-10; 63–76 iterations per forecast year,
-55–63 in the hold-out), with identities imposed exactly at every iteration.
+Each year is solved by **damped Gauss–Seidel** iteration to a fixed point (residual < 1e-10; <!-- AUTO:v23_solver -->62–70 iterations per forecast year,
+55–63 in the hold-out<!-- /AUTO:v23_solver -->), with identities imposed exactly at every iteration.
 
 ### 7.2 Anchoring 2026 on observed data
 
+<!-- AUTO:v23_anchor -->
 2026 is four months observed. All twelve GDP components have published year-to-date real growth indices. A robust (Huber)
 proportional bridge from January–April to full-year growth, estimated on 2022–2025 (2021 excluded: its January–April growth is a
-2020 base effect), has slope 0.68 and a cross-validated RMSE of 3.9 pp against 6.4 pp for the 1:1 mapping, but it does **not** beat
-1:1 on an HLN-corrected Diebold–Mariano test (one-sided p = 0.126), so the **1:1 mapping** is used. Each component's implied
-full-year level is an anchoring target reached through add-factor increments; **the increments apply fully in 2026 and decay by half
-each year** (1/16 remains in 2030). The largest is construction (−0.202 log points, from −19% January–April growth).
+2020 base effect), has slope 0.68 and a cross-validated RMSE of 3.9 pp against 6.4 pp for the 1:1 mapping, but it does
+**not** beat 1:1 on an HLN-corrected Diebold–Mariano test (one-sided p = 0.126), so the **1:1 mapping** is used. Each
+component's implied full-year level is an anchoring target reached through add-factor increments; **the increments apply fully in
+2026 and decay by half each year** (1/16 remains in 2030). The largest is construction (−0.212 log points, from
+−19% January–April growth).
+<!-- /AUTO:v23_anchor -->
 
-**The 2026→2027 sawtooth.** Because the construction anchor unwinds at a one-year half-life, construction goes −19.0% (2026) →
-+11.1% (2027) → +5.7% (2028); non-oil GDP +0.71% → +5.84% → +5.11%, i.e. roughly 1 pp of the 2027 non-oil figure is the unwinding.
-ICT (+9.0% → +9.2%) and agriculture (+2.0% → +4.8%, the second being its estimated trend) show no anchor-driven sawtooth.
+**The 2026→2027 sawtooth.** Because the construction anchor unwinds at a one-year half-life, construction goes <!-- AUTO:v22_sawtooth -->−19.0% (2026) →
++12.3% (2027) → +6.5% (2028); non-oil GDP +0.68% → +5.47% → +4.64%<!-- /AUTO:v22_sawtooth --> (v2.3), i.e. roughly 1 pp of the 2027 non-oil figure is the unwinding.
+Agriculture (<!-- AUTO:v23_agr -->+2.0% → +4.8%<!-- /AUTO:v23_agr -->, the second being its estimated trend) shows no anchor-driven sawtooth; ICT (<!-- AUTO:v22_sawtooth_ict -->+9.0% → +6.4%<!-- /AUTO:v22_sawtooth_ict -->) now does: <!-- AUTO:v23_ict -->its January–April anchor adds 1.7 pp in 2026 and takes back 0.8 pp in 2027, and per-capita ICT capital no longer grows at the 2025 investment share (−0.1 pp in 2027<!-- /AUTO:v23_ict -->, `FR1_sector_decomposition_all.csv`).
 
+<!-- AUTO:v23_jantable -->
 | | Published Jan–Apr | Model 2026 (full year) | Difference |
 |---|---|---|---|
-| Real GDP growth | +0.20% | +0.28% | +0.08 pp |
-| Real non-oil GDP growth | +0.70% | +0.71% | +0.01 pp |
+| Real GDP growth | +0.20% | +0.25% | +0.05 pp |
+| Real non-oil GDP growth | +0.70% | +0.68% | −0.02 pp |
+<!-- /AUTO:v23_jantable -->
 
 Two data tensions are passed to the user: construction contracting 19% while total investment rises 15%, and a steep Q1 fall in
 both exports and imports.
@@ -540,100 +691,113 @@ both exports and imports.
 Because hydrocarbons are exogenous, the forecast is scenario-conditional by construction — a feature that forces assumptions
 into the open. Calibrated on the 2025 starting point (Brent 69.1, oil 27.68 mt, gas 50.92 bcm, FX 1.70, policy rate 6.75%).
 Common to all scenarios: population +0.483% a year (computed), oil-sector investment moving with the oil-output path (compounded),
-pensions indexed to CPI, minimum wage +5% a year.
+pensions indexed to CPI, minimum wage +5% a year; v2.2: 2026 oil and gas output from the January–March outturn in every
+scenario, and 2026 state investment anchored on the <!-- AUTO:v22_sip -->approved State Investment Programme (2 700 mln AZN, sheet `DİP 2016-2026`)<!-- /AUTO:v22_sip -->.
 
+<!-- AUTO:v22_scenarios -->
 | Driver | Baseline | Adverse | Reform |
 |---|---|---|---|
 | Brent by 2030 | ~66 USD/bbl | ~48 | ~80 |
-| Oil output | −4.5% p.a. decelerating | −6.5% p.a. | −3.0% p.a. |
-| Gas output | +1.0% p.a. (plateau) | flat | +4.0% p.a. |
+| Oil output 2027–30 (v2.2) | Ministry plan growth: −2.1, −1.8, +3.0, −0.4% | pre-v2.2 Baseline decline: −4.2, −3.8, −3.5, −3.0% | plan + 1.2, 0.8, 0.5, 0 pp |
+| Gas output 2027–30 (v2.2) | Ministry plan growth: −1.1, −4.7, +5.2, 0.0% | plan − 1 pp | plan + 3 pp |
+| State Investment Programme 2026 | 2 700 mln AZN (approved) | same | same |
 | Gas export price | → 300 USD/kcm | 230 | 380 |
 | Public investment (policy level, real) | +1.5% p.a. | −4% p.a. | +5% p.a. |
 | Policy / deposit rate | easing | tightening | easing |
 | Exchange rate | 1.70 | 1.70 | 1.70 |
 | External demand | +3% p.a. | +0.5% p.a. | +5% p.a. |
 | Non-oil TFP | trend | trend | +0.4 log points a year from 2027 on every sector with a TFP/trend term (agr, man, elc, wat, tou, tra, ict, oth) — now actually applied by the solver |
+<!-- /AUTO:v22_scenarios -->
 
 ### 7.4 Headline results
 
+<!-- AUTO:v22_results -->
 | | Baseline | Adverse | Reform |
 |---|---|---|---|
-| Real GDP growth, avg % p.a. 2026–30 | **2.56** (first round 1.34; original 1.23) | 1.51 | 3.50 |
-| Real non-oil GDP growth, avg % p.a. | **4.18** (first round 2.68; original 2.35) | 3.07 | 5.26 |
-| CPI inflation 2030, % | 4.55 | 4.21 | 4.93 |
-| Unemployment 2030, % | 4.60 | 4.78 | 4.44 |
-| Budget balance 2030, % of GDP | +0.26 | +1.36 | −0.24 |
-| Public debt 2030, % of GDP | 20.0 | 20.7 | 19.1 |
-| Hydrocarbon share of value added 2030, % | 14.3 | 10.4 | 16.8 |
-| Nominal GDP 2030, bn AZN | 179 | 160 | 196 |
+| Real GDP growth, avg % p.a. 2026–30 | **2.74** (v2.1: 2.40; v2: 2.56; first round 1.34; original 1.23) | 1.62 | 3.67 |
+| Real non-oil GDP growth, avg % p.a. | **4.00** (v2.1: 3.99; v2: 4.18; first round 2.68; original 2.35) | 2.92 | 5.01 |
+| CPI inflation 2030, % | 4.48 | 4.17 | 4.83 |
+| Unemployment 2030, % | 4.63 | 4.80 | 4.48 |
+| Budget balance 2030, % of GDP | +0.09 | +0.99 | −0.26 |
+| Public debt 2030, % of GDP | 20.5 | 22.2 | 18.9 |
+| Hydrocarbon share of value added 2030, % | 17.2 | 12.3 | 20.7 |
+| Nominal GDP 2030, bn AZN | 183 | 161 | 203 |
+| Non-oil budget balance 2030, % of non-oil GDP (v2.2) | −11.6 | −8.5 | −13.7 |
+<!-- /AUTO:v22_results -->
 
-Baseline path, % growth:
+<!-- AUTO:v22_path -->
+Baseline path, % growth (v2.3):
 
 | | 2026 | 2027 | 2028 | 2029 | 2030 |
 |---|---|---|---|---|---|
-| Real GDP | 0.28 | 3.02 | 3.08 | 3.13 | 3.30 |
-| Real non-oil GDP | 0.71 | 5.84 | 5.11 | 4.73 | 4.61 |
-| Consumption | 4.68 | 4.02 | 4.28 | 4.30 | 4.42 |
-| Manufacturing | 6.21 | 6.85 | 6.86 | 6.90 | 6.97 |
+| Real GDP | 0.25 | 3.01 | 2.69 | 4.50 | 3.29 |
+| Real non-oil GDP | 0.68 | 5.47 | 4.64 | 4.94 | 4.35 |
+| Consumption | 4.63 | 3.31 | 3.52 | 4.24 | 3.91 |
+| Manufacturing | 6.20 | 6.12 | 6.25 | 6.78 | 6.54 |
 | Agriculture | 2.00 | 4.75 | 4.29 | 4.06 | 3.94 |
-| Construction | −18.99 | 11.08 | 5.70 | 3.16 | 2.06 |
-| ICT | 9.00 | 9.22 | 8.96 | 8.78 | 8.65 |
+| Construction | −19.00 | 12.33 | 6.52 | 5.32 | 2.77 |
+| ICT | 9.00 | 6.40 | 6.95 | 7.38 | 7.59 |
+<!-- /AUTO:v22_path -->
 
 **Why higher than the first revision.** The re-specified household-income equation ties income to non-oil GDP (share relation),
-so the demand loop non-oil GDP → income → consumption → trade, taxes and services → non-oil GDP is stronger; consumption now grows
-4–4.7% a year (history about 5%), where the first revision's wage-bill version gave 0.1–2.4% and under-predicted consumption by up to
-23% in-sample. The 1:1 YTD mapping, the transport transit term and the deflator units fix also contribute. Non-oil growth of
-4.2% a year is inside the 2021–25 range (2.7–9.1%) but above the 2015–25 average (about 3%).
+so the demand loop non-oil GDP → income → consumption → trade, taxes and services → non-oil GDP is stronger; consumption now <!-- AUTO:v22_whycons -->grows
+3.3–4.6% a year (history<!-- /AUTO:v22_whycons --> about 5%), where the first revision's wage-bill version gave 0.1–2.4% and under-predicted consumption by up to
+23% in-sample. The 1:1 YTD mapping, the transport transit term and the deflator units fix also contribute. Non-oil growth <!-- AUTO:v22_whynonoil -->of
+4.0% a year (v2.3)<!-- /AUTO:v22_whynonoil --> is inside the 2021–25 range (2.7–9.1%) but above the 2015–25 average (about 3%).
 
-**Plausibility flags, disclosed.** *Manufacturing* grows ~6.9% a year: capacity plus the export ↔ manufacturing loop (C3 export
+**Plausibility flags, disclosed.** *Manufacturing* grows <!-- AUTO:v22_man -->~6.4% a year (v2.3<!-- /AUTO:v22_man -->; 6.9% with the pre-v2.1 3-year investment shares): capacity plus the export ↔ manufacturing loop (C3 export
 elasticity 0.71 × D3 manufacturing elasticity 0.35; loop gain 0.25) applied to +3% a year external demand. Recent history is
-comparable (≈8% a year 2021–25), but the hold-out RMSE for manufacturing is 16.6%; no pre-cut evidence supports a different
+comparable (≈8% a year 2021–25), but <!-- AUTO:v22_manrmse -->the hold-out RMSE for manufacturing is 14.5%<!-- /AUTO:v22_manrmse -->; no pre-cut evidence supports a different
 specification (every candidate fails the sign screen on pre-cut data). *Agriculture* grows ~4.2% a year, 90% of it the estimated
 deterministic trend, against 0.9–3.4% in recent years; a 2015 trend break was tested on pre-cut data and not significant
-(p = 0.52), so no break is imposed. More than half of 2027–2030 growth is deterministic trend in transport (105%), agriculture
-(90%), ICT (78%) and electricity (64%) — those paths are as good as the assumption that the historical trend continues.
+(p = 0.52), so no break is imposed. More than half of 2027–2030 growth is deterministic trend in <!-- AUTO:v22_trend -->transport (102%), ICT (97%;
+v2.3), agriculture (90%) and electricity (65%)<!-- /AUTO:v22_trend --> — those paths are as good as the assumption that the historical trend continues.
 
-**Add-factor sensitivity:** if the base add-factors decay at each residual's autocorrelation instead of being held, average growth
-is lower — real GDP 2.10% (baseline), 1.10% (adverse), 3.01% (reform); non-oil 3.66%, 2.61%, 4.68% (v2: each sensitivity run now builds its own oil-revenue reference path).
+**Add-factor sensitivity:** if the base add-factors decay at a fixed, non-estimated half-life (v2.3; no residual autocorrelation is
+estimated) instead of being held, average growth is lower — <!-- AUTO:v22_addfactor -->real GDP 2.14% (baseline), 1.06% (adverse), 3.04% (reform); non-oil 3.34%, 2.33%, 4.31% (v2.3, half-life 1 year; constant add-factors: 2.74% and 4.00%)<!-- /AUTO:v22_addfactor --> (v2: each sensitivity run now builds its own oil-revenue reference path).
 
-**The clearest structural result:** the hydrocarbon share of value added falls from 25.6% to 14.3% in the baseline, because oil
+**The clearest structural result:** the hydrocarbon share of value added falls <!-- AUTO:v22_hcshare -->from 25.6% to 17.2% in the baseline (v2.2: Ministry output plan; 14.5% in v2.1)<!-- /AUTO:v22_hcshare -->, because oil
 volumes decline while non-oil sectors grow.
 
 ### 7.5 Uncertainty
 
+<!-- AUTO:v23_fan -->
 500 baseline replications combine: (1) **historical residual-path resampling** — a start year s (2010–2020) is drawn and the joint
 deviations u_{s+h} − u_s (h = 1…5) of all 29 behavioural residuals are added to the constant add-factors; nothing is estimated on
 the residual dynamics; paths are centred and used with both signs (antithetic); (2) the same five-year history for log Brent, oil
-and gas output, **with the same start year**; (3) antithetic, sign-preserving parameter draws from N(β̂, V̂_HAC) (21.9% of coefficient
+and gas output, **with the same start year**; (3) antithetic, sign-preserving parameter draws from N(β̂, V̂_HAC) (21.8% of coefficient
 draws rejected for a sign flip), with base add-factors recomputed to reproduce 2025. 2026 deviations are scaled by 0.84 (the
 remaining full-year uncertainty once January–April is known) and 2/3 for the exogenous drivers.
 
-**Diagnostics.** 748 replications were attempted (374 antithetic pairs) to obtain 500 valid (66.8%). Discarded: 133 for a
-one-year move more than 0.3 log points away from the baseline's (or 1.5× the largest move the variable made in 2000–2025, where
-larger — e.g. tourism, state investment, oil-linked prices), 5 non-finite, 1 explosive; none for non-convergence. The screen
-therefore truncates the tails somewhat. In the exported draws the share of draw-years with |Δlog| > 0.3 is 0% for real GDP,
-non-oil GDP, CPI and employment, 0.2% for consumption, 9.5% for real current spending and 26% for non-oil investment (whose own
+**Diagnostics.** 884 replications were attempted (442 antithetic pairs) to obtain 500 valid (56.6%). Discarded:
+204 for a one-year move more than 0.3 log points away from the baseline's (or 1.5× the largest move the variable
+made in 2000–2025, where larger — e.g. tourism, state investment, oil-linked prices), 9 non-finite, 0 explosive,
+0 for non-convergence (a failed member discards its antithetic pair). The screen therefore truncates the tails somewhat. In
+the exported draws the share of draw-years with |Δlog| > 0.3 is 0.0% for real GDP, 0.0% for non-oil GDP, 0.0% for CPI,
+0.0% for employment, 0.1% for consumption, 12.3% for real current spending and 22% for non-oil investment (whose own
 history has larger moves).
 
 **Centring.** Shocks and parameter deviations are symmetric, but aggregates are arithmetic sums of log-normally shocked parts
-(chain-linked GDP, oil + non-oil revenue, the income loop), so the raw median lies above the baseline: by 2030 +1.2% (real GDP),
-+1.8% (non-oil), +2.1% (consumption), +2.4% (income), +3.8% (current spending), +8.7% (revenue). The exported draws are then
-centred on the baseline (multiplicatively for levels, additively for rates): the median equals the published baseline in every
-year (max gap 6e−14), dispersion unchanged; cross-variable identities hold only up to those shifts.
+(chain-linked GDP, oil + non-oil revenue, the income loop), so the raw median lies above the baseline: by 2030 +1.6% (real GDP), +2.1% (non-oil), +0.9% (consumption), +0.9% (income), +3.7% (current spending), +8.4% (revenue). The exported draws are then centred on the baseline (multiplicatively for levels, additively for
+rates): the median equals the published baseline in every year (max gap 6e−14), dispersion unchanged; cross-variable
+identities hold only up to those shifts.
+<!-- /AUTO:v23_fan -->
 
+<!-- AUTO:v22_bands -->
 | 2030, baseline | 5–95% band (% of median) | 25–75% | hold-out 5-year error |
 |---|---|---|---|
-| Real GDP | 18.2 | 6.6 | −9.1% |
-| Real non-oil GDP | 24.4 | 7.6 | −9.6% |
-| CPI level | 70.2 | 36.0 | −29.7% |
-| Employment | 8.9 | 4.0 | −4.1% |
-| Real disposable income | 28.2 | 13.0 | +11.3% |
-| Real consumption | 48.7 | 24.4 | +1.5% |
-| Real current spending | 72.0 | 27.6 | +38.0% |
+| Real GDP | 23.3 | 9.6 | −11.4% |
+| Real non-oil GDP | 30.4 | 14.5 | −10.8% |
+| CPI level | 104.8 | 37.2 | −30.1% |
+| Employment | 9.2 | 4.3 | −4.2% |
+| Real disposable income | 41.6 | 14.1 | +10.0% |
+| Real consumption | 54.5 | 22.0 | +0.2% |
+| Real current spending | 74.1 | 38.1 | +32.1% |
+<!-- /AUTO:v22_bands -->
 
 Bands are of the same order as the model's own 2021–25 errors except consumption (far wider than its small hold-out error, because
-of the income loop). **Growth and CPI bands** — real GDP growth p5–p95 of about −4% to +13% a year, CPI inflation about −10% to
-+21% — replay the 2015–16 devaluation, the 2020 pandemic and the 2021–22 inflation episode, *with both signs*: the upper CPI tail is
+of the income loop). **Growth and CPI bands** — real GDP growth p5–p95 of <!-- AUTO:v22_growthband -->about −4% to +12% a year, CPI inflation about −12% to
++20%<!-- /AUTO:v22_growthband --> — replay the 2015–16 devaluation, the 2020 pandemic and the 2021–22 inflation episode, *with both signs*: the upper CPI tail is
 the 2016 devaluation (15.7%), while the deflationary lower tail is the mirror image of those episodes and has no historical
 precedent under the peg — it should be read as an artefact of symmetric resampling of an asymmetric history.
 
@@ -642,31 +806,39 @@ precedent under the peg — it should be read as an artefact of symmetric resamp
 Each experiment shocks one exogenous driver in the **solved** system, reusing the baseline add-factor paths. Deviations from
 baseline by 2030, in per cent (`FR1_multipliers.csv`):
 
+<!-- AUTO:v22_multipliers -->
 | | Brent +10 USD/bbl | Public investment +1 bn AZN | Credit easing (estimated) | Credit easing + judgemental overlay | External demand +10% |
 |---|---|---|---|---|---|
-| Construction | +1.28 | **+5.90** | +0.01 | +1.38 | +0.11 |
-| Manufacturing | +0.50 | +2.37 | 0.00 | +0.44 | **+9.45** |
-| Trade | +0.30 | +1.30 | +0.88 | +1.14 | +1.48 |
-| ICT | +0.79 | +3.94 | −0.01 | +0.38 | −0.04 |
-| Real GDP (chain-linked) | −0.49 | +1.08 | +0.23 | +0.45 | +1.23 |
-| Real non-oil GDP | +0.31 | +1.34 | +0.29 | +0.56 | +1.53 |
-| Consumption | +0.31 | +1.35 | +0.92 | +1.19 | +1.54 |
-| Non-oil investment | +2.47 | +11.58 | −0.04 | +1.15 | −0.15 |
-| Budget revenue | +3.88 | +1.66 | +0.62 | +0.95 | +1.93 |
-| Non-oil imports | −0.37 | +1.32 | +0.93 | +1.20 | +1.49 |
+| Construction | +1.70 | +5.61 | +0.02 | +1.33 | +0.14 |
+| Manufacturing | +0.62 | +2.07 | +0.00 | +0.41 | +9.47 |
+| Trade | +0.36 | +1.16 | +0.87 | +1.10 | +1.40 |
+| ICT | +0.99 | +3.53 | −0.00 | +0.36 | −0.01 |
+| Real GDP (chain-linked) | −0.08 | +0.98 | +0.23 | +0.43 | +1.19 |
+| Real non-oil GDP | +0.38 | +1.23 | +0.28 | +0.53 | +1.49 |
+| Consumption | +0.37 | +1.20 | +0.90 | +1.15 | +1.46 |
+| Non-oil investment | +3.41 | +11.40 | −0.02 | +1.19 | −0.04 |
+| Budget revenue | +3.82 | +1.43 | +0.58 | +0.88 | +1.76 |
+| Non-oil imports | −0.17 | +1.19 | +0.92 | +1.17 | +1.43 |
+<!-- /AUTO:v22_multipliers -->
 
 Transport no longer responds to any of these shocks (its equation is transit volume + trend). **Credit easing** (−200 bp policy,
 −100 bp deposit rate) works only through household credit and consumption in the estimated model; the column labelled
 "judgemental overlay" additionally applies the regional-panel output elasticity 0.134 to deviations of credit in the investment
 equation — a user lever, **not** an estimated effect (the aggregate data reject it, HAC-F p = 0.028).
 
-**Fiscal multiplier (`FR1_fiscal_multiplier.csv`).** +1 bn AZN of real state investment a year (actual injection 970 mln after the
-F4 response): real non-oil GDP +843 mln (2015 prices) in 2030 — a **2030 level multiplier of 0.87**; **cumulative multiplier**
-(sum of Δ non-oil GDP 2026–30 / sum of injections) **0.70** (0.64 on chain-weighted real GDP). It is larger than in the first
-revision (0.54/0.46) because of the stronger income loop; imports now rise (+1.32%).
+<!-- AUTO:v22_fiscal -->
+**Fiscal multiplier (`FR1_fiscal_multiplier.csv`).** +1 bn AZN of real state investment a year (actual injection 979 mln after the
+F4 response): real non-oil GDP +764 mln (2015 prices) in 2030 — a **2030 level multiplier of 0.78**; **cumulative multiplier**
+(sum of Δ non-oil GDP 2026–30 / sum of injections) **0.64** (0.59 on chain-weighted real GDP). It is larger than in the first
+revision (0.54/0.46) because of the stronger income loop; imports now rise (+1.19%).
+<!-- /AUTO:v22_fiscal -->
 
-**An oil price rise lowers chain-weighted real GDP** (−0.49%) while raising non-oil GDP (+0.31%) and budget revenue (+3.88%):
-a higher oil price raises the mining deflator and hence mining's chain weight while mining's volume (exogenous) falls.
+<!-- AUTO:v22_oilprice -->
+**An oil price rise lowers chain-weighted real GDP** (−0.08%; −0.48% before v2.2) while raising non-oil GDP (+0.38%) and budget revenue (+3.82%):
+a higher oil price raises the mining deflator and hence mining's chain weight while mining's volume (exogenous) falls. v2.2: the
+mining deflator now follows the export-value-weighted oil + gas export price index (oil is 58% of hydrocarbon exports in 2025),
+not the Brent price in manat with a unit-like elasticity, so the weight effect — and the fall in real GDP — is smaller.
+<!-- /AUTO:v22_oilprice -->
 
 ---
 
@@ -729,23 +901,25 @@ forecast tables alone had hidden:
 
 ### 8.4 Headline five-metric results, baseline
 
+<!-- AUTO:v22_accounts -->
 | | Real growth<br>% p.a. | Deflator infl.<br>% p.a. | Nominal growth<br>cum. % | Nominal 2030<br>mln AZN |
 |---|---|---|---|---|
-| **GDP** | +2.6 | +4.1 | +38.4 | 178,639 |
-| **Non-oil GDP** | +4.2 | +5.8 | +63.0 | 150,446 |
-| Oil and gas GDP | −3.4 | −1.9 | −23.4 | 28,193 |
-| Tourism & catering | **+10.0** | +5.0 | +105.6 | 7,346 |
-| Information & communication | +8.9 | −2.8 | +32.9 | 3,545 |
-| Manufacturing | +6.8 | +3.9 | +68.3 | 12,989 |
-| Transport & storage | +4.9 | +1.3 | +36.0 | 12,383 |
-| Water supply & waste | +4.6 | +3.9 | +51.6 | 458 |
-| Trade & vehicle repair | +4.2 | +6.3 | +66.7 | 24,376 |
-| Net taxes on products | +4.0 | +6.4 | +66.1 | 20,599 |
-| Agriculture | +3.8 | +3.5 | +42.8 | 10,926 |
-| Electricity, gas & steam | +2.9 | +5.8 | +52.7 | 2,223 |
-| Social & other services | +2.7 | +8.7 | +73.7 | 48,743 |
-| Construction | +0.0 | +2.2 | +11.9 | 9,428 |
-| Mining & quarrying | −3.1 | −1.9 | −22.6 | 25,624 |
+| **GDP** | +2.7 | +4.3 | +41.6 | 182,747 |
+| **Non-oil GDP** | +4.0 | +5.7 | +60.5 | 148,162 |
+| Oil and gas GDP | −1.2 | −0.0 | −6.0 | 34,585 |
+| **Tourism & catering** | **+9.2** | +5.0 | +98.0 | 7,076 |
+| Information & communication | +7.5 | −2.8 | +24.1 | 3,312 |
+| Manufacturing | +6.4 | +3.9 | +64.9 | 12,731 |
+| Transport & storage | +5.0 | +1.3 | +36.1 | 12,398 |
+| Water supply & waste | +4.5 | +3.8 | +50.6 | 454 |
+| Agriculture | +3.8 | +3.4 | +42.5 | 10,900 |
+| Trade & vehicle repair | +3.8 | +6.3 | +63.1 | 23,856 |
+| Net taxes on products | +3.7 | +6.3 | +62.8 | 20,185 |
+| Electricity, gas & steam | +2.9 | +5.6 | +51.7 | 2,208 |
+| Social & other services | +2.6 | +8.7 | +72.2 | 48,332 |
+| Construction | +1.0 | +2.2 | +17.0 | 9,861 |
+| Mining & quarrying | −1.1 | +0.1 | −5.1 | 31,433 |
+<!-- /AUTO:v22_accounts -->
 
 Tourism's +10% a year comes from its income elasticity (1.9) on faster-growing per-capita income plus trend — another demand-loop
 result to read with caution. The social-services deflator still rises 8.7% a year: unit CPI pass-through is imposed, but the
@@ -771,9 +945,9 @@ Each is specific and traceable to the data, not a generic caveat.
    Any scenario moving the rate extrapolates from a single episode.
 8. **Sector investment deflators are not published**, so the aggregate investment deflator is applied to every sector.
 9. **Chain-linked volumes are not additive**; the non-oil wedge uses a calibrated correction whose size is reported.
-10. **Manufacturing, construction and transport forecasts are the weakest** (hold-out RMSE 16.6–19.4%); against pre-pandemic
+10. **ICT, construction, transport and manufacturing forecasts are the weakest** (<!-- AUTO:v22_lim10 -->hold-out RMSE 14.5–25.8%<!-- /AUTO:v22_lim10 -->; ICT because 2020, the hold-out cut, was a trough of its investment share); against pre-pandemic
     constant growth the model is only on par (median U 1.02).
-11. **Calibrated shares are held fixed** (sector investment shares, social-spending share, debt-service rate).
+11. **Calibrated shares are held fixed** (sector investment and credit shares — v2.1: at their 2025 values —, social-spending share, debt-service rate).
 12. **Public investment's level is an assumption, not a forecast** (Section 5, last row).
 13. **Cointegration is established for only 2 of 30 level relations** (4 at 10%); most level t-statistics are descriptive and
     the forecast level depends on the constant-add-factor assumption (Section 7.4 sensitivity).
@@ -781,10 +955,14 @@ Each is specific and traceable to the data, not a generic caveat.
     trend (Section 7.4).
 15. **A strong demand loop** (income tied to non-oil GDP) raises growth, tourism and the fiscal multiplier; manufacturing is
     amplified by the export ↔ manufacturing link. The household-income elasticity rests on a pension-bill proxy
-    (average pension × total population).
+    (average pension × total population); v2.2 tested the macro module's income-by-source decomposition (DSMF transfers):
+    better in-sample, worse in the dynamic hold-out, so it is an engine lever, not the forecast (v2.2 note).
 16. **No aggregate credit channel** in investment; credit easing on investment is a judgemental overlay.
-17. **Fans** are wide for CPI, consumption and current spending, are truncated by the jump screen (one-third of replications
-    replaced), carry a mirrored deflationary CPI tail, and are centred on the baseline after a reported median correction.
+<!-- AUTO:v23_lim17 -->
+17. **Fans** are wide for CPI, consumption and current spending, are truncated by the jump screen (23.1% of attempted
+    replications rejected, 43.4% replaced with their antithetic pairs), carry a mirrored deflationary CPI tail, and are centred on the
+    baseline after a reported median correction.
+<!-- /AUTO:v23_lim17 -->
 
 ## 10. What would most improve the model
 

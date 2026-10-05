@@ -1,3 +1,3 @@
 WATERMARK,index,estimate,se,true
-"SYNTHETIC — pipeline test, not results",rel_lp_l1,0.15203611565292052,0.004582893819114427,0.15
-"SYNTHETIC — pipeline test, not results",rel_leverage_l1,-0.2963262656064581,0.010411335130783479,-0.3
+"SYNTHETIC — pipeline test, not results",rel_lp_l1,0.15203611565251943,0.004582893819105541,0.15
+"SYNTHETIC — pipeline test, not results",rel_leverage_l1,-0.2963262656155298,0.010411335130755685,-0.3

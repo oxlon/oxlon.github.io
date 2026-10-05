@@ -1,0 +1,384 @@
+{
+ "run_id": "r20261005-225102-2d35",
+ "status": "ok",
+ "dry_run": false,
+ "trigger": "cli",
+ "root": "/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit",
+ "argv": [
+  "--only",
+  "FR4,FR5",
+  "--skip-build"
+ ],
+ "python": "/Users/econ0757/venvs/miis-model/bin/python3",
+ "python_version": "3.13.15",
+ "kernel": "miis-model",
+ "timeout_s": 3600,
+ "started": "2026-10-05T21:51:02Z",
+ "finished": "2026-10-05T21:52:11Z",
+ "seconds": 69.0,
+ "plan": [
+  "FR4",
+  "FR5"
+ ],
+ "steps": [
+  {
+   "name": "FR4",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T21:51:02Z",
+   "finished": "2026-10-05T21:51:20Z",
+   "seconds": 17.6,
+   "returncode": 0,
+   "log": "logs/r20261005-225102-2d35/FR4.log",
+   "command": [
+    "/Users/econ0757/venvs/miis-model/bin/jupyter",
+    "nbconvert",
+    "--to",
+    "notebook",
+    "--execute",
+    "--inplace",
+    "--ExecutePreprocessor.timeout=3600",
+    "--ExecutePreprocessor.kernel_name=miis-model",
+    "FR4.ipynb"
+   ],
+   "inputs": {
+    "data/Statistik data dinamika 05.06.2026 +.xlsx": "838a9a61b869fcc016755cef15e5937dd479cb6d16a44ef128328382e9ef7486",
+    "data/dsk/001_5-6en.xls": "c7e6f9187ea4d013bee2084d06378b2e27e2ed754661808458b3964d04de193f",
+    "data/dsk/002_1-2en.xls": "312ed54b7ed3354b63094812d9d037254999a27858c75379a2ca419b708e9f2a",
+    "data/dsk/002_10-11en.xls": "efd636a101b31975d56ba864478ff5daad451dca8c3dc714ab3213e2fe0b2fde",
+    "data/dsk/002_12-13en.xls": "26a616781c950fa1b02cd314d8e157f1588074a36de245cfc84218406efd0290",
+    "data/dsk/002_3en.xls": "ec963b1f64221b0d37aa091cad6b239a746cc2528ba85a22a9404234b5756ea4",
+    "data/dsk/002_8-9en.xls": "e707ede46622e7b96837a14f9da478073fff403df29b129ad378772d8fc8b981",
+    "data/dsk/006_1-5en.xls": "7148cf21eba7aad8acdcbf94367b63c576f64a0ad15a60898d49daac4fdbb100",
+    "data/dsk/007_1-2en.xls": "d31b946d86b17fbb223c15088370890848868a72b04887ea831e75cabbe1d993",
+    "data/macro_module/fr345_moe_spec_panel.csv": "c27056b34db80218984ea52ef47217a59165c43955bf18e5d09edc4b3454c1cf",
+    "output/FR1_analysis_dataset.csv": "08d129f36cdc34089174412b3a93bb2ead4c9a6e319ae0277855a76ed3cb1d85",
+    "output/FR1_fan_draws.csv": "e01d789cf81308f7f134ed9b7b72cd9538da0a501b7153480fe4523f73e64a18",
+    "output/FR1_forecast_full.csv": "d2d684236e15c6633a7281964a63a2f1014cfb7494f43a730bbfd0308f4ac201",
+    "output/FR1_panel_industry.csv": "28e659b08fdb9ac710f7d0bff7c0e4feb8f9780f52cbb394432ce550cee8bcb2",
+    "output/FR3_wage_forecast_full.csv": "7342f887a72113993c9d1a0b9b0ba49f8a117f3f1e06a58be02a81ceb3284d32",
+    "FR4.ipynb#code": "4e94dfe6ba7a6f33a0c00ede899875972a3a1f700f23c8db62b6e1368f91cae9"
+   },
+   "outputs": {
+    "output/FR4_add_factors.csv": "b64369f96dd066b5d3e8ca9a68848ecb",
+    "output/FR4_budget_sigma_history.csv": "57a66e297afbe04f63fc02bf88c97aa4",
+    "output/FR4_coef_sensitivity.csv": "13a50ad2f1925e03eefee03b98d9ebed",
+    "output/FR4_dsk_employed_by_activity_history.csv": "23acbae7360e8965f1abacc6308a362e",
+    "output/FR4_dsk_employment_agency_indicators.csv": "10e99b00736f2daf2b97a861dea262ed",
+    "output/FR4_dsk_hired_by_activity_and_property.csv": "482fd8221e0878af5ba009ec6f8dc5ad",
+    "output/FR4_dsk_hired_by_activity_history.csv": "0a0fe696fba55443bcaac229070754b0",
+    "output/FR4_dsk_property_form_history.csv": "ce65f125edd500e6ed92f9301e5941f5",
+    "output/FR4_e6_bloc_split_selection.csv": "be1fe5a550a90511f26d556a77d0dca5",
+    "output/FR4_e8_structural_candidates.csv": "4e8499b637ba2397e4798879b1a50d29",
+    "output/FR4_employed_by_activity.csv": "1953d2e4ee048c24816e3f405ad8dfc2",
+    "output/FR4_employed_growth_rates.csv": "8af8f74d68752cd664718a742147db52",
+    "output/FR4_employment_long.csv": "4992dd7bb9c59d854da80d59c88b3c24",
+    "output/FR4_equation_audit.csv": "e35a62376b13d56cbbb4c09e41e15f17",
+    "output/FR4_equations.json": "a684826667079615aae1c591c56def97",
+    "output/FR4_fan_employment.csv": "8f5ec1e4695f601996a013a1f92dec44",
+    "output/FR4_fan_summary_2030.csv": "af6cb99336966a02b05b535da77e881f",
+    "output/FR4_forecast_tidy.csv": "e9cb9bbb8216093a59726758fede17e0",
+    "output/FR4_hired_by_activity.csv": "b0dfaa402b08590cbf87d3adfca905c6",
+    "output/FR4_hired_growth_rates.csv": "85b1967670982915942443597c188c5a",
+    "output/FR4_holdout_aggregate.csv": "ed771bad6c40097e474facfe3df25392",
+    "output/FR4_holdout_summary.csv": "132fc8e9a365ec314c5e87e3e4ebb573",
+    "output/FR4_holdout_validation.csv": "d162731fc3f2de1732e47de88ee320b2",
+    "output/FR4_holdout_validation_groups.csv": "28a5395521a0d278bbc386878671b922",
+    "output/FR4_identity_checks.csv": "aa7a73a42783393bf0ab38dd5d89b195",
+    "output/FR4_indicator_catalog.csv": "fee2d22af8e14ed0a11ed844c648e26a",
+    "output/FR4_institutional_breakdown.csv": "9f7245b9aa56c370f54430a519c8d2a9",
+    "output/FR4_not_forecast.csv": "5cd1bcb8a402ecb3c82d337862db9546",
+    "output/FR4_oil_sector_employment.csv": "d45bb65cf3d404fafa0aaf4092a87a41",
+    "output/FR4_rejected_specifications.csv": "421ae9bee95a3075f884ca3b4f48b160",
+    "output/FR4_robustness_summary.csv": "ceef8b363c6ec74db4f18825847626a7",
+    "output/FR4_scenario_summary.csv": "cccfeaab592497a96349f96a24950c65",
+    "output/FR4_sensitivity_levers.csv": "fb571ce01c1018ef93707ea3e1342e84",
+    "output/FR4_shift_share_decomposition.csv": "56dbf3b383b00b97d4e5cb5f94deaa7f",
+    "output/FR4_strings_az.csv": "a0b15acbca2ebc69f49f736108a0e8e2",
+    "output/FR4_tier1_driver_selection.csv": "1e6f7ac2a901dac30e3fbb4f07e81383",
+    "output/FR4_tier1_income_elasticities_descriptive.csv": "e59989fb1c64d20a7c4a9e7f088348ae",
+    "output/FR4_tier2_driver_selection.csv": "1e12506ab2f759d817400daa68642432",
+    "output/FR4_workbook_dvx_employment.csv": "043d789f8d2b99941c73ed463931985a",
+    "output/engine/FR4_state.json": "3a9f1a8f731b1b8da3d5b6f3c323f34e"
+   },
+   "error": null,
+   "error_tail": null,
+   "deps_declared": [
+    "FR1",
+    "FR3"
+   ],
+   "deps_detected": [
+    "FR1",
+    "FR3"
+   ],
+   "doc_refresh": {
+    "returncode": 0,
+    "summary": "docrefresh FR4: docs/FR4_Methodology.md: 6 v2.2 blocks unchanged; docs/az/FR4_Metodologiya.md: 6 v2.2 blocks unchanged"
+   }
+  },
+  {
+   "name": "FR5",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T21:51:21Z",
+   "finished": "2026-10-05T21:52:10Z",
+   "seconds": 48.9,
+   "returncode": 0,
+   "log": "logs/r20261005-225102-2d35/FR5.log",
+   "command": [
+    "/Users/econ0757/venvs/miis-model/bin/jupyter",
+    "nbconvert",
+    "--to",
+    "notebook",
+    "--execute",
+    "--inplace",
+    "--ExecutePreprocessor.timeout=3600",
+    "--ExecutePreprocessor.kernel_name=miis-model",
+    "FR5.ipynb"
+   ],
+   "inputs": {
+    "data/Statistik data dinamika 05.06.2026 +.xlsx": "838a9a61b869fcc016755cef15e5937dd479cb6d16a44ef128328382e9ef7486",
+    "data/dsk_services/007_18en.xls": "546fd22a0da9b043bbb34268cc22e7d05a222d5f094610d39ee6df1318f73820",
+    "data/dsk_services/007_19en.xls": "b489dbb75a7379ca639483ae90189909f8fd864467fea5b3ebb1d055c9511b64",
+    "data/dsk_services/007_1en.xls": "629c06c4c944ae235dc3528a7d8d2dcafee8261d28b67042faa9b7fa4de3404b",
+    "data/dsk_services/007_2en.xls": "3000009136b5c097f027765416a68ddb7cae6793c1cde4285df1459739d7fe7e",
+    "data/dsk_services/007_37en.xls": "45f171abdbb0138e033c56af46f662a78924e2452465df0baa7fa8945d224dd6",
+    "data/dsk_services/007_38en.xls": "919661a3ff1c0c32921747d8d2aae3ba9c25ab91d34e59aee76bbb652aa6bc5e",
+    "data/dsk_services/007_3en.xls": "bbef2f99fc0e8e8668bee075703fe396b33f95490303f2731a60fb29cba6ca39",
+    "data/dsk_services/007_4-5en.xls": "94d52fc5db68714ee19174ca24f049e31f1876fd81c764761f2b72aa1163495b",
+    "data/dsk_services/007_6-7en.xls": "08af2205f081f2a96721ff8ad9a43ba5a0cdccb86ca647dc3f6e1534ae4ebac9",
+    "data/dsk_services/007_8en.xls": "cd2c9abb5df63757955f51e6e5e296808ab5c81997c2ba67f2797d8ada5f4677",
+    "data/dsk_services/007_9en.xls": "e2ed55376a02680c06e69805b4d0bd64b36c95ecd37c30192069138a96e7c029",
+    "data/macro_module/fr345_ministry_equations_catalog.csv": "91272f0350dcd72786e91e5231bd1eea04499184d3359c078328ee4f18faa4c4",
+    "output/FR1_analysis_dataset.csv": "08d129f36cdc34089174412b3a93bb2ead4c9a6e319ae0277855a76ed3cb1d85",
+    "output/FR1_fan_draws.csv": "e01d789cf81308f7f134ed9b7b72cd9538da0a501b7153480fe4523f73e64a18",
+    "output/FR1_forecast_full.csv": "d2d684236e15c6633a7281964a63a2f1014cfb7494f43a730bbfd0308f4ac201",
+    "FR5.ipynb#code": "6b6d4ac3823d1b7f593bdab05fe4d4ad8cabab1004ee2a82e7353c122e82c333"
+   },
+   "outputs": {
+    "output/FR5_aggregate_specification_selection.csv": "5d07b7a7435cdeebe28a2ccd0177a80a",
+    "output/FR5_coef_sensitivity.csv": "c25a871420738f2761d547219e54c3c8",
+    "output/FR5_deflator_by_type_history.csv": "8e469298506887faa120f522a6f2b4fd",
+    "output/FR5_demand_system_coefficients.csv": "368010310608d1fcae714099302450e0",
+    "output/FR5_demand_system_equations.csv": "715b992e0feb7e004ed2d857f3948379",
+    "output/FR5_demand_system_specification_selection.csv": "b46326a83035b66ae972a1758c8892ec",
+    "output/FR5_dsk_state_nonstate_history.csv": "266e6e2ba96a8c8d19d8d0eb68fc0e69",
+    "output/FR5_dsk_value_by_type_history.csv": "af3ecea82d6acf8056b6c87e032aaefa",
+    "output/FR5_dsk_volume_index_by_type_history.csv": "a1f0b31512f54c783b13a6c60d61c0c9",
+    "output/FR5_e1_coefficients.csv": "2e54c180ecb51f70a67e6870b2923ab0",
+    "output/FR5_engel_level_vs_difference.csv": "dbe3df24523015119696bec4def65644",
+    "output/FR5_engel_shrinkage_selection.csv": "1a2029515a07ef0f5b621e8e19ccafe6",
+    "output/FR5_equation_audit.csv": "10cd4993d66206d555a9a43656a9a2cf",
+    "output/FR5_equations.json": "38ffcae3f0e08db7753b6c671564f296",
+    "output/FR5_expenditure_elasticities.csv": "82095be19393cace0c93ae9ff24ce2dd",
+    "output/FR5_fan_decomposition.csv": "ddb30fff7c4a7640dec23b93ca144a91",
+    "output/FR5_fan_meta.csv": "610d8bd0e957ea1273524c288b1784ed",
+    "output/FR5_fan_shares.csv": "2a9d4d7ed99e6f26c39c66ca9353d319",
+    "output/FR5_fan_splits.csv": "3c61290b4195440350a834ca312af5c0",
+    "output/FR5_fan_value.csv": "e00813919b11f3461a384a68d06618b5",
+    "output/FR5_fan_volume.csv": "298029ba2ae2226b1af5394df8f6b98b",
+    "output/FR5_forecast_long.csv": "0775cf84b0078db5bf05fc78d3d68c96",
+    "output/FR5_forecast_tidy.csv": "bcfb6fbb3990d115c601366d8febcebb",
+    "output/FR5_fr1_comparison.csv": "ae267d29911e0269f96e6807ba43ea40",
+    "output/FR5_fr1_drivers_baseline.csv": "055d8b7f2472a3d71119b947a91e3488",
+    "output/FR5_holdout_shares.csv": "743af1675ba2de6e201629bdff1a138d",
+    "output/FR5_holdout_validation.csv": "5254a8a46ce54d2849e018b23c1678c1",
+    "output/FR5_identity_checks.csv": "3d0be0c031e1bf5d2a63119dc6184925",
+    "output/FR5_income_elasticity_range.csv": "2b483e9c56a44089ede7c27d2fca2232",
+    "output/FR5_indicator_catalog.csv": "f9d04de4a0c99ce74db901afac6c757d",
+    "output/FR5_institutional_split.csv": "a45b1bf74ed0ad270ae7aefae7f02b69",
+    "output/FR5_macro_module_competition.csv": "a686f688afd60e453c7764b69ed2c0b9",
+    "output/FR5_nonselected_own_price_elasticities_law_of_demand.csv": "bf0ca9fa60829746b9667da5ee07c515",
+    "output/FR5_nonselected_own_price_elasticities_unrestricted.csv": "a64652f77426559e68139cd527f78272",
+    "output/FR5_nonselected_pandemic_dummy_variants.csv": "591c97df96ee1e4d46c7230948beaa57",
+    "output/FR5_not_forecast.csv": "7d95c54949af5e13b5c3fac3d3f02c47",
+    "output/FR5_own_price_elasticities_forecast_system.csv": "3351f66bf379523a3a80126fa38c8832",
+    "output/FR5_regional_service_growth.csv": "63c163a7df4eb35abd9ddd3e0491c893",
+    "output/FR5_rejected_specifications.csv": "f37e963d13c03923f92b92653417a62e",
+    "output/FR5_robustness_summary.csv": "70b05dd5d744519a252964622383414a",
+    "output/FR5_scenario_summary.csv": "08ed640f8295bf3410bd64b58db12f2b",
+    "output/FR5_sensitivity_levers.csv": "43660990baf683b7dd31132f6b61c592",
+    "output/FR5_share_change_check.csv": "2e8b313972fdb4fbf2d4fb1e0f796b9a",
+    "output/FR5_shares_by_type.csv": "3302516486a7297c78c762a6ff7f4af7",
+    "output/FR5_shares_by_type_history.csv": "561076431d533758ebd88d19a416d7be",
+    "output/FR5_strings_az.csv": "837fd4dc416b060cd272a418c84524d1",
+    "output/FR5_total_value.csv": "fbf9eb15189ecbe4bbbbfcef15b10c25",
+    "output/FR5_total_volume.csv": "f62d8fe629c6fb2f6dc281518f8b563b",
+    "output/FR5_type_growth_vs_history.csv": "19054a09b5113472e4b41cf126102a21",
+    "output/FR5_type_price_levers.csv": "208c6be87624d8342e8f4ff9b7de16d0",
+    "output/FR5_type_ranking_level_vs_difference_elasticities.csv": "dc62c4ab6b9ebea77aa470f285e4e49b",
+    "output/FR5_type_ranking_level_vs_difference_growth.csv": "f3042d9eeac636ec0c8359d0c5c765f0",
+    "output/FR5_value_by_type.csv": "6d3483f7462b9a72e1014f209d2246a1",
+    "output/FR5_volume_by_type.csv": "e9d695c510c163238a18478f4bf3d6fa",
+    "output/FR5_volume_by_type_history.csv": "71299dc40df33398517e51a12d106fb3",
+    "output/FR5_volume_growth_by_type.csv": "131758f7495f26e75f85e18f31bd0359",
+    "output/FR5_workbook_paid_services.csv": "4ef3ed24c19dfdcc4fa083200cd2efc1",
+    "output/engine/FR5_state.json": "86ab092b2d0b1ce9394acc0f662c667a"
+   },
+   "error": null,
+   "error_tail": null,
+   "deps_declared": [
+    "FR1"
+   ],
+   "deps_detected": [
+    "FR1"
+   ],
+   "doc_refresh": {
+    "returncode": 0,
+    "summary": "docrefresh FR5: docs/FR5_Methodology.md: 2 v2.2 blocks unchanged; docs/az/FR5_Metodologiya.md: 2 v2.2 blocks unchanged"
+   }
+  }
+ ],
+ "dependency_check": {
+  "FR1": {
+   "declared": [],
+   "detected": [],
+   "files": {},
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR3": {
+   "declared": [
+    "FR1"
+   ],
+   "detected": [
+    "FR1"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_annual_raw.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR4": {
+   "declared": [
+    "FR1",
+    "FR3"
+   ],
+   "detected": [
+    "FR1",
+    "FR3"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv",
+     "FR1_panel_industry.csv"
+    ],
+    "FR3": [
+     "FR3_wage_forecast_full.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR5": {
+   "declared": [
+    "FR1"
+   ],
+   "detected": [
+    "FR1"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR10": {
+   "declared": [
+    "FR1",
+    "FR3",
+    "FR4"
+   ],
+   "detected": [
+    "FR1",
+    "FR3",
+    "FR4"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv"
+    ],
+    "FR3": [
+     "FR3_industry_branch_wages.csv"
+    ],
+    "FR4": [
+     "FR4_dsk_hired_by_activity_history.csv",
+     "FR4_hired_by_activity.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR12": {
+   "declared": [
+    "FR1",
+    "FR10"
+   ],
+   "detected": [
+    "FR1",
+    "FR10"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv"
+    ],
+    "FR10": [
+     "FR10_branch_shares_history.csv",
+     "FR10_forecast_regions.csv",
+     "FR10_forecast_sections.csv",
+     "FR10_ownership.csv",
+     "FR10_regional_entry_exit.csv",
+     "FR10_regional_history.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  }
+ },
+ "snapshot": null,
+ "reproducibility": {
+  "previous_run": "r20261005-224936-0165",
+  "compared_steps": [
+   "FR4",
+   "FR5"
+  ],
+  "files_compared": 98,
+  "identical": false,
+  "changed": [
+   "output/FR4_equations.json",
+   "output/FR5_equations.json",
+   "output/engine/FR5_state.json"
+  ],
+  "added": [],
+  "removed": []
+ },
+ "error": null
+}

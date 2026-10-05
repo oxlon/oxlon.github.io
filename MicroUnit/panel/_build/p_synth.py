@@ -26,19 +26,23 @@ def _hist(x, bins=30):
             "cnt": int(len(x)), "med": C.fnum(x.median())}
 
 
-def _tests(name, cols=("test", "passed", "value")):
+def _tests(name, tr):
     t = C.csv(name)
     out = []
     for r in t.to_dict("records"):
-        out.append({"t": r.get("test"), "ok": bool(r.get("passed")), "v": str(r.get("value", r.get("detail", ""))) if
-                    r.get("value", r.get("detail")) is not None else ""})
+        v = r.get("value", r.get("detail"))
+        note = r.get("note")
+        v = "" if v is None or v != v else tr(str(v))
+        if isinstance(note, str) and note:
+            v = f"{v} · {tr(note)}" if v else tr(note)
+        out.append({"t": tr(r.get("test")), "ok": bool(r.get("passed")), "v": v})
     return out
 
 
-def build(data_dir):
+def build(data_dir, tr):
     syn = {}
     fr = C.csv("FR10_SYNTHETIC_firm_ratios_2025.csv")
-    syn["wm10"] = str(fr.WATERMARK.iloc[0])
+    syn["wm10"] = tr(str(fr.WATERMARK.iloc[0]))
     syn["ratios"] = [{"k": k, "n": lab, **_hist(fr[k])} for k, lab in RATIOS]
     cn = C.csv("FR10_SYNTHETIC_concentration_nace.csv", dtype={"nace2": str})
     last = int(cn.year.max())
@@ -49,7 +53,7 @@ def build(data_dir):
     syn["ee10"] = {"year": [int(y) for y in ee.index], "entry": [C.fnum(x) for x in ee.entrants / ee.firms * 100],
                    "exit": [C.fnum(x) for x in ee.exits / ee.firms * 100]}
     es = C.csv("FR12_SYNTHETIC_entry_exit_section.csv")
-    syn["wm12"] = str(es.WATERMARK.iloc[0])
+    syn["wm12"] = tr(str(es.WATERMARK.iloc[0]))
     tot = es.groupby("year")[["active_end", "entrants", "exits"]].sum()
     syn["ee12"] = {"year": [int(y) for y in tot.index], "entry": [C.fnum(x) for x in tot.entrants / tot.active_end * 100],
                    "exit": [C.fnum(x) for x in tot.exits / tot.active_end * 100]}
@@ -60,12 +64,10 @@ def build(data_dir):
     l12 = int(c12.year.max())
     c12 = c12[(c12.year == l12) & c12.HHI.notna()].sort_values("HHI", ascending=False).head(25)
     syn["hhi12"] = {"year": l12, "lab": [_lab(n) for n in c12.nace2], "hhi": [C.fnum(x) for x in c12.HHI]}
-    syn["pipe10"] = _tests("FR10_SYNTHETIC_pipeline_tests.csv")
-    syn["pipe12"] = _tests("FR12_SYNTHETIC_pipeline_tests.csv")
-    syn["swap10"] = [{"t": r["test"], "ok": bool(r["passed"]), "v": str(r["detail"])}
-                     for r in C.csv("FR10_firm_panel_swap_tests.csv").to_dict("records")]
-    syn["swap12"] = [{"t": r["test"], "ok": bool(r["passed"]), "v": str(r["detail"])}
-                     for r in C.csv("FR12_business_register_swap_tests.csv").to_dict("records")]
+    syn["pipe10"] = _tests("FR10_SYNTHETIC_pipeline_tests.csv", tr)
+    syn["pipe12"] = _tests("FR12_SYNTHETIC_pipeline_tests.csv", tr)
+    syn["swap10"] = _tests("FR10_firm_panel_swap_tests.csv", tr)
+    syn["swap12"] = _tests("FR12_business_register_swap_tests.csv", tr)
     # file facts, counted from the synthetic input files themselves
     p = pd.read_csv(C.UNIT / "data/firm_panel/FR10_firm_panel_SYNTHETIC.csv", dtype={"nace2": str},
                     usecols=["firm_id", "year", "nace2", "region"])

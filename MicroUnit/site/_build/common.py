@@ -20,7 +20,7 @@ def files_section(n, code, pre="../"):
                  f"{v(core.nrows(o), 0)} sətir</span></li>" for o in real)
     body = [html.h2("files", n, "Fayllar"),
             f"<p>Dəftər: {html.flink(code + '.ipynb', pre)} · metodologiya sənədi: "
-            f"{html.flink('docs/' + code + '_Methodology.md', pre)}. Modulun <span class=\"val\">{len(outs)}</span> "
+            f"{html.doc_links(code, pre)}. Modulun <span class=\"val\">{len(outs)}</span> "
             f"çıxış faylı <code>MicroUnit/output/</code> qovluğundadır; hər biri aşağıda birbaşa açılır.</p>",
             f'<ul class="file-list">{li}</ul>']
     if syn:

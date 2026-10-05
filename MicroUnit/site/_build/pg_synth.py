@@ -2,7 +2,7 @@
 import pandas as pd
 
 from . import core, html, synth
-from .core import v, esc
+from .core import v, esc, esc_az
 
 SECS = [("what", "Nə sintetikdir"), ("calibration", "Nəyə kalibrlənib"), ("replace", "Faylın əvəz edilməsi"),
         ("columns", "Sütunlar (sxem)"), ("tests", "Əvəzetmə testləri"), ("privacy", "Məxfilik")]
@@ -18,8 +18,8 @@ def _map(rel):
 
 
 def tests_table(name):
-    rows = [[f'<span class="src-en">{esc(t)}</span>', html.pill("done", "keçdi") if ok else html.pill("gap", "keçmədi"),
-             f'<span class="src-en">{esc(det)}</span>'] for t, ok, det in synth.swap_rows(name)]
+    rows = [[f'<span class="src-en">{esc_az(t)}</span>', html.pill("done", "keçdi") if ok else html.pill("gap", "keçmədi"),
+             f'<span class="src-en">{esc_az(det)}</span>'] for t, ok, det in synth.swap_rows(name)]
     return html.table(["Test (çıxış faylından, ingiliscə)", "Nəticə", "Təfərrüat"], rows, cols=["c-text", "c-tight", "c-text"])
 
 
@@ -38,6 +38,10 @@ def build(texts):
          '<p class="lead-in">Nazirlik müəssisə məlumatını layihə ilə paylaşmır — öz məlumatını öz sistemində yükləyəcək. '
          "Ona görə FR10 və FR12-nin müəssisə səviyyəsində mühərrikləri (B qatı) eyni sxemdə sintetik fayllarla təhvil "
          "verilir. Bu səhifə onların nə olduğunu, nəyə kalibrləndiyini və Nazirliyin onları necə əvəz edəcəyini göstərir.</p>",
+         '<p class="box">Sintetik məlumatla qiymətləndirilmiş bütün müəssisə səviyyəsi modelləri (model kartları, '
+         'əmsallar, marjinal effektlər, ROC, sağ qalma əyriləri, parametr bərpası): '
+         '<a href="fr/fr10-sintetik.html">FR10 · Sintetik B qatı</a> · <a href="fr/fr12-sintetik.html">FR12 · Sintetik B qatı</a>. '
+         'Real faylı yükləmək: <a href="api.html#yukle">API və avtomatlaşdırma</a>.</p>',
          html.h2("what", 1, "Nə sintetikdir"),
          html.table(["", "FR10 müəssisə paneli", "FR12 biznes reyestri"], [
              ["Fayl", f"<code>{FP}FR10_firm_panel_SYNTHETIC.csv / .xlsx</code>", f"<code>{BR}FR12_business_register_SYNTHETIC.csv / .xlsx</code>"],

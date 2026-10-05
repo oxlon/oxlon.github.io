@@ -11,7 +11,8 @@ Part 17 `institutions`, `own_total`) on the exported state (output/engine/FR4_st
 upstream = {"FR1": result} (from engines.fr1.run) replaces the FR1 CSV paths: series fr1:emp, fr1:lf, fr1:pop,
 fr1:rgdpnon, fr1:rgdpoil, fr1:rva_*. FR3 is not used by the FR4 forecast (only by a Part 19 consistency check).
 Levers: pop_growth_pp, phi_delta_2030_pp, state_share_mode (trend|frozen), budget_definition (sigma|kappa),
-budget_ratio, addfactor_decay. Coefficients: "FR4.E4_pooled_emp|d_lo_sq", "FR4.E4_combo|w_pooled", ...
+budget_ratio, addfactor_decay (bool, sensitivity only; baseline False = constant add-factors) and addfactor_half_life
+(years, default 1: the decay is FIXED, 0.5 ** (h / half-life) — v2.3, no estimated residual-AR coefficient). Coefficients: "FR4.E4_pooled_emp|d_lo_sq", "FR4.E4_combo|w_pooled", ...
 """
 from __future__ import annotations
 
@@ -163,6 +164,11 @@ def _industry(Bs, dr, years, ind_lvl, w):
     return out
 
 
+def _decay_path(years, anchor, half_life):
+    """notebook `addf_decay_path`: fixed (non-estimated) add-factor decay, 0.5 ** (max(year - anchor, 0) / half-life)."""
+    return np.power(0.5, np.maximum(np.asarray(years, float) - anchor, 0) / float(half_life))
+
+
 def _allocate(Bs, dr, years, total, w1, w2, decay):
     """allocate: 8 groups -> industry (4) and other services (two blocs, 9 activities); sums to the total."""
     K = _st()["keys"]
@@ -175,7 +181,7 @@ def _allocate(Bs, dr, years, total, w1, w2, decay):
     for k in K["ind"]:
         out[k] = ind[k]
     yy = np.asarray(years, float)
-    dfac = np.power(Bs["rho6"], np.maximum(yy - Bs["anchor6"], 0)) if decay else 1.0
+    dfac = _decay_path(yy, Bs["anchor6"], decay) if decay else 1.0     # decay = half-life (years) or False
     addf6 = Bs["lhs6"] - (Bs["c6"] + Bs["b6"] * np.log(Bs["oth6"]))
     ratio = np.exp(Bs["c6"] + Bs["b6"] * np.log(dr["oth"].reindex(years).to_numpy(float)) + addf6 * dfac)
     pub = lvl8["services"] / (1 + ratio)
@@ -199,7 +205,7 @@ def _institutions(S, dr, tot, hir, Hfr, ov, decay):
     trf = pd.Series({y: y - E8["base"] for y in yrs})
     b8 = {"const": E8["const"], "trend": _coef(ov, "FR4.E8_state|trend")}
     add8 = float(np.log(E8["state24"] / E8["nonstate24"]) - (b8["const"] + b8["trend"] * (ld - E8["base"])))
-    f8 = pd.Series({y: (E8["rho"] ** (y - ld) if decay else 1.0) for y in yrs})
+    f8 = pd.Series({y: (float(_decay_path(y, ld, decay)) if decay else 1.0) for y in yrs})
     od = np.exp(b8["const"] + b8["trend"] * trf + add8 * f8)
     state = tot * od / (1 + od) if _lev(ov, "state_share_mode") != "frozen" else tot * C["state_share24"]
     out = pd.DataFrame({"employed, total": tot, "labour force (FR1)": dr["lf"], "state": state, "non-state": tot - state})
@@ -245,7 +251,9 @@ def run(overrides=None, scenario="Baseline", upstream=None):
     tot = dr["emp"]
     phi, dphi = S["calib"]["phi"], float(_lev(ov, "phi_delta_2030_pp") or 0.0) / 100.0
     hir = tot * (pd.Series({y: phi + dphi * (y - la) / (fcy[-1] - la) for y in yrs}) if dphi != 0 else phi)
-    decay = bool(_lev(ov, "addfactor_decay"))
+    hl = _lev(ov, "addfactor_half_life")
+    hl = 1.0 if hl is None or not np.isfinite(float(hl)) or float(hl) <= 0 else float(hl)
+    decay = hl if bool(_lev(ov, "addfactor_decay")) else False      # False, or the fixed half-life in years
     w1, w2 = _coef(ov, "FR4.E4_combo|w_pooled"), _coef(ov, "FR4.E5_combo|w_pooled")
     FCs, series = {}, {}
     for tg, total in [("emp", tot), ("hired", hir)]:

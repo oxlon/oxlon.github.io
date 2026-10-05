@@ -5,7 +5,8 @@ output/engine/FR10_state.json (+ .npz). Contract section B:
     inputs()                                   editable inputs (FR1 driver paths, FR4 employment indices, coefficients, levers)
     run(overrides, scenario, upstream=None)    {"series": {fr10:<id>: {year: value}}, "meta", "warnings"}
     selftest()                                 run({}) reproduces output/FR10_forecast_tidy.csv in every scenario (rel. 1e-8)
-Upstream: FR1 (series 'fr1:<code>' for the FR1 drivers); FR4 employment indices are read from the state (FR4 CSV).
+Upstream: FR1 (series 'fr1:<code>' for the FR1 drivers) and FR4 (series 'fr4:hired:<activity>' -> section employment
+indices, 2025 = 1); without upstream results the CSV baselines stored in the state are used. FR3 is not used (F13).
 Layer B (firm level) is not part of the engine: it runs on the firm panel inside the notebook.
 """
 from __future__ import annotations
@@ -231,34 +232,54 @@ def _series(st, o):
     return out
 
 
-def _with_upstream(cat, scenario, upstream, warnings):
-    """Replace the FR1 driver baselines of `scenario` by an upstream FR1 engine result (series 'fr1:<code>')."""
-    fr1 = (upstream or {}).get("FR1")
-    if not fr1:
+_FR4_COL = {"B": "mining", "C": "manuf", "D": "elec", "E": "water"}   # FR10 section -> FR4 activity (hired employees)
+
+
+def _get(d, y):
+    v = d.get(str(y), d.get(y))
+    return None if v is None or not np.isfinite(v) else float(v)
+
+
+def _with_upstream(cat, scenario, upstream, warnings, used):
+    """Replace the baselines of `scenario` by upstream engine results: FR1 driver paths (series 'fr1:<code>') and
+    FR4's hired employees by activity (series 'fr4:hired:<activity>', turned into an index 2025 = 1, exactly as the
+    notebook's fr4_index). Without an upstream result the CSV baselines in the state are used. FR3 is not read:
+    FR10 does not use FR3's branch wages (finding F13), so an FR3 change cannot reach FR10."""
+    up = upstream or {}
+    if not up.get("FR1") and not up.get("FR4"):
         return cat
-    ser = fr1.get("series", {})
     cat = copy.deepcopy(cat)
-    used = []
-    for e in cat["exogenous"]:
-        if not e["id"].startswith("fr1_"):
+    for mod in ("FR1", "FR4"):
+        res = up.get(mod)
+        if not res:
             continue
-        sid = "fr1:" + e["id"][4:]
-        if sid in ser:
-            d = ser[sid]
-            vals = [d.get(str(y), d.get(y)) for y in e["years"]]
-            if all(v is not None and np.isfinite(v) for v in vals):
+        ser = res.get("series", {}) or {}
+        n0 = len(used)
+        for e in cat["exogenous"]:
+            if mod == "FR1" and e["id"].startswith("fr1_"):
+                d = ser.get("fr1:" + e["id"][4:])
+                vals = None if d is None else [_get(d, y) for y in e["years"]]
+            elif mod == "FR4" and e["id"].startswith("fr4_hired_"):
+                d = ser.get("fr4:hired:" + _FR4_COL.get(e["id"][len("fr4_hired_"):], "?"))
+                h0 = None if d is None else _get(d, min(e["years"]) - 1)
+                vals = None if (d is None or not h0) else [(_get(d, y) / h0 if _get(d, y) is not None else None) for y in e["years"]]
+            else:
+                continue
+            if vals is not None and all(v is not None for v in vals):
                 e["baseline"] = dict(e["baseline"], **{scenario: [float(v) for v in vals]})
-                used.append(sid)
-    if not used:
-        warnings.append("FR1 yuxarı axın nəticəsində FR10 sürücüləri tapılmadı — FR1 CSV baza yolları istifadə olunur")
+                used.append(e["id"])
+        if len(used) == n0:
+            warnings.append(f"{mod} yuxarı axın nəticəsində FR10 sürücüləri tapılmadı — {mod} CSV baza yolları istifadə olunur")
+    if up.get("FR3"):
+        warnings.append("FR3 yuxarı axın nəticəsi FR10-da istifadə olunmur (F13: sahə əmək haqları FR1 orta əmək haqqı indeksi ilə)")
     return cat
 
 
 def run(overrides=None, scenario="Baseline", upstream=None):
     t0 = time.perf_counter()
     st = _st()
-    W = []
-    cat = _with_upstream(st["inputs"], scenario, upstream, W)
+    W, up_used = [], []
+    cat = _with_upstream(st["inputs"], scenario, upstream, W, up_used)
     ov = B.apply_overrides(cat, overrides, scenario)
     W += ov["warnings"]
     lev, cf = ov["levers"], ov["coefficients"]
@@ -303,6 +324,7 @@ def run(overrides=None, scenario="Baseline", upstream=None):
               ls_shift=float(lev.get("labour_share_shift_pp", 0.0)), q08=q08)
     ser = _series(st, o)
     meta = {"module": MODULE, "scenario": scenario, "years": st["years"], "upstream": sorted((upstream or {}).keys()),
+            "upstream_inputs_used": up_used,
             "changed": [list(c) for c in ov["changed"]], "runtime_s": round(time.perf_counter() - t0, 4),
             "note_az": "A qatı: sahələr, bölmələr, regionlar, məhsullar; 2025 = faktiki (lövbər ili)"}
     return B.make_result(ser, meta=meta, warnings=W)

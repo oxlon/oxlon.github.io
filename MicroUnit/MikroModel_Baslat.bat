@@ -6,6 +6,8 @@ cd /d "%~dp0"
 if "%MIKRO_PORT%"=="" set MIKRO_PORT=8790
 set URL=http://127.0.0.1:%MIKRO_PORT%/panel/
 where py >nul 2>nul && (set PY=py -3) || (set PY=python)
+if not "%MIKRO_PYTHON%"=="" set PY=%MIKRO_PYTHON%
+%PY% -c "import numpy, pandas, scipy" >nul 2>nul || echo XEBERDARLIQ: numpy/pandas/scipy yoxdur - ssenari hesablamalari islemeyecek. Qurasdirin: %PY% -m pip install numpy pandas scipy statsmodels openpyxl xlrd nbconvert ipykernel
 echo MikroModel serveri basladilir: %URL%
 start "MikroModel API" %PY% api\server.py --port %MIKRO_PORT% %*
 timeout /t 3 /nobreak >nul

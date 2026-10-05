@@ -98,6 +98,12 @@ def esc(s):
     return html.escape(str(s), quote=True)
 
 
+def esc_az(s):
+    """esc() of the Azerbaijani text of an output string (module strings_az tables + site table)."""
+    from . import v2data
+    return esc(v2data.az(s) if isinstance(s, str) else s)
+
+
 def isnum(x):
     try:
         return x is not None and not (isinstance(x, float) and math.isnan(x)) and not isinstance(x, str)

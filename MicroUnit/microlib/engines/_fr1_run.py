@@ -22,22 +22,42 @@ def resolve_coefs(S, ov, W):
     for eq, d in req.items():
         for name, v in d.items():
             changed.setdefault(eq, {})[name] = (CF[eq][name], v); CF[eq][name] = v
-        for a, b in (S['TIES'].get(eq) or []):
+        for tie in (S['TIES'].get(eq) or []):
             if not keep: continue
-            if a in d and b not in d:
-                changed[eq][b] = (CF[eq][b], 1.0 - CF[eq][a]); CF[eq][b] = 1.0 - CF[eq][a]
-                W.append(f"FR1.{eq}: '{b}' = 1 − '{a}' (homogenlik məhdudiyyəti saxlanıldı)")
-            elif b in d and a not in d:
-                changed[eq][a] = (CF[eq][a], 1.0 - CF[eq][b]); CF[eq][a] = 1.0 - CF[eq][b]
-                W.append(f"FR1.{eq}: '{a}' = 1 − '{b}' (homogenlik məhdudiyyəti saxlanıldı)")
+            if len(tie) == 2:
+                a, b = tie
+                if a in d and b not in d:
+                    changed[eq][b] = (CF[eq][b], 1.0 - CF[eq][a]); CF[eq][b] = 1.0 - CF[eq][a]
+                    W.append(f"FR1.{eq}: '{b}' = 1 − '{a}' (homogenlik məhdudiyyəti saxlanıldı)")
+                elif b in d and a not in d:
+                    changed[eq][a] = (CF[eq][a], 1.0 - CF[eq][b]); CF[eq][a] = 1.0 - CF[eq][b]
+                    W.append(f"FR1.{eq}: '{a}' = 1 − '{b}' (homogenlik məhdudiyyəti saxlanıldı)")
+                continue
+            # v2.3: (m1, ..., m_n, k): k = 1 - (m1 + ... + m_n) (E3: non-oil GDP, wage bill -> pension bill)
+            mem, k = list(tie[:-1]), tie[-1]
+            if any(m in d for m in mem) and k not in d:
+                v = 1.0 - sum(CF[eq][m] for m in mem)
+                changed[eq][k] = (CF[eq][k], v); CF[eq][k] = v
+                W.append(f"FR1.{eq}: '{k}' = 1 − ({' + '.join(repr(m) for m in mem)}) (homogenlik məhdudiyyəti saxlanıldı)")
+            elif k in d and not any(m in d for m in mem):
+                m0 = mem[0]; v = 1.0 - CF[eq][k] - sum(CF[eq][m] for m in mem[1:])
+                changed[eq][m0] = (CF[eq][m0], v); CF[eq][m0] = v
+                W.append(f"FR1.{eq}: '{m0}' = 1 − '{k}' − qalanlar (homogenlik məhdudiyyəti saxlanıldı)")
     return CF, changed
 
 
-def resolve_cal(S, CF, changed):
+def resolve_cal(S, CF, changed, alloc='last', lev=None):
     CAL = dict(S['CAL'])
+    lev = lev or {}
+    if alloc == 'avg3' and 'inv_share_avg3' in CAL:      # pre-v2.1 investment shares (sensitivity lever)
+        CAL['inv_share'] = dict(CAL['inv_share_avg3'])
+    if lev.get('income_block'):                          # v2.2 lever: 'share' (E3, default) | 'legs' (income by source)
+        CAL['e3_mode'] = lev['income_block']
+    if lev.get('fiscal_rule'):                           # v2.2 lever: 'F3' (default) | 'nobd'
+        CAL['fiscal_rule'] = lev['fiscal_rule']
     if any(eq.startswith('G5_defl') for eq in changed):
-        CAL['defl'] = {s: (CF[f'G5_defl_{s}']['const'], CF[f'G5_defl_{s}']['infl'],
-                           CF[f'G5_defl_{s}'].get('dln_oil_azn', 0.0)) for s in S['M']['COMP']}
+        CAL['defl'] = {s: tuple(CF[f'G5_defl_{s}'].get(k, 0.0) for k in ('const', 'infl', 'dln_oil_azn', 'dln_xpi', 'dln_fx'))
+                       for s in S['M']['COMP']}
         CAL['mkt_defl'] = {k: (CF[f'G5_defl_{k}']['const'], CF[f'G5_defl_{k}']['infl']) for k in S['M']['MKT']}
     return CAL
 
@@ -50,7 +70,7 @@ def resolve_base_addf(S, changed, recalibrate):
     var_of = {eq: v for v, eq in S['EQ_OF_VAR'].items()}
     for eq, d in changed.items():
         v = var_of.get(eq)
-        if v is None or v not in base: continue
+        if v is None or v not in base or eq not in S['x25']: continue   # v2.2: growth equations have no base add-factor
         x = S['x25'][eq]
         base[v] = base[v] - sum((new - old)*(1.0 if n == 'const' else x[n]) for n, (old, new) in d.items())
     return base
@@ -59,7 +79,8 @@ def resolve_base_addf(S, changed, recalibrate):
 def solve(S, scenario, ov, W):
     M = S['M']; FY = M['FY']; lev = ov['levers']
     CF, changed = resolve_coefs(S, ov, W)
-    CAL = resolve_cal(S, CF, changed)
+    alloc = lev.get('alloc_shares', 'last')
+    CAL = resolve_cal(S, CF, changed, alloc, lev)
     base = resolve_base_addf(S, changed, bool(lev.get('addf_recalibrate', True)))
     exch = {k for (sec, k) in ov['changed'] if sec == 'exogenous'}
     ex = FCM.build_ex(S, scenario, ov['exogenous'], exch)
@@ -72,9 +93,11 @@ def solve(S, scenario, ov, W):
             ex[y]['credit_overlay'] = el; ex[y]['cred_ref'] = S['cred_ref'][scenario][y]
     mode = lev.get('mode', 'shock'); info = {}
     anchor, decay = bool(lev.get('anchor', True)), float(lev.get('anchor_decay', M['ANCHOR_DECAY']))
-    rho = S['RHO'] if lev.get('base_addf_decay') else None
+    # v2.3: optional decay of the base add-factors at a FIXED, user-set half-life (no estimated residual dynamics)
+    hl = float(lev.get('addf_halflife', M.get('ADDF_HALFLIFE', 1.0)))
+    bdecay = {k: 0.5**(1.0/hl) for k in base} if lev.get('base_addf_decay') else None
     if mode == 'reanchor':
-        fc, conv, path, ref = FCM.run_forecast(M, CF, CAL, ex, base, anchor=anchor, base_decay=rho,
+        fc, conv, path, ref = FCM.run_forecast(M, CF, CAL, ex, base, anchor=anchor, base_decay=bdecay,
                                                anchor_decay=decay, oilrev_ref=None, warn=W, info=info,
                                                anchor_maxit=int(lev.get('anchor_maxit', 20)))
         if rule == 'policy_level':
@@ -82,7 +105,7 @@ def solve(S, scenario, ov, W):
             fc, conv, path, _ = FCM.run_forecast(M, CF, CAL, ex, {}, addf_fixed=path,
                                                  oilrev_ref={y: None for y in FY})
     else:
-        default_path = (not changed or not lev.get('addf_recalibrate', True)) and anchor and rho is None \
+        default_path = (not changed or not lev.get('addf_recalibrate', True)) and anchor and bdecay is None \
             and decay == M['ANCHOR_DECAY']
         if default_path:
             path = {y: dict(S['ADDF'][scenario][y]) for y in FY}
@@ -90,7 +113,7 @@ def solve(S, scenario, ov, W):
             inc = S['ANCHOR_INC'][scenario] if anchor else {}
             path = {}
             for y in FY:
-                a = {k: v*rho.get(k, 1.0)**(y-M['LAST_ACT']) for k, v in base.items()} if rho else dict(base)
+                a = {k: v*bdecay.get(k, 1.0)**(y-M['LAST_ACT']) for k, v in base.items()} if bdecay else dict(base)
                 for k, v in inc.items(): a[k] = a.get(k, 0.0) + v*decay**(y-M['NOWCAST_Y'])
                 path[y] = a
         ref = {y: None for y in FY} if rule == 'policy_level' else dict(S['OILREF'][scenario])
@@ -98,7 +121,8 @@ def solve(S, scenario, ov, W):
     bad = [y for y, (it, err) in conv.items() if not err < 1e-9]
     if bad:
         W.append(f"həlledici {bad} illərində tam yığılmadı (Gauss–Seidel); nəticələri ehtiyatla şərh edin")
-    return dict(fc=fc, conv=conv, path=path, ref=ref, CF=CF, CAL=CAL, base=base, ex=ex, changed=changed, info=info)
+    return dict(fc=fc, conv=conv, path=path, ref=ref, CF=CF, CAL=CAL, base=base, ex=ex, changed=changed, info=info,
+                alloc=alloc)
 
 
 def series(S, R):
@@ -121,7 +145,7 @@ def series(S, R):
         for c in dec.columns:
             if c in ('sector', 'year') or not np.isfinite(r[c]): continue
             out.setdefault(I.dec_id(sec, c), {})[int(r['year'])] = float(r[c])
-    for sec, s in P.credit_by_sector(S, fc).items():
+    for sec, s in P.credit_by_sector(S, fc, R.get('alloc', 'last')).items():
         out[I.cred_id(sec)] = {int(y): float(v) for y, v in s.items()}
     for sec, s in P.investment_by_sector(S, fc, R['CAL']).items():
         out[I.inv_id(sec)] = {int(y): float(v) for y, v in s.items()}

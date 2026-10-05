@@ -8,6 +8,23 @@ SECS = [("what", "Əhatə"), ("headline", "Baş göstəricilər, 2026–2030"), 
         ("synthetic", "Sintetik məlumat haqqında"), ("run", "Modulun işə salınması")]
 
 
+START = (
+    '<div class="start-grid">'
+    '<a class="start-card start-main" href="../panel/index.html"><strong>İş paneli →</strong>'
+    '<span>İnteraktiv qrafiklər və cədvəllər, bütün göstəricilər üzrə axtarış.</span></a>'
+    '<a class="start-card" href="../panel/index.html#/ssenari"><strong>Ssenari qurucusu →</strong>'
+    '<span>Fərziyyələri və əmsalları dəyişin, nəticəni Əsas ssenari ilə müqayisə edin.</span></a>'
+    '<a class="start-card" href="../panel/index.html#/hesabat"><strong>Hesabat qurucusu →</strong>'
+    '<span>Seçdiyiniz göstəricilər üzrə PDF, Excel, Word və ya CSV hesabatı.</span></a>'
+    '<a class="start-card" href="dayaniqliq.html"><strong>Modellərin dayanıqlığı →</strong>'
+    '<span>Hansı tənliklər sabitdir, hansılar deyil — bütün modullar üzrə.</span></a>'
+    '<a class="start-card" href="fr/fr1-tenlikler.html"><strong>Tənliklər →</strong>'
+    '<span>Hər tənliyin tam reqressiya nəticəsi; hər FR səhifəsində «Tənliklər» sekməsi.</span></a>'
+    '<a class="start-card" href="api.html"><strong>API və avtomatlaşdırma →</strong>'
+    '<span>Yeni məlumatın yüklənməsi, avtonom icra, bir kliklə başladıcı.</span></a>'
+    '</div>')
+
+
 def headline_fig(d1):
     data = []
     for k, lab, col, bc in (("rgdp", "Real ÜDM", figs.ACCENT, figs.BAND),
@@ -55,15 +72,21 @@ def build(texts):
                         + [v(x, dec) for x in vals] + [f"{v(band[0], dec)} … {v(band[1], dec)}"])
     tbl = html.table(["Göstərici", "Vahid"] + [str(y) for y in YEARS] + ["5–95 % zolağı, 2030"], rows,
                      cols=["c-wide", "c-tight"] + ["c-num"] * 5 + ["c-text"])
+    def sub(c):
+        k = c.lower()
+        lb = f' · <a href="fr/{k}-sintetik.html">B qatı</a>' if c in ("FR10", "FR12") else ""
+        return (f'<div class="card-line card-links"><a href="fr/{k}-proqnoz.html">Proqnoz cədvəlləri</a> · '
+                f'<a href="fr/{k}-tenlikler.html">Tənliklər</a> · <a href="fr/{k}.html#dayaniqliq">Dayanıqlıq</a>{lb}</div>')
     grid = "".join(
         f'<div class="card"><div class="card-head"><span class="card-code">{c}</span>{html.pill(st, stl)}</div>'
-        f'<a class="card-title" href="{href}">{esc(t)}</a><div class="card-line">{line}</div></div>'
+        f'<a class="card-title" href="{href}">{esc(t)}</a><div class="card-line">{line}</div>{sub(c)}</div>'
         for c, href, t, st, stl, line in cards(d10, d12))
     p, r = synth.panel(), synth.register()
     o = ["<h1>MİİS §15.5.2 — Mikroiqtisadi təhlil və proqnozlaşdırma</h1>",
          '<p class="lead-in">İqtisadiyyat Nazirliyi üçün mikroiqtisadi modulun təqdimat saytı: altı funksional tələbin '
          "hər biri öz səhifəsində — tələb mətnindən modelə, məlumata, 2026–2030 proqnozuna, nümunədən kənar yoxlamaya və "
          "məhdudiyyətlərə qədər. Saytdakı hər rəqəm yığım anında modulun çıxış fayllarından oxunur.</p>",
+         START,
          html.h2("what", 1, "Əhatə"),
          "<p>§15.5.2 alt-modulu Texniki Tapşırığın FR1, FR3, FR4, FR5, FR10 və FR12 tələblərini əhatə edir (Nazirliyin "
          "24 avqust 2026 tarixli yazılı təsdiqinə görə FR2 və FR6–FR9 bu alt-modulda tələb olunmur). Bütün modellər "

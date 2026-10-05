@@ -10,6 +10,11 @@ QTY = {"total": "ümumi", "labour_force": "işçi qüvvəsi", "agriculture": "k�
        "industry": "sənaye", "mining": "mədənçıxarma", "market_services": "bazar xidmətləri", "manuf": "emal sənayesi"}
 
 
+G8_AZ = {"agr": "Kənd, meşə və balıqçılıq", "industry": "Sənaye", "constr": "Tikinti", "trade": "Ticarət və təmir",
+         "hotel": "Yerləşdirmə və iaşə", "transp": "Nəqliyyat və anbar", "ict": "İnformasiya və rabitə",
+         "services": "Digər xidmətlər (9 fəaliyyət)"}  # same labels as the notebook's G8_AZ (defined later, Part 21)
+
+
 def _dir(x):
     return "artır" if x > 0.005 else ("azalır" if x < -0.005 else "dəyişmir")
 
@@ -25,7 +30,8 @@ def results(ns):
     pm = lambda x, d=2: pct(x, d)  # noqa: E731
     tb = n.tb
     t0, t1 = n.TOT["Baseline"].loc[Y0], n.TOT["Baseline"].loc[Y1]
-    rows = sorted([(n.G8_AZ[g],) + tuple(n.band(n.G8_LABEL[g])) for g in n.G8_KEYS], key=lambda r: -r[1])
+    g8 = {**G8_AZ, **(ns.get("G8_AZ") or {})}
+    rows = sorted([(g8.get(g, n.G8_LABEL[g]),) + tuple(n.band(n.G8_LABEL[g])) for g in n.G8_KEYS], key=lambda r: -r[1])
     L11 = ["## 11. Əsas ssenarinin nəticələri, 2026–2030", "",
            f"Ümumi məşğulluq (FR1) {num(t0, 0)} min nəfərdən {num(t1, 0)} min nəfərədək "
            f"{'artır' if t1 >= t0 else 'azalır'} — **ildə {pm(tb[0])}** (90% zolaq: {pm(tb[1])} ilə {pm(tb[2])} arası).", "",

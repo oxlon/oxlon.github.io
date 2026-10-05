@@ -16,7 +16,7 @@ def frames(res):
     S = _st()
     s = B.result_to_frame(res)
     full_cols = [c[4:] for c in s.columns if c.startswith('fr3:') and ':' not in c[4:]
-                 and not c.endswith('_g') and c != 'fr3:prem_sp']
+                 and not c.endswith('_g') and c not in ('fr3:prem_sp', 'fr3:w_budget', 'fr3:w_nonbudget')]
     full = s[[f'fr3:{c}' for c in full_cols]].rename(columns=lambda c: c[4:]).rename_axis('year').reset_index()
     br = s[[f'fr3:brw:{c}' for c in S['branch']['code']]]
     br.columns = S['branch']['names']
@@ -35,7 +35,13 @@ def frames(res):
         summ.append(dict(breakdown=lbl, nominal_2025=n0, nominal_2030=n1, nominal_growth_avg_pct=((n1/n0)**(1/n)-1)*100,
                          real_2025=r0, real_2030=r1, real_growth_avg_pct=((r1/r0)**(1/n)-1)*100,
                          cumulative_nominal_pct=(n1/n0-1)*100))
-    return dict(full=(full, full_cols), branch=br, sector=se, accounts=pd.DataFrame(acc), summary=pd.DataFrame(summ)), LA
+    sw = None
+    if S.get('SW'):                                        # v2.2 sector and budget / non-budget wages
+        cols = list(S['SW']['sectors']) + ['budget', 'nonbudget']
+        sw = pd.DataFrame({c: s[f'fr3:sw:{c}'] if c in S['SW']['sectors'] else s[f'fr3:w_{c}'] for c in cols})
+        sw = sw.rename_axis('year').reset_index()
+    return dict(full=(full, full_cols), branch=br, sector=se, accounts=pd.DataFrame(acc), summary=pd.DataFrame(summ),
+                sector_wages=sw), LA
 
 
 def selftest(tol=1e-8):
@@ -61,6 +67,11 @@ def selftest(tol=1e-8):
                                            ['nominal_2025', 'nominal_2030', 'nominal_growth_avg_pct', 'real_2025',
                                             'real_2030', 'real_growth_avg_pct', 'cumulative_nominal_pct'], tol,
                                            on=['breakdown'], csv_filter=g)}
+        if fr.get('sector_wages') is not None:
+            FY = [int(y) for y in S['M']['FY']]
+            r['sector_wages'] = B.selftest_compare(
+                fr['sector_wages'], _out(S['csv']['sector_wages']), list(S['SW']['sectors']) + ['budget', 'nonbudget'], tol,
+                on=['year'], csv_filter=lambda d, sc=sc, FY=FY: d[(d.scenario == sc) & d.year.isin(FY)])
         u = run({'levers': {'branch_anchor': False}}, sc)
         bu = frames(u)[0]['branch']
         r['branch_unanchored'] = B.selftest_compare(bu, _out(S['csv']['branch_unanchored']), list(S['branch']['names']), tol,

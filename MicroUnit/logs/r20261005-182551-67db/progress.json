@@ -1,0 +1,46 @@
+{
+ "run_id": "r20261005-182551-67db",
+ "status": "ok",
+ "current": null,
+ "dry_run": false,
+ "updated": "2026-10-05T17:28:58Z",
+ "started": "2026-10-05T17:25:51Z",
+ "steps": [
+  {
+   "name": "FR1",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T17:25:51Z",
+   "finished": "2026-10-05T17:27:32Z",
+   "seconds": 100.6,
+   "error": null
+  },
+  {
+   "name": "FR3",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T17:27:32Z",
+   "finished": "2026-10-05T17:27:57Z",
+   "seconds": 24.9,
+   "error": null
+  },
+  {
+   "name": "FR4",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T17:27:57Z",
+   "finished": "2026-10-05T17:28:11Z",
+   "seconds": 14.7,
+   "error": null
+  },
+  {
+   "name": "FR5",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T17:28:11Z",
+   "finished": "2026-10-05T17:28:58Z",
+   "seconds": 46.1,
+   "error": null
+  }
+ ]
+}

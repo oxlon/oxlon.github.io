@@ -71,6 +71,24 @@ VAR = {
     "K_non": ("Əsas fondlar: qeyri-neft iqtisadiyyatı", "Capital stock: non-oil economy", R15, "level",
               "Əsas fondlar"),
     "pop": ("Əhali", "Population", PERS, "level", "Demoqrafiya"),
+    # v2.2
+    "hhdisp_n": ("Ev təsərrüfatlarının sərəncamda qalan gəliri (nominal)", "Household disposable income (nominal)", NOM,
+                 "level", "Gəlir"),
+    "hhinc_n": ("Əhalinin pul gəlirləri (nominal)", "Household money income (nominal)", NOM, "level", "Gəlir"),
+    "inc_wb_n": ("Gəlir: işçilərə əmək ödənişləri", "Income: compensation of employees", NOM, "level", "Gəlir"),
+    "inc_tr_n": ("Gəlir: alınmış transfertlər", "Income: transfers received", NOM, "level", "Gəlir"),
+    "inc_oth_n": ("Gəlir: sahibkarlıq və mülkiyyət gəlirləri", "Income: entrepreneurial and property income", NOM,
+                  "level", "Gəlir"),
+    "gdpnon_n": ("Qeyri-neft ÜDM (nominal)", "Non-oil GDP (nominal)", NOM, "level", "Aqreqatlar"),
+    "nobd_pct": ("Qeyri-neft büdcə balansı, qeyri-neft ÜDM-ə nisbətən", "Non-oil budget balance, % of non-oil GDP",
+                 "%", "rate", "Fiskal blok"),
+    "exp_pubinv_n": ("Dövlət İnvestisiya Proqramı (dövlət əsaslı vəsait qoyuluşu)",
+                     "State Investment Programme (public capital investment)", NOM, "level", "Fiskal blok"),
+    "gas_exp_price": ("Qazın ixrac qiyməti", "Gas export price", "ABŞ dolları / min m³", "level", "Karbohidrogen bloku"),
+    "xsh_oil": ("Neftin karbohidrogen ixracında payı (dəyərlə)", "Oil share of hydrocarbon export value", "pay (0–1)",
+                "share", "Karbohidrogen bloku"),
+    "dln_xpi": ("Karbohidrogen ixrac qiymətləri indeksinin dəyişməsi (ABŞ dolları)",
+                "Hydrocarbon export price index, change (USD)", "%", "rate", "Karbohidrogen bloku"),
 }
 for _k, _az in (("retail", "Pərakəndə ticarət"), ("cater", "İctimai iaşə"), ("serv_hh", "Ödənişli xidmətlər")):
     _en = {"retail": "Retail trade", "cater": "Catering", "serv_hh": "Paid services"}[_k]
@@ -114,7 +132,7 @@ DRIVER_AZ = {"total": "ümumi real artım", "trend": "deterministik trend", "tfp
 CRED_AZ = {"trd": "Ticarət və xidmət", "ene": "Energetika, kimya, təbii ehtiyatlar", "agr": "Kənd təsərrüfatı",
            "con": "Tikinti və daşınmaz əmlak", "ind": "Sənaye və istehsal", "tra": "Nəqliyyat və rabitə",
            "oth": "Digər (qalıq: cəmi − sektorlar − ev təsərrüfatları)"}
-RATE_COLS = {"infl", "unemp", "lendrate", "realrate", "gap"}
+RATE_COLS = {"infl", "unemp", "lendrate", "realrate", "gap", "nobd_pct", "dln_xpi"}
 
 
 def var_id(col):

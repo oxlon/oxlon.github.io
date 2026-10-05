@@ -1,0 +1,5 @@
+$ /Users/econ0757/venvs/miis-model/bin/jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 --ExecutePreprocessor.kernel_name=miis-model FR1.ipynb
+[NbConvertApp] Converting notebook FR1.ipynb to notebook
+/Users/econ0757/venvs/miis-model/lib/python3.13/site-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+[NbConvertApp] Writing 3251840 bytes to FR1.ipynb

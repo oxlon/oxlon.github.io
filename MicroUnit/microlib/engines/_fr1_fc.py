@@ -109,6 +109,18 @@ def build_ex(S, scenario, exo, changed):
             ex[y]['tfp_cum'] = cum
     if 'pension_real_g' in changed:
         for i, y in enumerate(FY): ex[y]['pension_real_g'] = float(exo['pension_real_g'][i])/100
+    if 'dsmf_add_g' in changed:                       # v2.2: extra DSMF spending growth (income-by-source lever)
+        for i, y in enumerate(FY): ex[y]['dsmf_add_g'] = float(exo['dsmf_add_g'][i])/100
+    if 'sip_n' in changed:
+        # v2.2: State Investment Programme (nominal). A change moves real state investment by the change deflated at
+        # the scenario's baseline investment prices; the programme ratio is reset so the published programme equals
+        # the input (exactly when investment prices and the oil-revenue response are unchanged).
+        v22 = S['V22']; base = v22['SIP_BASE'][scenario]; pinv = v22['PINV_PATH'][scenario]
+        for i, y in enumerate(FY):
+            new = float(exo['sip_n'][i]); b0 = float(base[str(y)] if str(y) in base else base[y])
+            p = float(pinv[str(y)] if str(y) in pinv else pinv[y])
+            ex[y]['istate_level'] = ex[y]['istate_level'] + (new - b0)/p
+            ex[y]['sip_ratio'] = new/p/max(ex[y]['istate_level'], 1e-6)
     for y in FY: ex[y]['oilrev_ref'] = None
     return ex
 

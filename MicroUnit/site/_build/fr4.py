@@ -97,7 +97,7 @@ def check(d):
     rows2 = [[esc(BASIS(r.basis)), esc(D.LEVEL_AZ.get(r.level, r.level)), v(r.median_RMSE_pct, 2), esc(r.beats_random_walk),
               u_cell(r.median_U_rw), esc(r.beats_constant_growth), u_cell(r.median_U_cg)] for r in hs.itertuples()]
     return [html.h2("check", 5, "Yoxlama"),
-            "<p>Dinamik hold-out 2020–2024: 2019-dan sonrakı heç bir məlumat işlədilmir; ümumi göstəricilər FR4-ün öz "
+            "<p>Dinamik nümunədən kənar yoxlama 2020–2024: 2019-dan sonrakı heç bir məlumat işlədilmir; ümumi göstəricilər FR4-ün öz "
             "blokundan simulyasiya olunur. Etalonlar eyni informasiya ilə: təsadüfi gəzişmə (2019 səviyyəsi) və "
             "2005–2019 sabit artım. Neft hasilatı tənliyi (E9) 2020-dən əvvəl qiymətləndirilə bilmir — bu, açıq "
             "yazılır.</p>",

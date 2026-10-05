@@ -39,6 +39,14 @@ def load():
     return d
 
 
+def filled(i):
+    """One series of FR12_series_filled.csv (observed + imputed points), indexed by year."""
+    f = core.csv("FR12_series_filled.csv")
+    f = f[(f.id == i) & f.value.notna()].set_index("year").sort_index()
+    f["imputed"] = f.imputed.astype(bool)
+    return f
+
+
 def rate_fig(d, key, ytitle):
     """National (all activity groups) entry or exit rate: history, nowcast/forecast, band, scenarios."""
     h = d["hist"][key]
@@ -46,7 +54,12 @@ def rate_fig(d, key, ytitle):
     f = d["fall"]
     yrs = list(f.index)
     data = figs.band(yrs, f[f"{key}_p5"], f[f"{key}_p95"])
-    data.append(figs.line(h.index, h.values, "Faktiki (DSK sahibkarlıq, 006)", mode="lines+markers", hfmt=".2f"))
+    fl = filled(f"fr12:act:{key}:ALL")
+    if len(fl):
+        h = fl.value
+        data += figs.imputed_series(fl.index, fl.value, fl.imputed, "Faktiki (DSK sahibkarlıq, 006)", hfmt=".2f")
+    else:
+        data.append(figs.line(h.index, h.values, "Faktiki (DSK sahibkarlıq, 006)", mode="lines+markers", hfmt=".2f"))
     b = d["fc_all"]["Baseline"]
     x = [int(h.index.max())] + yrs
     data.append(figs.line(x, [h.iloc[-1]] + list(b.loc[yrs, key]), "Əsas ssenari (2025 — cari qiymətləndirmə)",

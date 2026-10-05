@@ -14,7 +14,8 @@ en,az,context
 9 Prices,Qiymətlər,FR1_accounts_long.csv:group;FR1_accounts_summary_adverse.csv:group;FR1_accounts_summary_baseline.csv:group;FR1_accounts_summary_reform.csv:group
 ACTUAL,Faktiki,FR1_accounts_long.csv:scenario
 AZN per month,AZN/ay,FR1_accounts_summary_adverse.csv:unit;FR1_accounts_summary_baseline.csv:unit;FR1_accounts_summary_reform.csv:unit
-Adverse,Mənfi,FR1_accounts_forecast_deflator.csv:Unnamed: 0;FR1_accounts_forecast_nominal.csv:Unnamed: 0;FR1_accounts_forecast_real.csv:Unnamed: 0;FR1_accounts_long.csv:scenario;FR1_addfactor_sensitivity.csv:sütun adı;FR1_credit_by_sector.csv:scenario;FR1_gdp_growth_contributions_all.csv:scenario;FR1_investment_by_sector.csv:scenario;FR1_sector_decomposition_all.csv:scenario;FR1_sector_growth.csv:Unnamed: 0
+Adverse,Mənfi,FR1_accounts_forecast_deflator.csv:Unnamed: 0;FR1_accounts_forecast_nominal.csv:Unnamed: 0;FR1_accounts_forecast_real.csv:Unnamed: 0;FR1_accounts_long.csv:scenario;FR1_addfactor_sensitivity.csv:sütun adı;FR1_credit_by_sector.csv:scenario;FR1_gdp_growth_contributions_all.csv:scenario;FR1_investment_by_sector.csv:scenario;FR1_sector_decomposition_all.csv:scenario;FR1_sector_growth.csv:Unnamed: 0;FR1_v23_fiscal_diagnosis.csv:sütun adı;FR1_v23_forecast_checks.csv:scenario
+Adverse balance 2030 (% of GDP) with the Baseline state-investment policy level,Əsas ssenarinin dövlət investisiyası siyasət səviyyəsi ilə Mənfi ssenarinin 2030 balansı (ÜDM-ə nisbətdə %),FR1_v23_fiscal_diagnosis.csv:item
 "Agriculture, forestry & fishing","Kənd, meşə və balıqçılıq",FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity;FR1_gdp_growth_contributions.csv:sütun adı;FR1_gdp_growth_contributions_all.csv:sütun adı;FR1_sector_decomposition.csv:sector;FR1_sector_decomposition_all.csv:sector;FR1_sector_growth.csv:sütun adı;FR1_trend_share.csv:sector
 Average lending rate,Kreditlər üzrə faiz dərəcəsi,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 Average monthly wage,Orta aylıq əmək haqqı,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
@@ -22,7 +23,7 @@ B hydrocarbon,B. Karbohidrogen bloku,FR1_equation_audit.csv:block
 BOP: exports - imports = trade bal.,Tədiyə balansı: ixrac − idxal = ticarət balansı,FR1_identity_checks.csv:identity
 BOP: oil + non-oil FDI = FDI inflow,Tədiyə balansı: neft + qeyri-neft BXİ = BXİ axını,FR1_identity_checks.csv:identity
 BOP: oil + non-oil exports = exports,Tədiyə balansı: neft + qeyri-neft ixracı = ixrac,FR1_identity_checks.csv:identity
-Baseline,Əsas,FR1_accounts_forecast_deflator.csv:Unnamed: 0;FR1_accounts_forecast_nominal.csv:Unnamed: 0;FR1_accounts_forecast_real.csv:Unnamed: 0;FR1_accounts_long.csv:scenario;FR1_addfactor_sensitivity.csv:sütun adı;FR1_credit_by_sector.csv:scenario;FR1_gdp_growth_contributions_all.csv:scenario;FR1_investment_by_sector.csv:scenario;FR1_sector_decomposition_all.csv:scenario;FR1_sector_growth.csv:Unnamed: 0
+Baseline,Əsas,FR1_accounts_forecast_deflator.csv:Unnamed: 0;FR1_accounts_forecast_nominal.csv:Unnamed: 0;FR1_accounts_forecast_real.csv:Unnamed: 0;FR1_accounts_long.csv:scenario;FR1_addfactor_sensitivity.csv:sütun adı;FR1_credit_by_sector.csv:scenario;FR1_gdp_growth_contributions_all.csv:scenario;FR1_investment_by_sector.csv:scenario;FR1_sector_decomposition_all.csv:scenario;FR1_sector_growth.csv:Unnamed: 0;FR1_v23_fiscal_diagnosis.csv:sütun adı;FR1_v23_forecast_checks.csv:scenario
 Brent +10 USD/bbl,Brent +10 ABŞ dolları/barel,FR1_multipliers.csv:Unnamed: 0
 Budget expenditure (total),Dövlət büdcəsinin xərcləri,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 Budget revenue (total),Dövlət büdcəsinin gəlirləri,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
@@ -42,20 +43,37 @@ Customs: X - M = trade balance,Gömrük: ixrac − idxal = ticarət balansı,FR1
 Customs: agri + ind = non-oil exp.,Gömrük: k/t + sənaye = qeyri-neft ixracı,FR1_identity_checks.csv:identity
 Customs: oil + non-oil = exports,Gömrük: neft + qeyri-neft = ixrac,FR1_identity_checks.csv:identity
 D demand,D. Tələb və istehlak bazarları,FR1_equation_audit.csv:block
+D4 imports: absorption + REER (macro module),D4 idxal: udma + real effektiv məzənnə (makro modul),FR1_v22_macro_candidates.csv:variant
+"D4: imports at constant USD prices (same fit, relative price re-parametrised)","D4: sabit ABŞ dolları qiymətləri ilə idxal (eyni qiymətləndirmə, nisbi qiymət yenidən parametrləşdirilib)",FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
+"D4: relative price dropped (coefficient bounded at 0, binding)","D4: nisbi qiymət çıxarılıb (əmsal 0 həddində, hədd məcburidir)",FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
 DOLS(+/-1),DOLS(±1),FR1_equation_audit.csv:estimator;FR1_holdout_coefficients.csv:estimator_cut;FR1_holdout_coefficients.csv:estimator_full
 DOLS(0: contemporaneous dX only),DOLS(0: yalnız cari ΔX),FR1_equation_audit.csv:estimator;FR1_holdout_coefficients.csv:estimator_cut;FR1_holdout_coefficients.csv:estimator_full
 DOLS/OLS kept,DOLS/OLS saxlanılıb,FR1_iv_dwh.csv:decision
 Deposits,Cəmi depozitlər,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 E income/labour,E. Gəlir və əmək bazarı,FR1_equation_audit.csv:block
+"E3: + real wage bill, homogeneity imposed","E3: + real əmək haqqı fondu, homogenlik tətbiq olunub",FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
+"E3: + real wage bill, homogeneity test-and-impose rule","E3: + real əmək haqqı fondu, homogenlik yoxlanılır və rədd edilmədikdə tətbiq olunur",FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
+"E3: income legs (macro module, nominal)","E3: gəlirin mənbələr üzrə bölgüsü (makro modul, nominal)",FR1_v22_macro_candidates.csv:variant
+E3: income legs deflated by consumer prices,E3: istehlak qiymətləri ilə deflyasiya edilmiş gəlir bölgüsü,FR1_v22_macro_candidates.csv:variant
 "Electricity, gas & steam","Elektrik enerjisi, qaz",FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity;FR1_gdp_growth_contributions.csv:sütun adı;FR1_gdp_growth_contributions_all.csv:sütun adı;FR1_sector_decomposition.csv:sector;FR1_sector_decomposition_all.csv:sector;FR1_sector_growth.csv:sütun adı;FR1_trend_share.csv:sector
 Employment,Məşğul əhali,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 External demand +10%,Xarici tələb +10%,FR1_multipliers.csv:Unnamed: 0
 F fiscal,F. Fiskal blok,FR1_equation_audit.csv:block
+F3: non-oil and oil revenue separately,F3: qeyri-neft və neft gəlirləri ayrıca,FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
+F3: non-oil revenue only (oil revenue saved),F3: yalnız qeyri-neft gəlirləri (neft gəlirləri yığılır),FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
+F3: revenue elasticity at its 95% CI lower bound,F3: gəlir elastikliyi 95% etibarlılıq intervalının aşağı həddində,FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
+"F3_expcur elasticity (ln_rev_r): solver value, estimate, 95% CI","F3_expcur elastikliyi (ln_rev_r): həlledici dəyəri, qiymət, 95% etibarlılıq intervalı",FR1_v23_fiscal_diagnosis.csv:item
+"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity","F4: ssenari kapital xərcləri qaydası (Əsas ssenarinin siyasət səviyyəsi + F4 reaksiyası), vahid elastiklik",FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
+"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound","F4: ssenari kapital xərcləri qaydası, neft gəlirləri elastikliyi 95% etibarlılıq intervalının aşağı həddində",FR1_v23_candidates.csv:variant;FR1_v23_decisions.csv:variant;FR1_v23_forecast_checks.csv:variant
+"F4_pubinv elasticity (ln_rev_oil): solver value, estimate, 95% CI","F4_pubinv elastikliyi (ln_rev_oil): həlledici dəyəri, sərbəst qiymət, 95% etibarlılıq intervalı",FR1_v23_fiscal_diagnosis.csv:item
 Fiscal: current + capital = exp.,Fiskal: cari + əsaslı = xərclər,FR1_identity_checks.csv:identity
+Fiscal: non-oil balance / non-oil GDP held at the cut year,Fiskal: qeyri-neft balansı / qeyri-neft ÜDM kəsim ilinin səviyyəsində,FR1_v22_macro_candidates.csv:variant
 Fiscal: oil + non-oil rev = revenue,Fiskal: neft + qeyri-neft gəlirləri = gəlirlər,FR1_identity_checks.csv:identity
 Fiscal: revenue - exp = balance,Fiskal: gəlirlər − xərclər = balans,FR1_identity_checks.csv:identity
 Fixed investment (total),Əsas kapitala investisiyalar,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 G money/prices,"G. Pul, kredit və qiymətlər",FR1_equation_audit.csv:block
+G5 mining: CPI + export price index + exchange rate,G5 mədənçıxarma: İQİ + ixrac qiymətləri indeksi + məzənnə,FR1_v22_macro_candidates.csv:variant
+G5 mining: export price index + exchange rate (macro module),G5 mədənçıxarma: ixrac qiymətləri indeksi + məzənnə (makro modul),FR1_v22_macro_candidates.csv:variant
 GDP at market prices,ÜDM,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 GDP deflator,ÜDM deflyatoru,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 GDP deflator inflation (%),"ÜDM deflyatoru inflyasiyası, %",FR1_equation_audit.csv:dependent
@@ -64,7 +82,7 @@ Goods production,Malların istehsalı,FR1_accounts_forecast_deflator.csv:Unnamed
 "H0 const=0 & CPI pass-through=1: HAC-F=9.73 p=0.001; H0 pass-through=1 alone: p=0.222 (estimate const 6.58, slope 0.59) -> unit pass-through imposed, drift kept (joint H0 rejected)","H0: sabit = 0 və İQİ ötürülməsi = 1: HAC-F=9.73 p=0.001; H0: yalnız ötürülmə = 1: p=0.222 (qiymət: sabit 6.58, meyl 0.59) -> unit pass-through imposed, drift kept (joint H0: rejected)",FR1_equation_audit.csv:restriction
 "H0 elasticities sum to 1 (sum=1.126): HAC-F=5.08 p=0.046, s.e. of tested combination 0.056 -> REJECTED -> not imposed","H0: elastikliklərin cəmi = 1 (cəm=1.126): HAC-F=5.08 p=0.046, yoxlanılan kombinasiyanın standart xətası 0.056 → RƏDD EDİLİB → tətbiq olunmayıb",FR1_equation_audit.csv:restriction
 "H0 elasticities sum to 1 (sum=1.246): HAC-F=89.94 p=0.000, s.e. of tested combination 0.026 -> REJECTED -> not imposed","H0: elastikliklərin cəmi = 1 (cəm=1.246): HAC-F=89.94 p=0.000, yoxlanılan kombinasiyanın standart xətası 0.026 → RƏDD EDİLİB → tətbiq olunmayıb",FR1_equation_audit.csv:restriction
-"H0 homogeneity: non-oil GDP + pension-bill elasticities = 1 (sum 0.631): HAC-F=2.77 p=0.118, s.e. of tested combination 0.222 -> not rejected (low power) -> IMPOSED","H0: homogenlik: qeyri-neft ÜDM + pensiya fondu elastiklikləri = 1 (cəm 0.631): HAC-F=2.77 p=0.118, yoxlanılan kombinasiyanın standart xətası 0.222 → rədd edilməyib (aşağı güc) → TƏTBİQ OLUNUB",FR1_equation_audit.csv:restriction
+"H0 homogeneity: non-oil GDP + pension-bill + wage-bill elasticities = 1 (sum 0.342): HAC-F=24.74 p=0.001, s.e. of tested combination 0.132 -> REJECTED -> IMPOSED","H0: homogenlik: qeyri-neft ÜDM + pensiya fondu + əmək haqqı fondu elastiklikləri = 1 (cəm 0.342): HAC-F=24.74 p=0.001, yoxlanılan kombinasiyanın standart xətası 0.132 → RƏDD EDİLİB → TƏTBİQ OLUNUB",FR1_equation_audit.csv:restriction
 "H0 unit buoyancy w.r.t. non-oil GDP (estimate 1.322): HAC-F=2.81 p=0.124, s.e. of tested combination 0.192 -> not rejected (low power) -> IMPOSED","H0: qeyri-neft ÜDM-ə görə vahid elastiklik (qiymət 1.322): HAC-F=2.81 p=0.124, yoxlanılan kombinasiyanın standart xətası 0.192 → rədd edilməyib (aşağı güc) → TƏTBİQ OLUNUB",FR1_equation_audit.csv:restriction
 "H0 unit elasticity (estimate 0.961): HAC-F=11.39 p=0.003, s.e. of tested combination 0.011 -> REJECTED -> not imposed","H0: vahid elastiklik (qiymət 0.961): HAC-F=11.39 p=0.003, yoxlanılan kombinasiyanın standart xətası 0.011 → RƏDD EDİLİB → tətbiq olunmayıb",FR1_equation_audit.csv:restriction
 "H0 unit elasticity to real oil revenue (estimate 0.901): HAC-F=0.10 p=0.757, s.e. of tested combination 0.312 -> not rejected (low power) -> IMPOSED","H0: real neft gəlirlərinə görə vahid elastiklik (qiymət 0.901): HAC-F=0.10 p=0.757, yoxlanılan kombinasiyanın standart xətası 0.312 → rədd edilməyib (aşağı güc) → TƏTBİQ OLUNUB",FR1_equation_audit.csv:restriction
@@ -104,7 +122,7 @@ Oil and gas investment,Neft-qaz investisiyaları,FR1_accounts_forecast_deflator.
 Oil and gas revenue,Neft-qaz gəlirləri,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 Paid services to households,Əhaliyə ödənişli xidmətlər,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 Public debt,Dövlət borcu,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
-Reform,İslahat,FR1_accounts_forecast_deflator.csv:Unnamed: 0;FR1_accounts_forecast_nominal.csv:Unnamed: 0;FR1_accounts_forecast_real.csv:Unnamed: 0;FR1_accounts_long.csv:scenario;FR1_addfactor_sensitivity.csv:sütun adı;FR1_credit_by_sector.csv:scenario;FR1_gdp_growth_contributions_all.csv:scenario;FR1_investment_by_sector.csv:scenario;FR1_sector_decomposition_all.csv:scenario;FR1_sector_growth.csv:Unnamed: 0
+Reform,İslahat,FR1_accounts_forecast_deflator.csv:Unnamed: 0;FR1_accounts_forecast_nominal.csv:Unnamed: 0;FR1_accounts_forecast_real.csv:Unnamed: 0;FR1_accounts_long.csv:scenario;FR1_addfactor_sensitivity.csv:sütun adı;FR1_credit_by_sector.csv:scenario;FR1_gdp_growth_contributions_all.csv:scenario;FR1_investment_by_sector.csv:scenario;FR1_sector_decomposition_all.csv:scenario;FR1_sector_growth.csv:Unnamed: 0;FR1_v23_forecast_checks.csv:scenario
 Retail trade turnover,Pərakəndə ticarət dövriyyəsi,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 Services production,Xidmətlərin istehsalı,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 Social & other services,Sosial və digər xidmətlər,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity;FR1_gdp_growth_contributions.csv:sütun adı;FR1_gdp_growth_contributions_all.csv:sütun adı;FR1_sector_decomposition.csv:sector;FR1_sector_decomposition_all.csv:sector;FR1_sector_growth.csv:sütun adı;FR1_trend_share.csv:sector
@@ -118,13 +136,18 @@ Transport & storage,Nəqliyyat və anbar,FR1_accounts_forecast_deflator.csv:Unna
 Unemployment rate,İşsizlik səviyyəsi,FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity
 Water supply & waste,"Su təchizatı, tullantılar",FR1_accounts_forecast_deflator.csv:Unnamed: 1;FR1_accounts_forecast_nominal.csv:Unnamed: 1;FR1_accounts_forecast_real.csv:Unnamed: 1;FR1_accounts_history_deflator.csv:Unnamed: 0;FR1_accounts_history_nominal.csv:Unnamed: 0;FR1_accounts_history_real.csv:Unnamed: 0;FR1_accounts_long.csv:entity;FR1_accounts_summary_adverse.csv:entity;FR1_accounts_summary_baseline.csv:entity;FR1_accounts_summary_reform.csv:entity;FR1_gdp_growth_contributions.csv:sütun adı;FR1_gdp_growth_contributions_all.csv:sütun adı;FR1_sector_decomposition.csv:sector;FR1_sector_decomposition_all.csv:sector;FR1_sector_growth.csv:sütun adı;FR1_trend_share.csv:sector
 add-factor change (anchor),düzəliş əmsalının dəyişməsi (ankor),FR1_sector_decomposition.csv:sütun adı;FR1_sector_decomposition_all.csv:sütun adı
+add-factor half-life (years),düzəliş əmsallarının yarımparçalanma müddəti (il),FR1_addfactor_sensitivity.csv:Unnamed: 0
 agriculture VA,kənd təsərrüfatı ƏD,FR1_holdout_validation.csv:variable
+"budget balance 2030, % of GDP","büdcə balansı 2030, ÜDM-ə nisbətdə %",FR1_v23_forecast_checks.csv:check
 budget revenue,büdcə gəlirləri,FR1_holdout_validation.csv:variable
+capital spending,əsaslı xərclər,FR1_v23_fiscal_diagnosis.csv:item
 cointegration at 10%,kointeqrasiya 10% səviyyəsində,FR1_equation_audit.csv:inference
 cointegration at 5%,kointeqrasiya 5% səviyyəsində,FR1_equation_audit.csv:inference
 construction VA,tikinti ƏD,FR1_holdout_validation.csv:variable
+current spending,cari xərclər,FR1_v23_fiscal_diagnosis.csv:item
 d real GDP (mln),Δ real ÜDM (mln),FR1_fiscal_multiplier.csv:sütun adı
 d real non-oil GDP (mln),Δ real qeyri-neft ÜDM (mln),FR1_fiscal_multiplier.csv:sütun adı
+debt service,borc xidməti,FR1_v23_fiscal_diagnosis.csv:item
 "deflator inflation Agriculture, forestry & fishing","deflyator inflyasiyası, %",FR1_equation_audit.csv:dependent
 deflator inflation Catering (food service),"deflyator inflyasiyası, %",FR1_equation_audit.csv:dependent
 deflator inflation Construction,"deflyator inflyasiyası, %",FR1_equation_audit.csv:dependent
@@ -147,12 +170,18 @@ descriptive (cointegration not established),təsviri (kointeqrasiya müəyyən e
 "dropped as wrong-signed and insignificant: ln_inv_non (-0.069, p=0.78)","yanlış işarəli və əhəmiyyətsiz olduğu üçün çıxarılıb: ln_inv_non (-0.069, p=0.78)",FR1_equation_audit.csv:restriction
 free credit elasticity -0.135 (p=0.234) -> not usable; credit term omitted; H0 elasticity = regional-panel 0.134: HAC-F=6.23 p=0.028,sərbəst kredit elastikliyi -0.135 (p=0.234) -> istifadəyə yararsız; kredit həddi çıxarılıb; H0: elastiklik = regional panel dəyəri 0.134: HAC-F=6.23 p=0.028,FR1_equation_audit.csv:restriction
 goods + services + net taxes = GDP,mallar + xidmətlər + xalis vergilər = ÜDM,FR1_identity_checks.csv:identity
+"growth of DSMF expenditure (bridge), % (log difference x 100)","DSMF xərclərinin artımı, %",FR1_equation_audit.csv:dependent
+"growth of compensation of employees, % (log difference x 100)","əmək ödənişlərinin artımı, %",FR1_equation_audit.csv:dependent
+"growth of entrepreneurial + property income, % (log difference x 100)","digər gəlirlərin artımı, %",FR1_equation_audit.csv:dependent
+"growth of transfers received, % (log difference x 100)","transfertlərin artımı, %",FR1_equation_audit.csv:dependent
 "impact multiplier, non-oil GDP","təsir multiplikatoru, qeyri-neft ÜDM",FR1_fiscal_multiplier.csv:sütun adı
 industry+agri+constr = goods VA,sənaye + kənd təsərrüfatı + tikinti = malların ƏD,FR1_identity_checks.csv:identity
 "injection (real state investment, mln)","inyeksiya (real dövlət investisiyası, mln)",FR1_fiscal_multiplier.csv:sütun adı
 lending rate (%),"kredit faizi, %",FR1_equation_audit.csv:dependent
+level 2030,səviyyə 2030,FR1_v23_forecast_checks.csv:check
 ln average nominal wage,ln orta nominal əmək haqqı,FR1_equation_audit.csv:dependent
 ln employment rate (employment / labour force),ln məşğulluq / işçi qüvvəsi,FR1_equation_audit.csv:dependent
+ln non-oil imports at constant USD prices (= ln real imports + ln relprice),ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət),FR1_equation_audit.csv:dependent
 ln oil export price,ln neftin ixrac qiyməti,FR1_equation_audit.csv:dependent
 ln oil-gas budget revenue,ln neft-qaz gəlirləri,FR1_equation_audit.csv:dependent
 ln participation rate (labour force / population),ln işçi qüvvəsi / əhali,FR1_equation_audit.csv:dependent
@@ -169,7 +198,6 @@ ln real manufacturing VA,ln real emal ƏD,FR1_equation_audit.csv:dependent
 ln real mining VA,ln real mədənçıxarma ƏD,FR1_equation_audit.csv:dependent
 ln real net taxes on products,ln real xalis vergilər,FR1_equation_audit.csv:dependent
 ln real non-oil goods exports,ln real qeyri-neft ixracı,FR1_equation_audit.csv:dependent
-ln real non-oil imports,ln real qeyri-neft idxalı,FR1_equation_audit.csv:dependent
 ln real non-oil investment,ln real qeyri-neft investisiyaları,FR1_equation_audit.csv:dependent
 ln real non-oil revenue - ln real non-oil GDP,ln real qeyri-neft gəlirləri − ln qeyri-neft ÜDM,FR1_equation_audit.csv:dependent
 ln real oil-gas GDP,ln real neft-qaz ÜDM,FR1_equation_audit.csv:dependent
@@ -191,7 +219,7 @@ ln_cred_tot_r: lvl +0.58 / diff +0.92; ln_hhdisp: lvl +1.18 / diff +0.10,ln_cred
 ln_dep_r: lvl +0.52 / diff +1.07; polrate: lvl -0.04 / diff -0.02,ln_dep_r: səviyyə +0.52 / fərq +1.07; polrate: səviyyə -0.04 / fərq -0.02,FR1_equation_audit.csv:diff_form
 ln_gdpnon: lvl +0.04 / diff +0.44,ln_gdpnon: səviyyə +0.04 / fərq +0.44,FR1_equation_audit.csv:diff_form
 ln_gdpnon: lvl +0.20 / diff +1.76; ln_inv_state: lvl +0.89 / diff +0.58; ln_cred: lvl +0.00 / diff -0.08,ln_gdpnon: səviyyə +0.20 / fərq +1.76; ln_inv_state: səviyyə +0.89 / fərq +0.58; ln_cred: səviyyə +0.00 / fərq -0.08,FR1_equation_audit.csv:diff_form
-ln_gdpnon: lvl +0.89 / diff +0.92; ln_pens_r: lvl +0.11 / diff +0.11,ln_gdpnon: səviyyə +0.89 / fərq +0.92; ln_pens_r: səviyyə +0.11 / fərq +0.11,FR1_equation_audit.csv:diff_form
+ln_gdpnon: lvl +0.60 / diff +0.76; ln_pens_r: lvl +0.02 / diff +0.08; ln_wagebill_r: lvl +0.38 / diff +0.20,ln_gdpnon: səviyyə +0.60 / fərq +0.76; ln_pens_r: səviyyə +0.02 / fərq +0.08; ln_wagebill_r: səviyyə +0.38 / fərq +0.20,FR1_equation_audit.csv:diff_form
 ln_gdpnon: lvl +0.93 / diff -0.62; ln_hhdisp: lvl +0.29 / diff +1.63,ln_gdpnon: səviyyə +0.93 / fərq -0.62; ln_hhdisp: səviyyə +0.29 / fərq +1.63,FR1_equation_audit.csv:diff_form
 ln_gdpnon: lvl +1.00 / diff -0.02; ln_m_non: lvl +0.56 / diff +0.24,ln_gdpnon: səviyyə +1.00 / fərq -0.02; ln_m_non: səviyyə +0.56 / fərq +0.24,FR1_equation_audit.csv:diff_form
 ln_gdpnon: lvl +nan / diff +0.36; ln_hc: lvl +0.34 / diff +0.33,ln_gdpnon: səviyyə +nan / fərq +0.36; ln_hc: səviyyə +0.34 / fərq +0.33,FR1_equation_audit.csv:diff_form
@@ -209,24 +237,31 @@ ln_rev_r: lvl +0.99 / diff +0.76; ln_gdpnon: lvl +0.21 / diff -1.32,ln_rev_r: s�
 ln_va_man: lvl +0.35 / diff +1.89; ln_va_agr: lvl +1.06 / diff +2.89,ln_va_man: səviyyə +0.35 / fərq +1.89; ln_va_agr: səviyyə +1.06 / fərq +2.89,FR1_equation_audit.csv:diff_form
 ln_xoil_azn: lvl +0.61 / diff +0.15,ln_xoil_azn: səviyyə +0.61 / fərq +0.15,FR1_equation_audit.csv:diff_form
 manufacturing VA,emal ƏD,FR1_holdout_validation.csv:variable
+median of the 14 Part-11.5 variables,Hissə 11.5-in 14 dəyişəni üzrə median,FR1_v22_macro_candidates.csv:variable;FR1_v23_candidates.csv:variable
+"minimum wage +10%: 2030 deviation, %","minimum əmək haqqı +10%: 2030-da kənarlaşma, %",FR1_v23_forecast_checks.csv:check
 mining+manuf+elec+water = industry,mədənçıxarma + emal + elektrik + su = sənaye,FR1_identity_checks.csv:identity
 mln AZN,mln AZN,FR1_accounts_summary_adverse.csv:unit;FR1_accounts_summary_baseline.csv:unit;FR1_accounts_summary_reform.csv:unit
 n/a (rate equation),tətbiq olunmur (dərəcə tənliyi),FR1_equation_audit.csv:inference
 nominal GDP,nominal ÜDM,FR1_holdout_validation.csv:variable
-"non-oil GDP, base add-factors decay at rho","qeyri-neft ÜDM, baza düzəliş əmsalları ρ ilə sönür",FR1_addfactor_sensitivity.csv:Unnamed: 0
+"non-oil GDP, base add-factors decay at a fixed half-life","qeyri-neft ÜDM, baza düzəliş əmsalları sabit yarımparçalanma müddəti ilə sönür",FR1_addfactor_sensitivity.csv:Unnamed: 0
 "non-oil GDP, constant base add-factors","qeyri-neft ÜDM, sabit baza düzəliş əmsalları",FR1_addfactor_sensitivity.csv:Unnamed: 0
 non-oil investment,qeyri-neft investisiyaları,FR1_holdout_validation.csv:variable
+non-oil revenue,qeyri-neft gəlirləri,FR1_v23_fiscal_diagnosis.csv:item
 oil GDP + non-oil GDP = GDP,neft-qaz ÜDM + qeyri-neft ÜDM = ÜDM,FR1_identity_checks.csv:identity
+oil revenue,neft-qaz gəlirləri,FR1_v23_fiscal_diagnosis.csv:item
 population (unit elasticity),əhali (vahid elastiklik),FR1_sector_decomposition.csv:sütun adı;FR1_sector_decomposition_all.csv:sütun adı
+pre-v2.2 model,v2.2-dən əvvəlki model,FR1_v22_macro_candidates.csv:variant
 real GDP,real ÜDM,FR1_holdout_validation.csv:variable
-"real GDP, base add-factors decay at rho","real ÜDM, baza düzəliş əmsalları ρ ilə sönür",FR1_addfactor_sensitivity.csv:Unnamed: 0
+"real GDP, base add-factors decay at a fixed half-life","real ÜDM, baza düzəliş əmsalları sabit yarımparçalanma müddəti ilə sönür",FR1_addfactor_sensitivity.csv:Unnamed: 0
 "real GDP, constant base add-factors","real ÜDM, sabit baza düzəliş əmsalları",FR1_addfactor_sensitivity.csv:Unnamed: 0
 real consumption,real istehlak,FR1_holdout_validation.csv:variable
 real non-oil GDP,real qeyri-neft ÜDM,FR1_holdout_validation.csv:variable
+"real oil revenue vs real state investment, Adverse / Baseline 2030 - 1 (%)","real neft gəlirləri (fərq sütunu) və real dövlət investisiyası (Mənfi sütunu), Mənfi / Əsas 2030 − 1 (%)",FR1_v23_fiscal_diagnosis.csv:item
 rejected/free,rədd edilib / sərbəst,FR1_holdout_coefficients.csv:restriction_cut;FR1_holdout_coefficients.csv:restriction_full
 residual (interaction),qalıq (qarşılıqlı təsir),FR1_sector_decomposition.csv:sütun adı;FR1_sector_decomposition_all.csv:sütun adı
 retail turnover,pərakəndə dövriyyə,FR1_regional_elasticities.csv:equation
 scenario TFP boost,ssenari TFP əlavəsi,FR1_sector_decomposition.csv:sütun adı;FR1_sector_decomposition_all.csv:sütun adı
+spending cut per AZN of revenue lost,itirilən hər manat gəlirə düşən xərc azalması (manat),FR1_v23_fiscal_diagnosis.csv:item
 state investment,dövlət investisiyaları,FR1_holdout_validation.csv:variable
 sum 11 sector VA + net taxes = GDP,11 sektorun ƏD cəmi + xalis vergilər = ÜDM,FR1_identity_checks.csv:identity
 tax receipts,vergi daxilolmaları,FR1_regional_elasticities.csv:equation
@@ -239,3 +274,6 @@ transport VA,nəqliyyat ƏD,FR1_holdout_validation.csv:variable
 trd+tou+tra+ict+oth = services VA,ticarət + turizm + nəqliyyat + İKT + digər = xidmətlərin ƏD,FR1_identity_checks.csv:identity
 trend (deterministic),deterministik trend,FR1_sector_decomposition.csv:sütun adı;FR1_sector_decomposition_all.csv:sütun adı;FR1_trend_share.csv:sütun adı
 trend share of growth (%),trendin artımdakı payı (%),FR1_trend_share.csv:sütun adı
+v2.2 model (adopted changes),v2.2 modeli (qəbul edilmiş dəyişikliklər),FR1_v22_macro_candidates.csv:variant
+v2.2 model (before v2.3),v2.2 modeli (v2.3-dən əvvəl),FR1_v23_candidates.csv:variant;FR1_v23_forecast_checks.csv:variant
+v2.3 model (adopted changes),v2.3 modeli (qəbul edilmiş dəyişikliklər),FR1_v23_candidates.csv:variant;FR1_v23_forecast_checks.csv:variant

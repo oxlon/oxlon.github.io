@@ -1,3 +1,5 @@
+> **Azərbaycan dilində:** [az/FR5_Metodologiya.md](az/FR5_Metodologiya.md)
+
 # FR5 — Paid services rendered to the population
 ## Structural econometric methodology and five-year forecast
 
@@ -9,22 +11,64 @@ Companion to `FR5.ipynb`. Fourth in a linked set: **FR1** (sector output and the
 
 ---
 
+<!-- AUTO:v22_note -->
+## v2.2 (2026-10-05): competitors from the Ministry's macro module
+
+The macro module explains real paid-services growth by real final-consumption growth (its U ≈ 0.60), and the Ministry's own workbook
+(`MOE SOCIAL.xlsx` eq8, copied to `data/macro_module/fr345_ministry_equations_catalog.csv`) uses Δln paid services = −0.0055 +
+1.07 Δln trade + 0.38 Δln wage. Both forms (growth forms, no lagged dependent variable) and the Ministry's published coefficients
+were scored with E1's own rules: pre-cut origins 2011–2017 (scored ≤ 2019) and the untouched 2020–2025 window (2020–21 excluded).
+`FR5_macro_module_competition.csv`:
+
+| specification | selection RMSE % | DM p vs E1 | test RMSE % | U (RW) | U (CG) | 2025 error % | decision |
+|---|---|---|---|---|---|---|---|
+| M1 growth: real household consumption per head | 20.32 | 0.000 | 12.61 | 0.99 | 0.68 | -19.1 | rejected |
+| M2 growth: Ministry form, re-estimated (trade + wage) | 22.76 | 0.011 | 33.30 | 2.61 | 1.79 | +21.8 | rejected |
+| M3 Ministry equation, published coefficients (not re-estimated) | 38.01 | 0.001 | 50.32 | 3.95 | 2.70 | +42.4 | rejected |
+| reference: E1 (income + relative price), re-estimated to 2019 | 7.18 |  | 9.77 | 0.77 | 0.52 | -2.8 | reference |
+| reference: hold-out B procedure (specification re-selected at 2019) |  |  | 12.82 | 1.01 | 0.69 | -1.4 | reference |
+
+**Nothing is adopted.** The consumption form (elasticity 1.71, se 0.27) beats the hold-out *procedure* result quoted
+before (U 1.01) only marginally and loses to E1 itself re-estimated to 2019 (U 0.77 / 0.52); it is far worse on the
+pre-cut origins and ends 2025 -19% off; the Ministry form is worse still (with its published coefficients, which use the
+test years, U 3.95). Registered as `FR5.M1_cons_growth`, `FR5.M2_ministry_reest`, `FR5.M3_ministry_fixed` (rejected).
+
+**Share models — no-change behaviour.** With κ = 512 shrinkage and 2025 anchoring the shares are close to a no-change path: 2025→2030
+the median type share moves 0.02 pp (max 0.29 pp, household services), 12 of 13 types move < 0.1 pp, and
+the 2020–2025 hold-out U vs the random walk is 1.00 for 11 types (`FR5_share_change_check.csv`). This is the selected
+outcome of the pre-cut κ search, not an own-history model: the type paths are driven by the aggregate and the type prices.
+<!-- /AUTO:v22_note -->
+
+<!-- AUTO:v23_note -->
+## v2.3 (2026-10-05): add-factor decay with a fixed half-life (no estimated residual AR)
+
+Up to v2.2 the Part 17 sensitivity "add-factors decay" let the 2025 add-factors of E1, the share equations and the two splits fade
+at each equation's estimated first-order residual autocorrelation ρ̂ (E1 ρ̂ = 0.59) — an estimated AR(1) coefficient inside
+a scenario path, which the client's constraint excludes. From v2.3 the decay is **fixed, not estimated**: 0.5^(h/H), h = years
+after 2025, half-life **H = 1 year** (0.50 a year; the project's partial-year rule). H is the engine lever `addf_half_life`
+(0.25–10 years, active only with `addf_decay`). ρ̂ is still reported as a diagnostic only. The scenarios keep constant
+add-factors and are unchanged. 2030 total volume under the decay sensitivity: −492 million manat
+(−4.62%) vs Baseline; v2.2 (decay at ρ̂): −483 (−4.44%).
+<!-- /AUTO:v23_note -->
+
+---
+
 ## v2 (2026-10-05): tənliklər reyestri, ssenari mühərriki, dayanıqlıq
 
 <!-- AUTO:v2 -->
-**Tənliklər reyestri** (`output/FR5_equations.json`): 81 tənlik, onlardan 15-i proqnozda istifadə
+**Tənliklər reyestri** (`output/FR5_equations.json`): 84 tənlik, onlardan 15-i proqnozda istifadə
 olunur — E1 (gəlir + nisbi qiymət, DOLS(0: contemporaneous dx), η = 1.155, ε = -0.182), proqnoz sistemindəki 12 büzülmüş Engel meyli
 (κ = 512, seçim pəncərələri ≤2019) və iki sabit institusional pay. Qeydiyyatda həmçinin: Tier 1 namizədləri (yalnız gəlir, deflyasiya
 edilmiş gəlir, gəlir + trend, yalnız trend, artım forması) və E1-in fərq forması, Part 9-un statik alternativləri, 12 pay tənliyinin
 səviyyə (DOLS) və fərq formaları, qiymətlə genişləndirilmiş MNL, LA-AIDS (SUR, homogenlik + simmetriya), bölgü namizədləri (gəlir,
 trend). Hər OLS/DOLS tənliyi statsmodels ilə yenidən qiymətləndirilib və notebook-un qiymətləri ilə yoxlanılıb (uyğunsuzluq: 0).
-Dayanıqlıq hökmləri (bütün tənliklər): qeyri-stabil 47, qismən stabil 33, stabil 1; proqnozda istifadə olunanlar: qismən stabil 15 (büzülmüş meyllər və sabit
+Dayanıqlıq hökmləri (bütün tənliklər): qeyri-stabil 49, qismən stabil 34, stabil 1; proqnozda istifadə olunanlar: qismən stabil 15 (büzülmüş meyllər və sabit
 paylar üçün rekursiv testlər tətbiq olunmur; E1: rekursiv: c20 işarəsi yolun ilk yarısında dəyişir; bir ili çıxarmaqla: c20 işarəsi dəyişir; rekursiv: c21 işarəsi yolun ilk yarısında dəyişir).
 
 **Ssenari mühərriki** (`microlib/engines/fr5.py`, `_fr5_core.py`; vəziyyət `output/engine/FR5_state.json` + `.npz`): Part 14-ün `solve()`
 funksiyası köçürülüb. Girişlər: 4 FR1 yolu (`fr1:rhhdisp`, `fr1:p_cons`, `fr1:p_serv_hh`,
 `fr1:pop`) və 13 növ üzrə nisbi qiymət yolu, 14 redaktə edilə bilən əmsal (η, ε və 12 büzülmüş
-Engel meyli; SE və 95% interval reyestrdən), 5 rıçaq (növ qiymət qaydası, η seçimi, xidmətlərin nisbi qiyməti, əhali
+Engel meyli; SE və 95% interval reyestrdən), 6 rıçaq (növ qiymət qaydası, η seçimi, xidmətlərin nisbi qiyməti, əhali
 artımı, düzəliş əmsalının sönməsi). `selftest()`: bütün 3 ssenaridə CSV çıxışları təkrarlanır (maks. nisbi fərq
 2.5e-16); rıçaqlar Part 17 rıçaq cədvəlini dəqiq təkrarlayır. Bir ssenari < 0.1 s.
 
@@ -34,7 +78,7 @@ həcm, deflyator və artım templəri, 13 növün həcmi, dəyəri, payı, defly
 `FR5_not_forecast.csv`: regional sıralar (milli sıra ilə uzlaşmır, Part 13).
 
 **Əmsal həssaslığı** (`FR5_coef_sensitivity.csv`, ±1 SE, 2030, Əsas; başlıq: cəmi həcm və dəyər, 2030 dəyərinə görə ən böyük üç növ —
-Rabitə xidmətləri, Kommunal xidmətlər, Nəqliyyat xidmətləri): ən böyük təsirlər — Pullu xidmətlər, cəmi: nominal dəyər: FR5.E1_income_relprice|ln_income_pc (-1.85% / +1.89%); Rabitə xidmətləri: real həcm: FR5.E1_income_relprice|ln_income_pc (-1.86% / +1.90%); Pullu xidmətlər, cəmi: real həcm: FR5.E1_income_relprice|ln_income_pc (-1.85% / +1.89%); Nəqliyyat xidmətləri: real həcm: FR5.E1_income_relprice|ln_income_pc (-1.89% / +1.93%); Kommunal xidmətlər: real həcm: FR5.E1_income_relprice|ln_income_pc (-1.89% / +1.93%). Mətnlər: `FR5_strings_az.csv` (433 ingiliscə mətn → azərbaycanca). Kernel: `miis-model` (Python 3.13).
+Rabitə xidmətləri, Kommunal xidmətlər, Nəqliyyat xidmətləri): ən böyük təsirlər — Pullu xidmətlər, cəmi: nominal dəyər: FR5.E1_income_relprice|ln_income_pc (-1.65% / +1.67%); Rabitə xidmətləri: real həcm: FR5.E1_income_relprice|ln_income_pc (-1.65% / +1.68%); Pullu xidmətlər, cəmi: real həcm: FR5.E1_income_relprice|ln_income_pc (-1.65% / +1.67%); Nəqliyyat xidmətləri: real həcm: FR5.E1_income_relprice|ln_income_pc (-1.68% / +1.71%); Kommunal xidmətlər: real həcm: FR5.E1_income_relprice|ln_income_pc (-1.68% / +1.71%). Mətnlər: `FR5_strings_az.csv` (446 ingiliscə mətn → azərbaycanca). Kernel: `miis-model` (Python 3.13).
 <!-- /AUTO:v2 -->
 
 ---
@@ -45,7 +89,7 @@ Numbers in §7–§11 are **generated by the notebook** (last code cell) from th
 that produced them, between `AUTO` markers, so the document cannot drift from the outputs.
 
 <!-- AUTO:rev -->
-Current headline (this run): Tier 1 = income + relative price, η = 1.155; Tier 2 = MNL: Engel term, level slope if coherent else difference-form with Engel-slope shrinkage κ = 512; volume +4.49% and value +8.08% a year 2026–2030; E1 sign-rejection rate 22.8%; 54 FR5 CSV outputs.
+Current headline (this run): Tier 1 = income + relative price, η = 1.155; Tier 2 = MNL: Engel term, level slope if coherent else difference-form with Engel-slope shrinkage κ = 512; volume +4.04% and value +7.58% a year 2026–2030; E1 sign-rejection rate 22.8%; 56 FR5 CSV outputs.
 <!-- /AUTO:rev -->
 
 What changed and why:
@@ -178,7 +222,8 @@ process. The lag-like constructs are accounting or inference devices:
 | Chained volume indices | §4 | The official identity $Q_t = Q_{t-1} I_t$ between a published level and a published index |
 | DOLS leads/lags of **regressor** differences | every level relation | Endogeneity correction; the dependent variable's lags never enter |
 | Engle–Granger residual ADF (maxlag 1) | cointegration tests | A test statistic, not a model |
-| Residual autocorrelation ρ̂ | add-factor sensitivity only | Never a regressor |
+| Residual autocorrelation ρ̂ | diagnostic tables only | A diagnostic statistic (like DW); since v2.3 used in no forecast, scenario or sensitivity path; never a regressor |
+| Add-factor decay (sensitivity only) | Part 17 | A **fixed** one-year half-life (0.5 a year; the project's partial-year rule); nothing is estimated |
 | Historical residual paths $u_{s+h}-u_s$ | fan charts | Resampled observed deviations; no autocorrelation is estimated |
 | Cumulation of a growth-form candidate from the anchor | Tier-1 candidate | The chain identity $Q_t = Q_{t-1}(1+g_t)$, not a fitted lag |
 
@@ -260,7 +305,7 @@ $Y^d$ is FR1 real disposable income (consumer deflator); $Q$ the paid-services v
 deflator); $P^s/P$ the wedge between the two.
 
 <!-- AUTO:e1 -->
-**Chosen: income + relative price.** Estimated by DOLS(0: contemporaneous dx) on 2005-2025 (df 13): ln_income_pc +1.155 (s.e. 0.116), ln_relprice -0.182 (s.e. 0.248), c20 -0.273 (s.e. 0.041), c21 -0.167 (s.e. 0.044). **eg_coint_p = 0.41** — not cointegrating; t-statistics descriptive. Difference form: η = 1.44 (95% CI 0.86–2.02); the level estimate is **inside** it (coherent). 2025 add-factor +0.049; residual ρ̂ 0.59 (sensitivity only).
+**Chosen: income + relative price.** Estimated by DOLS(0: contemporaneous dx) on 2005-2025 (df 13): ln_income_pc +1.155 (s.e. 0.116), ln_relprice -0.182 (s.e. 0.248), c20 -0.273 (s.e. 0.041), c21 -0.167 (s.e. 0.044). **eg_coint_p = 0.41** — not cointegrating; t-statistics descriptive. Difference form: η = 1.44 (95% CI 0.86–2.02); the level estimate is **inside** it (coherent). 2025 add-factor +0.049; residual first-order autocorrelation 0.59 (diagnostic only).
 
 | estimate | eta | se | eg_coint_p | df | p(η = 1) |
 |---|---|---|---|---|---|
@@ -341,7 +386,7 @@ differ little from proportional growth (§10): the data do not support a sharper
 ### 8.5 Institutional splits
 
 <!-- AUTO:splits -->
-Both splits are forecast as constant shares at their 2025 values (individual entrepreneurs 24.87%, state 22.19%). 2030 baseline values: legal entities 16,569, individual entrepreneurs 5,486, state 4,895, non-state 17,160 mn AZN. 2030 90% bands: individual-entrepreneur share 20.1–28.9%, state share 19.7–28.2%.
+Both splits are forecast as constant shares at their 2025 values (individual entrepreneurs 24.87%, state 22.19%). 2030 baseline values: legal entities 16,192, individual entrepreneurs 5,361, state 4,783, non-state 16,770 mn AZN. 2030 90% bands: individual-entrepreneur share 20.1–28.9%, state share 19.7–28.2%.
 <!-- /AUTO:splits -->
 
 ---
@@ -377,7 +422,7 @@ total; constant-growth benchmark = five years before the cut, 2008–13 being th
 <!-- /AUTO:holdout -->
 
 **FR1 comparison.** <!-- AUTO:fr1gap -->
-FR5 differs from FR1's own forecast of this series by +0.80% in 2026, +1.09% in 2030, and at most +1.89% (2028). Both start from the same 2025 value and use the same FR1 drivers but are different equations: the gap is a genuine modelling difference, not corroboration.
+FR5 differs from FR1's own forecast of this series by +0.67% in 2026, +1.06% in 2030, and at most +1.87% (2028). Both start from the same 2025 value and use the same FR1 drivers but are different equations: the gap is a genuine modelling difference, not corroboration.
 <!-- /AUTO:fr1gap -->
 
 ---
@@ -387,10 +432,10 @@ FR5 differs from FR1's own forecast of this series by +0.80% in 2026, +1.09% in 
 <!-- AUTO:forecast -->
 | | 2025 | 2030 | per year |
 |---|---|---|---|
-| Volume, mn AZN at 2015 prices | 8,735 | 10,880 | **+4.49%** |
-| Value, mn AZN current prices | 14,957 | 22,055 | **+8.08%** |
+| Volume, mn AZN at 2015 prices | 8,735 | 10,650 | **+4.04%** |
+| Value, mn AZN current prices | 14,957 | 21,554 | **+7.58%** |
 
-Annual volume growth: 2026 +0.83%, 2027 +6.24%, 2028 +5.47%, 2029 +5.06%, 2030 +4.94%. FR1 baseline real income per head: 2026 +0.20%, 2027 +4.76%, 2028 +4.11%, 2029 +3.77%, 2030 +3.66%; services deflator growth +3.43% a year on average; relative price of services -0.048 log points by 2030.
+Annual volume growth: 2026 +0.64%, 2027 +5.55%, 2028 +4.70%, 2029 +5.01%, 2030 +4.41%. FR1 baseline real income per head: 2026 +0.04%, 2027 +4.17%, 2028 +3.46%, 2029 +3.72%, 2030 +3.21%; services deflator growth +3.40% a year on average; relative price of services -0.047 log points by 2030.
 <!-- /AUTO:forecast -->
 
 **Volume growth by type against its own history** (% a year):
@@ -398,30 +443,30 @@ Annual volume growth: 2026 +0.83%, 2027 +6.24%, 2028 +5.47%, 2029 +5.06%, 2030 +
 <!-- AUTO:types -->
 | type | label | forecast avg 2026–30 % | max forecast year % | 2010–19 % | 2021–25 % | best 5-yr avg % | window | exceeds best 5-yr |
 |---|---|---|---|---|---|---|---|---|
-| housing | Housing services | 4.64 | 6.46 | -1.06 | 20.59 | 51.93 | 2005-2010 | no |
-| other | Other paid services | 4.64 | 6.46 | 7.65 | 7.30 | 100.30 | 2006-2011 | no |
-| legal_bank | Legal and banking services | 4.60 | 6.40 | -4.01 | 8.60 | 78.20 | 2005-2010 | no |
-| sport | Physical culture and sport | 4.59 | 6.39 | 8.04 | 13.08 | 79.97 | 2005-2010 | no |
-| culture | Culture services | 4.59 | 6.39 | 7.36 | 14.47 | 61.25 | 2005-2010 | no |
-| sanatoria | Sanatoria and health services | 4.59 | 6.39 | 6.58 | 24.92 | 44.52 | 2005-2010 | no |
-| education | Educational services | 4.58 | 6.38 | 6.81 | 22.90 | 45.52 | 2005-2010 | no |
-| tourism | Tourist and excursion services | 4.58 | 6.38 | 11.47 | 30.77 | 34.46 | 2006-2011 | no |
-| utilities | Public utility services | 4.58 | 6.37 | 5.92 | 7.15 | 9.31 | 2005-2010 | no |
-| transport | Transport services | 4.57 | 6.36 | 6.18 | 16.14 | 25.94 | 2005-2010 | no |
-| medical | Medical services | 4.56 | 6.34 | 15.05 | 15.64 | 51.14 | 2005-2010 | no |
-| communication | Communication services | 4.51 | 6.27 | 9.09 | 6.95 | 22.19 | 2005-2010 | no |
-| household | Household (personal) services | 3.88 | 5.36 | 3.43 | 11.25 | 16.39 | 2005-2010 | no |
-| TOTAL | TOTAL | 4.49 | 6.24 | 4.67 | 9.87 | 29.34 | 2003-2008 | no |
+| housing | Housing services | 4.18 | 5.74 | -1.06 | 20.59 | 51.93 | 2005-2010 | no |
+| other | Other paid services | 4.18 | 5.74 | 7.65 | 7.30 | 100.30 | 2006-2011 | no |
+| legal_bank | Legal and banking services | 4.14 | 5.69 | -4.01 | 8.60 | 78.20 | 2005-2010 | no |
+| sport | Physical culture and sport | 4.14 | 5.68 | 8.04 | 13.08 | 79.97 | 2005-2010 | no |
+| culture | Culture services | 4.13 | 5.68 | 7.36 | 14.47 | 61.25 | 2005-2010 | no |
+| sanatoria | Sanatoria and health services | 4.13 | 5.68 | 6.58 | 24.92 | 44.52 | 2005-2010 | no |
+| education | Educational services | 4.13 | 5.67 | 6.81 | 22.90 | 45.52 | 2005-2010 | no |
+| tourism | Tourist and excursion services | 4.13 | 5.67 | 11.47 | 30.77 | 34.46 | 2006-2011 | no |
+| utilities | Public utility services | 4.12 | 5.66 | 5.92 | 7.15 | 9.31 | 2005-2010 | no |
+| transport | Transport services | 4.12 | 5.65 | 6.18 | 16.14 | 25.94 | 2005-2010 | no |
+| medical | Medical services | 4.11 | 5.64 | 15.05 | 15.64 | 51.14 | 2005-2010 | no |
+| communication | Communication services | 4.06 | 5.58 | 9.09 | 6.95 | 22.19 | 2005-2010 | no |
+| household | Household (personal) services | 3.50 | 4.77 | 3.43 | 11.25 | 16.39 | 2005-2010 | no |
+| TOTAL | TOTAL | 4.04 | 5.55 | 4.67 | 9.87 | 29.34 | 2003-2008 | no |
 
 Flagged (forecast average above the type's own best five-year average): none.
 <!-- /AUTO:types -->
 
 **Uncertainty.** <!-- AUTO:bands -->
-*Caution: only 9 joint historical residual paths (start years 2006–2014) are usable; the bands are indicative.* 1,000 replications (centred paths, parameter draws with sign rejection — 22.8% of E1 draws rejected — and 500 FR1 macro draws): 2030 volume 90% band 8,974–13,546 mn AZN (median 10,895); average volume growth +0.5% to +9.2% (median +4.52%); average value growth +0.9% to +16.3% (median +8.30%). FR5's own residual and parameter uncertainty alone: +2.6% to +7.1%. Variant pooling E1 and split paths over their own full samples: volume +0.0% to +10.9%, value +0.7% to +17.4%. Point forecasts inside the inter-quartile band: volume 5/5 years, value 5/5, shares 64/65 type-years.
+*Caution: only 9 joint historical residual paths (start years 2006–2014) are usable; the bands are indicative.* 1,000 replications (centred paths, parameter draws with sign rejection — 22.8% of E1 draws rejected — and 500 FR1 macro draws): 2030 volume 90% band 8,589–14,144 mn AZN (median 10,619); average volume growth -0.3% to +10.1% (median +3.98%); average value growth +1.5% to +15.7% (median +7.74%). FR5's own residual and parameter uncertainty alone: +2.2% to +6.7%. Variant pooling E1 and split paths over their own full samples: volume -0.6% to +11.2%, value +1.3% to +16.9%. Point forecasts inside the inter-quartile band: volume 5/5 years, value 5/5, shares 64/65 type-years.
 <!-- /AUTO:bands -->
 
 <!-- AUTO:scen -->
-**Scenarios** (2030 volume): Baseline 10,880, Adverse 10,281, Reform 11,483 mn AZN — a 11.7% span; volume growth Baseline +4.49%, Adverse +3.31%, Reform +5.62%; value growth Baseline +8.08%, Adverse +6.65%, Reform +9.46%.
+**Scenarios** (2030 volume): Baseline 10,650, Adverse 10,096, Reform 11,191 mn AZN — a 10.9% span; volume growth Baseline +4.04%, Adverse +2.94%, Reform +5.08%; value growth Baseline +7.58%, Adverse +6.23%, Reform +8.85%.
 <!-- /AUTO:scen -->
 
 ## 11. Levers
@@ -429,18 +474,18 @@ Flagged (forecast average above the type's own best five-year average): none.
 <!-- AUTO:levers -->
 | lever | volume 2030 | volume vs baseline % | value vs baseline % |
 |---|---|---|---|
-| chosen spec (income + relative price), eta = 1.44: its difference-form estimate | 11,394 | 4.72 | 4.72 |
-| alternative specification: income deflated by service price (DOLS 2005-2025; incoherent), eta = 0.43, eps = -0.43 | 9,789 | -10.03 | -10.03 |
-| alternative specification: income only (DOLS 2000-2025), eta = 1.67, eps = +0.00 | 11,714 | 7.66 | 7.66 |
-| services relative price 10% higher (tariff lever) | 10,693 | -1.72 | 8.11 |
-| services relative price 10% lower | 11,091 | 1.94 | -8.26 |
-| population growth 0.3pp lower | 10,905 | 0.23 | 0.23 |
-| population growth 0.3pp higher | 10,855 | -0.23 | -0.23 |
-| add-factors decay at residual rho (E1 rho = 0.59) | 10,397 | -4.44 | -4.44 |
-| type relative prices: 2020-25 drift continued, damped 0.5 | 10,880 | 0.00 | 0.00 |
-| type relative prices: administered tariffs +2% a year | 10,880 | 0.00 | 0.00 |
+| chosen spec (income + relative price), eta = 1.44: its difference-form estimate | 11,094 | 4.17 | 4.17 |
+| alternative specification: income deflated by service price (DOLS 2005-2025; incoherent), eta = 0.43, eps = -0.43 | 9,708 | -8.84 | -8.84 |
+| alternative specification: income only (DOLS 2000-2025), eta = 1.67, eps = +0.00 | 11,361 | 6.68 | 6.68 |
+| services relative price 10% higher (tariff lever) | 10,467 | -1.72 | 8.11 |
+| services relative price 10% lower | 10,856 | 1.94 | -8.26 |
+| population growth 0.3pp lower | 10,675 | 0.23 | 0.23 |
+| population growth 0.3pp higher | 10,625 | -0.23 | -0.23 |
+| add-factors decay, fixed half-life 1 year | 10,158 | -4.62 | -4.62 |
+| type relative prices: 2020-25 drift continued, damped 0.5 | 10,650 | 0.00 | 0.00 |
+| type relative prices: administered tariffs +2% a year | 10,650 | 0.00 | 0.00 |
 
-Type relative-price levers change only the volume/price split within types; e.g. communication 2026 volume growth +0.83% in the baseline and +6.31% if its 2020–25 price drift were continued.
+Type relative-price levers change only the volume/price split within types; e.g. communication 2026 volume growth +0.64% in the baseline and +6.10% if its 2020–25 price drift were continued.
 <!-- /AUTO:levers -->
 
 Alternative specifications change the equation, not a parameter, and are labelled as such. The

@@ -1,0 +1,82 @@
+{
+ "_comment": "Frozen reference values for microlib.docrefresh. 'v21' entries are the v2.1 run's figures (the BEFORE snapshot of output/ taken before the v2.2 run), quoted as the old value next to the v2.2 one. 'v22' entries are the v2.2 run's figures (the BEFORE snapshot of output/ taken on 2026-10-05 before the v2.3 run): the v2.2 note quotes them as the v2.2 effect, and the v2.3 note as the value before v2.3. They must NOT be updated on new data. Every other figure is read from the current output/ (and data/) files on each run; run-dependent figures that no CSV holds (solver iterations, the January-April anchor, fan diagnostics, the v2.2 comparison figures) come from output/FR1_doc_figures.json (FR1.ipynb Part 18.17).",
+ "FR1": {
+  "v21": {
+   "avg_growth_rgdp": {
+    "Baseline": 2.395476,
+    "Adverse": 1.369613,
+    "Reform": 3.324954
+   },
+   "avg_growth_rgdpnon": {
+    "Baseline": 3.986276,
+    "Adverse": 2.901712,
+    "Reform": 5.033049
+   },
+   "brent_mult_rgdp_2030": -0.483975,
+   "hc_share_2030_baseline": 14.450704,
+   "baseline_2030": {
+    "rgdp": 70168.822002,
+    "rgdpoil": 11960.556985,
+    "rgdpnon": 62266.265474,
+    "gdp_n": 176795.06282,
+    "cpi": 238.041896,
+    "rhhdisp": 48771.856578
+   },
+   "balance_2026_baseline": 947.531774,
+   "rinv_state_growth_2026_baseline": 1.5,
+   "oil_2030_baseline_mt": 22.8
+  },
+  "v22": {
+   "avg_growth_rgdp": {
+    "Baseline": 2.896401764591028,
+    "Adverse": 1.7649879597806617,
+    "Reform": 3.8463256979676785
+   },
+   "avg_growth_rgdpnon": {
+    "Baseline": 4.1964544096462,
+    "Adverse": 3.091059404753116,
+    "Reform": 5.231606121553134
+   },
+   "baseline_2030": {
+    "rgdp": 71902.05240004885,
+    "rgdpoil": 13370.39753373915,
+    "rgdpnon": 62898.08246904139,
+    "gdp_n": 184620.18317467725,
+    "cpi": 238.7376353267801,
+    "rhhdisp": 49214.505904787395,
+    "rcons": 53997.48935714674,
+    "rm_non": 14767.77815545629,
+    "emp": 5273.647484462459,
+    "rexp_cur": 11827.512906687234
+   },
+   "balance_gdp_2030": {
+    "Baseline": 0.22037629443476697,
+    "Adverse": 1.100614340686593,
+    "Reform": -0.12057405255725073
+   },
+   "balance_2026_baseline": 635.8040230299986,
+   "rinv_state_growth_2026_baseline": 3.9028695845195527,
+   "n_equations": 157,
+   "n_used": 47,
+   "n_catalog": 478,
+   "addf_rho_avg_growth": {
+    "rgdp": {
+     "Baseline": 2.416022,
+     "Adverse": 1.327879,
+     "Reform": 3.328862
+    },
+    "rgdpnon": {
+     "Baseline": 3.666019,
+     "Adverse": 2.623782,
+     "Reform": 4.655628
+    }
+   }
+  }
+ },
+ "FR4": {
+  "v21": {
+   "sigma": 0.913,
+   "budget_org_2030_baseline": 579.450236
+  }
+ }
+}

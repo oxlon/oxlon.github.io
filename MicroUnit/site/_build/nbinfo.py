@@ -10,7 +10,7 @@ WHAT = {
     "FR1": "Sektorlar və bazarlar üzrə struktur sistem (AZSEM-FR1); üç makro ssenari və FR1 çəkilişləri — digər "
            "dəftərlərin girişi.",
     "FR3": "Orta aylıq əmək haqqı: tənliklər, 2026 cari qiymətləndirməsi, iki bölgünün birgə uzlaşdırılması, zolaqlar.",
-    "FR4": "Məşğulluq: pay sistemi, dövlət/büdcə/neft blokları, hold-out, rıçaqlar və zolaqlar.",
+    "FR4": "Məşğulluq: pay sistemi, dövlət/büdcə/neft blokları, nümunədən kənar yoxlama, rıçaqlar və zolaqlar.",
     "FR5": "Pullu xidmətlər: aqreqat tələb tənliyi və on üç növ üzrə multinomial-logit pay sistemi.",
     "FR10": "Müəssisələr: A qatı (sahələr, regionlar, məhsullar), proqnoz, erkən xəbərdarlıq; B qatı mühərriki və "
             "əvəzetmə testləri.",

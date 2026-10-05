@@ -1,0 +1,6 @@
+$ /Users/econ0757/venvs/miis-model/bin/jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 --ExecutePreprocessor.kernel_name=miis-model FR12.ipynb
+[NbConvertApp] Converting notebook FR12.ipynb to notebook
+[NbConvertApp] Writing 1760319 bytes to FR12.ipynb
+
+$ /Users/econ0757/venvs/miis-model/bin/python3 -m microlib.docgen_az_fr10_fr12 FR12
+docs/az/FR12_Metodologiya.md: 33 AUTO blocks synced from docs/FR12_Methodology.md (changed); 0 generated text unit(s) without an Azerbaijani template

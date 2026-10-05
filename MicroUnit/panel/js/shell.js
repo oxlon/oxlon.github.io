@@ -1,72 +1,65 @@
-/* shell.js — tabs, hash router, scenario bar, search palette (Ctrl K), drawer, 1-minute tour. */
+/* shell.js — tabs, hash router, scenario bar, search palette (Ctrl K), modal dialog, 1-minute tour. */
 (function () {
   'use strict';
-  var U = window.U, $ = U.$, META = window.MICRO.META;
+  var U = window.U, $ = U.$, META = U.META;
   U.pages = {};
   U.TABS = [['', 'Başlanğıc', 'home']].concat(META.frs.map(function (f) { return [f.slug, f.c + ' ' + f.t, '']; }))
-    .concat([['ssenari', 'Ssenarilər', ''], ['cedvel', 'Proqnoz cədvəlləri', ''], ['sintetik', 'Sintetik', ''], ['beledci', 'Bələdçi', '']]);
+    .concat([['ssenari', 'Ssenarilər', 'sliders'], ['hesabat', 'Hesabat', 'doc'], ['cedvel', 'Cədvəllər', 'table'], ['sintetik', 'Sintetik', 'flask'], ['beledci', 'Bələdçi', 'book']]);
   var ROUTE = '';
   function renderTabs() {
     var cur = ROUTE.split('/')[0] || '';
     $('#tabs').innerHTML = U.TABS.map(function (t) {
       var on = cur === t[0];
       return '<a class="tab' + (on ? ' on' : '') + '" href="#/' + t[0] + '" data-tour="tab-' + (t[0] || 'home') + '"' + (on ? ' aria-current="page"' : '') +
-        ' title="' + U.esc(t[1]) + '">' + (t[2] ? U.icon(t[2]) : '') + '<span>' + U.esc(t[1]) + '</span></a>';
+        ' title="' + U.esc(t[1]) + '">' + (t[2] ? U.icon(t[2]) : '') + '<span>' + (/^FR\d/.test(t[1]) ? U.esc(t[1].split(' ')[0]) + '<span class="tn"> ' + U.esc(t[1].split(' ').slice(1).join(' ')) + '</span>' : U.esc(t[1])) + '</span></a>';
     }).join('');
     var on = $('#tabs .tab.on'); if (on && on.scrollIntoView) on.scrollIntoView({ block: 'nearest', inline: 'nearest' });
   }
   function renderScenBar() {
     var raw = U.scenRaw();
-    $('#scenbar').innerHTML = '<span><b>Ssenari</b> <span class="help" title="FR1-in üç makro ssenarisi bütün modullarda işlədilir. «Hamısı» qrafiklərdə üçünü birlikdə göstərir; cədvəllər onda Əsas ssenarini götürür.">?</span></span>' +
+    $('#scenbar').innerHTML = '<span><b>Ssenari</b> <span class="help" title="FR1-in üç makro ssenarisi bütün modullarda işlədilir. «Hamısı» qrafiklərdə üçünü birlikdə göstərir; cədvəllər bütün ssenariləri verir.">?</span></span>' +
       '<div class="seg" id="scen-seg" role="group" aria-label="Ssenari">' + ['B', 'A', 'R', 'all'].map(function (k) {
-        return '<button data-k="' + k + '" class="' + (raw === k ? 'on' : '') + '">' + (k === 'all' ? 'Hamısı' : U.SCN[k]) + '</button>'; }).join('') + '</div>' +
+        return '<button type="button" data-k="' + k + '" class="' + (raw === k ? 'on' : '') + '">' + (k === 'all' ? 'Hamısı' : U.SCN[k]) + '</button>'; }).join('') + '</div>' +
       '<span class="legend">' + U.SC.map(function (k) { return '<span><i class="dotline" style="background:' + U.SCC[k] + '"></i>' + U.SCN[k] + '</span>'; }).join('') +
-      '<span><i class="dotline" style="background:rgba(14,111,124,.3);height:8px"></i>5–95 % zolağı</span></span>' +
-      '<span class="muted small" style="margin-left:auto">Mikro Model · proqnoz 2026–2030 · ' + META.stamp.date + '</span>';
+      '<span><i class="dotline" style="background:rgba(14,111,124,.3);height:8px"></i>5–95 % zolağı</span><span><i class="impdot"></i>' + U.IMPLAB + '</span></span>' +
+      '<span class="muted small stamp">Mikro Model · proqnoz 2026–2030 · ' + META.stamp.date + '</span>';
     $('#scen-seg').onclick = function (e) { var b = e.target.closest('[data-k]'); if (!b) return; U.setScen(b.getAttribute('data-k')); };
   }
   U.onScen = function () { renderScenBar(); route(true); };
   function route(keep) {
-    ROUTE = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
-    if (!keep) U.closeDrawer();
+    var hq = location.hash.replace(/^#\/?/, '').split('?');
+    ROUTE = hq[0]; U.HQ = new URLSearchParams(hq[1] || '');
     renderTabs();
-    var p = ROUTE.split('/'), v = $('#view'), y = window.scrollY;
-    var fn = U.pages[p[0]] || U.pages[''];
-    if (!U.pages[p[0]] && p[0]) { U.toast('Belə bölmə yoxdur — başlanğıca qayıdıldı'); }
+    var p = ROUTE.split('/').map(function (x) { try { return decodeURIComponent(x); } catch (e) { return x; } });
+    var v = $('#view'), y = window.scrollY;
+    var fn = U.pages[p[0]];
+    if (!fn) { if (p[0]) U.toast('Belə bölmə yoxdur — başlanğıca qayıdıldı'); fn = U.pages['']; }
     v.onclick = null; v.oninput = null; v.onchange = null;
-    fn(v, p);
+    try { fn(v, p); } catch (err) { v.innerHTML = '<div class="card pad"><b>Bölmə açılmadı.</b><p class="small muted">' + U.esc(err.message) + '</p></div>'; if (window.console) console.error(err); }
     if (keep) window.scrollTo(0, y); else window.scrollTo(0, 0);
-    if (keep && !$('#drawer').hidden && U.DR) U.openDrawer(U.DR);
   }
   U.route = route;
+  U.go = function (h) { if (location.hash === h) route(true); else location.hash = h; };
 
-  // ---- drawer -------------------------------------------------------------
-  U.closeDrawer = function () { $('#drawer').hidden = true; $('#scrim').hidden = true; U.DR = null; };
-  U.openDrawer = function (s) {
-    U.DR = s;
-    var I = META.info[s.m] || {}, o = s.o, d = $('#drawer');
-    var hold = o ? '<table class="itbl" style="margin-top:6px"><tbody>' +
-      '<tr><td>Təsadüfi gəzişməyə qarşı Theil U</td><td class="n"><b class="' + (o.rw < 1 ? 'up' : 'down') + '">' + U.nf(o.rw, 2) + '</b></td></tr>' +
-      '<tr><td>' + (o.cgname ? 'Sabit etalona (' + U.esc(o.cgname) + ')' : 'Sabit artıma') + ' qarşı Theil U</td><td class="n"><b class="' + (U.isNum(o.cg) ? (o.cg < 1 ? 'up' : 'down') : '') + '">' + U.nf(o.cg, 2) + '</b></td></tr>' +
-      '<tr><td>Model xətası (RMSE)</td><td class="n">' + U.nf(o.rmse, 2) + '</td></tr><tr><td>Yoxlama pəncərəsi</td><td class="n">' + U.esc(o.win) + '</td></tr></tbody></table>' +
-      '<p class="small muted">U &lt; 1 — model etalondan yaxşıdır (yaşıl); U ≥ 1 — yaxşı deyil (qırmızı). Mənbə: <code>' + U.esc(o.src) + '</code></p>'
-      : '<p class="muted small">Bu sıra üçün ayrıca hold-out nəticəsi ixrac olunmayıb; modulun ümumi yoxlaması «Klassik görünüş»dədir.</p>';
-    d.innerHTML = '<div style="display:flex;gap:10px;align-items:start"><div style="flex:1"><div class="eyebrow">' + s.f + ' · ' + U.esc(s.g) + '</div><h3>' + U.esc(U.label(s)) + '</h3></div><button class="ibtn" id="dr-x" aria-label="Bağla">✕</button></div>' +
-      '<p class="small" style="margin:8px 0">' + '<span class="chip">' + U.esc(s.u || 'vahid göstərilməyib') + '</span> ' + (s.q ? '<span class="chip acc">5–95 % zolağı var</span> ' : '') + (s.nt ? '<span class="chip">' + U.esc(s.nt) + '</span>' : '') + '</p>' +
-      '<h4 style="margin-top:14px">Tərif</h4><p>' + U.esc(I.d || '') + '</p>' +
-      '<h4>Model</h4><p>' + U.esc(I.m || '') + '</p><h4>Sürücülər</h4><p>' + U.esc(I.r || '') + '</p>' +
-      '<h4>Nümunədən kənar yoxlama</h4>' + hold +
-      '<h4 style="margin-top:12px">Bütün ssenarilər, 2026–2030</h4><div class="itbl-wrap">' + U.yearTable(s, true) + '</div>' +
-      '<h4 style="margin-top:12px">Məhdudiyyətlər</h4><ul>' + (I.l || []).map(function (x) { return '<li>' + U.esc(x) + '</li>'; }).join('') + '</ul>' +
-      '<h4>Mənbə faylı</h4><p><a href="../output/' + U.esc(String(s.src).split(' ')[0]) + '">' + U.esc(s.src) + '</a> · <a href="../site/fr/' + s.f.toLowerCase() + '.html">' + s.f + ' — klassik səhifə</a></p>';
-    d.hidden = false; $('#scrim').hidden = false; $('#dr-x').onclick = U.closeDrawer; d.scrollTop = 0;
+  // ---- modal ---------------------------------------------------------------
+  U.openModal = function (html, onClose) {
+    var m = $('#modal'), b = $('#modal-body');
+    b.innerHTML = html; m.hidden = false; $('#scrim').hidden = false; document.body.classList.add('modal-on');
+    U._onClose = onClose; b.scrollTop = 0; var x = $('#modal-x'); if (x) x.focus();
+    return b;
+  };
+  U.closeModal = function (silent) {
+    if ($('#modal').hidden) return;
+    $('#modal').hidden = true; $('#scrim').hidden = true; document.body.classList.remove('modal-on');
+    var f = U._onClose; U._onClose = null; if (f && silent !== true) f();
   };
 
   // ---- palette ------------------------------------------------------------
   var PAL = null, RES = [], SEL = 0;
   function build() {
     PAL = U.TABS.map(function (t) { return { k: 'Bölmə', t: t[1], go: '#/' + t[0] }; });
-    U.S.forEach(function (s) { PAL.push({ k: s.f, t: U.label(s), sub: s.g + (s.u ? ' · ' + s.u : ''), go: '#/' + s.f.toLowerCase() + '/s/' + s.n }); });
+    U.S.forEach(function (s) { PAL.push({ k: s.f, t: s.e, sub: s.g + (s.u ? ' · ' + s.u : '') + ' · ' + s.i, go: U.href(s) }); });
+    (window.MICRO.EQI ? window.MICRO.EQI.rows : []).forEach(function (e) { PAL.push({ k: 'Tənlik', t: e.t, sub: e.id + ' · ' + e.st, go: '#/' + e.f.toLowerCase() + '/tenlik/' + U.enc(e.id) }); });
     META.gloss.forEach(function (g) { PAL.push({ k: 'Termin', t: g[0], sub: g[1].slice(0, 90), go: '#/beledci' }); });
     PAL.forEach(function (e) { e.f = U.fold(e.t + ' ' + (e.sub || '') + ' ' + e.k); });
   }
@@ -78,16 +71,15 @@
   function openPal() { if (!PAL) build(); $('#pal').hidden = false; $('#pal-scrim').hidden = false; var i = $('#pal-in'); i.value = ''; draw(''); i.focus(); }
   function closePal() { $('#pal').hidden = true; $('#pal-scrim').hidden = true; }
   function pick(i) { var e = RES[i]; if (!e) return; closePal(); location.hash = e.go; }
-  U.openPal = openPal;
 
   // ---- tour ---------------------------------------------------------------
   var TOUR = [
-    ['#tabs', 'Bölmələr', 'Başlanğıc, hər tələb (FR) üçün ayrıca bölmə, Ssenarilər, Proqnoz cədvəlləri, Sintetik məlumat və Bələdçi.'],
-    ['#scenbar', 'Ssenari', 'Əsas, Mənfi və ya İslahat ssenarisini seçin — bütün kartlar, qrafiklər və cədvəllər dərhal yenilənir. «Hamısı» üçünü birlikdə göstərir.'],
-    ['[data-tour="tab-fr1"]', 'Tələb bölməsi', 'Solda bütün göstəricilər qruplar üzrə; birini seçin — qrafik və 2026–2030 illər üzrə açıq cədvəl görünür. «Hamısı» qrupun bütün üzvlərini bir cədvəldə verir.'],
-    ['[data-tour="tab-cedvel"]', 'Proqnoz cədvəlləri', 'Bütün modulların bütün proqnoz sıraları bir cədvəldə: süzgəc, axtarış, CSV və Excel ixracı.'],
-    ['#open-pal', 'Sürətli axtarış', 'İstənilən göstəricini tapmaq üçün Ctrl+K (Mac: ⌘K).'],
-    ['#classic', 'Klassik görünüş', 'Metodologiya, məlumat mənbələri və yoxlamalar ətraflı sənəd şəklində.']];
+    ['#tabs', 'Bölmələr', 'Hər tələbin (FR) öz bölməsi, Ssenarilər (öz ssenarinizi qurmaq), Hesabat qurucusu, bütün proqnoz cədvəlləri, sintetik müəssisə məlumatı və bələdçi.'],
+    ['#scenbar', 'Ssenari', 'Əsas, Mənfi və ya İslahat ssenarisini seçin — kartlar və qrafiklər dərhal yenilənir. Cədvəllər hər zaman üç ssenarinin hamısını göstərir.'],
+    ['[data-tour="tab-fr1"]', 'Tələb bölməsi', 'Solda qruplar və komponentlər. Komponenti seçin: qrafik, 2026–2030 cədvəli və altında onu izah edən tənliklər, dayanıqlıq hökmü ilə.'],
+    ['[data-tour="tab-ssenari"]', 'Ssenari qurucusu', 'Neftin qiyməti kimi fərziyyəni və ya əmsalı dəyişin, «Hesabla» düyməsini basın — FR1-in nəticəsi bütün modullara ötürülür.'],
+    ['[data-tour="tab-hesabat"]', 'Hesabat', 'Göstəriciləri, ssenariləri və illəri seçin — Excel, Word, PDF və ya CSV hesabatı hazırdır.'],
+    ['#open-pal', 'Sürətli axtarış', 'İstənilən göstəricini və ya tənliyi tapmaq üçün Ctrl+K (Mac: ⌘K).']];
   var TI = 0;
   U.startTour = function () { TI = 0; if (ROUTE !== '') location.hash = '#/'; setTimeout(show, 80); };
   function show() {
@@ -106,20 +98,22 @@
   U.boot = function () {
     renderScenBar();
     $('#open-pal').onclick = openPal; $('#tour-btn').onclick = U.startTour;
-    $('#pal-scrim').onclick = closePal; $('#scrim').onclick = U.closeDrawer;
+    $('#pal-scrim').onclick = closePal; $('#scrim').onclick = U.closeModal;
+    $('#modal').addEventListener('click', function (e) { if (e.target.closest('#modal-x')) U.closeModal(); });
     $('#pal-in').oninput = function (e) { draw(e.target.value); };
     $('#pal-list').onclick = function (e) { var it = e.target.closest('[data-i]'); if (it) pick(+it.getAttribute('data-i')); };
     document.addEventListener('keydown', function (e) {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openPal(); return; }
-      if (e.key === 'Escape') { closePal(); U.closeDrawer(); end(); }
+      if (e.key === 'Escape') { closePal(); U.closeModal(); end(); }
       if ($('#pal').hidden) return;
       var items = U.$$('#pal-list .pal-item[data-i]');
       if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); SEL = Math.max(0, Math.min(items.length - 1, SEL + (e.key === 'ArrowDown' ? 1 : -1))); items.forEach(function (x, i) { x.classList.toggle('on', i === SEL); }); if (items[SEL]) items[SEL].scrollIntoView({ block: 'nearest' }); }
       if (e.key === 'Enter') pick(SEL);
     });
-    window.addEventListener('hashchange', function () { route(false); });
+    window.addEventListener('hashchange', function () { U.closeModal(true); route(false); });
     route(false);
     $('#boot').hidden = true;
+    if (U.API) U.API.ping();
     if (!U.ls('mikroPanel.tour') && !/notour/.test(location.search)) setTimeout(U.startTour, 600);
   };
 })();

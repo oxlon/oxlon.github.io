@@ -23,6 +23,7 @@ import nbextract
 from apicore import ApiError, now_iso, stamp, write_json
 from upload_store import KIND_AZ, classify
 from validate_dsk import DSK_DIRS, FR10_LOCAL_DIR, XLS_MAGIC
+from az_errors import az_exc
 
 BROWSER_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) "
               "Chrome/126.0 Safari/537.36")
@@ -186,7 +187,7 @@ def dsk_refresh(cfg, fetch=download, timeout=60, apply=True, log=print):
         try:
             blob = fetch(t["url"], timeout=timeout)
         except Exception as e:
-            rep["failed"].append({"path": t["path"], "url": t["url"], "error": str(e)[:200]})
+            rep["failed"].append({"path": t["path"], "url": t["url"], "error": az_exc(e), "detail": str(e)[:200]})
             continue
         if blob[:8] != XLS_MAGIC:
             rep["failed"].append({"path": t["path"], "url": t["url"], "error": "cavab .xls deyil (HTML səhifə?)"})

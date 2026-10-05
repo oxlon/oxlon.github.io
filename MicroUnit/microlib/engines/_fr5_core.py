@@ -83,11 +83,12 @@ def split_share(p, ydpc_path, years, addf_shift=None):
     return 1/(1 + np.exp(-z))
 
 
-def rho_c(r):
-    return float(min(max(r if (r is not None and np.isfinite(r)) else 0.0, 0.0), 1.0))
+def addf_decay_factor(h, half_life=1.0):
+    """notebook `addf_decay_factor` (v2.3): FIXED add-factor decay 0.5 ** (h / half-life); no estimated residual rho."""
+    return 0.5 ** (h / float(half_life))
 
 
-def solve(S, dd, c, sysp, rp, relp_lever=0.0, pop_override=None, addf_decay=False):
+def solve(S, dd, c, sysp, rp, relp_lever=0.0, pop_override=None, addf_decay=False, half_life=1.0):
     """The notebook's solve() for years = FC_YEARS with resolved inputs (no bootstrap shocks)."""
     M = S['M']; LA = M['LAST_ACT']; years = list(M['FY']); TK = S['TKEYS']
     pp = dd['pop'] if pop_override is None else pop_override
@@ -96,7 +97,8 @@ def solve(S, dd, c, sysp, rp, relp_lever=0.0, pop_override=None, addf_decay=Fals
     ydpc = np.log(dd['yd'].reindex(years)/pp.reindex(years))
     relp = dd['relp'].reindex(years) + relp_lever*(pd.Series(years, index=years) > LA)
     h = pd.Series([max(int(y) - LA, 0) for y in years], index=years)
-    a1_path = a1*(rho_c(S['E1']['rho'])**h if addf_decay else 1.0)
+    dfac = addf_decay_factor(h, half_life) if addf_decay else None
+    a1_path = a1*(dfac if addf_decay else 1.0)
     qpc = a1_path + e1_core(c, ydpc, relp, years)
     Q = np.exp(qpc)*pp.reindex(years)
     P = dd['p_serv'].reindex(years)*np.exp(relp - dd['relp'].reindex(years))
@@ -105,8 +107,8 @@ def solve(S, dd, c, sysp, rp, relp_lever=0.0, pop_override=None, addf_decay=Fals
     if addf_decay:
         for k in TK:
             p = sysp[k]
-            if p['mode'] not in ('reference', 'const') and p.get('rho') is not None:
-                zs[k] = p['addf']*(rho_c(p['rho'])**h - 1.0)
+            if p['mode'] not in ('reference', 'const') and p.get('decays'):
+                zs[k] = p['addf']*(dfac - 1.0)
     SH = predict_shares(S, sysp, years, qpc, rp, zshift=zs)
     nom_t = SH.mul(NOM, axis=0)
     pt = pd.DataFrame({k: P*np.exp(rp[k].reindex(years)) for k in TK}, index=years)
@@ -116,7 +118,7 @@ def solve(S, dd, c, sysp, rp, relp_lever=0.0, pop_override=None, addf_decay=Fals
     for nm, p in S['SPL'].items():
         sh_ = pd.Series(0.0, index=years)
         if addf_decay and p['lr'] is not None:
-            sh_ = sh_ + p['addf']*(rho_c(p['rho'])**h - 1.0)
+            sh_ = sh_ + p['addf']*(dfac - 1.0)
         spl[nm] = split_share(p, ydpc_full, years, addf_shift=sh_)
     SPLIT = pd.DataFrame({'indiv_share': spl['indiv'], 'legal_share': 1 - spl['indiv'],
                           'state_share': spl['state'], 'nonstate_share': 1 - spl['state']}, index=years)

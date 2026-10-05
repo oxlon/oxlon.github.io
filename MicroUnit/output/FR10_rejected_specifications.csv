@@ -1,14 +1,16 @@
 specification,block,verdict,evidence
-nonstate_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef -0.049, DK p 0.73 on t(14), wild p 0.72"
-stocks_go_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef +0.044, DK p 0.01 on t(14), wild p 0.13"
-dln_ent_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef -0.173, DK p 0.10 on t(14), wild p 0.11"
-inv_rate_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.020, DK p 0.37 on t(7), wild p 0.67"
-drelp_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.168, DK p 0.64 on t(7), wild p 0.65"
-nonstate_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.003, DK p 0.99 on t(7), wild p 0.99"
-stocks_go_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.120, DK p 0.77 on t(7), wild p 0.77"
-dln_ent_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.000, DK p 1.00 on t(7), wild p 1.00"
-dln_rwage_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.273, DK p 0.45 on t(7), wild p 0.46"
-labour_share_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.082, DK p 0.88 on t(7), wild p 0.78"
+inv_rate_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef -0.062, DK p 0.04 on t(14), wild p 0.12"
+drelp_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef +0.079, DK p 0.25 on t(14), wild p 0.30"
+nonstate_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef +0.009, DK p 0.97 on t(14), wild p 0.95"
+stocks_go_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef -0.002, DK p 0.90 on t(14), wild p 0.90"
+dln_ent_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef -0.250, DK p 0.18 on t(14), wild p 0.15"
+inv_rate_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.017, DK p 0.33 on t(7), wild p 0.34"
+drelp_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.243, DK p 0.54 on t(7), wild p 0.56"
+nonstate_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.265, DK p 0.46 on t(7), wild p 0.46"
+stocks_go_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.348, DK p 0.43 on t(7), wild p 0.47"
+dln_ent_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.174, DK p 0.63 on t(7), wild p 0.77"
+dln_rwage_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.258, DK p 0.45 on t(7), wild p 0.46"
+labour_share_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.026, DK p 0.97 on t(7), wild p 0.94"
 MNL: scale (FR1 real sector VA) (manufacturing (24 branches)),branch share system,NOT CHOSEN,selection RMSE 2.493 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.06
 MNL: oil export price (manufacturing (24 branches)),branch share system,NOT CHOSEN,selection RMSE 1.950 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.28
 MNL: scale + oil price (manufacturing (24 branches)),branch share system,NOT CHOSEN,selection RMSE 4.737 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.05
