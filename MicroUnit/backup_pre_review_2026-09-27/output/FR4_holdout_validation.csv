@@ -1,0 +1,39 @@
+basis,activity,label,model_RMSE_pct,U_vs_random_walk,U_vs_constant_growth,err_2024_pct
+employed population,agr,"Agriculture, forestry and fishing",0.44,0.185,0.433,-0.25
+employed population,mining,Mining,2.6,1.433,2.661,-4.58
+employed population,manuf,Manufacturing,3.36,0.464,1.477,-5.39
+employed population,elec,"Electricity, gas and steam",7.02,0.871,0.717,-3.88
+employed population,water,"Water supply, waste treatment",13.1,0.776,1.004,-27.08
+employed population,constr,Construction,1.84,0.317,0.245,2.08
+employed population,trade,Trade; repair of transport means,1.14,0.704,0.548,0.7
+employed population,transp,Transportation and storage,0.71,0.311,0.404,-0.71
+employed population,hotel,Accommodation and food service,6.7,0.393,0.376,-5.21
+employed population,ict,Information and communication,10.93,7.156,0.639,17.67
+employed population,fin,Financial and insurance activities,17.94,0.888,1.498,-25.04
+employed population,realest,Real estate activities,5.36,1.965,1.313,7.86
+employed population,prof,"Professional, scientific, technical",3.3,0.54,0.635,-6.44
+employed population,admsup,Administrative and support service,20.76,0.807,1.299,-14.79
+employed population,pubadm,Public administration and defence,4.87,1.168,1.746,7.55
+employed population,educ,Education,0.79,0.813,0.724,0.93
+employed population,health,Human health and social work,0.58,0.714,0.68,0.14
+employed population,art,"Art, entertainment and recreation",11.31,3.516,1.384,14.93
+employed population,othsvc,Other service activities,2.74,0.745,0.19,4.57
+hired employees,agr,"Agriculture, forestry and fishing",12.54,0.894,0.822,19.65
+hired employees,mining,Mining,5.85,1.109,2.161,-0.81
+hired employees,manuf,Manufacturing,3.07,0.473,0.953,-6.0
+hired employees,elec,"Electricity, gas and steam",9.57,1.237,1.021,-7.0
+hired employees,water,"Water supply, waste treatment",12.31,0.729,0.944,-26.09
+hired employees,constr,Construction,11.79,1.861,0.627,17.17
+hired employees,trade,Trade; repair of transport means,2.35,0.276,0.458,0.41
+hired employees,transp,Transportation and storage,3.6,2.119,1.905,1.11
+hired employees,hotel,Accommodation and food service,22.52,0.698,0.964,-42.4
+hired employees,ict,Information and communication,7.84,0.653,0.691,-12.05
+hired employees,fin,Financial and insurance activities,16.9,0.837,5.186,-23.72
+hired employees,realest,Real estate activities,16.41,2.454,0.653,20.03
+hired employees,prof,"Professional, scientific, technical",6.44,0.634,2.434,-10.5
+hired employees,admsup,Administrative and support service,10.25,0.576,0.252,17.5
+hired employees,pubadm,Public administration and defence,4.58,4.239,0.19,4.35
+hired employees,educ,Education,4.68,4.044,2.573,6.06
+hired employees,health,Human health and social work,3.85,0.592,0.702,-6.91
+hired employees,art,"Art, entertainment and recreation",6.56,3.267,1.488,7.86
+hired employees,othsvc,Other service activities,10.0,1.687,0.43,10.13

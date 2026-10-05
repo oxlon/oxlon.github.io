@@ -1,0 +1,2318 @@
+id,scenario,year,value,lower_5,upper_95,unit_az,kind,is_forecast,imputed
+fr3:w_avg,ACTUAL,1995,12.5,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,1996,17.9,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,1997,28.3,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,1998,33.7,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,1999,36.9,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2000,44.3,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2001,52.0,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2002,63.1,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2003,77.4,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2004,99.4,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2005,123.6,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2006,149.0,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2007,215.8,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2008,274.4,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2009,298.0,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2010,331.5,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2011,364.2,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2012,398.4,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2013,425.1,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2014,444.5,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2015,466.9,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2016,499.8,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2017,528.5,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2018,544.6,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2019,635.1,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2020,707.7,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2021,732.1,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2022,840.0,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2023,933.9,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2024,1009.4,,,AZN/ay,level,False,False
+fr3:w_avg,ACTUAL,2025,1102.9,,,AZN/ay,level,False,False
+fr3:w_avg,Baseline,2026,1179.098129691293,1138.0671825139755,1218.7407227171784,AZN/ay,level,True,False
+fr3:w_avg,Baseline,2027,1266.0970503679146,1062.6857328286426,1498.6988665504323,AZN/ay,level,True,False
+fr3:w_avg,Baseline,2028,1360.143816083969,1071.775470207296,1799.120583180094,AZN/ay,level,True,False
+fr3:w_avg,Baseline,2029,1461.312513456431,1062.920177135806,2080.513192634359,AZN/ay,level,True,False
+fr3:w_avg,Baseline,2030,1571.275032505211,1115.7476628027966,2300.171537040468,AZN/ay,level,True,False
+fr3:w_avg,Adverse,2026,1179.098129691293,,,AZN/ay,level,True,False
+fr3:w_avg,Adverse,2027,1239.030850678888,,,AZN/ay,level,True,False
+fr3:w_avg,Adverse,2028,1307.635997411683,,,AZN/ay,level,True,False
+fr3:w_avg,Adverse,2029,1383.3733813153601,,,AZN/ay,level,True,False
+fr3:w_avg,Adverse,2030,1465.0957261167778,,,AZN/ay,level,True,False
+fr3:w_avg,Reform,2026,1179.098129691293,,,AZN/ay,level,True,False
+fr3:w_avg,Reform,2027,1289.9683262679823,,,AZN/ay,level,True,False
+fr3:w_avg,Reform,2028,1409.2706549852453,,,AZN/ay,level,True,False
+fr3:w_avg,Reform,2029,1539.5997296674302,,,AZN/ay,level,True,False
+fr3:w_avg,Reform,2030,1683.2465118233233,,,AZN/ay,level,True,False
+fr3:rw_avg,ACTUAL,2000,109.35363230239265,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2001,126.7136454026419,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2002,148.85008237595326,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2003,176.23855582391715,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2004,205.01105270121056,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2005,241.8626189191088,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2006,261.7287059878336,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2007,316.94605481456364,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2008,349.2305340858818,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2009,376.6299864418197,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2010,388.29403469986266,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2011,403.97380889691607,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2012,443.23846185599996,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2013,456.9501924,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2014,478.2819999999999,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2015,466.9,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2016,431.9792566983578,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2017,423.3408602830977,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2018,429.79047962711644,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2019,489.46462572010574,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2020,531.5951772911066,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2021,491.0030850628028,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2022,492.45559456410285,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2023,536.2439715538171,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2024,552.5223619539684,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,ACTUAL,2025,573.8613242733437,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_avg,Baseline,2026,593.3160375977302,534.6726150501446,661.2419548508005,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Baseline,2027,607.290372253633,534.4005070514693,705.98750931222,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Baseline,2028,623.1213635683519,537.5337175655532,731.5940098272824,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Baseline,2029,640.1014277067392,558.8552261534088,756.0921452775134,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Baseline,2030,658.2943242058059,564.9153578934605,780.1076242069083,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Adverse,2026,593.3525304233842,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Adverse,2027,597.2641462297968,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Adverse,2028,604.4342268625346,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Adverse,2029,613.4485351823656,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Adverse,2030,623.444259059641,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Reform,2026,593.2920750937187,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Reform,2027,616.2553579324635,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Reform,2028,640.7357397445647,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Reform,2029,666.881298716012,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_avg,Reform,2030,694.8632890846491,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:w_avg_g,ACTUAL,1996,43.199999999999996,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,1997,58.1005586592179,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,1998,19.081272084805654,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,1999,9.495548961424326,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2000,20.054200542005418,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2001,17.381489841986465,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2002,21.34615384615386,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2003,22.66244057052298,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2004,28.42377260981912,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2005,24.346076458752506,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2006,20.55016181229774,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2007,44.83221476510069,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2008,27.15477293790545,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2009,8.600583090379011,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2010,11.241610738255027,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2011,9.864253393665145,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2012,9.390444810543652,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2013,6.701807228915668,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2014,4.56363208656787,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2015,5.039370078740157,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2016,7.0464767616192026,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2017,5.742296918767509,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2018,3.0463576158940464,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2019,16.617701065001846,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2020,11.431270666036841,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2021,3.447788610993352,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2022,14.738423712607563,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2023,11.178571428571416,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2024,8.084377342327876,,,%,rate,False,False
+fr3:w_avg_g,ACTUAL,2025,9.262928472359832,,,%,rate,False,False
+fr3:w_avg_g,Baseline,2026,6.908888357175891,3.188610256049993,10.503284315638611,%,rate,True,False
+fr3:w_avg_g,Baseline,2027,7.3784291982041506,-9.91353018366634,27.67929436908127,%,rate,True,False
+fr3:w_avg_g,Baseline,2028,7.4280850499355955,-5.412111100365056,31.062450491665572,%,rate,True,False
+fr3:w_avg_g,Baseline,2029,7.438088250383679,-9.558979629624169,25.164411670472475,%,rate,True,False
+fr3:w_avg_g,Baseline,2030,7.524914625461365,-4.392191292875725,23.871354991079652,%,rate,True,False
+fr3:w_avg_g,Adverse,2026,6.908888357175891,,,%,rate,True,False
+fr3:w_avg_g,Adverse,2027,5.082929018239257,,,%,rate,True,False
+fr3:w_avg_g,Adverse,2028,5.537000688498184,,,%,rate,True,False
+fr3:w_avg_g,Adverse,2029,5.79193170374559,,,%,rate,True,False
+fr3:w_avg_g,Adverse,2030,5.907468359967516,,,%,rate,True,False
+fr3:w_avg_g,Reform,2026,6.908888357175891,,,%,rate,True,False
+fr3:w_avg_g,Reform,2027,9.402966028426896,,,%,rate,True,False
+fr3:w_avg_g,Reform,2028,9.24846961649186,,,%,rate,True,False
+fr3:w_avg_g,Reform,2029,9.247980451530037,,,%,rate,True,False
+fr3:w_avg_g,Reform,2030,9.330138177337965,,,%,rate,True,False
+fr3:rw_avg_g,ACTUAL,2001,15.875113368199845,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2002,17.469655223769486,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2003,18.40003916073647,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2004,16.325880987154974,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2005,17.97540460982212,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2006,8.213789777646063,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2007,21.097169536037352,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2008,10.186111731287184,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2009,7.845663446255213,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2010,3.096951564647865,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2011,4.038118744001129,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2012,9.719603621407845,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2013,3.093533554507899,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2014,4.6683003869548045,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2015,-2.3797675848139743,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2016,-7.479276783388777,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2017,-1.9997248204193574,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2018,1.5235050402896855,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2019,13.884473696290867,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2020,8.60747628268701,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2021,-7.635903025898805,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2022,0.2958249236080235,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2023,8.891842731215904,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2024,3.0356314035536958,,,%,rate,False,False
+fr3:rw_avg_g,ACTUAL,2025,3.8620993083268385,,,%,rate,False,False
+fr3:rw_avg_g,Baseline,2026,3.390141921311951,-6.828951101177994,15.226785092740519,%,rate,True,False
+fr3:rw_avg_g,Baseline,2027,2.3552935990881485,-6.728245215015477,14.218844537437594,%,rate,True,False
+fr3:rw_avg_g,Baseline,2028,2.6068240232379525,-7.838242899972527,15.982455228153471,%,rate,True,False
+fr3:rw_avg_g,Baseline,2029,2.7250011203515223,-6.215602721377923,14.397107202959155,%,rate,True,False
+fr3:rw_avg_g,Baseline,2030,2.8421896455137707,-7.131927814615554,14.695233387198597,%,rate,True,False
+fr3:rw_avg_g,Adverse,2026,3.396501092789528,,,%,rate,True,False
+fr3:rw_avg_g,Adverse,2027,0.6592397614991974,,,%,rate,True,False
+fr3:rw_avg_g,Adverse,2028,1.2004873686121353,,,%,rate,True,False
+fr3:rw_avg_g,Adverse,2029,1.4913629836321496,,,%,rate,True,False
+fr3:rw_avg_g,Adverse,2030,1.6294315340249055,,,%,rate,True,False
+fr3:rw_avg_g,Reform,2026,3.385966260224871,,,%,rate,True,False
+fr3:rw_avg_g,Reform,2027,3.8704853482355084,,,%,rate,True,False
+fr3:rw_avg_g,Reform,2028,3.9724412123949504,,,%,rate,True,False
+fr3:rw_avg_g,Reform,2029,4.080552613136645,,,%,rate,True,False
+fr3:rw_avg_g,Reform,2030,4.1959476780219385,,,%,rate,True,False
+fr3:w_state,ACTUAL,2005,89.1,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2006,111.4,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2007,171.9,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2008,235.8,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2009,263.4,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2010,276.4,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2011,303.3,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2012,332.9,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2013,346.9,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2014,355.7,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2015,360.4,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2016,375.2,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2017,395.6,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2018,435.5,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2019,531.7,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2020,631.4,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2021,654.2,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2022,795.7,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2023,904.1,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2024,975.9,,,AZN/ay,level,False,False
+fr3:w_state,ACTUAL,2025,1080.8,,,AZN/ay,level,False,False
+fr3:w_state,Baseline,2026,1173.3490337282913,1124.035447031313,1221.2438252862958,AZN/ay,level,True,False
+fr3:w_state,Baseline,2027,1275.5076919036562,1071.131136460303,1548.9914185138446,AZN/ay,level,True,False
+fr3:w_state,Baseline,2028,1387.9227122242182,1094.7327425889441,1872.3827586693458,AZN/ay,level,True,False
+fr3:w_state,Baseline,2029,1510.6247157826344,1095.2117157570833,2211.45418608401,AZN/ay,level,True,False
+fr3:w_state,Baseline,2030,1645.89010409942,1141.1840667699469,2430.851125708721,AZN/ay,level,True,False
+fr3:w_state,Adverse,2026,1173.3490337282913,,,AZN/ay,level,True,False
+fr3:w_state,Adverse,2027,1233.80526590455,,,AZN/ay,level,True,False
+fr3:w_state,Adverse,2028,1306.321848056595,,,AZN/ay,level,True,False
+fr3:w_state,Adverse,2029,1388.3330781098477,,,AZN/ay,level,True,False
+fr3:w_state,Adverse,2030,1478.0643803979137,,,AZN/ay,level,True,False
+fr3:w_state,Reform,2026,1173.3490337282913,,,AZN/ay,level,True,False
+fr3:w_state,Reform,2027,1313.5315194795683,,,AZN/ay,level,True,False
+fr3:w_state,Reform,2028,1466.7421612250107,,,AZN/ay,level,True,False
+fr3:w_state,Reform,2029,1636.9224482956622,,,AZN/ay,level,True,False
+fr3:w_state,Reform,2030,1827.7446795047072,,,AZN/ay,level,True,False
+fr3:rw_state,ACTUAL,2005,174.35242189071678,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2006,195.68173051707828,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2007,252.47000381197168,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2008,300.1040814047046,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2009,332.90046452609164,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2010,323.7540609081208,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2011,336.42299900723407,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2012,370.3666765859999,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2013,372.8911356,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2014,382.73319999999995,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2015,360.4,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2016,324.2869490060501,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2017,316.8848520870264,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2018,343.69033029307604,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2019,409.77537631141587,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2020,474.2817506593255,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2021,438.75729852217677,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2022,466.48442451744836,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2023,519.1328564962051,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2024,534.1852318514739,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,ACTUAL,2025,562.3622443327861,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_state,Baseline,2026,590.4231224529742,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Baseline,2027,611.8042379163999,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Baseline,2028,635.8476822389556,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Baseline,2029,661.7017430545538,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Baseline,2030,689.5547191809387,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Adverse,2026,590.4594373453831,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Adverse,2027,594.7451981123336,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Adverse,2028,603.8267819382614,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Adverse,2029,615.6478826431605,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Adverse,2030,628.9628288808317,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Reform,2026,590.3992767863418,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Reform,2027,627.5121801124687,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Reform,2028,666.8656019782716,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Reform,2029,709.0368666488461,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_state,Reform,2030,754.5137748314036,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:w_state_g,ACTUAL,2006,25.028058361391704,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2007,54.30879712746859,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2008,37.17277486910995,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2009,11.704834605597947,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2010,4.935459377372808,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2011,9.732272069464564,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2012,9.759314210352766,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2013,4.205467107239413,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2014,2.536754107812045,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2015,1.3213382063536727,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2016,4.106548279689237,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2017,5.4371002132196145,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2018,10.085945399393314,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2019,22.089552238805975,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2020,18.751175474891845,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2021,3.61102312321826,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2022,21.629471109752373,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2023,13.623224833479952,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2024,7.9415993805994844,,,%,rate,False,False
+fr3:w_state_g,ACTUAL,2025,10.749052156983296,,,%,rate,False,False
+fr3:w_state_g,Baseline,2026,8.563012002987724,4.000318933319128,12.994432391404144,%,rate,True,False
+fr3:w_state_g,Baseline,2027,8.706587318758686,-8.801893724233121,32.695800927459516,%,rate,True,False
+fr3:w_state_g,Baseline,2028,8.813354951453567,-6.3791345122009755,34.9572756925028,%,rate,True,False
+fr3:w_state_g,Baseline,2029,8.840694260401571,-9.421328044087522,31.309129339091246,%,rate,True,False
+fr3:w_state_g,Baseline,2030,8.954268184782489,-5.485974656275094,32.04589280429338,%,rate,True,False
+fr3:w_state_g,Adverse,2026,8.563012002987724,,,%,rate,True,False
+fr3:w_state_g,Adverse,2027,5.152450842709633,,,%,rate,True,False
+fr3:w_state_g,Adverse,2028,5.877473873389594,,,%,rate,True,False
+fr3:w_state_g,Adverse,2029,6.2780263665696445,,,%,rate,True,False
+fr3:w_state_g,Adverse,2030,6.463240248531066,,,%,rate,True,False
+fr3:w_state_g,Reform,2026,8.563012002987724,,,%,rate,True,False
+fr3:w_state_g,Reform,2027,11.947211078859477,,,%,rate,True,False
+fr3:w_state_g,Reform,2028,11.664024766314384,,,%,rate,True,False
+fr3:w_state_g,Reform,2029,11.602604163810115,,,%,rate,True,False
+fr3:w_state_g,Reform,2030,11.657377623950737,,,%,rate,True,False
+fr3:rw_state_g,ACTUAL,2006,12.233445566778878,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2007,29.02073338417106,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2008,18.867222590216535,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2009,10.928336251835113,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2010,-2.747488992240199,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2011,3.913136429417219,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2012,10.089582959230437,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2013,0.6816107316322872,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2014,2.6393935013133474,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2015,-5.835187540563503,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2016,-10.020269421184757,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2017,-2.2825762620763523,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2018,8.459059506791466,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2019,19.228078358208943,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2020,15.741886427769858,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2021,-7.490157925698004,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2022,6.319467753280028,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2023,11.2862143324975,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2024,2.8995227651091193,,,%,rate,False,False
+fr3:rw_state_g,ACTUAL,2025,5.274764407778809,,,%,rate,False,False
+fr3:rw_state_g,Baseline,2026,4.989822557074564,,,%,rate,True,False
+fr3:rw_state_g,Baseline,2027,3.6213208206676617,,,%,rate,True,False
+fr3:rw_state_g,Baseline,2028,3.929924448454236,,,%,rate,True,False
+fr3:rw_state_g,Baseline,2029,4.066077700332338,,,%,rate,True,False
+fr3:rw_state_g,Baseline,2030,4.2092946586191005,,,%,rate,True,False
+fr3:rw_state_g,Adverse,2026,4.996280119397567,,,%,rate,True,False
+fr3:rw_state_g,Adverse,2027,0.7258349169959377,,,%,rate,True,False
+fr3:rw_state_g,Adverse,2028,1.5269705169124403,,,%,rate,True,False
+fr3:rw_state_g,Adverse,2029,1.9576973162657385,,,%,rate,True,False
+fr3:rw_state_g,Adverse,2030,2.1627535175636536,,,%,rate,True,False
+fr3:rw_state_g,Reform,2026,4.985582289013779,,,%,rate,True,False
+fr3:rw_state_g,Reform,2027,6.28606856162488,,,%,rate,True,False
+fr3:rw_state_g,Reform,2028,6.271339921840169,,,%,rate,True,False
+fr3:rw_state_g,Reform,2029,6.3238026591073915,,,%,rate,True,False
+fr3:rw_state_g,Reform,2030,6.4138989552824155,,,%,rate,True,False
+fr3:w_priv,ACTUAL,2005,191.9,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2006,221.0,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2007,296.5,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2008,341.3,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2009,357.2,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2010,423.9,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2011,466.7,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2012,500.3,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2013,542.1,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2014,571.1,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2015,617.4,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2016,679.0,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2017,711.1,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2018,690.4,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2019,767.9,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2020,801.6,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2021,823.2,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2022,889.0,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2023,966.1,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2024,1043.8,,,AZN/ay,level,False,False
+fr3:w_priv,ACTUAL,2025,1124.4,,,AZN/ay,level,False,False
+fr3:w_priv,Baseline,2026,1187.944180548866,1151.4707600749587,1222.0724953402885,AZN/ay,level,True,False
+fr3:w_priv,Baseline,2027,1263.2706164132494,1035.1928554117833,1516.5635930352885,AZN/ay,level,True,False
+fr3:w_priv,Baseline,2028,1343.1330080714067,1017.075297011561,1827.8816334375813,AZN/ay,level,True,False
+fr3:w_priv,Baseline,2029,1427.6400898724223,993.1027988611273,2002.6309593405276,AZN/ay,level,True,False
+fr3:w_priv,Baseline,2030,1517.9917417906076,1032.6296154242784,2308.314845393368,AZN/ay,level,True,False
+fr3:w_priv,Adverse,2026,1187.944180548866,,,AZN/ay,level,True,False
+fr3:w_priv,Adverse,2027,1247.6813840463935,,,AZN/ay,level,True,False
+fr3:w_priv,Adverse,2028,1313.443156716528,,,AZN/ay,level,True,False
+fr3:w_priv,Adverse,2029,1384.4947623629575,,,AZN/ay,level,True,False
+fr3:w_priv,Adverse,2030,1460.1808648150845,,,AZN/ay,level,True,False
+fr3:w_priv,Reform,2026,1187.944180548866,,,AZN/ay,level,True,False
+fr3:w_priv,Reform,2027,1276.0358081783081,,,AZN/ay,level,True,False
+fr3:w_priv,Reform,2028,1368.9553623387587,,,AZN/ay,level,True,False
+fr3:w_priv,Reform,2029,1468.2416806598321,,,AZN/ay,level,True,False
+fr3:w_priv,Reform,2030,1575.1015959392655,,,AZN/ay,level,True,False
+fr3:rw_priv,ACTUAL,2005,375.51324086227334,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2006,388.2016377403438,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2007,435.47036724985225,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2008,434.3745673597357,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2009,451.45044012422153,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2010,496.5244081727655,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2011,517.6677007473661,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2012,556.6069339019999,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2013,582.7163004,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2014,614.5035999999999,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2015,617.4,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2016,586.8625756266206,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2017,569.6077308369173,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2018,544.8537406069798,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2019,591.8121336647287,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2020,602.1290011538094,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2021,552.101816177707,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2022,521.1821709136755,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2023,554.7331629919079,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2024,571.3521313726493,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,ACTUAL,2025,585.0482119983204,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_priv,Baseline,2026,597.7673243151277,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Baseline,2027,605.9346577545115,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Baseline,2028,615.3282186384976,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Baseline,2029,625.3518336178684,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Baseline,2030,635.9709962544244,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Adverse,2026,597.8040909240942,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Adverse,2027,601.4340613076536,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Adverse,2028,607.1184951540463,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Adverse,2029,613.9458048062584,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Adverse,2030,621.352831169986,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Reform,2026,597.74318203513,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Reform,2027,609.5993891405066,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Reform,2028,622.4060819421494,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Reform,2029,635.9723894202775,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_priv,Reform,2030,650.2198388109398,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:w_priv_g,ACTUAL,2006,15.164147993746745,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2007,34.1628959276018,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2008,15.10961214165263,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2009,4.6586580720773485,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2010,18.673012318029116,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2011,10.096720924746405,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2012,7.199485751017787,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2013,8.354987007795334,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2014,5.349566500645642,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2015,8.107161617930302,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2016,9.977324263038545,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2017,4.727540500736382,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2018,-2.910982984109134,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2019,11.225376593279268,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2020,4.3885922646177855,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2021,2.6946107784431073,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2022,7.993197278911568,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2023,8.672665916760414,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2024,8.042645688852069,,,%,rate,False,False
+fr3:w_priv_g,ACTUAL,2025,7.7217857827170056,,,%,rate,False,False
+fr3:w_priv_g,Baseline,2026,5.6513856767045345,2.407573823813467,8.686632456446842,%,rate,True,False
+fr3:w_priv_g,Baseline,2027,6.340907013794239,-13.43777107930951,27.384494199620665,%,rate,True,False
+fr3:w_priv_g,Baseline,2028,6.321875188145132,-8.175045081729385,29.78860461359056,%,rate,True,False
+fr3:w_priv_g,Baseline,2029,6.291788027930201,-10.835919795512032,22.616603352752897,%,rate,True,False
+fr3:w_priv_g,Baseline,2030,6.328741575634744,-5.134243784374161,20.55720777210873,%,rate,True,False
+fr3:w_priv_g,Adverse,2026,5.6513856767045345,,,%,rate,True,False
+fr3:w_priv_g,Adverse,2027,5.028620407898909,,,%,rate,True,False
+fr3:w_priv_g,Adverse,2028,5.270718431083776,,,%,rate,True,False
+fr3:w_priv_g,Adverse,2029,5.409568376301199,,,%,rate,True,False
+fr3:w_priv_g,Adverse,2030,5.466694747400225,,,%,rate,True,False
+fr3:w_priv_g,Reform,2026,5.6513856767045345,,,%,rate,True,False
+fr3:w_priv_g,Reform,2027,7.415468594554775,,,%,rate,True,False
+fr3:w_priv_g,Reform,2028,7.281892370489529,,,%,rate,True,False
+fr3:w_priv_g,Reform,2029,7.2527067757307995,,,%,rate,True,False
+fr3:w_priv_g,Reform,2030,7.278087571482805,,,%,rate,True,False
+fr3:rw_priv_g,ACTUAL,2006,3.378947929754683,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2007,12.17633438762693,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2008,-0.25163592577766014,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2009,3.9311400914372907,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2010,9.984256087144662,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2011,4.258258451464436,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2012,7.522051906737959,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2013,4.690808703183902,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2014,5.455021522167791,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2015,0.4713397936155328,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2016,-4.94613287550687,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2017,-2.940184892737363,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2018,-4.345796043457262,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2019,8.618531829374266,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2020,1.7432673144422983,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2021,-8.308383233532945,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2022,-5.600352028923461,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2023,6.437478860686041,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2024,2.99584908374837,,,%,rate,False,False
+fr3:rw_priv_g,ACTUAL,2025,2.3971347744458082,,,%,rate,False,False
+fr3:rw_priv_g,Baseline,2026,2.1740280640057286,,,%,rate,True,False
+fr3:rw_priv_g,Baseline,2027,1.3663064385028623,,,%,rate,True,False
+fr3:rw_priv_g,Baseline,2028,1.550259712622637,,,%,rate,True,False
+fr3:rw_priv_g,Baseline,2029,1.6289867221674692,,,%,rate,True,False
+fr3:rw_priv_g,Baseline,2030,1.6981100982979003,,,%,rate,True,False
+fr3:rw_priv_g,Adverse,2026,2.1803124365091575,,,%,rate,True,False
+fr3:rw_priv_g,Adverse,2027,0.6072173875471654,,,%,rate,True,False
+fr3:rw_priv_g,Adverse,2028,0.9451466440117295,,,%,rate,True,False
+fr3:rw_priv_g,Adverse,2029,1.1245431833664998,,,%,rate,True,False
+fr3:rw_priv_g,Adverse,2030,1.2064625746673219,,,%,rate,True,False
+fr3:rw_priv_g,Reform,2026,2.169901518619799,,,%,rate,True,False
+fr3:rw_priv_g,Reform,2027,1.9834951634261966,,,%,rate,True,False
+fr3:rw_priv_g,Reform,2028,2.100837538518441,,,%,rate,True,False
+fr3:rw_priv_g,Reform,2029,2.179655352305687,,,%,rate,True,False
+fr3:rw_priv_g,Reform,2030,2.240262254726111,,,%,rate,True,False
+fr3:w_non,ACTUAL,2005,108.9,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2006,133.5,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2007,194.9,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2008,250.8,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2009,277.5,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2010,312.1,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2011,341.5,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2012,370.1,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2013,395.5,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2014,411.2,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2015,425.0,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2016,444.8,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2017,468.8,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2018,488.4,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2019,579.2,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2020,651.1,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2021,683.6,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2022,790.4,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2023,885.0,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2024,959.7,,,AZN/ay,level,False,False
+fr3:w_non,ACTUAL,2025,1050.7,,,AZN/ay,level,False,False
+fr3:w_non,Baseline,2026,1120.819722179894,1084.7747181916307,1154.2698067746353,AZN/ay,level,True,False
+fr3:w_non,Baseline,2027,1206.6556737186543,1010.7940383899285,1437.8091750739861,AZN/ay,level,True,False
+fr3:w_non,Baseline,2028,1299.6747833396987,1023.6265010019966,1737.688811835696,AZN/ay,level,True,False
+fr3:w_non,Baseline,2029,1400.0044945110985,1010.5022009192962,1999.6967839984566,AZN/ay,level,True,False
+fr3:w_non,Baseline,2030,1509.3083794718425,1048.8871298119009,2237.971739649359,AZN/ay,level,True,False
+fr3:w_non,Adverse,2026,1120.819722179894,,,AZN/ay,level,True,False
+fr3:w_non,Adverse,2027,1182.2542632591717,,,AZN/ay,level,True,False
+fr3:w_non,Adverse,2028,1252.4627850314887,,,AZN/ay,level,True,False
+fr3:w_non,Adverse,2029,1330.0649773391895,,,AZN/ay,level,True,False
+fr3:w_non,Adverse,2030,1414.0385830116782,,,AZN/ay,level,True,False
+fr3:w_non,Reform,2026,1120.819722179893,,,AZN/ay,level,True,False
+fr3:w_non,Reform,2027,1227.2355605483253,,,AZN/ay,level,True,False
+fr3:w_non,Reform,2028,1341.8583325190746,,,AZN/ay,level,True,False
+fr3:w_non,Reform,2029,1467.1812311968868,,,AZN/ay,level,True,False
+fr3:w_non,Reform,2030,1605.4162070641808,,,AZN/ay,level,True,False
+fr3:rw_non,ACTUAL,2005,213.0974045330983,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2006,234.50189429111265,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2007,286.2501672074071,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2008,319.1946718248512,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2009,350.7208766362583,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2010,365.570341568106,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2011,378.79477138467,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2012,411.75340043399996,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2013,425.13244199999997,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2014,442.4511999999999,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2015,425.0,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2016,384.44252376836647,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2017,375.519764050551,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2018,385.43824871443934,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2019,446.38310693919897,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2020,489.0795816507552,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2021,458.47522052852344,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2022,463.37726421841296,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2023,508.16566530156126,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2024,525.3177241601184,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,ACTUAL,2025,546.7006015178187,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_non,Baseline,2026,563.9906464776357,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Baseline,2027,578.7789909640961,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Baseline,2028,595.418744410215,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Baseline,2029,613.2465625800751,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Baseline,2030,632.3330538120044,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Adverse,2026,564.0253355995002,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Adverse,2027,569.8954814443332,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Adverse,2028,578.9312749442983,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Adverse,2029,589.8092467778154,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Adverse,2030,601.7178406519993,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Reform,2026,563.967868350512,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Reform,2027,586.2860926370074,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Reform,2028,610.0862089745415,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Reform,2029,635.5130532035685,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_non,Reform,2030,662.7340547891824,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:w_non_g,ACTUAL,2006,22.589531680440757,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2007,45.99250936329589,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2008,28.681375064135462,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2009,10.645933014354059,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2010,12.468468468468474,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2011,9.42005767382248,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2012,8.374816983894595,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2013,6.863009997298031,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2014,3.9696586599241357,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2015,3.3560311284046795,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2016,4.65882352941176,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2017,5.395683453237421,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2018,4.180887372013653,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2019,18.591318591318597,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2020,12.413674033149169,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2021,4.9915527568729745,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2022,15.62317144528964,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2023,11.968623481781382,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2024,8.440677966101706,,,%,rate,False,False
+fr3:w_non_g,ACTUAL,2025,9.482129832239238,,,%,rate,False,False
+fr3:w_non_g,Baseline,2026,6.673619699238009,3.243049223530088,9.857219641632755,%,rate,True,False
+fr3:w_non_g,Baseline,2027,7.65831916053521,-9.722354847425041,27.975776145501914,%,rate,True,False
+fr3:w_non_g,Baseline,2028,7.7088362195637306,-5.297532482860186,32.167762417219684,%,rate,True,False
+fr3:w_non_g,Baseline,2029,7.719601276989341,-9.228832024847133,25.900235124360016,%,rate,True,False
+fr3:w_non_g,Baseline,2030,7.807395289749719,-4.222474864528063,24.80560045255167,%,rate,True,False
+fr3:w_non_g,Adverse,2026,6.673619699238009,,,%,rate,True,False
+fr3:w_non_g,Adverse,2027,5.481215209150059,,,%,rate,True,False
+fr3:w_non_g,Adverse,2028,5.9385298031212175,,,%,rate,True,False
+fr3:w_non_g,Adverse,2029,6.1959679149867775,,,%,rate,True,False
+fr3:w_non_g,Adverse,2030,6.313496491011961,,,%,rate,True,False
+fr3:w_non_g,Reform,2026,6.673619699237943,,,%,rate,True,False
+fr3:w_non_g,Reform,2027,9.494465190304036,,,%,rate,True,False
+fr3:w_non_g,Reform,2028,9.339916121688653,,,%,rate,True,False
+fr3:w_non_g,Reform,2029,9.33950295949224,,,%,rate,True,False
+fr3:w_non_g,Reform,2030,9.421806449536273,,,%,rate,True,False
+fr3:rw_non_g,ACTUAL,2006,10.044462908833696,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2007,22.06731552115042,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2008,11.508990523514218,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2009,9.876795446230457,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2010,4.233983752056036,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2011,3.6174788577864714,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2012,8.700919743123947,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2013,3.2492850215440017,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2014,4.073732392316454,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2015,-3.944208988471476,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2016,-9.54293558391377,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2017,-2.320960655016302,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2018,2.6412683468114873,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2019,15.81183456183457,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2020,9.564984437767233,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2021,-6.2575421813634176,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2022,1.0692058088196177,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2023,9.665644938081662,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2024,3.3752888142056126,,,%,rate,False,False
+fr3:rw_non_g,ACTUAL,2025,4.070465619999286,,,%,rate,False,False
+fr3:rw_non_g,Baseline,2026,3.162616779973204,,,%,rate,True,False
+fr3:rw_non_g,Baseline,2027,2.622090380189812,,,%,rate,True,False
+fr3:rw_non_g,Baseline,2028,2.874975371583788,,,%,rate,True,False
+fr3:rw_non_g,Baseline,2029,2.994164751652084,,,%,rate,True,False
+fr3:rw_non_g,Baseline,2030,3.11236823760217,,,%,rate,True,False
+fr3:rw_non_g,Adverse,2026,3.1689619571630967,,,%,rate,True,False
+fr3:rw_non_g,Adverse,2027,1.0407592486237682,,,%,rate,True,False
+fr3:rw_non_g,Adverse,2028,1.5855176596706544,,,%,rate,True,False
+fr3:rw_non_g,Adverse,2029,1.8789746390128537,,,%,rate,True,False
+fr3:rw_non_g,Adverse,2030,2.019058524301154,,,%,rate,True,False
+fr3:rw_non_g,Reform,2026,3.1584503080395177,,,%,rate,True,False
+fr3:rw_non_g,Reform,2027,3.9573574203387585,,,%,rate,True,False
+fr3:rw_non_g,Reform,2028,4.059471414456639,,,%,rate,True,False
+fr3:rw_non_g,Reform,2029,4.167746107843584,,,%,rate,True,False
+fr3:rw_non_g,Reform,2030,4.283311168573989,,,%,rate,True,False
+fr3:w_oil,ACTUAL,2005,482.2,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2006,624.4,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2007,838.8,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2008,1005.9,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2009,989.8,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2010,986.7,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2011,1175.4,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2012,1430.4,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2013,1554.7,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2014,1758.5,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2015,2197.2,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2016,2802.4,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2017,3082.6,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2018,3007.6,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2019,3115.8,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2020,3348.6,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2021,3166.6,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2022,3367.9,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2023,3506.3,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2024,3725.8,,,AZN/ay,level,False,False
+fr3:w_oil,ACTUAL,2025,3938.6,,,AZN/ay,level,False,False
+fr3:w_oil,Baseline,2026,4306.307802225294,3866.5668584521436,4756.696520634248,AZN/ay,level,True,False
+fr3:w_oil,Baseline,2027,4502.7312709769085,3475.990387536829,5637.806872582056,AZN/ay,level,True,False
+fr3:w_oil,Baseline,2028,4706.191054494057,3325.794229878288,7059.634988657628,AZN/ay,level,True,False
+fr3:w_oil,Baseline,2029,4914.752760286036,3091.1720704555373,8114.767500792934,AZN/ay,level,True,False
+fr3:w_oil,Baseline,2030,5131.648490204265,3029.196208836786,9385.25086383922,AZN/ay,level,True,False
+fr3:w_oil,Adverse,2026,4306.307802225294,,,AZN/ay,level,True,False
+fr3:w_oil,Adverse,2027,4352.562760932599,,,AZN/ay,level,True,False
+fr3:w_oil,Adverse,2028,4409.987635827012,,,AZN/ay,level,True,False
+fr3:w_oil,Adverse,2029,4469.718491141572,,,AZN/ay,level,True,False
+fr3:w_oil,Adverse,2030,4524.92346563737,,,AZN/ay,level,True,False
+fr3:w_oil,Reform,2026,4306.30780222529,,,AZN/ay,level,True,False
+fr3:w_oil,Reform,2027,4671.569416628389,,,AZN/ay,level,True,False
+fr3:w_oil,Reform,2028,5060.218664578819,,,AZN/ay,level,True,False
+fr3:w_oil,Reform,2029,5480.694245971208,,,AZN/ay,level,True,False
+fr3:w_oil,Reform,2030,5940.0399661374695,,,AZN/ay,level,True,False
+fr3:rw_oil,ACTUAL,2005,943.5773045533516,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2006,1096.8013692537133,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2007,1231.9478720039663,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2008,1280.214993575031,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2009,1250.9676529533997,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2010,1155.745773871356,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2011,1303.7639071318922,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2012,1591.3862847359999,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2013,1671.1843427999997,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2014,1892.1459999999997,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2015,2197.2,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2016,2422.126188418323,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2017,2469.234694245368,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2018,2373.55462087131,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2019,2401.3129913693992,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2020,2515.3308049696184,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2021,2123.767749159775,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2022,1974.453805871955,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2023,2013.3121720303552,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2024,2039.4172936081786,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,ACTUAL,2025,2049.3337671438853,,,"AZN/ay, 2015 qiymətləri",level,False,False
+fr3:rw_oil,Baseline,2026,2166.911656930066,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Baseline,2027,2159.7596715947125,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Baseline,2028,2156.0427304905497,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Baseline,2029,2152.8182573648546,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Baseline,2030,2149.932382960815,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Adverse,2026,2167.0449362016393,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Adverse,2027,2098.11537775321,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Adverse,2028,2038.4476049990867,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Adverse,2029,1982.0695541077964,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Adverse,2030,1925.4970900863977,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Reform,2026,2166.8241409588427,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Reform,2027,2231.7444733543093,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Reform,2028,2300.667325931163,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Reform,2029,2373.975797857646,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:rw_oil,Reform,2030,2452.1160027199758,,,"AZN/ay, 2015 qiymətləri",level,True,False
+fr3:w_oil_g,ACTUAL,2006,29.489838241393617,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2007,34.33696348494555,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2008,19.921316165951364,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2009,-1.6005567153792644,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2010,-0.3131945847645867,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2011,19.12435390696261,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2012,21.694742215416028,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2013,8.689876957494413,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2014,13.10863832250595,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2015,24.94739835086721,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2016,27.544147096304393,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2017,9.99857265201256,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2018,-2.4330110945305905,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2019,3.5975528660726175,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2020,7.471596379741952,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2021,-5.435107208982859,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2022,6.356975936335507,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2023,4.109385670595933,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2024,6.260160282919314,,,%,rate,False,False
+fr3:w_oil_g,ACTUAL,2025,5.711525041601795,,,%,rate,False,False
+fr3:w_oil_g,Baseline,2026,9.336002697031788,-1.8289021872710107,20.77125172991033,%,rate,True,False
+fr3:w_oil_g,Baseline,2027,4.561296539232806,-17.55028653686042,28.26665056619572,%,rate,True,False
+fr3:w_oil_g,Baseline,2028,4.518585970887989,-14.44934315254075,32.07516968890996,%,rate,True,False
+fr3:w_oil_g,Baseline,2029,4.431645536209539,-17.224055498814188,26.431336030923067,%,rate,True,False
+fr3:w_oil_g,Baseline,2030,4.413156480034308,-13.941483240156535,26.203051205100124,%,rate,True,False
+fr3:w_oil_g,Adverse,2026,9.336002697031788,,,%,rate,True,False
+fr3:w_oil_g,Adverse,2027,1.0741210529215506,,,%,rate,True,False
+fr3:w_oil_g,Adverse,2028,1.319334793052107,,,%,rate,True,False
+fr3:w_oil_g,Adverse,2029,1.3544449610085607,,,%,rate,True,False
+fr3:w_oil_g,Adverse,2030,1.2350883977415572,,,%,rate,True,False
+fr3:w_oil_g,Reform,2026,9.336002697031699,,,%,rate,True,False
+fr3:w_oil_g,Reform,2027,8.48201362230423,,,%,rate,True,False
+fr3:w_oil_g,Reform,2028,8.3194578371679,,,%,rate,True,False
+fr3:w_oil_g,Reform,2029,8.309435011883771,,,%,rate,True,False
+fr3:w_oil_g,Reform,2030,8.381159385125713,,,%,rate,True,False
+fr3:rw_oil_g,ACTUAL,2006,16.23863396893499,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2007,12.321875823533057,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2008,3.917951616942217,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2009,-2.2845647620449605,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2010,-7.6118578172053475,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2011,12.807153320987341,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2012,22.060924990387164,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2013,5.014373871975275,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2014,13.22186018268865,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2015,16.122117426456526,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2016,10.236946496373722,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2017,1.9449236811979187,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2018,-3.8748877778626456,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2019,1.169485220774047,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2020,4.748144619631534,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2021,-15.567060008020405,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2022,-7.0306154402661525,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2023,1.9680564844230197,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2024,1.2966256271871313,,,%,rate,False,False
+fr3:rw_oil_g,ACTUAL,2025,0.4862405338420084,,,%,rate,False,False
+fr3:rw_oil_g,Baseline,2026,5.7373714165675604,,,%,rate,True,False
+fr3:rw_oil_g,Baseline,2027,-0.33005431081974956,,,%,rate,True,False
+fr3:rw_oil_g,Baseline,2028,-0.17209975503515995,,,%,rate,True,False
+fr3:rw_oil_g,Baseline,2029,-0.14955515862904445,,,%,rate,True,False
+fr3:rw_oil_g,Baseline,2030,-0.13405100008636595,,,%,rate,True,False
+fr3:rw_oil_g,Adverse,2026,5.74387495804578,,,%,rate,True,False
+fr3:rw_oil_g,Adverse,2027,-3.1808089115700544,,,%,rate,True,False
+fr3:rw_oil_g,Adverse,2028,-2.8438747166525724,,,%,rate,True,False
+fr3:rw_oil_g,Adverse,2029,-2.765734608681081,,,%,rate,True,False
+fr3:rw_oil_g,Adverse,2030,-2.8542118466101996,,,%,rate,True,False
+fr3:rw_oil_g,Reform,2026,5.73310095693691,,,%,rate,True,False
+fr3:rw_oil_g,Reform,2027,2.9961052753796125,,,%,rate,True,False
+fr3:rw_oil_g,Reform,2028,3.0882949817844674,,,%,rate,True,False
+fr3:rw_oil_g,Reform,2029,3.186400358722552,,,%,rate,True,False
+fr3:rw_oil_g,Reform,2030,3.291533339676267,,,%,rate,True,False
+fr3:wagebill,ACTUAL,2000,713.0483665816098,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2001,745.5897962973116,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2002,881.3420266992946,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2003,1131.5479122601516,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2004,1482.0316799492223,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2005,2073.0147693998306,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2006,2349.4772591948163,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2007,3124.8152294382417,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2008,4100.289975572657,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2009,4453.706661819794,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2010,4907.2615674066665,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2011,5600.477818024201,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2012,6441.876287218386,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2013,7215.817629577017,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2014,7525.240537453143,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2015,7707.500476418766,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2016,8226.627061196723,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2017,8939.535764989852,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2018,10419.891491477321,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2019,14210.130076625697,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2020,14970.94311686726,,,mln AZN,level,False,True
+fr3:wagebill,ACTUAL,2021,15880.287532656677,,,mln AZN,level,False,False
+fr3:wagebill,ACTUAL,2022,18800.514712437798,,,mln AZN,level,False,False
+fr3:wagebill,ACTUAL,2023,21810.291890877146,,,mln AZN,level,False,False
+fr3:wagebill,ACTUAL,2024,25119.66790138816,,,mln AZN,level,False,False
+fr3:wagebill,ACTUAL,2025,27262.61248486278,,,mln AZN,level,False,False
+fr3:wagebill,Baseline,2026,29302.410819830224,28181.864846618962,30440.53086061393,mln AZN,level,True,False
+fr3:wagebill,Baseline,2027,31686.08071987325,26328.281889880698,38010.83698302132,mln AZN,level,True,False
+fr3:wagebill,Baseline,2028,34271.535812228336,26429.6607727709,46483.586701558874,mln AZN,level,True,False
+fr3:wagebill,Baseline,2029,37066.838992294186,26520.18222614857,53505.69950217245,mln AZN,level,True,False
+fr3:wagebill,Baseline,2030,40120.98451112865,27746.944544661634,60011.33729649735,mln AZN,level,True,False
+fr3:wagebill,Adverse,2026,29302.2040451015,,,mln AZN,level,True,False
+fr3:wagebill,Adverse,2027,30990.79919098454,,,mln AZN,level,True,False
+fr3:wagebill,Adverse,2028,32914.320600969615,,,mln AZN,level,True,False
+fr3:wagebill,Adverse,2029,35039.81343519823,,,mln AZN,level,True,False
+fr3:wagebill,Adverse,2030,37342.142542244655,,,mln AZN,level,True,False
+fr3:wagebill,Reform,2026,29302.54661177924,,,mln AZN,level,True,False
+fr3:wagebill,Reform,2027,32298.707838033773,,,mln AZN,level,True,False
+fr3:wagebill,Reform,2028,35540.97538002985,,,mln AZN,level,True,False
+fr3:wagebill,Reform,2029,39103.76580696852,,,mln AZN,level,True,False
+fr3:wagebill,Reform,2030,43054.269143697835,,,mln AZN,level,True,False
+fr3:prem_oil,ACTUAL,2005,4.4279155188246095,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2006,4.677153558052434,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2007,4.3037455105182145,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2008,4.010765550239234,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2009,3.566846846846847,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2010,3.161486702979814,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2011,3.441874084919473,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2012,3.8649013780059445,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2013,3.930973451327434,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2014,4.276507782101167,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2015,5.169882352941176,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2016,6.3003597122302155,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2017,6.575511945392491,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2018,6.158067158067158,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2019,5.379488950276243,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2020,5.142988788204576,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2021,4.632241076653013,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2022,4.2610070850202435,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2023,3.9619209039548027,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2024,3.882254871313952,,,dəfə,index,False,False
+fr3:prem_oil,ACTUAL,2025,3.7485485866565145,,,dəfə,index,False,False
+fr3:prem_oil,Baseline,2026,3.842105663388855,,,dəfə,index,True,False
+fr3:prem_oil,Baseline,2027,3.7315792475416414,,,dəfə,index,True,False
+fr3:prem_oil,Baseline,2028,3.6210528316944277,,,dəfə,index,True,False
+fr3:prem_oil,Baseline,2029,3.5105264158472136,,,dəfə,index,True,False
+fr3:prem_oil,Baseline,2030,3.4,,,dəfə,index,True,False
+fr3:prem_oil,Adverse,2026,3.842105663388855,,,dəfə,index,True,False
+fr3:prem_oil,Adverse,2027,3.6815792475416416,,,dəfə,index,True,False
+fr3:prem_oil,Adverse,2028,3.5210528316944276,,,dəfə,index,True,False
+fr3:prem_oil,Adverse,2029,3.3605264158472137,,,dəfə,index,True,False
+fr3:prem_oil,Adverse,2030,3.2,,,dəfə,index,True,False
+fr3:prem_oil,Reform,2026,3.842105663388855,,,dəfə,index,True,False
+fr3:prem_oil,Reform,2027,3.8065792475416416,,,dəfə,index,True,False
+fr3:prem_oil,Reform,2028,3.7710528316944276,,,dəfə,index,True,False
+fr3:prem_oil,Reform,2029,3.7355264158472137,,,dəfə,index,True,False
+fr3:prem_oil,Reform,2030,3.7,,,dəfə,index,True,False
+fr3:prem_sp,ACTUAL,2005,0.464304325169359,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2006,0.5040723981900452,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2007,0.5797639123102867,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2008,0.6908877820099619,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2009,0.7374020156774915,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2010,0.6520405756074545,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2011,0.649882151274909,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2012,0.6654007595442734,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2013,0.6399188341634384,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2014,0.6228331290492033,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2015,0.5837382572076449,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2016,0.5525773195876289,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2017,0.5563211925186331,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2018,0.6307937427578215,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2019,0.692407865607501,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2020,0.7876746506986028,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2021,0.794703595724004,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2022,0.895050618672666,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2023,0.9358244488148225,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2024,0.9349492239892699,,,nisbət,index,False,False
+fr3:prem_sp,ACTUAL,2025,0.9612237637851297,,,nisbət,index,False,False
+fr3:prem_sp,Baseline,2026,0.9877139456048926,,,nisbət,index,True,False
+fr3:prem_sp,Baseline,2027,1.0096868203308258,,,nisbət,index,True,False
+fr3:prem_sp,Baseline,2028,1.0333471844438733,,,nisbət,index,True,False
+fr3:prem_sp,Baseline,2029,1.0581271333712883,,,nisbət,index,True,False
+fr3:prem_sp,Baseline,2030,1.084254978988189,,,nisbət,index,True,False
+fr3:prem_sp,Adverse,2026,0.9877139456048926,,,nisbət,index,True,False
+fr3:prem_sp,Adverse,2027,0.9888784762526138,,,nisbət,index,True,False
+fr3:prem_sp,Adverse,2028,0.9945781371477579,,,nisbət,index,True,False
+fr3:prem_sp,Adverse,2029,1.0027723584452852,,,nisbət,index,True,False
+fr3:prem_sp,Adverse,2030,1.0122474660596883,,,nisbət,index,True,False
+fr3:prem_sp,Reform,2026,0.9877139456048926,,,nisbət,index,True,False
+fr3:prem_sp,Reform,2027,1.0293845290711627,,,nisbət,index,True,False
+fr3:prem_sp,Reform,2028,1.0714316927903262,,,nisbət,index,True,False
+fr3:prem_sp,Reform,2029,1.1148862410444746,,,nisbət,index,True,False
+fr3:prem_sp,Reform,2030,1.1603979604977706,,,nisbət,index,True,False
+fr3:minwage,ACTUAL,2000,5.5,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2001,5.5,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2002,9.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2003,20.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2004,30.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2005,30.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2006,50.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2007,75.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2008,75.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2009,85.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2010,93.5,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2011,93.5,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2012,105.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2013,105.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2014,105.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2015,105.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2016,116.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2017,130.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2018,250.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2019,250.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2020,250.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2021,300.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2022,345.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2023,345.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2024,400.0,,,AZN/ay,level,False,False
+fr3:minwage,ACTUAL,2025,400.0,,,AZN/ay,level,False,False
+fr3:minwage,Baseline,2026,424.0,,,AZN/ay,level,True,False
+fr3:minwage,Baseline,2027,449.44,,,AZN/ay,level,True,False
+fr3:minwage,Baseline,2028,476.4064,,,AZN/ay,level,True,False
+fr3:minwage,Baseline,2029,504.990784,,,AZN/ay,level,True,False
+fr3:minwage,Baseline,2030,535.2902310400001,,,AZN/ay,level,True,False
+fr3:minwage,Adverse,2026,412.0,,,AZN/ay,level,True,False
+fr3:minwage,Adverse,2027,424.36,,,AZN/ay,level,True,False
+fr3:minwage,Adverse,2028,437.0908,,,AZN/ay,level,True,False
+fr3:minwage,Adverse,2029,450.203524,,,AZN/ay,level,True,False
+fr3:minwage,Adverse,2030,463.70962972,,,AZN/ay,level,True,False
+fr3:minwage,Reform,2026,436.00000000000006,,,AZN/ay,level,True,False
+fr3:minwage,Reform,2027,475.2400000000001,,,AZN/ay,level,True,False
+fr3:minwage,Reform,2028,518.0116000000002,,,AZN/ay,level,True,False
+fr3:minwage,Reform,2029,564.6326440000003,,,AZN/ay,level,True,False
+fr3:minwage,Reform,2030,615.4495819600003,,,AZN/ay,level,True,False
+fr3:kaitz,ACTUAL,2000,0.12415349887133184,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2001,0.10576923076923077,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2002,0.14263074484944532,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2003,0.25839793281653745,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2004,0.30181086519114686,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2005,0.24271844660194175,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2006,0.33557046979865773,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2007,0.3475440222428174,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2008,0.27332361516034986,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2009,0.28523489932885904,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2010,0.28205128205128205,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2011,0.256727073036793,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2012,0.2635542168674699,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2013,0.24700070571630203,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2014,0.23622047244094488,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2015,0.22488755622188908,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2016,0.23209283713485393,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2017,0.24597918637653737,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2018,0.45905251560778554,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2019,0.39363879703983623,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2020,0.3532570298148933,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2021,0.4097800846878842,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2022,0.4107142857142857,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2023,0.369418567298426,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2024,0.3962750148603131,,,nisbət,index,False,False
+fr3:kaitz,ACTUAL,2025,0.3626802067277178,,,nisbət,index,False,False
+fr3:kaitz,Baseline,2026,0.3595968726631854,,,nisbət,index,True,False
+fr3:kaitz,Baseline,2027,0.35498068640899005,,,nisbət,index,True,False
+fr3:kaitz,Baseline,2028,0.3502617843542722,,,nisbət,index,True,False
+fr3:kaitz,Baseline,2029,0.3455734343953227,,,nisbət,index,True,False
+fr3:kaitz,Baseline,2030,0.340672523884341,,,nisbət,index,True,False
+fr3:kaitz,Adverse,2026,0.3494196026821519,,,nisbət,index,True,False
+fr3:kaitz,Adverse,2027,0.34249348978476624,,,nisbət,index,True,False
+fr3:kaitz,Adverse,2028,0.33426029939919943,,,nisbət,index,True,False
+fr3:kaitz,Adverse,2029,0.325438909032593,,,nisbət,index,True,False
+fr3:kaitz,Adverse,2030,0.3165046634523042,,,nisbət,index,True,False
+fr3:kaitz,Reform,2026,0.36977414264421904,,,nisbət,index,True,False
+fr3:kaitz,Reform,2027,0.36841214650201587,,,nisbət,index,True,False
+fr3:kaitz,Reform,2028,0.3675742471238952,,,nisbət,index,True,False
+fr3:kaitz,Reform,2029,0.36673989551944575,,,nisbət,index,True,False
+fr3:kaitz,Reform,2030,0.3656324713207539,,,nisbət,index,True,False
+fr3:hired,ACTUAL,2000,1341.32499356962,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2001,1194.8554427841534,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2002,1163.948793844816,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2003,1218.2901725453828,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2004,1242.481287683788,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2005,1397.6636794766928,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2006,1314.0253127487786,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2007,1206.6787262273097,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2008,1245.2289770325124,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2009,1245.4436973769,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2010,1233.6001929126865,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2011,1281.456575605025,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2012,1347.4473492341,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2013,1414.5333704965533,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2014,1410.8062499912153,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2015,1375.6515450165573,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2016,1371.653171468041,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2017,1409.5767526001027,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2018,1594.4258005076083,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2019,1864.5528363808448,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2020,1762.8636329974163,,,min nəfər,level,False,True
+fr3:hired,ACTUAL,2021,1807.61821388889,,,min nəfər,level,False,False
+fr3:hired,ACTUAL,2022,1865.13042782121,,,min nəfər,level,False,False
+fr3:hired,ACTUAL,2023,1946.16588953824,,,min nəfər,level,False,False
+fr3:hired,ACTUAL,2024,2073.81182727265,,,min nəfər,level,False,False
+fr3:hired,ACTUAL,2025,2059.9187358224362,,,min nəfər,level,False,False
+fr3:hired,Baseline,2026,2070.9621250595196,,,min nəfər,level,True,False
+fr3:hired,Baseline,2027,2085.5484387147103,,,min nəfər,level,True,False
+fr3:hired,Baseline,2028,2099.7495146567503,,,min nəfər,level,True,False
+fr3:hired,Baseline,2029,2113.7869011000876,,,min nəfər,level,True,False
+fr3:hired,Baseline,2030,2127.8358700810704,,,min nəfər,level,True,False
+fr3:hired,Adverse,2026,2070.9475111550787,,,min nəfər,level,True,False
+fr3:hired,Adverse,2027,2084.344064422347,,,min nəfər,level,True,False
+fr3:hired,Adverse,2028,2097.5715378820873,,,min nəfər,level,True,False
+fr3:hired,Adverse,2029,2110.771027093757,,,min nəfər,level,True,False
+fr3:hired,Adverse,2030,2123.987638747427,,,min nəfər,level,True,False
+fr3:hired,Reform,2026,2070.9717222215086,,,min nəfər,level,True,False
+fr3:hired,Reform,2027,2086.531065681113,,,min nəfər,level,True,False
+fr3:hired,Reform,2028,2101.6175550514317,,,min nəfər,level,True,False
+fr3:hired,Reform,2029,2116.5547692611067,,,min nəfər,level,True,False
+fr3:hired,Reform,2030,2131.509399706635,,,min nəfər,level,True,False
+fr3:cpi,ACTUAL,2000,40.51077140034855,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2001,41.037411428553085,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2002,42.39164600569533,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2003,43.917745261900365,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2004,48.485190769138015,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2005,51.103391070671464,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2006,56.92917765272802,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2007,68.08729647266271,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2008,78.5727401294528,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2009,79.12274931035897,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2010,85.37344650587733,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2011,90.15435951020643,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2012,89.88389643167584,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2013,93.02983280678448,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2014,92.9368029739777,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2015,100.0,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2016,115.7,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2017,124.8403,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2018,126.7129045,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2019,129.754014208,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2020,133.127618577408,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2021,149.10293280669697,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2022,170.57375513086131,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2023,174.1558039886094,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2024,182.6894383840513,,,2015 = 100,index,False,False
+fr3:cpi,ACTUAL,2025,192.18928918002197,,,2015 = 100,index,False,False
+fr3:cpi,Baseline,2026,198.7301968888838,,,2015 = 100,index,True,False
+fr3:cpi,Baseline,2027,208.48297753667217,,,2015 = 100,index,True,False
+fr3:cpi,Baseline,2028,218.27911793859903,,,2015 = 100,index,True,False
+fr3:cpi,Baseline,2029,228.2939000295321,,,2015 = 100,index,True,False
+fr3:cpi,Baseline,2030,238.68883183838227,,,2015 = 100,index,True,False
+fr3:cpi,Adverse,2026,198.71797443080803,,,2015 = 100,index,True,False
+fr3:cpi,Adverse,2027,207.4510680910975,,,2015 = 100,index,True,False
+fr3:cpi,Adverse,2028,216.34049484578185,,,2015 = 100,index,True,False
+fr3:cpi,Adverse,2029,225.5076509236609,,,2015 = 100,index,True,False
+fr3:cpi,Adverse,2030,235.00027545792528,,,2015 = 100,index,True,False
+fr3:cpi,Reform,2026,198.7382234129856,,,2015 = 100,index,True,False
+fr3:cpi,Reform,2027,209.32366910298768,,,2015 = 100,index,True,False
+fr3:cpi,Reform,2028,219.9456917366689,,,2015 = 100,index,True,False
+fr3:cpi,Reform,2029,230.86563270430844,,,2015 = 100,index,True,False
+fr3:cpi,Reform,2030,242.24139312938553,,,2015 = 100,index,True,False
+fr3:w_avg_unbalanced,Baseline,2026,1179.4248447873142,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Baseline,2027,1244.0556401868826,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Baseline,2028,1322.7983797320014,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Baseline,2029,1412.316817392184,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Baseline,2030,1513.3477778168804,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Adverse,2026,1179.4248447873142,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Adverse,2027,1218.020125569269,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Adverse,2028,1273.5232839158125,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Adverse,2029,1340.4154200952446,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Adverse,2030,1415.3752069871466,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Reform,2026,1179.4248447873142,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Reform,2027,1267.3207968489248,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Reform,2028,1367.8282048350961,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Reform,2029,1481.0719730192216,,,AZN/ay,index,True,False
+fr3:w_avg_unbalanced,Reform,2030,1608.1990410003132,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Baseline,2026,1124.4482050859476,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Baseline,2027,1222.8728759168541,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Baseline,2028,1328.7597521747691,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Baseline,2029,1442.795125889239,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Baseline,2030,1567.4563664292752,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Adverse,2026,1124.4482050859476,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Adverse,2027,1195.9470522676993,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Adverse,2028,1276.4228749540998,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Adverse,2029,1365.1041222328138,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Adverse,2030,1461.183689506804,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Reform,2026,1124.4482050859476,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Reform,2027,1245.277638483849,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Reform,2028,1375.2759757631602,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Reform,2029,1517.8108761168878,,,AZN/ay,index,True,False
+fr3:w_non_unbalanced,Reform,2030,1675.8058003397232,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Baseline,2026,1187.1258987578917,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Baseline,2027,1259.7148981465893,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Baseline,2028,1336.935863370219,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Baseline,2029,1418.782166765144,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Baseline,2030,1506.306040017666,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Adverse,2026,1187.1258987578917,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Adverse,2027,1244.623691885452,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Adverse,2028,1308.1637302814456,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Adverse,2029,1376.8916215309632,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Adverse,2030,1450.1161041391085,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Reform,2026,1187.1258987578917,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Reform,2027,1272.1436343290159,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Reform,2028,1362.0509555653014,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Reform,2029,1458.224213167927,,,AZN/ay,index,True,False
+fr3:w_priv_unbalanced,Reform,2030,1561.7750300998464,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Baseline,2026,1167.1558657939854,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Baseline,2027,1247.5910777901638,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Baseline,2028,1337.2947365996915,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Baseline,2029,1435.2140852749085,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Baseline,2030,1542.0727060640136,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Adverse,2026,1167.1558657939854,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Adverse,2027,1210.7447826373302,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Adverse,2028,1266.259234008067,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Adverse,2029,1329.98197996354,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Adverse,2030,1399.7473240264394,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Reform,2026,1167.1558657939843,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Reform,2027,1281.8023685391897,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Reform,2028,1406.2381502692183,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Reform,2029,1542.5973095664751,,,AZN/ay,index,True,False
+fr3:w_state_unbalanced,Reform,2030,1692.8543102430976,,,AZN/ay,index,True,False
+fr3:factor_w_avg,Baseline,2026,0.9997229877787761,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Baseline,2027,1.017717382944159,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Baseline,2028,1.0282321455213257,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Baseline,2029,1.0346917175104637,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Baseline,2030,1.038277556248105,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Adverse,2026,0.9997229877787761,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Adverse,2027,1.017249899791105,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Adverse,2028,1.0267860932946442,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Adverse,2029,1.0320482445785824,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Adverse,2030,1.0351288611558127,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Reform,2026,0.9997229877787761,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Reform,2027,1.0178703998824674,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Reform,2028,1.030297993566484,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Reform,2029,1.0395171589999759,,,log / nisbət,index,True,False
+fr3:factor_w_avg,Reform,2030,1.0466655363606796,,,log / nisbət,index,True,False
+fr3:factor_w_non,Baseline,2026,0.9967730991168452,,,log / nisbət,index,True,False
+fr3:factor_w_non,Baseline,2027,0.986738439851288,,,log / nisbət,index,True,False
+fr3:factor_w_non,Baseline,2028,0.9781111906893121,,,log / nisbət,index,True,False
+fr3:factor_w_non,Baseline,2029,0.9703418519994187,,,log / nisbət,index,True,False
+fr3:factor_w_non,Baseline,2030,0.9629029629131585,,,log / nisbət,index,True,False
+fr3:factor_w_non,Adverse,2026,0.9967730991168452,,,log / nisbət,index,True,False
+fr3:factor_w_non,Adverse,2027,0.9885506728892688,,,log / nisbət,index,True,False
+fr3:factor_w_non,Adverse,2028,0.9812287209883537,,,log / nisbət,index,True,False
+fr3:factor_w_non,Adverse,2029,0.9743322547174548,,,log / nisbət,index,True,False
+fr3:factor_w_non,Adverse,2030,0.967734989903262,,,log / nisbət,index,True,False
+fr3:factor_w_non,Reform,2026,0.9967730991168444,,,log / nisbət,index,True,False
+fr3:factor_w_non,Reform,2027,0.9855116020894021,,,log / nisbət,index,True,False
+fr3:factor_w_non,Reform,2028,0.9757011364751415,,,log / nisbət,index,True,False
+fr3:factor_w_non,Reform,2029,0.9666429818650858,,,log / nisbət,index,True,False
+fr3:factor_w_non,Reform,2030,0.9579965690169632,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Baseline,2026,1.0006892965538283,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Baseline,2027,1.0028226373061806,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Baseline,2028,1.0046353343275314,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Baseline,2029,1.0062433284790113,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Baseline,2030,1.0077578536250207,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Adverse,2026,1.0006892965538283,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Adverse,2027,1.0024567201965355,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Adverse,2028,1.0040357535627031,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Adverse,2029,1.0055219602713106,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Adverse,2030,1.0069406585081346,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Reform,2026,1.0006892965538283,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Reform,2027,1.0030595396182171,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Reform,2028,1.005069125163964,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Reform,2029,1.0068696345880463,,,log / nisbət,index,True,False
+fr3:factor_w_priv,Reform,2030,1.0085329612668779,,,log / nisbət,index,True,False
+fr3:factor_w_state,Baseline,2026,1.0053062046945143,,,log / nisbət,index,True,False
+fr3:factor_w_state,Baseline,2027,1.0223764137227886,,,log / nisbət,index,True,False
+fr3:factor_w_state,Baseline,2028,1.037858502122918,,,log / nisbət,index,True,False
+fr3:factor_w_state,Baseline,2029,1.052543123204704,,,log / nisbət,index,True,False
+fr3:factor_w_state,Baseline,2030,1.0673232835437376,,,log / nisbət,index,True,False
+fr3:factor_w_state,Adverse,2026,1.0053062046945143,,,log / nisbət,index,True,False
+fr3:factor_w_state,Adverse,2027,1.0190465270616222,,,log / nisbət,index,True,False
+fr3:factor_w_state,Adverse,2028,1.03163855628655,,,log / nisbət,index,True,False
+fr3:factor_w_state,Adverse,2029,1.0438736005640523,,,log / nisbət,index,True,False
+fr3:factor_w_state,Adverse,2030,1.055950852719755,,,log / nisbət,index,True,False
+fr3:factor_w_state,Reform,2026,1.0053062046945151,,,log / nisbət,index,True,False
+fr3:factor_w_state,Reform,2027,1.024753543696864,,,log / nisbət,index,True,False
+fr3:factor_w_state,Reform,2028,1.0430254370102312,,,log / nisbət,index,True,False
+fr3:factor_w_state,Reform,2029,1.0611469617794782,,,log / nisbət,index,True,False
+fr3:factor_w_state,Reform,2030,1.0796822079994817,,,log / nisbət,index,True,False
+fr3:w_avg_from_parts,Baseline,2026,1179.098129590091,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Baseline,2027,1266.0970505887603,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Baseline,2028,1360.1438164022964,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Baseline,2029,1461.312514274929,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Baseline,2030,1571.2750322895963,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Adverse,2026,1179.098129590091,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Adverse,2027,1239.030850656325,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Adverse,2028,1307.6359976108436,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Adverse,2029,1383.373381355481,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Adverse,2030,1465.0957244980034,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Reform,2026,1179.098129590091,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Reform,2027,1289.9683259213427,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Reform,2028,1409.2706555440955,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Reform,2029,1539.5997293628961,,,AZN/ay,index,True,False
+fr3:w_avg_from_parts,Reform,2030,1683.2465116245876,,,AZN/ay,index,True,False
+fr3:agg_gap_pct,Baseline,2026,-8.58300097661413e-09,,,%,rate,True,False
+fr3:agg_gap_pct,Baseline,2027,1.7443047006793222e-08,,,%,rate,True,False
+fr3:agg_gap_pct,Baseline,2028,2.340394544830815e-08,,,%,rate,True,False
+fr3:agg_gap_pct,Baseline,2029,5.6011173477088505e-08,,,%,rate,True,False
+fr3:agg_gap_pct,Baseline,2030,-1.3722267766524965e-08,,,%,rate,True,False
+fr3:agg_gap_pct,Adverse,2026,-8.58300097661413e-09,,,%,rate,True,False
+fr3:agg_gap_pct,Adverse,2027,-1.8210322139111668e-09,,,%,rate,True,False
+fr3:agg_gap_pct,Adverse,2028,1.5230572358859717e-08,,,%,rate,True,False
+fr3:agg_gap_pct,Adverse,2029,2.900213402767804e-09,,,%,rate,True,False
+fr3:agg_gap_pct,Adverse,2030,-1.104893287973141e-07,,,%,rate,True,False
+fr3:agg_gap_pct,Reform,2026,-8.58300097661413e-09,,,%,rate,True,False
+fr3:agg_gap_pct,Reform,2027,-2.687194911032975e-08,,,%,rate,True,False
+fr3:agg_gap_pct,Reform,2028,3.965527906046873e-08,,,%,rate,True,False
+fr3:agg_gap_pct,Reform,2029,-1.9780077575859423e-08,,,%,rate,True,False
+fr3:agg_gap_pct,Reform,2030,-1.180668895983672e-08,,,%,rate,True,False
+fr3:w_avg_from_oil_split,Baseline,2026,1179.0981296526036,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Baseline,2027,1266.0970505566095,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Baseline,2028,1360.1438162379477,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Baseline,2029,1461.3125137356546,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Baseline,2030,1571.2750324388394,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Adverse,2026,1179.0981296526036,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Adverse,2027,1239.0308506827112,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Adverse,2028,1307.635997692318,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Adverse,2029,1383.373381526784,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Adverse,2030,1465.0957259857623,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Reform,2026,1179.0981296526027,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Reform,2027,1289.968326083661,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Reform,2028,1409.2706555973111,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Reform,2029,1539.5997284534276,,,AZN/ay,index,True,False
+fr3:w_avg_from_oil_split,Reform,2030,1683.2465106126015,,,AZN/ay,index,True,False
+fr3:oil_split_gap_pct,Baseline,2026,-3.2812752515098964e-09,,,%,rate,True,False
+fr3:oil_split_gap_pct,Baseline,2027,1.4903678291489086e-08,,,%,rate,True,False
+fr3:oil_split_gap_pct,Baseline,2028,1.1320766546418781e-08,,,%,rate,True,False
+fr3:oil_split_gap_pct,Baseline,2029,1.9107737614376674e-08,,,%,rate,True,False
+fr3:oil_split_gap_pct,Baseline,2030,-4.224054439561087e-09,,,%,rate,True,False
+fr3:oil_split_gap_pct,Adverse,2026,-3.2812752515098964e-09,,,%,rate,True,False
+fr3:oil_split_gap_pct,Adverse,2027,3.085531830038235e-10,,,%,rate,True,False
+fr3:oil_split_gap_pct,Adverse,2028,2.1461232790898066e-08,,,%,rate,True,False
+fr3:oil_split_gap_pct,Adverse,2029,1.5283219134687442e-08,,,%,rate,True,False
+fr3:oil_split_gap_pct,Adverse,2030,-8.942446783066771e-09,,,%,rate,True,False
+fr3:oil_split_gap_pct,Reform,2026,-3.28135296712162e-09,,,%,rate,True,False
+fr3:oil_split_gap_pct,Reform,2027,-1.4288825678221428e-08,,,%,rate,True,False
+fr3:oil_split_gap_pct,Reform,2028,4.3431391816284304e-08,,,%,rate,True,False
+fr3:oil_split_gap_pct,Reform,2029,-7.885183617162284e-08,,,%,rate,True,False
+fr3:oil_split_gap_pct,Reform,2030,-7.19277748473246e-08,,,%,rate,True,False
+fr3:balance_factor,Baseline,2026,1.0006892965538283,,,log / nisbət,index,True,False
+fr3:balance_factor,Baseline,2027,1.0028226373061806,,,log / nisbət,index,True,False
+fr3:balance_factor,Baseline,2028,1.0046353343275314,,,log / nisbət,index,True,False
+fr3:balance_factor,Baseline,2029,1.0062433284790113,,,log / nisbət,index,True,False
+fr3:balance_factor,Baseline,2030,1.0077578536250207,,,log / nisbət,index,True,False
+fr3:balance_factor,Adverse,2026,1.0006892965538283,,,log / nisbət,index,True,False
+fr3:balance_factor,Adverse,2027,1.0024567201965355,,,log / nisbət,index,True,False
+fr3:balance_factor,Adverse,2028,1.0040357535627031,,,log / nisbət,index,True,False
+fr3:balance_factor,Adverse,2029,1.0055219602713106,,,log / nisbət,index,True,False
+fr3:balance_factor,Adverse,2030,1.0069406585081346,,,log / nisbət,index,True,False
+fr3:balance_factor,Reform,2026,1.0006892965538283,,,log / nisbət,index,True,False
+fr3:balance_factor,Reform,2027,1.0030595396182171,,,log / nisbət,index,True,False
+fr3:balance_factor,Reform,2028,1.005069125163964,,,log / nisbət,index,True,False
+fr3:balance_factor,Reform,2029,1.0068696345880463,,,log / nisbət,index,True,False
+fr3:balance_factor,Reform,2030,1.0085329612668779,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Baseline,2026,0.03274158292960704,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Baseline,2027,0.01637079146480352,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Baseline,2028,0.00818539573240176,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Baseline,2029,0.00409269786620088,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Baseline,2030,0.00204634893310044,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Adverse,2026,0.04400030079051702,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Adverse,2027,0.02200015039525851,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Adverse,2028,0.011000075197629255,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Adverse,2029,0.005500037598814627,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Adverse,2030,0.0027500187994073137,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Reform,2026,0.021848978832489575,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Reform,2027,0.010924489416244788,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Reform,2028,0.005462244708122394,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Reform,2029,0.002731122354061197,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_state,Reform,2030,0.0013655611770305985,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Baseline,2026,0.03629667662151095,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Baseline,2027,0.018148338310755473,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Baseline,2028,0.009074169155377737,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Baseline,2029,0.004537084577688868,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Baseline,2030,0.002268542288844434,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Adverse,2026,0.03651359403397597,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Adverse,2027,0.018256797016987986,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Adverse,2028,0.009128398508493993,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Adverse,2029,0.004564199254246996,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Adverse,2030,0.002282099627123498,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Reform,2026,0.03615422248706946,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Reform,2027,0.01807711124353473,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Reform,2028,0.009038555621767365,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Reform,2029,0.004519277810883683,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_avg,Reform,2030,0.0022596389054418413,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Baseline,2026,0.03256051253764074,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Baseline,2027,0.01628025626882037,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Baseline,2028,0.008140128134410184,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Baseline,2029,0.004070064067205092,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Baseline,2030,0.002035032033602546,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Adverse,2026,0.03283506299477472,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Adverse,2027,0.01641753149738736,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Adverse,2028,0.00820876574869368,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Adverse,2029,0.00410438287434684,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Adverse,2030,0.00205219143717342,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Reform,2026,0.032380214873766376,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Reform,2027,0.016190107436883188,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Reform,2028,0.008095053718441594,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Reform,2029,0.004047526859220797,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_non,Reform,2030,0.0020237634296103985,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Baseline,2026,0.02007550718098011,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Baseline,2027,0.010037753590490054,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Baseline,2028,0.005018876795245027,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Baseline,2029,0.0025094383976225136,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Baseline,2030,0.0012547191988112568,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Adverse,2026,0.020224537166762528,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Adverse,2027,0.010112268583381264,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Adverse,2028,0.005056134291690632,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Adverse,2029,0.002528067145845316,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Adverse,2030,0.001264033572922658,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Reform,2026,0.019977640139689477,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Reform,2027,0.009988820069844738,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Reform,2028,0.004994410034922369,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Reform,2029,0.0024972050174611846,,,log / nisbət,index,True,False
+fr3:nowcast_incr_w_priv,Reform,2030,0.0012486025087305923,,,log / nisbət,index,True,False
+fr3:emp:ind,ACTUAL,2021,179.086,,,min nəfər,level,False,False
+fr3:emp:ind,ACTUAL,2022,182.492,,,min nəfər,level,False,False
+fr3:emp:ind,ACTUAL,2023,189.51,,,min nəfər,level,False,False
+fr3:emp:ind,ACTUAL,2024,196.65900000000002,,,min nəfər,level,False,False
+fr3:emp:ind,ACTUAL,2025,196.76,,,min nəfər,level,False,False
+fr3:emp:ind,Baseline,2026,215.71313516323502,,,min nəfər,level,True,False
+fr3:emp:ind,Baseline,2027,213.3212451108879,,,min nəfər,level,True,False
+fr3:emp:ind,Baseline,2028,212.01473608705464,,,min nəfər,level,True,False
+fr3:emp:ind,Baseline,2029,211.3419441730868,,,min nəfər,level,True,False
+fr3:emp:ind,Baseline,2030,211.13295293953823,,,min nəfər,level,True,False
+fr3:emp:ind,Adverse,2026,215.72298802633432,,,min nəfər,level,True,False
+fr3:emp:ind,Adverse,2027,212.04840395577583,,,min nəfər,level,True,False
+fr3:emp:ind,Adverse,2028,209.30295053684566,,,min nəfər,level,True,False
+fr3:emp:ind,Adverse,2029,207.06291632988808,,,min nəfər,level,True,False
+fr3:emp:ind,Adverse,2030,205.13742983317897,,,min nəfər,level,True,False
+fr3:emp:ind,Reform,2026,215.70669204577683,,,min nəfər,level,True,False
+fr3:emp:ind,Reform,2027,214.5160695266697,,,min nəfər,level,True,False
+fr3:emp:ind,Reform,2028,214.2863545145975,,,min nəfər,level,True,False
+fr3:emp:ind,Reform,2029,214.61204690445626,,,min nəfər,level,True,False
+fr3:emp:ind,Reform,2030,215.30883725203742,,,min nəfər,level,True,False
+fr3:empsh:ind,ACTUAL,2021,10.629529848403102,,,%,share,False,False
+fr3:empsh:ind,ACTUAL,2022,10.450155155817214,,,%,share,False,False
+fr3:empsh:ind,ACTUAL,2023,10.477233537098783,,,%,share,False,False
+fr3:empsh:ind,ACTUAL,2024,10.50044771027032,,,%,share,False,False
+fr3:empsh:ind,ACTUAL,2025,10.381042726041981,,,%,share,False,False
+fr3:empsh:ind,Baseline,2026,10.416083063664692,,,%,share,True,False
+fr3:empsh:ind,Baseline,2027,10.228544259674658,,,%,share,True,False
+fr3:empsh:ind,Baseline,2028,10.097144188253955,,,%,share,True,False
+fr3:empsh:ind,Baseline,2029,9.998261606366146,,,%,share,True,False
+fr3:empsh:ind,Baseline,2030,9.922426626424626,,,%,share,True,False
+fr3:empsh:ind,Adverse,2026,10.416632332029216,,,%,share,True,False
+fr3:empsh:ind,Adverse,2027,10.173387761417533,,,%,share,True,False
+fr3:empsh:ind,Adverse,2028,9.978346233100508,,,%,share,True,False
+fr3:empsh:ind,Adverse,2029,9.809823693429477,,,%,share,True,False
+fr3:empsh:ind,Adverse,2030,9.658127292781895,,,%,share,True,False
+fr3:empsh:ind,Reform,2026,10.415723678466774,,,%,share,True,False
+fr3:empsh:ind,Reform,2027,10.280990925799829,,,%,share,True,False
+fr3:empsh:ind,Reform,2028,10.196258305872087,,,%,share,True,False
+fr3:empsh:ind,Reform,2029,10.139687856004679,,,%,share,True,False
+fr3:empsh:ind,Reform,2030,10.101237990396426,,,%,share,True,False
+fr3:emp:agr,ACTUAL,2021,43.298,,,min nəfər,level,False,False
+fr3:emp:agr,ACTUAL,2022,45.035,,,min nəfər,level,False,False
+fr3:emp:agr,ACTUAL,2023,46.254,,,min nəfər,level,False,False
+fr3:emp:agr,ACTUAL,2024,49.11,,,min nəfər,level,False,False
+fr3:emp:agr,ACTUAL,2025,50.09,,,min nəfər,level,False,False
+fr3:emp:agr,Baseline,2026,55.03981104350252,,,min nəfər,level,True,False
+fr3:emp:agr,Baseline,2027,55.49013988596179,,,min nəfər,level,True,False
+fr3:emp:agr,Baseline,2028,55.94170690195469,,,min nəfər,level,True,False
+fr3:emp:agr,Baseline,2029,56.395748145402116,,,min nəfər,level,True,False
+fr3:emp:agr,Baseline,2030,56.83973640266577,,,min nəfər,level,True,False
+fr3:emp:agr,Adverse,2026,55.04257355929315,,,min nəfər,level,True,False
+fr3:emp:agr,Adverse,2027,55.71572429035484,,,min nəfər,level,True,False
+fr3:emp:agr,Adverse,2028,56.363212730671314,,,min nəfər,level,True,False
+fr3:emp:agr,Adverse,2029,56.99742171739647,,,min nəfər,level,True,False
+fr3:emp:agr,Adverse,2030,57.62832375977641,,,min nəfər,level,True,False
+fr3:emp:agr,Reform,2026,55.03799772914142,,,min nəfər,level,True,False
+fr3:emp:agr,Reform,2027,55.38958117838653,,,min nəfər,level,True,False
+fr3:emp:agr,Reform,2028,55.76034073499925,,,min nəfər,level,True,False
+fr3:emp:agr,Reform,2029,56.13358976890886,,,min nəfər,level,True,False
+fr3:emp:agr,Reform,2030,56.500295391579776,,,min nəfər,level,True,False
+fr3:empsh:agr,ACTUAL,2021,2.569923854327851,,,%,share,False,False
+fr3:empsh:agr,ACTUAL,2022,2.5788677719693367,,,%,share,False,False
+fr3:empsh:agr,ACTUAL,2023,2.557194660044151,,,%,share,False,False
+fr3:empsh:agr,ACTUAL,2024,2.6221885957488618,,,%,share,False,False
+fr3:empsh:agr,ACTUAL,2025,2.6427446134755175,,,%,share,False,False
+fr3:empsh:agr,Baseline,2026,2.657692788173066,,,%,share,True,False
+fr3:empsh:agr,Baseline,2027,2.6606977261175233,,,%,share,True,False
+fr3:empsh:agr,Baseline,2028,2.664208588284855,,,%,share,True,False
+fr3:empsh:agr,Baseline,2029,2.667995913687034,,,%,share,True,False
+fr3:empsh:agr,Baseline,2030,2.671246274295591,,,%,share,True,False
+fr3:empsh:agr,Adverse,2026,2.6578449363302767,,,%,share,True,False
+fr3:empsh:agr,Adverse,2027,2.673057929416075,,,%,share,True,False
+fr3:empsh:agr,Adverse,2028,2.6870698668795394,,,%,share,True,False
+fr3:empsh:agr,Adverse,2029,2.7003128707841952,,,%,share,True,False
+fr3:empsh:agr,Adverse,2030,2.7132137074847287,,,%,share,True,False
+fr3:empsh:agr,Reform,2026,2.657592913441752,,,%,share,True,False
+fr3:empsh:agr,Reform,2027,2.654625281618107,,,%,share,True,False
+fr3:empsh:agr,Reform,2028,2.6532106472452197,,,%,share,True,False
+fr3:empsh:agr,Reform,2029,2.6521208231481395,,,%,share,True,False
+fr3:empsh:agr,Reform,2030,2.650717627581471,,,%,share,True,False
+fr3:emp:con,ACTUAL,2021,104.956,,,min nəfər,level,False,False
+fr3:emp:con,ACTUAL,2022,103.081,,,min nəfər,level,False,False
+fr3:emp:con,ACTUAL,2023,109.156,,,min nəfər,level,False,False
+fr3:emp:con,ACTUAL,2024,112.377,,,min nəfər,level,False,False
+fr3:emp:con,ACTUAL,2025,120.235,,,min nəfər,level,False,False
+fr3:emp:con,Baseline,2026,122.364073486777,,,min nəfər,level,True,False
+fr3:emp:con,Baseline,2027,125.79930863674052,,,min nəfər,level,True,False
+fr3:emp:con,Baseline,2028,127.39181409085664,,,min nəfər,level,True,False
+fr3:emp:con,Baseline,2029,128.05693327963715,,,min nəfər,level,True,False
+fr3:emp:con,Baseline,2030,128.28336910439577,,,min nəfər,level,True,False
+fr3:emp:con,Adverse,2026,122.36728739214581,,,min nəfər,level,True,False
+fr3:emp:con,Adverse,2027,124.37500512263077,,,min nəfər,level,True,False
+fr3:emp:con,Adverse,2028,124.63666472783375,,,min nəfər,level,True,False
+fr3:emp:con,Adverse,2029,124.01730792776651,,,min nəfər,level,True,False
+fr3:emp:con,Adverse,2030,122.97005562746655,,,min nəfər,level,True,False
+fr3:emp:con,Reform,2026,122.36205285315235,,,min nəfər,level,True,False
+fr3:emp:con,Reform,2027,126.59508265780246,,,min nəfər,level,True,False
+fr3:emp:con,Reform,2028,128.86307278950216,,,min nəfər,level,True,False
+fr3:emp:con,Reform,2029,130.12368514156,,,min nəfər,level,True,False
+fr3:emp:con,Reform,2030,130.88427956656383,,,min nəfər,level,True,False
+fr3:empsh:con,ACTUAL,2021,6.229593238829366,,,%,share,False,False
+fr3:empsh:con,ACTUAL,2022,5.902792690182552,,,%,share,False,False
+fr3:empsh:con,ACTUAL,2023,6.034789214160492,,,%,share,False,False
+fr3:empsh:con,ACTUAL,2024,6.000278717663813,,,%,share,False,False
+fr3:empsh:con,ACTUAL,2025,6.343589510904948,,,%,share,False,False
+fr3:empsh:con,Baseline,2026,5.908561629694713,,,%,share,True,False
+fr3:empsh:con,Baseline,2027,6.031953336661345,,,%,share,True,False
+fr3:empsh:con,Baseline,2028,6.0670005256165815,,,%,share,True,False
+fr3:empsh:con,Baseline,2029,6.058176120449602,,,%,share,True,False
+fr3:empsh:con,Baseline,2030,6.028818806382288,,,%,share,True,False
+fr3:empsh:con,Adverse,2026,5.908758514304161,,,%,share,True,False
+fr3:empsh:con,Adverse,2027,5.967105299244342,,,%,share,True,False
+fr3:empsh:con,Adverse,2028,5.941950607018585,,,%,share,True,False
+fr3:empsh:con,Adverse,2029,5.875450550338536,,,%,share,True,False
+fr3:empsh:con,Adverse,2030,5.789584335810227,,,%,share,True,False
+fr3:empsh:con,Reform,2026,5.908436679275172,,,%,share,True,False
+fr3:empsh:con,Reform,2027,6.067251273657774,,,%,share,True,False
+fr3:empsh:con,Reform,2028,6.131613836198117,,,%,share,True,False
+fr3:empsh:con,Reform,2029,6.147900684232539,,,%,share,True,False
+fr3:empsh:con,Reform,2030,6.140450498814491,,,%,share,True,False
+fr3:emp:trd,ACTUAL,2021,236.192,,,min nəfər,level,False,False
+fr3:emp:trd,ACTUAL,2022,252.118,,,min nəfər,level,False,False
+fr3:emp:trd,ACTUAL,2023,269.483,,,min nəfər,level,False,False
+fr3:emp:trd,ACTUAL,2024,293.965,,,min nəfər,level,False,False
+fr3:emp:trd,ACTUAL,2025,308.305,,,min nəfər,level,False,False
+fr3:emp:trd,Baseline,2026,340.77964132469447,,,min nəfər,level,True,False
+fr3:emp:trd,Baseline,2027,342.9644088788341,,,min nəfər,level,True,False
+fr3:emp:trd,Baseline,2028,345.742720580395,,,min nəfər,level,True,False
+fr3:emp:trd,Baseline,2029,348.7263470778383,,,min nəfər,level,True,False
+fr3:emp:trd,Baseline,2030,351.8675808551823,,,min nəfər,level,True,False
+fr3:emp:trd,Adverse,2026,340.73602097808737,,,min nəfər,level,True,False
+fr3:emp:trd,Adverse,2027,341.8455430951181,,,min nəfər,level,True,False
+fr3:emp:trd,Adverse,2028,344.12352933705375,,,min nəfər,level,True,False
+fr3:emp:trd,Adverse,2029,347.0085317637666,,,min nəfər,level,True,False
+fr3:emp:trd,Adverse,2030,350.11489134372346,,,min nəfər,level,True,False
+fr3:emp:trd,Reform,2026,340.808197229937,,,min nəfər,level,True,False
+fr3:emp:trd,Reform,2027,343.48847973763094,,,min nəfər,level,True,False
+fr3:emp:trd,Reform,2028,346.63021943670896,,,min nəfər,level,True,False
+fr3:emp:trd,Reform,2029,350.07455444431434,,,min nəfər,level,True,False
+fr3:emp:trd,Reform,2030,353.70056390969796,,,min nəfər,level,True,False
+fr3:empsh:trd,ACTUAL,2021,14.019018314966136,,,%,share,False,False
+fr3:empsh:trd,ACTUAL,2022,14.437192959550687,,,%,share,False,False
+fr3:empsh:trd,ACTUAL,2023,14.898613926853418,,,%,share,False,False
+fr3:empsh:trd,ACTUAL,2024,15.696022613506702,,,%,share,False,False
+fr3:empsh:trd,ACTUAL,2025,16.26614849386244,,,%,share,False,False
+fr3:empsh:trd,Baseline,2026,16.45513634465432,,,%,share,True,False
+fr3:empsh:trd,Baseline,2027,16.444806675897567,,,%,share,True,False
+fr3:empsh:trd,Baseline,2028,16.465903107348222,,,%,share,True,False
+fr3:empsh:trd,Baseline,2029,16.49770593697733,,,%,share,True,False
+fr3:empsh:trd,Baseline,2030,16.536406111143158,,,%,share,True,False
+fr3:empsh:trd,Adverse,2026,16.45314616342162,,,%,share,True,False
+fr3:empsh:trd,Adverse,2027,16.400629288133235,,,%,share,True,False
+fr3:empsh:trd,Adverse,2028,16.405806577854047,,,%,share,True,False
+fr3:empsh:trd,Adverse,2029,16.439894583997106,,,%,share,True,False
+fr3:empsh:trd,Adverse,2030,16.483847879180487,,,%,share,True,False
+fr3:empsh:trd,Reform,2026,16.456438954383973,,,%,share,True,False
+fr3:empsh:trd,Reform,2027,16.462179039040805,,,%,share,True,False
+fr3:empsh:trd,Reform,2028,16.493496573796275,,,%,share,True,False
+fr3:empsh:trd,Reform,2029,16.53982970478605,,,%,share,True,False
+fr3:empsh:trd,Reform,2030,16.59390120251774,,,%,share,True,False
+fr3:emp:tou,ACTUAL,2021,53.026,,,min nəfər,level,False,False
+fr3:emp:tou,ACTUAL,2022,63.595,,,min nəfər,level,False,False
+fr3:emp:tou,ACTUAL,2023,70.101,,,min nəfər,level,False,False
+fr3:emp:tou,ACTUAL,2024,76.446,,,min nəfər,level,False,False
+fr3:emp:tou,ACTUAL,2025,84.918,,,min nəfər,level,False,False
+fr3:emp:tou,Baseline,2026,93.5030974739019,,,min nəfər,level,True,False
+fr3:emp:tou,Baseline,2027,96.85544382222479,,,min nəfər,level,True,False
+fr3:emp:tou,Baseline,2028,99.98482246309888,,,min nəfər,level,True,False
+fr3:emp:tou,Baseline,2029,103.02647958410114,,,min nəfər,level,True,False
+fr3:emp:tou,Baseline,2030,106.0802620469556,,,min nəfər,level,True,False
+fr3:emp:tou,Adverse,2026,93.4896302647828,,,min nəfər,level,True,False
+fr3:emp:tou,Adverse,2027,96.2974359592551,,,min nəfər,level,True,False
+fr3:emp:tou,Adverse,2028,98.9786319644567,,,min nəfər,level,True,False
+fr3:emp:tou,Adverse,2029,101.63338121387719,,,min nəfər,level,True,False
+fr3:emp:tou,Adverse,2030,104.29958335437892,,,min nəfər,level,True,False
+fr3:emp:tou,Reform,2026,93.51192640243114,,,min nəfər,level,True,False
+fr3:emp:tou,Reform,2027,97.32814634993882,,,min nəfər,level,True,False
+fr3:emp:tou,Reform,2028,100.90738478841885,,,min nəfər,level,True,False
+fr3:emp:tou,Reform,2029,104.43171120868158,,,min nəfər,level,True,False
+fr3:emp:tou,Reform,2030,108.00096433229248,,,min nəfər,level,True,False
+fr3:empsh:tou,ACTUAL,2021,3.1473227931911087,,,%,share,False,False
+fr3:empsh:tou,ACTUAL,2022,3.641680825100255,,,%,share,False,False
+fr3:empsh:tou,ACTUAL,2023,3.8755978480510884,,,%,share,False,False
+fr3:empsh:tou,ACTUAL,2024,4.081772131757636,,,%,share,False,False
+fr3:empsh:tou,ACTUAL,2025,4.4802672606730685,,,%,share,False,False
+fr3:empsh:tou,Baseline,2026,4.514959319751664,,,%,share,True,False
+fr3:empsh:tou,Baseline,2027,4.644123436515109,,,%,share,True,False
+fr3:empsh:tou,Baseline,2028,4.761749997567858,,,%,share,True,False
+fr3:empsh:tou,Baseline,2029,4.874023939238275,,,%,share,True,False
+fr3:empsh:tou,Baseline,2030,4.985359234634669,,,%,share,True,False
+fr3:empsh:tou,Adverse,2026,4.514340887985066,,,%,share,True,False
+fr3:empsh:tou,Adverse,2027,4.620035511552786,,,%,share,True,False
+fr3:empsh:tou,Adverse,2028,4.718724972040532,,,%,share,True,False
+fr3:empsh:tou,Adverse,2029,4.81498845252829,,,%,share,True,False
+fr3:empsh:tou,Adverse,2030,4.9105551017183515,,,%,share,True,False
+fr3:empsh:tou,Reform,2026,4.515364714981329,,,%,share,True,False
+fr3:empsh:tou,Reform,2027,4.664591289857824,,,%,share,True,False
+fr3:empsh:tou,Reform,2028,4.801415202584249,,,%,share,True,False
+fr3:empsh:tou,Reform,2029,4.934042469646976,,,%,share,True,False
+fr3:empsh:tou,Reform,2030,5.0668772254608365,,,%,share,True,False
+fr3:emp:tra,ACTUAL,2021,74.066,,,min nəfər,level,False,False
+fr3:emp:tra,ACTUAL,2022,75.301,,,min nəfər,level,False,False
+fr3:emp:tra,ACTUAL,2023,80.982,,,min nəfər,level,False,False
+fr3:emp:tra,ACTUAL,2024,89.25,,,min nəfər,level,False,False
+fr3:emp:tra,ACTUAL,2025,90.128,,,min nəfər,level,False,False
+fr3:emp:tra,Baseline,2026,99.83577187128422,,,min nəfər,level,True,False
+fr3:emp:tra,Baseline,2027,100.70244404194513,,,min nəfər,level,True,False
+fr3:emp:tra,Baseline,2028,101.75322450809733,,,min nəfər,level,True,False
+fr3:emp:tra,Baseline,2029,102.91055529921503,,,min nəfər,level,True,False
+fr3:emp:tra,Baseline,2030,104.12112530453577,,,min nəfər,level,True,False
+fr3:emp:tra,Adverse,2026,99.84078275142781,,,min nəfər,level,True,False
+fr3:emp:tra,Adverse,2027,100.94197142797019,,,min nəfər,level,True,False
+fr3:emp:tra,Adverse,2028,102.16382786034134,,,min nəfər,level,True,False
+fr3:emp:tra,Adverse,2029,103.4544964439258,,,min nəfər,level,True,False
+fr3:emp:tra,Adverse,2030,104.79461429619471,,,min nəfər,level,True,False
+fr3:emp:tra,Reform,2026,99.83248273137889,,,min nəfər,level,True,False
+fr3:emp:tra,Reform,2027,100.78255048566615,,,min nəfər,level,True,False
+fr3:emp:tra,Reform,2028,101.94291984924813,,,min nəfər,level,True,False
+fr3:emp:tra,Reform,2029,103.2090469582135,,,min nəfər,level,True,False
+fr3:emp:tra,Reform,2030,104.52700234516206,,,min nəfər,level,True,False
+fr3:empsh:tra,ACTUAL,2021,4.396137932344372,,,%,share,False,False
+fr3:empsh:tra,ACTUAL,2022,4.312008928545865,,,%,share,False,False
+fr3:empsh:tra,ACTUAL,2023,4.47716387684731,,,%,share,False,False
+fr3:empsh:tra,ACTUAL,2024,4.7654313209241685,,,%,share,False,False
+fr3:empsh:tra,ACTUAL,2025,4.755146466826142,,,%,share,False,False
+fr3:empsh:tra,Baseline,2026,4.8207434922748735,,,%,share,True,False
+fr3:empsh:tra,Baseline,2027,4.828583319983037,,,%,share,True,False
+fr3:empsh:tra,Baseline,2028,4.845969664373569,,,%,share,True,False
+fr3:empsh:tra,Baseline,2029,4.868539740011485,,,%,share,True,False
+fr3:empsh:tra,Baseline,2030,4.893287436712342,,,%,share,True,False
+fr3:empsh:tra,Adverse,2026,4.821019471214953,,,%,share,True,False
+fr3:empsh:tra,Adverse,2027,4.84286510806675,,,%,share,True,False
+fr3:empsh:tra,Adverse,2028,4.870576569869741,,,%,share,True,False
+fr3:empsh:tra,Adverse,2029,4.901265704142647,,,%,share,True,False
+fr3:empsh:tra,Adverse,2030,4.933861778875273,,,%,share,True,False
+fr3:empsh:tra,Reform,2026,4.820562331207965,,,%,share,True,False
+fr3:empsh:tra,Reform,2027,4.8301485725911,,,%,share,True,False
+fr3:empsh:tra,Reform,2028,4.850688442538887,,,%,share,True,False
+fr3:empsh:tra,Reform,2029,4.876275750437773,,,%,share,True,False
+fr3:empsh:tra,Reform,2030,4.903895913363008,,,%,share,True,False
+fr3:emp:ict,ACTUAL,2021,29.462,,,min nəfər,level,False,False
+fr3:emp:ict,ACTUAL,2022,30.769,,,min nəfər,level,False,False
+fr3:emp:ict,ACTUAL,2023,32.561,,,min nəfər,level,False,False
+fr3:emp:ict,ACTUAL,2024,36.342,,,min nəfər,level,False,False
+fr3:emp:ict,ACTUAL,2025,36.444,,,min nəfər,level,False,False
+fr3:emp:ict,Baseline,2026,40.940148421354586,,,min nəfər,level,True,False
+fr3:emp:ict,Baseline,2027,41.85301940663035,,,min nəfər,level,True,False
+fr3:emp:ict,Baseline,2028,42.813795297612096,,,min nəfər,level,True,False
+fr3:emp:ict,Baseline,2029,43.803300700083994,,,min nəfər,level,True,False
+fr3:emp:ict,Baseline,2030,44.80388195876086,,,min nəfər,level,True,False
+fr3:emp:ict,Adverse,2026,40.94211926370696,,,min nəfər,level,True,False
+fr3:emp:ict,Adverse,2027,41.87326525396287,,,min nəfər,level,True,False
+fr3:emp:ict,Adverse,2028,42.79210739085063,,,min nəfər,level,True,False
+fr3:emp:ict,Adverse,2029,43.68513386538598,,,min nəfər,level,True,False
+fr3:emp:ict,Adverse,2030,44.55071641577703,,,min nəfər,level,True,False
+fr3:emp:ict,Reform,2026,40.938858147610496,,,min nəfər,level,True,False
+fr3:emp:ict,Reform,2027,41.87357121802428,,,min nəfər,level,True,False
+fr3:emp:ict,Reform,2028,42.896958118917404,,,min nəfər,level,True,False
+fr3:emp:ict,Reform,2029,43.97805556672773,,,min nəfər,level,True,False
+fr3:emp:ict,Reform,2030,45.10129407263015,,,min nəfər,level,True,False
+fr3:empsh:ict,ACTUAL,2021,1.748697320804821,,,%,share,False,False
+fr3:empsh:ict,ACTUAL,2022,1.7619447646435997,,,%,share,False,False
+fr3:empsh:ict,ACTUAL,2023,1.8001646414514985,,,%,share,False,False
+fr3:empsh:ict,ACTUAL,2024,1.9404515973672394,,,%,share,False,False
+fr3:empsh:ict,ACTUAL,2025,1.9227826850369687,,,%,share,False,False
+fr3:empsh:ict,Baseline,2026,1.9768661109713905,,,%,share,True,False
+fr3:empsh:ict,Baseline,2027,2.006811188352149,,,%,share,True,False
+fr3:empsh:ict,Baseline,2028,2.03899536581681,,,%,share,True,False
+fr3:empsh:ict,Baseline,2029,2.072266635642753,,,%,share,True,False
+fr3:empsh:ict,Baseline,2030,2.1056079836201764,,,%,share,True,False
+fr3:empsh:ict,Adverse,2026,1.9769752271930512,,,%,share,True,False
+fr3:empsh:ict,Adverse,2027,2.0089420920805408,,,%,share,True,False
+fr3:empsh:ict,Adverse,2028,2.0400785679070434,,,%,share,True,False
+fr3:empsh:ict,Adverse,2029,2.069629216274322,,,%,share,True,False
+fr3:empsh:ict,Adverse,2030,2.0975035637236474,,,%,share,True,False
+fr3:empsh:ict,Reform,2026,1.9767946470894269,,,%,share,True,False
+fr3:empsh:ict,Reform,2027,2.0068510796102315,,,%,share,True,False
+fr3:empsh:ict,Reform,2028,2.0411400740258667,,,%,share,True,False
+fr3:empsh:ict,Reform,2029,2.07781325602458,,,%,share,True,False
+fr3:empsh:ict,Reform,2030,2.1159322158671947,,,%,share,True,False
+fr3:emp:oth,ACTUAL,2021,964.711,,,min nəfər,level,False,False
+fr3:emp:oth,ACTUAL,2022,993.9179999999999,,,min nəfər,level,False,False
+fr3:emp:oth,ACTUAL,2023,1010.732,,,min nəfər,level,False,False
+fr3:emp:oth,ACTUAL,2024,1018.714,,,min nəfər,level,False,False
+fr3:emp:oth,ACTUAL,2025,1008.4979999999999,,,min nəfər,level,False,False
+fr3:emp:oth,Baseline,2026,1102.78644627477,,,min nəfər,level,True,False
+fr3:emp:oth,Baseline,2027,1108.5624289314856,,,min nəfər,level,True,False
+fr3:emp:oth,Baseline,2028,1114.1066947276809,,,min nəfər,level,True,False
+fr3:emp:oth,Baseline,2029,1119.525592840723,,,min nəfər,level,True,False
+fr3:emp:oth,Baseline,2030,1124.706961469036,,,min nəfər,level,True,False
+fr3:emp:oth,Adverse,2026,1102.8061089193004,,,min nəfər,level,True,False
+fr3:emp:oth,Adverse,2027,1111.246715317279,,,min nəfər,level,True,False
+fr3:emp:oth,Adverse,2028,1119.2106133340342,,,min nəfər,level,True,False
+fr3:emp:oth,Adverse,2029,1126.9118378317503,,,min nəfər,level,True,False
+fr3:emp:oth,Adverse,2030,1134.492024116931,,,min nəfər,level,True,False
+fr3:emp:oth,Reform,2026,1102.7735150820802,,,min nəfər,level,True,False
+fr3:emp:oth,Reform,2027,1106.5575845269939,,,min nəfər,level,True,False
+fr3:emp:oth,Reform,2028,1110.3303048190396,,,min nəfər,level,True,False
+fr3:emp:oth,Reform,2029,1113.9920792682444,,,min nəfər,level,True,False
+fr3:emp:oth,Reform,2030,1117.4861628366716,,,min nəfər,level,True,False
+fr3:empsh:oth,ACTUAL,2021,57.25977669713325,,,%,share,False,False
+fr3:empsh:oth,ACTUAL,2022,56.915356904190496,,,%,share,False,False
+fr3:empsh:oth,ACTUAL,2023,55.879242295493256,,,%,share,False,False
+fr3:empsh:oth,ACTUAL,2024,54.393407312761276,,,%,share,False,False
+fr3:empsh:oth,ACTUAL,2025,53.20827824317893,,,%,share,False,False
+fr3:empsh:oth,Baseline,2026,53.249957250815285,,,%,share,True,False
+fr3:empsh:oth,Baseline,2027,53.154480056798626,,,%,share,True,False
+fr3:empsh:oth,Baseline,2028,53.05902856273816,,,%,share,True,False
+fr3:empsh:oth,Baseline,2029,52.963030107627375,,,%,share,True,False
+fr3:empsh:oth,Baseline,2030,52.85684752678714,,,%,share,True,False
+fr3:empsh:oth,Adverse,2026,53.251282467521655,,,%,share,True,False
+fr3:empsh:oth,Adverse,2027,53.313977010088735,,,%,share,True,False
+fr3:empsh:oth,Adverse,2028,53.357446605330004,,,%,share,True,False
+fr3:empsh:oth,Adverse,2029,53.38863492850543,,,%,share,True,False
+fr3:empsh:oth,Adverse,2030,53.41330634042539,,,%,share,True,False
+fr3:empsh:oth,Reform,2026,53.24908608115359,,,%,share,True,False
+fr3:empsh:oth,Reform,2027,53.03336253782432,,,%,share,True,False
+fr3:empsh:oth,Reform,2028,52.832176917739304,,,%,share,True,False
+fr3:empsh:oth,Reform,2029,52.632329455719265,,,%,share,True,False
+fr3:empsh:oth,Reform,2030,52.426987325998844,,,%,share,True,False
+fr3:brw:n29,ACTUAL,2016,439.9,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2017,478.5,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2018,502.4,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2019,528.6,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2020,559.6,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2021,589.2,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2022,723.0,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2023,829.7,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2024,955.8,,,AZN/ay,level,False,False
+fr3:brw:n29,ACTUAL,2025,1102.2,,,AZN/ay,level,False,False
+fr3:brw:n29,Baseline,2026,1175.7566363250016,,,AZN/ay,level,True,False
+fr3:brw:n29,Baseline,2027,1265.7998320859435,,,AZN/ay,level,True,False
+fr3:brw:n29,Baseline,2028,1363.3782680089619,,,AZN/ay,level,True,False
+fr3:brw:n29,Baseline,2029,1468.6256341963765,,,AZN/ay,level,True,False
+fr3:brw:n29,Baseline,2030,1583.2870427846817,,,AZN/ay,level,True,False
+fr3:brw:n29,Adverse,2026,1175.7566363250019,,,AZN/ay,level,True,False
+fr3:brw:n29,Adverse,2027,1240.202387897839,,,AZN/ay,level,True,False
+fr3:brw:n29,Adverse,2028,1313.8521763221725,,,AZN/ay,level,True,False
+fr3:brw:n29,Adverse,2029,1395.2580356174497,,,AZN/ay,level,True,False
+fr3:brw:n29,Adverse,2030,1483.34760273672,,,AZN/ay,level,True,False
+fr3:brw:n29,Reform,2026,1175.7566363250003,,,AZN/ay,level,True,False
+fr3:brw:n29,Reform,2027,1287.3884408835672,,,AZN/ay,level,True,False
+fr3:brw:n29,Reform,2028,1407.6294414224083,,,AZN/ay,level,True,False
+fr3:brw:n29,Reform,2029,1539.095034762738,,,AZN/ay,level,True,False
+fr3:brw:n29,Reform,2030,1684.1055900125066,,,AZN/ay,level,True,False
+fr3:brw:n15,ACTUAL,2016,520.1,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2017,510.2,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2018,404.3,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2019,339.9,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2020,393.9,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2021,381.0,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2022,403.2,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2023,435.7,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2024,457.4,,,AZN/ay,level,False,False
+fr3:brw:n15,ACTUAL,2025,569.0,,,AZN/ay,level,False,False
+fr3:brw:n15,Baseline,2026,606.9728960886645,,,AZN/ay,level,True,False
+fr3:brw:n15,Baseline,2027,653.4568176890781,,,AZN/ay,level,True,False
+fr3:brw:n15,Baseline,2028,703.8307335303025,,,AZN/ay,level,True,False
+fr3:brw:n15,Baseline,2029,758.1636598237509,,,AZN/ay,level,True,False
+fr3:brw:n15,Baseline,2030,817.3564936894246,,,AZN/ay,level,True,False
+fr3:brw:n15,Adverse,2026,606.9728960886645,,,AZN/ay,level,True,False
+fr3:brw:n15,Adverse,2027,640.242386784495,,,AZN/ay,level,True,False
+fr3:brw:n15,Adverse,2028,678.2633717359065,,,AZN/ay,level,True,False
+fr3:brw:n15,Adverse,2029,720.2883526277707,,,AZN/ay,level,True,False
+fr3:brw:n15,Adverse,2030,765.763732496093,,,AZN/ay,level,True,False
+fr3:brw:n15,Reform,2026,606.9728960886638,,,AZN/ay,level,True,False
+fr3:brw:n15,Reform,2027,664.6017264223823,,,AZN/ay,level,True,False
+fr3:brw:n15,Reform,2028,726.6749702135277,,,AZN/ay,level,True,False
+fr3:brw:n15,Reform,2029,794.5428005625092,,,AZN/ay,level,True,False
+fr3:brw:n15,Reform,2030,869.4030853902343,,,AZN/ay,level,True,False
+fr3:brw:n27,ACTUAL,2016,586.8,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2017,586.5,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2018,591.0,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2019,661.0,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2020,704.1,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2021,615.7,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2022,707.0,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2023,784.9,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2024,959.3,,,AZN/ay,level,False,False
+fr3:brw:n27,ACTUAL,2025,1186.2,,,AZN/ay,level,False,False
+fr3:brw:n27,Baseline,2026,1265.3624768723616,,,AZN/ay,level,True,False
+fr3:brw:n27,Baseline,2027,1362.2679738889003,,,AZN/ay,level,True,False
+fr3:brw:n27,Baseline,2028,1467.2829808675651,,,AZN/ay,level,True,False
+fr3:brw:n27,Baseline,2029,1580.5513765956644,,,AZN/ay,level,True,False
+fr3:brw:n27,Baseline,2030,1703.9512703240691,,,AZN/ay,level,True,False
+fr3:brw:n27,Adverse,2026,1265.3624768723619,,,AZN/ay,level,True,False
+fr3:brw:n27,Adverse,2027,1334.7197174055675,,,AZN/ay,level,True,False
+fr3:brw:n27,Adverse,2028,1413.9824456118317,,,AZN/ay,level,True,False
+fr3:brw:n27,Adverse,2029,1501.5923442654857,,,AZN/ay,level,True,False
+fr3:brw:n27,Adverse,2030,1596.3953242299922,,,AZN/ay,level,True,False
+fr3:brw:n27,Reform,2026,1265.36247687236,,,AZN/ay,level,True,False
+fr3:brw:n27,Reform,2027,1385.5018767701754,,,AZN/ay,level,True,False
+fr3:brw:n27,Reform,2028,1514.9065899249322,,,AZN/ay,level,True,False
+fr3:brw:n27,Reform,2029,1656.3913357245137,,,AZN/ay,level,True,False
+fr3:brw:n27,Reform,2030,1812.4533214233668,,,AZN/ay,level,True,False
+fr3:brw:n35,ACTUAL,2016,504.7,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2017,547.8,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2018,583.3,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2019,638.9,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2020,698.3,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2021,770.0,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2022,897.2,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2023,965.5,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2024,1097.1,,,AZN/ay,level,False,False
+fr3:brw:n35,ACTUAL,2025,1132.8,,,AZN/ay,level,False,False
+fr3:brw:n35,Baseline,2026,1208.3987639529685,,,AZN/ay,level,True,False
+fr3:brw:n35,Baseline,2027,1300.9417980284493,,,AZN/ay,level,True,False
+fr3:brw:n35,Baseline,2028,1401.2292705503103,,,AZN/ay,level,True,False
+fr3:brw:n35,Baseline,2029,1509.3985832132596,,,AZN/ay,level,True,False
+fr3:brw:n35,Baseline,2030,1627.2432971026014,,,AZN/ay,level,True,False
+fr3:brw:n35,Adverse,2026,1208.3987639529685,,,AZN/ay,level,True,False
+fr3:brw:n35,Adverse,2027,1274.6337007899401,,,AZN/ay,level,True,False
+fr3:brw:n35,Adverse,2028,1350.328202991977,,,AZN/ay,level,True,False
+fr3:brw:n35,Adverse,2029,1433.994105196377,,,AZN/ay,level,True,False
+fr3:brw:n35,Adverse,2030,1524.529272709269,,,AZN/ay,level,True,False
+fr3:brw:n35,Reform,2026,1208.398763952967,,,AZN/ay,level,True,False
+fr3:brw:n35,Reform,2027,1323.1297639565457,,,AZN/ay,level,True,False
+fr3:brw:n35,Reform,2028,1446.7089740911847,,,AZN/ay,level,True,False
+fr3:brw:n35,Reform,2029,1581.8244015416703,,,AZN/ay,level,True,False
+fr3:brw:n35,Reform,2030,1730.8608350264628,,,AZN/ay,level,True,False
+fr3:brw:n14,ACTUAL,2016,405.2,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2017,386.5,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2018,386.3,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2019,402.4,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2020,396.2,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2021,416.8,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2022,440.8,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2023,436.6,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2024,471.1,,,AZN/ay,level,False,False
+fr3:brw:n14,ACTUAL,2025,496.5,,,AZN/ay,level,False,False
+fr3:brw:n14,Baseline,2026,529.634521806717,,,AZN/ay,level,True,False
+fr3:brw:n14,Baseline,2027,570.1956238710497,,,AZN/ay,level,True,False
+fr3:brw:n14,Baseline,2028,614.1510706463886,,,AZN/ay,level,True,False
+fr3:brw:n14,Baseline,2029,661.5610845386509,,,AZN/ay,level,True,False
+fr3:brw:n14,Baseline,2030,713.2117734917388,,,AZN/ay,level,True,False
+fr3:brw:n14,Adverse,2026,529.634521806717,,,AZN/ay,level,True,False
+fr3:brw:n14,Adverse,2027,558.6649297688958,,,AZN/ay,level,True,False
+fr3:brw:n14,Adverse,2028,591.8414131228077,,,AZN/ay,level,True,False
+fr3:brw:n14,Adverse,2029,628.5117171875012,,,AZN/ay,level,True,False
+fr3:brw:n14,Adverse,2030,668.1927823977334,,,AZN/ay,level,True,False
+fr3:brw:n14,Reform,2026,529.6345218067163,,,AZN/ay,level,True,False
+fr3:brw:n14,Reform,2027,579.9204871154883,,,AZN/ay,level,True,False
+fr3:brw:n14,Reform,2028,634.0845741845633,,,AZN/ay,level,True,False
+fr3:brw:n14,Reform,2029,693.3049217562142,,,AZN/ay,level,True,False
+fr3:brw:n14,Reform,2030,758.6267695891939,,,AZN/ay,level,True,False
+fr3:brw:n25,ACTUAL,2016,572.2,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2017,553.9,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2018,462.5,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2019,557.4,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2020,656.9,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2021,738.3,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2022,749.4,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2023,847.2,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2024,829.0,,,AZN/ay,level,False,False
+fr3:brw:n25,ACTUAL,2025,888.3,,,AZN/ay,level,False,False
+fr3:brw:n25,Baseline,2026,947.5817637883315,,,AZN/ay,level,True,False
+fr3:brw:n25,Baseline,2027,1020.1505995662708,,,AZN/ay,level,True,False
+fr3:brw:n25,Baseline,2028,1098.7923384797323,,,AZN/ay,level,True,False
+fr3:brw:n25,Baseline,2029,1183.6147258724743,,,AZN/ay,level,True,False
+fr3:brw:n25,Baseline,2030,1276.0242062290263,,,AZN/ay,level,True,False
+fr3:brw:n25,Adverse,2026,947.5817637883317,,,AZN/ay,level,True,False
+fr3:brw:n25,Adverse,2027,999.52075954423,,,AZN/ay,level,True,False
+fr3:brw:n25,Adverse,2028,1058.8775977381472,,,AZN/ay,level,True,False
+fr3:brw:n25,Adverse,2029,1124.4853139529855,,,AZN/ay,level,True,False
+fr3:brw:n25,Adverse,2030,1195.479654791352,,,AZN/ay,level,True,False
+fr3:brw:n25,Reform,2026,947.5817637883305,,,AZN/ay,level,True,False
+fr3:brw:n25,Reform,2027,1037.5495845008825,,,AZN/ay,level,True,False
+fr3:brw:n25,Reform,2028,1134.4558454141943,,,AZN/ay,level,True,False
+fr3:brw:n25,Reform,2029,1240.4083826707856,,,AZN/ay,level,True,False
+fr3:brw:n25,Reform,2030,1357.2772596698508,,,AZN/ay,level,True,False
+fr3:brw:n17,ACTUAL,2016,528.3,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2017,505.8,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2018,380.9,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2019,618.1,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2020,679.6,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2021,688.0,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2022,756.7,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2023,857.3,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2024,968.4,,,AZN/ay,level,False,False
+fr3:brw:n17,ACTUAL,2025,1019.5,,,AZN/ay,level,False,False
+fr3:brw:n17,Baseline,2026,1087.5375528337318,,,AZN/ay,level,True,False
+fr3:brw:n17,Baseline,2027,1170.824649620413,,,AZN/ay,level,True,False
+fr3:brw:n17,Baseline,2028,1261.0816042779318,,,AZN/ay,level,True,False
+fr3:brw:n17,Baseline,2029,1358.4320759056486,,,AZN/ay,level,True,False
+fr3:brw:n17,Baseline,2030,1464.4902378143556,,,AZN/ay,level,True,False
+fr3:brw:n17,Adverse,2026,1087.5375528337318,,,AZN/ay,level,True,False
+fr3:brw:n17,Adverse,2027,1147.1478265848727,,,AZN/ay,level,True,False
+fr3:brw:n17,Adverse,2028,1215.271542152472,,,AZN/ay,level,True,False
+fr3:brw:n17,Adverse,2029,1290.5693769842042,,,AZN/ay,level,True,False
+fr3:brw:n17,Adverse,2030,1372.049429314177,,,AZN/ay,level,True,False
+fr3:brw:n17,Reform,2026,1087.5375528337306,,,AZN/ay,level,True,False
+fr3:brw:n17,Reform,2027,1190.7934272190132,,,AZN/ay,level,True,False
+fr3:brw:n17,Reform,2028,1302.0125345038512,,,AZN/ay,level,True,False
+fr3:brw:n17,Reform,2029,1423.6140336967983,,,AZN/ay,level,True,False
+fr3:brw:n17,Reform,2030,1557.7441925401472,,,AZN/ay,level,True,False
+fr3:brw:n20,ACTUAL,2016,718.8,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2017,789.2,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2018,848.7,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2019,898.4,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2020,970.0,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2021,982.2,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2022,1129.0,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2023,1271.3,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2024,1446.3,,,AZN/ay,level,False,False
+fr3:brw:n20,ACTUAL,2025,1616.2,,,AZN/ay,level,False,False
+fr3:brw:n20,Baseline,2026,1724.0590415790853,,,AZN/ay,level,True,False
+fr3:brw:n20,Baseline,2027,1856.092985499276,,,AZN/ay,level,True,False
+fr3:brw:n20,Baseline,2028,1999.1761538342264,,,AZN/ay,level,True,False
+fr3:brw:n20,Baseline,2029,2153.504581734879,,,AZN/ay,level,True,False
+fr3:brw:n20,Baseline,2030,2321.637197013793,,,AZN/ay,level,True,False
+fr3:brw:n20,Adverse,2026,1724.0590415790857,,,AZN/ay,level,True,False
+fr3:brw:n20,Adverse,2027,1818.5584279808452,,,AZN/ay,level,True,False
+fr3:brw:n20,Adverse,2028,1926.5540622136596,,,AZN/ay,level,True,False
+fr3:brw:n20,Adverse,2029,2045.9227337732918,,,AZN/ay,level,True,False
+fr3:brw:n20,Adverse,2030,2175.0919937788854,,,AZN/ay,level,True,False
+fr3:brw:n20,Reform,2026,1724.0590415790834,,,AZN/ay,level,True,False
+fr3:brw:n20,Reform,2027,1887.7492271420988,,,AZN/ay,level,True,False
+fr3:brw:n20,Reform,2028,2064.0634215449977,,,AZN/ay,level,True,False
+fr3:brw:n20,Reform,2029,2256.836685885989,,,AZN/ay,level,True,False
+fr3:brw:n20,Reform,2030,2469.471470312297,,,AZN/ay,level,True,False
+fr3:brw:n26,ACTUAL,2016,487.6,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2017,493.4,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2018,504.5,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2019,561.6,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2020,648.7,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2021,690.9,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2022,780.6,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2023,922.5,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2024,1200.7,,,AZN/ay,level,False,False
+fr3:brw:n26,ACTUAL,2025,1839.2,,,AZN/ay,level,False,False
+fr3:brw:n26,Baseline,2026,1961.9412135083862,,,AZN/ay,level,True,False
+fr3:brw:n26,Baseline,2027,2112.1929333809358,,,AZN/ay,level,True,False
+fr3:brw:n26,Baseline,2028,2275.018427256471,,,AZN/ay,level,True,False
+fr3:brw:n26,Baseline,2029,2450.640778818704,,,AZN/ay,level,True,False
+fr3:brw:n26,Baseline,2030,2641.9719915528817,,,AZN/ay,level,True,False
+fr3:brw:n26,Adverse,2026,1961.9412135083865,,,AZN/ay,level,True,False
+fr3:brw:n26,Adverse,2027,2069.479433697791,,,AZN/ay,level,True,False
+fr3:brw:n26,Adverse,2028,2192.3760866373977,,,AZN/ay,level,True,False
+fr3:brw:n26,Adverse,2029,2328.215005541293,,,AZN/ay,level,True,False
+fr3:brw:n26,Adverse,2030,2475.2067782193576,,,AZN/ay,level,True,False
+fr3:brw:n26,Reform,2026,1961.9412135083842,,,AZN/ay,level,True,False
+fr3:brw:n26,Reform,2027,2148.2170390791657,,,AZN/ay,level,True,False
+fr3:brw:n26,Reform,2028,2348.858708640985,,,AZN/ay,level,True,False
+fr3:brw:n26,Reform,2029,2568.2304372488,,,AZN/ay,level,True,False
+fr3:brw:n26,Reform,2030,2810.204138224462,,,AZN/ay,level,True,False
+fr3:brw:n28,ACTUAL,2016,373.5,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2017,403.0,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2018,412.2,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2019,497.7,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2020,553.2,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2021,695.0,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2022,817.0,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2023,926.7,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2024,1046.8,,,AZN/ay,level,False,False
+fr3:brw:n28,ACTUAL,2025,1059.8,,,AZN/ay,level,False,False
+fr3:brw:n28,Baseline,2026,1130.527021572525,,,AZN/ay,level,True,False
+fr3:brw:n28,Baseline,2027,1217.1063890806415,,,AZN/ay,level,True,False
+fr3:brw:n28,Baseline,2028,1310.9311272327145,,,AZN/ay,level,True,False
+fr3:brw:n28,Baseline,2029,1412.1297832710216,,,AZN/ay,level,True,False
+fr3:brw:n28,Baseline,2030,1522.3803374552763,,,AZN/ay,level,True,False
+fr3:brw:n28,Adverse,2026,1130.527021572525,,,AZN/ay,level,True,False
+fr3:brw:n28,Adverse,2027,1192.4936406225095,,,AZN/ay,level,True,False
+fr3:brw:n28,Adverse,2028,1263.3102308712016,,,AZN/ay,level,True,False
+fr3:brw:n28,Adverse,2029,1341.5845274427263,,,AZN/ay,level,True,False
+fr3:brw:n28,Adverse,2030,1426.2854195067828,,,AZN/ay,level,True,False
+fr3:brw:n28,Reform,2026,1130.5270215725234,,,AZN/ay,level,True,False
+fr3:brw:n28,Reform,2027,1237.8645161027077,,,AZN/ay,level,True,False
+fr3:brw:n28,Reform,2028,1353.4800236068484,,,AZN/ay,level,True,False
+fr3:brw:n28,Reform,2029,1479.8883304677458,,,AZN/ay,level,True,False
+fr3:brw:n28,Reform,2030,1619.3205446336913,,,AZN/ay,level,True,False
+fr3:brw:n33,ACTUAL,2016,1042.0,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2017,1244.7,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2018,1217.5,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2019,1252.0,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2020,1009.5,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2021,1423.4,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2022,1512.1,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2023,1526.3,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2024,1520.4,,,AZN/ay,level,False,False
+fr3:brw:n33,ACTUAL,2025,1540.0,,,AZN/ay,level,False,False
+fr3:brw:n33,Baseline,2026,1642.773743368266,,,AZN/ay,level,True,False
+fr3:brw:n33,Baseline,2027,1768.582599720879,,,AZN/ay,level,True,False
+fr3:brw:n33,Baseline,2028,1904.9197357410644,,,AZN/ay,level,True,False
+fr3:brw:n33,Baseline,2029,2051.9719439869527,,,AZN/ay,level,True,False
+fr3:brw:n33,Baseline,2030,2212.1775048887766,,,AZN/ay,level,True,False
+fr3:brw:n33,Adverse,2026,1642.7737433682662,,,AZN/ay,level,True,False
+fr3:brw:n33,Adverse,2027,1732.8177076416914,,,AZN/ay,level,True,False
+fr3:brw:n33,Adverse,2028,1835.7216036437542,,,AZN/ay,level,True,False
+fr3:brw:n33,Adverse,2029,1949.4623252140013,,,AZN/ay,level,True,False
+fr3:brw:n33,Adverse,2030,2072.5415607099885,,,AZN/ay,level,True,False
+fr3:brw:n33,Reform,2026,1642.7737433682641,,,AZN/ay,level,True,False
+fr3:brw:n33,Reform,2027,1798.7463245878184,,,AZN/ay,level,True,False
+fr3:brw:n33,Reform,2028,1966.7477225462787,,,AZN/ay,level,True,False
+fr3:brw:n33,Reform,2029,2150.4321842992345,,,AZN/ay,level,True,False
+fr3:brw:n33,Reform,2030,2353.041742532444,,,AZN/ay,level,True,False
+fr3:brw:n16,ACTUAL,2016,528.7,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2017,506.3,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2018,371.8,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2019,336.0,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2020,415.1,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2021,459.6,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2022,509.4,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2023,558.1,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2024,581.6,,,AZN/ay,level,False,False
+fr3:brw:n16,ACTUAL,2025,617.6,,,AZN/ay,level,False,False
+fr3:brw:n16,Baseline,2026,658.8162752624942,,,AZN/ay,level,True,False
+fr3:brw:n16,Baseline,2027,709.2705283036463,,,AZN/ay,level,True,False
+fr3:brw:n16,Baseline,2028,763.9470316842088,,,AZN/ay,level,True,False
+fr3:brw:n16,Baseline,2029,822.9206964976249,,,AZN/ay,level,True,False
+fr3:brw:n16,Baseline,2030,887.1693681943563,,,AZN/ay,level,True,False
+fr3:brw:n16,Adverse,2026,658.8162752624943,,,AZN/ay,level,True,False
+fr3:brw:n16,Adverse,2027,694.9274131425381,,,AZN/ay,level,True,False
+fr3:brw:n16,Adverse,2028,736.1958846820665,,,AZN/ay,level,True,False
+fr3:brw:n16,Adverse,2029,781.8103454884204,,,AZN/ay,level,True,False
+fr3:brw:n16,Adverse,2030,831.1699142172004,,,AZN/ay,level,True,False
+fr3:brw:n16,Reform,2026,658.8162752624935,,,AZN/ay,level,True,False
+fr3:brw:n16,Reform,2027,721.3673571853485,,,AZN/ay,level,True,False
+fr3:brw:n16,Reform,2028,788.7424632757026,,,AZN/ay,level,True,False
+fr3:brw:n16,Reform,2029,862.4070889761084,,,AZN/ay,level,True,False
+fr3:brw:n16,Reform,2030,943.661415706518,,,AZN/ay,level,True,False
+fr3:brw:n31,ACTUAL,2016,348.4,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2017,331.8,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2018,265.1,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2019,308.6,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2020,359.2,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2021,358.5,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2022,396.3,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2023,424.1,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2024,493.9,,,AZN/ay,level,False,False
+fr3:brw:n31,ACTUAL,2025,509.5,,,AZN/ay,level,False,False
+fr3:brw:n31,Baseline,2026,543.5020923676178,,,AZN/ay,level,True,False
+fr3:brw:n31,Baseline,2027,585.1252172453168,,,AZN/ay,level,True,False
+fr3:brw:n31,Baseline,2028,630.2315619221248,,,AZN/ay,level,True,False
+fr3:brw:n31,Baseline,2029,678.882925624255,,,AZN/ay,level,True,False
+fr3:brw:n31,Baseline,2030,731.8859991823583,,,AZN/ay,level,True,False
+fr3:brw:n31,Adverse,2026,543.5020923676178,,,AZN/ay,level,True,False
+fr3:brw:n31,Adverse,2027,573.2926117165205,,,AZN/ay,level,True,False
+fr3:brw:n31,Adverse,2028,607.3377643223979,,,AZN/ay,level,True,False
+fr3:brw:n31,Adverse,2029,644.9682173354115,,,AZN/ay,level,True,False
+fr3:brw:n31,Adverse,2030,685.6882631050253,,,AZN/ay,level,True,False
+fr3:brw:n31,Reform,2026,543.5020923676173,,,AZN/ay,level,True,False
+fr3:brw:n31,Reform,2027,595.1047093360347,,,AZN/ay,level,True,False
+fr3:brw:n31,Reform,2028,650.6869900242395,,,AZN/ay,level,True,False
+fr3:brw:n31,Reform,2029,711.4579207145842,,,AZN/ay,level,True,False
+fr3:brw:n31,Reform,2030,778.4901089742082,,,AZN/ay,level,True,False
+fr3:brw:n07,ACTUAL,2016,955.4,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2017,1027.3,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2018,1144.9,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2019,1183.3,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2020,1439.6,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2021,1784.1,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2022,2162.9,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2023,1963.5,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2024,2397.6,,,AZN/ay,level,False,False
+fr3:brw:n07,ACTUAL,2025,2602.2,,,AZN/ay,level,False,False
+fr3:brw:n07,Baseline,2026,2775.860931813572,,,AZN/ay,level,True,False
+fr3:brw:n07,Baseline,2027,2988.445221424462,,,AZN/ay,level,True,False
+fr3:brw:n07,Baseline,2028,3218.819569055452,,,AZN/ay,level,True,False
+fr3:brw:n07,Baseline,2029,3467.2996056122397,,,AZN/ay,level,True,False
+fr3:brw:n07,Baseline,2030,3738.005391702321,,,AZN/ay,level,True,False
+fr3:brw:n07,Adverse,2026,2775.860931813572,,,AZN/ay,level,True,False
+fr3:brw:n07,Adverse,2027,2928.011843392992,,,AZN/ay,level,True,False
+fr3:brw:n07,Adverse,2028,3101.8926993518035,,,AZN/ay,level,True,False
+fr3:brw:n07,Adverse,2029,3294.0849757609585,,,AZN/ay,level,True,False
+fr3:brw:n07,Adverse,2030,3502.0569151165782,,,AZN/ay,level,True,False
+fr3:brw:n07,Reform,2026,2775.8609318135696,,,AZN/ay,level,True,False
+fr3:brw:n07,Reform,2027,3039.414081715858,,,AZN/ay,level,True,False
+fr3:brw:n07,Reform,2028,3323.2928075389127,,,AZN/ay,level,True,False
+fr3:brw:n07,Reform,2029,3633.6718376516023,,,AZN/ay,level,True,False
+fr3:brw:n07,Reform,2030,3976.0293652064443,,,AZN/ay,level,True,False
+fr3:brw:n24,ACTUAL,2016,610.6,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2017,791.3,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2018,797.7,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2019,766.4,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2020,771.6,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2021,851.5,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2022,983.6,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2023,1025.3,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2024,1109.4,,,AZN/ay,level,False,False
+fr3:brw:n24,ACTUAL,2025,1164.5,,,AZN/ay,level,False,False
+fr3:brw:n24,Baseline,2026,1242.214301397627,,,AZN/ay,level,True,False
+fr3:brw:n24,Baseline,2027,1337.34703725647,,,AZN/ay,level,True,False
+fr3:brw:n24,Baseline,2028,1440.4409300457594,,,AZN/ay,level,True,False
+fr3:brw:n24,Baseline,2029,1551.6372264758486,,,AZN/ay,level,True,False
+fr3:brw:n24,Baseline,2030,1672.7796782097278,,,AZN/ay,level,True,False
+fr3:brw:n24,Adverse,2026,1242.2143013976272,,,AZN/ay,level,True,False
+fr3:brw:n24,Adverse,2027,1310.302740616071,,,AZN/ay,level,True,False
+fr3:brw:n24,Adverse,2028,1388.11545937867,,,AZN/ay,level,True,False
+fr3:brw:n24,Adverse,2029,1474.1226478647434,,,AZN/ay,level,True,False
+fr3:brw:n24,Adverse,2030,1567.1913295108968,,,AZN/ay,level,True,False
+fr3:brw:n24,Reform,2026,1242.2143013976256,,,AZN/ay,level,True,False
+fr3:brw:n24,Reform,2027,1360.1559058328016,,,AZN/ay,level,True,False
+fr3:brw:n24,Reform,2028,1487.1933265617804,,,AZN/ay,level,True,False
+fr3:brw:n24,Reform,2029,1626.0897913093884,,,AZN/ay,level,True,False
+fr3:brw:n24,Reform,2030,1779.2968241422282,,,AZN/ay,level,True,False
+fr3:brw:n08,ACTUAL,2016,310.3,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2017,341.0,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2018,378.6,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2019,503.5,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2020,447.3,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2021,496.7,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2022,686.3,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2023,921.2,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2024,1106.3,,,AZN/ay,level,False,False
+fr3:brw:n08,ACTUAL,2025,1081.9,,,AZN/ay,level,False,False
+fr3:brw:n08,Baseline,2026,1154.1018915260563,,,AZN/ay,level,True,False
+fr3:brw:n08,Baseline,2027,1242.4866978168955,,,AZN/ay,level,True,False
+fr3:brw:n08,Baseline,2028,1338.2679624014656,,,AZN/ay,level,True,False
+fr3:brw:n08,Baseline,2029,1441.5769131165484,,,AZN/ay,level,True,False
+fr3:brw:n08,Baseline,2030,1554.1265211293296,,,AZN/ay,level,True,False
+fr3:brw:n08,Adverse,2026,1154.1018915260563,,,AZN/ay,level,True,False
+fr3:brw:n08,Adverse,2027,1217.360699933471,,,AZN/ay,level,True,False
+fr3:brw:n08,Adverse,2028,1289.654027910505,,,AZN/ay,level,True,False
+fr3:brw:n08,Adverse,2029,1369.5605776941745,,,AZN/ay,level,True,False
+fr3:brw:n08,Adverse,2030,1456.0277367091794,,,AZN/ay,level,True,False
+fr3:brw:n08,Reform,2026,1154.1018915260552,,,AZN/ay,level,True,False
+fr3:brw:n08,Reform,2027,1263.677693877637,,,AZN/ay,level,True,False
+fr3:brw:n08,Reform,2028,1381.704130534298,,,AZN/ay,level,True,False
+fr3:brw:n08,Reform,2029,1510.748428696975,,,AZN/ay,level,True,False
+fr3:brw:n08,Reform,2030,1653.0882215882148,,,AZN/ay,level,True,False
+fr3:brw:n19,ACTUAL,2016,890.7,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2017,988.4,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2018,1108.5,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2019,1207.0,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2020,1305.8,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2021,1325.1,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2022,1784.5,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2023,1723.6,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2024,1799.1,,,AZN/ay,level,False,False
+fr3:brw:n19,ACTUAL,2025,2827.3,,,AZN/ay,level,False,False
+fr3:brw:n19,Baseline,2026,3015.9832497565576,,,AZN/ay,level,True,False
+fr3:brw:n19,Baseline,2027,3246.9568728511967,,,AZN/ay,level,True,False
+fr3:brw:n19,Baseline,2028,3497.259460299164,,,AZN/ay,level,True,False
+fr3:brw:n19,Baseline,2029,3767.233946256047,,,AZN/ay,level,True,False
+fr3:brw:n19,Baseline,2030,4061.3567919298957,,,AZN/ay,level,True,False
+fr3:brw:n19,Adverse,2026,3015.9832497565585,,,AZN/ay,level,True,False
+fr3:brw:n19,Adverse,2027,3181.2957823476327,,,AZN/ay,level,True,False
+fr3:brw:n19,Adverse,2028,3370.217980507784,,,AZN/ay,level,True,False
+fr3:brw:n19,Adverse,2029,3579.0356052451607,,,AZN/ay,level,True,False
+fr3:brw:n19,Adverse,2030,3804.9978925943833,,,AZN/ay,level,True,False
+fr3:brw:n19,Reform,2026,3015.983249756555,,,AZN/ay,level,True,False
+fr3:brw:n19,Reform,2027,3302.3347295500907,,,AZN/ay,level,True,False
+fr3:brw:n19,Reform,2028,3610.7700233474643,,,AZN/ay,level,True,False
+fr3:brw:n19,Reform,2029,3947.997996538458,,,AZN/ay,level,True,False
+fr3:brw:n19,Reform,2030,4319.970726403883,,,AZN/ay,level,True,False
+fr3:brw:n18,ACTUAL,2016,414.6,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2017,409.8,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2018,377.5,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2019,423.3,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2020,496.3,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2021,533.7,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2022,594.8,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2023,633.4,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2024,676.7,,,AZN/ay,level,False,False
+fr3:brw:n18,ACTUAL,2025,709.1,,,AZN/ay,level,False,False
+fr3:brw:n18,Baseline,2026,756.4226372872971,,,AZN/ay,level,True,False
+fr3:brw:n18,Baseline,2027,814.3518970532958,,,AZN/ay,level,True,False
+fr3:brw:n18,Baseline,2028,877.1289510480448,,,AZN/ay,level,True,False
+fr3:brw:n18,Baseline,2029,944.8398087539925,,,AZN/ay,level,True,False
+fr3:brw:n18,Baseline,2030,1018.6071874783324,,,AZN/ay,level,True,False
+fr3:brw:n18,Adverse,2026,756.4226372872972,,,AZN/ay,level,True,False
+fr3:brw:n18,Adverse,2027,797.8837899277424,,,AZN/ay,level,True,False
+fr3:brw:n18,Adverse,2028,845.2663565868742,,,AZN/ay,level,True,False
+fr3:brw:n18,Adverse,2029,897.6387888371745,,,AZN/ay,level,True,False
+fr3:brw:n18,Adverse,2030,954.311182272372,,,AZN/ay,level,True,False
+fr3:brw:n18,Reform,2026,756.4226372872961,,,AZN/ay,level,True,False
+fr3:brw:n18,Reform,2027,828.2409212761182,,,AZN/ay,level,True,False
+fr3:brw:n18,Reform,2028,905.5979286088095,,,AZN/ay,level,True,False
+fr3:brw:n18,Reform,2029,990.1762739523294,,,AZN/ay,level,True,False
+fr3:brw:n18,Reform,2030,1083.4687659933484,,,AZN/ay,level,True,False
+fr3:brw:n10,ACTUAL,2016,371.6,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2017,332.8,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2018,334.9,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2019,454.3,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2020,489.8,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2021,492.4,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2022,542.0,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2023,619.5,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2024,655.7,,,AZN/ay,level,False,False
+fr3:brw:n10,ACTUAL,2025,717.4,,,AZN/ay,level,False,False
+fr3:brw:n10,Baseline,2026,765.2765477223338,,,AZN/ay,level,True,False
+fr3:brw:n10,Baseline,2027,823.8838682076356,,,AZN/ay,level,True,False
+fr3:brw:n10,Baseline,2028,887.3957262471686,,,AZN/ay,level,True,False
+fr3:brw:n10,Baseline,2029,955.8991380624936,,,AZN/ay,level,True,False
+fr3:brw:n10,Baseline,2030,1030.5299623423432,,,AZN/ay,level,True,False
+fr3:brw:n10,Adverse,2026,765.2765477223339,,,AZN/ay,level,True,False
+fr3:brw:n10,Adverse,2027,807.2230022481489,,,AZN/ay,level,True,False
+fr3:brw:n10,Adverse,2028,855.1601808143047,,,AZN/ay,level,True,False
+fr3:brw:n10,Adverse,2029,908.1456312393018,,,AZN/ay,level,True,False
+fr3:brw:n10,Adverse,2030,965.4813738008738,,,AZN/ay,level,True,False
+fr3:brw:n10,Reform,2026,765.2765477223328,,,AZN/ay,level,True,False
+fr3:brw:n10,Reform,2027,837.9354631553902,,,AZN/ay,level,True,False
+fr3:brw:n10,Reform,2028,916.1979325679873,,,AZN/ay,level,True,False
+fr3:brw:n10,Reform,2029,1001.766265594981,,,AZN/ay,level,True,False
+fr3:brw:n10,Reform,2030,1096.150744216088,,,AZN/ay,level,True,False
+fr3:brw:n22,ACTUAL,2016,472.0,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2017,458.7,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2018,400.7,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2019,457.8,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2020,511.0,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2021,512.0,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2022,610.7,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2023,749.2,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2024,773.0,,,AZN/ay,level,False,False
+fr3:brw:n22,ACTUAL,2025,846.8,,,AZN/ay,level,False,False
+fr3:brw:n22,Baseline,2026,903.3122116131478,,,AZN/ay,level,True,False
+fr3:brw:n22,Baseline,2027,972.4907437945717,,,AZN/ay,level,True,False
+fr3:brw:n22,Baseline,2028,1047.4584624841125,,,AZN/ay,level,True,False
+fr3:brw:n22,Baseline,2029,1128.318079329969,,,AZN/ay,level,True,False
+fr3:brw:n22,Baseline,2030,1216.4103319089713,,,AZN/ay,level,True,False
+fr3:brw:n22,Adverse,2026,903.3122116131478,,,AZN/ay,level,True,False
+fr3:brw:n22,Adverse,2027,952.8246979421974,,,AZN/ay,level,True,False
+fr3:brw:n22,Adverse,2028,1009.4084766009943,,,AZN/ay,level,True,False
+fr3:brw:n22,Adverse,2029,1071.9511019423483,,,AZN/ay,level,True,False
+fr3:brw:n22,Adverse,2030,1139.6286971488428,,,AZN/ay,level,True,False
+fr3:brw:n22,Reform,2026,903.3122116131466,,,AZN/ay,level,True,False
+fr3:brw:n22,Reform,2027,989.0768751045224,,,AZN/ay,level,True,False
+fr3:brw:n22,Reform,2028,1081.4558256183045,,,AZN/ay,level,True,False
+fr3:brw:n22,Reform,2029,1182.458424457527,,,AZN/ay,level,True,False
+fr3:brw:n22,Reform,2030,1293.867368556152,,,AZN/ay,level,True,False
+fr3:brw:n30,ACTUAL,2016,455.8,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2017,455.9,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2018,492.1,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2019,542.8,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2020,520.5,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2021,575.1,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2022,675.9,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2023,854.5,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2024,838.6,,,AZN/ay,level,False,False
+fr3:brw:n30,ACTUAL,2025,1045.0,,,AZN/ay,level,False,False
+fr3:brw:n30,Baseline,2026,1114.7393258570376,,,AZN/ay,level,True,False
+fr3:brw:n30,Baseline,2027,1200.109621239168,,,AZN/ay,level,True,False
+fr3:brw:n30,Baseline,2028,1292.6241063957223,,,AZN/ay,level,True,False
+fr3:brw:n30,Baseline,2029,1392.4095334197182,,,AZN/ay,level,True,False
+fr3:brw:n30,Baseline,2030,1501.1204497459555,,,AZN/ay,level,True,False
+fr3:brw:n30,Adverse,2026,1114.7393258570376,,,AZN/ay,level,True,False
+fr3:brw:n30,Adverse,2027,1175.8405873282902,,,AZN/ay,level,True,False
+fr3:brw:n30,Adverse,2028,1245.6682310439758,,,AZN/ay,level,True,False
+fr3:brw:n30,Adverse,2029,1322.8494349666437,,,AZN/ay,level,True,False
+fr3:brw:n30,Adverse,2030,1406.3674876246348,,,AZN/ay,level,True,False
+fr3:brw:n30,Reform,2026,1114.7393258570362,,,AZN/ay,level,True,False
+fr3:brw:n30,Reform,2027,1220.5778631131623,,,AZN/ay,level,True,False
+fr3:brw:n30,Reform,2028,1334.5788117278316,,,AZN/ay,level,True,False
+fr3:brw:n30,Reform,2029,1459.2218393459088,,,AZN/ay,level,True,False
+fr3:brw:n30,Reform,2030,1596.7068967184443,,,AZN/ay,level,True,False
+fr3:brw:n36_39,ACTUAL,2016,321.4,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2017,324.6,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2018,304.6,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2019,468.9,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2020,558.3,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2021,549.6,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2022,647.3,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2023,711.5,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2024,685.9,,,AZN/ay,level,False,False
+fr3:brw:n36_39,ACTUAL,2025,766.8,,,AZN/ay,level,False,False
+fr3:brw:n36_39,Baseline,2026,817.9733158537572,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Baseline,2027,880.6163230298507,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Baseline,2028,948.5015930949661,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Baseline,2029,1021.7221341877892,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Baseline,2030,1101.4920199666972,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Adverse,2026,817.9733158537574,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Adverse,2027,862.8081936491226,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Adverse,2028,914.046315372747,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Adverse,2029,970.6803318013611,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Adverse,2030,1031.9642004885836,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Reform,2026,817.9733158537564,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Reform,2027,895.6355075934667,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Reform,2028,979.2871127587573,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Reform,2029,1070.7476616367874,,,AZN/ay,level,True,False
+fr3:brw:n36_39,Reform,2030,1171.6314338791417,,,AZN/ay,level,True,False
+fr3:brw:n23,ACTUAL,2016,592.1,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2017,561.8,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2018,589.8,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2019,715.9,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2020,764.3,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2021,757.2,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2022,823.2,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2023,881.1,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2024,1015.1,,,AZN/ay,level,False,False
+fr3:brw:n23,ACTUAL,2025,1081.5,,,AZN/ay,level,False,False
+fr3:brw:n23,Baseline,2026,1153.6751970472594,,,AZN/ay,level,True,False
+fr3:brw:n23,Baseline,2027,1242.027325713072,,,AZN/ay,level,True,False
+fr3:brw:n23,Baseline,2028,1337.7731780545203,,,AZN/ay,level,True,False
+fr3:brw:n23,Baseline,2029,1441.0439333908375,,,AZN/ay,level,True,False
+fr3:brw:n23,Baseline,2030,1553.5519295696183,,,AZN/ay,level,True,False
+fr3:brw:n23,Adverse,2026,1153.6751970472596,,,AZN/ay,level,True,False
+fr3:brw:n23,Adverse,2027,1216.9106174120059,,,AZN/ay,level,True,False
+fr3:brw:n23,Adverse,2028,1289.1772171043635,,,AZN/ay,level,True,False
+fr3:brw:n23,Adverse,2029,1369.0542238434691,,,AZN/ay,level,True,False
+fr3:brw:n23,Adverse,2030,1455.489414225878,,,AZN/ay,level,True,False
+fr3:brw:n23,Reform,2026,1153.6751970472583,,,AZN/ay,level,True,False
+fr3:brw:n23,Reform,2027,1263.2104870400817,,,AZN/ay,level,True,False
+fr3:brw:n23,Reform,2028,1381.1932869700004,,,AZN/ay,level,True,False
+fr3:brw:n23,Reform,2029,1510.1898748828712,,,AZN/ay,level,True,False
+fr3:brw:n23,Reform,2030,1652.4770419148304,,,AZN/ay,level,True,False
+fr3:brw:n13,ACTUAL,2016,299.4,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2017,360.8,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2018,368.0,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2019,460.8,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2020,471.6,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2021,525.1,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2022,637.0,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2023,737.9,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2024,743.5,,,AZN/ay,level,False,False
+fr3:brw:n13,ACTUAL,2025,795.6,,,AZN/ay,level,False,False
+fr3:brw:n13,Baseline,2026,848.6953183271379,,,AZN/ay,level,True,False
+fr3:brw:n13,Baseline,2027,913.6911145051503,,,AZN/ay,level,True,False
+fr3:brw:n13,Baseline,2028,984.1260660750589,,,AZN/ay,level,True,False
+fr3:brw:n13,Baseline,2029,1060.096674438974,,,AZN/ay,level,True,False
+fr3:brw:n13,Baseline,2030,1142.8626122659161,,,AZN/ay,level,True,False
+fr3:brw:n13,Adverse,2026,848.695318327138,,,AZN/ay,level,True,False
+fr3:brw:n13,Adverse,2027,895.2141351946298,,,AZN/ay,level,True,False
+fr3:brw:n13,Adverse,2028,948.376693414916,,,AZN/ay,level,True,False
+fr3:brw:n13,Adverse,2029,1007.1378090521167,,,AZN/ay,level,True,False
+fr3:brw:n13,Adverse,2030,1070.723419286277,,,AZN/ay,level,True,False
+fr3:brw:n13,Reform,2026,848.695318327137,,,AZN/ay,level,True,False
+fr3:brw:n13,Reform,2027,929.274399897447,,,AZN/ay,level,True,False
+fr3:brw:n13,Reform,2028,1016.0678493881945,,,AZN/ay,level,True,False
+fr3:brw:n13,Reform,2029,1110.9635362522538,,,AZN/ay,level,True,False
+fr3:brw:n13,Reform,2030,1215.6363703628656,,,AZN/ay,level,True,False
+fr3:brw:n12,ACTUAL,2016,416.8,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2017,561.4,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2018,673.1,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2019,781.4,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2020,778.5,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2021,906.1,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2022,1100.9,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2023,1381.8,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2024,1402.0,,,AZN/ay,level,False,False
+fr3:brw:n12,ACTUAL,2025,1342.6,,,AZN/ay,level,False,False
+fr3:brw:n12,Baseline,2026,1432.2000180819698,,,AZN/ay,level,True,False
+fr3:brw:n12,Baseline,2027,1541.8824664839299,,,AZN/ay,level,True,False
+fr3:brw:n12,Baseline,2028,1660.7436605233459,,,AZN/ay,level,True,False
+fr3:brw:n12,Baseline,2029,1788.946449348625,,,AZN/ay,level,True,False
+fr3:brw:n12,Baseline,2030,1928.6165701712152,,,AZN/ay,level,True,False
+fr3:brw:n12,Adverse,2026,1432.2000180819698,,,AZN/ay,level,True,False
+fr3:brw:n12,Adverse,2027,1510.7019832985286,,,AZN/ay,level,True,False
+fr3:brw:n12,Adverse,2028,1600.4154708130543,,,AZN/ay,level,True,False
+fr3:brw:n12,Adverse,2029,1699.5766998911156,,,AZN/ay,level,True,False
+fr3:brw:n12,Adverse,2030,1806.8794152007986,,,AZN/ay,level,True,False
+fr3:brw:n12,Reform,2026,1432.200018081968,,,AZN/ay,level,True,False
+fr3:brw:n12,Reform,2027,1568.1797502542886,,,AZN/ay,level,True,False
+fr3:brw:n12,Reform,2028,1714.6464235653464,,,AZN/ay,level,True,False
+fr3:brw:n12,Reform,2029,1874.7858770390594,,,AZN/ay,level,True,False
+fr3:brw:n12,Reform,2030,2051.4245737169217,,,AZN/ay,level,True,False
+fr3:brw:n06,ACTUAL,2016,3013.9,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2017,3420.2,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2018,3376.9,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2019,3364.2,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2020,3454.9,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2021,3143.5,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2022,3361.6,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2023,3425.9,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2024,3669.6,,,AZN/ay,level,False,False
+fr3:brw:n06,ACTUAL,2025,3788.4,,,AZN/ay,level,False,False
+fr3:brw:n06,Baseline,2026,4041.223408685935,,,AZN/ay,level,True,False
+fr3:brw:n06,Baseline,2027,4350.713195313363,,,AZN/ay,level,True,False
+fr3:brw:n06,Baseline,2028,4686.102549923019,,,AZN/ay,level,True,False
+fr3:brw:n06,Baseline,2029,5047.850982207906,,,AZN/ay,level,True,False
+fr3:brw:n06,Baseline,2030,5441.956662026392,,,AZN/ay,level,True,False
+fr3:brw:n06,Adverse,2026,4041.2234086859353,,,AZN/ay,level,True,False
+fr3:brw:n06,Adverse,2027,4262.731560798561,,,AZN/ay,level,True,False
+fr3:brw:n06,Adverse,2028,4515.875144963636,,,AZN/ay,level,True,False
+fr3:brw:n06,Adverse,2029,4795.677320026444,,,AZN/ay,level,True,False
+fr3:brw:n06,Adverse,2030,5098.452239346571,,,AZN/ay,level,True,False
+fr3:brw:n06,Reform,2026,4041.2234086859294,,,AZN/ay,level,True,False
+fr3:brw:n06,Reform,2027,4424.915958486034,,,AZN/ay,level,True,False
+fr3:brw:n06,Reform,2028,4838.199397463846,,,AZN/ay,level,True,False
+fr3:brw:n06,Reform,2029,5290.063173376117,,,AZN/ay,level,True,False
+fr3:brw:n06,Reform,2030,5788.482686629814,,,AZN/ay,level,True,False
+fr3:brw:n32,ACTUAL,2016,408.0,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2017,360.6,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2018,398.1,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2019,468.3,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2020,447.9,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2021,591.8,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2022,629.2,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2023,684.6,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2024,697.9,,,AZN/ay,level,False,False
+fr3:brw:n32,ACTUAL,2025,697.4,,,AZN/ay,level,False,False
+fr3:brw:n32,Baseline,2026,743.941823782486,,,AZN/ay,level,True,False
+fr3:brw:n32,Baseline,2027,800.9152630164555,,,AZN/ay,level,True,False
+fr3:brw:n32,Baseline,2028,862.6565088998822,,,AZN/ay,level,True,False
+fr3:brw:n32,Baseline,2029,929.2501517769489,,,AZN/ay,level,True,False
+fr3:brw:n32,Baseline,2030,1001.8003843567747,,,AZN/ay,level,True,False
+fr3:brw:n32,Adverse,2026,743.9418237824863,,,AZN/ay,level,True,False
+fr3:brw:n32,Adverse,2027,784.7188761748803,,,AZN/ay,level,True,False
+fr3:brw:n32,Adverse,2028,831.319640507243,,,AZN/ay,level,True,False
+fr3:brw:n32,Adverse,2029,882.827938704055,,,AZN/ay,level,True,False
+fr3:brw:n32,Adverse,2030,938.5652496358089,,,AZN/ay,level,True,False
+fr3:brw:n32,Reform,2026,743.9418237824854,,,AZN/ay,level,True,False
+fr3:brw:n32,Reform,2027,814.5751212776264,,,AZN/ay,level,True,False
+fr3:brw:n32,Reform,2028,890.6557543531005,,,AZN/ay,level,True,False
+fr3:brw:n32,Reform,2029,973.8385748897962,,,AZN/ay,level,True,False
+fr3:brw:n32,Reform,2030,1065.5917605468358,,,AZN/ay,level,True,False
+fr3:brw:n11,ACTUAL,2016,494.8,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2017,521.3,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2018,576.1,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2019,727.1,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2020,656.5,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2021,675.0,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2022,684.3,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2023,810.6,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2024,988.3,,,AZN/ay,level,False,False
+fr3:brw:n11,ACTUAL,2025,1125.1,,,AZN/ay,level,False,False
+fr3:brw:n11,Baseline,2026,1200.184895236127,,,AZN/ay,level,True,False
+fr3:brw:n11,Baseline,2027,1292.098885029845,,,AZN/ay,level,True,False
+fr3:brw:n11,Baseline,2028,1391.704671871605,,,AZN/ay,level,True,False
+fr3:brw:n11,Baseline,2029,1499.1387234933252,,,AZN/ay,level,True,False
+fr3:brw:n11,Baseline,2030,1616.1824095781576,,,AZN/ay,level,True,False
+fr3:brw:n11,Adverse,2026,1200.1848952361274,,,AZN/ay,level,True,False
+fr3:brw:n11,Adverse,2027,1265.9696122517316,,,AZN/ay,level,True,False
+fr3:brw:n11,Adverse,2028,1341.1495949737582,,,AZN/ay,level,True,False
+fr3:brw:n11,Adverse,2029,1424.246793570307,,,AZN/ay,level,True,False
+fr3:brw:n11,Adverse,2030,1514.1665649057193,,,AZN/ay,level,True,False
+fr3:brw:n11,Reform,2026,1200.1848952361258,,,AZN/ay,level,True,False
+fr3:brw:n11,Reform,2027,1314.1360323336066,,,AZN/ay,level,True,False
+fr3:brw:n11,Reform,2028,1436.875235478453,,,AZN/ay,level,True,False
+fr3:brw:n11,Reform,2029,1571.0722406201742,,,AZN/ay,level,True,False
+fr3:brw:n11,Reform,2030,1719.0956263138005,,,AZN/ay,level,True,False
+fr3:brw:n21,ACTUAL,2016,577.9,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2017,725.7,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2018,739.0,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2019,589.9,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2020,826.5,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2021,869.1,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2022,923.0,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2023,1051.5,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2024,1140.6,,,AZN/ay,level,False,False
+fr3:brw:n21,ACTUAL,2025,1285.2,,,AZN/ay,level,False,False
+fr3:brw:n21,Baseline,2026,1370.9693603746075,,,AZN/ay,level,True,False
+fr3:brw:n21,Baseline,2027,1475.9625695852428,,,AZN/ay,level,True,False
+fr3:brw:n21,Baseline,2028,1589.7421067366338,,,AZN/ay,level,True,False
+fr3:brw:n21,Baseline,2029,1712.4638587091117,,,AZN/ay,level,True,False
+fr3:brw:n21,Baseline,2030,1846.1626813526339,,,AZN/ay,level,True,False
+fr3:brw:n21,Adverse,2026,1370.9693603746075,,,AZN/ay,level,True,False
+fr3:brw:n21,Adverse,2027,1446.1151414682477,,,AZN/ay,level,True,False
+fr3:brw:n21,Adverse,2028,1531.9931201317875,,,AZN/ay,level,True,False
+fr3:brw:n21,Adverse,2029,1626.9149223149577,,,AZN/ay,level,True,False
+fr3:brw:n21,Adverse,2030,1729.6301388470629,,,AZN/ay,level,True,False
+fr3:brw:n21,Reform,2026,1370.969360374606,,,AZN/ay,level,True,False
+fr3:brw:n21,Reform,2027,1501.1355690651067,,,AZN/ay,level,True,False
+fr3:brw:n21,Reform,2028,1641.3403720886217,,,AZN/ay,level,True,False
+fr3:brw:n21,Reform,2029,1794.6334047151793,,,AZN/ay,level,True,False
+fr3:brw:n21,Reform,2030,1963.720290586167,,,AZN/ay,level,True,False

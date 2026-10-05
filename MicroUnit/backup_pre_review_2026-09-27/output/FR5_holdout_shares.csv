@@ -1,0 +1,14 @@
+type,label,share_RMSE_pp,U_vs_random_walk
+household,Household (personal) services,0.515,0.843
+transport,Transport services,0.309,0.729
+communication,Communication services,1.773,1.01
+housing,Housing services,0.662,3.206
+utilities,Public utility services,1.29,1.687
+culture,Culture services,0.195,0.951
+tourism,Tourist and excursion services,0.421,0.537
+sport,Physical culture and sport,0.056,0.656
+medical,Medical services,1.277,0.905
+sanatoria,Sanatoria and health services,0.16,1.613
+legal_bank,Legal and banking services,0.765,0.879
+education,Educational services,0.156,0.317
+other,Other paid services,0.294,0.805

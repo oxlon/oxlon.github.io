@@ -1,0 +1,14 @@
+type,label,mean_share_pct,expenditure_elasticity,total_income_elasticity,classification
+sport,Physical culture and sport,0.6643048379152222,2.4603920994113606,3.8395659784039564,luxury within services
+medical,Medical services,5.048938202380989,2.402557565633513,3.7493122711499764,luxury within services
+tourism,Tourist and excursion services,2.2582474948205644,2.0259444221840615,3.161588463650253,luxury within services
+education,Educational services,6.650900078797598,1.9856330412227483,3.09868052027059,luxury within services
+sanatoria,Sanatoria and health services,1.0070782006498968,1.5927366797080245,2.4855459296207707,luxury within services
+culture,Culture services,1.6531308399095939,1.338847495375457,2.089339050773582,luxury within services
+transport,Transport services,18.27305787338575,1.3280847243203093,2.0725432036455644,luxury within services
+legal_bank,Legal and banking services,4.635917421881563,1.3168624718111255,2.055030312531327,luxury within services
+other,Other paid services,5.4771759803253435,1.0924068498828607,1.7047559925058922,luxury within services
+housing,Housing services,2.469581160604897,0.8208738715371316,1.2810150831116578,necessity within services
+household,Household (personal) services,12.174002754406514,0.7660917435047881,1.1955248089932038,necessity within services
+utilities,Public utility services,16.448123779491336,0.5555995617397781,0.8670411416873656,necessity within services
+communication,Communication services,23.239541375430733,0.3351196227441364,0.5229710754199691,necessity within services

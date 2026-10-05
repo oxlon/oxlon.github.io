@@ -1,0 +1,9 @@
+WATERMARK,scope,scope_az,rule,rule_az
+"SYNTHETIC — pipeline test, not results",all models,bütün modellər,"revenue > 0, employees > 0, total assets > 0, fixed assets > 0","gəlir, işçilər, aktivlər və əsas fondlar müsbətdir"
+"SYNTHETIC — pipeline test, not results",operating margin,əməliyyat marjası,"unit labour cost (wage bill / revenue) <= 1 (selection on a regressor); EBIT / revenue within [-2, 1]","vahid əmək xərci (əmək haqqı fondu / gəlir) ≤ 1 (izahedici dəyişən üzrə seçim); EBIT / gəlir [-2, 1] aralığında"
+"SYNTHETIC — pipeline test, not results",sales growth,satışların artımı,Δ ln revenue bounded at ±1,Δ ln gəlir ±1 hüdudunda
+"SYNTHETIC — pipeline test, not results",ROA,ROA,net profit / total assets winsorised at the pooled 1st and 99th percentiles,xalis mənfəət / aktivlər 1% və 99% persentillərdə vinzorlaşdırılıb
+"SYNTHETIC — pipeline test, not results",investment rate,investisiya norması,"capex / fixed assets t-1 within [0, 2]; consecutive years only","kapital qoyuluşu / əsas fondlar t−1 [0, 2] aralığında; yalnız ardıcıl illər"
+"SYNTHETIC — pipeline test, not results",lagged regressors,gecikmiş izahedici dəyişənlər,value of the same firm in the previous calendar year (no lagged dependent variable),eyni müəssisənin əvvəlki ildəki dəyəri (asılı dəyişənin gecikməsi yoxdur)
+"SYNTHETIC — pipeline test, not results",fixed effects,sabit effektlər,firms observed once (singletons) are dropped from the within estimator,yalnız bir il müşahidə olunan müəssisələr daxili qiymətləndiricidən çıxarılır
+"SYNTHETIC — pipeline test, not results",optional fields,əlavə (məcburi olmayan) sahələr,a regressor with < 80% coverage in the estimation sample is dropped and listed,nümunədə 80%-dən az dolu olan izahedici dəyişən çıxarılır və göstərilir

@@ -1,0 +1,3 @@
+test,passed,detail
+REAL mode estimates the same firm-level models: identical coefficients on the same data,True,"81 coefficients, max |gap| 0.0e+00"
+"REAL mode writes FR10_FIRM_econ_* (no watermark, no recovery against true values)",True,"12 files: econ_coefficients.csv, econ_distress_ame.csv, econ_distress_calibration.csv, econ_distress_roc.csv, econ_export_ame.csv, econ_export_calibration.csv ..."

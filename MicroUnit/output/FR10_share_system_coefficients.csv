@@ -1,0 +1,15 @@
+system,branch,name,driver,slope_used,se_posterior,shrink_B,eg_coint_p,estimator,coherence
+14 economic regions,Baku city,Baku city,ln FR1 mining/manufacturing VA,0.0,0.1279966348874878,0.6509020758365976,,reference,
+14 economic regions,Nakhchivan AR,Nakhchivan AR,ln FR1 mining/manufacturing VA,-0.1614116617526863,0.13046660103716687,0.6762655260943865,0.5347397746897268,DOLS(+-1),x2: difference form
+14 economic regions,Absheron-Khizi,Absheron-Khizi,ln FR1 mining/manufacturing VA,-0.164146558479462,0.12734472706002908,0.6442886586618156,0.08640164086403207,DOLS(+-1),x2: difference form
+14 economic regions,Daghlig Shirvan,Daghlig Shirvan,ln FR1 mining/manufacturing VA,-0.42171682361904966,0.1082649951310594,0.46568760014744254,0.027793226177731434,DOLS(+-1),x2: difference form
+14 economic regions,Ganja-Dashkasan,Ganja-Dashkasan,ln FR1 mining/manufacturing VA,-0.20333027999509612,0.13306324903877617,0.7034525362161907,0.09976191461996348,DOLS(+-1),x2: difference form
+14 economic regions,Garabagh,Garabagh,ln FR1 mining/manufacturing VA,-0.2558814778919668,0.13163284703638928,0.6884098915017411,0.18892148900202355,DOLS(+-1),x2: difference form
+14 economic regions,Gazakh-Tovuz,Gazakh-Tovuz,ln FR1 mining/manufacturing VA,-0.40287884900888477,0.1064423054603993,0.45013947251854,0.07646857082514456,DOLS(+-1),x2: difference form
+14 economic regions,Guba-Khachmaz,Guba-Khachmaz,ln FR1 mining/manufacturing VA,-0.2462005397761759,0.1320488803013932,0.692768287076112,0.35862133545906316,DOLS(+-1),
+14 economic regions,Lankaran-Astara,Lankaran-Astara,ln FR1 mining/manufacturing VA,-0.4115964536308639,0.08598693409234294,0.2937537917886616,0.04608730283358812,DOLS(+-1),x2: difference form
+14 economic regions,Central Aran,Central Aran,ln FR1 mining/manufacturing VA,-0.2882123977381079,0.13584288360301264,0.7331491521963058,0.2533760390181249,DOLS(+-1),
+14 economic regions,Mil-Mughan,Mil-Mughan,ln FR1 mining/manufacturing VA,-0.12732318104065743,0.12683977004137423,0.6391892240790148,0.2732758566403414,DOLS(+-1),x2: difference form
+14 economic regions,Shaki-Zagatala,Shaki-Zagatala,ln FR1 mining/manufacturing VA,-0.25443726666090755,0.1294431487297689,0.6656971384824494,0.06276569257039678,DOLS(+-1),x2: difference form
+14 economic regions,Eastern Zangezur,Eastern Zangezur,ln FR1 mining/manufacturing VA,-0.09645761939929581,0.1532774109561274,0.9334151914359659,0.0901413921096228,DOLS(+-1),x2: difference form
+14 economic regions,Shirvan-Salyan,Shirvan-Salyan,ln FR1 mining/manufacturing VA,-0.11922783451365633,0.12198205108808352,0.5911673171297197,0.07574224926707218,DOLS(+-1),x2: difference form

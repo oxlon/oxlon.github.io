@@ -1,0 +1,66 @@
+panel,dep,candidate,sel_mse,n
+activity,lnB,null (FE + fixed terms),0.023351669746163595,11
+activity,lnB,structural: FE + size,0.02681797963850496,11
+activity,lnB,structural: FE + size | anchored,0.008739164818778662,11
+activity,lnB,structural: FE + dem,0.02600843139236504,11
+activity,lnB,structural: FE + dem | anchored,0.00587622534343426,11
+activity,lnB,structural: FE + size + dem,0.02699582013344932,11
+activity,lnB,structural: FE + size + dem | anchored,0.009189492273439931,11
+activity,lnB,structural: FE + size + lend,0.02999122641568712,11
+activity,lnB,structural: FE + size + lend | anchored,0.011986034882458923,11
+activity,lnB,structural: FE + size + cred,0.026316658315384392,11
+activity,lnB,structural: FE + size + cred | anchored,0.008311466782157691,11
+activity,lnB,structural: FE + dem + lend,0.027123840401005704,11
+activity,lnB,structural: FE + dem + lend | anchored,0.006970032248114353,11
+activity,lnB,structural: FE + pcm,0.030422947794849865,11
+activity,lnB,structural: FE + pcm | anchored,0.0075465397627219296,11
+activity,lnB,structural: FE + size + pcm,0.028358900853525902,11
+activity,lnB,structural: FE + size + pcm | anchored,0.008201109258476606,11
+activity,exit,null (FE + fixed terms),1.0431365458043358,11
+activity,exit,structural: FE + dem,1.0615132984432707,11
+activity,exit,structural: FE + dem | anchored,1.6134731227871888,11
+activity,exit,structural: FE + dem + pcm,1.0524137482607465,11
+activity,exit,structural: FE + dem + pcm | anchored,1.6098641058347112,11
+activity,exit,structural: FE + dem + cred,1.7999482139157026,11
+activity,exit,structural: FE + dem + cred | anchored,2.3681199621528384,11
+activity,exit,structural: FE + lend,309.4199200887038,11
+activity,exit,structural: FE + lend | anchored,310.01525704582497,11
+activity,exit,structural: FE + cred,1.9626467542640536,11
+activity,exit,structural: FE + cred | anchored,2.5579837113785238,11
+activity,exit,structural: FE + size,1.1222282881448573,11
+activity,exit,structural: FE + size | anchored,1.7055379346513753,11
+region,lnB,null (FE + fixed terms),0.4192648263671704,14
+region,lnB,structural: FE + reg,0.40603227238143313,14
+region,lnB,structural: FE + reg | anchored,0.35917924380838134,14
+region,lnB,structural: FE + size,0.536169781747624,14
+region,lnB,structural: FE + size | anchored,0.4771410411648419,14
+region,lnB,structural: FE + reg + size,0.5116878515070946,14
+region,lnB,structural: FE + reg + size | anchored,0.45378203224172536,14
+region,lnB,structural: FE + non,0.6761059550696971,14
+region,lnB,structural: FE + non | anchored,0.6604250499928119,14
+region,lnB,structural: FE + non + lend,0.4736297029026817,14
+region,lnB,structural: FE + non + lend | anchored,0.4579487978257961,14
+region,lnB,structural: FE + reg + lend,0.37313734497447243,14
+region,lnB,structural: FE + reg + lend | anchored,0.3517651073517733,14
+region,exit,null (FE + fixed terms),0.18810569205930652,14
+region,exit,structural: FE + reg,0.19440484417344325,14
+region,exit,structural: FE + reg | anchored,0.2074272273004501,14
+region,exit,structural: FE + size,0.1856520830434569,14
+region,exit,structural: FE + size | anchored,0.19416869915154925,14
+region,exit,structural: FE + reg + size,0.19072371124050416,14
+region,exit,structural: FE + reg + size | anchored,0.19867938938475316,14
+region,exit,structural: FE + non,0.13727516723799565,14
+region,exit,structural: FE + non | anchored,0.12824672774226745,14
+region,exit,structural: FE + non + lend,0.17019848057786024,14
+region,exit,structural: FE + non + lend | anchored,0.16117004108213204,14
+region,exit,structural: FE + reg + lend,0.22527899231270193,14
+region,exit,structural: FE + reg + lend | anchored,0.21357438688794175,14
+sme,lo,null (FE + fixed terms),0.15473387015090498,11
+sme,lo,structural: FE + dem,0.15895089422717318,11
+sme,lo,structural: FE + dem | anchored,0.18446422548506547,11
+sme,lo,structural: FE + size,0.14372162208346312,11
+sme,lo,structural: FE + size | anchored,0.18247344993267706,11
+sme,lo,structural: FE + lend,0.16610429181154768,11
+sme,lo,structural: FE + lend | anchored,0.1735118064972874,11
+sme,lo,structural: FE + dem + lend,0.2047729419857811,11
+sme,lo,structural: FE + dem + lend | anchored,0.20518063816537782,11

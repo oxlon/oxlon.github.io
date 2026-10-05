@@ -1,0 +1,15 @@
+,equation,n,R2,specification,note
+0,E1 aggregate volume of paid services,26,0.9881,ln(Q/N) on ln(Yd/N) + 2020 and 2021 dummies,income elasticity 1.561; price term tested and rejected out of sample
+1,E2 share of household,20,0.928,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+2,E2 share of communication,20,0.7368,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+3,E2 share of housing,20,0.5857,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+4,E2 share of utilities,20,0.7572,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+5,E2 share of culture,20,0.2437,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+6,E2 share of tourism,20,0.7596,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+7,E2 share of sport,20,0.5728,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+8,E2 share of medical,20,0.8361,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+9,E2 share of sanatoria,20,0.1912,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+10,E2 share of legal_bank,20,0.0772,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+11,E2 share of education,20,0.891,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+12,E2 share of other,20,0.0537,log-odds share on real service expenditure per head and own relative price,"LA-AIDS, reference = transport"
+13,E3 Share of the STATE sector in paid services,26,0.6924,logit share on income,chosen out of sample

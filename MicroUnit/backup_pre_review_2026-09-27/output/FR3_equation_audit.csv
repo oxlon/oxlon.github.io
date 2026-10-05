@@ -1,0 +1,7 @@
+equation,dependent,spec,n,R2,DW,eg_resid_p,sample,note
+E1_w_avg,ln real average wage,ln productivity + ln real minimum wage,26,0.975,0.91,0.132,2000-2025,
+E2_w_non,ln real non-oil wage,ln non-oil productivity + ln real minimum wage,21,0.942,0.9,0.038,2005-2025,
+E3_w_priv,ln real private wage,ln real non-oil wage,21,0.771,0.25,0.507,2005-2025,chosen on out-of-sample performance (Part 10.3): the lowest five-year hold-out error of five candidates. The oil-sector spillover and the minimum wage were both tested and rejected.
+E4_w_state,ln real state-sector wage,ln real minimum wage + ln non-oil productivity,21,0.915,0.82,0.102,2005-2025,"chosen on out-of-sample performance (Part 10.3). The statutory floor is the dominant driver of public pay, as the 2018 reform shows. The fiscal-capacity variant is shown above and can be substituted for budget-constraint simulations."
+E5_w_oil,ln real oil-sector wage,ln real non-oil wage,21,0.583,0.24,0.16,2005-2025,oil-sector productivity and the oil price are both rejected as drivers (Part 10); this is the weakest of the five equations and the one to treat with most caution
+P1_minwage,ln minimum wage,ln average wage,26,0.962,0.8,0.026,2000-2025,"reported as the historical indexation pattern; in the forecast the minimum wage is a scenario instrument, because it is a policy decision rather than an outcome"

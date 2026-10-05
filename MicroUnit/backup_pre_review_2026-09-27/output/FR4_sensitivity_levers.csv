@@ -1,0 +1,15 @@
+lever,quantity,baseline,alternative,difference,difference_pct
+population growth 0.3pp lower,agriculture,1836.9,1834.2,-2.8,-0.15
+population growth 0.3pp lower,services,1401.1,1400.5,-0.6,-0.04
+population growth 0.3pp lower,construction,439.7,442.2,2.5,0.57
+population growth 0.3pp lower,total,5242.4,5242.4,0.0,0.0
+population growth 0.3pp higher,agriculture,1836.9,1839.7,2.7,0.15
+population growth 0.3pp higher,services,1401.1,1401.7,0.6,0.04
+population growth 0.3pp higher,construction,439.7,437.2,-2.5,-0.57
+population growth 0.3pp higher,total,5242.4,5242.4,0.0,0.0
+employee share +2pp by 2030,hired,1860.0,1964.8,104.8,5.64
+employee share +2pp by 2030,budget,649.5,686.2,36.6,5.64
+employee share +2pp by 2030,nonbudget,1210.4,1278.6,68.2,5.64
+state share frozen at its 2024 level,state,978.8,1098.1,119.3,12.19
+state share frozen at its 2024 level,nonstate,4263.5,4144.2,-119.3,-2.8
+budget constant kappa = 0.908 (from the 2025 published figure),budget,649.5,593.7,-55.9,-8.6

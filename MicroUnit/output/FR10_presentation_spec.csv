@@ -1,0 +1,13 @@
+view,content,form,feeding_files
+V1 Branch scorecard,"One card per branch: share of industry and manufacturing, real growth, labour productivity, GOS-proxy margin, investment rate, flags",KPI cards + sparkline,FR10_branch_scorecard.csv
+V2 Efficiency vs financial health,"Labour-productivity growth against GOS-proxy margin, bubble = market share; quadrant labels",scatter / quadrant,FR10_quadrant.csv
+V3 Market-share dynamics,"Branch shares 2005-2025 and 2026-2030 with 50/80/90% bands; HHI, CR4",stacked area; fan chart; KPI,"FR10_branch_shares_history.csv, FR10_forecast_branches.csv, FR10_fan_charts.csv, FR10_concentration.csv"
+V4 Region x activity,Regional shares of industrial output by year; non-state share; enterprises; entry/exit; forecast shares,map + heat map,"FR10_regional_history.csv, FR10_forecast_regions.csv, FR10_regional_entry_exit.csv"
+V5 Product view,"Main products in physical units, 2020-2025 growth, branch link",table with sparklines,FR10_products.csv
+V6 Forecast with bands,"Section and branch output (nominal, real), margins, non-state share under three scenarios with 5-95% bands",time series with fan,"FR10_forecast_branches.csv, FR10_forecast_sections.csv, FR10_fan_charts.csv, FR10_scenario_summary.csv"
+V7 Early-warning flags,"Margin, market-share, renewal, stocks and productivity flags; watch list",flag table (traffic lights),FR10_early_warning.csv
+V8 Financial condition,"Section GOS margins, labour share, CFC; DVX declaration margins, losses, arrears; self-financing",time series; KPI cards,"FR10_financial_sections.csv, FR10_dvx_declarations.csv"
+V9 Key factors,Growth contributions by branch; determinants panel with honest inference,waterfall; coefficient table,"FR10_growth_contributions.csv, FR10_determinants_panel.csv"
+V10 Efficiency,"TFP decomposition, capital productivity, wage-productivity gap, innovation intensity",decomposition bars,"FR10_efficiency_branches.csv, FR10_tfp_sections.csv"
+V11 Data catalogue,"Indicator, source, table/row, years, status, integration route, alternative",searchable table,"FR10_data_source_matrix.csv, FR10_data_gaps_and_alternatives.csv, FR10_data_integrity_findings.csv"
+V12 Firm view (Layer B),"Firm scorecard, peer percentiles, distress zone, firm HHI by NACE x region, firm forecast — ACTIVE ONLY when the DVX/DSMF panel arrives",firm card; heat map,"FR10_SYNTHETIC_*.csv now (pipeline test only, watermarked)"

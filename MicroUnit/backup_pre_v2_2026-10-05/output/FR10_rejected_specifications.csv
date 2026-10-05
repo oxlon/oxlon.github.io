@@ -1,0 +1,28 @@
+specification,block,verdict,evidence
+nonstate_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef -0.049, DK p 0.73 on t(14), wild p 0.72"
+stocks_go_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef +0.044, DK p 0.01 on t(14), wild p 0.13"
+dln_ent_l1 as a determinant of branch growth (A),determinants panel,NOT ESTABLISHED (low power),"coef -0.173, DK p 0.10 on t(14), wild p 0.11"
+inv_rate_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.020, DK p 0.37 on t(7), wild p 0.67"
+drelp_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.168, DK p 0.64 on t(7), wild p 0.65"
+nonstate_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.003, DK p 0.99 on t(7), wild p 0.99"
+stocks_go_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.120, DK p 0.77 on t(7), wild p 0.77"
+dln_ent_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef +0.000, DK p 1.00 on t(7), wild p 1.00"
+dln_rwage_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.273, DK p 0.45 on t(7), wild p 0.46"
+labour_share_l1 as a determinant of branch growth (B),determinants panel,NOT ESTABLISHED (low power),"coef -0.082, DK p 0.88 on t(7), wild p 0.78"
+MNL: scale (FR1 real sector VA) (manufacturing (24 branches)),branch share system,NOT CHOSEN,selection RMSE 2.493 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.06
+MNL: oil export price (manufacturing (24 branches)),branch share system,NOT CHOSEN,selection RMSE 1.950 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.28
+MNL: scale + oil price (manufacturing (24 branches)),branch share system,NOT CHOSEN,selection RMSE 4.737 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.05
+combination: 1/2 constant + 1/2 MNL scale (manufacturing (24 branches)),branch share system,NOT CHOSEN,selection RMSE 2.037 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.04
+MNL: scale (FR1 real sector VA) (mining (4 branches)),branch share system,NOT CHOSEN,selection RMSE 3.712 pp vs 3.754 pp for the chosen system; DM/HLN p vs best 0.17
+MNL: oil export price (mining (4 branches)),branch share system,NOT CHOSEN,selection RMSE 3.760 pp vs 3.754 pp for the chosen system; DM/HLN p vs best 0.14
+MNL: scale + oil price (mining (4 branches)),branch share system,NOT CHOSEN,selection RMSE 3.306 pp vs 3.754 pp for the chosen system; DM/HLN p vs best nan
+combination: 1/2 constant + 1/2 MNL scale (mining (4 branches)),branch share system,NOT CHOSEN,selection RMSE 3.733 pp vs 3.754 pp for the chosen system; DM/HLN p vs best 0.16
+capacity rule for Chemicals,oil-linked block,REJECTED pre-cut,"RMSE 61.1 vs 35.4 log-% for the sector rate, DM p 0.009"
+pooled related-sector model alone,non-oil branch allocation,enters via the equal-weight combination,"RMSE 2.359 vs 2.048 pp, DM p 0.086"
+estimated elasticity to construction (quarrying),mining branches,NOT CHOSEN (pre-cut),see Part 11.6 tables
+neutral: held at trailing 3-year average (metal ores),mining branches,NOT CHOSEN (pre-cut),see Part 11.6 tables
+grows with FR1 construction VA (metal ores),mining branches,NOT CHOSEN (pre-cut),see Part 11.6 tables
+constant shares (regions),regional share system,NOT CHOSEN,selection RMSE 1.215 pp vs 1.131 pp; DM/HLN p vs best 0.05
+MNL: scale (FR1 real sector VA) (regions),regional share system,NOT CHOSEN,selection RMSE 1.377 pp vs 1.131 pp; DM/HLN p vs best 0.02
+MNL: scale + oil-sector mix (regions),regional share system,NOT CHOSEN,selection RMSE 1.341 pp vs 1.131 pp; DM/HLN p vs best 0.00
+combination: 1/2 constant + 1/2 MNL scale (regions),regional share system,NOT CHOSEN,selection RMSE 1.294 pp vs 1.131 pp; DM/HLN p vs best 0.03
