@@ -1,0 +1,9 @@
+check,result,tolerance,unit,passed
+"19 activities sum to total employment (all scenarios, both bases)",0.0,1e-09,%,True
+state + non-state = employed population,0.0,1e-09,%,True
+budget + non-budget = hired employees,2.220446049250313e-14,1e-09,%,True
+oil + non-oil = hired employees (tax-record basis),0.0,1e-09,%,True
+model reproduces every activity in 2024,4.440892098500626e-14,1e-06,%,True
+smallest activity share over the horizon (must exceed 0),0.0,1e-12,%,True
+employment / labour force must stay below 1 (reported as the excess),0.0,1.0,%,True
+every adjusted equation applies its add-factor (count of omissions),0.0,0.0,count,True

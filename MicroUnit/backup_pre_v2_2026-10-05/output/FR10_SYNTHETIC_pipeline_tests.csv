@@ -1,0 +1,10 @@
+WATERMARK,test,value,passed,note
+"SYNTHETIC — pipeline test, not results","validator catches 6 seeded corruptions (balance, NACE, negative cash)",6,True,
+"SYNTHETIC — pipeline test, not results",DuPont: margin x turnover x multiplier = ROE (max abs),8.9e-16,True,
+"SYNTHETIC — pipeline test, not results","TFP index equals an independent firm-by-firm re-computation (NACE 10, 2024; max abs gap)",1.3e-15,True,
+"SYNTHETIC — pipeline test, not results",market shares sum to one in every NACE-year cell (max gap),2.2e-16,True,
+"SYNTHETIC — pipeline test, not results",firm forecasts add up to the Layer-A branch forecast (%),2.2e-14,True,
+"SYNTHETIC — pipeline test, not results","peer percentile ranks lie in (0, 100]",0.048,True,
+"SYNTHETIC — pipeline test, not results","firm revenues add up to DSK branch output (max gap, %)",2.9e-06,True,
+"SYNTHETIC — pipeline test, not results",firm counts equal DSK active enterprises (max gap),0.000,True,
+"SYNTHETIC — pipeline test, not results","determinant model recovers the DGP (true 0.15, -0.30)","0.152, -0.296 (s.e. 0.005, 0.010)",True,

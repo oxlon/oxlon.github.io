@@ -1,0 +1,551 @@
+openapi: 3.0.3
+info:
+  title: MİİS §15.5.2 — mikroiqtisadi modulun məlumat API-si
+  version: 2.0.0
+  description: |
+    Mikroiqtisadi modulun (FR1, FR3, FR4, FR5, FR10, FR12) **məlumat mübadiləsi və avtonom icra** interfeysi.
+
+      * **Yükləmə** — yeni iş kitabı («Statistik data dinamika *.xlsx»), DSK cədvəlləri (.xls), FR10 müəssisə
+        paneli, FR12 biznes reyestri və ya müşahidələr (JSON) göndərilir; fayl dəftərlərin öz qaydaları ilə
+        yoxlanılır və hesabat qaytarılır. Tətbiq (`apply`) əvəz olunan faylın ehtiyat nüsxəsini saxlayır.
+      * **İcra** — `run_all.py` fon prosesi kimi işə salınır (FR1 → FR3 → FR4 → FR5 → FR10 → FR12 → panel → sayt),
+        mərhələlər üzrə irəliləyiş və jurnal izlənir. Eyni anda yalnız bir icra mümkündür (409).
+      * **Oxumaq** — proqnozlar (göstərici kataloqları üzrə), tənlik reyestri, vəziyyət.
+      * **Ssenarilər** — ssenari mühərriki (`microlib.engines.chain.run_chain`) ilə hesablama və saxlanmış ssenarilər.
+
+    Göstərici identifikatorları `fr<k>:<kod>` formatındadır (məs. `fr1:rgdp`, `fr4:emp:agr`). Ssenarilər:
+    `Baseline` (Əsas), `Adverse` (Mənfi), `Reform` (İslahat); faktiki dəyərlər `Actual`.
+    Bütün cavablar JSON-dur (hesabat istisna — .xlsx), xəta mesajları Azərbaycan dilindədir.
+
+    Bu sənəd **müqavilədir**. `server.py` onun işlək istinad tətbiqidir (yalnız standart kitabxana) və
+    Nazirliyin öz stekində əvəz edilə bilər.
+servers:
+  - url: http://127.0.0.1:8790
+    description: Yerli istinad serveri
+security:
+  - bearerAuth: []
+tags:
+  - name: Sistem
+  - name: Yükləmələr
+  - name: İcra
+  - name: Məlumat
+  - name: Ssenarilər
+  - name: Hesabatlar
+  - name: Avtonom rejim
+paths:
+  /api/v1/health:
+    get:
+      tags: [Sistem]
+      summary: Xidmətin vəziyyəti (nişan tələb olunmur)
+      security: []
+      responses:
+        "200":
+          description: İşləyir
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+                  version: { type: string }
+                  time: { type: string, format: date-time }
+  /api/v1/openapi.yaml:
+    get:
+      tags: [Sistem]
+      summary: Bu müqavilə (nişan tələb olunmur)
+      security: []
+      responses:
+        "200": { description: OpenAPI sənədi, content: { application/yaml: {} } }
+  /api/v1/status:
+    get:
+      tags: [Sistem]
+      summary: Son icra, məlumatın versiyası və FR10/FR12 məlumat rejimi
+      description: |
+        `data_modes.FR10` / `data_modes.FR12`: `mode` — nəticələrin əsaslandığı rejim (SYNTHETIC və ya REAL),
+        `input_mode` — növbəti icranın istifadə edəcəyi giriş faylının rejimi, `rerun_needed` — real fayl
+        tətbiq olunub, lakin modul hələ yenidən icra edilməyib.
+      responses:
+        "200":
+          description: Vəziyyət
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Status" }
+        "401": { $ref: "#/components/responses/Error" }
+  /api/v1/events:
+    get:
+      tags: [Sistem]
+      summary: Hadisələr jurnalı (yükləmə, tətbiq, icra, DSK yeniləməsi)
+      parameters:
+        - { name: limit, in: query, schema: { type: integer, default: 100, maximum: 1000 } }
+      responses:
+        "200": { description: Hadisələr, content: { application/json: { schema: { type: object } } } }
+  /api/v1/uploads:
+    get:
+      tags: [Yükləmələr]
+      summary: Yükləmələrin siyahısı
+      parameters:
+        - { name: kind, in: query, schema: { $ref: "#/components/schemas/Kind" } }
+        - { name: status, in: query, schema: { type: string, enum: [validated, rejected, applied] } }
+        - { name: limit, in: query, schema: { type: integer, default: 100 } }
+      responses:
+        "200": { description: Siyahı, content: { application/json: { schema: { type: object } } } }
+    post:
+      tags: [Yükləmələr]
+      summary: Fayl yükləmək və yoxlamaq
+      description: |
+        İki üsul:
+          1. **Xam gövdə** — `Content-Type: application/octet-stream`, başlıqlar `X-Filename` (faiz kodlaması ilə,
+             məs. `Statistik%20data%20dinamika%2005.09.2026.xlsx`), `X-Kind`, DSK üçün `X-Subfolder`, istəyə görə
+             `X-Actor`, `X-Note`.
+          2. **multipart/form-data** — sahələr `file` (fayl), `kind`, `subfolder`, `actor`, `note`.
+
+        Fayl `data/inbox/<upload_id>/` altında saxlanılır və yoxlanılır:
+          * `workbook` — dəftərlərin istinad etdiyi hər (vərəq, sətir, ad) ünvanı (FR1 VARMAP, FR3 WAGEMAP,
+            FR4/FR5/FR12 `wb_rows`) və il başlıqları;
+          * `dsk` — köhnə Excel (BIFF) formatı, dəftərlərin oxuduğu vərəqlər, əvvəlki faylın vərəqləri; alt qovluq
+            göstərilməyibsə fayl adından müəyyən edilir;
+          * `firm_panel` / `business_register` — FR10/FR12 validatorlarının bütün qaydaları, sətir və sahə üzrə;
+            bütün sətirlərində sintetik nişan olan fayl rədd edilir;
+          * `series` — müşahidələr (makro API-dəki kimi), kataloq varsa kodlar yoxlanılır.
+
+        `?apply=1` — yoxlamadan keçərsə dərhal tətbiq et; `&run=1` — sonra icranı başlat.
+        `kind` verilməyibsə fayl adından müəyyən edilir.
+      parameters:
+        - { name: X-Filename, in: header, schema: { type: string } }
+        - { name: X-Kind, in: header, schema: { $ref: "#/components/schemas/Kind" } }
+        - { name: X-Subfolder, in: header, schema: { type: string, example: dsk_services } }
+        - { name: apply, in: query, schema: { type: boolean } }
+        - { name: run, in: query, schema: { type: boolean } }
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema: { type: string, format: binary }
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file: { type: string, format: binary }
+                kind: { $ref: "#/components/schemas/Kind" }
+                subfolder: { type: string }
+                actor: { type: string }
+                note: { type: string }
+      responses:
+        "201":
+          description: Qəbul edildi (yoxlamadan keçdi)
+          content: { application/json: { schema: { $ref: "#/components/schemas/UploadResult" } } }
+        "422":
+          description: Rədd edildi — səhvlər `validation.errors` siyahısında (sətir, sahə, qayda, mesaj)
+          content: { application/json: { schema: { $ref: "#/components/schemas/UploadResult" } } }
+        "400": { $ref: "#/components/responses/Error" }
+        "413": { $ref: "#/components/responses/Error" }
+  /api/v1/uploads/{id}:
+    get:
+      tags: [Yükləmələr]
+      summary: Bir yükləmə və onun yoxlama hesabatı
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: Yükləmə, content: { application/json: { schema: { $ref: "#/components/schemas/Upload" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/uploads/{id}/apply:
+    post:
+      tags: [Yükləmələr]
+      summary: Yoxlanmış faylı tətbiq etmək
+      description: |
+        Əvəz olunan fayl `data/_replaced/<vaxt>_<id>/` altına köçürülür, yeni fayl dəftərlərin oxuduğu dəqiq
+        yola yazılır: iş kitabı — `data/Statistik data dinamika 05.06.2026 +.xlsx` (dəftərlərdəki ad), DSK —
+        `data/<alt qovluq>/<fayl>`, müəssisə paneli — `data/firm_panel/FR10_firm_panel.csv|xlsx`, reyestr —
+        `data/business_register/FR12_business_register.csv|xlsx`. `*_SYNTHETIC*` fayllarının üzərinə heç vaxt
+        yazılmır. İcra gedərkən tətbiq mümkün deyil (409). `?run=1` — ilk təsirlənən mərhələdən icra.
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: run, in: query, schema: { type: boolean } }
+      responses:
+        "200": { description: Tətbiq olundu, content: { application/json: { schema: { type: object } } } }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/runs:
+    get:
+      tags: [İcra]
+      summary: İcraların siyahısı (API və komanda sətrindən başladılanlar)
+      responses:
+        "200": { description: Siyahı, content: { application/json: { schema: { type: object } } } }
+    post:
+      tags: [İcra]
+      summary: run_all.py-ni fon prosesi kimi başlatmaq
+      description: |
+        `stage` — həmin mərhələ(lər) və ondan asılı olanlar (məs. `FR4` → FR4, FR10, FR12); `only` — yalnız
+        göstərilən mərhələ(lər); heç biri verilməzsə tam icra. Sonra `panel/build_panel.py` və `site/build_site.py`
+        (`skip_build: true` ilə olmadan). İlk xətada dayanır. Eyni anda yalnız bir icra — məşğuldursa 409.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stage: { type: string, example: FR4 }
+                only: { type: string, example: FR5 }
+                stages: { type: array, items: { type: string } }
+                skip_build: { type: boolean }
+                dry_run: { type: boolean, description: Heç nə icra etmədən plan və girişlər }
+                snapshot: { type: boolean, description: "output/ surəti output/vintages/<run_id>/ altında" }
+      responses:
+        "202": { description: Başladı, content: { application/json: { schema: { $ref: "#/components/schemas/Run" } } } }
+        "400": { $ref: "#/components/responses/Error" }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/runs/{id}:
+    get:
+      tags: [İcra]
+      summary: İcranın vəziyyəti, mərhələlər üzrə irəliləyiş və jurnalın sonu
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string, example: r20261005-103352-65ad } }
+        - { name: lines, in: query, schema: { type: integer, default: 40 } }
+      responses:
+        "200": { description: İcra, content: { application/json: { schema: { $ref: "#/components/schemas/Run" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/runs/{id}/cancel:
+    post:
+      tags: [İcra]
+      summary: İcranı ləğv etmək (cari dəftər dayandırılır, qalan mərhələlər icra edilmir)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "202": { description: Ləğv tələb olundu }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/catalog:
+    get:
+      tags: [Məlumat]
+      summary: Göstərici kataloqu (output/FRx_indicator_catalog.csv; yoxdursa panel məlumatı)
+      parameters:
+        - { name: module, in: query, schema: { $ref: "#/components/schemas/Module" } }
+        - { name: q, in: query, schema: { type: string }, description: İdentifikator və ya ad üzrə axtarış }
+      responses:
+        "200": { description: Kataloq, content: { application/json: { schema: { type: object } } } }
+  /api/v1/forecasts:
+    get:
+      tags: [Məlumat]
+      summary: Proqnozlar və faktiki dəyərlər
+      description: |
+        Kataloq sətrindəki `source_csv` / `source_column` üzrə mənbə CSV-dən oxunur. Kataloq hələ yoxdursa,
+        panelin yığılmış məlumatından (`source: panel`). `module` və ya `id` tələb olunur.
+      parameters:
+        - { name: module, in: query, schema: { $ref: "#/components/schemas/Module" } }
+        - { name: id, in: query, schema: { type: string }, description: "Vergüllə ayrılmış identifikatorlar, məs. fr1:rgdp,fr1:cpi" }
+        - { name: scenario, in: query, schema: { type: string }, description: "Baseline, Adverse, Reform, Actual (vergüllə)" }
+        - { name: from, in: query, schema: { type: integer } }
+        - { name: to, in: query, schema: { type: integer } }
+        - { name: limit, in: query, schema: { type: integer, default: 200000 } }
+      responses:
+        "200":
+          description: Nöqtələr
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: string }
+                        module: { type: string }
+                        scenario: { type: string }
+                        period: { type: integer }
+                        value: { type: number, nullable: true }
+                  series: { type: object, description: "id → {label_az, unit_az, kind, source, ...}" }
+                  source: { type: string, enum: [catalog, panel, catalog+panel, none] }
+                  warnings: { type: array, items: { type: object } }
+        "400": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/equations:
+    get:
+      tags: [Məlumat]
+      summary: Tənlik reyestri (output/FRx_equations.json)
+      description: |
+        Siyahıda yığcam görünüş (uyğunlaşdırılmış sıralar və rekursiv yollar olmadan); `id=` və ya `full=1` ilə tam.
+        Reyestr hələ yaradılmayıbsa `missing` siyahısı və izah qaytarılır.
+      parameters:
+        - { name: module, in: query, schema: { $ref: "#/components/schemas/Module" } }
+        - { name: id, in: query, schema: { type: string, example: FR1.C3_man } }
+        - { name: full, in: query, schema: { type: boolean } }
+      responses:
+        "200": { description: Tənliklər, content: { application/json: { schema: { type: object } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/observations:
+    get:
+      tags: [Məlumat]
+      summary: «series» yükləmələri ilə daxil edilmiş müşahidələr (artımlı — since_seq)
+      parameters:
+        - { name: module, in: query, schema: { $ref: "#/components/schemas/Module" } }
+        - { name: code, in: query, schema: { type: string } }
+        - { name: from, in: query, schema: { type: integer } }
+        - { name: to, in: query, schema: { type: integer } }
+        - { name: since_seq, in: query, schema: { type: integer } }
+      responses:
+        "200": { description: Müşahidələr, content: { application/json: { schema: { type: object } } } }
+  /api/v1/history:
+    get:
+      tags: [Məlumat]
+      summary: Müşahidələrin dəyişiklik tarixçəsi (audit)
+      parameters:
+        - { name: module, in: query, schema: { type: string } }
+        - { name: code, in: query, schema: { type: string } }
+      responses:
+        "200": { description: Tarixçə }
+  /api/v1/scenarios/inputs:
+    get:
+      tags: [Ssenarilər]
+      summary: Modulun redaktə edilə bilən girişləri (ekzogen dəyişənlər, əmsallar, alətlər)
+      parameters:
+        - { name: module, in: query, required: true, schema: { $ref: "#/components/schemas/Module" } }
+      responses:
+        "200": { description: Girişlər }
+        "503": { $ref: "#/components/responses/Error" }
+  /api/v1/scenarios/run:
+    post:
+      tags: [Ssenarilər]
+      summary: Zəncirvari ssenari hesablaması (FR1 → FR3, FR4, FR5, FR10 → FR12)
+      description: |
+        `microlib.engines.chain.run_chain(overrides, scenario)` çağırılır. `name` verilərsə nəticə saxlanılır
+        (`save: false` ilə saxlanmır). Mühərrik yoxdursa 503.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                overrides:
+                  type: object
+                  description: "{modul: {exogenous: {id: [5 dəyər] | {pct: x}}, coefficients: {\"EQID|ad\": dəyər}, levers: {...}}}"
+                  example: { FR1: { exogenous: { "fr1:brent": { pct: -20 } } } }
+                scenario: { type: string, enum: [Baseline, Adverse, Reform], default: Baseline }
+                modules: { type: array, items: { type: string }, description: Yalnız bu modullar (mühərrik dəstəkləyirsə) }
+                name: { type: string }
+                author: { type: string }
+                save: { type: boolean, default: true }
+      responses:
+        "200": { description: Nəticə }
+        "400": { $ref: "#/components/responses/Error" }
+        "503": { $ref: "#/components/responses/Error" }
+  /api/v1/scenarios/saved:
+    get:
+      tags: [Ssenarilər]
+      summary: Saxlanmış ssenarilər
+      parameters:
+        - { name: author, in: query, schema: { type: string } }
+      responses:
+        "200": { description: Siyahı }
+    post:
+      tags: [Ssenarilər]
+      summary: Ssenarini saxlamaq (id verilərsə yenilənir)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                id: { type: string }
+                name: { type: string }
+                author: { type: string }
+                scenario: { type: string }
+                overrides: { type: object }
+                result: { type: object }
+                note: { type: string }
+      responses:
+        "201": { description: Yaradıldı }
+        "200": { description: Yeniləndi }
+  /api/v1/scenarios/saved/{id}:
+    get:
+      tags: [Ssenarilər]
+      summary: Bir saxlanmış ssenari (girişlər və nəticə)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: Ssenari }
+        "404": { $ref: "#/components/responses/Error" }
+    delete:
+      tags: [Ssenarilər]
+      summary: Saxlanmış ssenarini silmək
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: Silindi }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/reports:
+    post:
+      tags: [Hesabatlar]
+      summary: Excel hesabatı (göstəricilər × illər × ssenarilər, tənliklərin xülasəsi)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title: { type: string }
+                indicators: { type: array, items: { type: string }, example: ["fr1:rgdp", "fr4:emp:agr"] }
+                module: { $ref: "#/components/schemas/Module" }
+                scenarios: { type: array, items: { type: string } }
+                from: { type: integer }
+                to: { type: integer }
+                equations: { oneOf: [{ type: boolean }, { type: array, items: { type: string } }] }
+                saved_scenarios: { type: array, items: { type: string } }
+      responses:
+        "200":
+          description: .xlsx faylı
+          content:
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: { schema: { type: string, format: binary } }
+        "400": { $ref: "#/components/responses/Error" }
+  /api/v1/dsk/refresh:
+    get:
+      tags: [Avtonom rejim]
+      summary: Son DSK yeniləməsinin nəticəsi
+      responses:
+        "200": { description: Vəziyyət }
+    post:
+      tags: [Avtonom rejim]
+      summary: DSK fayllarını yenidən endirmək (fon işi)
+      description: |
+        Modulların manifestlərindəki (output/FR10_dsk_manifest.csv, output/FR12_dsk_manifest.csv, FR4/FR5 yükləmə
+        siyahıları) fayllar brauzer User-Agent-i ilə endirilir, sha256 müqayisə olunur, dəyişən fayllar köhnəsi
+        `data/_replaced/` altına saxlanılaraq əvəz edilir. `?run=1` (və ya server `--auto-run` ilə) — dəyişiklik
+        olduqda təsirlənən mərhələlərdən icra.
+      parameters:
+        - { name: run, in: query, schema: { type: boolean } }
+      responses:
+        "202": { description: Başladı }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/autonomous:
+    get:
+      tags: [Avtonom rejim]
+      summary: Düşmə qovluğu, cədvəl və DSK yeniləməsinin vəziyyəti
+      responses:
+        "200": { description: Vəziyyət }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: |
+        `Authorization: Bearer <nişan>`. Nişanlar `API_TOKENS` mühit dəyişəni ilə verilir:
+        `read` — GET sorğuları, `write` — POST/DELETE (yükləmə, tətbiq, icra, ssenari). `write` `read`-i də əhatə edir.
+  responses:
+    Error:
+      description: Xəta (mesaj Azərbaycan dilində)
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: object
+                properties:
+                  code: { type: string, example: busy }
+                  message: { type: string, example: "Hazırda başqa icra gedir" }
+                  detail: { type: string, nullable: true }
+  schemas:
+    Module:
+      type: string
+      enum: [FR1, FR3, FR4, FR5, FR10, FR12]
+    Kind:
+      type: string
+      enum: [workbook, dsk, firm_panel, business_register, series]
+    Issue:
+      type: object
+      properties:
+        row: { type: integer, description: Faylın sətri (başlıq = 1) }
+        firm_id: { type: string, nullable: true }
+        year: { type: integer, nullable: true }
+        field: { type: string }
+        rule: { type: string, description: Dəftərdəki qaydanın adı (ingiliscə) }
+        severity: { type: string, enum: [fatal, error, warning] }
+        message: { type: string, description: Azərbaycan dilində izah }
+        sheet: { type: string }
+        module: { type: string }
+        expected: { type: string, nullable: true }
+        found: { type: string, nullable: true }
+    Validation:
+      type: object
+      properties:
+        ok: { type: boolean }
+        kind: { $ref: "#/components/schemas/Kind" }
+        errors: { type: array, items: { $ref: "#/components/schemas/Issue" } }
+        warnings: { type: array, items: { $ref: "#/components/schemas/Issue" } }
+        summary: { type: object }
+        target: { type: string, nullable: true, example: data/firm_panel/FR10_firm_panel.csv }
+        subfolder: { type: string, nullable: true }
+        first_stage: { type: string, nullable: true }
+        affected_stages: { type: array, items: { type: string } }
+    Upload:
+      type: object
+      properties:
+        id: { type: string }
+        kind: { $ref: "#/components/schemas/Kind" }
+        filename: { type: string }
+        bytes: { type: integer }
+        sha256: { type: string }
+        status: { type: string, enum: [validated, rejected, applied] }
+        valid: { type: boolean }
+        target: { type: string, nullable: true }
+        report: { $ref: "#/components/schemas/Validation" }
+        created_at: { type: string, format: date-time }
+        applied_at: { type: string, format: date-time, nullable: true }
+    UploadResult:
+      type: object
+      properties:
+        upload: { $ref: "#/components/schemas/Upload" }
+        validation: { $ref: "#/components/schemas/Validation" }
+        apply: { type: object, nullable: true }
+        run: { type: object, nullable: true }
+    Run:
+      type: object
+      properties:
+        id: { type: string }
+        status: { type: string, enum: [running, ok, failed, cancelled, dry-run, interrupted] }
+        plan: { type: array, items: { type: string } }
+        percent: { type: number }
+        progress:
+          type: object
+          properties:
+            current: { type: string, nullable: true }
+            steps:
+              type: array
+              items:
+                type: object
+                properties:
+                  name: { type: string }
+                  status: { type: string, enum: [pending, planned, ok, failed, timeout, cancelled, skipped] }
+                  seconds: { type: number, nullable: true }
+                  error: { type: string, nullable: true }
+        manifest: { type: object, description: "Yekun: reproducibility (əvvəlki icra ilə bayt-bayt müqayisə), snapshot, steps" }
+        log_tail: { type: string, nullable: true }
+        stage_log_tail: { type: string, nullable: true }
+    Status:
+      type: object
+      properties:
+        status: { type: string }
+        running: { type: object, nullable: true }
+        last_run: { type: object, nullable: true }
+        data_vintage: { type: object }
+        data_modes:
+          type: object
+          properties:
+            FR10: { $ref: "#/components/schemas/DataMode" }
+            FR12: { $ref: "#/components/schemas/DataMode" }
+        catalogs: { type: object }
+        equations: { type: object }
+        engine: { type: object }
+    DataMode:
+      type: object
+      properties:
+        mode: { type: string, enum: [SYNTHETIC, REAL, MIXED], nullable: true }
+        input_mode: { type: string, nullable: true }
+        input_file: { type: string, nullable: true }
+        output_mode: { type: string, nullable: true }
+        rerun_needed: { type: boolean }
+        note_az: { type: string }

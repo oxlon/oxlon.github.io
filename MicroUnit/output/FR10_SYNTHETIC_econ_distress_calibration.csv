@@ -1,0 +1,21 @@
+WATERMARK,decile,n,mean_predicted,observed_rate,sample
+"SYNTHETIC — pipeline test, not results",1,1724,0.0009533072466558624,0.000580046403712297,in-sample
+"SYNTHETIC — pipeline test, not results",2,1724,0.0025316185940859695,0.001160092807424594,in-sample
+"SYNTHETIC — pipeline test, not results",3,1724,0.0050193526898509415,0.0017401392111368909,in-sample
+"SYNTHETIC — pipeline test, not results",4,1724,0.008928183415538854,0.005220417633410673,in-sample
+"SYNTHETIC — pipeline test, not results",5,1724,0.015689994155482067,0.014501160092807424,in-sample
+"SYNTHETIC — pipeline test, not results",6,1724,0.027868710762587248,0.024361948955916472,in-sample
+"SYNTHETIC — pipeline test, not results",7,1724,0.049514000457832406,0.05394431554524362,in-sample
+"SYNTHETIC — pipeline test, not results",8,1724,0.0963664545868314,0.10208816705336426,in-sample
+"SYNTHETIC — pipeline test, not results",9,1724,0.20686811729101506,0.22447795823665892,in-sample
+"SYNTHETIC — pipeline test, not results",10,1724,0.5439168733291222,0.5295823665893271,in-sample
+"SYNTHETIC — pipeline test, not results",1,710,0.0010214536809791312,0.0014084507042253522,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",2,710,0.0027483670462225144,0.0,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",3,710,0.005492877638348685,0.0,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",4,709,0.009859879348571994,0.011283497884344146,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",5,710,0.017252868135724072,0.014084507042253521,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",6,710,0.030648011864403947,0.029577464788732393,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",7,709,0.05442622876511219,0.05500705218617771,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",8,710,0.10487422648756682,0.09718309859154929,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",9,710,0.22444454139043155,0.24084507042253522,out-of-sample (last two years)
+"SYNTHETIC — pipeline test, not results",10,710,0.5722697382957928,0.5647887323943662,out-of-sample (last two years)

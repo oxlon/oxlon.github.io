@@ -1,0 +1,35 @@
+field_en,field_az,unit,required,source,type,constraint
+data_status,Məlumatın statusu,,False,-,str,"""SYNTHETIC — not real enterprise data"" in the synthetic file; anything else (or absent) = real data"
+firm_id,Müəssisənin identifikatoru (psevdonim VÖEN),,True,DVX,str,"unique per enterprise (VÖEN, pseudonymised)"
+year,İl,,True,DVX,int,2019 <= year <= reporting year
+nace2,"İqtisadi fəaliyyət növü (NACE Rev.2, 2 rəqəm)",,True,DVX / DSK register,str,a valid NACE Rev.2 division (01-99); FR10 Layer A covers 05-39
+region,İqtisadi rayon,,True,DSK register,str,one of the 14 economic regions
+ownership,Mülkiyyət növü,,True,DSK register,str,state | private | foreign | joint
+size_class,Ölçü qrupu,,False,derived,str,micro | small | medium | large (derived if absent)
+total_assets,Aktivlərin cəmi,thsd AZN,True,DVX balance sheet,float,>= 0
+current_assets,Dövriyyə aktivləri,thsd AZN,True,DVX balance sheet,float,>= 0; <= total assets
+cash,Pul vəsaitləri,thsd AZN,True,DVX balance sheet,float,>= 0
+receivables,Debitor borcları,thsd AZN,True,DVX balance sheet,float,>= 0
+inventories,Ehtiyatlar,thsd AZN,True,DVX balance sheet,float,>= 0; cash + receivables + inventories <= current assets
+fixed_assets,Uzunmüddətli aktivlər,thsd AZN,True,DVX balance sheet,float,>= 0; current + fixed <= total assets
+equity,Kapital,thsd AZN,True,DVX balance sheet,float,may be negative
+retained_earnings,Bölüşdürülməmiş mənfəət,thsd AZN,False,DVX balance sheet,float,needed for the distress score; if absent the score is not computed and the firm is flagged
+interest_bearing_debt,Faizli borclar,thsd AZN,False,DVX balance sheet,float,>= 0; <= total liabilities (separates debt from trade payables)
+trade_payables,Kreditor borcları,thsd AZN,False,DVX balance sheet,float,>= 0
+st_liabilities,Qısamüddətli öhdəliklər,thsd AZN,True,DVX balance sheet,float,>= 0
+lt_liabilities,Uzunmüddətli öhdəliklər,thsd AZN,True,DVX balance sheet,float,>= 0; equity + liabilities = total assets
+revenue,Satışdan gəlir,thsd AZN,True,DVX P&L / profit-tax declaration,float,>= 0
+cost_of_sales,Satışın maya dəyəri,thsd AZN,True,DVX P&L,float,>= 0
+operating_expenses,Əməliyyat xərcləri,thsd AZN,True,DVX P&L,float,>= 0
+ebit,Faiz və vergidən əvvəl mənfəət,thsd AZN,True,DVX P&L,float,= revenue - cost of sales - operating expenses (within 5%)
+interest,Faiz xərcləri,thsd AZN,True,DVX P&L,float,>= 0
+net_profit,Xalis mənfəət,thsd AZN,True,DVX P&L,float,may be negative
+depreciation,Amortizasiya,thsd AZN,False,DVX P&L / fixed-asset register,float,>= 0
+operating_cash_flow,Əməliyyat fəaliyyətindən pul axını,thsd AZN,False,DVX cash-flow statement,float,may be negative
+capex,Əsas kapitala qoyuluş,thsd AZN,False,DVX cash-flow statement,float,>= 0
+employees,İşçilərin orta sayı,persons,True,DSMF,float,>= 0 (annual average)
+wage_bill,Əmək haqqı fondu,thsd AZN,True,DSMF,float,>= 0
+exports,İxrac,thsd AZN,False,State Customs Committee (DGK),float,>= 0; <= revenue
+product_codes,Məhsul kodları (HS / PRODCOM),,False,DGK / DSK,str,"HS / PRODCOM codes, "";""-separated"
+registration_date,Qeydiyyat tarixi,,False,DVX / Ministry of Justice register,date,state registration date (entry)
+liquidation_date,Ləğvetmə tarixi,,False,DVX / Ministry of Justice register,date,"liquidation date (exit), empty if active"

@@ -1,0 +1,684 @@
+source_csv,column,en,az,method
+FR12_data_gaps_and_alternatives.csv,gap,Firm-level revenue by NACE × region (DSK business register),NACE × region üzrə müəssisə səviyyəsində gəlir (DSK biznes reyestri),lüğət
+FR12_data_gaps_and_alternatives.csv,gap,Firm entry and exit dates,Müəssisələrin giriş və çıxış tarixləri,lüğət
+FR12_data_gaps_and_alternatives.csv,gap,Long time series of entry/exit by activity,Fəaliyyət növləri üzrə giriş/çıxışın uzun zaman sırası,lüğət
+FR12_data_gaps_and_alternatives.csv,gap,"Firm costs (cost of sales, operating costs)","Müəssisə xərcləri (satışın maya dəyəri, əməliyyat xərcləri)",lüğət
+FR12_data_gaps_and_alternatives.csv,gap,Import penetration by sector,Sahələr üzrə idxalın nüfuzu,lüğət
+FR12_data_gaps_and_alternatives.csv,gap,Narrow product markets,Dar məhsul bazarları,lüğət
+FR12_data_gaps_and_alternatives.csv,gap,Licensing and inspections by NACE,NACE üzrə lisenziyalar və yoxlamalar,lüğət
+FR12_data_gaps_and_alternatives.csv,gap,DVX micro-taxpayer rows,DVX mikro vergi ödəyicisi sətirləri,lüğət
+FR12_data_gaps_and_alternatives.csv,impact,"no firm HHI/CR4, no market-share mobility, no Boone indicator","müəssisə HHI/CR4-ü, bazar payı mobilliyi, Boone indikatoru yoxdur",lüğət
+FR12_data_gaps_and_alternatives.csv,impact,"no cohort survival, no entrant/exiter size","kohort sağ qalması, giriş/çıxış edənlərin ölçüsü yoxdur",lüğət
+FR12_data_gaps_and_alternatives.csv,impact,"only 5 annual observations per group (2019-2024, no 2021); low test power","hər qrup üzrə yalnız 5 illik müşahidə (2019–2024, 2021 yoxdur); testlərin gücü aşağıdır",lüğət
+FR12_data_gaps_and_alternatives.csv,impact,no firm price-cost margin or Boone indicator,müəssisə qiymət-xərc marjası və ya Boone indikatoru yoxdur,lüğət
+FR12_data_gaps_and_alternatives.csv,impact,import-competition scenarios need a domestic-share calibration,idxal rəqabəti ssenariləri daxili payın kalibrləməsini tələb edir,lüğət
+FR12_data_gaps_and_alternatives.csv,impact,activity groups understate concentration in product markets,fəaliyyət qrupları məhsul bazarlarında konsentrasiyanı azaldılmış göstərir,lüğət
+FR12_data_gaps_and_alternatives.csv,impact,barrier proxies mapped to groups by licence type,maneə proksiləri lisenziya növünə görə qruplara uyğunlaşdırılıb,lüğət
+FR12_data_gaps_and_alternatives.csv,impact,micro rows duplicate budget organisations (F8),mikro sətirlər büdcə təşkilatlarını təkrarlayır (F8),lüğət
+FR12_data_gaps_and_alternatives.csv,alternative_used_now,size-class concentration bounds (Part 8); branch-share instability from FR10,ölçü qrupları üzrə konsentrasiya hədləri (8-ci hissə); FR10-dan sahə paylarının qeyri-sabitliyi,lüğət
+FR12_data_gaps_and_alternatives.csv,alternative_used_now,DSK 006 registration flows; 024-028 age structure; register flows 2_1/2_3,DSK 006 qeydiyyat axınları; 024–028 yaş strukturu; reyestr axınları 2_1/2_3,lüğət
+FR12_data_gaps_and_alternatives.csv,alternative_used_now,archived DSK vintages (Part 4),DSK-nın arxiv versiyaları (4-cü hissə),lüğət
+FR12_data_gaps_and_alternatives.csv,alternative_used_now,section PCM proxy from national accounts,milli hesablardan bölmə üzrə PCM proksisi,lüğət
+FR12_data_gaps_and_alternatives.csv,alternative_used_now,literature fringe shares; FR1/FR5 aggregate imports,ədəbiyyatdakı kənar paylar; FR1/FR5 aqreqat idxalı,lüğət
+FR12_data_gaps_and_alternatives.csv,alternative_used_now,FR10 product location shares; licence types,FR10 məhsul yerləşmə payları; lisenziya növləri,lüğət
+FR12_data_gaps_and_alternatives.csv,alternative_used_now,mapping of 24 licence types to 11 groups (Part 5),24 lisenziya növünün 11 qrupa uyğunlaşdırılması (5-ci hissə),lüğət
+FR12_data_gaps_and_alternatives.csv,alternative_used_now,micro excluded from DVX concentration,mikro ödəyicilər DVX konsentrasiyasından çıxarılıb,lüğət
+FR12_data_gaps_and_alternatives.csv,bias_or_limitation_of_alternative,bounds are wide where SMEs dominate; activity groups are broader than antitrust markets,KOS üstünlük təşkil etdikdə hədlər genişdir; fəaliyyət qrupları antiinhisar bazarlarından genişdir,lüğət
+FR12_data_gaps_and_alternatives.csv,bias_or_limitation_of_alternative,"006 counts registrations incl. individual entrepreneurs, not market entry; register exit understates exit (F14)","006 bazara girişi deyil, fərdi sahibkarlar daxil qeydiyyatları sayır; reyestr üzrə çıxış çıxışı azaldılmış göstərir (F14)",lüğət
+FR12_data_gaps_and_alternatives.csv,bias_or_limitation_of_alternative,"definitions changed between vintages (""newly created"" → ""newly registered"")","versiyalar arasında tərif dəyişib (""yeni yaradılmış"" → ""yeni qeydiyyatdan keçmiş"")",lüğət
+FR12_data_gaps_and_alternatives.csv,bias_or_limitation_of_alternative,aggregate PCM mixes capital returns with rents,aqreqat PCM kapital gəlirini renta ilə qarışdırır,lüğət
+FR12_data_gaps_and_alternatives.csv,bias_or_limitation_of_alternative,not sector-specific,sahəyə xas deyil,lüğət
+FR12_data_gaps_and_alternatives.csv,bias_or_limitation_of_alternative,partial coverage,qismən əhatə,lüğət
+FR12_data_gaps_and_alternatives.csv,bias_or_limitation_of_alternative,several types are cross-sector,bir neçə növ sahələrarasıdır,lüğət
+FR12_data_gaps_and_alternatives.csv,bias_or_limitation_of_alternative,economy-wide bound slightly overstated,iqtisadiyyat üzrə hədd bir qədər şişirdilib,lüğət
+FR12_data_gaps_and_alternatives.csv,action_to_agree_with_Customer,confirm the register extract (requested 24 Aug 2026); agree pseudonymised firm_id and annual delivery,reyestr çıxarışını təsdiqləmək (24 avqust 2026 sorğusu); psevdonimləşdirilmiş firm_id və illik ötürülmə barədə razılaşmaq,lüğət
+FR12_data_gaps_and_alternatives.csv,action_to_agree_with_Customer,include registration/liquidation dates in the register extract,reyestr çıxarışına qeydiyyat/ləğv tarixlərini daxil etmək,lüğət
+FR12_data_gaps_and_alternatives.csv,action_to_agree_with_Customer,ask DSK for the 2010-2025 series of table 006 and 2_1 in one consistent vintage,DSK-dan 006 və 2_1 cədvəllərinin 2010–2025 sırasını vahid versiyada istəmək,lüğət
+FR12_data_gaps_and_alternatives.csv,action_to_agree_with_Customer,"link the FR10 Tax Service panel by firm_id, or add cost fields to the register extract",FR10 Vergi Xidməti panelini firm_id ilə birləşdirmək və ya reyestr çıxarışına xərc sahələri əlavə etmək,lüğət
+FR12_data_gaps_and_alternatives.csv,action_to_agree_with_Customer,customs HS × NACE concordance from the State Customs Committee,Dövlət Gömrük Komitəsindən HS × NACE uyğunluq cədvəli,lüğət
+FR12_data_gaps_and_alternatives.csv,action_to_agree_with_Customer,"agree priority markets (fuel, cement, telecom, pharmaceuticals, retail chains) for product-level data","məhsul səviyyəli məlumat üçün prioritet bazarları razılaşdırmaq (yanacaq, sement, telekom, əczaçılıq, pərakəndə şəbəkələr)",lüğət
+FR12_data_gaps_and_alternatives.csv,action_to_agree_with_Customer,request licence and inspection registers with NACE codes,NACE kodları ilə lisenziya və yoxlama reyestrlərini istəmək,lüğət
+FR12_data_gaps_and_alternatives.csv,action_to_agree_with_Customer,Tax Service to correct rows r123-r126,Vergi Xidməti r123–r126 sətirlərini düzəltməlidir,lüğət
+FR12_noar_constructs.csv,construct,Stock of active units N(t),Fəal vahidlərin ehtiyatı N(t),lüğət
+FR12_noar_constructs.csv,construct,Entry rate,Giriş əmsalı,lüğət
+FR12_noar_constructs.csv,construct,Anchoring on the last residual (add-factor),Son qalığa ankerləmə (düzəliş əmsalı),lüğət
+FR12_noar_constructs.csv,construct,Definition break and impulses,Tərif qırılması və impulslar,lüğət
+FR12_noar_constructs.csv,construct,Sector demand growth Δln VA(t),Sektor tələbinin artımı Δln ƏDV(t),lüğət
+FR12_noar_constructs.csv,construct,First-difference coherence check,Birinci fərqlər üzrə uyğunluq yoxlaması,lüğət
+FR12_noar_constructs.csv,construct,Random-walk benchmark,Təsadüfi gəzişmə müqayisə modeli,lüğət
+FR12_noar_constructs.csv,construct,Constant (mean) rate benchmark / null,Sabit (orta) əmsal müqayisə modeli / sıfır model,lüğət
+FR12_noar_constructs.csv,construct,Unit fixed effects,Vahid sabit effektləri,lüğət
+FR12_noar_constructs.csv,construct,Uncertainty bands,Qeyri-müəyyənlik zolaqları,lüğət
+FR12_noar_constructs.csv,construct,Synthetic register (Layer B),Sintetik reyestr (B qatı),lüğət
+FR12_noar_constructs.csv,form,"N(t) = (N(t−1) + births(t)) / (1 + exit rate(t)), i.e. N(t) = N(t−1) + B(t) − D(t) with D on the end-year stock","N(t) = (N(t−1) + doğulmalar(t)) / (1 + çıxış əmsalı(t)), yəni N(t) = N(t−1) + B(t) − D(t), D ilin sonundakı ehtiyat üzrə",lüğət
+FR12_noar_constructs.csv,form,births(t) / N(t),doğulmalar(t) / N(t),lüğət
+FR12_noar_constructs.csv,form,forecast = model + (y_last − fitted_last); implied weight on the last observation 1 (0.5 in a combination),proqnoz = model + (y_son − qiymətləndirilmiş_son); son müşahidəyə çəki 1 (kombinasiyada 0.5),lüğət
+FR12_noar_constructs.csv,form,brk = 1 from 2022 (006 definition change); 2022 exit impulse,brk = 1 (2022-dən; 006 tərif dəyişikliyi); 2022 çıxış impulsu,lüğət
+FR12_noar_constructs.csv,form,growth rate of an FR1 driver,FR1 sürücüsünün artım tempi,lüğət
+FR12_noar_constructs.csv,form,Δentry(t) on Δdrivers(t),Δgiriş(t) Δsürücülər(t) üzrə,lüğət
+FR12_noar_constructs.csv,form,entry(t+h) = entry(t),giriş(t+h) = giriş(t),lüğət
+FR12_noar_constructs.csv,form,unit mean over the estimation window,qiymətləndirmə pəncərəsi üzrə vahid ortası,lüğət
+FR12_noar_constructs.csv,form,a_i estimated on the training window,a_i təlim pəncərəsində qiymətləndirilir,lüğət
+FR12_noar_constructs.csv,form,"historical residual pairs e_h = w(u_{s+h} − u_s) + (1 − w)u_{s+h}, joint across units and equations; parameter draws; FR1 draws","tarixi qalıq cütləri e_h = w(u_{s+h} − u_s) + (1 − w)u_{s+h}, vahidlər və tənliklər üzrə birgə; parametr çəkilişləri; FR1 çəkilişləri",lüğət
+FR12_noar_constructs.csv,form,firm size evolves by a stated data-generating process,müəssisə ölçüsü bəyan edilmiş məlumat yaratma prosesi ilə dəyişir,lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,"accounting identity (like FR1's capital stock): births and the exit rate are forecast structurally, the stock is their sum","mühasibat eyniliyi (FR1-in kapital ehtiyatı kimi): doğulmalar və çıxış əmsalı struktur proqnozlaşdırılır, ehtiyat onların cəmidir",lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,derived from the births forecast and the identity stock; never modelled on its own past,doğulma proqnozundan və eynilik ehtiyatından alınır; heç vaxt öz keçmişi üzrə modelləşdirilmir,lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,"the FR1–FR10 add-factor convention: the last residual is held constant, no dynamics are estimated; the implied random-walk weight of every rule is reported in Part 12","FR1–FR10 düzəliş əmsalı konvensiyası: son qalıq sabit saxlanılır, dinamika qiymətləndirilmir; hər qaydanın təsadüfi gəzişmə çəkisi 12-ci hissədə verilir",lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,"deterministic dummies, not lags","deterministik dummy-lər, gecikmələr deyil",lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,"a transformation of an exogenous driver, not of the dependent variable","asılı dəyişənin deyil, ekzogen sürücünün çevrilməsi",lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,diagnostic only: the forecast never uses the lagged rate,yalnız diaqnostika: proqnoz heç vaxt gecikmiş əmsaldan istifadə etmir,lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,"benchmark only, required by NFR1; never used as the forecast",yalnız müqayisə modeli (NFR1 tələbi); heç vaxt proqnoz kimi istifadə olunmur,lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,"the unit fixed effect itself: a level, not a dynamic","vahidin sabit effektinin özü: dinamika deyil, səviyyə",lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,"time-invariant intercepts, no dynamics","zamandan asılı olmayan sabitlər, dinamika yoxdur",lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,resampled historical errors; no residual AR is estimated or imposed,yenidən seçilmiş tarixi xətalar; qalıq AR qiymətləndirilmir və tətbiq olunmur,lüğət
+FR12_noar_constructs.csv,why_not_autoregressive,test data only; the engine estimates no dynamic model,yalnız test məlumatı; mühərrik dinamik model qiymətləndirmir,lüğət
+FR12_noar_constructs.csv,role,identity,eynilik,lüğət
+FR12_noar_constructs.csv,role,model,model,lüğət
+FR12_noar_constructs.csv,role,driver,sürücü,lüğət
+FR12_noar_constructs.csv,role,diagnostic,diaqnostika,lüğət
+FR12_noar_constructs.csv,role,benchmark,müqayisə modeli,lüğət
+FR12_noar_constructs.csv,role,benchmark / combination partner,müqayisə modeli / kombinasiya tərəfdaşı,lüğət
+FR12_noar_constructs.csv,role,bands,zolaqlar,lüğət
+FR12_noar_constructs.csv,role,test data,test məlumatı,lüğət
+FR12_presentation_spec.csv,name,Competition dashboard by sector,Sahələr üzrə rəqabət idarə paneli,lüğət
+FR12_presentation_spec.csv,name,Entry/exit dynamics with forecast fan,Proqnoz zolağı ilə giriş/çıxış dinamikası,lüğət
+FR12_presentation_spec.csv,name,Region × sector heat map,Region × sahə istilik xəritəsi,lüğət
+FR12_presentation_spec.csv,name,Concentration bounds chart,Konsentrasiya hədləri qrafiki,lüğət
+FR12_presentation_spec.csv,name,Scenario simulator with assumptions panel,Fərziyyələr paneli olan ssenari simulyatoru,lüğət
+FR12_presentation_spec.csv,name,Early-warning list,Erkən xəbərdarlıq siyahısı,lüğət
+FR12_presentation_spec.csv,name,Firm-level market structure view (Layer B),Müəssisə səviyyəsində bazar strukturu görünüşü (B qatı),lüğət
+FR12_presentation_spec.csv,content,"KPI cards per activity group: entry, exit, churn, net entry, PCM proxy, HHI bounds, early-warning score","Fəaliyyət qrupları üzrə KPI kartları: giriş, çıxış, dövriyyə, xalis giriş, PCM proksisi, HHI hədləri, erkən xəbərdarlıq balı",lüğət
+FR12_presentation_spec.csv,content,history 2019-2025 and 2026-2030 under three FR1 scenarios with 5-95% bands; stock of active units,"tarix 2019–2025 və FR1-in üç ssenarisi üzrə 2026–2030, 5–95% zolaqlarla; fəal vahidlərin ehtiyatı",lüğət
+FR12_presentation_spec.csv,content,entry and exit rates by region (2021-2025) and by NACE section; forecasts by region,regionlar (2021–2025) və NACE bölmələri üzrə giriş və çıxış əmsalları; regionlar üzrə proqnozlar,lüğət
+FR12_presentation_spec.csv,content,"range bars [lower, upper] for HHI and CR4 by group; projected bounds 2026-2030","qruplar üzrə HHI və CR4 üçün [aşağı, yuxarı] interval sütunları; 2026–2030 proqnoz hədləri",lüğət
+FR12_presentation_spec.csv,content,"Cournot toolkit: entry, merger, cost/tax, import, SOE scenarios; Δprice, Δmarkup, Δoutput, ΔCS, ΔPS with elasticity ranges","Kurno aləti: giriş, birləşmə, xərc/vergi, idxal, dövlət müəssisəsi ssenariləri; elastiklik intervalları ilə Δqiymət, Δmarja, Δburaxılış, ΔİR, ΔİstR",lüğət
+FR12_presentation_spec.csv,content,"flags per sector, composite score, watch list, insufficient-data markers","sahələr üzrə bayraqlar, ümumi bal, müşahidə siyahısı, ""məlumat kifayət deyil"" işarələri",lüğət
+FR12_presentation_spec.csv,content,"HHI, CR4/CR8, entropy, Gini, share mobility, survival curves, Boone by NACE × region; SYNTHETIC watermark until the register arrives","NACE × region üzrə HHI, CR4/CR8, entropiya, Cini, pay mobilliyi, sağ qalma əyriləri, Boone; reyestr gələnə qədər SİNTETİK su nişanı",lüğət
+FR12_presentation_spec.csv,refresh,annual,illik,lüğət
+FR12_presentation_spec.csv,refresh,on demand,tələb əsasında,lüğət
+FR12_data_source_matrix.csv,pillar,Entry and exit,Giriş və çıxış,lüğət
+FR12_data_source_matrix.csv,pillar,Concentration and intensity,Konsentrasiya və rəqabət intensivliyi,lüğət
+FR12_data_source_matrix.csv,pillar,Margins and market power,Marjalar və bazar gücü,lüğət
+FR12_data_source_matrix.csv,pillar,Barriers and regulation,Maneələr və tənzimləmə,lüğət
+FR12_data_source_matrix.csv,pillar,Firm level (Layer B),Müəssisə səviyyəsi (B qatı),lüğət
+FR12_data_source_matrix.csv,indicator_en,Entry rate by activity group,Fəaliyyət qrupları üzrə giriş əmsalı,lüğət
+FR12_data_source_matrix.csv,indicator_en,Exit rate by activity group,Fəaliyyət qrupları üzrə çıxış əmsalı,lüğət
+FR12_data_source_matrix.csv,indicator_en,Net entry and churn,Xalis giriş və dövriyyə (churn),lüğət
+FR12_data_source_matrix.csv,indicator_en,New / liquidated statistical units by NACE section,NACE bölmələri üzrə yaradılan / ləğv edilən statistik vahidlər,lüğət
+FR12_data_source_matrix.csv,indicator_en,Entry and exit by economic region,İqtisadi rayonlar üzrə giriş və çıxış,lüğət
+FR12_data_source_matrix.csv,indicator_en,"Cohort-size ratio, ages 1-5 (not a survival rate)","Kohort ölçüsü nisbəti, 1–5 yaş (sağ qalma əmsalı deyil)",lüğət
+FR12_data_source_matrix.csv,indicator_en,Number of active units (forecast),Fəal vahidlərin sayı (proqnoz),lüğət
+FR12_data_source_matrix.csv,indicator_en,SME share of output,KOS-un buraxılışda payı,lüğət
+FR12_data_source_matrix.csv,indicator_en,SME share of employees,KOS-un işçi sayında payı,lüğət
+FR12_data_source_matrix.csv,indicator_en,Units by size class,Ölçü qrupları üzrə vahidlər,lüğət
+FR12_data_source_matrix.csv,indicator_en,HHI / CR4 bounds from size classes,Ölçü qruplarından HHI / CR4 hədləri,lüğət
+FR12_data_source_matrix.csv,indicator_en,"Taxpayer size classes: count, turnover, receipts, employees","Vergi ödəyicilərinin ölçü qrupları: say, dövriyyə, daxilolmalar, işçilər",lüğət
+FR12_data_source_matrix.csv,indicator_en,Active taxpayers by sector,Sahələr üzrə aktiv vergi ödəyiciləri,lüğət
+FR12_data_source_matrix.csv,indicator_en,Share instability across branches,Sahələr arasında payların qeyri-sabitliyi,lüğət
+FR12_data_source_matrix.csv,indicator_en,Regional dispersion of entry; HHI of units across regions,Girişin regional dispersiyası; vahidlərin regionlar üzrə HHI-si,lüğət
+FR12_data_source_matrix.csv,indicator_en,Price-cost margin proxy,Qiymət-xərc marjası (proksi),lüğət
+FR12_data_source_matrix.csv,indicator_en,Industry margin path (FR10 section forecasts),Sənaye marjası yolu (FR10 bölmə proqnozları),lüğət
+FR12_data_source_matrix.csv,indicator_en,Lerner index (scenario calibration),Lerner indeksi (ssenari kalibrləməsi),lüğət
+FR12_data_source_matrix.csv,indicator_en,Licences issued,Verilmiş lisenziyalar,lüğət
+FR12_data_source_matrix.csv,indicator_en,"Inspections of businesses (coverage changes over time, F18)","Sahibkarlıq subyektlərində yoxlamalar (əhatə zamanla dəyişir, F18)",lüğət
+FR12_data_source_matrix.csv,indicator_en,State share: of industrial output (S5 calibration); of active SMEs (information),Dövlət payı: sənaye buraxılışında (S5 kalibrləməsi); fəal KOS-da (məlumat üçün),lüğət
+FR12_data_source_matrix.csv,indicator_en,Import penetration by product group,Məhsul qrupları üzrə idxalın nüfuzu,lüğət
+FR12_data_source_matrix.csv,indicator_en,"Firm revenue (market shares, HHI, CR4/CR8, entropy, Gini)","Müəssisə gəliri (bazar payları, HHI, CR4/CR8, entropiya, Cini)",lüğət
+FR12_data_source_matrix.csv,indicator_en,"Firm entry and exit dates (entry/exit, survival, cohort shares)","Müəssisənin giriş və çıxış tarixləri (giriş/çıxış, sağ qalma, kohort payları)",lüğət
+FR12_data_source_matrix.csv,indicator_en,"Firm costs (price-cost margin, Boone indicator)","Müəssisə xərcləri (qiymət-xərc marjası, Boone indikatoru)",lüğət
+FR12_data_source_matrix.csv,indicator_en,"Firm attributes (SOE share, region × sector view)","Müəssisə xüsusiyyətləri (dövlət payı, region × sahə görünüşü)",lüğət
+FR12_data_source_matrix.csv,formula,"newly registered / registered (end-year) × 100; births modelled as a log flow, rate via the stock identity","yeni qeydiyyat / qeydiyyatda olanlar (ilin sonu) × 100; doğulmalar log axın kimi modelləşdirilir, əmsal ehtiyat eyniliyi ilə",lüğət
+FR12_data_source_matrix.csv,formula,deregistered / registered × 100,qeydiyyatdan çıxarılanlar / qeydiyyatda olanlar × 100,lüğət
+FR12_data_source_matrix.csv,formula,entry − exit; entry + exit,giriş − çıxış; giriş + çıxış,lüğət
+FR12_data_source_matrix.csv,formula,new or liquidated / units at period end,yaradılan və ya ləğv edilən / dövrün sonuna vahidlər,lüğət
+FR12_data_source_matrix.csv,formula,new or liquidated / units,yaradılan və ya ləğv edilən / vahidlər,lüğət
+FR12_data_source_matrix.csv,formula,active SMEs aged k / aged 1 in the same year (mixes cohort size and survival),eyni ildə k yaşlı fəal KOS / 1 yaşlı fəal KOS (kohort ölçüsü ilə sağ qalmanı qarışdırır),lüğət
+FR12_data_source_matrix.csv,formula,N(t) = (N(t−1) + births(t)) / (1 + exit rate(t)) (stock-flow identity),N(t) = (N(t−1) + doğulmalar(t)) / (1 + çıxış əmsalı(t)) (ehtiyat-axın eyniliyi),lüğət
+FR12_data_source_matrix.csv,formula,SME output / total × 100,KOS buraxılışı / cəmi × 100,lüğət
+FR12_data_source_matrix.csv,formula,SME employees / total × 100,KOS işçiləri / cəmi × 100,lüğət
+FR12_data_source_matrix.csv,formula,count,say,lüğət
+FR12_data_source_matrix.csv,formula,lower Σ S²/n; upper vertex of the box-simplex (Part 8),aşağı hədd Σ S²/n; yuxarı hədd qutu-simpleksin təpəsi (8-ci hissə),lüğət
+FR12_data_source_matrix.csv,formula,large share of declared turnover; HHI lower bound,bəyan edilmiş dövriyyədə iri ödəyicilərin payı; HHI aşağı həddi,lüğət
+FR12_data_source_matrix.csv,formula,½ Σ|Δs|,½ Σ|Δs|,lüğət
+FR12_data_source_matrix.csv,formula,CV; Σ s²,variasiya əmsalı; Σ s²,lüğət
+FR12_data_source_matrix.csv,formula,(VA − compensation) / output × 100,(ƏDV − əmək haqqı) / buraxılış × 100,lüğət
+FR12_data_source_matrix.csv,formula,"(VA − compensation) / output, B-E","(ƏDV − əmək haqqı) / buraxılış, B–E",lüğət
+FR12_data_source_matrix.csv,formula,HHI / ε (Cournot),HHI / ε (Kurno),lüğət
+FR12_data_source_matrix.csv,formula,count; per 1000 units,say; 1000 vahidə,lüğət
+FR12_data_source_matrix.csv,formula,state output / output; state SMEs / active SMEs,dövlət buraxılışı / buraxılış; dövlət KOS-ları / fəal KOS,lüğət
+FR12_data_source_matrix.csv,formula,imports / (output − exports + imports),idxal / (buraxılış − ixrac + idxal),lüğət
+FR12_data_source_matrix.csv,formula,Part 17 engine,17-ci hissənin mühərriki,lüğət
+FR12_data_source_matrix.csv,unit,%; units,%; vahid,lüğət
+FR12_data_source_matrix.csv,unit,pp,faiz bəndi,lüğət
+FR12_data_source_matrix.csv,unit,ratio,nisbət,lüğət
+FR12_data_source_matrix.csv,unit,units,vahid,lüğət
+FR12_data_source_matrix.csv,unit,index 0-10000; %,indeks 0–10 000; %,lüğət
+FR12_data_source_matrix.csv,unit,%; index,%; indeks,lüğət
+FR12_data_source_matrix.csv,unit,ratio; index,nisbət; indeks,lüğət
+FR12_data_source_matrix.csv,unit,number,say,lüğət
+FR12_data_source_matrix.csv,unit,thsd AZN / dates,min AZN / tarixlər,lüğət
+FR12_data_source_matrix.csv,source_institution,DSK,DSK,lüğət
+FR12_data_source_matrix.csv,source_institution,DSK via workbook,DSK (iş kitabı vasitəsilə),lüğət
+FR12_data_source_matrix.csv,source_institution,derived,hesablanmış,lüğət
+FR12_data_source_matrix.csv,source_institution,derived (DSK),hesablanmış (DSK),lüğət
+FR12_data_source_matrix.csv,source_institution,DVX,DVX,lüğət
+FR12_data_source_matrix.csv,source_institution,FR10,FR10,lüğət
+FR12_data_source_matrix.csv,source_institution,Ministry of Economy,İqtisadiyyat Nazirliyi,lüğət
+FR12_data_source_matrix.csv,source_institution,inspection bodies,yoxlama orqanları,lüğət
+FR12_data_source_matrix.csv,source_institution,DGK / DSK,DGK / DSK,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,"entrepreneurship 006 (+ archived vintages; definition change 2022, F17)","sahibkarlıq 006 (+ arxiv versiyaları; 2022-ci il tərif dəyişikliyi, F17)",lüğət
+FR12_data_source_matrix.csv,dataset_table_row,entrepreneurship 006,sahibkarlıq 006,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,st_units 2_1 (+ vintages),st_units 2_1 (+ versiyalar),lüğət
+FR12_data_source_matrix.csv,dataset_table_row,workbook 'Regionlar*' r38/r42/r43; st_units 2_3,iş kitabı 'Regionlar*' r38/r42/r43; st_units 2_3,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,entrepreneurship 024-028,sahibkarlıq 024–028,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,Part 13,13-cü hissə,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,entrepreneurship 012 (+ vintages),sahibkarlıq 012 (+ versiyalar),lüğət
+FR12_data_source_matrix.csv,dataset_table_row,entrepreneurship 013 (+ vintages),sahibkarlıq 013 (+ versiyalar),lüğət
+FR12_data_source_matrix.csv,dataset_table_row,"st_units 1_3, 1_4; entrepreneurship 005","st_units 1_3, 1_4; sahibkarlıq 005",lüğət
+FR12_data_source_matrix.csv,dataset_table_row,Part 8,8-ci hissə,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,workbook 'DVX üzrə göstəricilər' r111-r126,iş kitabı 'DVX üzrə göstəricilər' r111–r126,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,workbook 'DVX üzrə göstəricilər' r131-r145,iş kitabı 'DVX üzrə göstəricilər' r131–r145,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,FR10_branch_shares_history.csv,FR10_branch_shares_history.csv,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,Part 7,7-ci hissə,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,national accounts 013,milli hesablar 013,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,FR10_forecast_sections.csv,FR10_forecast_sections.csv,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,Part 15,15-ci hissə,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,workbook 'Verilmiş lisenziyalar',iş kitabı 'Verilmiş lisenziyalar',lüğət
+FR12_data_source_matrix.csv,dataset_table_row,workbook 'Aparılan yoxlamalar',iş kitabı 'Aparılan yoxlamalar',lüğət
+FR12_data_source_matrix.csv,dataset_table_row,"industry 010_2 via FR10_ownership.csv (output, 2005-2025); entrepreneurship 005 (SMEs, 2023-2024)","sənaye 010_2, FR10_ownership.csv vasitəsilə (buraxılış, 2005–2025); sahibkarlıq 005 (KOS, 2023–2024)",lüğət
+FR12_data_source_matrix.csv,dataset_table_row,customs data by HS × NACE,HS × NACE üzrə gömrük məlumatı,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,business register: revenue,biznes reyestri: gəlir,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,business register: registration_date / liquidation_date,biznes reyestri: qeydiyyat / ləğv tarixi,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,business register: cost_of_sales / operating_costs,biznes reyestri: satışın maya dəyəri / əməliyyat xərcləri,lüğət
+FR12_data_source_matrix.csv,dataset_table_row,"business register: ownership, region, size_class","biznes reyestri: mülkiyyət, region, ölçü qrupu",lüğət
+FR12_data_source_matrix.csv,granularity,11 activity groups,11 fəaliyyət qrupu,lüğət
+FR12_data_source_matrix.csv,granularity,19 NACE sections,19 NACE bölməsi,lüğət
+FR12_data_source_matrix.csv,granularity,14 regions,14 iqtisadi rayon,lüğət
+FR12_data_source_matrix.csv,granularity,11 groups × size,11 qrup × ölçü,lüğət
+FR12_data_source_matrix.csv,granularity,"groups, regions","qruplar, regionlar",lüğət
+FR12_data_source_matrix.csv,granularity,11 groups × micro/small/medium,11 qrup × mikro/kiçik/orta,lüğət
+FR12_data_source_matrix.csv,granularity,section / region × size,bölmə / region × ölçü,lüğət
+FR12_data_source_matrix.csv,granularity,11 groups,11 qrup,lüğət
+FR12_data_source_matrix.csv,granularity,"economy, 4 classes","iqtisadiyyat, 4 qrup",lüğət
+FR12_data_source_matrix.csv,granularity,5 sectors (others empty),5 sahə (digərləri boşdur),lüğət
+FR12_data_source_matrix.csv,granularity,24 manufacturing branches,emal sənayesinin 24 sahəsi,lüğət
+FR12_data_source_matrix.csv,granularity,19 sections / 11 groups,19 bölmə / 11 qrup,lüğət
+FR12_data_source_matrix.csv,granularity,sections B-E,B–E bölmələri,lüğət
+FR12_data_source_matrix.csv,granularity,sector,sahə,lüğət
+FR12_data_source_matrix.csv,granularity,24 licence types → groups,24 lisenziya növü → qruplar,lüğət
+FR12_data_source_matrix.csv,granularity,19 bodies,19 orqan,lüğət
+FR12_data_source_matrix.csv,granularity,industry; 11 groups,sənaye; 11 qrup,lüğət
+FR12_data_source_matrix.csv,granularity,firm × NACE × region × year,müəssisə × NACE × region × il,lüğət
+FR12_data_source_matrix.csv,frequency,annual,illik,lüğət
+FR12_data_source_matrix.csv,frequency,"annual, half-year","illik, yarımillik",lüğət
+FR12_data_source_matrix.csv,frequency,snapshot (1 July 2026); 2023-2024,an (1 iyul 2026); 2023–2024,lüğət
+FR12_data_source_matrix.csv,frequency,on demand,tələb əsasında,lüğət
+FR12_data_source_matrix.csv,status,available now,hazırda mövcuddur,lüğət
+FR12_data_source_matrix.csv,status,not available,mövcud deyil,lüğət
+FR12_data_source_matrix.csv,status,requested,sorğu göndərilib,lüğət
+FR12_data_source_matrix.csv,integration_into_MIIS,archived DSK vintages (scripted),DSK-nın arxiv versiyaları (skriptlə),lüğət
+FR12_data_source_matrix.csv,integration_into_MIIS,workbook upload (Ministry),iş kitabının yüklənməsi (Nazirlik),lüğət
+FR12_data_source_matrix.csv,integration_into_MIIS,"file download (DSK website, scripted)","faylın yüklənməsi (DSK saytı, skriptlə)",lüğət
+FR12_data_source_matrix.csv,integration_into_MIIS,MIIS internal (FR module output),MİİS daxili (FR modulunun nəticəsi),lüğət
+FR12_data_source_matrix.csv,integration_into_MIIS,data-sharing agreement with the State Customs Committee,Dövlət Gömrük Komitəsi ilə məlumat mübadiləsi razılaşması,lüğət
+FR12_data_source_matrix.csv,integration_into_MIIS,data-sharing agreement with DSK (business register extract),DSK ilə məlumat mübadiləsi razılaşması (biznes reyestrindən çıxarış),lüğət
+FR12_data_source_matrix.csv,analytical_use,structural births model (Part 11-13),struktur doğulma modeli (11–13-cü hissələr),lüğət
+FR12_data_source_matrix.csv,analytical_use,structural exit model,struktur çıxış modeli,lüğət
+FR12_data_source_matrix.csv,analytical_use,early warning,erkən xəbərdarlıq,lüğət
+FR12_data_source_matrix.csv,analytical_use,section monitoring; Layer-B calibration,bölmə monitorinqi; B qatının kalibrləməsi,lüğət
+FR12_data_source_matrix.csv,analytical_use,regional entry/exit model; heat map,regional giriş/çıxış modeli; istilik xəritəsi,lüğət
+FR12_data_source_matrix.csv,analytical_use,information only (not in the early-warning composite),yalnız məlumat üçün (erkən xəbərdarlıq balına daxil deyil),lüğət
+FR12_data_source_matrix.csv,analytical_use,forecast,proqnoz,lüğət
+FR12_data_source_matrix.csv,analytical_use,concentration bounds; share projection,konsentrasiya hədləri; payların proyeksiyası,lüğət
+FR12_data_source_matrix.csv,analytical_use,size structure,ölçü strukturu,lüğət
+FR12_data_source_matrix.csv,analytical_use,concentration bounds; Layer-B calibration,konsentrasiya hədləri; B qatının kalibrləməsi,lüğət
+FR12_data_source_matrix.csv,analytical_use,concentration monitoring; early warning,konsentrasiya monitorinqi; erkən xəbərdarlıq,lüğət
+FR12_data_source_matrix.csv,analytical_use,economy-wide concentration,iqtisadiyyat üzrə konsentrasiya,lüğət
+FR12_data_source_matrix.csv,analytical_use,cross-check of entry dynamics,giriş dinamikasının çarpaz yoxlanışı,lüğət
+FR12_data_source_matrix.csv,analytical_use,early warning (falling mobility),erkən xəbərdarlıq (mobilliyin azalması),lüğət
+FR12_data_source_matrix.csv,analytical_use,regional monitoring,regional monitorinq,lüğət
+FR12_data_source_matrix.csv,analytical_use,"entry-model driver; early warning (margins up, entry down)","giriş modelinin sürücüsü; erkən xəbərdarlıq (marja artır, giriş azalır)",lüğət
+FR12_data_source_matrix.csv,analytical_use,"margin driver path for industry if a rule selects the margin; the current rules do not, so it is not used in this run","qayda marjanı seçərsə sənaye üçün marja yolu; cari qaydalar seçmir, bu icrada istifadə olunmur",lüğət
+FR12_data_source_matrix.csv,analytical_use,scenario simulator,ssenari simulyatoru,lüğət
+FR12_data_source_matrix.csv,analytical_use,entry indicator (information; not a barrier flag),giriş göstəricisi (məlumat; maneə bayrağı deyil),lüğət
+FR12_data_source_matrix.csv,analytical_use,information only,yalnız məlumat üçün,lüğət
+FR12_data_source_matrix.csv,analytical_use,mixed-oligopoly scenario (S5); information,qarışıq oliqopoliya ssenarisi (S5); məlumat,lüğət
+FR12_data_source_matrix.csv,analytical_use,tariff / import-competition scenario,tarif / idxal rəqabəti ssenarisi,lüğət
+FR12_data_source_matrix.csv,analytical_use,Layer-B competition engine,B qatının rəqabət mühərriki,lüğət
+FR12_data_source_matrix.csv,presentation_form,time-series chart with forecast fan,proqnoz zolaqlı zaman sırası qrafiki,lüğət
+FR12_data_source_matrix.csv,presentation_form,dashboard KPI card,idarə paneli KPI kartı,lüğət
+FR12_data_source_matrix.csv,presentation_form,heat map section × year,istilik xəritəsi bölmə × il,lüğət
+FR12_data_source_matrix.csv,presentation_form,map; region × year heat map,xəritə; region × il istilik xəritəsi,lüğət
+FR12_data_source_matrix.csv,presentation_form,table,cədvəl,lüğət
+FR12_data_source_matrix.csv,presentation_form,forecast fan,proqnoz zolağı,lüğət
+FR12_data_source_matrix.csv,presentation_form,stacked bar; trend,yığılmış sütun; trend,lüğət
+FR12_data_source_matrix.csv,presentation_form,stacked bar,yığılmış sütun,lüğət
+FR12_data_source_matrix.csv,presentation_form,concentration bounds chart (range bars),konsentrasiya hədləri qrafiki (interval sütunları),lüğət
+FR12_data_source_matrix.csv,presentation_form,KPI card; trend,KPI kartı; trend,lüğət
+FR12_data_source_matrix.csv,presentation_form,trend,trend,lüğət
+FR12_data_source_matrix.csv,presentation_form,map,xəritə,lüğət
+FR12_data_source_matrix.csv,presentation_form,trend; quadrant,trend; kvadrant,lüğət
+FR12_data_source_matrix.csv,presentation_form,simulator with assumptions panel,fərziyyələr paneli olan simulyator,lüğət
+FR12_data_source_matrix.csv,presentation_form,trend; table,trend; cədvəl,lüğət
+FR12_data_source_matrix.csv,presentation_form,bar,sütun,lüğət
+FR12_data_source_matrix.csv,presentation_form,simulator input,simulyator girişi,lüğət
+FR12_data_source_matrix.csv,presentation_form,firm-level market structure view,müəssisə səviyyəsində bazar strukturu görünüşü,lüğət
+FR12_data_source_matrix.csv,update_frequency,annual,illik,lüğət
+FR12_data_source_matrix.csv,update_frequency,semi-annual,yarımillik,lüğət
+FR12_data_source_matrix.csv,update_frequency,on demand,tələb əsasında,lüğət
+FR12_data_source_matrix.csv,alternative_if_unavailable,Kaplan-Meier survival by cohort from the register (Layer B),reyestr üzrə kohortlar üçün Kaplan–Meyer sağ qalma əyrisi (B qatı),lüğət
+FR12_data_source_matrix.csv,alternative_if_unavailable,firm-level HHI (Layer B),müəssisə səviyyəsində HHI (B qatı),lüğət
+FR12_data_source_matrix.csv,alternative_if_unavailable,register counts (DSK),reyestr sayları (DSK),lüğət
+FR12_data_source_matrix.csv,alternative_if_unavailable,inspection register with NACE codes and constant coverage,NACE kodları və sabit əhatəli yoxlamalar reyestri,lüğət
+FR12_data_source_matrix.csv,alternative_if_unavailable,SOE revenue share by market from the register (Layer B),reyestrdən bazarlar üzrə dövlət müəssisələrinin gəlir payı (B qatı),lüğət
+FR12_data_source_matrix.csv,alternative_if_unavailable,FR5/FR1 import aggregates; literature fringe shares,FR5/FR1 idxal aqreqatları; ədəbiyyatdakı kənar paylar,lüğət
+FR12_data_source_matrix.csv,alternative_if_unavailable,Layer-A bounds and rates (this module),A qatının hədləri və əmsalları (bu modul),lüğət
+FR12_data_source_matrix.csv,status_group,available now,hazırda mövcuddur,lüğət
+FR12_data_source_matrix.csv,status_group,not available,mövcud deyil,lüğət
+FR12_data_source_matrix.csv,status_group,requested,sorğu göndərilib,lüğət
+FR12_scenario_assumptions.csv,market,ICT (Information & communication),ICT (İnformasiya və rabitə),lüğət
+FR12_scenario_assumptions.csv,market,Mobile telecommunications (3 operators),Mobil rabitə (3 operator),lüğət
+FR12_scenario_assumptions.csv,market,CON (Construction),CON (Tikinti),lüğət
+FR12_scenario_assumptions.csv,market,Banking (assets),Bank sektoru (aktivlər),lüğət
+FR12_scenario_assumptions.csv,market,ACC (Accommodation & food),ACC (Yerləşdirmə və iaşə),lüğət
+FR12_scenario_assumptions.csv,market,Cement (domestic producers),Sement (yerli istehsalçılar),lüğət
+FR12_scenario_assumptions.csv,market,IND (Industry),IND (Sənaye),lüğət
+FR12_scenario_assumptions.csv,change,Entry-barrier reduction / licensing simplification,Giriş maneələrinin azaldılması / lisenziyalaşdırmanın sadələşdirilməsi,lüğət
+FR12_scenario_assumptions.csv,change,Entry of a 4th mobile operator,Dördüncü mobil operatorun girişi,lüğət
+FR12_scenario_assumptions.csv,change,Merger of two firms,İki müəssisənin birləşməsi,lüğət
+FR12_scenario_assumptions.csv,change,Merger of two banks,İki bankın birləşməsi,lüğət
+FR12_scenario_assumptions.csv,change,Cost shock / excise or tax increase,Xərc şoku / aksiz və ya vergi artımı,lüğət
+FR12_scenario_assumptions.csv,change,Energy-cost shock,Enerji xərcləri şoku,lüğət
+FR12_scenario_assumptions.csv,change,Import competition (tariff cut),İdxal rəqabəti (tarifin azaldılması),lüğət
+FR12_scenario_assumptions.csv,change,SOE partial privatisation (mixed oligopoly),Dövlət müəssisəsinin qismən özəlləşdirilməsi (qarışıq oliqopoliya),lüğət
+FR12_scenario_assumptions.csv,change,SOE full privatisation (mixed oligopoly),Dövlət müəssisəsinin tam özəlləşdirilməsi (qarışıq oliqopoliya),lüğət
+FR12_scenario_assumptions.csv,assumption,one additional symmetric-equivalent competitor (ΔN = +1),bir əlavə simmetrik-ekvivalent rəqib (ΔN = +1),lüğət
+FR12_scenario_assumptions.csv,assumption,ΔN = +1 symmetric-equivalent competitor,ΔN = +1 simmetrik-ekvivalent rəqib,lüğət
+FR12_scenario_assumptions.csv,assumption,merging shares 10% and 5%; HHI used >= 0.10² + 0.05²,birləşən paylar 10% və 5%; istifadə olunan HHI ≥ 0.10² + 0.05²,lüğət
+FR12_scenario_assumptions.csv,assumption,merging asset shares 8% and 6%; HHI used >= 0.08² + 0.06²,birləşən aktiv payları 8% və 6%; istifadə olunan HHI ≥ 0.08² + 0.06²,lüğət
+FR12_scenario_assumptions.csv,assumption,"per-unit cost +5% of the initial price, all firms","vahid xərc ilkin qiymətin +5%-i, bütün müəssisələr",lüğət
+FR12_scenario_assumptions.csv,assumption,"per-unit cost +5% of the initial price, all producers","vahid xərc ilkin qiymətin +5%-i, bütün istehsalçılar",lüğət
+FR12_scenario_assumptions.csv,assumption,"import share 30% -> 40%, import supply elasticity η = 2","idxal payı 30% → 40%, idxal təklifinin elastikliyi η = 2",lüğət
+FR12_scenario_assumptions.csv,assumption,"import share 20% -> 30%, η = 2","idxal payı 20% → 30%, η = 2",lüğət
+FR12_scenario_assumptions.csv,assumption,"σ = 21.9% (industry), λ: 0 -> 0.5","σ = 21.9% (sənaye), λ: 0 → 0.5",lüğət
+FR12_scenario_assumptions.csv,assumption,"σ = 21.9% (industry), λ: 0 -> 1.0","σ = 21.9% (sənaye), λ: 0 → 1.0",lüğət
+FR12_scenario_assumptions.csv,assumption,"σ = 35.1% (manufacturing), λ: 0 -> 0.5","σ = 35.1% (emal sənayesi), λ: 0 → 0.5",lüğət
+FR12_scenario_assumptions.csv,assumption,"σ = 35.1% (manufacturing), λ: 0 -> 1.0","σ = 35.1% (emal sənayesi), λ: 0 → 1.0",lüğət
+FR12_scenario_assumptions.csv,structure_source,"Layer-A size-class bounds (Part 8), 2024","A qatının ölçü qrupu hədləri (8-ci hissə), 2024",lüğət
+FR12_scenario_assumptions.csv,structure_source,"ASSUMPTION: 3 operators, subscriber shares ≈ 50-55 / 25-30 / 20% (approximate public reports) -> HHI 3,300-4,000","FƏRZİYYƏ: 3 operator, abunəçi payları ≈ 50–55 / 25–30 / 20% (təxmini açıq hesabatlar) → HHI 3 300–4 000",lüğət
+FR12_scenario_assumptions.csv,structure_source,"ASSUMPTION: ~22 banks, top-5 ≈ 60% of assets (approximate, CBAR annual reports) -> HHI 800-1,300; replace with CBAR concentration data","FƏRZİYYƏ: ~22 bank, ilk 5 bank aktivlərin ≈ 60%-i (təxmini, AMB illik hesabatları) → HHI 800–1 300; AMB konsentrasiya məlumatı ilə əvəz edilməlidir",lüğət
+FR12_scenario_assumptions.csv,structure_source,"ASSUMPTION: 2-3 domestic integrated producers plus imports (approximate) -> domestic HHI 3,500-5,500",FƏRZİYYƏ: 2–3 yerli inteqrasiya olunmuş istehsalçı və idxal (təxmini) → daxili HHI 3 500–5 500,lüğət
+FR12_scenario_assumptions.csv,elasticity_range,0.5-2.0 (FR5 services system: 1.0),0.5–2.0 (FR5 xidmətlər sistemi: 1.0),lüğət
+FR12_scenario_assumptions.csv,conduct,Cournot θ = 1; θ = 0.5,Kurno θ = 1; θ = 0.5,lüğət
+FR12_scenario_assumptions.csv,demand,linear,xətti,lüğət
+FR12_scenario_assumptions.csv,status,illustrative,illüstrativ,lüğət
+FR12_scenario_summary.csv,change,Entry-barrier reduction / licensing simplification,Giriş maneələrinin azaldılması / lisenziyalaşdırmanın sadələşdirilməsi,lüğət
+FR12_scenario_summary.csv,change,Entry of a 4th mobile operator,Dördüncü mobil operatorun girişi,lüğət
+FR12_scenario_summary.csv,change,Merger of two firms,İki müəssisənin birləşməsi,lüğət
+FR12_scenario_summary.csv,change,Merger of two banks,İki bankın birləşməsi,lüğət
+FR12_scenario_summary.csv,change,Cost shock / excise or tax increase,Xərc şoku / aksiz və ya vergi artımı,lüğət
+FR12_scenario_summary.csv,change,Energy-cost shock,Enerji xərcləri şoku,lüğət
+FR12_scenario_summary.csv,change,Import competition (tariff cut),İdxal rəqabəti (tarifin azaldılması),lüğət
+FR12_scenario_summary.csv,change,SOE partial privatisation (mixed oligopoly),Dövlət müəssisəsinin qismən özəlləşdirilməsi (qarışıq oliqopoliya),lüğət
+FR12_scenario_summary.csv,change,SOE full privatisation (mixed oligopoly),Dövlət müəssisəsinin tam özəlləşdirilməsi (qarışıq oliqopoliya),lüğət
+FR12_scenario_summary.csv,assumption,one additional symmetric-equivalent competitor (ΔN = +1),bir əlavə simmetrik-ekvivalent rəqib (ΔN = +1),lüğət
+FR12_scenario_summary.csv,assumption,ΔN = +1 symmetric-equivalent competitor,ΔN = +1 simmetrik-ekvivalent rəqib,lüğət
+FR12_scenario_summary.csv,assumption,merging shares 10% and 5%; HHI used >= 0.10² + 0.05²,birləşən paylar 10% və 5%; istifadə olunan HHI ≥ 0.10² + 0.05²,lüğət
+FR12_scenario_summary.csv,assumption,merging asset shares 8% and 6%; HHI used >= 0.08² + 0.06²,birləşən aktiv payları 8% və 6%; istifadə olunan HHI ≥ 0.08² + 0.06²,lüğət
+FR12_scenario_summary.csv,assumption,"per-unit cost +5% of the initial price, all firms","vahid xərc ilkin qiymətin +5%-i, bütün müəssisələr",lüğət
+FR12_scenario_summary.csv,assumption,"per-unit cost +5% of the initial price, all producers","vahid xərc ilkin qiymətin +5%-i, bütün istehsalçılar",lüğət
+FR12_scenario_summary.csv,assumption,"import share 30% -> 40%, import supply elasticity η = 2","idxal payı 30% → 40%, idxal təklifinin elastikliyi η = 2",lüğət
+FR12_scenario_summary.csv,assumption,"import share 20% -> 30%, η = 2","idxal payı 20% → 30%, η = 2",lüğət
+FR12_scenario_summary.csv,assumption,"σ = 21.9% (industry), λ: 0 -> 0.5","σ = 21.9% (sənaye), λ: 0 → 0.5",lüğət
+FR12_scenario_summary.csv,assumption,"σ = 21.9% (industry), λ: 0 -> 1.0","σ = 21.9% (sənaye), λ: 0 → 1.0",lüğət
+FR12_scenario_summary.csv,assumption,"σ = 35.1% (manufacturing), λ: 0 -> 0.5","σ = 35.1% (emal sənayesi), λ: 0 → 0.5",lüğət
+FR12_scenario_summary.csv,assumption,"σ = 35.1% (manufacturing), λ: 0 -> 1.0","σ = 35.1% (emal sənayesi), λ: 0 → 1.0",lüğət
+FR12_scenario_results.csv,change,Entry-barrier reduction / licensing simplification,Giriş maneələrinin azaldılması / lisenziyalaşdırmanın sadələşdirilməsi,lüğət
+FR12_scenario_results.csv,change,Entry of a 4th mobile operator,Dördüncü mobil operatorun girişi,lüğət
+FR12_scenario_results.csv,change,Merger of two firms,İki müəssisənin birləşməsi,lüğət
+FR12_scenario_results.csv,change,Merger of two banks,İki bankın birləşməsi,lüğət
+FR12_scenario_results.csv,change,Cost shock / excise or tax increase,Xərc şoku / aksiz və ya vergi artımı,lüğət
+FR12_scenario_results.csv,change,Energy-cost shock,Enerji xərcləri şoku,lüğət
+FR12_scenario_results.csv,change,Import competition (tariff cut),İdxal rəqabəti (tarifin azaldılması),lüğət
+FR12_scenario_results.csv,change,SOE partial privatisation (mixed oligopoly),Dövlət müəssisəsinin qismən özəlləşdirilməsi (qarışıq oliqopoliya),lüğət
+FR12_scenario_results.csv,change,SOE full privatisation (mixed oligopoly),Dövlət müəssisəsinin tam özəlləşdirilməsi (qarışıq oliqopoliya),lüğət
+FR12_scenario_results.csv,assumption,one additional symmetric-equivalent competitor (ΔN = +1),bir əlavə simmetrik-ekvivalent rəqib (ΔN = +1),lüğət
+FR12_scenario_results.csv,assumption,ΔN = +1 symmetric-equivalent competitor,ΔN = +1 simmetrik-ekvivalent rəqib,lüğət
+FR12_scenario_results.csv,assumption,merging shares 10% and 5%; HHI used >= 0.10² + 0.05²,birləşən paylar 10% və 5%; istifadə olunan HHI ≥ 0.10² + 0.05²,lüğət
+FR12_scenario_results.csv,assumption,merging asset shares 8% and 6%; HHI used >= 0.08² + 0.06²,birləşən aktiv payları 8% və 6%; istifadə olunan HHI ≥ 0.08² + 0.06²,lüğət
+FR12_scenario_results.csv,assumption,"per-unit cost +5% of the initial price, all firms","vahid xərc ilkin qiymətin +5%-i, bütün müəssisələr",lüğət
+FR12_scenario_results.csv,assumption,"per-unit cost +5% of the initial price, all producers","vahid xərc ilkin qiymətin +5%-i, bütün istehsalçılar",lüğət
+FR12_scenario_results.csv,assumption,"import share 30% -> 40%, import supply elasticity η = 2","idxal payı 30% → 40%, idxal təklifinin elastikliyi η = 2",lüğət
+FR12_scenario_results.csv,assumption,"import share 20% -> 30%, η = 2","idxal payı 20% → 30%, η = 2",lüğət
+FR12_scenario_results.csv,assumption,"σ = 21.9% (industry), λ: 0 -> 0.5","σ = 21.9% (sənaye), λ: 0 → 0.5",lüğət
+FR12_scenario_results.csv,assumption,"σ = 21.9% (industry), λ: 0 -> 1.0","σ = 21.9% (sənaye), λ: 0 → 1.0",lüğət
+FR12_scenario_results.csv,assumption,"σ = 35.1% (manufacturing), λ: 0 -> 0.5","σ = 35.1% (emal sənayesi), λ: 0 → 0.5",lüğət
+FR12_scenario_results.csv,assumption,"σ = 35.1% (manufacturing), λ: 0 -> 1.0","σ = 35.1% (emal sənayesi), λ: 0 → 1.0",lüğət
+FR12_scenario_results.csv,us_2010_screen,unlikely to have adverse effects,mənfi təsir ehtimalı azdır,lüğət
+FR12_scenario_results.csv,us_2010_screen,potentially raises significant concerns,potensial olaraq ciddi narahatlıq yaradır,lüğət
+FR12_scenario_results.csv,eu_screen,no presumption,ehtimal yoxdur,lüğət
+FR12_merger_screen.csv,us,unlikely to have adverse effects,mənfi təsir ehtimalı azdır,lüğət
+FR12_merger_screen.csv,us,potentially raises significant concerns / unlikely to have adverse effects,potensial olaraq ciddi narahatlıq yaradır / mənfi təsir ehtimalı azdır,lüğət
+FR12_merger_screen.csv,eu,no presumption,ehtimal yoxdur,lüğət
+FR12_identity_checks.csv,check,register sections add to published totals (11 files),reyestr bölmələri dərc olunmuş cəmlərə bərabərdir (11 fayl),lüğət
+FR12_identity_checks.csv,check,entrepreneurship 11 groups add to total (006),sahibkarlığın 11 qrupu cəmə bərabərdir (006),lüğət
+FR12_identity_checks.csv,check,"national accounts: output − IC = VA (all sections, years)","milli hesablar: buraxılış − aralıq istehlak = ƏDV (bütün bölmələr, illər)",lüğət
+FR12_identity_checks.csv,check,size classes sum to commercial organisations (1_3 vs 1_1),ölçü qrupları kommersiya təşkilatlarının sayına bərabərdir (1_3 vs 1_1),lüğət
+FR12_identity_checks.csv,check,"region panel totals = register totals 2021, 2024, 2025","regional panelin cəmləri = reyestr cəmləri (2021, 2024, 2025)",lüğət
+FR12_identity_checks.csv,check,"HHI lower <= floor variants <= headline upper; CR4 lower <= CR4 upper (all groups, years)","HHI aşağı hədd ≤ döşəmə variantları ≤ əsas yuxarı hədd; CR4 aşağı ≤ CR4 yuxarı (bütün qruplar, illər)",lüğət
+FR12_identity_checks.csv,check,"CR4 bounds consistent with HHI bounds: CR4^2/4 <= HHI_upper (all groups, years)","CR4 hədləri HHI hədləri ilə uzlaşır: CR4²/4 ≤ HHI_yuxarı (bütün qruplar, illər)",lüğət
+FR12_identity_checks.csv,check,stock-flow identity N(t) = N(t-1) + births(t) - deaths(t) in every forecast path,ehtiyat-axın eyniliyi N(t) = N(t−1) + doğulmalar(t) − ölümlər(t) hər proqnoz yolunda,lüğət
+FR12_identity_checks.csv,check,projected upper bounds evolve continuously (max year-on-year change < 25%),proqnozlaşdırılan yuxarı hədlər fasiləsiz dəyişir (illik dəyişmə < 25%),lüğət
+FR12_identity_checks.csv,check,"Cournot calibration reproduces P = 1, Q = 1 at the calibration point","Kurno kalibrləməsi kalibrləmə nöqtəsində P = 1, Q = 1 verir",lüğət
+FR12_identity_checks.csv,check,"linear Cournot pass-through equals N/(N+θ), θ = 1.0","xətti Kurno ötürülməsi N/(N+θ)-ya bərabərdir, θ = 1.0",lüğət
+FR12_identity_checks.csv,check,"linear Cournot pass-through equals N/(N+θ), θ = 0.5","xətti Kurno ötürülməsi N/(N+θ)-ya bərabərdir, θ = 0.5",lüğət
+FR12_identity_checks.csv,check,"mixed oligopoly: calibration reproduces P = 1, Q = 1, SOE share σ; λ = 0 leaves the equilibrium unchanged","qarışıq oliqopoliya: kalibrləmə P = 1, Q = 1 və dövlət payı σ verir; λ = 0 tarazlığı dəyişmir",lüğət
+FR12_identity_checks.csv,check,scenario welfare: ΔCS has the opposite sign of Δprice in every run,ssenari rifahı: ΔİR hər hesablamada Δqiymətin əks işarəsindədir,lüğət
+FR12_identity_checks.csv,check,"mixed oligopoly: every calibration reproduces P = 1, Q = 1 and σ","qarışıq oliqopoliya: hər kalibrləmə P = 1, Q = 1 və σ verir",lüğət
+FR12_identity_checks.csv,check,aggregate N = sum of group N in every scenario-year,aqreqat N = qrupların N cəmi (hər ssenari-il),lüğət
+FR12_identity_checks.csv,check,fan: p5 <= p50 <= p95 for every series,zolaq: hər sıra üçün p5 ≤ p50 ≤ p95,lüğət
+FR12_identity_checks.csv,check,"SME + large output shares = 100 (all groups, years)","KOS + iri müəssisə payları = 100 (bütün qruplar, illər)",lüğət
+FR12_identity_checks.csv,check,"early-warning score in [0, 1]","erkən xəbərdarlıq balı [0, 1] aralığındadır",lüğət
+FR12_business_register_swap_tests.csv,test,real-named file with neutral data_status -> DATA_MODE = REAL,neytral data_status ilə real adlı fayl → DATA_MODE = REAL,lüğət
+FR12_business_register_swap_tests.csv,test,REAL file passes the validator (0 hard errors),REAL fayl yoxlamadan keçir (0 ciddi səhv),lüğət
+FR12_business_register_swap_tests.csv,test,"REAL mode writes FR12_FIRM_* only, without watermark; identity tests pass; Layer-B econometrics run in REAL mode (FR12_FIRM_econ_*)",REAL rejimi yalnız su nişanı olmayan FR12_FIRM_* yazır; eynilik testləri keçir; B qatının ekonometrikası REAL rejimdə işləyir (FR12_FIRM_econ_*),lüğət
+FR12_business_register_swap_tests.csv,test,Azerbaijani headers (xlsx) load and validate,Azərbaycan dilində başlıqlar (xlsx) yüklənir və yoxlanılır,lüğət
+FR12_business_register_swap_tests.csv,test,BUSREG_PATH environment variable has priority over the real-named file,BUSREG_PATH mühit dəyişəni real adlı fayldan üstündür,lüğət
+FR12_business_register_swap_tests.csv,test,register without a weight column: full engine runs (weights default to 1),çəki sütunu olmayan reyestr: mühərrik tam işləyir (çəkilər 1 qəbul edilir),lüğət
+FR12_business_register_swap_tests.csv,test,"weights honoured: weighted file = expanded unweighted file (HHI, CR4/CR8, entry/exit, KM, Boone n, PCM)","çəkilər nəzərə alınır: çəkili fayl = genişləndirilmiş çəkisiz fayl (HHI, CR4/CR8, giriş/çıxış, KM, Boone n, PCM)",lüğət
+FR12_business_register_swap_tests.csv,test,broken file: missing required column reported as fatal,xətalı fayl: çatışmayan məcburi sütun ciddi səhv kimi göstərilir,lüğət
+FR12_business_register_swap_tests.csv,test,broken file: negative revenue and liquidation before registration flagged per row; the run stops,xətalı fayl: mənfi gəlir və qeydiyyatdan əvvəl ləğv sətir-sətir göstərilir; icra dayanır,lüğət
+FR12_business_register_swap_tests.csv,test,generator never writes the real file name; project directory scanned for real-named files,generator heç vaxt real fayl adını yazmır; layihə qovluğu real adlı fayllar üçün yoxlanılır,lüğət
+FR12_business_register_swap_tests.csv,detail,"mode REAL, file FR12_business_register.csv","rejim REAL, fayl FR12_business_register.csv",qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,0 warnings,0 xəbərdarlıq,qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,"15 files, e.g. ['FR12_FIRM_concentration_nace.csv', 'FR12_FIRM_concentration_nace_region.csv', 'FR12_FIRM_econ_boone_sector_year.csv']; econometrics: 12 models, 262 coefficients = SYNTHETIC run, no wa","15 fayl, məsələn ['FR12_FIRM_concentration_nace.csv', 'FR12_FIRM_concentration_nace_region.csv', 'FR12_FIRM_econ_boone_sector_year.csv']; ekonometrika: 12 rejiml, 262 əmsal = SİNTETİK icra ilə eyni, no wa",qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,"3000 rows, unknown columns [], mode REAL","3000 sətir, naməlum sütunlar [], rejim REAL",qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,loaded register_az.xlsx with BUSREG_PATH set in the environment,yükləndi register_az.xlsx (BUSREG_PATH mühitdə təyin edilib),qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,"38,849 rows, mode REAL; engine + DSK comparison (615 cells) ran","38,849 sətir, rejim REAL; mühərrik + DSK müqayisəsi (615 xana) icra olundu",qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,max abs diff 6.37e-12 over 112 cells,maks. mütləq fərq 6.37e-12 — 112 xana,qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,required column missing (EN or AZ header),məcburi sütun yoxdur (EN və ya AZ başlıq),qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,"business register rejected: 8 hard errors (first: row 2, field revenue: negative value); see rep.csv","biznes reyestri rədd edildi: 8 ciddi səhv (birinci: sətir 2, sahə revenue: mənfi dəyər); bax: rep.csv",qayda (test təfərrüatı)
+FR12_business_register_swap_tests.csv,detail,"generator wrote ['FR12_business_register_SYNTHETIC.csv', 'FR12_business_register_TEMPLATE.csv', 'FR12_business_register_TEMPLATE.xlsx', 'FR12_business_register_column_map.csv', 'README_FR12_business_r","generator yazdı ['FR12_business_register_SYNTHETIC.csv', 'FR12_business_register_TEMPLATE.csv', 'FR12_business_register_TEMPLATE.xlsx', 'FR12_business_register_column_map.csv', 'README_FR12_business_r",qayda (test təfərrüatı)
+FR12_SYNTHETIC_pipeline_tests.csv,test,HHI >= 10000 / N in every market,hər bazarda HHI ≥ 10000 / N,lüğət
+FR12_SYNTHETIC_pipeline_tests.csv,test,CR4 <= CR8 <= 100,CR4 ≤ CR8 ≤ 100,lüğət
+FR12_SYNTHETIC_pipeline_tests.csv,test,entropy <= ln N,entropiya ≤ ln N,lüğət
+FR12_SYNTHETIC_pipeline_tests.csv,test,shares add to 1 in every national division market with revenue,gəliri olan hər milli bölmə bazarında paylar cəmi 1-dir,lüğət
+FR12_SYNTHETIC_pipeline_tests.csv,test,"Kaplan-Meier survival non-increasing and in [0, 1]","Kaplan–Meyer sağ qalma əyrisi artmır və [0, 1] aralığındadır",lüğət
+FR12_SYNTHETIC_pipeline_tests.csv,test,"calibration: births, deaths, revenue and SME revenue shares reproduce DSK where published (max |relative error| %)","kalibrləmə: doğulmalar, ölümlər, gəlir və KOS gəlir payları dərc olunduğu yerdə DSK ilə üst-üstə düşür (maks. |nisbi xəta| %)",lüğət
+FR12_SYNTHETIC_pipeline_tests.csv,test,DGP check: Boone slope negative (efficient firms larger) in >= 90% of section-years,MYP yoxlaması: bölmə-illərin ≥ 90%-ində Boone meyli mənfidir (səmərəli müəssisələr böyükdür),lüğət
+FR12_SYNTHETIC_pipeline_tests.csv,test,DGP check: low-Pareto-alpha sections more concentrated (median HHI ratio),MYP yoxlaması: aşağı Pareto-α bölmələri daha konsentrasiyalıdır (median HHI nisbəti),lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,"SME share of employees, %","KOS-un işçi sayında payı, %",lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,"SME share of revenue, %","KOS-un gəlirdə payı, %",lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,"active units, end of year","fəal vahidlər, ilin sonu",lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,births,doğulmalar,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,deaths,ölümlər,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,revenue (thsd AZN) = output,gəlir (min AZN) = buraxılış,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,"size mix: large share of units, %","ölçü strukturu: iri vahidlərin payı, %",lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,"size mix: medium share of units, %","ölçü strukturu: orta vahidlərin payı, %",lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,"size mix: micro share of units, %","ölçü strukturu: mikro vahidlərin payı, %",lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,target,"size mix: small share of units, %","ölçü strukturu: kiçik vahidlərin payı, %",lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,dimension,activity group,fəaliyyət qrupu,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,dimension,region,region,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,dimension,section,bölmə,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,status,exact except where the 251-employee floor of large units binds,dəqiq (iri vahidlərin 251 işçi döşəməsi məhdudlaşdırdığı hallar istisna),lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,status,exact (output base),dəqiq (buraxılış bazası),lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,status,exact 2025; earlier via stock-flow,dəqiq 2025; əvvəlki illər ehtiyat-axın ilə,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,status,exact 2025; earlier via stock-flow (F5),dəqiq 2025; əvvəlki illər ehtiyat-axın ilə (F5),lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,status,exact,dəqiq,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,status,exact where published,dərc olunduğu yerdə dəqiq,lüğət
+FR12_SYNTHETIC_calibration_errors_summary.csv,status,approximate (1 July 2026 snapshot),təxmini (1 iyul 2026 vəziyyəti),lüğət
+FR12_business_register_schema.csv,type,str,mətn,lüğət
+FR12_business_register_schema.csv,type,int,tam ədəd,lüğət
+FR12_business_register_schema.csv,type,float,həqiqi ədəd,lüğət
+FR12_business_register_schema.csv,type,date,tarix,lüğət
+FR12_business_register_schema.csv,constraint,synthetic marker; any other value or no column = REAL data,sintetik nişan; başqa dəyər və ya sütunun olmaması = REAL məlumat,lüğət
+FR12_business_register_schema.csv,constraint,"unique per enterprise, pseudonymised (never the VÖEN)","hər müəssisə üçün unikal, psevdonimləşdirilmiş (heç vaxt VÖEN deyil)",lüğət
+FR12_business_register_schema.csv,constraint,reporting year,hesabat ili,lüğət
+FR12_business_register_schema.csv,constraint,"NACE Rev.2 division, 2 digits, sections A-S and U","NACE Rev.2 bölməsi, 2 rəqəm, A–S və U",lüğət
+FR12_business_register_schema.csv,constraint,one of the 14 economic regions,14 iqtisadi rayondan biri,lüğət
+FR12_business_register_schema.csv,constraint,state | municipal | private | foreign | joint,dövlət | bələdiyyə | özəl | xarici | birgə,lüğət
+FR12_business_register_schema.csv,constraint,micro | small | medium | large (statutory classes),mikro | kiçik | orta | iri (qanuni qruplar),lüğət
+FR12_business_register_schema.csv,constraint,state registration date (entry); <= 31 Dec of year,dövlət qeydiyyatı tarixi (giriş); ilin 31 dekabrından gec deyil,lüğət
+FR12_business_register_schema.csv,constraint,liquidation date (exit); empty while active; >= registration date,ləğv tarixi (çıxış); fəal olduqda boş; qeydiyyat tarixindən gec,lüğət
+FR12_business_register_schema.csv,constraint,active | liquidated (liquidated only in the year of liquidation),fəal | ləğv edilmiş (yalnız ləğv ilində),lüğət
+FR12_business_register_schema.csv,constraint,LLC | JSC | state enterprise | other,MMC | SC | dövlət müəssisəsi | digər,lüğət
+FR12_business_register_schema.csv,constraint,">= 0, <= revenue","≥ 0, ≤ gəlir",lüğət
+FR12_business_register_schema.csv,constraint,"HS / PRODCOM codes, "";""-separated","HS / PRODCOM kodları, "";"" ilə ayrılmış",lüğət
+FR12_business_register_schema.csv,constraint,">= 0 (price-cost margin, Boone indicator)","≥ 0 (qiymət-xərc marjası, Boone indikatoru)",lüğət
+FR12_business_register_schema.csv,constraint,number of identical enterprises the row stands for; 1 (or absent) in a census register,sətrin təmsil etdiyi eyni müəssisələrin sayı; tam reyestrdə 1 (və ya yoxdur),lüğət
+FR12_business_register_schema.csv,source,generator,generator,lüğət
+FR12_business_register_schema.csv,source,DSK register,DSK reyestri,lüğət
+FR12_business_register_schema.csv,source,DSK register / DVX,DSK reyestri / DVX,lüğət
+FR12_business_register_schema.csv,source,DSK register / DSMF,DSK reyestri / DSMF,lüğət
+FR12_business_register_schema.csv,source,State Customs Committee,Dövlət Gömrük Komitəsi,lüğət
+FR12_business_register_schema.csv,source,DSK / Customs,DSK / Gömrük,lüğət
+FR12_business_register_schema.csv,source,DVX (link by firm_id to FR10 panel),DVX (FR10 panelinə firm_id ilə bağlantı),lüğət
+FR12_business_register_schema.csv,source,DVX,DVX,lüğət
+FR12_business_register_schema.csv,source,generator / sample design,generator / seçmə dizaynı,lüğət
+FR12_coherence.csv,status,coherent,uyğundur,lüğət
+FR12_coherence.csv,status,not applied (vacuous: 1 transition per unit),tətbiq olunmayıb (boş: hər vahiddə 1 keçid),lüğət
+FR12_coherence.csv,status,dropped (incoherent),çıxarılıb (uyğunsuz),lüğət
+FR12_selection_summary.csv,rule,combination: FE + dem | anchored,kombinasiya: FE + dem | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_summary.csv,rule,null (FE + fixed terms),sıfır model (FE + sabit hədlər),qayda (spesifikasiya adı)
+FR12_selection_summary.csv,rule,combination: FE + reg + lend | anchored,kombinasiya: FE + reg + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_summary.csv,rule,combination: FE + non | anchored,kombinasiya: FE + non | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_summary.csv,rule,combination: FE + size,kombinasiya: FE + size,qayda (spesifikasiya adı)
+FR12_selection_summary.csv,best_candidate,structural: FE + dem | anchored,struktur: FE + dem | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_summary.csv,best_candidate,structural: FE + dem + pcm,struktur: FE + dem + pcm,qayda (spesifikasiya adı)
+FR12_selection_summary.csv,best_candidate,structural: FE + reg + lend | anchored,struktur: FE + reg + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_summary.csv,best_candidate,structural: FE + non | anchored,struktur: FE + non | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_summary.csv,best_candidate,structural: FE + size,struktur: FE + size,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,null (FE + fixed terms),sıfır model (FE + sabit hədlər),qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size,struktur: FE + size,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size | anchored,struktur: FE + size | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + dem,struktur: FE + dem,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + dem | anchored,struktur: FE + dem | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size + dem,struktur: FE + size + dem,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size + dem | anchored,struktur: FE + size + dem | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size + lend,struktur: FE + size + lend,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size + lend | anchored,struktur: FE + size + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size + cred,struktur: FE + size + cred,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size + cred | anchored,struktur: FE + size + cred | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + dem + lend,struktur: FE + dem + lend,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + dem + lend | anchored,struktur: FE + dem + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + pcm,struktur: FE + pcm,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + pcm | anchored,struktur: FE + pcm | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size + pcm,struktur: FE + size + pcm,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + size + pcm | anchored,struktur: FE + size + pcm | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + dem + pcm,struktur: FE + dem + pcm,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + dem + pcm | anchored,struktur: FE + dem + pcm | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + dem + cred,struktur: FE + dem + cred,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + dem + cred | anchored,struktur: FE + dem + cred | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + lend,struktur: FE + lend,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + lend | anchored,struktur: FE + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + cred,struktur: FE + cred,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + cred | anchored,struktur: FE + cred | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + reg,struktur: FE + reg,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + reg | anchored,struktur: FE + reg | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + reg + size,struktur: FE + reg + size,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + reg + size | anchored,struktur: FE + reg + size | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + non,struktur: FE + non,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + non | anchored,struktur: FE + non | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + non + lend,struktur: FE + non + lend,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + non + lend | anchored,struktur: FE + non + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + reg + lend,struktur: FE + reg + lend,qayda (spesifikasiya adı)
+FR12_selection_scores.csv,candidate,structural: FE + reg + lend | anchored,struktur: FE + reg + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + size,FE + size,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + dem,FE + dem,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + size + dem,FE + size + dem,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + size + lend,FE + size + lend,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + size + cred,FE + size + cred,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + dem + lend,FE + dem + lend,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + pcm,FE + pcm,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + size + pcm,FE + size + pcm,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + dem + pcm,FE + dem + pcm,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + dem + cred,FE + dem + cred,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + lend,FE + lend,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + cred,FE + cred,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + reg,FE + reg,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + reg + size,FE + reg + size,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + non,FE + non,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + non + lend,FE + non + lend,qayda (spesifikasiya adı)
+FR12_fe_estimates.csv,spec,FE + reg + lend,FE + reg + lend,qayda (spesifikasiya adı)
+FR12_holdout_validation.csv,metric,"entry rate, % (births / identity stock)","giriş əmsalı, % (doğulmalar / eynilik ehtiyatı)",lüğət
+FR12_holdout_validation.csv,metric,log births,log doğulmalar,lüğət
+FR12_holdout_validation.csv,metric,"exit rate, %","çıxış əmsalı, %",lüğət
+FR12_holdout_validation.csv,metric,log-odds SME output share,KOS buraxılış payının log-odds-u,lüğət
+FR12_holdout_validation.csv,rule,combination: FE + dem | anchored,kombinasiya: FE + dem | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_holdout_validation.csv,rule,null (FE + fixed terms),sıfır model (FE + sabit hədlər),qayda (spesifikasiya adı)
+FR12_holdout_validation.csv,rule,combination: FE + reg + lend | anchored,kombinasiya: FE + reg + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_holdout_validation.csv,rule,combination: FE + non | anchored,kombinasiya: FE + non | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_holdout_validation.csv,rule,combination: FE + size,kombinasiya: FE + size,qayda (spesifikasiya adı)
+FR12_holdout_detail.csv,metric,"entry rate, % (births / identity stock)","giriş əmsalı, % (doğulmalar / eynilik ehtiyatı)",lüğət
+FR12_holdout_detail.csv,metric,log births,log doğulmalar,lüğət
+FR12_holdout_detail.csv,metric,"exit rate, %","çıxış əmsalı, %",lüğət
+FR12_holdout_detail.csv,metric,log-odds SME output share,KOS buraxılış payının log-odds-u,lüğət
+FR12_plausibility.csv,variable,"entry rate, %","giriş əmsalı, %",lüğət
+FR12_plausibility.csv,variable,births,doğulmalar,lüğət
+FR12_plausibility.csv,variable,"exit rate, %","çıxış əmsalı, %",lüğət
+FR12_plausibility.csv,variable,"stock growth, % a year","ehtiyatın artımı, ildə %",lüğət
+FR12_plausibility.csv,flag,differs from recent mean by >25%,son ortadan 25%-dən çox fərqlənir,lüğət
+FR12_plausibility.csv,flag,outside historical range,tarixi intervaldan kənar,lüğət
+FR12_last_actual_vs_2026_band.csv,explanation,"births 2026 -4.1% vs 2024 and stock +11.4%: the stock grows faster than births, so the rate falls; 2024 births were +3% vs the two earlier observations","2026-cı ildə doğulmalar 2024-ə nisbətən -4.1%, ehtiyat +11.4%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən +3% idi",qayda (izah)
+FR12_last_actual_vs_2026_band.csv,explanation,"births 2026 -1.1% vs 2024 and stock +9.3%: the stock grows faster than births, so the rate falls; 2024 births were -3% vs the two earlier observations","2026-cı ildə doğulmalar 2024-ə nisbətən -1.1%, ehtiyat +9.3%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən -3% idi",qayda (izah)
+FR12_last_actual_vs_2026_band.csv,explanation,"births 2026 -3.9% vs 2024 and stock +8.8%: the stock grows faster than births, so the rate falls; 2024 births were -1% vs the two earlier observations","2026-cı ildə doğulmalar 2024-ə nisbətən -3.9%, ehtiyat +8.8%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən -1% idi",qayda (izah)
+FR12_last_actual_vs_2026_band.csv,explanation,"births 2026 -6.5% vs 2024 and stock +3.5%: the stock grows faster than births, so the rate falls; 2024 births were +16% vs the two earlier observations","2026-cı ildə doğulmalar 2024-ə nisbətən -6.5%, ehtiyat +3.5%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən +16% idi",qayda (izah)
+FR12_last_actual_vs_2026_band.csv,explanation,"births 2026 -1.1% vs 2024 and stock +18.0%: the stock grows faster than births, so the rate falls; 2024 births were -6% vs the two earlier observations","2026-cı ildə doğulmalar 2024-ə nisbətən -1.1%, ehtiyat +18.0%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən -6% idi",qayda (izah)
+FR12_early_warning.csv,name,Agriculture,Kənd təsərrüfatı,lüğət
+FR12_early_warning.csv,name,Industry,Sənaye,lüğət
+FR12_early_warning.csv,name,Construction,Tikinti,lüğət
+FR12_early_warning.csv,name,Trade,Ticarət,lüğət
+FR12_early_warning.csv,name,Transport,Nəqliyyat,lüğət
+FR12_early_warning.csv,name,Accommodation & food,Yerləşdirmə və iaşə,lüğət
+FR12_early_warning.csv,name,Information & communication,İnformasiya və rabitə,lüğət
+FR12_early_warning.csv,name,Real estate,Daşınmaz əmlak,lüğət
+FR12_early_warning.csv,name,Education,Təhsil,lüğət
+FR12_early_warning.csv,name,Health & social,Səhiyyə və sosial xidmətlər,lüğət
+FR12_early_warning.csv,name,Other branches,Digər sahələr,lüğət
+FR12_early_warning.csv,flags,entry,giriş,qayda (bayraqlar)
+FR12_early_warning.csv,flags,conc,konsentrasiya,qayda (bayraqlar)
+FR12_early_warning.csv,F_mob,insufficient data,məlumat kifayət deyil,lüğət
+FR12_early_warning_false_listing.csv,null,iid,müstəqil eyni paylanmış (iid),lüğət
+FR12_early_warning_false_listing.csv,null,random walk,təsadüfi gəzişmə,lüğət
+FR12_dsk_manifest.csv,origin,archived vintage,arxiv versiyası,lüğət
+FR12_dsk_manifest.csv,origin,DSK current,DSK cari fayl,lüğət
+FR12_dsk_manifest.csv,origin,FR10 download (read only),FR10 yükləməsi (yalnız oxumaq üçün),lüğət
+FR12_dsk_manifest.csv,content,"registered / new / deregistered, 11 groups, 2019-2020","qeydiyyatda / yeni / qeydiyyatdan çıxan, 11 qrup, 2019–2020",lüğət
+FR12_dsk_manifest.csv,content,"registered / new / deregistered, 11 groups, 2022-2023","qeydiyyatda / yeni / qeydiyyatdan çıxan, 11 qrup, 2022–2023",lüğət
+FR12_dsk_manifest.csv,content,SME share of output by activity,fəaliyyət növləri üzrə KOS-un buraxılışda payı,lüğət
+FR12_dsk_manifest.csv,content,SME share of employees by activity,fəaliyyət növləri üzrə KOS-un işçi sayında payı,lüğət
+FR12_dsk_manifest.csv,content,active SMEs by size,ölçü üzrə fəal KOS,lüğət
+FR12_dsk_manifest.csv,content,active SMEs established one year ago,bir il əvvəl yaradılmış fəal KOS,lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by section, full year 2021","bölmələr üzrə yaradılan / ləğv edilən vahidlər, 2021 tam il",lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by section, Jan-Jun 2022","bölmələr üzrə yaradılan / ləğv edilən vahidlər, 2022 yanvar–iyun",lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by section, Jan-Jun 2024","bölmələr üzrə yaradılan / ləğv edilən vahidlər, 2024 yanvar–iyun",lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by section, full year 2024","bölmələr üzrə yaradılan / ləğv edilən vahidlər, 2024 tam il",lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by section, Jan-Jun 2025","bölmələr üzrə yaradılan / ləğv edilən vahidlər, 2025 yanvar–iyun",lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by section, full year 2025","bölmələr üzrə yaradılan / ləğv edilən vahidlər, 2025 tam il",lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by region, full year 2021","regionlar üzrə yaradılan / ləğv edilən vahidlər, 2021 tam il",lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by region, full year 2024","regionlar üzrə yaradılan / ləğv edilən vahidlər, 2024 tam il",lüğət
+FR12_dsk_manifest.csv,content,"new / liquidated units by region, full year 2025","regionlar üzrə yaradılan / ləğv edilən vahidlər, 2025 tam il",lüğət
+FR12_dsk_manifest.csv,content,medium business entities by region,regionlar üzrə orta sahibkarlıq subyektləri,lüğət
+FR12_dsk_manifest.csv,content,small business entities by region,regionlar üzrə kiçik sahibkarlıq subyektləri,lüğət
+FR12_dsk_manifest.csv,content,micro business entities by region,regionlar üzrə mikro sahibkarlıq subyektləri,lüğət
+FR12_dsk_manifest.csv,content,individual entrepreneurs by activity,fəaliyyət növləri üzrə fərdi sahibkarlar,lüğət
+FR12_dsk_manifest.csv,content,individual entrepreneurs by region,regionlar üzrə fərdi sahibkarlar,lüğət
+FR12_dsk_manifest.csv,content,individual entrepreneurs by sex and activity,cins və fəaliyyət növü üzrə fərdi sahibkarlar,lüğət
+FR12_dsk_manifest.csv,content,individual entrepreneurs by sex and region,cins və region üzrə fərdi sahibkarlar,lüğət
+FR12_dsk_manifest.csv,content,shared with FR10,FR10 ilə ortaq,lüğət
+FR12_dsk_manifest.csv,status,present,mövcuddur,lüğət
+FR12_series_filled.csv,method,observed,müşahidə,lüğət
+FR12_series_filled.csv,method,log-linear interpolation,log-xətti interpolyasiya,lüğət
+FR12_series_filled.csv,method,linear interpolation,xətti interpolyasiya,lüğət
+FR12_series_filled.csv,method,sum of filled components,doldurulmuş komponentlərin cəmi,lüğət
+FR12_series_filled.csv,method,not filled: leading gap (before the first observed year; no extrapolation),doldurulmayıb: ilkin boşluq (ilk müşahidədən əvvəl; ekstrapolyasiya yoxdur),lüğət
+FR12_series_filled.csv,method,linear interpolation (non-positive neighbour),xətti interpolyasiya (müsbət olmayan qonşu),lüğət
+FR12_SYNTHETIC_econ_coefficients.csv,ratio_type,IRR,insident nisbəti (IRR),lüğət
+FR12_SYNTHETIC_econ_coefficients.csv,ratio_type,OR,şans nisbəti (OR),lüğət
+FR12_SYNTHETIC_econ_coefficients.csv,ratio_type,HR,təhlükə nisbəti (HR),lüğət
+FR12_SYNTHETIC_econ_coefficients.csv,ratio_type,coef,əmsal,lüğət
+FR12_gapfill_sensitivity.csv,kind,coefficient,əmsal,lüğət
+FR12_gapfill_sensitivity.csv,kind,forecast_2030,2030 proqnozu,lüğət
+FR12_sme_employment_model.csv,table,selection (<= 2022 -> 2023),seçim (≤ 2022 → 2023),lüğət
+FR12_sme_employment_model.csv,table,hold-out,nümunədən kənar yoxlama,lüğət
+FR12_sme_employment_model.csv,table,rule,qayda,lüğət
+FR12_sme_employment_model.csv,metric,log-odds SME employment share,KOS-un işçi sayında payının log-odds-u,lüğət
+FR12_sme_employment_model.csv,candidate,null (FE + fixed terms),sıfır model (FE + sabit hədlər),qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,candidate,structural: FE + dem,struktur: FE + dem,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,candidate,structural: FE + dem | anchored,struktur: FE + dem | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,candidate,structural: FE + size,struktur: FE + size,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,candidate,structural: FE + size | anchored,struktur: FE + size | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,candidate,structural: FE + lend,struktur: FE + lend,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,candidate,structural: FE + lend | anchored,struktur: FE + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,candidate,structural: FE + dem + lend,struktur: FE + dem + lend,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,candidate,structural: FE + dem + lend | anchored,struktur: FE + dem + lend | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,rule,combination: FE + size | anchored,kombinasiya: FE + size | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,best_candidate,structural: FE + size | anchored,struktur: FE + size | ankerlənmiş,qayda (spesifikasiya adı)
+FR12_sme_employment_model.csv,coherence_last_origin,size: coherent,size: uyğundur,lüğət
+FR12_section_allocation_holdout.csv,variable,new,yeni,lüğət
+FR12_section_allocation_holdout.csv,variable,liq,ləğv edilən,lüğət
+FR12_section_allocation_holdout.csv,variable,stock,ehtiyat,lüğət
+FR12_section_allocation_holdout.csv,variant,anchored: last observed year (2024 at the origin; 2025 in the forecast),ankerlənmiş: son müşahidə ili (mənbədə 2024; proqnozda 2025),lüğət
+FR12_section_allocation_holdout.csv,variant,"average of observed years (2021, 2024 at the origin)","müşahidə illərinin ortası (mənbədə 2021, 2024)",lüğət
+FR12_section_allocation_holdout.csv,driver_rule,not identified pre-cut: one observed full year (2021) at or before 2022,seçimdən əvvəl identifikasiya olunmur: 2022-yə qədər yalnız bir müşahidə edilmiş tam il (2021),lüğət
+FR12_section_nowcast_2026.csv,variable,new,yeni,lüğət
+FR12_section_nowcast_2026.csv,variable,liq,ləğv edilən,lüğət
+FR12_section_nowcast_2026.csv,variable,stock,ehtiyat,lüğət
+FR12_SYNTHETIC_econ_recovery.csv,block,"G1 revenue-cost elasticity (records, section x year x size FE)","G1 gəlir–xərc elastikliyi (qeydlər, bölmə × il × ölçü sabit effektləri)",lüğət
+FR12_SYNTHETIC_econ_recovery.csv,block,"G2 exit hazard (conditional Poisson, cell-year strata)","G2 çıxış təhlükəsi (şərti Puasson, xana-il təbəqələri)",lüğət
+FR12_SYNTHETIC_econ_recovery.csv,block,"(b) cloglog, additive section/region/year FE","(b) cloglog, additiv bölmə/region/il sabit effektləri",lüğət
+FR12_SYNTHETIC_econ_recovery.csv,block,"(b) logit, additive section/region/year FE","(b) logit, additiv bölmə/region/il sabit effektləri",lüğət
+FR12_data_integrity_findings.csv,finding,DSK entrepreneurship tables publish only the two latest years; the register only the latest period,"DSK-nın sahibkarlıq cədvəlləri yalnız son iki ili, reyestr isə yalnız son dövrü dərc edir",tapıntı F1
+FR12_data_integrity_findings.csv,evidence,"current files: 2023-2024 (entrepreneurship), 1 July 2026 (st_units)","cari fayllar: 2023–2024 (sahibkarlıq), 1 iyul 2026 (st_units)",tapıntı F1
+FR12_data_integrity_findings.csv,consequence,"archived DSK vintages recovered (Part 4): 006 for 2019, 2020, 2022-2024; register flows by section for 2021, 2024, 2025","DSK-nın arxiv versiyaları bərpa edilib (4-cü hissə): 006 üçün 2019, 2020, 2022–2024; bölmələr üzrə reyestr axınları üçün 2021, 2024, 2025",tapıntı F1
+FR12_data_integrity_findings.csv,finding,"No archived vintage covers 2021 in entrepreneurship 006, nor full-year 2022-2023 register flows","Sahibkarlıq 006 üçün 2021-ci ili, reyestr axınları üçün isə 2022–2023-cü illərin tam ilini əhatə edən arxiv versiyası yoxdur",tapıntı F2
+FR12_data_integrity_findings.csv,evidence,"Internet Archive holds 006 only for April 2022 and April 2025; 2_1 for Mar 2022, Aug 2022, Sep 2024, Apr 2025, Jul 2025, Feb 2026","İnternet Arxivində 006 yalnız 2022-ci ilin aprel və 2025-ci ilin aprel versiyaları, 2_1 isə 2022 mart, 2022 avqust, 2024 sentyabr, 2025 aprel, 2025 iyul, 2026 fevral versiyaları ilə var",tapıntı F2
+FR12_data_integrity_findings.csv,consequence,"the activity panel is unbalanced in time (2019, 2020, 2022, 2023, 2024); 2021 is not used in estimation; for charts and tables it is filled by interpolation and flagged (FR12_series_filled.csv, Part 7.1)","fəaliyyət paneli zaman üzrə balanssızdır (2019, 2020, 2022, 2023, 2024); 2021 qiymətləndirmədə istifadə olunmur; qrafiklər və cədvəllər üçün interpolyasiya ilə doldurulur və işarələnir (FR12_series_filled.csv, 7.1-ci hissə)",tapıntı F2
+FR12_data_integrity_findings.csv,finding,Year 2023 is published in two vintages of 006; revisions recorded,2023-cü il 006-nın iki versiyasında dərc olunub; düzəlişlər qeydə alınıb,tapıntı F3
+FR12_data_integrity_findings.csv,evidence,"max |revision|: newly registered 0, deregistered 0 units","maks. |düzəliş|: yeni qeydiyyat 0, qeydiyyatdan çıxan 0 vahid",tapıntı F3
+FR12_data_integrity_findings.csv,consequence,the later vintage is used; NFR1 real-time caveat: hold-out actuals are the latest vintage,sonrakı versiya istifadə olunur; NFR1 real vaxt qeydi: nümunədən kənar yoxlamanın faktiki dəyərləri son versiyadandır,tapıntı F3
+FR12_data_integrity_findings.csv,finding,Registered entrepreneurship subjects do not follow the stock-flow identity exactly,Qeydiyyatdakı sahibkarlıq subyektləri ehtiyat-axın eyniliyinə dəqiq tabe deyil,tapıntı F4
+FR12_data_integrity_findings.csv,evidence,"2020: ΔN − (new − deregistered) = -17,137; 2023: ΔN − (new − deregistered) = +8,716; 2024: ΔN − (new − deregistered) = +6,653","2020: ΔN − (yeni − qeydiyyatdan çıxan) = -17,137; 2023: ΔN − (yeni − qeydiyyatdan çıxan) = +8,716; 2024: ΔN − (yeni − qeydiyyatdan çıxan) = +6,653",tapıntı F4
+FR12_data_integrity_findings.csv,consequence,"registration-based rates use the end-year registered stock as denominator, as DSK does; reactivations / reclassifications are a residual",qeydiyyata əsaslanan əmsallar DSK kimi ilin sonundakı qeydiyyat ehtiyatını məxrəc götürür; bərpalar / yenidən təsnifatlar qalıqdır,tapıntı F4
+FR12_data_integrity_findings.csv,finding,Register stock by section does not follow N(t) = N(t-1) + new - liquidated exactly,Bölmələr üzrə reyestr ehtiyatı N(t) = N(t−1) + yeni − ləğv edilən eyniliyinə dəqiq tabe deyil,tapıntı F5
+FR12_data_integrity_findings.csv,evidence,"2025, sum over sections: +0 units; largest section gaps: S +129, L +50, G +36","2025, bölmələr üzrə cəm: +0 vahid; ən böyük bölmə fərqləri: S +129, L +50, G +36",tapıntı F5
+FR12_data_integrity_findings.csv,consequence,section reclassifications in the register; the SYNTHETIC register reproduces births and deaths exactly and reports the stock gap (Part 17),reyestrdə bölmələrin yenidən təsnifatı; SİNTETİK reyestr doğulma və ölümləri dəqiq təkrarlayır və ehtiyat fərqini göstərir (17-ci hissə),tapıntı F5
+FR12_data_integrity_findings.csv,finding,Three different enterprise populations in the sources,Mənbələrdə üç fərqli müəssisə məcmusu var,tapıntı F6
+FR12_data_integrity_findings.csv,evidence,"registered entrepreneurship subjects (incl. individual entrepreneurs) 1,505,893 (2024) vs statistical units 226,643 (1 Jan 2026); active taxpayers 859,345 (2025)","qeydiyyatdakı sahibkarlıq subyektləri (fərdi sahibkarlar daxil) 1,505,893 (2024), statistik vahidlər 226,643 (1 yanvar 2026); aktiv vergi ödəyiciləri 859,345 (2025)",tapıntı F6
+FR12_data_integrity_findings.csv,consequence,each indicator states its population; rates are never mixed across populations,hər göstərici öz məcmusunu bildirir; əmsallar məcmular arasında qarışdırılmır,tapıntı F6
+FR12_data_integrity_findings.csv,finding,Agricultural registration surge in 2020,2020-ci ildə kənd təsərrüfatında qeydiyyat sıçrayışı,tapıntı F7
+FR12_data_integrity_findings.csv,evidence,"new registrations in agriculture 28,521 (2019) → 108,807 (2020)","kənd təsərrüfatında yeni qeydiyyatlar 28,521 (2019) → 108,807 (2020)",tapıntı F7
+FR12_data_integrity_findings.csv,consequence,"administrative registration of farmers (subsidy system) rather than market entry; agriculture kept in the panel, its fixed effect and a 2020 robustness check reported","bazara giriş deyil, fermerlərin inzibati qeydiyyatı (subsidiya sistemi); kənd təsərrüfatı paneldə saxlanılır, onun sabit effekti və 2020 dayanıqlıq yoxlaması verilir",tapıntı F7
+FR12_data_integrity_findings.csv,finding,Workbook DVX: micro-taxpayer rows duplicate the budget-organisation rows,İş kitabı DVX: mikro vergi ödəyicisi sətirləri büdcə təşkilatı sətirlərini təkrarlayır,tapıntı F8
+FR12_data_integrity_findings.csv,evidence,"count, turnover and receipts identical in 4 years: yes","say, dövriyyə və daxilolmalar 4 ildə eynidir: bəli",tapıntı F8
+FR12_data_integrity_findings.csv,consequence,micro taxpayers excluded from the taxpayer size-class concentration; to be corrected by the Tax Service,mikro vergi ödəyiciləri ölçü qrupu konsentrasiyasından çıxarılır; Vergi Xidməti tərəfindən düzəldilməlidir,tapıntı F8
+FR12_data_integrity_findings.csv,finding,DSK 1_1_en.xls: section A row labelled 'of which:',DSK 1_1_en.xls: A bölməsinin sətri 'of which:' kimi adlanıb,tapıntı F9
+FR12_data_integrity_findings.csv,evidence,the agriculture row carries the label of the line above,kənd təsərrüfatı sətri yuxarı sətrin adını daşıyır,tapıntı F9
+FR12_data_integrity_findings.csv,consequence,FR12 parses size-class tables by section pattern and checks section sums against the published total,FR12 ölçü qrupu cədvəllərini bölmə nümunəsi ilə oxuyur və bölmə cəmlərini dərc olunmuş cəmlə yoxlayır,tapıntı F9
+FR12_data_integrity_findings.csv,finding,Public administration (O) shows liquidations from administrative reorganisation,Dövlət idarəetməsi (O) inzibati yenidənqurma ilə bağlı ləğvlər göstərir,tapıntı F10
+FR12_data_integrity_findings.csv,evidence,"FY 2021: liquidated 71, new 20; FY 2024: liquidated 74, new 14; FY 2025: liquidated 167, new 37; H1 2022: liquidated 5, new 31; H1 2024: liquidated 38, new 10; H1 2025: liquidated 17, new 27; H1 2026: liquidated 228, new 10","FY 2021: ləğv edilən 71, yeni 20; FY 2024: ləğv edilən 74, yeni 14; FY 2025: ləğv edilən 167, yeni 37; H1 2022: ləğv edilən 5, yeni 31; H1 2024: ləğv edilən 38, yeni 10; H1 2025: ləğv edilən 17, yeni 27; H1 2026: ləğv edilən 228, yeni 10",tapıntı F10
+FR12_data_integrity_findings.csv,consequence,"O and U (extraterritorial) are non-market sections: excluded from competition indicators, kept in totals","O və U (ekstraterritorial) qeyri-bazar bölmələridir: rəqabət göstəricilərindən çıxarılır, cəmlərdə saxlanılır",tapıntı F10
+FR12_data_integrity_findings.csv,finding,Workbook region sheets equal the DSK register by region,İş kitabının region vərəqləri DSK reyestrinin region məlumatına bərabərdir,tapıntı F11
+FR12_data_integrity_findings.csv,evidence,"statistical units, new and liquidated: identical in 2021, 2024 and 2025 (asserted in Part 5)","statistik vahidlər, yeni və ləğv edilənlər: 2021, 2024 və 2025-də eynidir (5-ci hissədə yoxlanılıb)",tapıntı F11
+FR12_data_integrity_findings.csv,consequence,the 2021-2025 region panel is a register series; regional entry/exit is modelled on it,2021–2025 regional panel reyestr sırasıdır; regional giriş/çıxış onun üzərində modelləşdirilir,tapıntı F11
+FR12_data_integrity_findings.csv,finding,Size-class counts (1_3) cover commercial organisations only,Ölçü qrupu sayları (1_3) yalnız kommersiya təşkilatlarını əhatə edir,tapıntı F12
+FR12_data_integrity_findings.csv,evidence,"large + medium + small + micro = 215,416 vs 232,847 statistical units (1 July 2026)","iri + orta + kiçik + mikro = 215,416, statistik vahidlər 232 847 (1 iyul 2026)",tapıntı F12
+FR12_data_integrity_findings.csv,consequence,size-class concentration bounds use commercial-organisation counts,ölçü qrupu konsentrasiya hədləri kommersiya təşkilatlarının saylarından istifadə edir,tapıntı F12
+FR12_data_integrity_findings.csv,finding,January-June flows are not half of full-year flows,Yanvar–iyun axınları tam il axınlarının yarısı deyil,tapıntı F13
+FR12_data_integrity_findings.csv,evidence,"H1 2024 new 6,390 vs FY 2024 14,865","2024-cü il I yarım: yeni 6,390, 2024 tam il: 14,865",tapıntı F13
+FR12_data_integrity_findings.csv,consequence,H1 files used only for descriptive monitoring; models use full-year flows,yarımillik fayllar yalnız təsviri monitorinq üçündür; modellər tam il axınlarından istifadə edir,tapıntı F13
+FR12_data_integrity_findings.csv,finding,Register liquidations are far below deregistrations of entrepreneurship subjects,Reyestr üzrə ləğvlər sahibkarlıq subyektlərinin qeydiyyatdan çıxarılmasından xeyli azdır,tapıntı F14
+FR12_data_integrity_findings.csv,evidence,"register exit rate 0.31% (2025) vs deregistration rate 1.66% (2024, 006)","reyestr üzrə çıxış əmsalı 0.31% (2025), qeydiyyatdan çıxma əmsalı 1.66% (2024, 006)",tapıntı F14
+FR12_data_integrity_findings.csv,consequence,dormant legal units stay in the register: register exit understates market exit; exit forecasts use the 006 deregistration series,fəaliyyətsiz hüquqi vahidlər reyestrdə qalır: reyestr üzrə çıxış bazardan çıxışı azaldılmış göstərir; çıxış proqnozları 006-nın qeydiyyatdan çıxma sırasından istifadə edir,tapıntı F14
+FR12_data_integrity_findings.csv,finding,SME output shares (012) and national-accounts output use different bases,KOS-un buraxılış payları (012) və milli hesablar buraxılışı fərqli bazalardan istifadə edir,tapıntı F15
+FR12_data_integrity_findings.csv,evidence,in education and health the implied average SME revenue exceeds the statutory class ceiling when the share is applied to national-accounts output (public output in the base),təhsil və səhiyyədə pay milli hesablar buraxılışına tətbiq edildikdə KOS-un orta gəliri qanuni sinif tavanını aşır (bazada dövlət buraxılışı var),tapıntı F15
+FR12_data_integrity_findings.csv,consequence,for those group-years the concentration upper bound drops the revenue caps (uncapped supremum) and is flagged,həmin qrup-illər üçün yuxarı hədd gəlir tavanlarını atır (tavansız supremum) və işarələnir,tapıntı F15
+FR12_data_integrity_findings.csv,finding,Nationwide deregistration wave in 2022,2022-ci ildə ölkə üzrə qeydiyyatdan çıxarma dalğası,tapıntı F16
+FR12_data_integrity_findings.csv,evidence,"deregistered subjects 22,572 (2020), 57,734 (2022), 21,000 (2023)","qeydiyyatdan çıxarılan subyektlər 22,572 (2020), 57,734 (2022), 21,000 (2023)",tapıntı F16
+FR12_data_integrity_findings.csv,consequence,"one-off administrative clean-up: a common 2022 impulse dummy in the exit equations, set to zero out of sample","birdəfəlik inzibati təmizləmə: çıxış tənliklərində ümumi 2022 impuls dummy-si, nümunədən kənarda sıfır",tapıntı F16
+FR12_data_integrity_findings.csv,finding,Definition change in DSK 006 between vintages,DSK 006-da versiyalar arasında tərif dəyişikliyi,tapıntı F17
+FR12_data_integrity_findings.csv,evidence,2019-2020 vintage: 'newly created' / 'liquidated' enterprises (found: yes); 2022+ vintages: 'newly registered' / 'deregistered' (found: yes),2019–2020 versiyası: 'yeni yaradılmış' / 'ləğv edilmiş' müəssisələr (tapıldı: bəli); 2022+ versiyalar: 'yeni qeydiyyatdan keçmiş' / 'qeydiyyatdan çıxarılmış' (tapıldı: bəli),tapıntı F17
+FR12_data_integrity_findings.csv,consequence,births equation carries a break term (1 from 2022); exit keeps the 2022 impulse only (2023-2024 exit levels close to 2019-2020: no persistent break evident),doğulma tənliyi qırılma termini daşıyır (2022-dən 1); çıxış yalnız 2022 impulsunu saxlayır (2023–2024 çıxış səviyyələri 2019–2020-yə yaxındır: davamlı qırılma görünmür),tapıntı F17
+FR12_data_integrity_findings.csv,finding,Inspection counts change coverage over time,Yoxlamaların sayı zamanla əhatəni dəyişir,tapıntı F18
+FR12_data_integrity_findings.csv,evidence,"total inspections 17 (2015), 1,648 (2019), 17,082 (2020), 50,071 (2025); the Ministry of Emergency Situations' fire-safety inspections enter from 2020 and utility inspections (Azərişıq, Azəriqaz) from 2021-2022","yoxlamaların cəmi 17 (2015), 1,648 (2019), 17,082 (2020), 50,071 (2025); Fövqəladə Hallar Nazirliyinin yanğın təhlükəsizliyi yoxlamaları 2020-dən, kommunal yoxlamalar (Azərişıq, Azəriqaz) 2021–2022-dən daxil olur",tapıntı F18
+FR12_data_integrity_findings.csv,consequence,inspections are not comparable across years and are not used in the early-warning composite; reported as information only,yoxlamalar illər arasında müqayisəli deyil və erkən xəbərdarlıq balında istifadə olunmur; yalnız məlumat üçün verilir,tapıntı F18

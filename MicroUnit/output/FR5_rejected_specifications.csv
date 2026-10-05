@@ -1,0 +1,20 @@
+,specification,block,verdict,evidence
+0,volume per head on a deterministic trend,aggregate demand,REJECTED - not structural,fits (R2 = 0.840) but has no economic content and cannot respond to a scenario
+1,non-oil GDP per head in place of household income,aggregate demand,REJECTED - wrong-signed price term,price coefficient +1.536 when GDP replaces household income
+2,income only (aggregate demand),aggregate demand,NOT CHOSEN - selection windows <= 2019,selection RMSE 8.80% vs 7.18% for income + relative price; DM/HLN p vs best = 0.00
+3,income deflated by service price (aggregate demand),aggregate demand,NOT CHOSEN - selection windows <= 2019,selection RMSE 8.14% vs 7.18% for income + relative price; DM/HLN p vs best = 0.68
+4,trend only (aggregate demand),aggregate demand,NOT CHOSEN - selection windows <= 2019,selection RMSE 63.74% vs 7.18% for income + relative price; DM/HLN p vs best = 0.00
+5,income + trend (aggregate demand),aggregate demand,NOT CHOSEN - selection windows <= 2019,selection RMSE 11.86% vs 7.18% for income + relative price; DM/HLN p vs best = 0.00
+6,growth form: deflated income (aggregate demand),aggregate demand,NOT CHOSEN - selection windows <= 2019,selection RMSE 28.98% vs 7.18% for income + relative price; DM/HLN p vs best = 0.08
+7,per-category choice of share specification,demand system,REJECTED - no significant gain out of sample,"nested test: outer-window RMSE 0.651 vs 0.649 pp for the uniform system, DM/HLN p = 0.91"
+8,constant shares,demand system,NOT CHOSEN,"selection RMSE 0.774 pp vs 0.725 pp for MNL: Engel term, level slope if coherent else difference-form; DM/HLN p vs best = 0.01"
+9,MNL: Engel term only,demand system,NOT CHOSEN,"selection RMSE 0.680 pp vs 0.725 pp for MNL: Engel term, level slope if coherent else difference-form; DM/HLN p vs best = nan"
+10,"MNL: Engel term, difference-form slopes",demand system,NOT CHOSEN,"selection RMSE 0.751 pp vs 0.725 pp for MNL: Engel term, level slope if coherent else difference-form; DM/HLN p vs best = 0.38"
+11,MNL: Engel + own relative price (unrestricted),demand system,NOT CHOSEN - implies upward-sloping demand,"selection RMSE 1.219 pp vs 0.725 pp for MNL: Engel term, level slope if coherent else difference-form; DM/HLN p vs best = 0.07"
+12,"MNL: Engel + own relative price, law of demand imposed",demand system,NOT CHOSEN,"selection RMSE 0.893 pp vs 0.725 pp for MNL: Engel term, level slope if coherent else difference-form; DM/HLN p vs best = 0.15"
+13,"LA-AIDS (linear shares, Stone index, homogeneity+symmetry, SUR)",demand system,NOT CHOSEN,"selection RMSE 2.685 pp vs 0.725 pp for MNL: Engel term, level slope if coherent else difference-form; DM/HLN p vs best = 0.07"
+14,unrestricted own-price coefficients in the demand system,demand system,RESTRICTED - violated the law of demand,"4 of 12 types implied a positive own-price elasticity at some observed share (utilities, education, culture, medical); the four administered-price services have gamma = 0 in the restricted system"
+15,Share of INDIVIDUAL ENTREPRENEURS in paid services: income,institutional split,NOT CHOSEN,RMSE 3.31 pp vs 2.56 for constant share; DM/HLN p vs best = 0.24
+16,Share of INDIVIDUAL ENTREPRENEURS in paid services: trend,institutional split,NOT CHOSEN,RMSE 4.72 pp vs 2.56 for constant share; DM/HLN p vs best = 0.07
+17,Share of the STATE sector in paid services: income,institutional split,NOT CHOSEN,RMSE 2.71 pp vs 2.91 for constant share; DM/HLN p vs best = 0.10
+18,Share of the STATE sector in paid services: trend,institutional split,NOT CHOSEN,RMSE 0.82 pp vs 2.91 for constant share; DM/HLN p vs best = nan

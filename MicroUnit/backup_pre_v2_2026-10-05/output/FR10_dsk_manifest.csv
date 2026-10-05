@@ -1,0 +1,121 @@
+section,file,content,bytes,status
+industry,002-003en.xls,Main macro-economic indicators by sector of industry; share of industry in the economy,32768,present
+industry,004-007-008en.xls,Active industrial enterprises by ownership and activity (4/7); by size class (8),71168,present
+industry,005en.xls,Industrial output by type of ownership,32256,present
+industry,006en.xls,Number of employees in industry by activity,34816,present
+industry,006_1en.xls,Number of employees in industry by economic region,46080,present
+industry,006_2en.xls,Average monthly nominal wages in industry by activity,35840,present
+industry,009en.xls,Indices of industrial output by activity (9.1 previous year = 100; 9.2 2010 = 100),59904,present
+industry,010en.xls,Volume of industrial output at actual prices by activity,41984,present
+industry,010_1en.xls,"Sectoral structure of industry, % of total",34816,present
+industry,010_2en.xls,"Structure of industrial production by form of ownership, by activity",67072,present
+industry,011en.xls,Shipped goods by activity,46080,present
+industry,012en.xls,Structure of non-state industrial output by activity,46592,present
+industry,013en.xls,Stocks of finished goods held by industrial enterprises (as of 1 January),41984,present
+industry,014en.xls,Main indicators of mining and quarrying,54272,present
+industry,014_1en.xls,Main indicators of mining branch 14.1,70656,present
+industry,014_2en.xls,Main indicators of mining branch 14.2,70656,present
+industry,014_3en.xls,Main indicators of mining branch 14.3,71168,present
+industry,014_4en.xls,Main indicators of mining branch 14.4,69632,present
+industry,015en.xls,Main indicators of manufacturing,51712,present
+industry,015_1en.xls,Main indicators of manufacturing branch 15.1 (incl. main products in kind),74240,present
+industry,015_2en.xls,Main indicators of manufacturing branch 15.2 (incl. main products in kind),55296,present
+industry,015_3en.xls,Main indicators of manufacturing branch 15.3 (incl. main products in kind),70144,present
+industry,015_4en.xls,Main indicators of manufacturing branch 15.4 (incl. main products in kind),69632,present
+industry,015_5en.xls,Main indicators of manufacturing branch 15.5 (incl. main products in kind),69632,present
+industry,015_6en.xls,Main indicators of manufacturing branch 15.6 (incl. main products in kind),68608,present
+industry,015_7en.xls,Main indicators of manufacturing branch 15.7 (incl. main products in kind),68096,present
+industry,015_8en.xls,Main indicators of manufacturing branch 15.8 (incl. main products in kind),68608,present
+industry,015_9en.xls,Main indicators of manufacturing branch 15.9 (incl. main products in kind),67072,present
+industry,015_10en.xls,Main indicators of manufacturing branch 15.10 (incl. main products in kind),70656,present
+industry,015_11en.xls,Main indicators of manufacturing branch 15.11 (incl. main products in kind),73216,present
+industry,015_12en.xls,Main indicators of manufacturing branch 15.12 (incl. main products in kind),68608,present
+industry,015_13en.xls,Main indicators of manufacturing branch 15.13 (incl. main products in kind),69632,present
+industry,015_14en.xls,Main indicators of manufacturing branch 15.14 (incl. main products in kind),71168,present
+industry,015_15en.xls,Main indicators of manufacturing branch 15.15 (incl. main products in kind),69632,present
+industry,015_16en.xls,Main indicators of manufacturing branch 15.16 (incl. main products in kind),69632,present
+industry,015_17en.xls,Main indicators of manufacturing branch 15.17 (incl. main products in kind),54272,present
+industry,015_18en.xls,Main indicators of manufacturing branch 15.18 (incl. main products in kind),64000,present
+industry,015_19en.xls,Main indicators of manufacturing branch 15.19 (incl. main products in kind),53248,present
+industry,015_20en.xls,Main indicators of manufacturing branch 15.20 (incl. main products in kind),71168,present
+industry,015_21en.xls,Main indicators of manufacturing branch 15.21 (incl. main products in kind),50688,present
+industry,015_22en.xls,Main indicators of manufacturing branch 15.22 (incl. main products in kind),69632,present
+industry,015_23en.xls,Main indicators of manufacturing branch 15.23 (incl. main products in kind),70144,present
+industry,015_24en.xls,Main indicators of manufacturing branch 15.24 (incl. main products in kind),51200,present
+industry,016en.xls,"Main indicators of electricity, gas and steam supply",71680,present
+industry,017en.xls,"Main indicators of water supply, sewerage and waste management",69120,present
+industry,017_1en.xls,Main industrial products in kind by region (reused number),97280,present
+industry,017_2en.xls,Fixed industrial assets: indexes / structure / renewal / disposal / depreciation (old index),0,"NOT PUBLISHED (URL returns an HTML page, HTTP 200)"
+industry,017_3en.xls,Fixed industrial assets: indexes / structure / renewal / disposal / depreciation (old index),0,"NOT PUBLISHED (URL returns an HTML page, HTTP 200)"
+industry,017_4en.xls,Fixed industrial assets: indexes / structure / renewal / disposal / depreciation (old index),0,"NOT PUBLISHED (URL returns an HTML page, HTTP 200)"
+industry,017_5en.xls,Fixed industrial assets: indexes / structure / renewal / disposal / depreciation (old index),0,"NOT PUBLISHED (URL returns an HTML page, HTTP 200)"
+industry,017_6en.xls,Fixed industrial assets: indexes / structure / renewal / disposal / depreciation (old index),0,"NOT PUBLISHED (URL returns an HTML page, HTTP 200)"
+industry,017_7en.xls,Fixed industrial assets: indexes / structure / renewal / disposal / depreciation (old index),0,"NOT PUBLISHED (URL returns an HTML page, HTTP 200)"
+industry,018en.xls,Manufacture of the most important industrial products in kind,86016,present
+industry,018_1en.xls,Main industrial products in kind by region (reused number; formerly capital-yield index),125952,present
+industry,018_2en.xls,Main industrial products in kind by region (2),152064,present
+industry,019-019_1en.xls,Investment in fixed capital of industry by activity and source,130048,present
+industry,020_1en.xls,Volume of innovative products by activity,79872,present
+industry,020_2en.xls,Expenditure on technological innovation by type,77312,present
+industry,020_3en.xls,Expenditure on technological innovation by activity,71168,present
+industry,020_4en.xls,Expenditure on technological innovation by direction of use,69120,present
+industry,020_5en.xls,Factors impeding innovation,71680,present
+industry,021en.xls,Number of active industrial enterprises by economic region,45056,present
+industry,022en.xls,Volume of industrial output by economic region,54784,present
+industry,023en.xls,Indices of industrial output by economic region,54272,present
+industry,024en.xls,Share of the non-state sector in industrial output by economic region,76800,present
+industry,025en.xls,Industry of Baku city (regional profile),46592,present
+entrepreneurship,001en.xls,"Main indicators of micro, small and medium enterprises (SMEs)",34304,present
+entrepreneurship,001_1en.xls,Share of SMEs in the economy,34816,present
+entrepreneurship,002en.xls,Number of active SMEs,32768,present
+entrepreneurship,003en.xls,SMEs by economic region,57856,present
+entrepreneurship,004en.xls,Newly registered SMEs,31744,present
+entrepreneurship,004_1en.xls,Deregistered SMEs,31744,present
+entrepreneurship,005en.xls,Active SMEs by activity and ownership,44544,present
+entrepreneurship,006en.xls,Registered / newly registered / deregistered entities by activity,32768,present
+entrepreneurship,007en.xls,Newly registered SMEs by activity,46592,present
+entrepreneurship,008en.xls,Deregistered SMEs by activity,46592,present
+entrepreneurship,009en.xls,Value of goods and services of SMEs by activity,50176,present
+entrepreneurship,010en.xls,Employees of SMEs by activity,44032,present
+entrepreneurship,012en.xls,SME share of output by activity,32768,present
+entrepreneurship,013en.xls,SME share of employees by activity,34304,present
+entrepreneurship,014en.xls,SME investment in fixed capital by activity,34304,present
+entrepreneurship,015en.xls,SME share of investment by activity,32768,present
+entrepreneurship,021en.xls,SME output by region and activity,168448,present
+entrepreneurship,024en.xls,Active SMEs established one year ago,33792,present
+entrepreneurship,025en.xls,Active SMEs established two years ago,34816,present
+entrepreneurship,026en.xls,Active SMEs established three years ago,33280,present
+entrepreneurship,027en.xls,Active SMEs established four years ago,33280,present
+entrepreneurship,028en.xls,Active SMEs established five years ago,33280,present
+entrepreneurship,029en.xls,Value added of SMEs by activity,33792,present
+entrepreneurship,031en.xls,Average wages in SMEs by activity,34816,present
+entrepreneurship,039en.xls,Assets of SMEs by activity,34816,present
+entrepreneurship,039_1en.xls,SME share of assets,34304,present
+entrepreneurship,040en.xls,Stocks of SMEs by activity,35328,present
+entrepreneurship,040_1en.xls,SME share of stocks,34816,present
+entrepreneurship,041en.xls,Taxes paid by SMEs by activity,33280,present
+st_units,1_1_en.xls,Statistical units by activity,41984,present
+st_units,1_2_en.xls,Statistical units by ownership and activity,33792,present
+st_units,1_3_i_en.xls,Large business entities by activity,31744,present
+st_units,1_3_o_en.xls,Medium business entities by activity,31232,present
+st_units,1_3_k_en.xls,Small business entities by activity,40960,present
+st_units,1_3_m_en.xls,Micro business entities by activity,31232,present
+st_units,1_4_i_en.xls,Large business entities by region,29696,present
+st_units,2_1_en.xls,Newly created and liquidated units by activity,41472,present
+st_units,2_2_en.xls,Newly created and liquidated units by ownership,29696,present
+st_units,2_3_en.xls,Newly created and liquidated units by region,31232,present
+system_nat_accounts,013en.xls,"Production and generation of income account by section (output, IC, VA, compensation, GOS, CFC)",114176,present
+system_nat_accounts,014en.xls,"GDP by activity, current prices",84480,present
+system_nat_accounts,015en.xls,Output of industry by activity (NACE 2-digit),47616,present
+system_nat_accounts,015_1en.xls,Intermediate consumption of industry by activity,48640,present
+system_nat_accounts,015_2en.xls,Value added in industry by activity,48640,present
+system_nat_accounts,015_4en.xls,"Share of intermediate consumption in output, industry",47616,present
+system_nat_accounts,022en.xls,Structure of compensation of employees,33792,present
+system_nat_accounts,023en.xls,Share of compensation in value added,33280,present
+system_nat_accounts,024en.xls,Structure of consumption of fixed capital,33792,present
+system_nat_accounts,025en.xls,Share of consumption of fixed capital in value added,31232,present
+system_nat_accounts,029en.xls,Physical volume index of output / value added,57344,present
+system_nat_accounts,030_1en.xls,GDP by activity at 2015 prices,34816,present
+system_nat_accounts,030_2en.xls,Labour productivity by activity,41984,present
+system_nat_accounts,031en.xls,"Fixed assets by activity, end of year",41984,present
+system_nat_accounts,034en.xls,Output of main branches by economic region,197120,present

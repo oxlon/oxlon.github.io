@@ -1,0 +1,2 @@
+data_status,firm_id,year,nace2,region,ownership,size_class,revenue,employees,registration_date,liquidation_date,status,legal_form,exports,product_codes,cost_of_sales,operating_costs,weight
+EXAMPLE ROW — delete before use / NÜMUNƏ SƏTİR — istifadədən əvvəl silin,F000001,2025,47,Baku city,private,small,1250.0,18,2017-03-15,,active,LLC,0.0,,900.0,150.0,1

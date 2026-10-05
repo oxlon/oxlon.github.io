@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mikro Model İş Paneli</title>
+<script>window.onerror=function(m,s,l){var e=document.documentElement;e.setAttribute("data-err",(e.getAttribute("data-err")||"")+" | "+m+" @"+String(s).split("/").pop()+":"+l);};</script>
+<link rel="stylesheet" href="assets/panel.css">
+<link rel="stylesheet" href="assets/panel-micro.css">
+</head>
+<body>
+<div class="boot" id="boot"><div>Panel yüklənir…</div></div>
+
+<header class="bar">
+  <a class="brand" href="#/"><span class="mark" aria-hidden="true"></span><span><b>Mikro Model</b><small>İş paneli · 2026–2030</small></span></a>
+  <nav class="tabs" id="tabs" aria-label="Bölmələr"></nav>
+  <div class="bar-r">
+    <button class="kbtn" id="open-pal" aria-label="Axtarış"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Göstərici axtar…</span><kbd>Ctrl K</kbd></button>
+    <button class="ibtn" id="tour-btn" title="Qısa tur: panelə 1 dəqiqədə baxış">?</button>
+    <a class="ibtn" id="classic" href="../site/index.html" title="Metodologiya, məlumat mənbələri, yoxlamalar — sənəd şəklində">Klassik görünüş</a>
+  </div>
+</header>
+<div class="scenbar" id="scenbar"></div>
+<main class="view" id="view" tabindex="-1"></main>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Göstərici təfsilatı"></aside>
+<div class="scrim" id="pal-scrim" hidden style="z-index:50"></div>
+<div class="pal" id="pal" hidden role="dialog" aria-label="Axtarış"><input id="pal-in" placeholder="Göstərici, bölmə və ya termin yazın…" autocomplete="off"><div class="pal-list" id="pal-list"></div><div class="pal-foot">↑ ↓ seçmək · Enter açmaq · Esc bağlamaq</div></div>
+<div id="tour" hidden></div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="data/meta.js"></script>
+<script src="data/fr1.js"></script>
+<script src="data/fr3.js"></script>
+<script src="data/fr4.js"></script>
+<script src="data/fr5.js"></script>
+<script src="data/fr10.js"></script>
+<script src="data/fr12.js"></script>
+<script src="data/synthetic.js"></script>
+<script src="assets/plotly.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/tables.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/home.js"></script>
+<script src="js/frtab.js"></script>
+<script src="js/frextra.js"></script>
+<script src="js/scen.js"></script>
+<script src="js/xlsx.js"></script>
+<script src="js/bigtable.js"></script>
+<script src="js/synth.js"></script>
+<script src="js/guide.js"></script>
+<script>window.U.boot();</script>
+</body>
+</html>

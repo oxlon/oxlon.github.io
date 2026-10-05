@@ -1,0 +1,10 @@
+construct,where,why not autoregressive
+HAC / Driscoll-Kraay covariance,all equations,standard errors only
+DOLS leads/lags of regressor differences,share systems,endogeneity correction; no own lag
+"residual ADF, one fixed lag",eg_coint_p,test statistic
+chained volume levels,Part 5,chain-linking identity
+perpetual inventory capital,Part 7.2,stock-flow identity
+one-year lags of other regressors,determinants panel,predetermined regressors; dependent variable never lagged
+constant add-factor; decay at rho-hat (sensitivity),share systems,level anchor; decay is a labelled sensitivity
+historical residual paths,fan charts,replay of observed error paths
+held-at-last-value forecast rules,Part 14,"scenario assumptions, listed"

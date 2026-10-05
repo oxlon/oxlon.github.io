@@ -1,0 +1,28 @@
+equation,n,R2,specification,restriction
+E1 labour force,31,0.9114,ln(LF) on ln(pop) + trend,unit population elasticity imposed
+E2 employment rate,26,0.9393,ln(emp/LF) on ln(real non-oil GDP) + trend,
+E3 employee share,26,0.2703,ln(hired/employed) on trend,trend tested and set to zero
+E4 share of agr (employed population),25,0.7016,logit employment share on ln(real non-oil GDP per capita),
+E4 share of industry (employed population),25,0.1381,logit employment share on ln(real non-oil GDP per capita),
+E4 share of constr (employed population),25,0.8737,logit employment share on ln(real non-oil GDP per capita),
+E4 share of trade (employed population),25,0.7428,logit employment share on ln(real non-oil GDP per capita),
+E4 share of hotel (employed population),25,0.8393,logit employment share on ln(real non-oil GDP per capita),
+E4 share of transp (employed population),25,0.6,logit employment share on ln(real non-oil GDP per capita),
+E4 share of ict (employed population),25,0.7645,logit employment share on ln(real non-oil GDP per capita),
+E4 share of agr (hired employees),25,0.4333,logit employment share on ln(real non-oil GDP per capita),
+E4 share of industry (hired employees),25,0.7043,logit employment share on ln(real non-oil GDP per capita),
+E4 share of constr (hired employees),25,0.6371,logit employment share on ln(real non-oil GDP per capita),
+E4 share of trade (hired employees),25,0.2511,logit employment share on ln(real non-oil GDP per capita),
+E4 share of hotel (hired employees),25,0.8423,logit employment share on ln(real non-oil GDP per capita),
+E4 share of transp (hired employees),25,0.8657,logit employment share on ln(real non-oil GDP per capita),
+E4 share of ict (hired employees),25,0.0003,logit employment share on ln(real non-oil GDP per capita),
+E5 within-industry share of mining (employed population),16,0.7502,logit share on ypc,
+E5 within-industry share of elec (employed population),16,0.6479,logit share on ypc,
+E5 within-industry share of water (employed population),16,0.1124,logit share on ypc,
+E5 within-industry share of mining (hired employees),16,0.652,logit share on ypc,
+E5 within-industry share of elec (hired employees),16,0.663,logit share on ypc,
+E5 within-industry share of water (hired employees),16,0.0783,logit share on ypc,
+E6 services bloc split (employed population),25,0.8201,ln(market/budget services) on ln(real other-services VA),
+E6 services bloc split (hired employees),25,0.9182,ln(market/budget services) on ln(real other-services VA),
+E8 state share,25,0.9633,"logit(state/non-state) on trend, 2000-2024",no fiscal or output driver admitted (Part 10 R7)
+E9 oil extraction employment,10,0.6457,ln(extraction employment) on ln(real oil GDP),

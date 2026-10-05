@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sintetik məlumat və onun əvəz edilməsi — MİİS §15.5.2</title>
+<meta name="description" content="Sintetik məlumat və onun əvəz edilməsi">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/micro.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" data-sprite="miis-1551">
+  <!--
+    icons.svg — line icon sprite for the §15.5.1 site (blueprint §4).
+    Style: 24×24 box, 1.6 stroke set by CSS (.icon), fill none, stroke currentColor,
+    round caps and joins. Used small (15-18px), functional only.
+    build_site.py inlines this file into every page so <use href="#icon-…"> resolves
+    when the page is opened directly from disk (file://), where an external sprite
+    reference is blocked.
+  -->
+
+  <symbol id="icon-document" viewBox="0 0 24 24">
+    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+    <path d="M14 3v5h5"/>
+    <path d="M9 13h6M9 17h6"/>
+  </symbol>
+
+  <symbol id="icon-data" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="6" rx="7" ry="3"/>
+    <path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/>
+    <path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"/>
+  </symbol>
+
+  <symbol id="icon-equation" viewBox="0 0 24 24">
+    <path d="M4 19c1.8 0 2.6-1.1 3-3l2.2-9.6C9.6 4.6 10.5 4 12 4"/>
+    <path d="M6 11h7"/>
+    <path d="M15 10.5l5 8M20 10.5l-5 8"/>
+  </symbol>
+
+  <symbol id="icon-chart" viewBox="0 0 24 24">
+    <path d="M4 4v15a1 1 0 0 0 1 1h15"/>
+    <path d="M8 16v-4M12 16v-7M16 16v-3M20 16V7"/>
+  </symbol>
+
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M4 12.6l5 5L20 6.5"/>
+  </symbol>
+
+  <symbol id="icon-warning" viewBox="0 0 24 24">
+    <path d="M10.3 3.9 2.5 17.4a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+    <path d="M12 9v4.5"/>
+    <path d="M12 17.2h.01"/>
+  </symbol>
+
+  <symbol id="icon-download" viewBox="0 0 24 24">
+    <path d="M12 3v11"/>
+    <path d="M7.5 10 12 14.5 16.5 10"/>
+    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+  </symbol>
+
+  <symbol id="icon-external-link" viewBox="0 0 24 24">
+    <path d="M14 4h6v6"/>
+    <path d="M20 4 11 13"/>
+    <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>
+  </symbol>
+
+  <symbol id="icon-flask" viewBox="0 0 24 24">
+    <path d="M9.5 3h5"/>
+    <path d="M10.5 3v6.2L5.2 18a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3l-5.3-8.8V3"/>
+    <path d="M7.7 14h8.6"/>
+  </symbol>
+
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+</svg>
+<a class="skip" href="#main">Məzmuna keç</a>
+<button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="sidebar">
+<svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>Mündəricat</button>
+<div class="shell">
+<nav class="sidebar" id="sidebar" aria-label="Saytın bölmələri">
+  <div class="sidebar-head">
+    <a class="mark" href="index.html">MİİS §15.5.2
+      <span class="mark-sub">Mikroiqtisadi təhlil və proqnozlaşdırma modulu</span></a>
+  </div>
+  <div class="nav-group"><span class="nav-title">Ümumi</span><ul><li><a href="index.html">Ümumi baxış</a></li><li><a href="methodology.html">Metod</a></li><li><a href="data.html">Məlumat mənbələri</a></li><li><a class="current" href="synthetic.html">Sintetik məlumat</a><ul class="nav-sections"><li><a href="#what">Nə sintetikdir</a></li><li><a href="#calibration">Nəyə kalibrlənib</a></li><li><a href="#replace">Faylın əvəz edilməsi</a></li><li><a href="#columns">Sütunlar (sxem)</a></li><li><a href="#tests">Əvəzetmə testləri</a></li><li><a href="#privacy">Məxfilik</a></li></ul></li><li><a href="notebooks.html">Jupyter dəftərləri</a></li></ul></div><div class="nav-group"><span class="nav-title">Funksional tələblər (§15.5.2)</span><ul><li><a href="fr/fr1.html"><span class="nav-num">FR1</span>Sektorlar və bazarlar</a></li><li><a href="fr/fr3.html"><span class="nav-num">FR3</span>Orta aylıq əmək haqqı</a></li><li><a href="fr/fr4.html"><span class="nav-num">FR4</span>Məşğulluq</a></li><li><a href="fr/fr5.html"><span class="nav-num">FR5</span>Pullu xidmətlər</a></li><li><a href="fr/fr10.html"><span class="nav-num">FR10</span>Müəssisələr: maliyyə, effektivlik, bazar payı</a></li><li><a href="fr/fr12.html"><span class="nav-num">FR12</span>Rəqabət mühiti</a></li></ul></div><div class="nav-group"><span class="nav-title">Təhvil</span><ul><li><a href="results.html">Nəticələr və fayllar</a></li></ul></div>
+</nav>
+<main class="content" id="main">
+<h1>Sintetik məlumat və onun əvəz edilməsi</h1>
+<div class="synth-banner" role="note"><svg class="icon" aria-hidden="true"><use href="#icon-warning"/></svg><div><strong>SİNTETİK MƏLUMAT — real müəssisə məlumatı deyil.</strong> FR10 müəssisə paneli və FR12 biznes reyestri <strong>uydurma</strong> fayllardır: onlarda heç bir real müəssisə, VÖEN və ya real rəqəm yoxdur. Bu bölmədəki nəticələr yalnız texniki nümayişdir (boru xəttinin yoxlanılması), təhlil nəticəsi deyil. <a href="synthetic.html">Faylın necə əvəz olunduğu →</a></div></div>
+<p class="lead-in">Nazirlik müəssisə məlumatını layihə ilə paylaşmır — öz məlumatını öz sistemində yükləyəcək. Ona görə FR10 və FR12-nin müəssisə səviyyəsində mühərrikləri (B qatı) eyni sxemdə sintetik fayllarla təhvil verilir. Bu səhifə onların nə olduğunu, nəyə kalibrləndiyini və Nazirliyin onları necə əvəz edəcəyini göstərir.</p>
+<h2 id="what"><a class="anchor" href="#what" aria-hidden="true">#</a><span class="section-num">1</span>Nə sintetikdir</h2>
+<div class="table-wrap"><table class="tbl tbl-dense"><thead><tr><th class="c-tight"></th><th class="c-text">FR10 müəssisə paneli</th><th class="c-text">FR12 biznes reyestri</th></tr></thead><tbody><tr><td class="c-tight">Fayl</td><td class="c-text"><code>data/firm_panel/FR10_firm_panel_SYNTHETIC.csv / .xlsx</code></td><td class="c-text"><code>data/business_register/FR12_business_register_SYNTHETIC.csv / .xlsx</code></td></tr><tr><td class="c-tight">Sətir</td><td class="c-text"><span class="val">22 495</span></td><td class="c-text"><span class="val">92 032</span></td></tr><tr><td class="c-tight">Müəssisə / qeyd</td><td class="c-text"><span class="val">5 255</span> uydurma müəssisə</td><td class="c-text"><span class="val">15 725</span> qeyd (2025: <span class="val">226 643</span> aktiv müəssisəni təmsil edir)</td></tr><tr><td class="c-tight">NACE</td><td class="c-text"><span class="val">24</span> bölmə (2 rəqəmli)</td><td class="c-text"><span class="val">20</span> seksiya, <span class="val">86</span> bölmə</td></tr><tr><td class="c-tight">Region / illər</td><td class="c-text"><span class="val">14</span> region, 2019–2025</td><td class="c-text"><span class="val">14</span> region, 2019–2025</td></tr><tr><td class="c-tight">Sütun</td><td class="c-text"><span class="val">34</span></td><td class="c-text"><span class="val">18</span></td></tr><tr><td class="c-tight">Hər sətrin ilk sütunu</td><td class="c-text"><code>SYNTHETIC — not real enterprise data</code> (bütün sətirlərdə)</td><td class="c-text"><code>SYNTHETIC — not real enterprise data</code> (bütün sətirlərdə)</td></tr><tr><td class="c-tight">Çıxışlar</td><td class="c-text"><code>output/FR10_SYNTHETIC_*.csv</code> (su nişanlı)</td><td class="c-text"><code>output/FR12_SYNTHETIC_*.csv</code> (su nişanlı)</td></tr></tbody></table></div>
+<p>Sintetik fayllardan alınan nəticələr yalnız <strong>boru xəttinin texniki nümayişidir</strong>: onlar heç bir tapıntıda işlədilmir və bu saytda qrafik və ya cədvəl şəklində təhlil nəticəsi kimi göstərilmir. FR12-də hər müəssisə identifikatoru <code>SYN-</code> ilə başlayır (yoxlanılıb); xlsx fayllar qalın xəbərdarlıqlı README vərəqi ilə açılır.</p>
+<h2 id="calibration"><a class="anchor" href="#calibration" aria-hidden="true">#</a><span class="section-num">2</span>Nəyə kalibrlənib</h2>
+<p><strong>FR10 paneli</strong> təsadüfi yaradılıb, lakin DSK sahə aqreqatları ilə uzlaşdırılıb: müəssisələrin sayı, buraxılış, işçilərin sayı və əmək haqqı. Boru xətti testləri müəssisə gəlirlərinin DSK sahə buraxılışına, müəssisə saylarının DSK aktiv müəssisə sayına bərabər olduğunu yoxlayır (FR10 səhifəsi, B qatı).</p><p><strong>FR12 reyestri</strong> DSK aqreqatlarına kalibrlənib: bölmələr və regionlar üzrə doğulan və ləğv edilən vahidlər, 2025 sonuna say, bölmələr üzrə buraxılış, KOS payları; ölçü qrupları 1 iyul 2026 vəziyyətinə təxmini uyğunlaşdırılıb. <span class="val">13</span> kalibrləmə hədəfindən <span class="val">9</span>-i «dəqiq» statusundadır (<code>FR12_SYNTHETIC_calibration_errors_summary.csv</code>). Mikro və kiçik müəssisələr qruplaşdırılıb: <code>weight</code> sütunu sətrin neçə eyni müəssisəni təmsil etdiyini göstərir.</p>
+<h2 id="replace"><a class="anchor" href="#replace" aria-hidden="true">#</a><span class="section-num">3</span>Faylın əvəz edilməsi</h2>
+<ol><li>Real faylı eyni sxemdə saxlayın: <code>data/firm_panel/FR10_firm_panel.csv</code> və ya <code>.xlsx</code> (vərəq <code>data</code>); <code>data/business_register/FR12_business_register.csv</code> və ya <code>.xlsx</code>.</li><li>Və ya faylın yolunu mühit dəyişənində verin: <code>FIRM_PANEL_PATH</code> (FR10), <code>BUSREG_PATH</code> (FR12). Prioritet: mühit dəyişəni → real adlı fayl → sintetik fayl.</li><li>Şablondan başlayın: <a class="file-link" href="../data/firm_panel/FR10_firm_panel_TEMPLATE.csv"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-download"/></svg>FR10_firm_panel_TEMPLATE.csv</a>, <a class="file-link" href="../data/business_register/FR12_business_register_TEMPLATE.csv"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-download"/></svg>FR12_business_register_TEMPLATE.csv</a> (və .xlsx); nümunə sətrini silin. Başlıqlar ingilis və ya Azərbaycan dilində ola bilər; FR12-də <code>weight</code> sütunu buraxıla bilər (1 sayılır).</li><li><code>data_status</code> sütunu olmayan və ya dəyəri sintetik işarədən fərqli olan fayl REAL sayılır.</li><li><code>FR10.ipynb</code> / <code>FR12.ipynb</code> dəftərini yenidən icra edin. Banner <code>DATA_MODE = REAL</code> çap edir.</li><li>Validator <code>output/FR10_firm_panel_validation_report.csv</code> və <code>output/FR12_business_register_validation_report.csv</code> fayllarına hər səhvi sətir və sahə üzrə yazır; ciddi səhvlər icranı dayandırır, xəbərdarlıqlar dayandırmır.</li><li>Çıxışlar <code>FR10_FIRM_*.csv</code> və <code>FR12_FIRM_*.csv</code> adlanır (su nişanı olmadan) və sintetik çıxışların yerini tutur. A qatının nəticələri dəyişmir. Sonra <code>python3 site/build_site.py</code>.</li></ol>
+<h2 id="columns"><a class="anchor" href="#columns" aria-hidden="true">#</a><span class="section-num">4</span>Sütunlar (sxem)</h2>
+<p>FR10: <span class="val">34</span> sütun, onlardan <span class="val">22</span>-i məcburi; FR12: <span class="val">18</span> sütun, <span class="val">10</span>-i məcburi. Başlıqlar ingilis və ya Azərbaycan dilində ola bilər; tam xəritə (EN ↔ AZ ↔ tip ↔ vahid ↔ məcburilik ↔ mənbə) <a class="file-link" href="../data/firm_panel/FR10_firm_panel_column_map.csv"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-download"/></svg>FR10_firm_panel_column_map.csv</a> və <a class="file-link" href="../data/business_register/FR12_business_register_column_map.csv"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-download"/></svg>FR12_business_register_column_map.csv</a> fayllarındadır.</p>
+<h3>FR12 biznes reyestri — sütunlar</h3><div class="table-wrap"><table class="tbl tbl-dense"><thead><tr><th class="c-tight">Sütun (EN)</th><th class="c-text">Sütun (AZ)</th><th class="c-tight"></th></tr></thead><tbody><tr><td class="c-tight"><code>data_status</code></td><td class="c-text">Məlumatın statusu</td><td class="c-tight"><span class="pill pill-neutral">könüllü</span></td></tr><tr><td class="c-tight"><code>firm_id</code></td><td class="c-text">Müəssisənin identifikatoru (psevdonim)</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>year</code></td><td class="c-text">İl</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>nace2</code></td><td class="c-text">İqtisadi fəaliyyət növü (NACE Rev.2, 2 rəqəm)</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>region</code></td><td class="c-text">İqtisadi rayon</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>ownership</code></td><td class="c-text">Mülkiyyət növü</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>size_class</code></td><td class="c-text">Ölçü qrupu</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>revenue</code></td><td class="c-text">Gəlir (satış)</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>employees</code></td><td class="c-text">İşçilərin sayı</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>registration_date</code></td><td class="c-text">Qeydiyyat tarixi</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>liquidation_date</code></td><td class="c-text">Ləğvetmə tarixi</td><td class="c-tight"><span class="pill pill-neutral">könüllü</span></td></tr><tr><td class="c-tight"><code>status</code></td><td class="c-text">Status</td><td class="c-tight"><span class="pill pill-done">məcburi</span></td></tr><tr><td class="c-tight"><code>legal_form</code></td><td class="c-text">Təşkilati-hüquqi forma</td><td class="c-tight"><span class="pill pill-neutral">könüllü</span></td></tr><tr><td class="c-tight"><code>exports</code></td><td class="c-text">İxrac</td><td class="c-tight"><span class="pill pill-neutral">könüllü</span></td></tr><tr><td class="c-tight"><code>product_codes</code></td><td class="c-text">Məhsul kodları</td><td class="c-tight"><span class="pill pill-neutral">könüllü</span></td></tr><tr><td class="c-tight"><code>cost_of_sales</code></td><td class="c-text">Satışın maya dəyəri</td><td class="c-tight"><span class="pill pill-neutral">könüllü</span></td></tr><tr><td class="c-tight"><code>operating_costs</code></td><td class="c-text">Əməliyyat xərcləri</td><td class="c-tight"><span class="pill pill-neutral">könüllü</span></td></tr><tr><td class="c-tight"><code>weight</code></td><td class="c-text">Çəki</td><td class="c-tight"><span class="pill pill-neutral">könüllü</span></td></tr></tbody></table></div>
+<h2 id="tests"><a class="anchor" href="#tests" aria-hidden="true">#</a><span class="section-num">5</span>Əvəzetmə testləri</h2>
+<p>Dəftərlər real faylın yüklənməsini müvəqqəti qovluqda sınaqdan keçirir: real adlı fayl, Azərbaycan dilində başlıqlar, mühit dəyişəninin prioriteti, qırıq fayllar (çatmayan sütun, mənfi gəlir, balans uyğunsuzluğu).</p>
+<h3>FR10 — müəssisə paneli</h3>
+<div class="table-wrap"><table class="tbl tbl-dense"><thead><tr><th class="c-text">Test (çıxış faylından, ingiliscə)</th><th class="c-tight">Nəticə</th><th class="c-text">Təfərrüat</th></tr></thead><tbody><tr><td class="c-text"><span class="src-en">real-named file with neutral data_status -&gt; DATA_MODE = REAL</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">mode REAL, file FR10_firm_panel.csv</span></td></tr><tr><td class="c-text"><span class="src-en">REAL file passes the validator (0 hard errors)</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">0 warnings</span></td></tr><tr><td class="c-text"><span class="src-en">REAL mode writes FR10_FIRM_* only, without watermark, all tests pass</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">11 files, e.g. [&#x27;FR10_FIRM_cohort_survival.csv&#x27;, &#x27;FR10_FIRM_concentration_nace.csv&#x27;, &#x27;FR10_FIRM_concentration_nace_region_2025.csv&#x27;]</span></td></tr><tr><td class="c-text"><span class="src-en">Azerbaijani headers (xlsx, FIRM_PANEL_PATH) load and validate</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">3000 rows, unknown columns [], mode REAL</span></td></tr><tr><td class="c-text"><span class="src-en">FIRM_PANEL_PATH has priority over the real-named file</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">loaded panel_az.xlsx</span></td></tr><tr><td class="c-text"><span class="src-en">broken file: missing required column reported as fatal</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">required column missing (EN or AZ header)</span></td></tr><tr><td class="c-text"><span class="src-en">broken file: total assets &lt; current assets flagged per row and the run stops</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">firm panel rejected: 15 hard errors (first: row 2, field total_assets: total assets &lt; current + fixed assets); see rep.csv</span></td></tr></tbody></table></div>
+<h3>FR12 — biznes reyestri</h3>
+<div class="table-wrap"><table class="tbl tbl-dense"><thead><tr><th class="c-text">Test (çıxış faylından, ingiliscə)</th><th class="c-tight">Nəticə</th><th class="c-text">Təfərrüat</th></tr></thead><tbody><tr><td class="c-text"><span class="src-en">real-named file with neutral data_status -&gt; DATA_MODE = REAL</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">mode REAL, file FR12_business_register.csv</span></td></tr><tr><td class="c-text"><span class="src-en">REAL file passes the validator (0 hard errors)</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">0 warnings</span></td></tr><tr><td class="c-text"><span class="src-en">REAL mode writes FR12_FIRM_* only, without watermark; identity tests pass</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">8 files, e.g. [&#x27;FR12_FIRM_concentration_nace.csv&#x27;, &#x27;FR12_FIRM_concentration_nace_region.csv&#x27;, &#x27;FR12_FIRM_entry_exit_section.csv&#x27;]</span></td></tr><tr><td class="c-text"><span class="src-en">Azerbaijani headers (xlsx) load and validate</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">3000 rows, unknown columns [], mode REAL</span></td></tr><tr><td class="c-text"><span class="src-en">BUSREG_PATH environment variable has priority over the real-named file</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">loaded register_az.xlsx with BUSREG_PATH set in the environment</span></td></tr><tr><td class="c-text"><span class="src-en">register without a weight column: full engine runs (weights default to 1)</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">38,849 rows, mode REAL; engine + DSK comparison (615 cells) ran</span></td></tr><tr><td class="c-text"><span class="src-en">weights honoured: weighted file = expanded unweighted file (HHI, CR4/CR8, entry/exit, KM, Boone n, PCM)</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">max abs diff 6.37e-12 over 112 cells</span></td></tr><tr><td class="c-text"><span class="src-en">broken file: missing required column reported as fatal</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">required column missing (EN or AZ header)</span></td></tr><tr><td class="c-text"><span class="src-en">broken file: negative revenue and liquidation before registration flagged per row; the run stops</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">business register rejected: 8 hard errors (first: row 2, field revenue: negative value); see rep.csv</span></td></tr><tr><td class="c-text"><span class="src-en">generator never writes the real file name; project directory scanned for real-named files</span></td><td class="c-tight"><span class="pill pill-done">keçdi</span></td><td class="c-text"><span class="src-en">generator wrote [&#x27;FR12_business_register_SYNTHETIC.csv&#x27;, &#x27;FR12_business_register_TEMPLATE.csv&#x27;, &#x27;FR12_business_register_TEMPLATE.xlsx&#x27;, &#x27;FR12_business_register_column_map.csv&#x27;, &#x27;README_FR12_business_r</span></td></tr></tbody></table></div>
+<h2 id="privacy"><a class="anchor" href="#privacy" aria-hidden="true">#</a><span class="section-num">6</span>Məxfilik</h2>
+<p>Müəssisə identifikatorları psevdonimləşdirilmiş qalmalıdır (VÖEN yox). Real məlumatla nəticələr yalnız Nazirliyin öz sistemində saxlanılır; real adlı faylı bu layihəyə köçürməyin. Sintetik generator heç vaxt real adlı fayl yazmır. README faylları: <a class="file-link" href="../data/firm_panel/README_FR10_firm_panel.md"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-document"/></svg>README_FR10_firm_panel.md</a>, <a class="file-link" href="../data/business_register/README_FR12_business_register.md"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-document"/></svg>README_FR12_business_register.md</a>.</p>
+<footer class="site-footer">
+  <span class="stamp-row">MİİS §15.5.2 · yığılıb 2026-10-02 · möhür <code>6b89fc150c7e</code></span>
+  <span class="stamp-row">Bu səhifədəki hər rəqəm yığım anında bu 9 fayldan oxunur: <code>data/business_register/FR12_business_register_SYNTHETIC.csv</code>, <code>data/business_register/FR12_business_register_column_map.csv</code>, <code>data/business_register/README_FR12_business_register.md</code>, <code>data/firm_panel/FR10_firm_panel_SYNTHETIC.csv</code>, <code>data/firm_panel/FR10_firm_panel_column_map.csv</code>, <code>data/firm_panel/README_FR10_firm_panel.md</code>, <code>output/FR10_firm_panel_swap_tests.csv</code>, <code>output/FR12_SYNTHETIC_calibration_errors_summary.csv</code>, <code>output/FR12_business_register_swap_tests.csv</code>. Möhür həmin faylların md5 cəmidir.</span>
+  <span class="stamp-row">Sayt <code>site/build_site.py</code> ilə yenidən qurulur; əl ilə redaktə edilmir.</span>
+</footer>
+</main>
+</div>
+<script src="assets/plotly.min.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

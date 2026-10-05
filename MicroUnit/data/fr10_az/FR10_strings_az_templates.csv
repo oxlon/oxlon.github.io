@@ -1,0 +1,890 @@
+id,template_en,template_az
+s0000,"SYNTHETIC — pipeline test, not results","SİNTETİK — emal xəttinin sınağı, nəticə deyil"
+s0001,Central Aran,Mərkəzi Aran
+s0002,Daghlig Shirvan,Dağlıq Şirvan
+s0003,Eastern Zangezur,Şərqi Zəngəzur
+s0004,Nakhchivan AR,Naxçıvan MR
+s0005,"validator catches {0} seeded corruptions (balance, NACE, negative cash)","yoxlayıcı qəsdən daxil edilmiş {0} xətanı aşkarlayır (balans, NACE, mənfi pul vəsaiti)"
+s0006,DuPont: margin x turnover x multiplier = ROE (max abs),DuPont: marja x dövriyyə x multiplikator = ROE (maks. mütləq fərq)
+s0007,"TFP index equals an independent firm-by-firm re-computation (NACE {0}, {1}; max abs gap)","TFP indeksi müəssisələr üzrə müstəqil təkrar hesablamaya bərabərdir (NACE {0}, {1}; maks. mütləq fərq)"
+s0008,market shares sum to one in every NACE-year cell (max gap),bazar paylarının cəmi hər NACE-il xanasında birə bərabərdir (maks. fərq)
+s0009,firm forecasts add up to the Layer-A branch forecast (%),müəssisə proqnozlarının cəmi A qatının sahə proqnozuna bərabərdir (%)
+s0010,"peer percentile ranks lie in ({0}, {1}]","həmkar qrup daxilində persentil ranqları ({0}, {1}] intervalındadır"
+s0011,"firm revenues add up to DSK branch output (max gap, %)","müəssisə gəlirlərinin cəmi DSK-nın sahə buraxılışına bərabərdir (maks. fərq, %)"
+s0012,firm counts equal DSK active enterprises (max gap),müəssisələrin sayı DSK-nın fəaliyyət göstərən müəssisələrinin sayına bərabərdir (maks. fərq)
+s0013,"determinant model recovers the DGP (true {0}, {1})","amillər modeli məlumat yaradan prosesi (DGP) bərpa edir (həqiqi qiymətlər {0}, {1})"
+s0014,negative value,mənfi qiymət
+s0015,not a NACE Rev.{0} division,NACE Rev.{0} sahəsi deyil
+s0016,balance sheet does not balance (equity + liabilities != total assets),balans tarazlaşmır (kapital + öhdəliklər != aktivlərin cəmi)
+s0017,with {0} seeded corruptions,qəsdən daxil edilmiş {0} xəta ilə
+s0018,Crude oil and natural gas,Xam neft və təbii qaz hasilatı
+s0019,Metal ores,Metal filizlərinin hasilatı
+s0020,Other mining and quarrying,Digər faydalı qazıntılar
+s0021,Mining support services,Mədənçıxarma sahəsində xidmətlər
+s0022,Food products,Qida məhsulları
+s0023,Tobacco products,Tütün məmulatları
+s0024,Wearing apparel,Geyim
+s0025,Leather and footwear,Dəri və ayaqqabı
+s0026,Wood products,Ağac emalı
+s0027,Paper products,Kağız və karton
+s0028,Refined petroleum products,Neft emalı məhsulları
+s0029,Rubber and plastics,Rezin və plastik kütlə
+s0030,Non-metallic minerals,Digər qeyri-metal mineral məhsullar
+s0031,Basic metals,Metallurgiya
+s0032,Fabricated metal products,Hazır metal məmulatları
+s0033,Computer and electronics,Kompüter və elektronika
+s0034,Electrical equipment,Elektrik avadanlığı
+s0035,Machinery and equipment,Maşın və avadanlıq
+s0036,Motor vehicles,Avtomobil və qoşqular
+s0037,Other transport equipment,Digər nəqliyyat vasitələri
+s0038,Other manufacturing,Digər hazır məmulatlar
+s0039,Repair and installation,Maşın və avadanlığın təmiri və quraşdırılması
+s0040,"Electricity, gas and steam","Elektrik enerjisi, qaz və buxar"
+s0041,Water supply and waste,"Su təchizatı, tullantılar"
+s0042,FR1 oil & gas real; residual nominal,FR1 neft və qaz (real); qalıq (nominal)
+s0043,metal ores: grows with FR1 mining VA,metal filizləri: FR1 mədənçıxarma əlavə dəyəri ilə birgə artır
+s0044,FR1 construction (direct),FR1 tikinti (birbaşa)
+s0045,related-sector: rcons,əlaqəli sektor: rcons
+s0046,sector total,sektor üzrə cəmi
+s0047,capacity + oil price,istehsal gücü + neft qiyməti
+s0048,related-sector: rva_con,əlaqəli sektor: rva_con
+s0049,related-sector: rinv_non,əlaqəli sektor: rinv_non
+s0050,nominal {0},nominal {0}
+s0051,nominal growth % pa,"nominal artım, illik %"
+s0052,real growth % pa,"real artım, illik %"
+s0053,share of industry {0} %,"sənayedə payı {0}, %"
+s0054,LP growth % pa,"əmək məhsuldarlığının artımı, illik %"
+s0055,HHI manufacturing branches,"HHI, emal sənayesi sahələri"
+s0056,"CR4 manufacturing, %","CR4, emal sənayesi, %"
+s0057,HHI industry branches,"HHI, sənaye sahələri"
+s0058,"CR4 industry, %","CR4, sənaye, %"
+s0059,HHI {0} regions,"HHI, {0} iqtisadi rayon"
+s0060,"CR4 regions, %","CR4, iqtisadi rayonlar, %"
+s0061,"HHI manufacturing branches, Baseline","HHI, emal sənayesi sahələri, Əsas"
+s0062,"HHI manufacturing branches, Adverse","HHI, emal sənayesi sahələri, Mənfi"
+s0063,"HHI manufacturing branches, Reform","HHI, emal sənayesi sahələri, İslahat"
+s0064,"Enterprise balance sheet and P&L panel (Tax Service, >= {0} years)","Müəssisələrin balans və mənfəət-zərər hesabatı paneli (Vergi Xidməti, >= {0} il)"
+s0065,Firm employment and wage bill (DSMF),Müəssisələr üzrə məşğulluq və əmək haqqı fondu (DSMF)
+s0066,"Fixed-asset renewal, disposal, depreciation rates by branch (F1)","Sahələr üzrə əsas fondların yenilənmə, xaricolma və köhnəlmə əmsalları (F1)"
+s0067,Capital-yield index (old DSK {0}_1),Fondverimi indeksi (köhnə DSK {0}_1)
+s0068,Exports by branch / product (State Customs Committee),Sahələr / məhsullar üzrə ixrac (Dövlət Gömrük Komitəsi)
+s0069,Producer prices by NACE {0}-digit branch,NACE {0} rəqəmli sahələr üzrə istehsalçı qiymətləri
+s0070,Energy costs by branch,Sahələr üzrə enerji xərcləri
+s0071,Credit and NPLs by branch (CBAR),"Sahələr üzrə kreditlər və problemli kreditlər (Mərkəzi Bank, CBAR)"
+s0072,SME indicators as a time series (F11),KOS (SME) göstəricilərinin zaman sırası (F11)
+s0073,Industrial output by region x branch,İqtisadi rayon x sahə üzrə sənaye buraxılışı
+s0074,Profit-tax declarations by branch and size class (DVX),Sahə və ölçü qrupu üzrə mənfəət vergisi bəyannamələri (DVX)
+s0075,Budget-organisation taxpayer rows (F8),Büdcə təşkilatı olan vergi ödəyicilərinin sətirləri (F8)
+s0076,Workbook {0} branch vintage (F2),İş kitabındakı {0} sahə məlumatlarının versiyası (F2)
+s0077,Regional coverage break {0} (F9),"İqtisadi rayonlar üzrə əhatə dairəsində qırılma, {0} (F9)"
+s0078,Published non-state share {0}-{1} inconsistent (F12),Dərc edilmiş qeyri-dövlət payı {0}-{1} uyğunsuzdur (F12)
+s0079,FR3 branch wage levels not anchored on {0} (F13),FR3 sahə əmək haqqı səviyyələri {0} ilinin göstəricilərinə bağlanmayıb (F13)
+s0080,"No firm ratios, distress scores, firm-level HHI, entry/exit by firm; Layer B runs on synthetic data only","Müəssisə əmsalları, maliyyə çətinliyi balları, müəssisə səviyyəsində HHI, müəssisələr üzrə giriş/çıxış yoxdur; B qatı yalnız sintetik məlumatlarla işləyir"
+s0081,No firm productivity or TFP,Müəssisə məhsuldarlığı və ya TFP yoxdur
+s0082,No direct renewal indicator,Birbaşa yenilənmə göstəricisi yoxdur
+s0083,No published capital efficiency,Kapitalın səmərəliliyi üzrə dərc edilmiş göstərici yoxdur
+s0084,Export orientation cannot enter the share system or the determinants panel,İxrac yönümlülüyü paylar sisteminə və ya amillər panelinə daxil edilə bilməz
+s0085,Real branch output relies on implicit deflators,Sahələrin real buraxılışı implisit deflyatorlara əsaslanır
+s0086,No energy-intensity indicator,Enerji tutumu göstəricisi yoxdur
+s0087,No financing-condition driver by branch,Sahələr üzrə maliyyələşmə şəraiti amili yoxdur
+s0088,SME share cannot be projected,KOS payını proqnozlaşdırmaq mümkün deyil
+s0089,Regional forecasts cannot use branch composition,İqtisadi rayonlar üzrə proqnozlarda sahə strukturundan istifadə etmək mümkün deyil
+s0090,Financial condition only economy-wide from declarations,"Maliyyə vəziyyəti yalnız bütün iqtisadiyyat üzrə, bəyannamələr əsasında"
+s0091,Budget organisations cannot be separated,Büdcə təşkilatlarını ayırmaq mümkün deyil
+s0092,Workbook {0} branch data unusable,İş kitabındakı {0} sahə məlumatları istifadəyə yararsızdır
+s0093,Level break in regional shares,İqtisadi rayonların paylarında səviyyə qırılması
+s0094,Ownership history uncertain in {0} years,{0} ildə mülkiyyət tarixçəsi qeyri-müəyyəndir
+s0095,FR3 branch wage levels unusable for margins,FR3 sahə əmək haqqı səviyyələri marjalar üçün yararsızdır
+s0096,"Section GOS margins (NA {0}), branch GOS proxy, DVX declaration aggregates, concentration bound from the register","Bölmələr üzrə ümumi mənfəət marjaları (milli hesablar, NA {0}), sahə üzrə ümumi mənfəətin təxmini göstəricisi, DVX bəyannamə aqreqatları, registr əsasında konsentrasiya həddi"
+s0097,"DSK branch headcount and wages ({0}, {1}_2), workbook industry sheets","DSK sahə üzrə işçi sayı və əmək haqqı ({0}, {1}_2), iş kitabının sənaye vərəqləri"
+s0098,"Investment rate I/GO (DSK {0}/{1}); CFC/VA by section (NA {2}, {3})","İnvestisiya norması I/GO (DSK {0}/{1}); bölmələr üzrə əsas kapitalın istehlakı / əlavə dəyər (milli hesablar, NA {2}, {3})"
+s0099,Capital productivity from perpetual inventory,Daimi inventarizasiya metodu əsasında kapital məhsuldarlığı
+s0100,Industrial-park exports (workbook Park),"Sənaye parklarının ixracı (iş kitabı, Park vərəqi)"
+s0101,"Implicit output deflator = nominal output / chained volume (DSK {0}, {1})","Buraxılışın implisit deflyatoru = nominal buraxılış / zəncirvari həcm (DSK {0}, {1})"
+s0102,"SME electricity and fuel costs (entrepreneurship {0}, {1}; {2}-{3})","KOS (SME) elektrik enerjisi və yanacaq xərcləri (sahibkarlıq {0}, {1}; {2}-{3})"
+s0103,FR1 industry credit at section level,"FR1 sənaye kreditləri, bölmə səviyyəsində"
+s0104,Held at {0},{0} səviyyəsində saxlanılır
+s0105,"Regional totals ({0}) and products by place of production ({1}_1 {2}-{3}, {4}_2 {5}-{6})","İqtisadi rayonlar üzrə yekunlar ({0}) və istehsal yeri üzrə məhsullar ({1}_1 {2}-{3}, {4}_2 {5}-{6})"
+s0106,Economy-wide DVX aggregates,Bütün iqtisadiyyat üzrə DVX aqreqatları
+s0107,DSK final {0},"DSK-nın yekun məlumatları, {0}"
+s0108,Step dummy; shares on the regional sum,Pilləli fiktiv dəyişən; paylar iqtisadi rayonların cəminə görə
+s0109,Composition identity,Struktur eyniliyi
+s0110,FR1 average-wage index on DSK {0} branch wages,DSK-nın {0} sahə əmək haqlarına tətbiq edilən FR1 orta əmək haqqı indeksi
+s0111,Aggregates hide dispersion; the GOS proxy omits other taxes and non-employee compensation (overstates margins),Aqreqatlar dispersiyanı gizlədir; ümumi mənfəətin təxmini göstəricisi digər vergiləri və işçi olmayanlara ödənişləri nəzərə almır (marjaları şişirdir)
+s0112,Branch averages only,Yalnız sahə üzrə orta göstəricilər
+s0113,Investment rate ignores stock age and is lumpy; section CFC hides branches,İnvestisiya norması fondların yaşını nəzərə almır və sıçrayışlıdır; bölmə üzrə əsas kapitalın istehlakı sahələri gizlədir
+s0114,Depends on depreciation rate ({0}) and the {1} starting stock,Köhnəlmə dərəcəsindən ({0}) və {1} ilinin başlanğıc fondundan asılıdır
+s0115,"Covers parks and zones only, with no branch structure","Yalnız parkları və zonaları əhatə edir, sahə strukturu yoxdur"
+s0116,Composition effects inside a branch enter the deflator,Sahə daxilindəki struktur effektləri deflyatora daxil olur
+s0117,"SMEs only, two years","Yalnız KOS subyektləri, iki il"
+s0118,Section level,Bölmə səviyyəsi
+s0119,Ignores any trend,Heç bir trendi nəzərə almır
+s0120,"Products cover physical units only, main products only",Məhsullar yalnız natural ifadədə və yalnız əsas məhsullar üzrədir
+s0121,Dominated by oil and large payers,Neft və iri vergi ödəyiciləri üstünlük təşkil edir
+s0122,None once DSK final is used,DSK-nın yekun məlumatlarından istifadə edildikdə yoxdur
+s0123,Pre-{0} shares exclude household industry,{0} ilinədək olan paylara ev təsərrüfatlarının sənaye fəaliyyəti daxil deyil
+s0124,None in the forecast,Proqnozda yoxdur
+s0125,Common wage growth across branches,Bütün sahələr üzrə eyni əmək haqqı artımı
+s0126,Sign the data-sharing agreement on the Part {0} schema; pseudonymised VÖEN; annual delivery after the declaration deadline,Hissə {0} sxemi üzrə məlumat mübadiləsi sazişini imzalamaq; psevdonimləşdirilmiş VÖEN; bəyannamə müddəti bitdikdən sonra illik ötürmə
+s0127,DSMF agreement keyed on the same pseudonymised VÖEN,Eyni psevdonimləşdirilmiş VÖEN-ə əsaslanan DSMF sazişi
+s0128,Ask DSK to restore tables {0}_2-{1}_7 or deliver them to MIIS,DSK-dan {0}_2-{1}_7 cədvəllərini bərpa etməyi və ya onları MIIS-ə ötürməyi xahiş etmək
+s0129,As above,Yuxarıdakı kimi
+s0130,Monthly HS-level exports from DGK with an HS-NACE concordance,DGK-dan HS-NACE keçid cədvəli ilə HS səviyyəsində aylıq ixrac məlumatları
+s0131,DSK PPI by branch,Sahələr üzrə DSK istehsalçı qiymətləri indeksi (PPI)
+s0132,DSK / Azerenerji branch energy use,DSK / Azərenerji: sahələr üzrə enerji istehlakı
+s0133,CBAR loan register aggregates by NACE,Mərkəzi Bankın (CBAR) kredit reyestrinin NACE üzrə aqreqatları
+s0134,DSK back-series of entrepreneurship tables from {0},DSK-nın {0} ilindən başlayan sahibkarlıq cədvəllərinin retrospektiv sıraları
+s0135,DSK region x NACE output table,DSK-nın iqtisadi rayon x NACE üzrə buraxılış cədvəli
+s0136,DVX breakdown of r215-r232 by NACE and size,r215-r232 sətirlərinin NACE və ölçü üzrə DVX bölgüsü
+s0137,DVX to correct rows {0}-{1} of the workbook,DVX-nin iş kitabının {0}-{1} sətirlərini düzəltməsi
+s0138,Refresh procedure: workbook rows overwritten from DSK when the final release appears,Yeniləmə proseduru: yekun məlumatlar dərc edildikdə iş kitabının sətirləri DSK məlumatları ilə əvəz olunur
+s0139,DSK back-cast of regional output on the {0}+ coverage,DSK tərəfindən iqtisadi rayonlar üzrə buraxılışın {0}+ əhatəsi əsasında retrospektiv hesablanması
+s0140,Query DSK,DSK-ya sorğu göndərmək
+s0141,FR3 maintainers to anchor branch levels on {0} actuals,FR3-ə cavabdeh olanlar sahə səviyyələrini {0} ilinin faktiki göstəricilərinə bağlamalıdır
+s0142,"DSK no longer publishes the fixed-asset renewal, disposal and depreciation tables by branch, nor the capital-yield index","DSK artıq sahələr üzrə əsas fondların yenilənməsi, xaric olması və köhnəlməsi cədvəllərini, eləcə də fondverimi indeksini dərc etmir"
+s0143,The workbook's {0} branch columns are a different (preliminary) vintage from DSK,İş kitabındakı {0} sahə sütunları DSK məlumatlarından fərqli (ilkin) versiyadır
+s0144,Branch investment does not add up to the industry total before {0},{0} ilinədək sahələr üzrə investisiyaların cəmi sənaye üzrə yekuna bərabər deyil
+s0145,"Volume indices printed in thousands of per cent with a ""t."" suffix","Həcm indeksləri ""t."" işarəsi ilə min faiz ifadəsində dərc edilib"
+s0146,National-accounts income account does not close by section in {0},{0} ilində milli hesabların gəlir hesabı bölmələr üzrə balanslaşmır
+s0147,"Water supply runs a negative gross operating surplus; the income-account total row carries the section code ""C""","Su təchizatında ümumi mənfəət mənfidir; gəlir hesabının yekun sətrində ""C"" bölmə kodu göstərilib"
+s0148,"The DVX ""rentabellik"" (profitability) row is a tax ratio, not profitability","DVX-nin ""rentabellik"" sətri rentabellik deyil, vergi nisbətidir"
+s0149,DVX budget-organisation rows duplicate the micro-taxpayer rows; micro-taxpayer count carries a money unit,DVX-nin büdcə təşkilatları sətirləri mikro vergi ödəyiciləri sətirlərini təkrarlayır; mikro vergi ödəyicilərinin sayı pul vahidi ilə göstərilib
+s0150,DVX taxpayer counts carry a population unit,DVX-nin vergi ödəyicilərinin sayı əhali ölçü vahidi (nəfər) ilə göstərilib
+s0151,"Regional industrial output does not add up to the national total before {0}, and includes household industry after","{0} ilinədək iqtisadi rayonlar üzrə sənaye buraxılışının cəmi ölkə üzrə yekuna bərabər deyil, sonrakı illərdə isə ev təsərrüfatlarının sənaye fəaliyyətini də əhatə edir"
+s0152,FR1's {0} section value added is an earlier vintage than DSK's,FR1-in {0} ili üzrə bölmələrin əlavə dəyəri DSK məlumatlarından daha əvvəlki versiyadır
+s0153,SME indicators exist for two years only; the statistical register is a single snapshot,KOS (SME) göstəriciləri yalnız iki il üzrə mövcuddur; statistik registr yalnız bir tarixə olan vəziyyəti əks etdirir
+s0154,The published non-state share of industry is inconsistent with its own branch breakdown in some years,Bəzi illərdə sənayedə dərc edilmiş qeyri-dövlət payı onun öz sahə bölgüsü ilə uyğun gəlmir
+s0155,FR3's branch wage paths are not anchored on {0} branch wages and share one growth rate,FR3-ün sahə əmək haqqı trayektoriyaları {0} ilinin sahə əmək haqlarına bağlanmayıb və vahid artım tempinə malikdir
+s0156,"{0} URLs ({1}_2en.xls, {2}_3en.xls, {3}_4en.xls, {4}_5en.xls, {5}_6en.xls, {6}_7en.xls) return an HTML page with HTTP {7}; the section is commented out of the DSK industry index and file numbers {8}_1/{9}_1/{10}_2 now hold regional product tables","{0} URL ({1}_2en.xls, {2}_3en.xls, {3}_4en.xls, {4}_5en.xls, {5}_6en.xls, {6}_7en.xls) HTTP {7} kodu ilə HTML səhifə qaytarır; bu bölmə DSK-nın sənaye bölməsinin indeks səhifəsində deaktiv edilib (şərhə alınıb), {8}_1/{9}_1/{10}_2 nömrəli fayllarda isə hazırda iqtisadi rayonlar üzrə məhsul cədvəlləri yerləşir"
+s0157,"workbook industry total {0} vs DSK {1} mn AZN ({2}%); largest branch gaps: Machinery and equipment {3}%, Fabricated metal products {4}%, Basic metals {5}%, Other transport equipment {6}%; {7}-{8} agree to {9}%","iş kitabında sənaye üzrə yekun {0}, DSK-da {1} mln manat ({2}%); sahələr üzrə ən böyük fərqlər: Maşın və avadanlıq {3}%, Hazır metal məmulatları {4}%, Metallurgiya {5}%, Digər nəqliyyat vasitələri {6}%; {7}-{8} illərində {9}% dəqiqliklə üst-üstə düşür"
+s0158,"unattributed investment {0}% to {1}% of the total in {2}-{3}; exact (<{4}%) from {5}; mining-support investment printed as ""-"" until {6} although its output was {7} mn AZN a year","{2}-{3} illərində bölüşdürülməmiş investisiya yekunun {0}% ilə {1}% arasında; {5} ilindən dəqiqdir (<{4}%); mədənçıxarma sahəsində xidmətlər üzrə investisiya {6} ilinədək ""-"" kimi göstərilib, halbuki bu sahənin buraxılışı ildə {7} mln manat olub"
+s0159,"DSK {0} prints e.g. ""{1} t."" (= {2} {3}% of {4}) in {5} cells of sheet {6} and {7} of sheet {8}; read naively these cells become missing","DSK {0} faylında, məsələn, ""{1} t."" (= {4} ilinin {2} {3}%-i) yazılışı {6} vərəqinin {5} xanasında və {8} vərəqinin {7} xanasında rast gəlinir; sadə oxunduqda bu xanalar çatışmayan dəyərə çevrilir"
+s0160,"VA - compensation - other taxes - GOS = C {0}, D {1}, E {2} mn AZN in {3} (sum {4}); exact in every other year","{3} ilində ƏD - əmək ödənişləri - digər vergilər - ümumi mənfəət = C {0}, D {1}, E {2} mln manat (cəmi {4}); digər bütün illərdə dəqiq bərabərlik"
+s0161,section E GOS {0} mn AZN in {1} (compensation {2} > value added {3}); negative in {4} of {5} years,{1} ilində E bölməsinin ümumi mənfəəti {0} mln manat (əmək ödənişləri {2} > əlavə dəyər {3}); {5} il ərzində {4} il mənfi olub
+s0162,"r223 equals payable profit tax / income after deductions to {0} pp in every year {1}-{2} ({3}-{4}%); the profitability the declarations imply, (income after deductions - deductible expenses) / deductible expenses, is {5}-{6}%; taxable profit minus declared loss equals that net result to {7} mn AZN","{1}-{2} illərinin hər birində r223 ödənilməli mənfəət vergisi / çıxılmalardan sonrakı gəlir nisbətinə {0} faiz bəndi dəqiqliklə bərabərdir ({3}-{4}%); bəyannamələrdən irəli gələn rentabellik, yəni (çıxılmalardan sonrakı gəlir - gəlirdən çıxılan xərclər) / gəlirdən çıxılan xərclər, {5}-{6}% təşkil edir; vergiyə cəlb olunan mənfəət ilə bəyan edilmiş zərərin fərqi həmin xalis nəticəyə {7} mln manat dəqiqliklə bərabərdir"
+s0163,"rows {0}-{1} equal rows {2}-{3} in every year: True; row {4} (a count) is labelled ""mln. manat""","{0}-{1} sətirləri bütün illərdə {2}-{3} sətirlərinə bərabərdir: Bəli; {4} sətri (say göstəricisi) ""mln. manat"" kimi işarələnib"
+s0164,"rows {0}, {1} and {2} (numbers of large, medium and small taxpayers, e.g. {3} large payers in {4}) are labelled ""min nəfər"" (thousand persons)","{0}, {1} və {2} sətirləri (iri, orta və kiçik vergi ödəyicilərinin sayı, məsələn, {4} ilində {3} iri ödəyici) ""min nəfər"" kimi işarələnib"
+s0165,"sum of {0} regions vs DSK {1}: {2}% to {3}% in {4}-{5}, exact from {6}; DSK {7} footnotes {8}+ as ""considering industrial activities of households and informal individual owners""","{0} iqtisadi rayonun cəmi DSK {1} faylı ilə müqayisədə: {4}-{5} illərində {2}% ilə {3}% arasında, {6} ilindən dəqiq; DSK {7} faylında {8} və sonrakı illər üçün ""ev təsərrüfatlarının və qeyri-formal fərdi sahibkarların sənaye fəaliyyəti nəzərə alınmaqla"" qeydi verilib"
+s0166,FR1 manufacturing VA {0} {1} vs DSK NA {2} mn AZN ({3}%); the two agree exactly in {4},"FR1 emal sənayesi əlavə dəyəri ({0}) {1}, DSK milli hesablarında (NA) {2} mln manat ({3}%); {4} ilində ikisi tam üst-üstə düşür"
+s0167,DSK entrepreneurship tables cover {0} and {1}; st_units tables are as of {2} July {3} (entry/exit January-June {4}),"DSK sahibkarlıq cədvəlləri {0} və {1} illərini əhatə edir; st_units cədvəlləri {2} iyul {3} tarixinə olan vəziyyəti əks etdirir (giriş/çıxış: {4}, yanvar-iyun)"
+s0168,"output-weighted branch non-state shares (DSK {0}_2 x {1}) differ from the published industry total by {2} {3} pp, {4} {5} pp, {6} {7} pp, {8} {9} pp, {10} {11} pp; within {12} pp in every other year","buraxılışla çəkilənmiş sahə qeyri-dövlət payları (DSK {0}_2 x {1}) sənaye üzrə dərc edilmiş yekundan fərqlənir: {2}: {3} faiz bəndi, {4}: {5} faiz bəndi, {6}: {7} faiz bəndi, {8}: {9} faiz bəndi, {10}: {11} faiz bəndi; digər bütün illərdə fərq {12} faiz bəndi daxilindədir"
+s0169,FR3 {0} branch wage / DSK {1} branch wage - {2} ranges {3}% to {4}% across {5} branches; {6}-{7} growth is {8}-{9}% a year for every branch,FR3 {0} sahə əmək haqqı / DSK {1} sahə əmək haqqı - {2} nisbəti {5} sahə üzrə {3}% ilə {4}% arasında dəyişir; {6}-{7} illərində artım hər sahə üçün ildə {8}-{9}% təşkil edir
+s0170,"Renewal and depreciation rates by branch are NOT AVAILABLE; FR10 uses the investment rate (I/GO, DSK {0}) and the national-accounts consumption of fixed capital and fixed assets by section (DSK NA {1}, {2}) as alternatives (gaps table)","Sahələr üzrə yenilənmə və köhnəlmə əmsalları MÖVCUD DEYİL; FR10 alternativ olaraq investisiya normasından (I/GO, DSK {0}) və milli hesablar üzrə bölmələr üzrə əsas kapitalın istehlakı və əsas fondlardan (DSK NA {1}, {2}) istifadə edir (boşluqlar cədvəli)"
+s0171,FR10 takes {0} branch data from DSK; the workbook branch rows are used only where they match DSK,FR10 {0} ili üzrə sahə məlumatlarını DSK-dan götürür; iş kitabının sahə sətirlərindən yalnız DSK ilə uyğun gəldiyi hallarda istifadə olunur
+s0172,"Investment rates are used from {0} in the determinants panel; mining-support investment before {1} is treated as missing, not zero","Amillər panelində investisiya normalarından {0} ilindən etibarən istifadə edilir; {1} ilinədək mədənçıxarma sahəsində xidmətlər üzrə investisiya sıfır deyil, çatışmayan dəyər kimi qəbul edilir"
+s0173,to_num reads the suffix (Part {0}); real output is chained from {1} (previous year = {2}) only,"to_num ""t."" işarəsini nəzərə alır (Hissə {0}); real buraxılış yalnız {1} ilindən zəncirvari üsulla hesablanır (əvvəlki il = {2})"
+s0174,"An allocation error between sections C, D, E; GOS margins of those sections in {0} are uncertain by these amounts","C, D, E bölmələri arasında bölüşdürmə xətası; həmin bölmələrin {0} ilində ümumi mənfəət marjaları bu məbləğlər qədər qeyri-müəyyəndir"
+s0175,"Not an error but an economic fact (a subsidised utility); the total row is identified by its label, not its code","Xəta deyil, iqtisadi faktdır (subsidiyalaşdırılan kommunal xidmət); yekun sətir kodu ilə deyil, adı ilə müəyyən edilir"
+s0176,FR10 reports the declaration margin computed from the components and labels r223 as an effective tax ratio,FR10 komponentlərdən hesablanmış bəyannamə marjasını təqdim edir və r223-ü effektiv vergi nisbəti kimi işarələyir
+s0177,Budget-organisation taxpayer counts are NOT AVAILABLE; the size-class table uses the micro rows only (as FR4 F4),Büdcə təşkilatı olan vergi ödəyicilərinin sayı MÖVCUD DEYİL; ölçü qrupları cədvəlində yalnız mikro sətirlərdən istifadə olunur (FR4 F4-də olduğu kimi)
+s0178,Read as counts of taxpayers; the unit should be corrected in the workbook,Vergi ödəyicilərinin sayı kimi oxunur; ölçü vahidi iş kitabında düzəldilməlidir
+s0179,"Regional shares are modelled on the regional sum (shares add to one by construction); the {0}/{1} change of coverage is a level break, handled by a step dummy in the regional share equations",İqtisadi rayonların payları iqtisadi rayonların cəminə görə modelləşdirilir (payların cəmi konstruksiyaya görə birə bərabərdir); {0}/{1} əhatə dəyişikliyi səviyyə qırılmasıdır və iqtisadi rayonların pay tənliklərində pilləli fiktiv dəyişənlə nəzərə alınır
+s0180,"FR10 anchors on {0}, where FR1 and DSK coincide, and uses FR1 only as growth indices from {1}",FR10 FR1 və DSK məlumatlarının üst-üstə düşdüyü {0} ilinə bağlanır və {1} ilindən FR1-dən yalnız artım indeksləri kimi istifadə edir
+s0181,"SME shares and register-based entry/exit rates are presented, not modelled: no time series exists to identify a projection","KOS (SME) payları və registr əsasında giriş/çıxış əmsalları modelləşdirilmir, yalnız təqdim olunur: proqnozu müəyyənləşdirmək üçün zaman sırası mövcud deyil"
+s0182,The forecast of the non-state share is built from the branch composition (consistent by construction); the published total for those years should be queried with DSK,Qeyri-dövlət payının proqnozu sahə strukturu əsasında qurulur (konstruksiyaya görə uyğundur); həmin illər üzrə dərc edilmiş yekun göstərici barədə DSK-ya sorğu göndərilməlidir
+s0183,FR10 applies FR1's average-wage index to each branch's {0} DSK wage; FR3 is not used for levels,FR10 FR1-in orta əmək haqqı indeksini hər sahənin DSK üzrə {0} əmək haqqına tətbiq edir; səviyyələr üçün FR3-dən istifadə edilmir
+s0184,market position,bazar mövqeyi
+s0185,production efficiency,istehsal səmərəliliyi
+s0186,financial condition,maliyyə vəziyyəti
+s0187,Branch share of industrial output,Sənaye buraxılışında sahənin payı
+s0188,Branch share of manufacturing output,Emal sənayesi buraxılışında sahənin payı
+s0189,"Concentration across branches (HHI, CR4)","Sahələr üzrə konsentrasiya (HHI, CR4)"
+s0190,Firm-level HHI / CR4 by NACE x region,NACE x iqtisadi rayon üzrə müəssisə səviyyəsində HHI / CR4
+s0191,Non-state share of output by branch,Sahələr üzrə buraxılışda qeyri-dövlət payı
+s0192,Active enterprises by branch and ownership,Sahələr və mülkiyyət formaları üzrə fəaliyyət göstərən müəssisələr
+s0193,Enterprises by size class,Ölçü qrupları üzrə müəssisələr
+s0194,"SME share of output, employment, investment","Buraxılışda, məşğulluqda və investisiyada KOS (SME) payı"
+s0195,"Taxpayer size classes: count, turnover, employees","Vergi ödəyicilərinin ölçü qrupları: say, dövriyyə, işçilər"
+s0196,Regional share of industrial output,Sənaye buraxılışında iqtisadi rayonun payı
+s0197,Non-state share of industrial output by region,İqtisadi rayonlar üzrə sənaye buraxılışında qeyri-dövlət payı
+s0198,Industrial enterprises by region,İqtisadi rayonlar üzrə sənaye müəssisələri
+s0199,New and liquidated enterprises by region (all sectors),İqtisadi rayonlar üzrə yeni yaradılmış və ləğv edilmiş müəssisələr (bütün sektorlar)
+s0200,Created and liquidated statistical units by activity,Fəaliyyət növləri üzrə yaradılmış və ləğv edilmiş statistik vahidlər
+s0201,Main products in physical units,Natural ifadədə əsas məhsullar
+s0202,Main products by place of production; product location shares,İstehsal yeri üzrə əsas məhsullar; məhsul istehsalının ərazi payları
+s0203,Exports by branch (export orientation),Sahələr üzrə ixrac (ixrac yönümlülüyü)
+s0204,"Industrial parks and zones: output, exports, jobs, investment","Sənaye parkları və zonaları: buraxılış, ixrac, iş yerləri, investisiya"
+s0205,"Investment promotion certificates: projects, jobs, value","İnvestisiya təşviqi sənədləri: layihələr, iş yerləri, dəyər"
+s0206,SME agency (KOBİA) support services,KOBİA (KOS agentliyi) dəstək xidmətləri
+s0207,"Labour productivity, real output per employee","Əmək məhsuldarlığı, bir işçiyə düşən real buraxılış"
+s0208,"Labour productivity, real value added per employee","Əmək məhsuldarlığı, bir işçiyə düşən real əlavə dəyər"
+s0209,Labour productivity by section (official),Bölmələr üzrə əmək məhsuldarlığı (rəsmi)
+s0210,Intermediate-consumption share of output,Buraxılışda aralıq istehlakın payı
+s0211,Capital productivity,Kapital məhsuldarlığı
+s0212,"TFP growth, gross output (branches) and value added (sections)","TFP artımı, ümumi buraxılış (sahələr) və əlavə dəyər (bölmələr)"
+s0213,Wage-productivity gap,Əmək haqqı ilə məhsuldarlıq arasındakı fərq
+s0214,Innovation intensity,İnnovasiya intensivliyi
+s0215,Investment rate (renewal proxy),İnvestisiya norması (yenilənmənin təxmini göstəricisi)
+s0216,"Fixed-asset renewal, disposal and depreciation rates","Əsas fondların yenilənmə, xaricolma və köhnəlmə əmsalları"
+s0217,Capital-yield index,Fondverimi indeksi
+s0218,Energy intensity of production,İstehsalın enerji tutumu
+s0219,Gross operating surplus margin by section,Bölmələr üzrə ümumi mənfəət marjası
+s0220,Labour share of value added,Əlavə dəyərdə əməyin payı
+s0221,Consumption of fixed capital / VA,Əsas kapitalın istehlakı / əlavə dəyər
+s0222,GOS-proxy margin by manufacturing branch,Emal sənayesi sahələri üzrə ümumi mənfəətin təxmini marjası
+s0223,Profit-tax declarations: net margin,Mənfəət vergisi bəyannamələri: xalis marja
+s0224,Declared losses,Bəyan edilmiş zərərlər
+s0225,"Effective profit-tax ratio (DVX ""rentabellik"", F7)","Effektiv mənfəət vergisi nisbəti (DVX ""rentabellik"", F7)"
+s0226,Income-tax declarations of individual entrepreneurs,Fərdi sahibkarların gəlir vergisi bəyannamələri
+s0227,Tax arrears,Vergi borcları
+s0228,Industry turnover on the tax basis,Vergi məlumatları əsasında sənaye dövriyyəsi
+s0229,Investment self-financing share,İnvestisiyaların öz vəsaitləri hesabına maliyyələşmə payı
+s0230,Finished-goods stocks to output,Hazır məhsul ehtiyatlarının buraxılışa nisbəti
+s0231,"SME assets, stocks and taxes paid","KOS (SME) aktivləri, ehtiyatları və ödənilmiş vergilər"
+s0232,"Liquidity: current, quick, cash ratios","Likvidlik: cari, tez və mütləq likvidlik əmsalları"
+s0233,Leverage and interest cover,Borc yükü (leveraj) və faizlərin ödənilmə əmsalı
+s0234,"Profitability: ROE (DuPont), ROA, EBIT margin","Rentabellik: ROE (DuPont), ROA, EBIT marjası"
+s0235,"Turnover: assets, inventories, receivable days","Dövriyyə: aktivlər, ehtiyatlar, debitor borcunun dövriyyə günləri"
+s0236,"Distress score (Altman Z''-EM, literature coefficients)","Maliyyə çətinliyi balı (Altman Z''-EM, ədəbiyyatdakı əmsallar)"
+s0237,Firm employment and wage bill,Müəssisələr üzrə məşğulluq və əmək haqqı fondu
+s0238,Credit and NPLs by branch,Sahələr üzrə kreditlər və problemli kreditlər
+s0239,GO_b / sum GO,GO_b / cəm GO
+s0240,sum s^{0} x {1}^{2}; top-{3} share,cəm s^{0} x {1}^{2}; ən böyük {3} vahidin payı
+s0241,sum firm s^{0} within cell,xana daxilində müəssisələr üzrə cəm s^{0}
+s0242,non-state output / output,qeyri-dövlət buraxılışı / buraxılış
+s0243,count by micro/small/medium-large,say: mikro/kiçik/orta-iri
+s0244,SME value / total,KOS dəyəri / cəmi
+s0245,by large/medium/small/micro,iri/orta/kiçik/mikro üzrə
+s0246,GO_r / sum GO_r,GO_r / cəm GO_r
+s0247,new / stock; liquidated / stock,yeni / mövcud say; ləğv edilmiş / mövcud say
+s0248,new / units; liquidated / units,yeni / vahidlər; ləğv edilmiş / vahidlər
+s0249,volume; place / national,həcm; istehsal yeri / ölkə üzrə
+s0250,exports / output,ixrac / buraxılış
+s0251,"count, value","say, dəyər"
+s0252,Q_b / employees,Q_b / işçilər
+s0253,VA_b / P_b / employees,ƏD_b / P_b / işçilər
+s0254,VA / employed,ƏD / məşğullar
+s0255,Q_b / K_b (perpetual inventory),Q_b / K_b (daimi inventarizasiya metodu)
+s0256,Tornqvist residual with observed cost shares,Müşahidə olunan xərc payları ilə Törnqvist qalığı
+s0257,dln(w/P) - dln LP,dln(w/P) - dln LP
+s0258,innovation expenditure / output,innovasiya xərcləri / buraxılış
+s0259,published rates,dərc edilmiş əmsallar
+s0260,published index,dərc edilmiş indeks
+s0261,energy cost / output,enerji xərcləri / buraxılış
+s0262,GOS / VA; GOS / GO,ümumi mənfəət / ƏD; ümumi mənfəət / ümumi buraxılış
+s0263,compensation / VA,əmək ödənişləri / ƏD
+s0264,CFC / VA,əsas kapitalın istehlakı / ƏD
+s0265,(VA - gross wage bill) / GO,(ƏD - ümumi əmək haqqı fondu) / ümumi buraxılış
+s0266,(income after deductions - deductible expenses) / deductible expenses,(çıxılmalardan sonrakı gəlir - gəlirdən çıxılan xərclər) / gəlirdən çıxılan xərclər
+s0267,loss / taxable profit,zərər / vergiyə cəlb olunan mənfəət
+s0268,payable tax / income after deductions,ödənilməli vergi / çıxılmalardan sonrakı gəlir
+s0269,profit / income; loss,mənfəət / gəlir; zərər
+s0270,own funds / total investment,öz vəsaitləri / ümumi investisiya
+s0271,stocks / GO,ehtiyatlar / ümumi buraxılış
+s0272,CA/STL; (CA-inv)/STL; cash/STL,dövriyyə aktivləri / qısamüddətli öhdəliklər; (dövriyyə aktivləri - ehtiyatlar) / qısamüddətli öhdəliklər; pul vəsaitləri / qısamüddətli öhdəliklər
+s0273,(STL+LTL)/E; EBIT/interest,(qısamüddətli + uzunmüddətli öhdəliklər) / kapital; EBIT / faiz xərcləri
+s0274,NP/Rev x Rev/TA x TA/E,xalis mənfəət / gəlir x gəlir / aktivlər x aktivlər / kapital
+s0275,Rev/TA; COGS/inv; rec/Rev x {0},gəlir / aktivlər; satışın maya dəyəri / ehtiyatlar; debitor borcları / gəlir x {0}
+s0276,persons; wage bill,nəfər; əmək haqqı fondu
+s0277,loans; NPL / loans,kreditlər; problemli kreditlər / kreditlər
+s0278,index; %,indeks; %
+s0279,units; mn AZN; thsd,vahid; mln manat; min
+s0280,"tonnes, units","ton, ədəd"
+s0281,"tonnes, units; %","ton, ədəd; %"
+s0282,mn AZN; persons,mln manat; nəfər
+s0283,units; mn AZN,vahid; mln manat
+s0284,units; thsd AZN,vahid; min manat
+s0285,thsd AZN {0} prices,"min manat, {0} qiymətləri ilə"
+s0286,log points,log bəndləri
+s0287,mn AZN,mln manat
+s0288,persons; thsd AZN,nəfər; min manat
+s0289,mn AZN; %,mln manat; %
+s0290,DVX / DSMF,DVX / DSMF
+s0291,DSK via workbook,DSK (iş kitabı vasitəsilə)
+s0292,State Customs Committee (DGK),Dövlət Gömrük Komitəsi (DGK)
+s0293,"Industrial-park operators (İZİA, Ministry of Economy)","Sənaye parkı operatorları (İZİA, İqtisadiyyat Nazirliyi)"
+s0294,Ministry of Economy,İqtisadiyyat Nazirliyi
+s0295,DSK; workbook,DSK; iş kitabı
+s0296,DSK; FR1; FR4,DSK; FR1; FR4
+s0297,DSK; Azerenerji,DSK; Azərenerji
+s0298,industry {0},sənaye {0}
+s0299,industry {0} (derived),sənaye {0} (hesablanmış)
+s0300,enterprise panel (requested {0}),müəssisə paneli ({0} tarixində sorğu edilib)
+s0301,industry {0}_2,sənaye {0}_2
+s0302,industry {0}-{1}-{2} sheet {3};{4},"sənaye {0}-{1}-{2}, vərəq {3};{4}"
+s0303,industry {0}-{1}-{2} sheet {3},"sənaye {0}-{1}-{2}, vərəq {3}"
+s0304,"entrepreneurship {0}_1, {1}, {2}, {3}","sahibkarlıq {0}_1, {1}, {2}, {3}"
+s0305,industry {0} (and {1} volume index),sənaye {0} (və {1} fiziki həcm indeksi)
+s0306,st_units {0}_1-{1}_3 (snapshot {2} Jul {3}),st_units {0}_1-{1}_3 ({2} iyul {3} tarixinə vəziyyət)
+s0307,"industry {0}; product lists in {1}_x, {2}_x, {3}, {4}","sənaye {0}; məhsul siyahıları: {1}_x, {2}_x, {3}, {4}"
+s0308,"industry {0}_1 ({1}-{2}), {3}_2 ({4}-{5}); {6}_1 (to {7})","sənaye {0}_1 ({1}-{2}), {3}_2 ({4}-{5}); {6}_1 ({7} ilədək)"
+s0309,HS-level exports (not in project),HS kodları səviyyəsində ixrac (layihədə yoxdur)
+s0310,workbook 'Park',iş kitabı 'Park'
+s0311,workbook 'KOBİA',iş kitabı 'KOBİA'
+s0312,"industry {0}, {1}, {2}; industry sheets (headcount)","sənaye {0}, {1}, {2}; sənaye vərəqləri (işçi sayı)"
+s0313,national accounts {0}_2; {1},milli hesablar {0}_2; {1}
+s0314,national accounts {0}_2,milli hesablar {0}_2
+s0315,"national accounts {0}, {1}_1","milli hesablar {0}, {1}_1"
+s0316,industry {0}; national accounts {1},sənaye {0}; milli hesablar {1}
+s0317,"NA {0}, {1}, {2}_1, {3}; industry {4}; FR4 hired","milli hesablar {0}, {1}, {2}_1, {3}; sənaye {4}; FR4 muzdlu işçilər"
+s0318,industry {0}_2; industry sheets,sənaye {0}_2; sənaye vərəqləri
+s0319,"industry {0}_3 (also {1}_1, {2}_2, {3}_4, {4}_5)","sənaye {0}_3 (həmçinin {1}_1, {2}_2, {3}_4, {4}_5)"
+s0320,"industry {0}, {1}","sənaye {0}, {1}"
+s0321,"industry {0}_2-{1}_7 (no longer published, F1)","sənaye {0}_2-{1}_7 (artıq dərc edilmir, F1)"
+s0322,"industry {0}_1 (old numbering, discontinued)","sənaye {0}_1 (köhnə nömrələmə, dayandırılıb)"
+s0323,"not published by branch (SME electricity costs only, entrepreneurship {0}, {1}-{2})","sahələr üzrə dərc edilmir (yalnız KOS-un elektrik enerjisi xərcləri, sahibkarlıq {0}, {1}-{2})"
+s0324,national accounts {0},milli hesablar {0}
+s0325,"national accounts {0}, {1}","milli hesablar {0}, {1}"
+s0326,"NA {0}, {1}_2; industry {2}, {3}_2; industry sheets","milli hesablar {0}, {1}_2; sənaye {2}, {3}_2; sənaye vərəqləri"
+s0327,DVX r221,DVX r221
+s0328,DVX r223,DVX r223
+s0329,DVX r224-r232,DVX r224-r232
+s0330,DVX r43,DVX r43
+s0331,DVX r53-r57,DVX r53-r57
+s0332,workbook 'Real sektor' r114 / r80,iş kitabı 'Real sektor' r114 / r80
+s0333,"entrepreneurship {0}, {1}, {2}","sahibkarlıq {0}, {1}, {2}"
+s0334,enterprise balance sheet and P&L panel (requested {0}),müəssisələrin balans hesabatı və mənfəət-zərər hesabatı paneli ({0} tarixində sorğu edilib)
+s0335,contributor records (requested),sığorta haqqı ödəyicilərinin qeydləri (sorğu edilib)
+s0336,not in project (FR1 holds total industry credit),layihədə yoxdur (FR1 sənaye üzrə ümumi kredit həcmini əhatə edir)
+s0337,branch ({0}),sahə ({0})
+s0338,industry / manufacturing,sənaye / emal sənayesi
+s0339,branch x ownership,sahə x mülkiyyət növü
+s0340,branch x size,sahə x ölçü
+s0341,section x size,bölmə x ölçü
+s0342,size class,ölçü qrupu
+s0343,economic region ({0}),iqtisadi rayon ({0})
+s0344,"section, region, ownership","bölmə, iqtisadi rayon, mülkiyyət növü"
+s0345,product (~{0}) x branch,məhsul (~{0}) x sahə
+s0346,product x city/district,məhsul x şəhər/rayon
+s0347,branch / product,sahə / məhsul
+s0348,national / SME house,ölkə üzrə / KOB evi (SME house)
+s0349,branch / section,sahə / bölmə
+s0350,"branch, section","sahə, bölmə"
+s0351,"section (B, C, D, E)","bölmə (B, C, D, E)"
+s0352,all payers,bütün vergi ödəyiciləri
+s0353,industry / non-oil industry,sənaye / qeyri-neft sənayesi
+s0354,semi-annual snapshot,yarımillik anlıq vəziyyət
+s0355,available now,hazırda mövcuddur
+s0356,available now ({0} years),hazırda mövcuddur ({0} il)
+s0357,available now (snapshot),hazırda mövcuddur (anlıq vəziyyət)
+s0358,not available,mövcud deyil
+s0359,available now (derived),hazırda mövcuddur (hesablanmış)
+s0360,available now ({0} years annual),"hazırda mövcuddur ({0} il, illik)"
+s0361,"file download (DSK xls, scheduled)","fayl endirmə (DSK xls, qrafik üzrə)"
+s0362,data-sharing agreement + secure API,məlumat mübadiləsi sazişi + təhlükəsiz API
+s0363,workbook upload (Ministry of Economy),iş kitabının yüklənməsi (İqtisadiyyat Nazirliyi)
+s0364,data-sharing agreement + secure API with DGK; HS-NACE concordance,DGK ilə məlumat mübadiləsi sazişi + təhlükəsiz API; HS-NACE uyğunluq cədvəli
+s0365,"file download (DSK xls, scheduled); workbook upload (Ministry of Economy)","fayl endirmə (DSK xls, qrafik üzrə); iş kitabının yüklənməsi (İqtisadiyyat Nazirliyi)"
+s0366,request to DSK to resume publication,dərcin bərpası üçün DSK-ya sorğu
+s0367,request to DSK,DSK-ya sorğu
+s0368,data-sharing agreement + secure API with CBAR,Mərkəzi Bank (CBAR) ilə məlumat mübadiləsi sazişi + təhlükəsiz API
+s0369,"share system, HHI (Parts {0}, {1})","paylar sistemi, HHI (Hissələr {0}, {1})"
+s0370,"MNL share system (Part {0}), forecast","MNL paylar sistemi (Hissə {0}), proqnoz"
+s0371,"market-structure KPI, forecast","bazar strukturu üzrə KPI, proqnoz"
+s0372,Layer B concentration,B qatında konsentrasiya
+s0373,ownership composition forecast (Part {0}),mülkiyyət tərkibinin proqnozu (Hissə {0})
+s0374,"entry/net-entry rates, determinants panel","giriş/xalis giriş dərəcələri, determinantlar paneli"
+s0375,"size structure, concentration bound","ölçü strukturu, konsentrasiya həddi"
+s0376,"held constant (not identifiable, F11)","sabit saxlanılır (identifikasiya olunmur, F11)"
+s0377,size structure cross-check,ölçü strukturunun çarpaz yoxlanması
+s0378,regional share system (Part {0}),regional paylar sistemi (Hissə {0})
+s0379,regional ownership profile,regional mülkiyyət profili
+s0380,regional entry dynamics,regionlarda bazara giriş dinamikası
+s0381,entry/exit rates,giriş/çıxış dərəcələri
+s0382,"product view, growth ranking","məhsullar üzrə baxış, artım reytinqi"
+s0383,"product market shares by place, HHI across places (Part {0})","yerlər üzrə məhsul bazar payları, yerlər arasında HHI (Hissə {0})"
+s0384,"share-system driver, determinants panel","paylar sisteminin amili, determinantlar paneli"
+s0385,park performance,parkların fəaliyyət nəticələri
+s0386,support-measure context,dəstək tədbirləri konteksti
+s0387,"efficiency ranking, quadrant, forecast path","səmərəlilik reytinqi, kvadrant, proqnoz trayektoriyası"
+s0388,efficiency ranking,səmərəlilik reytinqi
+s0389,TFP materials share; cost structure,TFP üçün material xərclərinin payı; xərc strukturu
+s0390,"efficiency, TFP capital input","səmərəlilik, TFP üçün kapital amili"
+s0391,efficiency decomposition (Part {0}),səmərəliliyin dekompozisiyası (Hissə {0})
+s0392,unit-labour-cost pressure,vahid əmək xərclərinin təzyiqi
+s0393,efficiency profile,səmərəlilik profili
+s0394,determinants panel; early-warning flag,determinantlar paneli; erkən xəbərdarlıq siqnalı
+s0395,renewal flag,yeniləşmə siqnalı
+s0396,"cost structure, determinants","xərc strukturu, determinantlar"
+s0397,financial-condition forecast (Part {0}),maliyyə vəziyyətinin proqnozu (Hissə {0})
+s0398,margin decomposition,marjanın dekompozisiyası
+s0399,"renewal proxy, net margin","yeniləşmə üzrə proksi göstərici, xalis marja"
+s0400,"quadrant, early warning, forecast","kvadrant, erkən xəbərdarlıq, proqnoz"
+s0401,economy-wide profitability KPI,bütün iqtisadiyyat üzrə rentabellik KPI
+s0402,distress KPI,maliyyə çətinliyi KPI
+s0403,tax burden,vergi yükü
+s0404,small-business profitability,kiçik biznesin rentabelliyi
+s0405,early-warning context,erkən xəbərdarlıq konteksti
+s0406,cross-check of output,buraxılışın çarpaz yoxlanması
+s0407,financial capacity KPI,maliyyə imkanları KPI
+s0408,early-warning flag (rising stocks),erkən xəbərdarlıq siqnalı (ehtiyatların artması)
+s0409,SME balance-sheet profile,KOS-un balans profili
+s0410,Layer B engine (Part {0}),B qatının hesablama modulu (Hissə {0})
+s0411,"Layer B productivity, TFP","B qatı: məhsuldarlıq, TFP"
+s0412,financial-condition driver,maliyyə vəziyyətinin amili
+s0413,ranking table; time series with fan,reytinq cədvəli; yelpik zolaqlı zaman sırası
+s0414,stacked area; fan chart,yığılmış sahə qrafiki; yelpik qrafiki
+s0415,dashboard KPI card,idarəetmə panelində KPI kartı
+s0416,heat map NACE x region,istilik xəritəsi NACE x iqtisadi rayon
+s0417,time series; KPI card,zaman sırası; KPI kartı
+s0418,ranking table,reytinq cədvəli
+s0419,stacked bar,yığılmış sütun qrafiki
+s0420,KPI card,KPI kartı
+s0421,map; region x year heat map,xəritə; iqtisadi rayon x il istilik xəritəsi
+s0422,map; table,xəritə; cədvəl
+s0423,product table with sparklines,mini-qrafikli (sparkline) məhsul cədvəli
+s0424,map; product table,xəritə; məhsul cədvəli
+s0425,scatter; time series,səpələnmə diaqramı; zaman sırası
+s0426,table; KPI card,cədvəl; KPI kartı
+s0427,ranking table; quadrant; fan,reytinq cədvəli; kvadrant; yelpik qrafiki
+s0428,time series,zaman sırası
+s0429,waterfall / decomposition chart,şəlalə / dekompozisiya qrafiki
+s0430,bar chart,sütun qrafiki
+s0431,heat map,istilik xəritəsi
+s0432,time series with fan,yelpik zolaqlı zaman sırası
+s0433,quadrant; ranking; fan,kvadrant; reytinq; yelpik qrafiki
+s0434,firm scorecard; peer percentile; early-warning list,müəssisə qiymətləndirmə kartı; analoqlar arasında persentil; erkən xəbərdarlıq siyahısı
+s0435,firm scorecard,müəssisə qiymətləndirmə kartı
+s0436,annual (DSK release),illik (DSK nəşri)
+s0437,lower bound from DSK register large-unit count and SME output share (Part {0}),DSK reyestrindəki iri vahidlərin sayı və KOS-un buraxılışdakı payı əsasında aşağı hədd (Hissə {0})
+s0438,DVX taxpayer size classes r111-r126 ({0}-{1}),DVX vergi ödəyicilərinin ölçü qrupları r111-r126 ({0}-{1})
+s0439,DVX register flows (requested),DVX reyestr axınları (sorğu edilib)
+s0440,"industrial-park exports (workbook Park, {0}-{1}); DSK shipped goods {2} is not exports","sənaye parklarının ixracı (iş kitabı Park, {0}-{1}); DSK-nın yüklənmiş mallar cədvəli {2} ixrac deyil"
+s0441,"investment rate (DSK {0}/{1}); consumption of fixed capital / VA by section (NA {2}, {3})","investisiya dərəcəsi (DSK {0}/{1}); bölmələr üzrə əsas kapitalın istehlakı / əlavə dəyər (milli hesablar {2}, {3})"
+s0442,capital productivity from perpetual inventory,fasiləsiz inventar metodu ilə kapital məhsuldarlığı
+s0443,"SME electricity and fuel costs (entrepreneurship {0}, {1})","KOS-un elektrik enerjisi və yanacaq xərcləri (sahibkarlıq {0}, {1})"
+s0444,branch breakdown requested from DVX,sahələr üzrə bölgü DVX-dən sorğu edilib
+s0445,none for firms; aggregate proxies above,müəssisələr üzrə yoxdur; yuxarıdakı aqreqat proksi göstəricilər
+s0446,"branch headcount (DSK {0}, workbook)","sahələr üzrə işçi sayı (DSK {0}, iş kitabı)"
+s0447,FR1 industry credit (cred_ind_n) at section level,bölmə səviyyəsində FR1 sənaye krediti (cred_ind_n)
+s0448,"A: {0}-{1}, core","A: {0}-{1}, əsas"
+s0449,"B: {0}-{1}, + wage and labour share","B: {0}-{1}, + əmək haqqı və əməyin payı"
+s0450,Main macro-economic indicators by sector of industry; share of industry in the economy,Sənaye sektoru üzrə əsas makroiqtisadi göstəricilər; sənayenin iqtisadiyyatda payı
+s0451,Active industrial enterprises by ownership and activity ({0}/{1}); by size class ({2}),Mülkiyyət növləri və iqtisadi fəaliyyət növləri üzrə fəaliyyət göstərən sənaye müəssisələri ({0}/{1}); ölçü qrupları üzrə ({2})
+s0452,Industrial output by type of ownership,Sənaye məhsulunun mülkiyyət növləri üzrə bölgüsü
+s0453,Number of employees in industry by activity,İqtisadi fəaliyyət növləri üzrə sənayedə çalışan işçilərin sayı
+s0454,Number of employees in industry by economic region,İqtisadi rayonlar üzrə sənayedə çalışan işçilərin sayı
+s0455,Average monthly nominal wages in industry by activity,İqtisadi fəaliyyət növləri üzrə sənayedə orta aylıq nominal əmək haqqı
+s0456,Indices of industrial output by activity ({0} previous year = {1}; {2} {3} = {4}),İqtisadi fəaliyyət növləri üzrə sənaye istehsalı indeksləri ({0} əvvəlki il = {1}; {2} {3} = {4})
+s0457,Volume of industrial output at actual prices by activity,İqtisadi fəaliyyət növləri üzrə faktiki qiymətlərlə sənaye məhsulunun həcmi
+s0458,"Sectoral structure of industry, % of total","Sənaye istehsalının sahə strukturu, ümumi həcmə görə %"
+s0459,"Structure of industrial production by form of ownership, by activity","Sənaye istehsalının mülkiyyət formalarına görə strukturu, iqtisadi fəaliyyət növləri üzrə"
+s0460,Shipped goods by activity,İqtisadi fəaliyyət növləri üzrə yüklənmiş mallar
+s0461,Structure of non-state industrial output by activity,İqtisadi fəaliyyət növləri üzrə qeyri-dövlət sənaye məhsulunun strukturu
+s0462,Stocks of finished goods held by industrial enterprises (as of {0} January),Sənaye müəssisələrində hazır məhsul ehtiyatları ({0} yanvar vəziyyətinə)
+s0463,Main indicators of mining and quarrying,Mədənçıxarma sənayesi üzrə əsas göstəricilər
+s0464,Main indicators of mining branch {0},Mədənçıxarma sahəsi {0} üzrə əsas göstəricilər
+s0465,Main indicators of manufacturing,Emal sənayesi üzrə əsas göstəricilər
+s0466,Main indicators of manufacturing branch {0} (incl. main products in kind),Emal sənayesi sahəsi {0} üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla)
+s0467,"Main indicators of electricity, gas and steam supply","Elektrik enerjisi, qaz və buxar istehsalı, bölüşdürülməsi və təchizatı üzrə əsas göstəricilər"
+s0468,"Main indicators of water supply, sewerage and waste management","Su təchizatı, tullantıların təmizlənməsi və emalı üzrə əsas göstəricilər"
+s0469,Main industrial products in kind by region (reused number),Regionlar üzrə mühüm növ sənaye məhsullarının natura ifadəsində istehsalı (təkrar istifadə edilmiş nömrə)
+s0470,Fixed industrial assets: indexes / structure / renewal / disposal / depreciation (old index),Əsas sənaye-istehsal fondları: indekslər / struktur / yeniləşmə / sıradan çıxma / aşınma (köhnə indeks)
+s0471,Manufacture of the most important industrial products in kind,Sənaye məhsullarının ən mühüm növlərinin natura ifadəsində istehsalı
+s0472,Main industrial products in kind by region (reused number; formerly capital-yield index),Regionlar üzrə mühüm növ sənaye məhsullarının natura ifadəsində istehsalı (təkrar istifadə edilmiş nömrə; əvvəllər fondverimi indeksi)
+s0473,Main industrial products in kind by region ({0}),Regionlar üzrə mühüm növ sənaye məhsullarının natura ifadəsində istehsalı ({0})
+s0474,Investment in fixed capital of industry by activity and source,İqtisadi fəaliyyət növləri və maliyyələşmə mənbələri üzrə sənayedə əsas kapitala yönəldilən investisiyalar
+s0475,Volume of innovative products by activity,İqtisadi fəaliyyət növləri üzrə innovasiya məhsulunun həcmi
+s0476,Expenditure on technological innovation by type,Növlərinə görə texnoloji innovasiyalara çəkilən xərclər
+s0477,Expenditure on technological innovation by activity,İqtisadi fəaliyyət növləri üzrə texnoloji innovasiyalara çəkilən xərclər
+s0478,Expenditure on technological innovation by direction of use,Tətbiqi istiqamətləri üzrə texnoloji innovasiyalara çəkilən xərclər
+s0479,Factors impeding innovation,İnnovasiyalara mane olan amillər
+s0480,Number of active industrial enterprises by economic region,İqtisadi rayonlar üzrə fəaliyyət göstərən sənaye müəssisələrinin sayı
+s0481,Volume of industrial output by economic region,İqtisadi rayonlar üzrə sənaye məhsulunun həcmi
+s0482,Indices of industrial output by economic region,İqtisadi rayonlar üzrə sənaye istehsalı indeksləri
+s0483,Share of the non-state sector in industrial output by economic region,İqtisadi rayonlar üzrə sənaye məhsulunun həcmində qeyri-dövlət sektorunun payı
+s0484,Industry of Baku city (regional profile),Bakı şəhərinin sənayesi (regional profil)
+s0485,"Main indicators of micro, small and medium enterprises (SMEs)","Mikro, kiçik və orta sahibkarlıq (KOS) subyektlərinin əsas göstəriciləri"
+s0486,Share of SMEs in the economy,KOS-un iqtisadiyyatda payı
+s0487,Number of active SMEs,Fəaliyyət göstərən KOS subyektlərinin sayı
+s0488,SMEs by economic region,İqtisadi rayonlar üzrə KOS subyektləri
+s0489,Newly registered SMEs,Yeni qeydiyyata alınmış KOS subyektləri
+s0490,Deregistered SMEs,Qeydiyyatdan çıxarılmış KOS subyektləri
+s0491,Active SMEs by activity and ownership,İqtisadi fəaliyyət növləri və mülkiyyət növləri üzrə fəaliyyət göstərən KOS subyektləri
+s0492,Registered / newly registered / deregistered entities by activity,İqtisadi fəaliyyət növləri üzrə qeydiyyatda olan / yeni qeydiyyata alınmış / qeydiyyatdan çıxarılmış subyektlər
+s0493,Newly registered SMEs by activity,İqtisadi fəaliyyət növləri üzrə yeni qeydiyyata alınmış KOS subyektləri
+s0494,Deregistered SMEs by activity,İqtisadi fəaliyyət növləri üzrə qeydiyyatdan çıxarılmış KOS subyektləri
+s0495,Value of goods and services of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin istehsal etdiyi mal və xidmətlərin dəyəri
+s0496,Employees of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərində çalışan işçilər
+s0497,SME share of output by activity,İqtisadi fəaliyyət növləri üzrə buraxılışda KOS-un payı
+s0498,SME share of employees by activity,İqtisadi fəaliyyət növləri üzrə işçilərin sayında KOS-un payı
+s0499,SME investment in fixed capital by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin əsas kapitala investisiyaları
+s0500,SME share of investment by activity,İqtisadi fəaliyyət növləri üzrə investisiyalarda KOS-un payı
+s0501,SME output by region and activity,İqtisadi rayonlar və iqtisadi fəaliyyət növləri üzrə KOS buraxılışı
+s0502,Active SMEs established one year ago,Bir il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri
+s0503,Active SMEs established two years ago,İki il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri
+s0504,Active SMEs established three years ago,Üç il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri
+s0505,Active SMEs established four years ago,Dörd il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri
+s0506,Active SMEs established five years ago,Beş il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri
+s0507,Value added of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin əlavə dəyəri
+s0508,Average wages in SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərində orta əmək haqqı
+s0509,Assets of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin aktivləri
+s0510,SME share of assets,Aktivlərdə KOS-un payı
+s0511,Stocks of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin ehtiyatları
+s0512,SME share of stocks,Ehtiyatlarda KOS-un payı
+s0513,Taxes paid by SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin ödədiyi vergilər
+s0514,Statistical units by activity,İqtisadi fəaliyyət növləri üzrə statistik vahidlər
+s0515,Statistical units by ownership and activity,Mülkiyyət növləri və iqtisadi fəaliyyət növləri üzrə statistik vahidlər
+s0516,Large business entities by activity,İqtisadi fəaliyyət növləri üzrə iri sahibkarlıq subyektləri
+s0517,Medium business entities by activity,İqtisadi fəaliyyət növləri üzrə orta sahibkarlıq subyektləri
+s0518,Small business entities by activity,İqtisadi fəaliyyət növləri üzrə kiçik sahibkarlıq subyektləri
+s0519,Micro business entities by activity,İqtisadi fəaliyyət növləri üzrə mikro sahibkarlıq subyektləri
+s0520,Large business entities by region,İqtisadi rayonlar üzrə iri sahibkarlıq subyektləri
+s0521,Newly created and liquidated units by activity,İqtisadi fəaliyyət növləri üzrə yeni yaradılmış və ləğv edilmiş vahidlər
+s0522,Newly created and liquidated units by ownership,Mülkiyyət növləri üzrə yeni yaradılmış və ləğv edilmiş vahidlər
+s0523,Newly created and liquidated units by region,İqtisadi rayonlar üzrə yeni yaradılmış və ləğv edilmiş vahidlər
+s0524,"Production and generation of income account by section (output, IC, VA, compensation, GOS, CFC)","Bölmələr üzrə istehsal hesabı və gəlirlərin yaranması hesabı (buraxılış, aralıq istehlak, əlavə dəyər, işçilərin əmək ödənişi, ümumi mənfəət, əsas kapitalın istehlakı)"
+s0525,"GDP by activity, current prices","İqtisadi fəaliyyət növləri üzrə ÜDM, cari qiymətlərlə"
+s0526,Output of industry by activity (NACE {0}-digit),"İqtisadi fəaliyyət növləri üzrə sənaye buraxılışı (NACE, {0} rəqəmli)"
+s0527,Intermediate consumption of industry by activity,İqtisadi fəaliyyət növləri üzrə sənayedə aralıq istehlak
+s0528,Value added in industry by activity,İqtisadi fəaliyyət növləri üzrə sənayedə əlavə dəyər
+s0529,"Share of intermediate consumption in output, industry",Sənayedə aralıq istehlakın buraxılışda payı
+s0530,Structure of compensation of employees,İşçilərin əmək ödənişinin strukturu
+s0531,Share of compensation in value added,İşçilərin əmək ödənişinin əlavə dəyərdə payı
+s0532,Structure of consumption of fixed capital,Əsas kapitalın istehlakının strukturu
+s0533,Share of consumption of fixed capital in value added,Əsas kapitalın istehlakının əlavə dəyərdə payı
+s0534,Physical volume index of output / value added,Buraxılışın / əlavə dəyərin fiziki həcm indeksi
+s0535,GDP by activity at {0} prices,"İqtisadi fəaliyyət növləri üzrə ÜDM, {0} qiymətləri ilə"
+s0536,Labour productivity by activity,İqtisadi fəaliyyət növləri üzrə əmək məhsuldarlığı
+s0537,"Fixed assets by activity, end of year","İqtisadi fəaliyyət növləri üzrə əsas fondlar, ilin sonuna"
+s0538,Output of main branches by economic region,İqtisadi rayonlar üzrə əsas sahələrin buraxılışı
+s0539,"NOT PUBLISHED (URL returns an HTML page, HTTP {0})","DƏRC EDİLMƏYİB (URL HTML səhifəsi qaytarır, HTTP {0})"
+s0540,"profit-tax payers, thsd","mənfəət vergisi ödəyiciləri, min"
+s0541,"declaration net margin, % of deductible expenses","bəyannamə üzrə xalis marja, çıxılan xərclərə nisbətən %"
+s0542,"taxable profit / gross income, %","vergi tutulan mənfəət / ümumi gəlir, %"
+s0543,"declared losses / taxable profit, %","bəyan edilmiş zərər / vergi tutulan mənfəət, %"
+s0544,"effective tax ratio (r223), %","effektiv vergi nisbəti (r223), %"
+s0545,"tax arrears, mn AZN","vergi borcları, mln manat"
+s0546,"industry turnover share of total, %","sənaye dövriyyəsinin ümumi dövriyyədə payı, %"
+s0547,insufficient data,məlumat kifayət deyil
+s0548,"branch nominal output, mn AZN","sahənin nominal buraxılışı, mln manat"
+s0549,"branch real output, mn AZN {0} prices","sahənin real buraxılışı, mln manat, {0} qiymətləri ilə"
+s0550,"branch share of industry, %","sahənin sənayedə payı, %"
+s0551,"labour productivity, thsd AZN {0} prices per employee","əmək məhsuldarlığı, bir işçiyə min manat, {0} qiymətləri ilə"
+s0552,"branch share of manufacturing, %","sahənin emal sənayesində payı, %"
+s0553,"GOS-proxy margin, % of output","ümumi mənfəət (proksi) marjası, buraxılışa nisbətən %"
+s0554,"section output, mn AZN","bölmənin buraxılışı, mln manat"
+s0555,"section GOS, % of value added","bölmənin ümumi mənfəəti, əlavə dəyərə nisbətən %"
+s0556,"industry output, mn AZN","sənaye buraxılışı, mln manat"
+s0557,"non-state share of industry, %","qeyri-dövlət sektorunun sənayedə payı, %"
+s0558,HHI across manufacturing branches,emal sənayesi sahələri üzrə HHI
+s0559,"regional share of industrial output, %","iqtisadi rayonun sənaye buraxılışında payı, %"
+s0560,"industry output, mn AZN — FR1 prices held at baseline","sənaye buraxılışı, mln manat — FR1 qiymətləri Əsas ssenari səviyyəsində saxlanılıb"
+s0561,"section output, mn AZN — FR1 prices held at baseline","bölmənin buraxılışı, mln manat — FR1 qiymətləri Əsas ssenari səviyyəsində saxlanılıb"
+s0562,{0}-{1} growth % pa,"{0}-{1} artım, illik %"
+s0563,real-named file with neutral data_status -> DATA_MODE = REAL,"real adlı fayl, neytral data_status ilə -> DATA_MODE = REAL"
+s0564,REAL file passes the validator ({0} hard errors),REAL fayl validatordan keçir ({0} kritik xəta)
+s0565,"REAL mode writes FR10_FIRM_* only, without watermark, all tests pass","REAL rejimi yalnız FR10_FIRM_* fayllarını su nişanı olmadan yazır, bütün testlər keçir"
+s0566,"Azerbaijani headers (xlsx, FIRM_PANEL_PATH) load and validate","Azərbaycan dilində başlıqlar (xlsx, FIRM_PANEL_PATH) yüklənir və yoxlamadan keçir"
+s0567,FIRM_PANEL_PATH has priority over the real-named file,FIRM_PANEL_PATH real adlı fayla nisbətən prioritet təşkil edir
+s0568,broken file: missing required column reported as fatal,zədələnmiş fayl: məcburi sütunun olmaması kritik xəta kimi bildirilir
+s0569,broken file: total assets < current assets flagged per row and the run stops,zədələnmiş fayl: ümumi aktivlər < cari aktivlər halı hər sətir üzrə qeyd olunur və icra dayandırılır
+s0570,"mode REAL, file FR10_firm_panel.csv","rejim REAL, fayl FR10_firm_panel.csv"
+s0571,{0} warnings,{0} xəbərdarlıq
+s0572,"{0} files, e.g. ['FR10_FIRM_cohort_survival.csv', 'FR10_FIRM_concentration_nace.csv', 'FR10_FIRM_concentration_nace_region_2025.csv']","{0} fayl, məs. ['FR10_FIRM_cohort_survival.csv', 'FR10_FIRM_concentration_nace.csv', 'FR10_FIRM_concentration_nace_region_2025.csv']"
+s0573,"{0} rows, unknown columns [], mode REAL","{0} sətir, naməlum sütunlar [], rejim REAL"
+s0574,loaded panel_az.xlsx,panel_az.xlsx yükləndi
+s0575,required column missing (EN or AZ header),məcburi sütun yoxdur (EN və ya AZ başlığı)
+s0576,"firm panel rejected: {0} hard errors (first: row {1}, field total_assets: total assets < current + fixed assets); see rep.csv","müəssisə paneli rədd edildi: {0} kritik xəta (birincisi: sətir {1}, sütun total_assets: ümumi aktivlər < cari aktivlər + əsas fondlar); bax: rep.csv"
+s0577,section output,bölmə buraxılışı
+s0578,non-oil branch relative prices,qeyri-neft sahələrinin nisbi qiymətləri
+s0579,refining real output,neft emalının real buraxılışı
+s0580,refining price,neft emalı məhsullarının qiyməti
+s0581,labour share of VA (margin baseline),əlavə dəyərdə əməyin payı (marja üçün baza)
+s0582,within-branch non-state shares,sahədaxili qeyri-dövlət payları
+s0583,within-section employment shares,bölmədaxili məşğulluq payları
+s0584,"branch wages (sensitivity, productivity)","sahələr üzrə əmək haqqı (həssaslıq, məhsuldarlıq)"
+s0585,other taxes on production / VA,istehsala digər vergilər / ƏD
+s0586,branch VA / output,sahə üzrə ƏD / buraxılış
+s0587,SME shares,KOS (SME) payları
+s0588,output/VA ratio held at {0},buraxılış/ƏD nisbəti {0} səviyyəsində saxlanılır
+s0589,held at {0},{0} səviyyəsində saxlanılır
+s0590,{0}-{1} average throughput (capacity),{0}-{1} orta emal həcmi (istehsal gücü)
+s0591,"oil export price in manat, estimated elasticity; exchange rate held","manatla ifadə olunmuş neft ixrac qiyməti, qiymətləndirilmiş elastiklik; məzənnə sabit saxlanılır"
+s0592,held at {0}-{1} average,{0}-{1} orta səviyyəsində saxlanılır
+s0593,{0} DSK wage x FR1 average-wage index,{0} DSK əmək haqqı x FR1 orta əmək haqqı indeksi
+s0594,held at {0} (no time series),{0} səviyyəsində saxlanılır (zaman sırası yoxdur)
+s0595,FR1 nominal VA,FR1 nominal əlavə dəyər
+s0596,DSK {0},DSK {0}
+s0597,FR1 oil price,FR1 neft qiyməti
+s0598,FR4 section index,FR4 bölmə indeksi
+s0599,FR1 wage,FR1 əmək haqqı
+s0600,forecast rule,proqnoz qaydası
+s0601,"model RMSE, nominal %","model RMSE, nominal %"
+s0602,manufacturing ({0} branches): forecasting model,emal sənayesi ({0} sahə): proqnoz modeli
+s0603,manufacturing ({0} branches) (Part {1} share systems),"emal sənayesi ({0} sahə) (Hissə {1}, pay sistemləri)"
+s0604,mining ({0} branches) (Part {1} share systems),"mədənçıxarma ({0} sahə) (Hissə {1}, pay sistemləri)"
+s0605,{0} economic regions,{0} iqtisadi rayon
+s0606,oil block + combo,neft bloku + kombinasiya
+s0607,oil block + pooled,neft bloku + birləşdirilmiş model
+s0608,oil block + const,neft bloku + sabit paylar
+s0609,constant shares,sabit paylar
+s0610,MNL: scale (FR1 real sector VA),MNL: miqyas (FR1 real sektor əlavə dəyəri)
+s0611,MNL: oil export price,MNL: neft ixrac qiyməti
+s0612,MNL: scale + oil price,MNL: miqyas + neft qiyməti
+s0613,combination: {0}/{1} constant + {2}/{3} MNL scale,kombinasiya: {0}/{1} sabit paylar + {2}/{3} MNL miqyas
+s0614,MNL: oil-sector mix (FR1 mining/manufacturing VA),MNL: neft sektoru strukturu (FR1 mədənçıxarma/emal sənayesi əlavə dəyəri)
+s0615,MNL: scale + oil-sector mix,MNL: miqyas + neft sektoru strukturu
+s0616,Baseline: manufacturing branch shares sum to {0},Əsas: emal sənayesi sahələri paylarının cəmi {0}
+s0617,Baseline: industry branch shares sum to {0},Əsas: sənaye sahələri paylarının cəmi {0}
+s0618,Baseline: regional shares sum to {0},Əsas: iqtisadi rayon paylarının cəmi {0}
+s0619,Baseline: manufacturing branches add up to section output,Əsas: emal sənayesi sahələrinin cəmi bölmə buraxılışına bərabərdir
+s0620,Baseline: mining branches (oil part = residual) reconcile with FR1 mining output,Əsas: mədənçıxarma sahələri (neft hissəsi = qalıq) FR1 mədənçıxarma buraxılışı ilə uzlaşır
+s0621,Baseline: nominal = real x deflator for every branch (oil-linked: oil-price deflator),Əsas: hər sahə üçün nominal = real x deflyator (neftlə bağlı sahələr: neft qiyməti deflyatoru)
+s0622,Baseline: non-oil + oil-linked branches add up to manufacturing output,Əsas: qeyri-neft + neftlə bağlı sahələrin cəmi emal sənayesi buraxılışına bərabərdir
+s0623,Baseline: section VA = compensation + other taxes + GOS,Əsas: bölmə ƏD = əməyin ödənişi + digər vergilər + ümumi mənfəət
+s0624,Adverse: manufacturing branch shares sum to {0},Mənfi: emal sənayesi sahələri paylarının cəmi {0}
+s0625,Adverse: industry branch shares sum to {0},Mənfi: sənaye sahələri paylarının cəmi {0}
+s0626,Adverse: regional shares sum to {0},Mənfi: iqtisadi rayon paylarının cəmi {0}
+s0627,Adverse: manufacturing branches add up to section output,Mənfi: emal sənayesi sahələrinin cəmi bölmə buraxılışına bərabərdir
+s0628,Adverse: mining branches (oil part = residual) reconcile with FR1 mining output,Mənfi: mədənçıxarma sahələri (neft hissəsi = qalıq) FR1 mədənçıxarma buraxılışı ilə uzlaşır
+s0629,Adverse: nominal = real x deflator for every branch (oil-linked: oil-price deflator),Mənfi: hər sahə üçün nominal = real x deflyator (neftlə bağlı sahələr: neft qiyməti deflyatoru)
+s0630,Adverse: non-oil + oil-linked branches add up to manufacturing output,Mənfi: qeyri-neft + neftlə bağlı sahələrin cəmi emal sənayesi buraxılışına bərabərdir
+s0631,Adverse: section VA = compensation + other taxes + GOS,Mənfi: bölmə ƏD = əməyin ödənişi + digər vergilər + ümumi mənfəət
+s0632,Reform: manufacturing branch shares sum to {0},İslahat: emal sənayesi sahələri paylarının cəmi {0}
+s0633,Reform: industry branch shares sum to {0},İslahat: sənaye sahələri paylarının cəmi {0}
+s0634,Reform: regional shares sum to {0},İslahat: iqtisadi rayon paylarının cəmi {0}
+s0635,Reform: manufacturing branches add up to section output,İslahat: emal sənayesi sahələrinin cəmi bölmə buraxılışına bərabərdir
+s0636,Reform: mining branches (oil part = residual) reconcile with FR1 mining output,İslahat: mədənçıxarma sahələri (neft hissəsi = qalıq) FR1 mədənçıxarma buraxılışı ilə uzlaşır
+s0637,Reform: nominal = real x deflator for every branch (oil-linked: oil-price deflator),İslahat: hər sahə üçün nominal = real x deflyator (neftlə bağlı sahələr: neft qiyməti deflyatoru)
+s0638,Reform: non-oil + oil-linked branches add up to manufacturing output,İslahat: qeyri-neft + neftlə bağlı sahələrin cəmi emal sənayesi buraxılışına bərabərdir
+s0639,Reform: section VA = compensation + other taxes + GOS,İslahat: bölmə ƏD = əməyin ödənişi + digər vergilər + ümumi mənfəət
+s0640,model reproduces {0} branch output,model sahə buraxılışını bərpa edir ({0})
+s0641,model reproduces {0} regional shares,model iqtisadi rayon paylarını bərpa edir ({0})
+s0642,non-state share {0}: composition vs published (pp),qeyri-dövlət payı {0}: struktur üzrə və dərc edilmiş (faiz bəndi)
+s0643,vectorised fan simulator reproduces the solver (zero shocks),vektorlaşdırılmış yelpik diaqramı simulyatoru həlledicinin nəticəsini bərpa edir (sıfır şoklar)
+s0644,DSK adding-up checks (Part {0}) all pass,DSK cəmlənmə yoxlamalarının (Hissə {0}) hamısı uğurludur
+s0645,Layer-B pipeline tests all pass (SYNTHETIC panel),B qatı hesablama zənciri testlərinin hamısı uğurludur (SİNTETİK panel)
+s0646,firm-panel swap tests all pass (temporary directory),müəssisə panelinin əvəzlənməsi testlərinin hamısı uğurludur (müvəqqəti qovluq)
+s0647,arithmetic check - holds by construction,arifmetik yoxlama - qurulmasına görə ödənilir
+s0648,thsd AZN,min manat
+s0649,{0} <= year <= reporting year,{0} <= il <= hesabat ili
+s0650,a valid NACE Rev.{0} division ({1}-{2}); FR10 Layer A covers {3}-{4},etibarlı NACE Rev.{0} sahə kodu ({1}-{2}); FR10 A qatı {3}-{4} kodlarını əhatə edir
+s0651,one of the {0} economic regions,{0} iqtisadi rayondan biri
+s0652,state | private | foreign | joint,dövlət | özəl | xarici | birgə
+s0653,micro | small | medium | large (derived if absent),mikro | kiçik | orta | iri (olmadıqda hesablanır)
+s0654,>= {0}; <= total assets,>= {0}; <= ümumi aktivlər
+s0655,>= {0}; cash + receivables + inventories <= current assets,>= {0}; pul vəsaitləri + debitor borcları + ehtiyatlar <= cari aktivlər
+s0656,>= {0}; current + fixed <= total assets,>= {0}; cari aktivlər + əsas fondlar <= ümumi aktivlər
+s0657,may be negative,mənfi ola bilər
+s0658,needed for the distress score; if absent the score is not computed and the firm is flagged,maliyyə çətinliyi göstəricisi (distress score) üçün tələb olunur; olmadıqda göstərici hesablanmır və müəssisə işarələnir
+s0659,>= {0}; <= total liabilities (separates debt from trade payables),>= {0}; <= ümumi öhdəliklər (borc öhdəliklərini ticarət kreditor borclarından ayırır)
+s0660,>= {0}; equity + liabilities = total assets,>= {0}; xüsusi kapital + öhdəliklər = ümumi aktivlər
+s0661,= revenue - cost of sales - operating expenses (within {0}%),= gəlir - satışın maya dəyəri - əməliyyat xərcləri ({0}% dəqiqliklə)
+s0662,>= {0} (annual average),>= {0} (illik orta)
+s0663,>= {0}; <= revenue,>= {0}; <= gəlir
+s0664,"HS / PRODCOM codes, "";""-separated","HS / PRODCOM kodları, "";"" ilə ayrılmış"
+s0665,state registration date (entry),dövlət qeydiyyatı tarixi (bazara giriş)
+s0666,"liquidation date (exit), empty if active","ləğvetmə tarixi (bazardan çıxış), fəaliyyətdədirsə boş"
+s0667,DVX / DSK register,DVX / DSK reyestri
+s0668,DSK register,DSK reyestri
+s0669,DVX balance sheet,DVX balans hesabatı
+s0670,DVX P&L / profit-tax declaration,DVX mənfəət və zərər hesabatı / mənfəət vergisi bəyannaməsi
+s0671,DVX P&L,DVX mənfəət və zərər hesabatı
+s0672,DVX P&L / fixed-asset register,DVX mənfəət və zərər hesabatı / əsas fondlar reyestri
+s0673,DVX cash-flow statement,DVX pul vəsaitlərinin hərəkəti hesabatı
+s0674,DGK / DSK,DGK / DSK
+s0675,DVX / Ministry of Justice register,DVX / Ədliyyə Nazirliyinin reyestri
+s0676,grows with FR1 mining VA,FR1 mədənçıxarma əlavə dəyəri ilə birgə artır
+s0677,unit elasticity to construction,tikintiyə görə vahid elastiklik
+s0678,estimated elasticity to construction,tikintiyə görə qiymətləndirilmiş elastiklik
+s0679,neutral: held at trailing {0}-year average,neytral: son {0} ilin orta səviyyəsində saxlanılır
+s0680,grows with FR1 construction VA,FR1 tikinti əlavə dəyəri ilə birgə artır
+s0681,HAC / Driscoll-Kraay covariance,HAC / Driscoll-Kraay kovariasiyası
+s0682,DOLS leads/lags of regressor differences,izahedici dəyişənlərin fərqlərinin DOLS irəli/geri lağları
+s0683,"residual ADF, one fixed lag","qalıqlar üzrə ADF, bir sabit lağ"
+s0684,chained volume levels,zəncirvari həcm səviyyələri
+s0685,perpetual inventory capital,daimi inventar metodu ilə kapital
+s0686,one-year lags of other regressors,digər izahedici dəyişənlərin bir illik lağları
+s0687,constant add-factor; decay at rho-hat (sensitivity),sabit düzəliş əmsalı; rho-hat ilə sönmə (həssaslıq)
+s0688,historical residual paths,tarixi qalıq trayektoriyaları
+s0689,held-at-last-value forecast rules,son qiymətdə saxlama proqnoz qaydaları
+s0690,all equations,bütün tənliklər
+s0691,share systems,pay sistemləri
+s0692,Part {0},Hissə {0}
+s0693,determinants panel,müəyyənedici amillər paneli
+s0694,fan charts,yelpik diaqramları
+s0695,standard errors only,yalnız standart xətalar
+s0696,endogeneity correction; no own lag,endogenlik düzəlişi; öz lağı yoxdur
+s0697,test statistic,test statistikası
+s0698,chain-linking identity,zəncirvari əlaqələndirmə eyniliyi
+s0699,stock-flow identity,ehtiyat-axın eyniliyi
+s0700,predetermined regressors; dependent variable never lagged,əvvəlcədən müəyyən edilmiş izahedici dəyişənlər; asılı dəyişənin lağından heç vaxt istifadə edilmir
+s0701,level anchor; decay is a labelled sensitivity,səviyyə lövbəri; sönmə ayrıca qeyd olunmuş həssaslıq variantıdır
+s0702,replay of observed error paths,müşahidə edilmiş xəta trayektoriyalarının təkrar tətbiqi
+s0703,"scenario assumptions, listed","ssenari fərziyyələri, siyahı şəklində"
+s0704,why not autoregressive,niyə avtoreqressiv deyil
+s0705,"non-state share held ({0}), %","qeyri-dövlət payı sabit saxlanılır ({0}), %"
+s0706,"share of industry {0}, %","sənayedə pay {0}, %"
+s0707,"published non-state share, %","dərc edilmiş qeyri-dövlət payı, %"
+s0708,"composition identity, %","struktur eyniliyi, %"
+s0709,"non-state share of manufacturing, %","emal sənayesində qeyri-dövlət payı, %"
+s0710,"non-state share of mining, %","mədənçıxarmada qeyri-dövlət payı, %"
+s0711,"identity gap, pp","eynilik boşluğu, faiz bəndi"
+s0712,"forecast non-state share %, Baseline","qeyri-dövlət payının proqnozu %, Əsas"
+s0713,"forecast non-state share %, Adverse","qeyri-dövlət payının proqnozu %, Mənfi"
+s0714,"forecast non-state share %, Reform","qeyri-dövlət payının proqnozu %, İslahat"
+s0715,V1 Branch scorecard,V1 Sahə göstəriciləri kartı
+s0716,V2 Efficiency vs financial health,V2 Səmərəlilik və maliyyə vəziyyəti
+s0717,V3 Market-share dynamics,V3 Bazar payı dinamikası
+s0718,V4 Region x activity,V4 İqtisadi rayon x fəaliyyət növü
+s0719,V5 Product view,V5 Məhsullar üzrə görünüş
+s0720,V6 Forecast with bands,V6 Zolaqlı proqnoz
+s0721,V7 Early-warning flags,V7 Erkən xəbərdarlıq siqnalları
+s0722,V8 Financial condition,V8 Maliyyə vəziyyəti
+s0723,V9 Key factors,V9 Əsas amillər
+s0724,V10 Efficiency,V10 Səmərəlilik
+s0725,V11 Data catalogue,V11 Məlumat kataloqu
+s0726,V12 Firm view (Layer B),V12 Müəssisə görünüşü (B qatı)
+s0727,"One card per branch: share of industry and manufacturing, real growth, labour productivity, GOS-proxy margin, investment rate, flags","Hər sahə üçün bir kart: sənayedə və emal sənayesində pay, real artım, əmək məhsuldarlığı, ümumi mənfəət (proksi) marjası, investisiya norması, siqnallar"
+s0728,"Labour-productivity growth against GOS-proxy margin, bubble = market share; quadrant labels","Əmək məhsuldarlığının artımı ümumi mənfəət (proksi) marjasına qarşı, qabarcıq = bazar payı; kvadrant etiketləri"
+s0729,"Branch shares {0}-{1} and {2}-{3} with {4}/{5}/{6}% bands; HHI, CR4","Sahə payları {0}-{1} və {2}-{3}, {4}/{5}/{6}% zolaqlarla; HHI, CR4"
+s0730,Regional shares of industrial output by year; non-state share; enterprises; entry/exit; forecast shares,İllər üzrə sənaye buraxılışında iqtisadi rayonların payları; qeyri-dövlət payı; müəssisələr; bazara giriş/çıxış; proqnoz payları
+s0731,"Main products in physical units, {0}-{1} growth, branch link","Natural ifadədə əsas məhsullar, {0}-{1} artım, sahə ilə əlaqə"
+s0732,"Section and branch output (nominal, real), margins, non-state share under three scenarios with {0}-{1}% bands","Bölmə və sahə buraxılışı (nominal, real), marjalar, qeyri-dövlət payı üç ssenari üzrə, {0}-{1}% zolaqlarla"
+s0733,"Margin, market-share, renewal, stocks and productivity flags; watch list","Marja, bazar payı, yenilənmə, ehtiyatlar və məhsuldarlıq siqnalları; müşahidə siyahısı"
+s0734,"Section GOS margins, labour share, CFC; DVX declaration margins, losses, arrears; self-financing","Bölmələr üzrə ümumi mənfəət marjaları, əməyin payı, əsas kapitalın istehlakı (CFC); DVX bəyannamələri üzrə marjalar, zərərlər, borclar; özünümaliyyələşdirmə"
+s0735,Growth contributions by branch; determinants panel with honest inference,Sahələr üzrə artıma töhfələr; düzgün statistik nəticə çıxarışı ilə müəyyənedici amillər paneli
+s0736,"TFP decomposition, capital productivity, wage-productivity gap, innovation intensity","TFP dekompozisiyası, kapitalın məhsuldarlığı, əmək haqqı-məhsuldarlıq boşluğu, innovasiya intensivliyi"
+s0737,"Indicator, source, table/row, years, status, integration route, alternative","Göstərici, mənbə, cədvəl/sətir, illər, status, inteqrasiya yolu, alternativ"
+s0738,"Firm scorecard, peer percentiles, distress zone, firm HHI by NACE x region, firm forecast — ACTIVE ONLY when the DVX/DSMF panel arrives","Müəssisə göstəriciləri kartı, analoq müəssisələr üzrə persentillər, maliyyə çətinliyi zonası, NACE x iqtisadi rayon üzrə müəssisə HHI, müəssisə proqnozu — YALNIZ DVX/DSMF paneli daxil olduqda AKTİVDİR"
+s0739,KPI cards + sparkline,KPI kartları + mini-qrafik (sparkline)
+s0740,scatter / quadrant,səpələnmə diaqramı / kvadrant
+s0741,stacked area; fan chart; KPI,yığılmış sahə diaqramı; yelpik diaqramı; KPI
+s0742,map + heat map,xəritə + istilik xəritəsi
+s0743,table with sparklines,mini-qrafikli cədvəl
+s0744,flag table (traffic lights),siqnal cədvəli (svetofor)
+s0745,time series; KPI cards,zaman sıraları; KPI kartları
+s0746,waterfall; coefficient table,şəlalə diaqramı; əmsallar cədvəli
+s0747,decomposition bars,dekompozisiya sütunları
+s0748,searchable table,axtarışlı cədvəl
+s0749,firm card; heat map,müəssisə kartı; istilik xəritəsi
+s0750,"FR10_SYNTHETIC_*.csv now (pipeline test only, watermarked)","hazırda FR10_SYNTHETIC_*.csv (yalnız hesablama zəncirinin testi, su nişanı ilə)"
+s0751,thsd. tonnes,min ton
+s0752,mln. cubic meter,mln. kub metr
+s0753,pebbles and flint thsd. tonnes,"çınqıl və çaxmaqdaşı, min ton"
+s0754,thsd. dkl,min dkl
+s0755,mln. units,mln. ədəd
+s0756,thsd. sq.m,min kv.m
+s0757,thsd. units,min ədəd
+s0758,thsd. sq. m,min kv. m
+s0759,thsd. pairs,min cüt
+s0760,thsd. unit,min ədəd
+s0761,thsd. pair,min cüt
+s0762,thsd. square meter,min kvadrat metr
+s0763,mln. cubuc metr,mln. kub metr
+s0764,thsd. Units,min ədəd
+s0765,thsd. manat,min manat
+s0766,million units,milyon ədəd
+s0767,thsd. sq. m.,min kv. m.
+s0768,thsd. cubic m.,min kub m.
+s0769,thsd. cubic meter,min kub metr
+s0770,mln. kWt-h,mln. kVt.saat
+s0771,thsd. Gcal,min Qkal
+s0772,"growth {0}-{1}, % a year","artım {0}-{1}, illik %"
+s0773,"profitable, lagging efficiency","rentabelli, səmərəlilikdə geridə qalan"
+s0774,efficient and profitable,səmərəli və rentabelli
+s0775,lagging on both,hər iki göstəricidə geridə qalan
+s0776,"efficient, thin margin","səmərəli, aşağı marjalı"
+s0777,"LP growth {0}-{1}, % a year","əmək məhsuldarlığının artımı {0}-{1}, illik %"
+s0778,"GOS-proxy margin {0}, %","ümumi mənfəət (proksi) marjası {0}, %"
+s0779,"share of manufacturing {0}, %","emal sənayesində pay {0}, %"
+s0780,nonstate_l1 as a determinant of branch growth (A),nonstate_l1 sahə artımının müəyyənedici amili kimi (A)
+s0781,stocks_go_l1 as a determinant of branch growth (A),stocks_go_l1 sahə artımının müəyyənedici amili kimi (A)
+s0782,dln_ent_l1 as a determinant of branch growth (A),dln_ent_l1 sahə artımının müəyyənedici amili kimi (A)
+s0783,inv_rate_l1 as a determinant of branch growth (B),inv_rate_l1 sahə artımının müəyyənedici amili kimi (B)
+s0784,drelp_l1 as a determinant of branch growth (B),drelp_l1 sahə artımının müəyyənedici amili kimi (B)
+s0785,nonstate_l1 as a determinant of branch growth (B),nonstate_l1 sahə artımının müəyyənedici amili kimi (B)
+s0786,stocks_go_l1 as a determinant of branch growth (B),stocks_go_l1 sahə artımının müəyyənedici amili kimi (B)
+s0787,dln_ent_l1 as a determinant of branch growth (B),dln_ent_l1 sahə artımının müəyyənedici amili kimi (B)
+s0788,dln_rwage_l1 as a determinant of branch growth (B),dln_rwage_l1 sahə artımının müəyyənedici amili kimi (B)
+s0789,labour_share_l1 as a determinant of branch growth (B),labour_share_l1 sahə artımının müəyyənedici amili kimi (B)
+s0790,MNL: scale (FR1 real sector VA) (manufacturing ({0} branches)),MNL: miqyas (FR1 real sektor əlavə dəyəri) (emal sənayesi ({0} sahə))
+s0791,MNL: oil export price (manufacturing ({0} branches)),MNL: neft ixrac qiyməti (emal sənayesi ({0} sahə))
+s0792,MNL: scale + oil price (manufacturing ({0} branches)),MNL: miqyas + neft qiyməti (emal sənayesi ({0} sahə))
+s0793,combination: {0}/{1} constant + {2}/{3} MNL scale (manufacturing ({4} branches)),kombinasiya: {0}/{1} sabit paylar + {2}/{3} MNL miqyas (emal sənayesi ({4} sahə))
+s0794,MNL: scale (FR1 real sector VA) (mining ({0} branches)),MNL: miqyas (FR1 real sektor əlavə dəyəri) (mədənçıxarma ({0} sahə))
+s0795,MNL: oil export price (mining ({0} branches)),MNL: neft ixrac qiyməti (mədənçıxarma ({0} sahə))
+s0796,MNL: scale + oil price (mining ({0} branches)),MNL: miqyas + neft qiyməti (mədənçıxarma ({0} sahə))
+s0797,combination: {0}/{1} constant + {2}/{3} MNL scale (mining ({4} branches)),kombinasiya: {0}/{1} sabit paylar + {2}/{3} MNL miqyas (mədənçıxarma ({4} sahə))
+s0798,capacity rule for Chemicals,Kimya məhsulları üçün istehsal gücü qaydası
+s0799,pooled related-sector model alone,yalnız əlaqəli sahələr üzrə birləşdirilmiş model
+s0800,estimated elasticity to construction (quarrying),tikintiyə görə qiymətləndirilmiş elastiklik (karxana hasilatı)
+s0801,neutral: held at trailing {0}-year average (metal ores),neytral: son {0} ilin orta səviyyəsində saxlanılır (metal filizləri)
+s0802,grows with FR1 construction VA (metal ores),FR1 tikinti əlavə dəyəri ilə birgə artır (metal filizləri)
+s0803,constant shares (regions),sabit paylar (iqtisadi rayonlar)
+s0804,MNL: scale (FR1 real sector VA) (regions),MNL: miqyas (FR1 real sektor əlavə dəyəri) (iqtisadi rayonlar)
+s0805,MNL: scale + oil-sector mix (regions),MNL: miqyas + neft sektoru strukturu (iqtisadi rayonlar)
+s0806,combination: {0}/{1} constant + {2}/{3} MNL scale (regions),kombinasiya: {0}/{1} sabit paylar + {2}/{3} MNL miqyas (iqtisadi rayonlar)
+s0807,branch share system,sahə payları sistemi
+s0808,oil-linked block,neftlə bağlı blok
+s0809,non-oil branch allocation,qeyri-neft sahələri üzrə bölgü
+s0810,mining branches,mədənçıxarma sahələri
+s0811,regional share system,iqtisadi rayon payları sistemi
+s0812,NOT ESTABLISHED (low power),TƏSDİQLƏNMƏYİB (testin gücü aşağıdır)
+s0813,NOT CHOSEN,SEÇİLMƏYİB
+s0814,REJECTED pre-cut,RƏDD EDİLİB (kəsimdən əvvəlki nümunədə)
+s0815,enters via the equal-weight combination,bərabər çəkili kombinasiya vasitəsilə daxil olur
+s0816,NOT CHOSEN (pre-cut),SEÇİLMƏYİB (kəsimdən əvvəlki nümunədə)
+s0817,"coef {0}, DK p {1} on t({2}), wild p {3}","əmsal {0}, DK p {1} (t({2})), wild p {3}"
+s0818,selection RMSE {0} pp vs {1} pp for the chosen system; DM/HLN p vs best {2},"seçim RMSE {0} faiz bəndi, seçilmiş sistem üçün {1} faiz bəndi; ən yaxşıya qarşı DM/HLN p {2}"
+s0819,selection RMSE {0} pp vs {1} pp for the chosen system; DM/HLN p vs best nan,"seçim RMSE {0} faiz bəndi, seçilmiş sistem üçün {1} faiz bəndi; ən yaxşıya qarşı DM/HLN p nan"
+s0820,"RMSE {0} vs {1} log-% for the sector rate, DM p {2}","RMSE {0} və {1} log-% (sektor artım tempi üzrə), DM p {2}"
+s0821,"RMSE {0} vs {1} pp, DM p {2}","RMSE {0} və {1} faiz bəndi, DM p {2}"
+s0822,see Part {0} tables,bax: Hissə {0} cədvəlləri
+s0823,selection RMSE {0} pp vs {1} pp; DM/HLN p vs best {2},seçim RMSE {0} faiz bəndi və {1} faiz bəndi; ən yaxşıya qarşı DM/HLN p {2}
+s0824,industry nominal output growth % pa,"sənaye nominal buraxılışının artımı, illik %"
+s0825,manufacturing nominal growth % pa,"emal sənayesi nominal artım, illik %"
+s0826,manufacturing real growth % pa (FR1 rva_man),"emal sənayesi real artım, illik % (FR1 rva_man)"
+s0827,refining real growth % pa,"neft emalı real artım, illik %"
+s0828,mining share of industry {0} %,mədənçıxarmanın sənayedə payı {0} %
+s0829,non-state share {0} % (composition),qeyri-dövlət payı {0} % (struktur üzrə)
+s0830,HHI manufacturing {0},HHI emal sənayesi {0}
+s0831,Baku share {0} %,Bakı şəhərinin payı {0} %
+s0832,manufacturing GOS % VA {0},"emal sənayesi ümumi mənfəət, ƏD-nin %-i {0}"
+s0833,allocation: pooled model alone,bölgü: yalnız birləşdirilmiş model
+s0834,allocation: constant shares,bölgü: sabit paylar
+s0835,oil-linked branches at maximum throughput,neftlə bağlı sahələr maksimal emal həcmində
+s0836,margin: FR1 wage path,marja: FR1 əmək haqqı trayektoriyası
+s0837,margin: wages constant in product terms,marja: məhsul ifadəsində sabit əmək haqqı
+s0838,"manufacturing real branch growth, min % pa","emal sənayesi sahələrinin real artımı, minimum, illik %"
+s0839,"manufacturing real branch growth, max % pa","emal sənayesi sahələrinin real artımı, maksimum, illik %"
+s0840,building materials real growth % pa,"tikinti materialları real artım, illik %"
+s0841,median branch GOS-proxy margin {0},sahələr üzrə median ümumi mənfəət (proksi) marjası {0}
+s0842,ln FR1 mining/manufacturing VA,ln FR1 mədənçıxarma/emal sənayesi ƏD
+s0843,x2: difference form,x2: fərq forması
+s0844,kappa = {0} (no shrinkage),kappa = {0} (büzülmə (shrinkage) yoxdur)
+s0845,kappa = {0},kappa = {0}
+s0846,"output growth {0}-{1}, log pts x100","buraxılış artımı {0}-{1}, log bəndi x100"
+s0847,mean capital share,kapitalın orta payı
+s0848,real product wage growth,məhsul ifadəsində real əmək haqqının artımı
+s0849,labour productivity growth,əmək məhsuldarlığının artımı
+s0850,"gap (wage - productivity), log pts","boşluq (əmək haqqı - məhsuldarlıq), log bəndi"
+v2_000,"Two-way fixed effects (firm + year), firm-demeaned; cluster(firm)","İki yönlü sabit effektlər (müəssisə + il), müəssisə üzrə ortadan çıxarma; klaster (müəssisə)"
+v2_001,Pooled LS + NACE x year fixed effects; cluster(firm),Birləşdirilmiş ƏKK + NACE × il sabit effektləri; klaster (müəssisə)
+v2_002,Pooled LS + NACE and year dummies; cluster(firm),Birləşdirilmiş ƏKK + NACE və il dummy-ləri; klaster (müəssisə)
+v2_003,"Logit (MLE), dummies year; cluster(firm)","Logit (MHQ), il dummy-ləri; klaster (müəssisə)"
+v2_004,"Logit (MLE), dummies nace2 + year; cluster(firm)","Logit (MHQ), NACE və il dummy-ləri; klaster (müəssisə)"
+v2_005,"OLS within NACE x year (demeaned), HC1","ƏKK, NACE × il daxilində (ortadan çıxarılmış), HC1"
+v2_006,out-of-sample (last two years),nümunədən kənar (son iki il)
+v2_007,within R²,daxili R²
+v2_008,McFadden pseudo-R²,McFadden psevdo-R²
+v2_009,"firm-level econometric models estimated (statsmodels = independent numpy computation, asserted)","müəssisə səviyyəsində ekonometrik modellər qiymətləndirilib (statsmodels = müstəqil numpy hesablaması, yoxlanılıb)"
+v2_010,parameter recovery: consistent estimators within {0} s.e. of the true values (count),parametrlərin bərpası: ardıcıl qiymətləndiricilər həqiqi dəyərdən {0} standart xəta daxilindədir (say)
+v2_011,"{0}% CI coverage {1}/{2} (all), {3}/{4} (consistent)","{0}% etibarlılıq intervalının əhatəsi {1}/{2} (hamısı), {3}/{4} (ardıcıl qiymətləndiricilər)"
+v2_012,REAL mode estimates the same firm-level models: identical coefficients on the same data,REAL rejimi eyni müəssisə modellərini qiymətləndirir: eyni məlumatda əmsallar eynidir
+v2_013,"REAL mode writes FR10_FIRM_econ_* (no watermark, no recovery against true values)",REAL rejimi FR10_FIRM_econ_* fayllarını yazır (su nişanı və həqiqi dəyərlərlə bərpa testi olmadan)
+v2_014,"{0} coefficients, max |gap| {1}","{0} əmsal, maksimum |fərq| {1}"
+v2_015,"MNL log-odds share system, empirical-Bayes shrinkage (kappa={0})","MNL log-nisbət pay sistemi, empirik Bayes büzülməsi (kappa={0})"
+v2_016,DOLS({0}: contemporaneous dx),DOLS({0}: cari dövr fərqləri)
+v2_017,"FE-oneway (branch), first differences","Bir yönlü sabit effektlər (sahə), birinci fərqlər"
+v2_018,"FE-oneway (branch), levels","Bir yönlü sabit effektlər (sahə), səviyyələr"
+v2_019,"Calibrated rule: unit elasticity, chosen pre-cut","Kalibrlənmiş qayda: vahid elastiklik, kəsimdən əvvəl seçilib"
+v2_020,"FE-twoway (branch + year), within","İki yönlü sabit effektlər (sahə + il), daxili qiymətləndirici"
+v2_021,"FE-oneway (branch), within","Bir yönlü sabit effektlər (sahə), daxili qiymətləndirici"
+v2_022,CUSUM p={0},CUSUM p={0}
+v2_023,Chow {0} p={1},Chow {0} p={1}
+v2_024,in-sample,nümunə daxilində
+v2_025,"Workwear and service apparel, thsd. unit","İstehsalat və peşə komplektləri, min ədəd"
+v2_026,"Steam and hot water; steam and hot water supply, thsd. Gcal","Buxar və isti su; buxar və isti su ilə təchizat, min Qkal"
+v2_027,"{0} files: econ_coefficients.csv, econ_distress_ame.csv, econ_distress_calibration.csv, econ_distress_roc.csv, econ_export_ame.csv, econ_export_calibration.csv ...","{0} fayl: econ_coefficients.csv, econ_distress_ame.csv, econ_distress_calibration.csv, econ_distress_roc.csv, econ_export_ame.csv, econ_export_calibration.csv ..."
+v2q_00,quarrying: neutral: held at trailing {0}-year average,digər faydalı qazıntılar: neytral: son {0} ilin ortası səviyyəsində saxlanılır
+v2q_01,information only,yalnız məlumat üçün
+v2q_02,unit elasticity to construction (quarrying),tikintiyə vahid elastiklik (digər faydalı qazıntılar)
+v2q_03,NOT CHOSEN (pre-cut); kept as a lever,SEÇİLMƏYİB (kəsimdən əvvəl); rıçaq kimi saxlanılır
+v2q_04,"RMSE {0} vs {1} log-%, DM p vs neutral {2}; unit restriction rejected on the full sample (t {3}, p {4})","RMSE {0} / {1} log-% (neytral qayda), neytral qaydaya qarşı DM p {2}; vahid məhdudiyyət tam nümunədə rədd edilir (t {3}, p {4})"
+v2q_05,"RMSE {0} vs {1} log-%, DM p vs neutral {2}","RMSE {0} / {1} log-% (neytral qayda), neytral qaydaya qarşı DM p {2}"
+v2q_06,"Calibrated rule: neutral null, real output held at the {0}-{1} average","Kalibrlənmiş qayda: neytral sıfır hipotezi, real buraxılış {0}-{1} ortası səviyyəsində saxlanılır"
+v2r_0,quarrying: neutral: held at the last actual level,digər faydalı qazıntılar: neytral: son faktiki səviyyədə saxlanılır
+v2r_1,neutral: held at the last actual level,neytral: son faktiki səviyyədə saxlanılır
+v2r_2,"Calibrated rule: anchored null, real output constant at the last actual level","Kalibrlənmiş qayda: lövbərlənmiş neytral qayda, real buraxılış son faktiki səviyyədə sabit"

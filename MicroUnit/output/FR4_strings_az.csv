@@ -1,0 +1,425 @@
+en,az,kind_az,files
+19 activities,19 fəaliyyət,dəyər,FR4_holdout_summary.csv
+"19 activities sum to total employment (all scenarios, both bases)","19 fəaliyyətin cəmi ümumi məşğulluğa bərabərdir (bütün ssenarilər, hər iki əsas)",dəyər,FR4_identity_checks.csv
+"2025 anchors reproduced (own-block LF, oil on both bases, tax-record contracts)","2025 lövbərləri təkrarlanır (öz blokun işçi qüvvəsi, hər iki əsasda neft, vergi uçotu müqavilələri)",dəyər,FR4_identity_checks.csv
+8 groups,8 qrup,dəyər,FR4_holdout_summary.csv
+Accommodation & food,Yerləşdirmə və iaşə,dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+Accommodation and food service,Yerləşdirmə və iaşə,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Administrative and support service,İnzibati və yardımçı xidmətlər,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Adverse,Mənfi,dəyər,FR4_employment_long.csv;FR4_forecast_tidy.csv;FR4_scenario_summary.csv
+"Agriculture, forestry & fishing","Kənd, meşə və balıqçılıq",dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+"Agriculture, forestry and fishing","Kənd, meşə və balıqçılıq",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+"Art, entertainment and recreation","İncəsənət, əyləncə",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Baseline,Əsas,dəyər,FR4_employment_long.csv;FR4_forecast_tidy.csv;FR4_scenario_summary.csv
+Baseline;Adverse;Reform,Əsas;Mənfi;İslahat,dəyər,FR4_indicator_catalog.csv
+Construction,Tikinti,dəyər,FR4_employment_long.csv;FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+DM_p_vs_null,DM p-dəyəri (sabit paylara qarşı),sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+DM_stat_vs_null,DM statistikası (sabit paylara qarşı),sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+DM_target_years,DM testində hədəf illərin sayı,sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+DOLS(+/-1),DOLS(±1),dəyər,FR4_equation_audit.csv
+DOLS(0),DOLS(0),dəyər,FR4_robustness_summary.csv
+DOLS(0: contemporaneous dx),DOLS(0: eyni dövrün fərqləri),dəyər,FR4_equation_audit.csv
+DOLS(±1),DOLS(±1),dəyər,FR4_robustness_summary.csv
+DVX oil sector (tax records),DVX neft sektoru (vergi uçotu),sütun adı,FR4_oil_sector_employment.csv
+E1 labour force (free population elasticity),E1 işçi qüvvəsi (sərbəst əhali elastikliyi),dəyər,FR4_equation_audit.csv
+E1 participation rate,E1 iştirak səviyyəsi,dəyər,FR4_equation_audit.csv
+E2 employment rate,E2 məşğulluq səviyyəsi,dəyər,FR4_equation_audit.csv
+"E2 employment rate, FR1 form (reference)","E2 məşğulluq səviyyəsi, FR1 forması (istinad)",dəyər,FR4_equation_audit.csv
+E3 employee share,E3 muzdlu işçilərin payı,dəyər,FR4_equation_audit.csv
+E4 share of agr on income per capita (employed population),"E4 Kənd, meşə və balıqçılıq payı adambaşına real qeyri-neft ÜDM üzrə (məşğul əhali)",dəyər,FR4_equation_audit.csv
+E4 share of agr on income per capita (hired employees),"E4 Kənd, meşə və balıqçılıq payı adambaşına real qeyri-neft ÜDM üzrə (muzdlu işçilər)",dəyər,FR4_equation_audit.csv
+E4 share of agr on relative output (employed population),"E4 Kənd, meşə və balıqçılıq payı nisbi real buraxılış payı üzrə (məşğul əhali)",dəyər,FR4_equation_audit.csv
+E4 share of agr on relative output (hired employees),"E4 Kənd, meşə və balıqçılıq payı nisbi real buraxılış payı üzrə (muzdlu işçilər)",dəyər,FR4_equation_audit.csv
+E4 share of constr on income per capita (employed population),E4 Tikinti payı adambaşına real qeyri-neft ÜDM üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of constr on income per capita (hired employees),E4 Tikinti payı adambaşına real qeyri-neft ÜDM üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of constr on relative output (employed population),E4 Tikinti payı nisbi real buraxılış payı üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of constr on relative output (hired employees),E4 Tikinti payı nisbi real buraxılış payı üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of hotel on income per capita (employed population),E4 Yerləşdirmə və iaşə payı adambaşına real qeyri-neft ÜDM üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of hotel on income per capita (hired employees),E4 Yerləşdirmə və iaşə payı adambaşına real qeyri-neft ÜDM üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of hotel on relative output (employed population),E4 Yerləşdirmə və iaşə payı nisbi real buraxılış payı üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of hotel on relative output (hired employees),E4 Yerləşdirmə və iaşə payı nisbi real buraxılış payı üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of ict on income per capita (employed population),E4 İnformasiya və rabitə payı adambaşına real qeyri-neft ÜDM üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of ict on income per capita (hired employees),E4 İnformasiya və rabitə payı adambaşına real qeyri-neft ÜDM üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of ict on relative output (employed population),E4 İnformasiya və rabitə payı nisbi real buraxılış payı üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of ict on relative output (hired employees),E4 İnformasiya və rabitə payı nisbi real buraxılış payı üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of industry on income per capita (employed population),E4 Sənaye payı adambaşına real qeyri-neft ÜDM üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of industry on income per capita (hired employees),E4 Sənaye payı adambaşına real qeyri-neft ÜDM üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of industry on relative output (employed population),E4 Sənaye payı nisbi real buraxılış payı üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of industry on relative output (hired employees),E4 Sənaye payı nisbi real buraxılış payı üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of trade on income per capita (employed population),E4 Ticarət və təmir payı adambaşına real qeyri-neft ÜDM üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of trade on income per capita (hired employees),E4 Ticarət və təmir payı adambaşına real qeyri-neft ÜDM üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of trade on relative output (employed population),E4 Ticarət və təmir payı nisbi real buraxılış payı üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of trade on relative output (hired employees),E4 Ticarət və təmir payı nisbi real buraxılış payı üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of transp on income per capita (employed population),E4 Nəqliyyat və anbar payı adambaşına real qeyri-neft ÜDM üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of transp on income per capita (hired employees),E4 Nəqliyyat və anbar payı adambaşına real qeyri-neft ÜDM üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E4 share of transp on relative output (employed population),E4 Nəqliyyat və anbar payı nisbi real buraxılış payı üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E4 share of transp on relative output (hired employees),E4 Nəqliyyat və anbar payı nisbi real buraxılış payı üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E5 within-industry share of elec on income per capita (employed population),"E5 Elektrik enerjisi, qaz: sənaye daxilində pay adambaşına gəlir üzrə (məşğul əhali)",dəyər,FR4_equation_audit.csv
+E5 within-industry share of elec on income per capita (hired employees),"E5 Elektrik enerjisi, qaz: sənaye daxilində pay adambaşına gəlir üzrə (muzdlu işçilər)",dəyər,FR4_equation_audit.csv
+E5 within-industry share of mining on income per capita (employed population),E5 Mədənçıxarma: sənaye daxilində pay adambaşına gəlir üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E5 within-industry share of mining on income per capita (hired employees),E5 Mədənçıxarma: sənaye daxilində pay adambaşına gəlir üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E5 within-industry share of water on income per capita (employed population),E5 Su təchizatı: sənaye daxilində pay adambaşına gəlir üzrə (məşğul əhali),dəyər,FR4_equation_audit.csv
+E5 within-industry share of water on income per capita (hired employees),E5 Su təchizatı: sənaye daxilində pay adambaşına gəlir üzrə (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+"E6 bloc split, employed","E6 blok bölgüsü, məşğul əhali",dəyər,FR4_add_factors.csv
+"E6 bloc split, hired","E6 blok bölgüsü, muzdlu işçilər",dəyər,FR4_add_factors.csv
+E6 services bloc split (employed population),E6 xidmət bloklarının bölgüsü (məşğul əhali),dəyər,FR4_equation_audit.csv
+E6 services bloc split (hired employees),E6 xidmət bloklarının bölgüsü (muzdlu işçilər),dəyər,FR4_equation_audit.csv
+E8 state share,E8 dövlət payı,dəyər,FR4_add_factors.csv;FR4_equation_audit.csv
+E9 oil (anchored on 2025 actual),E9 neft (2025 faktiki səviyyəsinə lövbərlənib),dəyər,FR4_add_factors.csv
+E9 oil extraction employment,E9 neft hasilatında məşğulluq,dəyər,FR4_equation_audit.csv
+Education,Təhsil,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+"Electricity, gas and steam","Elektrik enerjisi, qaz",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+FE-entity (within),sabit effektlər (qrup daxilində),dəyər,FR4_robustness_summary.csv
+FE-twoway,iki yönlü sabit effektlər,dəyər,FR4_robustness_summary.csv
+Financial and insurance activities,Maliyyə və sığorta,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Human health and social work,Səhiyyə və sosial xidmətlər,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Industry,Sənaye,dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+Information & communication,İnformasiya və rabitə,dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+Information and communication,İnformasiya və rabitə,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Manufacturing,Emal sənayesi,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Mining,Mədənçıxarma,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+NOT ADOPTED - replaced by the pooled restricted elasticity,QƏBUL EDİLMƏYİB — birləşdirilmiş məhdudlaşdırılmış elastikliklə əvəz olunub,dəyər,FR4_rejected_specifications.csv
+NOT ADOPTED ALONE - enters via equal-weight combination,TƏK QƏBUL EDİLMƏYİB — bərabər çəkili birləşmə ilə daxil olur,dəyər,FR4_rejected_specifications.csv
+OLS (deterministic regressors only),OLS (yalnız deterministik izahedicilər),dəyər,FR4_equation_audit.csv
+OLS (too few df for DOLS),OLS (DOLS üçün sərbəstlik dərəcəsi azdır),dəyər,FR4_equation_audit.csv
+OLS: too few observations for DOLS; hold-out not estimable,OLS: DOLS üçün müşahidə azdır; nümunədən kənar yoxlama mümkün deyil,dəyər,FR4_equation_audit.csv
+Other service activities,Digər xidmətlər,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Other services (9 activities),Digər xidmətlər (9 fəaliyyət),dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation_groups.csv
+"Professional, scientific, technical","Peşə, elmi və texniki fəaliyyət",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Public administration and defence,Dövlət idarəetməsi və müdafiə,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+REJECTED - collinear,RƏDD EDİLİB — kollinear,dəyər,FR4_rejected_specifications.csv
+REJECTED - fails out of sample,RƏDD EDİLİB — nümunədən kənar uğursuzdur,dəyər,FR4_rejected_specifications.csv
+REJECTED - no driver passes both level and difference tests,"RƏDD EDİLİB — heç bir sürücü həm səviyyə, həm fərq testindən keçmir",dəyər,FR4_rejected_specifications.csv
+REJECTED - not better than constant shares out of sample; level elasticities descriptive,RƏDD EDİLİB — nümunədən kənar sabit paylardan yaxşı deyil; səviyyə elastiklikləri təsviridir,dəyər,FR4_rejected_specifications.csv
+REJECTED — implausible magnitude,RƏDD EDİLİB — qeyri-real böyüklük,dəyər,FR4_rejected_specifications.csv
+REJECTED — spurious,RƏDD EDİLİB — yalançı əlaqə,dəyər,FR4_rejected_specifications.csv
+REJECTED — wrong sign,RƏDD EDİLİB — yanlış işarə,dəyər,FR4_rejected_specifications.csv
+"REPORTED, NOT IMPOSED — insignificant","GÖSTƏRİLİR, TƏTBİQ EDİLMİR — əhəmiyyətsiz",dəyər,FR4_rejected_specifications.csv
+Real estate activities,Daşınmaz əmlak,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Reform,İslahat,dəyər,FR4_employment_long.csv;FR4_forecast_tidy.csv;FR4_scenario_summary.csv
+"SENSITIVITY ONLY: add-factors decay at residual rho (E6, E8)","YALNIZ HƏSSASLIQ: düzəliş əmsalları qalığın ρ-su ilə sönür (E6, E8)",dəyər,FR4_sensitivity_levers.csv
+TOTAL,CƏMİ,dəyər,FR4_employment_long.csv
+Tier 1 + industry: pooled output system alone,1-ci pillə + sənaye: yalnız birləşdirilmiş buraxılış sistemi,dəyər,FR4_sensitivity_levers.csv
+Tier 1 + industry: pure constant shares,1-ci pillə + sənaye: təmiz sabit paylar,dəyər,FR4_sensitivity_levers.csv
+Tier 1 / Tier 2a / E7 (constant shares),1-ci pillə / 2a pilləsi / E7 (sabit paylar),dəyər,FR4_add_factors.csv
+Tier-1 driver: group-specific income per capita (not adopted),1-ci pillə sürücüsü: qrupa xas adambaşına gəlir (qəbul edilməyib),dəyər,FR4_sensitivity_levers.csv
+Tier-1 driver: group-specific relative output share (not adopted),1-ci pillə sürücüsü: qrupa xas nisbi buraxılış payı (qəbul edilməyib),dəyər,FR4_sensitivity_levers.csv
+Trade & repair,Ticarət və təmir,dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+Trade; repair of transport means,Ticarət və təmir,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+Transport & storage,Nəqliyyat və anbar,dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+Transportation and storage,Nəqliyyat və anbar,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+U_vs_constant_growth,Theil U (sabit artıma qarşı),sütun adı,FR4_holdout_aggregate.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv
+U_vs_random_walk,Theil U (təsadüfi gəzişməyə qarşı),sütun adı,FR4_holdout_aggregate.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv
+"Water supply, waste treatment",Su təchizatı,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
+a bare trend as the Tier-1 driver,1-ci pillənin sürücüsü kimi yalnız trend,dəyər,FR4_rejected_specifications.csv
+activity,fəaliyyət,sütun adı,FR4_employment_long.csv;FR4_holdout_validation.csv
+add_factor,düzəliş əmsalı,sütun adı,FR4_add_factors.csv
+addf_2024,2024 düzəliş əmsalı,sütun adı,FR4_tier1_income_elasticities_descriptive.csv
+admsup,İnzibati və yardımçı xidmətlər,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+admsup,İnzibati və yardımçı xidmətlər,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+aggregate labour force,məcmu işçi qüvvəsi,dəyər,FR4_rejected_specifications.csv
+agr,"Kənd, meşə və balıqçılıq",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+agr,"Kənd, meşə və balıqçılıq",sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv;FR4_workbook_dvx_employment.csv
+agriculture,kənd təsərrüfatı,dəyər,FR4_sensitivity_levers.csv
+agriculture_2030,"kənd təsərrüfatı, 2030",sütun adı,FR4_scenario_summary.csv
+alternative,alternativ,sütun adı,FR4_sensitivity_levers.csv
+art,"İncəsənət, əyləncə",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+art,"İncəsənət, əyləncə",sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+"average growth, % a year","orta artım, illik %",dəyər,FR4_fan_employment.csv
+baseline,əsas (baza) dəyər,sütun adı,FR4_sensitivity_levers.csv
+baseline_2030,"əsas proqnoz, 2030",sütun adı,FR4_coef_sensitivity.csv
+basis,ölçü əsası,sütun adı,FR4_employment_long.csv;FR4_holdout_summary.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+beats_constant_growth,sabit artımdan üstün olanlar,sütun adı,FR4_holdout_summary.csv
+beats_random_walk,təsadüfi gəzişmədən üstün olanlar,sütun adı,FR4_holdout_summary.csv
+block,blok,sütun adı,FR4_rejected_specifications.csv
+budget,büdcə təşkilatları,dəyər,FR4_sensitivity_levers.csv
+budget + non-budget = hired employees,büdcə + qeyri-büdcə = muzdlu işçilər,dəyər,FR4_identity_checks.csv
+"budget = all hired in the 4 activities (kappa = 0.994, first version)","büdcə = 4 fəaliyyətin bütün muzdlu işçiləri (κ = 0.994, 1-ci versiya)",dəyər,FR4_sensitivity_levers.csv
+budget organisations,Büdcə təşkilatlarında muzdlu işçilər,dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_indicator_catalog.csv
+budget organisations,Büdcə təşkilatlarında muzdlu işçilər,sütun adı,FR4_institutional_breakdown.csv
+"budget share of hired, %",Büdcə təşkilatlarının muzdlu işçilərdə payı,dəyər,FR4_indicator_catalog.csv
+"budget share of hired, %",Büdcə təşkilatlarının muzdlu işçilərdə payı,sütun adı,FR4_institutional_breakdown.csv
+budget_2030,"büdcə təşkilatları, 2030",sütun adı,FR4_scenario_summary.csv
+budget_org,büdcə təşkilatlarının işçi sayı (DVX r130),sütun adı,FR4_workbook_dvx_employment.csv
+"calibrated (DVX r130 / all hired, 2022-2024)","kalibrləmə (DVX r130 / bütün muzdlu, 2022–2024)",dəyər,FR4_robustness_summary.csv
+calibrated (mean of DSK tables 2.12-2.13),kalibrləmə (DSK 2.12–2.13 cədvəllərinin ortası),dəyər,FR4_robustness_summary.csv
+check,yoxlama,sütun adı,FR4_identity_checks.csv
+chow_min_p,Chow testinin minimal p-dəyəri,sütun adı,FR4_robustness_summary.csv
+coefficient,əmsal,sütun adı,FR4_coef_sensitivity.csv
+coefficient unstable between levels and differences; mean difference-form R2 = 0.026,əmsal səviyyələr və fərqlər arasında qeyri-sabitdir; fərq formasının orta R² = 0.026,dəyər,FR4_rejected_specifications.csv
+coint_established,kointeqrasiya müəyyən edilib,sütun adı,FR4_robustness_summary.csv
+cointegrated at 10%,10%-də kointeqrasiya olunub,dəyər,FR4_equation_audit.csv
+combination: constant + pooled (equal weights),birləşmə: sabit + birləşdirilmiş (bərabər çəkilər),dəyər,FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+constant shares,sabit paylar,dəyər,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+constr,Tikinti,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+constr,Tikinti,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv;FR4_workbook_dvx_employment.csv
+construction,tikinti,dəyər,FR4_sensitivity_levers.csv
+contracts_tot,"əmək müqavilələri, cəmi (DVX r91)",sütun adı,FR4_workbook_dvx_employment.csv
+count,say,dəyər,FR4_identity_checks.csv
+credit coefficient -0.167 (t = -4.1),kredit əmsalı -0.167 (t = -4.1),dəyər,FR4_rejected_specifications.csv
+cross-check block,yoxlama bloku,dəyər,FR4_equation_audit.csv
+"cross-check block, hold-out","yoxlama bloku, nümunədən kənar yoxlama",dəyər,FR4_equation_audit.csv
+crude oil & gas extraction,xam neft və təbii qaz hasilatı,sütun adı,FR4_oil_sector_employment.csv
+cusum_p,CUSUM p-dəyəri,sütun adı,FR4_robustness_summary.csv
+d_lo_sq,Δ nisbi buraxılış payının log-nisbəti,dəyər,FR4_coef_sensitivity.csv
+descriptive (cointegration not established),təsviri (kointeqrasiya müəyyən edilməyib),dəyər,FR4_equation_audit.csv
+df,sərbəstlik dərəcəsi,sütun adı,FR4_equation_audit.csv
+diff_ci_95,fərq forması əmsalının 95% etibarlılıq intervalı,sütun adı,FR4_equation_audit.csv
+diff_coef,fərq forması əmsalı,sütun adı,FR4_equation_audit.csv;FR4_tier1_income_elasticities_descriptive.csv
+diff_form_coherent,səviyyə və fərq formaları uyğundur,sütun adı,FR4_robustness_summary.csv
+diff_t,fərq forması t-statistikası,sütun adı,FR4_tier1_income_elasticities_descriptive.csv
+difference,fərq,sütun adı,FR4_sensitivity_levers.csv
+difference_pct,"fərq, %",sütun adı,FR4_sensitivity_levers.csv
+educ,Təhsil,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+educ,Təhsil,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+effect_minus_pct,"təsir −1 SE, %",sütun adı,FR4_coef_sensitivity.csv
+effect_plus_pct,"təsir +1 SE, %",sütun adı,FR4_coef_sensitivity.csv
+eg_coint_p,kointeqrasiya p-dəyəri (Engle–Granger),sütun adı,FR4_equation_audit.csv;FR4_robustness_summary.csv;FR4_tier1_income_elasticities_descriptive.csv
+elec,"Elektrik enerjisi, qaz",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+elec,"Elektrik enerjisi, qaz",sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+employed population,məşğul əhali,dəyər,FR4_employment_long.csv;FR4_holdout_summary.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+"employed, total","Məşğul əhali, cəmi",sütun adı,FR4_institutional_breakdown.csv
+employed_2030,"məşğul əhali, 2030",sütun adı,FR4_scenario_summary.csv
+employed_growth_pa,"məşğul əhalinin illik orta artımı, %",sütun adı,FR4_scenario_summary.csv
+employee share +2pp by 2030,muzdlu işçilərin payı 2030-a qədər +2 faiz bəndi,dəyər,FR4_sensitivity_levers.csv
+employment / labour force (both FR1) must stay below 1 (reported as the excess),məşğulluq / işçi qüvvəsi (hər ikisi FR1) 1-dən kiçik qalmalıdır (artıq hissə göstərilir),dəyər,FR4_identity_checks.csv
+"employment contracts, tax-record basis",Əmək müqavilələri (vergi uçotu əsası),dəyər,FR4_indicator_catalog.csv
+"employment contracts, tax-record basis",Əmək müqavilələri (vergi uçotu əsası),sütun adı,FR4_institutional_breakdown.csv
+employment_growth,"məşğulluğun artımı, %",sütun adı,FR4_shift_share_decomposition.csv
+eq_id,tənlik,sütun adı,FR4_coef_sensitivity.csv
+equation,tənlik,sütun adı,FR4_add_factors.csv;FR4_equation_audit.csv;FR4_robustness_summary.csv
+equation_ids,tənliklər,sütun adı,FR4_indicator_catalog.csv
+err_2024_pct,"2024-cü il xətası, %",sütun adı,FR4_holdout_aggregate.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv
+estimator,qiymətləndirmə üsulu,sütun adı,FR4_equation_audit.csv;FR4_robustness_summary.csv
+every adjusted equation applies its add-factor (count of omissions),hər düzəldilmiş tənlik öz düzəliş əmsalını tətbiq edir (buraxılmaların sayı),dəyər,FR4_identity_checks.csv
+evidence,sübut,sütun adı,FR4_rejected_specifications.csv
+fin,Maliyyə və sığorta,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+fin,Maliyyə və sığorta,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+forecast combination (equal weights),proqnozların birləşməsi (bərabər çəkilər),dəyər,FR4_robustness_summary.csv
+freq,tezlik,sütun adı,FR4_indicator_catalog.csv
+group,qrup,sütun adı,FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+group-specific relative-output elasticities as the Tier-1 driver,1-ci pillənin sürücüsü kimi qrupa xas nisbi buraxılış elastiklikləri,dəyər,FR4_rejected_specifications.csv
+"growth, % a year","artım, illik %",dəyər,FR4_fan_employment.csv
+growth_pct,"artım, %",sütun adı,FR4_employment_long.csv
+growth_point,artım: nöqtəvi proqnoz,sütun adı,FR4_fan_summary_2030.csv
+growth_q05,artım: 5-ci kvantil,sütun adı,FR4_fan_summary_2030.csv
+growth_q50,artım: mediana,sütun adı,FR4_fan_summary_2030.csv
+growth_q95,artım: 95-ci kvantil,sütun adı,FR4_fan_summary_2030.csv
+has_band,zolaq var,sütun adı,FR4_indicator_catalog.csv
+has_forecast,proqnoz var,sütun adı,FR4_indicator_catalog.csv
+headline,əsas göstərici,sütun adı,FR4_coef_sensitivity.csv
+health,Səhiyyə və sosial xidmətlər,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+health,Səhiyyə və sosial xidmətlər,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+hired,muzdlu işçilər,dəyər,FR4_sensitivity_levers.csv
+hired / employed constant over 2025-2030 (no artificial jump),muzdlu / məşğul nisbəti 2025–2030 ərzində sabitdir (süni sıçrayış yoxdur),dəyər,FR4_identity_checks.csv
+hired employees,muzdlu işçilər,dəyər,FR4_employment_long.csv;FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_summary.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
+hired employees (E3 x simulated total),muzdlu işçilər (E3 × simulyasiya edilmiş cəm),dəyər,FR4_holdout_aggregate.csv
+"hired, total","Muzdlu işçilər, cəmi",sütun adı,FR4_institutional_breakdown.csv
+hired_avg,"muzdlu işçilər, aylıq orta (DVX r107)",sütun adı,FR4_workbook_dvx_employment.csv
+history_source,tarixi məlumatın mənbəyi,sütun adı,FR4_not_forecast.csv
+hotel,yerləşdirmə və iaşə,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv;FR4_sensitivity_levers.csv
+hotel,yerləşdirmə və iaşə,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv;FR4_workbook_dvx_employment.csv
+ict,informasiya və rabitə,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv;FR4_sensitivity_levers.csv
+ict,informasiya və rabitə,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv;FR4_workbook_dvx_employment.csv
+id,göstəricinin identifikatoru,sütun adı,FR4_forecast_tidy.csv;FR4_indicator_catalog.csv;FR4_not_forecast.csv
+identity (Tornqvist shift-share decomposition),identiklik (Törnqvist shift-share bölgüsü),dəyər,FR4_robustness_summary.csv
+identity residual,identiklik qalığı,sütun adı,FR4_shift_share_decomposition.csv
+imputed,doldurulmuş,sütun adı,FR4_forecast_tidy.csv
+imputed_years,doldurulmuş illər,sütun adı,FR4_indicator_catalog.csv
+income per capita,adambaşına gəlir,dəyər,FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+income per capita + relative output,adambaşına gəlir + nisbi buraxılış,dəyər,FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+income per capita and relative output jointly,adambaşına gəlir və nisbi buraxılış birlikdə,dəyər,FR4_rejected_specifications.csv
+income_elasticity,gəlir elastikliyi,sütun adı,FR4_tier1_income_elasticities_descriptive.csv
+industry,Sənaye,dəyər,FR4_sensitivity_levers.csv
+industry,Sənaye,sütun adı,FR4_workbook_dvx_employment.csv
+industry_nonoil,qeyri-neft sənayesi,sütun adı,FR4_workbook_dvx_employment.csv
+inference,statistik nəticə,sütun adı,FR4_equation_audit.csv
+is_forecast,proqnozdur,sütun adı,FR4_forecast_tidy.csv
+key_regressor,əsas izahedici dəyişən,sütun adı,FR4_equation_audit.csv
+kind,növ,sütun adı,FR4_forecast_tidy.csv;FR4_indicator_catalog.csv
+label,ad,sütun adı,FR4_employment_long.csv;FR4_holdout_validation.csv
+"labour force (E1, projected population)","işçi qüvvəsi (E1, proqnozlaşdırılan əhali)",dəyər,FR4_holdout_aggregate.csv
+labour force (FR1),"İşçi qüvvəsi (iqtisadi fəal əhali, FR1)",dəyər,FR4_indicator_catalog.csv
+labour force (FR1),"İşçi qüvvəsi (iqtisadi fəal əhali, FR1)",sütun adı,FR4_institutional_breakdown.csv
+labour_force,işçi qüvvəsi,dəyər,FR4_sensitivity_levers.csv
+level,səviyyə,dəyər,FR4_forecast_tidy.csv;FR4_indicator_catalog.csv
+level,səviyyə,sütun adı,FR4_holdout_summary.csv
+"level, thousand persons","səviyyə, min nəfər",dəyər,FR4_fan_employment.csv
+level_coef,səviyyə əmsalı,sütun adı,FR4_equation_audit.csv
+level_outside_diff_CI,səviyyə əmsalı fərq formasının intervalından kənardadır,sütun adı,FR4_tier1_income_elasticities_descriptive.csv
+level_outside_diff_ci,səviyyə əmsalı fərq formasının intervalından kənardadır,sütun adı,FR4_equation_audit.csv
+level_point,səviyyə: nöqtəvi proqnoz,sütun adı,FR4_fan_summary_2030.csv
+level_q05,səviyyə: 5-ci kvantil,sütun adı,FR4_fan_summary_2030.csv
+level_q25,səviyyə: 25-ci kvantil,sütun adı,FR4_fan_summary_2030.csv
+level_q50,səviyyə: mediana,sütun adı,FR4_fan_summary_2030.csv
+level_q75,səviyyə: 75-ci kvantil,sütun adı,FR4_fan_summary_2030.csv
+level_q95,səviyyə: 95-ci kvantil,sütun adı,FR4_fan_summary_2030.csv
+lever,rıçaq,sütun adı,FR4_sensitivity_levers.csv
+ln(LF) on ln(pop) + trend,ln(işçi qüvvəsi) ln(əhali) və trend üzrə,dəyər,FR4_equation_audit.csv
+ln(LF/pop) on trend,ln(işçi qüvvəsi/əhali) trend üzrə,dəyər,FR4_equation_audit.csv
+ln(emp/LF) on ln(real non-oil GDP per capita),ln(məşğul/işçi qüvvəsi) ln(adambaşına real qeyri-neft ÜDM) üzrə,dəyər,FR4_equation_audit.csv
+ln(emp/LF) on ln(real non-oil GDP) + trend,ln(məşğul/işçi qüvvəsi) ln(real qeyri-neft ÜDM) və trend üzrə,dəyər,FR4_equation_audit.csv
+ln(extraction employment) on ln(real oil GDP),ln(hasilatda məşğulluq) ln(real neft ÜDM) üzrə,dəyər,FR4_equation_audit.csv
+ln(hired/employed) on trend,ln(muzdlu/məşğul) trend üzrə,dəyər,FR4_equation_audit.csv
+"ln(market/budget services) on ln(real other-services VA) + 2010 step, DOLS","ln(bazar/büdcə xidmətləri) ln(digər xidmətlərin real ƏDV-si) və 2010 pilləsi üzrə, DOLS",dəyər,FR4_equation_audit.csv
+ln(mining employment) on ln(crude oil production),ln(mədənçıxarmada məşğulluq) ln(xam neft hasilatı) üzrə,dəyər,FR4_rejected_specifications.csv
+ln(pop) elasticity 2.8 (services level) and 4.8 (bloc split),ln(əhali) elastikliyi 2.8 (xidmətlər səviyyəsi) və 4.8 (blok bölgüsü),dəyər,FR4_rejected_specifications.csv
+ln(sector employment) = a + b ln(sector real value added),ln(sahədə məşğulluq) = a + b ln(sahənin real ƏDV-si),dəyər,FR4_rejected_specifications.csv
+ln_pop,ln əhali,dəyər,FR4_equation_audit.csv
+ln_rgdpnon,ln real qeyri-neft ÜDM,dəyər,FR4_equation_audit.csv
+ln_rgdpnon_pc,ln adambaşına real qeyri-neft ÜDM,dəyər,FR4_equation_audit.csv
+ln_rgdpoil,ln real neft ÜDM,dəyər,FR4_coef_sensitivity.csv;FR4_equation_audit.csv
+ln_rva_oth,ln digər xidmətlərin real ƏDV-si,dəyər,FR4_coef_sensitivity.csv;FR4_equation_audit.csv
+lo_sq,nisbi buraxılış payının log-nisbəti,dəyər,FR4_equation_audit.csv
+"logit employment share on ln(real non-oil GDP per capita) + 2010 step, DOLS","məşğulluq payının logit-i ln(adambaşına real qeyri-neft ÜDM) və 2010 pilləsi üzrə, DOLS",dəyər,FR4_equation_audit.csv
+"logit employment share on logit real output share + 2010 step, DOLS","məşğulluq payının logit-i real buraxılış payının logit-i və 2010 pilləsi üzrə, DOLS",dəyər,FR4_equation_audit.csv
+"logit share on ln(real non-oil GDP per capita), DOLS/OLS by df","payın logit-i ln(adambaşına real qeyri-neft ÜDM) üzrə, sərbəstlik dərəcəsinə görə DOLS/OLS",dəyər,FR4_equation_audit.csv
+"logit(state/non-state) on trend, 2000-2024 (sample chosen pre-2019)","logit(dövlət/qeyri-dövlət) trend üzrə, 2000–2024 (nümunə ≤2019 məlumatla seçilib)",dəyər,FR4_equation_audit.csv
+lower_5,aşağı sərhəd (5%),sütun adı,FR4_forecast_tidy.csv
+manuf,Emal sənayesi,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+manuf,Emal sənayesi,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+market-service employment with a real-credit term,bazar xidmətlərində məşğulluq real kredit həddi ilə,dəyər,FR4_rejected_specifications.csv
+market_services,bazar xidmətləri,dəyər,FR4_sensitivity_levers.csv
+measure,ölçü,sütun adı,FR4_fan_employment.csv
+median_RMSE_pct,"mediana RMSE, %",sütun adı,FR4_holdout_summary.csv
+median_U_cg,mediana Theil U (sabit artım),sütun adı,FR4_holdout_summary.csv
+median_U_rw,mediana Theil U (təsadüfi gəzişmə),sütun adı,FR4_holdout_summary.csv
+median_abs_err_pct,"mediana mütləq xəta, %",sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+mining,mədənçıxarma,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv;FR4_sensitivity_levers.csv
+mining,mədənçıxarma,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+mining support services,mədənçıxarmaya yardımçı xidmətlər (neft xidmətləri),sütun adı,FR4_oil_sector_employment.csv
+minus_2030,"−1 SE ilə, 2030",sütun adı,FR4_coef_sensitivity.csv
+model reproduces every activity in 2024,model 2024-cü ildə hər fəaliyyəti dəqiq təkrarlayır,dəyər,FR4_identity_checks.csv
+model_RMSE_pct,"model RMSE, %",sütun adı,FR4_holdout_aggregate.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv
+module,modul,sütun adı,FR4_indicator_catalog.csv
+n_predictions,proqnozların sayı,sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+name,əmsalın adı,sütun adı,FR4_coef_sensitivity.csv
+no - descriptive,xeyr — təsviri,dəyər,FR4_equation_audit.csv
+no - descriptive (not selected),xeyr — təsviri (seçilməyib),dəyər,FR4_equation_audit.csv
+"no - group-specific version, sensitivity only","xeyr — qrupa xas versiya, yalnız həssaslıq",dəyər,FR4_equation_audit.csv
+no fiscal or output driver passes the level and difference tests (Part 10 R7),heç bir fiskal və ya buraxılış sürücüsü səviyyə və fərq testlərindən keçmir (Part 10 R7),dəyər,FR4_equation_audit.csv
+non-budget,Qeyri-büdcə təşkilatlarında muzdlu işçilər,dəyər,FR4_indicator_catalog.csv
+non-budget,Qeyri-büdcə təşkilatlarında muzdlu işçilər,sütun adı,FR4_institutional_breakdown.csv
+"non-oil, statistical basis (hired)","Qeyri-neft sektoru (statistik əsas, muzdlu)",dəyər,FR4_indicator_catalog.csv
+"non-oil, statistical basis (hired)","Qeyri-neft sektoru (statistik əsas, muzdlu)",sütun adı,FR4_institutional_breakdown.csv
+"non-oil, tax-record basis",Qeyri-neft sektoru (vergi uçotu əsası),dəyər,FR4_indicator_catalog.csv
+"non-oil, tax-record basis",Qeyri-neft sektoru (vergi uçotu əsası),sütun adı,FR4_institutional_breakdown.csv
+non-state,qeyri-dövlət sektoru,dəyər,FR4_indicator_catalog.csv
+non-state,qeyri-dövlət sektoru,sütun adı,FR4_institutional_breakdown.csv
+nonbudget,qeyri-büdcə təşkilatları,dəyər,FR4_sensitivity_levers.csv
+nonstate,qeyri-dövlət sektoru,dəyər,FR4_sensitivity_levers.csv
+nonstate,qeyri-dövlət sektoru,sütun adı,FR4_dsk_hired_by_activity_and_property.csv;FR4_dsk_property_form_history.csv;FR4_workbook_dvx_employment.csv
+oil,neft sektoru,sütun adı,FR4_workbook_dvx_employment.csv
+oil + non-oil = total within each basis (tax: contracts; statistical: DSK hired),neft + qeyri-neft = cəm hər əsas daxilində (vergi: müqavilələr; statistik: DSK muzdlu),dəyər,FR4_identity_checks.csv
+oil / non-oil,neft / qeyri-neft,dəyər,FR4_rejected_specifications.csv
+oil extraction employment (E9),neft hasilatında məşğulluq (E9),dəyər,FR4_holdout_aggregate.csv
+oil refining,neft emalı,sütun adı,FR4_oil_sector_employment.csv
+"oil sector, statistical basis","neft sektoru, statistik əsas",sütun adı,FR4_oil_sector_employment.csv
+"oil, statistical basis",Neft sektoru (statistik əsas),dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_indicator_catalog.csv
+"oil, statistical basis",Neft sektoru (statistik əsas),sütun adı,FR4_institutional_breakdown.csv
+"oil, tax-record basis",Neft sektoru (vergi uçotu əsası),dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_indicator_catalog.csv
+"oil, tax-record basis",Neft sektoru (vergi uçotu əsası),sütun adı,FR4_institutional_breakdown.csv
+oil-extraction employment on combined oil+gas volume,neft hasilatında məşğulluq birləşmiş neft+qaz həcmi üzrə,dəyər,FR4_rejected_specifications.csv
+oil_tax_2030,"neft sektoru (vergi uçotu), 2030",sütun adı,FR4_scenario_summary.csv
+othsvc,Digər xidmətlər,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+othsvc,Digər xidmətlər,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+output elasticity,buraxılış elastikliyi,dəyər,FR4_e6_bloc_split_selection.csv
+output_growth,"buraxılışın artımı, %",sütun adı,FR4_shift_share_decomposition.csv
+panel real-wage elasticity -0.128 (t = -0.7) with n = 290,"panel real əmək haqqı elastikliyi -0.128 (t = -0.7), n = 290",dəyər,FR4_rejected_specifications.csv
+participation rate on the real wage,iştirak səviyyəsi real əmək haqqı üzrə,dəyər,FR4_rejected_specifications.csv
+passed,keçdi,sütun adı,FR4_identity_checks.csv
+persons_thsd,min nəfər,sütun adı,FR4_employment_long.csv
+placed_in_job,işlə təmin olunanlar,sütun adı,FR4_dsk_employment_agency_indicators.csv
+plus_2030,"+1 SE ilə, 2030",sütun adı,FR4_coef_sensitivity.csv
+point,nöqtəvi proqnoz,sütun adı,FR4_fan_employment.csv
+"pooled OOS RMSE 12.23% vs 6.96% constant shares, DM p = 0.070","nümunədən kənar RMSE 12.23% (sabit paylar: 6.96%), DM p = 0.070",dəyər,FR4_rejected_specifications.csv
+"pooled OOS RMSE 13.70% vs 6.96% constant shares, DM p = 0.131","nümunədən kənar RMSE 13.70% (sabit paylar: 6.96%), DM p = 0.131",dəyər,FR4_rejected_specifications.csv
+"pooled OOS RMSE 6.48% vs 6.96% constant shares, DM p = 0.445","nümunədən kənar RMSE 6.48% (sabit paylar: 6.96%), DM p = 0.445",dəyər,FR4_rejected_specifications.csv
+"pooled OOS RMSE 7.32% vs 6.96% constant shares, DM p = 0.422","nümunədən kənar RMSE 7.32% (sabit paylar: 6.96%), DM p = 0.422",dəyər,FR4_rejected_specifications.csv
+"pooled OOS RMSE 7.45% vs 6.96% constant shares, DM p = 0.237","nümunədən kənar RMSE 7.45% (sabit paylar: 6.96%), DM p = 0.237",dəyər,FR4_rejected_specifications.csv
+pooled output elasticity (FD),birləşdirilmiş buraxılış elastikliyi (birinci fərqlər),dəyər,FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+pooled restricted output elasticity ALONE as the Tier-1 baseline,1-ci pillənin əsası kimi TƏKCƏ birləşdirilmiş məhdudlaşdırılmış elastiklik,dəyər,FR4_rejected_specifications.csv
+pooled_OOS_RMSE_pct,"nümunədən kənar RMSE (birləşdirilmiş), %",sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+population growth 0.3pp higher,əhali artımı 0.3 faiz bəndi yuxarı,dəyər,FR4_sensitivity_levers.csv
+population growth 0.3pp lower,əhali artımı 0.3 faiz bəndi aşağı,dəyər,FR4_sensitivity_levers.csv
+prof,"Peşə, elmi və texniki fəaliyyət",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+prof,"Peşə, elmi və texniki fəaliyyət",sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+pubadm,Dövlət idarəetməsi və müdafiə,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+pubadm,Dövlət idarəetməsi və müdafiə,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+public-service employment with a free population elasticity,büdcə xidmətlərində məşğulluq sərbəst əhali elastikliyi ilə,dəyər,FR4_rejected_specifications.csv
+qeyri-stabil,qeyri-stabil,dəyər,FR4_robustness_summary.csv
+quantity,kəmiyyət,sütun adı,FR4_sensitivity_levers.csv
+"real GDP per capita: level t = -2.12, difference t = +0.50","adambaşına real ÜDM: səviyyə t = -2.12, fərq t = +0.50",dəyər,FR4_rejected_specifications.csv
+real non-oil GDP per capita as the Tier-1 driver (first version's choice),1-ci pillənin sürücüsü kimi adambaşına real qeyri-neft ÜDM (1-ci versiyanın seçimi),dəyər,FR4_rejected_specifications.csv
+realest,Daşınmaz əmlak,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+realest,Daşınmaz əmlak,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+reallocation,yenidən bölüşdürmə,sütun adı,FR4_shift_share_decomposition.csv
+reference only,yalnız istinad,dəyər,FR4_equation_audit.csv
+registered_unemp,qeydiyyatda olan işsizlər,sütun adı,FR4_dsk_employment_agency_indicators.csv
+relative output share,nisbi buraxılış payı,dəyər,FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+resid_rho1,qalığın 1-ci dərəcəli avtokorrelyasiyası,sütun adı,FR4_equation_audit.csv
+restriction,məhdudiyyət,sütun adı,FR4_equation_audit.csv
+result,nəticə,sütun adı,FR4_identity_checks.csv
+rho,qalığın avtokorrelyasiyası (ρ),sütun adı,FR4_add_factors.csv
+scenario,ssenari,sütun adı,FR4_employment_long.csv;FR4_forecast_tidy.csv;FR4_scenario_summary.csv
+scenarios,ssenarilər,sütun adı,FR4_indicator_catalog.csv
+se,standart xəta,sütun adı,FR4_coef_sensitivity.csv
+sector allocation,sahələr üzrə bölgü,dəyər,FR4_rejected_specifications.csv
+series,sıra,sütun adı,FR4_holdout_aggregate.csv
+services,Digər xidmətlər (9 fəaliyyət),dəyər,FR4_sensitivity_levers.csv
+services,Digər xidmətlər (9 fəaliyyət),sütun adı,FR4_workbook_dvx_employment.csv
+services allocation,xidmətlər üzrə bölgü,dəyər,FR4_rejected_specifications.csv
+services_2030,"digər xidmətlər, 2030",sütun adı,FR4_scenario_summary.csv
+share,pay,dəyər,FR4_forecast_tidy.csv;FR4_indicator_catalog.csv
+smallest activity share over the horizon (must exceed 0),proqnoz dövründə ən kiçik fəaliyyət payı (0-dan böyük olmalıdır),dəyər,FR4_identity_checks.csv
+source_column,mənbə sütunu,sütun adı,FR4_indicator_catalog.csv
+source_csv,mənbə CSV,sütun adı,FR4_indicator_catalog.csv
+specification,spesifikasiya,sütun adı,FR4_e6_bloc_split_selection.csv;FR4_equation_audit.csv;FR4_rejected_specifications.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+stabil,stabil,dəyər,FR4_robustness_summary.csv
+state,dövlət sektoru,dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_indicator_catalog.csv;FR4_sensitivity_levers.csv
+state,dövlət sektoru,sütun adı,FR4_dsk_hired_by_activity_and_property.csv;FR4_dsk_property_form_history.csv;FR4_institutional_breakdown.csv;FR4_workbook_dvx_employment.csv
+state + non-state = employed population,dövlət + qeyri-dövlət = məşğul əhali,dəyər,FR4_identity_checks.csv
+state / non-state,dövlət / qeyri-dövlət,dəyər,FR4_rejected_specifications.csv
+state employment (E8 x simulated total),dövlət məşğulluğu (E8 × simulyasiya edilmiş cəm),dəyər,FR4_holdout_aggregate.csv
+state employment on fiscal capacity or output,dövlət məşğulluğu fiskal imkan və ya buraxılış üzrə,dəyər,FR4_rejected_specifications.csv
+state share frozen at its 2024 level,dövlət payı 2024-cü il səviyyəsində dondurulmuş,dəyər,FR4_sensitivity_levers.csv
+"state share, %",Dövlət sektorunun məşğulluqda payı,dəyər,FR4_indicator_catalog.csv
+"state share, %",Dövlət sektorunun məşğulluqda payı,sütun adı,FR4_institutional_breakdown.csv
+state_2030,"dövlət sektoru, 2030",sütun adı,FR4_scenario_summary.csv
+state_share_2030,"dövlət sektorunun payı, 2030, %",sütun adı,FR4_scenario_summary.csv
+swing_pct,"ümumi yayılma, %",sütun adı,FR4_coef_sensitivity.csv
+t_HAC,t-statistikası (HAC),sütun adı,FR4_equation_audit.csv;FR4_tier1_income_elasticities_descriptive.csv
+test only,yalnız test,dəyər,FR4_equation_audit.csv
+tolerance,tolerantlıq,sütun adı,FR4_identity_checks.csv
+total,Cəmi,dəyər,FR4_employment_long.csv;FR4_indicator_catalog.csv;FR4_sensitivity_levers.csv
+total,Cəmi,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_and_property.csv;FR4_dsk_hired_by_activity_history.csv;FR4_dsk_property_form_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv;FR4_shift_share_decomposition.csv
+total employed,ümumi məşğulluq,dəyər,FR4_fan_employment.csv;FR4_fan_summary_2030.csv
+"total employed (E1-E2, simulated)","ümumi məşğulluq (E1–E2, simulyasiya)",dəyər,FR4_holdout_aggregate.csv
+trade,Ticarət və təmir,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+trade,Ticarət və təmir,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv;FR4_workbook_dvx_employment.csv
+transp,Nəqliyyat və anbar,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+transp,Nəqliyyat və anbar,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv;FR4_workbook_dvx_employment.csv
+trend,xətti trend,dəyər,FR4_coef_sensitivity.csv;FR4_equation_audit.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+trend insignificant; held at latest actual,trend əhəmiyyətsizdir; son faktiki səviyyədə saxlanılır,dəyər,FR4_equation_audit.csv
+trend not used (U-shaped); held at latest actual,trend istifadə olunmur (U-formalı); son faktiki səviyyədə saxlanılır,dəyər,FR4_equation_audit.csv
+unit,vahid,sütun adı,FR4_identity_checks.csv
+"unit elasticity: HAC-F p = 0.382, not rejected (low power, se 0.96)","vahid elastiklik: HAC-F p = 0.382, rədd edilmir (aşağı güc, SE 0.96)",dəyər,FR4_equation_audit.csv
+upper_95,yuxarı sərhəd (95%),sütun adı,FR4_forecast_tidy.csv
+used_in_forecast,proqnozda istifadə,sütun adı,FR4_equation_audit.csv;FR4_robustness_summary.csv
+vacancies,vakansiyalar,sütun adı,FR4_dsk_employment_agency_indicators.csv
+value,dəyər,dəyər,FR4_indicator_catalog.csv
+value,dəyər,sütun adı,FR4_coef_sensitivity.csv;FR4_forecast_tidy.csv
+value_minus,dəyər −1 SE,sütun adı,FR4_coef_sensitivity.csv
+value_plus,dəyər +1 SE,sütun adı,FR4_coef_sensitivity.csv
+variable,dəyişən,sütun adı,FR4_fan_employment.csv;FR4_fan_summary_2030.csv
+verdict,hökm,sütun adı,FR4_rejected_specifications.csv;FR4_robustness_summary.csv
+w_pooled,birləşdirilmiş sistemin çəkisi,dəyər,FR4_coef_sensitivity.csv
+wage term in sector labour demand,sahə əmək tələbində əmək haqqı həddi,dəyər,FR4_rejected_specifications.csv
+wage_avg,orta aylıq əmək haqqı (DVX r108),sütun adı,FR4_workbook_dvx_employment.csv
+wagefund,əmək haqqı fondu (DVX r104),sütun adı,FR4_workbook_dvx_employment.csv
+water,Su təchizatı,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
+water,Su təchizatı,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
+within,sahədaxili,sütun adı,FR4_shift_share_decomposition.csv
+year,il,sütun adı,FR4_employment_long.csv;FR4_fan_employment.csv;FR4_forecast_tidy.csv;FR4_shift_share_decomposition.csv
+yes,bəli,dəyər,FR4_equation_audit.csv
+ypc,ln adambaşına real qeyri-neft ÜDM,dəyər,FR4_equation_audit.csv

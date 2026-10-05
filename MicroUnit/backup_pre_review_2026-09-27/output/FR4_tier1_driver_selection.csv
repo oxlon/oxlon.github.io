@@ -1,0 +1,6 @@
+specification,n_predictions,pooled_OOS_RMSE_pct,median_abs_err_pct
+income per capita,320,9.051,3.126
+constant shares,320,10.336,3.434
+relative output share,320,12.45,4.121
+trend,320,12.863,3.503
+income per capita + relative output,320,17.058,4.41
