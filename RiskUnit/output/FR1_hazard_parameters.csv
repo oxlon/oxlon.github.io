@@ -1,0 +1,13 @@
+acar,deyer
+eq_lambda_tier1,0.16938072985410052
+eq_lambda_tier2,0.05211714764741555
+eq_n_tier1,13
+eq_n_tier2,4
+eq_years,76.75017111567419
+p_drought,0.15151515151515152
+spi_now,-0.40837401691364483
+p_dev_given_crash,0.5
+deval_nonoil_residual_2015_16,-5.575245926515432
+deval_cpi_passthrough,14.018192907603057
+deval_trigger_years,1998;2015;2016;2020
+deval_years,2015;2016

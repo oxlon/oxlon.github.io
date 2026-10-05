@@ -1,0 +1,48 @@
+acar,deyer,vahid,izah,menbe
+p_band_1,0.05,ehtimal,1-ci ehtimal pilləsinin yuxarı həddi (≤ 5%),risk iştahı — Nazirlik təsdiq edir
+p_band_2,0.15,ehtimal,2-ci pillənin yuxarı həddi,risk iştahı — Nazirlik təsdiq edir
+p_band_3,0.30,ehtimal,3-cü pillənin yuxarı həddi,risk iştahı — Nazirlik təsdiq edir
+p_band_4,0.50,ehtimal,4-cü pillənin yuxarı həddi (5-ci pillə: > 50%),risk iştahı — Nazirlik təsdiq edir
+i_nonoil_1,0.10,f.b.,qeyri-neft ÜDM itkisi: 1-ci təsir pilləsinin yuxarı həddi,risk iştahı — Nazirlik təsdiq edir
+i_nonoil_2,0.30,f.b.,2-ci təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_nonoil_3,0.75,f.b.,3-cü təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_nonoil_4,1.50,f.b.,"4-cü təsir pilləsi (5-ci: > 1,5 f.b.)",risk iştahı — Nazirlik təsdiq edir
+i_cpi_1,0.25,f.b.,inflyasiya artımı: 1-ci təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_cpi_2,0.75,f.b.,2-ci təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_cpi_3,1.50,f.b.,3-cü təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_cpi_4,3.00,f.b.,4-cü təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_fiscal_1,0.10,% ÜDM,büdcə balansının pisləşməsi: 1-ci təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_fiscal_2,0.30,% ÜDM,2-ci təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_fiscal_3,0.75,% ÜDM,3-cü təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+i_fiscal_4,1.50,% ÜDM,4-cü təsir pilləsi,risk iştahı — Nazirlik təsdiq edir
+score_high,12,bal,yüksək prioritet: risk skoru ≥ bu dəyər (xəbərdarlıq yaranır),risk iştahı — Nazirlik təsdiq edir
+score_medium,6,bal,orta prioritet: risk skoru ≥ bu dəyər,risk iştahı — Nazirlik təsdiq edir
+score_jump_alert,4,bal,əvvəlki yeniləmədən bəri skorun bu qədər artması xəbərdarlıq yaradır,risk iştahı — Nazirlik təsdiq edir
+nonoil_gar_threshold,2.0,%,R13: qeyri-neft real artımı üçün hədd,risk iştahı — Nazirlik təsdiq edir
+cpi_threshold,6.0,%,R12: AMB hədəf diapazonunun yuxarı həddi (4±2),AMB elanı
+fiscal_threshold,-1.0,% ÜDM,R11: büdcə balansı həddi,risk iştahı — Nazirlik təsdiq edir
+partner_shock_threshold,-1.5,f.b.,R05: tərəfdaş artımının baza yolundan sapma həddi,metodologiya
+lendrate_shock_threshold,1.0,f.b.,R02: daxili kredit faizinin artım həddi,metodologiya
+remit_shock_threshold,-20,%,R07: pul baratlarının azalma həddi,metodologiya
+spi_threshold,-1.0,SPI,R09: quraqlıq həddi (WMO: orta quraqlıq),WMO SPI təlimatı (2012)
+gpr_quantile,0.90,kvantil,R06: GPR-in tarixi paylanmasında hədd kvantili,metodologiya
+devaluation_brent_drop,-30,%,R03: devalvasiya təzyiqi həddi — Brent illik ortasının əvvəlki 3 ilin ortasından nisbi enməsi,tarixi epizodlar (1998; 2015; 2016; 2020)
+devaluation_size,0.25,pay,R03: şərti devalvasiyanın ölçüsü (USD/AZN-in nisbi artımı),"2015-2016 analoqu (1,03→1,60 — iki mərhələdə)"
+eq_mag_tier1,5.5,M,R08: zərər verə bilən zəlzələ həddi,metodologiya
+eq_mag_tier2,6.0,M,R08: güclü zəlzələ həddi,metodologiya
+eq_damage_med_tier1,0.05,% ÜDM,"R08: M 5,5–6,0 üçün birbaşa zərərin medianı",KALİBRLƏMƏ FƏRZİYYƏSİ — FHN zərər məlumatı ilə əvəz edilməlidir
+eq_damage_p90_tier1,0.30,% ÜDM,"R08: M 5,5–6,0 üçün birbaşa zərərin 90-cı faizi",KALİBRLƏMƏ FƏRZİYYƏSİ — FHN zərər məlumatı ilə əvəz edilməlidir
+eq_damage_med_tier2,0.50,% ÜDM,"R08: M ≥ 6,0 üçün birbaşa zərərin medianı",KALİBRLƏMƏ FƏRZİYYƏSİ — FHN zərər məlumatı ilə əvəz edilməlidir
+eq_damage_p90_tier2,3.00,% ÜDM,"R08: M ≥ 6,0 üçün birbaşa zərərin 90-cı faizi",KALİBRLƏMƏ FƏRZİYYƏSİ — FHN zərər məlumatı ilə əvəz edilməlidir
+eq_output_loss,0.25,əmsal,R08: birbaşa zərərin hadisə ilində məhsul itkisinə çevrilmə əmsalı,"KALİBRLƏMƏ FƏRZİYYƏSİ — ədəbiyyat aralığı 0,1–0,5"
+eq_fiscal_share,0.50,pay,R08: birbaşa zərərin büdcəyə düşən hissəsi (bərpa xərcləri),KALİBRLƏMƏ FƏRZİYYƏSİ
+remit_mpc,0.70,əmsal,R07: pul baratlarından istehlak meyli,KALİBRLƏMƏ FƏRZİYYƏSİ — ev təsərrüfatları büdcə sorğusu ilə əvəz edilə bilər
+ext_demand_elasticity,1.0,əmsal,R05: xarici tələb indeksinin tərəfdaş ÜDM-ə elastikliyi,FR1 mikro: xarici tələb ssenari girişidir (iş kitabında sıra yoxdur)
+oil_export_elasticity,1.141,əmsal,neft-qaz ixracı dəyərinin Brent-ə elastikliyi,makro FR7 tənliyi
+ews_auroc_min,0.70,AUROC,NFR1: erkən xəbərdarlıq sisteminin minimal nümunədən-kənar AUROC-u,Metodologiya Blueprint §4.2
+coverage80_lo,0.75,pay,NFR1: 80% intervalın faktiki əhatəsinin aşağı həddi,Metodologiya Blueprint §4.2
+coverage80_hi,0.85,pay,NFR1: 80% intervalın faktiki əhatəsinin yuxarı həddi,Metodologiya Blueprint §4.2
+coverage90_lo,0.86,pay,NFR1: 90% intervalın aşağı həddi,Metodologiya Blueprint §4.2
+coverage90_hi,0.94,pay,NFR1: 90% intervalın yuxarı həddi,Metodologiya Blueprint §4.2
+test_alpha,0.05,p,NFR1: statistik testlər üçün əhəmiyyətlilik səviyyəsi,metodologiya
+update_sla_hours,24,saat,NFR2: yeni məlumatdan risk skorunun yenilənməsinə qədər maksimal müddət,TT §15.5.3 NFR2

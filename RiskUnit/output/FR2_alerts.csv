@@ -1,0 +1,9 @@
+as_of,tip,ciddilik,risk_id,mesaj,baseline_id
+2026-10-02,yüksək prioritet,yüksək,R12,"İnflyasiyanın hədəf diapazonundan yuxarı olması: ehtimal 57%, skor 25 (P 5 × T 5, ölçü: inflyasiya)",B-7854a9d6fc
+2026-10-02,yüksək prioritet,yüksək,R11,"Büdcə balansının pisləşməsi: ehtimal 35%, skor 20 (P 4 × T 5, ölçü: büdcə)",B-7854a9d6fc
+2026-10-02,yüksək prioritet,yüksək,R01,"Neft qiymətinin kəskin enməsi: ehtimal 26%, skor 15 (P 3 × T 5, ölçü: qeyri-neft ÜDM)",B-7854a9d6fc
+2026-10-02,yüksək prioritet,yüksək,R14,"Enerji keçidi: karbohidrogen tələbinin struktur azalması: ehtimal 25%, skor 12 (P 3 × T 4, ölçü: qeyri-neft ÜDM)",B-7854a9d6fc
+2026-10-02,göstərici həddi,orta,,"Regional geosiyasi risk (Rusiya, Ukrayna, İsrail, Türkiyə ortası): son dəyər 1.134 (2026-09), tarixi paylanmanın 91-cı faizi",B-7854a9d6fc
+2026-10-02,göstərici həddi,orta,,FR10 izləmə siyahısındakı emal sahələri: 3 (2025),B-7854a9d6fc
+2026-10-02,baza köhnəlib,orta,R01,2027: canlı məlumatla şərtləndirilmiş qeyri-neft artımının medianı 7.4% — makro baza yolu 5.4%. Fərq ≥ 1 f.b.: makro modelin Brent fərziyyəsinin yenilənməsi tövsiyə olunur,B-7854a9d6fc
+2026-10-02,baza köhnəlib,orta,R01,2027: Brent mərkəzi yolu 84 USD (canlı) — makro fərziyyə 69 USD,B-7854a9d6fc

@@ -1,0 +1,17 @@
+unit,key,path,sha256,rows
+makro §15.5.1,forecast_long,/Users/econ0757/My Drive/OxLon/18august/model/outputs/forecast_long.csv,27b1a1630f4d0dd5278f740e6accf60aebb7b2d8f3faffb64788c04d1e7b0f50,14603
+makro §15.5.1,validation_backtest,/Users/econ0757/My Drive/OxLon/18august/model/outputs/validation_backtest.csv,604a4b064e5c214d0f5c41dac892370c721d28224c4fa87fba05f0d30c31a06e,6747
+makro §15.5.1,assumptions,/Users/econ0757/My Drive/OxLon/18august/model/data/assumptions.csv,92518ed96fffaeca20100e7d5b64d9fab06fdfe598263f4267fb524e178220e4,325
+makro §15.5.1,external_block,/Users/econ0757/My Drive/OxLon/18august/model/data/external_block_annual.csv,f0b0f5d78023365eeb879111bc4d82267208943c2e8f6b7aa6440aff28d9762b,31
+makro §15.5.1,monthly_panel,/Users/econ0757/My Drive/OxLon/18august/model/data/monthly_panel.csv,8311f07c9ea427b377dabbe868d471911ac153f9ebdb8e79714dcf9e25786717,360
+makro §15.5.1,macro_annual,/Users/econ0757/My Drive/OxLon/18august/model/data/macro_annual.csv,bd1e2213b7e2b722c361b84083b6e08b0da1acf8a34c60e19c703d9461ef2849,41
+makro §15.5.1,public_panel,/Users/econ0757/My Drive/OxLon/18august/model/data/public_sources_panel.csv,969eefe11dc2d29795ffe512f723a91334a7fff55b587f50be24e52b1a93925e,5469
+mikro §15.5.2,fr1_multipliers,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR1_multipliers.csv,403cf632f27e40e9f03216a08a801b8092768789d009608aea5db02cdceb5c84,25
+mikro §15.5.2,fr1_forecast,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR1_forecast_full.csv,3b6762898376f99a3203acf04bc7115d5165a939d162ba16035b1fa0ae99bb0b,15
+mikro §15.5.2,fr1_draws,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR1_fan_draws.csv,26dfaff76fe223da10fc522c84aa9b3a2407ac2c880c5820e88de0f0723d2a13,2500
+mikro §15.5.2,fr1_holdout,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR1_holdout_validation.csv,fe5b9c70ae83ec0a368825ecdc45d6570f21234a5c62c1b0b97babb73b5e6f39,14
+mikro §15.5.2,fr10_ews,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR10_early_warning.csv,2d68ca2776843f36cd3340fd100d46a0dbdb4525e316a04f7cc7549559193abf,24
+mikro §15.5.2,fr10_plausibility,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR10_plausibility.csv,87567b9506dd675381b406e9912ce304688a259c6ab897121dc3881472fa692a,34
+mikro §15.5.2,fr12_ews,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR12_early_warning.csv,ce9f194233363616da7917db6f4a4655d8504c782c955af2f8230276b9ebe8dd,11
+mikro §15.5.2,fr12_false_listing,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR12_early_warning_false_listing.csv,ed39611d1fab01a1efda8256fc382e90486a68f07107211d7b8a707cd256d74a,6
+mikro §15.5.2,fr12_scenarios,/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit/output/FR12_scenario_summary.csv,b24c0e95f92121dc6257587121bc60dda681d3efa23edcb36b53bb25906d77d3,12

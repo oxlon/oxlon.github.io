@@ -1,0 +1,3 @@
+# NFR2 — Linux/Unix serverləri üçün (crontab -e). Gündəlik 07:00 tam dövr + hər 30 dəqiqədən bir yerli giriş yoxlaması.
+0 7 * * *    cd /opt/miis/Risk_Unit && /usr/bin/python3 update.py            >> output/NFR2_cron.log 2>&1
+*/30 * * * * cd /opt/miis/Risk_Unit && /usr/bin/python3 update.py --no-fetch >> output/NFR2_cron.log 2>&1

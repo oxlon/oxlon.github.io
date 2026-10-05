@@ -1,0 +1,8 @@
+# MİİS §15.5.3 risk bölməsi — makro modelin (18august/model/requirements.txt) eyni versiyaları
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.16.3
+statsmodels==0.14.6
+openpyxl==3.1.5
+xlrd==2.0.1        # GPR (.xls) axınının oxunması
+# PDF ixracı üçün Google Chrome / Chromium / Edge (başsız rejim) quraşdırılmalıdır
