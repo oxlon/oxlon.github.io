@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+reports/*.print.html
+output/NFR2_cron.log

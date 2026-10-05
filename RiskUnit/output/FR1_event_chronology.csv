@@ -1,0 +1,18 @@
+tarix,aile,hadise,risk_idler,gpr_qlobal_nisbet,gpr_regional_nisbet,brent_3ay_log_deyisme,brent_12ay_log_deyisme,vix_nisbet,zelzele_M,usd_azn_il_deyisme_pct,menbe_qeydi
+2000-11-25,TEB,Bakı yaxınlığında Xəzərdə güclü zəlzələ,R08,0.7282,0.9342,-12.32,-49.93,1.166,6.8,8.646,USGS kataloqu (maqnituda kataloqdan oxunur)
+2008-08-08,XSI,Rusiya–Gürcüstan müharibəsi,R06;R05,1.036,1.741,-92.83,-60.45,0.8925,,-4.233,açıq mənbələr
+2008-09-15,MAL,Qlobal maliyyə böhranının kəskinləşməsi (Lehman Brothers),R01;R02;R05,1.031,1.274,-104.2,-51.52,1.325,,-4.233,açıq mənbələr
+2010-05-01,TEB,Kür və Araz çaylarında daşqınlar (may–iyun),R10,1.045,1.19,-9.618,30.43,1.343,,-0.1403,açıq mənbələr
+2012-05-07,TEB,Zaqatala–Balakən zəlzələləri,R08,0.9014,0.9731,-5.213,-15.22,0.8711,5.6,-0.5118,USGS kataloqu
+2014-03-01,XSI,Ukrayna böhranı və Rusiyaya qarşı sanksiyalar,R06;R07;R05,1.481,3.91,2.623,-66.71,1.03,,-0.02408,açıq mənbələr
+2014-11-27,MAL,OPEC hasilatı azaltmadı — neft qiymətinin çöküşü,R01,0.8576,0.686,-40.92,-68.11,0.9627,,-0.02408,açıq mənbələr
+2015-02-21,MAL,Manatın birinci devalvasiyası,R03,1.085,1.184,29.39,-39.48,1.093,,30.83,AMB (məzənnə sırası modeldə)
+2015-12-21,MAL,Manatın ikinci devalvasiyası və üzən məzənnə rejiminə keçid,R03,1.47,0.9812,-14.71,18.58,1.09,,30.83,AMB (məzənnə sırası modeldə)
+2016-04-02,XSI,Aprel döyüşləri (Qarabağ),R06,0.8021,0.7328,16.25,31.4,0.8078,,55.52,açıq mənbələr
+2020-03-09,MAL,Pandemiya və OPEC+ qiymət müharibəsi — neft qiymətinin çöküşü,R01;R05;R13,0.8725,0.5749,-32.37,16.15,3.783,,0,açıq mənbələr
+2020-09-27,XSI,İkinci Qarabağ müharibəsi (27.09–10.11.2020),R06,0.9918,1.489,11.11,50.99,1.099,,0,açıq mənbələr
+2022-02-24,XSI,Rusiyanın Ukraynaya genişmiqyaslı hərbi müdaxiləsi,R06;R07;R05;R01,2.48,5.451,27.02,-4.638,1.315,,0,açıq mənbələr
+2023-09-19,XSI,Qarabağda antiterror tədbirləri,R06,0.8652,0.8299,-10.41,-15.18,0.7474,,0,açıq mənbələr
+2023-10-07,XSI,Yaxın Şərqdə münaqişənin eskalasiyası,R06;R01,1.779,1.727,-15.68,-21.44,0.9793,,0,açıq mənbələr
+2026-03-01,XSI,GPR indeksinin sıçrayışı (ölkə indeksləri arasında ən yüksəyi İsrail; Brent 3 ayda kəskin artım),R06;R01,2.22,2.386,18.62,,1.339,,,GPR və Brent sıralarından (hadisə adı verilmir — yalnız göstəricilər)
+2026-04-08,TEB,"Respublikanın cənubunda M 5,6 zəlzələ",R08,1.537,1.351,-20.81,,1.02,5.6,,USGS kataloqu

@@ -1,0 +1,23 @@
+bolme,ad,rehberlik,analitik
+kpi,Əsas göstəricilər,1,1
+alerts,Xəbərdarlıqlar,1,1
+heatmap,Risk xəritəsi (ehtimal × təsir),1,1
+top,Prioritet risklər,1,1
+fan,Qeyri-neft artımının paylanması (Growth-at-Risk),1,1
+brent,Neft qiyməti: canlı vəziyyət və başabaş,1,1
+stress,Stress ssenariləri və tədbirlərin effekti,1,1
+measures_summary,Tədbirlərin icra vəziyyəti,1,1
+register,Risk reyestri (tam),0,1
+contrib,Risklərin töhfəsi (dispersiya və aşağı quyruq),0,1
+dist,Proqnoz paylanmaları (bütün kvantillər),0,1
+indicators,Risk göstəriciləri bazası,0,1
+channels,Ötürmə kanalları,0,1
+hazards,Təbii təhlükələr,0,1
+chronology,Hadisələr xronologiyası,0,1
+stress_full,Stress ssenariləri: illər üzrə yollar,0,1
+levers,Siyasət alətlərinin ölçüsü,0,1
+measures,Tədbirlər reyestri və risk-tədbir əlaqəsi,0,1
+residual,Qalıq risk,0,1
+backtest,Geriyə doğru sınaq və kalibrləmə (NFR1),0,1
+feeds,Məlumat axınları və yeniləmə jurnalı (NFR2),0,1
+method,Metodologiya qeydləri və məlumat boşluqları,1,1

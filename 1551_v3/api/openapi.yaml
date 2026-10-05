@@ -1,0 +1,378 @@
+openapi: 3.1.0
+info:
+  title: MİİS §15.5.1 — baza məlumatı API-si
+  version: 1.0.0
+  description: |
+    Makroiqtisadi proqnoz modellərinin **baza məlumatı** üçün inteqrasiya interfeysi.
+
+    İki istiqamətdə işləyir:
+      * Nazirliyin məlumat anbarı modelin bütün baza sıralarını və müşahidələrini **oxuya** bilər
+        (tam və ya artımlı — `since_seq` ilə yalnız dəyişənləri).
+      * Yeni faktiki məlumat nöqtələri API vasitəsilə **daxil edilə** bilər; hər yazı
+        kim, nə vaxt və hansı mənbədən qeydi ilə saxlanılır və geri izlənə bilər.
+
+    Sıra kodu iki hissədən ibarətdir: `model` (`bum` — aşağıdan-yuxarı model, `caem` — CAEM)
+    və `code` (dəyişənin adı, məs. `CPI`, `NEER`, `Exp_coeff_1`). Tezlik illikdir (`A`).
+
+    Bu sənəd **müqavilədir**. `server.py` onun işlək istinad tətbiqidir və öz texnoloji
+    stekinizlə əvəz edilə bilər.
+servers:
+  - url: http://127.0.0.1:8787
+    description: Yerli istinad serveri
+  - url: https://api.example.gov.az
+    description: Nazirliyin istehsal mühiti
+security:
+  - bearerAuth: []
+tags:
+  - name: Sistem
+  - name: Kataloq
+  - name: Müşahidələr
+  - name: Proqnozlar
+paths:
+  /v1/health:
+    get:
+      tags: [Sistem]
+      summary: Xidmətin vəziyyəti
+      security: []
+      responses:
+        "200":
+          description: İşləyir
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+                  version: { type: string }
+                  time: { type: string, format: date-time }
+                  series: { type: integer }
+                  observations: { type: integer }
+  /v1/models:
+    get:
+      tags: [Kataloq]
+      summary: Modellərin siyahısı və əhatə dövrü
+      responses:
+        "200":
+          description: Modellər
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: "#/components/schemas/Model" }
+  /v1/series:
+    get:
+      tags: [Kataloq]
+      summary: Baza sıralarının kataloqu
+      parameters:
+        - { name: model, in: query, schema: { type: string, enum: [bum, caem] } }
+        - { name: kind, in: query, schema: { type: string }, description: "series, scalar, coef, addfactor, switch" }
+        - { name: q, in: query, schema: { type: string }, description: Kod və ya ad üzrə axtarış
+          }
+        - { name: limit, in: query, schema: { type: integer, default: 500, maximum: 2000 } }
+        - { name: offset, in: query, schema: { type: integer, default: 0 } }
+      responses:
+        "200":
+          description: Sıralar
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items: { type: array, items: { $ref: "#/components/schemas/Series" } }
+                  total: { type: integer }
+                  limit: { type: integer }
+                  offset: { type: integer }
+  /v1/series/{model}/{code}:
+    get:
+      tags: [Kataloq]
+      summary: Bir sıra — metaməlumat və bütün müşahidələr
+      parameters:
+        - { name: model, in: path, required: true, schema: { type: string } }
+        - { name: code, in: path, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: Sıra
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/Series"
+                  - type: object
+                    properties:
+                      observations:
+                        type: array
+                        items: { $ref: "#/components/schemas/Observation" }
+        "404": { $ref: "#/components/responses/Error" }
+  /v1/observations:
+    get:
+      tags: [Müşahidələr]
+      summary: Müşahidələrin toplu oxunması (anbar sinxronizasiyası)
+      description: |
+        Anbarın ilk yüklənməsi üçün filtrsiz çağırın. Sonrakı artımlı sinxronizasiya üçün
+        əvvəlki cavabdakı `max_seq` dəyərini `since_seq` kimi göndərin — yalnız həmin andan
+        sonra dəyişmiş nöqtələr qayıdacaq.
+      parameters:
+        - { name: model, in: query, schema: { type: string } }
+        - { name: code, in: query, schema: { type: string }, description: "Vergüllə ayrılmış kodlar" }
+        - { name: from, in: query, schema: { type: integer }, description: İlk il }
+        - { name: to, in: query, schema: { type: integer }, description: Son il }
+        - { name: updated_since, in: query, schema: { type: string, format: date-time } }
+        - { name: since_seq, in: query, schema: { type: integer }, description: Artımlı sinxronizasiya
+          }
+        - { name: limit, in: query, schema: { type: integer, default: 10000, maximum: 50000 } }
+        - { name: offset, in: query, schema: { type: integer, default: 0 } }
+      responses:
+        "200":
+          description: Müşahidələr
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items: { type: array, items: { $ref: "#/components/schemas/Observation" } }
+                  total: { type: integer }
+                  max_seq: { type: integer, description: Növbəti artımlı sorğu üçün }
+    post:
+      tags: [Müşahidələr]
+      summary: Yeni məlumat nöqtələrinin daxil edilməsi (toplu)
+      description: |
+        Hər nöqtə `(model, code, period)` açarı ilə əlavə olunur və ya üzərinə yazılır.
+        Mövcud dəyər dəyişdirilirsə, köhnə dəyər tarixçəyə yazılır və `revision` artır.
+        `?dry_run=1` ilə heç nə yazmadan yoxlamaq olar — cavabda nəyin dəyişəcəyi görünür.
+        Tanınmayan kod, aralıqdan kənar il və ya ədəd olmayan dəyər rədd edilir; qalan
+        nöqtələr tətbiq olunur (qismən uğur mümkündür — `errors` massivinə baxın).
+      parameters:
+        - { name: dry_run, in: query, schema: { type: boolean }, description: Yalnız yoxla }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ObservationBatch" }
+            examples:
+              dsk:
+                summary: DSK-dan gələn 2025 faktiki məlumatı
+                value:
+                  actor: dovlet.statistika
+                  source: DSK 2025 yekun
+                  items:
+                    - { model: bum, code: CPI, period: 2025, value: 1.95 }
+                    - { model: bum, code: NEER, period: 2025, value: 0.81 }
+      responses:
+        "201":
+          description: Tətbiq olundu
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/WriteResult" }
+        "200":
+          description: Yalnız yoxlanıldı (dry_run)
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/WriteResult" }
+        "403": { $ref: "#/components/responses/Error" }
+  /v1/history:
+    get:
+      tags: [Müşahidələr]
+      summary: Dəyişikliklərin tarixçəsi (audit)
+      parameters:
+        - { name: model, in: query, schema: { type: string } }
+        - { name: code, in: query, schema: { type: string } }
+        - { name: period, in: query, schema: { type: integer } }
+        - { name: limit, in: query, schema: { type: integer, default: 500 } }
+      responses:
+        "200":
+          description: Tarixçə
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        model: { type: string }
+                        code: { type: string }
+                        period: { type: integer }
+                        old_value: { type: [number, "null"] }
+                        new_value: { type: [number, "null"] }
+                        source: { type: string }
+                        actor: { type: string }
+                        at: { type: string, format: date-time }
+  /v1/forecasts:
+    get:
+      tags: [Proqnozlar]
+      summary: Dərc olunmuş proqnoz versiyaları
+      parameters:
+        - { name: model, in: query, schema: { type: string } }
+        - { name: code, in: query, schema: { type: string } }
+        - { name: vintage, in: query, schema: { type: string } }
+      responses:
+        "200":
+          description: Proqnoz nöqtələri
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        vintage: { type: string }
+                        model: { type: string }
+                        code: { type: string }
+                        period: { type: integer }
+                        value: { type: [number, "null"] }
+    post:
+      tags: [Proqnozlar]
+      summary: Modeldən proqnoz versiyasının dərci
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [items]
+              properties:
+                vintage: { type: string, description: "Versiyanın adı, məs. 2026Q3-baza" }
+                model: { type: string }
+                actor: { type: string }
+                note: { type: string }
+                items:
+                  type: array
+                  items:
+                    type: object
+                    required: [model, code, period]
+                    properties:
+                      model: { type: string }
+                      code: { type: string }
+                      period: { type: integer }
+                      value: { type: [number, "null"] }
+                      label: { type: string, description: Göstəricinin adı — kod kataloqda olmaya bilər }
+                      unit: { type: string }
+      responses:
+        "201":
+          description: Dərc olundu
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  vintage: { type: string }
+                  points: { type: integer }
+                  created_at: { type: string, format: date-time }
+  /v1/vintages:
+    get:
+      tags: [Proqnozlar]
+      summary: Proqnoz versiyalarının siyahısı
+      responses:
+        "200":
+          description: Versiyalar
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items: { type: array, items: { type: object } }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: |
+        `Authorization: Bearer <nişan>`. Nişanlar iki səlahiyyətlə verilir:
+        `read` (yalnız oxumaq) və `write` (məlumat daxil etmək).
+  responses:
+    Error:
+      description: Xəta
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: object
+                properties:
+                  code: { type: string }
+                  message: { type: string }
+                  detail: { type: [string, "null"] }
+  schemas:
+    Model:
+      type: object
+      properties:
+        id: { type: string, example: bum }
+        name_az: { type: string }
+        sheets: { type: integer }
+        formulas: { type: integer }
+        first_year: { type: integer }
+        last_year: { type: integer }
+        last_actual: { type: integer, description: Son faktiki il — ondan sonrası proqnozdur }
+    Series:
+      type: object
+      properties:
+        model: { type: string }
+        code: { type: string }
+        kind: { type: string, description: "series, scalar, coef, addfactor, switch" }
+        label_az: { type: [string, "null"] }
+        unit_az: { type: [string, "null"] }
+        freq: { type: string, example: A }
+        book: { type: [string, "null"], description: Mənbə Excel iş kitabı }
+        sheet: { type: [string, "null"], description: Mənbə vərəq }
+        row: { type: [integer, "null"], description: Mənbə sətir }
+        first_year: { type: [integer, "null"] }
+        last_year: { type: [integer, "null"] }
+    Observation:
+      type: object
+      properties:
+        model: { type: string }
+        code: { type: string }
+        period: { type: integer, description: İl }
+        value: { type: [number, "null"] }
+        source: { type: [string, "null"] }
+        actor: { type: [string, "null"] }
+        note: { type: [string, "null"] }
+        revision: { type: integer }
+        updated_at: { type: string, format: date-time }
+        seq: { type: integer }
+    ObservationBatch:
+      type: object
+      required: [items]
+      properties:
+        actor: { type: string, description: Kim daxil edir }
+        source: { type: string, description: Məlumatın mənbəyi }
+        note: { type: string }
+        items:
+          type: array
+          maxItems: 20000
+          items:
+            type: object
+            required: [model, code, period]
+            properties:
+              model: { type: string }
+              code: { type: string }
+              period: { type: integer }
+              value: { type: [number, "null"] }
+              source: { type: string }
+              actor: { type: string }
+              note: { type: string }
+    WriteResult:
+      type: object
+      properties:
+        dry_run: { type: boolean }
+        applied: { type: integer }
+        rejected: { type: integer }
+        max_seq: { type: integer }
+        items: { type: array, items: { type: object } }
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              index: { type: integer }
+              reason: { type: string, enum: [bad_item, unknown_series, period_out_of_range] }
+              message: { type: string }

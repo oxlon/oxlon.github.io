@@ -1,0 +1,3 @@
+Windows Task Scheduler (schtasks):
+schtasks /Create /TN "MIIS_Risk_Update" /SC DAILY /ST 07:00 /TR "cmd /c cd /d C:\miis\Risk_Unit && python update.py >> output\NFR2_cron.log 2>&1"
+schtasks /Create /TN "MIIS_Risk_Watch" /SC MINUTE /MO 30 /TR "cmd /c cd /d C:\miis\Risk_Unit && python update.py --no-fetch >> output\NFR2_cron.log 2>&1"
