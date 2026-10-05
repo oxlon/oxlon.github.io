@@ -11,6 +11,17 @@ Default mode 'shock' = the notebook's shock-run convention: each scenario's add-
 decaying 2026 anchor increments) and its oil-revenue reference path are held, so a changed oil price moves
 public investment through F4. Lever mode='reanchor' re-runs the full pipeline (2026 re-anchored on the YTD data
 and a new oil-revenue reference). The fan-chart bootstrap is not part of the engine (notebook only).
+
+v2.2 (macro-module adoption): mining deflator on the hydrocarbon export price index + exchange rate; Baseline
+oil/gas output on the Ministry plan growth rates; 2026 state investment anchored on the State Investment Programme
+(input `sip_n`); levers `income_block` ('share' | 'legs': income by source with DSMF transfers, input `dsmf_add_g`)
+and `fiscal_rule` ('F3' | 'nobd': non-oil balance held at its 2025 ratio to non-oil GDP); new outputs gdpnon_n,
+hhdisp_n, nobd_pct, exp_pubinv_n, gas_exp_price, xsh_oil, dln_xpi.
+
+v2.3: E3 carries the real wage bill (homogeneity over three terms: the tie keeps ln_pens_r = 1 - ln_gdpnon -
+ln_wagebill_r when one of them is overridden); D4 is estimated in USD-volume form (solver coefficients unchanged);
+lever `base_addf_decay` now decays the base add-factors at a FIXED half-life (`addf_halflife`, default 1 year) -
+no estimated residual autocorrelation is used anywhere in the engine.
 """
 import os
 import time
@@ -62,6 +73,11 @@ def run(overrides=None, scenario="Baseline", upstream=None):
         W.append("FR1 yuxarı axın modulundan asılı deyil — 'upstream' nəzərə alınmadı")
     R = RUN.solve(S, scenario, ov, W)
     ser, _ = RUN.series(S, R)
+    if any(k == 'exogenous' and v in ('brent', 'gas_exp_price', 'fx') for k, v in ov['changed']):
+        W.append("Real ÜDM zəncirvari üsulla (əvvəlki ilin qiymətləri ilə) hesablanır: neft-qaz qiyməti dəyişdikdə neft-qaz "
+                 "sektorunun çəkisi dəyişir. Bazada neft-qaz hasilatı azaldığı üçün aşağı neft qiyməti bu azalmanın real ÜDM-ə "
+                 "təsirini zəiflədir və real ÜDM baza ilə müqayisədə arta bilər, halbuki qeyri-neft ÜDM və nominal ÜDM azalır. "
+                 "İqtisadi fəallığa təsiri qeyri-neft ÜDM üzrə oxuyun.")
     meta = {"module": MODULE, "scenario": scenario, "years": S['M']['FY'], "last_actual": S['M']['LAST_ACT'],
             "mode": ov['levers'].get('mode', 'shock'), "levers": ov['levers'],
             "changed": [f"{a}:{b}" for a, b in ov['changed']],
@@ -125,6 +141,12 @@ def selftest(modes=("shock", "reanchor"), tol=1e-8):
             r['decomposition_all'] = B.selftest_compare(dec, _out("FR1_sector_decomposition_all.csv"),
                                                         [c for c in dec.columns if c not in ('sector',)], tol=tol, floor=1e-6,
                                                         csv_filter=lambda d, sc=sc: d[d.scenario == sc].drop(columns='scenario').reset_index(drop=True)[dec.columns])
+            if mode == 'shock':                           # v2.1: sector allocations (anchored on 2025 shares)
+                for nm, fn in (('investment_by_sector', P.investment_by_sector(S, R['fc'], R['CAL'])),
+                               ('credit_by_sector', P.credit_by_sector(S, R['fc'], R['alloc']))):
+                    eng = pd.DataFrame(fn); eng.index.name = 'year'; eng = eng.reset_index()
+                    r[nm] = B.selftest_compare(eng, _out(f"FR1_{nm}.csv"), list(eng.columns), tol=tol,
+                                               csv_filter=lambda d, sc=sc: d[d.scenario == sc].drop(columns='scenario').reset_index(drop=True))
             sm = P.accounts_summary(S, post['acc'])
             num = [c for c in sm.columns if c not in ('group', 'entity', 'entity_az', 'unit')]
             r['accounts_summary'] = B.selftest_compare(sm, _out(f"FR1_accounts_summary_{sc.lower()}.csv"),
@@ -161,14 +183,16 @@ def _multipliers_check(base, tol):
 
 
 def _addf_sens_check(S, sc, fc, tol):
-    """FR1_addfactor_sensitivity.csv: average growth 2026-2030 with base add-factors held and decaying at rho
-    (re-anchored run with its own oil-revenue reference path, Part 13.1)."""
+    """FR1_addfactor_sensitivity.csv: average growth 2026-2030 with base add-factors held and decaying at a fixed
+    half-life (v2.3; re-anchored run with its own oil-revenue reference path, Part 13.1)."""
     ref = pd.read_csv(_out("FR1_addfactor_sensitivity.csv"), index_col=0)[sc]
     fs = run_frames({"levers": {"mode": "reanchor", "base_addf_decay": True}}, sc)[0]['fc']
     H, n, d = S['M']['H_END'], len(S['M']['FY']), S['d25']
     g = lambda f, k: ((f[k][H]/d[k])**(1/n) - 1)*100  # noqa: E731
-    eng = {'real GDP, constant base add-factors': g(fc, 'rgdp'), 'real GDP, base add-factors decay at rho': g(fs, 'rgdp'),
+    eng = {'real GDP, constant base add-factors': g(fc, 'rgdp'),
+           'real GDP, base add-factors decay at a fixed half-life': g(fs, 'rgdp'),
            'non-oil GDP, constant base add-factors': g(fc, 'rgdpnon'),
-           'non-oil GDP, base add-factors decay at rho': g(fs, 'rgdpnon')}
+           'non-oil GDP, base add-factors decay at a fixed half-life': g(fs, 'rgdpnon'),
+           'add-factor half-life (years)': float(S['M'].get('ADDF_HALFLIFE', 1.0))}
     mx = max(abs(eng[k] - ref[k])/max(abs(ref[k]), 1e-10) for k in eng)
     return dict(ok=bool(mx <= tol), max_rel_diff=float(mx), n_rows=len(eng))

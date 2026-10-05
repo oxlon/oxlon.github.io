@@ -25,6 +25,7 @@ from data_views import Views                                           # noqa: E
 from run_manager import RunManager                                     # noqa: E402
 from scenario_engine import Engine                                     # noqa: E402
 from upload_store import UploadStore                                   # noqa: E402
+from az_errors import az_exc
 
 LOCAL_ORIGIN = re.compile(r"^https?://(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$")
 
@@ -65,7 +66,7 @@ class App:
                     rep["run"] = self.runs.queue(rep["affected_stages"], actor=actor, trigger="dsk-refresh")
                 self.dsk_state = {"running": False, "last": rep}
             except Exception as e:
-                self.dsk_state = {"running": False, "last": {"error": str(e), "at": now_iso()}}
+                self.dsk_state = {"running": False, "last": {"error": az_exc(e), "detail": str(e)[:300], "at": now_iso()}}
         threading.Thread(target=job, daemon=True, name="dsk-refresh").start()
         return self.dsk_state
 

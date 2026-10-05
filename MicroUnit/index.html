@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mikroiqtisadi modul — MİİS §15.5.2</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="panel/assets/hub.css">
 </head>
 <body>
@@ -11,57 +12,69 @@
   <div class="wrap">
     <div class="eyebrow">Azərbaycan Respublikası İqtisadiyyat Nazirliyi</div>
     <h1>Mikroiqtisadi təhlil və proqnoz modulu — MİİS §15.5.2</h1>
-    <p class="lead">Altı funksional tələb (FR1, FR3, FR4, FR5, FR10, FR12) üzrə struktur ekonometrik modellər və onların 2026–2030 proqnozları,
-    üç ssenari ilə. Hər iki görünüş eyni çıxış fayllarından yığılır və brauzerdə birbaşa açılır — server və internet lazım deyil.</p>
+    <p class="lead">Altı funksional tələb (FR1, FR3, FR4, FR5, FR10, FR12) üzrə struktur ekonometrik modellər, onların
+    2026–2030 proqnozları üç ssenaridə, hər tənliyin tam reqressiya nəticəsi və dayanıqlıq yoxlamaları. Öz ssenarinizi
+    qurub zənciri yenidən hesablaya və istədiyiniz göstəricilərdən hesabat (Excel, Word, PDF) hazırlaya bilərsiniz.</p>
     <div class="facts">
       <span class="fact"><b>6</b> funksional tələb</span>
-      <span class="fact"><b>1 057</b> proqnoz göstəricisi</span>
-      <span class="fact"><b>3 129</b> ssenari üzrə sıra, hər biri 2026–2030</span>
-      <span class="fact"><b>369</b> göstəricidə 5–95 % zolağı</span>
+      <span class="fact"><b>1 533</b> proqnoz göstəricisi</span>
+      <span class="fact"><b>4 596</b> ssenari üzrə sıra, hər biri 2026–2030</span>
+      <span class="fact"><b>672</b> qiymətləndirilmiş tənlik</span>
+      <span class="fact"><b>500</b> göstəricidə 5–95 % zolağı</span>
     </div>
   </div>
 </header>
 <div class="wrap">
   <section>
-    <h2><span class="dot" style="background:var(--moe)"></span>Mikroiqtisadi modul (§15.5.2)</h2>
-    <p class="sec-note">Sektorlar və bazarlar, orta əmək haqqı, məşğulluq, pullu xidmətlər, müəssisələrin maliyyə vəziyyəti və bazar payı,
-    rəqabət mühiti. Bütün modellər strukturdur (AR/ARIMA/ARCH/GARCH yoxdur) və sadə etalonlara qarşı nümunədən kənar yoxlanılıb.</p>
+    <h2><span class="dot" style="background:var(--moe)"></span>Haradan başlamalı</h2>
+    <p class="sec-note">Gündəlik iş üçün <b>İş paneli</b>: proqnozlar, tənliklər, ssenari və hesabat qurucusu. Metodologiya,
+    məlumat mənbələri və məhdudiyyətlər üçün <b>Klassik görünüş</b>. Hər iki görünüş eyni çıxış fayllarından yığılır və
+    brauzerdə birbaşa açılır; yalnız ssenarinin yenidən hesablanması üçün yerli server lazımdır.</p>
     <div class="pair">
+      <a class="card" style="--k: var(--moe)" href="panel/index.html">
+        <span class="kind">İş paneli</span>
+        <h3>Proqnozlar, tənliklər, ssenarilər</h3>
+        <p>Hər tələb üçün bütün göstəricilər: qrafik, 2026–2030 cədvəli (bütün ssenarilər, səviyyə, artım, zolaq) və altında onu izah edən tənliklər.</p>
+        <ul>
+          <li>Hər tənliyin tam reqressiya nəticəsi və dayanıqlıq hökmü</li>
+          <li>Ssenari qurucusu: ekzogen fərziyyələr, əmsallar, alətlər → zəncirvari hesablama</li>
+          <li>Hesabat qurucusu: Excel, Word, PDF və CSV ixracı</li>
+          <li>FR10/FR12 müəssisə səviyyəsi (sintetik nümayiş) — tam ekonometrika</li>
+        </ul>
+        <span class="go">İş panelini aç →</span>
+        <span class="file">panel/index.html</span>
+      </a>
       <a class="card" style="--k: var(--moe)" href="site/index.html">
         <span class="kind">Klassik görünüş</span>
         <h3>Metodologiya və sənədlər</h3>
         <p>Hər tələb öz səhifəsində: tələb mətni, model, məlumat, nəticə, yoxlama və məhdudiyyətlər.</p>
         <ul>
-          <li>Ortaq metod standartları və hold-out xülasəsi</li>
+          <li>Ortaq metod standartları və nümunədən kənar yoxlama xülasəsi</li>
           <li>Məlumat mənbələri, FR10/FR12 mənbə matrisləri, məlumat boşluqları</li>
-          <li>Sintetik məlumat və onun əvəz edilməsi</li>
+          <li>Sintetik məlumat və onun real faylla əvəz edilməsi</li>
           <li>Bütün çıxış faylları, dəftərlər və icra ardıcıllığı</li>
         </ul>
         <span class="go">Klassik görünüşü aç →</span>
         <span class="file">site/index.html</span>
       </a>
-      <a class="card" style="--k: var(--moe)" href="panel/index.html">
-        <span class="kind">İş paneli</span>
-        <h3>Proqnozlar — açıq və interaktiv</h3>
-        <p>Bütün proqnozlar illər üzrə, üç ssenaridə: kartlar, qrafiklər, cədvəllər.</p>
-        <ul>
-          <li>Hər tələb üçün bütün göstəricilər, qruplar üzrə «Hamısı» cədvəli</li>
-          <li>Əsas / Mənfi / İslahat ssenariləri və onların müqayisəsi</li>
-          <li>Bir böyük proqnoz cədvəli: süzgəc, axtarış, CSV və Excel ixracı</li>
-          <li>Sürətli axtarış (Ctrl K), qısa tur və bələdçi</li>
-        </ul>
-        <span class="go">İş panelini aç →</span>
-        <span class="file">panel/index.html</span>
-      </a>
     </div>
   </section>
+  <section>
+    <h2><span class="dot" style="background:var(--caem)"></span>Altı tələb</h2>
+    <div class="note"><ul><li><a href="panel/index.html#/fr1"><b>FR1</b> — İqtisadi sektorlar və bazarlar</a></li><li><a href="panel/index.html#/fr3"><b>FR3</b> — Orta aylıq əmək haqqı</a></li><li><a href="panel/index.html#/fr4"><b>FR4</b> — Əhalinin məşğulluq göstəriciləri</a></li><li><a href="panel/index.html#/fr5"><b>FR5</b> — Əhaliyə göstərilən pullu xidmətlər</a></li><li><a href="panel/index.html#/fr10"><b>FR10</b> — Müəssisələrin maliyyə vəziyyəti, effektivliyi və bazar payı</a></li><li><a href="panel/index.html#/fr12"><b>FR12</b> — Rəqabət mühiti: giriş, çıxış, konsentrasiya</a></li></ul></div>
+  </section>
   <div class="note">
-    <h3>Yeniləmə</h3>
-    <p>Dəftərlər bu ardıcıllıqla icra olunur: FR1 → FR3 → FR4 → FR5 → FR10 → FR12. Sonra:</p>
-    <ul><li><code>python3 site/build_site.py</code> — klassik görünüş</li><li><code>python3 panel/build_panel.py</code> — iş paneli və bu səhifə</li></ul>
+    <h3>Ssenarini yenidən hesablamaq üçün</h3>
+    <p><b>MikroModel_Baslat.command</b> (macOS) və ya <b>MikroModel_Baslat.bat</b> (Windows) faylını iki dəfə klikləyin —
+    yerli server başlayır və panel <code>http://127.0.0.1:8790/panel/</code> ünvanında açılır. Və ya:
+    <code>python3 api/server.py</code>.</p>
+    <h3 style="margin-top:12px">Yeniləmə</h3>
+    <p>Dəftərlər bu ardıcıllıqla icra olunur: FR1 → FR3 → FR4 → FR5 → FR10 → FR12. Sonra
+    <code>python3 panel/build_panel.py</code> (iş paneli və bu səhifə) və <code>python3 site/build_site.py</code> (klassik görünüş);
+    hamısı birlikdə: <code>python3 run_all.py</code>.</p>
     <p>FR10 və FR12-nin müəssisə səviyyəsi (B qatı) Nazirlik öz məlumatını yükləyənə qədər <b>sintetik</b> fayllarla işləyir; onların nəticələri tapıntı kimi göstərilmir.</p>
   </div>
-  <footer>Yığılıb 2026-10-02 · 82 çıxış faylı · möhür 988e3a6def76</footer>
+  <footer>Yığılıb 2026-10-05 · 65 çıxış faylı · möhür da0c45b979c1</footer>
 </div>
 </body>
 </html>

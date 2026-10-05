@@ -1,3 +1,5 @@
+> **Azərbaycan dilində:** [az/FR4_Metodologiya.md](az/FR4_Metodologiya.md)
+
 # FR4 — Employment indicators of the population
 ## Structural econometric methodology and five-year forecast
 
@@ -41,7 +43,7 @@ re-executed end to end (0 errors, no fallback warnings) on FR1's re-run outputs 
 6. **Aggregate block and anchors.** Headline employment and labour force are FR1's, and E1–E2 is a
    cross-check anchored on 2025. There is one employee-share path (the 2024 actual, 0.3540), so the old
    2026 jump is gone. All 2025 anchors are reproduced.
-7. **Institutions.** Budget = σ × hired in the four budget activities, with σ = 0.913 the state share
+7. **Institutions.** Budget = σ × hired in the four budget activities, with σ = <!-- AUTO:fr4v22_sigma1 -->0.9092 (v2.2: the 2024 value; 0.913 before)<!-- /AUTO:fr4v22_sigma1 --> the state share
    from DSK tables 2.12–2.13; finding F3 is re-read as definitional. The claim in R7 is corrected. E9 is
    OLS on n = 10, its hold-out is not estimable, and both oil bases are anchored on 2025.
 8. **Mining and refining are consistent with E9 (second round).** Oil extraction plus oilfield
@@ -53,8 +55,8 @@ re-executed end to end (0 errors, no fallback warnings) on FR1's re-run outputs 
     non-oil are split within one basis each. Text errors are fixed.
 11. **Fan charts** (`FR4_fan_employment.csv`): historical residual-path resampling from 2011 (no
     estimated autocorrelation), parameter draws, and FR1's 500 draws. The notebook asserts that every
-    point forecast lies inside its inter-quartile band. Add-factors are held constant; their decay at
-    ρ̂ is shown as a sensitivity only.
+    point forecast lies inside its inter-quartile band. Add-factors are held constant; their decay with a
+    fixed one-year half-life (v2.3; nothing estimated) is shown as a sensitivity only.
 
 ---
 
@@ -205,7 +207,7 @@ process, and no fitted autocorrelation drives any forecast or fan chart. The lag
 | DOLS leads/lags of **regressor** differences | level equations with a stochastic regressor | Endogeneity correction; the level coefficients are used |
 | First differences with group fixed effects | pooled share systems (Tier 1, industry) | Differences of employment and output shares within a year; no lagged dependent variable on the right-hand side |
 | One lag in the residual-based cointegration test | every level equation | A test statistic only |
-| Constant add-factor; decay at ρ̂ | Parts 15, 18 | A fixed level adjustment; the decay is a **sensitivity only**, not a forecast rule |
+| Constant add-factor; decay with a fixed half-life | Parts 15, 18 | A fixed level adjustment; the decay (0.5 a year, half-life one year — v2.3, no estimated residual autocorrelation) is a **sensitivity only**, not a forecast rule |
 | Historical residual-path resampling | fan charts | Replays observed forecast-error paths $u_{s+h}-u_s$; no estimated dynamics |
 | Nominal share weights | shift-share | Accounting identity |
 
@@ -250,7 +252,7 @@ $$L_t = N_t \,\pi_t\,(1-u_t), \qquad H_t = \phi_t L_t$$
 - **E2 — employment rate.** DOLS: $\ln(L/LF) = -0.860 + 0.0824\ln Q^{non} - 0.0036\,t$. The difference form
   gives 0.0967 (95% CI 0.021–0.172), which contains the level estimate. The cointegration p-value is
   0.225 and the DW 0.58, so the level t-statistics are descriptive. FR1's form (per-capita non-oil GDP,
-  no trend, with a participation trend) gives 0.0337 (cointegration p = 0.171). <!-- AUTO:e2gap -->The two blocks differ by 0.95% in 2030 employment (1.21% at most across scenarios and years) and 0.23% at most in the labour force. Both reproduce 2025.<!-- /AUTO:e2gap -->
+  no trend, with a participation trend) gives 0.0337 (cointegration p = 0.171). <!-- AUTO:e2gap -->The two blocks differ by 0.99% in 2030 employment (1.24% at most across scenarios and years) and 0.23% at most in the labour force. Both reproduce 2025.<!-- /AUTO:e2gap -->
 - **E3 — employee share.** On data up to 2019 the trend is +0.0006 (t = 0.28), and on the full sample
   t = 1.97. The difference form shows no drift, and the series is U-shaped. It is held at its **2024
   actual, 0.3540, for every year from 2025**.
@@ -327,11 +329,12 @@ policy lever.
 
 $$B_t = \sigma \sum_{i \in \{\text{pubadm, educ, health, art}\}} H_{i,t}, \qquad \text{non-budget}_t = H_t - B_t$$
 
-σ is the **state share** of hired employees in the four activities, from DSK tables 2.12–2.13: 0.9169
-(2023) and 0.9092 (2024), mean **0.913**. The first version's κ = 0.994 on all hired employees
-reproduced DVX r130 for 2022–2024 but counted private schools and clinics. The identity gives 596.7
-thousand for 2025 against r130's 588.0 (+1.5%), consistent with the definitional reading of F3. History
-before 2023 assumes the same σ.
+σ is the **state share** of hired employees in the four activities, from DSK tables 2.12–2.13: <!-- AUTO:fr4v22_sigma2 -->0.9169
+(2023) and 0.9092 (2024). **v2.2:** `Dynamics_2.12` gives every year since 2005 and holding the last published
+year beats the two-year mean on origins 2010–2019, so σ = **0.9092** (2024; was the mean 0.913).<!-- /AUTO:fr4v22_sigma2 --> The first version's κ = 0.994 on all hired employees
+reproduced DVX r130 for 2022–2024 but counted private schools and clinics. The identity gives <!-- AUTO:fr4v22_r130 -->594.2
+thousand for 2025 against r130's 588.0 (+1.0%; 596.7 with the old mean)<!-- /AUTO:fr4v22_r130 -->, consistent with the definitional reading of F3. <!-- AUTO:fr4v22_history -->History
+2005–2022 uses the observed σ (v2.2); before 2005 there is no property split, so no budget history.<!-- /AUTO:fr4v22_history -->
 
 ### 8.6 Oil and non-oil
 
@@ -356,7 +359,7 @@ because residuals are generally not shown to be stationary:
 - E8: −0.018.
 - E9: anchored on the 2025 actual.
 
-The share blocks need none. Decay at ρ̂ is reported as a **sensitivity only** (§12). The anchors are
+The share blocks need none. Decay with a fixed one-year half-life (v2.3; ρ̂ is not used) is reported as a **sensitivity only** (§12, §18). The anchors are
 reproduced exactly (the 2025-anchor check in Part 19): shares on 2024 (to 3 × 10⁻¹⁴%), and the total, labour force, oil
 on both bases and tax-record contracts on 2025. **Population** is FR1's published path.
 
@@ -415,30 +418,30 @@ by construction, so this is consistency, not corroboration.
 <!-- AUTO:results (generated by FR4.ipynb Part 20.2 from the run's outputs; do not edit by hand) -->
 ## 11. Baseline results, 2026–2030
 
-Total employment (FR1) rises from 5,105 to 5,274 thousand, **+0.65% a year** (90% band -0.22% to +1.57%).
+Total employment (FR1) rises from 5,105 to 5,272 thousand, **+0.65% a year** (90% band -0.25% to +1.60%).
 
 | Group | % a year | 90% band |
 |---|---|---|
-| Accommodation & food | +1.00 | -1.69 to +4.08 |
-| Information & communication | +0.95 | -0.13 to +2.09 |
-| Transport & storage | +0.74 | -0.56 to +2.17 |
-| Trade & repair | +0.70 | -0.17 to +1.62 |
-| Agriculture, forestry & fishing | +0.68 | -0.11 to +1.51 |
-| Other services (9 activities) | +0.63 | -0.32 to +1.66 |
-| Industry | +0.50 | -0.59 to +1.53 |
-| Construction | +0.48 | -0.85 to +1.81 |
+| Accommodation & food | +0.95 | -1.72 to +4.04 |
+| Information & communication | +0.86 | -0.28 to +1.98 |
+| Transport & storage | +0.74 | -0.62 to +2.22 |
+| Agriculture, forestry & fishing | +0.67 | -0.19 to +1.59 |
+| Trade & repair | +0.67 | -0.24 to +1.63 |
+| Other services (9 activities) | +0.61 | -0.43 to +1.64 |
+| Industry | +0.55 | -0.59 to +1.70 |
+| Construction | +0.52 | -0.96 to +1.93 |
 
-- **Inside industry** (employed basis): mining -1.63% a year (its oil part follows E9), manufacturing +0.72%.
-- **Inside other services**: market services grow (+1.81% a year employed, +3.83% hired) and budget-financed services fall on the employed basis (-0.09%) and fall on the hired basis (-0.61%): E6 moves employment from the budget-financed bloc towards market services as other-services output grows, fast enough here to shrink the budget-financed bloc in absolute terms.
+- **Inside industry** (employed basis): mining -0.46% a year (its oil part follows E9), manufacturing +0.66%.
+- **Inside other services**: market services grow (+1.75% a year employed, +3.68% hired) and budget-financed services fall on the employed basis (-0.07%) and fall on the hired basis (-0.57%): E6 moves employment from the budget-financed bloc towards market services as other-services output grows, fast enough here to shrink the budget-financed bloc in absolute terms.
 - **Construction**: FR1 has construction output changing -19.0% in 2026; construction employment changes -0.60% that year against +0.54% for the total — a dip, but a damped one (half weight on a small elasticity).
 
 First version, for comparison: accommodation +2.42%, ICT +1.43%, construction +1.24% … trade +0.32%, total +0.53% on FR1's earlier path.
 
-- **State** employment: 1,049.3 → 984.7 thousand (-1.26% a year; band -2.38% to -0.22%), share 20.6% → 18.7%.
-- **Budget organisations** (σ = 0.913): 596.7 → 578.6 thousand (-0.61% a year; band -1.81% to +0.51%), 31.0% of employees in 2030.
-- **Oil** employment, tax-record basis: 47.8 → 41.6 thousand (-2.72% a year; band -4.46% to -1.00%); statistical basis 30.9 → 26.9.
+- **State** employment: 1,049.3 → 984.4 thousand (-1.27% a year; band -2.42% to -0.20%), share 20.6% → 18.7%.
+- **Budget organisations** (σ = 0.909): 594.2 → 577.4 thousand (-0.57% a year; band -1.96% to +0.60%), 30.9% of employees in 2030.
+- **Oil** employment, tax-record basis: 47.8 → 45.5 thousand (-0.97% a year; band -2.47% to +0.52%); statistical basis 30.9 → 29.4.
 
-**Scenarios.** In 2030 FR1's scenarios differ by 20.5% in real oil GDP, 11.07% in non-oil GDP and 0.35% in employment; FR4's employment therefore differs by 0.35% (18.6 thousand). Oil employment separates by 16.1% (Adverse 37.6 vs Reform 43.7 thousand).
+**Scenarios.** In 2030 FR1's scenarios differ by 22.0% in real oil GDP, 10.58% in non-oil GDP and 0.34% in employment; FR4's employment therefore differs by 0.34% (17.8 thousand). Oil employment separates by 17.3% (Adverse 40.7 vs Reform 47.8 thousand).
 
 **Fan charts** (`FR4_fan_employment.csv`, `FR4_fan_summary_2030.csv`): 2,000 replications combining historical residual-path resampling (8 joint 6-year paths starting 2011–2018 across 18 equations, centred; E9 starts 2016–2020), parameter draws and FR1's 500 macro draws. Every point forecast lies inside its inter-quartile band (asserted in Part 17.5).
 
@@ -450,14 +453,14 @@ First version, for comparison: accommodation +2.42%, ICT +1.43%, construction +1
 |---|---|
 | population growth 0.3pp lower | total -78.6 thousand (-1.5%); labour force -82.4 thousand (-1.5%); agriculture -27.9 thousand (-1.5%) |
 | population growth 0.3pp higher | total +79.6 thousand (+1.5%); labour force +83.4 thousand (+1.5%); agriculture +28.2 thousand (+1.5%) |
-| employee share +2pp by 2030 | hired +105.5 thousand (+5.7%); budget +32.7 thousand (+5.7%); nonbudget +72.8 thousand (+5.7%) |
+| employee share +2pp by 2030 | hired +105.4 thousand (+5.7%); budget +32.6 thousand (+5.7%); nonbudget +72.8 thousand (+5.7%) |
 | state share frozen at its 2024 level | state +120.0 thousand (+12.2%); nonstate -120.0 thousand (-2.8%) |
-| budget = all hired in the 4 activities (kappa = 0.994, first version) | budget +51.2 thousand (+8.8%) |
-| Tier 1 + industry: pure constant shares | hotel -2.3 thousand (-2.1%); ict -1.2 thousand (-1.8%); construction +4.0 thousand (+0.9%) |
-| Tier 1 + industry: pooled output system alone | hotel +2.3 thousand (+2.1%); ict +1.2 thousand (+1.8%); construction -4.0 thousand (-0.9%) |
-| Tier-1 driver: group-specific relative output share (not adopted) | hotel +7.6 thousand (+6.8%); ict -1.5 thousand (-2.4%); construction +5.8 thousand (+1.4%) |
-| Tier-1 driver: group-specific income per capita (not adopted) | hotel +11.0 thousand (+9.9%); construction +20.7 thousand (+4.9%); industry +17.7 thousand (+4.2%) |
-| SENSITIVITY ONLY: add-factors decay at residual rho (E6, E8) | market services -11.5 thousand (-2.1%); state +14.2 thousand (+1.4%); budget +4.6 thousand (+0.8%) |
+| budget = all hired in the 4 activities (kappa = 0.994, first version) | budget +53.7 thousand (+9.3%) |
+| Tier 1 + industry: pure constant shares | hotel -2.1 thousand (-1.9%); ict -0.9 thousand (-1.4%); construction +3.0 thousand (+0.7%) |
+| Tier 1 + industry: pooled output system alone | hotel +2.1 thousand (+1.9%); ict +0.9 thousand (+1.4%); construction -3.0 thousand (-0.7%) |
+| Tier-1 driver: group-specific relative output share (not adopted) | hotel +7.1 thousand (+6.4%); ict -1.2 thousand (-1.9%); construction +4.3 thousand (+1.0%) |
+| Tier-1 driver: group-specific income per capita (not adopted) | hotel +10.7 thousand (+9.6%); construction +19.0 thousand (+4.5%); industry +16.0 thousand (+3.8%) |
+| SENSITIVITY ONLY: add-factors decay, fixed half-life 1 year (E6, E8) | market services -17.8 thousand (-3.2%); state +14.3 thousand (+1.4%); budget +4.7 thousand (+0.8%) |
 
 The decay row is a sensitivity only, not a forecast rule. The state-share lever remains the largest swing: a political decision, not an econometric one.
 
@@ -495,7 +498,7 @@ The decay row is a sensitivity only, not a forecast rule. The state-share lever 
 
 ## 14. Outputs
 
-`FR4.ipynb` — <!-- AUTO:cells -->114 cells (79 code, 35 markdown)<!-- /AUTO:cells -->, executes end to end with 0 errors. Its Part 20.2 cell regenerates this document's §8.1 cross-check gap, §11 and §12 from the run (between the `AUTO` markers), so those figures are never typed by hand.
+`FR4.ipynb` — <!-- AUTO:cells -->119 cells (83 code, 36 markdown)<!-- /AUTO:cells -->, executes end to end with 0 errors. Its Part 20.2 cell regenerates this document's §8.1 cross-check gap, §11 and §12 from the run (between the `AUTO` markers), so those figures are never typed by hand.
 `docs/FR4_Methodology.md` — this document. CSV files in `output/`:
 
 | File | Content |
@@ -521,16 +524,107 @@ The decay row is a sensitivity only, not a forecast rule. The state-share lever 
 
 *Bu bölmə FR4.ipynb-nin 21–26-cı hissələri tərəfindən hər icrada yenidən yazılır.*
 
-**Tənliklər reyestri** (`output/FR4_equations.json`, 21-ci hissə): notebook-da qiymətləndirilən hər tənlik — cəmi **122**, onlardan **11**-i proqnozda istifadə olunur. Bloklar üzrə: A 9, B 37, C 31, D 5, E 1, R 39 (R — rədd edilmiş/alternativ spesifikasiyalar, A — məcmu blok, B — 1-ci pillə pay sistemi, C — sənaye daxilində və xidmətlər, D — institusional bölgülər, E — shift-share). Reyestr hər tənliyi statsmodels ilə eyni (y, X) üzərində müstəqil yenidən qiymətləndirir və əmsalların notebook-un öz qiymətləndirmələrinə bərabər olduğunu yoxlayır (hamısı uyğun gəlir); diaqnostika (DW, BG, JB, White, RESET, VIF, kointeqrasiya, fərq forması), rekursiv və bir ili çıxarmaqla qiymətləndirmələr, Chow və CUSUM əlavə olunur.
+**Tənliklər reyestri** (`output/FR4_equations.json`, 21-ci hissə): notebook-da qiymətləndirilən hər tənlik — cəmi **125**, onlardan **11**-i proqnozda istifadə olunur. Bloklar üzrə: A 9, B 37, C 31, D 5, E 1, R 42 (R — rədd edilmiş/alternativ spesifikasiyalar, A — məcmu blok, B — 1-ci pillə pay sistemi, C — sənaye daxilində və xidmətlər, D — institusional bölgülər, E — shift-share). Reyestr hər tənliyi statsmodels ilə eyni (y, X) üzərində müstəqil yenidən qiymətləndirir və əmsalların notebook-un öz qiymətləndirmələrinə bərabər olduğunu yoxlayır (hamısı uyğun gəlir); diaqnostika (DW, BG, JB, White, RESET, VIF, kointeqrasiya, fərq forması), rekursiv və bir ili çıxarmaqla qiymətləndirmələr, Chow və CUSUM əlavə olunur.
 
-**Dayanıqlıq hökmləri** (`FR4_robustness_summary.csv`): bütün tənliklər — stabil 19, qismən stabil 40, qeyri-stabil 63; proqnozda istifadə olunanlar — stabil 4, qismən stabil 4, qeyri-stabil 3. Kövrək (qeyri-stabil) proqnoz tənlikləri: `FR4.E5_pooled_emp` (rekursiv: d_lo_sq işarəsi son yarıda dəyişir; bir ili çıxarmaqla: d_lo_sq işarəsi dəyişir); `FR4.E6_emp` (rekursiv: d2010 işarəsi son yarıda dəyişir; Chow 2012 (orta nöqtə) p = 0.000; Chow 2015 (2015) p = 0.000; Chow 2020 (2020) p = 0.000; CUSUM p = 0.022); `FR4.E6_hired` (Chow 2012 (orta nöqtə) p = 0.034; Chow 2015 (2015) p = 0.012; Chow 2020 (2020) p = 0.000). Kointeqrasiya testi aparılan 70 səviyyə tənliyindən yalnız 11-ində 10%-də müəyyən edilir — t-statistikaları əksər hallarda təsviridir (19.4-cü hissə ilə uyğun). R9 sənaye panelində əmək haqqı elastikliyi -0.128: Driscoll–Kraay p = 0.491, wild-cluster bootstrap (illər üzrə, Webb) p = 0.544; buraxılış elastikliyinin bootstrap p-dəyəri 0.066 (DK: 0.011).
+**Dayanıqlıq hökmləri** (`FR4_robustness_summary.csv`): bütün tənliklər — stabil 19, qismən stabil 40, qeyri-stabil 66; proqnozda istifadə olunanlar — stabil 4, qismən stabil 4, qeyri-stabil 3. Kövrək (qeyri-stabil) proqnoz tənlikləri: `FR4.E5_pooled_emp` (rekursiv: d_lo_sq işarəsi son yarıda dəyişir; bir ili çıxarmaqla: d_lo_sq işarəsi dəyişir); `FR4.E6_emp` (rekursiv: d2010 işarəsi son yarıda dəyişir; Chow 2012 (orta nöqtə) p = 0.000; Chow 2015 (2015) p = 0.000; Chow 2020 (2020) p = 0.000; CUSUM p = 0.022); `FR4.E6_hired` (Chow 2012 (orta nöqtə) p = 0.034; Chow 2015 (2015) p = 0.012; Chow 2020 (2020) p = 0.000). Kointeqrasiya testi aparılan 73 səviyyə tənliyindən yalnız 11-ində 10%-də müəyyən edilir — t-statistikaları əksər hallarda təsviridir (19.4-cü hissə ilə uyğun). R9 sənaye panelində əmək haqqı elastikliyi -0.128: Driscoll–Kraay p = 0.508, wild-cluster bootstrap (illər üzrə, Webb) p = 0.544; buraxılış elastikliyinin bootstrap p-dəyəri 0.066 (DK: 0.031).
 
 **Tam proqnoz cədvəli** (`FR4_forecast_tidy.csv`): 75 komponent × 3 ssenari, tarix ilk mövcud ildən, 2025 (nowcast) və 2026–2030; tamlıq yoxlanılır (1125 dəyər). 8 qrup və iki xidmət bloku indi hər üç ssenari üçün verilir (əvvəl qruplar yalnız Əsas ssenarinin fan cədvəlində idi). Zolaqlar (5–95%) Əsas ssenari üçün 14 sıra üzrə. Proqnozlaşdırılmayanlar və səbəbləri: `FR4_not_forecast.csv` (15 sıra: Məşğulluq Agentliyinin qırılan sıraları, vergi uçotu üzrə sahə bölgüsü, DVX r130/r107, regionlar). Kataloq: `FR4_indicator_catalog.csv` (id-lər `fr4:emp:<fəaliyyət>`, `fr4:hired:<fəaliyyət>`, `fr4:<əsas>:grp:<qrup>`, `fr4:<əsas>:bloc:pub|mkt`, `fr4:state`, `fr4:budget`, `fr4:oil:stat|tax`, `fr4:lf`, `fr4:phi` və s.).
 
-**Ssenari mühərriki** (`microlib/engines/fr4.py`, vəziyyət `output/engine/FR4_state.json`): notebook-un 15–17-ci hissələrdəki həllini təkrarlayır. Redaktə olunan girişlər: 16 ekzogen FR1 yolu (`fr1:emp`, `fr1:lf`, `fr1:pop`, `fr1:rgdpnon`, `fr1:rgdpoil`, 11 `fr1:rva_*`), 10 əmsal (birləşdirilmiş β-lar, birləşmə çəkiləri, E6, E8, E9) və 6 rıçaq (əhali artımı, muzdlu payı, dövlət payı trend/dondurulmuş, σ/κ, düzəliş əmsallarının sönməsi). `upstream={"FR1": ...}` verildikdə FR1 mühərrikinin yolları istifadə olunur; FR3 proqnozda istifadə olunmur. Özünü yoxlama: hər ssenari üzrə notebook CSV-ləri maksimal nisbi fərq 1.9e-16 ilə təkrarlanır, 18-ci hissənin rıçaq cədvəli də (34 dəyər) təkrarlanır; bir ssenari ~17 ms.
+**Ssenari mühərriki** (`microlib/engines/fr4.py`, vəziyyət `output/engine/FR4_state.json`): notebook-un 15–17-ci hissələrdəki həllini təkrarlayır. Redaktə olunan girişlər: 16 ekzogen FR1 yolu (`fr1:emp`, `fr1:lf`, `fr1:pop`, `fr1:rgdpnon`, `fr1:rgdpoil`, 11 `fr1:rva_*`), 10 əmsal (birləşdirilmiş β-lar, birləşmə çəkiləri, E6, E8, E9) və 7 rıçaq (əhali artımı, muzdlu payı, dövlət payı trend/dondurulmuş, σ/κ, düzəliş əmsallarının sönməsi). `upstream={"FR1": ...}` verildikdə FR1 mühərrikinin yolları istifadə olunur; FR3 proqnozda istifadə olunmur. Özünü yoxlama: hər ssenari üzrə notebook CSV-ləri maksimal nisbi fərq 3.5e-16 ilə təkrarlanır, 18-ci hissənin rıçaq cədvəli də (34 dəyər) təkrarlanır; bir ssenari ~16 ms.
 
-**Əmsal həssaslığı** (`FR4_coef_sensitivity.csv`, ±1 standart xəta, 2030, Əsas): dövlət məşğulluğu — `FR4.E8_state|trend` ilə -0.54% / +0.54%; büdcə təşkilatları — `FR4.E6_hired|ln_rva_oth` ilə +0.97% / -0.98%; ən böyük üç qrup (Kənd, meşə və balıqçılıq, Digər xidmətlər (9 fəaliyyət), Ticarət və təmir) birləşmə çəkisinə ən həssasdır (çəki üçün SE olmadığından ±0.25) — Kənd, meşə və balıqçılıq ±0.06%, Digər xidmətlər (9 fəaliyyət) ±0.07%, Ticarət və təmir ±0.17%. Ümumi məşğulluq FR1-dəndir və FR4 əmsallarından asılı deyil.
+**Əmsal həssaslığı** (`FR4_coef_sensitivity.csv`, ±1 standart xəta, 2030, Əsas): dövlət məşğulluğu — `FR4.E8_state|trend` ilə -0.54% / +0.54%; büdcə təşkilatları — `FR4.E6_hired|ln_rva_oth` ilə +0.93% / -0.94%; ən böyük üç qrup (Kənd, meşə və balıqçılıq, Digər xidmətlər (9 fəaliyyət), Ticarət və təmir) birləşmə çəkisinə ən həssasdır (çəki üçün SE olmadığından ±0.25) — Kənd, meşə və balıqçılıq ±0.06%, Digər xidmətlər (9 fəaliyyət) ±0.09%, Ticarət və təmir ±0.11%. Ümumi məşğulluq FR1-dəndir və FR4 əmsallarından asılı deyil.
 
-Yeni fayllar: `FR4_equations.json`, `FR4_indicator_catalog.csv`, `FR4_forecast_tidy.csv`, `FR4_not_forecast.csv`, `FR4_robustness_summary.csv`, `FR4_coef_sensitivity.csv`, `FR4_strings_az.csv` (istifadəçiyə görünən hər ingiliscə sətrin Azərbaycan dilində qarşılığı, 424 sətir), `engine/FR4_state.json` (yalnız sadə məlumat). v2-dən əvvəlki bütün CSV-lər dəyişməz qalır (reqressiya yoxlaması).
+Yeni fayllar: `FR4_equations.json`, `FR4_indicator_catalog.csv`, `FR4_forecast_tidy.csv`, `FR4_not_forecast.csv`, `FR4_robustness_summary.csv`, `FR4_coef_sensitivity.csv`, `FR4_strings_az.csv` (istifadəçiyə görünən hər ingiliscə sətrin Azərbaycan dilində qarşılığı, 438 sətir), `engine/FR4_state.json` (yalnız sadə məlumat). v2-dən əvvəlki bütün CSV-lər dəyişməz qalır (reqressiya yoxlaması).
 
 <!-- /AUTO:v2 -->
+
+<!-- v2.1-begin -->
+## 16. v2.1 (2026-10-05) — Driscoll–Kraay p-values on t(T−1)
+
+**Defect.** In `FR4_equations.json` the p-values of the Driscoll–Kraay panel equations came from t(n−k) (n = unit-years) while their
+confidence intervals used t(T−1) (T = number of years, the DK time clusters) — e.g. `FR4.E4_pooled_emp`: p = 0.028 under t(n−k),
+0.037 under t(T−1). The notebook's own `panel_fe` (Part 8) also reported t(n−k) p-values.
+
+**Fix.** `panel_fe` now computes p-values from t(T−1), the convention of FR1, FR3 and the registry (microlib convention 7);
+coefficients, standard errors (DK, 2 lags, n/(n−k) scaling) and t-statistics are unchanged. The registry receives these p-values
+(`fit_p`) and the export cell asserts, for every DK coefficient, that the registry p equals the notebook p, equals
+2·P(t<sub>T−1</sub> > |t|) and that the interval uses the same t(T−1) quantile. No forecast, selection or rejection decision uses
+these p-values (decisions use t-statistics, signs and out-of-sample tests), so no CSV changes; only `FR4_equations.json`, the
+R9 note and §15 above change.
+
+| Equation | coefficient | T−1 | t | p before (t(n−k)) | p after (t(T−1)) |
+|---|---|---|---|---|---|
+| C1_real_lvl = E4_panel_hired_lvl | lo_sq | 24 | 5.99 | 1.3e-08 | 3.5e-06 |
+| C1_real_diff = E4_panel_hired_fd | d_lo_sq | 23 | 5.80 | 3.4e-08 | 6.5e-06 |
+| C1_nom_lvl | lo_sq | 19 | 2.68 | 0.0083 | 0.0148 |
+| C1_nom_diff | d_lo_sq | 18 | 4.36 | 0.00003 | 0.00038 |
+| R9_wage_panel | ln_real_output | 9 | 2.55 | 0.0114 | 0.0313 |
+| R9_wage_panel | ln_real_wage | 9 | −0.69 | 0.491 | 0.508 |
+| E4_pooled_emp | d_lo_sq | 22 | 2.22 | 0.0279 | 0.0371 |
+| E4_panel_emp_fd | d_lo_sq | 23 | 2.31 | 0.0223 | 0.0303 |
+| E4_pooled_hired | d_lo_sq | 22 | 5.91 | 2.1e-08 | 6.0e-06 |
+| E4_panel_hired_lvl_tw | lo_sq | 24 | 3.77 | 0.00024 | 0.00093 |
+| E5_pooled_emp | d_lo_sq | 13 | 0.64 | 0.527 | 0.535 |
+| E5_pooled_hired | d_lo_sq | 13 | 0.82 | 0.416 | 0.426 |
+| E4_panel_emp_lvl, E4_panel_emp_lvl_tw | lo_sq | 24 | 12.7, 13.5 | < 1e-15 | 4.1e-12, 1.1e-12 |
+
+No significance verdict at 5% changes (C1_nom_lvl moves from the 1% to the 5% band). FR4's employment forecasts changed in this
+run only because FR1 v2.1 changed its inputs (`FR1_forecast_full.csv`, `FR1_fan_draws.csv`; see the FR1 v2.1 note).
+<!-- v2.1-end -->
+
+---
+
+<!-- AUTO:fr4v22_note -->
+## 17. v2.2 (2026-10-05) — data from the Ministry's macro module
+
+**State employment (E8).** Structural alternatives without a trend or own lags, scored like E8 (origins 2011–2014 scored ≤ 2019;
+hold-out 2020–2024 × the simulated total): real government final consumption per head (MOE SNA `GC`, 1995–2024, from
+`data/macro_module/fr345_moe_spec_panel.csv`), its ratio to real non-oil GDP, real non-oil GDP per head, and a composition model
+(activity state shares from DSK `Dynamics_2.12` held at the origin × the activity hired forecast). File `FR4_e8_structural_candidates.csv`.
+
+| specification | selection RMSE % | DM p vs trend | hold-out U (RW) | U (CG) | level / difference coefficient | decision |
+|---|---|---|---|---|---|---|
+| trend (E8, used) | 2.73 | nan | 0.60 | 0.81 |  | used |
+| C composition (activity state shares) | 5.15 | 0.162 | 1.50 | 2.05 |  | rejected |
+| G3 non-oil GDP per head | 6.11 | 0.315 | 1.23 | 1.68 | -0.402 (t -3.8); diff +0.076 (t +0.6) | rejected |
+| G1 government consumption per head | 6.97 | 0.305 | 0.96 | 1.31 | -0.296 (t -5.5); diff -0.020 (t -0.3) | rejected |
+| G2 government consumption / non-oil GDP | 10.35 | 0.129 | 1.07 | 1.46 | -1.209 (t -4.7); diff -0.038 (t -0.5) | rejected |
+
+**None beats the trend** (U 0.60 / 0.81); the fiscal and output drivers are negative in levels (the share falls as
+they rise — both trend) and insignificant in differences, and the composition model misses the privatisation inside activities
+(state shares fell in 17 of 19 activities 2005–2024). E8 stays the logistic trend presented as a policy lever; the three
+regressions are registered as `FR4.E8_alt_G1–G3` (rejected).
+
+**Budget organisations (σ).** `data/dsk/002_12-13en.xls` already holds `Dynamics_2.12` (2005–2024); FR4 had read only the 2023 and
+2024 sheets. σ is now observed every year (0.9586 in 2005, 0.9384 in 2019, 0.9092 in 2024; `FR4_budget_sigma_history.csv`), so the
+2005–2022 budget history is no longer imputed (1999–2004 dropped: no σ). On origins 2010–2019 holding the last published year beats
+the two-year mean (budget-employment RMSE 1.46% vs 1.59%), which is also the anchoring rule of the other
+modules: **σ = 0.9092** (was 0.913). Baseline budget employment 594.2 thousand in 2025 (DVX r130: 588.0) and
+577.4 in 2030 (was 579.5, -0.36%); state employment unchanged (984.4 thousand in 2030).
+
+**Sector employment.** The 19 activities already run 1999–2024 (DSK 2.1 / 2.8); the macro module's `L_*` series and DSK 2.12 add
+no longer history, so the sector equations are unchanged.
+<!-- /AUTO:fr4v22_note -->
+
+<!-- AUTO:fr4v23_note -->
+## 18. v2.3 (2026-10-05) — add-factor decay with a fixed half-life (no estimated residual AR)
+
+The client's constraint excludes any estimated residual-AR process. Up to v2.2 the Part 18 sensitivity "add-factors decay" let
+the E6 bloc-split and E8 state-share add-factors fade at each equation's estimated first-order residual autocorrelation ρ̂
+(E6 employed 0.85, hired 0.63; E8 0.52) — an estimated AR(1) coefficient inside a scenario path. From v2.3 the
+decay is **fixed, not estimated**: the add-factor is multiplied by 0.5^(h/H), h = years after the anchor year (2024), with
+half-life **H = 1 year** (0.50 a year) — the project's partial-year (nowcast) rule, as in FR1 and FR3. H is an engine lever
+(`addfactor_half_life`, 0.25–10 years; it acts only with `addfactor_decay` on). ρ̂ remains a reported diagnostic (beside DW and
+BG) and enters no forecast, scenario or sensitivity path; `FR4_add_factors.csv` lists the half-life and the yearly factor instead.
+The Baseline, Adverse and Reform scenarios keep constant add-factors and are unchanged. Decay sensitivity, 2030 vs Baseline
+(thousand persons):
+
+| quantity | v2.2: decay at ρ̂ | v2.3: half-life 1 year |
+|---|---|---|
+| state employment | +14.2 (+1.44%) | +14.3 (+1.45%) |
+| budget organisations | +4.5 (+0.79%) | +4.7 (+0.82%) |
+| market services | −11.4 (−2.09%) | −17.8 (−3.25%) |
+| services (total) | 0.0 (0.00%) | 0.0 (0.00%) |
+
+The fixed decay is faster than ρ̂, so more of E6's 2024 add-factor is gone by 2030 and market services move further; the state-share effect hardly changes (E8's ρ̂ was close to 0.5).
+<!-- /AUTO:fr4v23_note -->

@@ -1,49 +1,49 @@
 lever,quantity,baseline,alternative,difference,difference_pct
-population growth 0.3pp lower,total,5273.5,5194.9,-78.6,-1.49
+population growth 0.3pp lower,total,5272.0,5193.4,-78.6,-1.49
 population growth 0.3pp lower,labour_force,5528.1,5445.7,-82.4,-1.49
-population growth 0.3pp lower,agriculture,1871.0,1843.1,-27.9,-1.49
-population growth 0.3pp lower,services,1411.8,1390.8,-21.1,-1.49
-population growth 0.3pp lower,construction,419.4,413.2,-6.3,-1.49
-population growth 0.3pp higher,total,5273.5,5353.1,79.6,1.51
+population growth 0.3pp lower,agriculture,1870.2,1842.3,-27.9,-1.49
+population growth 0.3pp lower,services,1410.8,1389.8,-21.0,-1.49
+population growth 0.3pp lower,construction,420.3,414.0,-6.3,-1.49
+population growth 0.3pp higher,total,5272.0,5351.5,79.6,1.51
 population growth 0.3pp higher,labour_force,5528.1,5611.5,83.4,1.51
-population growth 0.3pp higher,agriculture,1871.0,1899.2,28.2,1.51
-population growth 0.3pp higher,services,1411.8,1433.1,21.3,1.51
-population growth 0.3pp higher,construction,419.4,425.7,6.3,1.51
-employee share +2pp by 2030,hired,1866.6,1972.0,105.5,5.65
-employee share +2pp by 2030,budget,578.6,611.3,32.7,5.65
-employee share +2pp by 2030,nonbudget,1287.9,1360.7,72.8,5.65
-state share frozen at its 2024 level,state,984.7,1104.7,120.0,12.19
-state share frozen at its 2024 level,nonstate,4288.9,4168.9,-120.0,-2.8
-"budget = all hired in the 4 activities (kappa = 0.994, first version)",budget,578.6,629.8,51.2,8.84
-Tier 1 + industry: pure constant shares,agriculture,1871.0,1868.7,-2.3,-0.12
-Tier 1 + industry: pure constant shares,services,1411.8,1413.8,2.0,0.14
-Tier 1 + industry: pure constant shares,construction,419.4,423.4,4.0,0.94
-Tier 1 + industry: pure constant shares,hotel,110.9,108.6,-2.3,-2.06
-Tier 1 + industry: pure constant shares,ict,64.3,63.1,-1.2,-1.82
-Tier 1 + industry: pure constant shares,industry,424.5,428.2,3.7,0.87
-Tier 1 + industry: pure constant shares,mining,35.7,35.8,0.1,0.31
-Tier 1 + industry: pooled output system alone,agriculture,1871.0,1873.3,2.3,0.12
-Tier 1 + industry: pooled output system alone,services,1411.8,1409.8,-2.0,-0.14
-Tier 1 + industry: pooled output system alone,construction,419.4,415.5,-4.0,-0.94
-Tier 1 + industry: pooled output system alone,hotel,110.9,113.2,2.3,2.06
-Tier 1 + industry: pooled output system alone,ict,64.3,65.5,1.2,1.82
-Tier 1 + industry: pooled output system alone,industry,424.5,420.8,-3.7,-0.87
-Tier 1 + industry: pooled output system alone,mining,35.7,35.6,-0.1,-0.31
-Tier-1 driver: group-specific relative output share (not adopted),agriculture,1871.0,1859.2,-11.8,-0.63
-Tier-1 driver: group-specific relative output share (not adopted),services,1411.8,1413.5,1.6,0.12
-Tier-1 driver: group-specific relative output share (not adopted),construction,419.4,425.2,5.8,1.38
-Tier-1 driver: group-specific relative output share (not adopted),hotel,110.9,118.5,7.6,6.84
-Tier-1 driver: group-specific relative output share (not adopted),ict,64.3,62.7,-1.5,-2.4
-Tier-1 driver: group-specific relative output share (not adopted),industry,424.5,428.3,3.8,0.9
-Tier-1 driver: group-specific relative output share (not adopted),mining,35.7,35.8,0.1,0.32
-Tier-1 driver: group-specific income per capita (not adopted),agriculture,1871.0,1838.2,-32.8,-1.75
-Tier-1 driver: group-specific income per capita (not adopted),services,1411.8,1406.4,-5.4,-0.38
-Tier-1 driver: group-specific income per capita (not adopted),construction,419.4,440.1,20.7,4.93
-Tier-1 driver: group-specific income per capita (not adopted),hotel,110.9,121.9,11.0,9.94
-Tier-1 driver: group-specific income per capita (not adopted),ict,64.3,62.8,-1.5,-2.27
-Tier-1 driver: group-specific income per capita (not adopted),industry,424.5,442.2,17.7,4.17
-Tier-1 driver: group-specific income per capita (not adopted),mining,35.7,36.2,0.5,1.51
-"SENSITIVITY ONLY: add-factors decay at residual rho (E6, E8)",services,1411.8,1411.8,-0.0,-0.0
-"SENSITIVITY ONLY: add-factors decay at residual rho (E6, E8)",budget,578.6,583.2,4.6,0.79
-"SENSITIVITY ONLY: add-factors decay at residual rho (E6, E8)",state,984.7,998.9,14.2,1.44
-"SENSITIVITY ONLY: add-factors decay at residual rho (E6, E8)",market_services,548.9,537.4,-11.5,-2.09
+population growth 0.3pp higher,agriculture,1870.2,1898.4,28.2,1.51
+population growth 0.3pp higher,services,1410.8,1432.1,21.3,1.51
+population growth 0.3pp higher,construction,420.3,426.6,6.3,1.51
+employee share +2pp by 2030,hired,1866.0,1971.5,105.4,5.65
+employee share +2pp by 2030,budget,577.4,610.0,32.6,5.65
+employee share +2pp by 2030,nonbudget,1288.7,1361.5,72.8,5.65
+state share frozen at its 2024 level,state,984.4,1104.3,120.0,12.19
+state share frozen at its 2024 level,nonstate,4287.6,4167.7,-120.0,-2.8
+"budget = all hired in the 4 activities (kappa = 0.994, first version)",budget,577.4,631.1,53.7,9.3
+Tier 1 + industry: pure constant shares,agriculture,1870.2,1868.1,-2.1,-0.11
+Tier 1 + industry: pure constant shares,services,1410.8,1413.4,2.6,0.18
+Tier 1 + industry: pure constant shares,construction,420.3,423.2,3.0,0.7
+Tier 1 + industry: pure constant shares,hotel,110.7,108.6,-2.1,-1.86
+Tier 1 + industry: pure constant shares,ict,64.0,63.1,-0.9,-1.44
+Tier 1 + industry: pure constant shares,industry,425.5,428.1,2.6,0.6
+Tier 1 + industry: pure constant shares,mining,37.8,37.9,0.1,0.21
+Tier 1 + industry: pooled output system alone,agriculture,1870.2,1872.3,2.1,0.11
+Tier 1 + industry: pooled output system alone,services,1410.8,1408.2,-2.6,-0.18
+Tier 1 + industry: pooled output system alone,construction,420.3,417.3,-3.0,-0.7
+Tier 1 + industry: pooled output system alone,hotel,110.7,112.7,2.1,1.86
+Tier 1 + industry: pooled output system alone,ict,64.0,64.9,0.9,1.44
+Tier 1 + industry: pooled output system alone,industry,425.5,423.0,-2.6,-0.6
+Tier 1 + industry: pooled output system alone,mining,37.8,37.8,-0.1,-0.21
+Tier-1 driver: group-specific relative output share (not adopted),agriculture,1870.2,1858.4,-11.8,-0.63
+Tier-1 driver: group-specific relative output share (not adopted),services,1410.8,1413.7,2.9,0.2
+Tier-1 driver: group-specific relative output share (not adopted),construction,420.3,424.6,4.3,1.02
+Tier-1 driver: group-specific relative output share (not adopted),hotel,110.7,117.8,7.1,6.44
+Tier-1 driver: group-specific relative output share (not adopted),ict,64.0,62.8,-1.2,-1.89
+Tier-1 driver: group-specific relative output share (not adopted),industry,425.5,428.3,2.8,0.65
+Tier-1 driver: group-specific relative output share (not adopted),mining,37.8,37.9,0.1,0.22
+Tier-1 driver: group-specific income per capita (not adopted),agriculture,1870.2,1839.0,-31.2,-1.67
+Tier-1 driver: group-specific income per capita (not adopted),services,1410.8,1406.4,-4.5,-0.32
+Tier-1 driver: group-specific income per capita (not adopted),construction,420.3,439.3,19.0,4.51
+Tier-1 driver: group-specific income per capita (not adopted),hotel,110.7,121.3,10.7,9.63
+Tier-1 driver: group-specific income per capita (not adopted),ict,64.0,62.8,-1.2,-1.88
+Tier-1 driver: group-specific income per capita (not adopted),industry,425.5,441.5,16.0,3.75
+Tier-1 driver: group-specific income per capita (not adopted),mining,37.8,38.3,0.5,1.28
+"SENSITIVITY ONLY: add-factors decay, fixed half-life 1 year (E6, E8)",services,1410.8,1410.8,0.0,0.0
+"SENSITIVITY ONLY: add-factors decay, fixed half-life 1 year (E6, E8)",budget,577.4,582.1,4.7,0.82
+"SENSITIVITY ONLY: add-factors decay, fixed half-life 1 year (E6, E8)",state,984.4,998.7,14.3,1.45
+"SENSITIVITY ONLY: add-factors decay, fixed half-life 1 year (E6, E8)",market_services,547.1,529.3,-17.8,-3.25

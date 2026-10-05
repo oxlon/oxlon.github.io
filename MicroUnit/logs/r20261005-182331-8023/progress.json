@@ -1,0 +1,37 @@
+{
+ "run_id": "r20261005-182331-8023",
+ "status": "ok",
+ "current": null,
+ "dry_run": false,
+ "updated": "2026-10-05T17:24:58Z",
+ "started": "2026-10-05T17:23:31Z",
+ "steps": [
+  {
+   "name": "FR3",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T17:23:31Z",
+   "finished": "2026-10-05T17:23:56Z",
+   "seconds": 24.7,
+   "error": null
+  },
+  {
+   "name": "FR4",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T17:23:56Z",
+   "finished": "2026-10-05T17:24:11Z",
+   "seconds": 15.1,
+   "error": null
+  },
+  {
+   "name": "FR5",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T17:24:11Z",
+   "finished": "2026-10-05T17:24:58Z",
+   "seconds": 46.4,
+   "error": null
+  }
+ ]
+}

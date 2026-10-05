@@ -1,0 +1,8 @@
+22:51:02  icra r20261005-225102-2d35: FR4 → FR5
+22:51:02  [FR4] başladı
+22:51:20  [FR4] uğurla bitdi (18 s, 40 çıxış faylı)
+22:51:21  [FR4] docrefresh FR4: docs/FR4_Methodology.md: 6 v2.2 blocks unchanged; docs/az/FR4_Metodologiya.md: 6 v2.2 blocks unchanged
+22:51:21  [FR5] başladı
+22:52:10  [FR5] uğurla bitdi (49 s, 58 çıxış faylı)
+22:52:11  [FR5] docrefresh FR5: docs/FR5_Methodology.md: 2 v2.2 blocks unchanged; docs/az/FR5_Metodologiya.md: 2 v2.2 blocks unchanged
+22:52:11  icra r20261005-225102-2d35 bitdi: ok (69 s); əvvəlki icra ilə bayt-bayt eyni: False

@@ -11,6 +11,7 @@ from pathlib import Path
 
 import apidb
 import nbextract
+from az_errors import az_exc
 from apicore import ApiError, DB_LOCK, MODULES, new_id, now_iso, safe_filename, stamp, within, write_json
 from validate_dsk import DSK_DIRS, infer_subfolder, norm_subfolder, validate_dsk
 
@@ -83,7 +84,7 @@ class UploadStore:
         try:
             rep = self.validate(path, kind, fn, subfolder)
         except Exception as e:                                  # a validator crash is a rejection, not a 500
-            rep = {"ok": False, "kind": kind, "errors": [{"message": "Yoxlama zamanı gözlənilməz xəta: %s" % e}],
+            rep = {"ok": False, "kind": kind, "errors": [{"message": "Yoxlama zamanı gözlənilməz xəta: %s" % az_exc(e), "detail": str(e)[:300]}],
                    "warnings": [], "summary": {}}
         rep["upload_id"] = uid
         rep["checked_at"] = now_iso()

@@ -12,6 +12,7 @@ import re, unicodedata
 from pathlib import Path
 
 import nbextract as X
+from az_errors import az_exc
 
 MONTHS = {'yanvar': 1, 'fevral': 2, 'mart': 3, 'aprel': 4, 'may': 5, 'iyun': 6, 'iyul': 7, 'avqust': 8,
           'sentyabr': 9, 'oktyabr': 10, 'noyabr': 11, 'dekabr': 12}
@@ -174,13 +175,13 @@ def validate_workbook(path, root, reference=None, max_errors=300):
         try:
             ref_names, _ = read_book(reference, [])
         except Exception as e:                                   # pragma: no cover
-            warnings.append({"message": "İndiki iş kitabı oxunmadı: %s" % e})
+            warnings.append({"message": "İndiki iş kitabı oxunmadı: %s" % az_exc(e), "detail": str(e)[:300]})
     named = named_sheets(root, ref_names) if ref_names else {}
     need = sorted({a["sheet"] for a in addrs} | set(named))
     try:
         names, mats = read_book(path, need)
     except Exception as e:
-        return {"ok": False, "kind": "workbook", "errors": [{"message": "Fayl Excel (.xlsx) kimi açılmadı: %s" % e}],
+        return {"ok": False, "kind": "workbook", "errors": [{"message": "Fayl Excel (.xlsx) kimi açılmadı: %s" % az_exc(e), "detail": str(e)[:300]}],
                 "warnings": warnings, "summary": {}}
     if ref_names:
         try:

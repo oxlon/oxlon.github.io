@@ -1,0 +1,6 @@
+specification_en,n_predictions,pooled_OOS_RMSE_pct,median_abs_err_pct,DM_stat_vs_null,DM_p_vs_null,DM_target_years,holdout_model_RMSE_pct,holdout_U_vs_random_walk,holdout_U_vs_constant_growth,holdout_err_2024_pct,coef,t,difference_coef,difference_t,decision,specification_az,decision_az
+"trend (E8, used)",20,2.731,1.896,,,,3.89,0.596,0.815,4.96,,,,,used,"trend (E8, istifadə olunur)",istifadə olunur
+C composition (activity state shares),20,5.149,2.232,1.56,0.162,8.0,9.77,1.497,2.047,13.73,,,,,rejected,C tərkib modeli (fəaliyyətlər üzrə dövlət payları),rədd edildi
+G3 non-oil GDP per head,20,6.108,3.383,1.08,0.315,8.0,8.04,1.231,1.684,10.68,-0.40162793790223345,-3.7652095886743875,0.07607975820840945,0.5881801393398723,rejected,G3 adambaşına real qeyri-neft ÜDM,rədd edildi
+G1 government consumption per head,20,6.97,4.51,1.11,0.305,8.0,6.25,0.958,1.31,9.64,-0.2958986189309508,-5.510738441522983,-0.020341146087643223,-0.3077858952720252,rejected,G1 adambaşına real dövlət istehlakı,rədd edildi
+G2 government consumption / non-oil GDP,20,10.345,9.227,1.72,0.129,8.0,6.98,1.069,1.462,6.29,-1.209498494775676,-4.743664316701756,-0.0377709958154229,-0.4801781658980794,rejected,G2 dövlət istehlakı / qeyri-neft ÜDM,rədd edildi

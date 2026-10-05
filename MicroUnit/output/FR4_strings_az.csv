@@ -13,9 +13,9 @@ Adverse,Mənfi,dəyər,FR4_employment_long.csv;FR4_forecast_tidy.csv;FR4_scenari
 Baseline,Əsas,dəyər,FR4_employment_long.csv;FR4_forecast_tidy.csv;FR4_scenario_summary.csv
 Baseline;Adverse;Reform,Əsas;Mənfi;İslahat,dəyər,FR4_indicator_catalog.csv
 Construction,Tikinti,dəyər,FR4_employment_long.csv;FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
-DM_p_vs_null,DM p-dəyəri (sabit paylara qarşı),sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
-DM_stat_vs_null,DM statistikası (sabit paylara qarşı),sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
-DM_target_years,DM testində hədəf illərin sayı,sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+DM_p_vs_null,DM p-dəyəri (sabit paylara qarşı),sütun adı,FR4_e6_bloc_split_selection.csv;FR4_e8_structural_candidates.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+DM_stat_vs_null,DM statistikası (sabit paylara qarşı),sütun adı,FR4_e6_bloc_split_selection.csv;FR4_e8_structural_candidates.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+DM_target_years,DM testində hədəf illərin sayı,sütun adı,FR4_e6_bloc_split_selection.csv;FR4_e8_structural_candidates.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
 DOLS(+/-1),DOLS(±1),dəyər,FR4_equation_audit.csv
 DOLS(0),DOLS(0),dəyər,FR4_robustness_summary.csv
 DOLS(0: contemporaneous dx),DOLS(0: eyni dövrün fərqləri),dəyər,FR4_equation_audit.csv
@@ -97,7 +97,7 @@ REJECTED — wrong sign,RƏDD EDİLİB — yanlış işarə,dəyər,FR4_rejected
 "REPORTED, NOT IMPOSED — insignificant","GÖSTƏRİLİR, TƏTBİQ EDİLMİR — əhəmiyyətsiz",dəyər,FR4_rejected_specifications.csv
 Real estate activities,Daşınmaz əmlak,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv
 Reform,İslahat,dəyər,FR4_employment_long.csv;FR4_forecast_tidy.csv;FR4_scenario_summary.csv
-"SENSITIVITY ONLY: add-factors decay at residual rho (E6, E8)","YALNIZ HƏSSASLIQ: düzəliş əmsalları qalığın ρ-su ilə sönür (E6, E8)",dəyər,FR4_sensitivity_levers.csv
+"SENSITIVITY ONLY: add-factors decay, fixed half-life 1 year (E6, E8)","YALNIZ HƏSSASLIQ: düzəliş əmsalları sabit yarımsönmə dövrü ilə sönür (1 il; E6, E8)",dəyər,FR4_sensitivity_levers.csv
 TOTAL,CƏMİ,dəyər,FR4_employment_long.csv
 Tier 1 + industry: pooled output system alone,1-ci pillə + sənaye: yalnız birləşdirilmiş buraxılış sistemi,dəyər,FR4_sensitivity_levers.csv
 Tier 1 + industry: pure constant shares,1-ci pillə + sənaye: təmiz sabit paylar,dəyər,FR4_sensitivity_levers.csv
@@ -141,10 +141,11 @@ budget organisations,Büdcə təşkilatlarında muzdlu işçilər,sütun adı,FR
 "budget share of hired, %",Büdcə təşkilatlarının muzdlu işçilərdə payı,sütun adı,FR4_institutional_breakdown.csv
 budget_2030,"büdcə təşkilatları, 2030",sütun adı,FR4_scenario_summary.csv
 budget_org,büdcə təşkilatlarının işçi sayı (DVX r130),sütun adı,FR4_workbook_dvx_employment.csv
+"calibrated (DSK Dynamics_2.12, last published year)","kalibrləmə (DSK Dynamics_2.12, son dərc olunmuş il)",dəyər,FR4_robustness_summary.csv
 "calibrated (DVX r130 / all hired, 2022-2024)","kalibrləmə (DVX r130 / bütün muzdlu, 2022–2024)",dəyər,FR4_robustness_summary.csv
-calibrated (mean of DSK tables 2.12-2.13),kalibrləmə (DSK 2.12–2.13 cədvəllərinin ortası),dəyər,FR4_robustness_summary.csv
 check,yoxlama,sütun adı,FR4_identity_checks.csv
 chow_min_p,Chow testinin minimal p-dəyəri,sütun adı,FR4_robustness_summary.csv
+coef,əmsal,sütun adı,FR4_e8_structural_candidates.csv
 coefficient,əmsal,sütun adı,FR4_coef_sensitivity.csv
 coefficient unstable between levels and differences; mean difference-form R2 = 0.026,əmsal səviyyələr və fərqlər arasında qeyri-sabitdir; fərq formasının orta R² = 0.026,dəyər,FR4_rejected_specifications.csv
 coint_established,kointeqrasiya müəyyən edilib,sütun adı,FR4_robustness_summary.csv
@@ -162,6 +163,8 @@ cross-check block,yoxlama bloku,dəyər,FR4_equation_audit.csv
 crude oil & gas extraction,xam neft və təbii qaz hasilatı,sütun adı,FR4_oil_sector_employment.csv
 cusum_p,CUSUM p-dəyəri,sütun adı,FR4_robustness_summary.csv
 d_lo_sq,Δ nisbi buraxılış payının log-nisbəti,dəyər,FR4_coef_sensitivity.csv
+decay_per_year,"illik sönmə əmsalı (0,5^(1/yarımsönmə))",sütun adı,FR4_add_factors.csv
+decision,qərar,sütun adı,FR4_e8_structural_candidates.csv
 descriptive (cointegration not established),təsviri (kointeqrasiya müəyyən edilməyib),dəyər,FR4_equation_audit.csv
 df,sərbəstlik dərəcəsi,sütun adı,FR4_equation_audit.csv
 diff_ci_95,fərq forması əmsalının 95% etibarlılıq intervalı,sütun adı,FR4_equation_audit.csv
@@ -169,7 +172,9 @@ diff_coef,fərq forması əmsalı,sütun adı,FR4_equation_audit.csv;FR4_tier1_i
 diff_form_coherent,səviyyə və fərq formaları uyğundur,sütun adı,FR4_robustness_summary.csv
 diff_t,fərq forması t-statistikası,sütun adı,FR4_tier1_income_elasticities_descriptive.csv
 difference,fərq,sütun adı,FR4_sensitivity_levers.csv
+difference_coef,fərq formasında əmsal,sütun adı,FR4_e8_structural_candidates.csv
 difference_pct,"fərq, %",sütun adı,FR4_sensitivity_levers.csv
+difference_t,fərq formasında t,sütun adı,FR4_e8_structural_candidates.csv
 educ,Təhsil,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
 educ,Təhsil,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
 effect_minus_pct,"təsir −1 SE, %",sütun adı,FR4_coef_sensitivity.csv
@@ -205,6 +210,7 @@ growth_point,artım: nöqtəvi proqnoz,sütun adı,FR4_fan_summary_2030.csv
 growth_q05,artım: 5-ci kvantil,sütun adı,FR4_fan_summary_2030.csv
 growth_q50,artım: mediana,sütun adı,FR4_fan_summary_2030.csv
 growth_q95,artım: 95-ci kvantil,sütun adı,FR4_fan_summary_2030.csv
+half_life_years,"yarımsönmə dövrü, il (sabit, qiymətləndirilmir)",sütun adı,FR4_add_factors.csv
 has_band,zolaq var,sütun adı,FR4_indicator_catalog.csv
 has_forecast,proqnoz var,sütun adı,FR4_indicator_catalog.csv
 headline,əsas göstərici,sütun adı,FR4_coef_sensitivity.csv
@@ -215,8 +221,13 @@ hired / employed constant over 2025-2030 (no artificial jump),muzdlu / məşğul
 hired employees,muzdlu işçilər,dəyər,FR4_employment_long.csv;FR4_fan_employment.csv;FR4_fan_summary_2030.csv;FR4_holdout_summary.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv;FR4_tier1_income_elasticities_descriptive.csv
 hired employees (E3 x simulated total),muzdlu işçilər (E3 × simulyasiya edilmiş cəm),dəyər,FR4_holdout_aggregate.csv
 "hired, total","Muzdlu işçilər, cəmi",sütun adı,FR4_institutional_breakdown.csv
+hired_4_activities,"4 büdcə fəaliyyətində muzdlu işçilər, min nəfər",sütun adı,FR4_budget_sigma_history.csv
 hired_avg,"muzdlu işçilər, aylıq orta (DVX r107)",sütun adı,FR4_workbook_dvx_employment.csv
 history_source,tarixi məlumatın mənbəyi,sütun adı,FR4_not_forecast.csv
+holdout_U_vs_constant_growth,yoxlama: U (sabit artım),sütun adı,FR4_e8_structural_candidates.csv
+holdout_U_vs_random_walk,yoxlama: U (təsadüfi gəzişmə),sütun adı,FR4_e8_structural_candidates.csv
+holdout_err_2024_pct,"yoxlama: 2024 xətası, %",sütun adı,FR4_e8_structural_candidates.csv
+holdout_model_RMSE_pct,"yoxlama: model RMSE, %",sütun adı,FR4_e8_structural_candidates.csv
 hotel,yerləşdirmə və iaşə,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv;FR4_sensitivity_levers.csv
 hotel,yerləşdirmə və iaşə,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv;FR4_workbook_dvx_employment.csv
 ict,informasiya və rabitə,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv;FR4_sensitivity_levers.csv
@@ -284,7 +295,7 @@ measure,ölçü,sütun adı,FR4_fan_employment.csv
 median_RMSE_pct,"mediana RMSE, %",sütun adı,FR4_holdout_summary.csv
 median_U_cg,mediana Theil U (sabit artım),sütun adı,FR4_holdout_summary.csv
 median_U_rw,mediana Theil U (təsadüfi gəzişmə),sütun adı,FR4_holdout_summary.csv
-median_abs_err_pct,"mediana mütləq xəta, %",sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+median_abs_err_pct,"mediana mütləq xəta, %",sütun adı,FR4_e6_bloc_split_selection.csv;FR4_e8_structural_candidates.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
 mining,mədənçıxarma,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv;FR4_sensitivity_levers.csv
 mining,mədənçıxarma,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
 mining support services,mədənçıxarmaya yardımçı xidmətlər (neft xidmətləri),sütun adı,FR4_oil_sector_employment.csv
@@ -292,7 +303,7 @@ minus_2030,"−1 SE ilə, 2030",sütun adı,FR4_coef_sensitivity.csv
 model reproduces every activity in 2024,model 2024-cü ildə hər fəaliyyəti dəqiq təkrarlayır,dəyər,FR4_identity_checks.csv
 model_RMSE_pct,"model RMSE, %",sütun adı,FR4_holdout_aggregate.csv;FR4_holdout_validation.csv;FR4_holdout_validation_groups.csv
 module,modul,sütun adı,FR4_indicator_catalog.csv
-n_predictions,proqnozların sayı,sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+n_predictions,proqnozların sayı,sütun adı,FR4_e6_bloc_split_selection.csv;FR4_e8_structural_candidates.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
 name,əmsalın adı,sütun adı,FR4_coef_sensitivity.csv
 no - descriptive,xeyr — təsviri,dəyər,FR4_equation_audit.csv
 no - descriptive (not selected),xeyr — təsviri (seçilməyib),dəyər,FR4_equation_audit.csv
@@ -339,7 +350,7 @@ point,nöqtəvi proqnoz,sütun adı,FR4_fan_employment.csv
 "pooled OOS RMSE 7.45% vs 6.96% constant shares, DM p = 0.237","nümunədən kənar RMSE 7.45% (sabit paylar: 6.96%), DM p = 0.237",dəyər,FR4_rejected_specifications.csv
 pooled output elasticity (FD),birləşdirilmiş buraxılış elastikliyi (birinci fərqlər),dəyər,FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
 pooled restricted output elasticity ALONE as the Tier-1 baseline,1-ci pillənin əsası kimi TƏKCƏ birləşdirilmiş məhdudlaşdırılmış elastiklik,dəyər,FR4_rejected_specifications.csv
-pooled_OOS_RMSE_pct,"nümunədən kənar RMSE (birləşdirilmiş), %",sütun adı,FR4_e6_bloc_split_selection.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
+pooled_OOS_RMSE_pct,"nümunədən kənar RMSE (birləşdirilmiş), %",sütun adı,FR4_e6_bloc_split_selection.csv;FR4_e8_structural_candidates.csv;FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
 population growth 0.3pp higher,əhali artımı 0.3 faiz bəndi yuxarı,dəyər,FR4_sensitivity_levers.csv
 population growth 0.3pp lower,əhali artımı 0.3 faiz bəndi aşağı,dəyər,FR4_sensitivity_levers.csv
 prof,"Peşə, elmi və texniki fəaliyyət",dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
@@ -356,11 +367,11 @@ realest,Daşınmaz əmlak,sütun adı,FR4_dsk_employed_by_activity_history.csv;F
 reallocation,yenidən bölüşdürmə,sütun adı,FR4_shift_share_decomposition.csv
 reference only,yalnız istinad,dəyər,FR4_equation_audit.csv
 registered_unemp,qeydiyyatda olan işsizlər,sütun adı,FR4_dsk_employment_agency_indicators.csv
+rejected,rədd edildi,dəyər,FR4_e8_structural_candidates.csv
 relative output share,nisbi buraxılış payı,dəyər,FR4_tier1_driver_selection.csv;FR4_tier2_driver_selection.csv
 resid_rho1,qalığın 1-ci dərəcəli avtokorrelyasiyası,sütun adı,FR4_equation_audit.csv
 restriction,məhdudiyyət,sütun adı,FR4_equation_audit.csv
 result,nəticə,sütun adı,FR4_identity_checks.csv
-rho,qalığın avtokorrelyasiyası (ρ),sütun adı,FR4_add_factors.csv
 scenario,ssenari,sütun adı,FR4_employment_long.csv;FR4_forecast_tidy.csv;FR4_scenario_summary.csv
 scenarios,ssenarilər,sütun adı,FR4_indicator_catalog.csv
 se,standart xəta,sütun adı,FR4_coef_sensitivity.csv
@@ -371,6 +382,7 @@ services,Digər xidmətlər (9 fəaliyyət),sütun adı,FR4_workbook_dvx_employm
 services allocation,xidmətlər üzrə bölgü,dəyər,FR4_rejected_specifications.csv
 services_2030,"digər xidmətlər, 2030",sütun adı,FR4_scenario_summary.csv
 share,pay,dəyər,FR4_forecast_tidy.csv;FR4_indicator_catalog.csv
+sigma,σ (dövlət payı),sütun adı,FR4_budget_sigma_history.csv
 smallest activity share over the horizon (must exceed 0),proqnoz dövründə ən kiçik fəaliyyət payı (0-dan böyük olmalıdır),dəyər,FR4_identity_checks.csv
 source_column,mənbə sütunu,sütun adı,FR4_indicator_catalog.csv
 source_csv,mənbə CSV,sütun adı,FR4_indicator_catalog.csv
@@ -386,6 +398,7 @@ state share frozen at its 2024 level,dövlət payı 2024-cü il səviyyəsində 
 "state share, %",Dövlət sektorunun məşğulluqda payı,dəyər,FR4_indicator_catalog.csv
 "state share, %",Dövlət sektorunun məşğulluqda payı,sütun adı,FR4_institutional_breakdown.csv
 state_2030,"dövlət sektoru, 2030",sütun adı,FR4_scenario_summary.csv
+state_hired_4_activities,"4 büdcə fəaliyyətində dövlət muzdlu işçiləri, min nəfər",sütun adı,FR4_budget_sigma_history.csv
 state_share_2030,"dövlət sektorunun payı, 2030, %",sütun adı,FR4_scenario_summary.csv
 swing_pct,"ümumi yayılma, %",sütun adı,FR4_coef_sensitivity.csv
 t_HAC,t-statistikası (HAC),sütun adı,FR4_equation_audit.csv;FR4_tier1_income_elasticities_descriptive.csv
@@ -405,6 +418,7 @@ trend not used (U-shaped); held at latest actual,trend istifadə olunmur (U-form
 unit,vahid,sütun adı,FR4_identity_checks.csv
 "unit elasticity: HAC-F p = 0.382, not rejected (low power, se 0.96)","vahid elastiklik: HAC-F p = 0.382, rədd edilmir (aşağı güc, SE 0.96)",dəyər,FR4_equation_audit.csv
 upper_95,yuxarı sərhəd (95%),sütun adı,FR4_forecast_tidy.csv
+used,istifadə olunur,dəyər,FR4_e8_structural_candidates.csv
 used_in_forecast,proqnozda istifadə,sütun adı,FR4_equation_audit.csv;FR4_robustness_summary.csv
 vacancies,vakansiyalar,sütun adı,FR4_dsk_employment_agency_indicators.csv
 value,dəyər,dəyər,FR4_indicator_catalog.csv
@@ -420,6 +434,6 @@ wagefund,əmək haqqı fondu (DVX r104),sütun adı,FR4_workbook_dvx_employment.
 water,Su təchizatı,dəyər,FR4_employment_long.csv;FR4_holdout_validation.csv;FR4_indicator_catalog.csv
 water,Su təchizatı,sütun adı,FR4_dsk_employed_by_activity_history.csv;FR4_dsk_hired_by_activity_history.csv;FR4_employed_by_activity.csv;FR4_employed_growth_rates.csv;FR4_hired_by_activity.csv;FR4_hired_growth_rates.csv
 within,sahədaxili,sütun adı,FR4_shift_share_decomposition.csv
-year,il,sütun adı,FR4_employment_long.csv;FR4_fan_employment.csv;FR4_forecast_tidy.csv;FR4_shift_share_decomposition.csv
+year,il,sütun adı,FR4_budget_sigma_history.csv;FR4_employment_long.csv;FR4_fan_employment.csv;FR4_forecast_tidy.csv;FR4_shift_share_decomposition.csv
 yes,bəli,dəyər,FR4_equation_audit.csv
 ypc,ln adambaşına real qeyri-neft ÜDM,dəyər,FR4_equation_audit.csv

@@ -1,6 +1,7 @@
 """check.py — link checker and figure checks, run at the end of every build.
 
-* every relative href/src resolves to an existing file, and every #fragment to an id in the target page;
+* every relative href/src resolves to an existing file, and every #fragment to an id in the target page
+  (hash routes of the İş paneli, `#/…`, are app routes and only the file is checked);
 * no external (http/https) script, stylesheet or link — the site must work offline from file://;
 * every <use href="#icon-…"> has a symbol in the inline sprite;
 * every figure mount has an inline figdata JSON that parses, has traces, and x/y of equal length.
@@ -90,6 +91,8 @@ def run(site):
             if not target.exists():
                 errors.append(f"{rel}: broken link {href}")
                 continue
+            if frag.startswith("/"):
+                continue                    # hash route of the İş paneli (#/ssenari), not an element id
             if frag and target.suffix == ".html":
                 if frag not in _parse(target, cache).ids:
                     errors.append(f"{rel}: missing anchor {href}")

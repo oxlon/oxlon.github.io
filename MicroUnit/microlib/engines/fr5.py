@@ -9,7 +9,9 @@ notebook's Part 14 solve, ported in _fr5_core.
     selftest()          run({}) per scenario reproduces FR5_forecast_long / institutional_split / total_volume /
                         total_value / scenario_summary (rel. 1e-8)
 Levers: price_rule ('constant' | 'drift' | 'admin'), e1_spec ('chosen' | 'difference' | alternative specifications),
-relp_shift_pct (services relative price, %), pop_growth_shift_pp, addf_decay (bool)."""
+relp_shift_pct (services relative price, %), pop_growth_shift_pp, addf_decay (bool; sensitivity only, baseline False =
+constant add-factors) and addf_half_life (years, default 1: FIXED decay 0.5 ** (h / half-life); v2.3 — no estimated
+residual-AR coefficient)."""
 from __future__ import annotations
 
 import copy
@@ -129,8 +131,16 @@ def solve(overrides=None, scenario="Baseline", upstream=None):
         for i, y in enumerate(FY):
             pop_ov.loc[y] = dd['pop'].loc[y]*(1 + dg)**(i + 1)
     sol = C.solve(S, dd, c, sysp, rp, relp_lever=np.log(1 + rl/100.0) if rl else 0.0, pop_override=pop_ov,
-                  addf_decay=bool(lv.get('addf_decay')))
+                  addf_decay=bool(lv.get('addf_decay')), half_life=_half_life(lv.get('addf_half_life')))
     return sol, ov, W, c
+
+
+def _half_life(v):
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return 1.0
+    return v if np.isfinite(v) and v > 0 else 1.0
 
 
 def series(sol):

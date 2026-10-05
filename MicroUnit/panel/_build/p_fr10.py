@@ -53,8 +53,11 @@ def build(R):
         if ind not in IND:
             continue
         lab, unit, hf, hs, fanind = IND[ind]
-        sc = {s: g[g.scenario == s].set_index("year")["value"] for s in C.SC}
-        base = g[(g.scenario == "Baseline") & (g.year == 2025)]["value"]
+        # FR10_forecast_branches.csv stores the two share indicators as FRACTIONS (0.079), while their history
+        # (FR10_branch_shares_history.csv, *_pct) and the fan chart are in PERCENT: put the forecast on the % scale.
+        mult = 100.0 if ind in ("share_of_industry", "share_of_manufacturing") else 1.0
+        sc = {s: g[g.scenario == s].set_index("year")["value"] * mult for s in C.SC}
+        base = g[(g.scenario == "Baseline") & (g.year == 2025)]["value"] * mult
         hold = None
         en = names_en.get(code)
         if ind == "output_nominal_mn_AZN" and en in hb.index:

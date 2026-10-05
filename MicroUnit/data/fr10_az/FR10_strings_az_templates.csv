@@ -888,3 +888,7 @@ v2q_06,"Calibrated rule: neutral null, real output held at the {0}-{1} average",
 v2r_0,quarrying: neutral: held at the last actual level,digər faydalı qazıntılar: neytral: son faktiki səviyyədə saxlanılır
 v2r_1,neutral: held at the last actual level,neytral: son faktiki səviyyədə saxlanılır
 v2r_2,"Calibrated rule: anchored null, real output constant at the last actual level","Kalibrlənmiş qayda: lövbərlənmiş neytral qayda, real buraxılış son faktiki səviyyədə sabit"
+v21_0,BELOW worst {0}-yr,ən zəif {0} illik dövrdən AŞAĞI
+v21_1,ABOVE best {0}-yr,ən yaxşı {0} illik dövrdən YUXARI
+v21_2,inv_rate_l1 as a determinant of branch growth (A),inv_rate_l1 sahə artımının müəyyənedici amili kimi (A)
+v21_3,drelp_l1 as a determinant of branch growth (A),drelp_l1 sahə artımının müəyyənedici amili kimi (A)

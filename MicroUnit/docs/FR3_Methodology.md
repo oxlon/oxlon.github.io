@@ -1,3 +1,5 @@
+> **Azərbaycan dilində:** [az/FR3_Metodologiya.md](az/FR3_Metodologiya.md)
+
 # FR3 — Structural Econometric Methodology for Wage Analysis and Five-Year Forecasting
 
 **Module:** 15.5.2 Microeconomic analysis and forecasting
@@ -10,7 +12,7 @@ sector, budget and non-budget organisations, and oil and non-oil sector.
 **Source:** `Statistik data dinamika 05.06.2026 +.xlsx`
 **Actuals:** annual through 2025; **monthly through February 2026** for every published wage series
 **Forecast:** 2026–2030, on FR1's three macro scenarios
-**Implementation:** `FR3.ipynb` (86 cells, 54 code, runs end to end with no errors on the `miis-model` kernel; Part 21 = v2)
+**Implementation:** `FR3.ipynb` (<!-- AUTO:v22_cells -->92 cells, 59 code<!-- /AUTO:v22_cells -->, runs end to end with no errors on the `miis-model` kernel; Part 21 = v2)
 **Outputs:** 18 CSV files in `MicroUnit/output/` (new: `FR3_fan_wages.csv`, `FR3_specification_selection.csv`,
 `FR3_homogeneity_break_tests.csv`, `FR3_minimum_wage_elasticities.csv`, `FR3_nowcast_2026.csv`, `FR3_forecast_sensitivity.csv`).
 `FR3_wage_forecast_full.csv` keeps all its earlier columns (new columns added only).
@@ -18,16 +20,65 @@ sector, budget and non-budget organisations, and oil and non-oil sector.
 
 ---
 
+<!-- AUTO:v22_note -->
+## v2.2 (2026-10-05): data and approaches from the Ministry's macro module
+
+**Data.** `data/macro_module/fr345_public_sources_panel.csv` (DSK 4.5–4.8 wages and 2.12 hired employees by 19 activities ×
+state / non-state, 2005–2024; source path and MD5 in `data/macro_module/README_fr345.md`). Its state / non-state wages equal FR3's
+series exactly, so **sector wages are published after all** — §8.1 and §8.2 below are superseded.
+
+**Adopted — sector wages (8 DSK sectors) and budget / non-budget wages** (new components `fr3:sw:*`, `fr3:swg:*`, `fr3:w_budget`,
+`fr3:w_nonbudget` + growth; `FR3_sector_wages.csv`, history `FR3_dsk_sector_wages_history.csv`). Rule chosen on rolling origins
+2014–2016 (scored ≤ 2020): each sector keeps its relative wage of the last published year (2024); a relative-productivity driver is
+worse (RMSE 14.9% vs 12.3%, DM p = 0.004; pooled β = +0.045, se 0.063) and is
+registered as rejected. Sector hired weights move with FR3's sector employment; the weighted average equals FR3's average wage
+(× the 2024 DSK aggregation ratio), so 2024 is reproduced exactly. Budget organisations (state units in public administration,
+education, health and arts — FR4's definition; 588.6 thousand in 2024) keep their 2024 ratio to the state wage (0.923); the
+non-budget wage follows from the identity. 2025 is an estimate (DSK ends in 2024). Hold-out (cut 2020, 2021–2024) with FR3's own
+simulated average wage: beats the random walk in 6/8 sectors and constant growth in 1/8 (median U
+0.64 / 1.28) — the sector errors inherit the aggregate's +12.7% bias; given the actual average wage
+the composition rule beats them in 7/8 and 6/8. Budget wage: U 0.57 / 2.18.
+
+| Baseline | 2024 actual | 2030 | % a year |
+|---|---|---|---|
+| Industry | 1,247.4 | 1,934.3 | +7.59 |
+| Agriculture | 611.7 | 948.6 | +7.59 |
+| Construction | 1,087.1 | 1,685.7 | +7.59 |
+| Trade | 691.7 | 1,072.6 | +7.59 |
+| Tourism & catering | 751.7 | 1,165.6 | +7.59 |
+| Transport & storage | 1,392.5 | 2,159.3 | +7.59 |
+| ICT | 1,672.1 | 2,592.9 | +7.59 |
+| Social & other services | 1,025.6 | 1,590.4 | +7.59 |
+| Budget organisations | 900.7 | 1,502.0 | +8.90 |
+| Non-budget | 1,058.6 | 1,578.1 | +6.88 |
+
+Because the relative wages are held at 2024, **every sector grows at the same rate** — the average-wage growth corrected for the
+shift of employment between sectors (a factor common to all sectors); there is no sector-specific wage dynamics. This is the honest
+result of the pre-cut test (no sector driver beats the anchored relative wage), not a convenience choice.
+
+**Rejected (registered, not used).** (a) Aggregate, state and private wage equations re-estimated as activity-panel growth equations
+(19 activities, 2006–2020, CPI + productivity + minimum wage, no lagged dependent variable): hold-out U vs random walk / constant
+growth 0.73/3.82 (average; current 0.49/3.02), 0.59/1.92 (state; current 0.32/1.24),
+1.04/8.70 (private; current 0.87/8.48) — CPI pass-through overshoots the 2021–22 inflation spike; **no wage equation
+beats constant growth**, the weakness of §6.1 remains. (b) Sector employment on the long DSK 2.12 panel (two-way FE, β = 0.165,
+DK se 0.058): share RMSE in the 2021–2024 hold-out 15.50% vs 14.22% for the current DVX elasticity (constant
+shares 16.89%), so the current elasticity is kept. All tests: `FR3_macro_module_tests.csv`.
+
+Registry now 97 equations (12 used); 109 components × 3 scenarios × 2026–2030; `FR3_not_forecast.csv`: 0 rows.
+<!-- /AUTO:v22_note -->
+
+---
+
 ## v2 (2026-10-05): tənliklər reyestri, ssenari mühərriki, dayanıqlıq
 
 <!-- AUTO:v2 -->
-**Tənliklər reyestri** (`output/FR3_equations.json`): 90 tənlik, onlardan 10-i proqnozda istifadə olunur
+**Tənliklər reyestri** (`output/FR3_equations.json`): 97 tənlik, onlardan 12-i proqnozda istifadə olunur
 (E1–E4 DOLS, homogenlik real forma ilə qoyulub; sektor məşğulluğu üçün iki tərəfli FE; beş 2026 nowcast nisbəti; sahə
 between paneli yalnız lövbərsiz həssaslıqda). Qalanları: E5, sürüşən başlanğıc namizədləri, həssaslıq variantları, ≤2020 qırılma/homogenlik test
 reqressiyaları, P1, minimum əmək haqqı OLS/2SLS (DWH ilə), Gregory–Hansen, rədd edilmiş spesifikasiyalar, 2SLS/3SLS, sənaye və
 region panelləri (within və between). Hər OLS/DOLS/2SLS/panel tənliyi statsmodels ilə yenidən qiymətləndirilib, əmsallar notebook-un
-öz qiymətləri ilə yoxlanılıb (uyğunsuzluq: 0). Dayanıqlıq hökmləri (bütün tənliklər): qeyri-stabil 40, qismən stabil 36, stabil 14;
-proqnozda istifadə olunanlar: qismən stabil 7, qeyri-stabil 2, stabil 1 — qeyri-stabil: FR3.E1_w_avg, FR3.E3_w_priv
+öz qiymətləri ilə yoxlanılıb (uyğunsuzluq: 0). Dayanıqlıq hökmləri (bütün tənliklər): qeyri-stabil 43, qismən stabil 38, stabil 16;
+proqnozda istifadə olunanlar: qismən stabil 9, qeyri-stabil 2, stabil 1 — qeyri-stabil: FR3.E1_w_avg, FR3.E3_w_priv
 (`FR3_robustness_summary.csv`).
 
 **Ssenari mühərriki** (`microlib/engines/fr3.py`, `_fr3_core.py`; vəziyyət `output/engine/FR3_state.json` + `.npz`): notebook-un həll
@@ -36,11 +87,11 @@ kodu dəyişmədən köçürülüb (real forma/homogenlik, E4 → E1 → E2 → 
 `fr1:rgdpnon`, `fr1:emp`, `fr1:rexp_cur`, `fr1:rva_*`), 6 redaktə edilə bilən əmsal
 (SE və 95% interval reyestrdən), 6 rıçaq (minimum əmək haqqı artımı, neft mükafatı hədəfi/yolu, nowcast yarım ömrü,
 E1-in uzlaşdırmada rolu, sahə lövbəri). `selftest()`: bütün 3 ssenaridə CSV çıxışları təkrarlanır (maks. nisbi fərq
-7.4e-14); rıçaqlar Part 15 həssaslıq cədvəlini dəqiq təkrarlayır. Bir ssenari < 0.1 s.
+4.9e-14); rıçaqlar Part 15 həssaslıq cədvəlini dəqiq təkrarlayır. Bir ssenari < 0.1 s.
 
-**Tam proqnoz cədvəli** (`FR3_forecast_tidy.csv`, `FR3_indicator_catalog.csv`): 89 komponent × 3 ssenari × 2026–2030
-(hamısı dolu), tarix ilə; 5–95% zolaqlar 13 komponent üçün (Əsas ssenari). `FR3_not_forecast.csv`: 9 komponent —
-yeddi qeyri-sənaye sektorunun orta əmək haqqı və büdcə/qeyri-büdcə əmək haqları (məlumat yoxdur; §8).
+**Tam proqnoz cədvəli** (`FR3_forecast_tidy.csv`, `FR3_indicator_catalog.csv`): 109 komponent × 3 ssenari × 2026–2030
+(hamısı dolu), tarix ilə; 5–95% zolaqlar 13 komponent üçün (Əsas ssenari). `FR3_not_forecast.csv`: 0 komponent —
+heç bir komponent qalmır (v2.2: 8 sektorun və büdcə/qeyri-büdcə təşkilatlarının əmək haqları DSK 4.5–4.8 əsasında proqnozlaşdırılır, `FR3_sector_wages.csv`).
 
 **Sahə əmək haqları (v2).** Baza proqnoz LÖVBƏRLƏNİB (digər modullardakı düzəliş əmsalı qaydası): hər sahənin between əlaqəsindən
 2025 qalığı sabit saxlanılır, əlavə dəyəri olmayan iki sahə (metal filizləri, digər mədənçıxarma; əvvəllər boş) 2025 nisbi əmək
@@ -48,12 +99,12 @@ haqqında saxlanılır və məşğulluqla çəkilmiş orta bütün 29 sahə üzr
 yolu vermədiyi üçün bütün sahələr sənaye əmək haqqı tempi ilə artır: 2026-da +6.67%…+6.67%
 (bütün ssenarilərdə). Hər sahənin öz 2017-2025 tarixi ilə müqayisə (`FR3_branch_wage_plausibility.csv`): 2026 artımı öz
 illik diapazonundan kənarda — 0 / 87 sahə-ssenari; 2026–2030 orta artımı öz 5 illik orta
-diapazonundan kənarda — 34 (Dəri və dəridən məmulatların,ayaqqabıların istehsalı, Elektrik enerjisi, qaz və buxar istehsalı, bölüşdürülməsi və təchizatı, Geyim istehsalı, Kimya sənayesi, Komputer, elektron və optik məhsulların istehsalı, Maşın və avadanlıqların istehsalı, Maşın və avadanlıqların quraşdırılması və təmiri, Metal filizlərinin hasilatı, Metallurgiya sənayesi, Mədənçıxarma sənayesinin digər sahələri, Neft məhsullarının istehsalı, Su təchizatı, tullantıların təmizlənməsi və emalı, Tikinti materiallarının istehsalı, Toxuculuq sənayesi, Tütün məmulatlarının istehsalı, Xam neft və təbii qaz hasilatı, Zərgərlik məmulatları, musiqi alətləri,idman mallarının və tibb avadanlıqlarının istehsalı).
+diapazonundan kənarda — 35 (Avtomobil, qoşqu və yarımqoşquların istehsalı, Dəri və dəridən məmulatların,ayaqqabıların istehsalı, Elektrik enerjisi, qaz və buxar istehsalı, bölüşdürülməsi və təchizatı, Geyim istehsalı, Kimya sənayesi, Komputer, elektron və optik məhsulların istehsalı, Maşın və avadanlıqların istehsalı, Metal filizlərinin hasilatı, Metallurgiya sənayesi, Mədənçıxarma sənayesinin digər sahələri, Neft məhsullarının istehsalı, Su təchizatı, tullantıların təmizlənməsi və emalı, Tikinti materiallarının istehsalı, Toxuculuq sənayesi, Tütün məmulatlarının istehsalı, Xam neft və təbii qaz hasilatı, Zərgərlik məmulatları, musiqi alətləri,idman mallarının və tibb avadanlıqlarının istehsalı).
 Lövbərsiz yol (sahə məhsuldarlığına uyğun nisbi səviyyə; 2026-da -25%…+76%,
 54 sahə-ssenari öz tarixi diapazonundan kənarda) yalnız həssaslıqdır:
 `FR3_industry_branch_wages_unanchored.csv`, mühərrikdə `branch_anchor = False`.
 
-**Əmsal həssaslığı** (`FR3_coef_sensitivity.csv`, ±1 SE, 2030, Əsas): ən böyük təsirlər — Real orta aylıq əmək haqqı: FR3.E2_w_non|ln_prod_non (-0.71% / +0.72%); Real qeyri-dövlət (özəl) sektor əmək haqqı: FR3.E3_w_priv|ln_prod_non (-2.09% / +2.12%); Real dövlət sektoru əmək haqqı: FR3.E4_w_state|ln_prod_non (-1.58% / +1.59%). Mətnlər: `FR3_strings_az.csv` (391 ingiliscə mətn → azərbaycanca). Kernel: `miis-model` (Python 3.13).
+**Əmsal həssaslığı** (`FR3_coef_sensitivity.csv`, ±1 SE, 2030, Əsas): ən böyük təsirlər — Real orta aylıq əmək haqqı: FR3.E2_w_non|ln_prod_non (-0.67% / +0.68%); Real qeyri-dövlət (özəl) sektor əmək haqqı: FR3.E3_w_priv|ln_prod_non (-1.98% / +2.02%); Real dövlət sektoru əmək haqqı: FR3.E4_w_state|ln_prod_non (-1.51% / +1.51%). Mətnlər: `FR3_strings_az.csv` (431 ingiliscə mətn → azərbaycanca). Kernel: `miis-model` (Python 3.13).
 <!-- /AUTO:v2 -->
 
 ---
@@ -88,7 +139,7 @@ dynamics); FR1 draws are screened only for non-finite values; (f) a **policy-lev
 minimum wage enters a baseline equation only if its sign is consistent with theory (or its difference-form estimate is
 significantly of the same sign) and it survives the 2018 break control — this excludes it from the private wage.
 
-**Consequences for the headline numbers.** Baseline average-wage growth 2026–2030 is **+7.34% a year nominal, +2.78% real**
+**Consequences for the headline numbers.** Baseline average-wage growth 2026–2030 is **+7.13% a year nominal, +2.64% real**
 (first version +5.26% / +1.19%). Under the forecast's own anchoring rule the 2021–2025 hold-out is **poor against constant
 growth**: the model beats a random walk for 4 of 5 series but constant growth for **none** (average wage: Theil U 0.49 vs random
 walk, 3.03 vs constant growth; +12.7% level error by 2025). No equation establishes cointegration; the equations are descriptive
@@ -341,8 +392,8 @@ total productivity, which falling oil output drags down, while the components us
 (with a finite E1 weight the aggregate was pulled down and the non-oil wage pushed ~3% below its own equation by 2030); E1's
 pre-2021 record (RMSE 8.9%) is no better than E2's (8.3%). The aggregate is the identity over the reconciled components and E1 is
 a cross-check. Identity residuals < 10⁻⁷% in every scenario and year. Baseline factors (reconciled ÷ equation), 2026 → 2030:
-state 1.005 → 1.069, private 1.001 → 1.008, non-oil 0.997 → 0.962; the reconciled aggregate differs from E1's own
-prediction by 0.0% → +3.8%. In 2026 the reconciled values are within 0.6% of the nowcasts.
+state 1.005 → 1.062, private 1.001 → 1.007, non-oil 0.997 → 0.966; the reconciled aggregate differs from E1's own
+prediction by 0.0% → +3.9%. In 2026 the reconciled values are within 0.6% of the nowcasts.
 
 ---
 
@@ -354,42 +405,42 @@ hired share from the DVX level; state/private and oil shares are held. FR3 uses 
 
 | Baseline | 2025 | 2030 | nominal % p.a. | real % p.a. |
 |---|---|---|---|---|
-| Average wage | 1,102.9 | 1,571.3 | **+7.34** | **+2.78** |
-| Non-oil sector | 1,050.7 | 1,509.3 | +7.51 | +2.95 |
-| State sector | 1,080.8 | 1,645.9 | +8.78 | +4.16 |
-| Private sector | 1,124.4 | 1,518.0 | +6.19 | +1.68 |
-| Oil sector | 3,938.6 | 5,131.6 | +5.43 | +0.96 |
+| Average wage | 1,102.9 | 1,556.4 | **+7.13** | **+2.64** |
+| Non-oil sector | 1,050.7 | 1,495.0 | +7.31 | +2.81 |
+| State sector | 1,080.8 | 1,625.9 | +8.51 | +3.96 |
+| Private sector | 1,124.4 | 1,507.1 | +6.03 | +1.59 |
+| Oil sector | 3,938.6 | 5,083.1 | +5.23 | +0.83 |
 
 | | Baseline | Adverse | Reform |
 |---|---|---|---|
-| Average wage, nominal % p.a. | 7.34 | 5.84 | 8.82 |
-| Average wage, **real** % p.a. | 2.78 | 1.67 | 3.90 |
-| Real non-oil wage % p.a. | 2.95 | 1.94 | 3.92 |
-| Real private wage % p.a. | 1.68 | 1.21 | 2.13 |
-| Real state wage % p.a. | 4.16 | 2.26 | 6.05 |
-| Real oil wage % p.a. | 0.96 | −1.24 | 3.65 |
+| Average wage, nominal % p.a. | 7.13 | 5.67 | 8.59 |
+| Average wage, **real** % p.a. | 2.64 | 1.55 | 3.74 |
+| Real non-oil wage % p.a. | 2.81 | 1.82 | 3.76 |
+| Real private wage % p.a. | 1.59 | 1.13 | 2.03 |
+| Real state wage % p.a. | 3.96 | 2.10 | 5.83 |
+| Real oil wage % p.a. | 0.83 | −1.35 | 3.49 |
 
 The ordering **Adverse ≤ Baseline ≤ Reform holds for every group** (checked in the notebook).
 
-Baseline wage bill: 29,302 mln AZN in 2026 (+7.5%) rising to 40,121 mln in 2030. The
+Baseline wage bill: 29,302 mln AZN in 2026 (+7.5%) rising to 39,729 mln in 2030. The
 **state/private ratio** is 0.99 in 2026 and 1.08 in 2030 in the baseline (passing 1.00 in 2027), 1.01 in 2030 in
-the Adverse and 1.16 in the Reform scenario, driven by the minimum wage in the state equation.
+the Adverse and 1.15 in the Reform scenario, driven by the minimum wage in the state equation.
 
 **Sensitivity** (baseline, nominal % p.a.; average / state / private):
 
 | Variant | average | state | private |
 |---|---|---|---|
-| **Main** (joint WLS, E1 cross-check, constant base add-factors) | 7.34 | 8.78 | 6.19 |
-| reconciled strictly to E1 | 6.53 | 7.21 | 6.00 |
-| E1 as a weighted constraint | 7.10 | 8.32 | 6.14 |
-| base add-factors decaying at the residual ρ̂ (contract decision 4) | 7.03 | 6.33 | 7.55 |
-| E3 unrestricted (ln CPI elasticity 0.588) | 7.39 | 8.68 | 6.36 |
-| E3 with the minimum wage (−0.247; fails lever coherence) | 7.59 | 8.31 | 7.03 |
-| E4 unrestricted (ln CPI free) | 7.25 | 8.56 | 6.21 |
-| E4 with the 2018 dummy (minimum-wage elasticity 0.843; unscored) | 7.35 | 8.80 | 6.18 |
+| **Main** (joint WLS, E1 cross-check, constant base add-factors) | 7.13 | 8.51 | 6.03 |
+| reconciled strictly to E1 | 6.31 | 6.91 | 5.84 |
+| E1 as a weighted constraint | 6.89 | 8.04 | 5.98 |
+| base add-factors decaying at the residual ρ̂ (contract decision 4) | 6.83 | 6.08 | 7.39 |
+| E3 unrestricted (ln CPI elasticity 0.588) | 7.16 | 8.46 | 6.13 |
+| E3 with the minimum wage (−0.247; fails lever coherence) | 7.36 | 8.09 | 6.79 |
+| E4 unrestricted (ln CPI free) | 7.05 | 8.30 | 6.05 |
+| E4 with the 2018 dummy (minimum-wage elasticity 0.843; unscored) | 7.16 | 8.57 | 6.03 |
 
 **Against FR1's own wage forecast.** FR3's average wage differs from FR1's `wage` column by +3.6% in 2026 and
-+3.5% in 2030 (baseline); across scenarios the gap is +1.6% to +5.5%. FR3 is the published wage forecast.
++3.4% in 2030 (baseline); across scenarios the gap is +1.6% to +5.4%. FR3 is the published wage forecast.
 
 **Decomposition.** Historically (2021–2025) almost all growth is the **within** term; the **between** term is small and positive
 (+0.10 to +0.30 pp a year), as employment shifted toward the better-paid non-state sector. In the forecast the shares are held, so
@@ -405,11 +456,11 @@ growth.
 
 | Baseline, 2030 | 5% | 25% | median | 75% | 95% | central |
 |---|---|---|---|---|---|---|
-| Average wage, AZN | 1,116 | 1,344 | 1,609 | 1,884 | 2,300 | 1,571 |
-| Average wage growth in 2030, % | −4.4 | 3.6 | 8.3 | 14.2 | 23.9 | 7.5 |
-| State wage, AZN | 1,141 | 1,389 | 1,646 | 1,969 | 2,431 | 1,646 |
-| Private wage, AZN | 1,033 | 1,284 | 1,550 | 1,871 | 2,308 | 1,518 |
-| Oil wage, AZN | 3,029 | 4,100 | 5,069 | 6,404 | 9,385 | 5,132 |
+| Average wage, AZN | 1,104 | 1,335 | 1,586 | 1,872 | 2,313 | 1,556 |
+| Average wage growth in 2030, % | −4.0 | 3.1 | 8.2 | 14.2 | 23.8 | 7.3 |
+| State wage, AZN | 1,122 | 1,373 | 1,630 | 1,933 | 2,424 | 1,626 |
+| Private wage, AZN | 1,017 | 1,286 | 1,534 | 1,858 | 2,315 | 1,507 |
+| Oil wage, AZN | 3,021 | 4,007 | 4,988 | 6,364 | 9,341 | 5,083 |
 
 **Sanity check.** From FR3's own sources alone (macro at baseline) the 90% level half-widths for the average wage are
 3.5% (2026) and 10–17% (2027–2030), against a hold-out RMSE of 14.5%; for the state wage
@@ -423,6 +474,10 @@ possible start years the bands are lumpy. Both variants are in `FR3_fan_wages.cs
 ## 8. What the data cannot deliver
 
 ### 8.1 Average wages by economic sector — not derivable
+
+<!-- AUTO:v22_s81 -->
+> **v2.2: superseded.** DSK 4.5–4.8 publishes them (2005–2024); FR3 now forecasts all eight (see the v2.2 note).
+<!-- /AUTO:v22_s81 -->
 
 **Attempt 1** — allocate wages by value added per hired worker with the between-branch elasticity (0.305), anchored to the national
 wage. Rejected: the derived **industry** wage is **25–42% above** the actual one (industrial value added per worker, 216 thousand
@@ -438,6 +493,10 @@ wage fund or of compensation of employees.
 
 ### 8.2 Budget versus non-budget average wages — not identifiable
 
+<!-- AUTO:v22_s82 -->
+> **v2.2: superseded.** DSK 4.5–4.8 state wages in the four budget-financed activities identify them (2024: 900.7 vs 1,058.6 AZN); forecast in v2.2.
+<!-- /AUTO:v22_s82 -->
+
 The employer rate is recoverable from the budget's accounts (212100 ÷ 211xxx ≈ 0.218, the statutory 22%), but applying assumed
 rates to DVX budget-organisation contributions gives a 2025 budget wage of 1,062–1,399 AZN depending only on the rate, and every
 variant puts the budget wage above the non-budget wage, contradicting the published state < private ordering. The split is
@@ -452,8 +511,8 @@ Rows **127–129** of the DVX sheet are byte-identical to rows 123–125 (micro 
 
 ## 9. Limitations
 
-1. Sector average wages not published and not derivable (§8.1).
-2. Budget/non-budget average wages not identifiable (§8.2).
+1. <!-- AUTO:v22_limits -->(v2.2) Sector and budget / non-budget wages are published only to 2024 and are forecast with relative wages held at 2024 — no sector-specific driver beats that rule.
+2. (v2.2) The DSK and published averages differ by up to 1.05% (hired weights); the ratio is held at 2024.<!-- /AUTO:v22_limits -->
 3. Source data error in DVX rows 127–129 (§8.3).
 4. The **oil wage** is not forecast by an equation: it is the non-oil wage times a stated premium lever; in the hold-out a random
    walk beats that mechanism (U 3.80) and constant growth roughly ties (1.07).
@@ -462,7 +521,7 @@ Rows **127–129** of the DVX sheet are byte-identical to rows 123–125 (micro 
 6. **Cointegration is not established** for any equation (EG and Gregory–Hansen); t-statistics are descriptive and base
    add-factors are held constant.
 7. **Homogeneity is imposed on theory grounds** though rejected for the private wage on the short sample; the unrestricted form
-   gives 6.36% instead of 6.19% a year private-wage growth.
+   gives 6.13% instead of 6.03% a year private-wage growth.
 8. The **minimum-wage effect is imprecise**: state 0.24–0.84 (forecast 0.386; 0.843 with the unscored break dummy). In the
    private wage its estimates are negative (−0.25 to −0.01) but fail the lever-coherence rule, so it is excluded there; any true
    private-sector effect is not captured.

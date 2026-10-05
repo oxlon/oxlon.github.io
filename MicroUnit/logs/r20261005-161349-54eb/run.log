@@ -1,0 +1,8 @@
+16:13:49  icra r20261005-161349-54eb: FR12 → panel → site
+16:13:49  [FR12] başladı
+16:14:22  [FR12] uğurla bitdi (33 s, 77 çıxış faylı)
+16:14:22  [panel] başladı
+16:14:27  [panel] uğurla bitdi (4 s, 21 çıxış faylı)
+16:14:27  [site] başladı
+16:14:39  [site] uğurla bitdi (12 s, 28 çıxış faylı)
+16:14:39  icra r20261005-161349-54eb bitdi: ok (50 s); əvvəlki icra ilə bayt-bayt eyni: False

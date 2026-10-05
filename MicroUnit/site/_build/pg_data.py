@@ -1,6 +1,6 @@
 """pg_data.py — data sources: workbook, DSK tables, FR10/FR12 source matrices, gaps, integrity findings."""
 from . import core, html
-from .core import v, esc
+from .core import v, esc, esc_az
 from .labels import status, PILLAR_AZ
 
 SECS = [("workbook", "Nazirliyin iş kitabı"), ("dsk", "DSK-dan toplanmış cədvəllər"), ("fr10-matrix", "FR10 mənbə matrisi"),
@@ -50,9 +50,9 @@ def matrix(name, anchor):
     for r in m.itertuples():
         cls, lab = status(r.status)
         rows.append([esc(r.id), esc(PILLAR_AZ.get(r.pillar, r.pillar)), esc(r.indicator_az),
-                     f'<span class="src-en">{esc(r.source_institution)} · {esc(r.dataset_table_row)}</span>',
-                     esc(r.years_available_now), html.pill(cls, lab),
-                     f'<span class="src-en">{esc(r.presentation_form)}</span>'])
+                     f'<span class="src-en">{esc_az(r.source_institution)} · {esc_az(r.dataset_table_row)}</span>',
+                     esc_az(r.years_available_now), html.pill(cls, lab),
+                     f'<span class="src-en">{esc_az(r.presentation_form)}</span>'])
     sg = m.status_group.value_counts()
     head = (" · ".join(f"{html.pill(status(k)[0], status(k)[1])} {v(sg.get(k, 0), 0)}"
                        for k in ("available now", "requested", "not available")))
@@ -64,7 +64,7 @@ def matrix(name, anchor):
 def gaps(name):
     g = core.csv(name)
     alt = "alternative_proxy" if "alternative_proxy" in g.columns else "alternative_used_now"
-    rows = [[f'<span class="src-en">{esc(getattr(r, c))}</span>' for c in ("gap", "impact", alt, "action_to_agree_with_Customer")]
+    rows = [[f'<span class="src-en">{esc_az(getattr(r, c))}</span>' for c in ("gap", "impact", alt, "action_to_agree_with_Customer")]
             for r in g.itertuples()]
     return html.table(["Boşluq", "Təsiri", "İndi işlədilən alternativ", "Sifarişçi ilə razılaşdırılacaq addım"], rows,
                       cols=["c-text", "c-text", "c-text", "c-text"])
@@ -72,7 +72,7 @@ def gaps(name):
 
 def findings(name):
     f = core.csv(name)
-    rows = [[esc(r.id), f'<span class="src-en">{esc(r.finding)}</span>', f'<span class="src-en">{esc(r.consequence)}</span>']
+    rows = [[esc_az(r.id), f'<span class="src-en">{esc_az(r.finding)}</span>', f'<span class="src-en">{esc_az(r.consequence)}</span>']
             for r in f.itertuples()]
     return html.table(["Kod", "Tapıntı", "Nəticəsi"], rows, cols=["c-tight", "c-text", "c-text"])
 
@@ -83,8 +83,8 @@ def build(texts):
     o = ["<h1>Məlumat mənbələri</h1>",
          '<p class="lead-in">Modulun hansı məlumatı, hansı mənbədən, hansı göstərici üçün və hansı formada işlətdiyi; '
          "çatmayan məlumat və onun alternativləri; mənbələrdə aşkarlanan problemlər. FR10 və FR12 üçün tələb olunan mənbə "
-         "matrisləri tam şəkildə verilir. Matris və tapıntı cədvəllərindəki uzun mətnlər çıxış fayllarından olduğu kimi "
-         "(ingilis dilində) göstərilir; sütun başlıqları, statuslar və göstərici adları Azərbaycan dilindədir.</p>",
+         "matrisləri tam şəkildə verilir. Matris və tapıntı cədvəllərindəki mətnlər modulların tərcümə cədvəlləri (<code>FRx_strings_az.csv</code>) "
+         "əsasında Azərbaycan dilində göstərilir.</p>",
          html.h2("workbook", 1, "Nazirliyin iş kitabı"),
          f"<p>{html.chip(WB)} — {v(len(sheets), 0)} vərəq. FR1–FR5-in əsas mənbəyi; FR10 və FR12 də onun "
          "regional, DVX, lisenziya və yoxlama vərəqlərini oxuyur. Vərəqlər: " + ", ".join(esc(s.strip()) for s in sheets) + ".</p>",
@@ -108,7 +108,7 @@ def build(texts):
         core.mark(core.DOCS / f"{code}_Methodology.md")
         o.append(html.h3(f"{code} — metodologiya sənədi, §{sec}"))
         o.append("<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
-                 f"<p>Ətraflı: {html.flink(f'docs/{code}_Methodology.md', '')}.</p>")
+                 f"<p>Ətraflı: {html.doc_links(code, '')}.</p>")
     o += [html.h3("FR10"), findings("FR10_data_integrity_findings.csv"),
           html.h3("FR12"), findings("FR12_data_integrity_findings.csv")]
     return "\n".join(o), SECS

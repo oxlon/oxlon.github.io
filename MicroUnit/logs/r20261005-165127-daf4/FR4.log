@@ -1,0 +1,3 @@
+$ /Users/econ0757/venvs/miis-model/bin/jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 --ExecutePreprocessor.kernel_name=miis-model FR4.ipynb
+[NbConvertApp] Converting notebook FR4.ipynb to notebook
+[NbConvertApp] Writing 1615237 bytes to FR4.ipynb

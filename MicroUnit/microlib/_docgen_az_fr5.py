@@ -13,6 +13,7 @@ HEAD = {"specification": "spesifikasiya", "selection RMSE %": "seçim RMSE, %", 
         "2010–19 %": "2010–19, %", "2021–25 %": "2021–25, %", "best 5-yr avg %": "ən yaxşı 5 illik orta, %",
         "window": "pəncərə", "exceeds best 5-yr": "ən yaxşı 5 illiyi aşır",
         "value vs baseline %": "dəyər, Əsas ssenariyə nisbətən %", "volume vs baseline %": "həcm, Əsas ssenariyə nisbətən %"}
+HEAD.update({k: k for k in ("e_i (proqnoz sistemi)", "sıra", "sıra, hamısı səviyyə", "sıra, hamısı fərq forması", "xidmət")})
 SCEN = {"Baseline": "Əsas", "Adverse": "Mənfi", "Reform": "İslahat"}
 
 
@@ -53,8 +54,8 @@ def part1(n):
                + f" Fərq forması: η = {num(e['diff_eta'], 2)} (95% etibarlılıq intervalı {num(dlo, 2)}–{num(dhi, 2)}); "
                + ("səviyyə qiyməti bu intervalın **daxilindədir** (uyğundur)." if inside
                   else "səviyyə qiyməti bu intervaldan **kənardadır**.")
-               + f" 2025-ci il düzəliş əmsalı {num(e['addf_2025'], 3, True)}; qalığın ρ̂ əmsalı {num(e['resid_rho'], 2)} "
-               "(yalnız həssaslıq üçün).\n\n"
+               + f" 2025-ci il düzəliş əmsalı {num(e['addf_2025'], 3, True)}; qalığın birinci tərtib avtokorrelyasiyası {num(e['resid_rho'], 2)} "
+               "(yalnız diaqnostika).\n\n"
                + md_table(er[["eta", "se", "eg_coint_p", "df", "p_eta_eq_1"]].rename(columns={"p_eta_eq_1": "p(η = 1)"}),
                           fmt={"eta": "{:.3f}", "se": "{:.3f}", "eg_coint_p": "{:.2f}", "df": "{:.0f}", "p(η = 1)": "{:.3f}"},
                           tr=n.trx)

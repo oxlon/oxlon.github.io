@@ -152,20 +152,31 @@ def decompose(S, CF, ex, fc, ap, base_addf):
     return pd.DataFrame(rows)
 
 
-def credit_by_sector(S, fc):
+CRED6 = ('trd', 'ene', 'agr', 'con', 'ind', 'tra')
+
+
+def credit_by_sector(S, fc, rule='last'):
     """Nominal credit by sector: households = equation G2; business credit (total - households) split across the six
-    sectors at their 3-year-average shares within non-household credit; 'oth' = the exact remainder."""
-    sh, FY = S['CRED_SHARE_FIX'], S['M']['FY']
+    sectors; 'oth' = the exact remainder. v2.1 rule 'last' (default): each sector's 2025 share WITHIN business credit,
+    held through 2030 (anchored on the last actual year). Rule 'avg3' (pre-v2.1, sensitivity): the 2023-25 average
+    shares of total credit renormalised by the average non-household share."""
+    FY = S['M']['FY']
     tot, hh = fc['rcred_tot']*fc['p_gdp'], fc['rcred_hh']*fc['p_gdp']
-    biz, w = tot - hh, 1 - sh['cred_hh_n']
-    out = {sec: (sh[f'cred_{sec}_n']/w*biz).reindex(FY) for sec in ('trd', 'ene', 'agr', 'con', 'ind', 'tra')}
+    biz = tot - hh
+    anch = S.get('CRED_SHARE_ANCH')
+    if rule == 'last' and anch:
+        out = {sec: (anch[sec]*biz).reindex(FY) for sec in CRED6}
+    else:
+        sh = S['CRED_SHARE_FIX']; w = 1 - sh['cred_hh_n']
+        out = {sec: (sh[f'cred_{sec}_n']/w*biz).reindex(FY) for sec in CRED6}
     out['oth'] = (biz - sum(out.values())).reindex(FY)
     return out
 
 
 def investment_by_sector(S, fc, CAL):
-    """Real fixed investment by sector = calibrated 3-year share x total real investment: exactly the flow that
-    the solver's capital-stock identity uses (Part 11.2/11.3)."""
+    """Real fixed investment by sector = sector share x total real investment: exactly the flow that the solver's
+    capital-stock identity uses (Part 11.2/11.3). v2.1: CAL['inv_share'] = the 2025 (last actual) shares; lever
+    alloc_shares='avg3' substitutes the pre-v2.1 3-year averages (CAL['inv_share_avg3']) in both places."""
     FY = S['M']['FY']
     return {sec: (CAL['inv_share'][sec]*fc['rinv_tot']).reindex(FY) for sec in S['M']['KSECT']}
 

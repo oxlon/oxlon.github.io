@@ -107,3 +107,45 @@ def hbar(labels, values, xtitle, name, height=None, color=ACCENT, values2=None, 
 
 def spec(data, lay):
     return {"data": data, "layout": lay}
+
+
+IMP_NAME = "Doldurulmuş (interpolyasiya)"
+
+
+def imputed_series(x, y, imp, name, color=ACCENT, width=2.6, hfmt=None, rank=1000, show_imp_legend=True):
+    """A history line whose imputed points are drawn as hollow markers joined by dashed segments
+    (legend «Doldurulmuş (interpolyasiya)»); observed points keep the solid line with filled markers."""
+    x = [int(i) for i in x]
+    y = _clean(y)
+    imp = [bool(i) for i in imp]
+    obs = [v if not f else None for v, f in zip(y, imp)]
+    out = [{"type": "scatter", "mode": "lines+markers", "name": name, "x": x, "y": obs, "connectgaps": False,
+            "line": {"color": color, "width": width}, "marker": {"color": color, "size": 6}, "legendrank": rank}]
+    if hfmt:
+        out[0]["hovertemplate"] = "%{y:" + hfmt + "}"
+    if not any(imp):
+        return out
+    sx, sy = [], []
+    i, n = 0, len(x)
+    while i < n:
+        if imp[i]:
+            j = i
+            while j + 1 < n and imp[j + 1]:
+                j += 1
+            lo, hi = max(i - 1, 0), min(j + 1, n - 1)
+            sx += x[lo:hi + 1] + [None]
+            sy += y[lo:hi + 1] + [None]
+            i = j + 1
+        else:
+            i += 1
+    out.append({"type": "scatter", "mode": "lines", "name": IMP_NAME, "x": sx, "y": sy, "connectgaps": False,
+                "line": {"color": color, "width": max(width - 0.8, 1.4), "dash": "dash"}, "showlegend": False,
+                "legendgroup": "imp", "hoverinfo": "skip", "legendrank": rank + 1})
+    mk = {"type": "scatter", "mode": "markers", "name": IMP_NAME, "x": [a for a, f in zip(x, imp) if f],
+          "y": [b for b, f in zip(y, imp) if f], "legendgroup": "imp", "showlegend": show_imp_legend,
+          "marker": {"symbol": "circle-open", "size": 10, "color": color, "line": {"width": 2, "color": color}},
+          "legendrank": rank + 2}
+    if hfmt:
+        mk["hovertemplate"] = "%{y:" + hfmt + "} (doldurulmuş)"
+    out.append(mk)
+    return out

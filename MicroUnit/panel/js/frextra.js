@@ -1,7 +1,7 @@
 /* frextra.js — FR10/FR12 extras: early-warning lists, FR12 industrial-organisation scenario table. */
 (function () {
   'use strict';
-  var U = window.U, META = window.MICRO.META;
+  var U = window.U, META = U.META;
   function ew10() {
     var rows = META.ew10.slice().sort(function (a, b) { return (b.w - a.w) || (b.nf - a.nf) || (b.share - a.share); });
     return '<h1 class="h1" style="font-size:24px">Erkən xəbərdarlıq — emal sahələri</h1>' +
@@ -27,7 +27,7 @@
       '<div class="card itbl-wrap" style="margin-top:12px"><table class="itbl"><thead><tr><th class="l">Ssenari</th><th class="l">Bazar</th><th class="l">Dəyişiklik</th><th class="l">Struktur</th><th>HHI</th><th>Qiymət, %</th><th>Buraxılış, %</th><th>İstehlakçı izafisi, %</th></tr></thead><tbody>' +
       META.io.map(function (r) { return '<tr title="' + U.esc(r.as) + '"><td>' + r.s + '</td><td class="lab">' + U.esc(r.m) + '</td><td class="lab small">' + U.esc(r.ch) + '<div class="muted">' + U.esc(r.as) + '</div></td><td><span class="chip ' + (r.src === 'fərziyyə' ? 'warn' : 'acc') + '">' + r.src + '</span></td>' +
         '<td class="n">' + rng(r.h, 0) + '</td><td class="n">' + rng(r.p, 2) + '</td><td class="n">' + rng(r.q, 2) + '</td><td class="n">' + rng(r.cs, 2) + '</td></tr>'; }).join('') +
-      '</tbody></table></div><p class="small muted">Fərziyyə mətnləri çıxış faylından olduğu kimi (ingiliscə). Mənbə: FR12_scenario_summary.csv, FR12_scenario_assumptions.csv.</p>';
+      '</tbody></table></div><p class="small muted">Mənbə: FR12_scenario_summary.csv, FR12_scenario_assumptions.csv. Ssenari qurucusunda FR12-nin «IO ssenarisi» alətləri ilə dəyişdirilə bilər.</p>';
   }
   U.extra = function (f, arg) {
     if (f.c === 'FR10' && arg === 'ew') return ew10();

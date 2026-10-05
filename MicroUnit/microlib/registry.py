@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import pandas as pd
 
 from . import robustness as R
@@ -18,6 +19,8 @@ from ._regcore import dols_augment, family_of, parse_leads_lags  # noqa: F401  (
 from ._regchecks import build_rows, check_coefs, norm_restrictions
 from ._util import as_dict, as_frame, as_series, now_iso, to_jsonable
 from .glossary import CONVENTIONS_AZ, VERDICT_RULE_AZ, VERDICT_RULE_EN
+
+_CLOCK = re.compile(r"(?m)^(?:Date|Time):\s+\S.*?(?=\s{2,}\S|$)")
 from .schema import HOLD_KEYS, validate_eq, validate_registry
 from .summary import build_summary
 
@@ -105,6 +108,9 @@ class EquationRegistry:
 
     def write(self, path):
         d = to_jsonable(self.to_dict())
+        for e in d.get("equations", []):                  # statsmodels clock lines: not results, break reproducibility
+            if isinstance(e.get("summary_text"), str):
+                e["summary_text"] = _CLOCK.sub(lambda m: " " * len(m.group(0)), e["summary_text"])
         errs = validate_registry(d)
         if errs:
             raise ValueError(f"{len(errs)} schema errors, not written: " + "; ".join(errs[:10]))

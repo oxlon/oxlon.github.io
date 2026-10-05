@@ -1,6 +1,8 @@
 """FR1 one-year solver: a line-by-line port of the notebook's `solve_year` (Part 11.3), damped Gauss-Seidel.
 Only change: the coefficient set `c` (CF), the calibration `CAL` and the model lists come from the arguments
-instead of notebook globals; `tfp_cum` (optional) generalises tfp_boost x tfp_years to a non-constant path."""
+instead of notebook globals; `tfp_cum` (optional) generalises tfp_boost x tfp_years to a non-constant path.
+v2.2: hydrocarbon export price index in the mining deflator; income-by-source and non-oil-balance levers;
+nominal non-oil GDP, non-oil balance (% of non-oil GDP) and the State Investment Programme as outputs."""
 import numpy as np
 
 
@@ -39,9 +41,15 @@ def solve_year(M, c, CAL, prev, ex, maxit=800, tol=1e-10, damp=0.5, addf=None, i
         s['cpi'] = prev['cpi']*(1 + s['infl']/100)
         s['p_cons'] = prev['p_cons']*(1 + s['infl']/100)
         s['p_inv'] = prev['p_inv'] *(1 + s['infl']/100)
+        # v2.2: export-value-weighted hydrocarbon export price index (USD), previous-year value weights
+        dln_xpi = (prev['xsh_oil']*(np.log(oil_p) - np.log(prev['oil_exp_price']))
+                   + (1 - prev['xsh_oil'])*(np.log(ex['gas_exp_price']) - np.log(prev['gas_exp_price'])))*100
+        _vo, _vg = ex['oil_exp_vol']*CAL['bbl']*oil_p, ex['gas_exp_vol']*ex['gas_exp_price']
+        s['xsh_oil'], s['gas_exp_price'], s['dln_xpi'] = _vo/(_vo + _vg), ex['gas_exp_price'], dln_xpi
         for sec in COMP:
-            a0, b1, b2 = CAL['defl'][sec]
-            s['p_'+sec] = prev['p_'+sec]*np.exp((a0 + b1*s['infl'] + b2*ex['dln_oil_azn'])/100)
+            a0, b1, b2, b3, b4 = CAL['defl'][sec]
+            s['p_'+sec] = prev['p_'+sec]*np.exp((a0 + b1*s['infl'] + b2*ex['dln_oil_azn'] + b3*dln_xpi
+                                                 + b4*ex['dln_fx'])/100)
         s['lendrate'] = Lin(c['G3_lendrate'], deprate=ex['deprate'], npl_ratio=ex['npl_ratio']) + A_.get('lendrate', 0)
         s['realrate'] = s['lendrate'] - s['infl']
         s['pension'] = ex['pension'] if ex.get('pension') is not None else \
@@ -54,10 +62,26 @@ def solve_year(M, c, CAL, prev, ex, maxit=800, tol=1e-10, damp=0.5, addf=None, i
         s['wage'] = np.exp(Lin(c['E2_wage'], ln_prod_non=np.log(prod_non), ln_cpi=np.log(s['cpi']),
                                ln_minwage=np.log(ex['minwage'])) + A_.get('wage', 0))
         s['rwage'] = s['wage']/s['cpi']*100
-        wagebill_r = s['wage']*s['emp']*12/1000.0/s['p_cons']
-        pens_r = s['pension']*pop/1000.0/s['p_cons']
-        s['rhhdisp'] = np.exp(Lin(c['E3_hhdisp'], ln_wagebill_r=np.log(wagebill_r), ln_pens_r=np.log(pens_r),
-                                  ln_gdpnon=np.log(s['rgdpnon'])) + A_.get('rhhdisp', 0))
+        if CAL.get('e3_mode', 'share') in ('legs', 'legs_real'):
+            # v2.2 lever: household income by source (E3a-E3d growth equations from the 2025 actual levels)
+            dq = (np.log(s['p_cons']) - np.log(prev['p_cons']))*100 if CAL.get('e3_mode') == 'legs_real' else 0.0
+            d_pay = (np.log(s['wage']*s['emp']) - np.log(prev['wage']*prev['emp']))*100 - dq
+            d_dsmf = (Lin(c['E3d_dsmf'], dln_pension=(np.log(s['pension']) - np.log(prev['pension']))*100 - dq)
+                      + 100*np.log(1 + ex.get('dsmf_add_g', 0.0)) + A_.get('dsmf_n', 0))
+            d_non = (np.log(s['gdpnon_n']) - np.log(prev['gdpnon_n']))*100 - dq
+            s['inc_wb_n'] = prev['inc_wb_n']*np.exp((Lin(c['E3a_wb'], dln_payroll=d_pay) + A_.get('inc_wb_n', 0) + dq)/100)
+            s['inc_tr_n'] = prev['inc_tr_n']*np.exp((Lin(c['E3b_tr'], dln_dsmf=d_dsmf) + A_.get('inc_tr_n', 0) + dq)/100)
+            s['inc_oth_n'] = prev['inc_oth_n']*np.exp((Lin(c['E3c_oth'], dln_gdpnon_n=d_non) + A_.get('inc_oth_n', 0) + dq)/100)
+            s['hhinc_n'] = s['inc_wb_n'] + s['inc_tr_n'] + s['inc_oth_n']
+            s['hhdisp_n'] = CAL['disp_ratio']*s['hhinc_n']
+            s['rhhdisp'] = s['hhdisp_n']/s['p_cons']
+        else:
+            wagebill_r = s['wage']*s['emp']*12/1000.0/s['p_cons']
+            pens_r = s['pension']*pop/1000.0/s['p_cons']
+            s['rhhdisp'] = np.exp(Lin(c['E3_hhdisp'], ln_wagebill_r=np.log(wagebill_r), ln_pens_r=np.log(pens_r),
+                                      ln_gdpnon=np.log(s['rgdpnon'])) + A_.get('rhhdisp', 0))
+            s['hhdisp_n'] = s['rhhdisp']*s['p_cons']
+            for k in ('inc_wb_n', 'inc_tr_n', 'inc_oth_n', 'hhinc_n'): s[k] = np.nan
         # ===== Block G: credit =====
         s['rdep_tot'] = np.exp(Lin(c['G7_dep'], ln_gdpnon=np.log(s['rgdpnon']), ln_hhdisp=np.log(s['rhhdisp']))
                                + A_.get('rdep_tot', 0))
@@ -89,7 +113,9 @@ def solve_year(M, c, CAL, prev, ex, maxit=800, tol=1e-10, damp=0.5, addf=None, i
         s['rx_non'] = np.exp(Lin(c['D3_xnon'], ln_va_man=np.log(s['rva_man']), ln_va_agr=np.log(s['rva_agr']))
                              + np.log(ex['extdem']) + A_.get('rx_non', 0))
         s['rm_non'] = np.exp(Lin(c['D4_mnon'], ln_cons=np.log(s['rcons']), ln_inv_non=np.log(s['rinv_non']),
-                                 ln_relprice=np.log(s['p_gdp']/(ex['fx']*100))) + A_.get('rm_non', 0))
+                                 ln_relprice=np.log(s['p_gdp']/(ex['fx']*100)),
+                                 ln_absorb=np.log(s['rcons'] + s['rinv_non']), ln_reer=np.log(ex['reer']))
+                             + A_.get('rm_non', 0))
         # ===== Block C: the eleven sectors plus the tax wedge =====
         tb = {sec: (tfp if sec in TFP_SECT else 0.0) for sec in SECT}
         s['rva_agr'] = np.exp(Lin(c['C1_agr'], ln_K_agr=np.log(s['K_agr']), trend=ex['trend'],
@@ -132,20 +158,30 @@ def solve_year(M, c, CAL, prev, ex, maxit=800, tol=1e-10, damp=0.5, addf=None, i
         s['rgdpnon'] = prev['rgdpnon']*(1 + g_non - CAL['nonoil_bias']/100)
         s['gdp_n'] = sum(s['p_'+k]*s['rva_'+k] for k in COMP)
         s['p_gdp'] = s['gdp_n']/s['rgdp']
+        s['gdpnon_n'] = s['gdp_n'] - CAL['oilgdp_ratio']*s['p_min']*s['rva_min']   # v2.2
         # ===== Block F: fiscal =====
         s['rev_oil_n'] = np.exp(Lin(c['F1_revoil'], ln_xoil_azn=np.log(s['x_g_oil_usd']*ex['fx'])) + A_.get('rev_oil_n', 0))
         s['rrev_nonoil'] = np.exp(Lin(c['F2_revnon'], ln_gdpnon=np.log(s['rgdpnon']), ln_m_non=np.log(s['rm_non']))
                                   + A_.get('rrev_nonoil', 0))
         s['rev_tot_n'] = s['rev_oil_n'] + s['rrev_nonoil']*s['p_gdp']
-        s['rexp_cur'] = np.exp(Lin(c['F3_expcur'], ln_rev_r=np.log(s['rev_tot_n']/s['p_gdp']), ln_gdpnon=np.log(s['rgdpnon']))
+        s['rexp_cur'] = np.exp(Lin(c['F3_expcur'], ln_rev_r=np.log(s['rev_tot_n']/s['p_gdp']), ln_gdpnon=np.log(s['rgdpnon']),
+                                   ln_rev_non_r=np.log(s['rrev_nonoil']), ln_rev_oil_r=np.log(max(s['rev_oil_n']/s['p_gdp'], 1e-6)))
                                + A_.get('rexp_cur', 0))
         s['rexp_soc'] = CAL['soc_share']*s['rexp_cur']
         s['exp_cap_n'] = CAL['capexp_ratio']*s['rinv_state']*s['p_inv']
         debt_serv = CAL['debtserv_ratio']*prev['debt_azn']
-        s['exp_tot_n'] = s['rexp_cur']*s['p_gdp'] + s['exp_cap_n'] + debt_serv
+        if CAL.get('fiscal_rule', 'F3') == 'nobd':
+            # v2.2 lever: non-oil balance held at its last-actual ratio to non-oil GDP; current spending = residual
+            s['exp_tot_n'] = s['rev_tot_n'] - s['rev_oil_n'] - CAL['nobd_ratio']*s['gdpnon_n']
+            s['rexp_cur'] = (s['exp_tot_n'] - s['exp_cap_n'] - debt_serv)/s['p_gdp']
+            s['rexp_soc'] = CAL['soc_share']*s['rexp_cur']
+        else:
+            s['exp_tot_n'] = s['rexp_cur']*s['p_gdp'] + s['exp_cap_n'] + debt_serv
         s['balance_n'] = s['rev_tot_n'] - s['exp_tot_n']
         s['debt_azn'] = prev['debt_azn'] - s['balance_n']
         s['debt_serv_n'] = debt_serv
+        s['nobd_pct'] = 100*(s['rev_tot_n'] - s['rev_oil_n'] - s['exp_tot_n'])/s['gdpnon_n']    # v2.2
+        s['exp_pubinv_n'] = ex.get('sip_ratio', np.nan)*s['rinv_state']*s['p_inv']             # v2.2 (programme)
         # ---- damped update and convergence test
         err = 0.0
         for k in ENDO:

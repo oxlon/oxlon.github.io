@@ -1,0 +1,64 @@
+$ /Users/econ0757/venvs/miis-model/bin/python3 site/build_site.py
+wrote fr/fr1.html
+wrote fr/fr1-proqnoz.html
+wrote fr/fr1-tenlikler.html
+wrote fr/fr3.html
+wrote fr/fr3-proqnoz.html
+wrote fr/fr3-tenlikler.html
+wrote fr/fr4.html
+wrote fr/fr4-proqnoz.html
+wrote fr/fr4-tenlikler.html
+wrote fr/fr5.html
+wrote fr/fr5-proqnoz.html
+wrote fr/fr5-tenlikler.html
+wrote fr/fr10.html
+wrote fr/fr10-proqnoz.html
+wrote fr/fr10-tenlikler.html
+wrote fr/fr12.html
+wrote fr/fr12-proqnoz.html
+wrote fr/fr12-tenlikler.html
+wrote fr/fr10-sintetik.html
+wrote fr/fr12-sintetik.html
+wrote index.html
+wrote dayaniqliq.html
+wrote methodology.html
+wrote data.html
+wrote synthetic.html
+wrote notebooks.html
+wrote api.html
+wrote results.html
+FORECAST COMPLETENESS CHECK: OK — every catalog component has 2026–2030 in every scenario
+
+page                         figures tables links
+api.html                           0      2    47
+data.html                          0      7    48
+dayaniqliq.html                    1      5    87
+fr/fr1-proqnoz.html                0     18   912
+fr/fr1-tenlikler.html            309    828    41
+fr/fr1.html                        5      5   159
+fr/fr10-proqnoz.html               0     44   466
+fr/fr10-sintetik.html              4     18    49
+fr/fr10-tenlikler.html           261    740    43
+fr/fr10.html                       5      5   165
+fr/fr12-proqnoz.html               0      6   979
+fr/fr12-sintetik.html              1     15    49
+fr/fr12-tenlikler.html            99    318    43
+fr/fr12.html                       7      9   151
+fr/fr3-proqnoz.html                0     10   268
+fr/fr3-tenlikler.html            181    518    41
+fr/fr3.html                        4      5    96
+fr/fr4-proqnoz.html                0     11   201
+fr/fr4-tenlikler.html            243    602    41
+fr/fr4.html                        5      6   107
+fr/fr5-proqnoz.html                0      3   235
+fr/fr5-tenlikler.html            140    443    41
+fr/fr5.html                        5      3   122
+index.html                         1      1    80
+methodology.html                   0      1    60
+notebooks.html                     0      1    40
+results.html                       0      6   401
+synthetic.html                     0      4    48
+pages 28, figures 1271, tables 3634, links checked 5020
+LINK/FIGURE CHECK: OK — every link and anchor resolves, no external resources, every figure parses
+
+TRANSLATION CHECK: OK — 28 pages and site.js, no leftover English (word list 370, allow-list 150)

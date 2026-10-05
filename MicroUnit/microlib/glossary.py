@@ -48,14 +48,14 @@ SCENARIO_AZ = {"Baseline": "Əsas", "Adverse": "Mənfi", "Reform": "İslahat"}
 VERDICTS = ("stabil", "qismən stabil", "qeyri-stabil")
 
 VERDICT_RULE_AZ = (
-    "Dayanıqlıq hökmü: 'stabil' — proqnozda istifadə olunan bütün əmsallar rekursiv (genişlənən pəncərə, "
+    "Dayanıqlıq hökmü: 'stabil' — proqnozda istifadə olunan bütün meyl əmsalları (sabit, trend və dummy dəyişənlər nəzərə alınmır) rekursiv (genişlənən pəncərə, "
     "minimum n = k+5) və bir ili çıxarmaqla qiymətləndirmələrdə işarəsini saxlayır və bütün mümkün Chow "
     "testlərinin (nümunənin ortası, 2015, 2020) və CUSUM testinin p-dəyəri > 0.05; 'qeyri-stabil' — rekursiv "
     "yolun son yarısında hər hansı əmsalın işarəsi dəyişir və ya hər hansı Chow testinin p-dəyəri < 0.01; "
     "qalan hallarda 'qismən stabil'. Rekursiv yol qurula bilmirsə, hökm 'stabil' ola bilməz."
 )
 VERDICT_RULE_EN = (
-    "Verdict: 'stabil' if every used coefficient keeps its sign in the recursive (expanding window from n=k+5) "
+    "Verdict: 'stabil' if every used slope coefficient (constant, trend and dummies excluded) keeps its sign in the recursive (expanding window from n=k+5) "
     "and leave-one-year-out estimates and all feasible Chow (midpoint, 2015, 2020) and CUSUM p > 0.05; "
     "'qeyri-stabil' if a sign flips in the last half of the recursive path or any Chow p < 0.01; otherwise "
     "'qismən stabil'. Without a recursive path the verdict cannot be 'stabil'."

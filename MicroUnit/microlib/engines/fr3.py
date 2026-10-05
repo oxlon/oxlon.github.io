@@ -7,7 +7,9 @@ industrial branch and sector hired employment — the notebook's solve, ported i
                                       upstream = {"FR1": result}: FR1 paths are taken from it (fr1:cpi, fr1:rgdp,
                                       fr1:rgdpnon, fr1:emp, fr1:rexp_cur, fr1:rva_*); otherwise FR1_forecast_full.csv
     selftest()                        run({}) per scenario reproduces FR3_wage_forecast_full / industry_branch_wages /
-                                      sector_employment / wage_accounts_long / wage_summary (rel. 1e-8)
+                                      sector_employment / wage_accounts_long / wage_summary / sector_wages (rel. 1e-8)
+v2.2: fr3:sw:<sector>, fr3:swg:<sector> (8 sector wages and growth) and fr3:w_budget, fr3:w_nonbudget (+ _g) from the
+DSK 4.5-4.8 relative wages of the last published year (state key 'SW'; Part 20A of FR3.ipynb).
 Levers: mw_growth (% a year, number or 5 values), prem_target (2030 oil premium), prem_path (5 values),
 nowcast_half_life (years), e1_mode ('cross-check' | 'fixed' | 'weighted'), branch_anchor (bool; default True =
 baseline anchored on each branch's own 2025 residual, False = unanchored sensitivity)."""
@@ -151,7 +153,8 @@ def solve(overrides=None, scenario="Baseline", upstream=None):
     empf, gva_f = C.sector_employment(S, fc, {y: ex[y]['hired'] for y in FY}, emp_el)
     ba = lv.get('branch_anchor')
     brf = C.branch_wages(S, f3, gva_f, empf['ind'], beta, anchor=True if ba is None else bool(ba))
-    return dict(full=f3, sector=empf, branch=brf, inc=inc, fc=fc), ov, W
+    sw = C.sector_wages(S, f3, empf)                      # v2.2: sector and budget / non-budget wages (None if no state)
+    return dict(full=f3, sector=empf, branch=brf, sw=sw, inc=inc, fc=fc), ov, W
 
 
 def series(fr):
@@ -170,6 +173,15 @@ def series(fr):
         out[f'fr3:empsh:{k}'] = fr['sector'][k]/fr['sector'].sum(axis=1)*100
     for nm, code in zip(S['branch']['names'], S['branch']['code']):
         out[f'fr3:brw:{code}'] = fr['branch'][nm]
+    sw = fr.get('sw')
+    if sw is not None:                                     # v2.2: growth of 2026 is measured from the 2025 estimate
+        FY = S['M']['FY']
+        for k in S['SW']['sectors']:
+            out[f'fr3:sw:{k}'] = sw[k].loc[FY]
+            out[f'fr3:swg:{k}'] = (sw[k].pct_change()*100).loc[FY]
+        for k in ('budget', 'nonbudget'):
+            out[f'fr3:w_{k}'] = sw[k].loc[FY]
+            out[f'fr3:w_{k}_g'] = (sw[k].pct_change()*100).loc[FY]
     return out
 
 

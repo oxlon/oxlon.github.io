@@ -96,7 +96,7 @@ def check(d):
                      v(r.final_year_err_pct, 2, sign=True), v(r.shares_RMSE_pp, 2), v(r.types_beating_rw, 0)])
     B = h[h.window.str.startswith("B")].iloc[0]
     return [html.h2("check", 5, "Yoxlama"),
-            "<p>İki hold-out: hər birində bütün qərar qaydası kəsimə qədərki məlumatla yenidən tətbiq olunur, paylar "
+            "<p>İki nümunədən kənar yoxlama: hər birində bütün qərar qaydası kəsimə qədərki məlumatla yenidən tətbiq olunur, paylar "
             "simulyasiya olunan cəmlə idarə edilir. Sabit artım etalonu kəsimdən əvvəlki beş ilin ortasıdır.</p>",
             html.table(["Pəncərə", "RMSE, %", "U: təsadüfi gəzişmə", "U: sabit artım", "Son il xətası, %",
                         "Paylar RMSE, f.b.", "TG-ni üstələyən növlər"], rows, cls="tbl tbl-dense tbl-backtest",

@@ -1,0 +1,8 @@
+$ /Users/econ0757/venvs/miis-model/bin/jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 --ExecutePreprocessor.kernel_name=miis-model FR10.ipynb
+[NbConvertApp] Converting notebook FR10.ipynb to notebook
+[NbConvertApp] Writing 1697365 bytes to FR10.ipynb
+
+$ /Users/econ0757/venvs/miis-model/bin/python3 -m microlib.docgen_az_fr10_fr12 FR10
+docs/az/FR10_Metodologiya.md: 41 AUTO blocks synced from docs/FR10_Methodology.md (changed); 2 generated text unit(s) without an Azerbaijani template -> microlib/i18n/FR10_untranslated.txt
+    [branches] Manufacturing branches, baseline real growth ⟦0⟧–⟦1⟧: min ⟦2⟧% (Refined petroleum products), max ⟦3⟧% (Textiles).
+    [branches] Implied non-oil manufacturing real growth ⟦0⟧% a year against ⟦1⟧% (⟦2⟧–⟦3⟧), ⟦4⟧% (⟦5⟧–⟦6⟧), best five-year ⟦7⟧% — within history.

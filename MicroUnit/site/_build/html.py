@@ -5,12 +5,19 @@ from . import core
 from .core import esc
 
 NAV = [
+    ("İş paneli (interaktiv)", [
+        ("../panel/index.html", "İş paneli", None),
+        ("../panel/index.html#/ssenari", "Ssenari qurucusu", None),
+        ("../panel/index.html#/hesabat", "Hesabat qurucusu", None),
+    ]),
     ("Ümumi", [
         ("index.html", "Ümumi baxış", None),
+        ("dayaniqliq.html", "Modellərin dayanıqlığı", None),
         ("methodology.html", "Metod", None),
         ("data.html", "Məlumat mənbələri", None),
         ("synthetic.html", "Sintetik məlumat", None),
         ("notebooks.html", "Jupyter dəftərləri", None),
+        ("api.html", "API və avtomatlaşdırma", None),
     ]),
     ("Funksional tələblər (§15.5.2)", [
         ("fr/fr1.html", "Sektorlar və bazarlar", "FR1"),
@@ -31,17 +38,33 @@ def sprite():
     return svg.strip()           # the macro sprite, verbatim (already display:none)
 
 
+def _secs(sections):
+    return '<ul class="nav-sections">' + "".join(
+        f'<li><a href="#{i}">{esc(t)}</a></li>' for i, t in sections) + "</ul>"
+
+
 def _nav(path, sections, pre):
+    from . import v2nav
     out = []
     for title, items in NAV:
         lis = []
         for href, label, num in items:
-            cur = ' class="current"' if href == path else ""
+            stem = href[:-5]
+            mine = href == path or (num and path.startswith(stem + "-"))
+            cur = ' class="current"' if mine else ""
             n = f'<span class="nav-num">{num}</span>' if num else ""
             sub = ""
-            if href == path and sections:
-                sub = '<ul class="nav-sections">' + "".join(
-                    f'<li><a href="#{i}">{esc(t)}</a></li>' for i, t in sections) + "</ul>"
+            if mine and num:
+                subs = []
+                for h, lab in v2nav.pages(num):
+                    if "#" in h:
+                        continue
+                    c = ' class="current"' if h == path else ""
+                    inner = _secs(sections) if h == path and sections else ""
+                    subs.append(f'<li><a{c} href="{pre}{h}">{esc(lab)}</a>{inner}</li>')
+                sub = '<ul class="nav-sub">' + "".join(subs) + "</ul>"
+            elif mine and sections:
+                sub = _secs(sections)
             lis.append(f'<li><a{cur} href="{pre}{href}">{n}{esc(label)}</a>{sub}</li>')
         out.append(f'<div class="nav-group"><span class="nav-title">{esc(title)}</span><ul>{"".join(lis)}</ul></div>')
     return "".join(out)
@@ -85,6 +108,7 @@ def page(path, title, sections, body, date, desc=""):
 <title>{esc(title)} — MİİS §15.5.2</title>
 <meta name="description" content="{esc(desc or title)}">
 <meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="{pre}assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{pre}assets/base.css">
 {css_micro}
 </head>
@@ -97,7 +121,8 @@ def page(path, title, sections, body, date, desc=""):
 <nav class="sidebar" id="sidebar" aria-label="Saytın bölmələri">
   <div class="sidebar-head">
     <a class="mark" href="{pre}index.html">MİİS §15.5.2
-      <span class="mark-sub">Mikroiqtisadi təhlil və proqnozlaşdırma modulu</span></a>
+      <span class="mark-sub">Mikroiqtisadi təhlil və proqnozlaşdırma modulu · Klassik görünüş</span></a>
+    <a class="panel-cta" href="{pre}../panel/index.html">İş panelinə keç →</a>
   </div>
   {_nav(path, sections, pre)}
 </nav>
@@ -107,6 +132,7 @@ def page(path, title, sections, body, date, desc=""):
 </main>
 </div>
 <script src="{pre}assets/plotly.min.js"></script>
+<script src="{pre}assets/plotly-az.js"></script>
 <script src="{pre}assets/site.js"></script>
 </body>
 </html>
@@ -167,8 +193,26 @@ def fig(fid, title, spec, cap, window, pre=""):
             f'<span class="fig-id">[{fid}]</span></figcaption></figure>')
 
 
-def kicker(code, nb, doc):
-    return (f'<p class="page-kicker">{code} · dəftər {chip(nb)} · metodologiya {chip(doc)}</p>')
+def kicker(code, nb, doc, pre="../"):
+    """Notebook and methodology links; the Azerbaijani methodology (docs/az/) when it exists."""
+    from . import v2data
+    az = v2data.doc_az(code)
+    if az:
+        m = f"metodologiya {flink(az, pre, 'Azərbaycan dilində')} · ingilis dilində {flink(doc, pre, doc.split('/')[-1])}"
+    else:
+        m = (f"metodologiya {flink(doc, pre, doc.split('/')[-1])} (ingilis dilində; Azərbaycan dilində mətn "
+             f"<code>docs/az/</code> qovluğuna əlavə olunduqda burada görünəcək)")
+    return f'<p class="page-kicker">{code} · dəftər {flink(nb, pre)} · {m}</p>'
+
+
+def doc_links(code, pre):
+    """Methodology document links: the Azerbaijani text (docs/az/) when present, and the English original."""
+    from . import v2data
+    az = v2data.doc_az(code)
+    en = flink(f"docs/{code}_Methodology.md", pre)
+    if az:
+        return f"{flink(az, pre)} (Azərbaycan dilində) · {en} (ingilis dilində)"
+    return f"{en} (ingilis dilində; Azərbaycan dilində mətn hazırlanır)"
 
 
 def synth_banner(pre, what):

@@ -26,7 +26,7 @@ def build(t, pre="../"):
          f"<p><strong>Tənliklər.</strong> {v(d['n_eq'], 0)} tənlik (orta, qeyri-neft, qeyri-dövlət, dövlət, neft əmək haqqı və "
          "minimum əmək haqqı qaydası) DOLS ilə qiymətləndirilib. Nominal homogenlik sınanıb və nəzəri əsasla tətbiq "
          "olunub; 2018 minimum əmək haqqı islahatı struktur qırılma kimi yoxlanılıb; minimum əmək haqqının təsiri "
-         "elastikliklər aralığı ilə verilir. Spesifikasiya hold-out pəncərəsindən əvvəlki sürüşən başlanğıclarda seçilib "
+         "elastikliklər aralığı ilə verilir. Spesifikasiya nümunədən kənar yoxlama pəncərəsindən əvvəlki sürüşən başlanğıclarda seçilib "
          "(<code>FR3_specification_selection.csv</code>). Neft sektorunun əmək haqqı tənliklə deyil, qeyri-neft əmək haqqı × "
          f"açıq göstərilən mükafat rıçağı ilə verilir. Kointeqrasiya {v(d['n_eq'], 0)} tənliyin {v(d['coint'], 0)}-də "
          "təsdiqlənir, ona görə t-statistikaları təsviri xarakter daşıyır.</p>",
@@ -105,8 +105,8 @@ def limits():
     items = ["Sektorlar üzrə orta əmək haqqı nəşr olunmur və çıxarıla bilmir.",
              "Büdcə və qeyri-büdcə təşkilatlarının orta əmək haqqı identifikasiya olunmur (yuxarıdakı aralıq fərziyyədən asılıdır).",
              "DVX məlumatında sətir təkrarı aşkarlanıb (sənəd, §8.3).",
-             "Neft sektorunun əmək haqqı tənliklə proqnozlaşdırılmır; hold-out-da təsadüfi gəzişmə bu mexanizmi üstələyir.",
-             "Hold-out sabit artım etalonuna qarşı zəifdir; lövbər ilinin seçimi nəticəni güclü dəyişir.",
+             "Neft sektorunun əmək haqqı tənliklə proqnozlaşdırılmır; nümunədən kənar yoxlamada təsadüfi gəzişmə bu mexanizmi üstələyir.",
+             "Nümunədən kənar yoxlamada model sabit artım etalonuna qarşı zəifdir; lövbər ilinin seçimi nəticəni güclü dəyişir.",
              "Heç bir tənlikdə kointeqrasiya təsdiqlənmir; əlavə amillər sabit saxlanılır.",
              "Homogenlik nəzəri əsasla tətbiq olunub, qeyri-dövlət sektorunda isə qısa nümunədə rədd edilir.",
              "Minimum əmək haqqının təsiri qeyri-dəqiqdir; qeyri-dövlət sektorunda tutulmur.",

@@ -20,7 +20,7 @@ RULES = [
     (r"dsk_manifest", "Yığılmış DSK fayllarının manifesti"),
     (r"presentation_spec", "MİİS istifadəçi görünüşlərinin spesifikasiyası"),
     (r"noar_constructs", "Gecikmə ehtiva edən, lakin avtoreqressiv olmayan konstruksiyalar"),
-    (r"holdout|backtest", "Nümunədən kənar (hold-out) yoxlama: RMSE, Theil U, DM testləri"),
+    (r"holdout|backtest", "Nümunədən kənar yoxlama: RMSE, Theil U, DM testləri"),
     (r"fan|band_meta", "Qeyri-müəyyənlik zolaqları (kvantillər)"),
     (r"identity_checks", "Hesab eyniliklərinin yoxlaması"),
     (r"equation_audit|coefficients|elasticit|fe_estimates|iv_dwh|chow|collinearity|determinants", "Qiymətləndirmə nəticələri və diaqnostika"),

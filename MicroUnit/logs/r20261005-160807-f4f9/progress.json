@@ -1,0 +1,82 @@
+{
+ "run_id": "r20261005-160807-f4f9",
+ "status": "ok",
+ "current": null,
+ "dry_run": false,
+ "updated": "2026-10-05T15:12:30Z",
+ "started": "2026-10-05T15:08:07Z",
+ "steps": [
+  {
+   "name": "FR1",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T15:08:07Z",
+   "finished": "2026-10-05T15:09:28Z",
+   "seconds": 81.2,
+   "error": null
+  },
+  {
+   "name": "FR3",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T15:09:28Z",
+   "finished": "2026-10-05T15:09:55Z",
+   "seconds": 26.2,
+   "error": null
+  },
+  {
+   "name": "FR4",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T15:09:55Z",
+   "finished": "2026-10-05T15:10:12Z",
+   "seconds": 17.1,
+   "error": null
+  },
+  {
+   "name": "FR5",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T15:10:12Z",
+   "finished": "2026-10-05T15:11:01Z",
+   "seconds": 48.8,
+   "error": null
+  },
+  {
+   "name": "FR10",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T15:11:01Z",
+   "finished": "2026-10-05T15:11:44Z",
+   "seconds": 42.8,
+   "error": null
+  },
+  {
+   "name": "FR12",
+   "kind": "notebook",
+   "status": "ok",
+   "started": "2026-10-05T15:11:44Z",
+   "finished": "2026-10-05T15:12:14Z",
+   "seconds": 30.2,
+   "error": null
+  },
+  {
+   "name": "panel",
+   "kind": "build",
+   "status": "ok",
+   "started": "2026-10-05T15:12:14Z",
+   "finished": "2026-10-05T15:12:19Z",
+   "seconds": 5.1,
+   "error": null
+  },
+  {
+   "name": "site",
+   "kind": "build",
+   "status": "ok",
+   "started": "2026-10-05T15:12:20Z",
+   "finished": "2026-10-05T15:12:30Z",
+   "seconds": 10.6,
+   "error": null
+  }
+ ]
+}

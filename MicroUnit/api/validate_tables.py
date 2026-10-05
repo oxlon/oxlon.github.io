@@ -12,6 +12,7 @@ import csv, re, unicodedata
 from pathlib import Path
 
 import nbextract as X
+from az_errors import az_exc
 
 SYN_STATUS = "SYNTHETIC — not real enterprise data"
 FR10_REGIONS = ["Baku city", "Nakhchivan AR", "Absheron-Khizi", "Daghlig Shirvan", "Ganja-Dashkasan", "Garabagh",
@@ -213,12 +214,13 @@ def validate_table(path, root, kind, max_items=500):
     try:
         cmap = column_map(root, kind)
     except OSError as e:
-        return {"ok": False, "kind": kind, "errors": [{"message": "Sütun xəritəsi tapılmadı: %s" % e}], "warnings": [], "summary": {}}
+        return {"ok": False, "kind": kind, "errors": [{"message": "Sütun xəritəsi tapılmadı: %s" % az_exc(e), "detail": str(e)[:300]}], "warnings": [], "summary": {}}
     try:
         raw = read_table(path)
     except Exception as e:
         hint = " (.xlsx faylında «data» vərəqi olmalıdır)" if str(path).lower().endswith((".xlsx", ".xls")) else ""
-        return {"ok": False, "kind": kind, "errors": [{"message": "Fayl oxunmadı%s: %s" % (hint, e)}], "warnings": [], "summary": {}}
+        return {"ok": False, "kind": kind, "errors": [{"message": "Fayl oxunmadı%s: %s" % (hint, az_exc(e)), "detail": str(e)[:300]}],
+                "warnings": [], "summary": {}}
     df, unknown = normalise(raw, cmap)
     synthetic = "data_status" in df and df["data_status"].astype(str).eq(SYN_STATUS).all()
     df = prepare(df)

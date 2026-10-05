@@ -11,6 +11,7 @@ import csv, re
 from pathlib import Path
 
 import nbextract as X
+from az_errors import az_exc
 
 XLS_MAGIC = bytes.fromhex("d0cf11e0a1b11ae1")
 DSK_DIRS = {"dsk": "FR4", "dsk_services": "FR5",
@@ -101,7 +102,7 @@ def validate_dsk(path, filename, subfolder, root):
         import xlrd
         wb = xlrd.open_workbook(str(path))
     except Exception as e:
-        errors.append({"message": "Fayl xlrd ilə açılmadı: %s" % e})
+        errors.append({"message": "Fayl açılmadı: %s" % az_exc(e), "detail": str(e)[:300]})
         return {"ok": False, "kind": "dsk", "errors": errors, "warnings": warnings, "summary": {"subfolder": sub}}
     sheets = wb.sheet_names()
     expected = referenced_sheets(root).get(filename, set())

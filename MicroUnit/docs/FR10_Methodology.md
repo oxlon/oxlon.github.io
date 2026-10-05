@@ -1,3 +1,5 @@
+> **Azərbaycan dilində:** [az/FR10_Metodologiya.md](az/FR10_Metodologiya.md)
+
 # FR10 — Financial condition, production efficiency and market position of enterprises and productions
 ## Structural methodology, indicator system and five-year forecast
 
@@ -24,6 +26,76 @@ SYNTHETIC panel now, every output watermarked and registered `synthetic: true`. 
 xülasəsini və B qatında müəssisə səviyyəsində tam ekonometrik təhlili əlavə edir; A qatının nəticələri dəyişmir. B qatı
 hazırda **sintetik məlumat — texniki nümayiş** üzərində işləyir.
 
+## Revision / status note (2026-10-05, v2.1 — data-integrity fixes)
+
+**What was wrong.** Branch real output (`output_real_mn_AZN_2015`) and the branch deflator (`deflator_2015_1`) are
+chained from DSK's volume indices (table 009, sheet 9.1) on 2015 nominal output. For several small branches DSK's index
+is inconsistent with the branch's own nominal output — e.g. electrical equipment (27) 2020: index 8 500% while nominal
+output fell 7% (implied deflator ÷ 100); pharmaceuticals (21) 2020: 11 200%; motor vehicles (29) 2010: 84 400% and
+2018: 31 000%. Chained as published, real output in 2025 was 429 times nominal output in branch 27, 195 times in 21 and
+44 times in 16; the forecast then took branch 27 to about 186 bn AZN (2015 prices) in 2030 — more than national real
+GDP — with labour productivity of 61 mn AZN per worker, and product volumes jumped by up to +181% from 2025 to 2026.
+The defect predates v2.
+
+**The rule (Part 5.1, toolkit `validate_volume_index`).** Before chaining, every branch-year index is tested.
+**T1:** the implied deflator change (N_t / N_t−1) / (I_t / 100) outside ×1/3…×3. **T2** (after T1, walking outward
+from 2015): the branch deflator relative to the manufacturing (section C) deflator, 2015 = 1, outside 1/6…6. Both bands
+lie just outside the envelope of the branches T1 never flags (figures in the block below), so the rule cannot touch a
+well-behaved branch in 2005–2025. A failing index is replaced by the branch's nominal growth deflated by the
+manufacturing deflator change of the same year (the branch's relative price is held in that year). The replaced points
+are flagged: `imputed` = True in `FR10_forecast_tidy.csv` and `imputed_years` in the catalogue (for real output and
+labour productivity, the year whose real level is derived through the replaced link), finding **F15** (English and
+Azerbaijani) lists every replaced branch-year with its published index, and `FR10_volume_index_validation.csv` gives the
+details. The notebook asserts that afterwards every branch passes both tests in every year and that every branch's
+2030 real output stays below section C real output.
+
+**Effect.** No coefficient of an equation used in the forecast changes: the share systems, the pooled related-sector
+model, the refining block, the mining rules and the regional system are estimated on nominal shares, the refining
+deflator and FR1's drivers. What changes: real output, the deflator, labour productivity, TFP and the growth
+decomposition of the affected branches, in history and forecast (non-oil real output = nominal ÷ (2025 deflator × FR1
+index), so the 2025 deflator carries the fix into 2026–2030); the determinants panel (not used in the forecast, §10); the real-output hold-out scores (§12); the plausibility
+flags (§14).
+Nominal output, shares, sections, regions — hence FR12's inputs — do not change.
+
+**Also in v2.1.** (i) **Products** are anchored on the 2025 actual (constant base add-factor; there are no partial-year
+product data, so no decaying increment); with the 2023–25 average intensity, 38 products had jumped by more than 25%
+between 2025 and 2026. (ii) The 13 **regional equations** whose slope is empirical-Bayes-shrunk now carry an
+`eb_shrinkage` restriction (`imposed: true`, estimate, prior mean, weight, κ, τ²) and `fixed: true` on the shrunk
+coefficient. (iii) The **scenario engine** takes FR4's hired-employee paths from the upstream FR4 result in a chained run
+(`chain.run_chain`), so an FR4 change reaches FR10's employment and labour productivity; FR3 is not used by FR10 (F13).
+
+<!-- AUTO:v21 -->
+Volume-index validation: **64 branch-year indices replaced in 15 branches** (T1 41, T2 23; 29 in 2005–2025). Bands from the 17 branches T1 never flags: their one-year deflator changes 1996–2025 lie in ×0.34–×2.85 (T1 band ×1/3–×3) and their deflators relative to manufacturing 2005–2025 in 0.26–5.24 (T2 band 1/6–6). After the fix every branch passes both tests in every year, and every branch's 2030 real output is below section C real output in all scenarios (largest: 06, 13,084 vs 18,374+ mn AZN 2015). Full list: `FR10_volume_index_validation.csv`; per-branch deflator ranges: `FR10_branch_deflator_check.csv`.
+
+| nace2 | branch | replaced (year, test, published index) | real/nominal 2025, published indices | real/nominal 2025, validated | real output 2030 (Baseline), mn AZN 2015 | labour productivity 2030, thsd AZN 2015 |
+|---|---|---|---|---|---|---|
+| 07 | Metal ores | 2000 (T1, 631.7), 2003 (T1, 829.3), 2008 (T1, 159.7) | 0.22 | 0.22 | 151.61 | 64.17 |
+| 14 | Wearing apparel | 1998 (T2, 82.6) | 1.31 | 1.31 | 408.36 | 74.15 |
+| 16 | Wood products | 1997 (T1, 21.1), 1999 (T2, 103.1), 2000 (T1, 194.5), 2013 (T1, 91.6), 2014 (T1, 305.9), 2020 (T2, 256), 2023 (T1, 165.1), 2024 (T2, 125.9) | 44.24 | 4.20 | 248.50 | 299.81 |
+| 17 | Paper products | 1999 (T2, 171), 2002 (T2, 61.3) | 0.31 | 0.31 | 134.04 | 55.55 |
+| 21 | Pharmaceuticals | 2011 (T2, 83.7), 2016 (T1, 122.4), 2020 (T1, 11200) | 194.91 | 0.96 | 45.18 | 75.36 |
+| 22 | Rubber and plastics | 1996 (T1, 77.8), 1998 (T2, 80.5), 1999 (T2, 40.3), 2000 (T2, 76.7), 2001 (T1, 52.9), 2002 (T2, 86.9), 2004 (T2, 126.5) | 1.75 | 1.75 | 1,808.95 | 246.05 |
+| 25 | Fabricated metal products | 1996 (T1, 85.7) | 0.79 | 0.79 | 901.99 | 128.06 |
+| 26 | Computer and electronics | 2000 (T2, 36.9), 2002 (T2, 54.4), 2004 (T2, 67.5), 2005 (T1, 75.7), 2006 (T2, 64.9), 2007 (T2, 92.3) | 2.26 | 2.26 | 246.17 | 960.74 |
+| 27 | Electrical equipment | 2011 (T1, 72.9), 2016 (T1, 333.8), 2020 (T1, 8500) | 428.67 | 1.11 | 473.61 | 156.84 |
+| 28 | Machinery and equipment | 2025 (T1, 84.1) | 1.42 | 0.40 | 81.33 | 28.03 |
+| 29 | Motor vehicles | 1997 (T1, 112.3), 2000 (T1, 1156.4), 2003 (T1, 119.5), 2006 (T1, 2230.7), 2009 (T1, 23), 2010 (T1, 84400), 2012 (T1, 27.8), 2014 (T1, 158.2), 2017 (T1, 1.2), 2018 (T1, 31000) | 4.17 | 0.76 | 396.34 | 403.44 |
+| 30 | Other transport equipment | 1996 (T2, 124.6), 1997 (T1, 110.5), 1998 (T2, 114.9), 1999 (T1, 88.2), 2000 (T1, 143), 2002 (T2, 178.6), 2003 (T2, 117.4), 2004 (T1, 97.9), 2005 (T2, 208.2), 2006 (T2, 105.7), 2014 (T1, 339.9), 2021 (T1, 12.5), 2024 (T1, 54.9) | 0.13 | 2.62 | 168.32 | 118.52 |
+| 31 | Furniture | 2002 (T1, 47.1), 2010 (T1, 24.1) | 0.87 | 0.87 | 539.85 | 59.79 |
+| 33 | Repair and installation | 1996 (T1, 104.9) | 0.40 | 0.40 | 683.54 | 65.36 |
+| 36 | Water supply and waste | 1996 (T1, 95), 1998 (T1, 89.5), 1999 (T1, 96.6) | 0.57 | 0.57 | 475.23 | 9.47 |
+
+Products: anchored on the 2025 actual; 0 of 127 products change by more than 25% from 2025 to 2026 (Baseline). Regional share equations: 13 coefficients carry an `eb_shrinkage` restriction (`imposed: true`, `fixed: true`) recording the estimate, prior mean, shrinkage weight, κ and τ² behind the value used in the forecast.
+<!-- /AUTO:v21 -->
+
+*Xülasə (AZ):* v2.1 DSK həcm indekslərinin yoxlanmasını əlavə edir: bəzi kiçik sahələrdə (16, 21, 27, 29, 30 və s.)
+indeks sahənin öz nominal buraxılışı ilə uyğun gəlmir, buna görə zəncirlənmiş real buraxılış qeyri-real səviyyələrə
+çatırdı. Deflyatorun bir illik dəyişməsi ×1/3…×3 intervalından (T1) və ya emal sənayesi deflyatoruna nisbətən deflyator
+1/6…6 intervalından (T2) çıxdıqda indeks nominal artımın emal sənayesi deflyatoru dəyişməsinə bölünməsi ilə əvəz olunur;
+əvəz olunan dəyərlər doldurulmuş kimi işarələnir (F15). Proqnozda istifadə olunan tənliklərin əmsalları
+dəyişmir. Məhsul proqnozları 2025 faktiki səviyyəsinə bağlanır; regional əmsalların empirik Bayes büzülməsi reyestrdə
+məhdudiyyət kimi qeyd olunur; mühərrik FR4 yuxarı axın nəticəsini istifadə edir.
+
 ## Revision / status note (2026-10-01)
 
 **Layer B runs on a replaceable firm-panel file.** The Ministry will not share enterprise data with the project; it
@@ -42,7 +114,7 @@ Numbers in this document are **generated by the notebook's last code cell** from
 <!-- /AUTO:mode_header -->
 
 <!-- AUTO:rev -->
-This run: 114 DSK tables, 14 integrity findings, 52 indicators in the source matrix (available now 40, requested 7, not available 5); branch model: Refined petroleum products by throughput capacity and the oil price, non-oil branches by the equal-weight combination of the pooled related-sector model (β = 0.219) and constant shares; regions MNL: oil-sector mix (FR1 mining/manufacturing VA) (κ = 0.5); baseline industry output +2.62% a year (nominal) 2026–2030; 86 FR10 CSV files, of which 24 SYNTHETIC.
+This run: 114 DSK tables, 15 integrity findings, 52 indicators in the source matrix (available now 40, requested 7, not available 5); branch model: Refined petroleum products by throughput capacity and the oil price, non-oil branches by the equal-weight combination of the pooled related-sector model (β = 0.219) and constant shares; regions MNL: oil-sector mix (FR1 mining/manufacturing VA) (κ = 0.5); baseline industry output +4.21% a year (nominal) 2026–2030; 88 FR10 CSV files, of which 24 SYNTHETIC.
 <!-- /AUTO:rev -->
 
 Standards applied (the lessons of the FR1–FR5 review): no lagged dependent variable and no own-history forecast;
@@ -121,8 +193,9 @@ income-tax declarations), `Real sektor` (r80, r114–r118 investment by source; 
 | F9 | Regional industrial output does not add up to the national total before 2019, and includes household industry after | sum of 14 regions vs DSK 010: -13.9% to -1.7% in 2003-2018, exact from 2019; DSK 022 footnotes 2019+ as "considering industrial activities of households and informal individual owners" | Regional shares are modelled on the regional sum (shares add to one by construction); the 2018/2019 change of coverage is a level break, handled by a step dummy in the regional share equations |
 | F10 | FR1's 2024 section value added is an earlier vintage than DSK's | FR1 manufacturing VA 2024 7,475.5 vs DSK NA 7,019.4 mn AZN (+6.5%); the two agree exactly in 2025 | FR10 anchors on 2025, where FR1 and DSK coincide, and uses FR1 only as growth indices from 2025 |
 | F11 | SME indicators exist for two years only; the statistical register is a single snapshot | DSK entrepreneurship tables cover 2023 and 2024; st_units tables are as of 1 July 2026 (entry/exit January-June 2026) | SME shares and register-based entry/exit rates are presented, not modelled: no time series exists to identify a projection |
+| F15 | DSK volume indices of small branches are inconsistent with their own nominal output | 64 branch-year volume indices (DSK 009, sheet 9.1) fail the validation in 15 branches: T1 (one-year implied deflator change outside x1/3-x3) 41, T2 (deflator relative to manufacturing, 2015 = 1, outside 1/6-6) 23. Replaced (year and published index, previous year = 100): 07: 2000 631.7, 2003 829.3, 2008 159.7; 14: 1998 82.6; 16: 1997 21.1, 1999 103.1, 2000 194.5, 2013 91.6, 2014 305.9, 2020 256, 2023 165.1, 2024 125.9; 17: 1999 171, 2002 61.3; 21: 2011 83.7, 2016 122.4, 2020 11200; 22: 1996 77.8, 1998 80.5, 1999 40.3, 2000 76.7, 2001 52.9, 2002 86.9, 2004 126.5; 25: 1996 85.7; 26: 2000 36.9, 2002 54.4, 2004 67.5, 2005 75.7, 2006 64.9, 2007 92.3; 27: 2011 72.9, 2016 333.8, 2020 8500; 28: 2025 84.1; 29: 1997 112.3, 2000 1156.4, 2003 119.5, 2006 2230.7, 2009 23, 2010 84400, 2012 27.8, 2014 158.2, 2017 1.2, 2018 31000; 30: 1996 124.6, 1997 110.5, 1998 114.9, 1999 88.2, 2000 143, 2002 178.6, 2003 117.4, 2004 97.9, 2005 208.2, 2006 105.7, 2014 339.9, 2021 12.5, 2024 54.9; 31: 2002 47.1, 2010 24.1; 33: 1996 104.9; 36: 1996 95, 1998 89.5, 1999 96.6. Chained on the published indices, real / nominal output in 2025 was 429 (27), 195 (21), 44.2 (16) | Each failing index is replaced by the branch's nominal growth deflated by the manufacturing deflator change of the same year (relative price held); the affected real output and labour productivity values are flagged imputed (FR10_volume_index_validation.csv); the indices should be queried with DSK |
 | F12 | The published non-state share of industry is inconsistent with its own branch breakdown in some years | output-weighted branch non-state shares (DSK 010_2 x 010) differ from the published industry total by 2005 -0.8 pp, 2013 +6.3 pp, 2014 +7.6 pp, 2015 +7.9 pp, 2016 +6.7 pp; within 0.15 pp in every other year | The forecast of the non-state share is built from the branch composition (consistent by construction); the published total for those years should be queried with DSK |
-| F13 | FR3's branch wage paths are not anchored on 2025 branch wages and share one growth rate | FR3 2026 branch wage / DSK 2025 branch wage - 1 ranges -21% to +21% across 29 branches; 2026-2030 growth is 7.72-7.72% a year for every branch | FR10 applies FR1's average-wage index to each branch's 2025 DSK wage; FR3 is not used for levels |
+| F13 | FR3's branch wage paths are not anchored on 2025 branch wages and share one growth rate | FR3 2026 branch wage / DSK 2025 branch wage - 1 ranges -21% to +21% across 29 branches; 2026-2030 growth is 7.49-7.49% a year for every branch | FR10 applies FR1's average-wage index to each branch's 2025 DSK wage; FR3 is not used for levels |
 <!-- /AUTO:integrity -->
 
 ## 5. The indicator system: which data, from which source, for which indicator, in which form
@@ -280,13 +353,13 @@ Branch TFP (gross output, 2017–2025 cumulative, log points × 100), highest an
 
 | branch | output growth 2016-25, log pts x100 | materials | labour | capital | TFP | mean capital share |
 |---|---|---|---|---|---|---|
-| Pharmaceuticals | 736.97 | 484.53 | 59.56 | 21.51 | 171.36 | -0.25 |
-| Electrical equipment | 584.66 | 428.63 | -7.98 | -2.71 | 166.71 | 0.08 |
-| Wood products | 282.74 | 175.15 | -6.83 | -2.55 | 116.97 | 0.21 |
+| Other transport equipment | 224.49 | 115.45 | -78.31 | 44.64 | 142.71 | -0.69 |
 | Tobacco products | 217.68 | 130.10 | 12.56 | 0.09 | 74.92 | 0.33 |
-| Motor vehicles | 243.72 | 340.15 | 1.96 | 22.04 | -120.42 | 0.23 |
+| Non-metallic minerals | 185.06 | 112.37 | 0.44 | 0.40 | 71.86 | 0.25 |
+| Fabricated metal products | 103.16 | 37.18 | 8.04 | -10.44 | 68.37 | 0.23 |
+| Motor vehicles | 73.20 | 213.97 | 1.96 | 22.04 | -164.77 | 0.23 |
 | Refined petroleum products | 7.19 | 5.77 | -0.15 | 73.42 | -71.85 | 0.44 |
-| Other transport equipment | -72.80 | -4.10 | -78.31 | 44.64 | -35.02 | -0.69 |
+| Machinery and equipment | -115.06 | -49.97 | -13.29 | -5.26 | -46.56 | 0.15 |
 | Repair and installation | -51.15 | -33.64 | 10.59 | 5.57 | -33.66 | 0.15 |
 <!-- /AUTO:eff -->
 
@@ -342,20 +415,20 @@ output in the denominator use output at t−2. Export orientation, credit and en
 <!-- AUTO:det -->
 | spec | regressor | coef | se_DK | p_DK_t | p_wild | between_coef | n | years |
 |---|---|---|---|---|---|---|---|---|
-| A: 2011-2025, core | inv_rate_l1 | -0.080 | 0.029 | 0.017 | 0.074 | 0.100 | 265 | 15 |
-| A: 2011-2025, core | drelp_l1 | 0.100 | 0.028 | 0.003 | 0.020 | -0.167 | 265 | 15 |
-| A: 2011-2025, core | nonstate_l1 | -0.049 | 0.141 | 0.733 | 0.725 | 0.048 | 265 | 15 |
-| A: 2011-2025, core | stocks_go_l1 | 0.044 | 0.015 | 0.009 | 0.133 | -0.140 | 265 | 15 |
-| A: 2011-2025, core | dln_ent_l1 | -0.173 | 0.098 | 0.101 | 0.113 | -0.260 | 265 | 15 |
-| B: 2018-2025, + wage and labour share | inv_rate_l1 | 0.020 | 0.021 | 0.368 | 0.671 | 0.159 | 151 | 8 |
-| B: 2018-2025, + wage and labour share | drelp_l1 | -0.168 | 0.343 | 0.640 | 0.655 | 0.025 | 151 | 8 |
-| B: 2018-2025, + wage and labour share | nonstate_l1 | -0.003 | 0.301 | 0.992 | 0.989 | 0.063 | 151 | 8 |
-| B: 2018-2025, + wage and labour share | stocks_go_l1 | 0.120 | 0.395 | 0.770 | 0.775 | -0.342 | 151 | 8 |
-| B: 2018-2025, + wage and labour share | dln_ent_l1 | 0.000 | 0.268 | 1.000 | 1.000 | -0.655 | 151 | 8 |
-| B: 2018-2025, + wage and labour share | dln_rwage_l1 | -0.273 | 0.338 | 0.446 | 0.457 | 0.159 | 151 | 8 |
-| B: 2018-2025, + wage and labour share | labour_share_l1 | -0.082 | 0.529 | 0.882 | 0.781 | 0.050 | 151 | 8 |
+| A: 2011-2025, core | inv_rate_l1 | -0.062 | 0.027 | 0.036 | 0.120 | 0.049 | 265 | 15 |
+| A: 2011-2025, core | drelp_l1 | 0.079 | 0.066 | 0.253 | 0.300 | -0.478 | 265 | 15 |
+| A: 2011-2025, core | nonstate_l1 | 0.009 | 0.202 | 0.965 | 0.950 | 0.060 | 265 | 15 |
+| A: 2011-2025, core | stocks_go_l1 | -0.002 | 0.017 | 0.899 | 0.903 | -0.011 | 265 | 15 |
+| A: 2011-2025, core | dln_ent_l1 | -0.250 | 0.175 | 0.175 | 0.154 | 0.038 | 265 | 15 |
+| B: 2018-2025, + wage and labour share | inv_rate_l1 | 0.017 | 0.016 | 0.333 | 0.338 | 0.092 | 151 | 8 |
+| B: 2018-2025, + wage and labour share | drelp_l1 | -0.243 | 0.376 | 0.538 | 0.556 | 0.043 | 151 | 8 |
+| B: 2018-2025, + wage and labour share | nonstate_l1 | 0.265 | 0.335 | 0.455 | 0.460 | 0.086 | 151 | 8 |
+| B: 2018-2025, + wage and labour share | stocks_go_l1 | 0.348 | 0.412 | 0.426 | 0.465 | -0.138 | 151 | 8 |
+| B: 2018-2025, + wage and labour share | dln_ent_l1 | -0.174 | 0.346 | 0.631 | 0.772 | -0.064 | 151 | 8 |
+| B: 2018-2025, + wage and labour share | dln_rwage_l1 | -0.258 | 0.320 | 0.447 | 0.458 | 0.320 | 151 | 8 |
+| B: 2018-2025, + wage and labour share | labour_share_l1 | -0.026 | 0.676 | 0.970 | 0.944 | -0.003 | 151 | 8 |
 
-Contributions to real manufacturing growth 2016–2025 (log points × 100): top Food products +17.3, Electrical equipment +11.9, Non-metallic minerals +10.9, Chemicals +6.4, Rubber and plastics +5.9; bottom Repair and installation -2.3, Refined petroleum products -1.3, Machinery and equipment -0.4.
+Contributions to real manufacturing growth 2016–2025 (log points × 100): top Food products +17.3, Non-metallic minerals +10.9, Chemicals +6.4, Rubber and plastics +5.9, Tobacco products +3.6; bottom Machinery and equipment -2.5, Repair and installation -2.3, Refined petroleum products -1.3.
 <!-- /AUTO:det -->
 
 How much the division-bias correction moves the coefficients (t−2 denominators used vs same-year denominators):
@@ -363,11 +436,11 @@ How much the division-bias correction moves the coefficients (t−2 denominators
 <!-- AUTO:divb -->
 | spec | regressor | coef_t2_denominator | coef_same_year_denominator | change | p_t2 | p_same |
 |---|---|---|---|---|---|---|
-| A | inv_rate_l1 | -0.080 | -0.082 | 0.002 | 0.017 | 0.015 |
-| A | stocks_go_l1 | 0.044 | 0.208 | -0.164 | 0.009 | 0.110 |
-| B | inv_rate_l1 | 0.020 | 0.042 | -0.021 | 0.368 | 0.221 |
-| B | stocks_go_l1 | 0.120 | 0.247 | -0.127 | 0.770 | 0.586 |
-| B | labour_share_l1 | -0.082 | 0.253 | -0.335 | 0.882 | 0.395 |
+| A | inv_rate_l1 | -0.062 | -0.049 | -0.013 | 0.036 | 0.078 |
+| A | stocks_go_l1 | -0.002 | 0.002 | -0.004 | 0.899 | 0.987 |
+| B | inv_rate_l1 | 0.017 | 0.040 | -0.023 | 0.333 | 0.211 |
+| B | stocks_go_l1 | 0.348 | 0.540 | -0.192 | 0.426 | 0.212 |
+| B | labour_share_l1 | -0.026 | 0.211 | -0.237 | 0.970 | 0.475 |
 <!-- /AUTO:divb -->
 
 Coefficients that are not significant on both tests are "not established (low power)", not "no effect".
@@ -481,7 +554,7 @@ part); electricity and water are stand-alone sections.
 | grows with FR1 mining VA | 72.297 | 0.009 | CHOSEN | 7 |
 | grows with FR1 construction VA | 85.660 | 0.198 | — | 7 |
 
-Quarrying: **neutral: held at the last actual level** — the unit-elasticity link to FR1 construction VA against the neutral null: DM/HLN p = 0.042 (both rules anchored on the origin's last actual; pre-cut RMSE 89.7 vs 67.4 log-% for the null; the link is adopted only if significantly MORE accurate, p < 0.10); the free elasticity 0.111 (s.e. 0.334) rejects the unit restriction (p = 0.016). The construction link is kept as the engine lever `quarrying_rule`. Metal ores: grows with FR1 mining VA. Crude oil and natural gas: 33,349.0 → 25,552.2 mn AZN nominal, real -3.38% a year. Metal ores: 729.9 → 759.7 mn AZN nominal, real -3.12% a year. Other mining and quarrying: 244.8 → 273.5 mn AZN nominal, real +0.00% a year. Mining support services: 2,698.4 → 2,067.5 mn AZN nominal, real -3.38% a year. Reconciliation: the four branches equal FR1's mining output to 0.0e+00% in every scenario and year (asserted); the implied deflator of the oil part grows -1.87% a year against FR1's mining deflator -1.93%.
+Quarrying: **neutral: held at the last actual level** — the unit-elasticity link to FR1 construction VA against the neutral null: DM/HLN p = 0.042 (both rules anchored on the origin's last actual; pre-cut RMSE 89.7 vs 67.4 log-% for the null; the link is adopted only if significantly MORE accurate, p < 0.10); the free elasticity 0.111 (s.e. 0.334) rejects the unit restriction (p = 0.016). The construction link is kept as the engine lever `quarrying_rule`. Metal ores: grows with FR1 mining VA. Crude oil and natural gas: 33,349.0 → 31,475.2 mn AZN nominal, real -1.21% a year. Metal ores: 729.9 → 854.2 mn AZN nominal, real -1.10% a year. Other mining and quarrying: 244.8 → 273.1 mn AZN nominal, real +0.00% a year. Mining support services: 2,698.4 → 2,546.8 mn AZN nominal, real -1.21% a year. Reconciliation: the four branches equal FR1's mining output to 2.2e-14% in every scenario and year (asserted); the implied deflator of the oil part grows +0.06% a year against FR1's mining deflator +0.07%.
 <!-- /AUTO:mining -->
 
 ### 11.5 Regions
@@ -490,7 +563,7 @@ The κ rule: when constant shares are rejected at the specification stage, the s
 lowest-RMSE κ among those significantly better than constant shares (or among the non-inferior ones if none is).
 
 <!-- AUTO:regions -->
-Selected: MNL: oil-sector mix (FR1 mining/manufacturing VA), κ = 0.5. Baku's share of industrial output 79.9% in 2025; in 2030: Baseline 77.1%, Adverse 76.2%, Reform 77.4%.
+Selected: MNL: oil-sector mix (FR1 mining/manufacturing VA), κ = 0.5. Baku's share of industrial output 79.9% in 2025; in 2030: Baseline 78.0%, Adverse 76.9%, Reform 78.4%.
 <!-- /AUTO:regions -->
 
 ## 12. Hold-out validation, 2020–2025
@@ -504,13 +577,13 @@ aggregates; no FR10 outcome is fed in. Benchmarks: random walk and constant grow
 |---|---|---|---|---|---|---|---|---|
 | manufacturing (24 branches): forecasting model | nominal | unweighted | oil block + combo | 50.664 | 0.793 | 0.823 | 0.099 | 0.180 |
 | manufacturing (24 branches): forecasting model | nominal | share-weighted | oil block + combo | 38.160 | 0.814 | 0.981 | 0.039 | 0.714 |
-| manufacturing (24 branches): forecasting model | real | unweighted | oil block + combo | 139.221 | 0.896 | 1.012 | 0.008 | 0.456 |
-| manufacturing (24 branches): forecasting model | real | share-weighted | oil block + combo | 64.474 | 0.855 | 1.151 | 0.023 | 0.000 |
+| manufacturing (24 branches): forecasting model | real | unweighted | oil block + combo | 56.492 | 0.801 | 0.525 | 0.044 | 0.041 |
+| manufacturing (24 branches): forecasting model | real | share-weighted | oil block + combo | 30.814 | 0.765 | 0.704 | 0.088 | 0.051 |
 | 14 economic regions | shares_pp | unweighted | MNL: oil-sector mix (FR1 mining/manufacturing VA) | 0.877 | 0.789 | 0.330 | 0.051 | 0.047 |
 <!-- /AUTO:holdout -->
 
 <!-- AUTO:holdout_note -->
-Real branch output does **not beat constant growth**: U = 1.012 unweighted (not significantly different, DM p 0.456) and 1.151 share-weighted (significantly worse, DM p 0.000); for the Part 11 constant-share system the figures were 1.035 (p 0.041, unweighted), 1.179 (p 0.001, share-weighted). Real branch paths should be read with their bands; nominal output is the more reliable output.
+Real branch output **beats constant growth**: U = 0.525 unweighted (significantly better, DM p 0.041) and 0.704 share-weighted (significantly better, DM p 0.051); for the Part 11 constant-share system the figures were 0.531 (p 0.039, unweighted), 0.701 (p 0.031, share-weighted). Real branch paths should be read with their bands; nominal output is the more reliable output.
 <!-- /AUTO:holdout_note -->
 
 Alternative allocations inside the same model (information only):
@@ -520,12 +593,12 @@ Alternative allocations inside the same model (information only):
 |---|---|---|---|---|---|
 | nominal | unweighted | oil block + pooled | 50.821 | 0.795 | 0.826 |
 | nominal | share-weighted | oil block + pooled | 37.915 | 0.809 | 0.975 |
-| real | unweighted | oil block + pooled | 139.085 | 0.895 | 1.011 |
-| real | share-weighted | oil block + pooled | 64.513 | 0.855 | 1.152 |
+| real | unweighted | oil block + pooled | 56.579 | 0.803 | 0.526 |
+| real | share-weighted | oil block + pooled | 30.628 | 0.760 | 0.700 |
 | nominal | unweighted | oil block + const | 50.538 | 0.791 | 0.821 |
 | nominal | share-weighted | oil block + const | 38.425 | 0.820 | 0.988 |
-| real | unweighted | oil block + const | 139.375 | 0.897 | 1.013 |
-| real | share-weighted | oil block + const | 64.450 | 0.854 | 1.151 |
+| real | unweighted | oil block + const | 56.437 | 0.801 | 0.525 |
+| real | share-weighted | oil block + const | 31.027 | 0.770 | 0.709 |
 <!-- /AUTO:holdout_full_alt -->
 
 Part 11.1 share systems, re-estimated to 2019 (information only; used for no choice):
@@ -569,18 +642,18 @@ sensitivities) = 2025 DSK wage × FR1 average-wage index (F13).
 <!-- AUTO:forecast -->
 | scenario | industry nominal output growth % pa | manufacturing nominal growth % pa | manufacturing real growth % pa (FR1 rva_man) | refining real growth % pa | mining share of industry 2030 % | non-state share 2030 % (composition) | HHI manufacturing 2030 | Baku share 2030 % | manufacturing GOS % VA 2030 |
 |---|---|---|---|---|---|---|---|---|---|
-| Baseline | 2.62 | 10.97 | 6.76 | -0.36 | 39.96 | 75.87 | 1203.15 | 77.12 | 65.81 |
-| Adverse | -2.60 | 6.95 | 3.18 | -0.36 | 33.68 | 72.64 | 1218.84 | 76.15 | 65.81 |
-| Reform | 6.70 | 14.87 | 10.22 | -0.36 | 42.25 | 77.73 | 1190.29 | 77.42 | 65.81 |
+| Baseline | 4.21 | 10.52 | 6.38 | -0.36 | 45.39 | 77.36 | 1203.20 | 77.97 | 65.81 |
+| Adverse | -1.53 | 6.62 | 2.90 | -0.36 | 38.05 | 73.89 | 1218.78 | 76.91 | 65.81 |
+| Reform | 8.80 | 14.30 | 9.74 | -0.36 | 48.79 | 79.44 | 1189.66 | 78.41 | 65.81 |
 
 Sections, baseline:
 
 | section | nominal output growth % pa | GOS % of VA 2025 | GOS % of VA 2030 |
 |---|---|---|---|
-| Mining | -5.00 | 93.56 | 94.39 |
-| Manufacturing | 10.97 | 65.82 | 65.81 |
-| Electricity | 8.84 | 65.44 | 65.89 |
-| Water | 8.68 | -51.61 | -40.05 |
+| Mining | -1.03 | 93.56 | 94.39 |
+| Manufacturing | 10.52 | 65.82 | 65.81 |
+| Electricity | 8.69 | 65.44 | 65.89 |
+| Water | 8.54 | -51.61 | -40.05 |
 <!-- /AUTO:forecast -->
 
 **Branches.**
@@ -588,38 +661,38 @@ Sections, baseline:
 <!-- AUTO:branches -->
 | nace2 | branch | model | nominal growth % pa | real growth % pa | share of industry 2030 % | LP growth % pa |
 |---|---|---|---|---|---|---|
-| 06 | Crude oil and natural gas | FR1 oil & gas real; residual nominal | -5.19 | -3.38 | 35.63 | -1.27 |
-| 07 | Metal ores | metal ores: grows with FR1 mining VA | 0.80 | -3.12 | 1.06 | -1.01 |
-| 08 | Other mining and quarrying | quarrying: neutral: held at the last actual level | 2.24 | 0.00 | 0.38 | 2.18 |
-| 09 | Mining support services | FR1 oil & gas real; residual nominal | -5.19 | -3.38 | 2.88 | -1.27 |
-| 10 | Food products | related-sector: rcons | 14.04 | 9.72 | 13.41 | 8.82 |
-| 11 | Beverages | related-sector: rcons | 14.04 | 9.72 | 2.46 | 8.82 |
-| 12 | Tobacco products | sector total | 14.33 | 10.00 | 3.04 | 9.09 |
-| 13 | Textiles | sector total | 14.33 | 10.00 | 1.12 | 9.09 |
-| 14 | Wearing apparel | sector total | 14.33 | 10.00 | 0.54 | 9.09 |
-| 15 | Leather and footwear | sector total | 14.33 | 10.00 | 0.10 | 9.09 |
-| 16 | Wood products | sector total | 14.33 | 10.00 | 0.10 | 9.09 |
-| 17 | Paper products | sector total | 14.33 | 10.00 | 0.74 | 9.09 |
-| 18 | Printing | sector total | 14.33 | 10.00 | 0.42 | 9.09 |
-| 19 | Refined petroleum products | capacity + oil price | -0.96 | -0.36 | 7.30 | -1.18 |
-| 20 | Chemicals | sector total | 14.33 | 10.00 | 4.31 | 9.09 |
-| 21 | Pharmaceuticals | sector total | 14.33 | 10.00 | 0.08 | 9.09 |
-| 22 | Rubber and plastics | sector total | 14.33 | 10.00 | 1.79 | 9.09 |
-| 23 | Non-metallic minerals | related-sector: rva_con | 13.52 | 9.22 | 3.90 | 8.32 |
-| 24 | Basic metals | sector total | 14.33 | 10.00 | 3.07 | 9.09 |
-| 25 | Fabricated metal products | related-sector: rva_con | 13.52 | 9.22 | 1.96 | 8.32 |
-| 26 | Computer and electronics | sector total | 14.33 | 10.00 | 0.19 | 9.09 |
-| 27 | Electrical equipment | related-sector: rinv_non | 13.78 | 9.46 | 0.73 | 8.56 |
-| 28 | Machinery and equipment | related-sector: rinv_non | 13.78 | 9.46 | 0.35 | 8.56 |
-| 29 | Motor vehicles | related-sector: rinv_non | 13.78 | 9.46 | 0.90 | 8.56 |
-| 30 | Other transport equipment | related-sector: rinv_non | 13.78 | 9.46 | 0.11 | 8.56 |
-| 31 | Furniture | sector total | 14.33 | 10.00 | 1.07 | 9.09 |
-| 32 | Other manufacturing | sector total | 14.33 | 10.00 | 0.33 | 9.09 |
-| 33 | Repair and installation | related-sector: rinv_non | 13.78 | 9.46 | 2.92 | 8.56 |
-| 35 | Electricity, gas and steam | sector total | 8.84 | 2.91 | 7.69 | 2.27 |
-| 36 | Water supply and waste | sector total | 8.68 | 4.64 | 1.41 | 3.85 |
+| 06 | Crude oil and natural gas | FR1 oil & gas real; residual nominal | -1.15 | -1.21 | 40.65 | -0.51 |
+| 07 | Metal ores | metal ores: grows with FR1 mining VA | 3.20 | -1.10 | 1.10 | -0.40 |
+| 08 | Other mining and quarrying | quarrying: neutral: held at the last actual level | 2.21 | 0.00 | 0.35 | 0.70 |
+| 09 | Mining support services | FR1 oil & gas real; residual nominal | -1.15 | -1.21 | 3.29 | -0.51 |
+| 10 | Food products | related-sector: rcons | 13.47 | 9.22 | 12.11 | 8.42 |
+| 11 | Beverages | related-sector: rcons | 13.47 | 9.22 | 2.23 | 8.42 |
+| 12 | Tobacco products | sector total | 13.77 | 9.50 | 2.75 | 8.70 |
+| 13 | Textiles | sector total | 13.77 | 9.50 | 1.02 | 8.70 |
+| 14 | Wearing apparel | sector total | 13.77 | 9.50 | 0.49 | 8.70 |
+| 15 | Leather and footwear | sector total | 13.77 | 9.50 | 0.09 | 8.70 |
+| 16 | Wood products | sector total | 13.77 | 9.50 | 0.09 | 8.70 |
+| 17 | Paper products | sector total | 13.77 | 9.50 | 0.67 | 8.70 |
+| 18 | Printing | sector total | 13.77 | 9.50 | 0.38 | 8.70 |
+| 19 | Refined petroleum products | capacity + oil price | -0.96 | -0.36 | 6.76 | -1.09 |
+| 20 | Chemicals | sector total | 13.77 | 9.50 | 3.89 | 8.70 |
+| 21 | Pharmaceuticals | sector total | 13.77 | 9.50 | 0.07 | 8.70 |
+| 22 | Rubber and plastics | sector total | 13.77 | 9.50 | 1.61 | 8.70 |
+| 23 | Non-metallic minerals | related-sector: rva_con | 13.12 | 8.88 | 3.55 | 8.08 |
+| 24 | Basic metals | sector total | 13.77 | 9.50 | 2.77 | 8.70 |
+| 25 | Fabricated metal products | related-sector: rva_con | 13.12 | 8.88 | 1.78 | 8.08 |
+| 26 | Computer and electronics | sector total | 13.77 | 9.50 | 0.17 | 8.70 |
+| 27 | Electrical equipment | related-sector: rinv_non | 13.31 | 9.06 | 0.67 | 8.26 |
+| 28 | Machinery and equipment | related-sector: rinv_non | 13.31 | 9.06 | 0.31 | 8.26 |
+| 29 | Motor vehicles | related-sector: rinv_non | 13.31 | 9.06 | 0.82 | 8.26 |
+| 30 | Other transport equipment | related-sector: rinv_non | 13.31 | 9.06 | 0.10 | 8.26 |
+| 31 | Furniture | sector total | 13.77 | 9.50 | 0.97 | 8.70 |
+| 32 | Other manufacturing | sector total | 13.77 | 9.50 | 0.30 | 8.70 |
+| 33 | Repair and installation | related-sector: rinv_non | 13.31 | 9.06 | 2.64 | 8.26 |
+| 35 | Electricity, gas and steam | sector total | 8.69 | 2.90 | 7.08 | 2.38 |
+| 36 | Water supply and waste | sector total | 8.54 | 4.53 | 1.29 | 3.87 |
 
-Manufacturing branches, baseline real growth 2026–2030: min -0.36% (Refined petroleum products), max +10.00% (Tobacco products). Implied non-oil manufacturing real growth +9.28% a year against +7.72% (2010–19), +10.06% (2021–25), best five-year +13.82% — within history.
+Manufacturing branches, baseline real growth 2026–2030: min -0.36% (Refined petroleum products), max +9.50% (Tobacco products). Implied non-oil manufacturing real growth +8.86% a year against +8.11% (2010–19), +9.45% (2021–25), best five-year +10.32% — within history.
 
 Implied cross-sector multipliers (% change in branch output per 1% in the related sector, sector total given):
 
@@ -644,59 +717,60 @@ DSK branch output includes informal and household production that has no recorde
 in branches with much informal output.
 
 <!-- AUTO:margin -->
-Baseline (labour share of VA held at its 2023–25 average): manufacturing GOS 65.8% of VA in 2025 and 65.8% in 2030. Sensitivities: FR1 wage path 70.7%; wages constant in product terms 74.1%. Median branch GOS-proxy margin 2030: baseline 19.7%, FR1 wage path 24.0%.
+Baseline (labour share of VA held at its 2023–25 average): manufacturing GOS 65.8% of VA in 2025 and 65.8% in 2030. Sensitivities: FR1 wage path 70.5%; wages constant in product terms 73.8%. Median branch GOS-proxy margin 2030: baseline 19.7%, FR1 wage path 23.9%.
 
 | lever | manufacturing real branch growth, min % pa | manufacturing real branch growth, max % pa | refining real growth % pa | building materials real growth % pa | manufacturing GOS % VA 2030 | median branch GOS-proxy margin 2030 | HHI manufacturing 2030 |
 |---|---|---|---|---|---|---|---|
-| baseline | -0.36 | 10.00 | -0.36 | 9.22 | 65.81 | 19.71 | 1203.15 |
-| allocation: pooled model alone | -0.36 | 10.26 | -0.36 | 8.70 | 65.81 | 19.71 | 1202.36 |
-| allocation: constant shares | -0.36 | 9.73 | -0.36 | 9.73 | 65.81 | 19.71 | 1204.09 |
-| oil-linked branches at maximum throughput | 0.66 | 9.80 | 0.66 | 9.03 | 65.81 | 19.71 | 1207.79 |
-| margin: FR1 wage path | -0.36 | 10.00 | -0.36 | 9.22 | 70.72 | 24.01 | 1203.15 |
-| margin: wages constant in product terms | -0.36 | 10.00 | -0.36 | 9.22 | 74.09 | 25.61 | 1203.15 |
+| baseline | -0.36 | 9.50 | -0.36 | 8.88 | 65.81 | 19.71 | 1203.20 |
+| allocation: pooled model alone | -0.36 | 9.74 | -0.36 | 8.49 | 65.81 | 19.71 | 1200.75 |
+| allocation: constant shares | -0.36 | 9.26 | -0.36 | 9.26 | 65.81 | 19.71 | 1205.74 |
+| oil-linked branches at maximum throughput | 0.66 | 9.30 | 0.66 | 8.68 | 65.81 | 19.71 | 1208.47 |
+| margin: FR1 wage path | -0.36 | 9.50 | -0.36 | 8.88 | 70.51 | 23.86 | 1203.20 |
+| margin: wages constant in product terms | -0.36 | 9.50 | -0.36 | 8.88 | 73.76 | 25.39 | 1203.20 |
 <!-- /AUTO:margin -->
 
 **Non-state share.**
 
 <!-- AUTO:ns -->
-Mining falls from 58.8% to 40.0% of industrial output (baseline); with within-branch non-state shares held (mining 94.1%, refining 1.9%, electricity 3.4%), the industry non-state share moves from 78.1% to 75.9% — **pure composition, not an ownership forecast**.
+Mining falls from 58.8% to 45.4% of industrial output (baseline); with within-branch non-state shares held (mining 94.1%, refining 1.9%, electricity 3.4%), the industry non-state share moves from 78.1% to 77.4% — **pure composition, not an ownership forecast**.
 
 | nace2 | branch | non-state share held (2025), % | share of industry 2025, % | share of industry 2030, % |
 |---|---|---|---|---|
-| 6 | Crude oil and natural gas | 95.71 | 52.93 | 35.63 |
-| 7 | Metal ores | 39.61 | 1.16 | 1.06 |
-| 8 | Other mining and quarrying | 98.02 | 0.39 | 0.38 |
-| 9 | Mining support services | 88.50 | 4.28 | 2.88 |
-| 10 | Food products | 99.99 | 7.91 | 13.41 |
-| 11 | Beverages | 99.11 | 1.45 | 2.46 |
-| 12 | Tobacco products | 100.00 | 1.77 | 3.04 |
-| 13 | Textiles | 91.75 | 0.65 | 1.12 |
-| 14 | Wearing apparel | 95.73 | 0.31 | 0.54 |
-| 15 | Leather and footwear | 94.94 | 0.06 | 0.10 |
-| 16 | Wood products | 99.84 | 0.06 | 0.10 |
-| 17 | Paper products | 100.00 | 0.43 | 0.74 |
-| 18 | Printing | 98.44 | 0.24 | 0.42 |
-| 19 | Refined petroleum products | 1.86 | 8.72 | 7.30 |
-| 20 | Chemicals | 20.13 | 2.51 | 4.31 |
-| 21 | Pharmaceuticals | 100.00 | 0.05 | 0.08 |
-| 22 | Rubber and plastics | 100.00 | 1.04 | 1.79 |
-| 23 | Non-metallic minerals | 99.60 | 2.36 | 3.90 |
-| 24 | Basic metals | 100.00 | 1.79 | 3.07 |
-| 25 | Fabricated metal products | 60.39 | 1.18 | 1.96 |
-| 26 | Computer and electronics | 92.74 | 0.11 | 0.19 |
-| 27 | Electrical equipment | 98.83 | 0.44 | 0.73 |
-| 28 | Machinery and equipment | 93.75 | 0.21 | 0.35 |
-| 29 | Motor vehicles | 76.47 | 0.54 | 0.90 |
-| 30 | Other transport equipment | 87.96 | 0.07 | 0.11 |
-| 31 | Furniture | 100.00 | 0.62 | 1.07 |
-| 32 | Other manufacturing | 89.80 | 0.19 | 0.33 |
-| 33 | Repair and installation | 54.15 | 1.74 | 2.92 |
-| 35 | Electricity, gas and steam | 3.37 | 5.73 | 7.69 |
-| 36 | Water supply and waste | 29.10 | 1.05 | 1.41 |
+| 6 | Crude oil and natural gas | 95.71 | 52.93 | 40.65 |
+| 7 | Metal ores | 39.61 | 1.16 | 1.10 |
+| 8 | Other mining and quarrying | 98.02 | 0.39 | 0.35 |
+| 9 | Mining support services | 88.50 | 4.28 | 3.29 |
+| 10 | Food products | 99.99 | 7.91 | 12.11 |
+| 11 | Beverages | 99.11 | 1.45 | 2.23 |
+| 12 | Tobacco products | 100.00 | 1.77 | 2.75 |
+| 13 | Textiles | 91.75 | 0.65 | 1.02 |
+| 14 | Wearing apparel | 95.73 | 0.31 | 0.49 |
+| 15 | Leather and footwear | 94.94 | 0.06 | 0.09 |
+| 16 | Wood products | 99.84 | 0.06 | 0.09 |
+| 17 | Paper products | 100.00 | 0.43 | 0.67 |
+| 18 | Printing | 98.44 | 0.24 | 0.38 |
+| 19 | Refined petroleum products | 1.86 | 8.72 | 6.76 |
+| 20 | Chemicals | 20.13 | 2.51 | 3.89 |
+| 21 | Pharmaceuticals | 100.00 | 0.05 | 0.07 |
+| 22 | Rubber and plastics | 100.00 | 1.04 | 1.61 |
+| 23 | Non-metallic minerals | 99.60 | 2.36 | 3.55 |
+| 24 | Basic metals | 100.00 | 1.79 | 2.77 |
+| 25 | Fabricated metal products | 60.39 | 1.18 | 1.78 |
+| 26 | Computer and electronics | 92.74 | 0.11 | 0.17 |
+| 27 | Electrical equipment | 98.83 | 0.44 | 0.67 |
+| 28 | Machinery and equipment | 93.75 | 0.21 | 0.31 |
+| 29 | Motor vehicles | 76.47 | 0.54 | 0.82 |
+| 30 | Other transport equipment | 87.96 | 0.07 | 0.10 |
+| 31 | Furniture | 100.00 | 0.62 | 0.97 |
+| 32 | Other manufacturing | 89.80 | 0.19 | 0.30 |
+| 33 | Repair and installation | 54.15 | 1.74 | 2.64 |
+| 35 | Electricity, gas and steam | 3.37 | 5.73 | 7.08 |
+| 36 | Water supply and waste | 29.10 | 1.05 | 1.29 |
 <!-- /AUTO:ns -->
 
-**Products.** Product volume paths are derived from the branch forecast with the product mix held at its 2023–25
-average (a labelled derivation, not a product model); product market shares are by place of production (DSK 018_1).
+**Products.** Product volume paths are derived from the branch forecast with the product mix held and anchored on the
+2025 actual (v2.1: volume_t = volume_2025 × branch real output_t / real output_2025, a constant base add-factor; a labelled
+derivation, not a product model); product market shares are by place of production (DSK 018_1).
 
 <!-- AUTO:products -->
 127 products in 25 branches receive **derived** volume paths (product mix held at 2023–25); 91 products have producing places in 2025 (median 3 places, median top-place share 81%). Most concentrated by place:
@@ -718,7 +792,7 @@ average (a labelled derivation, not a product model); product market shares are 
 sign rejection, and FR1's employment draw; the batch simulation reproduces the scenario solver exactly.
 
 <!-- AUTO:bands -->
-500 FR1 replications; 16 historical model-error paths for the branch allocation and 11 for regions (paths crossing the 2019 coverage break excluded). Average growth 2026–2030 — industry output: baseline +2.62%, median +3.06%, 90% band -8.9% to +15.4%; mining: baseline -5.00%, median -5.04%, 90% band -19.5% to +12.4%; manufacturing: baseline +10.97%, median +10.47%, 90% band -0.2% to +21.7%; electricity: baseline +8.84%, median +8.56%, 90% band -12.2% to +37.1%; water: baseline +8.68%, median +8.44%, 90% band +0.1% to +19.2%. The baseline is FR1's scenario path, the median is that of the replications; they differ because FR1's draws are not centred on its scenario. The wide industry and electricity tails come from FR1's oil- and electricity-price draws: with FR1's prices held at their baseline paths the bands are — industry: baseline +2.62%, median +2.57%, 90% band -0.5% to +6.3%; electricity: baseline +8.84%, median +8.84%, 90% band +5.9% to +11.8%. Refining share of manufacturing in 2030: 9.4–24.2% (baseline 14.3%). Manufacturing GOS share of VA in 2030: 65.8–65.8%. Baseline inside the inter-quartile band in 98.4% of series-years, inside the 90% band in 100.0%.
+500 FR1 replications; 16 historical model-error paths for the branch allocation and 11 for regions (paths crossing the 2019 coverage break excluded). Average growth 2026–2030 — industry output: baseline +4.21%, median +4.81%, 90% band -4.3% to +14.6%; mining: baseline -1.03%, median -0.96%, 90% band -12.1% to +10.2%; manufacturing: baseline +10.52%, median +10.22%, 90% band -0.4% to +22.7%; electricity: baseline +8.69%, median +8.71%, 90% band -13.6% to +43.5%; water: baseline +8.54%, median +8.45%, 90% band -1.8% to +19.9%. The baseline is FR1's scenario path, the median is that of the replications; they differ because FR1's draws are not centred on its scenario. The wide industry and electricity tails come from FR1's oil- and electricity-price draws: with FR1's prices held at their baseline paths the bands are — industry: baseline +4.21%, median +4.16%, 90% band +1.3% to +8.2%; electricity: baseline +8.69%, median +8.69%, 90% band +6.0% to +11.7%. Refining share of manufacturing in 2030: 9.0–24.4% (baseline 14.6%). Manufacturing GOS share of VA in 2030: 65.8–65.8%. Baseline inside the inter-quartile band in 98.8% of series-years, inside the 90% band in 100.0%.
 <!-- /AUTO:bands -->
 
 ## 14. Plausibility and early warning
@@ -729,42 +803,42 @@ averages since 2005; flags are published with their root cause.
 <!-- AUTO:plaus -->
 | code | unit | forecast_real_growth | hist_2010_2019 | hist_2021_2025 | best_5yr | worst_5yr | flag | hist_2010_19_inside_90band |
 |---|---|---|---|---|---|---|---|---|
-| 06 | Crude oil and natural gas | -3.38 | -2.57 | -0.01 | 17.50 | -3.46 | — | yes |
-| 07 | Metal ores | -3.12 | 10.43 | -0.42 | 137.19 | -8.81 | — | no |
+| 06 | Crude oil and natural gas | -1.21 | -2.57 | -0.01 | 17.50 | -3.46 | — | no |
+| 07 | Metal ores | -1.10 | 10.43 | -0.42 | 252.03 | -8.81 | — | no |
 | 08 | Other mining and quarrying | 0.00 | 12.22 | 15.14 | 27.98 | -8.70 | — | no |
-| 09 | Mining support services | -3.38 | 18.79 | -18.41 | 27.50 | -20.68 | — | no |
-| 10 | Food products | 9.72 | 3.80 | 10.22 | 10.22 | 2.39 | — | yes |
-| 11 | Beverages | 9.72 | 8.73 | 7.56 | 10.96 | 0.24 | — | yes |
-| 12 | Tobacco products | 10.00 | 16.66 | 13.10 | 50.73 | -14.63 | — | yes |
-| 13 | Textiles | 10.00 | 18.84 | 11.63 | 43.24 | -22.65 | — | yes |
-| 14 | Wearing apparel | 10.00 | 10.32 | 5.29 | 21.66 | 0.71 | — | yes |
-| 15 | Leather and footwear | 10.00 | -9.20 | 10.64 | 19.67 | -18.10 | — | yes |
-| 16 | Wood products | 10.00 | 35.70 | 19.60 | 67.47 | -23.60 | — | yes |
-| 17 | Paper products | 10.00 | 6.84 | 7.41 | 60.85 | -18.43 | — | yes |
-| 18 | Printing | 10.00 | 31.14 | -12.71 | 38.68 | -12.71 | — | no |
+| 09 | Mining support services | -1.21 | 18.79 | -18.41 | 27.50 | -20.68 | — | no |
+| 10 | Food products | 9.22 | 3.80 | 10.22 | 10.22 | 2.39 | — | yes |
+| 11 | Beverages | 9.22 | 8.73 | 7.56 | 10.96 | 0.24 | — | yes |
+| 12 | Tobacco products | 9.50 | 16.66 | 13.10 | 50.73 | -14.63 | — | yes |
+| 13 | Textiles | 9.50 | 18.84 | 11.63 | 43.24 | -22.65 | — | yes |
+| 14 | Wearing apparel | 9.50 | 10.32 | 5.29 | 21.66 | 0.71 | — | yes |
+| 15 | Leather and footwear | 9.50 | -9.20 | 10.64 | 19.67 | -18.10 | — | yes |
+| 16 | Wood products | 9.50 | 41.13 | -12.70 | 73.42 | -17.94 | — | no |
+| 17 | Paper products | 9.50 | 6.84 | 7.41 | 60.85 | -18.43 | — | yes |
+| 18 | Printing | 9.50 | 31.14 | -12.71 | 38.68 | -12.71 | — | no |
 | 19 | Refined petroleum products | -0.36 | -3.18 | 3.78 | 3.78 | -5.46 | — | no |
-| 20 | Chemicals | 10.00 | 12.52 | 10.04 | 17.94 | -3.85 | — | yes |
-| 21 | Pharmaceuticals | 10.00 | 3.80 | 40.95 | 239.59 | -15.14 | — | yes |
-| 22 | Rubber and plastics | 10.00 | 11.86 | 16.26 | 28.01 | -2.69 | — | yes |
-| 23 | Non-metallic minerals | 9.22 | 14.58 | 25.80 | 29.01 | -3.50 | — | yes |
-| 24 | Basic metals | 10.00 | 8.71 | 5.98 | 28.12 | -15.56 | — | yes |
-| 25 | Fabricated metal products | 9.22 | 6.32 | 15.15 | 29.97 | -17.49 | — | yes |
-| 26 | Computer and electronics | 10.00 | 14.59 | -2.03 | 31.08 | -22.55 | — | yes |
-| 27 | Electrical equipment | 9.46 | 35.63 | 3.96 | 294.16 | -7.19 | — | yes |
-| 28 | Machinery and equipment | 9.46 | -3.70 | -0.01 | 33.34 | -13.41 | — | yes |
-| 29 | Motor vehicles | 9.46 | 7.96 | 28.95 | 492.11 | -50.43 | — | yes |
-| 30 | Other transport equipment | 9.46 | 13.40 | 5.44 | 57.52 | -45.91 | — | yes |
-| 31 | Furniture | 10.00 | 32.66 | 21.72 | 31.13 | -20.30 | — | no |
-| 32 | Other manufacturing | 10.00 | 12.63 | 30.95 | 30.95 | -27.63 | — | yes |
-| 33 | Repair and installation | 9.46 | 23.16 | 4.10 | 57.65 | -11.50 | — | yes |
-| 35 | Electricity, gas and steam | 2.91 | 3.96 | 2.08 | 7.48 | 0.73 | — | yes |
-| 36 | Water supply and waste | 4.64 | 4.47 | 9.07 | 9.07 | -4.22 | — | yes |
-| B | Mining | -3.12 | -2.21 | -1.39 | 23.44 | -3.37 | — | — |
-| C | Manufacturing | 6.76 | 4.32 | 8.09 | 10.15 | 1.28 | — | — |
-| D | Electricity | 2.91 | 4.21 | 2.06 | 7.57 | 0.36 | — | — |
-| E | Water | 4.64 | 4.51 | 8.88 | 8.88 | 0.59 | — | — |
+| 20 | Chemicals | 9.50 | 12.52 | 10.04 | 17.94 | -3.85 | — | yes |
+| 21 | Pharmaceuticals | 9.50 | -3.24 | 40.95 | 55.64 | -30.70 | — | yes |
+| 22 | Rubber and plastics | 9.50 | 11.86 | 16.26 | 28.01 | -2.69 | — | yes |
+| 23 | Non-metallic minerals | 8.88 | 14.58 | 25.80 | 29.01 | -3.50 | — | yes |
+| 24 | Basic metals | 9.50 | 8.71 | 5.98 | 28.12 | -15.56 | — | yes |
+| 25 | Fabricated metal products | 8.88 | 6.32 | 15.15 | 29.97 | -17.49 | — | yes |
+| 26 | Computer and electronics | 9.50 | 14.59 | -2.03 | 31.08 | -4.94 | — | yes |
+| 27 | Electrical equipment | 9.06 | 29.25 | 3.96 | 49.69 | 1.45 | — | yes |
+| 28 | Machinery and equipment | 9.06 | -3.70 | -22.20 | 33.34 | -22.20 | — | yes |
+| 29 | Motor vehicles | 9.06 | 32.29 | 28.95 | 151.62 | -27.11 | — | yes |
+| 30 | Other transport equipment | 9.06 | -1.18 | 91.08 | 91.08 | -23.93 | — | yes |
+| 31 | Furniture | 9.50 | 32.66 | 21.72 | 34.29 | 9.58 | BELOW worst 5-yr | no |
+| 32 | Other manufacturing | 9.50 | 12.63 | 30.95 | 30.95 | -27.63 | — | yes |
+| 33 | Repair and installation | 9.06 | 23.16 | 4.10 | 57.65 | -11.50 | — | yes |
+| 35 | Electricity, gas and steam | 2.90 | 3.96 | 2.08 | 7.48 | 0.73 | — | yes |
+| 36 | Water supply and waste | 4.53 | 4.47 | 9.07 | 9.07 | -4.22 | — | yes |
+| B | Mining | -1.10 | -2.21 | -1.39 | 23.44 | -3.37 | — | — |
+| C | Manufacturing | 6.38 | 4.32 | 8.09 | 10.15 | 1.28 | — | — |
+| D | Electricity | 2.90 | 4.21 | 2.06 | 7.57 | 0.36 | — | — |
+| E | Water | 4.53 | 4.51 | 8.88 | 8.88 | 0.59 | — | — |
 
-0 of 34 units flagged.
+1 of 34 units flagged.
 <!-- /AUTO:plaus -->
 
 Early-warning flags compare 2023–25 with 2020–22 averages, scaled by each branch's own volatility; branches under 0.5%
@@ -780,21 +854,21 @@ of manufacturing need two flags only for reporting, a negative margin is an auto
 | 13 | Textiles | 1.90 | 22.42 | -0.61 | -0.35 | 1.51 | — | — | 0 | no |
 | 14 | Wearing apparel | 0.91 | 7.43 | 0.20 | -0.82 | -0.28 | FLAG | — | 1 | no |
 | 15 | Leather and footwear | 0.16 | 11.86 | 0.70 | 0.17 | 4.10 | — | — | 0 | no |
-| 16 | Wood products | 0.17 | 19.41 | -1.13 | -4.07 | 3.43 | insufficient data | — | 2 | no |
+| 16 | Wood products | 0.17 | 19.41 | -1.13 | -4.07 | -0.56 | insufficient data | — | 2 | no |
 | 17 | Paper products | 1.25 | 17.09 | 3.43 | 1.68 | 0.53 | — | — | 0 | no |
 | 18 | Printing | 0.71 | 27.97 | 0.70 | 0.77 | -0.91 | — | insufficient data | 0 | no |
 | 19 | Refined petroleum products | 25.31 | 36.80 | -1.85 | 0.90 | 0.41 | — | — | 1 | no |
 | 20 | Chemicals | 7.28 | 27.44 | 0.25 | -0.26 | 3.28 | — | — | 0 | no |
-| 21 | Pharmaceuticals | 0.14 | 1.62 | 0.02 | 0.89 | 0.24 | — | insufficient data | 0 | yes |
+| 21 | Pharmaceuticals | 0.14 | 1.62 | 0.02 | 0.89 | 0.78 | — | insufficient data | 0 | yes |
 | 22 | Rubber and plastics | 3.02 | 14.67 | 1.62 | 0.59 | 2.98 | — | — | 0 | no |
 | 23 | Non-metallic minerals | 6.84 | 24.15 | -0.19 | 1.17 | 3.24 | — | — | 0 | no |
 | 24 | Basic metals | 5.19 | 25.24 | -2.89 | 0.02 | -0.11 | — | — | 1 | no |
 | 25 | Fabricated metal products | 3.43 | 17.04 | -0.58 | 0.17 | 1.53 | — | — | 0 | no |
 | 26 | Computer and electronics | 0.32 | 22.22 | 0.63 | -0.29 | 1.75 | insufficient data | — | 0 | no |
-| 27 | Electrical equipment | 1.27 | 13.25 | 0.64 | -0.30 | 0.33 | — | — | 0 | no |
-| 28 | Machinery and equipment | 0.60 | 22.53 | 1.11 | -0.49 | 0.69 | — | — | 0 | no |
-| 29 | Motor vehicles | 1.56 | 19.77 | -0.00 | 2.09 | 0.34 | FLAG | — | 1 | no |
-| 30 | Other transport equipment | 0.19 | -44.89 | 0.70 | 1.26 | 0.19 | — | insufficient data | 0 | yes |
+| 27 | Electrical equipment | 1.27 | 13.25 | 0.64 | -0.30 | 1.69 | — | — | 0 | no |
+| 28 | Machinery and equipment | 0.60 | 22.53 | 1.11 | -0.49 | -0.23 | — | — | 0 | no |
+| 29 | Motor vehicles | 1.56 | 19.77 | -0.00 | 2.09 | 1.97 | FLAG | — | 1 | no |
+| 30 | Other transport equipment | 0.19 | -44.89 | 0.70 | 1.26 | 1.99 | — | insufficient data | 0 | yes |
 | 31 | Furniture | 1.81 | 18.29 | 1.84 | 2.95 | 1.49 | FLAG | — | 1 | no |
 | 32 | Other manufacturing | 0.56 | 17.41 | 0.05 | -0.78 | 0.23 | — | insufficient data | 0 | no |
 | 33 | Repair and installation | 5.05 | 17.45 | 0.70 | 0.74 | -1.49 | — | insufficient data | 1 | no |
@@ -836,7 +910,7 @@ Pipeline tests on the loaded panel:
 |---|---|---|
 | validator catches 6 seeded corruptions (balance, NACE, negative cash) | 6 | yes |
 | DuPont: margin x turnover x multiplier = ROE (max abs) | 1.4e-14 | yes |
-| TFP index equals an independent firm-by-firm re-computation (NACE 10, 2024; max abs gap) | 7.8e-16 | yes |
+| TFP index equals an independent firm-by-firm re-computation (NACE 10, 2024; max abs gap) | 8.9e-16 | yes |
 | market shares sum to one in every NACE-year cell (max gap) | 2.2e-16 | yes |
 | firm forecasts add up to the Layer-A branch forecast (%) | 2.2e-14 | yes |
 | firm-level econometric models estimated (statsmodels = independent numpy computation, asserted) | 14 | yes |
@@ -882,102 +956,124 @@ every v1 draw that the share model and the Layer-A consistency checks use. ROA, 
 are non-linear accounting functions of these blocks, so no closed-form true parameter exists for them (stated in the
 tables). Coverage is measured over replications of the structural layer.
 
+**Calibration of the SYNTHETIC panel (v2.2, `DGP_CAL`; level constants, not estimated parameters).** In the previous
+version the share of loss-making firms (profit before tax < 0) drifted from 29% (2019) to 42% (2025) and the
+aggregate net margin was 5.4% of revenue in 2025 (4.8–8.0% over 2019–2025; profit before tax 6.7–11.5% of deductible
+expenses): the capital scale constant was set by branch only, so nominal labour-productivity growth raised capital /
+revenue and the interest burden mechanically year after year. Three changes: (1) the capital scale constant is
+additive in branch and year (median capital / revenue = 0.5 in every branch-year); (2) the mark-up of the value-added
+share over the branch unit labour cost is 0.18 (was 0.15); (3) a year-common intercept $\delta_t$ of the value-added
+share is set by bisection so that **25% of firms are loss-making in every year**. Basis of the target: the DVX
+declarations report the *amount* of declared losses (14–27% of taxable profit) but not the *number* of loss-making
+payers; in firm-level accounts data the loss-making share in manufacturing is typically between a fifth and a third,
+and 25% is the middle of that range — a calibration choice, not an Azerbaijani statistic. The reference for the
+aggregate margin is the DVX declaration net margin (10.0–13.2% of deductible expenses, 2021–2025, all payers).
+Result (2019–2025): loss-making share 25.0% in every year (was 28.9–43.3%); profit before tax 9.2–12.7% of deductible
+expenses (was 6.7–11.5%); net profit 6.6–8.8% of revenue (was 4.8–8.0%; 2025: 8.5%, was 5.4%); Altman Z''-EM distress
+zone 6.3–8.2% of firms (was 7.5–11.4%), safe zone 79–81% (was 74–80%). Declared losses equal 5–9% of the profits of
+profitable firms, below the DVX range (the declarations cover all sectors, and their losses are concentrated in large
+payers, which the synthetic panel does not attempt to mimic). $\delta_t$ and the capital year constant are absorbed by
+the year effects of every estimator (firm + year, NACE × year, NACE + year), so the true parameters in `DGP_TRUE` are
+unchanged; parameter recovery stays 30/30 within 4 s.e. for the consistent estimators, and the Monte Carlo coverage is
+essentially unchanged. Revenues still add up to DSK branch output and firm counts equal DSK active enterprises; every
+file keeps the SYNTHETIC watermark.
+
 <!-- AUTO:econ_models -->
 **Data mode: SYNTHETIC** (FR10_firm_panel_SYNTHETIC.csv, 22,495 rows, 5,255 firms, 2019–2025) — **SYNTHETIC — pipeline test, not results** / *sintetik məlumat — texniki nümayiş*.
 
 | model_id | estimator | dependent | n_obs | n_firms | r2 | r2_type | auc | auc_oos | RTS | crs_p |
 |---|---|---|---|---|---|---|---|---|---|---|
-| B_roa_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | roa | 21888 | 4648 | 0.273 | within R² | — | — | — | — |
-| B_roa_pool | Pooled LS + NACE x year fixed effects; cluster(firm) | roa | 22495 | 5255 | 0.439 | R² | — | — | — | — |
-| B_margin_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | op_margin | 21849 | 4644 | 0.439 | within R² | — | — | — | — |
-| B_margin_pool | Pooled LS + NACE x year fixed effects; cluster(firm) | op_margin | 22456 | 5251 | 0.659 | R² | — | — | — | — |
-| B_pf_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | ln_va | 21888 | 4648 | 0.953 | within R² | — | — | 0.945 | 0.000 |
-| B_pf_pool | Pooled LS + NACE and year dummies; cluster(firm) | ln_va | 22495 | 5255 | 0.991 | R² | — | — | 0.956 | 0.000 |
-| B_tfp_idx | Pooled LS + NACE x year fixed effects; cluster(firm) | tfp_idx | 22495 | 5255 | 0.159 | R² | — | — | — | — |
-| B_tfp_idx_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | tfp_idx | 21888 | 4648 | 0.031 | within R² | — | — | — | — |
-| B_tfp_pf | Pooled LS + NACE x year fixed effects; cluster(firm) | tfp_pf | 22495 | 5255 | 0.579 | R² | — | — | — | — |
-| B_distress | Logit (MLE), dummies year; cluster(firm) | distress | 17240 | 4648 | 0.383 | McFadden pseudo-R² | 0.911 | 0.914 | — | — |
-| B_invest_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | inv_rate | 16279 | 3687 | 0.455 | within R² | — | — | — | — |
-| B_invest_pool | Pooled LS + NACE x year fixed effects; cluster(firm) | inv_rate | 17240 | 4648 | 0.525 | R² | — | — | — | — |
+| B_roa_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | roa | 21888 | 4648 | 0.258 | within R² | — | — | — | — |
+| B_roa_pool | Pooled LS + NACE x year fixed effects; cluster(firm) | roa | 22495 | 5255 | 0.435 | R² | — | — | — | — |
+| B_margin_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | op_margin | 21849 | 4644 | 0.410 | within R² | — | — | — | — |
+| B_margin_pool | Pooled LS + NACE x year fixed effects; cluster(firm) | op_margin | 22456 | 5251 | 0.643 | R² | — | — | — | — |
+| B_pf_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | ln_va | 21888 | 4648 | 0.950 | within R² | — | — | 0.945 | 0.000 |
+| B_pf_pool | Pooled LS + NACE and year dummies; cluster(firm) | ln_va | 22495 | 5255 | 0.991 | R² | — | — | 0.955 | 0.000 |
+| B_tfp_idx | Pooled LS + NACE x year fixed effects; cluster(firm) | tfp_idx | 22495 | 5255 | 0.151 | R² | — | — | — | — |
+| B_tfp_idx_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | tfp_idx | 21888 | 4648 | 0.033 | within R² | — | — | — | — |
+| B_tfp_pf | Pooled LS + NACE x year fixed effects; cluster(firm) | tfp_pf | 22495 | 5255 | 0.601 | R² | — | — | — | — |
+| B_distress | Logit (MLE), dummies year; cluster(firm) | distress | 17240 | 4648 | 0.387 | McFadden pseudo-R² | 0.918 | 0.920 | — | — |
+| B_invest_fe | Two-way fixed effects (firm + year), firm-demeaned; cluster(firm) | inv_rate | 16279 | 3687 | 0.457 | within R² | — | — | — | — |
+| B_invest_pool | Pooled LS + NACE x year fixed effects; cluster(firm) | inv_rate | 17240 | 4648 | 0.518 | R² | — | — | — | — |
 | B_export | Logit (MLE), dummies nace2 + year; cluster(firm) | exporter | 17240 | 4648 | 0.112 | McFadden pseudo-R² | 0.724 | — | — | — |
 
 Coefficients (cluster-robust by firm):
 
 | model_id | term | coef | se | p | ci_low | ci_high |
 |---|---|---|---|---|---|---|
-| B_roa_fe | ln_emp | 0.0169 | 0.0031 | 0.0000 | 0.0108 | 0.0229 |
-| B_roa_fe | leverage | -0.1430 | 0.0342 | 0.0000 | -0.2101 | -0.0759 |
-| B_roa_fe | ln_current_ratio | 0.0089 | 0.0032 | 0.0049 | 0.0027 | 0.0151 |
-| B_roa_fe | ln_age | 0.0046 | 0.0020 | 0.0204 | 0.0007 | 0.0086 |
-| B_roa_fe | export_share | 0.0457 | 0.0054 | 0.0000 | 0.0352 | 0.0563 |
-| B_roa_fe | demand_growth | 0.1347 | 0.0095 | 0.0000 | 0.1161 | 0.1532 |
-| B_roa_fe | ulc | -1.4110 | 0.0685 | 0.0000 | -1.5454 | -1.2766 |
-| B_roa_pool | ln_emp | 0.0204 | 0.0012 | 0.0000 | 0.0180 | 0.0228 |
-| B_roa_pool | leverage | -0.1659 | 0.0116 | 0.0000 | -0.1885 | -0.1432 |
-| B_roa_pool | ln_current_ratio | 0.0053 | 0.0030 | 0.0775 | -0.0006 | 0.0111 |
-| B_roa_pool | ln_age | 0.0070 | 0.0012 | 0.0000 | 0.0046 | 0.0093 |
-| B_roa_pool | state | -0.0435 | 0.0052 | 0.0000 | -0.0536 | -0.0333 |
-| B_roa_pool | foreign | 0.0239 | 0.0050 | 0.0000 | 0.0141 | 0.0336 |
-| B_roa_pool | joint | 0.0090 | 0.0056 | 0.1090 | -0.0020 | 0.0199 |
-| B_roa_pool | export_share | 0.0398 | 0.0058 | 0.0000 | 0.0284 | 0.0513 |
-| B_roa_pool | baku | 0.0087 | 0.0027 | 0.0013 | 0.0034 | 0.0139 |
-| B_roa_pool | ulc | -1.3182 | 0.0393 | 0.0000 | -1.3952 | -1.2412 |
-| B_margin_fe | ln_emp | 0.0095 | 0.0012 | 0.0000 | 0.0072 | 0.0118 |
-| B_margin_fe | leverage | -0.0608 | 0.0130 | 0.0000 | -0.0862 | -0.0354 |
-| B_margin_fe | ln_current_ratio | 0.0118 | 0.0012 | 0.0000 | 0.0094 | 0.0143 |
-| B_margin_fe | ln_age | 0.0043 | 0.0008 | 0.0000 | 0.0026 | 0.0059 |
-| B_margin_fe | export_share | 0.0514 | 0.0029 | 0.0000 | 0.0457 | 0.0570 |
-| B_margin_fe | demand_growth | 0.0779 | 0.0021 | 0.0000 | 0.0739 | 0.0820 |
-| B_margin_fe | ulc | -1.0059 | 0.0138 | 0.0000 | -1.0330 | -0.9788 |
+| B_roa_fe | ln_emp | 0.0152 | 0.0024 | 0.0000 | 0.0105 | 0.0200 |
+| B_roa_fe | leverage | -0.1807 | 0.0262 | 0.0000 | -0.2322 | -0.1293 |
+| B_roa_fe | ln_current_ratio | -0.0150 | 0.0024 | 0.0000 | -0.0197 | -0.0104 |
+| B_roa_fe | ln_age | 0.0026 | 0.0015 | 0.0817 | -0.0003 | 0.0054 |
+| B_roa_fe | export_share | 0.0296 | 0.0043 | 0.0000 | 0.0211 | 0.0380 |
+| B_roa_fe | demand_growth | 0.0885 | 0.0072 | 0.0000 | 0.0743 | 0.1027 |
+| B_roa_fe | ulc | -1.1098 | 0.0636 | 0.0000 | -1.2345 | -0.9851 |
+| B_roa_pool | ln_emp | 0.0102 | 0.0009 | 0.0000 | 0.0085 | 0.0120 |
+| B_roa_pool | leverage | -0.1753 | 0.0088 | 0.0000 | -0.1926 | -0.1579 |
+| B_roa_pool | ln_current_ratio | -0.0136 | 0.0023 | 0.0000 | -0.0182 | -0.0090 |
+| B_roa_pool | ln_age | 0.0034 | 0.0009 | 0.0002 | 0.0016 | 0.0052 |
+| B_roa_pool | state | -0.0349 | 0.0038 | 0.0000 | -0.0423 | -0.0275 |
+| B_roa_pool | foreign | 0.0218 | 0.0042 | 0.0000 | 0.0136 | 0.0300 |
+| B_roa_pool | joint | 0.0085 | 0.0049 | 0.0811 | -0.0010 | 0.0180 |
+| B_roa_pool | export_share | 0.0244 | 0.0048 | 0.0000 | 0.0151 | 0.0338 |
+| B_roa_pool | baku | 0.0059 | 0.0021 | 0.0046 | 0.0018 | 0.0100 |
+| B_roa_pool | ulc | -1.0098 | 0.0330 | 0.0000 | -1.0745 | -0.9451 |
+| B_margin_fe | ln_emp | 0.0094 | 0.0012 | 0.0000 | 0.0070 | 0.0117 |
+| B_margin_fe | leverage | -0.0614 | 0.0134 | 0.0000 | -0.0877 | -0.0352 |
+| B_margin_fe | ln_current_ratio | 0.0120 | 0.0013 | 0.0000 | 0.0094 | 0.0145 |
+| B_margin_fe | ln_age | 0.0042 | 0.0009 | 0.0000 | 0.0025 | 0.0059 |
+| B_margin_fe | export_share | 0.0513 | 0.0030 | 0.0000 | 0.0455 | 0.0572 |
+| B_margin_fe | demand_growth | 0.0778 | 0.0022 | 0.0000 | 0.0736 | 0.0820 |
+| B_margin_fe | ulc | -1.0063 | 0.0142 | 0.0000 | -1.0342 | -0.9784 |
 | B_margin_pool | ln_emp | 0.0156 | 0.0004 | 0.0000 | 0.0149 | 0.0163 |
-| B_margin_pool | leverage | -0.0586 | 0.0043 | 0.0000 | -0.0670 | -0.0501 |
-| B_margin_pool | ln_current_ratio | 0.0114 | 0.0012 | 0.0000 | 0.0091 | 0.0137 |
+| B_margin_pool | leverage | -0.0585 | 0.0044 | 0.0000 | -0.0671 | -0.0499 |
+| B_margin_pool | ln_current_ratio | 0.0115 | 0.0012 | 0.0000 | 0.0091 | 0.0138 |
 | B_margin_pool | ln_age | 0.0064 | 0.0005 | 0.0000 | 0.0055 | 0.0074 |
-| B_margin_pool | state | -0.0283 | 0.0017 | 0.0000 | -0.0316 | -0.0249 |
-| B_margin_pool | foreign | 0.0238 | 0.0020 | 0.0000 | 0.0198 | 0.0278 |
-| B_margin_pool | joint | 0.0054 | 0.0027 | 0.0440 | 0.0001 | 0.0107 |
-| B_margin_pool | export_share | 0.0546 | 0.0028 | 0.0000 | 0.0490 | 0.0601 |
-| B_margin_pool | baku | 0.0086 | 0.0011 | 0.0000 | 0.0066 | 0.0107 |
-| B_margin_pool | ulc | -0.9947 | 0.0083 | 0.0000 | -1.0110 | -0.9784 |
-| B_pf_fe | ln_L | 0.4468 | 0.0025 | 0.0000 | 0.4419 | 0.4516 |
-| B_pf_fe | ln_K | 0.4985 | 0.0013 | 0.0000 | 0.4960 | 0.5010 |
-| B_pf_pool | ln_L | 0.4936 | 0.0027 | 0.0000 | 0.4884 | 0.4989 |
-| B_pf_pool | ln_K | 0.4623 | 0.0020 | 0.0000 | 0.4583 | 0.4663 |
-| B_tfp_idx | ln_emp | -0.0202 | 0.0009 | 0.0000 | -0.0219 | -0.0186 |
-| B_tfp_idx | ln_age | -0.0023 | 0.0008 | 0.0033 | -0.0038 | -0.0008 |
-| B_tfp_idx | state | -0.0142 | 0.0031 | 0.0000 | -0.0202 | -0.0082 |
-| B_tfp_idx | foreign | 0.0217 | 0.0050 | 0.0000 | 0.0119 | 0.0314 |
-| B_tfp_idx | joint | 0.0085 | 0.0056 | 0.1338 | -0.0026 | 0.0195 |
-| B_tfp_idx | exporter | -0.0045 | 0.0014 | 0.0011 | -0.0071 | -0.0018 |
-| B_tfp_idx | leverage | 0.0138 | 0.0055 | 0.0127 | 0.0029 | 0.0247 |
-| B_tfp_idx | baku | -0.0008 | 0.0022 | 0.7232 | -0.0050 | 0.0035 |
-| B_tfp_idx_fe | ln_emp | -0.0191 | 0.0014 | 0.0000 | -0.0220 | -0.0163 |
-| B_tfp_idx_fe | ln_age | -0.0014 | 0.0008 | 0.0826 | -0.0029 | 0.0002 |
-| B_tfp_idx_fe | exporter | -0.0026 | 0.0009 | 0.0036 | -0.0043 | -0.0008 |
-| B_tfp_idx_fe | leverage | 0.0241 | 0.0136 | 0.0766 | -0.0026 | 0.0507 |
+| B_margin_pool | state | -0.0283 | 0.0017 | 0.0000 | -0.0317 | -0.0249 |
+| B_margin_pool | foreign | 0.0238 | 0.0021 | 0.0000 | 0.0197 | 0.0278 |
+| B_margin_pool | joint | 0.0053 | 0.0027 | 0.0528 | -0.0001 | 0.0107 |
+| B_margin_pool | export_share | 0.0545 | 0.0029 | 0.0000 | 0.0488 | 0.0602 |
+| B_margin_pool | baku | 0.0087 | 0.0011 | 0.0000 | 0.0065 | 0.0108 |
+| B_margin_pool | ulc | -0.9946 | 0.0085 | 0.0000 | -1.0112 | -0.9779 |
+| B_pf_fe | ln_L | 0.4468 | 0.0025 | 0.0000 | 0.4419 | 0.4517 |
+| B_pf_fe | ln_K | 0.4984 | 0.0014 | 0.0000 | 0.4958 | 0.5011 |
+| B_pf_pool | ln_L | 0.4956 | 0.0027 | 0.0000 | 0.4903 | 0.5009 |
+| B_pf_pool | ln_K | 0.4599 | 0.0021 | 0.0000 | 0.4558 | 0.4640 |
+| B_tfp_idx | ln_emp | -0.0210 | 0.0009 | 0.0000 | -0.0229 | -0.0192 |
+| B_tfp_idx | ln_age | -0.0034 | 0.0009 | 0.0002 | -0.0051 | -0.0016 |
+| B_tfp_idx | state | -0.0175 | 0.0035 | 0.0000 | -0.0244 | -0.0107 |
+| B_tfp_idx | foreign | 0.0260 | 0.0054 | 0.0000 | 0.0154 | 0.0365 |
+| B_tfp_idx | joint | 0.0089 | 0.0067 | 0.1843 | -0.0042 | 0.0220 |
+| B_tfp_idx | exporter | -0.0055 | 0.0015 | 0.0002 | -0.0085 | -0.0026 |
+| B_tfp_idx | leverage | 0.0196 | 0.0063 | 0.0019 | 0.0072 | 0.0319 |
+| B_tfp_idx | baku | -0.0014 | 0.0024 | 0.5692 | -0.0062 | 0.0034 |
+| B_tfp_idx_fe | ln_emp | -0.0201 | 0.0015 | 0.0000 | -0.0230 | -0.0172 |
+| B_tfp_idx_fe | ln_age | -0.0014 | 0.0008 | 0.0883 | -0.0030 | 0.0002 |
+| B_tfp_idx_fe | exporter | -0.0036 | 0.0009 | 0.0001 | -0.0054 | -0.0018 |
+| B_tfp_idx_fe | leverage | 0.0288 | 0.0143 | 0.0437 | 0.0008 | 0.0569 |
 | B_tfp_pf | state | -0.0756 | 0.0082 | 0.0000 | -0.0917 | -0.0595 |
-| B_tfp_pf | foreign | 0.0983 | 0.0089 | 0.0000 | 0.0810 | 0.1157 |
+| B_tfp_pf | foreign | 0.0983 | 0.0089 | 0.0000 | 0.0809 | 0.1157 |
 | B_tfp_pf | joint | 0.0350 | 0.0140 | 0.0127 | 0.0075 | 0.0625 |
-| B_distress | leverage_l1 | 10.0068 | 0.3098 | 0.0000 | 9.3996 | 10.6141 |
-| B_distress | ln_current_ratio_l1 | 0.1412 | 0.1005 | 0.1600 | -0.0558 | 0.3382 |
-| B_distress | roa_w_l1 | -7.0902 | 0.3545 | 0.0000 | -7.7849 | -6.3954 |
-| B_distress | ln_emp_l1 | -0.1020 | 0.0228 | 0.0000 | -0.1467 | -0.0573 |
-| B_distress | export_share_l1 | 0.4248 | 0.2303 | 0.0651 | -0.0265 | 0.8762 |
-| B_distress | ln_age | -0.1772 | 0.0411 | 0.0000 | -0.2577 | -0.0967 |
-| B_distress | state | 0.3044 | 0.1059 | 0.0040 | 0.0969 | 0.5119 |
-| B_distress | foreign | -0.0474 | 0.1366 | 0.7284 | -0.3152 | 0.2203 |
-| B_distress | demand_growth | -2.4877 | 0.1458 | 0.0000 | -2.7735 | -2.2020 |
-| B_invest_fe | sales_growth | 0.0811 | 0.0010 | 0.0000 | 0.0791 | 0.0830 |
-| B_invest_fe | leverage_l1 | -0.0577 | 0.0103 | 0.0000 | -0.0780 | -0.0375 |
-| B_invest_fe | roa_w_l1 | 0.2072 | 0.0042 | 0.0000 | 0.1991 | 0.2154 |
+| B_distress | leverage_l1 | 10.0756 | 0.3592 | 0.0000 | 9.3716 | 10.7796 |
+| B_distress | ln_current_ratio_l1 | 0.0172 | 0.1188 | 0.8849 | -0.2156 | 0.2500 |
+| B_distress | roa_w_l1 | -7.7893 | 0.4027 | 0.0000 | -8.5785 | -7.0000 |
+| B_distress | ln_emp_l1 | -0.0677 | 0.0254 | 0.0077 | -0.1175 | -0.0179 |
+| B_distress | export_share_l1 | 0.3731 | 0.2626 | 0.1554 | -0.1417 | 0.8878 |
+| B_distress | ln_age | -0.1709 | 0.0468 | 0.0003 | -0.2627 | -0.0791 |
+| B_distress | state | 0.2897 | 0.1183 | 0.0143 | 0.0578 | 0.5217 |
+| B_distress | foreign | -0.0374 | 0.1535 | 0.8075 | -0.3383 | 0.2635 |
+| B_distress | demand_growth | -2.5513 | 0.1566 | 0.0000 | -2.8583 | -2.2443 |
+| B_invest_fe | sales_growth | 0.0810 | 0.0010 | 0.0000 | 0.0791 | 0.0830 |
+| B_invest_fe | leverage_l1 | -0.0578 | 0.0103 | 0.0000 | -0.0780 | -0.0376 |
+| B_invest_fe | roa_w_l1 | 0.2080 | 0.0044 | 0.0000 | 0.1992 | 0.2167 |
 | B_invest_fe | ln_emp_l1 | -0.0045 | 0.0010 | 0.0000 | -0.0064 | -0.0026 |
-| B_invest_pool | sales_growth | 0.0819 | 0.0013 | 0.0000 | 0.0794 | 0.0844 |
-| B_invest_pool | leverage_l1 | -0.0520 | 0.0024 | 0.0000 | -0.0567 | -0.0472 |
-| B_invest_pool | roa_w_l1 | 0.2113 | 0.0037 | 0.0000 | 0.2040 | 0.2186 |
-| B_invest_pool | ln_emp_l1 | -0.0040 | 0.0003 | 0.0000 | -0.0045 | -0.0035 |
-| B_invest_pool | state | -0.0206 | 0.0014 | 0.0000 | -0.0233 | -0.0179 |
-| B_invest_pool | foreign | -0.0004 | 0.0016 | 0.8039 | -0.0035 | 0.0027 |
-| B_invest_pool | joint | -0.0001 | 0.0019 | 0.9623 | -0.0038 | 0.0037 |
+| B_invest_pool | sales_growth | 0.0820 | 0.0013 | 0.0000 | 0.0795 | 0.0845 |
+| B_invest_pool | leverage_l1 | -0.0523 | 0.0024 | 0.0000 | -0.0570 | -0.0475 |
+| B_invest_pool | roa_w_l1 | 0.2102 | 0.0040 | 0.0000 | 0.2024 | 0.2180 |
+| B_invest_pool | ln_emp_l1 | -0.0040 | 0.0003 | 0.0000 | -0.0045 | -0.0034 |
+| B_invest_pool | state | -0.0207 | 0.0014 | 0.0000 | -0.0233 | -0.0180 |
+| B_invest_pool | foreign | -0.0004 | 0.0016 | 0.8184 | -0.0034 | 0.0027 |
+| B_invest_pool | joint | -0.0001 | 0.0019 | 0.9670 | -0.0038 | 0.0037 |
 | B_export | ln_emp_l1 | 0.4057 | 0.0138 | 0.0000 | 0.3787 | 0.4327 |
 | B_export | foreign | 1.0329 | 0.0624 | 0.0000 | 0.9107 | 1.1551 |
 | B_export | state | -0.6258 | 0.0642 | 0.0000 | -0.7517 | -0.4999 |
@@ -989,62 +1085,62 @@ Coefficients (cluster-robust by firm):
 
 Interpretation (Azerbaijani):
 
-- **B_roa_fe**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 21,888 müşahidə (2019–2025). Daxili R² = 0.273. Əsas amillər: vahid əmək xərci (əmək haqqı fondu / gəlir) −1.411 (azaldır, p < 0.001); sahə tələbinin artımı (Δln DSK buraxılışı) 0.135 (artırır, p < 0.001); ixracın gəlirdə payı 0.046 (artırır, p < 0.001); ln işçilərin sayı (ölçü) 0.017 (artırır, p < 0.001). Zamanla dəyişməyən amillər (mülkiyyət, region) müəssisə effektlərinə daxildir; onlar birləşdirilmiş modeldə qiymətləndirilir.
-- **B_roa_pool**: [sintetik məlumat — texniki nümayiş] 5,255 müəssisə, 22,495 müşahidə (2019–2025). R² = 0.439. Əsas amillər: vahid əmək xərci (əmək haqqı fondu / gəlir) −1.318 (azaldır, p < 0.001); ln işçilərin sayı (ölçü) 0.020 (artırır, p < 0.001); borc yükü (öhdəliklər / aktivlər) −0.166 (azaldır, p < 0.001); dövlət mülkiyyəti −0.043 (azaldır, p < 0.001). Sahə tələbinin artımı NACE × il effektlərinə daxildir; o, iki yönlü FE modelində qiymətləndirilir.
-- **B_margin_fe**: [sintetik məlumat — texniki nümayiş] 4,644 müəssisə, 21,849 müşahidə (2019–2025). Daxili R² = 0.439. Əsas amillər: vahid əmək xərci (əmək haqqı fondu / gəlir) −1.006 (azaldır, p < 0.001); sahə tələbinin artımı (Δln DSK buraxılışı) 0.078 (artırır, p < 0.001); ixracın gəlirdə payı 0.051 (artırır, p < 0.001); ln cari likvidlik əmsalı 0.012 (artırır, p < 0.001). Zamanla dəyişməyən amillər (mülkiyyət, region) müəssisə effektlərinə daxildir; onlar birləşdirilmiş modeldə qiymətləndirilir.
-- **B_margin_pool**: [sintetik məlumat — texniki nümayiş] 5,251 müəssisə, 22,456 müşahidə (2019–2025). R² = 0.659. Əsas amillər: vahid əmək xərci (əmək haqqı fondu / gəlir) −0.995 (azaldır, p < 0.001); ln işçilərin sayı (ölçü) 0.016 (artırır, p < 0.001); ixracın gəlirdə payı 0.055 (artırır, p < 0.001); dövlət mülkiyyəti −0.028 (azaldır, p < 0.001). Sahə tələbinin artımı NACE × il effektlərinə daxildir; o, iki yönlü FE modelində qiymətləndirilir.
-- **B_pf_fe**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 21,888 müşahidə (2019–2025). Daxili R² = 0.953. Əmək elastikliyi 0.447, kapital elastikliyi 0.498; miqyasdan gəlir 0.945 [0.941, 0.949]; sabit gəlir (CRS) hipotezi p = 0.0000 ilə rədd edilir. Olley–Pakes / Levinsohn–Petrin / ACF tətbiq edilmir: onlar məhsuldarlıq üçün avtoreqressiv (Markov) hərəkət qanunu qiymətləndirir, bu isə sifarişçinin məhdudiyyətinə ziddir.
-- **B_pf_pool**: [sintetik məlumat — texniki nümayiş] 5,255 müəssisə, 22,495 müşahidə (2019–2025). R² = 0.991. Əmək elastikliyi 0.494, kapital elastikliyi 0.462; miqyasdan gəlir 0.956 [0.953, 0.959]; sabit gəlir (CRS) hipotezi p = 0.0000 ilə rədd edilir. Olley–Pakes / Levinsohn–Petrin / ACF tətbiq edilmir: onlar məhsuldarlıq üçün avtoreqressiv (Markov) hərəkət qanunu qiymətləndirir, bu isə sifarişçinin məhdudiyyətinə ziddir. Birləşdirilmiş OLS müəssisənin daimi məhsuldarlığını nəzərə almır; FE qiymətləndiricisi ilə fərq bu sürüşməni göstərir.
-- **B_tfp_idx**: [sintetik məlumat — texniki nümayiş] 5,255 müəssisə, 22,495 müşahidə (2019–2025). R² = 0.159. TFP ilə əlaqəli amillər: ln işçilərin sayı (ölçü) −0.020 (azaldır, p < 0.001); dövlət mülkiyyəti −0.014 (azaldır, p < 0.001); xarici mülkiyyət 0.022 (artırır, p < 0.001); ixracatçı (0/1) −0.004 (azaldır, p = 0.001).
-- **B_tfp_idx_fe**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 21,888 müşahidə (2019–2025). Daxili R² = 0.031. TFP ilə əlaqəli amillər: ln işçilərin sayı (ölçü) −0.019 (azaldır, p < 0.001); ixracatçı (0/1) −0.003 (azaldır, p = 0.004).
-- **B_tfp_pf**: [sintetik məlumat — texniki nümayiş] 5,255 müəssisə, 22,495 müşahidə (2019–2025). R² = 0.579. TFP ilə əlaqəli amillər: xarici mülkiyyət 0.098 (artırır, p < 0.001); dövlət mülkiyyəti −0.076 (azaldır, p < 0.001); birgə mülkiyyət 0.035 (artırır, p = 0.013).
-- **B_distress**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 17,240 müşahidə (2020–2025). Çətinlik tezliyi 9.6%. AUC nümunədə 0.911, son iki ildə (nümunədən kənar, 2020-2023 üzrə qiymətləndirilmiş) 0.914; Brier 0.0583; Hosmer–Lemeshow p = 0.061. Ən böyük orta marjinal effektlər: borc yükü, t−1 0.5720; ROA, t−1 (±0,3 hüdudunda) −0.4053; sahə tələbinin artımı (Δln DSK buraxılışı) −0.1422. Gecikmiş çətinlik statusu modelə daxil edilmir.
-- **B_invest_fe**: [sintetik məlumat — texniki nümayiş] 3,687 müəssisə, 16,279 müşahidə (2020–2025). Daxili R² = 0.455. İnvestisiya normasının amilləri: satışların artımı (Δln gəlir) 0.081 (artırır, p < 0.001); ROA, t−1 (±0,3 hüdudunda) 0.207 (artırır, p < 0.001); borc yükü, t−1 −0.058 (azaldır, p < 0.001); ln işçilərin sayı, t−1 −0.004 (azaldır, p < 0.001). Gecikmiş investisiya norması modeldə yoxdur.
-- **B_invest_pool**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 17,240 müşahidə (2020–2025). R² = 0.525. İnvestisiya normasının amilləri: satışların artımı (Δln gəlir) 0.082 (artırır, p < 0.001); ROA, t−1 (±0,3 hüdudunda) 0.211 (artırır, p < 0.001); borc yükü, t−1 −0.052 (azaldır, p < 0.001); dövlət mülkiyyəti −0.021 (azaldır, p < 0.001). Gecikmiş investisiya norması modeldə yoxdur.
+- **B_roa_fe**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 21,888 müşahidə (2019–2025). Daxili R² = 0.258. Əsas amillər: vahid əmək xərci (əmək haqqı fondu / gəlir) −1.110 (azaldır, p < 0.001); sahə tələbinin artımı (Δln DSK buraxılışı) 0.089 (artırır, p < 0.001); borc yükü (öhdəliklər / aktivlər) −0.181 (azaldır, p < 0.001); ixracın gəlirdə payı 0.030 (artırır, p < 0.001). Zamanla dəyişməyən amillər (mülkiyyət, region) müəssisə effektlərinə daxildir; onlar birləşdirilmiş modeldə qiymətləndirilir.
+- **B_roa_pool**: [sintetik məlumat — texniki nümayiş] 5,255 müəssisə, 22,495 müşahidə (2019–2025). R² = 0.435. Əsas amillər: vahid əmək xərci (əmək haqqı fondu / gəlir) −1.010 (azaldır, p < 0.001); borc yükü (öhdəliklər / aktivlər) −0.175 (azaldır, p < 0.001); ln işçilərin sayı (ölçü) 0.010 (artırır, p < 0.001); dövlət mülkiyyəti −0.035 (azaldır, p < 0.001). Sahə tələbinin artımı NACE × il effektlərinə daxildir; o, iki yönlü FE modelində qiymətləndirilir.
+- **B_margin_fe**: [sintetik məlumat — texniki nümayiş] 4,644 müəssisə, 21,849 müşahidə (2019–2025). Daxili R² = 0.410. Əsas amillər: vahid əmək xərci (əmək haqqı fondu / gəlir) −1.006 (azaldır, p < 0.001); sahə tələbinin artımı (Δln DSK buraxılışı) 0.078 (artırır, p < 0.001); ixracın gəlirdə payı 0.051 (artırır, p < 0.001); ln cari likvidlik əmsalı 0.012 (artırır, p < 0.001). Zamanla dəyişməyən amillər (mülkiyyət, region) müəssisə effektlərinə daxildir; onlar birləşdirilmiş modeldə qiymətləndirilir.
+- **B_margin_pool**: [sintetik məlumat — texniki nümayiş] 5,251 müəssisə, 22,456 müşahidə (2019–2025). R² = 0.643. Əsas amillər: vahid əmək xərci (əmək haqqı fondu / gəlir) −0.995 (azaldır, p < 0.001); ln işçilərin sayı (ölçü) 0.016 (artırır, p < 0.001); ixracın gəlirdə payı 0.054 (artırır, p < 0.001); dövlət mülkiyyəti −0.028 (azaldır, p < 0.001). Sahə tələbinin artımı NACE × il effektlərinə daxildir; o, iki yönlü FE modelində qiymətləndirilir.
+- **B_pf_fe**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 21,888 müşahidə (2019–2025). Daxili R² = 0.950. Əmək elastikliyi 0.447, kapital elastikliyi 0.498; miqyasdan gəlir 0.945 [0.941, 0.949]; sabit gəlir (CRS) hipotezi p = 0.0000 ilə rədd edilir. Olley–Pakes / Levinsohn–Petrin / ACF tətbiq edilmir: onlar məhsuldarlıq üçün avtoreqressiv (Markov) hərəkət qanunu qiymətləndirir, bu isə sifarişçinin məhdudiyyətinə ziddir.
+- **B_pf_pool**: [sintetik məlumat — texniki nümayiş] 5,255 müəssisə, 22,495 müşahidə (2019–2025). R² = 0.991. Əmək elastikliyi 0.496, kapital elastikliyi 0.460; miqyasdan gəlir 0.955 [0.953, 0.958]; sabit gəlir (CRS) hipotezi p = 0.0000 ilə rədd edilir. Olley–Pakes / Levinsohn–Petrin / ACF tətbiq edilmir: onlar məhsuldarlıq üçün avtoreqressiv (Markov) hərəkət qanunu qiymətləndirir, bu isə sifarişçinin məhdudiyyətinə ziddir. Birləşdirilmiş OLS müəssisənin daimi məhsuldarlığını nəzərə almır; FE qiymətləndiricisi ilə fərq bu sürüşməni göstərir.
+- **B_tfp_idx**: [sintetik məlumat — texniki nümayiş] 5,255 müəssisə, 22,495 müşahidə (2019–2025). R² = 0.151. TFP ilə əlaqəli amillər: ln işçilərin sayı (ölçü) −0.021 (azaldır, p < 0.001); dövlət mülkiyyəti −0.018 (azaldır, p < 0.001); xarici mülkiyyət 0.026 (artırır, p < 0.001); ln(1 + yaş) −0.003 (azaldır, p < 0.001).
+- **B_tfp_idx_fe**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 21,888 müşahidə (2019–2025). Daxili R² = 0.033. TFP ilə əlaqəli amillər: ln işçilərin sayı (ölçü) −0.020 (azaldır, p < 0.001); ixracatçı (0/1) −0.004 (azaldır, p < 0.001); borc yükü (öhdəliklər / aktivlər) 0.029 (artırır, p = 0.044).
+- **B_tfp_pf**: [sintetik məlumat — texniki nümayiş] 5,255 müəssisə, 22,495 müşahidə (2019–2025). R² = 0.601. TFP ilə əlaqəli amillər: xarici mülkiyyət 0.098 (artırır, p < 0.001); dövlət mülkiyyəti −0.076 (azaldır, p < 0.001); birgə mülkiyyət 0.035 (artırır, p = 0.013).
+- **B_distress**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 17,240 müşahidə (2020–2025). Çətinlik tezliyi 7.1%. AUC nümunədə 0.918, son iki ildə (nümunədən kənar, 2020-2023 üzrə qiymətləndirilmiş) 0.920; Brier 0.0460; Hosmer–Lemeshow p = 0.152. Ən böyük orta marjinal effektlər: borc yükü, t−1 0.4550; ROA, t−1 (±0,3 hüdudunda) −0.3518; sahə tələbinin artımı (Δln DSK buraxılışı) −0.1152. Gecikmiş çətinlik statusu modelə daxil edilmir.
+- **B_invest_fe**: [sintetik məlumat — texniki nümayiş] 3,687 müəssisə, 16,279 müşahidə (2020–2025). Daxili R² = 0.457. İnvestisiya normasının amilləri: satışların artımı (Δln gəlir) 0.081 (artırır, p < 0.001); ROA, t−1 (±0,3 hüdudunda) 0.208 (artırır, p < 0.001); borc yükü, t−1 −0.058 (azaldır, p < 0.001); ln işçilərin sayı, t−1 −0.004 (azaldır, p < 0.001). Gecikmiş investisiya norması modeldə yoxdur.
+- **B_invest_pool**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 17,240 müşahidə (2020–2025). R² = 0.518. İnvestisiya normasının amilləri: satışların artımı (Δln gəlir) 0.082 (artırır, p < 0.001); ROA, t−1 (±0,3 hüdudunda) 0.210 (artırır, p < 0.001); borc yükü, t−1 −0.052 (azaldır, p < 0.001); dövlət mülkiyyəti −0.021 (azaldır, p < 0.001). Gecikmiş investisiya norması modeldə yoxdur.
 - **B_export**: [sintetik məlumat — texniki nümayiş] 4,648 müəssisə, 17,240 müşahidə (2020–2025). İxracatçıların payı 25.3%; AUC 0.724. Ən böyük orta marjinal effektlər: xarici mülkiyyət 0.1703; dövlət mülkiyyəti −0.1031; ln işçilərin sayı, t−1 0.0669.
 - **B_share**: [sintetik məlumat — texniki nümayiş] Bazar payının illik dəyişməsi əvvəlki ilin nisbi əmək məhsuldarlığı ilə 0.152 (s.x. 0.005), nisbi borc yükü ilə −0.296 (s.x. 0.010) əlaqəlidir; 17,240 müşahidə. Gecikmiş pay modeldə yoxdur; proqnozda paylar sahə daxilində normallaşdırılır.
 - **recovery**: [sintetik məlumat — texniki nümayiş] Generatorun məlum parametrləri ilə müqayisə: 35/43 həqiqi parametr 95% etibarlılıq intervalına düşür; ardıcıl (FE, logit, pay modeli) qiymətləndiricilərdə 26/30. Birləşdirilmiş OLS-in istehsal funksiyasında və marjanın ölçü əmsalında sürüşmə gözləniləndir (daimi müəssisə effekti izahedici dəyişənlərlə korrelyasiyalıdır). ROA, indeks TFP və çətinlik modeli üçün generatorda qapalı həqiqi parametr yoxdur.
-- **recovery_mc**: [sintetik məlumat — texniki nümayiş] 40 təkrarlamada (struktur qat yenidən çəkilir) ardıcıl qiymətləndiricilərin 23 parametri üzrə 95% etibarlılıq intervalının orta əhatəsi 94.5% (minimum 88%); sürüşmə testinin maksimum |t| = 3.8. Birləşdirilmiş OLS-də maksimum |t| = 126: daimi müəssisə effektləri nəzərə alınmadıqda əmsallar sürüşür.
+- **recovery_mc**: [sintetik məlumat — texniki nümayiş] 40 təkrarlamada (struktur qat yenidən çəkilir) ardıcıl qiymətləndiricilərin 23 parametri üzrə 95% etibarlılıq intervalının orta əhatəsi 94.7% (minimum 88%); sürüşmə testinin maksimum |t| = 3.8. Birləşdirilmiş OLS-də maksimum |t| = 131: daimi müəssisə effektləri nəzərə alınmadıqda əmsallar sürüşür.
 <!-- /AUTO:econ_models -->
 
 <!-- AUTO:econ_recovery -->
 | model_id | term | true | estimate | se | ci_low | ci_high | covered |
 |---|---|---|---|---|---|---|---|
-| B_margin_fe | ln_emp | 0.0100 | 0.0095 | 0.0012 | 0.0072 | 0.0118 | yes |
-| B_margin_fe | leverage | -0.0600 | -0.0608 | 0.0130 | -0.0862 | -0.0354 | yes |
-| B_margin_fe | ln_current_ratio | 0.0120 | 0.0118 | 0.0012 | 0.0094 | 0.0143 | yes |
-| B_margin_fe | ln_age | 0.0060 | 0.0043 | 0.0008 | 0.0026 | 0.0059 | no |
-| B_margin_fe | export_share | 0.0500 | 0.0514 | 0.0029 | 0.0457 | 0.0570 | yes |
-| B_margin_fe | demand_growth | 0.0800 | 0.0779 | 0.0021 | 0.0739 | 0.0820 | yes |
-| B_margin_fe | ulc | -1.0000 | -1.0059 | 0.0138 | -1.0330 | -0.9788 | yes |
+| B_margin_fe | ln_emp | 0.0100 | 0.0094 | 0.0012 | 0.0070 | 0.0117 | yes |
+| B_margin_fe | leverage | -0.0600 | -0.0614 | 0.0134 | -0.0877 | -0.0352 | yes |
+| B_margin_fe | ln_current_ratio | 0.0120 | 0.0120 | 0.0013 | 0.0094 | 0.0145 | yes |
+| B_margin_fe | ln_age | 0.0060 | 0.0042 | 0.0009 | 0.0025 | 0.0059 | no |
+| B_margin_fe | export_share | 0.0500 | 0.0513 | 0.0030 | 0.0455 | 0.0572 | yes |
+| B_margin_fe | demand_growth | 0.0800 | 0.0778 | 0.0022 | 0.0736 | 0.0820 | yes |
+| B_margin_fe | ulc | -1.0000 | -1.0063 | 0.0142 | -1.0342 | -0.9784 | yes |
 | B_margin_pool | ln_emp | 0.0100 | 0.0156 | 0.0004 | 0.0149 | 0.0163 | no |
-| B_margin_pool | leverage | -0.0600 | -0.0586 | 0.0043 | -0.0670 | -0.0501 | yes |
-| B_margin_pool | ln_current_ratio | 0.0120 | 0.0114 | 0.0012 | 0.0091 | 0.0137 | yes |
+| B_margin_pool | leverage | -0.0600 | -0.0585 | 0.0044 | -0.0671 | -0.0499 | yes |
+| B_margin_pool | ln_current_ratio | 0.0120 | 0.0115 | 0.0012 | 0.0091 | 0.0138 | yes |
 | B_margin_pool | ln_age | 0.0060 | 0.0064 | 0.0005 | 0.0055 | 0.0074 | yes |
-| B_margin_pool | state | -0.0300 | -0.0283 | 0.0017 | -0.0316 | -0.0249 | yes |
-| B_margin_pool | foreign | 0.0250 | 0.0238 | 0.0020 | 0.0198 | 0.0278 | yes |
-| B_margin_pool | joint | 0.0100 | 0.0054 | 0.0027 | 0.0001 | 0.0107 | yes |
-| B_margin_pool | export_share | 0.0500 | 0.0546 | 0.0028 | 0.0490 | 0.0601 | yes |
-| B_margin_pool | baku | 0.0100 | 0.0086 | 0.0011 | 0.0066 | 0.0107 | yes |
-| B_margin_pool | ulc | -1.0000 | -0.9947 | 0.0083 | -1.0110 | -0.9784 | yes |
-| B_pf_fe | ln_L | 0.4500 | 0.4468 | 0.0025 | 0.4419 | 0.4516 | yes |
-| B_pf_fe | ln_K | 0.5000 | 0.4985 | 0.0013 | 0.4960 | 0.5010 | yes |
-| B_pf_fe | RTS | 0.9500 | 0.9453 | 0.0021 | 0.9411 | 0.9494 | no |
-| B_pf_pool | ln_L | 0.4500 | 0.4936 | 0.0027 | 0.4884 | 0.4989 | no |
-| B_pf_pool | ln_K | 0.5000 | 0.4623 | 0.0020 | 0.4583 | 0.4663 | no |
-| B_pf_pool | RTS | 0.9500 | 0.9559 | 0.0015 | 0.9530 | 0.9588 | no |
+| B_margin_pool | state | -0.0300 | -0.0283 | 0.0017 | -0.0317 | -0.0249 | yes |
+| B_margin_pool | foreign | 0.0250 | 0.0238 | 0.0021 | 0.0197 | 0.0278 | yes |
+| B_margin_pool | joint | 0.0100 | 0.0053 | 0.0027 | -0.0001 | 0.0107 | yes |
+| B_margin_pool | export_share | 0.0500 | 0.0545 | 0.0029 | 0.0488 | 0.0602 | yes |
+| B_margin_pool | baku | 0.0100 | 0.0087 | 0.0011 | 0.0065 | 0.0108 | yes |
+| B_margin_pool | ulc | -1.0000 | -0.9946 | 0.0085 | -1.0112 | -0.9779 | yes |
+| B_pf_fe | ln_L | 0.4500 | 0.4468 | 0.0025 | 0.4419 | 0.4517 | yes |
+| B_pf_fe | ln_K | 0.5000 | 0.4984 | 0.0014 | 0.4958 | 0.5011 | yes |
+| B_pf_fe | RTS | 0.9500 | 0.9452 | 0.0021 | 0.9410 | 0.9494 | no |
+| B_pf_pool | ln_L | 0.4500 | 0.4956 | 0.0027 | 0.4903 | 0.5009 | no |
+| B_pf_pool | ln_K | 0.5000 | 0.4599 | 0.0021 | 0.4558 | 0.4640 | no |
+| B_pf_pool | RTS | 0.9500 | 0.9555 | 0.0015 | 0.9526 | 0.9584 | no |
 | B_tfp_pf | state | -0.0800 | -0.0756 | 0.0082 | -0.0917 | -0.0595 | yes |
-| B_tfp_pf | foreign | 0.1000 | 0.0983 | 0.0089 | 0.0810 | 0.1157 | yes |
+| B_tfp_pf | foreign | 0.1000 | 0.0983 | 0.0089 | 0.0809 | 0.1157 | yes |
 | B_tfp_pf | joint | 0.0500 | 0.0350 | 0.0140 | 0.0075 | 0.0625 | yes |
-| B_invest_fe | sales_growth | 0.0800 | 0.0811 | 0.0010 | 0.0791 | 0.0830 | yes |
-| B_invest_fe | leverage_l1 | -0.0600 | -0.0577 | 0.0103 | -0.0780 | -0.0375 | yes |
-| B_invest_fe | roa_w_l1 | 0.2000 | 0.2072 | 0.0042 | 0.1991 | 0.2154 | yes |
+| B_invest_fe | sales_growth | 0.0800 | 0.0810 | 0.0010 | 0.0791 | 0.0830 | yes |
+| B_invest_fe | leverage_l1 | -0.0600 | -0.0578 | 0.0103 | -0.0780 | -0.0376 | yes |
+| B_invest_fe | roa_w_l1 | 0.2000 | 0.2080 | 0.0044 | 0.1992 | 0.2167 | yes |
 | B_invest_fe | ln_emp_l1 | -0.0040 | -0.0045 | 0.0010 | -0.0064 | -0.0026 | yes |
-| B_invest_pool | sales_growth | 0.0800 | 0.0819 | 0.0013 | 0.0794 | 0.0844 | yes |
-| B_invest_pool | leverage_l1 | -0.0600 | -0.0520 | 0.0024 | -0.0567 | -0.0472 | no |
-| B_invest_pool | roa_w_l1 | 0.2000 | 0.2113 | 0.0037 | 0.2040 | 0.2186 | no |
-| B_invest_pool | ln_emp_l1 | -0.0040 | -0.0040 | 0.0003 | -0.0045 | -0.0035 | yes |
-| B_invest_pool | state | -0.0200 | -0.0206 | 0.0014 | -0.0233 | -0.0179 | yes |
+| B_invest_pool | sales_growth | 0.0800 | 0.0820 | 0.0013 | 0.0795 | 0.0845 | yes |
+| B_invest_pool | leverage_l1 | -0.0600 | -0.0523 | 0.0024 | -0.0570 | -0.0475 | no |
+| B_invest_pool | roa_w_l1 | 0.2000 | 0.2102 | 0.0040 | 0.2024 | 0.2180 | no |
+| B_invest_pool | ln_emp_l1 | -0.0040 | -0.0040 | 0.0003 | -0.0045 | -0.0034 | yes |
+| B_invest_pool | state | -0.0200 | -0.0207 | 0.0014 | -0.0233 | -0.0180 | yes |
 | B_export | ln_emp_l1 | 0.4000 | 0.4057 | 0.0138 | 0.3787 | 0.4327 | yes |
 | B_export | foreign | 1.0000 | 1.0329 | 0.0624 | 0.9107 | 1.1551 | yes |
 | B_export | state | -0.6000 | -0.6258 | 0.0642 | -0.7517 | -0.4999 | yes |
@@ -1054,40 +1150,40 @@ Interpretation (Azerbaijani):
 | B_share | rel_lp_l1 | 0.1500 | 0.1520 | 0.0046 | 0.1431 | 0.1610 | yes |
 | B_share | rel_leverage_l1 | -0.3000 | -0.2963 | 0.0104 | -0.3167 | -0.2759 | yes |
 
-Over 40 replications of the structural layer (`FR10_SYNTHETIC_econ_recovery_mc.csv`): consistent estimators' mean 95% coverage 94.5% (minimum 88%), largest |bias t| 3.76; pooled OLS (production function, margin size effect) largest |bias t| 126 — the bias the within estimator removes.
+Over 40 replications of the structural layer (`FR10_SYNTHETIC_econ_recovery_mc.csv`): consistent estimators' mean 95% coverage 94.7% (minimum 88%), largest |bias t| 3.77; pooled OLS (production function, margin size effect) largest |bias t| 131 — the bias the within estimator removes.
 
 | model_id | term | true | mean_estimate | mc_sd | mean_se | coverage_95 | bias_t |
 |---|---|---|---|---|---|---|---|
-| B_pf_fe | ln_L | 0.4500 | 0.4500 | 0.0027 | 0.0024 | 0.9000 | 0.1034 |
-| B_pf_fe | ln_K | 0.5000 | 0.5002 | 0.0011 | 0.0013 | 0.9750 | 1.0877 |
-| B_pf_fe | RTS | 0.9500 | 0.9502 | 0.0025 | 0.0021 | 0.9500 | 0.5907 |
-| B_pf_pool | ln_L | 0.4500 | 0.4933 | 0.0027 | 0.0027 | 0.0000 | 102.2955 |
-| B_pf_pool | ln_K | 0.5000 | 0.4616 | 0.0019 | 0.0020 | 0.0000 | -125.5979 |
-| B_pf_pool | RTS | 0.9500 | 0.9549 | 0.0012 | 0.0015 | 0.0500 | 25.4909 |
-| B_margin_fe | ln_emp | 0.0100 | 0.0099 | 0.0012 | 0.0011 | 0.9750 | -0.4843 |
-| B_margin_fe | leverage | -0.0600 | -0.0614 | 0.0122 | 0.0130 | 0.9500 | -0.7160 |
-| B_margin_fe | ln_current_ratio | 0.0120 | 0.0119 | 0.0013 | 0.0013 | 0.9500 | -0.7204 |
-| B_margin_fe | ln_age | 0.0060 | 0.0060 | 0.0009 | 0.0009 | 0.9500 | 0.3055 |
-| B_margin_fe | export_share | 0.0500 | 0.0504 | 0.0028 | 0.0029 | 0.9750 | 0.8554 |
-| B_margin_fe | demand_growth | 0.0800 | 0.0801 | 0.0021 | 0.0021 | 0.9500 | 0.2402 |
-| B_margin_fe | ulc | -1.0000 | -0.9979 | 0.0170 | 0.0139 | 0.8750 | 0.7847 |
-| B_margin_pool | ln_emp | 0.0100 | 0.0156 | 0.0004 | 0.0003 | 0.0000 | 96.3324 |
-| B_margin_pool | leverage | -0.0600 | -0.0561 | 0.0041 | 0.0043 | 0.8750 | 6.1518 |
-| B_margin_pool | ln_current_ratio | 0.0120 | 0.0121 | 0.0011 | 0.0012 | 0.9500 | 0.7907 |
-| B_margin_pool | ln_age | 0.0060 | 0.0066 | 0.0004 | 0.0005 | 0.8500 | 10.7702 |
-| B_margin_pool | state | -0.0300 | -0.0299 | 0.0018 | 0.0017 | 0.9250 | 0.3663 |
-| B_margin_pool | foreign | 0.0250 | 0.0245 | 0.0019 | 0.0020 | 0.9500 | -1.8024 |
-| B_margin_pool | joint | 0.0100 | 0.0100 | 0.0028 | 0.0028 | 0.9250 | 0.1070 |
-| B_margin_pool | export_share | 0.0500 | 0.0509 | 0.0025 | 0.0028 | 0.9750 | 2.2139 |
-| B_margin_pool | baku | 0.0100 | 0.0099 | 0.0009 | 0.0011 | 0.9750 | -0.9044 |
-| B_margin_pool | ulc | -1.0000 | -0.9903 | 0.0082 | 0.0083 | 0.7750 | 7.4530 |
-| B_invest_fe | sales_growth | 0.0800 | 0.0800 | 0.0009 | 0.0010 | 0.9750 | -0.0595 |
-| B_invest_fe | leverage_l1 | -0.0600 | -0.0537 | 0.0105 | 0.0103 | 0.9250 | 3.7644 |
-| B_invest_fe | roa_w_l1 | 0.2000 | 0.1998 | 0.0037 | 0.0043 | 0.9500 | -0.3970 |
-| B_invest_fe | ln_emp_l1 | -0.0040 | -0.0040 | 0.0010 | 0.0010 | 0.9500 | -0.1254 |
-| B_tfp_pf | state | -0.0800 | -0.0787 | 0.0078 | 0.0077 | 0.9000 | 1.0478 |
-| B_tfp_pf | foreign | 0.1000 | 0.0975 | 0.0087 | 0.0088 | 0.9250 | -1.8145 |
-| B_tfp_pf | joint | 0.0500 | 0.0505 | 0.0113 | 0.0128 | 1.0000 | 0.2758 |
+| B_pf_fe | ln_L | 0.4500 | 0.4500 | 0.0027 | 0.0025 | 0.9000 | 0.1063 |
+| B_pf_fe | ln_K | 0.5000 | 0.5002 | 0.0011 | 0.0014 | 1.0000 | 1.0525 |
+| B_pf_fe | RTS | 0.9500 | 0.9502 | 0.0025 | 0.0021 | 0.9500 | 0.5976 |
+| B_pf_pool | ln_L | 0.4500 | 0.4953 | 0.0027 | 0.0027 | 0.0000 | 106.3899 |
+| B_pf_pool | ln_K | 0.5000 | 0.4592 | 0.0020 | 0.0020 | 0.0000 | -130.5119 |
+| B_pf_pool | RTS | 0.9500 | 0.9544 | 0.0012 | 0.0015 | 0.1000 | 23.6317 |
+| B_margin_fe | ln_emp | 0.0100 | 0.0099 | 0.0012 | 0.0012 | 0.9750 | -0.4439 |
+| B_margin_fe | leverage | -0.0600 | -0.0616 | 0.0127 | 0.0134 | 0.9750 | -0.7993 |
+| B_margin_fe | ln_current_ratio | 0.0120 | 0.0118 | 0.0013 | 0.0013 | 0.9500 | -0.7807 |
+| B_margin_fe | ln_age | 0.0060 | 0.0060 | 0.0009 | 0.0009 | 0.9500 | 0.3225 |
+| B_margin_fe | export_share | 0.0500 | 0.0504 | 0.0029 | 0.0030 | 0.9750 | 0.9139 |
+| B_margin_fe | demand_growth | 0.0800 | 0.0801 | 0.0022 | 0.0021 | 0.9500 | 0.2799 |
+| B_margin_fe | ulc | -1.0000 | -0.9979 | 0.0175 | 0.0142 | 0.8750 | 0.7490 |
+| B_margin_pool | ln_emp | 0.0100 | 0.0156 | 0.0004 | 0.0004 | 0.0000 | 94.7993 |
+| B_margin_pool | leverage | -0.0600 | -0.0561 | 0.0041 | 0.0044 | 0.8750 | 5.9568 |
+| B_margin_pool | ln_current_ratio | 0.0120 | 0.0121 | 0.0011 | 0.0012 | 0.9500 | 0.6802 |
+| B_margin_pool | ln_age | 0.0060 | 0.0066 | 0.0004 | 0.0005 | 0.8500 | 10.6394 |
+| B_margin_pool | state | -0.0300 | -0.0299 | 0.0018 | 0.0017 | 0.9250 | 0.4389 |
+| B_margin_pool | foreign | 0.0250 | 0.0245 | 0.0019 | 0.0020 | 0.9500 | -1.7820 |
+| B_margin_pool | joint | 0.0100 | 0.0101 | 0.0029 | 0.0028 | 0.9250 | 0.1139 |
+| B_margin_pool | export_share | 0.0500 | 0.0509 | 0.0026 | 0.0029 | 0.9750 | 2.2057 |
+| B_margin_pool | baku | 0.0100 | 0.0099 | 0.0009 | 0.0011 | 1.0000 | -0.9627 |
+| B_margin_pool | ulc | -1.0000 | -0.9904 | 0.0083 | 0.0085 | 0.7750 | 7.3042 |
+| B_invest_fe | sales_growth | 0.0800 | 0.0800 | 0.0009 | 0.0010 | 0.9750 | 0.0194 |
+| B_invest_fe | leverage_l1 | -0.0600 | -0.0537 | 0.0105 | 0.0103 | 0.9250 | 3.7716 |
+| B_invest_fe | roa_w_l1 | 0.2000 | 0.1999 | 0.0038 | 0.0045 | 0.9750 | -0.1291 |
+| B_invest_fe | ln_emp_l1 | -0.0040 | -0.0040 | 0.0010 | 0.0010 | 0.9250 | -0.1100 |
+| B_tfp_pf | state | -0.0800 | -0.0787 | 0.0078 | 0.0077 | 0.9000 | 1.0428 |
+| B_tfp_pf | foreign | 0.1000 | 0.0975 | 0.0087 | 0.0088 | 0.9250 | -1.8122 |
+| B_tfp_pf | joint | 0.0500 | 0.0505 | 0.0113 | 0.0128 | 1.0000 | 0.2770 |
 | B_export | ln_emp_l1 | 0.4000 | 0.4000 | 0.0162 | 0.0134 | 0.9000 | -0.0087 |
 | B_export | foreign | 1.0000 | 0.9834 | 0.0446 | 0.0618 | 1.0000 | -2.3469 |
 | B_export | state | -0.6000 | -0.6159 | 0.0700 | 0.0671 | 0.9500 | -1.4362 |
@@ -1106,7 +1202,9 @@ Over 40 replications of the structural layer (`FR10_SYNTHETIC_econ_recovery_mc.c
 
 1. The related-sector elasticity is significant in sample but its out-of-sample allocation gain over constant shares
    is not established; the baseline combination follows a rule fixed in advance (§11.3).
-2. Real branch output is significantly worse than constant growth on the hold-out (§12).
+2. Real branch output rests on implicit deflators and on DSK volume indices that are inconsistent with nominal output
+   for several small branches (F15; the failing indices are replaced by the v2.1 rule and flagged imputed); its
+   hold-out score is in §12. Nominal output remains the more reliable output.
 3. The refining capacity rule assumes no new capacity; the lever shows the 2015–25 maximum.
 4. Financial condition is aggregate until Layer-B data arrive; the margin is conditional on the labour-share rule and
    the branch GOS proxy is an upper bound (informal output, omitted taxes).
@@ -1122,7 +1220,7 @@ Over 40 replications of the structural layer (`FR10_SYNTHETIC_econ_recovery_mc.c
 The notebook locates its files relative to its own directory.
 
 <!-- AUTO:outputs -->
-`FR10_SYNTHETIC_cohort_survival.csv`, `FR10_SYNTHETIC_concentration_nace.csv`, `FR10_SYNTHETIC_concentration_nace_region_2025.csv`, `FR10_SYNTHETIC_coverage_vs_layer_a.csv`, `FR10_SYNTHETIC_econ_coefficients.csv`, `FR10_SYNTHETIC_econ_distress_ame.csv`, `FR10_SYNTHETIC_econ_distress_calibration.csv`, `FR10_SYNTHETIC_econ_distress_roc.csv`, `FR10_SYNTHETIC_econ_export_ame.csv`, `FR10_SYNTHETIC_econ_export_calibration.csv`, `FR10_SYNTHETIC_econ_export_roc.csv`, `FR10_SYNTHETIC_econ_interpretation_az.csv`, `FR10_SYNTHETIC_econ_models.csv`, `FR10_SYNTHETIC_econ_production_function.csv`, `FR10_SYNTHETIC_econ_recovery.csv`, `FR10_SYNTHETIC_econ_recovery_mc.csv`, `FR10_SYNTHETIC_econ_sample_rules.csv`, `FR10_SYNTHETIC_econ_true_parameters.csv`, `FR10_SYNTHETIC_entry_exit.csv`, `FR10_SYNTHETIC_firm_forecast.csv`, `FR10_SYNTHETIC_firm_ratios_2025.csv`, `FR10_SYNTHETIC_pipeline_tests.csv`, `FR10_SYNTHETIC_share_model.csv`, `FR10_SYNTHETIC_validation_seeded_corruptions.csv`, `FR10_branch_growth_table.csv`, `FR10_branch_history.csv`, `FR10_branch_scorecard.csv`, `FR10_branch_shares_history.csv`, `FR10_coef_sensitivity.csv`, `FR10_concentration.csv`, `FR10_cross_sector_multipliers.csv`, `FR10_data_gaps_and_alternatives.csv`, `FR10_data_integrity_findings.csv`, `FR10_data_source_matrix.csv`, `FR10_determinants_division_bias.csv`, `FR10_determinants_panel.csv`, `FR10_dsk_manifest.csv`, `FR10_dvx_declarations.csv`, `FR10_early_warning.csv`, `FR10_efficiency_branches.csv`, `FR10_fan_charts.csv`, `FR10_fan_meta.csv`, `FR10_financial_sections.csv`, `FR10_firm_panel_swap_tests.csv`, `FR10_firm_panel_swap_tests_econ.csv`, `FR10_firm_panel_validation_report.csv`, `FR10_forecast_assumptions.csv`, `FR10_forecast_branches.csv`, `FR10_forecast_regions.csv`, `FR10_forecast_sections.csv`, `FR10_forecast_tidy.csv`, `FR10_growth_contributions.csv`, `FR10_holdout_branches.csv`, `FR10_holdout_validation.csv`, `FR10_identity_checks.csv`, `FR10_indicator_catalog.csv`, `FR10_input_schema.csv`, `FR10_mining_reconciliation.csv`, `FR10_mining_rules_selection.csv`, `FR10_noar_constructs.csv`, `FR10_nonoil_allocation_selection.csv`, `FR10_nonoil_growth_vs_history.csv`, `FR10_nonstate_composition.csv`, `FR10_nonstate_composition_summary.csv`, `FR10_not_forecast.csv`, `FR10_oil_linked_block.csv`, `FR10_ownership.csv`, `FR10_plausibility.csv`, `FR10_pooled_related_sector_model.csv`, `FR10_presentation_spec.csv`, `FR10_product_forecasts_derived.csv`, `FR10_product_location_shares.csv`, `FR10_products.csv`, `FR10_quadrant.csv`, `FR10_regional_entry_exit.csv`, `FR10_regional_history.csv`, `FR10_rejected_specifications.csv`, `FR10_robustness_summary.csv`, `FR10_scenario_summary.csv`, `FR10_sensitivity_levers.csv`, `FR10_share_system_coefficients.csv`, `FR10_share_system_selection.csv`, `FR10_strings_az.csv`, `FR10_tfp_branches.csv`, `FR10_tfp_sections.csv`, `FR10_wage_productivity_gap.csv`
+`FR10_SYNTHETIC_cohort_survival.csv`, `FR10_SYNTHETIC_concentration_nace.csv`, `FR10_SYNTHETIC_concentration_nace_region_2025.csv`, `FR10_SYNTHETIC_coverage_vs_layer_a.csv`, `FR10_SYNTHETIC_econ_coefficients.csv`, `FR10_SYNTHETIC_econ_distress_ame.csv`, `FR10_SYNTHETIC_econ_distress_calibration.csv`, `FR10_SYNTHETIC_econ_distress_roc.csv`, `FR10_SYNTHETIC_econ_export_ame.csv`, `FR10_SYNTHETIC_econ_export_calibration.csv`, `FR10_SYNTHETIC_econ_export_roc.csv`, `FR10_SYNTHETIC_econ_interpretation_az.csv`, `FR10_SYNTHETIC_econ_models.csv`, `FR10_SYNTHETIC_econ_production_function.csv`, `FR10_SYNTHETIC_econ_recovery.csv`, `FR10_SYNTHETIC_econ_recovery_mc.csv`, `FR10_SYNTHETIC_econ_sample_rules.csv`, `FR10_SYNTHETIC_econ_true_parameters.csv`, `FR10_SYNTHETIC_entry_exit.csv`, `FR10_SYNTHETIC_firm_forecast.csv`, `FR10_SYNTHETIC_firm_ratios_2025.csv`, `FR10_SYNTHETIC_pipeline_tests.csv`, `FR10_SYNTHETIC_share_model.csv`, `FR10_SYNTHETIC_validation_seeded_corruptions.csv`, `FR10_branch_deflator_check.csv`, `FR10_branch_growth_table.csv`, `FR10_branch_history.csv`, `FR10_branch_scorecard.csv`, `FR10_branch_shares_history.csv`, `FR10_coef_sensitivity.csv`, `FR10_concentration.csv`, `FR10_cross_sector_multipliers.csv`, `FR10_data_gaps_and_alternatives.csv`, `FR10_data_integrity_findings.csv`, `FR10_data_source_matrix.csv`, `FR10_determinants_division_bias.csv`, `FR10_determinants_panel.csv`, `FR10_dsk_manifest.csv`, `FR10_dvx_declarations.csv`, `FR10_early_warning.csv`, `FR10_efficiency_branches.csv`, `FR10_fan_charts.csv`, `FR10_fan_meta.csv`, `FR10_financial_sections.csv`, `FR10_firm_panel_swap_tests.csv`, `FR10_firm_panel_swap_tests_econ.csv`, `FR10_firm_panel_validation_report.csv`, `FR10_forecast_assumptions.csv`, `FR10_forecast_branches.csv`, `FR10_forecast_regions.csv`, `FR10_forecast_sections.csv`, `FR10_forecast_tidy.csv`, `FR10_growth_contributions.csv`, `FR10_holdout_branches.csv`, `FR10_holdout_validation.csv`, `FR10_identity_checks.csv`, `FR10_indicator_catalog.csv`, `FR10_input_schema.csv`, `FR10_mining_reconciliation.csv`, `FR10_mining_rules_selection.csv`, `FR10_noar_constructs.csv`, `FR10_nonoil_allocation_selection.csv`, `FR10_nonoil_growth_vs_history.csv`, `FR10_nonstate_composition.csv`, `FR10_nonstate_composition_summary.csv`, `FR10_not_forecast.csv`, `FR10_oil_linked_block.csv`, `FR10_ownership.csv`, `FR10_plausibility.csv`, `FR10_pooled_related_sector_model.csv`, `FR10_presentation_spec.csv`, `FR10_product_forecasts_derived.csv`, `FR10_product_location_shares.csv`, `FR10_products.csv`, `FR10_quadrant.csv`, `FR10_regional_entry_exit.csv`, `FR10_regional_history.csv`, `FR10_rejected_specifications.csv`, `FR10_robustness_summary.csv`, `FR10_scenario_summary.csv`, `FR10_sensitivity_levers.csv`, `FR10_share_system_coefficients.csv`, `FR10_share_system_selection.csv`, `FR10_strings_az.csv`, `FR10_tfp_branches.csv`, `FR10_tfp_sections.csv`, `FR10_volume_index_validation.csv`, `FR10_wage_productivity_gap.csv`
 <!-- /AUTO:outputs -->
 
 ## 19. v2: equation registry, scenario engine, robustness, Azerbaijani strings
@@ -1143,8 +1241,8 @@ DK, wild bootstrap p-values, division-bias variants, between and co-movement reg
 | A | A2. Bazar payları: mədənçıxarma sahələri | 12 | 2 | 0 | 3 | 9 |
 | A | A3. Regional bölgü: iqtisadi rayonların sənaye payları | 27 | 14 | 13 | 12 | 2 |
 | A | A4. Neftlə bağlı sahələr (neft emalı, kimya) | 2 | 1 | 1 | 1 | 0 |
-| A | A5. İnkişaf və tənəzzülün amilləri (determinantlar paneli) | 7 | 0 | 0 | 1 | 6 |
-| B | B. Müəssisə səviyyəsi: SİNTETİK məlumat — texniki nümayiş — (a) Rentabellik amilləri | 4 | 0 | 3 | 1 | 0 |
+| A | A5. İnkişaf və tənəzzülün amilləri (determinantlar paneli) | 7 | 0 | 0 | 3 | 4 |
+| B | B. Müəssisə səviyyəsi: SİNTETİK məlumat — texniki nümayiş — (a) Rentabellik amilləri | 4 | 0 | 4 | 0 | 0 |
 | B | B. Müəssisə səviyyəsi: SİNTETİK məlumat — texniki nümayiş — (b) İstehsal funksiyası | 2 | 0 | 2 | 0 | 0 |
 | B | B. Müəssisə səviyyəsi: SİNTETİK məlumat — texniki nümayiş — (c) TFP amilləri | 3 | 0 | 3 | 0 | 0 |
 | B | B. Müəssisə səviyyəsi: SİNTETİK məlumat — texniki nümayiş — (d) Maliyyə çətinliyi modeli | 1 | 0 | 0 | 1 | 0 |
@@ -1196,12 +1294,13 @@ Equations used in the forecast:
 <!-- /AUTO:v2_tidy -->
 
 **Scenario engine** (`microlib/engines/fr10.py`, state `output/engine/FR10_state.json` + `.npz`). Upstream FR1 (driver
-paths `fr1:<code>`); FR4's employment indices are exogenous inputs. Coefficients editable with value, s.e. and CI from
+paths `fr1:<code>`) and, since v2.1, FR4 (`fr4:hired:<activity>` → section employment indices, 2025 = 1); without
+upstream results the CSV baselines in the state are used; FR3 is not used (F13). FR4's indices are also editable exogenous inputs. Coefficients editable with value, s.e. and CI from
 the registry; levers: refinery capacity factor, labour-share shift and margin rule, the combination weight of the
 non-oil allocation, κ of the regional system.
 
 <!-- AUTO:v2_engine -->
-Inputs: 20 exogenous paths (FR1 drivers and FR4 indices, 2026–2030, per scenario), 17 coefficients, 6 levers. Self-test: Baseline max rel. diff 1.4e-15 over 2070 values, Adverse max rel. diff 1.7e-15 over 2070 values, Reform max rel. diff 1.3e-15 over 2070 values — PASS; run time 0.009 s per scenario.
+Inputs: 20 exogenous paths (FR1 drivers and FR4 indices, 2026–2030, per scenario), 17 coefficients, 6 levers. Self-test: Baseline max rel. diff 1.2e-15 over 2070 values, Adverse max rel. diff 1.5e-15 over 2070 values, Reform max rel. diff 1.4e-15 over 2070 values — PASS; run time 0.007 s per scenario.
 
 | eq_id | name | label_az | value | se | ci_low | ci_high |
 |---|---|---|---|---|---|---|
@@ -1231,11 +1330,11 @@ Chow/CUSUM p > 0.05; *qeyri-stabil* if a sign flips in the last half of the recu
 regions but do not move the industry, manufacturing or mining totals — the tornado shows this honestly.
 
 <!-- AUTO:v2_sens -->
-Robustness verdicts: A qeyri-stabil: 41, A qismən stabil: 44, A stabil: 34, B qismən stabil: 3, B stabil: 11. Non-zero 2030 effects on the headline components (Baseline, % of the baseline value, −1 s.e. / +1 s.e. or lever low / high); no coefficient or lever moves: Sənaye buraxılışı, cəmi (30 sahə); Emal sənayesi: Buraxılış; Mədənçıxarma: Buraxılış (they are FR1 paths). 
+Robustness verdicts: A qeyri-stabil: 39, A qismən stabil: 46, A stabil: 34, B qismən stabil: 2, B stabil: 12. Non-zero 2030 effects on the headline components (Baseline, % of the baseline value, −1 s.e. / +1 s.e. or lever low / high); no coefficient or lever moves: Sənaye buraxılışı, cəmi (30 sahə); Emal sənayesi: Buraxılış; Mədənçıxarma: Buraxılış (they are FR1 paths). 
 
 | component_az | type | input | effect_low_pct | effect_high_pct |
 |---|---|---|---|---|
-| Emal sənayesi: Ümumi mənfəət / əlavə dəyər | lever | margin_mode | +7.455 | +12.581 |
+| Emal sənayesi: Ümumi mənfəət / əlavə dəyər | lever | margin_mode | +7.149 | +12.075 |
 | Emal sənayesi: Ümumi mənfəət / əlavə dəyər | lever | labour_share_shift_pp | +1.520 | -1.520 |
 | 19 Neft emalı məhsulları: Emal sənayesində pay | lever | cap_factor_19 | -5.091 | +5.091 |
 | 19 Neft emalı məhsulları: Emal sənayesində pay | coefficient | FR10.oil_19/dln_oil_azn | +0.683 | -0.678 |
@@ -1244,26 +1343,26 @@ Each coefficient's largest 2030 effect on any component (± 1 s.e.):
 
 | input | component_az | effect_low_pct | effect_high_pct |
 |---|---|---|---|
-| FR10.pooled/x | 23 Digər qeyri-metal mineral məhsullar: Real buraxılış (2015 qiymətləri) | +0.957 | -0.943 |
-| FR10.mining_08/x | 08 Digər faydalı qazıntılar: Real buraxılış (2015 qiymətləri) | -0.050 | +0.050 |
+| FR10.pooled/x | 23 Digər qeyri-metal mineral məhsullar: Real buraxılış (2015 qiymətləri) | +0.725 | -0.718 |
+| FR10.mining_08/x | 08 Digər faydalı qazıntılar: Real buraxılış (2015 qiymətləri) | -1.590 | +1.616 |
 | FR10.oil_19/dln_oil_azn | 19 Neft emalı məhsulları: Nominal buraxılış | +0.683 | -0.678 |
-| FR10.reg_system/Nakhchivan_AR | Naxçıvan MR: sənaye buraxılışında pay | +10.557 | -9.557 |
-| FR10.reg_system/Absheron_Khizi | Abşeron-Xızı: sənaye buraxılışında pay | +9.497 | -8.738 |
-| FR10.reg_system/Daghlig_Shirvan | Dağlıq Şirvan: sənaye buraxılışında pay | +8.745 | -8.043 |
-| FR10.reg_system/Ganja_Dashkasan | Gəncə-Daşkəsən: sənaye buraxılışında pay | +10.623 | -9.623 |
-| FR10.reg_system/Garabagh | Qarabağ: sənaye buraxılışında pay | +10.468 | -9.499 |
-| FR10.reg_system/Gazakh_Tovuz | Qazax-Tovuz: sənaye buraxılışında pay | +8.480 | -7.826 |
-| FR10.reg_system/Guba_Khachmaz | Quba-Xaçmaz: sənaye buraxılışında pay | +10.704 | -9.677 |
-| FR10.reg_system/Lankaran_Astara | Lənkəran-Astara: sənaye buraxılışında pay | +6.834 | -6.401 |
-| FR10.reg_system/Central_Aran | Mərkəzi Aran: sənaye buraxılışında pay | +10.903 | -9.849 |
-| FR10.reg_system/Mil_Mughan | Mil-Muğan: sənaye buraxılışında pay | +10.211 | -9.275 |
-| FR10.reg_system/Shaki_Zagatala | Şəki-Zaqatala: sənaye buraxılışında pay | +10.446 | -9.468 |
-| FR10.reg_system/Eastern_Zangezur | Şərqi Zəngəzur: sənaye buraxılışında pay | +12.620 | -11.208 |
-| FR10.reg_system/Shirvan_Salyan | Şirvan-Salyan: sənaye buraxılışında pay | +9.760 | -8.905 |
+| FR10.reg_system/Nakhchivan_AR | Naxçıvan MR: sənaye buraxılışında pay | +7.399 | -6.894 |
+| FR10.reg_system/Absheron_Khizi | Abşeron-Xızı: sənaye buraxılışında pay | +6.687 | -6.301 |
+| FR10.reg_system/Daghlig_Shirvan | Dağlıq Şirvan: sənaye buraxılışında pay | +6.144 | -5.789 |
+| FR10.reg_system/Ganja_Dashkasan | Gəncə-Daşkəsən: sənaye buraxılışında pay | +7.451 | -6.945 |
+| FR10.reg_system/Garabagh | Qarabağ: sənaye buraxılışında pay | +7.347 | -6.856 |
+| FR10.reg_system/Gazakh_Tovuz | Qazax-Tovuz: sənaye buraxılışında pay | +5.966 | -5.635 |
+| FR10.reg_system/Guba_Khachmaz | Quba-Xaçmaz: sənaye buraxılışında pay | +7.502 | -6.982 |
+| FR10.reg_system/Lankaran_Astara | Lənkəran-Astara: sənaye buraxılışında pay | +4.817 | -4.598 |
+| FR10.reg_system/Central_Aran | Mərkəzi Aran: sənaye buraxılışında pay | +7.646 | -7.111 |
+| FR10.reg_system/Mil_Mughan | Mil-Muğan: sənaye buraxılışında pay | +7.160 | -6.687 |
+| FR10.reg_system/Shaki_Zagatala | Şəki-Zaqatala: sənaye buraxılışında pay | +7.325 | -6.830 |
+| FR10.reg_system/Eastern_Zangezur | Şərqi Zəngəzur: sənaye buraxılışında pay | +8.819 | -8.105 |
+| FR10.reg_system/Shirvan_Salyan | Şirvan-Salyan: sənaye buraxılışında pay | +6.849 | -6.417 |
 <!-- /AUTO:v2_sens -->
 
 **Azerbaijani strings** (`output/FR10_strings_az.csv`).
 
 <!-- AUTO:v2_strings -->
-1075 English strings in FR10's CSVs; translation template 861, DSK az (018) 137, DSK az (018_1) 49, branch dictionary 24, region dictionary 4. Products with the official DSK Azerbaijani name: 142 of 142.
+1083 English strings in FR10's CSVs; translation template 866, DSK az (018) 137, DSK az (018_1) 49, branch dictionary 24, region dictionary 4, composed at run time (v2.1) 3. Products with the official DSK Azerbaijani name: 142 of 142.
 <!-- /AUTO:v2_strings -->

@@ -20,7 +20,8 @@ D4_mnon,ln_cons,1.047,1.087,37.8,0.056,0.616,16,DOLS/OLS kept
 E1_emp,ln_gdpnon_pc,0.034,0.012,118.4,0.102,0.113,20,DOLS/OLS kept
 E2_wage,ln_prod_non,0.817,0.962,76.9,0.011,0.663,20,DOLS/OLS kept
 E2_wage,ln_cpi,0.617,0.798,9.8,0.011,0.663,20,DOLS/OLS kept
-E3_hhdisp,ln_g_rel,0.895,1.069,18.4,0.006,0.646,20,DOLS/OLS kept
+E3_hhdisp,ln_g_rel,0.603,0.067,18.4,0.003,0.77,20,DOLS/OLS kept
+E3_hhdisp,ln_wb_rel,0.377,0.877,26.8,0.003,0.77,20,DOLS/OLS kept
 F2_revnon,ln_m_non,0.56,0.489,6.2,0.08,0.033,16,DOLS/OLS kept
 F3_expcur,ln_rev_r,0.992,0.663,2.9,0.039,0.857,16,DOLS/OLS kept
 F3_expcur,ln_gdpnon,0.215,0.312,43.0,0.039,0.857,16,DOLS/OLS kept

@@ -1,0 +1,283 @@
+mode,en,az,note
+phrase,qalıq (residual) diaqnostikası,qalıq diaqnostikası,rows_eq1
+phrase,MacKinnon 'None',MacKinnon —,rows_eq1
+phrase, vs səviyyə , | səviyyə forması: ,rows_eq1
+phrase,constant shares,sabit paylar,rows_eq1
+phrase,DOLS(0: contemporaneous dX only),DOLS(0: yalnız cari fərq hədləri),rows_eq1
+phrase,DOLS(0: contemporaneous dx),DOLS(0: yalnız cari fərq hədləri),rows_eq1
+phrase,small-sample n/(n-k),kiçik nümunə düzəlişi n/(n-k),rows_eq1
+phrase,) on projected regressors,) proyeksiya edilmiş izahedicilər üzrə,rows_eq1
+phrase,(kəsim None),(kəsim —),rows_eq1
+phrase,"SYNTHETIC — pipeline test, not results","SİNTETİK — hesablama xəttinin sınağı, nəticə deyil",rows_eq1
+phrase,"SYNTHETIC — pipeline demonstration, not findings","SİNTETİK — hesablama xəttinin nümayişi, tapıntı deyil",rows_eq1
+phrase,Covariance Type:,Kovariasiya növü:,rows_eq1
+phrase,cluster,klaster,rows_eq1
+phrase,(firm),(müəssisə),rows_eq1
+phrase,(record),(qeyd),rows_eq1
+phrase,(division),(NACE bölməsi),rows_eq1
+phrase,(section×region),(bölmə×region),rows_eq1
+phrase,(nace2),(NACE-2),rows_eq1
+phrase,(unit),(vahid),rows_eq1
+phrase,unit means (FE only),vahid ortaları (yalnız sabit effektlər),rows_eq1
+phrase,seasonal-ratio nowcast (calibrated mean),mövsümi nisbət üzrə cari qiymətləndirmə (kalibrlənmiş orta),rows_eq1
+phrase,sample mean,nümunə ortası,rows_eq1
+phrase,"Two-way fixed effects (firm + year), firm-demeaned","İki yönlü sabit effektlər (müəssisə + il), müəssisə ortasından çıxılmış",rows_eq1
+phrase,Pooled LS + NACE x year fixed effects,Birləşdirilmiş ƏKK + NACE × il sabit effektləri,rows_eq1
+phrase,Pooled LS + NACE and year dummies,Birləşdirilmiş ƏKK + NACE və il fiktiv dəyişənləri,rows_eq1
+phrase,"calibrated (Cournot, linear demand)","kalibrlənmiş (Kurno, xətti tələb)",rows_eq1
+phrase,FE-entity (within),FE-vahid (daxili),rows_eq1
+phrase,"FE-twoway (branch + year), within","FE-ikiyönlü (sahə + il), daxili",rows_eq1
+phrase,"FE-oneway (branch), first differences","FE-biryönlü (sahə), birinci fərqlər",rows_eq1
+phrase,"FE-oneway (branch), levels","FE-biryönlü (sahə), səviyyələr",rows_eq1
+phrase,"FE-oneway (branch), within","FE-biryönlü (sahə), daxili",rows_eq1
+phrase,FE-oneway,FE-biryönlü,rows_eq1
+phrase,FE-twoway,FE-ikiyönlü,rows_eq1
+phrase,FE-entity,FE-vahid,rows_eq1
+phrase,Crude oil and natural gas,Xam neft və təbii qaz,rows_eq1
+phrase,Crude oil and natural,Xam neft və təbii,rows_eq1
+phrase,test=None,test=—,rows_eq1
+phrase,Nəticə: not established,Nəticə: müəyyən edilməyib,rows_eq1
+phrase,income deflated by service price,xidmət qiyməti ilə deflyasiya edilmiş gəlir,rows_eq1
+phrase,namizədi: income + trend,namizədi: gəlir + trend,rows_eq1
+phrase,income only,yalnız gəlir,rows_eq1
+phrase,trend only,yalnız trend,rows_eq1
+phrase,Dep. Variable:,Asılı dəyişən:,rows_eq1
+phrase,No. Observations:,Müşahidələr:,rows_eq1
+phrase,converged:,yığılma:,rows_eq1
+phrase,LL-Null:,LL (sıfır model):,rows_eq1
+phrase,LLR p-value:,LR p-dəyəri:,rows_eq1
+phrase,OLS Regression Results,ƏKK reqressiyasının nəticələri,rows_eq1
+phrase,Method:,Üsul:,rows_eq1
+phrase,Least Squares,Ən kiçik kvadratlar,rows_eq1
+phrase,F-statistic:,F-statistikası:,rows_eq1
+phrase,Df Residuals:,Qalıq sərbəstlik dərəcəsi:,rows_eq1
+phrase,Df Model:,Model sərbəstlik dərəcəsi:,rows_eq1
+phrase,Kurtosis:,Ekses:,rows_eq1
+phrase,Cond. No.,Şərt ədədi,rows_eq1
+phrase,Notes:,Qeydlər:,rows_eq1
+phrase,Standard Errors are robust to klaster correlation,Standart xətalar klaster daxili korrelyasiyaya davamlıdır,rows_eq1
+phrase,Standard Errors are robust to cluster correlation,Standart xətalar klaster daxili korrelyasiyaya davamlıdır,rows_eq1
+phrase,Poisson Regression Results,Puasson reqressiyasının nəticələri,rows_eq1
+phrase,Generalized Linear Model Regression Results,Ümumiləşdirilmiş xətti model (GLM): nəticələr,rows_eq1
+phrase,Model Family:,Model ailəsi:,rows_eq1
+phrase,No. Iterations:,İterasiyalar:,rows_eq1
+phrase,Pseudo R-squ. (CS):,Psevdo R² (CS):,rows_eq1
+phrase,Pseudo R-squ.:,Psevdo R²:,rows_eq1
+phrase,NegativeBinomial Regression Results,Mənfi binomial reqressiyanın nəticələri,rows_eq1
+phrase,Model: NegativeBinomial,Model: mənfi binomial,rows_eq1
+phrase,Link Function:,Əlaqə funksiyası:,rows_eq1
+phrase,Scale:,Miqyas:,rows_eq1
+phrase,Adj. R-squared:,Düzəldilmiş R²:,rows_eq1
+phrase,R-squared:,R²:,rows_eq1
+phrase,Prob (F-statistic):,p-dəyəri (F):,rows_eq1
+phrase,Log-Likelihood:,Log-həqiqətəbənzərlik:,rows_eq1
+phrase,Prob(Omnibus):,p (Omnibus):,rows_eq1
+phrase,Prob(JB):,p (JB):,rows_eq1
+phrase,Skew:,Asimmetriya:,rows_eq1
+phrase,Deviance:,Devians:,rows_eq1
+phrase,Pearson chi2:,Pirson χ²:,rows_eq1
+phrase,Date:,Tarix:,rows_eq1
+phrase,Time:,Vaxt:,rows_eq1
+phrase,Covariance Type,Kovariasiya növü,rows_eq1
+phrase,std err,st. xəta,rows_eq1
+phrase,Dep. Variable,Asılı dəyişən,rows_eq1
+phrase,Model:,Model:,rows_eq1
+phrase,"production function, freely estimated","istehsal funksiyası, sərbəst qiymətləndirilmiş",rows_eq1
+phrase,"production function, panel factor shares imposed","istehsal funksiyası, panel amil payları qoyulub",rows_eq1
+phrase,segmented deterministic trend,seqmentli deterministik trend,rows_eq1
+phrase,deterministic linear trend,deterministik xətti trend,rows_eq1
+phrase,BETWEEN (,Arası qiymətləndirici (,rows_eq1
+phrase,real state investment per capita,adambaşına real dövlət investisiyası,rows_eq1
+phrase,real total expenditure per capita,adambaşına real ümumi xərclər,rows_eq1
+phrase,real value added of other services,digər xidmətlərin real əlavə dəyəri,rows_eq1
+phrase,real GDP per capita,adambaşına real ÜDM,rows_eq1
+phrase,forecast combination (equal weights),proqnozların kombinasiyası (bərabər çəkilər),rows_eq1
+phrase,calibrated (no s.e.),kalibrlənmiş (standart xəta yoxdur),rows_eq1
+phrase,Sahələr arası (between) qiymətləndirici,Sahələrarası qiymətləndirici,rows_eq1
+phrase,(between) ,,rows_eq1
+phrase,(within) ,,rows_eq1
+phrase,MLE sandwich,MLE sendviç kovariasiyası,rows_eq1
+phrase,combination:,kombinasiya:,rows_eq1
+phrase,| anchored,| lövbərlənmiş,rows_eq1
+phrase,null (FE + fixed terms),sıfır qayda (FE + sabit hədlər),rows_eq1
+phrase,"least squares, year dummies","ən kiçik kvadratlar, il fiktiv dəyişənləri",rows_eq1
+phrase,"least squares, section/year dummies","ən kiçik kvadratlar, bölmə/il fiktiv dəyişənləri",rows_eq1
+phrase,"WLS, absorbed","WLS, udulmuş",rows_eq1
+phrase, effects, effektləri,rows_eq1
+phrase,"WLS per section-year (HC0), cross-section","WLS hər bölmə-il üzrə (HC0), kəsik",rows_eq1
+phrase,"conditional ML, cell-year strata","şərti ML, xana-il təbəqələri",rows_eq1
+phrase,OLS (df too small for DOLS),OLS (DOLS üçün sərbəstlik dərəcəsi kifayət deyil),rows_eq1
+phrase,identity (Tornqvist shift-share decomposition),eynilik (Törnqvist struktur sürüşmə bölgüsü),rows_eq1
+phrase,"MNL log-odds share system, empirical-Bayes shrinkage (kappa=","MNL log-odds pay sistemi, empirik Bayes büzülməsi (κ=",rows_eq1
+phrase,posterior s.e. after shrinkage,büzülmədən sonra posterior standart xəta,rows_eq1
+phrase,"Calibrated rule: anchored null, real output constant at the last actual level","Kalibrlənmiş qayda: lövbərlənmiş sıfır model, real buraxılış son faktiki səviyyədə sabit",rows_eq1
+phrase,"Calibrated rule: unit elasticity, chosen pre-cut","Kalibrlənmiş qayda: vahid elastiklik, kəsimdən əvvəl seçilib",rows_eq1
+phrase,"Logit (MLE), dummies year;","Logit (MLE), il fiktiv dəyişənləri;",rows_eq1
+phrase,"Logit (MLE), dummies nace2 + year;","Logit (MLE), NACE-2 + il fiktiv dəyişənləri;",rows_eq1
+phrase,calibrated identity (box-simplex vertices),kalibrlənmiş eynilik (qutu-simpleks təpələri),rows_eq1
+phrase,calibrated allocation (constant observed shares),kalibrlənmiş bölüşdürmə (sabit müşahidə olunan paylar),rows_eq1
+phrase,calibrated allocation (constant observed sabit paylar),kalibrlənmiş bölüşdürmə (sabit müşahidə olunan paylar),rows_eq1
+phrase,calibrated allocation (observed half-year ratio),kalibrlənmiş bölüşdürmə (müşahidə olunan yarımillik nisbət),rows_eq1
+phrase,"Binomial GLM, logistic link (frequency weights)","Binomial GLM, logistik əlaqə (tezlik çəkiləri)",rows_eq1
+phrase,"Binomial GLM, complementary log-log link (frequency weights)","Binomial GLM, tamamlayıcı log-log əlaqəsi (tezlik çəkiləri)",rows_eq1
+regex,calibrated \(mean of DSK tables ([\d.\-–]+)\),kalibrlənmiş (DSK \1 cədvəllərinin ortası),rows_eq1
+regex,"calibrated \(DVX (r\d+) / all hired, ([\d\-–]+)\)","kalibrlənmiş (DVX \1 / bütün muzdlu işçilər, \2)",rows_eq1
+phrase,calibrated,kalibrlənmiş,rows_eq1
+regex,\bTrue\b,bəli,rows_eq1
+regex,\bFalse\b,xeyr,rows_eq1
+regex,\bNone\b,—,rows_eq1
+regex, vs\.? , / ,rows_eq1
+phrase,fixed effects,sabit effektlər,rows_eq2
+regex,chosen on rolling origins <= (\d+) \(Part ([\d.]+)\),"sürüşən başlanğıclar üzrə seçilib (≤ \1, \2-ci hissə)",rows_eq2
+phrase,"; the D18 dummy passed the break test but could not be scored out of sample (not estimable before 2018), so the baseline uses the scored specification without it; the D18 version is a sensitivity","; D18 fiktiv dəyişəni qırılma testindən keçdi, lakin nümunədən kənar qiymətləndirilə bilmədi (2018-dən əvvəl qiymətləndirilmir), ona görə əsas proqnoz onsuz, yoxlanmış spesifikasiyanı istifadə edir; D18 variantı həssaslıq yoxlamasıdır.",rows_eq2
+phrase,"; long-run homogeneity IMPOSED on theory grounds although rejected on this short sample: with a sum of price elasticities c != 1 the real wage would drift by (c-1) x inflation every year forever (money illusion). The rejection reflects episodes such as the 2021-22 inflation spike, when nominal pay lagged prices, and the 2018 floor reform. The unrestricted version is a sensitivity","; uzunmüddətli homogenlik bu qısa nümunədə rədd edilsə də, nəzəri əsasla QOYULUB: qiymət elastiklikləri cəmi c ≠ 1 olarsa, real əmək haqqı hər il (c−1) × inflyasiya qədər sonsuz sürüşərdi (pul illüziyası). Rədd edilmə 2021–22 inflyasiya sıçrayışı (nominal əmək haqqı qiymətlərdən geri qalanda) və 2018 minimum əmək haqqı islahatı kimi epizodları əks etdirir. Məhdudiyyətsiz variant həssaslıq yoxlamasıdır.",rows_eq2
+phrase,NOT used to forecast: the oil wage is the non-oil wage times the premium lever. Oil-sector productivity and the oil price were rejected as drivers (Part 10).,Proqnozda İSTİFADƏ OLUNMUR: neft sektorunda əmək haqqı qeyri-neft əmək haqqının mükafat rıçağına hasilidir. Neft sektorunun məhsuldarlığı və neftin qiyməti sürücü kimi rədd edilib (10-cu hissə).,rows_eq2
+phrase,Rıçaq uyğunluğu: level ,Rıçaq uyğunluğu: səviyyə ,rows_eq2
+phrase,uyğunluq qaydasından KEÇMİR: level ,uyğunluq qaydasından KEÇMİR: səviyyə ,rows_eq2
+phrase,; diff-form ,; fərq forması ,rows_eq2
+regex,; with (D\d+) ,; \1 ilə ,rows_eq2
+regex,\bpass\b,keçir,rows_eq2
+regex,\bFAIL\b,KEÇMİR,rows_eq2
+phrase, -> , → ,rows_eq2
+phrase,Seçim: income + relative price — simplest coherent non-inferior level specification,"Seçim: gəlir + nisbi qiymət — ən sadə, uyğun və etalondan geri qalmayan səviyyə spesifikasiyası",rows_eq2
+phrase,(Information & communication),(İnformasiya və rabitə),rows_eq2
+phrase,(Construction),(Tikinti),rows_eq2
+phrase,(Accommodation & food),(Yerləşdirmə və iaşə),rows_eq2
+phrase,(Industry),(Sənaye),rows_eq2
+phrase,Layer-A size-class bounds (Part 8),"A qatı, ölçü sinifləri üzrə hədlər (8-ci hissə)",rows_eq2
+phrase,Mobile telecommunications (3 operators),Mobil rabitə (3 operator),rows_eq2
+phrase,"ASSUMPTION: 3 operators, subscriber shares ≈ 50-55 / 25-30 / 20% (approximate public reports)","FƏRZİYYƏ: 3 operator, abunəçi payları ≈ 50–55 / 25–30 / 20% (ictimai hesabatlar üzrə təxmini)",rows_eq2
+phrase,Banking (assets),Bank sektoru (aktivlər),rows_eq2
+phrase,"ASSUMPTION: ~22 banks, top-5 ≈ 60% of assets (approximate, CBAR annual reports)","FƏRZİYYƏ: ~22 bank, ən böyük 5-i aktivlərin ≈ 60%-i (təxmini, AMB illik hesabatları)",rows_eq2
+phrase,; replace with CBAR concentration data,; AMB-nin konsentrasiya məlumatı ilə əvəz edin,rows_eq2
+phrase,Cement (domestic producers),Sement (yerli istehsalçılar),rows_eq2
+phrase,ASSUMPTION: 2-3 domestic integrated producers plus imports (approximate),FƏRZİYYƏ: 2–3 yerli inteqrasiya olunmuş istehsalçı və idxal (təxmini),rows_eq2
+phrase,domestic HHI,yerli HHI,rows_eq2
+phrase,Qayda (Part 12.5),Qayda (12.5-ci hissə),rows_eq2
+phrase,Eyni qayda (Part 12.5),Eyni qayda (12.5-ci hissə),rows_eq2
+phrase,(OOS RMSE,(nümunədən kənar RMSE,rows_eq2
+regex,\(Part (\d+(?:\.\d+)?)\),(\1-ci hissə),rows_eq2
+regex,\bPart (\d+(?:\.\d+)?),\1-ci hissə,rows_eq2
+phrase,notebook-un estimate_lr funksiyası,dəftərin estimate_lr funksiyası,rows_eq2
+phrase,seçim sübutu hold-out blokundadır,seçim sübutu nümunədən kənar yoxlama blokundadır,rows_eq2
+phrase,Leather and footwear,Dəri və ayaqqabı,rows_eq2
+phrase,Rubber and plastics,Rezin və plastik kütlə,rows_eq2
+phrase,Computer and electronics,Kompüter və elektronika,rows_eq2
+phrase,Machinery and equipment,Maşın və avadanlıq,rows_eq2
+phrase,Other transport equipment,Digər nəqliyyat vasitələri,rows_eq2
+phrase,Other manufacturing,Digər hazır məmulatlar,rows_eq2
+phrase,Repair and installation,Maşın və avadanlığın təmiri və quraşdırılması,rows_eq2
+phrase,Other mining and quarrying,Digər faydalı qazıntılar,rows_eq2
+phrase,Mining support services,Mədənçıxarma sahəsində xidmətlər,rows_eq2
+phrase,(mean of DSK tables ,(DSK cədvəllərinin ortası: ,rows_eq2
+phrase," / all hired, "," / bütün muzdlu işçilər, ",rows_eq2
+phrase,FE + size,FE + ölçü,rows_eq2
+phrase,+ reg + size,+ reg + ölçü,rows_eq2
+phrase,difference-form slope (level slope outside its difference-form CI); shrunk,fərq formasının meyli (səviyyə meyli fərq formasının etibarlılıq intervalından kənardadır); büzülmüş,rows_eq2
+phrase,"empirical Bayes (precision-weighted) shrinkage, kappa chosen pre-cut","empirik Bayes büzülməsi (dəqiqliklə çəkilmiş), κ kəsim ilindən əvvəlki məlumatla seçilib",rows_eq2
+phrase,"(DSK 4.5-4.8 relative sector wages, 2024)","(DSK 4.5–4.8, sahələrin nisbi əmək haqları, 2024)",rows_eq2
+phrase,"(DSK 4.5-4.8 state wages, 4 budget-financed activities, 2024)","(DSK 4.5–4.8, dövlət sektorunda əmək haqları, büdcədən maliyyələşən 4 fəaliyyət növü, 2024)",rows_eq2
+phrase,"(DSK Dynamics_2.12, last published year)","(DSK Dynamics_2.12, son dərc olunmuş il)",rows_eq2
+phrase,"(Ministry MOE SOCIAL.xlsx eq8, published coefficients)","(Nazirliyin MOE SOCIAL.xlsx eq8 tənliyi, dərc olunmuş əmsallar)",rows_eq2
+regex,(?<![\w:|/.\-])Baku\ city(?![\w\-])(?! {2}),Bakı şəhəri,rows_geo
+regex,(?<![\w:|/.\-])Nakhchivan\ AR(?![\w\-])(?! {2}),Naxçıvan MR,rows_geo
+regex,(?<![\w:|/.\-])Absheron\-Khizi(?![\w\-])(?! {2}),Abşeron-Xızı,rows_geo
+regex,(?<![\w:|/.\-])Daghlig\ Shirvan(?![\w\-])(?! {2}),Dağlıq Şirvan,rows_geo
+regex,(?<![\w:|/.\-])Ganja\-Dashkasan(?![\w\-])(?! {2}),Gəncə-Daşkəsən,rows_geo
+regex,(?<![\w:|/.\-])Garabagh(?![\w\-])(?! {2}),Qarabağ,rows_geo
+regex,(?<![\w:|/.\-])Gazakh\-Tovuz(?![\w\-])(?! {2}),Qazax-Tovuz,rows_geo
+regex,(?<![\w:|/.\-])Guba\-Khachmaz(?![\w\-])(?! {2}),Quba-Xaçmaz,rows_geo
+regex,(?<![\w:|/.\-])Lankaran\-Astara(?![\w\-])(?! {2}),Lənkəran-Astara,rows_geo
+regex,(?<![\w:|/.\-])Central\ Aran(?![\w\-])(?! {2}),Mərkəzi Aran,rows_geo
+regex,(?<![\w:|/.\-])Mil\-Mughan(?![\w\-])(?! {2}),Mil-Muğan,rows_geo
+regex,(?<![\w:|/.\-])Shaki\-Zagatala(?![\w\-])(?! {2}),Şəki-Zaqatala,rows_geo
+regex,(?<![\w:|/.\-])Eastern\ Zangezur(?![\w\-])(?! {2}),Şərqi Zəngəzur,rows_geo
+regex,(?<![\w:|/.\-])Shirvan\-Salyan(?![\w\-])(?! {2}),Şirvan-Salyan,rows_geo
+regex,(?<![\w:|/.\-])Nakhchivan(?! AR)(?![\w\-])(?! {2}),Naxçıvan,rows_geo
+phrase,SYNTHETIC panel üzrə,sintetik panel üzrə,rows_geo
+regex,(— FE[^\n\[]*?\+ )reg\b,\g<1>regional buraxılış,rows_geo
+regex,(— FE[^\n\[]*?\+ )non\b,\g<1>qeyri-neft ÜDM,rows_geo
+regex,(— FE[^\n\[]*?\+ )lend\b,\g<1>kredit faizi,rows_geo
+regex,(— FE[^\n\[]*?\+ )cred\b,\g<1>kredit artımı,rows_geo
+regex,(— FE[^\n\[]*?\+ )dem\b,\g<1>tələb,rows_geo
+regex,(— FE[^\n\[]*?\+ )pcm\b,\g<1>marja,rows_geo
+regex,(— FE[^\n\[]*?\+ )brk\b,\g<1>tərif qırılması,rows_geo
+regex,(— FE[^\n\[]*?\+ )d2022\b,\g<1>2022 impulsu,rows_geo
+exact,"validator catches 6 seeded corruptions (balance, NACE, negative cash)","validator 6 qəsdən yerləşdirilmiş xətanı tapır (balans, NACE, mənfi pul vəsaiti)",rows_syn
+exact,DuPont: margin x turnover x multiplier = ROE (max abs),DuPont: marja × dövriyyə × multiplikator = ROE (maks. mütləq fərq),rows_syn
+exact,"TFP index equals an independent firm-by-firm re-computation (NACE 10, 2024; max abs gap)","TFP indeksi müstəqil, müəssisə-müəssisə təkrar hesablamaya bərabərdir (NACE 10, 2024; maks. mütləq fərq)",rows_syn
+exact,market shares sum to one in every NACE-year cell (max gap),bazar payları hər NACE-il xanasında cəmdə birə bərabərdir (maks. fərq),rows_syn
+exact,firm forecasts add up to the Layer-A branch forecast (%),müəssisə proqnozları cəmdə A qatının sahə proqnozuna bərabərdir (%),rows_syn
+exact,"firm-level econometric models estimated (statsmodels = independent numpy computation, asserted)","müəssisə səviyyəsində ekonometrik modellər qiymətləndirilib (statsmodels = müstəqil numpy hesablaması, yoxlanılıb)",rows_syn
+exact,parameter recovery: consistent estimators within 4 s.e. of the true values (count),parametrlərin bərpası: ardıcıl qiymətləndiricilər həqiqi dəyərdən 4 standart xəta daxilində (say),rows_syn
+exact,"peer percentile ranks lie in (0, 100]","həmkarlar arasında faiz dərəcələri (0, 100] aralığındadır",rows_syn
+exact,"firm revenues add up to DSK branch output (max gap, %)","müəssisə gəlirləri cəmdə DSK sahə buraxılışına bərabərdir (maks. fərq, %)",rows_syn
+exact,firm counts equal DSK active enterprises (max gap),müəssisələrin sayı DSK-nın fəal müəssisələrinə bərabərdir (maks. fərq),rows_syn
+exact,"determinant model recovers the DGP (true 0.15, -0.30)","amillər modeli məlumat yaradan prosesi bərpa edir (həqiqi 0,15, −0,30)",rows_syn
+exact,HHI >= 10000 / N in every market,hər bazarda HHI ≥ 10000 / N,rows_syn
+exact,entropy <= ln N,entropiya ≤ ln N,rows_syn
+exact,shares add to 1 in every national division market with revenue,gəliri olan hər milli NACE bölməsi bazarında paylar cəmdə 1-dir,rows_syn
+exact,"Kaplan-Meier survival non-increasing and in [0, 1]","Kaplan–Meyer sağ qalma funksiyası artmır və [0, 1] aralığındadır",rows_syn
+exact,"calibration: births, deaths, revenue and SME revenue shares reproduce DSK where published (max |relative error| %)","kalibrləmə: doğulmalar, ölümlər, gəlir və KOS-un gəlir payları DSK-nın dərc etdiyi dəyərləri təkrarlayır (maks. |nisbi xəta|, %)",rows_syn
+exact,DGP check: Boone slope negative (efficient firms larger) in >= 90% of section-years,məlumat yaradan prosesin yoxlanması: Boone meyli bölmə-illərin ≥ 90 %-ində mənfidir (səmərəli müəssisələr böyükdür),rows_syn
+exact,DGP check: low-Pareto-alpha sections more concentrated (median HHI ratio),məlumat yaradan prosesin yoxlanması: Pareto α-sı aşağı bölmələr daha konsentrasiyalıdır (HHI nisbətinin medianı),rows_syn
+exact,real-named file with neutral data_status -> DATA_MODE = REAL,"real adlı fayl, neytral data_status → DATA_MODE = REAL",rows_syn
+exact,REAL file passes the validator (0 hard errors),REAL fayl validatordan keçir (0 ciddi xəta),rows_syn
+exact,"REAL mode writes FR10_FIRM_* only, without watermark, all tests pass","REAL rejimdə yalnız FR10_FIRM_* faylları yazılır, su nişanı olmadan; bütün testlər keçir",rows_syn
+exact,"Azerbaijani headers (xlsx, FIRM_PANEL_PATH) load and validate","Azərbaycan dilində başlıqlar (xlsx, FIRM_PANEL_PATH) oxunur və yoxlanılır",rows_syn
+exact,FIRM_PANEL_PATH has priority over the real-named file,FIRM_PANEL_PATH real adlı fayldan üstündür,rows_syn
+exact,broken file: missing required column reported as fatal,xətalı fayl: çatışmayan məcburi sütun ciddi xəta kimi bildirilir,rows_syn
+exact,broken file: total assets < current assets flagged per row and the run stops,xətalı fayl: «cəmi aktivlər < dövriyyə aktivləri» hər sətirdə qeyd olunur və icra dayanır,rows_syn
+exact,"REAL mode writes FR12_FIRM_* only, without watermark; identity tests pass; Layer-B econometrics run in REAL mode (FR12_FIRM_econ_*)","REAL rejimdə yalnız FR12_FIRM_* yazılır, su nişanı olmadan; eynilik testləri keçir; B qatının ekonometrikası REAL rejimdə işləyir (FR12_FIRM_econ_*)",rows_syn
+exact,Azerbaijani headers (xlsx) load and validate,Azərbaycan dilində başlıqlar (xlsx) oxunur və yoxlanılır,rows_syn
+exact,BUSREG_PATH environment variable has priority over the real-named file,BUSREG_PATH mühit dəyişəni real adlı fayldan üstündür,rows_syn
+exact,register without a weight column: full engine runs (weights default to 1),çəki sütunu olmayan reyestr: mühərrik tam işləyir (çəkilər standart olaraq 1),rows_syn
+exact,"weights honoured: weighted file = expanded unweighted file (HHI, CR4/CR8, entry/exit, KM, Boone n, PCM)","çəkilər nəzərə alınır: çəkili fayl = genişləndirilmiş çəkisiz fayl (HHI, CR4/CR8, giriş/çıxış, KM, Boone n, PCM)",rows_syn
+exact,broken file: negative revenue and liquidation before registration flagged per row; the run stops,xətalı fayl: mənfi gəlir və qeydiyyatdan əvvəl ləğv hər sətirdə qeyd olunur; icra dayanır,rows_syn
+exact,generator never writes the real file name; project directory scanned for real-named files,generator heç vaxt real fayl adını yazmır; layihə qovluğu real adlı fayllar üçün yoxlanılır,rows_syn
+exact,"mode REAL, file FR10_firm_panel.csv","rejim REAL, fayl FR10_firm_panel.csv",rows_syn
+exact,"mode REAL, file FR12_business_register.csv","rejim REAL, fayl FR12_business_register.csv",rows_syn
+exact,0 warnings,0 xəbərdarlıq,rows_syn
+exact,"3000 rows, unknown columns [], mode REAL","3000 sətir, naməlum sütun yoxdur, rejim REAL",rows_syn
+exact,loaded panel_az.xlsx,panel_az.xlsx oxundu,rows_syn
+exact,required column missing (EN or AZ header),məcburi sütun yoxdur (ingilis və ya Azərbaycan başlığı),rows_syn
+exact,"firm panel rejected: 15 hard errors (first: row 2, field total_assets: total assets < current + fixed assets); see rep.csv","müəssisə paneli rədd edildi: 15 ciddi xəta (birincisi: 2-ci sətir, total_assets sahəsi: cəmi aktivlər < dövriyyə + əsas aktivlər); rep.csv-yə baxın",rows_syn
+exact,loaded register_az.xlsx with BUSREG_PATH set in the environment,BUSREG_PATH mühit dəyişəni ilə register_az.xlsx oxundu,rows_syn
+exact,"38,849 rows, mode REAL; engine + DSK comparison (615 cells) ran","38 849 sətir, rejim REAL; mühərrik və DSK ilə müqayisə (615 xana) icra olundu",rows_syn
+exact,max abs diff 6.37e-12 over 112 cells,"112 xana üzrə maks. mütləq fərq 6,37e-12",rows_syn
+exact,"business register rejected: 8 hard errors (first: row 2, field revenue: negative value); see rep.csv","biznes reyestri rədd edildi: 8 ciddi xəta (birincisi: 2-ci sətir, revenue sahəsi: mənfi dəyər); rep.csv-yə baxın",rows_syn
+exact,"95% CI coverage 35/43 (all), 26/30 (consistent)","95 % EI örtüyü 35/43 (hamısı), 26/30 (ardıcıl qiymətləndiricilər)",rows_syn
+regex,"^(\d+) files, e\.g\. \[(.*)\]$","\1 fayl, məs. [\2]",rows_syn
+regex,"^(\d+) files, e\.g\. \[(.*?)\]; econometrics: (\d+) models, (\d+) coefficients.*$","\1 fayl, məs. [\2]; ekonometrika: \3 model, \4 əmsal",rows_syn
+regex,^generator wrote \[(.*)$,generatorun yazdığı fayllar: [\1,rows_syn
+exact,"15 files, e.g. ['FR12_FIRM_concentration_nace.csv', 'FR12_FIRM_concentration_nace_region.csv', 'FR12_FIRM_econ_boone_sector_year.csv']; econometrics: 12 models, 262 coefficients = SYNTHETIC run, no wa","15 fayl, məs. FR12_FIRM_concentration_nace.csv, FR12_FIRM_concentration_nace_region.csv, FR12_FIRM_econ_boone_sector_year.csv; ekonometrika: 12 model, 262 əmsal — sintetik icra ilə eyni",rows_ui
+exact,"generator wrote ['FR12_business_register_SYNTHETIC.csv', 'FR12_business_register_TEMPLATE.csv', 'FR12_business_register_TEMPLATE.xlsx', 'FR12_business_register_column_map.csv', 'README_FR12_business_r","generatorun yazdığı fayllar: FR12_business_register_SYNTHETIC.csv, FR12_business_register_TEMPLATE.csv, FR12_business_register_TEMPLATE.xlsx, FR12_business_register_column_map.csv, README_FR12_business_register…",rows_ui
+phrase,"'cross-check' (baza), 'fixed' (aqreqat E1-ə bərabər), 'weighted' (E1 MSE çəkisi)","çarpaz yoxlama (baza), sabit (aqreqat E1-ə bərabər), çəkili (E1 MSE çəkisi)",rows_ui
+phrase,between əlaqəsinin,sahələrarası əlaqənin,rows_ui
+phrase,"'constant' (baza, 2025 səviyyəsi), 'drift' (2020–25 meyli, 0.5 sönmə ilə), 'admin' (inzibati tariflər +2%/il)","sabit (baza, 2025 səviyyəsi), meyl (2020–25 meyli, 0.5 sönmə ilə), inzibati (inzibati tariflər +2%/il)",rows_ui
+phrase,"'chosen' (DOLS, baza), 'difference' (fərq forması η), 'income_srv', 'income_only' (alternativ spesifikasiyalar, 2025-ə yenidən lövbərlənir)","seçilmiş (DOLS, baza), fərq forması (η), xidmət qiyməti ilə deflyasiya edilmiş gəlir, yalnız gəlir (alternativ spesifikasiyalar, 2025-ə yenidən lövbərlənir)",rows_ui
+exact,(a) entry counts,(a) girişlərin sayı,rows_ui
+exact,(c) Boone slope,(c) Boone meyli,rows_ui
+exact,"(d) SCP, (e) mobility","(d) struktur–davranış–nəticə (SCP), (e) mobillik",rows_ui
+exact,in-sample,nümunə daxilində,rows_ui
+exact,out-of-sample,nümunədən kənar,rows_ui
+phrase,Metal ores,Metal filizlərinin hasilatı,FR10_branch_scorecard
+phrase,Food products,Qida məhsulları,FR10_branch_scorecard
+phrase,Beverages,İçkilər,FR10_branch_scorecard
+phrase,Tobacco products,Tütün məmulatları,FR10_branch_scorecard
+phrase,Textiles,Toxuculuq,FR10_branch_scorecard
+phrase,Wearing apparel,Geyim,FR10_branch_scorecard
+phrase,Wood products,Ağac emalı,FR10_branch_scorecard
+phrase,Paper products,Kağız və karton,FR10_branch_scorecard
+phrase,Printing,Poliqrafiya,FR10_branch_scorecard
+phrase,Refined petroleum products,Neft emalı məhsulları,FR10_branch_scorecard
+phrase,Chemicals,Kimya məhsulları,FR10_branch_scorecard
+phrase,Pharmaceuticals,Əczaçılıq məhsulları,FR10_branch_scorecard
+phrase,Non-metallic minerals,Digər qeyri-metal mineral məhsullar,FR10_branch_scorecard
+phrase,Basic metals,Metallurgiya,FR10_branch_scorecard
+phrase,Fabricated metal products,Hazır metal məmulatları,FR10_branch_scorecard
+phrase,Electrical equipment,Elektrik avadanlığı,FR10_branch_scorecard
+phrase,Motor vehicles,Avtomobil və qoşqular,FR10_branch_scorecard
+phrase,Furniture,Mebel,FR10_branch_scorecard
+phrase,"Electricity, gas and steam","Elektrik enerjisi, qaz və buxar",FR10_branch_scorecard
+phrase,Water supply and waste,Su təchizatı,FR10_branch_scorecard

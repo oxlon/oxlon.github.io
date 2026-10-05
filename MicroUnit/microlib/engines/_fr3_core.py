@@ -187,3 +187,24 @@ def branch_wages(S, fc3, gva_f, emp_ind, beta, anchor=True):
         row[nova] = w_nova
         rows[y] = row
     return pd.DataFrame(rows).T
+
+
+def sector_wages(S, f3, empf):
+    '''v2.2 (Part 20A): the eight sector wages and the budget / non-budget wages, LAST_ACT and the forecast years.
+    Each sector keeps its relative wage of the last published DSK year; hired weights move with FR3's own sector
+    employment; the weighted average equals FR3's average wage x the DSK aggregation ratio. Budget organisations keep
+    their ratio to the state wage; non-budget wages follow from the identity with the held budget share.'''
+    sw = S.get('SW')
+    if not sw:
+        return None
+    SEC8 = list(sw['sectors']); LA = S['M']['LAST_ACT']
+    rel = pd.Series(sw['rel'])[SEC8]; h0 = pd.Series(sw['h0'])[SEC8]; e24 = pd.Series(sw['e24'])[SEC8]
+    wbar = pd.concat([pd.Series({LA: float(S['W25']['w_avg'])}), f3['w_avg'].astype(float)])
+    wst = pd.concat([pd.Series({LA: float(S['W25']['w_state'])}), f3['w_state'].astype(float)])
+    e = pd.concat([pd.DataFrame([{k: float(S['base_e'][k]) for k in SEC8}], index=[LA]), empf[SEC8].astype(float)])
+    h = e.div(e24, axis=1).mul(h0, axis=1)
+    wsh = h.div(h.sum(axis=1), axis=0)
+    out = pd.DataFrame({k: sw['kd']*wbar*rel[k]/(wsh*rel).sum(axis=1) for k in SEC8})
+    out['budget'] = sw['rb']*wst
+    out['nonbudget'] = (sw['kd']*wbar - sw['bsh']*out['budget'])/(1 - sw['bsh'])
+    return out
