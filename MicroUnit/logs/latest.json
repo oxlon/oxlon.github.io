@@ -1,0 +1,214 @@
+{
+ "run_id": "r20261005-112759-e3d2",
+ "status": "dry-run",
+ "dry_run": true,
+ "trigger": "cli",
+ "root": "/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/MicroUnit",
+ "argv": [
+  "--dry-run"
+ ],
+ "python": "/Users/econ0757/venvs/miis-model/bin/python3",
+ "python_version": "3.13.15",
+ "kernel": "miis-model",
+ "timeout_s": 3600,
+ "started": "2026-10-05T10:27:59Z",
+ "finished": "2026-10-05T10:27:59Z",
+ "seconds": 0.2,
+ "plan": [
+  "FR1",
+  "FR3",
+  "FR4",
+  "FR5",
+  "FR10",
+  "FR12",
+  "panel",
+  "site"
+ ],
+ "dependency_check": {
+  "FR1": {
+   "declared": [],
+   "detected": [],
+   "files": {},
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR3": {
+   "declared": [
+    "FR1"
+   ],
+   "detected": [
+    "FR1"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_annual_raw.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR4": {
+   "declared": [
+    "FR1",
+    "FR3"
+   ],
+   "detected": [
+    "FR1",
+    "FR3"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv",
+     "FR1_panel_industry.csv"
+    ],
+    "FR3": [
+     "FR3_wage_forecast_full.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR5": {
+   "declared": [
+    "FR1"
+   ],
+   "detected": [
+    "FR1"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR10": {
+   "declared": [
+    "FR1",
+    "FR3",
+    "FR4"
+   ],
+   "detected": [
+    "FR1",
+    "FR3",
+    "FR4"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv"
+    ],
+    "FR3": [
+     "FR3_industry_branch_wages.csv"
+    ],
+    "FR4": [
+     "FR4_dsk_hired_by_activity_history.csv",
+     "FR4_hired_by_activity.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  },
+  "FR12": {
+   "declared": [
+    "FR1",
+    "FR10"
+   ],
+   "detected": [
+    "FR1",
+    "FR10"
+   ],
+   "files": {
+    "FR1": [
+     "FR1_analysis_dataset.csv",
+     "FR1_fan_draws.csv",
+     "FR1_forecast_full.csv"
+    ],
+    "FR10": [
+     "FR10_branch_shares_history.csv",
+     "FR10_forecast_regions.csv",
+     "FR10_forecast_sections.csv",
+     "FR10_ownership.csv",
+     "FR10_regional_entry_exit.csv",
+     "FR10_regional_history.csv"
+    ]
+   },
+   "ok": true,
+   "undeclared": [],
+   "unused": [],
+   "order_ok": true
+  }
+ },
+ "snapshot": null,
+ "reproducibility": null,
+ "error": null,
+ "steps": [
+  {
+   "name": "FR1",
+   "status": "planned",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR3",
+   "status": "planned",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR4",
+   "status": "planned",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR5",
+   "status": "planned",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR10",
+   "status": "planned",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "FR12",
+   "status": "planned",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "panel",
+   "status": "planned",
+   "seconds": null,
+   "error": null
+  },
+  {
+   "name": "site",
+   "status": "planned",
+   "seconds": null,
+   "error": null
+  }
+ ]
+}

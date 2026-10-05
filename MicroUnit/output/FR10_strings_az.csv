@@ -1,0 +1,1076 @@
+en,az,how,files
+"SYNTHETIC — pipeline test, not results","SİNTETİK — emal xəttinin sınağı, nəticə deyil",translation template,FR10_SYNTHETIC_cohort_survival.csv;FR10_SYNTHETIC_concentration_nace.csv;FR10_SYNTHETIC_concentration_nace_region_2025.csv;FR10_SYNTHETIC_coverage_vs_layer_a.csv;FR10_SYNTHETIC_econ_coefficients.csv;FR10_SYNTHETIC_econ_distress_ame.csv;FR10_SYNTHETIC_econ_distress_calibration.csv;FR10_SYNTHETIC_econ_distress_roc.csv;FR10_SYNTHETIC_econ_export_ame.csv;FR10_SYNTHETIC_econ_export_calibration.csv;FR10_SYNTHETIC_econ_export_roc.csv;FR10_SYNTHETIC_econ_interpretation_az.csv;FR10_SYNTHETIC_econ_models.csv;FR10_SYNTHETIC_econ_production_function.csv;FR10_SYNTHETIC_econ_recovery.csv;FR10_SYNTHETIC_econ_recovery_mc.csv;FR10_SYNTHETIC_econ_sample_rules.csv;FR10_SYNTHETIC_econ_true_parameters.csv;FR10_SYNTHETIC_entry_exit.csv;FR10_SYNTHETIC_pipeline_tests.csv;FR10_SYNTHETIC_share_model.csv;FR10_SYNTHETIC_validation_seeded_corruptions.csv
+Baku city,Bakı şəhəri,DSK az (018_1),FR10_SYNTHETIC_concentration_nace_region_2025.csv;FR10_fan_charts.csv;FR10_forecast_regions.csv;FR10_product_location_shares.csv;FR10_regional_history.csv;FR10_share_system_coefficients.csv
+Central Aran,Mərkəzi Aran,region dictionary,FR10_SYNTHETIC_concentration_nace_region_2025.csv;FR10_fan_charts.csv;FR10_forecast_regions.csv;FR10_regional_history.csv;FR10_share_system_coefficients.csv
+Daghlig Shirvan,Dağlıq Şirvan,region dictionary,FR10_SYNTHETIC_concentration_nace_region_2025.csv;FR10_fan_charts.csv;FR10_forecast_regions.csv;FR10_regional_history.csv;FR10_share_system_coefficients.csv
+Eastern Zangezur,Şərqi Zəngəzur,region dictionary,FR10_SYNTHETIC_concentration_nace_region_2025.csv;FR10_fan_charts.csv;FR10_forecast_regions.csv;FR10_regional_history.csv;FR10_share_system_coefficients.csv
+Nakhchivan AR,Naxçıvan MR,region dictionary,FR10_SYNTHETIC_concentration_nace_region_2025.csv;FR10_fan_charts.csv;FR10_forecast_regions.csv;FR10_regional_history.csv;FR10_share_system_coefficients.csv
+"Two-way fixed effects (firm + year), firm-demeaned; cluster(firm)","İki yönlü sabit effektlər (müəssisə + il), müəssisə üzrə ortadan çıxarma; klaster (müəssisə)",translation template,FR10_SYNTHETIC_econ_coefficients.csv;FR10_SYNTHETIC_econ_models.csv;FR10_robustness_summary.csv
+Pooled LS + NACE x year fixed effects; cluster(firm),Birləşdirilmiş ƏKK + NACE × il sabit effektləri; klaster (müəssisə),translation template,FR10_SYNTHETIC_econ_coefficients.csv;FR10_SYNTHETIC_econ_models.csv;FR10_robustness_summary.csv
+Pooled LS + NACE and year dummies; cluster(firm),Birləşdirilmiş ƏKK + NACE və il dummy-ləri; klaster (müəssisə),translation template,FR10_SYNTHETIC_econ_coefficients.csv;FR10_SYNTHETIC_econ_models.csv;FR10_robustness_summary.csv
+"Logit (MLE), dummies year; cluster(firm)","Logit (MHQ), il dummy-ləri; klaster (müəssisə)",translation template,FR10_SYNTHETIC_econ_coefficients.csv;FR10_SYNTHETIC_econ_models.csv;FR10_robustness_summary.csv
+"Logit (MLE), dummies nace2 + year; cluster(firm)","Logit (MHQ), NACE və il dummy-ləri; klaster (müəssisə)",translation template,FR10_SYNTHETIC_econ_coefficients.csv;FR10_SYNTHETIC_econ_models.csv;FR10_robustness_summary.csv
+"OLS within NACE x year (demeaned), HC1","ƏKK, NACE × il daxilində (ortadan çıxarılmış), HC1",translation template,FR10_SYNTHETIC_econ_coefficients.csv
+out-of-sample (last two years),nümunədən kənar (son iki il),translation template,FR10_SYNTHETIC_econ_distress_calibration.csv;FR10_SYNTHETIC_econ_distress_roc.csv
+within R²,daxili R²,translation template,FR10_SYNTHETIC_econ_models.csv
+McFadden pseudo-R²,McFadden psevdo-R²,translation template,FR10_SYNTHETIC_econ_models.csv
+"validator catches 6 seeded corruptions (balance, NACE, negative cash)","yoxlayıcı qəsdən daxil edilmiş 6 xətanı aşkarlayır (balans, NACE, mənfi pul vəsaiti)",translation template,FR10_SYNTHETIC_pipeline_tests.csv
+DuPont: margin x turnover x multiplier = ROE (max abs),DuPont: marja x dövriyyə x multiplikator = ROE (maks. mütləq fərq),translation template,FR10_SYNTHETIC_pipeline_tests.csv
+"TFP index equals an independent firm-by-firm re-computation (NACE 10, 2024; max abs gap)","TFP indeksi müəssisələr üzrə müstəqil təkrar hesablamaya bərabərdir (NACE 10, 2024; maks. mütləq fərq)",translation template,FR10_SYNTHETIC_pipeline_tests.csv
+market shares sum to one in every NACE-year cell (max gap),bazar paylarının cəmi hər NACE-il xanasında birə bərabərdir (maks. fərq),translation template,FR10_SYNTHETIC_pipeline_tests.csv
+firm forecasts add up to the Layer-A branch forecast (%),müəssisə proqnozlarının cəmi A qatının sahə proqnozuna bərabərdir (%),translation template,FR10_SYNTHETIC_pipeline_tests.csv
+"firm-level econometric models estimated (statsmodels = independent numpy computation, asserted)","müəssisə səviyyəsində ekonometrik modellər qiymətləndirilib (statsmodels = müstəqil numpy hesablaması, yoxlanılıb)",translation template,FR10_SYNTHETIC_pipeline_tests.csv
+parameter recovery: consistent estimators within 4 s.e. of the true values (count),parametrlərin bərpası: ardıcıl qiymətləndiricilər həqiqi dəyərdən 4 standart xəta daxilindədir (say),translation template,FR10_SYNTHETIC_pipeline_tests.csv
+"peer percentile ranks lie in (0, 100]","həmkar qrup daxilində persentil ranqları (0, 100] intervalındadır",translation template,FR10_SYNTHETIC_pipeline_tests.csv
+"firm revenues add up to DSK branch output (max gap, %)","müəssisə gəlirlərinin cəmi DSK-nın sahə buraxılışına bərabərdir (maks. fərq, %)",translation template,FR10_SYNTHETIC_pipeline_tests.csv
+firm counts equal DSK active enterprises (max gap),müəssisələrin sayı DSK-nın fəaliyyət göstərən müəssisələrinin sayına bərabərdir (maks. fərq),translation template,FR10_SYNTHETIC_pipeline_tests.csv
+"determinant model recovers the DGP (true 0.15, -0.30)","amillər modeli məlumat yaradan prosesi (DGP) bərpa edir (həqiqi qiymətlər 0.15, -0.30)",translation template,FR10_SYNTHETIC_pipeline_tests.csv
+"95% CI coverage 35/43 (all), 26/30 (consistent)","95% etibarlılıq intervalının əhatəsi 35/43 (hamısı), 26/30 (ardıcıl qiymətləndiricilər)",translation template,FR10_SYNTHETIC_pipeline_tests.csv
+negative value,mənfi qiymət,translation template,FR10_SYNTHETIC_validation_seeded_corruptions.csv
+not a NACE Rev.2 division,NACE Rev.2 sahəsi deyil,translation template,FR10_SYNTHETIC_validation_seeded_corruptions.csv
+balance sheet does not balance (equity + liabilities != total assets),balans tarazlaşmır (kapital + öhdəliklər != aktivlərin cəmi),translation template,FR10_SYNTHETIC_validation_seeded_corruptions.csv
+with 6 seeded corruptions,qəsdən daxil edilmiş 6 xəta ilə,translation template,FR10_SYNTHETIC_validation_seeded_corruptions.csv
+Crude oil and natural gas,Xam neft və təbii qaz hasilatı,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv
+Metal ores,Metal filizlərinin hasilatı,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv
+Other mining and quarrying,Digər faydalı qazıntılar,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv
+Mining support services,Mədənçıxarma sahəsində xidmətlər,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv
+Food products,Qida məhsulları,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Tobacco products,Tütün məmulatları,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Wearing apparel,Geyim,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Leather and footwear,Dəri və ayaqqabı,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Wood products,Ağac emalı,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Paper products,Kağız və karton,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Refined petroleum products,Neft emalı məhsulları,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_oil_linked_block.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Rubber and plastics,Rezin və plastik kütlə,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Non-metallic minerals,Digər qeyri-metal mineral məhsullar,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Basic metals,Metallurgiya,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Fabricated metal products,Hazır metal məmulatları,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Computer and electronics,Kompüter və elektronika,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Electrical equipment,Elektrik avadanlığı,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Machinery and equipment,Maşın və avadanlıq,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Motor vehicles,Avtomobil və qoşqular,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Other transport equipment,Digər nəqliyyat vasitələri,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Other manufacturing,Digər hazır məmulatlar,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+Repair and installation,Maşın və avadanlığın təmiri və quraşdırılması,branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_cross_sector_multipliers.csv;FR10_early_warning.csv;FR10_growth_contributions.csv;FR10_holdout_branches.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_quadrant.csv;FR10_tfp_branches.csv;FR10_wage_productivity_gap.csv
+"Electricity, gas and steam","Elektrik enerjisi, qaz və buxar",branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv
+Water supply and waste,"Su təchizatı, tullantılar",branch dictionary,FR10_branch_growth_table.csv;FR10_branch_scorecard.csv;FR10_nonstate_composition.csv;FR10_plausibility.csv;FR10_product_forecasts_derived.csv
+FR1 oil & gas real; residual nominal,FR1 neft və qaz (real); qalıq (nominal),translation template,FR10_branch_growth_table.csv
+metal ores: grows with FR1 mining VA,metal filizləri: FR1 mədənçıxarma əlavə dəyəri ilə birgə artır,translation template,FR10_branch_growth_table.csv
+quarrying: neutral: held at the last actual level,digər faydalı qazıntılar: neytral: son faktiki səviyyədə saxlanılır,translation template,FR10_branch_growth_table.csv
+related-sector: rcons,əlaqəli sektor: rcons,translation template,FR10_branch_growth_table.csv
+sector total,sektor üzrə cəmi,translation template,FR10_branch_growth_table.csv
+capacity + oil price,istehsal gücü + neft qiyməti,translation template,FR10_branch_growth_table.csv
+related-sector: rva_con,əlaqəli sektor: rva_con,translation template,FR10_branch_growth_table.csv
+related-sector: rinv_non,əlaqəli sektor: rinv_non,translation template,FR10_branch_growth_table.csv
+nominal 2025,nominal 2025,translation template,FR10_branch_growth_table.csv
+nominal 2030,nominal 2030,translation template,FR10_branch_growth_table.csv
+nominal growth % pa,"nominal artım, illik %",translation template,FR10_branch_growth_table.csv
+real growth % pa,"real artım, illik %",translation template,FR10_branch_growth_table.csv
+share of industry 2025 %,"sənayedə payı 2025, %",translation template,FR10_branch_growth_table.csv
+share of industry 2030 %,"sənayedə payı 2030, %",translation template,FR10_branch_growth_table.csv
+LP growth % pa,"əmək məhsuldarlığının artımı, illik %",translation template,FR10_branch_growth_table.csv
+HHI manufacturing branches,"HHI, emal sənayesi sahələri",translation template,FR10_concentration.csv
+"CR4 manufacturing, %","CR4, emal sənayesi, %",translation template,FR10_concentration.csv
+HHI industry branches,"HHI, sənaye sahələri",translation template,FR10_concentration.csv
+"CR4 industry, %","CR4, sənaye, %",translation template,FR10_concentration.csv
+HHI 14 regions,"HHI, 14 iqtisadi rayon",translation template,FR10_concentration.csv
+"CR4 regions, %","CR4, iqtisadi rayonlar, %",translation template,FR10_concentration.csv
+"HHI manufacturing branches, Baseline","HHI, emal sənayesi sahələri, Əsas",translation template,FR10_concentration.csv
+"HHI manufacturing branches, Adverse","HHI, emal sənayesi sahələri, Mənfi",translation template,FR10_concentration.csv
+"HHI manufacturing branches, Reform","HHI, emal sənayesi sahələri, İslahat",translation template,FR10_concentration.csv
+"Enterprise balance sheet and P&L panel (Tax Service, >= 5 years)","Müəssisələrin balans və mənfəət-zərər hesabatı paneli (Vergi Xidməti, >= 5 il)",translation template,FR10_data_gaps_and_alternatives.csv
+Firm employment and wage bill (DSMF),Müəssisələr üzrə məşğulluq və əmək haqqı fondu (DSMF),translation template,FR10_data_gaps_and_alternatives.csv
+"Fixed-asset renewal, disposal, depreciation rates by branch (F1)","Sahələr üzrə əsas fondların yenilənmə, xaricolma və köhnəlmə əmsalları (F1)",translation template,FR10_data_gaps_and_alternatives.csv
+Capital-yield index (old DSK 018_1),Fondverimi indeksi (köhnə DSK 018_1),translation template,FR10_data_gaps_and_alternatives.csv
+Exports by branch / product (State Customs Committee),Sahələr / məhsullar üzrə ixrac (Dövlət Gömrük Komitəsi),translation template,FR10_data_gaps_and_alternatives.csv
+Producer prices by NACE 2-digit branch,NACE 2 rəqəmli sahələr üzrə istehsalçı qiymətləri,translation template,FR10_data_gaps_and_alternatives.csv
+Energy costs by branch,Sahələr üzrə enerji xərcləri,translation template,FR10_data_gaps_and_alternatives.csv
+Credit and NPLs by branch (CBAR),"Sahələr üzrə kreditlər və problemli kreditlər (Mərkəzi Bank, CBAR)",translation template,FR10_data_gaps_and_alternatives.csv
+SME indicators as a time series (F11),KOS (SME) göstəricilərinin zaman sırası (F11),translation template,FR10_data_gaps_and_alternatives.csv
+Industrial output by region x branch,İqtisadi rayon x sahə üzrə sənaye buraxılışı,translation template,FR10_data_gaps_and_alternatives.csv
+Profit-tax declarations by branch and size class (DVX),Sahə və ölçü qrupu üzrə mənfəət vergisi bəyannamələri (DVX),translation template,FR10_data_gaps_and_alternatives.csv
+Budget-organisation taxpayer rows (F8),Büdcə təşkilatı olan vergi ödəyicilərinin sətirləri (F8),translation template,FR10_data_gaps_and_alternatives.csv
+Workbook 2025 branch vintage (F2),İş kitabındakı 2025 sahə məlumatlarının versiyası (F2),translation template,FR10_data_gaps_and_alternatives.csv
+Regional coverage break 2019 (F9),"İqtisadi rayonlar üzrə əhatə dairəsində qırılma, 2019 (F9)",translation template,FR10_data_gaps_and_alternatives.csv
+Published non-state share 2013-2016 inconsistent (F12),Dərc edilmiş qeyri-dövlət payı 2013-2016 uyğunsuzdur (F12),translation template,FR10_data_gaps_and_alternatives.csv
+FR3 branch wage levels not anchored on 2025 (F13),FR3 sahə əmək haqqı səviyyələri 2025 ilinin göstəricilərinə bağlanmayıb (F13),translation template,FR10_data_gaps_and_alternatives.csv
+"No firm ratios, distress scores, firm-level HHI, entry/exit by firm; Layer B runs on synthetic data only","Müəssisə əmsalları, maliyyə çətinliyi balları, müəssisə səviyyəsində HHI, müəssisələr üzrə giriş/çıxış yoxdur; B qatı yalnız sintetik məlumatlarla işləyir",translation template,FR10_data_gaps_and_alternatives.csv
+No firm productivity or TFP,Müəssisə məhsuldarlığı və ya TFP yoxdur,translation template,FR10_data_gaps_and_alternatives.csv
+No direct renewal indicator,Birbaşa yenilənmə göstəricisi yoxdur,translation template,FR10_data_gaps_and_alternatives.csv
+No published capital efficiency,Kapitalın səmərəliliyi üzrə dərc edilmiş göstərici yoxdur,translation template,FR10_data_gaps_and_alternatives.csv
+Export orientation cannot enter the share system or the determinants panel,İxrac yönümlülüyü paylar sisteminə və ya amillər panelinə daxil edilə bilməz,translation template,FR10_data_gaps_and_alternatives.csv
+Real branch output relies on implicit deflators,Sahələrin real buraxılışı implisit deflyatorlara əsaslanır,translation template,FR10_data_gaps_and_alternatives.csv
+No energy-intensity indicator,Enerji tutumu göstəricisi yoxdur,translation template,FR10_data_gaps_and_alternatives.csv
+No financing-condition driver by branch,Sahələr üzrə maliyyələşmə şəraiti amili yoxdur,translation template,FR10_data_gaps_and_alternatives.csv
+SME share cannot be projected,KOS payını proqnozlaşdırmaq mümkün deyil,translation template,FR10_data_gaps_and_alternatives.csv
+Regional forecasts cannot use branch composition,İqtisadi rayonlar üzrə proqnozlarda sahə strukturundan istifadə etmək mümkün deyil,translation template,FR10_data_gaps_and_alternatives.csv
+Financial condition only economy-wide from declarations,"Maliyyə vəziyyəti yalnız bütün iqtisadiyyat üzrə, bəyannamələr əsasında",translation template,FR10_data_gaps_and_alternatives.csv
+Budget organisations cannot be separated,Büdcə təşkilatlarını ayırmaq mümkün deyil,translation template,FR10_data_gaps_and_alternatives.csv
+Workbook 2025 branch data unusable,İş kitabındakı 2025 sahə məlumatları istifadəyə yararsızdır,translation template,FR10_data_gaps_and_alternatives.csv
+Level break in regional shares,İqtisadi rayonların paylarında səviyyə qırılması,translation template,FR10_data_gaps_and_alternatives.csv
+Ownership history uncertain in 4 years,4 ildə mülkiyyət tarixçəsi qeyri-müəyyəndir,translation template,FR10_data_gaps_and_alternatives.csv
+FR3 branch wage levels unusable for margins,FR3 sahə əmək haqqı səviyyələri marjalar üçün yararsızdır,translation template,FR10_data_gaps_and_alternatives.csv
+"Section GOS margins (NA 013), branch GOS proxy, DVX declaration aggregates, concentration bound from the register","Bölmələr üzrə ümumi mənfəət marjaları (milli hesablar, NA 013), sahə üzrə ümumi mənfəətin təxmini göstəricisi, DVX bəyannamə aqreqatları, registr əsasında konsentrasiya həddi",translation template,FR10_data_gaps_and_alternatives.csv
+"DSK branch headcount and wages (006, 006_2), workbook industry sheets","DSK sahə üzrə işçi sayı və əmək haqqı (006, 006_2), iş kitabının sənaye vərəqləri",translation template,FR10_data_gaps_and_alternatives.csv
+"Investment rate I/GO (DSK 019/010); CFC/VA by section (NA 013, 025)","İnvestisiya norması I/GO (DSK 019/010); bölmələr üzrə əsas kapitalın istehlakı / əlavə dəyər (milli hesablar, NA 013, 025)",translation template,FR10_data_gaps_and_alternatives.csv
+Capital productivity from perpetual inventory,Daimi inventarizasiya metodu əsasında kapital məhsuldarlığı,translation template,FR10_data_gaps_and_alternatives.csv
+Industrial-park exports (workbook Park),"Sənaye parklarının ixracı (iş kitabı, Park vərəqi)",translation template,FR10_data_gaps_and_alternatives.csv
+"Implicit output deflator = nominal output / chained volume (DSK 010, 009)","Buraxılışın implisit deflyatoru = nominal buraxılış / zəncirvari həcm (DSK 010, 009)",translation template,FR10_data_gaps_and_alternatives.csv
+"SME electricity and fuel costs (entrepreneurship 035, 037; 2023-2024)","KOS (SME) elektrik enerjisi və yanacaq xərcləri (sahibkarlıq 035, 037; 2023-2024)",translation template,FR10_data_gaps_and_alternatives.csv
+FR1 industry credit at section level,"FR1 sənaye kreditləri, bölmə səviyyəsində",translation template,FR10_data_gaps_and_alternatives.csv
+Held at 2024,2024 səviyyəsində saxlanılır,translation template,FR10_data_gaps_and_alternatives.csv
+"Regional totals (022) and products by place of production (018_1 2011-2025, 018_2 2019-2025)","İqtisadi rayonlar üzrə yekunlar (022) və istehsal yeri üzrə məhsullar (018_1 2011-2025, 018_2 2019-2025)",translation template,FR10_data_gaps_and_alternatives.csv
+Economy-wide DVX aggregates,Bütün iqtisadiyyat üzrə DVX aqreqatları,translation template,FR10_data_gaps_and_alternatives.csv
+DSK final 2025,"DSK-nın yekun məlumatları, 2025",translation template,FR10_data_gaps_and_alternatives.csv
+Step dummy; shares on the regional sum,Pilləli fiktiv dəyişən; paylar iqtisadi rayonların cəminə görə,translation template,FR10_data_gaps_and_alternatives.csv
+Composition identity,Struktur eyniliyi,translation template,FR10_data_gaps_and_alternatives.csv
+FR1 average-wage index on DSK 2025 branch wages,DSK-nın 2025 sahə əmək haqlarına tətbiq edilən FR1 orta əmək haqqı indeksi,translation template,FR10_data_gaps_and_alternatives.csv
+Aggregates hide dispersion; the GOS proxy omits other taxes and non-employee compensation (overstates margins),Aqreqatlar dispersiyanı gizlədir; ümumi mənfəətin təxmini göstəricisi digər vergiləri və işçi olmayanlara ödənişləri nəzərə almır (marjaları şişirdir),translation template,FR10_data_gaps_and_alternatives.csv
+Branch averages only,Yalnız sahə üzrə orta göstəricilər,translation template,FR10_data_gaps_and_alternatives.csv
+Investment rate ignores stock age and is lumpy; section CFC hides branches,İnvestisiya norması fondların yaşını nəzərə almır və sıçrayışlıdır; bölmə üzrə əsas kapitalın istehlakı sahələri gizlədir,translation template,FR10_data_gaps_and_alternatives.csv
+Depends on depreciation rate (0.07) and the 2010 starting stock,Köhnəlmə dərəcəsindən (0.07) və 2010 ilinin başlanğıc fondundan asılıdır,translation template,FR10_data_gaps_and_alternatives.csv
+"Covers parks and zones only, with no branch structure","Yalnız parkları və zonaları əhatə edir, sahə strukturu yoxdur",translation template,FR10_data_gaps_and_alternatives.csv
+Composition effects inside a branch enter the deflator,Sahə daxilindəki struktur effektləri deflyatora daxil olur,translation template,FR10_data_gaps_and_alternatives.csv
+"SMEs only, two years","Yalnız KOS subyektləri, iki il",translation template,FR10_data_gaps_and_alternatives.csv
+Section level,Bölmə səviyyəsi,translation template,FR10_data_gaps_and_alternatives.csv
+Ignores any trend,Heç bir trendi nəzərə almır,translation template,FR10_data_gaps_and_alternatives.csv
+"Products cover physical units only, main products only",Məhsullar yalnız natural ifadədə və yalnız əsas məhsullar üzrədir,translation template,FR10_data_gaps_and_alternatives.csv
+Dominated by oil and large payers,Neft və iri vergi ödəyiciləri üstünlük təşkil edir,translation template,FR10_data_gaps_and_alternatives.csv
+None once DSK final is used,DSK-nın yekun məlumatlarından istifadə edildikdə yoxdur,translation template,FR10_data_gaps_and_alternatives.csv
+Pre-2019 shares exclude household industry,2019 ilinədək olan paylara ev təsərrüfatlarının sənaye fəaliyyəti daxil deyil,translation template,FR10_data_gaps_and_alternatives.csv
+None in the forecast,Proqnozda yoxdur,translation template,FR10_data_gaps_and_alternatives.csv
+Common wage growth across branches,Bütün sahələr üzrə eyni əmək haqqı artımı,translation template,FR10_data_gaps_and_alternatives.csv
+Sign the data-sharing agreement on the Part 17.1 schema; pseudonymised VÖEN; annual delivery after the declaration deadline,Hissə 17.1 sxemi üzrə məlumat mübadiləsi sazişini imzalamaq; psevdonimləşdirilmiş VÖEN; bəyannamə müddəti bitdikdən sonra illik ötürmə,translation template,FR10_data_gaps_and_alternatives.csv
+DSMF agreement keyed on the same pseudonymised VÖEN,Eyni psevdonimləşdirilmiş VÖEN-ə əsaslanan DSMF sazişi,translation template,FR10_data_gaps_and_alternatives.csv
+Ask DSK to restore tables 017_2-017_7 or deliver them to MIIS,DSK-dan 017_2-017_7 cədvəllərini bərpa etməyi və ya onları MIIS-ə ötürməyi xahiş etmək,translation template,FR10_data_gaps_and_alternatives.csv
+As above,Yuxarıdakı kimi,translation template,FR10_data_gaps_and_alternatives.csv
+Monthly HS-level exports from DGK with an HS-NACE concordance,DGK-dan HS-NACE keçid cədvəli ilə HS səviyyəsində aylıq ixrac məlumatları,translation template,FR10_data_gaps_and_alternatives.csv
+DSK PPI by branch,Sahələr üzrə DSK istehsalçı qiymətləri indeksi (PPI),translation template,FR10_data_gaps_and_alternatives.csv
+DSK / Azerenerji branch energy use,DSK / Azərenerji: sahələr üzrə enerji istehlakı,translation template,FR10_data_gaps_and_alternatives.csv
+CBAR loan register aggregates by NACE,Mərkəzi Bankın (CBAR) kredit reyestrinin NACE üzrə aqreqatları,translation template,FR10_data_gaps_and_alternatives.csv
+DSK back-series of entrepreneurship tables from 2019,DSK-nın 2019 ilindən başlayan sahibkarlıq cədvəllərinin retrospektiv sıraları,translation template,FR10_data_gaps_and_alternatives.csv
+DSK region x NACE output table,DSK-nın iqtisadi rayon x NACE üzrə buraxılış cədvəli,translation template,FR10_data_gaps_and_alternatives.csv
+DVX breakdown of r215-r232 by NACE and size,r215-r232 sətirlərinin NACE və ölçü üzrə DVX bölgüsü,translation template,FR10_data_gaps_and_alternatives.csv
+DVX to correct rows 127-129 of the workbook,DVX-nin iş kitabının 127-129 sətirlərini düzəltməsi,translation template,FR10_data_gaps_and_alternatives.csv
+Refresh procedure: workbook rows overwritten from DSK when the final release appears,Yeniləmə proseduru: yekun məlumatlar dərc edildikdə iş kitabının sətirləri DSK məlumatları ilə əvəz olunur,translation template,FR10_data_gaps_and_alternatives.csv
+DSK back-cast of regional output on the 2019+ coverage,DSK tərəfindən iqtisadi rayonlar üzrə buraxılışın 2019+ əhatəsi əsasında retrospektiv hesablanması,translation template,FR10_data_gaps_and_alternatives.csv
+Query DSK,DSK-ya sorğu göndərmək,translation template,FR10_data_gaps_and_alternatives.csv
+FR3 maintainers to anchor branch levels on 2025 actuals,FR3-ə cavabdeh olanlar sahə səviyyələrini 2025 ilinin faktiki göstəricilərinə bağlamalıdır,translation template,FR10_data_gaps_and_alternatives.csv
+"DSK no longer publishes the fixed-asset renewal, disposal and depreciation tables by branch, nor the capital-yield index","DSK artıq sahələr üzrə əsas fondların yenilənməsi, xaric olması və köhnəlməsi cədvəllərini, eləcə də fondverimi indeksini dərc etmir",translation template,FR10_data_integrity_findings.csv
+The workbook's 2025 branch columns are a different (preliminary) vintage from DSK,İş kitabındakı 2025 sahə sütunları DSK məlumatlarından fərqli (ilkin) versiyadır,translation template,FR10_data_integrity_findings.csv
+Branch investment does not add up to the industry total before 2010,2010 ilinədək sahələr üzrə investisiyaların cəmi sənaye üzrə yekuna bərabər deyil,translation template,FR10_data_integrity_findings.csv
+"Volume indices printed in thousands of per cent with a ""t."" suffix","Həcm indeksləri ""t."" işarəsi ilə min faiz ifadəsində dərc edilib",translation template,FR10_data_integrity_findings.csv
+National-accounts income account does not close by section in 2016,2016 ilində milli hesabların gəlir hesabı bölmələr üzrə balanslaşmır,translation template,FR10_data_integrity_findings.csv
+"Water supply runs a negative gross operating surplus; the income-account total row carries the section code ""C""","Su təchizatında ümumi mənfəət mənfidir; gəlir hesabının yekun sətrində ""C"" bölmə kodu göstərilib",translation template,FR10_data_integrity_findings.csv
+"The DVX ""rentabellik"" (profitability) row is a tax ratio, not profitability","DVX-nin ""rentabellik"" sətri rentabellik deyil, vergi nisbətidir",translation template,FR10_data_integrity_findings.csv
+DVX budget-organisation rows duplicate the micro-taxpayer rows; micro-taxpayer count carries a money unit,DVX-nin büdcə təşkilatları sətirləri mikro vergi ödəyiciləri sətirlərini təkrarlayır; mikro vergi ödəyicilərinin sayı pul vahidi ilə göstərilib,translation template,FR10_data_integrity_findings.csv
+DVX taxpayer counts carry a population unit,DVX-nin vergi ödəyicilərinin sayı əhali ölçü vahidi (nəfər) ilə göstərilib,translation template,FR10_data_integrity_findings.csv
+"Regional industrial output does not add up to the national total before 2019, and includes household industry after","2019 ilinədək iqtisadi rayonlar üzrə sənaye buraxılışının cəmi ölkə üzrə yekuna bərabər deyil, sonrakı illərdə isə ev təsərrüfatlarının sənaye fəaliyyətini də əhatə edir",translation template,FR10_data_integrity_findings.csv
+FR1's 2024 section value added is an earlier vintage than DSK's,FR1-in 2024 ili üzrə bölmələrin əlavə dəyəri DSK məlumatlarından daha əvvəlki versiyadır,translation template,FR10_data_integrity_findings.csv
+SME indicators exist for two years only; the statistical register is a single snapshot,KOS (SME) göstəriciləri yalnız iki il üzrə mövcuddur; statistik registr yalnız bir tarixə olan vəziyyəti əks etdirir,translation template,FR10_data_integrity_findings.csv
+The published non-state share of industry is inconsistent with its own branch breakdown in some years,Bəzi illərdə sənayedə dərc edilmiş qeyri-dövlət payı onun öz sahə bölgüsü ilə uyğun gəlmir,translation template,FR10_data_integrity_findings.csv
+FR3's branch wage paths are not anchored on 2025 branch wages and share one growth rate,FR3-ün sahə əmək haqqı trayektoriyaları 2025 ilinin sahə əmək haqlarına bağlanmayıb və vahid artım tempinə malikdir,translation template,FR10_data_integrity_findings.csv
+"6 URLs (017_2en.xls, 017_3en.xls, 017_4en.xls, 017_5en.xls, 017_6en.xls, 017_7en.xls) return an HTML page with HTTP 200; the section is commented out of the DSK industry index and file numbers 017_1/018_1/018_2 now hold regional product tables","6 URL (017_2en.xls, 017_3en.xls, 017_4en.xls, 017_5en.xls, 017_6en.xls, 017_7en.xls) HTTP 200 kodu ilə HTML səhifə qaytarır; bu bölmə DSK-nın sənaye bölməsinin indeks səhifəsində deaktiv edilib (şərhə alınıb), 017_1/018_1/018_2 nömrəli fayllarda isə hazırda iqtisadi rayonlar üzrə məhsul cədvəlləri yerləşir",translation template,FR10_data_integrity_findings.csv
+"workbook industry total 63,123 vs DSK 63,011 mn AZN (+0.18%); largest branch gaps: Machinery and equipment +228%, Fabricated metal products -40%, Basic metals -20%, Other transport equipment -12%; 2016-2024 agree to 0.000%","iş kitabında sənaye üzrə yekun 63,123, DSK-da 63,011 mln manat (+0.18%); sahələr üzrə ən böyük fərqlər: Maşın və avadanlıq +228%, Hazır metal məmulatları -40%, Metallurgiya -20%, Digər nəqliyyat vasitələri -12%; 2016-2024 illərində 0.000% dəqiqliklə üst-üstə düşür",translation template,FR10_data_integrity_findings.csv
+"unattributed investment -3.05% to -0.41% of the total in 2005-2009; exact (<0.01%) from 2010; mining-support investment printed as ""-"" until 2017 although its output was 1,342 mn AZN a year","2005-2009 illərində bölüşdürülməmiş investisiya yekunun -3.05% ilə -0.41% arasında; 2010 ilindən dəqiqdir (<0.01%); mədənçıxarma sahəsində xidmətlər üzrə investisiya 2017 ilinədək ""-"" kimi göstərilib, halbuki bu sahənin buraxılışı ildə 1,342 mln manat olub",translation template,FR10_data_integrity_findings.csv
+"DSK 009 prints e.g. ""7.8 t."" (= 7 800% of 2010) in 48 cells of sheet 9.2 and 4 of sheet 9.1; read naively these cells become missing","DSK 009 faylında, məsələn, ""7.8 t."" (= 2010 ilinin 7 800%-i) yazılışı 9.2 vərəqinin 48 xanasında və 9.1 vərəqinin 4 xanasında rast gəlinir; sadə oxunduqda bu xanalar çatışmayan dəyərə çevrilir",translation template,FR10_data_integrity_findings.csv
+"VA - compensation - other taxes - GOS = C -22.5, D +7.3, E +15.2 mn AZN in 2016 (sum -0.00); exact in every other year","2016 ilində ƏD - əmək ödənişləri - digər vergilər - ümumi mənfəət = C -22.5, D +7.3, E +15.2 mln manat (cəmi -0.00); digər bütün illərdə dəqiq bərabərlik",translation template,FR10_data_integrity_findings.csv
+section E GOS -155.7 mn AZN in 2025 (compensation 454.3 > value added 301.7); negative in 5 of 21 years,2025 ilində E bölməsinin ümumi mənfəəti -155.7 mln manat (əmək ödənişləri 454.3 > əlavə dəyər 301.7); 21 il ərzində 5 il mənfi olub,translation template,FR10_data_integrity_findings.csv
+"r223 equals payable profit tax / income after deductions to 0.05 pp in every year 2021-2025 (2.2-2.8%); the profitability the declarations imply, (income after deductions - deductible expenses) / deductible expenses, is 10.0-13.2%; taxable profit minus declared loss equals that net result to 7.60 mn AZN","2021-2025 illərinin hər birində r223 ödənilməli mənfəət vergisi / çıxılmalardan sonrakı gəlir nisbətinə 0.05 faiz bəndi dəqiqliklə bərabərdir (2.2-2.8%); bəyannamələrdən irəli gələn rentabellik, yəni (çıxılmalardan sonrakı gəlir - gəlirdən çıxılan xərclər) / gəlirdən çıxılan xərclər, 10.0-13.2% təşkil edir; vergiyə cəlb olunan mənfəət ilə bəyan edilmiş zərərin fərqi həmin xalis nəticəyə 7.60 mln manat dəqiqliklə bərabərdir",translation template,FR10_data_integrity_findings.csv
+"rows 127-129 equal rows 123-125 in every year: True; row 123 (a count) is labelled ""mln. manat""","127-129 sətirləri bütün illərdə 123-125 sətirlərinə bərabərdir: Bəli; 123 sətri (say göstəricisi) ""mln. manat"" kimi işarələnib",translation template,FR10_data_integrity_findings.csv
+"rows 111, 115 and 119 (numbers of large, medium and small taxpayers, e.g. 846 large payers in 2022) are labelled ""min nəfər"" (thousand persons)","111, 115 və 119 sətirləri (iri, orta və kiçik vergi ödəyicilərinin sayı, məsələn, 2022 ilində 846 iri ödəyici) ""min nəfər"" kimi işarələnib",translation template,FR10_data_integrity_findings.csv
+"sum of 14 regions vs DSK 010: -13.9% to -1.7% in 2003-2018, exact from 2019; DSK 022 footnotes 2019+ as ""considering industrial activities of households and informal individual owners""","14 iqtisadi rayonun cəmi DSK 010 faylı ilə müqayisədə: 2003-2018 illərində -13.9% ilə -1.7% arasında, 2019 ilindən dəqiq; DSK 022 faylında 2019 və sonrakı illər üçün ""ev təsərrüfatlarının və qeyri-formal fərdi sahibkarların sənaye fəaliyyəti nəzərə alınmaqla"" qeydi verilib",translation template,FR10_data_integrity_findings.csv
+"FR1 manufacturing VA 2024 7,475.5 vs DSK NA 7,019.4 mn AZN (+6.5%); the two agree exactly in 2025","FR1 emal sənayesi əlavə dəyəri (2024) 7,475.5, DSK milli hesablarında (NA) 7,019.4 mln manat (+6.5%); 2025 ilində ikisi tam üst-üstə düşür",translation template,FR10_data_integrity_findings.csv
+DSK entrepreneurship tables cover 2023 and 2024; st_units tables are as of 1 July 2026 (entry/exit January-June 2026),"DSK sahibkarlıq cədvəlləri 2023 və 2024 illərini əhatə edir; st_units cədvəlləri 1 iyul 2026 tarixinə olan vəziyyəti əks etdirir (giriş/çıxış: 2026, yanvar-iyun)",translation template,FR10_data_integrity_findings.csv
+"output-weighted branch non-state shares (DSK 010_2 x 010) differ from the published industry total by 2005 -0.8 pp, 2013 +6.3 pp, 2014 +7.6 pp, 2015 +7.9 pp, 2016 +6.7 pp; within 0.15 pp in every other year","buraxılışla çəkilənmiş sahə qeyri-dövlət payları (DSK 010_2 x 010) sənaye üzrə dərc edilmiş yekundan fərqlənir: 2005: -0.8 faiz bəndi, 2013: +6.3 faiz bəndi, 2014: +7.6 faiz bəndi, 2015: +7.9 faiz bəndi, 2016: +6.7 faiz bəndi; digər bütün illərdə fərq 0.15 faiz bəndi daxilindədir",translation template,FR10_data_integrity_findings.csv
+FR3 2026 branch wage / DSK 2025 branch wage - 1 ranges -21% to +21% across 29 branches; 2026-2030 growth is 7.72-7.72% a year for every branch,FR3 2026 sahə əmək haqqı / DSK 2025 sahə əmək haqqı - 1 nisbəti 29 sahə üzrə -21% ilə +21% arasında dəyişir; 2026-2030 illərində artım hər sahə üçün ildə 7.72-7.72% təşkil edir,translation template,FR10_data_integrity_findings.csv
+"Renewal and depreciation rates by branch are NOT AVAILABLE; FR10 uses the investment rate (I/GO, DSK 019) and the national-accounts consumption of fixed capital and fixed assets by section (DSK NA 013, 031) as alternatives (gaps table)","Sahələr üzrə yenilənmə və köhnəlmə əmsalları MÖVCUD DEYİL; FR10 alternativ olaraq investisiya normasından (I/GO, DSK 019) və milli hesablar üzrə bölmələr üzrə əsas kapitalın istehlakı və əsas fondlardan (DSK NA 013, 031) istifadə edir (boşluqlar cədvəli)",translation template,FR10_data_integrity_findings.csv
+FR10 takes 2025 branch data from DSK; the workbook branch rows are used only where they match DSK,FR10 2025 ili üzrə sahə məlumatlarını DSK-dan götürür; iş kitabının sahə sətirlərindən yalnız DSK ilə uyğun gəldiyi hallarda istifadə olunur,translation template,FR10_data_integrity_findings.csv
+"Investment rates are used from 2010 in the determinants panel; mining-support investment before 2018 is treated as missing, not zero","Amillər panelində investisiya normalarından 2010 ilindən etibarən istifadə edilir; 2018 ilinədək mədənçıxarma sahəsində xidmətlər üzrə investisiya sıfır deyil, çatışmayan dəyər kimi qəbul edilir",translation template,FR10_data_integrity_findings.csv
+to_num reads the suffix (Part 2); real output is chained from 9.1 (previous year = 100) only,"to_num ""t."" işarəsini nəzərə alır (Hissə 2); real buraxılış yalnız 9.1 ilindən zəncirvari üsulla hesablanır (əvvəlki il = 100)",translation template,FR10_data_integrity_findings.csv
+"An allocation error between sections C, D, E; GOS margins of those sections in 2016 are uncertain by these amounts","C, D, E bölmələri arasında bölüşdürmə xətası; həmin bölmələrin 2016 ilində ümumi mənfəət marjaları bu məbləğlər qədər qeyri-müəyyəndir",translation template,FR10_data_integrity_findings.csv
+"Not an error but an economic fact (a subsidised utility); the total row is identified by its label, not its code","Xəta deyil, iqtisadi faktdır (subsidiyalaşdırılan kommunal xidmət); yekun sətir kodu ilə deyil, adı ilə müəyyən edilir",translation template,FR10_data_integrity_findings.csv
+FR10 reports the declaration margin computed from the components and labels r223 as an effective tax ratio,FR10 komponentlərdən hesablanmış bəyannamə marjasını təqdim edir və r223-ü effektiv vergi nisbəti kimi işarələyir,translation template,FR10_data_integrity_findings.csv
+Budget-organisation taxpayer counts are NOT AVAILABLE; the size-class table uses the micro rows only (as FR4 F4),Büdcə təşkilatı olan vergi ödəyicilərinin sayı MÖVCUD DEYİL; ölçü qrupları cədvəlində yalnız mikro sətirlərdən istifadə olunur (FR4 F4-də olduğu kimi),translation template,FR10_data_integrity_findings.csv
+Read as counts of taxpayers; the unit should be corrected in the workbook,Vergi ödəyicilərinin sayı kimi oxunur; ölçü vahidi iş kitabında düzəldilməlidir,translation template,FR10_data_integrity_findings.csv
+"Regional shares are modelled on the regional sum (shares add to one by construction); the 2018/2019 change of coverage is a level break, handled by a step dummy in the regional share equations",İqtisadi rayonların payları iqtisadi rayonların cəminə görə modelləşdirilir (payların cəmi konstruksiyaya görə birə bərabərdir); 2018/2019 əhatə dəyişikliyi səviyyə qırılmasıdır və iqtisadi rayonların pay tənliklərində pilləli fiktiv dəyişənlə nəzərə alınır,translation template,FR10_data_integrity_findings.csv
+"FR10 anchors on 2025, where FR1 and DSK coincide, and uses FR1 only as growth indices from 2025",FR10 FR1 və DSK məlumatlarının üst-üstə düşdüyü 2025 ilinə bağlanır və 2025 ilindən FR1-dən yalnız artım indeksləri kimi istifadə edir,translation template,FR10_data_integrity_findings.csv
+"SME shares and register-based entry/exit rates are presented, not modelled: no time series exists to identify a projection","KOS (SME) payları və registr əsasında giriş/çıxış əmsalları modelləşdirilmir, yalnız təqdim olunur: proqnozu müəyyənləşdirmək üçün zaman sırası mövcud deyil",translation template,FR10_data_integrity_findings.csv
+The forecast of the non-state share is built from the branch composition (consistent by construction); the published total for those years should be queried with DSK,Qeyri-dövlət payının proqnozu sahə strukturu əsasında qurulur (konstruksiyaya görə uyğundur); həmin illər üzrə dərc edilmiş yekun göstərici barədə DSK-ya sorğu göndərilməlidir,translation template,FR10_data_integrity_findings.csv
+FR10 applies FR1's average-wage index to each branch's 2025 DSK wage; FR3 is not used for levels,FR10 FR1-in orta əmək haqqı indeksini hər sahənin DSK üzrə 2025 əmək haqqına tətbiq edir; səviyyələr üçün FR3-dən istifadə edilmir,translation template,FR10_data_integrity_findings.csv
+market position,bazar mövqeyi,translation template,FR10_data_source_matrix.csv
+production efficiency,istehsal səmərəliliyi,translation template,FR10_data_source_matrix.csv
+financial condition,maliyyə vəziyyəti,translation template,FR10_data_source_matrix.csv
+GO_b / sum GO,GO_b / cəm GO,translation template,FR10_data_source_matrix.csv
+sum s^2 x 10^4; top-4 share,cəm s^2 x 10^4; ən böyük 4 vahidin payı,translation template,FR10_data_source_matrix.csv
+sum firm s^2 within cell,xana daxilində müəssisələr üzrə cəm s^2,translation template,FR10_data_source_matrix.csv
+non-state output / output,qeyri-dövlət buraxılışı / buraxılış,translation template,FR10_data_source_matrix.csv
+count by micro/small/medium-large,say: mikro/kiçik/orta-iri,translation template,FR10_data_source_matrix.csv
+SME value / total,KOS dəyəri / cəmi,translation template,FR10_data_source_matrix.csv
+by large/medium/small/micro,iri/orta/kiçik/mikro üzrə,translation template,FR10_data_source_matrix.csv
+GO_r / sum GO_r,GO_r / cəm GO_r,translation template,FR10_data_source_matrix.csv
+new / stock; liquidated / stock,yeni / mövcud say; ləğv edilmiş / mövcud say,translation template,FR10_data_source_matrix.csv
+new / units; liquidated / units,yeni / vahidlər; ləğv edilmiş / vahidlər,translation template,FR10_data_source_matrix.csv
+volume; place / national,həcm; istehsal yeri / ölkə üzrə,translation template,FR10_data_source_matrix.csv
+exports / output,ixrac / buraxılış,translation template,FR10_data_source_matrix.csv
+"count, value","say, dəyər",translation template,FR10_data_source_matrix.csv
+Q_b / employees,Q_b / işçilər,translation template,FR10_data_source_matrix.csv
+VA_b / P_b / employees,ƏD_b / P_b / işçilər,translation template,FR10_data_source_matrix.csv
+VA / employed,ƏD / məşğullar,translation template,FR10_data_source_matrix.csv
+Q_b / K_b (perpetual inventory),Q_b / K_b (daimi inventarizasiya metodu),translation template,FR10_data_source_matrix.csv
+Tornqvist residual with observed cost shares,Müşahidə olunan xərc payları ilə Törnqvist qalığı,translation template,FR10_data_source_matrix.csv
+dln(w/P) - dln LP,dln(w/P) - dln LP,translation template,FR10_data_source_matrix.csv
+innovation expenditure / output,innovasiya xərcləri / buraxılış,translation template,FR10_data_source_matrix.csv
+published rates,dərc edilmiş əmsallar,translation template,FR10_data_source_matrix.csv
+published index,dərc edilmiş indeks,translation template,FR10_data_source_matrix.csv
+energy cost / output,enerji xərcləri / buraxılış,translation template,FR10_data_source_matrix.csv
+GOS / VA; GOS / GO,ümumi mənfəət / ƏD; ümumi mənfəət / ümumi buraxılış,translation template,FR10_data_source_matrix.csv
+compensation / VA,əmək ödənişləri / ƏD,translation template,FR10_data_source_matrix.csv
+CFC / VA,əsas kapitalın istehlakı / ƏD,translation template,FR10_data_source_matrix.csv
+(VA - gross wage bill) / GO,(ƏD - ümumi əmək haqqı fondu) / ümumi buraxılış,translation template,FR10_data_source_matrix.csv
+(income after deductions - deductible expenses) / deductible expenses,(çıxılmalardan sonrakı gəlir - gəlirdən çıxılan xərclər) / gəlirdən çıxılan xərclər,translation template,FR10_data_source_matrix.csv
+loss / taxable profit,zərər / vergiyə cəlb olunan mənfəət,translation template,FR10_data_source_matrix.csv
+payable tax / income after deductions,ödənilməli vergi / çıxılmalardan sonrakı gəlir,translation template,FR10_data_source_matrix.csv
+profit / income; loss,mənfəət / gəlir; zərər,translation template,FR10_data_source_matrix.csv
+own funds / total investment,öz vəsaitləri / ümumi investisiya,translation template,FR10_data_source_matrix.csv
+stocks / GO,ehtiyatlar / ümumi buraxılış,translation template,FR10_data_source_matrix.csv
+CA/STL; (CA-inv)/STL; cash/STL,dövriyyə aktivləri / qısamüddətli öhdəliklər; (dövriyyə aktivləri - ehtiyatlar) / qısamüddətli öhdəliklər; pul vəsaitləri / qısamüddətli öhdəliklər,translation template,FR10_data_source_matrix.csv
+(STL+LTL)/E; EBIT/interest,(qısamüddətli + uzunmüddətli öhdəliklər) / kapital; EBIT / faiz xərcləri,translation template,FR10_data_source_matrix.csv
+NP/Rev x Rev/TA x TA/E,xalis mənfəət / gəlir x gəlir / aktivlər x aktivlər / kapital,translation template,FR10_data_source_matrix.csv
+Rev/TA; COGS/inv; rec/Rev x 365,gəlir / aktivlər; satışın maya dəyəri / ehtiyatlar; debitor borcları / gəlir x 365,translation template,FR10_data_source_matrix.csv
+persons; wage bill,nəfər; əmək haqqı fondu,translation template,FR10_data_source_matrix.csv
+loans; NPL / loans,kreditlər; problemli kreditlər / kreditlər,translation template,FR10_data_source_matrix.csv
+index; %,indeks; %,translation template,FR10_data_source_matrix.csv
+units; mn AZN; thsd,vahid; mln manat; min,translation template,FR10_data_source_matrix.csv
+"tonnes, units","ton, ədəd",translation template,FR10_data_source_matrix.csv
+"tonnes, units; %","ton, ədəd; %",translation template,FR10_data_source_matrix.csv
+mn AZN; persons,mln manat; nəfər,translation template,FR10_data_source_matrix.csv
+units; mn AZN,vahid; mln manat,translation template,FR10_data_source_matrix.csv
+units; thsd AZN,vahid; min manat,translation template,FR10_data_source_matrix.csv
+thsd AZN 2015 prices,"min manat, 2015 qiymətləri ilə",translation template,FR10_data_source_matrix.csv
+log points,log bəndləri,translation template,FR10_data_source_matrix.csv
+mn AZN,mln manat,translation template,FR10_data_source_matrix.csv;FR10_identity_checks.csv
+persons; thsd AZN,nəfər; min manat,translation template,FR10_data_source_matrix.csv
+mn AZN; %,mln manat; %,translation template,FR10_data_source_matrix.csv
+DVX / DSMF,DVX / DSMF,translation template,FR10_data_source_matrix.csv
+DSK via workbook,DSK (iş kitabı vasitəsilə),translation template,FR10_data_source_matrix.csv
+State Customs Committee (DGK),Dövlət Gömrük Komitəsi (DGK),translation template,FR10_data_source_matrix.csv;FR10_input_schema.csv
+"Industrial-park operators (İZİA, Ministry of Economy)","Sənaye parkı operatorları (İZİA, İqtisadiyyat Nazirliyi)",translation template,FR10_data_source_matrix.csv
+Ministry of Economy,İqtisadiyyat Nazirliyi,translation template,FR10_data_source_matrix.csv
+DSK; workbook,DSK; iş kitabı,translation template,FR10_data_source_matrix.csv
+DSK; FR1; FR4,DSK; FR1; FR4,translation template,FR10_data_source_matrix.csv
+DSK; Azerenerji,DSK; Azərenerji,translation template,FR10_data_source_matrix.csv
+industry 010,sənaye 010,translation template,FR10_data_source_matrix.csv
+industry 010 (derived),sənaye 010 (hesablanmış),translation template,FR10_data_source_matrix.csv
+enterprise panel (requested 24.08.2026),müəssisə paneli (24.08.2026 tarixində sorğu edilib),translation template,FR10_data_source_matrix.csv
+industry 010_2,sənaye 010_2,translation template,FR10_data_source_matrix.csv
+industry 004-007-008 sheet 4;7,"sənaye 004-007-008, vərəq 4;7",translation template,FR10_data_source_matrix.csv
+industry 004-007-008 sheet 8,"sənaye 004-007-008, vərəq 8",translation template,FR10_data_source_matrix.csv
+"entrepreneurship 001_1, 012, 013, 015","sahibkarlıq 001_1, 012, 013, 015",translation template,FR10_data_source_matrix.csv
+industry 022 (and 023 volume index),sənaye 022 (və 023 fiziki həcm indeksi),translation template,FR10_data_source_matrix.csv
+industry 024,sənaye 024,translation template,FR10_data_source_matrix.csv
+industry 021,sənaye 021,translation template,FR10_data_source_matrix.csv
+st_units 2_1-2_3 (snapshot 1 Jul 2026),st_units 2_1-2_3 (1 iyul 2026 tarixinə vəziyyət),translation template,FR10_data_source_matrix.csv
+"industry 018; product lists in 014_x, 015_x, 016, 017","sənaye 018; məhsul siyahıları: 014_x, 015_x, 016, 017",translation template,FR10_data_source_matrix.csv
+"industry 018_1 (2011-2025), 018_2 (2019-2025); 017_1 (to 2022)","sənaye 018_1 (2011-2025), 018_2 (2019-2025); 017_1 (2022 ilədək)",translation template,FR10_data_source_matrix.csv
+HS-level exports (not in project),HS kodları səviyyəsində ixrac (layihədə yoxdur),translation template,FR10_data_source_matrix.csv
+workbook 'Park',iş kitabı 'Park',translation template,FR10_data_source_matrix.csv
+workbook 'KOBİA',iş kitabı 'KOBİA',translation template,FR10_data_source_matrix.csv
+"industry 010, 009, 006; industry sheets (headcount)","sənaye 010, 009, 006; sənaye vərəqləri (işçi sayı)",translation template,FR10_data_source_matrix.csv
+national accounts 015_2; 006,milli hesablar 015_2; 006,translation template,FR10_data_source_matrix.csv
+national accounts 030_2,milli hesablar 030_2,translation template,FR10_data_source_matrix.csv
+"national accounts 015, 015_1","milli hesablar 015, 015_1",translation template,FR10_data_source_matrix.csv
+industry 019; national accounts 031,sənaye 019; milli hesablar 031,translation template,FR10_data_source_matrix.csv
+"NA 013, 015, 015_1, 031; industry 019; FR4 hired","milli hesablar 013, 015, 015_1, 031; sənaye 019; FR4 muzdlu işçilər",translation template,FR10_data_source_matrix.csv
+industry 006_2; industry sheets,sənaye 006_2; sənaye vərəqləri,translation template,FR10_data_source_matrix.csv
+"industry 020_3 (also 020_1, 020_2, 020_4, 020_5)","sənaye 020_3 (həmçinin 020_1, 020_2, 020_4, 020_5)",translation template,FR10_data_source_matrix.csv
+"industry 019, 010","sənaye 019, 010",translation template,FR10_data_source_matrix.csv
+"industry 017_2-017_7 (no longer published, F1)","sənaye 017_2-017_7 (artıq dərc edilmir, F1)",translation template,FR10_data_source_matrix.csv
+"industry 018_1 (old numbering, discontinued)","sənaye 018_1 (köhnə nömrələmə, dayandırılıb)",translation template,FR10_data_source_matrix.csv
+"not published by branch (SME electricity costs only, entrepreneurship 037, 2023-2024)","sahələr üzrə dərc edilmir (yalnız KOS-un elektrik enerjisi xərcləri, sahibkarlıq 037, 2023-2024)",translation template,FR10_data_source_matrix.csv
+national accounts 013,milli hesablar 013,translation template,FR10_data_source_matrix.csv
+"national accounts 013, 023","milli hesablar 013, 023",translation template,FR10_data_source_matrix.csv
+"national accounts 013, 025","milli hesablar 013, 025",translation template,FR10_data_source_matrix.csv
+"NA 015, 015_2; industry 006, 006_2; industry sheets","milli hesablar 015, 015_2; sənaye 006, 006_2; sənaye vərəqləri",translation template,FR10_data_source_matrix.csv
+DVX r221,DVX r221,translation template,FR10_data_source_matrix.csv
+DVX r223,DVX r223,translation template,FR10_data_source_matrix.csv
+DVX r224-r232,DVX r224-r232,translation template,FR10_data_source_matrix.csv
+DVX r43,DVX r43,translation template,FR10_data_source_matrix.csv
+DVX r53-r57,DVX r53-r57,translation template,FR10_data_source_matrix.csv
+workbook 'Real sektor' r114 / r80,iş kitabı 'Real sektor' r114 / r80,translation template,FR10_data_source_matrix.csv
+industry 013,sənaye 013,translation template,FR10_data_source_matrix.csv
+"entrepreneurship 039, 040, 041","sahibkarlıq 039, 040, 041",translation template,FR10_data_source_matrix.csv
+enterprise balance sheet and P&L panel (requested 24.08.2026),müəssisələrin balans hesabatı və mənfəət-zərər hesabatı paneli (24.08.2026 tarixində sorğu edilib),translation template,FR10_data_source_matrix.csv
+contributor records (requested),sığorta haqqı ödəyicilərinin qeydləri (sorğu edilib),translation template,FR10_data_source_matrix.csv
+not in project (FR1 holds total industry credit),layihədə yoxdur (FR1 sənaye üzrə ümumi kredit həcmini əhatə edir),translation template,FR10_data_source_matrix.csv
+branch (30),sahə (30),translation template,FR10_data_source_matrix.csv
+branch (24),sahə (24),translation template,FR10_data_source_matrix.csv
+industry / manufacturing,sənaye / emal sənayesi,translation template,FR10_data_source_matrix.csv
+branch x ownership,sahə x mülkiyyət növü,translation template,FR10_data_source_matrix.csv
+branch x size,sahə x ölçü,translation template,FR10_data_source_matrix.csv
+section x size,bölmə x ölçü,translation template,FR10_data_source_matrix.csv
+size class,ölçü qrupu,translation template,FR10_data_source_matrix.csv
+economic region (14),iqtisadi rayon (14),translation template,FR10_data_source_matrix.csv
+"section, region, ownership","bölmə, iqtisadi rayon, mülkiyyət növü",translation template,FR10_data_source_matrix.csv
+product (~140) x branch,məhsul (~140) x sahə,translation template,FR10_data_source_matrix.csv
+product x city/district,məhsul x şəhər/rayon,translation template,FR10_data_source_matrix.csv
+branch / product,sahə / məhsul,translation template,FR10_data_source_matrix.csv
+national / SME house,ölkə üzrə / KOB evi (SME house),translation template,FR10_data_source_matrix.csv
+branch / section,sahə / bölmə,translation template,FR10_data_source_matrix.csv
+"branch, section","sahə, bölmə",translation template,FR10_data_source_matrix.csv
+"section (B, C, D, E)","bölmə (B, C, D, E)",translation template,FR10_data_source_matrix.csv
+all payers,bütün vergi ödəyiciləri,translation template,FR10_data_source_matrix.csv
+industry / non-oil industry,sənaye / qeyri-neft sənayesi,translation template,FR10_data_source_matrix.csv
+semi-annual snapshot,yarımillik anlıq vəziyyət,translation template,FR10_data_source_matrix.csv
+available now,hazırda mövcuddur,translation template,FR10_data_source_matrix.csv
+available now (2 years),hazırda mövcuddur (2 il),translation template,FR10_data_source_matrix.csv
+available now (snapshot),hazırda mövcuddur (anlıq vəziyyət),translation template,FR10_data_source_matrix.csv
+not available,mövcud deyil,translation template,FR10_data_source_matrix.csv
+available now (derived),hazırda mövcuddur (hesablanmış),translation template,FR10_data_source_matrix.csv
+available now (3 years annual),"hazırda mövcuddur (3 il, illik)",translation template,FR10_data_source_matrix.csv
+"file download (DSK xls, scheduled)","fayl endirmə (DSK xls, qrafik üzrə)",translation template,FR10_data_source_matrix.csv
+data-sharing agreement + secure API,məlumat mübadiləsi sazişi + təhlükəsiz API,translation template,FR10_data_source_matrix.csv
+workbook upload (Ministry of Economy),iş kitabının yüklənməsi (İqtisadiyyat Nazirliyi),translation template,FR10_data_source_matrix.csv
+data-sharing agreement + secure API with DGK; HS-NACE concordance,DGK ilə məlumat mübadiləsi sazişi + təhlükəsiz API; HS-NACE uyğunluq cədvəli,translation template,FR10_data_source_matrix.csv
+"file download (DSK xls, scheduled); workbook upload (Ministry of Economy)","fayl endirmə (DSK xls, qrafik üzrə); iş kitabının yüklənməsi (İqtisadiyyat Nazirliyi)",translation template,FR10_data_source_matrix.csv
+request to DSK to resume publication,dərcin bərpası üçün DSK-ya sorğu,translation template,FR10_data_source_matrix.csv
+request to DSK,DSK-ya sorğu,translation template,FR10_data_source_matrix.csv
+data-sharing agreement + secure API with CBAR,Mərkəzi Bank (CBAR) ilə məlumat mübadiləsi sazişi + təhlükəsiz API,translation template,FR10_data_source_matrix.csv
+"share system, HHI (Parts 7, 11)","paylar sistemi, HHI (Hissələr 7, 11)",translation template,FR10_data_source_matrix.csv
+"MNL share system (Part 11), forecast","MNL paylar sistemi (Hissə 11), proqnoz",translation template,FR10_data_source_matrix.csv
+"market-structure KPI, forecast","bazar strukturu üzrə KPI, proqnoz",translation template,FR10_data_source_matrix.csv
+Layer B concentration,B qatında konsentrasiya,translation template,FR10_data_source_matrix.csv
+ownership composition forecast (Part 14),mülkiyyət tərkibinin proqnozu (Hissə 14),translation template,FR10_data_source_matrix.csv
+"entry/net-entry rates, determinants panel","giriş/xalis giriş dərəcələri, determinantlar paneli",translation template,FR10_data_source_matrix.csv
+"size structure, concentration bound","ölçü strukturu, konsentrasiya həddi",translation template,FR10_data_source_matrix.csv
+"held constant (not identifiable, F11)","sabit saxlanılır (identifikasiya olunmur, F11)",translation template,FR10_data_source_matrix.csv
+size structure cross-check,ölçü strukturunun çarpaz yoxlanması,translation template,FR10_data_source_matrix.csv
+regional share system (Part 12),regional paylar sistemi (Hissə 12),translation template,FR10_data_source_matrix.csv
+regional ownership profile,regional mülkiyyət profili,translation template,FR10_data_source_matrix.csv
+regional entry dynamics,regionlarda bazara giriş dinamikası,translation template,FR10_data_source_matrix.csv
+entry/exit rates,giriş/çıxış dərəcələri,translation template,FR10_data_source_matrix.csv
+"product view, growth ranking","məhsullar üzrə baxış, artım reytinqi",translation template,FR10_data_source_matrix.csv
+"product market shares by place, HHI across places (Part 14.3)","yerlər üzrə məhsul bazar payları, yerlər arasında HHI (Hissə 14.3)",translation template,FR10_data_source_matrix.csv
+"share-system driver, determinants panel","paylar sisteminin amili, determinantlar paneli",translation template,FR10_data_source_matrix.csv
+park performance,parkların fəaliyyət nəticələri,translation template,FR10_data_source_matrix.csv
+support-measure context,dəstək tədbirləri konteksti,translation template,FR10_data_source_matrix.csv
+"efficiency ranking, quadrant, forecast path","səmərəlilik reytinqi, kvadrant, proqnoz trayektoriyası",translation template,FR10_data_source_matrix.csv
+efficiency ranking,səmərəlilik reytinqi,translation template,FR10_data_source_matrix.csv
+TFP materials share; cost structure,TFP üçün material xərclərinin payı; xərc strukturu,translation template,FR10_data_source_matrix.csv
+"efficiency, TFP capital input","səmərəlilik, TFP üçün kapital amili",translation template,FR10_data_source_matrix.csv
+efficiency decomposition (Part 7.2),səmərəliliyin dekompozisiyası (Hissə 7.2),translation template,FR10_data_source_matrix.csv
+unit-labour-cost pressure,vahid əmək xərclərinin təzyiqi,translation template,FR10_data_source_matrix.csv
+efficiency profile,səmərəlilik profili,translation template,FR10_data_source_matrix.csv
+determinants panel; early-warning flag,determinantlar paneli; erkən xəbərdarlıq siqnalı,translation template,FR10_data_source_matrix.csv
+renewal flag,yeniləşmə siqnalı,translation template,FR10_data_source_matrix.csv
+"cost structure, determinants","xərc strukturu, determinantlar",translation template,FR10_data_source_matrix.csv
+financial-condition forecast (Part 14),maliyyə vəziyyətinin proqnozu (Hissə 14),translation template,FR10_data_source_matrix.csv
+margin decomposition,marjanın dekompozisiyası,translation template,FR10_data_source_matrix.csv
+"renewal proxy, net margin","yeniləşmə üzrə proksi göstərici, xalis marja",translation template,FR10_data_source_matrix.csv
+"quadrant, early warning, forecast","kvadrant, erkən xəbərdarlıq, proqnoz",translation template,FR10_data_source_matrix.csv
+economy-wide profitability KPI,bütün iqtisadiyyat üzrə rentabellik KPI,translation template,FR10_data_source_matrix.csv
+distress KPI,maliyyə çətinliyi KPI,translation template,FR10_data_source_matrix.csv
+tax burden,vergi yükü,translation template,FR10_data_source_matrix.csv
+small-business profitability,kiçik biznesin rentabelliyi,translation template,FR10_data_source_matrix.csv
+early-warning context,erkən xəbərdarlıq konteksti,translation template,FR10_data_source_matrix.csv
+cross-check of output,buraxılışın çarpaz yoxlanması,translation template,FR10_data_source_matrix.csv
+financial capacity KPI,maliyyə imkanları KPI,translation template,FR10_data_source_matrix.csv
+early-warning flag (rising stocks),erkən xəbərdarlıq siqnalı (ehtiyatların artması),translation template,FR10_data_source_matrix.csv
+SME balance-sheet profile,KOS-un balans profili,translation template,FR10_data_source_matrix.csv
+Layer B engine (Part 17),B qatının hesablama modulu (Hissə 17),translation template,FR10_data_source_matrix.csv
+"Layer B productivity, TFP","B qatı: məhsuldarlıq, TFP",translation template,FR10_data_source_matrix.csv
+financial-condition driver,maliyyə vəziyyətinin amili,translation template,FR10_data_source_matrix.csv
+ranking table; time series with fan,reytinq cədvəli; yelpik zolaqlı zaman sırası,translation template,FR10_data_source_matrix.csv
+stacked area; fan chart,yığılmış sahə qrafiki; yelpik qrafiki,translation template,FR10_data_source_matrix.csv
+dashboard KPI card,idarəetmə panelində KPI kartı,translation template,FR10_data_source_matrix.csv
+heat map NACE x region,istilik xəritəsi NACE x iqtisadi rayon,translation template,FR10_data_source_matrix.csv
+time series; KPI card,zaman sırası; KPI kartı,translation template,FR10_data_source_matrix.csv
+ranking table,reytinq cədvəli,translation template,FR10_data_source_matrix.csv
+stacked bar,yığılmış sütun qrafiki,translation template,FR10_data_source_matrix.csv
+KPI card,KPI kartı,translation template,FR10_data_source_matrix.csv
+map; region x year heat map,xəritə; iqtisadi rayon x il istilik xəritəsi,translation template,FR10_data_source_matrix.csv
+map; table,xəritə; cədvəl,translation template,FR10_data_source_matrix.csv
+product table with sparklines,mini-qrafikli (sparkline) məhsul cədvəli,translation template,FR10_data_source_matrix.csv
+map; product table,xəritə; məhsul cədvəli,translation template,FR10_data_source_matrix.csv
+scatter; time series,səpələnmə diaqramı; zaman sırası,translation template,FR10_data_source_matrix.csv
+table; KPI card,cədvəl; KPI kartı,translation template,FR10_data_source_matrix.csv
+ranking table; quadrant; fan,reytinq cədvəli; kvadrant; yelpik qrafiki,translation template,FR10_data_source_matrix.csv
+time series,zaman sırası,translation template,FR10_data_source_matrix.csv
+waterfall / decomposition chart,şəlalə / dekompozisiya qrafiki,translation template,FR10_data_source_matrix.csv
+bar chart,sütun qrafiki,translation template,FR10_data_source_matrix.csv
+heat map,istilik xəritəsi,translation template,FR10_data_source_matrix.csv
+time series with fan,yelpik zolaqlı zaman sırası,translation template,FR10_data_source_matrix.csv;FR10_presentation_spec.csv
+quadrant; ranking; fan,kvadrant; reytinq; yelpik qrafiki,translation template,FR10_data_source_matrix.csv
+firm scorecard; peer percentile; early-warning list,müəssisə qiymətləndirmə kartı; analoqlar arasında persentil; erkən xəbərdarlıq siyahısı,translation template,FR10_data_source_matrix.csv
+firm scorecard,müəssisə qiymətləndirmə kartı,translation template,FR10_data_source_matrix.csv
+annual (DSK release),illik (DSK nəşri),translation template,FR10_data_source_matrix.csv
+lower bound from DSK register large-unit count and SME output share (Part 7.1),DSK reyestrindəki iri vahidlərin sayı və KOS-un buraxılışdakı payı əsasında aşağı hədd (Hissə 7.1),translation template,FR10_data_source_matrix.csv
+DVX taxpayer size classes r111-r126 (2022-2025),DVX vergi ödəyicilərinin ölçü qrupları r111-r126 (2022-2025),translation template,FR10_data_source_matrix.csv
+DVX register flows (requested),DVX reyestr axınları (sorğu edilib),translation template,FR10_data_source_matrix.csv
+"industrial-park exports (workbook Park, 2019-2025); DSK shipped goods 011 is not exports","sənaye parklarının ixracı (iş kitabı Park, 2019-2025); DSK-nın yüklənmiş mallar cədvəli 011 ixrac deyil",translation template,FR10_data_source_matrix.csv
+"investment rate (DSK 019/010); consumption of fixed capital / VA by section (NA 013, 025)","investisiya dərəcəsi (DSK 019/010); bölmələr üzrə əsas kapitalın istehlakı / əlavə dəyər (milli hesablar 013, 025)",translation template,FR10_data_source_matrix.csv
+capital productivity from perpetual inventory,fasiləsiz inventar metodu ilə kapital məhsuldarlığı,translation template,FR10_data_source_matrix.csv
+"SME electricity and fuel costs (entrepreneurship 035, 037)","KOS-un elektrik enerjisi və yanacaq xərcləri (sahibkarlıq 035, 037)",translation template,FR10_data_source_matrix.csv
+branch breakdown requested from DVX,sahələr üzrə bölgü DVX-dən sorğu edilib,translation template,FR10_data_source_matrix.csv
+none for firms; aggregate proxies above,müəssisələr üzrə yoxdur; yuxarıdakı aqreqat proksi göstəricilər,translation template,FR10_data_source_matrix.csv
+"branch headcount (DSK 006, workbook)","sahələr üzrə işçi sayı (DSK 006, iş kitabı)",translation template,FR10_data_source_matrix.csv
+FR1 industry credit (cred_ind_n) at section level,bölmə səviyyəsində FR1 sənaye krediti (cred_ind_n),translation template,FR10_data_source_matrix.csv
+"A: 2011-2025, core","A: 2011-2025, əsas",translation template,FR10_determinants_panel.csv
+"B: 2018-2025, + wage and labour share","B: 2018-2025, + əmək haqqı və əməyin payı",translation template,FR10_determinants_panel.csv
+Main macro-economic indicators by sector of industry; share of industry in the economy,Sənaye sektoru üzrə əsas makroiqtisadi göstəricilər; sənayenin iqtisadiyyatda payı,translation template,FR10_dsk_manifest.csv
+Active industrial enterprises by ownership and activity (4/7); by size class (8),Mülkiyyət növləri və iqtisadi fəaliyyət növləri üzrə fəaliyyət göstərən sənaye müəssisələri (4/7); ölçü qrupları üzrə (8),translation template,FR10_dsk_manifest.csv
+Industrial output by type of ownership,Sənaye məhsulunun mülkiyyət növləri üzrə bölgüsü,translation template,FR10_dsk_manifest.csv
+Number of employees in industry by activity,İqtisadi fəaliyyət növləri üzrə sənayedə çalışan işçilərin sayı,translation template,FR10_dsk_manifest.csv
+Number of employees in industry by economic region,İqtisadi rayonlar üzrə sənayedə çalışan işçilərin sayı,translation template,FR10_dsk_manifest.csv
+Average monthly nominal wages in industry by activity,İqtisadi fəaliyyət növləri üzrə sənayedə orta aylıq nominal əmək haqqı,translation template,FR10_dsk_manifest.csv
+Indices of industrial output by activity (9.1 previous year = 100; 9.2 2010 = 100),İqtisadi fəaliyyət növləri üzrə sənaye istehsalı indeksləri (9.1 əvvəlki il = 100; 9.2 2010 = 100),translation template,FR10_dsk_manifest.csv
+Volume of industrial output at actual prices by activity,İqtisadi fəaliyyət növləri üzrə faktiki qiymətlərlə sənaye məhsulunun həcmi,translation template,FR10_dsk_manifest.csv
+"Sectoral structure of industry, % of total","Sənaye istehsalının sahə strukturu, ümumi həcmə görə %",translation template,FR10_dsk_manifest.csv
+"Structure of industrial production by form of ownership, by activity","Sənaye istehsalının mülkiyyət formalarına görə strukturu, iqtisadi fəaliyyət növləri üzrə",translation template,FR10_dsk_manifest.csv
+Shipped goods by activity,İqtisadi fəaliyyət növləri üzrə yüklənmiş mallar,translation template,FR10_dsk_manifest.csv
+Structure of non-state industrial output by activity,İqtisadi fəaliyyət növləri üzrə qeyri-dövlət sənaye məhsulunun strukturu,translation template,FR10_dsk_manifest.csv
+Stocks of finished goods held by industrial enterprises (as of 1 January),Sənaye müəssisələrində hazır məhsul ehtiyatları (1 yanvar vəziyyətinə),translation template,FR10_dsk_manifest.csv
+Main indicators of mining and quarrying,Mədənçıxarma sənayesi üzrə əsas göstəricilər,translation template,FR10_dsk_manifest.csv
+Main indicators of mining branch 14.1,Mədənçıxarma sahəsi 14.1 üzrə əsas göstəricilər,translation template,FR10_dsk_manifest.csv
+Main indicators of mining branch 14.2,Mədənçıxarma sahəsi 14.2 üzrə əsas göstəricilər,translation template,FR10_dsk_manifest.csv
+Main indicators of mining branch 14.3,Mədənçıxarma sahəsi 14.3 üzrə əsas göstəricilər,translation template,FR10_dsk_manifest.csv
+Main indicators of mining branch 14.4,Mədənçıxarma sahəsi 14.4 üzrə əsas göstəricilər,translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing,Emal sənayesi üzrə əsas göstəricilər,translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.1 (incl. main products in kind),Emal sənayesi sahəsi 15.1 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.2 (incl. main products in kind),Emal sənayesi sahəsi 15.2 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.3 (incl. main products in kind),Emal sənayesi sahəsi 15.3 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.4 (incl. main products in kind),Emal sənayesi sahəsi 15.4 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.5 (incl. main products in kind),Emal sənayesi sahəsi 15.5 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.6 (incl. main products in kind),Emal sənayesi sahəsi 15.6 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.7 (incl. main products in kind),Emal sənayesi sahəsi 15.7 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.8 (incl. main products in kind),Emal sənayesi sahəsi 15.8 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.9 (incl. main products in kind),Emal sənayesi sahəsi 15.9 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.10 (incl. main products in kind),Emal sənayesi sahəsi 15.10 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.11 (incl. main products in kind),Emal sənayesi sahəsi 15.11 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.12 (incl. main products in kind),Emal sənayesi sahəsi 15.12 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.13 (incl. main products in kind),Emal sənayesi sahəsi 15.13 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.14 (incl. main products in kind),Emal sənayesi sahəsi 15.14 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.15 (incl. main products in kind),Emal sənayesi sahəsi 15.15 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.16 (incl. main products in kind),Emal sənayesi sahəsi 15.16 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.17 (incl. main products in kind),Emal sənayesi sahəsi 15.17 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.18 (incl. main products in kind),Emal sənayesi sahəsi 15.18 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.19 (incl. main products in kind),Emal sənayesi sahəsi 15.19 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.20 (incl. main products in kind),Emal sənayesi sahəsi 15.20 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.21 (incl. main products in kind),Emal sənayesi sahəsi 15.21 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.22 (incl. main products in kind),Emal sənayesi sahəsi 15.22 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.23 (incl. main products in kind),Emal sənayesi sahəsi 15.23 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+Main indicators of manufacturing branch 15.24 (incl. main products in kind),Emal sənayesi sahəsi 15.24 üzrə əsas göstəricilər (əsas məhsulların natura ifadəsində istehsalı daxil olmaqla),translation template,FR10_dsk_manifest.csv
+"Main indicators of electricity, gas and steam supply","Elektrik enerjisi, qaz və buxar istehsalı, bölüşdürülməsi və təchizatı üzrə əsas göstəricilər",translation template,FR10_dsk_manifest.csv
+"Main indicators of water supply, sewerage and waste management","Su təchizatı, tullantıların təmizlənməsi və emalı üzrə əsas göstəricilər",translation template,FR10_dsk_manifest.csv
+Main industrial products in kind by region (reused number),Regionlar üzrə mühüm növ sənaye məhsullarının natura ifadəsində istehsalı (təkrar istifadə edilmiş nömrə),translation template,FR10_dsk_manifest.csv
+Fixed industrial assets: indexes / structure / renewal / disposal / depreciation (old index),Əsas sənaye-istehsal fondları: indekslər / struktur / yeniləşmə / sıradan çıxma / aşınma (köhnə indeks),translation template,FR10_dsk_manifest.csv
+Manufacture of the most important industrial products in kind,Sənaye məhsullarının ən mühüm növlərinin natura ifadəsində istehsalı,translation template,FR10_dsk_manifest.csv
+Main industrial products in kind by region (reused number; formerly capital-yield index),Regionlar üzrə mühüm növ sənaye məhsullarının natura ifadəsində istehsalı (təkrar istifadə edilmiş nömrə; əvvəllər fondverimi indeksi),translation template,FR10_dsk_manifest.csv
+Main industrial products in kind by region (2),Regionlar üzrə mühüm növ sənaye məhsullarının natura ifadəsində istehsalı (2),translation template,FR10_dsk_manifest.csv
+Investment in fixed capital of industry by activity and source,İqtisadi fəaliyyət növləri və maliyyələşmə mənbələri üzrə sənayedə əsas kapitala yönəldilən investisiyalar,translation template,FR10_dsk_manifest.csv
+Volume of innovative products by activity,İqtisadi fəaliyyət növləri üzrə innovasiya məhsulunun həcmi,translation template,FR10_dsk_manifest.csv
+Expenditure on technological innovation by type,Növlərinə görə texnoloji innovasiyalara çəkilən xərclər,translation template,FR10_dsk_manifest.csv
+Expenditure on technological innovation by activity,İqtisadi fəaliyyət növləri üzrə texnoloji innovasiyalara çəkilən xərclər,translation template,FR10_dsk_manifest.csv
+Expenditure on technological innovation by direction of use,Tətbiqi istiqamətləri üzrə texnoloji innovasiyalara çəkilən xərclər,translation template,FR10_dsk_manifest.csv
+Factors impeding innovation,İnnovasiyalara mane olan amillər,translation template,FR10_dsk_manifest.csv
+Number of active industrial enterprises by economic region,İqtisadi rayonlar üzrə fəaliyyət göstərən sənaye müəssisələrinin sayı,translation template,FR10_dsk_manifest.csv
+Volume of industrial output by economic region,İqtisadi rayonlar üzrə sənaye məhsulunun həcmi,translation template,FR10_dsk_manifest.csv
+Indices of industrial output by economic region,İqtisadi rayonlar üzrə sənaye istehsalı indeksləri,translation template,FR10_dsk_manifest.csv
+Share of the non-state sector in industrial output by economic region,İqtisadi rayonlar üzrə sənaye məhsulunun həcmində qeyri-dövlət sektorunun payı,translation template,FR10_dsk_manifest.csv
+Industry of Baku city (regional profile),Bakı şəhərinin sənayesi (regional profil),translation template,FR10_dsk_manifest.csv
+"Main indicators of micro, small and medium enterprises (SMEs)","Mikro, kiçik və orta sahibkarlıq (KOS) subyektlərinin əsas göstəriciləri",translation template,FR10_dsk_manifest.csv
+Share of SMEs in the economy,KOS-un iqtisadiyyatda payı,translation template,FR10_dsk_manifest.csv
+Number of active SMEs,Fəaliyyət göstərən KOS subyektlərinin sayı,translation template,FR10_dsk_manifest.csv
+SMEs by economic region,İqtisadi rayonlar üzrə KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Newly registered SMEs,Yeni qeydiyyata alınmış KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Deregistered SMEs,Qeydiyyatdan çıxarılmış KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Active SMEs by activity and ownership,İqtisadi fəaliyyət növləri və mülkiyyət növləri üzrə fəaliyyət göstərən KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Registered / newly registered / deregistered entities by activity,İqtisadi fəaliyyət növləri üzrə qeydiyyatda olan / yeni qeydiyyata alınmış / qeydiyyatdan çıxarılmış subyektlər,translation template,FR10_dsk_manifest.csv
+Newly registered SMEs by activity,İqtisadi fəaliyyət növləri üzrə yeni qeydiyyata alınmış KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Deregistered SMEs by activity,İqtisadi fəaliyyət növləri üzrə qeydiyyatdan çıxarılmış KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Value of goods and services of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin istehsal etdiyi mal və xidmətlərin dəyəri,translation template,FR10_dsk_manifest.csv
+Employees of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərində çalışan işçilər,translation template,FR10_dsk_manifest.csv
+SME share of output by activity,İqtisadi fəaliyyət növləri üzrə buraxılışda KOS-un payı,translation template,FR10_dsk_manifest.csv
+SME share of employees by activity,İqtisadi fəaliyyət növləri üzrə işçilərin sayında KOS-un payı,translation template,FR10_dsk_manifest.csv
+SME investment in fixed capital by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin əsas kapitala investisiyaları,translation template,FR10_dsk_manifest.csv
+SME share of investment by activity,İqtisadi fəaliyyət növləri üzrə investisiyalarda KOS-un payı,translation template,FR10_dsk_manifest.csv
+SME output by region and activity,İqtisadi rayonlar və iqtisadi fəaliyyət növləri üzrə KOS buraxılışı,translation template,FR10_dsk_manifest.csv
+Active SMEs established one year ago,Bir il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Active SMEs established two years ago,İki il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Active SMEs established three years ago,Üç il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Active SMEs established four years ago,Dörd il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Active SMEs established five years ago,Beş il əvvəl yaradılmış fəaliyyət göstərən KOS subyektləri,translation template,FR10_dsk_manifest.csv
+Value added of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin əlavə dəyəri,translation template,FR10_dsk_manifest.csv
+Average wages in SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərində orta əmək haqqı,translation template,FR10_dsk_manifest.csv
+Assets of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin aktivləri,translation template,FR10_dsk_manifest.csv
+SME share of assets,Aktivlərdə KOS-un payı,translation template,FR10_dsk_manifest.csv
+Stocks of SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin ehtiyatları,translation template,FR10_dsk_manifest.csv
+SME share of stocks,Ehtiyatlarda KOS-un payı,translation template,FR10_dsk_manifest.csv
+Taxes paid by SMEs by activity,İqtisadi fəaliyyət növləri üzrə KOS subyektlərinin ödədiyi vergilər,translation template,FR10_dsk_manifest.csv
+Statistical units by activity,İqtisadi fəaliyyət növləri üzrə statistik vahidlər,translation template,FR10_dsk_manifest.csv
+Statistical units by ownership and activity,Mülkiyyət növləri və iqtisadi fəaliyyət növləri üzrə statistik vahidlər,translation template,FR10_dsk_manifest.csv
+Large business entities by activity,İqtisadi fəaliyyət növləri üzrə iri sahibkarlıq subyektləri,translation template,FR10_dsk_manifest.csv
+Medium business entities by activity,İqtisadi fəaliyyət növləri üzrə orta sahibkarlıq subyektləri,translation template,FR10_dsk_manifest.csv
+Small business entities by activity,İqtisadi fəaliyyət növləri üzrə kiçik sahibkarlıq subyektləri,translation template,FR10_dsk_manifest.csv
+Micro business entities by activity,İqtisadi fəaliyyət növləri üzrə mikro sahibkarlıq subyektləri,translation template,FR10_dsk_manifest.csv
+Large business entities by region,İqtisadi rayonlar üzrə iri sahibkarlıq subyektləri,translation template,FR10_dsk_manifest.csv
+Newly created and liquidated units by activity,İqtisadi fəaliyyət növləri üzrə yeni yaradılmış və ləğv edilmiş vahidlər,translation template,FR10_dsk_manifest.csv
+Newly created and liquidated units by ownership,Mülkiyyət növləri üzrə yeni yaradılmış və ləğv edilmiş vahidlər,translation template,FR10_dsk_manifest.csv
+Newly created and liquidated units by region,İqtisadi rayonlar üzrə yeni yaradılmış və ləğv edilmiş vahidlər,translation template,FR10_dsk_manifest.csv
+"Production and generation of income account by section (output, IC, VA, compensation, GOS, CFC)","Bölmələr üzrə istehsal hesabı və gəlirlərin yaranması hesabı (buraxılış, aralıq istehlak, əlavə dəyər, işçilərin əmək ödənişi, ümumi mənfəət, əsas kapitalın istehlakı)",translation template,FR10_dsk_manifest.csv
+"GDP by activity, current prices","İqtisadi fəaliyyət növləri üzrə ÜDM, cari qiymətlərlə",translation template,FR10_dsk_manifest.csv
+Output of industry by activity (NACE 2-digit),"İqtisadi fəaliyyət növləri üzrə sənaye buraxılışı (NACE, 2 rəqəmli)",translation template,FR10_dsk_manifest.csv
+Intermediate consumption of industry by activity,İqtisadi fəaliyyət növləri üzrə sənayedə aralıq istehlak,translation template,FR10_dsk_manifest.csv
+Value added in industry by activity,İqtisadi fəaliyyət növləri üzrə sənayedə əlavə dəyər,translation template,FR10_dsk_manifest.csv
+"Share of intermediate consumption in output, industry",Sənayedə aralıq istehlakın buraxılışda payı,translation template,FR10_dsk_manifest.csv
+Structure of compensation of employees,İşçilərin əmək ödənişinin strukturu,translation template,FR10_dsk_manifest.csv
+Share of compensation in value added,İşçilərin əmək ödənişinin əlavə dəyərdə payı,translation template,FR10_dsk_manifest.csv
+Structure of consumption of fixed capital,Əsas kapitalın istehlakının strukturu,translation template,FR10_dsk_manifest.csv
+Share of consumption of fixed capital in value added,Əsas kapitalın istehlakının əlavə dəyərdə payı,translation template,FR10_dsk_manifest.csv
+Physical volume index of output / value added,Buraxılışın / əlavə dəyərin fiziki həcm indeksi,translation template,FR10_dsk_manifest.csv
+GDP by activity at 2015 prices,"İqtisadi fəaliyyət növləri üzrə ÜDM, 2015 qiymətləri ilə",translation template,FR10_dsk_manifest.csv
+Labour productivity by activity,İqtisadi fəaliyyət növləri üzrə əmək məhsuldarlığı,translation template,FR10_dsk_manifest.csv
+"Fixed assets by activity, end of year","İqtisadi fəaliyyət növləri üzrə əsas fondlar, ilin sonuna",translation template,FR10_dsk_manifest.csv
+Output of main branches by economic region,İqtisadi rayonlar üzrə əsas sahələrin buraxılışı,translation template,FR10_dsk_manifest.csv
+"NOT PUBLISHED (URL returns an HTML page, HTTP 200)","DƏRC EDİLMƏYİB (URL HTML səhifəsi qaytarır, HTTP 200)",translation template,FR10_dsk_manifest.csv
+"profit-tax payers, thsd","mənfəət vergisi ödəyiciləri, min",translation template,FR10_dvx_declarations.csv
+"declaration net margin, % of deductible expenses","bəyannamə üzrə xalis marja, çıxılan xərclərə nisbətən %",translation template,FR10_dvx_declarations.csv
+"taxable profit / gross income, %","vergi tutulan mənfəət / ümumi gəlir, %",translation template,FR10_dvx_declarations.csv
+"declared losses / taxable profit, %","bəyan edilmiş zərər / vergi tutulan mənfəət, %",translation template,FR10_dvx_declarations.csv
+"effective tax ratio (r223), %","effektiv vergi nisbəti (r223), %",translation template,FR10_dvx_declarations.csv
+"tax arrears, mn AZN","vergi borcları, mln manat",translation template,FR10_dvx_declarations.csv
+"industry turnover share of total, %","sənaye dövriyyəsinin ümumi dövriyyədə payı, %",translation template,FR10_dvx_declarations.csv
+insufficient data,məlumat kifayət deyil,translation template,FR10_early_warning.csv
+"branch nominal output, mn AZN","sahənin nominal buraxılışı, mln manat",translation template,FR10_fan_charts.csv
+"branch real output, mn AZN 2015 prices","sahənin real buraxılışı, mln manat, 2015 qiymətləri ilə",translation template,FR10_fan_charts.csv
+"branch share of industry, %","sahənin sənayedə payı, %",translation template,FR10_fan_charts.csv
+"labour productivity, thsd AZN 2015 prices per employee","əmək məhsuldarlığı, bir işçiyə min manat, 2015 qiymətləri ilə",translation template,FR10_fan_charts.csv
+"branch share of manufacturing, %","sahənin emal sənayesində payı, %",translation template,FR10_fan_charts.csv
+"GOS-proxy margin, % of output","ümumi mənfəət (proksi) marjası, buraxılışa nisbətən %",translation template,FR10_fan_charts.csv
+"section output, mn AZN","bölmənin buraxılışı, mln manat",translation template,FR10_fan_charts.csv
+"section GOS, % of value added","bölmənin ümumi mənfəəti, əlavə dəyərə nisbətən %",translation template,FR10_fan_charts.csv
+"industry output, mn AZN","sənaye buraxılışı, mln manat",translation template,FR10_fan_charts.csv
+"non-state share of industry, %","qeyri-dövlət sektorunun sənayedə payı, %",translation template,FR10_fan_charts.csv
+HHI across manufacturing branches,emal sənayesi sahələri üzrə HHI,translation template,FR10_fan_charts.csv
+"regional share of industrial output, %","iqtisadi rayonun sənaye buraxılışında payı, %",translation template,FR10_fan_charts.csv
+"industry output, mn AZN — FR1 prices held at baseline","sənaye buraxılışı, mln manat — FR1 qiymətləri Əsas ssenari səviyyəsində saxlanılıb",translation template,FR10_fan_charts.csv
+"section output, mn AZN — FR1 prices held at baseline","bölmənin buraxılışı, mln manat — FR1 qiymətləri Əsas ssenari səviyyəsində saxlanılıb",translation template,FR10_fan_charts.csv
+2026-2030 growth % pa,"2026-2030 artım, illik %",translation template,FR10_fan_charts.csv
+real-named file with neutral data_status -> DATA_MODE = REAL,"real adlı fayl, neytral data_status ilə -> DATA_MODE = REAL",translation template,FR10_firm_panel_swap_tests.csv
+REAL file passes the validator (0 hard errors),REAL fayl validatordan keçir (0 kritik xəta),translation template,FR10_firm_panel_swap_tests.csv
+"REAL mode writes FR10_FIRM_* only, without watermark, all tests pass","REAL rejimi yalnız FR10_FIRM_* fayllarını su nişanı olmadan yazır, bütün testlər keçir",translation template,FR10_firm_panel_swap_tests.csv
+"Azerbaijani headers (xlsx, FIRM_PANEL_PATH) load and validate","Azərbaycan dilində başlıqlar (xlsx, FIRM_PANEL_PATH) yüklənir və yoxlamadan keçir",translation template,FR10_firm_panel_swap_tests.csv
+FIRM_PANEL_PATH has priority over the real-named file,FIRM_PANEL_PATH real adlı fayla nisbətən prioritet təşkil edir,translation template,FR10_firm_panel_swap_tests.csv
+broken file: missing required column reported as fatal,zədələnmiş fayl: məcburi sütunun olmaması kritik xəta kimi bildirilir,translation template,FR10_firm_panel_swap_tests.csv
+broken file: total assets < current assets flagged per row and the run stops,zədələnmiş fayl: ümumi aktivlər < cari aktivlər halı hər sətir üzrə qeyd olunur və icra dayandırılır,translation template,FR10_firm_panel_swap_tests.csv
+"mode REAL, file FR10_firm_panel.csv","rejim REAL, fayl FR10_firm_panel.csv",translation template,FR10_firm_panel_swap_tests.csv
+0 warnings,0 xəbərdarlıq,translation template,FR10_firm_panel_swap_tests.csv
+"11 files, e.g. ['FR10_FIRM_cohort_survival.csv', 'FR10_FIRM_concentration_nace.csv', 'FR10_FIRM_concentration_nace_region_2025.csv']","11 fayl, məs. ['FR10_FIRM_cohort_survival.csv', 'FR10_FIRM_concentration_nace.csv', 'FR10_FIRM_concentration_nace_region_2025.csv']",translation template,FR10_firm_panel_swap_tests.csv
+"3000 rows, unknown columns [], mode REAL","3000 sətir, naməlum sütunlar [], rejim REAL",translation template,FR10_firm_panel_swap_tests.csv
+loaded panel_az.xlsx,panel_az.xlsx yükləndi,translation template,FR10_firm_panel_swap_tests.csv
+required column missing (EN or AZ header),məcburi sütun yoxdur (EN və ya AZ başlığı),translation template,FR10_firm_panel_swap_tests.csv
+"firm panel rejected: 15 hard errors (first: row 2, field total_assets: total assets < current + fixed assets); see rep.csv","müəssisə paneli rədd edildi: 15 kritik xəta (birincisi: sətir 2, sütun total_assets: ümumi aktivlər < cari aktivlər + əsas fondlar); bax: rep.csv",translation template,FR10_firm_panel_swap_tests.csv
+REAL mode estimates the same firm-level models: identical coefficients on the same data,REAL rejimi eyni müəssisə modellərini qiymətləndirir: eyni məlumatda əmsallar eynidir,translation template,FR10_firm_panel_swap_tests_econ.csv
+"REAL mode writes FR10_FIRM_econ_* (no watermark, no recovery against true values)",REAL rejimi FR10_FIRM_econ_* fayllarını yazır (su nişanı və həqiqi dəyərlərlə bərpa testi olmadan),translation template,FR10_firm_panel_swap_tests_econ.csv
+"81 coefficients, max |gap| 0.0e+00","81 əmsal, maksimum |fərq| 0.0e+00",translation template,FR10_firm_panel_swap_tests_econ.csv
+"12 files: econ_coefficients.csv, econ_distress_ame.csv, econ_distress_calibration.csv, econ_distress_roc.csv, econ_export_ame.csv, econ_export_calibration.csv ...","12 fayl: econ_coefficients.csv, econ_distress_ame.csv, econ_distress_calibration.csv, econ_distress_roc.csv, econ_export_ame.csv, econ_export_calibration.csv ...",translation template,FR10_firm_panel_swap_tests_econ.csv
+section output,bölmə buraxılışı,translation template,FR10_forecast_assumptions.csv
+non-oil branch relative prices,qeyri-neft sahələrinin nisbi qiymətləri,translation template,FR10_forecast_assumptions.csv
+refining real output,neft emalının real buraxılışı,translation template,FR10_forecast_assumptions.csv
+refining price,neft emalı məhsullarının qiyməti,translation template,FR10_forecast_assumptions.csv
+labour share of VA (margin baseline),əlavə dəyərdə əməyin payı (marja üçün baza),translation template,FR10_forecast_assumptions.csv
+within-branch non-state shares,sahədaxili qeyri-dövlət payları,translation template,FR10_forecast_assumptions.csv
+within-section employment shares,bölmədaxili məşğulluq payları,translation template,FR10_forecast_assumptions.csv
+"branch wages (sensitivity, productivity)","sahələr üzrə əmək haqqı (həssaslıq, məhsuldarlıq)",translation template,FR10_forecast_assumptions.csv
+other taxes on production / VA,istehsala digər vergilər / ƏD,translation template,FR10_forecast_assumptions.csv
+branch VA / output,sahə üzrə ƏD / buraxılış,translation template,FR10_forecast_assumptions.csv
+SME shares,KOS (SME) payları,translation template,FR10_forecast_assumptions.csv
+output/VA ratio held at 2025,buraxılış/ƏD nisbəti 2025 səviyyəsində saxlanılır,translation template,FR10_forecast_assumptions.csv
+held at 2025,2025 səviyyəsində saxlanılır,translation template,FR10_forecast_assumptions.csv
+2023-25 average throughput (capacity),2023-25 orta emal həcmi (istehsal gücü),translation template,FR10_forecast_assumptions.csv
+"oil export price in manat, estimated elasticity; exchange rate held","manatla ifadə olunmuş neft ixrac qiyməti, qiymətləndirilmiş elastiklik; məzənnə sabit saxlanılır",translation template,FR10_forecast_assumptions.csv
+held at 2023-25 average,2023-25 orta səviyyəsində saxlanılır,translation template,FR10_forecast_assumptions.csv
+2025 DSK wage x FR1 average-wage index,2025 DSK əmək haqqı x FR1 orta əmək haqqı indeksi,translation template,FR10_forecast_assumptions.csv
+held at 2024 (no time series),2024 səviyyəsində saxlanılır (zaman sırası yoxdur),translation template,FR10_forecast_assumptions.csv
+FR1 nominal VA,FR1 nominal əlavə dəyər,translation template,FR10_forecast_assumptions.csv
+DSK 018,DSK 018,translation template,FR10_forecast_assumptions.csv
+FR1 oil price,FR1 neft qiyməti,translation template,FR10_forecast_assumptions.csv
+FR4 section index,FR4 bölmə indeksi,translation template,FR10_forecast_assumptions.csv
+FR1 wage,FR1 əmək haqqı,translation template,FR10_forecast_assumptions.csv
+forecast rule,proqnoz qaydası,translation template,FR10_forecast_assumptions.csv
+"model RMSE, nominal %","model RMSE, nominal %",translation template,FR10_holdout_branches.csv
+manufacturing (24 branches): forecasting model,emal sənayesi (24 sahə): proqnoz modeli,translation template,FR10_holdout_validation.csv
+manufacturing (24 branches) (Part 11 share systems),"emal sənayesi (24 sahə) (Hissə 11, pay sistemləri)",translation template,FR10_holdout_validation.csv
+mining (4 branches) (Part 11 share systems),"mədənçıxarma (4 sahə) (Hissə 11, pay sistemləri)",translation template,FR10_holdout_validation.csv
+14 economic regions,14 iqtisadi rayon,translation template,FR10_holdout_validation.csv;FR10_share_system_coefficients.csv
+oil block + combo,neft bloku + kombinasiya,translation template,FR10_holdout_validation.csv
+oil block + pooled,neft bloku + birləşdirilmiş model,translation template,FR10_holdout_validation.csv
+oil block + const,neft bloku + sabit paylar,translation template,FR10_holdout_validation.csv
+constant shares,sabit paylar,translation template,FR10_holdout_validation.csv;FR10_share_system_selection.csv
+MNL: scale (FR1 real sector VA),MNL: miqyas (FR1 real sektor əlavə dəyəri),translation template,FR10_holdout_validation.csv;FR10_share_system_selection.csv
+MNL: oil export price,MNL: neft ixrac qiyməti,translation template,FR10_holdout_validation.csv;FR10_share_system_selection.csv
+MNL: scale + oil price,MNL: miqyas + neft qiyməti,translation template,FR10_holdout_validation.csv;FR10_share_system_selection.csv
+combination: 1/2 constant + 1/2 MNL scale,kombinasiya: 1/2 sabit paylar + 1/2 MNL miqyas,translation template,FR10_holdout_validation.csv;FR10_share_system_selection.csv
+MNL: oil-sector mix (FR1 mining/manufacturing VA),MNL: neft sektoru strukturu (FR1 mədənçıxarma/emal sənayesi əlavə dəyəri),translation template,FR10_holdout_validation.csv;FR10_share_system_selection.csv
+MNL: scale + oil-sector mix,MNL: miqyas + neft sektoru strukturu,translation template,FR10_holdout_validation.csv;FR10_share_system_selection.csv
+Baseline: manufacturing branch shares sum to 1,Əsas: emal sənayesi sahələri paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Baseline: industry branch shares sum to 1,Əsas: sənaye sahələri paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Baseline: regional shares sum to 1,Əsas: iqtisadi rayon paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Baseline: manufacturing branches add up to section output,Əsas: emal sənayesi sahələrinin cəmi bölmə buraxılışına bərabərdir,translation template,FR10_identity_checks.csv
+Baseline: mining branches (oil part = residual) reconcile with FR1 mining output,Əsas: mədənçıxarma sahələri (neft hissəsi = qalıq) FR1 mədənçıxarma buraxılışı ilə uzlaşır,translation template,FR10_identity_checks.csv
+Baseline: nominal = real x deflator for every branch (oil-linked: oil-price deflator),Əsas: hər sahə üçün nominal = real x deflyator (neftlə bağlı sahələr: neft qiyməti deflyatoru),translation template,FR10_identity_checks.csv
+Baseline: non-oil + oil-linked branches add up to manufacturing output,Əsas: qeyri-neft + neftlə bağlı sahələrin cəmi emal sənayesi buraxılışına bərabərdir,translation template,FR10_identity_checks.csv
+Baseline: section VA = compensation + other taxes + GOS,Əsas: bölmə ƏD = əməyin ödənişi + digər vergilər + ümumi mənfəət,translation template,FR10_identity_checks.csv
+Adverse: manufacturing branch shares sum to 1,Mənfi: emal sənayesi sahələri paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Adverse: industry branch shares sum to 1,Mənfi: sənaye sahələri paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Adverse: regional shares sum to 1,Mənfi: iqtisadi rayon paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Adverse: manufacturing branches add up to section output,Mənfi: emal sənayesi sahələrinin cəmi bölmə buraxılışına bərabərdir,translation template,FR10_identity_checks.csv
+Adverse: mining branches (oil part = residual) reconcile with FR1 mining output,Mənfi: mədənçıxarma sahələri (neft hissəsi = qalıq) FR1 mədənçıxarma buraxılışı ilə uzlaşır,translation template,FR10_identity_checks.csv
+Adverse: nominal = real x deflator for every branch (oil-linked: oil-price deflator),Mənfi: hər sahə üçün nominal = real x deflyator (neftlə bağlı sahələr: neft qiyməti deflyatoru),translation template,FR10_identity_checks.csv
+Adverse: non-oil + oil-linked branches add up to manufacturing output,Mənfi: qeyri-neft + neftlə bağlı sahələrin cəmi emal sənayesi buraxılışına bərabərdir,translation template,FR10_identity_checks.csv
+Adverse: section VA = compensation + other taxes + GOS,Mənfi: bölmə ƏD = əməyin ödənişi + digər vergilər + ümumi mənfəət,translation template,FR10_identity_checks.csv
+Reform: manufacturing branch shares sum to 1,İslahat: emal sənayesi sahələri paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Reform: industry branch shares sum to 1,İslahat: sənaye sahələri paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Reform: regional shares sum to 1,İslahat: iqtisadi rayon paylarının cəmi 1,translation template,FR10_identity_checks.csv
+Reform: manufacturing branches add up to section output,İslahat: emal sənayesi sahələrinin cəmi bölmə buraxılışına bərabərdir,translation template,FR10_identity_checks.csv
+Reform: mining branches (oil part = residual) reconcile with FR1 mining output,İslahat: mədənçıxarma sahələri (neft hissəsi = qalıq) FR1 mədənçıxarma buraxılışı ilə uzlaşır,translation template,FR10_identity_checks.csv
+Reform: nominal = real x deflator for every branch (oil-linked: oil-price deflator),İslahat: hər sahə üçün nominal = real x deflyator (neftlə bağlı sahələr: neft qiyməti deflyatoru),translation template,FR10_identity_checks.csv
+Reform: non-oil + oil-linked branches add up to manufacturing output,İslahat: qeyri-neft + neftlə bağlı sahələrin cəmi emal sənayesi buraxılışına bərabərdir,translation template,FR10_identity_checks.csv
+Reform: section VA = compensation + other taxes + GOS,İslahat: bölmə ƏD = əməyin ödənişi + digər vergilər + ümumi mənfəət,translation template,FR10_identity_checks.csv
+model reproduces 2025 branch output,model sahə buraxılışını bərpa edir (2025),translation template,FR10_identity_checks.csv
+model reproduces 2025 regional shares,model iqtisadi rayon paylarını bərpa edir (2025),translation template,FR10_identity_checks.csv
+non-state share 2025: composition vs published (pp),qeyri-dövlət payı 2025: struktur üzrə və dərc edilmiş (faiz bəndi),translation template,FR10_identity_checks.csv
+vectorised fan simulator reproduces the solver (zero shocks),vektorlaşdırılmış yelpik diaqramı simulyatoru həlledicinin nəticəsini bərpa edir (sıfır şoklar),translation template,FR10_identity_checks.csv
+DSK adding-up checks (Part 5) all pass,DSK cəmlənmə yoxlamalarının (Hissə 5) hamısı uğurludur,translation template,FR10_identity_checks.csv
+Layer-B pipeline tests all pass (SYNTHETIC panel),B qatı hesablama zənciri testlərinin hamısı uğurludur (SİNTETİK panel),translation template,FR10_identity_checks.csv
+firm-panel swap tests all pass (temporary directory),müəssisə panelinin əvəzlənməsi testlərinin hamısı uğurludur (müvəqqəti qovluq),translation template,FR10_identity_checks.csv
+arithmetic check - holds by construction,arifmetik yoxlama - qurulmasına görə ödənilir,translation template,FR10_identity_checks.csv
+thsd AZN,min manat,translation template,FR10_input_schema.csv
+2019 <= year <= reporting year,2019 <= il <= hesabat ili,translation template,FR10_input_schema.csv
+a valid NACE Rev.2 division (01-99); FR10 Layer A covers 05-39,etibarlı NACE Rev.2 sahə kodu (01-99); FR10 A qatı 05-39 kodlarını əhatə edir,translation template,FR10_input_schema.csv
+one of the 14 economic regions,14 iqtisadi rayondan biri,translation template,FR10_input_schema.csv
+state | private | foreign | joint,dövlət | özəl | xarici | birgə,translation template,FR10_input_schema.csv
+micro | small | medium | large (derived if absent),mikro | kiçik | orta | iri (olmadıqda hesablanır),translation template,FR10_input_schema.csv
+>= 0; <= total assets,>= 0; <= ümumi aktivlər,translation template,FR10_input_schema.csv
+>= 0; cash + receivables + inventories <= current assets,>= 0; pul vəsaitləri + debitor borcları + ehtiyatlar <= cari aktivlər,translation template,FR10_input_schema.csv
+>= 0; current + fixed <= total assets,>= 0; cari aktivlər + əsas fondlar <= ümumi aktivlər,translation template,FR10_input_schema.csv
+may be negative,mənfi ola bilər,translation template,FR10_input_schema.csv
+needed for the distress score; if absent the score is not computed and the firm is flagged,maliyyə çətinliyi göstəricisi (distress score) üçün tələb olunur; olmadıqda göstərici hesablanmır və müəssisə işarələnir,translation template,FR10_input_schema.csv
+>= 0; <= total liabilities (separates debt from trade payables),>= 0; <= ümumi öhdəliklər (borc öhdəliklərini ticarət kreditor borclarından ayırır),translation template,FR10_input_schema.csv
+>= 0; equity + liabilities = total assets,>= 0; xüsusi kapital + öhdəliklər = ümumi aktivlər,translation template,FR10_input_schema.csv
+= revenue - cost of sales - operating expenses (within 5%),= gəlir - satışın maya dəyəri - əməliyyat xərcləri (5% dəqiqliklə),translation template,FR10_input_schema.csv
+>= 0 (annual average),>= 0 (illik orta),translation template,FR10_input_schema.csv
+>= 0; <= revenue,>= 0; <= gəlir,translation template,FR10_input_schema.csv
+"HS / PRODCOM codes, "";""-separated","HS / PRODCOM kodları, "";"" ilə ayrılmış",translation template,FR10_input_schema.csv
+state registration date (entry),dövlət qeydiyyatı tarixi (bazara giriş),translation template,FR10_input_schema.csv
+"liquidation date (exit), empty if active","ləğvetmə tarixi (bazardan çıxış), fəaliyyətdədirsə boş",translation template,FR10_input_schema.csv
+DVX / DSK register,DVX / DSK reyestri,translation template,FR10_input_schema.csv
+DSK register,DSK reyestri,translation template,FR10_input_schema.csv
+DVX balance sheet,DVX balans hesabatı,translation template,FR10_input_schema.csv
+DVX P&L / profit-tax declaration,DVX mənfəət və zərər hesabatı / mənfəət vergisi bəyannaməsi,translation template,FR10_input_schema.csv
+DVX P&L,DVX mənfəət və zərər hesabatı,translation template,FR10_input_schema.csv
+DVX P&L / fixed-asset register,DVX mənfəət və zərər hesabatı / əsas fondlar reyestri,translation template,FR10_input_schema.csv
+DVX cash-flow statement,DVX pul vəsaitlərinin hərəkəti hesabatı,translation template,FR10_input_schema.csv
+DGK / DSK,DGK / DSK,translation template,FR10_input_schema.csv
+DVX / Ministry of Justice register,DVX / Ədliyyə Nazirliyinin reyestri,translation template,FR10_input_schema.csv
+grows with FR1 mining VA,FR1 mədənçıxarma əlavə dəyəri ilə birgə artır,translation template,FR10_mining_reconciliation.csv;FR10_mining_rules_selection.csv
+neutral: held at the last actual level,neytral: son faktiki səviyyədə saxlanılır,translation template,FR10_mining_reconciliation.csv;FR10_mining_rules_selection.csv
+unit elasticity to construction,tikintiyə görə vahid elastiklik,translation template,FR10_mining_rules_selection.csv
+estimated elasticity to construction,tikintiyə görə qiymətləndirilmiş elastiklik,translation template,FR10_mining_rules_selection.csv
+neutral: held at trailing 3-year average,neytral: son 3 ilin orta səviyyəsində saxlanılır,translation template,FR10_mining_rules_selection.csv
+grows with FR1 construction VA,FR1 tikinti əlavə dəyəri ilə birgə artır,translation template,FR10_mining_rules_selection.csv
+information only,yalnız məlumat üçün,translation template,FR10_mining_rules_selection.csv
+HAC / Driscoll-Kraay covariance,HAC / Driscoll-Kraay kovariasiyası,translation template,FR10_noar_constructs.csv
+DOLS leads/lags of regressor differences,izahedici dəyişənlərin fərqlərinin DOLS irəli/geri lağları,translation template,FR10_noar_constructs.csv
+"residual ADF, one fixed lag","qalıqlar üzrə ADF, bir sabit lağ",translation template,FR10_noar_constructs.csv
+chained volume levels,zəncirvari həcm səviyyələri,translation template,FR10_noar_constructs.csv
+perpetual inventory capital,daimi inventar metodu ilə kapital,translation template,FR10_noar_constructs.csv
+one-year lags of other regressors,digər izahedici dəyişənlərin bir illik lağları,translation template,FR10_noar_constructs.csv
+constant add-factor; decay at rho-hat (sensitivity),sabit düzəliş əmsalı; rho-hat ilə sönmə (həssaslıq),translation template,FR10_noar_constructs.csv
+historical residual paths,tarixi qalıq trayektoriyaları,translation template,FR10_noar_constructs.csv
+held-at-last-value forecast rules,son qiymətdə saxlama proqnoz qaydaları,translation template,FR10_noar_constructs.csv
+all equations,bütün tənliklər,translation template,FR10_noar_constructs.csv
+share systems,pay sistemləri,translation template,FR10_noar_constructs.csv
+Part 5,Hissə 5,translation template,FR10_noar_constructs.csv
+Part 7.2,Hissə 7.2,translation template,FR10_noar_constructs.csv
+determinants panel,müəyyənedici amillər paneli,translation template,FR10_noar_constructs.csv;FR10_rejected_specifications.csv
+fan charts,yelpik diaqramları,translation template,FR10_noar_constructs.csv
+Part 14,Hissə 14,translation template,FR10_noar_constructs.csv
+standard errors only,yalnız standart xətalar,translation template,FR10_noar_constructs.csv
+endogeneity correction; no own lag,endogenlik düzəlişi; öz lağı yoxdur,translation template,FR10_noar_constructs.csv
+test statistic,test statistikası,translation template,FR10_noar_constructs.csv
+chain-linking identity,zəncirvari əlaqələndirmə eyniliyi,translation template,FR10_noar_constructs.csv
+stock-flow identity,ehtiyat-axın eyniliyi,translation template,FR10_noar_constructs.csv
+predetermined regressors; dependent variable never lagged,əvvəlcədən müəyyən edilmiş izahedici dəyişənlər; asılı dəyişənin lağından heç vaxt istifadə edilmir,translation template,FR10_noar_constructs.csv
+level anchor; decay is a labelled sensitivity,səviyyə lövbəri; sönmə ayrıca qeyd olunmuş həssaslıq variantıdır,translation template,FR10_noar_constructs.csv
+replay of observed error paths,müşahidə edilmiş xəta trayektoriyalarının təkrar tətbiqi,translation template,FR10_noar_constructs.csv
+"scenario assumptions, listed","ssenari fərziyyələri, siyahı şəklində",translation template,FR10_noar_constructs.csv
+why not autoregressive,niyə avtoreqressiv deyil,translation template,FR10_noar_constructs.csv
+"non-state share held (2025), %","qeyri-dövlət payı sabit saxlanılır (2025), %",translation template,FR10_nonstate_composition.csv
+"share of industry 2025, %","sənayedə pay 2025, %",translation template,FR10_nonstate_composition.csv
+"share of industry 2030, %","sənayedə pay 2030, %",translation template,FR10_nonstate_composition.csv
+"published non-state share, %","dərc edilmiş qeyri-dövlət payı, %",translation template,FR10_ownership.csv
+"composition identity, %","struktur eyniliyi, %",translation template,FR10_ownership.csv
+"non-state share of manufacturing, %","emal sənayesində qeyri-dövlət payı, %",translation template,FR10_ownership.csv
+"non-state share of mining, %","mədənçıxarmada qeyri-dövlət payı, %",translation template,FR10_ownership.csv
+"identity gap, pp","eynilik boşluğu, faiz bəndi",translation template,FR10_ownership.csv
+"forecast non-state share %, Baseline","qeyri-dövlət payının proqnozu %, Əsas",translation template,FR10_ownership.csv
+"forecast non-state share %, Adverse","qeyri-dövlət payının proqnozu %, Mənfi",translation template,FR10_ownership.csv
+"forecast non-state share %, Reform","qeyri-dövlət payının proqnozu %, İslahat",translation template,FR10_ownership.csv
+V1 Branch scorecard,V1 Sahə göstəriciləri kartı,translation template,FR10_presentation_spec.csv
+V2 Efficiency vs financial health,V2 Səmərəlilik və maliyyə vəziyyəti,translation template,FR10_presentation_spec.csv
+V3 Market-share dynamics,V3 Bazar payı dinamikası,translation template,FR10_presentation_spec.csv
+V4 Region x activity,V4 İqtisadi rayon x fəaliyyət növü,translation template,FR10_presentation_spec.csv
+V5 Product view,V5 Məhsullar üzrə görünüş,translation template,FR10_presentation_spec.csv
+V6 Forecast with bands,V6 Zolaqlı proqnoz,translation template,FR10_presentation_spec.csv
+V7 Early-warning flags,V7 Erkən xəbərdarlıq siqnalları,translation template,FR10_presentation_spec.csv
+V8 Financial condition,V8 Maliyyə vəziyyəti,translation template,FR10_presentation_spec.csv
+V9 Key factors,V9 Əsas amillər,translation template,FR10_presentation_spec.csv
+V10 Efficiency,V10 Səmərəlilik,translation template,FR10_presentation_spec.csv
+V11 Data catalogue,V11 Məlumat kataloqu,translation template,FR10_presentation_spec.csv
+V12 Firm view (Layer B),V12 Müəssisə görünüşü (B qatı),translation template,FR10_presentation_spec.csv
+"One card per branch: share of industry and manufacturing, real growth, labour productivity, GOS-proxy margin, investment rate, flags","Hər sahə üçün bir kart: sənayedə və emal sənayesində pay, real artım, əmək məhsuldarlığı, ümumi mənfəət (proksi) marjası, investisiya norması, siqnallar",translation template,FR10_presentation_spec.csv
+"Labour-productivity growth against GOS-proxy margin, bubble = market share; quadrant labels","Əmək məhsuldarlığının artımı ümumi mənfəət (proksi) marjasına qarşı, qabarcıq = bazar payı; kvadrant etiketləri",translation template,FR10_presentation_spec.csv
+"Branch shares 2005-2025 and 2026-2030 with 50/80/90% bands; HHI, CR4","Sahə payları 2005-2025 və 2026-2030, 50/80/90% zolaqlarla; HHI, CR4",translation template,FR10_presentation_spec.csv
+Regional shares of industrial output by year; non-state share; enterprises; entry/exit; forecast shares,İllər üzrə sənaye buraxılışında iqtisadi rayonların payları; qeyri-dövlət payı; müəssisələr; bazara giriş/çıxış; proqnoz payları,translation template,FR10_presentation_spec.csv
+"Main products in physical units, 2020-2025 growth, branch link","Natural ifadədə əsas məhsullar, 2020-2025 artım, sahə ilə əlaqə",translation template,FR10_presentation_spec.csv
+"Section and branch output (nominal, real), margins, non-state share under three scenarios with 5-95% bands","Bölmə və sahə buraxılışı (nominal, real), marjalar, qeyri-dövlət payı üç ssenari üzrə, 5-95% zolaqlarla",translation template,FR10_presentation_spec.csv
+"Margin, market-share, renewal, stocks and productivity flags; watch list","Marja, bazar payı, yenilənmə, ehtiyatlar və məhsuldarlıq siqnalları; müşahidə siyahısı",translation template,FR10_presentation_spec.csv
+"Section GOS margins, labour share, CFC; DVX declaration margins, losses, arrears; self-financing","Bölmələr üzrə ümumi mənfəət marjaları, əməyin payı, əsas kapitalın istehlakı (CFC); DVX bəyannamələri üzrə marjalar, zərərlər, borclar; özünümaliyyələşdirmə",translation template,FR10_presentation_spec.csv
+Growth contributions by branch; determinants panel with honest inference,Sahələr üzrə artıma töhfələr; düzgün statistik nəticə çıxarışı ilə müəyyənedici amillər paneli,translation template,FR10_presentation_spec.csv
+"TFP decomposition, capital productivity, wage-productivity gap, innovation intensity","TFP dekompozisiyası, kapitalın məhsuldarlığı, əmək haqqı-məhsuldarlıq boşluğu, innovasiya intensivliyi",translation template,FR10_presentation_spec.csv
+"Indicator, source, table/row, years, status, integration route, alternative","Göstərici, mənbə, cədvəl/sətir, illər, status, inteqrasiya yolu, alternativ",translation template,FR10_presentation_spec.csv
+"Firm scorecard, peer percentiles, distress zone, firm HHI by NACE x region, firm forecast — ACTIVE ONLY when the DVX/DSMF panel arrives","Müəssisə göstəriciləri kartı, analoq müəssisələr üzrə persentillər, maliyyə çətinliyi zonası, NACE x iqtisadi rayon üzrə müəssisə HHI, müəssisə proqnozu — YALNIZ DVX/DSMF paneli daxil olduqda AKTİVDİR",translation template,FR10_presentation_spec.csv
+KPI cards + sparkline,KPI kartları + mini-qrafik (sparkline),translation template,FR10_presentation_spec.csv
+scatter / quadrant,səpələnmə diaqramı / kvadrant,translation template,FR10_presentation_spec.csv
+stacked area; fan chart; KPI,yığılmış sahə diaqramı; yelpik diaqramı; KPI,translation template,FR10_presentation_spec.csv
+map + heat map,xəritə + istilik xəritəsi,translation template,FR10_presentation_spec.csv
+table with sparklines,mini-qrafikli cədvəl,translation template,FR10_presentation_spec.csv
+flag table (traffic lights),siqnal cədvəli (svetofor),translation template,FR10_presentation_spec.csv
+time series; KPI cards,zaman sıraları; KPI kartları,translation template,FR10_presentation_spec.csv
+waterfall; coefficient table,şəlalə diaqramı; əmsallar cədvəli,translation template,FR10_presentation_spec.csv
+decomposition bars,dekompozisiya sütunları,translation template,FR10_presentation_spec.csv
+searchable table,axtarışlı cədvəl,translation template,FR10_presentation_spec.csv
+firm card; heat map,müəssisə kartı; istilik xəritəsi,translation template,FR10_presentation_spec.csv
+"Oil extraction (including gas condensate), thsd. tonnes","Neft hasilatı (qaz kondensatı daxil olmaqla), min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Gold, kilogram","Qızıl, kiloqram",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Silver, kilogram","Gümüş, kiloqram",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Copper concentrates, ton","Mis konsentratı, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Bentonite, thsd. tonnes","Bentonit, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Sand for construction, thsd. tonnes","Tikinti qumu, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Gravel, crashed stone, pebbles and flint thsd. tonnes","Çınqıl, qırmadaş, xırda çay daşı və çaxmaq daşı, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Limestone for construction, thsd. tonnes","İnşaat üçün əhəng daşı, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Salt, ton","Duz, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Gypsum and anhydrit, ton","Gips və anhidrit, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Sausages and similar products, ton","Kolbasa məmulatları, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Condensed milk, ton","Qatılaşdırılmış süd, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Ayran, ton","Ayran, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Ice cream, ton","Dondurma, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Cream, sour cream, ton","Qaymaq və xama, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Cheese and curd, ton","Pendir və kəsmik, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Butter, thsd. tonnes","Kərə yağı, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Fish products (including canned fish), thsd. tonnes","Balıq məhsulları (konservlər daxil olmaqla), min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Caviar, ton","Nərə kürüsü, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Canned fruit and vegetables, fruit and vegetable juices, thsd. tonnes","Meyvə və tərəvəz konservləri, şirələri, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"canned fruit and vegetables, thsd. tonnes","meyvə və tərəvəz konservləri, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Macaroni products, thsd. tonnes","Makaron məmulatları, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Vegetable oils, thsd. tonnes","Bitki yağları, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"liquid vegetable oils, thsd. tonnes","duru bitki yağları, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"hydrogenated oil, thsd. tonnes","hidrogenləşdirilmiş yağlar, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Margarine, ton","Marqarin, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Mayonnaise, ton","Mayonez, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Flour confectionery, thsd. tonnes","Unlu qənnadı məmulatları, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Sugar confectionery, thsd. tonnes","Şəkərli qənnadı məmulatları, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Sugar, thsd. tonnes","Şəkər, qənd, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Wheat flour, thsd. tonnes","Buğda unu, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Bread, thsd. tonnes","Çörək, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Tea, thsd. tonnes","Çay, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Table salt, ton","Qida duzu, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Animal feeds, thsd. tonnes","Yem, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Desalinated waters, thsd. dkl","Şirinləşdirilmiş sular, min dkl",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Alcohol, thsd. dkl","Spirt, min dkl",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Vodka, thsd. dkl","Araq, min dkl",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Wine, thsd. dkl","Üzüm şərabı, min dkl",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Whiskey, brandy, thsd. dkl","Viski, brendi, min dkl",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Beer, thsd. dkl","Pivə, min dkl",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Tobacco, ton","Tütün, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Cigarettes, mln. units","Siqaretlər, mln. ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Cotton lint, thsd. tonnes","Pambıq mahlıc, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Cotton fabrics, thsd. sq.m","Pambıq parçalar, min kv.metr",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Cotton bed linen, thsd. units","Pambıq yataq ağları, min ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Cotton yarn, thsd. tonnes","Pambıq iplik, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Carpet, thsd. sq. m","Xalça, min kv.metr",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Hosiery, thsd. pairs","Corab məmulatları, min cüt",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Outerwear, thsd. units","Üst geyim, min ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Underwear, thsd. units","Alt geyim, min ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Leather, not further processed after tanning, ton","Aşılanmadan başqa digər emala məruz qalmayan dəri, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Footwear, thsd. pair","Ayaqqabı, min cüt",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Processed leather, thsd. sq. m","Emal edilmiş dəri, min kv. metr",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Wooden pallets and other loading boards, unit","Taxta altlıqlar və sair yükləmə lövhələri, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Wooden parquet, thsd. square meter","Taxta parket, min kv.metr",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Wood, cubic meter","Taxta şalban, kub metr",DSK az (018),FR10_product_forecasts_derived.csv
+"Corrugated paper and paperboard, thsd. tonnes","Büzmələnmiş kağız və karton taralar, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Hygienic and hospital articles, garments and clothing accessories, ton","Gigiyena və xəstəxana məmulatı, geyim əşyaları və aksesuarları, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Gasoline, thsd. tonnes","Avtomobil benzini, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Light petroleum products, light distillates, thsd. tonnes","Yüngül neft məhsulları, yüngül distillatlar, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Kerosene, thsd. tonnes","Ağ neft, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Fuel oil, thsd. tonnes","Mazut, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Gas oils (diesel fuel), thsd. tonnes","Qazoyllar (dizel yanacağı), min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Lubricants, thsd. tonnes","Sürtkü yağları, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Petroleum coke; petroleum bitumen and other residues of petroleum oils, thsd. tonnes","Neft koksu; neft bitumu və neft məhsullarının digər qalıqları, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"bitumen, thsd. tonnes","neft bitumu, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"petroleum coke, thsd. tonnes","neft koksu, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Inert gases, mln. cubic meter","Təsirsiz qazlar, mln. kub metr",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Ethyl alcohol, thsd. dkl","Etil spirti, min dkl",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Plastics in primary forms, ton","İlkin formada plastik kütlə, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"polyethylene, ton","polietilen, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Paints and varnishes, thsd. tonnes","Lak-boya məmulatları, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Organic chemicals, thsd. tonnes","Üzvi kimyəvi maddələr, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"ethylene, thsd. tonnes","etilen, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"propene (propylene), thsd. tonnes","propen (propilen), min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"methanol (methyl alcohol), thsd. tonnes","metanol (metil spirti), min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Organic surface-active agents, ton","Üzvi səthi-aktiv maddələri, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Soap, ton","Sabun, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Detergents, ton","Yuyucu maddələr, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Glues and adhesives, ton","Yapışqanlar və yapışdırıcı maddələr, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Fertilizer and nitrogen compounds, thsd. tonnes","Gübrə və azot birləşmələri, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"urea, thsd. tonnes","karbamid, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Medical mask, thsd. Units","Tibbi maska, min ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Medicaments, thsd. manat","Dərmanlar, min manat",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Rigid tubes, pipes and hoses and fittings, ton","Sərt plastmasdan borular, borucuqlar, qolçaqlar və şlanqlar, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Sacks and bags of polymers of ethylene, ton","Polietilen kisə və çantalar, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Glass products, ton","Şüşə məmulatları, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Kitchen, laboratory glassware, etc. products, million units","Şüşədən mətbəx, laboratoriya və s. məmulatları, milyon ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Ceramic tiles, thsd. sq. m.","Saxsı lövhələr, min kv.m.",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Building lime, ton","Tikinti əhəngi, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Gypsum products, ton","Gips məmulatlar, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"building plaster, ton","tikinti gipsi, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Plasterboard and gypsum blocks for use in construction, thsd. sq. m.","Tikintidə istifadə etmək üçün gipsdən tavalar və bloklar, min kv. metr",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Cement, thsd. tonnes","Sement, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Concrete, thsd. tonnes","Beton, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Precast concrete, thsd. cubic m.","Betondan yığma tikinti konstruksiyaları, min kub m.",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Asphalt, thsd. tonnes","Asfalt, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Brick for construction, thsd. cubic meter","Tikinti kərpici, min kub m",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Cement, concrete bricks and similar products, ton","Sementdən, betondan kərpiclər və oxşar məmulatlar, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Steel castings, thsd. tonnes","Polad tökmə, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Steel pipes, thsd. tonnes","Polad borular, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Aluminum pipes, ton","Alüminium borular, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Aluminium products, ton","Alüminium məmulatları, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Unwrought lead, aluminium, zinc, nickel, etc., ton","Emal edilməmiş qurğuşun, alüminium, sink, nikel və s., ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Copper wire, ton","Mis məftil, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Reinforcing bars, thsd. tonnes","Armatur, min ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Structures of metal, ton","Metaldan konstruksiyalar, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Stranded wire, cables and similar articles, ton","İzolyasiyası olmayan çoxnaqilli məftil, troslar və oxşar məmulatlar, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Laptops, unit","Noutbuklar, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Desktop computers, unit","Stolüstü kompüterlər, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Measuring devices, unit","Ölçmə cihazları, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Power transformers, unit","Güc transformatorları, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Other electrical wires, ton","Digər elektrik naqilləri, ton",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Refrigerators and freezers, of the household type, unit","Məişət soyuducuları və dondurucuları, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Pumps, unit","Nasoslar, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Lifting equipment, unit","Qaldırıcı qurğular, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Tractors, unit","Traktorlar, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Motor vehicles, unit","Avtomobillər, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Passenger cars, unit","minik avtomobilləri, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"lorry, unit","yük avtomobilləri, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"passenger public transport, unit","ictimai sərnişin nəqliyyat vasitələri, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Trailers and semi-trailers, unit","Qoşqular və yarımqoşqular, ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Syringes, needles, catheters, cannulae, etc., million units","Şprislər, iynələr, kateterlər, kanyullar və s., milyon ədəd",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Electric power, mln. kWt-h","Elektrik enerjisi, milyon kVt-saat",DSK az (018),FR10_product_forecasts_derived.csv;FR10_product_location_shares.csv;FR10_products.csv
+"Steam and hot water; steam and hot water supply, thsd. Gcal","Buxar və isti su; buxar və isti su ilə təchizat, min Qkal",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Collection, treatment and distribution of water, mln. cubic meter","Suyun yığılması, təmizlənməsi və paylanması, milyon kub m.",DSK az (018),FR10_product_forecasts_derived.csv;FR10_products.csv
+"Asphalt, thsd.ton","Asfalt, min ton",DSK az (018_1),FR10_product_location_shares.csv
+"Bentonite, ton","Bentonit, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Brick for construction, cubic meter","Tikinti kərpici, kub metr",DSK az (018_1),FR10_product_location_shares.csv
+"Ceramic tiles, thsd. sq.m.","Saxsı lövhələr, min kv.m.",DSK az (018_1),FR10_product_location_shares.csv
+"Cigarettes, mln. Units","Siqaretlər, mln. ədəd",DSK az (018_1),FR10_product_location_shares.csv
+"Copper concentrates, kg","Mis konsentratı, kq",DSK az (018_1),FR10_product_location_shares.csv
+"Copper products, ton","Mis məmulatları, ton",DSK az (018),FR10_product_location_shares.csv;FR10_products.csv
+"Corrugated paper and paperboard, ton","Büzmələnmiş kağız karton taralar, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Cotton bed linen, unit","Pambıq yataq ağları, ədəd",DSK az (018_1),FR10_product_location_shares.csv
+"Cotton lint, ton","Pambıq mahlıc, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Cotton yarn, ton","Pambıq ipliyi, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Ferro-alloys, ton","Ferro-ərintilər, ton",DSK az (018),FR10_product_location_shares.csv;FR10_products.csv
+"Fruit juices, thsd. dkl","Meyvə şirələri, min dkl",DSK az (018_1),FR10_product_location_shares.csv
+"Gas extraction, million cubic meters","Qaz hasilatı, milyon kub metr",DSK az (018_1),FR10_product_location_shares.csv
+"Gold, kg","Qızıl, kq",DSK az (018_1),FR10_product_location_shares.csv
+"Gravel, crashed stone, pebbles and flint, ton","Çınqıl, qırmadaş, xırda çay daşı və çaxmaq daşı, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Hydrogenated oil, ton","Hidrogenləşdirilmiş yağlar, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Kitchen, laboratory glassware etc. products, million units","Şüşədən mətbəx, laboratoriya və s. məmulatları, milyon ədəd",DSK az (018_1),FR10_product_location_shares.csv
+"Limestone for construction, ton","İnşaat üçün əhəng daşı, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Liquid vegetable oils, ton","Duru bitki yağları, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Lorry, unit","Yük avtomobilləri, ədəd",DSK az (018_1),FR10_product_location_shares.csv
+"Macaroni products, ton","Makaron məmulatları, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Mattresses, unit","Döşəklər, ədəd",DSK az (018),FR10_product_location_shares.csv;FR10_products.csv
+"Medical mask, thsd. units","Tibbi maska, min ədəd",DSK az (018_1),FR10_product_location_shares.csv
+"Office furniture, unit","Ofis mebelləri, ədəd",DSK az (018),FR10_product_location_shares.csv;FR10_products.csv
+"Outerwear, unit","Üst geyim, ədəd",DSK az (018_1),FR10_product_location_shares.csv
+"Paints and varnishes, ton","Lak-boya məmulatları, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Passenger car, unit","Minik avtomobilləri, ədəd",DSK az (018_1),FR10_product_location_shares.csv
+"Passenger public transport, unit","İctimai sərnişin nəqliyyat vasitələri, ədəd",DSK az (018_1),FR10_product_location_shares.csv
+"Petroleum coke; Petroleum bitumen and other residues of petroleum oils, thsd. tonnes","Neft koksu; neft bitumu və neft məhsullarının digər qalıqları, min ton",DSK az (018_1),FR10_product_location_shares.csv
+"Sand for construction, ton","Tikinti qumu, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Seats with wooden frames, unit","Ağac karkas əsaslı oturmaq üçün mebellər, ədəd",DSK az (018),FR10_product_location_shares.csv;FR10_products.csv
+"Silver, kg","Gümüş, kq",DSK az (018_1),FR10_product_location_shares.csv
+"Steel pipes, thsd. tons","Polad borular, min ton",DSK az (018_1),FR10_product_location_shares.csv
+"Sugar, ton","Şəkər (qənd), ton",DSK az (018_1),FR10_product_location_shares.csv
+"Tea, ton","Çay, ton",DSK az (018_1),FR10_product_location_shares.csv
+"Wooden furniture for bedrooms, dining and living rooms, unit","Yataq, yemək və qonaq otaqları üçün taxta mebellər, ədəd",DSK az (018),FR10_product_location_shares.csv;FR10_products.csv
+"Workwear and service apparel, unit","İstehsalat və peşə komplektləri, ədəd",DSK az (018_1),FR10_product_location_shares.csv
+Ganja city,Gəncə şəhəri,DSK az (018_1),FR10_product_location_shares.csv
+Absheron district,Abşeron rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Gazakh district,Qazax rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Sumgayit city,Sumqayıt şəhəri,DSK az (018_1),FR10_product_location_shares.csv
+Aghdam district,Ağdam rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Gadabay district,Gədəbəy rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Khankendi city,Xankəndi şəhəri,DSK az (018_1),FR10_product_location_shares.csv
+Saatli district,Saatlı rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Mingachevir city,Mingəçevir şəhəri,DSK az (018_1),FR10_product_location_shares.csv
+Gabala district,Qəbələ rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Dashkasan district,Daşkəsən rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Goranboy district,Goranboy rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Hajigabul district,Hacıqabul rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Imishli district,İmişli rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Zagatala district,Zaqatala rayonu,DSK az (018_1),FR10_product_location_shares.csv
+Goychay district,Göyçay rayonu,DSK az (018_1),FR10_product_location_shares.csv
+"Gas extraction, mln. cubic meter","Qaz hasilatı, milyon kub metr",DSK az (018),FR10_products.csv
+"Workwear and service apparel, thsd. unit","İstehsalat və peşə komplektləri, min ədəd",DSK az (018),FR10_products.csv
+"nitrogen, mln. cubuc metr","azot, mln. kub metr",DSK az (018),FR10_products.csv
+"Articles of ewellery and parts thereof of precious metal, thsd. manat","Zərgərlik məmulatları və qiymətli metallardan onların hissələri, min manat",DSK az (018),FR10_products.csv
+thsd. tonnes,min ton,translation template,FR10_products.csv
+mln. cubic meter,mln. kub metr,translation template,FR10_products.csv
+pebbles and flint thsd. tonnes,"çınqıl və çaxmaqdaşı, min ton",translation template,FR10_products.csv
+thsd. dkl,min dkl,translation template,FR10_products.csv
+mln. units,mln. ədəd,translation template,FR10_products.csv
+thsd. sq.m,min kv.m,translation template,FR10_products.csv
+thsd. units,min ədəd,translation template,FR10_products.csv
+thsd. sq. m,min kv. m,translation template,FR10_products.csv
+thsd. pairs,min cüt,translation template,FR10_products.csv
+thsd. unit,min ədəd,translation template,FR10_products.csv
+thsd. pair,min cüt,translation template,FR10_products.csv
+thsd. square meter,min kvadrat metr,translation template,FR10_products.csv
+mln. cubuc metr,mln. kub metr,translation template,FR10_products.csv
+thsd. Units,min ədəd,translation template,FR10_products.csv
+thsd. manat,min manat,translation template,FR10_products.csv
+million units,milyon ədəd,translation template,FR10_products.csv
+thsd. sq. m.,min kv. m.,translation template,FR10_products.csv
+thsd. cubic m.,min kub m.,translation template,FR10_products.csv
+thsd. cubic meter,min kub metr,translation template,FR10_products.csv
+mln. kWt-h,mln. kVt.saat,translation template,FR10_products.csv
+thsd. Gcal,min Qkal,translation template,FR10_products.csv
+"growth 2020-2025, % a year","artım 2020-2025, illik %",translation template,FR10_products.csv
+"profitable, lagging efficiency","rentabelli, səmərəlilikdə geridə qalan",translation template,FR10_quadrant.csv
+efficient and profitable,səmərəli və rentabelli,translation template,FR10_quadrant.csv
+lagging on both,hər iki göstəricidə geridə qalan,translation template,FR10_quadrant.csv
+"efficient, thin margin","səmərəli, aşağı marjalı",translation template,FR10_quadrant.csv
+"LP growth 2020-25, % a year","əmək məhsuldarlığının artımı 2020-25, illik %",translation template,FR10_quadrant.csv
+"GOS-proxy margin 2025, %","ümumi mənfəət (proksi) marjası 2025, %",translation template,FR10_quadrant.csv
+"share of manufacturing 2025, %","emal sənayesində pay 2025, %",translation template,FR10_quadrant.csv
+nonstate_l1 as a determinant of branch growth (A),nonstate_l1 sahə artımının müəyyənedici amili kimi (A),translation template,FR10_rejected_specifications.csv
+stocks_go_l1 as a determinant of branch growth (A),stocks_go_l1 sahə artımının müəyyənedici amili kimi (A),translation template,FR10_rejected_specifications.csv
+dln_ent_l1 as a determinant of branch growth (A),dln_ent_l1 sahə artımının müəyyənedici amili kimi (A),translation template,FR10_rejected_specifications.csv
+inv_rate_l1 as a determinant of branch growth (B),inv_rate_l1 sahə artımının müəyyənedici amili kimi (B),translation template,FR10_rejected_specifications.csv
+drelp_l1 as a determinant of branch growth (B),drelp_l1 sahə artımının müəyyənedici amili kimi (B),translation template,FR10_rejected_specifications.csv
+nonstate_l1 as a determinant of branch growth (B),nonstate_l1 sahə artımının müəyyənedici amili kimi (B),translation template,FR10_rejected_specifications.csv
+stocks_go_l1 as a determinant of branch growth (B),stocks_go_l1 sahə artımının müəyyənedici amili kimi (B),translation template,FR10_rejected_specifications.csv
+dln_ent_l1 as a determinant of branch growth (B),dln_ent_l1 sahə artımının müəyyənedici amili kimi (B),translation template,FR10_rejected_specifications.csv
+dln_rwage_l1 as a determinant of branch growth (B),dln_rwage_l1 sahə artımının müəyyənedici amili kimi (B),translation template,FR10_rejected_specifications.csv
+labour_share_l1 as a determinant of branch growth (B),labour_share_l1 sahə artımının müəyyənedici amili kimi (B),translation template,FR10_rejected_specifications.csv
+MNL: scale (FR1 real sector VA) (manufacturing (24 branches)),MNL: miqyas (FR1 real sektor əlavə dəyəri) (emal sənayesi (24 sahə)),translation template,FR10_rejected_specifications.csv
+MNL: oil export price (manufacturing (24 branches)),MNL: neft ixrac qiyməti (emal sənayesi (24 sahə)),translation template,FR10_rejected_specifications.csv
+MNL: scale + oil price (manufacturing (24 branches)),MNL: miqyas + neft qiyməti (emal sənayesi (24 sahə)),translation template,FR10_rejected_specifications.csv
+combination: 1/2 constant + 1/2 MNL scale (manufacturing (24 branches)),kombinasiya: 1/2 sabit paylar + 1/2 MNL miqyas (emal sənayesi (24 sahə)),translation template,FR10_rejected_specifications.csv
+MNL: scale (FR1 real sector VA) (mining (4 branches)),MNL: miqyas (FR1 real sektor əlavə dəyəri) (mədənçıxarma (4 sahə)),translation template,FR10_rejected_specifications.csv
+MNL: oil export price (mining (4 branches)),MNL: neft ixrac qiyməti (mədənçıxarma (4 sahə)),translation template,FR10_rejected_specifications.csv
+MNL: scale + oil price (mining (4 branches)),MNL: miqyas + neft qiyməti (mədənçıxarma (4 sahə)),translation template,FR10_rejected_specifications.csv
+combination: 1/2 constant + 1/2 MNL scale (mining (4 branches)),kombinasiya: 1/2 sabit paylar + 1/2 MNL miqyas (mədənçıxarma (4 sahə)),translation template,FR10_rejected_specifications.csv
+capacity rule for Chemicals,Kimya məhsulları üçün istehsal gücü qaydası,translation template,FR10_rejected_specifications.csv
+pooled related-sector model alone,yalnız əlaqəli sahələr üzrə birləşdirilmiş model,translation template,FR10_rejected_specifications.csv
+unit elasticity to construction (quarrying),tikintiyə vahid elastiklik (digər faydalı qazıntılar),translation template,FR10_rejected_specifications.csv
+estimated elasticity to construction (quarrying),tikintiyə görə qiymətləndirilmiş elastiklik (karxana hasilatı),translation template,FR10_rejected_specifications.csv
+neutral: held at trailing 3-year average (metal ores),neytral: son 3 ilin orta səviyyəsində saxlanılır (metal filizləri),translation template,FR10_rejected_specifications.csv
+grows with FR1 construction VA (metal ores),FR1 tikinti əlavə dəyəri ilə birgə artır (metal filizləri),translation template,FR10_rejected_specifications.csv
+constant shares (regions),sabit paylar (iqtisadi rayonlar),translation template,FR10_rejected_specifications.csv
+MNL: scale (FR1 real sector VA) (regions),MNL: miqyas (FR1 real sektor əlavə dəyəri) (iqtisadi rayonlar),translation template,FR10_rejected_specifications.csv
+MNL: scale + oil-sector mix (regions),MNL: miqyas + neft sektoru strukturu (iqtisadi rayonlar),translation template,FR10_rejected_specifications.csv
+combination: 1/2 constant + 1/2 MNL scale (regions),kombinasiya: 1/2 sabit paylar + 1/2 MNL miqyas (iqtisadi rayonlar),translation template,FR10_rejected_specifications.csv
+branch share system,sahə payları sistemi,translation template,FR10_rejected_specifications.csv
+oil-linked block,neftlə bağlı blok,translation template,FR10_rejected_specifications.csv
+non-oil branch allocation,qeyri-neft sahələri üzrə bölgü,translation template,FR10_rejected_specifications.csv
+mining branches,mədənçıxarma sahələri,translation template,FR10_rejected_specifications.csv
+regional share system,iqtisadi rayon payları sistemi,translation template,FR10_rejected_specifications.csv
+NOT ESTABLISHED (low power),TƏSDİQLƏNMƏYİB (testin gücü aşağıdır),translation template,FR10_rejected_specifications.csv
+NOT CHOSEN,SEÇİLMƏYİB,translation template,FR10_rejected_specifications.csv
+REJECTED pre-cut,RƏDD EDİLİB (kəsimdən əvvəlki nümunədə),translation template,FR10_rejected_specifications.csv
+enters via the equal-weight combination,bərabər çəkili kombinasiya vasitəsilə daxil olur,translation template,FR10_rejected_specifications.csv
+NOT CHOSEN (pre-cut); kept as a lever,SEÇİLMƏYİB (kəsimdən əvvəl); rıçaq kimi saxlanılır,translation template,FR10_rejected_specifications.csv
+NOT CHOSEN (pre-cut),SEÇİLMƏYİB (kəsimdən əvvəlki nümunədə),translation template,FR10_rejected_specifications.csv
+"coef -0.049, DK p 0.73 on t(14), wild p 0.72","əmsal -0.049, DK p 0.73 (t(14)), wild p 0.72",translation template,FR10_rejected_specifications.csv
+"coef +0.044, DK p 0.01 on t(14), wild p 0.13","əmsal +0.044, DK p 0.01 (t(14)), wild p 0.13",translation template,FR10_rejected_specifications.csv
+"coef -0.173, DK p 0.10 on t(14), wild p 0.11","əmsal -0.173, DK p 0.10 (t(14)), wild p 0.11",translation template,FR10_rejected_specifications.csv
+"coef +0.020, DK p 0.37 on t(7), wild p 0.67","əmsal +0.020, DK p 0.37 (t(7)), wild p 0.67",translation template,FR10_rejected_specifications.csv
+"coef -0.168, DK p 0.64 on t(7), wild p 0.65","əmsal -0.168, DK p 0.64 (t(7)), wild p 0.65",translation template,FR10_rejected_specifications.csv
+"coef -0.003, DK p 0.99 on t(7), wild p 0.99","əmsal -0.003, DK p 0.99 (t(7)), wild p 0.99",translation template,FR10_rejected_specifications.csv
+"coef +0.120, DK p 0.77 on t(7), wild p 0.77","əmsal +0.120, DK p 0.77 (t(7)), wild p 0.77",translation template,FR10_rejected_specifications.csv
+"coef +0.000, DK p 1.00 on t(7), wild p 1.00","əmsal +0.000, DK p 1.00 (t(7)), wild p 1.00",translation template,FR10_rejected_specifications.csv
+"coef -0.273, DK p 0.45 on t(7), wild p 0.46","əmsal -0.273, DK p 0.45 (t(7)), wild p 0.46",translation template,FR10_rejected_specifications.csv
+"coef -0.082, DK p 0.88 on t(7), wild p 0.78","əmsal -0.082, DK p 0.88 (t(7)), wild p 0.78",translation template,FR10_rejected_specifications.csv
+selection RMSE 2.493 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.06,"seçim RMSE 2.493 faiz bəndi, seçilmiş sistem üçün 1.869 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.06",translation template,FR10_rejected_specifications.csv
+selection RMSE 1.950 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.28,"seçim RMSE 1.950 faiz bəndi, seçilmiş sistem üçün 1.869 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.28",translation template,FR10_rejected_specifications.csv
+selection RMSE 4.737 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.05,"seçim RMSE 4.737 faiz bəndi, seçilmiş sistem üçün 1.869 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.05",translation template,FR10_rejected_specifications.csv
+selection RMSE 2.037 pp vs 1.869 pp for the chosen system; DM/HLN p vs best 0.04,"seçim RMSE 2.037 faiz bəndi, seçilmiş sistem üçün 1.869 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.04",translation template,FR10_rejected_specifications.csv
+selection RMSE 3.712 pp vs 3.754 pp for the chosen system; DM/HLN p vs best 0.17,"seçim RMSE 3.712 faiz bəndi, seçilmiş sistem üçün 3.754 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.17",translation template,FR10_rejected_specifications.csv
+selection RMSE 3.760 pp vs 3.754 pp for the chosen system; DM/HLN p vs best 0.14,"seçim RMSE 3.760 faiz bəndi, seçilmiş sistem üçün 3.754 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.14",translation template,FR10_rejected_specifications.csv
+selection RMSE 3.306 pp vs 3.754 pp for the chosen system; DM/HLN p vs best nan,"seçim RMSE 3.306 faiz bəndi, seçilmiş sistem üçün 3.754 faiz bəndi; ən yaxşıya qarşı DM/HLN p nan",translation template,FR10_rejected_specifications.csv
+selection RMSE 3.733 pp vs 3.754 pp for the chosen system; DM/HLN p vs best 0.16,"seçim RMSE 3.733 faiz bəndi, seçilmiş sistem üçün 3.754 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.16",translation template,FR10_rejected_specifications.csv
+"RMSE 61.1 vs 35.4 log-% for the sector rate, DM p 0.009","RMSE 61.1 və 35.4 log-% (sektor artım tempi üzrə), DM p 0.009",translation template,FR10_rejected_specifications.csv
+"RMSE 2.359 vs 2.048 pp, DM p 0.086","RMSE 2.359 və 2.048 faiz bəndi, DM p 0.086",translation template,FR10_rejected_specifications.csv
+"RMSE 89.7 vs 67.4 log-%, DM p vs neutral 0.042; unit restriction rejected on the full sample (t -2.66, p 0.016)","RMSE 89.7 / 67.4 log-% (neytral qayda), neytral qaydaya qarşı DM p 0.042; vahid məhdudiyyət tam nümunədə rədd edilir (t -2.66, p 0.016)",translation template,FR10_rejected_specifications.csv
+"RMSE 84.2 vs 67.4 log-%, DM p vs neutral 0.011","RMSE 84.2 / 67.4 log-% (neytral qayda), neytral qaydaya qarşı DM p 0.011",translation template,FR10_rejected_specifications.csv
+see Part 11.6 tables,bax: Hissə 11.6 cədvəlləri,translation template,FR10_rejected_specifications.csv
+selection RMSE 1.215 pp vs 1.131 pp; DM/HLN p vs best 0.05,seçim RMSE 1.215 faiz bəndi və 1.131 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.05,translation template,FR10_rejected_specifications.csv
+selection RMSE 1.377 pp vs 1.131 pp; DM/HLN p vs best 0.02,seçim RMSE 1.377 faiz bəndi və 1.131 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.02,translation template,FR10_rejected_specifications.csv
+selection RMSE 1.341 pp vs 1.131 pp; DM/HLN p vs best 0.00,seçim RMSE 1.341 faiz bəndi və 1.131 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.00,translation template,FR10_rejected_specifications.csv
+selection RMSE 1.294 pp vs 1.131 pp; DM/HLN p vs best 0.03,seçim RMSE 1.294 faiz bəndi və 1.131 faiz bəndi; ən yaxşıya qarşı DM/HLN p 0.03,translation template,FR10_rejected_specifications.csv
+"MNL log-odds share system, empirical-Bayes shrinkage (kappa=0.5)","MNL log-nisbət pay sistemi, empirik Bayes büzülməsi (kappa=0.5)",translation template,FR10_robustness_summary.csv
+DOLS(0: contemporaneous dx),DOLS(0: cari dövr fərqləri),translation template,FR10_robustness_summary.csv
+"FE-oneway (branch), first differences","Bir yönlü sabit effektlər (sahə), birinci fərqlər",translation template,FR10_robustness_summary.csv
+"FE-oneway (branch), levels","Bir yönlü sabit effektlər (sahə), səviyyələr",translation template,FR10_robustness_summary.csv
+"Calibrated rule: anchored null, real output constant at the last actual level","Kalibrlənmiş qayda: lövbərlənmiş neytral qayda, real buraxılış son faktiki səviyyədə sabit",translation template,FR10_robustness_summary.csv
+"Calibrated rule: unit elasticity, chosen pre-cut","Kalibrlənmiş qayda: vahid elastiklik, kəsimdən əvvəl seçilib",translation template,FR10_robustness_summary.csv
+"FE-twoway (branch + year), within","İki yönlü sabit effektlər (sahə + il), daxili qiymətləndirici",translation template,FR10_robustness_summary.csv
+"FE-oneway (branch), within","Bir yönlü sabit effektlər (sahə), daxili qiymətləndirici",translation template,FR10_robustness_summary.csv
+industry nominal output growth % pa,"sənaye nominal buraxılışının artımı, illik %",translation template,FR10_scenario_summary.csv
+manufacturing nominal growth % pa,"emal sənayesi nominal artım, illik %",translation template,FR10_scenario_summary.csv
+manufacturing real growth % pa (FR1 rva_man),"emal sənayesi real artım, illik % (FR1 rva_man)",translation template,FR10_scenario_summary.csv
+refining real growth % pa,"neft emalı real artım, illik %",translation template,FR10_scenario_summary.csv;FR10_sensitivity_levers.csv
+mining share of industry 2030 %,mədənçıxarmanın sənayedə payı 2030 %,translation template,FR10_scenario_summary.csv
+non-state share 2030 % (composition),qeyri-dövlət payı 2030 % (struktur üzrə),translation template,FR10_scenario_summary.csv
+HHI manufacturing 2030,HHI emal sənayesi 2030,translation template,FR10_scenario_summary.csv;FR10_sensitivity_levers.csv
+Baku share 2030 %,Bakı şəhərinin payı 2030 %,translation template,FR10_scenario_summary.csv
+manufacturing GOS % VA 2030,"emal sənayesi ümumi mənfəət, ƏD-nin %-i 2030",translation template,FR10_scenario_summary.csv;FR10_sensitivity_levers.csv
+allocation: pooled model alone,bölgü: yalnız birləşdirilmiş model,translation template,FR10_sensitivity_levers.csv
+allocation: constant shares,bölgü: sabit paylar,translation template,FR10_sensitivity_levers.csv
+oil-linked branches at maximum throughput,neftlə bağlı sahələr maksimal emal həcmində,translation template,FR10_sensitivity_levers.csv
+margin: FR1 wage path,marja: FR1 əmək haqqı trayektoriyası,translation template,FR10_sensitivity_levers.csv
+margin: wages constant in product terms,marja: məhsul ifadəsində sabit əmək haqqı,translation template,FR10_sensitivity_levers.csv
+"manufacturing real branch growth, min % pa","emal sənayesi sahələrinin real artımı, minimum, illik %",translation template,FR10_sensitivity_levers.csv
+"manufacturing real branch growth, max % pa","emal sənayesi sahələrinin real artımı, maksimum, illik %",translation template,FR10_sensitivity_levers.csv
+building materials real growth % pa,"tikinti materialları real artım, illik %",translation template,FR10_sensitivity_levers.csv
+median branch GOS-proxy margin 2030,sahələr üzrə median ümumi mənfəət (proksi) marjası 2030,translation template,FR10_sensitivity_levers.csv
+ln FR1 mining/manufacturing VA,ln FR1 mədənçıxarma/emal sənayesi ƏD,translation template,FR10_share_system_coefficients.csv
+x2: difference form,x2: fərq forması,translation template,FR10_share_system_coefficients.csv
+kappa = 0 (no shrinkage),kappa = 0 (büzülmə (shrinkage) yoxdur),translation template,FR10_share_system_selection.csv
+kappa = 0.5,kappa = 0.5,translation template,FR10_share_system_selection.csv
+kappa = 1,kappa = 1,translation template,FR10_share_system_selection.csv
+kappa = 2,kappa = 2,translation template,FR10_share_system_selection.csv
+kappa = 4,kappa = 4,translation template,FR10_share_system_selection.csv
+kappa = 8,kappa = 8,translation template,FR10_share_system_selection.csv
+kappa = 16,kappa = 16,translation template,FR10_share_system_selection.csv
+kappa = 64,kappa = 64,translation template,FR10_share_system_selection.csv
+kappa = 256,kappa = 256,translation template,FR10_share_system_selection.csv
+"output growth 2016-25, log pts x100","buraxılış artımı 2016-25, log bəndi x100",translation template,FR10_tfp_branches.csv
+mean capital share,kapitalın orta payı,translation template,FR10_tfp_branches.csv
+real product wage growth,məhsul ifadəsində real əmək haqqının artımı,translation template,FR10_wage_productivity_gap.csv
+labour productivity growth,əmək məhsuldarlığının artımı,translation template,FR10_wage_productivity_gap.csv
+"gap (wage - productivity), log pts","boşluq (əmək haqqı - məhsuldarlıq), log bəndi",translation template,FR10_wage_productivity_gap.csv

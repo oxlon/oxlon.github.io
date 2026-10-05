@@ -1,0 +1,12 @@
+object,forecast rule,driver
+section output,output/VA ratio held at 2025,FR1 nominal VA
+non-oil branch relative prices,held at 2025,-
+refining real output,2023-25 average throughput (capacity),DSK 018
+refining price,"oil export price in manat, estimated elasticity; exchange rate held",FR1 oil price
+labour share of VA (margin baseline),held at 2023-25 average,-
+within-branch non-state shares,held at 2025,-
+within-section employment shares,held at 2025,FR4 section index
+"branch wages (sensitivity, productivity)",2025 DSK wage x FR1 average-wage index,FR1 wage
+other taxes on production / VA,held at 2025,-
+branch VA / output,held at 2025,-
+SME shares,held at 2024 (no time series),-

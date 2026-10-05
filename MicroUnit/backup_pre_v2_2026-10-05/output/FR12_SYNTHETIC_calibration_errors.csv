@@ -1,0 +1,706 @@
+WATERMARK,target,dimension,unit,year,published,synthetic,abs_error,rel_error_pct,status
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,A,2019,8608800.0,8608800.261,0.26099999994039536,3.0317814322599594e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,B,2019,32863900.0,32863900.014000002,0.014000002294778824,4.259994186563014e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,C,2019,11808000.0,11808000.020999998,0.020999997854232788,1.7784551028313676e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,D,2019,2028200.0,2028199.9679999999,-0.03200000012293458,-1.5777536792690356e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,E,2019,336200.0,336199.995,-0.005000000004656613,-1.4872099954362322e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,F,2019,14052500.0,14052499.540000001,-0.4599999990314245,-3.273438882984697e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,G,2019,12693500.0,12693499.649,-0.35099999979138374,-2.7651947830888542e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,H,2019,7624000.0,7623999.966000001,-0.033999999053776264,-4.459601135070339e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,I,2019,3046500.0,3046500.115,0.11500000022351742,3.7748235753657454e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,J,2019,2223600.0,2223599.8600000003,-0.13999999966472387,-6.296096405141386e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,K,2019,2094900.0,2094899.944,-0.05600000009872019,-2.673158628035715e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,L,2019,3055400.0,3055399.955,-0.044999999925494194,-1.4728022493125023e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,M,2019,2321700.0,2321700.0420000004,0.04200000036507845,1.8090192688580975e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,N,2019,778200.0,778199.949,-0.05099999997764826,-6.55358519373532e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,O,2019,4740100.0,4740099.8270000005,-0.17299999948590994,-3.6497120205461897e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,P,2019,3019700.0,3019700.1149999998,0.11499999975785613,3.808325322312022e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,Q,2019,2120100.0,2120100.083,0.08300000010058284,3.914909678816227e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,R,2019,876200.0,876199.995,-0.005000000004656613,-5.706459717708985e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,S,2019,1290500.0,1290499.9270000001,-0.07299999985843897,-5.656722189727933e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,AGR,2019,68.50044786486518,68.5004488106801,9.458149179408792e-07,1.3807426774883917e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,AGR,2019,62.596703666330306,62.59645210079725,-0.0002515655330554978,-0.00040188303588070657,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,IND,2019,8.006553522654336,8.006553519643617,-3.010718785390054e-09,-3.7603180655338195e-08,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,IND,2019,38.30066360876768,38.02032148995398,-0.2803421188136994,-0.7319510744704807,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,CON,2019,31.907101804717584,31.9070995465053,-2.258212283834382e-06,-7.077459738134214e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,CON,2019,41.17736860406931,41.177959769549915,0.0005911654806070032,0.001435656285595146,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRD,2019,74.77755299190667,74.77755232575105,-6.661556284370818e-07,-8.908497293421478e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRD,2019,41.779117653422574,41.77924211370975,0.00012446028717505442,0.00029790070773516814,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRA,2019,19.968553770078856,19.968553433752728,-3.363261278366281e-07,-1.6842788501818472e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRA,2019,30.078856855233354,30.07892352110598,6.666587262671442e-05,0.0002216369888908041,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ACC,2019,78.95686907535209,78.9568699556737,8.803216076103126e-07,1.114939862635868e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ACC,2019,90.13096563159627,84.78615672008652,-5.344808911509745,-5.930047319537505,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ICT,2019,33.73671421002172,33.73670989527764,-4.314744074918053e-06,-1.2789461498999003e-05,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ICT,2019,59.81518682201687,59.81617740662474,0.0009905846078694935,0.001656075422479292,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,REA,2019,79.50964750437072,79.5096472402743,-2.6409641407099116e-07,-3.321564393257731e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,REA,2019,62.793599530240755,62.792193336136734,-0.0014061941040210968,-0.0022393908209448767,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,EDU,2019,98.43470752990461,98.43470758022606,5.032144656524906e-08,5.112164990174967e-08,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,EDU,2019,76.76767676767676,76.7684226425227,0.0007458748459328035,0.0009716001282545732,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,HEA,2019,59.72606153643774,59.72606308322095,1.5467832099602674e-06,2.589796095991704e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,HEA,2019,75.06701106291729,67.12183743046833,-7.945173632448956,-10.584108145440506,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,OTH,2019,44.685488782027576,44.68548740006395,-1.3819636279777114e-06,-3.092645209094221e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,OTH,2019,44.893631710275855,44.893516858930894,-0.00011485134496069804,-0.00025582992639557235,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,A,2020,9057100.0,9057099.810999999,-0.18900000117719173,-2.0867606759027917e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,B,2020,22815000.0,22814999.993999995,-0.006000004708766937,-2.629850847585771e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,C,2020,11820900.0,11820899.889999999,-0.1100000012665987,-9.305552137874333e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,D,2020,2286200.0,2286200.007,0.007000000216066837,3.061849451520793e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,E,2020,374600.0,374600.038,0.03800000000046566,1.0144153764139259e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,F,2020,12996500.0,12996499.724,-0.2760000005364418,-2.12364867877076e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,G,2020,12918400.0,12918399.923999999,-0.07600000128149986,-5.883081595360095e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,H,2020,8068500.0,8068499.93,-0.07000000029802322,-8.675714234123223e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,I,2020,1274700.0,1274700.058,0.05799999996088445,4.550090214237425e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,J,2020,2316800.0,2316799.912,-0.08799999998882413,-3.7983425409540804e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,K,2020,2087300.0000000002,2087300.0089999996,0.008999999379739165,4.31179005401196e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,L,2020,3085500.0,3085500.166,0.16600000020116568,5.380003247485519e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,M,2020,2225100.0,2225099.857,-0.1430000001564622,-6.426677459730448e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,N,2020,845000.0,844999.873,-0.12699999997857958,-1.5029585796281608e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,O,2020,5563500.0,5563500.07,0.07000000029802322,1.2582007782515183e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,P,2020,3373500.0,3373499.9409999996,-0.05900000035762787,-1.7489254589485066e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,Q,2020,2929600.0,2929600.0779999997,0.07799999974668026,2.662479510741407e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,R,2020,793900.0,793900.0290000001,0.029000000096857548,3.6528530163569147e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,S,2020,1170400.0,1170399.637,-0.36299999989569187,-3.1015037585072784e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,AGR,2020,71.4204091352909,71.42040856327714,-5.720137608022924e-07,-8.009107868854867e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,AGR,2020,53.6,53.600375394590905,0.00037539459090396576,0.0007003630427312794,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,IND,2020,10.5,10.499999818898187,-1.8110181265740266e-07,-1.7247791681657398e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,IND,2020,37.3,37.18856926212028,-0.11143073787971502,-0.29874192461049603,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,CON,2020,37.481906347521765,37.48190504712853,-1.3003932366473236e-06,-3.469389269026076e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,CON,2020,44.5,44.50028766439323,0.00028766439322680526,0.0006464368387119219,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRD,2020,70.9,70.89999979009785,-2.0990215432448167e-07,-2.960538142799459e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRD,2020,35.3,35.29999387530544,-6.124694557740895e-06,-1.735040951201387e-05,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRA,2020,13.600397016662981,13.600396263497272,-7.531657093551303e-07,-5.537821494713457e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRA,2020,31.0,31.000256871307474,0.00025687130747442666,0.0008286171208852473,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ACC,2020,64.57353240352639,64.57353389404177,1.490515387558844e-06,2.308245084448015e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ACC,2020,62.4,62.399816516099435,-0.00018348390056388553,-0.0002940447124421242,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ICT,2020,24.090901094907277,24.090898316643237,-2.7782640401596836e-06,-1.153242059819422e-05,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ICT,2020,59.300000000000004,59.3012351326624,0.0012351326623942782,0.002082854405386641,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,REA,2020,46.94726016377666,46.94726300656436,2.842787701240468e-06,6.055279245952446e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,REA,2020,66.5,66.4908916586769,-0.009108341323099012,-0.013696753869321822,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,EDU,2020,81.19999999999999,81.1999995526308,-4.4736918880516896e-07,-5.509472768536564e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,EDU,2020,71.6,71.60033109330939,0.00033109330939851134,0.0004624208231822785,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,HEA,2020,56.5,56.50000119231291,1.1923129079605133e-06,2.1102883326734746e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,HEA,2020,65.7,64.34959610206437,-1.3504038979356352,-2.055409281484985,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,OTH,2020,42.29809570792763,42.29809330609678,-2.40183084798673e-06,-5.678342742830789e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,OTH,2020,42.6,42.59998291056399,-1.7089436013861814e-05,-4.011604698089628e-05,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings",births,section,A,2021,464.0,464.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,A,2021,44.0,44.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,A,2021,11936.0,11459.0,-477.0,-3.996313672922252,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,A,2021,9991100.0,9991100.036,0.036000000312924385,3.603206885420463e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,B,2021,45.0,45.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,B,2021,3.0,3.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,B,2021,985.0,972.0,-13.0,-1.3197969543147208,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,B,2021,36222100.0,36222100.036,0.035999998450279236,9.93868341434628e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,C,2021,876.0,876.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,C,2021,17.0,17.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,C,2021,9343.0,8959.0,-384.0,-4.110028898640693,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,C,2021,15874700.0,15874699.919,-0.08100000023841858,-5.102458644158225e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,D,2021,13.0,13.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,D,2021,2.0,2.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,D,2021,343.0,345.0,2.0,0.5830903790087464,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,D,2021,2698100.0,2698100.005,0.004999999888241291,1.853155883118228e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,E,2021,102.0,102.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,E,2021,6.0,6.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,E,2021,673.0,704.0,31.0,4.606240713224369,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,E,2021,460600.0,460600.0200000001,0.020000000076834112,4.342162413554953e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,F,2021,1173.0,1173.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,F,2021,28.0,28.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,F,2021,15887.0,15560.0,-327.0,-2.058286649461824,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,F,2021,13063800.0,13063799.895,-0.10500000044703484,-8.037477644103159e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,G,2021,4841.0,4841.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,G,2021,138.0,138.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,G,2021,48844.0,49536.0,692.0,1.4167553844893948,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,G,2021,14458900.0,14458899.230999999,-0.7690000012516975,-5.318523547792e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,H,2021,571.0,571.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,H,2021,10.0,10.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,H,2021,4092.0,4092.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,H,2021,9949600.0,9949600.001000002,0.0010000020265579224,1.0050675670960866e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,I,2021,285.0,285.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,I,2021,7.0,7.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,I,2021,3665.0,3920.0,255.0,6.957708049113233,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,I,2021,1770700.0,1770699.9440000001,-0.05599999986588955,-3.1625910581063733e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,J,2021,569.0,569.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,J,2021,17.0,17.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,J,2021,4674.0,4541.0,-133.0,-2.8455284552845526,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,J,2021,2475600.0,2475600.017,0.01699999999254942,6.86702213303822e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,K,2021,172.0,172.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,K,2021,4.0,4.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,K,2021,2068.0,2053.0,-15.0,-0.7253384912959381,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,K,2021,2368200.0,2368200.019,0.01899999985471368,8.022970971503116e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,L,2021,143.0,143.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,L,2021,9.0,9.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,L,2021,2365.0,2606.0,241.0,10.190274841437633,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,L,2021,3474300.0,3474300.069,0.06900000013411045,1.9860115745361786e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,M,2021,1075.0,1075.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,M,2021,34.0,34.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,M,2021,11556.0,11506.0,-50.0,-0.4326756663205262,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,M,2021,2542300.0,2542299.63,-0.3700000001117587,-1.4553750545244808e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,N,2021,593.0,593.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,N,2021,20.0,20.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,N,2021,8347.0,9078.0,731.0,8.757637474541752,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,N,2021,889900.0,889899.8030000001,-0.19699999992735684,-2.2137318791702083e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,O,2021,20.0,20.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,O,2021,71.0,71.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,O,2021,4898.0,4980.0,82.0,1.6741527153940383,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,O,2021,6406700.0,6406699.933,-0.0669999998062849,-1.0457801958306914e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,P,2021,394.0,394.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,P,2021,13.0,13.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,P,2021,5069.0,5159.0,90.0,1.7754981258630893,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,P,2021,3726100.0,3726100.0510000004,0.051000000443309546,1.368723341920763e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,Q,2021,279.0,279.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,Q,2021,6.0,6.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,Q,2021,2595.0,2506.0,-89.0,-3.4296724470134876,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,Q,2021,2923400.0,2923400.043,0.043000000063329935,1.4708900616860482e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,R,2021,126.0,126.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,R,2021,8.0,8.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,R,2021,2284.0,2345.0,61.0,2.670753064798599,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,R,2021,1040000.0,1039999.986,-0.013999999966472387,-1.3461538429300373e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,S,2021,481.0,481.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,S,2021,81.0,81.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,S,2021,27417.0,26724.0,-693.0,-2.527628843418317,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,S,2021,1400600.0,1400599.4239999999,-0.5760000001173466,-4.1125232051788284e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,U,2021,1.0,1.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,U,2021,0.0,0.0,0.0,,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,U,2021,99.0,95.0,-4.0,-4.040404040404041,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Baku city,2021,9981.0,9981.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Baku city,2021,243.0,243.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Baku city,2021,103431.0,103325.0,-106.0,-0.10248378145817018,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Nakhchivan,2021,52.0,52.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Nakhchivan,2021,20.0,20.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Nakhchivan,2021,2043.0,2082.0,39.0,1.908957415565345,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Absheron-Khizi,2021,758.0,758.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Absheron-Khizi,2021,77.0,77.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Absheron-Khizi,2021,11123.0,11164.0,41.0,0.3686055920165423,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Daghlig Shirvan,2021,61.0,61.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Daghlig Shirvan,2021,10.0,10.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Daghlig Shirvan,2021,2452.0,2447.0,-5.0,-0.20391517128874387,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Ganja-Dashkasan,2021,219.0,219.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Ganja-Dashkasan,2021,30.0,30.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Ganja-Dashkasan,2021,5120.0,5108.0,-12.0,-0.234375,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Karabakh,2021,146.0,146.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Karabakh,2021,7.0,7.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Karabakh,2021,4674.0,4728.0,54.0,1.1553273427471118,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Gazakh-Tovuz,2021,121.0,121.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Gazakh-Tovuz,2021,3.0,3.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Gazakh-Tovuz,2021,3898.0,3900.0,2.0,0.0513083632632119,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Guba-Khachmaz,2021,121.0,121.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Guba-Khachmaz,2021,10.0,10.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Guba-Khachmaz,2021,4735.0,4723.0,-12.0,-0.2534318901795143,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Lankaran-Astara,2021,212.0,212.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Lankaran-Astara,2021,47.0,47.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Lankaran-Astara,2021,7461.0,7460.0,-1.0,-0.013403029084573114,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Central Aran,2021,149.0,149.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Central Aran,2021,22.0,22.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Central Aran,2021,5279.0,5269.0,-10.0,-0.18942981625307825,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Mil-Mughan,2021,107.0,107.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Mil-Mughan,2021,11.0,11.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Mil-Mughan,2021,5649.0,5682.0,33.0,0.5841741901221456,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shaki-Zagatala,2021,171.0,171.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shaki-Zagatala,2021,20.0,20.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shaki-Zagatala,2021,5525.0,5527.0,2.0,0.03619909502262443,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,East Zangezur,2021,44.0,44.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,East Zangezur,2021,0.0,0.0,0.0,,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,East Zangezur,2021,1019.0,994.0,-25.0,-2.4533856722276743,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shirvan-Salyan,2021,81.0,81.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shirvan-Salyan,2021,18.0,18.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shirvan-Salyan,2021,4731.0,4731.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,A,2022,11916900.0,11916899.983,-0.017000000923871994,-1.426545571740301e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,B,2022,64742300.0,64742300.009,0.009000003337860107,1.3901272178869311e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,C,2022,18104500.0,18104499.979999997,-0.020000003278255463,-1.1046979081584944e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,D,2022,3057300.0,3057299.995,-0.004999999888241291,-1.635429917980339e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,E,2022,538400.0,538400.0109999999,0.010999999940395355,2.043090627859464e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,F,2022,15214300.0,15214299.805,-0.19500000029802322,-1.2816889393401159e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,G,2022,17118900.0,17118900.858,0.857999999076128,5.012004270578881e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,H,2022,12845400.0,12845399.983,-0.017000000923871994,-1.3234310277509455e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,I,2022,3031200.0,3031200.1489999997,0.14899999974295497,4.9155449902004145e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,J,2022,2896200.0,2896200.0820000004,0.08200000040233135,2.831296195094653e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,K,2022,3062900.0,3062900.0199999996,0.019999999552965164,6.529759232415411e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,L,2022,3825000.0,3825000.098,0.098000000230968,2.5620915093063528e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,M,2022,3125200.0,3125200.378,0.37800000002607703,1.2095225906376456e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,N,2022,1102700.0,1102700.072,0.07199999992735684,6.52942776161756e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,O,2022,7932500.0,7932500.022,0.02199999988079071,2.77340055225852e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,P,2022,4342800.0,4342800.079,0.07899999991059303,1.8191028808739298e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,Q,2022,3716800.0,3716800.0889999997,0.08899999968707561,2.394532923134837e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,R,2022,1404200.0,1404199.9649999999,-0.03500000014901161,-2.4925224433137453e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,S,2022,1763600.0,1763600.262,0.26200000010430813,1.4855976417799282e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Baku city,2022,13633.0,13633.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Baku city,2022,373.0,373.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Baku city,2022,116702.0,116585.0,-117.0,-0.10025535123648266,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Nakhchivan,2022,70.0,70.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Nakhchivan,2022,19.0,19.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Nakhchivan,2022,2092.0,2133.0,41.0,1.9598470363288718,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Absheron-Khizi,2022,913.0,913.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Absheron-Khizi,2022,36.0,36.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Absheron-Khizi,2022,11983.0,12041.0,58.0,0.4840190269548527,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Daghlig Shirvan,2022,69.0,69.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Daghlig Shirvan,2022,7.0,7.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Daghlig Shirvan,2022,2506.0,2509.0,3.0,0.11971268954509177,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Ganja-Dashkasan,2022,257.0,257.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Ganja-Dashkasan,2022,10.0,10.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Ganja-Dashkasan,2022,5344.0,5355.0,11.0,0.20583832335329344,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Karabakh,2022,173.0,173.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Karabakh,2022,13.0,13.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Karabakh,2022,4851.0,4888.0,37.0,0.7627293341579056,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Gazakh-Tovuz,2022,155.0,155.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Gazakh-Tovuz,2022,11.0,11.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Gazakh-Tovuz,2022,4041.0,4044.0,3.0,0.07423904974016332,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Guba-Khachmaz,2022,121.0,121.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Guba-Khachmaz,2022,11.0,11.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Guba-Khachmaz,2022,4847.0,4833.0,-14.0,-0.28883845677738806,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Lankaran-Astara,2022,217.0,217.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Lankaran-Astara,2022,14.0,14.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Lankaran-Astara,2022,7658.0,7663.0,5.0,0.06529119874640898,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Central Aran,2022,180.0,180.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Central Aran,2022,21.0,21.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Central Aran,2022,5447.0,5428.0,-19.0,-0.3488158619423536,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Mil-Mughan,2022,106.0,106.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Mil-Mughan,2022,19.0,19.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Mil-Mughan,2022,5747.0,5769.0,22.0,0.3828084217852793,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shaki-Zagatala,2022,196.0,196.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shaki-Zagatala,2022,10.0,10.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shaki-Zagatala,2022,5719.0,5713.0,-6.0,-0.10491344640671448,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,East Zangezur,2022,42.0,42.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,East Zangezur,2022,2.0,2.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,East Zangezur,2022,1051.0,1034.0,-17.0,-1.6175071360608944,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shirvan-Salyan,2022,122.0,122.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shirvan-Salyan,2022,11.0,11.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shirvan-Salyan,2022,4849.0,4842.0,-7.0,-0.14435966178593523,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,AGR,2022,56.099999999999994,56.09999995415754,-4.584245516525698e-08,-8.171560635518179e-08,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,AGR,2022,53.4,53.39982649546199,-0.00017350453801157073,-0.00032491486519020733,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,IND,2022,5.9,5.899999985302369,-1.4697631556259694e-08,-2.4911239925863887e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,IND,2022,38.6,38.43929506467118,-0.16070493532882324,-0.416334029349283,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,CON,2022,43.7,43.69999931127294,-6.887270629363229e-07,-1.5760344689618374e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,CON,2022,42.3,42.29980861600654,-0.00019138399346019241,-0.00045244442898390643,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRD,2022,68.9,68.90000155289177,1.5528917600704517e-06,2.2538341945870125e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRD,2022,34.2,34.200029421254854,2.942125485105862e-05,8.602706096800766e-05,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRA,2022,16.7,16.699999889758203,-1.1024179613627894e-07,-6.601305157861014e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRA,2022,32.8,32.80021843834488,0.00021843834488066705,0.0006659705636605704,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ACC,2022,82.2,82.20000094094743,9.40947430194683e-07,1.1447049029132396e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ACC,2022,57.5,57.498509877384194,-0.0014901226158059444,-0.0025915175927059904,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ICT,2022,37.2,37.200001708997945,1.7089979422735269e-06,4.5940804899825985e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ICT,2022,60.5,60.50028340124268,0.0002834012426831123,0.00046843180608778886,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,REA,2022,67.3,67.30000083780389,8.378038955925149e-07,1.2448794882503936e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,REA,2022,74.8,74.74283905681278,-0.05716094318721332,-0.0764183732449376,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,EDU,2022,89.5,89.5000001910058,1.9100579606856627e-07,2.1341429728331428e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,EDU,2022,68.1,68.09859068098591,-0.0014093190140869183,-0.0020694846021834337,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,HEA,2022,50.5,50.500001185293776,1.1852937760181703e-06,2.347116388154793e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,HEA,2022,68.0,66.50477382765955,-1.4952261723404519,-2.1988620181477234,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,OTH,2022,51.599999999999994,51.6000019030726,1.9030726079449778e-06,3.688125209195694e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,OTH,2022,38.6,38.60003013893393,3.0138933929890754e-05,7.808013971474288e-05,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,A,2023,13228500.0,13228499.864999998,-0.13500000163912773,-1.0205238813102598e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,B,2023,45112800.0,45112800.05299999,0.052999988198280334,1.1748326017955068e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,C,2023,18435800.0,18435800.130000003,0.13000000268220901,7.051497775101108e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,D,2023,3181300.0,3181300.011,0.010999999940395355,3.457705950521911e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,E,2023,644300.0,644300.0170000001,0.01700000010896474,2.638522444352746e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,F,2023,18045900.0,18045899.989,-0.010999999940395355,-6.095567381175422e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,G,2023,19833400.0,19833399.997,-0.00299999862909317,-1.512599266435997e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,H,2023,12532100.0,12532100.109000001,0.10900000110268593,8.6976644858153e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,I,2023,3984900.0,3984900.127,0.12699999986216426,3.1870310387252943e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,J,2023,3365940.4239999996,3365940.5379999997,0.11400000005960464,3.386869216304485e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,K,2023,3815900.0,3815899.9349999996,-0.06500000040978193,-1.7033989467696201e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,L,2023,4692500.0,4692499.862,-0.1380000002682209,-2.9408630850979415e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,M,2023,3718800.0,3718799.698,-0.30200000014156103,-8.120899218607106e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,N,2023,1447500.0,1447500.2140000002,0.2140000001527369,1.4784110545957646e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,O,2023,8485000.0,8484999.992,-0.007999999448657036,-9.428402414445533e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,P,2023,5020200.0,5020199.978,-0.02199999988079071,-4.3822955023287343e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,Q,2023,4155399.9999999995,4155400.088,0.08800000045448542,2.1177263429389573e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,R,2023,1535100.0,1535100.0750000002,0.07500000018626451,4.885675212446389e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,S,2023,2107200.0,2107199.942,-0.058000000193715096,-2.7524677388816956e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Baku city,2023,13116.0,13116.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Baku city,2023,361.0,361.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Baku city,2023,129446.0,129340.0,-106.0,-0.08188742796223908,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Nakhchivan,2023,589.0,589.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Nakhchivan,2023,51.0,51.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Nakhchivan,2023,2666.0,2671.0,5.0,0.1875468867216804,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Absheron-Khizi,2023,974.0,974.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Absheron-Khizi,2023,64.0,64.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Absheron-Khizi,2023,12895.0,12951.0,56.0,0.4342768514928267,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Daghlig Shirvan,2023,65.0,65.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Daghlig Shirvan,2023,26.0,26.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Daghlig Shirvan,2023,2544.0,2548.0,4.0,0.15723270440251574,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Ganja-Dashkasan,2023,265.0,265.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Ganja-Dashkasan,2023,30.0,30.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Ganja-Dashkasan,2023,5585.0,5590.0,5.0,0.08952551477170993,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Karabakh,2023,173.0,173.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Karabakh,2023,15.0,15.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Karabakh,2023,5041.0,5046.0,5.0,0.09918666931164452,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Gazakh-Tovuz,2023,168.0,168.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Gazakh-Tovuz,2023,46.0,46.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Gazakh-Tovuz,2023,4156.0,4166.0,10.0,0.2406159769008662,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Guba-Khachmaz,2023,119.0,119.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Guba-Khachmaz,2023,31.0,31.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Guba-Khachmaz,2023,4927.0,4921.0,-6.0,-0.12177795818956769,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Lankaran-Astara,2023,276.0,276.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Lankaran-Astara,2023,15.0,15.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Lankaran-Astara,2023,7933.0,7924.0,-9.0,-0.11345014496407413,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Central Aran,2023,205.0,205.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Central Aran,2023,32.0,32.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Central Aran,2023,5596.0,5601.0,5.0,0.08934953538241601,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Mil-Mughan,2023,109.0,109.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Mil-Mughan,2023,16.0,16.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Mil-Mughan,2023,5843.0,5862.0,19.0,0.3251754235837755,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shaki-Zagatala,2023,170.0,170.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shaki-Zagatala,2023,33.0,33.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shaki-Zagatala,2023,5850.0,5850.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,East Zangezur,2023,80.0,80.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,East Zangezur,2023,1.0,1.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,East Zangezur,2023,1128.0,1113.0,-15.0,-1.3297872340425532,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shirvan-Salyan,2023,130.0,130.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shirvan-Salyan,2023,17.0,17.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shirvan-Salyan,2023,4928.0,4955.0,27.0,0.5478896103896104,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,AGR,2023,62.3,62.29999960770307,-3.9229692561093543e-07,-6.296900892631388e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,AGR,2023,57.3,57.300008939323035,8.939323038248403e-06,1.5600912806716237e-05,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,IND,2023,11.0,11.00000027427413,2.7427413051839267e-07,2.4934011865308423e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,IND,2023,40.9,40.72303096400967,-0.1769690359903251,-0.43268712956069705,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,CON,2023,35.6,35.599999955203124,-4.4796877318731276e-08,-1.2583392505261595e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,CON,2023,49.3,49.299663332425176,-0.00033666757482109233,-0.0006828956892922766,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRD,2023,68.0,67.99999999515968,-4.840316591980809e-09,-7.118112635265895e-09,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRD,2023,35.9,35.900038666924054,3.86669240555193e-05,0.00010770730934685043,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRA,2023,20.2,20.200000702053124,7.020531249679607e-07,3.4755105196433695e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRA,2023,32.5,32.500083450163565,8.345016356514634e-05,0.00025676973404660416,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ACC,2023,79.6,79.60000065015431,6.50154319714602e-07,8.167767835610578e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ACC,2023,60.7,60.701314699573096,0.0013146995730934918,0.00216589715501399,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ICT,2023,39.2,39.2000019936181,1.993618099049854e-06,5.085760456759832e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ICT,2023,60.199999999999996,60.20090091802406,0.0009009180240653336,0.0014965415682148399,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,REA,2023,60.4,60.39999881410758,-1.1858924153784756e-06,-1.9633980387060854e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,REA,2023,66.0,66.00017462673536,0.0001746267353581743,0.00026458596266390043,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,EDU,2023,86.60000000000001,86.59999996119674,-3.8803264601483534e-08,-4.4807464897786984e-08,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,EDU,2023,67.2,67.1986022131625,-0.001397786837500803,-0.0020800399367571472,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,HEA,2023,73.0,73.00000057178609,5.717860886989001e-07,7.832686146560275e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,HEA,2023,68.1,67.01170246413065,-1.0882975358693443,-1.5980874241840592,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,OTH,2023,55.4,55.39999969575784,-3.0424215680113775e-07,-5.491735682331006e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,OTH,2023,39.6,39.59997183689079,-2.8163109213608095e-05,-7.11189626606265e-05,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings",births,section,A,2024,544.0,544.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,A,2024,25.0,25.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,A,2024,13132.0,13121.0,-11.0,-0.0837648492232714,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,A,2024,14220200.0,14220200.018,0.017999999225139618,1.2658049271557094e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,B,2024,51.0,51.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,B,2024,7.0,7.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,B,2024,1121.0,1121.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,B,2024,41472500.0,41472499.960999995,-0.039000004529953,-9.40382290191163e-08,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,C,2024,1216.0,1216.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,C,2024,37.0,37.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,C,2024,12615.0,12604.0,-11.0,-0.08719778042013476,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,C,2024,19524000.0,19524000.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,D,2024,21.0,21.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,D,2024,0.0,0.0,0.0,,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,D,2024,404.0,405.0,1.0,0.24752475247524752,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,D,2024,3290200.0,3290200.0249999994,0.024999999441206455,7.598322120602532e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,E,2024,60.0,60.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,E,2024,5.0,5.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,E,2024,945.0,942.0,-3.0,-0.31746031746031744,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,E,2024,684500.0,684499.991,-0.008999999961815774,-1.3148283362769575e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,F,2024,855.0,855.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,F,2024,48.0,48.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,F,2024,18742.0,18734.0,-8.0,-0.042684878881656174,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,F,2024,20434800.0,20434800.048,0.04800000041723251,2.3489341915375985e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,G,2024,5915.0,5915.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,G,2024,99.0,99.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,G,2024,68044.0,68080.0,36.0,0.052906942566574564,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,G,2024,20988500.0,20988500.575,0.5749999992549419,2.7395954892200105e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,H,2024,750.0,750.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,H,2024,17.0,17.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,H,2024,6374.0,6392.0,18.0,0.2823972387825541,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,H,2024,14072000.0,14071999.759,-0.2410000003874302,-1.712620810030061e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,I,2024,635.0,635.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,I,2024,9.0,9.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,I,2024,5629.0,5639.0,10.0,0.17765144785930007,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,I,2024,4639300.0,4639299.97,-0.03000000026077032,-6.46649284606952e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,J,2024,566.0,566.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,J,2024,12.0,12.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,J,2024,6420.0,6434.0,14.0,0.21806853582554517,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,J,2024,3781600.0,3781599.8840000005,-0.11599999945610762,-3.0674846481940875e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,K,2024,186.0,186.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,K,2024,67.0,67.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,K,2024,2524.0,2529.0,5.0,0.19809825673534073,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,K,2024,4258200.0,4258199.855,-0.14499999955296516,-3.405194672701263e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,L,2024,177.0,177.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,L,2024,18.0,18.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,L,2024,3073.0,3123.0,50.0,1.6270745200130166,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,L,2024,5697300.0,5697299.994,-0.006000000052154064,-1.0531304393579527e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,M,2024,1411.0,1411.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,M,2024,79.0,79.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,M,2024,15709.0,15718.0,9.0,0.057291998217582275,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,M,2024,4622500.0,4622500.012,0.012000000104308128,2.5959978592337754e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,N,2024,901.0,901.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,N,2024,14.0,14.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,N,2024,11717.0,11732.0,15.0,0.12801911752154987,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,N,2024,1652800.0,1652800.1809999999,0.18099999986588955,1.0951113254228555e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,O,2024,14.0,14.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,O,2024,74.0,74.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,O,2024,4821.0,4807.0,-14.0,-0.2903961833644472,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,O,2024,8557700.0,8557700.034,0.03399999998509884,3.9730301348608665e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,P,2024,531.0,531.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,P,2024,80.0,80.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,P,2024,6619.0,6627.0,8.0,0.12086417887898473,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,P,2024,5471400.0,5471400.286,0.2860000003129244,5.2271813487027885e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,Q,2024,185.0,185.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,Q,2024,11.0,11.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,Q,2024,3209.0,3222.0,13.0,0.40511062636335304,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,Q,2024,4692400.0,4692400.023,0.023000000044703484,4.901542929993922e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,R,2024,273.0,273.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,R,2024,15.0,15.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,R,2024,3063.0,3060.0,-3.0,-0.0979431929480901,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,R,2024,1633000.0,1632999.8809999998,-0.11900000018067658,-7.2872014807517804e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,S,2024,572.0,572.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,S,2024,81.0,81.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,S,2024,28443.0,28314.0,-129.0,-0.4535386562598882,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,S,2024,2322500.0,2322500.401,0.4010000000707805,1.7265877290453412e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,U,2024,2.0,2.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,U,2024,0.0,0.0,0.0,,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,U,2024,101.0,101.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Baku city,2024,11571.0,11571.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Baku city,2024,327.0,327.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Baku city,2024,140631.0,140584.0,-47.0,-0.03342079626824811,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Nakhchivan,2024,307.0,307.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Nakhchivan,2024,57.0,57.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Nakhchivan,2024,2921.0,2921.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Absheron-Khizi,2024,1067.0,1067.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Absheron-Khizi,2024,50.0,50.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Absheron-Khizi,2024,13929.0,13968.0,39.0,0.2799913848804652,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Daghlig Shirvan,2024,74.0,74.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Daghlig Shirvan,2024,14.0,14.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Daghlig Shirvan,2024,2610.0,2608.0,-2.0,-0.07662835249042146,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Ganja-Dashkasan,2024,231.0,231.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Ganja-Dashkasan,2024,30.0,30.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Ganja-Dashkasan,2024,5783.0,5791.0,8.0,0.13833650354487292,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Karabakh,2024,341.0,341.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Karabakh,2024,20.0,20.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Karabakh,2024,5353.0,5367.0,14.0,0.26153558752101624,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Gazakh-Tovuz,2024,172.0,172.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Gazakh-Tovuz,2024,25.0,25.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Gazakh-Tovuz,2024,4306.0,4313.0,7.0,0.1625638643752903,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Guba-Khachmaz,2024,136.0,136.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Guba-Khachmaz,2024,19.0,19.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Guba-Khachmaz,2024,5048.0,5038.0,-10.0,-0.19809825673534073,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Lankaran-Astara,2024,219.0,219.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Lankaran-Astara,2024,34.0,34.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Lankaran-Astara,2024,8111.0,8109.0,-2.0,-0.024657872025644186,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Central Aran,2024,179.0,179.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Central Aran,2024,42.0,42.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Central Aran,2024,5728.0,5738.0,10.0,0.17458100558659218,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Mil-Mughan,2024,106.0,106.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Mil-Mughan,2024,19.0,19.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Mil-Mughan,2024,5945.0,5949.0,4.0,0.0672834314550042,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shaki-Zagatala,2024,184.0,184.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shaki-Zagatala,2024,37.0,37.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shaki-Zagatala,2024,6003.0,5997.0,-6.0,-0.09995002498750624,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,East Zangezur,2024,167.0,167.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,East Zangezur,2024,4.0,4.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,East Zangezur,2024,1295.0,1276.0,-19.0,-1.4671814671814671,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shirvan-Salyan,2024,111.0,111.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shirvan-Salyan,2024,20.0,20.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shirvan-Salyan,2024,5042.0,5046.0,4.0,0.07933359777865927,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,AGR,2024,59.3,59.300000058550516,5.855051909975373e-08,9.873611989840426e-08,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,AGR,2024,59.900000000000006,59.898927633886345,-0.0010723661136609053,-0.0017902606238078549,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,IND,2024,10.8,10.799999969962078,-3.003792237166181e-08,-2.7812891084872043e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,IND,2024,40.3,40.17875986471252,-0.12124013528747923,-0.3008440081575167,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,CON,2024,37.0,37.0000001284084,1.2840840213357296e-07,3.470497354961431e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,CON,2024,50.900000000000006,50.9000589958802,5.8995880195311656e-05,0.00011590546207330384,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRD,2024,66.6,66.60000094361195,9.436119512429286e-07,1.416834761626019e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRD,2024,38.599999999999994,38.59987379725999,-0.0001262027400059651,-0.0003269501036423967,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,TRA,2024,19.299999999999997,19.299998632127608,-1.367872389579361e-06,-7.087421707665084e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,TRA,2024,32.3,32.29976350178786,-0.0002364982121392245,-0.0007321926072421812,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ACC,2024,78.8,78.7999998198004,-1.8019959213688708e-07,-2.2867968545290238e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ACC,2024,60.8,60.79954311821816,-0.00045688178183667105,-0.0007514502990734721,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,ICT,2024,36.599999999999994,36.5999980816585,-1.9183414963208634e-06,-5.24137020852695e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,ICT,2024,59.3,59.29934596989796,-0.0006540301020336869,-0.0011029175413721534,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,REA,2024,53.5,53.49999995102943,-4.897056982144932e-08,-9.153377536719499e-08,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,REA,2024,65.0,64.99839331619538,-0.0016066838046242538,-0.002471821237883467,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,EDU,2024,86.10000000000001,86.10000070830132,7.083013144892902e-07,8.226496103243788e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,EDU,2024,70.5,70.50198357670835,0.001983576708354917,0.002813583983482152,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,HEA,2024,70.30000000000001,70.30000010295372,1.029537060048824e-07,1.4644908393297638e-07,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,HEA,2024,64.5,64.12543745282372,-0.3745625471762821,-0.5807171274050886,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings","SME share of revenue, %",activity group,OTH,2024,52.400000000000006,52.40000074745625,7.474562409015562e-07,1.426443207827397e-06,exact (output base)
+"SYNTHETIC — pipeline demonstration, not findings","SME share of employees, %",activity group,OTH,2024,43.4,43.40023279543227,0.00023279543226806254,0.0005363950052259506,exact except where the 251-employee floor of large units binds
+"SYNTHETIC — pipeline demonstration, not findings",births,section,A,2025,392.0,392.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,A,2025,32.0,32.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,A,2025,13481.0,13481.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,A,2025,15397500.0,15397499.878000002,-0.12199999764561653,-7.923364029590293e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,B,2025,47.0,47.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,B,2025,6.0,6.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,B,2025,1162.0,1162.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,B,2025,37618500.0,37618499.956,-0.04399999976158142,-1.1696372731922171e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,C,2025,1113.0,1113.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,C,2025,27.0,27.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,C,2025,13690.0,13690.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,C,2025,21365400.0,21365400.207000002,0.2070000022649765,9.688561986434914e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,D,2025,42.0,42.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,D,2025,1.0,1.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,D,2025,446.0,446.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,D,2025,3531600.0,3531600.0110000004,0.011000000406056643,3.114735645615767e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,E,2025,67.0,67.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,E,2025,54.0,54.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,E,2025,955.0,955.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,E,2025,683600.0,683599.9490000001,-0.050999999861232936,-7.460503197956837e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,F,2025,982.0,982.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,F,2025,30.0,30.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,F,2025,19686.0,19686.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,F,2025,20699100.0,20699099.915999997,-0.08400000259280205,-4.0581475809480634e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,G,2025,5071.0,5071.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,G,2025,93.0,93.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,G,2025,73058.0,73058.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,G,2025,22594500.0,22594500.291,0.29100000113248825,1.2879240573258459e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,H,2025,838.0,838.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,H,2025,20.0,20.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,H,2025,7210.0,7210.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,H,2025,14965700.0,14965699.958999995,-0.04100000485777855,-2.739598205080855e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,I,2025,593.0,593.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,I,2025,12.0,12.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,I,2025,6220.0,6220.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,I,2025,5313600.0,5313600.097,0.09700000006705523,1.8255043674167275e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,J,2025,622.0,622.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,J,2025,14.0,14.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,J,2025,7042.0,7042.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,J,2025,4131300.0,4131299.9739999995,-0.026000000536441803,-6.29341866638632e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,K,2025,187.0,187.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,K,2025,8.0,8.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,K,2025,2708.0,2708.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,K,2025,4559300.0,4559299.97,-0.03000000026077032,-6.579957506803746e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,L,2025,238.0,238.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,L,2025,14.0,14.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,L,2025,3347.0,3347.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,L,2025,6407600.0,6407599.933,-0.0669999998062849,-1.0456333074206395e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,M,2025,1608.0,1608.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,M,2025,73.0,73.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,M,2025,17253.0,17253.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,M,2025,5091400.0,5091399.745,-0.2549999998882413,-5.0084456119778705e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,N,2025,1191.0,1191.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,N,2025,25.0,25.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,N,2025,12898.0,12898.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,N,2025,1868900.0,1868900.128,0.12800000002607703,6.848948580773558e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,O,2025,37.0,37.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,O,2025,167.0,167.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,O,2025,4677.0,4677.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,O,2025,9423200.0,9423199.921999998,-0.07800000160932541,-8.277443077651479e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,P,2025,626.0,626.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,P,2025,25.0,25.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,P,2025,7228.0,7228.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,P,2025,5754800.0,5754799.943,-0.05700000002980232,-9.904775149406117e-07,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,Q,2025,163.0,163.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,Q,2025,13.0,13.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,Q,2025,3372.0,3372.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,Q,2025,5191100.0,5191100.215,0.2149999998509884,4.141704067557712e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,R,2025,301.0,301.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,R,2025,18.0,18.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,R,2025,3343.0,3343.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,R,2025,1800400.0,1800399.891,-0.10899999993853271,-6.054210172102462e-06,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,S,2025,524.0,524.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,S,2025,72.0,72.0,0.0,0.0,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,S,2025,28766.0,28766.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",revenue (thsd AZN) = output,section,S,2025,2535800.0,2535799.705,-0.2949999999254942,-1.163340957194945e-05,exact
+"SYNTHETIC — pipeline demonstration, not findings",births,section,U,2025,0.0,0.0,0.0,,exact where published
+"SYNTHETIC — pipeline demonstration, not findings",deaths,section,U,2025,0.0,0.0,0.0,,exact where published
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",section,U,2025,101.0,101.0,0.0,0.0,exact 2025; earlier via stock-flow (F5)
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Baku city,2025,11155.0,11155.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Baku city,2025,336.0,336.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Baku city,2025,151403.0,151403.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Nakhchivan,2025,296.0,296.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Nakhchivan,2025,144.0,144.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Nakhchivan,2025,3073.0,3073.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Absheron-Khizi,2025,1123.0,1123.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Absheron-Khizi,2025,15.0,15.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Absheron-Khizi,2025,15076.0,15076.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Daghlig Shirvan,2025,83.0,83.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Daghlig Shirvan,2025,9.0,9.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Daghlig Shirvan,2025,2682.0,2682.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Ganja-Dashkasan,2025,245.0,245.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Ganja-Dashkasan,2025,19.0,19.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Ganja-Dashkasan,2025,6017.0,6017.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Karabakh,2025,270.0,270.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Karabakh,2025,20.0,20.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Karabakh,2025,5617.0,5617.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Gazakh-Tovuz,2025,172.0,172.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Gazakh-Tovuz,2025,9.0,9.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Gazakh-Tovuz,2025,4476.0,4476.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Guba-Khachmaz,2025,208.0,208.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Guba-Khachmaz,2025,23.0,23.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Guba-Khachmaz,2025,5223.0,5223.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Lankaran-Astara,2025,258.0,258.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Lankaran-Astara,2025,32.0,32.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Lankaran-Astara,2025,8335.0,8335.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Central Aran,2025,233.0,233.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Central Aran,2025,34.0,34.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Central Aran,2025,5937.0,5937.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Mil-Mughan,2025,152.0,152.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Mil-Mughan,2025,19.0,19.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Mil-Mughan,2025,6082.0,6082.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shaki-Zagatala,2025,204.0,204.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shaki-Zagatala,2025,17.0,17.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shaki-Zagatala,2025,6184.0,6184.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,East Zangezur,2025,120.0,120.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,East Zangezur,2025,3.0,3.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,East Zangezur,2025,1393.0,1393.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings",births,region,Shirvan-Salyan,2025,123.0,123.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings",deaths,region,Shirvan-Salyan,2025,24.0,24.0,0.0,0.0,exact
+"SYNTHETIC — pipeline demonstration, not findings","active units, end of year",region,Shirvan-Salyan,2025,5145.0,5145.0,0.0,0.0,exact 2025; earlier via stock-flow
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,A,2025,95.52804642166345,95.17098138120318,-0.3570650404602702,-0.3737803229893085,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,A,2025,2.893617021276596,2.944885394258586,0.05126837298199005,1.771774654524656,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,A,2025,1.3307543520309477,1.5948371782508717,0.26408282621992396,19.84459609821231,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,A,2025,0.2475822050290135,0.28929604628736744,0.04171384125835392,16.848481195757017,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,B,2025,84.82293423271501,83.99311531841653,-0.8298189142984853,-0.9782954596004012,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,B,2025,7.504215851602024,8.089500860585199,0.5852850089831749,7.799415962405005,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,B,2025,4.1315345699831365,4.905335628227195,0.7738010582440582,18.72914398117251,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,B,2025,3.541315345699832,3.0120481927710845,-0.5292671529287474,-14.945496270797484,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,C,2025,87.97771823438161,87.56026296566837,-0.41745526871324046,-0.47450113175372094,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,C,2025,7.869129882950218,7.932797662527393,0.06366777957717495,0.8090828404690819,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,C,2025,3.2223945846848117,3.52081811541271,0.2984235307278982,9.260924535630311,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,C,2025,0.9307572979833592,0.9861212563915266,0.055363958408167435,5.948270137459322,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,D,2025,53.08924485125858,51.34529147982063,-1.7439533714379465,-3.284946652234408,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,D,2025,15.102974828375288,14.573991031390134,-0.5289837969851536,-3.502513928522911,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,D,2025,26.773455377574372,28.02690582959641,1.2534504520220366,4.68169100456094,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,D,2025,5.034324942791762,6.053811659192825,1.0194867164010635,20.2507134121484,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,E,2025,79.12341407151095,74.03141361256544,-5.092000458945506,-6.435516615022966,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,E,2025,6.459054209919262,7.74869109947644,1.2896368895571788,19.966342557965607,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,E,2025,9.688581314878892,11.413612565445026,1.7250312505661345,17.804786836200464,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,E,2025,4.728950403690888,6.806282722513089,2.077332318822201,43.92797854680117,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,F,2025,90.80716376444907,91.1713908361272,0.36422707167812973,0.4010994910301607,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,F,2025,5.918539465198195,5.648684344204003,-0.2698551209941913,-4.559488410628595,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,F,2025,2.7484248648112315,2.692268617291476,-0.05615624751975545,-2.043215670136662,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,F,2025,0.5258719055414992,0.48765620237732393,-0.038215703164175274,-7.267112534719633,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,G,2025,93.14454245792908,93.04114539133292,-0.10339706659615899,-0.11100711203005877,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,G,2025,4.8283132932086,4.939910755837827,0.1115974626292271,2.311313617245957,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,G,2025,1.7495629428956536,1.742451203153659,-0.007111739741994638,-0.40648664690075065,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,G,2025,0.2775813059666636,0.2764926496756002,-0.0010886562910633613,-0.3921936627800521,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,H,2025,87.96394485683987,87.48959778085992,-0.4743470759799493,-0.5392517090404969,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,H,2025,8.2847295864263,8.640776699029127,0.35604711260282684,4.297631067961161,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,H,2025,2.99575821845175,3.1622746185852977,0.16651640013354774,5.558405852245504,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,H,2025,0.7555673382820784,0.7073509015256588,-0.04821643675641962,-6.381487699832099,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,I,2025,91.77361991649914,91.35048231511253,-0.42313760138661394,-0.46106670061789934,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,I,2025,5.644038967063554,5.868167202572348,0.22412823550879413,3.971061093247593,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,I,2025,2.195763104994588,2.315112540192926,0.11934943519833796,5.435442235405997,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,I,2025,0.38657801144270915,0.4662379421221865,0.07965993067947735,20.6064308681672,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,J,2025,91.67453784914316,91.65009940357854,-0.02443844556462693,-0.0266578333940904,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,J,2025,5.85615976251518,5.978415222948026,0.12225546043284652,2.087638749465036,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,J,2025,2.0105248954257187,2.0022720817949446,-0.008252813630774014,-0.4104805491118538,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,J,2025,0.4587774929159357,0.3692132916785004,-0.0895642012374353,-19.522361628548033,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,K,2025,79.7979797979798,77.5480059084195,-2.2499738895603087,-2.819587532486969,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,K,2025,16.558441558441558,18.131462333825702,1.573020775384144,9.499811741535616,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,K,2025,2.5613275613275612,2.9911373707533233,0.4298098094257621,16.780743545467782,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,K,2025,1.0822510822510822,1.329394387001477,0.2471433047503948,22.83604135893648,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,L,2025,89.76949794758447,89.154466686585,-0.6150312609994728,-0.6851227589114774,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,L,2025,7.988632775497316,9.023005676725425,1.0343729012281093,12.94805920232973,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,L,2025,1.7998105462582885,1.613385121003884,-0.18642542525440442,-10.358058276854365,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,L,2025,0.4420587306599305,0.2091425156856887,-0.2329162149742418,-52.68897520167313,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,M,2025,93.372938055139,93.4388222338144,0.06588417867540386,0.07056025016209476,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,M,2025,5.098627292651979,4.961455978670376,-0.13717131398160287,-2.6903577396075002,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,M,2025,1.2285153997000806,1.2635483683996984,0.035032968699617806,2.851650757342599,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,M,2025,0.2999192525089399,0.3361734191155161,0.03625416660657621,12.087975781246506,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,N,2025,95.9481849676156,95.84431694836408,-0.10386801925152156,-0.10825428254487467,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,N,2025,2.952251845157403,3.101256008683517,0.14900416352611368,5.047135926785044,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,N,2025,0.8510317818948636,0.8063265622577145,-0.04470521963714913,-5.253061118071383,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,N,2025,0.24853140533212834,0.24810048069468132,-0.00043092463744701104,-0.173388404121861,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,P,2025,93.17925591882751,92.68123962368566,-0.4980162951418521,-0.5344712084583458,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,P,2025,4.885381435550545,5.603209739900388,0.717828304349843,14.693393214422557,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,P,2025,1.5783540022547913,1.4250138350857775,-0.15334016716901377,-9.715194877065374,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,P,2025,0.3570086433671552,0.2905368013281682,-0.06647184203898698,-18.61911280692046,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,Q,2025,80.435522286492,80.63463819691577,0.19911591042377097,0.24754723381364757,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,Q,2025,13.133718952024498,13.463819691577699,0.33010073955320074,2.513383610225018,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,Q,2025,4.5253487580809795,3.795966785290629,-0.7293819727903506,-16.117696376171732,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,Q,2025,1.9054100034025179,2.1055753262158956,0.20016532281337773,10.505105066937807,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,R,2025,94.39655172413794,93.14986539036794,-1.2466863337700005,-1.3206905453636535,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,R,2025,3.7798408488063657,4.4570744839964105,0.6772336351900448,17.91698810292259,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,R,2025,1.4588859416445623,1.9144481005085252,0.4555621588639629,31.22671525303891,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,R,2025,0.3647214854111406,0.4786120251271313,0.11389053971599072,31.22671525303891,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: micro share of units, %",section,S,2025,98.89173457508731,98.89800458875061,0.006270013663296936,0.006340280803282089,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: small share of units, %",section,S,2025,0.9313154831199069,0.9038448167976084,-0.027470666322298443,-2.949662796356795,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: medium share of units, %",section,S,2025,0.15832363213038417,0.17381631092261698,0.015492678792232817,9.785449325388228,approximate (1 July 2026 snapshot)
+"SYNTHETIC — pipeline demonstration, not findings","size mix: large share of units, %",section,S,2025,0.018626309662398137,0.024334283529166376,0.005707973866768239,30.644684697211982,approximate (1 July 2026 snapshot)

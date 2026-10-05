@@ -1,0 +1,7 @@
+rule,RMSE_log_pct,DM_p_vs_first,decision,branch
+neutral: held at the last actual level,67.38446120530229,,CHOSEN,08
+unit elasticity to construction,89.66814011803189,0.04245128103721085,,08
+estimated elasticity to construction,84.15654046319463,0.011185572616394746,information only,08
+neutral: held at trailing 3-year average,79.00593691784478,,,07
+grows with FR1 mining VA,72.2973119245116,0.008883699020565405,CHOSEN,07
+grows with FR1 construction VA,85.6596500545995,0.19830109172631283,,07

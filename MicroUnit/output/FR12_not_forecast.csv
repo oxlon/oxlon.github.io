@@ -1,0 +1,2 @@
+id,label_az,reason_az,reason_en
+fr12:conc:hhi_upper_floor30:EDU,"HHI, yuxarı hədd (iri müəssisələr ≥ 30 mln AZN fərziyyəsi): Təhsil","Fərziyyə mümkün deyil (2025, 2026, 2027, 2028): 19 iri vahidin hər birinin gəliri ≥ 30 mln AZN olsaydı, iri sinfin buraxılışını aşardı (iri pay 9.2–9.2%). Əsas yuxarı hədd (hhi_upper) və 15 mln AZN variantı verilir.","infeasible assumption in [2025, 2026, 2027, 2028]: 19 large units with revenue >= 30 mn AZN each would exceed the large class's output; headline upper bound and the 15 mn variant are given"

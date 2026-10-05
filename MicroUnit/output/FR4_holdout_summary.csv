@@ -1,0 +1,5 @@
+basis,level,median_RMSE_pct,beats_random_walk,median_U_rw,beats_constant_growth,median_U_cg
+employed population,19 activities,4.85,9/19,1.04,6/19,1.36
+employed population,8 groups,2.79,5/8,0.77,4/8,1.11
+hired employees,19 activities,7.12,9/19,1.06,11/19,0.98
+hired employees,8 groups,7.21,5/8,0.8,5/8,0.97

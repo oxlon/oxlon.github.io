@@ -1,0 +1,8 @@
+,RMSE_pp,DM_HLN_vs_best,DM_p_vs_best,slopes,non_inferior,coherent,decision,test_RMSE_pp_2022_2025 (information only),n_selection,n_test
+constant shares,0.7739605584299886,-2.8243610666949484,0.010832607743346045,0,False,True,,2.37484061433868,260,52
+MNL: Engel term only,0.6799711200681864,,,1,True,False,,2.3017144783633983,260,52
+"MNL: Engel term, difference-form slopes",0.7514621626838809,-0.8973295524489772,0.38077303241219074,1,True,True,,2.2870542194228722,260,52
+"MNL: Engel term, level slope if coherent else difference-form",0.72536239104082,-0.9966728380546538,0.33144810502709254,1,True,True,CHOSEN,2.211457227046773,260,52
+MNL: Engel + own relative price (unrestricted),1.2193406764410102,-1.9044226949393561,0.07210909930711473,3,False,False,,2.302945380358775,260,52
+"MNL: Engel + own relative price, law of demand imposed",0.8926310498915214,-1.4831780936477452,0.154425787223752,2,True,False,,2.26554171930128,260,52
+"LA-AIDS (linear shares, Stone index, homogeneity+symmetry, SUR)",2.685458325901212,-1.9580939955328471,0.06506739415309948,2,False,False,,1.9895635146651893,260,52

@@ -1,0 +1,4 @@
+specification,selection_RMSE_pp,held_back_RMSE_pp,n_selection,n_held_back
+constant shares,1.507,2.375,364,52
+Engel term only,1.458,2.304,364,52
+Engel + relative price (LA-AIDS),1.552,1.96,364,52

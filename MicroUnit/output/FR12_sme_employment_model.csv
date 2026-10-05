@@ -1,0 +1,12 @@
+panel,dep,candidate,sel_mse,n,table,metric,rule,implied_rw_weight,targets,rmse_rule,rmse_null,rmse_rw,rmse_constant,theil_rule_vs_rw,theil_rule_vs_constant,theil_null_vs_rw,theil_constant_vs_rw,dm_p_rule_vs_rw,dm_p_rule_vs_constant,best_candidate,dm_p_vs_null,applied_at_last_origin,coherence_last_origin
+sme_emp,lo,null (FE + fixed terms),0.04589748678894072,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,lo,structural: FE + dem,0.05596934984114921,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,lo,structural: FE + dem | anchored,0.031065411643967863,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,lo,structural: FE + size,0.10775904020814292,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,lo,structural: FE + size | anchored,0.027225811410653337,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,lo,structural: FE + lend,0.04589748678894072,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,lo,structural: FE + lend | anchored,0.04589748678894072,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,lo,structural: FE + dem + lend,0.06710580354323102,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,lo,structural: FE + dem + lend | anchored,0.03979558382328848,11.0,selection (<= 2022 -> 2023),,,,,,,,,,,,,,,,,,
+sme_emp,,,,22.0,hold-out,log-odds SME employment share,combination: FE + size | anchored,0.5,2024,0.167006273777892,0.20295910800336872,0.17282745195291,0.20295910800336872,0.9663179772123004,0.8228567587867012,1.1743453121016252,1.1743453121016252,0.8601297656987166,0.4154183717273554,,,,
+,,,,,rule,,combination: FE + size | anchored,,,,,,,,,,,,,structural: FE + size | anchored,0.6210128524083367,size,size: coherent

@@ -1,0 +1,275 @@
+WATERMARK,nace2,region,firms,revenue,HHI,CR4_pct
+"SYNTHETIC — pipeline test, not results",10,Absheron-Khizi,74,955811.2172,3371.0672869042137,67.97849741745006
+"SYNTHETIC — pipeline test, not results",10,Baku city,350,2392570.4465,138.2135082136661,15.352883248948885
+"SYNTHETIC — pipeline test, not results",10,Central Aran,23,165073.6588,1127.8059335557016,59.73429117450445
+"SYNTHETIC — pipeline test, not results",10,Daghlig Shirvan,11,87276.93519999999,3421.1615630078013,84.49795038174072
+"SYNTHETIC — pipeline test, not results",10,Eastern Zangezur,1,1965.3224,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",10,Ganja-Dashkasan,22,539503.1846,6134.506397637068,89.23203963233843
+"SYNTHETIC — pipeline test, not results",10,Garabagh,8,26955.970400000002,2389.872086363181,85.95171591374057
+"SYNTHETIC — pipeline test, not results",10,Gazakh-Tovuz,14,62645.5534,1938.4201480568358,72.2206760807384
+"SYNTHETIC — pipeline test, not results",10,Guba-Khachmaz,9,61394.268299999996,2582.3366511187232,91.54218033086323
+"SYNTHETIC — pipeline test, not results",10,Lankaran-Astara,15,155636.5477,2466.082075890225,83.67175905945643
+"SYNTHETIC — pipeline test, not results",10,Mil-Mughan,18,137406.6427,1693.4428863859496,66.24470128328083
+"SYNTHETIC — pipeline test, not results",10,Nakhchivan AR,22,203628.8268,1944.1353045199783,67.07057755341347
+"SYNTHETIC — pipeline test, not results",10,Shaki-Zagatala,31,153729.2159,1142.7567198504394,59.2620935237594
+"SYNTHETIC — pipeline test, not results",10,Shirvan-Salyan,14,40902.2109,1439.7895948351952,61.34549660737289
+"SYNTHETIC — pipeline test, not results",11,Absheron-Khizi,16,85064.2001,2558.7691423595247,76.79718862130345
+"SYNTHETIC — pipeline test, not results",11,Baku city,96,154093.07690000001,650.7807075021991,40.62257692512855
+"SYNTHETIC — pipeline test, not results",11,Central Aran,7,16749.4718,2195.4730450142224,82.172036016085
+"SYNTHETIC — pipeline test, not results",11,Daghlig Shirvan,6,554819.4853000001,9941.40682365402,99.91780629338325
+"SYNTHETIC — pipeline test, not results",11,Eastern Zangezur,2,1378.4775,5001.392454889216,100.0
+"SYNTHETIC — pipeline test, not results",11,Ganja-Dashkasan,12,12092.828300000001,1796.4950176640996,74.05298312223617
+"SYNTHETIC — pipeline test, not results",11,Garabagh,5,5676.2001,2884.3612330314463,96.59212683499301
+"SYNTHETIC — pipeline test, not results",11,Gazakh-Tovuz,6,19369.4066,4435.430334706078,98.5614283093216
+"SYNTHETIC — pipeline test, not results",11,Guba-Khachmaz,5,11638.8547,3363.268750590267,97.36293296968473
+"SYNTHETIC — pipeline test, not results",11,Lankaran-Astara,4,2855.272,3369.417499283186,100.0
+"SYNTHETIC — pipeline test, not results",11,Mil-Mughan,4,3376.1913999999997,3288.5030773822778,100.0
+"SYNTHETIC — pipeline test, not results",11,Nakhchivan AR,6,6248.7872,3228.3519029821846,90.581191499048
+"SYNTHETIC — pipeline test, not results",11,Shaki-Zagatala,9,29852.269800000002,2454.5706553518576,81.69324933543244
+"SYNTHETIC — pipeline test, not results",11,Shirvan-Salyan,3,12985.4782,8191.421377938096,100.0
+"SYNTHETIC — pipeline test, not results",12,Absheron-Khizi,2,11693.79,6776.385286395146,100.0
+"SYNTHETIC — pipeline test, not results",12,Baku city,16,677722.2482,1689.2219561610132,69.91018929338433
+"SYNTHETIC — pipeline test, not results",12,Lankaran-Astara,1,212749.6809,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",12,Nakhchivan AR,1,27819.8392,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",12,Shaki-Zagatala,2,186914.44160000002,9012.151479516466,100.0
+"SYNTHETIC — pipeline test, not results",13,Absheron-Khizi,9,17348.2572,1986.71243836815,85.93183354463986
+"SYNTHETIC — pipeline test, not results",13,Baku city,61,321013.8835,2984.125961025884,65.98326623465182
+"SYNTHETIC — pipeline test, not results",13,Central Aran,2,187.98409999999998,5931.690433470938,100.0
+"SYNTHETIC — pipeline test, not results",13,Daghlig Shirvan,1,404.2605,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",13,Eastern Zangezur,2,1067.0602,7187.203831629897,100.0
+"SYNTHETIC — pipeline test, not results",13,Ganja-Dashkasan,6,25177.6334,3039.6134550965057,91.29313202248788
+"SYNTHETIC — pipeline test, not results",13,Garabagh,4,8017.875400000001,6664.923024566574,99.99999999999999
+"SYNTHETIC — pipeline test, not results",13,Gazakh-Tovuz,6,7805.9629,2827.718245766789,88.33283207123621
+"SYNTHETIC — pipeline test, not results",13,Guba-Khachmaz,3,2425.0826,5084.624474787388,100.0
+"SYNTHETIC — pipeline test, not results",13,Lankaran-Astara,2,1222.0308,9340.570742714974,99.99999999999999
+"SYNTHETIC — pipeline test, not results",13,Mil-Mughan,1,156.5866,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",13,Nakhchivan AR,3,11757.1647,4910.259536508595,100.0
+"SYNTHETIC — pipeline test, not results",13,Shaki-Zagatala,7,14023.7262,3965.4162996553246,96.22492059207488
+"SYNTHETIC — pipeline test, not results",13,Shirvan-Salyan,2,1892.4913999999999,6005.087382487725,100.0
+"SYNTHETIC — pipeline test, not results",14,Absheron-Khizi,16,10111.6562,1402.903476058326,61.87975813497298
+"SYNTHETIC — pipeline test, not results",14,Baku city,108,140447.9575,872.1179900323159,43.547853303598245
+"SYNTHETIC — pipeline test, not results",14,Central Aran,6,2435.6045,2215.5762345623093,87.5619543320765
+"SYNTHETIC — pipeline test, not results",14,Daghlig Shirvan,4,5815.0651,4535.262292678849,100.0
+"SYNTHETIC — pipeline test, not results",14,Eastern Zangezur,1,400.0053,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",14,Ganja-Dashkasan,8,7260.7032,6050.250916929493,94.16359285971089
+"SYNTHETIC — pipeline test, not results",14,Garabagh,3,3059.075,4544.344252037896,100.0
+"SYNTHETIC — pipeline test, not results",14,Gazakh-Tovuz,2,518.3729000000001,5000.947667455804,99.99999999999999
+"SYNTHETIC — pipeline test, not results",14,Guba-Khachmaz,4,3302.4525,2807.6276035863707,100.0
+"SYNTHETIC — pipeline test, not results",14,Lankaran-Astara,3,11262.9904,4901.815756056104,100.0
+"SYNTHETIC — pipeline test, not results",14,Mil-Mughan,2,386.8,7435.781805202499,99.99999999999999
+"SYNTHETIC — pipeline test, not results",14,Nakhchivan AR,6,3700.2361,3047.5847282919035,95.37180343708339
+"SYNTHETIC — pipeline test, not results",14,Shaki-Zagatala,8,3475.539,1772.5789598725657,77.26308351021235
+"SYNTHETIC — pipeline test, not results",14,Shirvan-Salyan,6,5823.542100000001,2472.7805269508717,91.69767829101811
+"SYNTHETIC — pipeline test, not results",15,Absheron-Khizi,6,12687.3557,3986.162404051558,96.81668418896776
+"SYNTHETIC — pipeline test, not results",15,Baku city,16,17285.6118,1217.8525119110343,62.254511003191695
+"SYNTHETIC — pipeline test, not results",15,Daghlig Shirvan,1,1352.3943,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",15,Ganja-Dashkasan,3,3717.3486,3739.6058687819127,100.0
+"SYNTHETIC — pipeline test, not results",15,Garabagh,1,49.0554,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",15,Guba-Khachmaz,1,208.2338,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",16,Absheron-Khizi,8,4114.4109,3577.957300033366,91.77559538353353
+"SYNTHETIC — pipeline test, not results",16,Baku city,43,21445.566600000002,2526.900544198738,74.50250579996333
+"SYNTHETIC — pipeline test, not results",16,Central Aran,2,1839.5533,5022.919446399505,100.0
+"SYNTHETIC — pipeline test, not results",16,Ganja-Dashkasan,3,5267.7979,4734.093814962975,100.0
+"SYNTHETIC — pipeline test, not results",16,Garabagh,1,21.7291,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",16,Gazakh-Tovuz,3,630.3022,3842.0298989945436,99.99999999999999
+"SYNTHETIC — pipeline test, not results",16,Guba-Khachmaz,1,500.2281,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",16,Lankaran-Astara,2,644.6112,6803.327075489779,100.0
+"SYNTHETIC — pipeline test, not results",16,Nakhchivan AR,2,534.7881,7316.742597929718,100.0
+"SYNTHETIC — pipeline test, not results",16,Shaki-Zagatala,1,1894.483,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",16,Shirvan-Salyan,2,706.5295,7250.426355206437,100.0
+"SYNTHETIC — pipeline test, not results",17,Absheron-Khizi,9,33498.9849,2035.310181101553,80.48313219186531
+"SYNTHETIC — pipeline test, not results",17,Baku city,41,105738.27100000001,922.1872771227887,50.688905344404574
+"SYNTHETIC — pipeline test, not results",17,Central Aran,2,4028.7124000000003,6385.546202247942,100.0
+"SYNTHETIC — pipeline test, not results",17,Daghlig Shirvan,2,333.0647,7808.348623706452,100.0
+"SYNTHETIC — pipeline test, not results",17,Eastern Zangezur,2,2955.5555999999997,5051.399186310135,100.0
+"SYNTHETIC — pipeline test, not results",17,Ganja-Dashkasan,4,6751.0639,6725.345304966555,99.99999999999999
+"SYNTHETIC — pipeline test, not results",17,Gazakh-Tovuz,2,1715.6785,5153.840615130794,100.0
+"SYNTHETIC — pipeline test, not results",17,Guba-Khachmaz,5,59889.6611,6231.667234055876,99.54230130048273
+"SYNTHETIC — pipeline test, not results",17,Lankaran-Astara,5,33568.2848,3839.2309499239336,96.50008361463854
+"SYNTHETIC — pipeline test, not results",17,Mil-Mughan,4,3415.0996,4215.425782773056,100.0
+"SYNTHETIC — pipeline test, not results",17,Nakhchivan AR,3,3930.9323999999997,8279.375456585305,100.0
+"SYNTHETIC — pipeline test, not results",17,Shaki-Zagatala,3,7949.1669,3646.470518076799,100.0
+"SYNTHETIC — pipeline test, not results",17,Shirvan-Salyan,1,7825.5241,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",18,Absheron-Khizi,28,35902.1946,4234.470575796686,84.73065627024371
+"SYNTHETIC — pipeline test, not results",18,Baku city,148,80474.7713,344.1564947478177,27.473085717237694
+"SYNTHETIC — pipeline test, not results",18,Central Aran,6,7263.3429,4633.7928989581915,97.25528723144822
+"SYNTHETIC — pipeline test, not results",18,Daghlig Shirvan,4,3401.7832000000003,4823.817555941696,100.0
+"SYNTHETIC — pipeline test, not results",18,Eastern Zangezur,2,701.7751000000001,9448.892293203744,99.99999999999999
+"SYNTHETIC — pipeline test, not results",18,Ganja-Dashkasan,12,9191.6915,3087.5474320669205,85.27438284890219
+"SYNTHETIC — pipeline test, not results",18,Garabagh,7,2838.4802,1909.4704994723513,75.72032033198612
+"SYNTHETIC — pipeline test, not results",18,Gazakh-Tovuz,7,1964.4027999999998,2472.6189647558463,91.75987226245044
+"SYNTHETIC — pipeline test, not results",18,Guba-Khachmaz,8,1974.7701,3205.0756511759555,89.73180726202001
+"SYNTHETIC — pipeline test, not results",18,Lankaran-Astara,6,3137.2533999999996,2902.33865853848,93.75745676138243
+"SYNTHETIC — pipeline test, not results",18,Mil-Mughan,2,502.4068,5060.87289501558,100.0
+"SYNTHETIC — pipeline test, not results",18,Nakhchivan AR,6,2735.5938,4051.625371427093,98.65073535405729
+"SYNTHETIC — pipeline test, not results",18,Shaki-Zagatala,10,2573.4764999999998,1927.3379966921073,75.89756891115968
+"SYNTHETIC — pipeline test, not results",18,Shirvan-Salyan,7,1538.0587,2961.506043309113,82.4043061555453
+"SYNTHETIC — pipeline test, not results",19,Absheron-Khizi,1,66814.018,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",19,Baku city,8,4230359.8873,4712.74717448715,91.30504931260673
+"SYNTHETIC — pipeline test, not results",19,Central Aran,1,133047.7138,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",19,Garabagh,1,457911.2007,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",19,Mil-Mughan,2,427704.7519,7275.137093475483,100.0
+"SYNTHETIC — pipeline test, not results",19,Shaki-Zagatala,1,162893.7767,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",19,Shirvan-Salyan,2,15668.6515,6973.23234141513,100.0
+"SYNTHETIC — pipeline test, not results",20,Absheron-Khizi,21,314789.2369,3359.855005008886,78.63380293355894
+"SYNTHETIC — pipeline test, not results",20,Baku city,121,783894.1499,294.739504399283,25.450935132689906
+"SYNTHETIC — pipeline test, not results",20,Central Aran,5,17554.237500000003,3084.6618571081704,98.79697252586446
+"SYNTHETIC — pipeline test, not results",20,Daghlig Shirvan,3,40039.1007,6172.264641709565,99.99999999999999
+"SYNTHETIC — pipeline test, not results",20,Eastern Zangezur,2,6405.9673,7280.968121492852,100.0
+"SYNTHETIC — pipeline test, not results",20,Ganja-Dashkasan,11,99564.5218,1952.4955481509999,79.99933988534458
+"SYNTHETIC — pipeline test, not results",20,Garabagh,10,164779.93360000002,2718.983619793634,87.81800734989493
+"SYNTHETIC — pipeline test, not results",20,Gazakh-Tovuz,5,48909.909,5227.3594028001735,99.42238453152714
+"SYNTHETIC — pipeline test, not results",20,Guba-Khachmaz,9,31604.9137,1716.560888895205,76.53101517565605
+"SYNTHETIC — pipeline test, not results",20,Lankaran-Astara,3,7079.5644,5903.510389608812,100.0
+"SYNTHETIC — pipeline test, not results",20,Mil-Mughan,1,734.8984,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",20,Nakhchivan AR,5,21458.9637,3331.4545089645862,92.20671406420247
+"SYNTHETIC — pipeline test, not results",20,Shaki-Zagatala,7,35307.2978,4004.781088470269,92.5435888214589
+"SYNTHETIC — pipeline test, not results",20,Shirvan-Salyan,3,9177.3058,4674.904709202323,100.0
+"SYNTHETIC — pipeline test, not results",21,Absheron-Khizi,3,977.7577,5522.4979029772685,100.0
+"SYNTHETIC — pipeline test, not results",21,Baku city,14,26659.1812,4126.864070343137,95.11171483391246
+"SYNTHETIC — pipeline test, not results",21,Central Aran,2,951.2307,7289.691888118425,100.0
+"SYNTHETIC — pipeline test, not results",21,Garabagh,1,1269.8122,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",21,Lankaran-Astara,1,42.0182,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",22,Absheron-Khizi,22,60910.8974,2662.990244147372,73.34671940000017
+"SYNTHETIC — pipeline test, not results",22,Baku city,140,470618.7167,481.231942426648,32.599098369008836
+"SYNTHETIC — pipeline test, not results",22,Central Aran,7,13054.798999999999,3116.4884765187876,93.52332425799892
+"SYNTHETIC — pipeline test, not results",22,Daghlig Shirvan,6,21328.6999,2910.3262450275447,93.24655367296907
+"SYNTHETIC — pipeline test, not results",22,Eastern Zangezur,1,887.8875,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",22,Ganja-Dashkasan,13,16442.8635,2407.5753729994594,80.67200034835781
+"SYNTHETIC — pipeline test, not results",22,Garabagh,4,49789.5953,6835.517740335327,100.0
+"SYNTHETIC — pipeline test, not results",22,Gazakh-Tovuz,2,4891.2753,9585.86880715951,100.0
+"SYNTHETIC — pipeline test, not results",22,Guba-Khachmaz,6,4287.323200000001,3567.209089989422,90.18093620746855
+"SYNTHETIC — pipeline test, not results",22,Lankaran-Astara,5,2352.3355,3385.0047706151754,94.15506844155522
+"SYNTHETIC — pipeline test, not results",22,Mil-Mughan,8,6433.1081,2091.9225265816003,84.02727913121808
+"SYNTHETIC — pipeline test, not results",22,Nakhchivan AR,4,1696.1933,3519.201992308999,100.0
+"SYNTHETIC — pipeline test, not results",22,Shaki-Zagatala,4,1558.2221,3449.3435702679903,99.99999999999999
+"SYNTHETIC — pipeline test, not results",22,Shirvan-Salyan,4,1448.0834,3011.7844794657,100.0
+"SYNTHETIC — pipeline test, not results",23,Absheron-Khizi,40,179468.4221,1255.810206297367,60.85388918120989
+"SYNTHETIC — pipeline test, not results",23,Baku city,205,688523.0751,175.84819146064459,17.613469654940253
+"SYNTHETIC — pipeline test, not results",23,Central Aran,14,38503.5494,1447.585353565818,68.53474111142594
+"SYNTHETIC — pipeline test, not results",23,Daghlig Shirvan,4,2235.1381,2929.3349498372318,99.99999999999999
+"SYNTHETIC — pipeline test, not results",23,Eastern Zangezur,5,84383.757,2696.3818582288827,99.7498147658915
+"SYNTHETIC — pipeline test, not results",23,Ganja-Dashkasan,21,147274.3022,1377.1552293936304,65.64214642736226
+"SYNTHETIC — pipeline test, not results",23,Garabagh,9,20373.1359,2474.19129630744,77.51122251140532
+"SYNTHETIC — pipeline test, not results",23,Gazakh-Tovuz,8,59699.865699999995,2758.978297985387,89.2958208112016
+"SYNTHETIC — pipeline test, not results",23,Guba-Khachmaz,7,7185.3685,3814.0469327124197,87.74466473083461
+"SYNTHETIC — pipeline test, not results",23,Lankaran-Astara,8,16699.3009,1886.5842764504175,78.7633960173746
+"SYNTHETIC — pipeline test, not results",23,Mil-Mughan,9,66381.2385,2262.4447630312343,90.30085390768959
+"SYNTHETIC — pipeline test, not results",23,Nakhchivan AR,11,43283.4215,6848.807026645643,94.72290724521396
+"SYNTHETIC — pipeline test, not results",23,Shaki-Zagatala,13,95837.3123,1477.867944428514,72.55105535759063
+"SYNTHETIC — pipeline test, not results",23,Shirvan-Salyan,4,34552.1132,8084.94374991133,100.0
+"SYNTHETIC — pipeline test, not results",24,Absheron-Khizi,10,105914.1056,2802.514363748384,86.36105434855318
+"SYNTHETIC — pipeline test, not results",24,Baku city,56,711183.224,1036.810373362213,49.01276359409737
+"SYNTHETIC — pipeline test, not results",24,Central Aran,5,39992.7168,5509.529959661554,96.81698293625304
+"SYNTHETIC — pipeline test, not results",24,Daghlig Shirvan,3,16943.9591,3451.6435206143838,100.0
+"SYNTHETIC — pipeline test, not results",24,Ganja-Dashkasan,1,32631.6214,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",24,Garabagh,2,6170.8914,5909.509188928354,100.0
+"SYNTHETIC — pipeline test, not results",24,Gazakh-Tovuz,4,20122.268,4988.910492088823,100.0
+"SYNTHETIC — pipeline test, not results",24,Guba-Khachmaz,3,74143.1327,4038.9766794666502,100.0
+"SYNTHETIC — pipeline test, not results",24,Lankaran-Astara,6,55190.1435,3936.960282487106,90.89680859409253
+"SYNTHETIC — pipeline test, not results",24,Mil-Mughan,2,7643.320900000001,5956.84901163023,100.0
+"SYNTHETIC — pipeline test, not results",24,Nakhchivan AR,3,36581.995800000004,5591.993320211609,99.99999999999999
+"SYNTHETIC — pipeline test, not results",24,Shaki-Zagatala,4,17117.661,7342.6174481745265,100.0
+"SYNTHETIC — pipeline test, not results",24,Shirvan-Salyan,1,3364.9595,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",25,Absheron-Khizi,23,100955.9247,1279.4930070140517,66.31026420582128
+"SYNTHETIC — pipeline test, not results",25,Baku city,143,464894.1124,520.8983894768545,36.99818595508632
+"SYNTHETIC — pipeline test, not results",25,Central Aran,8,11729.391399999999,5306.527521345725,93.13596611670748
+"SYNTHETIC — pipeline test, not results",25,Daghlig Shirvan,6,6638.975,2265.4729629030544,86.44861141968451
+"SYNTHETIC — pipeline test, not results",25,Eastern Zangezur,1,1204.5524,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",25,Ganja-Dashkasan,7,34431.3896,7475.89469107128,96.94231974883755
+"SYNTHETIC — pipeline test, not results",25,Garabagh,5,10225.052099999999,3076.412734517299,95.93746422084246
+"SYNTHETIC — pipeline test, not results",25,Gazakh-Tovuz,7,37271.3424,3749.8660973713904,89.46989658199162
+"SYNTHETIC — pipeline test, not results",25,Guba-Khachmaz,3,1289.5294999999999,4191.255755504486,100.0
+"SYNTHETIC — pipeline test, not results",25,Lankaran-Astara,5,22484.049,8922.04997300918,99.36020109189407
+"SYNTHETIC — pipeline test, not results",25,Mil-Mughan,2,5057.8539,7703.801679925071,100.0
+"SYNTHETIC — pipeline test, not results",25,Nakhchivan AR,7,12631.4342,2465.6906061609716,88.70518836253764
+"SYNTHETIC — pipeline test, not results",25,Shaki-Zagatala,7,22055.3047,2067.084766461529,87.46666057168551
+"SYNTHETIC — pipeline test, not results",25,Shirvan-Salyan,5,14631.089100000001,3078.4218151020864,98.12466933852517
+"SYNTHETIC — pipeline test, not results",26,Absheron-Khizi,5,48246.1306,7633.256085825751,99.83742260980407
+"SYNTHETIC — pipeline test, not results",26,Baku city,20,16930.3769,2024.5188911530022,75.2478256996157
+"SYNTHETIC — pipeline test, not results",26,Central Aran,2,360.1164,6004.842264951322,100.0
+"SYNTHETIC — pipeline test, not results",26,Daghlig Shirvan,2,1930.0219,8942.473634035015,100.0
+"SYNTHETIC — pipeline test, not results",26,Garabagh,1,188.6601,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",26,Guba-Khachmaz,1,119.3588,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",26,Lankaran-Astara,2,245.2962,6739.365914475808,100.0
+"SYNTHETIC — pipeline test, not results",26,Nakhchivan AR,1,295.7724,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",26,Shaki-Zagatala,1,413.1412,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",26,Shirvan-Salyan,1,371.1256,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",27,Absheron-Khizi,9,21682.1578,2535.34429125895,89.37248717929724
+"SYNTHETIC — pipeline test, not results",27,Baku city,59,168607.1508,1015.6948796734407,55.46178311910599
+"SYNTHETIC — pipeline test, not results",27,Central Aran,8,27432.774800000003,6780.79173341976,94.93495021874345
+"SYNTHETIC — pipeline test, not results",27,Daghlig Shirvan,1,163.9131,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",27,Eastern Zangezur,2,1743.5753,7093.86991367661,100.0
+"SYNTHETIC — pipeline test, not results",27,Ganja-Dashkasan,1,248.6571,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",27,Garabagh,1,488.8664,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",27,Gazakh-Tovuz,2,4678.133000000001,9858.72812636799,100.0
+"SYNTHETIC — pipeline test, not results",27,Guba-Khachmaz,1,4186.0536,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",27,Lankaran-Astara,4,3782.6319,3220.533289417651,100.0
+"SYNTHETIC — pipeline test, not results",27,Mil-Mughan,4,27639.4621,6036.66172916923,100.0
+"SYNTHETIC — pipeline test, not results",27,Nakhchivan AR,7,5281.9992,3771.3645370261856,88.36978998406512
+"SYNTHETIC — pipeline test, not results",27,Shaki-Zagatala,8,7929.1825,2442.269618463961,84.99771067193876
+"SYNTHETIC — pipeline test, not results",27,Shirvan-Salyan,2,2335.4426,9882.185166140178,100.0
+"SYNTHETIC — pipeline test, not results",28,Absheron-Khizi,13,8319.1505,1609.0566647638905,71.8178749140312
+"SYNTHETIC — pipeline test, not results",28,Baku city,61,70989.3638,484.442867082285,33.96593504899109
+"SYNTHETIC — pipeline test, not results",28,Central Aran,5,4298.5218,2415.663656660352,97.75039410059522
+"SYNTHETIC — pipeline test, not results",28,Daghlig Shirvan,2,840.4616000000001,5475.077519168199,99.99999999999999
+"SYNTHETIC — pipeline test, not results",28,Ganja-Dashkasan,5,4034.8259,2652.523516967335,97.47238908127362
+"SYNTHETIC — pipeline test, not results",28,Garabagh,1,43.9686,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",28,Gazakh-Tovuz,2,4389.2351,9323.859837000646,100.0
+"SYNTHETIC — pipeline test, not results",28,Guba-Khachmaz,1,530.2963,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",28,Lankaran-Astara,5,2889.7533999999996,3851.1489610902677,96.86967060926376
+"SYNTHETIC — pipeline test, not results",28,Mil-Mughan,2,9008.0775,5391.6117425105185,100.0
+"SYNTHETIC — pipeline test, not results",28,Nakhchivan AR,6,19368.5622,5029.158297707854,99.53919914612969
+"SYNTHETIC — pipeline test, not results",28,Shaki-Zagatala,3,3614.0504,5414.167262268557,100.0
+"SYNTHETIC — pipeline test, not results",28,Shirvan-Salyan,4,2173.7324999999996,4343.699250475577,100.00000000000003
+"SYNTHETIC — pipeline test, not results",29,Absheron-Khizi,1,139345.6585,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",29,Baku city,17,150217.75650000002,1368.0101719404845,66.66898117334085
+"SYNTHETIC — pipeline test, not results",29,Eastern Zangezur,1,2219.3281,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",29,Ganja-Dashkasan,4,42556.415,4320.403731259318,99.99999999999999
+"SYNTHETIC — pipeline test, not results",29,Lankaran-Astara,1,4074.2412,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",29,Shaki-Zagatala,1,786.6007,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",30,Absheron-Khizi,4,2842.2624,4163.920974575688,100.0
+"SYNTHETIC — pipeline test, not results",30,Baku city,17,16176.9808,1210.26583704026,61.25461062548829
+"SYNTHETIC — pipeline test, not results",30,Central Aran,3,10380.6251,8670.716826897835,100.0
+"SYNTHETIC — pipeline test, not results",30,Ganja-Dashkasan,2,7850.221399999999,5490.592437416249,100.0
+"SYNTHETIC — pipeline test, not results",30,Garabagh,2,3706.9485999999997,8867.402683274928,100.0
+"SYNTHETIC — pipeline test, not results",30,Nakhchivan AR,1,332.54,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",30,Shirvan-Salyan,1,410.4219,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",31,Absheron-Khizi,28,12032.521,884.5722549852295,52.03021129154896
+"SYNTHETIC — pipeline test, not results",31,Baku city,151,320104.0314,2723.624435403144,64.78857070089371
+"SYNTHETIC — pipeline test, not results",31,Central Aran,8,7497.5463,2609.3312917241683,89.89400172160323
+"SYNTHETIC — pipeline test, not results",31,Daghlig Shirvan,5,1897.8806,5641.066057767733,97.51712515529164
+"SYNTHETIC — pipeline test, not results",31,Ganja-Dashkasan,10,4517.9727,2358.3815808593404,79.68191574065952
+"SYNTHETIC — pipeline test, not results",31,Garabagh,7,1878.0937000000001,2138.6887074727424,82.90562925587793
+"SYNTHETIC — pipeline test, not results",31,Guba-Khachmaz,5,3437.9813000000004,3394.085026314374,96.30556163874422
+"SYNTHETIC — pipeline test, not results",31,Lankaran-Astara,10,13657.4902,2648.995974989457,86.3694809753552
+"SYNTHETIC — pipeline test, not results",31,Mil-Mughan,3,1944.5106,3630.175970830399,100.0
+"SYNTHETIC — pipeline test, not results",31,Nakhchivan AR,7,2380.2102,2354.340248807095,86.96472269549974
+"SYNTHETIC — pipeline test, not results",31,Shaki-Zagatala,11,7186.6911,2879.1052218454533,88.6828265096854
+"SYNTHETIC — pipeline test, not results",31,Shirvan-Salyan,10,15965.071100000001,3699.51175471375,91.4383293914676
+"SYNTHETIC — pipeline test, not results",32,Absheron-Khizi,17,17479.6546,2628.803423127039,78.9374184773651
+"SYNTHETIC — pipeline test, not results",32,Baku city,58,81616.47679999999,1443.355325403442,60.983700781359886
+"SYNTHETIC — pipeline test, not results",32,Central Aran,3,2948.9926,4962.074601314015,100.0
+"SYNTHETIC — pipeline test, not results",32,Daghlig Shirvan,1,20.75,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",32,Ganja-Dashkasan,3,2937.5729,8650.751859563801,100.0
+"SYNTHETIC — pipeline test, not results",32,Garabagh,3,117.94330000000001,5294.526355059069,100.0
+"SYNTHETIC — pipeline test, not results",32,Gazakh-Tovuz,1,1471.4527,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",32,Guba-Khachmaz,2,492.2004,7695.150740012348,100.0
+"SYNTHETIC — pipeline test, not results",32,Lankaran-Astara,1,155.3204,10000.0,100.0
+"SYNTHETIC — pipeline test, not results",32,Nakhchivan AR,8,8243.758,6774.922037849917,95.79361985152886
+"SYNTHETIC — pipeline test, not results",32,Shaki-Zagatala,4,4857.1852,6735.523278474991,100.0
+"SYNTHETIC — pipeline test, not results",32,Shirvan-Salyan,2,358.6927,5368.522133275732,100.0
+"SYNTHETIC — pipeline test, not results",33,Absheron-Khizi,58,168901.63270000002,1078.2837154765102,51.72485718665287
+"SYNTHETIC — pipeline test, not results",33,Baku city,277,556366.0061,146.7402800575801,14.063434293635934
+"SYNTHETIC — pipeline test, not results",33,Central Aran,14,27349.1034,2567.9599178764693,84.60820291461548
+"SYNTHETIC — pipeline test, not results",33,Daghlig Shirvan,9,7644.3053,1912.9382874396276,78.55191367095189
+"SYNTHETIC — pipeline test, not results",33,Eastern Zangezur,6,19709.2382,4242.589884633334,97.7696078583088
+"SYNTHETIC — pipeline test, not results",33,Ganja-Dashkasan,16,92946.21429999999,4660.620917776774,91.58729200657719
+"SYNTHETIC — pipeline test, not results",33,Garabagh,15,48833.696899999995,2643.5616582405073,89.06843462838465
+"SYNTHETIC — pipeline test, not results",33,Gazakh-Tovuz,9,25917.184699999998,3727.536175691233,94.71567913007156
+"SYNTHETIC — pipeline test, not results",33,Guba-Khachmaz,6,5592.4611,2634.238580653778,85.44949199557237
+"SYNTHETIC — pipeline test, not results",33,Lankaran-Astara,8,22636.6591,3923.325690078877,87.97436278925102
+"SYNTHETIC — pipeline test, not results",33,Mil-Mughan,13,47443.95650000001,5836.419345633517,92.05436523827855
+"SYNTHETIC — pipeline test, not results",33,Nakhchivan AR,18,17445.0031,1502.955007863238,62.414374119543716
+"SYNTHETIC — pipeline test, not results",33,Shaki-Zagatala,12,45042.545900000005,2100.7975970934176,85.70885044044545
+"SYNTHETIC — pipeline test, not results",33,Shirvan-Salyan,6,10671.9922,3692.5036494220208,90.35482896998369

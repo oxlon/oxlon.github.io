@@ -1,0 +1,11 @@
+WATERMARK,decile,n,mean_predicted,observed_rate,sample
+"SYNTHETIC — pipeline test, not results",1,1724,0.05767731725767376,0.054524361948955914,in-sample
+"SYNTHETIC — pipeline test, not results",2,1724,0.10015809410794162,0.10672853828306264,in-sample
+"SYNTHETIC — pipeline test, not results",3,1724,0.133061059723565,0.13109048723897912,in-sample
+"SYNTHETIC — pipeline test, not results",4,1724,0.16662080421746994,0.16473317865429235,in-sample
+"SYNTHETIC — pipeline test, not results",5,1724,0.20140658914885012,0.2088167053364269,in-sample
+"SYNTHETIC — pipeline test, not results",6,1724,0.23970665796965718,0.23665893271461716,in-sample
+"SYNTHETIC — pipeline test, not results",7,1724,0.28628069024993985,0.2923433874709977,in-sample
+"SYNTHETIC — pipeline test, not results",8,1724,0.34274062471593003,0.3323665893271462,in-sample
+"SYNTHETIC — pipeline test, not results",9,1724,0.41725311367327944,0.41879350348027844,in-sample
+"SYNTHETIC — pipeline test, not results",10,1724,0.5806170906990346,0.5794663573085846,in-sample

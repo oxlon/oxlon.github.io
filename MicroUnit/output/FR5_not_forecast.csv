@@ -1,0 +1,2 @@
+id,component_az,component_en,reason_az,evidence,alternative_ids
+fr5:reg:<region>,İqtisadi rayonlar üzrə pullu xidmətlərin real artımı,Regional real growth of paid services,"Regional sıralar milli sıra ilə uzlaşmır: milli indeks bir neçə ildə bütün hesabat verən regionların diapazonundan kənardadır (Part 13, F5) — regional sətirlər daha dar anlayışdadır və ya böyük komponent çatışmır. Ona görə regionlar nə sürücü, nə də proqnoz obyekti kimi istifadə olunmur; tarix məlumat üçün FR5_regional_service_growth.csv-də verilir.",FR5_regional_service_growth.csv; Part 13,

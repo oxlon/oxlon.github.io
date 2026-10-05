@@ -1,0 +1,3 @@
+window,tier1_spec,tier1_estimator,cg_rate_pct,cg_window,RMSE_pct,U_vs_random_walk,U_vs_constant_growth,final_year_err_pct,scored_years,tier2_spec,shares_RMSE_pp,shares_U_vs_random_walk,types_beating_rw,RMSE_pct_incl_pandemic,U_vs_rw_incl_pandemic,U_vs_cg_incl_pandemic
+A: pre-pandemic 2014-2019,income deflated by service price,OLS (df too small for DOLS),9.44,2008-2013,4.88,0.405,0.184,8.74,2014-2019,constant shares,0.787,1.0,0,,,
+B: test window 2020-2025,income deflated by service price,DOLS(0: contemporaneous dx),2.24,2014-2019,12.82,1.006,0.688,-1.38,2022-2025 (2020-21 excluded),"coherence rule, shrinkage kappa = 512.0",2.376,1.0,3,18.92,0.82,0.683

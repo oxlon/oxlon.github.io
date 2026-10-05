@@ -1,0 +1,7 @@
+variable,variant,used_in_baseline,origin,target,rmse,theil_vs_other_variant,dm_p_anchored_vs_average,driver_rule
+new,anchored: last observed year (2024 at the origin; 2025 in the forecast),True,2024,2025,198.9127640574852,0.9419547718164923,0.17920810353002858,not identified pre-cut: one observed full year (2021) at or before 2022
+new,"average of observed years (2021, 2024 at the origin)",False,2024,2025,211.17018567026966,1.0616220968567012,0.17920810353002858,not identified pre-cut: one observed full year (2021) at or before 2022
+liq,anchored: last observed year (2024 at the origin; 2025 in the forecast),True,2024,2025,30.352336989423637,1.1594350422747397,0.3612727573939756,not identified pre-cut: one observed full year (2021) at or before 2022
+liq,"average of observed years (2021, 2024 at the origin)",False,2024,2025,26.17855755840727,0.8624890257224432,0.3612727573939756,not identified pre-cut: one observed full year (2021) at or before 2022
+stock,anchored: last observed year (2024 at the origin; 2025 in the forecast),True,2024,2025,449.8492399824303,0.2935724319345448,0.09318228665466366,not identified pre-cut: one observed full year (2021) at or before 2022
+stock,"average of observed years (2021, 2024 at the origin)",False,2024,2025,1532.3279403930173,3.4063143920235706,0.09318228665466366,not identified pre-cut: one observed full year (2021) at or before 2022

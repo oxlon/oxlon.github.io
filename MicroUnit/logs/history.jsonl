@@ -1,0 +1,1 @@
+{"run_id": "r20261005-112759-e3d2", "status": "dry-run", "dry_run": true, "started": "2026-10-05T10:27:59Z", "finished": "2026-10-05T10:27:59Z", "plan": ["FR1", "FR3", "FR4", "FR5", "FR10", "FR12", "panel", "site"], "trigger": "cli", "identical_to_previous": null}

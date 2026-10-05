@@ -1,0 +1,19 @@
+field,type,unit,required,constraint,source,field_az
+data_status,str,,False,synthetic marker; any other value or no column = REAL data,generator,Məlumatın statusu
+firm_id,str,,True,"unique per enterprise, pseudonymised (never the VÖEN)",DSK register,Müəssisənin identifikatoru (psevdonim)
+year,int,,True,reporting year,DSK register,İl
+nace2,str,,True,"NACE Rev.2 division, 2 digits, sections A-S and U",DSK register,"İqtisadi fəaliyyət növü (NACE Rev.2, 2 rəqəm)"
+region,str,,True,one of the 14 economic regions,DSK register,İqtisadi rayon
+ownership,str,,True,state | municipal | private | foreign | joint,DSK register,Mülkiyyət növü
+size_class,str,,True,micro | small | medium | large (statutory classes),DSK register,Ölçü qrupu
+revenue,float,thsd AZN,True,>= 0,DSK register / DVX,Gəlir (satış)
+employees,float,persons,True,>= 0,DSK register / DSMF,İşçilərin sayı
+registration_date,date,,True,state registration date (entry); <= 31 Dec of year,DSK register,Qeydiyyat tarixi
+liquidation_date,date,,False,liquidation date (exit); empty while active; >= registration date,DSK register,Ləğvetmə tarixi
+status,str,,True,active | liquidated (liquidated only in the year of liquidation),DSK register,Status
+legal_form,str,,False,LLC | JSC | state enterprise | other,DSK register,Təşkilati-hüquqi forma
+exports,float,thsd AZN,False,">= 0, <= revenue",State Customs Committee,İxrac
+product_codes,str,,False,"HS / PRODCOM codes, "";""-separated",DSK / Customs,Məhsul kodları
+cost_of_sales,float,thsd AZN,False,">= 0 (price-cost margin, Boone indicator)",DVX (link by firm_id to FR10 panel),Satışın maya dəyəri
+operating_costs,float,thsd AZN,False,>= 0,DVX,Əməliyyat xərcləri
+weight,float,enterprises,False,number of identical enterprises the row stands for; 1 (or absent) in a census register,generator / sample design,Çəki
