@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- MİİS §15.5.3 NFR2 — scheduler/install.py tərəfindən yaradılıb (/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit). Əl ilə redaktə etməyin:
+     qovluq köçürüldükdə `python3 scheduler/install.py --install` yenidən işlədin. -->
+<plist version="1.0"><dict>
+  <key>Label</key><string>az.miis.risk.daily</string>
+  <key>ProgramArguments</key><array>
+    <string>/bin/sh</string><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/scheduler/run_update.sh</string><string>--daily</string>
+  </array>
+  <key>WorkingDirectory</key><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit</string>
+  <key>EnvironmentVariables</key><dict><key>MIIS_PYTHON</key><string>/Users/econ0757/venvs/miis-model/bin/python3</string></dict>
+  <key>StartCalendarInterval</key><array><dict><key>Hour</key><integer>13</integer><key>Minute</key><integer>30</integer></dict><dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>30</integer></dict></array>
+  <key>StandardOutPath</key><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/output/NFR2_launchd.log</string>
+  <key>StandardErrorPath</key><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/output/NFR2_launchd.log</string>
+  <key>RunAtLoad</key><false/>
+</dict></plist>

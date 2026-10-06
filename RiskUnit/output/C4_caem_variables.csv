@@ -1,0 +1,49 @@
+variable,variable_name,unit
+ta,"Labor productivity, level",log
+dta,"Labor productivity, growth",%
+tpop,"Population, level",log
+dtpop,"Population, growth",%
+CR,Monetary policy rate,"%, p.a."
+dP,CPI inflation,%
+dc,"Private consumption, growth",%
+dinv,"Business investment, growth",%
+dinv_com,"Investment in commodity sec., growth",%
+dx,"Non-commodty exports, growth",%
+dx_com,"Commodity exports, growth",%
+dm,"Imports, growth",%
+dy,"Real GDP, growth",%
+y,"Real GDP, level",log
+c,"Private consumption, level",log
+inv,"Business investment, level",log
+inv_com,"Investment in commodity sec., level",log
+x,"Non-commodty exports, level",log
+x_com,"Commodity exports, level",log
+m,"Imports, level",log
+dypot,"Potential output, growth",%
+ypot,"Potential output, level",log
+k_com,"Commodity sector physical capital, level",log
+dle,"Employment, growth",%
+le,"Employment, level",log
+dUR,"Unemployment rate, change",ppt
+UR,"Unemployment rate, level",%
+ty,"Potential output growth, Okun's law",%
+dy_ncom,"Non-commodity output, growth",%
+pb_y,Primary balance,% of GDP
+g_y,Government spending,% of GDP
+gdis_y,… discretionary spending,% of GDP
+gcap_y,… capital spending,% of GDP
+rev_y,Government revenues,% of GDP
+ptax_y,… profit tax,% of GDP
+pitax_y,… personal income tax,% of GDP
+vatax_y,… value added tax (VAT),% of GDP
+otax_y,… other taxes and fees,% of GDP
+dS,"Nominal exchange rate, growth",%
+dP_f,Foreign CPI inflation,%
+dy_f,"Foreign real GDP, growth",%
+R_f,Foreign short-term interest rate,"%, p.a."
+Rd_f,Foreign debt interest rate,"%, p.a."
+dPoil,"Commodity prices, growth",%
+tot,Terms of trade (non-commodity),log
+d_y,Total government debt,% of GDP
+dd_y,… domestic debt,% of GDP
+df_y,… foreign debt,% of GDP

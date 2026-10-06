@@ -1,0 +1,16 @@
+yoxlama,deyer,netice,qeyd
+"AZE Model!A210 = 'B1', A261 = 'B2'",B1 / B2,keçdi,
+AZE Model!B209 həll forması,y(t) = Bc + B1*y(t-1) + B2*e(t),keçdi,
+"B1 düsturu = MMULT(MINVERSE(A0 C5:AX52), A1 C56:AX103)","=MMULT(MINVERSE(_xlfn.IFNA(C5:AX52,0)),_xlfn.IFNA(C56:AX103,0))",keçdi,
+"B2 düsturu = MMULT(MINVERSE(A0), A2 C107:AX154)","=MMULT(MINVERSE(_xlfn.IFNA(C5:AX52,0)),_xlfn.IFNA(C107:AX154,0))",keçdi,
+max|inv(A0)·A1 − B1| (C211:AX258),5.551115123125783e-16,keçdi,
+max|inv(A0)·A2 − B2| (C262:AX309),8.881784197001252e-16,keçdi,
+B1/B2 sətir kodları = 8a C62:C109 vəziyyət kodları (48),48,keçdi,
+"8a!E62 B1 sətri $C211:$AX211, B2 sətri $C262:$AX262, sabit $C159 istifadə edir","=SUMPRODUCT(TRANSPOSE('AZE Model'!$C211:$AX211),D$62:D$109)+",keçdi,
+"Sabit (Ac, C159:C206) sıfırdır → Bc = 0",0.0,keçdi,8a Bc=inv(A0)·Ac əvəzinə Ac-ni toplayır; Ac=0 olduğundan nəticəyə təsir etmir
+Yüklənmiş 8a təcrübəsinin təkrarı: max|Δ| (48×13),8.881784197001252e-16,keçdi,şok: dP h=1=1
+CR h=1 (gözlənilən ≈ +2.42),2.42,keçdi,
+dy h=1 (gözlənilən ≈ -0.13),-0.128,keçdi,
+dy h=2 (gözlənilən ≈ -0.20),-0.197,keçdi,
+"B1 məxsusi ədədləri: |λ|≥0,999 sayı (vahid köklər — səviyyə dəyişənləri)",5,keçdi,ən böyük |λ| = 1.0000
+Xarici borc sətri (8a F109:P109) xətası: düzəliş edilərsə df_y h=5 fərqi,-1.3815,keçdi,F109 düsturu E109 əvəzinə E108-ə (daxili borc) istinad edir

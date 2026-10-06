@@ -1,0 +1,38 @@
+{
+ "date": "2026-07-01",
+ "total_azn": 23830.6,
+ "gdp_proj_azn": 130873.5,
+ "ext_azn": 7848.6,
+ "ext_usd": 4616.8,
+ "dom_azn": 15982.0,
+ "dom_securities_azn": 7234.6,
+ "dom_assumed_guar_azn": 8747.4,
+ "floating_total_pct": 16.3,
+ "floating_ext_pct": 49.4,
+ "debt_service_exp_pct": 5.6,
+ "ext_avg_maturity_y": 4.8,
+ "strategic_reserves_usd_bn": 85.8,
+ "ext_due_5y_pct": 59.5,
+ "ext_ccy_pct": {
+  "USD": 86.4,
+  "EUR": 6.1,
+  "XDR": 2.9,
+  "JPY": 3.1,
+  "OTHER": 1.5
+ },
+ "guar_total_azn": 7232.3,
+ "guar_ext_azn": 4928.0,
+ "guar_ext_usd": 2898.8,
+ "guar_dom_azn": 2304.3,
+ "guar_ccy_pct": {
+  "USD": 52.8,
+  "EUR": 22.0,
+  "JPY": 5.0,
+  "AZN": 17.9,
+  "OTHER": 2.3
+ },
+ "guar_due_5y_pct": 65.5,
+ "eurobond_2029_usd": 310.7,
+ "eurobond_2032_usd": 1076.6,
+ "url": "https://www.maliyye.gov.az/uploads/static-pages/files/6a9810b8688c1.pdf"
+}

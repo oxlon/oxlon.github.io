@@ -46,3 +46,4 @@ coverage90_lo,0.86,pay,NFR1: 90% intervalın aşağı həddi,Metodologiya Bluepr
 coverage90_hi,0.94,pay,NFR1: 90% intervalın yuxarı həddi,Metodologiya Blueprint §4.2
 test_alpha,0.05,p,NFR1: statistik testlər üçün əhəmiyyətlilik səviyyəsi,metodologiya
 update_sla_hours,24,saat,NFR2: yeni məlumatdan risk skorunun yenilənməsinə qədər maksimal müddət,TT §15.5.3 NFR2
+model_risk_gap_pp,0.5,f.b.,"R19: bazanın digər bölmə proqnozlarından əlverişli tərəfdə olma həddi (qeyri-neft artımı, inflyasiya)",risk iştahı — Nazirlik təsdiq edir

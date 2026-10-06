@@ -1,0 +1,211 @@
+mode,en,az,note
+phrase,% of GDP,% ÜDM,unit
+exact,ppt,f.b.,unit
+exact,"ppt, p.a.","f.b., illik",unit
+exact,"%, p.a.","%, illik",unit
+exact,Persistent labour productivity shock,Davamlı əmək məhsuldarlığı şoku,C4
+exact,Persistent migration/population shock,Davamlı miqrasiya / əhali şoku,C4
+exact,Monetary policy shocks,Pul siyasəti şoku,C4
+exact,CPI inflation (cost-push) shock,İQİ inflyasiyası (xərc) şoku,C4
+exact,Private consumption shock,Özəl istehlak şoku,C4
+exact,Business investment shock,Biznes investisiyası şoku,C4
+exact,Commodity sector investment shock,Əmtəə sektoruna investisiya şoku,C4
+exact,Non-commodity exports shock,Qeyri-əmtəə ixracı şoku,C4
+exact,Commodity exports shock,Əmtəə ixracı şoku,C4
+exact,Imports shock,İdxal şoku,C4
+exact,Potential output shock,Potensial buraxılış şoku,C4
+exact,Employment shock,Məşğulluq şoku,C4
+exact,Unemployment shock,İşsizlik şoku,C4
+exact,Governmet current spending shock,Dövlətin cari xərcləri şoku,C4
+exact,Government capital spending shock,Dövlətin kapital xərcləri şoku,C4
+exact,Profit tax shock,Mənfəət vergisi şoku,C4
+exact,Personal income shock,Fərdi gəlir vergisi şoku,C4
+exact,VAT shock,ƏDV şoku,C4
+exact,Other taxes and fees shock,Digər vergi və rüsumlar şoku,C4
+exact,Exchange rate shock,Məzənnə şoku,C4
+exact,Foreign inflation shock,Xarici inflyasiya şoku,C4
+exact,Foreign demand shock,Xarici tələb şoku,C4
+exact,Foreign interest rate shock,Xarici faiz dərəcəsi şoku,C4
+exact,Foreign debt interest rate shock,Xarici borc faizi şoku,C4
+exact,Commodity price shock,Əmtəə qiyməti şoku,C4
+exact,Terms-of-trade shock (non-commodities),Ticarət şərtləri şoku (qeyri-əmtəə),C4
+exact,"Labor productivity, level","Əmək məhsuldarlığı, səviyyə",C4
+exact,"Labor productivity, growth","Əmək məhsuldarlığı, artım",C4
+exact,"Population, level","Əhali, səviyyə",C4
+exact,"Population, growth","Əhali, artım",C4
+exact,Monetary policy rate,Pul siyasəti faizi,C4
+exact,CPI inflation,İQİ inflyasiyası,C4
+exact,"Private consumption, growth","Özəl istehlak, artım",C4
+exact,"Business investment, growth","Biznes investisiyası, artım",C4
+exact,"Investment in commodity sec., growth","Əmtəə sektoruna investisiya, artım",C4
+exact,"Non-commodty exports, growth","Qeyri-əmtəə ixracı, artım",C4
+exact,"Commodity exports, growth","Əmtəə ixracı, artım",C4
+exact,"Imports, growth","İdxal, artım",C4
+exact,"Real GDP, growth","Real ÜDM, artım",C4
+exact,"Real GDP, level","Real ÜDM, səviyyə",C4
+exact,"Private consumption, level","Özəl istehlak, səviyyə",C4
+exact,"Business investment, level","Biznes investisiyası, səviyyə",C4
+exact,"Investment in commodity sec., level","Əmtəə sektoruna investisiya, səviyyə",C4
+exact,"Non-commodty exports, level","Qeyri-əmtəə ixracı, səviyyə",C4
+exact,"Commodity exports, level","Əmtəə ixracı, səviyyə",C4
+exact,"Imports, level","İdxal, səviyyə",C4
+exact,"Potential output, growth","Potensial buraxılış, artım",C4
+exact,"Potential output, level","Potensial buraxılış, səviyyə",C4
+exact,"Commodity sector physical capital, level","Əmtəə sektorunun fiziki kapitalı, səviyyə",C4
+exact,"Employment, growth","Məşğulluq, artım",C4
+exact,"Employment, level","Məşğulluq, səviyyə",C4
+exact,"Unemployment rate, change","İşsizlik səviyyəsi, dəyişmə",C4
+exact,"Unemployment rate, level",İşsizlik səviyyəsi,C4
+exact,"Potential output growth, Okun's law",Potensial artım (Oukun qanunu),C4
+exact,"Non-commodity output, growth","Qeyri-əmtəə buraxılışı, artım",C4
+exact,Primary balance,İlkin balans,C4
+exact,Government spending,Dövlət xərcləri,C4
+exact,… discretionary spending,… diskresion xərclər,C4
+exact,… capital spending,… kapital xərcləri,C4
+exact,Government revenues,Dövlət gəlirləri,C4
+exact,… profit tax,… mənfəət vergisi,C4
+exact,… personal income tax,… fərdi gəlir vergisi,C4
+exact,… value added tax (VAT),… əlavə dəyər vergisi (ƏDV),C4
+exact,… other taxes and fees,… digər vergi və rüsumlar,C4
+exact,"Nominal exchange rate, growth","Nominal məzənnə, artım",C4
+exact,Foreign CPI inflation,Xarici İQİ inflyasiyası,C4
+exact,"Foreign real GDP, growth","Xarici real ÜDM, artım",C4
+exact,Foreign short-term interest rate,Xarici qısamüddətli faiz,C4
+exact,Foreign debt interest rate,Xarici borc faizi,C4
+exact,"Commodity prices, growth","Əmtəə qiymətləri, artım",C4
+exact,Terms of trade (non-commodity),Ticarət şərtləri (qeyri-əmtəə),C4
+exact,Total government debt,Dövlət borcu (cəmi),C4
+exact,… domestic debt,… daxili borc,C4
+exact,… foreign debt,… xarici borc,C4
+exact,Brent +10 USD/bbl,Brent +10 USD/barel,C5
+exact,State investment +1 bn AZN (real),Dövlət investisiyası +1 mlrd AZN (real),C5
+exact,"Credit easing (-200 bp policy, -100 bp deposit)","Kredit yumşalması (uçot −200 b.b., depozit −100 b.b.)",C5
+exact,Credit easing + judgemental credit->investment overlay,Kredit yumşalması + ekspert örtüyü (kredit → investisiya),C5
+exact,External demand +10%,Xarici tələb +10 %,C5
+exact,full + fetch,tam dövr + axınların yüklənməsi,run
+exact,full,tam dövr,run
+exact,daily,gündəlik dövr,run
+exact,actual,faktiki,D3
+exact,forecast,proqnoz,D3
+exact,assumption,fərziyyə,D3
+exact,level,səviyyə,D3
+exact,rate,dərəcə / artım,D3
+phrase,: OTHER,: digər,V1
+phrase,marginal töhfə,marjinal töhfə,M3
+phrase,(Balance of risks),(`Balance of risks` vərəqi),C6
+regex,"(\d+) km ([NSEW]{1,3}) of ([^,)]+)(, Azerbaijan)?",\3 yaxınlığında (\1 km),USGS
+exact,Oil prices (Neft qiymətləri; çəki 12),Neft qiymətləri (çəki 12),reg
+phrase,"Oil prices (Neft qiymətləri, çəki 12)",Neft qiymətləri (CAEM; çəki 12),reg
+phrase,Oil prices (əlaqəli:,Neft qiymətləri (CAEM; əlaqəli:,reg
+phrase,"Food prices (Ərzaq qiymətləri, çəki 2)",Ərzaq qiymətləri (CAEM; çəki 2),reg
+phrase,Food prices (qismən:,Ərzaq qiymətləri (CAEM; qismən:,reg
+phrase,"Import prices (İdxal qiymətləri, çəki 2)",İdxal qiymətləri (CAEM; çəki 2),reg
+phrase,Import prices; Food prices,İdxal qiymətləri; ərzaq qiymətləri (CAEM),reg
+phrase,CAEM kateqoriyası: Import prices,CAEM kateqoriyası: idxal qiymətləri,reg
+phrase,CAEM kateqoriyası: Food prices,CAEM kateqoriyası: ərzaq qiymətləri,reg
+phrase,"Geopolitical risks (Geosiyasi risklər, çəki 2)",Geosiyasi risklər (CAEM; çəki 2),reg
+phrase,Regional trading partners growth (çəki 2),Regional ticarət tərəfdaşlarının artımı (CAEM; çəki 2),reg
+phrase,Regional trading partners growth (əlaqəli:,Regional ticarət tərəfdaşlarının artımı (CAEM; əlaqəli:,reg
+exact,ACG associated gas,AÇG səmt qazı,D1
+exact,ACTUAL,faktiki,D1
+exact,ACTUAL;Adverse;Baseline;Reform,faktiki; mənfi; əsas; islahat,D1
+exact,ACTUAL;Baseline,faktiki; əsas,D1
+exact,Adverse;Baseline;Reform,mənfi; əsas; islahat,D1
+exact,Baseline,əsas,D1
+exact,CPI Inflation,İQİ inflyasiyası,D1
+exact,Central Government,Mərkəzi hökumət,D1
+exact,"Change in private sector credit, percentage points of GDP","Özəl sektora kreditin dəyişməsi, ÜDM-in f.b.",D1
+exact,Changes in inventories,Ehtiyatların dəyişməsi,D1
+exact,"Consumption growth, percent","İstehlak artımı, %",D1
+exact,Credit to the Private Sector,Özəl sektora kredit,D1
+exact,"Current Account, percent of GDP","Cari hesab, % ÜDM",D1
+exact,Current account balance,Cari hesab balansı,D1
+exact,Domestic,Daxili,D1
+exact,"Domestic Demand Growth, percent","Daxili tələbin artımı, %",D1
+exact,Domestic consumption,Daxili istehlak,D1
+exact,Effective lending rate (GEL),Effektiv kredit faizi (GEL),D1
+exact,Exchange rate,Məzənnə,D1
+exact,"Expenditure, percent of GDP","Xərclər, % ÜDM",D1
+exact,Export price,İxrac qiyməti,D1
+exact,Exports,İxrac,D1
+exact,"Exports of G&S growth, percent","Mal və xidmət ixracının artımı, %",D1
+exact,"External debt, percent of GDP","Xarici borc, % ÜDM",D1
+exact,GDP real growth rate,ÜDM-in real artım tempi,D1
+exact,GDP: real growth rate,ÜDM: real artım tempi,D1
+exact,Gas production,Qaz hasilatı,D1
+exact,"Government Domestic debt, percent of GDP","Dövlətin daxili borcu, % ÜDM",D1
+exact,"Government External debt, percent of GDP","Dövlətin xarici borcu, % ÜDM",D1
+exact,Import,İdxal,D1
+exact,"Imports of G&S growth, percent","Mal və xidmət idxalının artımı, %",D1
+exact,"Inflation (CPI, average annual)","İnflyasiya (İQİ, illik orta)",D1
+exact,Information and Communication,İnformasiya və rabitə,D1
+exact,Losses,İtkilər,D1
+exact,MM-ƏŞlər export price,MM-ƏŞlər ixrac qiyməti,D1
+exact,"Net  FDI, percent of GDP","Xalis BXİ, % ÜDM",D1
+exact,"Net IIP, percent of GDP","Xalis BİM, % ÜDM",D1
+exact,"Net Portfolio & other investment, percent of GDP","Xalis portfel və digər investisiyalar, % ÜDM",D1
+exact,Non-oil and gas industry,Qeyri-neft-qaz sənayesi,D1
+exact,Non-oil and gas sector,Qeyri-neft-qaz sektoru,D1
+exact,Non-oil and gas sector: deflator,Qeyri-neft-qaz sektoru: deflyator,D1
+exact,Non-oil and gas sector: real growth rate,Qeyri-neft-qaz sektoru: real artım tempi,D1
+exact,Non-oil investment,Qeyri-neft investisiyası,D1
+exact,Non-oil sector: real growth rate,Qeyri-neft sektoru: real artım tempi,D1
+exact,Oil and gas industry,Neft-qaz sənayesi,D1
+exact,Oil and gas sector,Neft-qaz sektoru,D1
+exact,Oil and gas sector: deflator,Neft-qaz sektoru: deflyator,D1
+exact,Oil and gas sector: real growth rate,Neft-qaz sektoru: real artım tempi,D1
+exact,Oil investment,Neft investisiyası,D1
+exact,Oil price,Neft qiyməti,D1
+exact,Oil price Brent,Brent neft qiyməti,D1
+exact,Oil production,Neft hasilatı,D1
+exact,Oil production (Marketable),Neft hasilatı (əmtəəlik),D1
+exact,Oil sector,Neft sektoru,D1
+exact,Oil sector: real growth rate,Neft sektoru: real artım tempi,D1
+exact,Overall balance,Ümumi balans,D1
+exact,"Overall fiscal balance (net lending), percent of GDP","Ümumi fiskal balans (xalis kreditləşmə), % ÜDM",D1
+exact,"Primary income, net","İlkin gəlirlər, xalis",D1
+exact,Private Consumption,Özəl istehlak,D1
+exact,Private sector credit gap,Özəl sektor kredit boşluğu,D1
+exact,Public Consumption,Dövlət istehlakı,D1
+exact,"Real effective exchange rate (Index, 2010=100)","Real effektiv məzənnə (indeks, 2010=100)",D1
+exact,"Real growth, percent","Real artım, %",D1
+exact,"Reserves, percent of GDP","Ehtiyatlar, % ÜDM",D1
+exact,"Reserves, percent of broad money","Ehtiyatlar, geniş pul kütləsinin %-i",D1
+exact,"Revenue, percent of GDP","Gəlirlər, % ÜDM",D1
+exact,SOCAR domestic price,SOCAR daxili qiyməti,D1
+exact,SOCAR export price,SOCAR ixrac qiyməti,D1
+exact,SOCAR other export,SOCAR digər ixrac,D1
+exact,SOFAZ's assets,ARDNF-in aktivləri,D1
+exact,"Savings-Investment Balance, percent of GDP","Yığım–investisiya balansı, % ÜDM",D1
+exact,"Secondary income, net","Təkrar gəlirlər, xalis",D1
+exact,Shahdeniz Exports,Şahdəniz ixracı,D1
+exact,Share in GDP,ÜDM-də pay,D1
+exact,Social and other services,Sosial və digər xidmətlər,D1
+exact,State budget expenses,Dövlət büdcəsinin xərcləri,D1
+exact,State budget revenues,Dövlət büdcəsinin gəlirləri,D1
+exact,"Total Government debt, percent of GDP","Dövlət borcu (cəmi), % ÜDM",D1
+exact,"Total Investment growth, percent","Ümumi investisiyanın artımı, %",D1
+exact,"Total output Gap, percent of potential  GDP","Buraxılış boşluğu, potensial ÜDM-in %-i",D1
+exact,Trade balance,Ticarət balansı,D1
+exact,Transport cost,Nəqliyyat xərci,D1
+exact,WAGE,Əmək haqqı,D1
+exact,add value,əlavə dəyər,D1
+exact,add value: deflator,əlavə dəyər: deflyator,D1
+exact,add value: real growth rate,əlavə dəyər: real artım tempi,D1
+exact,export convertion ratio,ixrac çevirmə əmsalı,D1
+exact,in constant prices (millions of 2000 manat),sabit qiymətlərlə (2000-ci il qiymətləri ilə mln manat),D1
+exact,oil convertion ratio,neft çevirmə əmsalı,D1
+exact,ministry:8vereq,Nazirlik: 8 vərəq,D1
+exact,ministry:bottomup,Nazirlik: Bottom-up,D1
+exact,ministry:caem,Nazirlik: CAEM,D1
+exact,ministry:eviews,Nazirlik: EViews,D1
+exact,oxlon:ours,OxLon: proqnoz,D1
+exact,oxlon:template_sample,OxLon: şablon nümunəsi,D1
+exact,oxlon:assumptions,OxLon: fərziyyələr,D1
+exact,oxlon:ministry_spec,OxLon: Nazirlik spesifikasiyası,D1
+exact,oxlon:imf_reference,OxLon: BVF istinadı,D1
+phrase, (Full Disk Access),,docs
+phrase,(Baseline dəyişmir,(Əsas ssenari dəyişmir,docs
+phrase,/ Baseline ÜDM,/ Əsas ssenarinin ÜDM-i,docs
+phrase,"(forecast_long, source=ours)","(uzunmüddətli proqnoz faylı, OxLon-un öz qiymətləndirməsi)",C1
+phrase,(source=ours),(OxLon-un öz qiymətləndirməsi),C1

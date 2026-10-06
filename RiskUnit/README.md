@@ -1,6 +1,6 @@
 # MİİS §15.5.3 — İqtisadi risklərin idarəedilməsi və qərar dəstək sistemi
 
-Risk bölməsi makro model (§15.5.1, `../../18august/model`) və mikro bölmə (§15.5.2, `../MicroUnit`) üzərində
+Risk bölməsi makro model (§15.5.1, `../Macro_OxLon/delivery` — təhvil verilmiş müqavilə: `2_neticeler/`, `4_melumat/`) və mikro bölmə (§15.5.2, `../MicroUnit`) üzərində
 qurulur: onların mərkəzi yolu ətrafında risk paylanmasını hesablayır, riskləri ehtimal × təsir üzrə
 prioritetləşdirir, tədbirləri izləyir və nəticəni rəhbərliyə və analitiklərə rol əsasında təqdim edir.
 Metodologiya: [`docs/Risk_Metodologiyasi.md`](docs/Risk_Metodologiyasi.md).
@@ -9,14 +9,16 @@ Metodologiya: [`docs/Risk_Metodologiyasi.md`](docs/Risk_Metodologiyasi.md).
 
 ```bash
 pip install -r requirements.txt
-python3 run_all.py --fetch          # canlı axınları yüklə + tam boru xətti
-python3 run_all.py                  # saxlanılmış axınlarla (oflayn)
+python3 run_all.py --fetch          # BÜTÜN canlı axınlar (FRED/GPR/EPU/USGS/ERA5, AMB, DSK, MN, ARDNF, BFB, bazar) + tam boru xətti
+python3 run_all.py                  # saxlanılmış axınlarla; RISK_NO_NETWORK=1 — tam oflayn
+python3 run_all.py --daily          # sürətli gündəlik dövr (D1–D7: axınlar, yuxarı axın, konsensus, monitor)
+python3 update.py --daily | --full  # cədvəldən çağırılan NFR2 dövrləri (eyni mərhələlər)
 python3 update.py                   # NFR2: dəyişiklik varsa skorları yenilə (cədvəldən çağırılır)
 python3 update.py --watch 30        # 30 dəqiqədən bir yerli girişləri izlə
 python3 -m unittest discover -s tests -v
 ```
 
-Yuxarı axın qovluqları başqa yerdədirsə: `MIIS_MACRO_DIR=/yol/model MIIS_MICRO_DIR=/yol/MicroUnit python3 run_all.py`.
+Yuxarı axın qovluqları başqa yerdədirsə: `MIIS_MACRO_DIR=/yol/Macro_OxLon/delivery MIIS_MICRO_DIR=/yol/MicroUnit MIIS_MINISTRY_DIR=/yol/Macro_MinistryUnit python3 run_all.py`.
 Gündəlik cədvəl: `scheduler/` (macOS launchd, Linux cron, Windows Task Scheduler).
 
 ## Qovluqlar
@@ -52,3 +54,12 @@ Hər dəyişiklik növbəti `update.py` dövründə (≤ 30 dəqiqə izləmə re
 | `site/*.html`, `reports/*.pdf`, `reports/*.xlsx`, `output/risk_api.json` | FR4, NFR3 |
 | `output/NFR1_backtest_register.csv`, `NFR1_calibration.csv`, `forecast_archive/` | NFR1 |
 | `output/NFR2_update_log.csv`, `data/vintages/manifest.csv` | NFR2 |
+
+## v2 (2026-10-06)
+
+- Boru xətti DAG-ı və hər mərhələnin vaxtı/statusu: `output/_run_summary_v2.json` (gündəlik dövr: `_run_summary_daily.json`).
+- İki paylanma: `FR2_distribution.csv` — **baza mərkəzli** (median = rəsmi baza; skorlar və istilik xəritəsi), 
+  `FR2_distribution_live.csv` — **canlı şərtləndirilmiş** (cari Brent; D6 ilə uyğun); yelpik qatları `FR2_band_layering.csv`.
+- Reyestr: R17 (idxal qiymətləri), R18 (dünya ərzaq qiymətləri) — CAEM kateqoriyaları; R19 (model riski, D3); `caem_kateqoriya` sütunu.
+- Yeni çıxışlar: D1–D7 (məlumat və monitor), C1–C6 (CAEM), V1–V6 (VaR), K1–K5 (CaR, DSA); kataloq `output/_catalog_v2.csv`.
+- Düzəlişlər və sübut: `docs/Risk_Metodologiyasi.md` §12.

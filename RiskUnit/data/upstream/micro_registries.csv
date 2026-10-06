@@ -1,0 +1,678 @@
+module,eq_id,lhs,verdict,n_obs,data_mode
+FR1,FR1.B1_oil_price,"{'code': 'B1_oil_price', 'label_az': 'ln neftin ixrac qiyməti', 'label_en': 'ln oil export price'}",,,OBSERVED
+FR1,FR1.B2_mining,"{'code': 'B2_mining', 'label_az': 'ln real mədənçıxarma ƏD', 'label_en': 'ln real mining VA'}",,,OBSERVED
+FR1,FR1.B3_oilgdp,"{'code': 'B3_oilgdp', 'label_az': 'ln real neft-qaz ÜDM', 'label_en': 'ln real oil-gas GDP'}",,,OBSERVED
+FR1,FR1.C1_agr,"{'code': 'C1_agr', 'label_az': 'ln real k/t ƏD', 'label_en': 'ln real agriculture VA'}",,,OBSERVED
+FR1,FR1.C3_man,"{'code': 'C3_man', 'label_az': 'ln real emal ƏD', 'label_en': 'ln real manufacturing VA'}",,,OBSERVED
+FR1,FR1.C4_elc,"{'code': 'C4_elc', 'label_az': 'ln real elektrik ƏD', 'label_en': 'ln real electricity VA'}",,,OBSERVED
+FR1,FR1.C5_wat,"{'code': 'C5_wat', 'label_az': 'ln adambaşına real su ƏD', 'label_en': 'ln real water VA per capita'}",,,OBSERVED
+FR1,FR1.C6_con,"{'code': 'C6_con', 'label_az': 'ln real tikinti ƏD', 'label_en': 'ln real construction VA'}",,,OBSERVED
+FR1,FR1.C7_trd,"{'code': 'C7_trd', 'label_az': 'ln real ticarət ƏD', 'label_en': 'ln real trade VA'}",,,OBSERVED
+FR1,FR1.C8_tou,"{'code': 'C8_tou', 'label_az': 'ln adambaşına real turizm ƏD', 'label_en': 'ln real tourism VA per capita'}",,,OBSERVED
+FR1,FR1.C9_tra,"{'code': 'C9_tra', 'label_az': 'ln real nəqliyyat ƏD', 'label_en': 'ln real transport VA'}",,,OBSERVED
+FR1,FR1.C10_ict,"{'code': 'C10_ict', 'label_az': 'ln adambaşına real İKT ƏD', 'label_en': 'ln real ICT VA per capita'}",,,OBSERVED
+FR1,FR1.C11_oth,"{'code': 'C11_oth', 'label_az': 'ln adambaşına real digər xidmətlər ƏD', 'label_en': 'ln real other-services VA per capita'}",,,OBSERVED
+FR1,FR1.C12_nettax,"{'code': 'C12_nettax', 'label_az': 'ln real xalis vergilər', 'label_en': 'ln real net taxes on products'}",,,OBSERVED
+FR1,FR1.D1_cons,"{'code': 'D1_cons', 'label_az': 'ln adambaşına real istehlak', 'label_en': 'ln real consumption per capita'}",,,OBSERVED
+FR1,FR1.G5_defl_retail,"{'code': 'G5_defl_retail', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Retail trade'}",,,OBSERVED
+FR1,FR1.G5_defl_cater,"{'code': 'G5_defl_cater', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Catering (food service)'}",,,OBSERVED
+FR1,FR1.G5_defl_serv_hh,"{'code': 'G5_defl_serv_hh', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Paid services to households'}",,,OBSERVED
+FR1,FR1.D2_inv,"{'code': 'D2_inv', 'label_az': 'ln real qeyri-neft investisiyaları', 'label_en': 'ln real non-oil investment'}",,,OBSERVED
+FR1,FR1.D3_xnon,"{'code': 'D3_xnon', 'label_az': 'ln real qeyri-neft ixracı', 'label_en': 'ln real non-oil goods exports'}",,,OBSERVED
+FR1,FR1.D4_mnon,"{'code': 'D4_mnon', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'ln non-oil imports at constant USD prices (= ln real imports + ln relprice)'}",,,OBSERVED
+FR1,FR1.E1_emp,"{'code': 'E1_emp', 'label_az': 'ln məşğulluq / işçi qüvvəsi', 'label_en': 'ln employment rate (employment / labour force)'}",,,OBSERVED
+FR1,FR1.E2_wage,"{'code': 'E2_wage', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'ln average nominal wage'}",,,OBSERVED
+FR1,FR1.E3_hhdisp,"{'code': 'E3_hhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'ln real disposable income - ln real pension bill'}",,,OBSERVED
+FR1,FR1.E3a_wb,"{'code': 'E3a_wb', 'label_az': 'əmək ödənişlərinin artımı, %', 'label_en': 'growth of compensation of employees, % (log difference x 100)'}",,,OBSERVED
+FR1,FR1.E3b_tr,"{'code': 'E3b_tr', 'label_az': 'transfertlərin artımı, %', 'label_en': 'growth of transfers received, % (log difference x 100)'}",,,OBSERVED
+FR1,FR1.E3c_oth,"{'code': 'E3c_oth', 'label_az': 'digər gəlirlərin artımı, %', 'label_en': 'growth of entrepreneurial + property income, % (log difference x 100)'}",,,OBSERVED
+FR1,FR1.E3d_dsmf,"{'code': 'E3d_dsmf', 'label_az': 'DSMF xərclərinin artımı, %', 'label_en': 'growth of DSMF expenditure (bridge), % (log difference x 100)'}",,,OBSERVED
+FR1,FR1.E4_lf,"{'code': 'E4_lf', 'label_az': 'ln işçi qüvvəsi / əhali', 'label_en': 'ln participation rate (labour force / population)'}",,,OBSERVED
+FR1,FR1.F1_revoil,"{'code': 'F1_revoil', 'label_az': 'ln neft-qaz gəlirləri', 'label_en': 'ln oil-gas budget revenue'}",,,OBSERVED
+FR1,FR1.F2_revnon,"{'code': 'F2_revnon', 'label_az': 'ln real qeyri-neft gəlirləri − ln qeyri-neft ÜDM', 'label_en': 'ln real non-oil revenue - ln real non-oil GDP'}",,,OBSERVED
+FR1,FR1.F3_expcur,"{'code': 'F3_expcur', 'label_az': 'ln real cari xərclər', 'label_en': 'ln real current expenditure'}",,,OBSERVED
+FR1,FR1.F4_pubinv,"{'code': 'F4_pubinv', 'label_az': 'ln real dövlət investisiyaları − ln real neft gəlirləri', 'label_en': 'ln real state investment - ln real oil revenue'}",,,OBSERVED
+FR1,FR1.G1_credit,"{'code': 'G1_credit', 'label_az': 'ln real kreditlər', 'label_en': 'ln real total credit'}",,,OBSERVED
+FR1,FR1.G2_credhh,"{'code': 'G2_credhh', 'label_az': 'ln real ev təsərrüfatı krediti', 'label_en': 'ln real household credit'}",,,OBSERVED
+FR1,FR1.G3_lendrate,"{'code': 'G3_lendrate', 'label_az': 'kredit faizi, %', 'label_en': 'lending rate (%)'}",,,OBSERVED
+FR1,FR1.G4_infl,"{'code': 'G4_infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (%)'}",,,OBSERVED
+FR1,FR1.G5_defl_agr,"{'code': 'G5_defl_agr', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Agriculture, forestry & fishing'}",,,OBSERVED
+FR1,FR1.G5_defl_min,"{'code': 'G5_defl_min', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Mining & quarrying'}",,,OBSERVED
+FR1,FR1.G5_defl_man,"{'code': 'G5_defl_man', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Manufacturing'}",,,OBSERVED
+FR1,FR1.G5_defl_elc,"{'code': 'G5_defl_elc', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Electricity, gas & steam'}",,,OBSERVED
+FR1,FR1.G5_defl_wat,"{'code': 'G5_defl_wat', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Water supply & waste'}",,,OBSERVED
+FR1,FR1.G5_defl_con,"{'code': 'G5_defl_con', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Construction'}",,,OBSERVED
+FR1,FR1.G5_defl_trd,"{'code': 'G5_defl_trd', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Trade & vehicle repair'}",,,OBSERVED
+FR1,FR1.G5_defl_tou,"{'code': 'G5_defl_tou', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Tourism & catering'}",,,OBSERVED
+FR1,FR1.G5_defl_tra,"{'code': 'G5_defl_tra', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Transport & storage'}",,,OBSERVED
+FR1,FR1.G5_defl_ict,"{'code': 'G5_defl_ict', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Information & communication'}",,,OBSERVED
+FR1,FR1.G5_defl_oth,"{'code': 'G5_defl_oth', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Social & other services - CPI inflation'}",,,OBSERVED
+FR1,FR1.G5_defl_nettax,"{'code': 'G5_defl_nettax', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'deflator inflation Net taxes on products'}",,,OBSERVED
+FR1,FR1.G6_defl_gdp,"{'code': 'G6_defl_gdp', 'label_az': 'ÜDM deflyatoru inflyasiyası, %', 'label_en': 'GDP deflator inflation (%)'}",,,OBSERVED
+FR1,FR1.G7_dep,"{'code': 'G7_dep', 'label_az': 'ln real depozitlər', 'label_en': 'ln real deposits'}",,,OBSERVED
+FR1,FR1.POT,"{'code': 'POT', 'label_az': 'ln real qeyri-neft ÜDM', 'label_en': 'Descriptive trend for the output gap'}",,,OBSERVED
+FR1,FR1.B1_oil_price.gasprice_brent,"{'code': 'gas_exp_price', 'label_az': 'ln neftin ixrac qiyməti', 'label_en': 'Oil export price — gas export price on Brent (not used)'}",,,OBSERVED
+FR1,FR1.C1_agr.break2015_precut,"{'code': 'rva_agr', 'label_az': 'ln real k/t ƏD', 'label_en': 'Agriculture real value added — trend break 2015 test (pre-cut)'}",,,OBSERVED
+FR1,FR1.C1_agr.with_K,"{'code': 'rva_agr', 'label_az': 'ln real k/t ƏD', 'label_en': 'Agriculture real value added — with capital (rejected)'}",,,OBSERVED
+FR1,FR1.C3_man.cand1_precut,"{'code': 'rva_man', 'label_az': 'ln real emal ƏD', 'label_en': 'Manufacturing real value added — candidate 1: K + construction + exports (pre-cut)'}",,,OBSERVED
+FR1,FR1.C3_man.cand2_precut,"{'code': 'rva_man', 'label_az': 'ln real emal ƏD', 'label_en': 'Manufacturing real value added — candidate 2: K + construction + agriculture (pre-cut)'}",,,OBSERVED
+FR1,FR1.C3_man.cand3_precut,"{'code': 'rva_man', 'label_az': 'ln real emal ƏD', 'label_en': 'Manufacturing real value added — candidate 3: K + trend (pre-cut)'}",,,OBSERVED
+FR1,FR1.C3_man.cand4_precut,"{'code': 'rva_man', 'label_az': 'ln real emal ƏD', 'label_en': 'Manufacturing real value added — candidate 4: K + non-oil GDP + trend (pre-cut)'}",,,OBSERVED
+FR1,FR1.C9_tra.transit_precut,"{'code': 'rva_tra', 'label_az': 'ln real nəqliyyat ƏD', 'label_en': 'Transport real value added — hydrocarbon transit test (pre-cut)'}",,,OBSERVED
+FR1,FR1.C9_tra.with_gdpnon,"{'code': 'rva_tra', 'label_az': 'ln real nəqliyyat ƏD', 'label_en': 'Transport real value added — with non-oil GDP (rejected)'}",,,OBSERVED
+FR1,FR1.D1_cons.realrate,"{'code': 'D1_cons.realrate', 'label_az': 'ln adambaşına real istehlak', 'label_en': 'Household consumption per capita — with ex-post real rate (rejected)'}",,,OBSERVED
+FR1,FR1.D2_inv.ucc_realrate,"{'code': 'rinv_non', 'label_az': 'ln real qeyri-neft investisiyaları', 'label_en': 'Real non-oil investment — user cost: realrate'}",,,OBSERVED
+FR1,FR1.D2_inv.ucc_ucc_nom,"{'code': 'rinv_non', 'label_az': 'ln real qeyri-neft investisiyaları', 'label_en': 'Real non-oil investment — user cost: ucc_nom'}",,,OBSERVED
+FR1,FR1.D2_inv.ucc_ucc_gdpdef,"{'code': 'rinv_non', 'label_az': 'ln real qeyri-neft investisiyaları', 'label_en': 'Real non-oil investment — user cost: ucc_gdpdef'}",,,OBSERVED
+FR1,FR1.D2_inv.ucc_ucc_smooth,"{'code': 'rinv_non', 'label_az': 'ln real qeyri-neft investisiyaları', 'label_en': 'Real non-oil investment — user cost: ucc_smooth'}",,,OBSERVED
+FR1,FR1.D2_inv.with_credit,"{'code': 'rinv_non', 'label_az': 'ln real qeyri-neft investisiyaları', 'label_en': 'Real non-oil investment — free credit term (rejected)'}",,,OBSERVED
+FR1,FR1.D4_mnon.noprice,"{'code': 'rm_non', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'Real non-oil goods imports — without relative price (rejected)'}",,,OBSERVED
+FR1,FR1.D4_mnon.with_inv,"{'code': 'rm_non', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'Real non-oil goods imports — with investment (rejected)'}",,,OBSERVED
+FR1,FR1.E1_emp.labour_demand,"{'code': 'emp', 'label_az': 'ln məşğulluq / işçi qüvvəsi', 'label_en': 'Employment rate (Okun-type) — labour demand in levels (rejected)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.cmp2_to2020,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — comparison spec 2 (to 2020)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.cmp3_to2020,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — comparison spec 3 (to 2020)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.hom1_to2020,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — homogeneity test spec 1 (to 2020)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.hom2_to2020,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — homogeneity test spec 2 (to 2020)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.cmp1_to2025,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — comparison spec 1 (to 2025)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.cmp2_to2025,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — comparison spec 2 (to 2025)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.cmp3_to2025,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — comparison spec 3 (to 2025)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.hom1_to2025,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — homogeneity test spec 1 (to 2025)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.hom2_to2025,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — homogeneity test spec 2 (to 2025)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.free,"{'code': 'rhhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — unrestricted'}",,,OBSERVED
+FR1,FR1.E4_lf.free,"{'code': 'lf', 'label_az': 'ln işçi qüvvəsi / əhali', 'label_en': 'Labour-force participation — free population elasticity (rejected)'}",,,OBSERVED
+FR1,FR1.F2_revnon.free,"{'code': 'rrev_nonoil', 'label_az': 'ln real qeyri-neft gəlirləri − ln qeyri-neft ÜDM', 'label_en': 'Real non-oil revenue — unrestricted'}",,,OBSERVED
+FR1,FR1.F4_pubinv.free,"{'code': 'rinv_state', 'label_az': 'ln real dövlət investisiyaları − ln real neft gəlirləri', 'label_en': 'Public investment reaction function — unrestricted'}",,,OBSERVED
+FR1,FR1.G1_credit.with_gdpnon,"{'code': 'rcred_tot', 'label_az': 'ln real kreditlər', 'label_en': 'Real total credit — with non-oil GDP (rejected)'}",,,OBSERVED
+FR1,FR1.G3_lendrate.polrate,"{'code': 'lendrate', 'label_az': 'kredit faizi, %', 'label_en': 'Average lending rate — policy-rate pass-through (rejected)'}",,,OBSERVED
+FR1,FR1.G4_infl.gap1,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — gap term: production function, freely estimated'}",,,OBSERVED
+FR1,FR1.G4_infl.gap2,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — gap term: production function, panel factor shares imposed'}",,,OBSERVED
+FR1,FR1.G4_infl.gap3,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — gap term: deterministic linear trend'}",,,OBSERVED
+FR1,FR1.G4_infl.gap4,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — gap term: segmented deterministic trend (2015, 2020)'}",,,OBSERVED
+FR1,FR1.G4_infl.credit,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — credit growth as demand proxy'}",,,OBSERVED
+FR1,FR1.G4_infl.gapaux_pf_free,"{'code': 'rgdpnon', 'label_az': 'ln real qeyri-neft ÜDM', 'label_en': 'Descriptive trend for the output gap — gap construction: pf_free'}",,,OBSERVED
+FR1,FR1.G4_infl.gapaux_pf_imposed,"{'code': 'G4_infl.gapaux_pf_imposed', 'label_az': 'ln real qeyri-neft ÜDM', 'label_en': 'Descriptive trend for the output gap — gap construction: pf_imposed'}",,,OBSERVED
+FR1,FR1.G4_infl.gapaux_trend_segmented,"{'code': 'rgdpnon', 'label_az': 'ln real qeyri-neft ÜDM', 'label_en': 'Descriptive trend for the output gap — gap construction: trend_segmented'}",,,OBSERVED
+FR1,FR1.G5_defl_oth.free,"{'code': 'p_oth', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'Deflator inflation: Social & other services — unrestricted'}",,,OBSERVED
+FR1,FR1.E3a_wb.real,"{'code': 'E3a_wb.real', 'label_az': 'əmək ödənişlərinin artımı, %', 'label_en': 'Household income: compensation of employees — deflated by consumer prices (rejected)'}",,,OBSERVED
+FR1,FR1.E3b_tr.real,"{'code': 'E3b_tr.real', 'label_az': 'transfertlərin artımı, %', 'label_en': 'Household income: transfers received — deflated by consumer prices (rejected)'}",,,OBSERVED
+FR1,FR1.E3c_oth.real,"{'code': 'E3c_oth.real', 'label_az': 'digər gəlirlərin artımı, %', 'label_en': 'Household income: entrepreneurial and property income — deflated by consumer prices (rejected)'}",,,OBSERVED
+FR1,FR1.E3d_dsmf.real,"{'code': 'E3d_dsmf.real', 'label_az': 'DSMF xərclərinin artımı, %', 'label_en': 'DSMF expenditure (bridge) — deflated by consumer prices (rejected)'}",,,OBSERVED
+FR1,FR1.G5_defl_min.oil_azn,"{'code': 'p_min', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'Deflator inflation: Mining & quarrying — pre-v2.2: CPI + manat oil price'}",,,OBSERVED
+FR1,FR1.G5_defl_min.xpi_cpi,"{'code': 'p_min', 'label_az': 'deflyator inflyasiyası, %', 'label_en': 'Deflator inflation: Mining & quarrying — CPI + export price index + exchange rate (rejected)'}",,,OBSERVED
+FR1,FR1.D4_mnon.absorb_reer,"{'code': 'rm_non', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'Real non-oil goods imports — absorption + REER (rejected)'}",,,OBSERVED
+FR1,FR1.D4_mnon.v22_gdp_prices,"{'code': 'rm_non', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'Real non-oil goods imports — v2.2 form: real imports at GDP prices (same fit)'}",,,OBSERVED
+FR1,FR1.D4_mnon.v23_norelprice,"{'code': 'rm_non', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'Real non-oil goods imports — relative price dropped (bound at 0; rejected)'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.v22,"{'code': 'E3_hhdisp.v22', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — v2.2 form: non-oil GDP + pension bill (replaced)'}",,,OBSERVED
+FR1,FR1.F3_expcur.v23_rev_split,"{'code': 'rexp_cur', 'label_az': 'ln real cari xərclər', 'label_en': 'Real current expenditure — non-oil and oil revenue separately (rejected)'}",,,OBSERVED
+FR1,FR1.F3_expcur.v23_rev_non,"{'code': 'rexp_cur', 'label_az': 'ln real cari xərclər', 'label_en': 'Real current expenditure — non-oil revenue only (rejected)'}",,,OBSERVED
+FR1,FR1.F3_expcur.v23_rev_cap,"{'code': 'F3_expcur.v23_rev_cap', 'label_az': 'ln real cari xərclər', 'label_en': 'Real current expenditure — revenue elasticity at its 95% CI lower bound (rejected)'}",,,OBSERVED
+FR1,FR1.G4_infl.v22,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — pre-v2.3.3 form: exchange-rate change + wages (replaced)'}",,,OBSERVED
+FR1,FR1.G4_infl.v233_pm_azn_lag,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — v2.3.3 form: manat import prices (macro module), current + previous year (replaced)'}",,,OBSERVED
+FR1,FR1.G4_infl.v234_pm_dsk_lag,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — manat import prices, DSK index spliced for 2021–25 (rejected)'}",,,OBSERVED
+FR1,FR1.G4_infl.v23_pm_azn,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — manat import prices, current year only (rejected)'}",,,OBSERVED
+FR1,FR1.G4_infl.v23_fx_post15,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — pass-through in the post-2015 regime, current + previous year (rejected)'}",,,OBSERVED
+FR1,FR1.F4_pubinv.v23_cap,"{'code': 'F4_pubinv.v23_cap', 'label_az': 'ln real dövlət investisiyaları − ln real neft gəlirləri', 'label_en': 'Public investment reaction function — oil-revenue elasticity at its 95% CI lower bound (rejected)'}",,,OBSERVED
+FR1,FR1.C3_man.2SLS,"{'code': 'rva_man', 'label_az': 'ln real emal ƏD', 'label_en': 'Manufacturing real value added — 2SLS'}",,,OBSERVED
+FR1,FR1.C4_elc.2SLS,"{'code': 'rva_elc', 'label_az': 'ln real elektrik ƏD', 'label_en': 'Electricity real value added — 2SLS'}",,,OBSERVED
+FR1,FR1.C5_wat.2SLS,"{'code': 'C5_wat.2SLS', 'label_az': 'ln adambaşına real su ƏD', 'label_en': 'Water supply real VA per capita — 2SLS'}",,,OBSERVED
+FR1,FR1.C6_con.2SLS,"{'code': 'rva_con', 'label_az': 'ln real tikinti ƏD', 'label_en': 'Construction real value added — 2SLS'}",,,OBSERVED
+FR1,FR1.C7_trd.2SLS,"{'code': 'rva_trd', 'label_az': 'ln real ticarət ƏD', 'label_en': 'Trade real value added — 2SLS'}",,,OBSERVED
+FR1,FR1.C8_tou.2SLS,"{'code': 'C8_tou.2SLS', 'label_az': 'ln adambaşına real turizm ƏD', 'label_en': 'Tourism real VA per capita — 2SLS'}",,,OBSERVED
+FR1,FR1.C11_oth.2SLS,"{'code': 'C11_oth.2SLS', 'label_az': 'ln adambaşına real digər xidmətlər ƏD', 'label_en': 'Other services real VA per capita — 2SLS'}",,,OBSERVED
+FR1,FR1.C12_nettax.2SLS,"{'code': 'rva_nettax', 'label_az': 'ln real xalis vergilər', 'label_en': 'Real net taxes on products — 2SLS'}",,,OBSERVED
+FR1,FR1.D1_cons.2SLS,"{'code': 'D1_cons.2SLS', 'label_az': 'ln adambaşına real istehlak', 'label_en': 'Household consumption per capita — 2SLS'}",,,OBSERVED
+FR1,FR1.D2_inv.2SLS,"{'code': 'rinv_non', 'label_az': 'ln real qeyri-neft investisiyaları', 'label_en': 'Real non-oil investment — 2SLS'}",,,OBSERVED
+FR1,FR1.D3_xnon.2SLS,"{'code': 'rx_non', 'label_az': 'ln real qeyri-neft ixracı', 'label_en': 'Real non-oil goods exports — 2SLS'}",,,OBSERVED
+FR1,FR1.D4_mnon.2SLS,"{'code': 'D4_mnon.2SLS', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'Real non-oil goods imports — 2SLS'}",,,OBSERVED
+FR1,FR1.E1_emp.2SLS,"{'code': 'E1_emp.2SLS', 'label_az': 'ln məşğulluq / işçi qüvvəsi', 'label_en': 'Employment rate (Okun-type) — 2SLS'}",,,OBSERVED
+FR1,FR1.E2_wage.2SLS,"{'code': 'wage', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'Average nominal wage — 2SLS'}",,,OBSERVED
+FR1,FR1.E3_hhdisp.2SLS,"{'code': 'E3_hhdisp.2SLS', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — 2SLS'}",,,OBSERVED
+FR1,FR1.F2_revnon.2SLS,"{'code': 'F2_revnon.2SLS', 'label_az': 'ln real qeyri-neft gəlirləri − ln qeyri-neft ÜDM', 'label_en': 'Real non-oil revenue — 2SLS'}",,,OBSERVED
+FR1,FR1.F3_expcur.2SLS,"{'code': 'rexp_cur', 'label_az': 'ln real cari xərclər', 'label_en': 'Real current expenditure — 2SLS'}",,,OBSERVED
+FR1,FR1.G1_credit.2SLS,"{'code': 'rcred_tot', 'label_az': 'ln real kreditlər', 'label_en': 'Real total credit — 2SLS'}",,,OBSERVED
+FR1,FR1.G2_credhh.2SLS,"{'code': 'rcred_hh', 'label_az': 'ln real ev təsərrüfatı krediti', 'label_en': 'Real household credit — 2SLS'}",,,OBSERVED
+FR1,FR1.G7_dep.2SLS,"{'code': 'rdep_tot', 'label_az': 'ln real depozitlər', 'label_en': 'Real deposits — 2SLS'}",,,OBSERVED
+FR1,FR1.IV_relevance.rgdpnon,"{'code': 'rgdpnon', 'label_az': 'ln Real qeyri-neft ÜDM', 'label_en': 'Instrument relevance: ln rgdpnon'}",,,OBSERVED
+FR1,FR1.IV_relevance.rcons,"{'code': 'rcons', 'label_az': 'ln Real istehlak (istehlak bazarı)', 'label_en': 'Instrument relevance: ln rcons'}",,,OBSERVED
+FR1,FR1.IV_relevance.rva_con,"{'code': 'rva_con', 'label_az': 'ln Real əlavə dəyər: Tikinti', 'label_en': 'Instrument relevance: ln rva_con'}",,,OBSERVED
+FR1,FR1.IV_relevance.rhhdisp,"{'code': 'rhhdisp', 'label_az': 'ln Ev təsərrüfatlarının real sərəncamda qalan gəliri', 'label_en': 'Instrument relevance: ln rhhdisp'}",,,OBSERVED
+FR1,FR1.IV_relevance.rinv_non,"{'code': 'rinv_non', 'label_az': 'ln Qeyri-neft investisiyaları (real)', 'label_en': 'Instrument relevance: ln rinv_non'}",,,OBSERVED
+FR1,FR1.IV_relevance.rinv_priv,"{'code': 'rinv_priv', 'label_az': 'ln Qeyri-dövlət investisiyaları (real)', 'label_en': 'Instrument relevance: ln rinv_priv'}",,,OBSERVED
+FR1,FR1.IV_relevance.rinv_state,"{'code': 'rinv_state', 'label_az': 'ln Dövlət investisiyaları (real)', 'label_en': 'Instrument relevance: ln rinv_state'}",,,OBSERVED
+FR1,FR1.C6_con.3SLS,"{'code': 'rva_con', 'label_az': 'ln real tikinti ƏD', 'label_en': 'Construction real value added — 3SLS core system'}",,,OBSERVED
+FR1,FR1.C7_trd.3SLS,"{'code': 'rva_trd', 'label_az': 'ln real ticarət ƏD', 'label_en': 'Trade real value added — 3SLS core system'}",,,OBSERVED
+FR1,FR1.C9_tra.3SLS,"{'code': 'rva_tra', 'label_az': 'ln real nəqliyyat ƏD', 'label_en': 'Transport real value added — 3SLS core system'}",,,OBSERVED
+FR1,FR1.D1_cons.3SLS,"{'code': 'D1_cons.3SLS', 'label_az': 'ln adambaşına real istehlak', 'label_en': 'Household consumption per capita — 3SLS core system'}",,,OBSERVED
+FR1,FR1.D4_mnon.3SLS,"{'code': 'rm_non', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'Real non-oil goods imports — 3SLS core system'}",,,OBSERVED
+FR1,FR1.SUR_mkt.retail,"{'code': 'retail', 'label_az': 'nominal pay', 'label_en': 'Consumer-market share: Retail trade (SUR)'}",,,OBSERVED
+FR1,FR1.SUR_mkt.serv_hh,"{'code': 'serv_hh', 'label_az': 'nominal pay', 'label_en': 'Consumer-market share: Paid services to households (SUR)'}",,,OBSERVED
+FR1,FR1.SUR_cred.trd,"{'code': 'cred_trd_n', 'label_az': 'kreditin payı', 'label_en': 'Credit share: cred_trd_n (SUR)'}",,,OBSERVED
+FR1,FR1.SUR_cred.ene,"{'code': 'cred_ene_n', 'label_az': 'kreditin payı', 'label_en': 'Credit share: cred_ene_n (SUR)'}",,,OBSERVED
+FR1,FR1.SUR_cred.agr,"{'code': 'cred_agr_n', 'label_az': 'kreditin payı', 'label_en': 'Credit share: cred_agr_n (SUR)'}",,,OBSERVED
+FR1,FR1.SUR_cred.con,"{'code': 'cred_con_n', 'label_az': 'kreditin payı', 'label_en': 'Credit share: cred_con_n (SUR)'}",,,OBSERVED
+FR1,FR1.SUR_cred.ind,"{'code': 'cred_ind_n', 'label_az': 'kreditin payı', 'label_en': 'Credit share: cred_ind_n (SUR)'}",,,OBSERVED
+FR1,FR1.SUR_cred.tra,"{'code': 'cred_tra_n', 'label_az': 'kreditin payı', 'label_en': 'Credit share: cred_tra_n (SUR)'}",,,OBSERVED
+FR1,FR1.SUR_cred.hh,"{'code': 'cred_hh_n', 'label_az': 'kreditin payı', 'label_en': 'Credit share: cred_hh_n (SUR)'}",,,OBSERVED
+FR1,FR1.P_ind.prodfn_va,"{'code': 'ln_gva', 'label_az': 'ln əlavə dəyər', 'label_en': 'Industry panel: production function (VA)'}",,,OBSERVED
+FR1,FR1.P_ind.prodfn_output,"{'code': 'ln_output', 'label_az': 'ln buraxılış', 'label_en': 'Industry panel: production function (output)'}",,,OBSERVED
+FR1,FR1.P_ind.accelerator,"{'code': 'ln_inv', 'label_az': 'ln investisiya', 'label_en': 'Industry panel: accelerator'}",,,OBSERVED
+FR1,FR1.P_ind.wage,"{'code': 'ln_wage', 'label_az': 'ln əmək haqqı', 'label_en': 'Industry panel: wage on productivity'}",,,OBSERVED
+FR1,FR1.P_reg.total_output,"{'code': 'ln_out_lvl', 'label_az': 'ln_out_lvl', 'label_en': 'Regional panel: total output'}",,,OBSERVED
+FR1,FR1.P_reg.total_output_labour,"{'code': 'ln_out_lvl', 'label_az': 'ln_out_lvl', 'label_en': 'Regional panel: total output + labour'}",,,OBSERVED
+FR1,FR1.P_reg.industry,"{'code': 'ln_ind_lvl', 'label_az': 'ln_ind_lvl', 'label_en': 'Regional panel: industry'}",,,OBSERVED
+FR1,FR1.P_reg.agriculture,"{'code': 'ln_agr_lvl', 'label_az': 'ln_agr_lvl', 'label_en': 'Regional panel: agriculture'}",,,OBSERVED
+FR1,FR1.P_reg.construction,"{'code': 'ln_con_lvl', 'label_az': 'ln_con_lvl', 'label_en': 'Regional panel: construction'}",,,OBSERVED
+FR1,FR1.P_reg.retail_turnover,"{'code': 'ln_retail', 'label_az': 'ln_retail', 'label_en': 'Regional panel: retail turnover'}",,,OBSERVED
+FR1,FR1.P_reg.trade_value_added,"{'code': 'ln_trd_lvl', 'label_az': 'ln_trd_lvl', 'label_en': 'Regional panel: trade value added'}",,,OBSERVED
+FR1,FR1.P_reg.tax_receipts,"{'code': 'ln_tax', 'label_az': 'ln_tax', 'label_en': 'Regional panel: tax receipts'}",,,OBSERVED
+FR1,FR1.P_reg.total_output.oneway,"{'code': 'ln_out_lvl', 'label_az': 'ln_out_lvl', 'label_en': 'Regional panel: total output (entity FE only)'}",,,OBSERVED
+FR1,FR1.P_reg.construction.oneway,"{'code': 'ln_con_lvl', 'label_az': 'ln_con_lvl', 'label_en': 'Regional panel: construction (entity FE only)'}",,,OBSERVED
+FR1,FR1.N_bridge,"{'code': 'N_bridge', 'label_az': 'bütün il real artımı, %', 'label_en': 'Jan–Apr to full-year bridge (Huber)'}",,,OBSERVED
+FR3,FR3.E4_w_state,"{'code': 'ln_rw_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'State sector wage'}",,,OBSERVED
+FR3,FR3.E1_w_avg,"{'code': 'ln_rw_avg', 'label_az': 'ln orta aylıq əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Average monthly wage (cross-check, not a level constraint)'}",,,OBSERVED
+FR3,FR3.E2_w_non,"{'code': 'ln_rw_non', 'label_az': 'ln qeyri-neft sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Non-oil sector wage'}",,,OBSERVED
+FR3,FR3.E3_w_priv,"{'code': 'ln_rw_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Private (non-state) sector wage'}",,,OBSERVED
+FR3,FR3.E5_w_oil,"{'code': 'ln_w_oil', 'label_az': 'ln neft sektorunda əmək haqqı', 'label_en': 'Oil sector wage (analytical only)'}",,,OBSERVED
+FR3,FR3.C_E1_prod_tot_mw,"{'code': 'ln_rw_avg', 'label_az': 'ln orta aylıq əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Candidate E1: prod_tot + mw (not chosen)'}",,,OBSERVED
+FR3,FR3.C_E2_prod_non_mw,"{'code': 'ln_rw_non', 'label_az': 'ln qeyri-neft sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Candidate E2: prod_non + mw (not chosen)'}",,,OBSERVED
+FR3,FR3.C_E3_prod_non_mw,"{'code': 'ln_rw_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Candidate E3: prod_non + mw (not chosen)'}",,,OBSERVED
+FR3,FR3.C_E3_prod_non_w_state,"{'code': 'ln_rw_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Candidate E3: prod_non + w_state (not chosen)'}",,,OBSERVED
+FR3,FR3.C_E3_prod_non_w_oil,"{'code': 'ln_rw_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Candidate E3: prod_non + w_oil (not chosen)'}",,,OBSERVED
+FR3,FR3.C_E3r_prod_non_mw,"{'code': 'ln_w_priv_over_w_state', 'label_az': 'ln özəl / dövlət əmək haqqı nisbəti', 'label_en': 'Candidate E3r: ratio: prod_non + mw (not chosen)'}",,,OBSERVED
+FR3,FR3.C_E4_mw,"{'code': 'ln_rw_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Candidate E4: mw (not chosen)'}",,,OBSERVED
+FR3,FR3.C_E4_exp_pe_mw,"{'code': 'ln_rw_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Candidate E4: exp_pe + mw (not chosen)'}",,,OBSERVED
+FR3,FR3.S_E3_unrestricted,"{'code': 'ln_w_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı', 'label_en': 'E3 unrestricted (homogeneity not imposed)'}",,,OBSERVED
+FR3,FR3.S_E4_unrestricted,"{'code': 'ln_w_state', 'label_az': 'ln dövlət sektorunda əmək haqqı', 'label_en': 'E4 unrestricted (homogeneity not imposed)'}",,,OBSERVED
+FR3,FR3.S_E4_D18,"{'code': 'ln_rw_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'E4 with the 2018 break dummy (unscorable before 2018)'}",,,OBSERVED
+FR3,FR3.T_E1_prod_tot_mw,"{'code': 'ln_w_avg', 'label_az': 'ln orta aylıq əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E1: prod_tot + mw [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E1_prod_tot,"{'code': 'ln_w_avg', 'label_az': 'ln orta aylıq əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E1: prod_tot [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E2_prod_non_mw,"{'code': 'ln_w_non', 'label_az': 'ln qeyri-neft sektorunda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E2: prod_non + mw [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E2_prod_non,"{'code': 'ln_w_non', 'label_az': 'ln qeyri-neft sektorunda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E2: prod_non [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E3_prod_non,"{'code': 'ln_w_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E3: prod_non [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E3_prod_non_mw,"{'code': 'ln_w_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E3: prod_non + mw [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E3_prod_non_w_state,"{'code': 'ln_w_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E3: prod_non + w_state [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E3_prod_non_w_oil,"{'code': 'ln_w_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E3: prod_non + w_oil [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E3r_prod_non_mw,"{'code': 'ln_w_priv_over_w_state', 'label_az': 'ln özəl / dövlət əmək haqqı nisbəti (nominal)', 'label_en': 'Break and homogeneity test regression E3r: prod_non + mw [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E4_prod_non_mw,"{'code': 'ln_w_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E4: prod_non + mw [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E4_mw,"{'code': 'ln_w_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E4: mw [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E4_exp_pe_mw,"{'code': 'ln_w_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E4: exp_pe + mw [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_E5_w_non,"{'code': 'ln_w_oil', 'label_az': 'ln neft sektorunda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E5: w_non [nominal + D18, <= 2020]'}",,,OBSERVED
+FR3,FR3.T_AGG_OLS_prod_cpi,"{'code': 'ln_w_avg', 'label_az': 'ln nominal orta əmək haqqı', 'label_en': 'Aggregate wage, OLS in levels (first-vintage table): ln_prod + ln_cpi'}",,,OBSERVED
+FR3,FR3.T_AGG_OLS_prod_cpi_mw,"{'code': 'ln_w_avg', 'label_az': 'ln nominal orta əmək haqqı', 'label_en': 'Aggregate wage, OLS in levels (first-vintage table): ln_prod + ln_cpi + ln_mw'}",,,OBSERVED
+FR3,FR3.P1_minwage,"{'code': 'ln_minwage', 'label_az': 'ln nominal minimum əmək haqqı', 'label_en': 'P1: historical minimum-wage indexation (ln minimum wage on ln average wage)'}",,,OBSERVED
+FR3,FR3.MW_E1_OLS,"{'code': 'ln_rw_avg', 'label_az': 'ln real orta aylıq əmək haqqı', 'label_en': 'Minimum-wage elasticity, OLS levels: E1 prod_tot + mw'}",,,OBSERVED
+FR3,FR3.MW_E1_2SLS,"{'code': 'ln_rw_avg', 'label_az': 'ln real orta aylıq əmək haqqı', 'label_en': 'Minimum-wage elasticity, 2SLS with the lagged decree level: E1'}",,,OBSERVED
+FR3,FR3.MW_E1_OLS_D18,"{'code': 'ln_rw_avg', 'label_az': 'ln real orta aylıq əmək haqqı', 'label_en': 'Minimum-wage elasticity, OLS levels: E1 prod_tot + mw + D18'}",,,OBSERVED
+FR3,FR3.MW_E1_2SLS_D18,"{'code': 'ln_rw_avg', 'label_az': 'ln real orta aylıq əmək haqqı', 'label_en': 'Minimum-wage elasticity, 2SLS with the lagged decree level: E1 + D18'}",,,OBSERVED
+FR3,FR3.MW_E1_DOLS_D18,"{'code': 'ln_rw_avg', 'label_az': 'ln orta aylıq əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Minimum-wage elasticity, DOLS + D18: E1'}",,,OBSERVED
+FR3,FR3.MW_E2_OLS,"{'code': 'ln_rw_non', 'label_az': 'ln real qeyri-neft sektorunda əmək haqqı', 'label_en': 'Minimum-wage elasticity, OLS levels: E2 prod_non + mw'}",,,OBSERVED
+FR3,FR3.MW_E2_2SLS,"{'code': 'ln_rw_non', 'label_az': 'ln real qeyri-neft sektorunda əmək haqqı', 'label_en': 'Minimum-wage elasticity, 2SLS with the lagged decree level: E2'}",,,OBSERVED
+FR3,FR3.MW_E2_OLS_D18,"{'code': 'ln_rw_non', 'label_az': 'ln real qeyri-neft sektorunda əmək haqqı', 'label_en': 'Minimum-wage elasticity, OLS levels: E2 prod_non + mw + D18'}",,,OBSERVED
+FR3,FR3.MW_E2_2SLS_D18,"{'code': 'ln_rw_non', 'label_az': 'ln real qeyri-neft sektorunda əmək haqqı', 'label_en': 'Minimum-wage elasticity, 2SLS with the lagged decree level: E2 + D18'}",,,OBSERVED
+FR3,FR3.MW_E2_DOLS_D18,"{'code': 'ln_rw_non', 'label_az': 'ln qeyri-neft sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Minimum-wage elasticity, DOLS + D18: E2'}",,,OBSERVED
+FR3,FR3.MW_E3_OLS,"{'code': 'ln_rw_priv', 'label_az': 'ln real qeyri-dövlət (özəl) sektorda əmək haqqı', 'label_en': 'Minimum-wage elasticity, OLS levels: E3 prod_non + mw'}",,,OBSERVED
+FR3,FR3.MW_E3_2SLS,"{'code': 'ln_rw_priv', 'label_az': 'ln real qeyri-dövlət (özəl) sektorda əmək haqqı', 'label_en': 'Minimum-wage elasticity, 2SLS with the lagged decree level: E3'}",,,OBSERVED
+FR3,FR3.MW_E3_OLS_D18,"{'code': 'ln_rw_priv', 'label_az': 'ln real qeyri-dövlət (özəl) sektorda əmək haqqı', 'label_en': 'Minimum-wage elasticity, OLS levels: E3 prod_non + mw + D18'}",,,OBSERVED
+FR3,FR3.MW_E3_2SLS_D18,"{'code': 'ln_rw_priv', 'label_az': 'ln real qeyri-dövlət (özəl) sektorda əmək haqqı', 'label_en': 'Minimum-wage elasticity, 2SLS with the lagged decree level: E3 + D18'}",,,OBSERVED
+FR3,FR3.MW_E3_DOLS_D18,"{'code': 'ln_rw_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Minimum-wage elasticity, DOLS + D18: E3'}",,,OBSERVED
+FR3,FR3.MW_E4_OLS,"{'code': 'ln_rw_state', 'label_az': 'ln real dövlət sektorunda əmək haqqı', 'label_en': 'Minimum-wage elasticity, OLS levels: E4 prod_non + mw'}",,,OBSERVED
+FR3,FR3.MW_E4_2SLS,"{'code': 'ln_rw_state', 'label_az': 'ln real dövlət sektorunda əmək haqqı', 'label_en': 'Minimum-wage elasticity, 2SLS with the lagged decree level: E4'}",,,OBSERVED
+FR3,FR3.MW_E4_OLS_D18,"{'code': 'ln_rw_state', 'label_az': 'ln real dövlət sektorunda əmək haqqı', 'label_en': 'Minimum-wage elasticity, OLS levels: E4 prod_non + mw + D18'}",,,OBSERVED
+FR3,FR3.MW_E4_2SLS_D18,"{'code': 'ln_rw_state', 'label_az': 'ln real dövlət sektorunda əmək haqqı', 'label_en': 'Minimum-wage elasticity, 2SLS with the lagged decree level: E4 + D18'}",,,OBSERVED
+FR3,FR3.GH_E1_w_avg,"{'code': 'ln_rw_avg', 'label_az': 'ln real orta aylıq əmək haqqı', 'label_en': 'Gregory-Hansen level-shift regression for E1_w_avg (break 2017)'}",,,OBSERVED
+FR3,FR3.GH_E2_w_non,"{'code': 'ln_rw_non', 'label_az': 'ln real qeyri-neft sektorunda əmək haqqı', 'label_en': 'Gregory-Hansen level-shift regression for E2_w_non (break 2013)'}",,,OBSERVED
+FR3,FR3.GH_E3_w_priv,"{'code': 'ln_rw_priv', 'label_az': 'ln real qeyri-dövlət (özəl) sektorda əmək haqqı', 'label_en': 'Gregory-Hansen level-shift regression for E3_w_priv (break 2020)'}",,,OBSERVED
+FR3,FR3.GH_E4_w_state,"{'code': 'ln_rw_state', 'label_az': 'ln real dövlət sektorunda əmək haqqı', 'label_en': 'Gregory-Hansen level-shift regression for E4_w_state (break 2013)'}",,,OBSERVED
+FR3,FR3.F_phillips_1,"{'code': 'dlnw', 'label_az': 'Δln orta əmək haqqı ×100', 'label_en': 'Wage Phillips curve: wage growth on unemp + infl'}",,,OBSERVED
+FR3,FR3.F_phillips_2,"{'code': 'dlnw', 'label_az': 'Δln orta əmək haqqı ×100', 'label_en': 'Wage Phillips curve: wage growth on unemp + infl + dlnprod'}",,,OBSERVED
+FR3,FR3.F_phillips_3,"{'code': 'dlnw', 'label_az': 'Δln orta əmək haqqı ×100', 'label_en': 'Wage Phillips curve: wage growth on unemp + infl + dlnmw'}",,,OBSERVED
+FR3,FR3.F_rw_emprate,"{'code': 'ln_rw_avg', 'label_az': 'ln real orta əmək haqqı', 'label_en': 'Real average wage on productivity, real minimum wage and the employment rate'}",,,OBSERVED
+FR3,FR3.F_oil_prod,"{'code': 'ln_rw_oil', 'label_az': 'ln real neft sektoru əmək haqqı', 'label_en': 'Real oil wage on oil productivity'}",,,OBSERVED
+FR3,FR3.F_oil_brent,"{'code': 'ln_rw_oil', 'label_az': 'ln real neft sektoru əmək haqqı', 'label_en': 'Real oil wage on Brent price'}",,,OBSERVED
+FR3,FR3.F_oil_prod_trend,"{'code': 'ln_rw_oil', 'label_az': 'ln real neft sektoru əmək haqqı', 'label_en': 'Real oil wage on oil productivity + trend'}",,,OBSERVED
+FR3,FR3.F_oil_premium_relprod,"{'code': 'ln_prem_oil', 'label_az': 'ln neft / qeyri-neft əmək haqqı', 'label_en': 'Oil premium on relative productivity (premium form)'}",,,OBSERVED
+FR3,FR3.F_state_on_private,"{'code': 'ln_rw_state', 'label_az': 'ln real dövlət sektoru əmək haqqı', 'label_en': 'State pay on private pay (spillover test)'}",,,OBSERVED
+FR3,FR3.F_premium_trend_lin,"{'code': 'ln_prem_oil', 'label_az': 'ln neft / qeyri-neft əmək haqqı', 'label_en': 'Oil premium on a linear trend (last origin 2016)'}",,,OBSERVED
+FR3,FR3.F_premium_trend_quad,"{'code': 'ln_prem_oil', 'label_az': 'ln neft / qeyri-neft əmək haqqı', 'label_en': 'Oil premium on a quadratic trend (last origin 2016)'}",,,OBSERVED
+FR3,FR3.SYS_E4_OLS,"{'code': 'rw_state', 'label_az': 'ln real dövlət sektoru əmək haqqı', 'label_en': 'E4: OLS benchmark for 2SLS'}",,,OBSERVED
+FR3,FR3.SYS_E4_2SLS,"{'code': 'rw_state', 'label_az': 'ln real dövlət sektoru əmək haqqı', 'label_en': 'E4: 2SLS with the full instrument set'}",,,OBSERVED
+FR3,FR3.SYS_E5_OLS,"{'code': 'w_oil', 'label_az': 'ln neft sektoru əmək haqqı', 'label_en': 'E5: OLS benchmark for 2SLS'}",,,OBSERVED
+FR3,FR3.SYS_E5_2SLS,"{'code': 'w_oil', 'label_az': 'ln neft sektoru əmək haqqı', 'label_en': 'E5: 2SLS with the full instrument set'}",,,OBSERVED
+FR3,FR3.SYS3_E1_w_avg,"{'code': 'SYS3_E1_w_avg', 'label_az': 'ln real orta aylıq əmək haqqı', 'label_en': 'E1_w_avg: 3SLS system cross-check'}",,,OBSERVED
+FR3,FR3.SYS3_E2_w_non,"{'code': 'SYS3_E2_w_non', 'label_az': 'ln real qeyri-neft sektorunda əmək haqqı', 'label_en': 'E2_w_non: 3SLS system cross-check'}",,,OBSERVED
+FR3,FR3.SYS3_E3_w_priv,"{'code': 'SYS3_E3_w_priv', 'label_az': 'ln real qeyri-dövlət (özəl) sektorda əmək haqqı', 'label_en': 'E3_w_priv: 3SLS system cross-check'}",,,OBSERVED
+FR3,FR3.SYS3_E4_w_state,"{'code': 'SYS3_E4_w_state', 'label_az': 'ln real dövlət sektorunda əmək haqqı', 'label_en': 'E4_w_state: 3SLS system cross-check'}",,,OBSERVED
+FR3,FR3.PAN_ind_2w,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Industry branches: wage on productivity, two-way FE (DK)'}",,,OBSERVED
+FR3,FR3.PAN_ind_1w,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Industry branches: entity FE only'}",,,OBSERVED
+FR3,FR3.PAN_ind_2w_emp,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Industry branches: productivity + employment, two-way FE'}",,,OBSERVED
+FR3,FR3.PAN_ind_between,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Industry branches: between estimator (unanchored branch sensitivity only)'}",,,OBSERVED
+FR3,FR3.PAN_reg_2w,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Regions: wage on ln_prod, two-way FE'}",,,OBSERVED
+FR3,FR3.PAN_reg_2w_emp_rate,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Regions: wage on ln_prod + emp_rate, two-way FE'}",,,OBSERVED
+FR3,FR3.PAN_reg_2w_ln_firms,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Regions: wage on ln_prod + ln_firms, two-way FE'}",,,OBSERVED
+FR3,FR3.PAN_reg_1w,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Regions: entity FE only'}",,,OBSERVED
+FR3,FR3.PAN_reg_between,"{'code': 'ln_wage', 'label_az': 'ln_wage', 'label_en': 'Regions: between estimator'}",,,OBSERVED
+FR3,FR3.PAN_sec_emp_2w,"{'code': 'ln_emp', 'label_az': 'ln məşğulluq', 'label_en': 'Sector hired employment on sector real value added, two-way FE (used)'}",,,OBSERVED
+FR3,FR3.PAN_sec_emp_1w,"{'code': 'ln_emp', 'label_az': 'ln məşğulluq', 'label_en': 'Sector employment: entity FE only'}",,,OBSERVED
+FR3,FR3.SW_rel_anchor,"{'code': 'SW_rel_anchor', 'label_az': 'sektor əmək haqqı / DSK orta əmək haqqı', 'label_en': 'Sector wages: 2024 relative wages x FR3 average wage (hired-weighted adding-up exact)'}",,,OBSERVED
+FR3,FR3.BW_budget_ratio,"{'code': 'BW_budget_ratio', 'label_az': 'büdcə / dövlət sektoru əmək haqqı nisbəti', 'label_en': 'Budget-organisation wage = 2024 ratio x state wage; non-budget wage from the identity'}",,,OBSERVED
+FR3,FR3.SW_relprod_pooled,"{'code': 'dy', 'label_az': 'Δln (sektor / orta əmək haqqı)', 'label_en': 'Rejected: sector relative wage on relative productivity (pooled first differences, no constant)'}",,,OBSERVED
+FR3,FR3.PAN_sec_emp_long,"{'code': 'ln_emp', 'label_az': 'ln məşğulluq', 'label_en': 'Rejected: sector hired employment on value added, long DSK 2.12 panel (two-way FE, DK)'}",,,OBSERVED
+FR3,FR3.AGG_panel_w_avg,"{'code': 'dlnw_activity', 'label_az': 'Δln nominal əmək haqqı (fəaliyyət)', 'label_en': 'Rejected: average wage - activity-panel growth equation (CPI + productivity + minimum wage)'}",,,OBSERVED
+FR3,FR3.AGG_panel_w_state,"{'code': 'dlnw_activity', 'label_az': 'Δln nominal əmək haqqı (fəaliyyət)', 'label_en': 'Rejected: state wage - activity-panel growth equation (CPI + productivity + minimum wage)'}",,,OBSERVED
+FR3,FR3.AGG_panel_w_priv,"{'code': 'dlnw_activity', 'label_az': 'Δln nominal əmək haqqı (fəaliyyət)', 'label_en': 'Rejected: private wage - activity-panel growth equation (CPI + productivity + minimum wage)'}",,,OBSERVED
+FR3,FR3.NC_w_avg,"{'code': 'ratio_w_avg', 'label_az': 'yanvar–fevral ortasının illik ortaya nisbəti', 'label_en': '2026 nowcast of the average wage: year-to-date average / multi-year seasonal ratio'}",,,OBSERVED
+FR3,FR3.NC_w_oil,"{'code': 'ratio_w_oil', 'label_az': 'yanvar–fevral ortasının illik ortaya nisbəti', 'label_en': '2026 nowcast of the oil sector: year-to-date average / multi-year seasonal ratio'}",,,OBSERVED
+FR3,FR3.NC_w_non,"{'code': 'ratio_w_non', 'label_az': 'yanvar–fevral ortasının illik ortaya nisbəti', 'label_en': '2026 nowcast of the non-oil sector: year-to-date average / multi-year seasonal ratio'}",,,OBSERVED
+FR3,FR3.NC_w_state,"{'code': 'ratio_w_state', 'label_az': 'yanvar–fevral ortasının illik ortaya nisbəti', 'label_en': '2026 nowcast of the state sector: year-to-date average / multi-year seasonal ratio'}",,,OBSERVED
+FR3,FR3.NC_w_priv,"{'code': 'ratio_w_priv', 'label_az': 'yanvar–fevral ortasının illik ortaya nisbəti', 'label_en': '2026 nowcast of the private sector: year-to-date average / multi-year seasonal ratio'}",,,OBSERVED
+FR4,FR4.R1_agr_lvl,"{'code': 'R1_agr_lvl', 'label_az': 'ln muzdlu işçilər (Kənd, meşə və balıqçılıq)', 'label_en': 'R1 agr hired employment on own real value added (lvl)'}",,,OBSERVED
+FR4,FR4.R1_agr_trend,"{'code': 'R1_agr_trend', 'label_az': 'ln muzdlu işçilər (Kənd, meşə və balıqçılıq)', 'label_en': 'R1 agr hired employment on own real value added (trend)'}",,,OBSERVED
+FR4,FR4.R1_agr_diff,"{'code': 'R1_agr_diff', 'label_az': 'Δ ln muzdlu işçilər (Kənd, meşə və balıqçılıq)', 'label_en': 'R1 agr hired employment on own real value added (diff)'}",,,OBSERVED
+FR4,FR4.R1_manuf_lvl,"{'code': 'R1_manuf_lvl', 'label_az': 'ln muzdlu işçilər (Emal sənayesi)', 'label_en': 'R1 manuf hired employment on own real value added (lvl)'}",,,OBSERVED
+FR4,FR4.R1_manuf_trend,"{'code': 'R1_manuf_trend', 'label_az': 'ln muzdlu işçilər (Emal sənayesi)', 'label_en': 'R1 manuf hired employment on own real value added (trend)'}",,,OBSERVED
+FR4,FR4.R1_manuf_diff,"{'code': 'R1_manuf_diff', 'label_az': 'Δ ln muzdlu işçilər (Emal sənayesi)', 'label_en': 'R1 manuf hired employment on own real value added (diff)'}",,,OBSERVED
+FR4,FR4.R1_mining_lvl,"{'code': 'R1_mining_lvl', 'label_az': 'ln muzdlu işçilər (Mədənçıxarma)', 'label_en': 'R1 mining hired employment on own real value added (lvl)'}",,,OBSERVED
+FR4,FR4.R1_mining_trend,"{'code': 'R1_mining_trend', 'label_az': 'ln muzdlu işçilər (Mədənçıxarma)', 'label_en': 'R1 mining hired employment on own real value added (trend)'}",,,OBSERVED
+FR4,FR4.R1_mining_diff,"{'code': 'R1_mining_diff', 'label_az': 'Δ ln muzdlu işçilər (Mədənçıxarma)', 'label_en': 'R1 mining hired employment on own real value added (diff)'}",,,OBSERVED
+FR4,FR4.R1_constr_lvl,"{'code': 'R1_constr_lvl', 'label_az': 'ln muzdlu işçilər (Tikinti)', 'label_en': 'R1 constr hired employment on own real value added (lvl)'}",,,OBSERVED
+FR4,FR4.R1_constr_trend,"{'code': 'R1_constr_trend', 'label_az': 'ln muzdlu işçilər (Tikinti)', 'label_en': 'R1 constr hired employment on own real value added (trend)'}",,,OBSERVED
+FR4,FR4.R1_constr_diff,"{'code': 'R1_constr_diff', 'label_az': 'Δ ln muzdlu işçilər (Tikinti)', 'label_en': 'R1 constr hired employment on own real value added (diff)'}",,,OBSERVED
+FR4,FR4.R1_trade_lvl,"{'code': 'R1_trade_lvl', 'label_az': 'ln muzdlu işçilər (Ticarət və təmir)', 'label_en': 'R1 trade hired employment on own real value added (lvl)'}",,,OBSERVED
+FR4,FR4.R1_trade_trend,"{'code': 'R1_trade_trend', 'label_az': 'ln muzdlu işçilər (Ticarət və təmir)', 'label_en': 'R1 trade hired employment on own real value added (trend)'}",,,OBSERVED
+FR4,FR4.R1_trade_diff,"{'code': 'R1_trade_diff', 'label_az': 'Δ ln muzdlu işçilər (Ticarət və təmir)', 'label_en': 'R1 trade hired employment on own real value added (diff)'}",,,OBSERVED
+FR4,FR4.R1_transp_lvl,"{'code': 'R1_transp_lvl', 'label_az': 'ln muzdlu işçilər (Nəqliyyat və anbar)', 'label_en': 'R1 transp hired employment on own real value added (lvl)'}",,,OBSERVED
+FR4,FR4.R1_transp_trend,"{'code': 'R1_transp_trend', 'label_az': 'ln muzdlu işçilər (Nəqliyyat və anbar)', 'label_en': 'R1 transp hired employment on own real value added (trend)'}",,,OBSERVED
+FR4,FR4.R1_transp_diff,"{'code': 'R1_transp_diff', 'label_az': 'Δ ln muzdlu işçilər (Nəqliyyat və anbar)', 'label_en': 'R1 transp hired employment on own real value added (diff)'}",,,OBSERVED
+FR4,FR4.C1_real_lvl,"{'code': 'lo_se', 'label_az': 'muzdlu məşğulluq payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'C1 hired employment log-odds on real VA-share log-odds (levels, group FE)'}",,,OBSERVED
+FR4,FR4.C1_real_diff,"{'code': 'd_lo_se', 'label_az': 'Δ muzdlu məşğulluq payının log-nisbəti', 'label_en': 'C1 same equation in first differences (real VA shares)'}",,,OBSERVED
+FR4,FR4.C1_nom_lvl,"{'code': 'lo_se', 'label_az': 'muzdlu məşğulluq payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'C1 hired employment log-odds on nominal VA-share log-odds (levels, group FE)'}",,,OBSERVED
+FR4,FR4.C1_nom_diff,"{'code': 'd_lo_se', 'label_az': 'Δ muzdlu məşğulluq payının log-nisbəti', 'label_en': 'C1 same equation in first differences (nominal VA shares)'}",,,OBSERVED
+FR4,FR4.R3_mining_oilprod,"{'code': 'R3_mining_oilprod', 'label_az': 'ln muzdlu işçilər (mədənçıxarma)', 'label_en': 'R3 mining employment on crude oil production'}",,,OBSERVED
+FR4,FR4.R4_oilx_oilgas,"{'code': 'R4_oilx_oilgas', 'label_az': 'ln məşğulluq (xam neft və qaz hasilatı)', 'label_en': 'R4 oil-extraction employment on oil+gas volume'}",,,OBSERVED
+FR4,FR4.R5_part_wage,"{'code': 'R5_part_wage', 'label_az': 'ln (işçi qüvvəsi / əhali)', 'label_en': 'R5 participation on the real wage and a trend'}",,,OBSERVED
+FR4,FR4.R5_part_trend,"{'code': 'R5_part_trend', 'label_az': 'ln (işçi qüvvəsi / əhali)', 'label_en': 'R5 participation on a trend alone'}",,,OBSERVED
+FR4,FR4.R6_pub_pop,"{'code': 'R6_pub_pop', 'label_az': 'ln məşğulluq (büdcə xidmətləri)', 'label_en': 'R6 public-service employment with a free population elasticity'}",,,OBSERVED
+FR4,FR4.R6_bloc_pop,"{'code': 'R6_bloc_pop', 'label_az': 'ln (bazar / büdcə xidmətləri)', 'label_en': 'R6 market/public services ratio with a free population elasticity'}",,,OBSERVED
+FR4,FR4.R7_rinv_state_lvl,"{'code': 'R7_rinv_state_lvl', 'label_az': 'ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 state employment per capita on real state investment per capita (levels)'}",,,OBSERVED
+FR4,FR4.R7_rinv_state_diff,"{'code': 'R7_rinv_state_diff', 'label_az': 'Δ ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 same, first differences: real state investment per capita'}",,,OBSERVED
+FR4,FR4.R7_rexp_tot_lvl,"{'code': 'R7_rexp_tot_lvl', 'label_az': 'ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 state employment per capita on real total expenditure per capita (levels)'}",,,OBSERVED
+FR4,FR4.R7_rexp_tot_diff,"{'code': 'R7_rexp_tot_diff', 'label_az': 'Δ ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 same, first differences: real total expenditure per capita'}",,,OBSERVED
+FR4,FR4.R7_rva_oth_lvl,"{'code': 'R7_rva_oth_lvl', 'label_az': 'ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 state employment per capita on real value added of other services (levels)'}",,,OBSERVED
+FR4,FR4.R7_rva_oth_diff,"{'code': 'R7_rva_oth_diff', 'label_az': 'Δ ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 same, first differences: real value added of other services'}",,,OBSERVED
+FR4,FR4.R7_rgdp_pc_lvl,"{'code': 'R7_rgdp_pc_lvl', 'label_az': 'ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 state employment per capita on real GDP per capita (levels)'}",,,OBSERVED
+FR4,FR4.R7_rgdp_pc_diff,"{'code': 'R7_rgdp_pc_diff', 'label_az': 'Δ ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 same, first differences: real GDP per capita'}",,,OBSERVED
+FR4,FR4.R7_trend,"{'code': 'R7_trend', 'label_az': 'ln (dövlət məşğulluğu / əhali)', 'label_en': 'R7 state employment per capita on a trend alone'}",,,OBSERVED
+FR4,FR4.R8_mkt_credit,"{'code': 'R8_mkt_credit', 'label_az': 'ln məşğulluq (bazar xidmətləri)', 'label_en': 'R8 market-service employment on output and real credit'}",,,OBSERVED
+FR4,FR4.R9_wage_panel,"{'code': 'ln_emp', 'label_az': 'ln məşğulluq (sənaye sahəsi)', 'label_en': 'R9 industry branch panel: employment on real output and the real wage (two-way FE)'}",,,OBSERVED
+FR4,FR4.E1_lf_free,"{'code': 'ln_lf', 'label_az': 'ln işçi qüvvəsi', 'label_en': 'E1a labour force with a free population elasticity'}",,,OBSERVED
+FR4,FR4.E1_lf_free_static,"{'code': 'ln_lf', 'label_az': 'ln işçi qüvvəsi', 'label_en': 'E1a same equation, static OLS (for the Wald test)'}",,,OBSERVED
+FR4,FR4.E1_lf_free_2019,"{'code': 'ln_lf', 'label_az': 'ln işçi qüvvəsi', 'label_en': 'E1a decision sample (<=2019)'}",,,OBSERVED
+FR4,FR4.E1_part,"{'code': 'ln_part', 'label_az': 'ln (işçi qüvvəsi / əhali)', 'label_en': 'E1 participation rate on a trend'}",,,OBSERVED
+FR4,FR4.E1_part_2019,"{'code': 'ln_part', 'label_az': 'ln (işçi qüvvəsi / əhali)', 'label_en': 'E1 participation trend, decision sample'}",,,OBSERVED
+FR4,FR4.E2_emprate,"{'code': 'ln_emp_rate', 'label_az': 'ln (məşğul əhali / işçi qüvvəsi)', 'label_en': 'E2 employment rate (Okun-type) on real non-oil GDP and a trend'}",,,OBSERVED
+FR4,FR4.E2_emprate_fr1form,"{'code': 'ln_emp_rate', 'label_az': 'ln (məşğul əhali / işçi qüvvəsi)', 'label_en': 'E2 in FR1 form: per-capita non-oil GDP, no trend'}",,,OBSERVED
+FR4,FR4.E3_phi,"{'code': 'ln_phi', 'label_az': 'ln (muzdlu işçilər / məşğul əhali)', 'label_en': 'E3 employee share of employment on a trend'}",,,OBSERVED
+FR4,FR4.E3_phi_2019,"{'code': 'ln_phi', 'label_az': 'ln (muzdlu işçilər / məşğul əhali)', 'label_en': 'E3 decision sample (<=2019)'}",,,OBSERVED
+FR4,FR4.E4_pooled_emp,"{'code': 'd_lo_se', 'label_az': 'Δ məşğulluq payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 pooled restricted related-sector share system, first differences (employed population)'}",,,OBSERVED
+FR4,FR4.E4_agr_lo_sq_emp,"{'code': 'lo_se_agr', 'label_az': 'Kənd, meşə və balıqçılıq payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 agr: employment share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E4_industry_lo_sq_emp,"{'code': 'lo_se_industry', 'label_az': 'Sənaye payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 industry: employment share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E4_constr_lo_sq_emp,"{'code': 'lo_se_constr', 'label_az': 'Tikinti payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 constr: employment share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E4_trade_lo_sq_emp,"{'code': 'lo_se_trade', 'label_az': 'Ticarət və təmir payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 trade: employment share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E4_hotel_lo_sq_emp,"{'code': 'lo_se_hotel', 'label_az': 'Yerləşdirmə və iaşə payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 hotel: employment share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E4_transp_lo_sq_emp,"{'code': 'lo_se_transp', 'label_az': 'Nəqliyyat və anbar payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 transp: employment share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E4_ict_lo_sq_emp,"{'code': 'lo_se_ict', 'label_az': 'İnformasiya və rabitə payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 ict: employment share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E4_agr_ypc_emp,"{'code': 'lo_se_agr', 'label_az': 'Kənd, meşə və balıqçılıq payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 agr: employment share log-odds on real non-oil GDP per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E4_industry_ypc_emp,"{'code': 'lo_se_industry', 'label_az': 'Sənaye payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 industry: employment share log-odds on real non-oil GDP per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E4_constr_ypc_emp,"{'code': 'lo_se_constr', 'label_az': 'Tikinti payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 constr: employment share log-odds on real non-oil GDP per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E4_trade_ypc_emp,"{'code': 'lo_se_trade', 'label_az': 'Ticarət və təmir payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 trade: employment share log-odds on real non-oil GDP per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E4_hotel_ypc_emp,"{'code': 'lo_se_hotel', 'label_az': 'Yerləşdirmə və iaşə payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 hotel: employment share log-odds on real non-oil GDP per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E4_transp_ypc_emp,"{'code': 'lo_se_transp', 'label_az': 'Nəqliyyat və anbar payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 transp: employment share log-odds on real non-oil GDP per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E4_ict_ypc_emp,"{'code': 'lo_se_ict', 'label_az': 'İnformasiya və rabitə payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 ict: employment share log-odds on real non-oil GDP per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E4_panel_emp_lvl,"{'code': 'lo_se', 'label_az': 'məşğulluq payının log-nisbəti', 'label_en': 'E4 in-sample panel evidence (lvl; employed population)'}",,,OBSERVED
+FR4,FR4.E4_panel_emp_lvl_tw,"{'code': 'lo_se', 'label_az': 'məşğulluq payının log-nisbəti', 'label_en': 'E4 in-sample panel evidence (lvl_tw; employed population)'}",,,OBSERVED
+FR4,FR4.E4_panel_emp_fd,"{'code': 'd_lo_se', 'label_az': 'Δ məşğulluq payının log-nisbəti', 'label_en': 'E4 in-sample panel evidence (fd; employed population)'}",,,OBSERVED
+FR4,FR4.E4_pooled_hired,"{'code': 'd_lo_se', 'label_az': 'Δ məşğulluq payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 pooled restricted related-sector share system, first differences (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_agr_lo_sq_hired,"{'code': 'lo_se_agr', 'label_az': 'Kənd, meşə və balıqçılıq payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 agr: employment share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_industry_lo_sq_hired,"{'code': 'lo_se_industry', 'label_az': 'Sənaye payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 industry: employment share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_constr_lo_sq_hired,"{'code': 'lo_se_constr', 'label_az': 'Tikinti payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 constr: employment share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_trade_lo_sq_hired,"{'code': 'lo_se_trade', 'label_az': 'Ticarət və təmir payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 trade: employment share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_hotel_lo_sq_hired,"{'code': 'lo_se_hotel', 'label_az': 'Yerləşdirmə və iaşə payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 hotel: employment share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_transp_lo_sq_hired,"{'code': 'lo_se_transp', 'label_az': 'Nəqliyyat və anbar payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 transp: employment share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_ict_lo_sq_hired,"{'code': 'lo_se_ict', 'label_az': 'İnformasiya və rabitə payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 ict: employment share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_agr_ypc_hired,"{'code': 'lo_se_agr', 'label_az': 'Kənd, meşə və balıqçılıq payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 agr: employment share log-odds on real non-oil GDP per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_industry_ypc_hired,"{'code': 'lo_se_industry', 'label_az': 'Sənaye payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 industry: employment share log-odds on real non-oil GDP per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_constr_ypc_hired,"{'code': 'lo_se_constr', 'label_az': 'Tikinti payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 constr: employment share log-odds on real non-oil GDP per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_trade_ypc_hired,"{'code': 'lo_se_trade', 'label_az': 'Ticarət və təmir payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 trade: employment share log-odds on real non-oil GDP per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_hotel_ypc_hired,"{'code': 'lo_se_hotel', 'label_az': 'Yerləşdirmə və iaşə payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 hotel: employment share log-odds on real non-oil GDP per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_transp_ypc_hired,"{'code': 'lo_se_transp', 'label_az': 'Nəqliyyat və anbar payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 transp: employment share log-odds on real non-oil GDP per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_ict_ypc_hired,"{'code': 'lo_se_ict', 'label_az': 'İnformasiya və rabitə payının log-nisbəti (digər xidmətlərə qarşı)', 'label_en': 'E4 ict: employment share log-odds on real non-oil GDP per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E4_panel_hired_lvl,"{'code': 'lo_se', 'label_az': 'məşğulluq payının log-nisbəti', 'label_en': 'E4 in-sample panel evidence (lvl; hired employees)'}",,,OBSERVED
+FR4,FR4.E4_panel_hired_lvl_tw,"{'code': 'lo_se', 'label_az': 'məşğulluq payının log-nisbəti', 'label_en': 'E4 in-sample panel evidence (lvl_tw; hired employees)'}",,,OBSERVED
+FR4,FR4.E4_panel_hired_fd,"{'code': 'd_lo_se', 'label_az': 'Δ məşğulluq payının log-nisbəti', 'label_en': 'E4 in-sample panel evidence (fd; hired employees)'}",,,OBSERVED
+FR4,FR4.E4_combo,"{'code': 'E4_combo', 'label_az': '8 qrupun məşğulluq payları', 'label_en': 'E4 forecast combination: constant shares and the pooled share system (equal weights)'}",,,OBSERVED
+FR4,FR4.E5_pooled_emp,"{'code': 'd_lo_se', 'label_az': 'Δ sənaye daxilində payın log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 within-industry pooled restricted share system, first differences (employed population)'}",,,OBSERVED
+FR4,FR4.E5_mining_ypc_emp,"{'code': 'lo_se_mining', 'label_az': 'Mədənçıxarma payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 mining: within-industry share log-odds on income per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E5_elec_ypc_emp,"{'code': 'lo_se_elec', 'label_az': 'Elektrik enerjisi, qaz payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 elec: within-industry share log-odds on income per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E5_water_ypc_emp,"{'code': 'lo_se_water', 'label_az': 'Su təchizatı payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 water: within-industry share log-odds on income per capita (employed population)'}",,,OBSERVED
+FR4,FR4.E5_mining_lo_sq_emp,"{'code': 'lo_se_mining', 'label_az': 'Mədənçıxarma payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 mining: within-industry share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E5_elec_lo_sq_emp,"{'code': 'lo_se_elec', 'label_az': 'Elektrik enerjisi, qaz payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 elec: within-industry share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E5_water_lo_sq_emp,"{'code': 'lo_se_water', 'label_az': 'Su təchizatı payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 water: within-industry share log-odds on own relative output share (employed population)'}",,,OBSERVED
+FR4,FR4.E6_emp,"{'code': 'ln_mkt_over_pub', 'label_az': 'ln (bazar xidmətləri / büdcədən maliyyələşən xidmətlər)', 'label_en': 'E6 split of other services between market and budget-financed blocs (employed population)'}",,,OBSERVED
+FR4,FR4.E5_pooled_hired,"{'code': 'd_lo_se', 'label_az': 'Δ sənaye daxilində payın log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 within-industry pooled restricted share system, first differences (hired employees)'}",,,OBSERVED
+FR4,FR4.E5_mining_ypc_hired,"{'code': 'lo_se_mining', 'label_az': 'Mədənçıxarma payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 mining: within-industry share log-odds on income per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E5_elec_ypc_hired,"{'code': 'lo_se_elec', 'label_az': 'Elektrik enerjisi, qaz payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 elec: within-industry share log-odds on income per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E5_water_ypc_hired,"{'code': 'lo_se_water', 'label_az': 'Su təchizatı payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 water: within-industry share log-odds on income per capita (hired employees)'}",,,OBSERVED
+FR4,FR4.E5_mining_lo_sq_hired,"{'code': 'lo_se_mining', 'label_az': 'Mədənçıxarma payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 mining: within-industry share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E5_elec_lo_sq_hired,"{'code': 'lo_se_elec', 'label_az': 'Elektrik enerjisi, qaz payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 elec: within-industry share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E5_water_lo_sq_hired,"{'code': 'lo_se_water', 'label_az': 'Su təchizatı payının log-nisbəti (emal sənayesinə qarşı)', 'label_en': 'E5 water: within-industry share log-odds on own relative output share (hired employees)'}",,,OBSERVED
+FR4,FR4.E6_hired,"{'code': 'ln_mkt_over_pub', 'label_az': 'ln (bazar xidmətləri / büdcədən maliyyələşən xidmətlər)', 'label_en': 'E6 split of other services between market and budget-financed blocs (hired employees)'}",,,OBSERVED
+FR4,FR4.E7_pubadm_emp,"{'code': 'lo_pubadm_educ', 'label_az': 'ln (Dövlət idarəetməsi və müdafiə / Təhsil)', 'label_en': 'E7 pubadm: within-bloc share log-odds on a trend (employed population; reference educ)'}",,,OBSERVED
+FR4,FR4.E7_health_emp,"{'code': 'lo_health_educ', 'label_az': 'ln (Səhiyyə və sosial xidmətlər / Təhsil)', 'label_en': 'E7 health: within-bloc share log-odds on a trend (employed population; reference educ)'}",,,OBSERVED
+FR4,FR4.E7_art_emp,"{'code': 'lo_art_educ', 'label_az': 'ln (İncəsənət, əyləncə / Təhsil)', 'label_en': 'E7 art: within-bloc share log-odds on a trend (employed population; reference educ)'}",,,OBSERVED
+FR4,FR4.E7_pubadm_hired,"{'code': 'lo_pubadm_educ', 'label_az': 'ln (Dövlət idarəetməsi və müdafiə / Təhsil)', 'label_en': 'E7 pubadm: within-bloc share log-odds on a trend (hired employees; reference educ)'}",,,OBSERVED
+FR4,FR4.E7_health_hired,"{'code': 'lo_health_educ', 'label_az': 'ln (Səhiyyə və sosial xidmətlər / Təhsil)', 'label_en': 'E7 health: within-bloc share log-odds on a trend (hired employees; reference educ)'}",,,OBSERVED
+FR4,FR4.E7_art_hired,"{'code': 'lo_art_educ', 'label_az': 'ln (İncəsənət, əyləncə / Təhsil)', 'label_en': 'E7 art: within-bloc share log-odds on a trend (hired employees; reference educ)'}",,,OBSERVED
+FR4,FR4.E7_fin_emp,"{'code': 'lo_fin_prof', 'label_az': 'ln (Maliyyə və sığorta / Peşə, elmi və texniki fəaliyyət)', 'label_en': 'E7 fin: within-bloc share log-odds on a trend (employed population; reference prof)'}",,,OBSERVED
+FR4,FR4.E7_realest_emp,"{'code': 'lo_realest_prof', 'label_az': 'ln (Daşınmaz əmlak / Peşə, elmi və texniki fəaliyyət)', 'label_en': 'E7 realest: within-bloc share log-odds on a trend (employed population; reference prof)'}",,,OBSERVED
+FR4,FR4.E7_admsup_emp,"{'code': 'lo_admsup_prof', 'label_az': 'ln (İnzibati və yardımçı xidmətlər / Peşə, elmi və texniki fəaliyyət)', 'label_en': 'E7 admsup: within-bloc share log-odds on a trend (employed population; reference prof)'}",,,OBSERVED
+FR4,FR4.E7_othsvc_emp,"{'code': 'lo_othsvc_prof', 'label_az': 'ln (Digər xidmətlər / Peşə, elmi və texniki fəaliyyət)', 'label_en': 'E7 othsvc: within-bloc share log-odds on a trend (employed population; reference prof)'}",,,OBSERVED
+FR4,FR4.E7_fin_hired,"{'code': 'lo_fin_prof', 'label_az': 'ln (Maliyyə və sığorta / Peşə, elmi və texniki fəaliyyət)', 'label_en': 'E7 fin: within-bloc share log-odds on a trend (hired employees; reference prof)'}",,,OBSERVED
+FR4,FR4.E7_realest_hired,"{'code': 'lo_realest_prof', 'label_az': 'ln (Daşınmaz əmlak / Peşə, elmi və texniki fəaliyyət)', 'label_en': 'E7 realest: within-bloc share log-odds on a trend (hired employees; reference prof)'}",,,OBSERVED
+FR4,FR4.E7_admsup_hired,"{'code': 'lo_admsup_prof', 'label_az': 'ln (İnzibati və yardımçı xidmətlər / Peşə, elmi və texniki fəaliyyət)', 'label_en': 'E7 admsup: within-bloc share log-odds on a trend (hired employees; reference prof)'}",,,OBSERVED
+FR4,FR4.E7_othsvc_hired,"{'code': 'lo_othsvc_prof', 'label_az': 'ln (Digər xidmətlər / Peşə, elmi və texniki fəaliyyət)', 'label_en': 'E7 othsvc: within-bloc share log-odds on a trend (hired employees; reference prof)'}",,,OBSERVED
+FR4,FR4.E5_combo,"{'code': 'E5_combo', 'label_az': '4 sənaye fəaliyyətinin (qeyri-neft hissəsinin) payları', 'label_en': 'E5 within-industry forecast combination: constant shares and the pooled system (equal weights)'}",,,OBSERVED
+FR4,FR4.E8_alt_G1,"{'code': 'logit_state_share', 'label_az': 'ln (dövlət / qeyri-dövlət məşğulluğu)', 'label_en': 'Rejected: structural alternative to E8 - government consumption per head (no trend)'}",,,OBSERVED
+FR4,FR4.E8_alt_G2,"{'code': 'logit_state_share', 'label_az': 'ln (dövlət / qeyri-dövlət məşğulluğu)', 'label_en': 'Rejected: structural alternative to E8 - government consumption / non-oil GDP (no trend)'}",,,OBSERVED
+FR4,FR4.E8_alt_G3,"{'code': 'logit_state_share', 'label_az': 'ln (dövlət / qeyri-dövlət məşğulluğu)', 'label_en': 'Rejected: structural alternative to E8 - non-oil GDP per head (no trend)'}",,,OBSERVED
+FR4,FR4.E8_state,"{'code': 'logit_state_share', 'label_az': 'ln (dövlət / qeyri-dövlət məşğulluğu)', 'label_en': 'E8 state share of employment: logistic trend (2000-2024)'}",,,OBSERVED
+FR4,FR4.E8_state_full,"{'code': 'logit_state_share', 'label_az': 'ln (dövlət / qeyri-dövlət məşğulluğu)', 'label_en': 'E8 logistic trend of the state share, full sample 1990-2024'}",,,OBSERVED
+FR4,FR4.E9_oil,"{'code': 'ln_oil_extraction_emp', 'label_az': 'ln məşğulluq (xam neft və təbii qaz hasilatı)', 'label_en': 'E9 oil and gas extraction employment on real oil GDP'}",,,OBSERVED
+FR4,FR4.B_sigma,"{'code': 'sigma', 'label_az': 'σ: dövlət payı (2005–2024)', 'label_en': 'Budget organisations: B = sigma x hired in the four budget activities'}",,,OBSERVED
+FR4,FR4.B_kappa,"{'code': 'kappa', 'label_az': 'κ: DVX r130 / muzdlu işçilər', 'label_en': 'First-version budget definition: kappa x all hired in the four activities'}",,,OBSERVED
+FR4,FR4.SS_shift_share,"{'code': 'total', 'label_az': 'məcmu məhsuldarlıq artımı, % (log)', 'label_en': 'Shift-share decomposition of labour-productivity growth (within and reallocation)'}",,,OBSERVED
+FR5,FR5.E1_income_relprice,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'E1: real paid-services volume per head on real income per head and the relative price of services'}",,,OBSERVED
+FR5,FR5.E1d_income_relprice,"{'code': 'dln_qpc', 'label_az': 'Δln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'E1 in first differences'}",,,OBSERVED
+FR5,FR5.C_income_only_2000,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Tier-1 candidate: income only'}",,,OBSERVED
+FR5,FR5.C_income_only_2005,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Tier-1 candidate: income only'}",,,OBSERVED
+FR5,FR5.C_income_srv,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Tier-1 candidate: income deflated by service price'}",,,OBSERVED
+FR5,FR5.C_income_trend,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Tier-1 candidate: income + trend'}",,,OBSERVED
+FR5,FR5.C_trend_only,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Tier-1 candidate: trend only'}",,,OBSERVED
+FR5,FR5.C_growth_form,"{'code': 'dln_qpc', 'label_az': 'Δln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Tier-1 candidate: growth form in deflated income'}",,,OBSERVED
+FR5,FR5.C_income_only_diff,"{'code': 'dln_qpc', 'label_az': 'Δln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Income only, difference form'}",,,OBSERVED
+FR5,FR5.R1_trend,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Static OLS (Part 9): volume per head on trend only'}",,,OBSERVED
+FR5,FR5.R1_income,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Static OLS (Part 9): volume per head on income, no dummies'}",,,OBSERVED
+FR5,FR5.R2_income_dummies,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Static OLS (Part 9): volume per head on income + 2020, 2021 dummies'}",,,OBSERVED
+FR5,FR5.R3_income_relprice,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Static OLS (Part 9): volume per head on income + relative price'}",,,OBSERVED
+FR5,FR5.R3_income_srv,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Static OLS (Part 9): volume per head on deflated income'}",,,OBSERVED
+FR5,FR5.R3_gdp,"{'code': 'ln_qpc', 'label_az': 'ln adambaşına pullu xidmətlərin real həcmi', 'label_en': 'Static OLS (Part 9): volume per head on non-oil GDP per head'}",,,OBSERVED
+FR5,FR5.L_household,"{'code': 'lo_household', 'label_az': 'ln(Məişət xidmətləri payı / nəqliyyat payı)', 'label_en': 'Household (personal) services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_household,"{'code': 'dlo_household', 'label_az': 'Δln(Məişət xidmətləri payı / nəqliyyat payı)', 'label_en': 'Household (personal) services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_household,"{'code': 'lo_household', 'label_az': 'ln(Məişət xidmətləri payı / nəqliyyat payı)', 'label_en': 'Household (personal) services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_household,"{'code': 'lo_household', 'label_az': 'ln(Məişət xidmətləri payı / nəqliyyat payı)', 'label_en': 'Household (personal) services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_communication,"{'code': 'lo_communication', 'label_az': 'ln(Rabitə xidmətləri payı / nəqliyyat payı)', 'label_en': 'Communication services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_communication,"{'code': 'dlo_communication', 'label_az': 'Δln(Rabitə xidmətləri payı / nəqliyyat payı)', 'label_en': 'Communication services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_communication,"{'code': 'lo_communication', 'label_az': 'ln(Rabitə xidmətləri payı / nəqliyyat payı)', 'label_en': 'Communication services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_communication,"{'code': 'lo_communication', 'label_az': 'ln(Rabitə xidmətləri payı / nəqliyyat payı)', 'label_en': 'Communication services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_housing,"{'code': 'lo_housing', 'label_az': 'ln(Mənzil xidmətləri payı / nəqliyyat payı)', 'label_en': 'Housing services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_housing,"{'code': 'dlo_housing', 'label_az': 'Δln(Mənzil xidmətləri payı / nəqliyyat payı)', 'label_en': 'Housing services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_housing,"{'code': 'lo_housing', 'label_az': 'ln(Mənzil xidmətləri payı / nəqliyyat payı)', 'label_en': 'Housing services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_housing,"{'code': 'lo_housing', 'label_az': 'ln(Mənzil xidmətləri payı / nəqliyyat payı)', 'label_en': 'Housing services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_utilities,"{'code': 'lo_utilities', 'label_az': 'ln(Kommunal xidmətlər payı / nəqliyyat payı)', 'label_en': 'Public utility services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_utilities,"{'code': 'dlo_utilities', 'label_az': 'Δln(Kommunal xidmətlər payı / nəqliyyat payı)', 'label_en': 'Public utility services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_utilities,"{'code': 'lo_utilities', 'label_az': 'ln(Kommunal xidmətlər payı / nəqliyyat payı)', 'label_en': 'Public utility services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_utilities,"{'code': 'lo_utilities', 'label_az': 'ln(Kommunal xidmətlər payı / nəqliyyat payı)', 'label_en': 'Public utility services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_culture,"{'code': 'lo_culture', 'label_az': 'ln(Mədəniyyət xidmətləri payı / nəqliyyat payı)', 'label_en': 'Culture services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_culture,"{'code': 'dlo_culture', 'label_az': 'Δln(Mədəniyyət xidmətləri payı / nəqliyyat payı)', 'label_en': 'Culture services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_culture,"{'code': 'lo_culture', 'label_az': 'ln(Mədəniyyət xidmətləri payı / nəqliyyat payı)', 'label_en': 'Culture services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_culture,"{'code': 'lo_culture', 'label_az': 'ln(Mədəniyyət xidmətləri payı / nəqliyyat payı)', 'label_en': 'Culture services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_tourism,"{'code': 'lo_tourism', 'label_az': 'ln(Turizm və ekskursiya xidmətləri payı / nəqliyyat payı)', 'label_en': 'Tourist and excursion services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_tourism,"{'code': 'dlo_tourism', 'label_az': 'Δln(Turizm və ekskursiya xidmətləri payı / nəqliyyat payı)', 'label_en': 'Tourist and excursion services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_tourism,"{'code': 'lo_tourism', 'label_az': 'ln(Turizm və ekskursiya xidmətləri payı / nəqliyyat payı)', 'label_en': 'Tourist and excursion services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_tourism,"{'code': 'lo_tourism', 'label_az': 'ln(Turizm və ekskursiya xidmətləri payı / nəqliyyat payı)', 'label_en': 'Tourist and excursion services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_sport,"{'code': 'lo_sport', 'label_az': 'ln(Bədən tərbiyəsi və idman xidmətləri payı / nəqliyyat payı)', 'label_en': 'Physical culture and sport: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_sport,"{'code': 'dlo_sport', 'label_az': 'Δln(Bədən tərbiyəsi və idman xidmətləri payı / nəqliyyat payı)', 'label_en': 'Physical culture and sport: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_sport,"{'code': 'lo_sport', 'label_az': 'ln(Bədən tərbiyəsi və idman xidmətləri payı / nəqliyyat payı)', 'label_en': 'Physical culture and sport: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_sport,"{'code': 'lo_sport', 'label_az': 'ln(Bədən tərbiyəsi və idman xidmətləri payı / nəqliyyat payı)', 'label_en': 'Physical culture and sport: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_medical,"{'code': 'lo_medical', 'label_az': 'ln(Tibbi xidmətlər payı / nəqliyyat payı)', 'label_en': 'Medical services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_medical,"{'code': 'dlo_medical', 'label_az': 'Δln(Tibbi xidmətlər payı / nəqliyyat payı)', 'label_en': 'Medical services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_medical,"{'code': 'lo_medical', 'label_az': 'ln(Tibbi xidmətlər payı / nəqliyyat payı)', 'label_en': 'Medical services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_medical,"{'code': 'lo_medical', 'label_az': 'ln(Tibbi xidmətlər payı / nəqliyyat payı)', 'label_en': 'Medical services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_sanatoria,"{'code': 'lo_sanatoria', 'label_az': 'ln(Sanatoriya-sağlamlıq xidmətləri payı / nəqliyyat payı)', 'label_en': 'Sanatoria and health services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_sanatoria,"{'code': 'dlo_sanatoria', 'label_az': 'Δln(Sanatoriya-sağlamlıq xidmətləri payı / nəqliyyat payı)', 'label_en': 'Sanatoria and health services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_sanatoria,"{'code': 'lo_sanatoria', 'label_az': 'ln(Sanatoriya-sağlamlıq xidmətləri payı / nəqliyyat payı)', 'label_en': 'Sanatoria and health services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_sanatoria,"{'code': 'lo_sanatoria', 'label_az': 'ln(Sanatoriya-sağlamlıq xidmətləri payı / nəqliyyat payı)', 'label_en': 'Sanatoria and health services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_legal_bank,"{'code': 'lo_legal_bank', 'label_az': 'ln(Hüquqi və bank xidmətləri payı / nəqliyyat payı)', 'label_en': 'Legal and banking services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_legal_bank,"{'code': 'dlo_legal_bank', 'label_az': 'Δln(Hüquqi və bank xidmətləri payı / nəqliyyat payı)', 'label_en': 'Legal and banking services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_legal_bank,"{'code': 'lo_legal_bank', 'label_az': 'ln(Hüquqi və bank xidmətləri payı / nəqliyyat payı)', 'label_en': 'Legal and banking services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_legal_bank,"{'code': 'lo_legal_bank', 'label_az': 'ln(Hüquqi və bank xidmətləri payı / nəqliyyat payı)', 'label_en': 'Legal and banking services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_education,"{'code': 'lo_education', 'label_az': 'ln(Təhsil xidmətləri payı / nəqliyyat payı)', 'label_en': 'Educational services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_education,"{'code': 'dlo_education', 'label_az': 'Δln(Təhsil xidmətləri payı / nəqliyyat payı)', 'label_en': 'Educational services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_education,"{'code': 'lo_education', 'label_az': 'ln(Təhsil xidmətləri payı / nəqliyyat payı)', 'label_en': 'Educational services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_education,"{'code': 'lo_education', 'label_az': 'ln(Təhsil xidmətləri payı / nəqliyyat payı)', 'label_en': 'Educational services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.L_other,"{'code': 'lo_other', 'label_az': 'ln(Digər pullu xidmətlər payı / nəqliyyat payı)', 'label_en': 'Other paid services: share log-odds vs transport on ln real service spending per head (level, DOLS)'}",,,OBSERVED
+FR5,FR5.D_other,"{'code': 'dlo_other', 'label_az': 'Δln(Digər pullu xidmətlər payı / nəqliyyat payı)', 'label_en': 'Other paid services: share log-odds, difference form'}",,,OBSERVED
+FR5,FR5.S_other,"{'code': 'lo_other', 'label_az': 'ln(Digər pullu xidmətlər payı / nəqliyyat payı)', 'label_en': 'Other paid services: shrunk Engel slope used in the forecast (multinomial-logit share system)'}",,,OBSERVED
+FR5,FR5.PF_other,"{'code': 'lo_other', 'label_az': 'ln(Digər pullu xidmətlər payı / nəqliyyat payı)', 'label_en': 'Other paid services: share log-odds on spending and own relative price (unrestricted, not selected)'}",,,OBSERVED
+FR5,FR5.LA_household,"{'code': 'w_household', 'label_az': 'Məişət xidmətləri payı', 'label_en': 'Household (personal) services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_communication,"{'code': 'w_communication', 'label_az': 'Rabitə xidmətləri payı', 'label_en': 'Communication services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_housing,"{'code': 'w_housing', 'label_az': 'Mənzil xidmətləri payı', 'label_en': 'Housing services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_utilities,"{'code': 'w_utilities', 'label_az': 'Kommunal xidmətlər payı', 'label_en': 'Public utility services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_culture,"{'code': 'w_culture', 'label_az': 'Mədəniyyət xidmətləri payı', 'label_en': 'Culture services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_tourism,"{'code': 'w_tourism', 'label_az': 'Turizm və ekskursiya xidmətləri payı', 'label_en': 'Tourist and excursion services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_sport,"{'code': 'w_sport', 'label_az': 'Bədən tərbiyəsi və idman xidmətləri payı', 'label_en': 'Physical culture and sport: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_medical,"{'code': 'w_medical', 'label_az': 'Tibbi xidmətlər payı', 'label_en': 'Medical services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_sanatoria,"{'code': 'w_sanatoria', 'label_az': 'Sanatoriya-sağlamlıq xidmətləri payı', 'label_en': 'Sanatoria and health services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_legal_bank,"{'code': 'w_legal_bank', 'label_az': 'Hüquqi və bank xidmətləri payı', 'label_en': 'Legal and banking services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_education,"{'code': 'w_education', 'label_az': 'Təhsil xidmətləri payı', 'label_en': 'Educational services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.LA_other,"{'code': 'w_other', 'label_az': 'Digər pullu xidmətlər payı', 'label_en': 'Other paid services: LA-AIDS share equation (comparison candidate)'}",,,OBSERVED
+FR5,FR5.M1_cons_growth,"{'code': 'dln_qpc', 'label_az': 'Δln adambaşına real pullu xidmətlər', 'label_en': 'Rejected (macro module): growth: real household consumption per head'}",,,OBSERVED
+FR5,FR5.M2_ministry_reest,"{'code': 'dln_paid_services_nominal', 'label_az': 'Δln nominal pullu xidmətlər', 'label_en': 'Rejected (macro module): growth: Ministry form, re-estimated (trade + wage)'}",,,OBSERVED
+FR5,FR5.M3_ministry_fixed,"{'code': 'M3_ministry_fixed', 'label_az': 'Δln nominal pullu xidmətlər', 'label_en': 'Rejected: the Ministry equation with its published coefficients'}",,,OBSERVED
+FR5,FR5.SP_indiv_income,"{'code': 'lo_indiv', 'label_az': 'payın log-nisbəti', 'label_en': 'Share of individual entrepreneurs: logit share on income (candidate)'}",,,OBSERVED
+FR5,FR5.SP_indiv_trend,"{'code': 'lo_indiv', 'label_az': 'payın log-nisbəti', 'label_en': 'Share of individual entrepreneurs: logit share on trend (candidate)'}",,,OBSERVED
+FR5,FR5.SP_indiv_constant,"{'code': 'lo_indiv', 'label_az': 'payın log-nisbəti', 'label_en': 'Share of individual entrepreneurs: constant share (chosen)'}",,,OBSERVED
+FR5,FR5.SP_state_income,"{'code': 'lo_state', 'label_az': 'payın log-nisbəti', 'label_en': 'Share of the state sector: logit share on income (candidate)'}",,,OBSERVED
+FR5,FR5.SP_state_trend,"{'code': 'lo_state', 'label_az': 'payın log-nisbəti', 'label_en': 'Share of the state sector: logit share on trend (candidate)'}",,,OBSERVED
+FR5,FR5.SP_state_constant,"{'code': 'lo_state', 'label_az': 'payın log-nisbəti', 'label_en': 'Share of the state sector: constant share (chosen)'}",,,OBSERVED
+FR10,FR10.reg_Nakhchivan_AR_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Nakhchivan AR: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Nakhchivan_AR_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Nakhchivan AR: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Absheron_Khizi_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Absheron-Khizi: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Absheron_Khizi_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Absheron-Khizi: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Daghlig_Shirvan_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Daghlig Shirvan: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Daghlig_Shirvan_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Daghlig Shirvan: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Ganja_Dashkasan_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Ganja-Dashkasan: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Ganja_Dashkasan_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Ganja-Dashkasan: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Garabagh_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Garabagh: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Garabagh_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Garabagh: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Gazakh_Tovuz_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Gazakh-Tovuz: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Gazakh_Tovuz_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Gazakh-Tovuz: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Guba_Khachmaz_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Guba-Khachmaz: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Guba_Khachmaz_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Guba-Khachmaz: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Lankaran_Astara_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Lankaran-Astara: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Lankaran_Astara_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Lankaran-Astara: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Central_Aran_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Central Aran: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Central_Aran_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Central Aran: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Mil_Mughan_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Mil-Mughan: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Mil_Mughan_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Mil-Mughan: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Shaki_Zagatala_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Shaki-Zagatala: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Shaki_Zagatala_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Shaki-Zagatala: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Eastern_Zangezur_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Eastern Zangezur: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Eastern_Zangezur_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Eastern Zangezur: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_Shirvan_Salyan_lvl,"{'code': 'log_odds', 'label_az': 'ln(pay / Bakı payı)', 'label_en': 'Shirvan-Salyan: log-odds of the industrial-output share vs Baku (levels, DOLS)'}",,,OBSERVED
+FR10,FR10.reg_Shirvan_Salyan_fd,"{'code': 'd_log_odds', 'label_az': 'Δ ln(pay / Bakı payı)', 'label_en': 'Shirvan-Salyan: log-odds, first differences'}",,,OBSERVED
+FR10,FR10.reg_system,"{'code': 'log_odds', 'label_az': 'ln(rayon payı / Bakı payı)', 'label_en': 'Regional share system (softmax, EB-shrunk slopes on the FR1 oil-sector mix)'}",,,OBSERVED
+FR10,FR10.man_11_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Beverages: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_12_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Tobacco products: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_13_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Textiles: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_14_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Wearing apparel: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_15_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Leather and footwear: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_16_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Wood products: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_17_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Paper products: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_18_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Printing: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_19_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Refined petroleum products: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_20_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Chemicals: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_21_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Pharmaceuticals: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_22_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Rubber and plastics: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_23_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Non-metallic minerals: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_24_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Basic metals: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_25_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Fabricated metal products: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_26_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Computer and electronics: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_27_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Electrical equipment: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_28_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Machinery and equipment: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_29_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Motor vehicles: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_30_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Other transport equipment: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_31_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Furniture: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_32_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Other manufacturing: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_33_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Repair and installation: share log-odds vs Food products, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_11_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Beverages: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_12_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Tobacco products: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_13_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Textiles: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_14_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Wearing apparel: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_15_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Leather and footwear: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_16_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Wood products: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_17_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Paper products: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_18_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Printing: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_19_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Refined petroleum products: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_20_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Chemicals: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_21_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Pharmaceuticals: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_22_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Rubber and plastics: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_23_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Non-metallic minerals: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_24_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Basic metals: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_25_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Fabricated metal products: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_26_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Computer and electronics: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_27_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Electrical equipment: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_28_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Machinery and equipment: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_29_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Motor vehicles: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_30_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Other transport equipment: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_31_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Furniture: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_32_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Other manufacturing: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_33_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Repair and installation: share log-odds vs Food products, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_11_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Beverages: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_12_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Tobacco products: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_13_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Textiles: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_14_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Wearing apparel: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_15_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Leather and footwear: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_16_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Wood products: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_17_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Paper products: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_18_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Printing: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_19_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Refined petroleum products: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_20_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Chemicals: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_21_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Pharmaceuticals: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_22_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Rubber and plastics: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_23_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Non-metallic minerals: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_24_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Basic metals: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_25_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Fabricated metal products: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_26_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Computer and electronics: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_27_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Electrical equipment: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_28_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Machinery and equipment: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_29_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Motor vehicles: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_30_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Other transport equipment: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_31_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Furniture: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_32_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Other manufacturing: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.man_33_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Food products payı)', 'label_en': 'Repair and installation: share log-odds vs Food products, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_07_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Metal ores: share log-odds vs Crude oil and natural gas, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_08_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Other mining and quarrying: share log-odds vs Crude oil and natural gas, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_09_scale,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Mining support services: share log-odds vs Crude oil and natural gas, candidate ""MNL: scale (FR1 real sector VA)"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_07_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Metal ores: share log-odds vs Crude oil and natural gas, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_08_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Other mining and quarrying: share log-odds vs Crude oil and natural gas, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_09_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Mining support services: share log-odds vs Crude oil and natural gas, candidate ""MNL: oil export price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_07_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Metal ores: share log-odds vs Crude oil and natural gas, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_08_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Other mining and quarrying: share log-odds vs Crude oil and natural gas, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.min_09_scale_oil,"{'code': 'log_odds', 'label_az': 'ln(pay / Crude oil and natural gas payı)', 'label_en': 'Mining support services: share log-odds vs Crude oil and natural gas, candidate ""MNL: scale + oil price"" (estimated to 2019)'}",,,OBSERVED
+FR10,FR10.pooled,"{'code': 'dln_share', 'label_az': 'Δ ln sahənin qeyri-neft emalında payı', 'label_en': 'Pooled related-sector model of non-oil branch shares (common elasticity)'}",,,OBSERVED
+FR10,FR10.pooled_lev,"{'code': 'ln_share', 'label_az': 'ln sahə payı', 'label_en': 'Pooled related-sector model in levels (coherence check)'}",,,OBSERVED
+FR10,FR10.oil_19,"{'code': 'dln_pdef_19', 'label_az': 'Δ ln sahə deflyatoru', 'label_en': 'Refined petroleum products: elasticity of the branch deflator to the oil price in manat'}",,,OBSERVED
+FR10,FR10.oil_20,"{'code': 'dln_pdef_20', 'label_az': 'Δ ln sahə deflyatoru', 'label_en': 'Chemicals: elasticity of the branch deflator to the oil price in manat'}",,,OBSERVED
+FR10,FR10.mining_08,"{'code': 'dlnQ_08', 'label_az': 'Δ ln real buraxılış (08)', 'label_en': 'Quarrying (08): elasticity to FR1 construction value added'}",,,OBSERVED
+FR10,FR10.mining_08_rule,"{'code': 'ln_Q_08', 'label_az': 'ln real buraxılış (08)', 'label_en': 'Quarrying (08): anchored null, real output constant at its 2025 actual level'}",,,OBSERVED
+FR10,FR10.mining_07,"{'code': 'dlnQ_07', 'label_az': 'Δ ln real buraxılış (07)', 'label_en': 'Metal ores (07): grows with FR1 mining VA'}",,,OBSERVED
+FR10,FR10.det_A,"{'code': 'dlnQ_w', 'label_az': 'Δ ln real buraxılış ×100 (5/95% vinzorlaşdırılmış)', 'label_en': 'Determinants of branch real growth, spec A'}",,,OBSERVED
+FR10,FR10.det_A_between,"{'code': 'dlnQ_w_mean', 'label_az': 'sahə ortası: Δ ln real buraxılış', 'label_en': 'Between estimator (branch means), spec A'}",,,OBSERVED
+FR10,FR10.det_A_same,"{'code': 'dlnQ_w', 'label_az': 'Δ ln real buraxılış ×100', 'label_en': 'Determinants spec A, same-year denominators (division-bias variant)'}",,,OBSERVED
+FR10,FR10.det_B,"{'code': 'dlnQ_w', 'label_az': 'Δ ln real buraxılış ×100 (5/95% vinzorlaşdırılmış)', 'label_en': 'Determinants of branch real growth, spec B'}",,,OBSERVED
+FR10,FR10.det_B_between,"{'code': 'dlnQ_w_mean', 'label_az': 'sahə ortası: Δ ln real buraxılış', 'label_en': 'Between estimator (branch means), spec B'}",,,OBSERVED
+FR10,FR10.det_B_same,"{'code': 'dlnQ_w', 'label_az': 'Δ ln real buraxılış ×100', 'label_en': 'Determinants spec B, same-year denominators (division-bias variant)'}",,,OBSERVED
+FR10,FR10.det_link,"{'code': 'det_link', 'label_az': 'Δ ln real buraxılış ×100', 'label_en': 'Co-movement of branch growth with FR1 manufacturing VA growth'}",,,OBSERVED
+FR10,FR10.B_roa_fe,"{'code': 'roa', 'label_az': 'aktivlərin rentabelliyi (ROA)', 'label_en': 'ROA determinants, two-way FE'}",,,OBSERVED
+FR10,FR10.B_roa_pool,"{'code': 'roa', 'label_az': 'aktivlərin rentabelliyi (ROA)', 'label_en': 'ROA determinants, pooled NACE x year FE'}",,,OBSERVED
+FR10,FR10.B_margin_fe,"{'code': 'op_margin', 'label_az': 'əməliyyat marjası (EBIT / gəlir)', 'label_en': 'Operating margin determinants, two-way FE'}",,,OBSERVED
+FR10,FR10.B_margin_pool,"{'code': 'op_margin', 'label_az': 'əməliyyat marjası (EBIT / gəlir)', 'label_en': 'Operating margin, pooled NACE x year FE'}",,,OBSERVED
+FR10,FR10.B_pf_fe,"{'code': 'ln_va', 'label_az': 'ln əlavə dəyər', 'label_en': 'Cobb-Douglas production function, within (FE)'}",,,OBSERVED
+FR10,FR10.B_pf_pool,"{'code': 'ln_va', 'label_az': 'ln əlavə dəyər', 'label_en': 'Cobb-Douglas, pooled OLS with sector and year dummies'}",,,OBSERVED
+FR10,FR10.B_tfp_idx,"{'code': 'tfp_idx', 'label_az': 'TFP indeksi (Törnqvist)', 'label_en': 'Index-number TFP determinants, pooled NACE x year FE'}",,,OBSERVED
+FR10,FR10.B_tfp_idx_fe,"{'code': 'tfp_idx', 'label_az': 'TFP indeksi (Törnqvist)', 'label_en': 'Index-number TFP determinants, two-way FE'}",,,OBSERVED
+FR10,FR10.B_tfp_pf,"{'code': 'tfp_pf', 'label_az': 'istehsal funksiyası üzrə TFP', 'label_en': 'Production-function TFP on ownership, pooled NACE x year FE'}",,,OBSERVED
+FR10,FR10.B_distress,"{'code': 'B_distress', 'label_az': 'maliyyə çətinliyi (0/1)', 'label_en': 'Financial distress logit'}",,,OBSERVED
+FR10,FR10.B_invest_fe,"{'code': 'inv_rate', 'label_az': 'investisiya norması (kapital qoyuluşu / əsas fondlar t−1)', 'label_en': 'Investment rate, two-way FE'}",,,OBSERVED
+FR10,FR10.B_invest_pool,"{'code': 'inv_rate', 'label_az': 'investisiya norması (kapital qoyuluşu / əsas fondlar t−1)', 'label_en': 'Investment rate, pooled NACE x year FE'}",,,OBSERVED
+FR10,FR10.B_export,"{'code': 'B_export', 'label_az': 'ixracatçı (0/1)', 'label_en': 'Export participation logit'}",,,OBSERVED
+FR10,FR10.B_share,"{'code': 'dlsh', 'label_az': 'Δ ln bazar payı', 'label_en': 'Market-share growth determinants'}",,,OBSERVED
+FR12,FR12.act_lnB_null,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — null (FE + fixed terms) + brk'}",,,OBSERVED
+FR12,FR12.act_lnB_size,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + size + brk'}",,,OBSERVED
+FR12,FR12.act_lnB_dem,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + dem + brk'}",,,OBSERVED
+FR12,FR12.act_lnB_size_dem,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + size + dem + brk'}",,,OBSERVED
+FR12,FR12.act_lnB_size_lend,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + size + lend + brk'}",,,OBSERVED
+FR12,FR12.act_lnB_size_cred,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + size + cred + brk'}",,,OBSERVED
+FR12,FR12.act_lnB_dem_lend,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + dem + lend + brk'}",,,OBSERVED
+FR12,FR12.act_lnB_pcm,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + pcm + brk'}",,,OBSERVED
+FR12,FR12.act_lnB_size_pcm,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + size + pcm + brk'}",,,OBSERVED
+FR12,FR12.act_exit_null,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'activity: exit — null (FE + fixed terms) + d2022'}",,,OBSERVED
+FR12,FR12.act_exit_dem,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'activity: exit — FE + dem + d2022'}",,,OBSERVED
+FR12,FR12.act_exit_dem_pcm,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'activity: exit — FE + dem + pcm + d2022'}",,,OBSERVED
+FR12,FR12.act_exit_dem_cred,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'activity: exit — FE + dem + cred + d2022'}",,,OBSERVED
+FR12,FR12.act_exit_lend,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'activity: exit — FE + lend + d2022'}",,,OBSERVED
+FR12,FR12.act_exit_cred,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'activity: exit — FE + cred + d2022'}",,,OBSERVED
+FR12,FR12.act_exit_size,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'activity: exit — FE + size + d2022'}",,,OBSERVED
+FR12,FR12.reg_lnB_null,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'region: lnB — null (FE + fixed terms)'}",,,OBSERVED
+FR12,FR12.reg_lnB_reg,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'region: lnB — FE + reg'}",,,OBSERVED
+FR12,FR12.reg_lnB_size,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'region: lnB — FE + size'}",,,OBSERVED
+FR12,FR12.reg_lnB_reg_size,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'region: lnB — FE + reg + size'}",,,OBSERVED
+FR12,FR12.reg_lnB_non,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'region: lnB — FE + non'}",,,OBSERVED
+FR12,FR12.reg_lnB_non_lend,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'region: lnB — FE + non + lend'}",,,OBSERVED
+FR12,FR12.reg_lnB_reg_lend,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'region: lnB — FE + reg + lend'}",,,OBSERVED
+FR12,FR12.reg_exit_null,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'region: exit — null (FE + fixed terms)'}",,,OBSERVED
+FR12,FR12.reg_exit_reg,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'region: exit — FE + reg'}",,,OBSERVED
+FR12,FR12.reg_exit_size,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'region: exit — FE + size'}",,,OBSERVED
+FR12,FR12.reg_exit_reg_size,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'region: exit — FE + reg + size'}",,,OBSERVED
+FR12,FR12.reg_exit_non,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'region: exit — FE + non'}",,,OBSERVED
+FR12,FR12.reg_exit_non_lend,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'region: exit — FE + non + lend'}",,,OBSERVED
+FR12,FR12.reg_exit_reg_lend,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'region: exit — FE + reg + lend'}",,,OBSERVED
+FR12,FR12.sme_lo_null,"{'code': 'lo', 'label_az': 'KOS-un buraxılışda payının log-odds-u', 'label_en': 'sme: lo — null (FE + fixed terms)'}",,,OBSERVED
+FR12,FR12.sme_lo_dem,"{'code': 'lo', 'label_az': 'KOS-un buraxılışda payının log-odds-u', 'label_en': 'sme: lo — FE + dem'}",,,OBSERVED
+FR12,FR12.sme_lo_size,"{'code': 'lo', 'label_az': 'KOS-un buraxılışda payının log-odds-u', 'label_en': 'sme: lo — FE + size'}",,,OBSERVED
+FR12,FR12.sme_lo_lend,"{'code': 'lo', 'label_az': 'KOS-un buraxılışda payının log-odds-u', 'label_en': 'sme: lo — FE + lend'}",,,OBSERVED
+FR12,FR12.sme_lo_dem_lend,"{'code': 'lo', 'label_az': 'KOS-un buraxılışda payının log-odds-u', 'label_en': 'sme: lo — FE + dem + lend'}",,,OBSERVED
+FR12,FR12.smeemp_lo_null,"{'code': 'lo', 'label_az': 'KOS-un işçi sayında payının log-odds-u', 'label_en': 'sme_emp: lo — null (FE + fixed terms)'}",,,OBSERVED
+FR12,FR12.smeemp_lo_dem,"{'code': 'lo', 'label_az': 'KOS-un işçi sayında payının log-odds-u', 'label_en': 'sme_emp: lo — FE + dem'}",,,OBSERVED
+FR12,FR12.smeemp_lo_size,"{'code': 'lo', 'label_az': 'KOS-un işçi sayında payının log-odds-u', 'label_en': 'sme_emp: lo — FE + size'}",,,OBSERVED
+FR12,FR12.smeemp_lo_lend,"{'code': 'lo', 'label_az': 'KOS-un işçi sayında payının log-odds-u', 'label_en': 'sme_emp: lo — FE + lend'}",,,OBSERVED
+FR12,FR12.smeemp_lo_dem_lend,"{'code': 'lo', 'label_az': 'KOS-un işçi sayında payının log-odds-u', 'label_en': 'sme_emp: lo — FE + dem + lend'}",,,OBSERVED
+FR12,FR12.gapsens_act_lnB_m1,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — FE + dem + brk [doldurulmuş 2021 ilə]'}",,,OBSERVED
+FR12,FR12.gapsens_act_lnB_m0,"{'code': 'lnB', 'label_az': 'ln yeni qeydiyyatlar (doğulmalar)', 'label_en': 'activity: lnB — null (FE + fixed terms) + brk [doldurulmuş 2021 ilə]'}",,,OBSERVED
+FR12,FR12.gapsens_act_exit_m0,"{'code': 'exit', 'label_az': 'çıxış əmsalı, %', 'label_en': 'activity: exit — null (FE + fixed terms) + d2022 [doldurulmuş 2021 ilə]'}",,,OBSERVED
+FR12,FR12.gapsens_sme_lo_m0,"{'code': 'lo', 'label_az': 'KOS-un buraxılışda payının log-odds-u', 'label_en': 'sme: lo — null (FE + fixed terms) [doldurulmuş 2021 ilə]'}",,,OBSERVED
+FR12,FR12.gapsens_smeemp_lo_m1,"{'code': 'lo', 'label_az': 'KOS-un işçi sayında payının log-odds-u', 'label_en': 'sme_emp: lo — FE + size [doldurulmuş 2021 ilə]'}",,,OBSERVED
+FR12,FR12.gapsens_smeemp_lo_m0,"{'code': 'lo', 'label_az': 'KOS-un işçi sayında payının log-odds-u', 'label_en': 'sme_emp: lo — null (FE + fixed terms) [doldurulmuş 2021 ilə]'}",,,OBSERVED
+FR12,FR12.IO_S1,"{'code': 'd_price_pct', 'label_az': 'Δqiymət, Δmarja, Δburaxılış, Δistehlakçı və istehsalçı rifahı', 'label_en': 'IO toolkit S1: Entry of a 4th mobile operator; Entry-barrier reduction / licensing simplification'}",,,OBSERVED
+FR12,FR12.IO_S2,"{'code': 'd_price_pct', 'label_az': 'Δqiymət, Δmarja, Δburaxılış, Δistehlakçı və istehsalçı rifahı', 'label_en': 'IO toolkit S2: Merger of two banks; Merger of two firms'}",,,OBSERVED
+FR12,FR12.IO_S3,"{'code': 'd_price_pct', 'label_az': 'Δqiymət, Δmarja, Δburaxılış, Δistehlakçı və istehsalçı rifahı', 'label_en': 'IO toolkit S3: Cost shock / excise or tax increase; Energy-cost shock'}",,,OBSERVED
+FR12,FR12.IO_S4,"{'code': 'd_price_pct', 'label_az': 'Δqiymət, Δmarja, Δburaxılış, Δistehlakçı və istehsalçı rifahı', 'label_en': 'IO toolkit S4: Import competition (tariff cut)'}",,,OBSERVED
+FR12,FR12.IO_S5,"{'code': 'd_price_pct', 'label_az': 'Δqiymət, Δmarja, Δburaxılış, Δistehlakçı və istehsalçı rifahı', 'label_en': 'IO toolkit S5: SOE full privatisation (mixed oligopoly); SOE partial privatisation (mixed oligopoly)'}",,,OBSERVED
+FR12,FR12.conc_bounds_map,"{'code': 'hhi_bounds', 'label_az': 'HHI aşağı/yuxarı hədd, CR4 hədləri', 'label_en': 'Concentration bounds from size-class shares (identity)'}",,,OBSERVED
+FR12,FR12.alloc_sections,"{'code': 'section_flows', 'label_az': 'bölmənin yeni, ləğv edilən vahidləri və ehtiyatı', 'label_en': 'Section register flows: allocation of the region-panel total'}",,,OBSERVED
+FR12,FR12.alloc_sections_h1,"{'code': 'section_h1_flows', 'label_az': 'bölmənin yanvar–iyun göstəriciləri', 'label_en': 'Section half-year flows: full-year allocation x observed H1 ratio'}",,,OBSERVED
+FR12,FR12.LB_entry_poisson,"{'code': 'entrants', 'label_az': 'girişlərin sayı (müəssisə)', 'label_en': 'entry poisson'}",,,OBSERVED
+FR12,FR12.LB_entry_poisson_secfe,"{'code': 'entrants', 'label_az': 'girişlərin sayı (müəssisə)', 'label_en': 'entry poisson secfe'}",,,OBSERVED
+FR12,FR12.LB_entry_nb2,"{'code': 'entrants', 'label_az': 'girişlərin sayı', 'label_en': 'entry nb2'}",,,OBSERVED
+FR12,FR12.LB_exit_logit,"{'code': 'exit', 'label_az': 'çıxış (0/1), müəssisə-il', 'label_en': 'exit logit'}",,,OBSERVED
+FR12,FR12.LB_exit_cloglog,"{'code': 'exit', 'label_az': 'çıxış (0/1), müəssisə-il', 'label_en': 'exit cloglog'}",,,OBSERVED
+FR12,FR12.LB_scp,"{'code': 'scp', 'label_az': 'qiymət-xərc marjası, %', 'label_en': 'scp'}",,,OBSERVED
+FR12,FR12.LB_mob_instability,"{'code': 'mob_instability', 'label_az': 'payların qeyri-sabitliyi, f.b.', 'label_en': 'mob instability'}",,,OBSERVED
+FR12,FR12.LB_mob_rank,"{'code': 'mob_rank', 'label_az': 'sıra mobilliyi (1 − ρ)', 'label_en': 'mob rank'}",,,OBSERVED
+FR12,FR12.LB_entrant_profile,"{'code': 'ln_revenue', 'label_az': 'ln gəlir', 'label_en': 'entrant profile'}",,,OBSERVED
+FR12,FR12.LB_postentry_growth,"{'code': 'g_rel', 'label_az': 'nisbi ölçünün illik dəyişməsi (log)', 'label_en': 'postentry growth'}",,,OBSERVED
+FR12,FR12.LB_boone_pooled,"{'code': 'ln_profit', 'label_az': 'ln mənfəət (mənfəətli müəssisələr)', 'label_en': 'boone pooled'}",,,OBSERVED
+FR12,FR12.LB_boone_sector,"{'code': 'ln_profit', 'label_az': 'ln mənfəət (mənfəətli müəssisələr)', 'label_en': 'boone sector'}",,,OBSERVED
+FR12,FR12.LB_boone_sector_year,"{'code': 'ln_profit', 'label_az': 'ln mənfəət (mənfəətli müəssisələr)', 'label_en': 'Boone indicator per section-year'}",,,OBSERVED
+FR12,FR12.LB_recovery_revenue,"{'code': 'ln_revenue', 'label_az': 'ln gəlir', 'label_en': 'recovery revenue'}",,,OBSERVED
+FR12,FR12.LB_recovery_exit,"{'code': 'exits', 'label_az': 'çıxışlar (müəssisə sayı)', 'label_en': 'parameter recovery: exit hazard'}",,,OBSERVED

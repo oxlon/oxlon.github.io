@@ -1,0 +1,15 @@
+gosterici,ad,vahid,il,baza,p05,p10,median,p95,ES10_quyruq,risk_altinda,pis_istiqamet,menbe,qeyd
+GaR,ÜDM-ə risk (qeyri-neft real artım),%,2027,5.43,0.106703,1.331371,5.43,10.356434,-0.477971,5.323297,aşağı,RU birgə Monte Karlo (simulate.py),risk_altinda = baza − p05
+IaR,İnflyasiyaya risk (illik orta İQİ),%,2027,5.7416,1.637477,2.179166,5.7416,13.712911,14.735187,7.971311,yuxarı,RU birgə Monte Karlo (simulate.py),risk_altinda = p95 − baza
+FaR,Fiskal risk (büdcə balansı / ÜDM),% ÜDM,2027,0.32115,-1.334761,-0.917677,0.32115,1.988297,-1.556464,1.655911,aşağı,RU birgə Monte Karlo (simulate.py),"bütün fiskal kanallar, prosiklik investisiya reaksiyası daxil"
+CAaR,Cari əməliyyatlar balansına risk (% ÜDM),% ÜDM,2027,1.910762,-14.5697,-11.684444,1.61435,12.768746,-15.046058,16.480462,aşağı,OxLon cari hesab–Brent həssaslığı × RU Brent paylanması,yalnız Brent kanalı
+DaR,Borca risk (dövlət borcu / ÜDM),% ÜDM,2027,15.67331,12.688973,13.235504,15.921078,20.250526,,4.577216,yuxarı,dsa.py stoxastik DSA,"P(borc > 20% ÜDM) = 0.062; P(> 25%) = 0.000; P(> 30%, DR10) = 0.000"
+SaR,ARDNF aktivlərinə risk,mln USD,2027,78749.379746,64416.267903,67513.774924,78524.777536,93756.995959,63574.130433,14333.111843,aşağı,car.py (kopula gəlirliliyi + neft axınları + plan transferti),baza = simulyasiya ortası
+CaR,Fiskal kapitala risk (ARDNF + AMB − dövlət borcu),mln USD,2027,80213.877567,63106.820023,,80244.562562,,,17107.057544,aşağı,car.py,CaR99 = 23426; ES99 = 26731
+DaR,Borca risk (dövlət borcu / ÜDM),% ÜDM,2030,11.912634,6.744573,7.774387,12.365051,19.145606,,7.232972,yuxarı,dsa.py stoxastik DSA,"P(borc > 20% ÜDM) = 0.032; P(> 25%) = 0.002; P(> 30%, DR10) = 0.000"
+SaR,ARDNF aktivlərinə risk,mln USD,2030,94434.347964,57443.905009,64115.707406,91614.704896,141098.297154,56172.47372,36990.442956,aşağı,car.py (kopula gəlirliliyi + neft axınları + plan transferti),baza = simulyasiya ortası
+CaR,Fiskal kapitala risk (ARDNF + AMB − dövlət borcu),mln USD,2030,96385.315067,52192.941762,,92649.528019,,,44192.373305,aşağı,car.py,CaR99 = 55558; ES99 = 61180
+ORaR95,Büdcənin neft gəlirlərinə risk,mln AZN,2027,17723.214008,,,,,6378.002197,5591.111841,aşağı,var.py,etibarlılıq 95%; RU birgə Monte Karlo (simulate.py)
+ORaR99,Büdcənin neft gəlirlərinə risk,mln AZN,2027,17723.214008,,,,,7232.898721,6869.244101,aşağı,var.py,etibarlılıq 99%; RU birgə Monte Karlo (simulate.py)
+VaR_ARDNF95,ARDNF portfelinin bazar VaR-ı (1 il),mln USD,2027,72595.1,,,,,9825.406142,6978.195146,aşağı,var.py,etibarlılıq 95%; Monte Karlo: empirik marjinallar + Student-t kopula
+VaR_ARDNF99,ARDNF portfelinin bazar VaR-ı (1 il),mln USD,2027,72595.1,,,,,13873.888852,11597.988793,aşağı,var.py,etibarlılıq 99%; Monte Karlo: empirik marjinallar + Student-t kopula

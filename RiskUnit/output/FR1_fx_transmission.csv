@@ -1,0 +1,29 @@
+parametr,deyer,izah,n,numune,qeyd,setir_novu,il,cemi,zencir,elave_qat
+pt_reg,0.260294,b0 0.176 + b1 0.084; se(cəm) 0.037,25,2001–2025,"İQİ ← AZN idxal qiymətləri inflyasiyası (cari + 1 il gecikmə), HAC; asılı dəyişənin gecikməsi yoxdur",parametr,,,,
+pt_episode,0.30113,"2015–18 artıq İQİ 25.1 f.b., USD idxal hissəsi çıxılmaqla 23.7 f.b. / 78.6 log bənd",4,2015–2018,KALİBRLƏMƏ: cəmi ötürmə (istifadə olunur),parametr,,,,
+w0,0.677217,epizod LS: 0.58 (cəm 0.331),25,2001–2025,hadisə ilinin payı (qalan hissə növbəti ildə),parametr,,,,
+pt_range,0.145564,[0.223; 0.368],,,qeyri-müəyyənlik aralığı,parametr,,,,
+L_nonoil,-12.2428,"aralıq [-20.5; -4.0] (etalon: simmetrik 5.87, əvvəl 8.80, sonra 2.93)",2,2015–2016,"qeyri-neft səviyyə itkisi, % / log vahid (neft və investisiya kanalları çıxılmaqla)",parametr,,,,
+w0g,0.0753435,2015 qalığı -0.66 / 2016 məcmu -8.70,2,2015–2016,hadisə ilinin payı,parametr,,,,
+s_ext,0.32935,"borc/ÜDM 18.2%, xarici 6.0% (zəmanətli xarici 3.8% daxil deyil)",,2026-07-01,xarici (valyuta) borcun payı — yenidənqiymətləndirmə,parametr,,,,
+p_dev,0.333333,"epizodlar [[1998], [2015, 2016], [2020]]; devalvasiya: [[2015, 2016]]",3,,P(devalvasiya | Brent çöküşü epizodu),parametr,,,,
+cpi,3.11445,"inflyasiya, f.b.",,2026,+16.5% devalvasiya (2026-dən),cavab,2026,3.11445,0.890672,2.22378
+cpi,1.48444,"inflyasiya, f.b.",,2027,+16.5% devalvasiya (2026-dən),cavab,2027,1.48444,2.39635,-0.911903
+cpi,0,"inflyasiya, f.b.",,2028,+16.5% devalvasiya (2026-dən),cavab,2028,0,0.00972271,-0.00972271
+cpi,0,"inflyasiya, f.b.",,2029,+16.5% devalvasiya (2026-dən),cavab,2029,0,0.00873597,-0.00873597
+cpi,0,"inflyasiya, f.b.",,2030,+16.5% devalvasiya (2026-dən),cavab,2030,0,0.00684712,-0.00684712
+nonoil_lvl,-0.140872,"qeyri-neft səviyyəsi, %",,2026,+16.5% devalvasiya (2026-dən),cavab,2026,-0.140872,0.299152,-0.440024
+nonoil_lvl,-1.86973,"qeyri-neft səviyyəsi, %",,2027,+16.5% devalvasiya (2026-dən),cavab,2027,-1.86973,-0.0262693,-1.84347
+nonoil_lvl,-1.86973,"qeyri-neft səviyyəsi, %",,2028,+16.5% devalvasiya (2026-dən),cavab,2028,-1.86973,0.00204304,-1.87178
+nonoil_lvl,-1.86973,"qeyri-neft səviyyəsi, %",,2029,+16.5% devalvasiya (2026-dən),cavab,2029,-1.86973,0.0274742,-1.89721
+nonoil_lvl,-1.86973,"qeyri-neft səviyyəsi, %",,2030,+16.5% devalvasiya (2026-dən),cavab,2030,-1.86973,0.0473928,-1.91713
+nonoil_g,-0.140872,"qeyri-neft artımı, f.b.",,2026,+16.5% devalvasiya (2026-dən),cavab,2026,-0.140872,0.299152,-0.440024
+nonoil_g,-1.72886,"qeyri-neft artımı, f.b.",,2027,+16.5% devalvasiya (2026-dən),cavab,2027,-1.72886,-0.325421,-1.40344
+nonoil_g,0,"qeyri-neft artımı, f.b.",,2028,+16.5% devalvasiya (2026-dən),cavab,2028,0,0.0283123,-0.0283123
+nonoil_g,0,"qeyri-neft artımı, f.b.",,2029,+16.5% devalvasiya (2026-dən),cavab,2029,0,0.0254311,-0.0254311
+nonoil_g,0,"qeyri-neft artımı, f.b.",,2030,+16.5% devalvasiya (2026-dən),cavab,2030,0,0.0199186,-0.0199186
+debt_gdp,0.98952,"dövlət borcu, % ÜDM (f.b.)",,2026,+16.5% devalvasiya (2026-dən),cavab,2026,0.98952,-0.0191753,1.00869
+debt_gdp,0.98952,"dövlət borcu, % ÜDM (f.b.)",,2027,+16.5% devalvasiya (2026-dən),cavab,2027,0.98952,-0.0191753,1.00869
+debt_gdp,0.98952,"dövlət borcu, % ÜDM (f.b.)",,2028,+16.5% devalvasiya (2026-dən),cavab,2028,0.98952,-0.0191753,1.00869
+debt_gdp,0.98952,"dövlət borcu, % ÜDM (f.b.)",,2029,+16.5% devalvasiya (2026-dən),cavab,2029,0.98952,-0.0191753,1.00869
+debt_gdp,0.98952,"dövlət borcu, % ÜDM (f.b.)",,2030,+16.5% devalvasiya (2026-dən),cavab,2030,0.98952,-0.0191753,1.00869

@@ -78,6 +78,21 @@ def blocks(c: dict) -> dict[str, str]:
                    _md(T[["test_id", "model", "hedef", "n", "metrik", "deyer", "hedd", "netice"]], num={"deyer": 3}) +
                    "\n\nKalibrləmə qərarları:\n\n" + _md(c["calibration"][["hedef", "miqyas", "ehate80", "n", "qerar"]],
                                                          num={"miqyas": 2, "ehate80": 2}))
+    rows = []
+    for view, r in (("baza mərkəzli", c["res"]), ("canlı", c.get("res_live"))):
+        if r is None:
+            continue
+        jj = r.col(r.score_year)
+        for kind, nm in (("g", "Qeyri-neft artımı, %"), ("cpi", "İnflyasiya, %"), ("fis", "Büdcə balansı, % ÜDM")):
+            x = r.total(kind)[:, jj]
+            rows.append({"Baxış": view, "Göstərici": nm, "Baza": r.base[kind][jj], "P5": np.quantile(x, .05),
+                         "P50": np.median(x), "Orta": x.mean(), "P95": np.quantile(x, .95),
+                         "Hədəf σ": r.meta["layering"][kind]["sig_target"][jj],
+                         "Ümumi σ": r.meta["layering"][kind]["sig_total"][jj]})
+    vt = pd.DataFrame(rows)
+    out["v2_views"] = (f"Qiymətləndirmə ili {res.score_year}; Brent mərkəzi: baza {az(res.brent_base[j], 1)} USD, canlı "
+                       f"{az(float(c['res_live'].meta['brent_centre'][j]), 1)} USD.\n\n" if c.get("res_live") is not None else "") + \
+        _md(vt, num={k: 2 for k in ("Baza", "P5", "P50", "Orta", "P95", "Hədəf σ", "Ümumi σ")})
     fs = c["feed_status"]
     out["nfr2"] = _md(fs[["feed", "vintage", "last_obs", "age_days", "n_obs"]], num={"age_days": 0, "n_obs": 0})
     return out

@@ -1,0 +1,25 @@
+  brent             ok     9097 müşahidə, son: 2026-09-29
+  vix               ok     9287 müşahidə, son: 2026-10-02
+  ust10             ok    16174 müşahidə, son: 2026-10-02
+  fedfunds          ok      867 müşahidə, son: 2026-09-01
+  eurusd            ok     6960 müşahidə, son: 2026-10-02
+  gpr               ok     3507 müşahidə, son: 2026-09-01
+  epu               ok      355 müşahidə, son: 2026-07-01
+  usgs              ok      251 müşahidə, son: 2026-10-01
+  era5              ok     3204 müşahidə, son: 2026-09-01
+  cbar_fx                                           ok     3696 müşahidə, son: 2026-10-05
+  cbar_rate                                         ok      215 müşahidə, son: 2026-09-24
+  dsk_macro                                         ok      354 müşahidə, son: 2026-08-01
+  dsk_cpi                                           ok        7 müşahidə, son: 2026-08-01
+  dsk_tables                                        ok      412 müşahidə, son: 2026-04-01
+  minfin                                            ok        5 müşahidə, son: 2026-03-01
+  sofaz                                             ok       15 müşahidə, son: 2026-06-30
+  bfb                                               ok       24 müşahidə, son: 2026-10-01
+  D1 kataloq: Nazirlik (MU) 793, makro OxLon §15.5.1 1001, mikro §15.5.2 1551
+  monitor: 56 göstərici (14 xəbərdarlıq), 12786 təsir sətri, 5 dəyişiklik (1.7 san)
+    Brent (spot)                                          113.960 vs     68.980 (OxLon §15.5.1) z=+2.7
+    Brent 2026 illik ortası (YTD + spot)                   98.361 vs     68.980 (OxLon §15.5.1) z=+6.9
+    Azeri Light (proksi) vs FR1 ixrac qiyməti             114.631 vs     66.018 (MicroUnit FR1) z=+3.0
+    Dövlət büdcəsi xərcləri: icra (illik planın %-i)       54.833 vs     66.667 (Nazirlik Bottom-up) z=-2.4
+    Dövlət büdcəsinin balansı (Yanvar–ay) vs illik fər   3715.900 vs  -3042.450 (Nazirlik Bottom-up) z=+4.5
+    ARDNF aktivləri vs Nazirlik ilsonu fərziyyəsi       72596.600 vs  59123.972 (Nazirlik Bottom-up) z=+4.6

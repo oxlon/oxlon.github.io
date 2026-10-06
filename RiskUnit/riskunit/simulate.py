@@ -15,6 +15,21 @@ Risk is the simulated distribution of the core (Methodology Blueprint §1.1). Th
 
 Every channel is kept as a separate additive component per draw, so risk contributions
 (variance shares and lower-tail Euler contributions) are exact decompositions.
+
+v2 (2026-10-06) — two views and three evidence-driven fixes (docs/Risk_Metodologiyasi.md §12):
+* view="baseline" (default; scores, heat map, stress tests, DSA): Brent is centred on the macro
+  assumption and the median of every outcome equals the official baseline exactly (the risk unit
+  publishes no central path) — since v2.1 except in the running year, whose observed months are fixed
+  at the year-to-date outturn in both views (the baseline applies to unobserved months only); view="live": Brent centre conditioned on today's market data
+  (inverse-MSE combination with the spot, the D6 monitor's driver), median = baseline + the
+  deterministic response to the live gap, nothing else.
+* R01 procyclical investment reaction: re-estimated on 2007–2025 (the 2005–06 rinv_state splice is
+  excluded), NET of the investment response that the FR1 Brent multiplier already contains
+  (rinv_state +3.2…3.8 % per +10 USD — the v1 code double-counted it), and SOFAZ-transfer financed:
+  it moves growth and CPI but not the state-budget balance. Only the part of investment kept above
+  the transfer-financed path (T09 floor) is deficit financed (FR1 balance_n response, mln AZN).
+* bands: residual layering fills the calibrated macro fan; the fiscal fan is calibrated to the
+  random-walk error of the balance ratio (NFR1 calibration row 'fis').
 """
 from __future__ import annotations
 
@@ -24,7 +39,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from . import config, factors, spine
+from . import config, factors, fx, parametrler, spine
 
 YEARS = config.FORECAST_YEARS
 T = len(YEARS)
@@ -59,11 +74,13 @@ CHANNEL_AZ = {
     "deval": "Devalvasiya (R03)", "quake": "Zəlzələ (R08)", "drought": "Quraqlıq (R09)",
     "bank": "Bank sektoru (R04, ekspert)", "flood": "Daşqın (R10, ekspert)",
     "manuf": "Emal sahələri (R15)", "compet": "Rəqabət (R16)", "resid": "Modelin qalıq qeyri-müəyyənliyi",
+    "import": "İdxal qiymətləri (R17)", "food": "Dünya ərzaq qiymətləri (R18)",
 }
 CHANNEL_RISK = {"brent": "R01", "fiscal_react": "R01", "rate": "R02", "deval": "R03", "bank": "R04", "partner": "R05",
                 "gpr": "R06", "remit": "R07", "quake": "R08", "drought": "R09", "flood": "R10",
-                "transition": "R14", "manuf": "R15", "compet": "R16"}
-
+                "transition": "R14", "manuf": "R15", "compet": "R16", "import": "R17", "food": "R18"}
+VIEWS = {"baseline": "baza mərkəzli (rəsmi proqnozlarla uyğun; skorlar və istilik xəritəsi)",
+         "live": "canlı məlumatla şərtləndirilmiş (cari bazar; D6 proqnoz təsiri monitoru ilə uyğun)"}
 
 def _step_response(mult: pd.DataFrame, var: str) -> np.ndarray:
     return mult[var].reindex(YEARS).to_numpy(dtype=float)
@@ -129,8 +146,13 @@ def micro_signals() -> dict:
 
 
 def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None = None,
-        overrides: dict | None = None) -> SimResult:
-    """Joint simulation. `overrides` lets FR3 stress scenarios and tests fix factor paths."""
+        overrides: dict | None = None, view: str = "baseline") -> SimResult:
+    """Joint simulation. `overrides` lets FR3 stress scenarios and tests fix factor paths.
+    view='baseline' (default): centred on the official baseline for unobserved months (median = baseline
+    except in the running year, whose observed months are fixed at the YTD outturn — v2.1);
+    view='live': Brent centre conditioned on the live market data (see module docstring)."""
+    if view not in VIEWS:
+        raise ValueError(f"view must be one of {list(VIEWS)}")
     rng = np.random.default_rng(seed)
     ov = overrides or {}
     p = factors.params()
@@ -151,6 +173,10 @@ def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None =
         "remit": P["remit_gw"],
         "lend": P["lendrate"].diff(),
         "gpr": P["dl_gpr_reg"] / 100,
+        # R17/R18 (CAEM categories): import-price inflation and world food-price growth, each
+        # orthogonalised on Brent (and food on imports) so that FR1's Brent channel is not double-counted
+        "imp": P["imp_own"],
+        "food": P["food_own"],
     }).loc[2003:config.LAST_ACTUAL].dropna()
     H = H - H.mean()
     H["brent"] = H["brent"] * calibration_factors()["brent"]      # NFR1 recalibration of the oil tails
@@ -169,36 +195,53 @@ def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None =
     b_spi = pdraw(("agri_spi", "spi"))
     b_inv0 = pdraw(("inv_brent", "dln_brent"))
     b_inv1 = pdraw(("inv_brent", "dln_brent_l1"))
+    # single external-price pass-through (factors 'cpi_ext'): joint draw of (b0, b1) per path
+    ce = (ch[("cpi_ext", "impA")]["coef"], ch[("cpi_ext", "impA_l1")]["coef"])
+    bext = rng.multivariate_normal(ce, ch[("cpi_ext", "cov")], size=n)
+    b_ext0, b_ext1 = bext[:, 0], bext[:, 1]
+    fxp = fx.draw_params(rng, n)                       # FX module parameter uncertainty (pt, L)
 
-    # ---------------- partial observation of the running year
+    # ---------------- partial observation of the running year (v2.1, audit C3: YTD nowcast in BOTH views)
     as_of = pd.Timestamp(config.as_of())
+    ry = running_year()
     f_rem = np.ones(T)
     if YEARS[0] == as_of.year:
         last_obs_month = pd.Timestamp(L["brent_last_date"]).month
         f_rem[0] = max(0.0, (12 - last_obs_month) / 12)
     f_obs_growth = np.ones(T)
     if YEARS[0] == as_of.year:
-        f_obs_growth[0] = 0.5          # three quarters observed: half the annual innovation remains
+        # remaining share of the year after the DSK Jan–M outturn (v2.0: fixed 0,5)
+        f_obs_growth[0] = (12 - ry["g_months"]) / 12 if "g_months" in ry else float(parametrler.get("sim_f_obs_growth", 0.5))
+    f_obs_cpi = f_obs_growth.copy()
+    if YEARS[0] == as_of.year and "cpi_months" in ry:
+        f_obs_cpi[0] = (12 - ry["cpi_months"]) / 12
 
     # ---------------- Brent path: live-conditioned centre + resampled innovations
     w = ch[("brent_combo", "w_struct")]
     base_b = B["brent_usd"].to_numpy()
-    lb_last = np.log(L["brent_last_month"])
-    centre = np.exp(w * np.log(base_b) + (1 - w) * lb_last)
-    if YEARS[0] == as_of.year:
+    if view == "live":
+        lb_last = np.log(L["brent_last_month"])
+        centre = np.exp(w * np.log(base_b) + (1 - w) * lb_last)
+    else:                                   # baseline view: the macro unit's Brent assumption for unobserved months
+        centre = base_b.astype(float).copy()
+    if YEARS[0] == as_of.year:              # both views: observed months fixed at the year-to-date average
         centre[0] = (1 - f_rem[0]) * L["brent_ytd_avg"] + f_rem[0] * centre[0]
     gpr_part = b_gpr_brent[:, None] * E["gpr"]
     own = E["brent"] - gpr_part
     scale = f_rem[None, :]
     cum_own = np.cumsum(own * scale, axis=1)
     cum_gpr = np.cumsum(gpr_part * scale, axis=1)
+    # the centre is the median path by construction: remove the small-sample median of the resampled
+    # cumulative innovations (whole-year bootstrap of 23 years is not exactly median-zero)
+    cum_own = cum_own - np.median(cum_own + cum_gpr, axis=0)[None, :]
     # energy-transition overlay (R14): Bernoulli on the whole path, -x %/yr drift from year 2
     p14 = float(reg.at["R14", "ekspert_ehtimal"]) if "R14" in reg.index else 0.0
     trans_on = rng.random(n) < p14
     det = bool(ov.get("deterministic"))               # stress mode: only the declared shocks act
     if det:
         trans_on[:] = False
-    drift = np.array([0.0] + [-0.03 * k for k in range(1, T)])
+    d_tr = float(parametrler.get("sim_transition_drift", -0.03))
+    drift = np.array([0.0] + [d_tr * k for k in range(1, T)])
     cum_tr = trans_on[:, None] * drift[None, :]
     if "brent_path" in ov:                                        # stress scenario override
         brent = np.tile(np.asarray(ov["brent_path"], dtype=float), (n, 1))
@@ -276,29 +319,47 @@ def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None =
         dmg = np.zeros((n, T))
     mi_last = spine.micro_fr1_dataset().loc[config.LAST_ACTUAL]
     gdp_over_nonoil = float(mi_last["gdp_n"] / mi_last["gdp_nonoil_n"])     # damage in % GDP → % non-oil GDP
-    lv_quake = -p["eq_output_loss"] * dmg * gdp_over_nonoil          # transitory, % of non-oil GDP
-    fis_quake = -p["eq_fiscal_share"] * dmg                          # % GDP
+    # v2.1 (same profile as scalability.quake_profiles): the output loss fades as capital is rebuilt; reconstruction
+    # (eq_fiscal_share × damage) is spent 25/50/25 % over three years and passes through the FR1 investment multiplier
+    from .scalability import QUAKE_REC
+    loss_w = np.cumsum((1.0,) + tuple(-w for w in QUAKE_REC))[:len(QUAKE_REC)]       # 1, 0.75, 0.25
+    def spread(a, w):
+        out = np.zeros_like(a)
+        for k, wk in enumerate(w):
+            out[:, k:] += wk * a[:, :T - k]
+        return out
+    lv_quake_dir = -p["eq_output_loss"] * spread(dmg, loss_w) * gdp_over_nonoil      # % of non-oil GDP
+    p_inv = float(mi_last["p_inv"])
+    rec_bn = p["eq_fiscal_share"] * spread(dmg, QUAKE_REC) / 100 * B["fr1_gdp_n"].to_numpy()[None, :] / p_inv / 1000
 
-    # ---------------- conditional devaluation (one per path at most, permanent level effect)
-    hist_b = spine.annual_panel()["brent"].loc[config.LAST_ACTUAL - 2:config.LAST_ACTUAL].to_numpy()
+    # ---------------- conditional devaluation (one per path at most) — v2.1: ONE FX module (riskunit.fx)
+    # trigger = first year of a run of crash years (an episode; consecutive trigger years are one episode, p_dev = 1/3)
+    Pa = spine.annual_panel()["brent"]
+    hist_b = Pa.loc[config.LAST_ACTUAL - 3:config.LAST_ACTUAL].to_numpy()
     full = np.concatenate([np.tile(hist_b, (n, 1)), brent], axis=1)
     deval = np.zeros((n, T), dtype=bool)
     happened = np.zeros(n, dtype=bool)
+    trig_prev = np.full(n, (hist_b[-1] / hist_b[:3].mean() - 1) * 100 <= p["devaluation_brent_drop"])
     u = rng.random((n, T))
     for t in range(T):
-        prev3 = full[:, t:t + 3].mean(axis=1)
-        trig = (full[:, t + 3] / prev3 - 1) * 100 <= p["devaluation_brent_drop"]
-        hit = trig & (u[:, t] < dv["p_dev"]) & ~happened
+        prev3 = full[:, t + 1:t + 4].mean(axis=1)
+        trig = (full[:, t + 4] / prev3 - 1) * 100 <= p["devaluation_brent_drop"]
+        hit = trig & ~trig_prev & (u[:, t] < dv["p_dev"]) & ~happened
+        trig_prev = trig
         if "deval_year" in ov:
             hit = np.full(n, YEARS[t] == ov["deval_year"])
         elif det:
             hit = np.zeros(n, dtype=bool)
         deval[:, t] = hit
         happened |= hit
-    size = np.log1p(p["devaluation_size"])
+    size = np.log1p(p["devaluation_size"]) * 100                       # log points
     dev_on = np.cumsum(deval, axis=1) > 0
-    lv_deval = dev_on * dv["nonoil_residual"] * size / dv["dln_fx_2014_2017"]
-    cpi_deval = deval * dv["cpi_passthrough"] * size
+    x_fx = dev_on * size
+    if YEARS[0] == as_of.year:
+        x_fx[:, 0] *= f_rem[0]                     # a devaluation in the running year: remaining months of the average
+    fxr = fx.responses(x_fx, pt=fxp["pt"], L=fxp["L"])
+    lv_deval, cpi_deval = fxr["nonoil_lvl"], fxr["cpi"]
+    debt_deval = fxr["debt_gdp"]
 
     # ---------------- micro signals and expert overlays (independent Bernoulli per year)
     ms = micro_signals()
@@ -336,22 +397,70 @@ def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None =
     lv_x_gpr, c_x_gpr, f_x_gpr = via(M["extdem10"], ext_gpr / 10)
     # credit easing scenario = -200 bp policy rate; one unit = -2 pp on the lending rate (approximation)
     lv_r, c_r, f_r = via(M["credit_ease200"], -lend / 2)
-    # procyclical fiscal reaction (R01): real public investment follows Brent with the historical
-    # distributed-lag elasticity; a level shift of x mln AZN enters the FR1 step response per 1 bn.
+    # procyclical public-investment reaction (R01), v2 — see module docstring:
+    #  (i) EXCESS of the historical elasticity (2007–2025) over the response already inside the FR1
+    #      Brent multiplier (e_fr1), so the investment effect of Brent is counted once;
+    #  (ii) a deviation response to x = log Brent deviation from the baseline assumption (no drift);
+    #  (iii) transfer-financed → balance-neutral; only investment kept above that path (T09) is deficit-financed.
     inv0 = float(spine.micro_fr1_dataset().loc[config.LAST_ACTUAL, "rinv_state"])
+    e_fr1 = fr1_embedded_inv_elasticity(M, base_b)
     react_scale = np.ones(T)
     if YEARS[0] == as_of.year:
         react_scale[0] = f_rem[0]                      # the running year's budget is largely set
-    def reaction(x):                                   # x: N×T log deviation of Brent from baseline
+    def reaction(x, b0=b_inv0, b1=b_inv1):             # x: N×T log deviation of Brent from baseline
         x_l1 = np.concatenate([np.zeros((x.shape[0], 1)), x[:, :-1]], axis=1)
-        return inv0 / 1000 * (b_inv0[:, None] * x * react_scale[None, :] + b_inv1[:, None] * x_l1)
+        b0, b1 = np.atleast_1d(b0)[:, None], np.atleast_1d(b1)[:, None]
+        return inv0 / 1000 * ((b0 - e_fr1) * x * react_scale[None, :] + b1 * x_l1)
     x_own = np.log(centre / base_b)[None, :] + cum_own
     react_on = 0.0 if ov.get("fiscal_react_off") else 1.0
-    # T09 (no procyclical cut): public investment is never cut below its baseline path
-    floor = (lambda z: np.maximum(z, 0.0)) if ov.get("fiscal_react_floor") else (lambda z: z)
-    lv_fr_own, c_fr_own, f_fr_own = via(M["stateinv1bn"], react_on * floor(reaction(x_own)))
-    lv_fr_gpr, c_fr_gpr, f_fr_gpr = via(M["stateinv1bn"], react_on * floor(reaction(cum_gpr)))
-    lv_fr_tr, c_fr_tr, f_fr_tr = via(M["stateinv1bn"], react_on * floor(reaction(cum_tr)))
+    floor_on = bool(ov.get("fiscal_react_floor"))       # T09: no cut below the baseline investment path
+    def react_channel(x):
+        z = react_on * reaction(x)
+        z_eff = np.maximum(z, 0.0) if floor_on else z
+        g_, c_, _ = via(M["stateinv1bn"], z_eff)
+        _, _, f_ = via(M["stateinv1bn"], z_eff - z)    # deficit-financed part only (0 without T09)
+        return g_, c_, f_
+    lv_fr_own, c_fr_own, f_fr_own = react_channel(x_own)
+    lv_fr_gpr, c_fr_gpr, f_fr_gpr = react_channel(cum_gpr)
+    lv_fr_tr, c_fr_tr, f_fr_tr = react_channel(cum_tr)
+    react_inv_mln = react_on * (reaction(x_own) + reaction(cum_gpr) + reaction(cum_tr)) * 1000   # N×T mln AZN (2015 prices)
+
+    # R17 / R18 / R01 — external prices → CPI, v2.1 (audit M1): ONE pass-through (AZN import-price inflation, b0 + b1·lag);
+    # USD import-price inflation deviation = a_imp·ΔlnBrent (→ R01 / R06 / R14 by Brent source) + γ·food_own (→ R18)
+    # + imp_own (→ R17); world food growth = a_food·ΔlnBrent + food_own (event definition of R18)
+    imp_dev = E["imp"] * f_obs_cpi[None, :]
+    food_dev = E["food"] * f_obs_cpi[None, :]
+    if det:
+        imp_dev, food_dev = np.zeros((n, T)), np.zeros((n, T))
+    if "imp_dev" in ov:
+        imp_dev = np.tile(np.asarray(ov["imp_dev"], dtype=float), (n, 1))
+    if "food_dev" in ov:
+        food_dev = np.tile(np.asarray(ov["food_dev"], dtype=float), (n, 1))
+    pf = ch["_impfood"]
+    dev_b = np.log(brent / base_b[None, :])
+    dlb = np.diff(np.concatenate([np.zeros((n, 1)), dev_b], axis=1), axis=1) * 100     # pp Δln Brent vs baseline
+    d100 = lambda a: np.diff(np.concatenate([np.zeros((n, 1)), a], axis=1), axis=1) * 100  # noqa: E731
+    dlb_gpr, dlb_tr = d100(cum_gpr + 0 * dev_b), d100(cum_tr + 0 * dev_b)
+    dlb_own = dlb - dlb_gpr - dlb_tr
+    ecpi = lambda d: ext_price_cpi(d, b_ext0, b_ext1)  # noqa: E731
+    cpi_imp = ecpi(imp_dev)
+    cpi_food = ecpi(pf["gamma"] * food_dev)
+    c_x_brent, c_x_gpr_imp, c_x_tr = (ecpi(pf["a_imp"] * d) for d in (dlb_own, dlb_gpr, dlb_tr))
+    imp_level = pf["imp_base"][None, :] + pf["a_imp"] * dlb + pf["gamma"] * food_dev + imp_dev
+    food_level = pf["food_base"][None, :] + pf["a_food"] * dlb + food_dev
+
+    # earthquake reconstruction through the FR1 investment multiplier (deficit-financed: budget cost)
+    lv_qr, c_qr, f_qr = via(M["stateinv1bn"], rec_bn)
+    lv_quake, fis_quake = lv_quake_dir + lv_qr, f_qr
+
+    # deterministic response to the live Brent gap (zero in the baseline view): the only allowed median shift
+    gap = (centre - base_b)[None, :]
+    lv_gap, c_gap, f_gap = via(M["brent10"], gap / 10)
+    zg = react_on * reaction(np.log(centre / base_b)[None, :], ch[("inv_brent", "dln_brent")]["coef"],
+                             ch[("inv_brent", "dln_brent_l1")]["coef"])
+    lv_gr, c_gr, _ = via(M["stateinv1bn"], zg)
+    c_gx = ext_price_cpi(pf["a_imp"] * np.diff(np.concatenate([[0.0], np.log(centre / base_b) * 100])))
+    live_shift = {"g": _level_to_growth(lv_gap + lv_gr)[0], "cpi": (c_gap + c_gr + c_gx)[0], "fis": f_gap[0]}
 
     # level contributions are summed per risk channel, then turned into growth contributions
     LV = {
@@ -365,32 +474,69 @@ def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None =
     res = SimResult(years=YEARS, score_year=sy, brent=brent, brent_base=base_b, gpr_reg=gpr_reg)
     for k, lv in LV.items():
         res.comp_g[k] = _level_to_growth(lv)
-    res.comp_cpi = {"brent": c_b_own, "fiscal_react": c_fr_own, "gpr": c_b_gpr + c_x_gpr + c_fr_gpr,
-                    "transition": c_b_tr + c_fr_tr, "partner": c_x_own,
-                    "rate": c_r, "deval": cpi_deval, "compet": cpi_compet, "bank": c04, "flood": c10}
+    res.comp_cpi = {"brent": c_b_own + c_x_brent, "fiscal_react": c_fr_own, "gpr": c_b_gpr + c_x_gpr + c_fr_gpr + c_x_gpr_imp,
+                    "transition": c_b_tr + c_fr_tr + c_x_tr, "partner": c_x_own,
+                    "rate": c_r, "deval": cpi_deval, "compet": cpi_compet, "bank": c04, "flood": c10,
+                    "import": cpi_imp, "food": cpi_food, "quake": c_qr}
     res.comp_fis = {"brent": f_b_own, "fiscal_react": f_fr_own, "gpr": f_b_gpr + f_x_gpr + f_fr_gpr,
                     "transition": f_b_tr + f_fr_tr, "partner": f_x_own,
                     "rate": f_r, "quake": fis_quake, "bank": f04, "flood": f10}
 
-    # ---------------- core residuals: fill the macro fan, never exceed it
+    # ---------------- centring targets: official baseline (+ live gap response in the live view); running year =
+    # YTD nowcast in BOTH views (v2.1, audit C3: observed months fixed, unobserved months as in the view)
+    res.base = {"g": B["nonoil_realg"].to_numpy(), "cpi": B["cpi_infl"].to_numpy(),
+                "fis": B["fr1_balance_pct"].to_numpy()}
+    targets, obs_share = {}, {}
+    for kind in ("g", "cpi", "fis"):
+        tg = res.base[kind] + (live_shift[kind] if view == "live" else 0.0)
+        tg = np.asarray(tg, float).copy()
+        obs_share[kind] = np.nan
+        if YEARS[0] == as_of.year and kind in ("g", "cpi"):
+            c0, m = nowcast_centre(kind, view, float(res.base[kind][0]), ry)
+            if np.isfinite(m):
+                tg[0], obs_share[kind] = c0, m
+        targets[kind] = tg
+
+    # ---------------- core residuals: fill the calibrated fan (macro for g/CPI, FR1 for the balance)
     t5 = stats.t(df=5)
     t5_sd = np.sqrt(5 / 3)
     calib = calibration_factors()
+    layer = {}
     def add_resid(kind, sigma_core, comp):
         fac = np.stack([c for c in comp.values()]).sum(axis=0)
         v_fac = fac.var(axis=0)
-        s2 = np.maximum(sigma_core ** 2 - v_fac, (0.5 * sigma_core) ** 2)
-        eps = t5.rvs(size=(n, T), random_state=rng) / t5_sd * np.sqrt(s2)[None, :]
-        return eps
+        s2 = np.maximum(sigma_core ** 2 - v_fac, (RESID_FLOOR * sigma_core) ** 2)
+        layer[kind] = {"sig_target": sigma_core, "sig_factors": np.sqrt(v_fac), "sig_resid": np.sqrt(s2),
+                       "sig_total": np.sqrt(v_fac + s2)}
+        if kind == "cpi":        # v2.1 (audit M6): right-skewed, bounded below (no deflation 2000–2025)
+            return shifted_lognormal(rng.standard_normal((n, T)), targets["cpi"], np.sqrt(s2))
+        return t5.rvs(size=(n, T), random_state=rng) / t5_sd * np.sqrt(s2)[None, :]
+    f_fis = f_obs_growth.copy()
+    if YEARS[0] == as_of.year:
+        f_fis[0] = float(parametrler.get("sim_f_obs_growth", FIS_OBS_SHARE))
     sig_g = np.array([spine.baseline_band_sigma("nonoil_realg", y) for y in YEARS]) * f_obs_growth * calib["nonoil"]
-    sig_c = np.array([spine.baseline_band_sigma("cpi_infl", y) for y in YEARS]) * f_obs_growth * calib["cpi"]
-    sig_f = fiscal_sigma() * f_obs_growth
+    sig_c = np.array([spine.baseline_band_sigma("cpi_infl", y) for y in YEARS]) * f_obs_cpi * calib["cpi"]
+    sig_f = fiscal_sigma() * f_fis * calib["fis"]
     res.comp_g["resid"] = add_resid("g", sig_g, res.comp_g) * (not det)
     res.comp_cpi["resid"] = add_resid("cpi", sig_c, res.comp_cpi) * (not det)
     res.comp_fis["resid"] = add_resid("fis", sig_f, res.comp_fis) * (not det)
 
-    res.base = {"g": B["nonoil_realg"].to_numpy(), "cpi": B["cpi_infl"].to_numpy(),
-                "fis": B["fr1_balance_pct"].to_numpy()}
+    # ---------------- centring (no own central path): median = target. The offset is booked on the core residual,
+    # whose location belongs to the upstream forecaster; event channels keep their skew (mean − median = balance of risks).
+    centring = {}
+    for kind, comp in (("g", res.comp_g), ("cpi", res.comp_cpi), ("fis", res.comp_fis)):
+        shift = np.zeros(T) if det else np.median(res.total(kind), axis=0) - targets[kind]
+        comp["resid"] = comp["resid"] - shift[None, :]
+        centring[kind] = shift
+    # CPI lower tail (audit M6): additive channels (Brent-linked import prices, residual) can still push the total below
+    # zero although 2000–2025 had no deflation. Soft floor, monotone and median-preserving: deviations D below the
+    # target are compressed, π = F + (target − F)·exp(D / (target − F)); booked on the residual so the channels still sum.
+    if not det:
+        tot = res.total("cpi")
+        m = np.maximum(targets["cpi"] - CPI_FLOOR, 0.5)[None, :]
+        D = tot - targets["cpi"][None, :]
+        soft = np.where(D < 0, CPI_FLOOR + m * np.exp(np.minimum(D, 0) / m), tot)
+        res.comp_cpi["resid"] = res.comp_cpi["resid"] + (soft - tot)
     res.events = {
         "R01": brent < B["brent_breakeven_ca0"].to_numpy()[None, :],
         "R02": lend >= p["lendrate_shock_threshold"],
@@ -405,12 +551,146 @@ def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None =
         "R14": np.repeat(trans_on[:, None], T, axis=1),
         "R15": ev15,
         "R16": ev16,
+        "R17": imp_level > pf["imp_thr"],
+        "R18": food_level > pf["food_thr"],
     }
-    res.meta = {"n": n, "seed": seed, "brent_centre": centre, "w_struct": w, "f_rem": f_rem,
+    res.meta = {"n": n, "seed": seed, "view": view, "view_az": VIEWS[view], "live_shift": live_shift,
+                "targets": targets, "nowcast": ry, "react_inv_mln": react_inv_mln, "obs_share": obs_share, "fx_debt_gdp": debt_deval,
+                "fx_params": {"pt": fx.calibration()["pt"], "w0": fx.calibration()["w0"], "L": fx.calibration()["L"]},
+                "centring": centring, "layering": layer, "e_fr1_inv": e_fr1, "inv0_real": inv0,
+                "imp_level": imp_level, "food_level": food_level,
+                "brent_centre": centre, "w_struct": w, "f_rem": f_rem,
                 "remit_share": remit_share, "agri_share": agri_share, "sig_core_g": sig_g,
                 "sig_core_c": sig_c, "sig_core_f": sig_f, "micro": ms, "gpr_ref": gpr_ref,
                 "bootstrap_years": f"{H.index.min()}–{H.index.max()}", "calibration": calib}
     return res
+
+
+RESID_FLOOR = 0.25      # the core residual keeps at least (0.25 σ_target)² — 6 % of the target variance
+CPI_FLOOR = 0.0         # CPI residual lower bound (shifted lognormal): no annual deflation in 2000–2025 (min 1,1 %, n = 26)
+CALIB_N0 = 10           # shrinkage of NFR1 band-scale factors toward 1: weight n / (n + N0) (N0 = 10 pseudo-years)
+FIS_OBS_SHARE = 0.5     # budget balance is NOT conditioned on Jan–M execution (strong Q4 seasonality): half the σ remains
+
+
+def running_year() -> dict:
+    """Year-to-date nowcast of the running year (v2.1, audit C3) — DSK monthly via the spine feeds (D4/D5) and Brent YTD.
+    Returns months observed and the YTD values; empty dict if the running year is not the first forecast year or the
+    data are missing (then the v2.0 fallback applies: half of the annual innovation remains)."""
+    as_of = pd.Timestamp(config.as_of())
+    if YEARS[0] != as_of.year:
+        return {}
+    out = {"year": YEARS[0]}
+    try:
+        from . import monitor
+        g, gd = monitor.last("dsk_macro", "dsk_gdp_nonoil_ytd_yoy")
+        if gd is not None and gd.year == YEARS[0] and np.isfinite(g):
+            out.update({"g_ytd": float(g), "g_months": int(gd.month), "g_date": gd.date().isoformat()})
+        ytd, d = monitor.last("dsk_cpi", "dsk_cpi_ytd_avg_yoy")
+        yoy, _ = monitor.last("dsk_cpi", "dsk_cpi_yoy")
+        if not np.isfinite(ytd):
+            ytd, d = monitor.last("dsk_macro", "dsk_cpi_ytd_yoy")
+            yoy = yoy if np.isfinite(yoy) else ytd
+        if d is not None and d.year == YEARS[0] and np.isfinite(ytd):
+            out.update({"cpi_ytd": float(ytd), "cpi_last_yoy": float(yoy if np.isfinite(yoy) else ytd),
+                        "cpi_months": int(d.month), "cpi_date": d.date().isoformat()})
+    except Exception as exc:                             # noqa: BLE001 — never block the simulation on the nowcast
+        out["xeta"] = f"{type(exc).__name__}: {exc}"[:160]
+    L = spine.live()
+    out.update({"brent_ytd": float(L["brent_ytd_avg"]), "brent_months": int(pd.Timestamp(L["brent_last_date"]).month),
+                "brent_date": str(L["brent_last_date"])})
+    return out
+
+
+def nowcast_centre(kind: str, view: str, base0: float, ry: dict) -> tuple[float, float]:
+    """(centre, observed share) of the running-year outcome. Observed months are fixed at the YTD outturn in BOTH views;
+    unobserved months: baseline view — the official forecast rate; live view — the latest observed rate persists."""
+    key = {"g": ("g_ytd", "g_months", "g_ytd"), "cpi": ("cpi_ytd", "cpi_months", "cpi_last_yoy")}.get(kind)
+    if not ry or key is None or key[0] not in ry:
+        return base0, np.nan
+    m = ry[key[1]] / 12
+    rest = base0 if view == "baseline" else ry[key[2]]
+    return m * ry[key[0]] + (1 - m) * rest, m
+
+
+def fiscal_reaction(brent_path, base_path, M: dict | None = None, coefs: tuple | None = None) -> dict:
+    """R01 procyclical public-investment reaction (EXCESS over FR1's own F4 response, SOFAZ-financed, balance-neutral)
+    to a deterministic Brent path — the same function the joint simulation uses, exposed for D6 / S-grid / API.
+    Returns T arrays: g_lvl (% level non-oil), g (pp growth), cpi (pp), fis (0)."""
+    M = M or spine.multipliers()
+    ch = factors.channels()
+    b0, b1 = coefs or (ch[("inv_brent", "dln_brent")]["coef"], ch[("inv_brent", "dln_brent_l1")]["coef"])
+    base_path = np.asarray(base_path, float)
+    x = np.log(np.asarray(brent_path, float) / base_path)[None, :]
+    x_l1 = np.concatenate([np.zeros((1, 1)), x[:, :-1]], axis=1)
+    inv0 = float(spine.micro_fr1_dataset().loc[config.LAST_ACTUAL, "rinv_state"])
+    e_fr1 = fr1_embedded_inv_elasticity(M, base_path)
+    rs = np.ones(T)
+    if YEARS[0] == pd.Timestamp(config.as_of()).year:
+        rs[0] = max(0.0, (12 - pd.Timestamp(spine.live()["brent_last_date"]).month) / 12)
+    z = inv0 / 1000 * ((b0 - e_fr1) * x * rs[None, :] + b1 * x_l1)
+    lv = _convolve(z, _step_response(M["stateinv1bn"], "rgdpnon"))
+    c = _convolve(z, _step_response(M["stateinv1bn"], "infl"))
+    return {"g_lvl": lv[0], "g": _level_to_growth(lv)[0], "cpi": c[0], "fis": np.zeros(T), "inv_bn": z[0]}
+
+
+def ext_price_cpi(dimp, b0=None, b1=None) -> np.ndarray:
+    """CPI (pp) from a USD import-price inflation deviation path (pp; N×T or T): the single external-price
+    pass-through (factors 'cpi_ext'): b0 in the year, b1 the year after."""
+    ch = factors.channels()
+    b0 = ch[("cpi_ext", "impA")]["coef"] if b0 is None else b0
+    b1 = ch[("cpi_ext", "impA_l1")]["coef"] if b1 is None else b1
+    d = np.atleast_2d(np.asarray(dimp, float))
+    b0, b1 = np.atleast_1d(b0)[:, None], np.atleast_1d(b1)[:, None]
+    return b0 * d + b1 * np.concatenate([np.zeros((d.shape[0], 1)), d[:, :-1]], axis=1)
+
+
+def brent_import_cpi(brent_path, base_path) -> np.ndarray:
+    """Brent-linked part of import (incl. food) prices → CPI, attributed to R01 (T array, pp)."""
+    a_imp = factors.channels()["_impfood"]["a_imp"]
+    dev = np.log(np.asarray(brent_path, float) / np.asarray(base_path, float)) * 100
+    dl = np.diff(np.concatenate([[0.0], dev]))
+    return ext_price_cpi(a_imp * dl)[0]
+
+
+def shifted_lognormal(z: np.ndarray, centre: np.ndarray, sd: np.ndarray, floor: float = CPI_FLOOR) -> np.ndarray:
+    """Right-skewed residual with lower bound `floor − centre`, median 0 and standard deviation `sd`:
+    e = m·(exp(σ_l·z) − 1), m = centre − floor, exp(σ_l²) = (1 + √(1 + 4 (sd/m)²)) / 2."""
+    m = np.maximum(np.asarray(centre, float) - floor, 0.5)
+    r = np.asarray(sd, float) / m
+    s_l = np.sqrt(np.log((1 + np.sqrt(1 + 4 * r ** 2)) / 2))
+    return m[None, :] * (np.exp(s_l[None, :] * z) - 1)
+
+
+def fr1_embedded_inv_elasticity(M: dict, base_b: np.ndarray) -> float:
+    """Elasticity of real state investment to Brent that the FR1 structural model already contains:
+    rinv_state response (%) to the +10 USD step ÷ the step in log points, averaged over the horizon."""
+    r = M["brent10"]["rinv_state"].reindex(YEARS).to_numpy(dtype=float) / 100
+    if np.isnan(r).all():
+        return 0.0
+    return float(np.nanmean(r / np.log((base_b + 10) / base_b)))
+
+
+# economically required signs of the standing stress set (first stressed year, deviation from reference)
+STRESS_SIGNS = {"S1": {"g": -1, "fis": -1, "cpi": -1}, "S2": {"g": -1, "fis": -1},
+                "S3": {"g": -1, "fis": -1, "cpi": +1}, "S4": {"g": -1}, "S5": {"g": -1, "fis": -1},
+                "S6": {"g": -1, "fis": -1}, "S7": {"g": -1}, "S8": {"g": -1, "fis": -1}}
+_STRESS_VAR = {"qeyri-neft": "g", "inflyasiya": "cpi", "büdcə": "fis"}
+
+
+def check_stress_signs(stress: pd.DataFrame, year: int | None = None, tol: float = 1e-6) -> pd.DataFrame:
+    """Sign assertion for FR3_stress_scenarios (the v1 S1 'Brent 45 improves the budget' defect).
+    Returns the violations (empty = all economically sensible); run_all raises on any violation."""
+    if stress is None or not len(stress):
+        return pd.DataFrame(columns=["ssenari", "gosterici", "il", "sapma", "gozlenilen_isare"])
+    yr = year or (config.FORECAST_YEARS[1] if len(config.FORECAST_YEARS) > 1 else config.FORECAST_YEARS[0])
+    bad = []
+    for r in stress[stress["il"] == yr].itertuples():
+        kind = next((v for k, v in _STRESS_VAR.items() if str(r.gosterici).startswith(k)), None)
+        sgn = STRESS_SIGNS.get(r.ssenari, {}).get(kind)
+        if sgn is not None and sgn * r.sapma < -tol:
+            bad.append({"ssenari": r.ssenari, "gosterici": r.gosterici, "il": yr, "sapma": r.sapma,
+                        "gozlenilen_isare": "+" if sgn > 0 else "−"})
+    return pd.DataFrame(bad, columns=["ssenari", "gosterici", "il", "sapma", "gozlenilen_isare"])
 
 
 def fiscal_sigma() -> np.ndarray:
@@ -420,17 +700,92 @@ def fiscal_sigma() -> np.ndarray:
     return s.reindex(YEARS).to_numpy()
 
 
-def calibration_factors() -> dict:
-    """Band-scale factors set by the quarterly NFR1 backtest (output/NFR1_calibration.csv);
-    1.0 until a backtest has recalibrated them."""
+def calibration_factors(raw: bool = False) -> dict:
+    """Band-scale factors set by the quarterly NFR1 backtest (output/NFR1_calibration.csv); 1.0 until a backtest has
+    recalibrated them. v2.1 (audit M6): small-sample factors are SHRUNK toward 1 with weight n / (n + CALIB_N0)
+    (non-oil n = 9, fiscal n = 14, Brent n = 30); `raw=True` returns the backtest values. calibration_report() re-tests
+    the 80 % coverage after scaling and gives bootstrap intervals."""
     f = config.OUTPUT / "NFR1_calibration.csv"
-    out = {"nonoil": 1.0, "cpi": 1.0, "brent": 1.0}
+    out = {"nonoil": 1.0, "cpi": 1.0, "brent": 1.0, "fis": 1.0}
     if f.exists():
         c = pd.read_csv(f)
         for r in c.itertuples():
             if r.hedef in out:
-                out[r.hedef] = float(r.miqyas)
+                n = float(getattr(r, "n", 0) or 0)
+                out[r.hedef] = float(r.miqyas) if raw else _shrunk(r.hedef, float(r.miqyas), n)
     return out
+
+
+def _shrunk(h: str, raw: float, n: float) -> float:
+    """Shrink toward 1 (weight n/(n+N0)), then re-test: if the 80 % coverage on the same out-of-sample points leaves
+    the tolerance band, move back toward the raw factor until it is inside (closest-to-shrunk factor that passes)."""
+    f_s = 1 + n / (n + CALIB_N0) * (raw - 1)
+    try:
+        z = _calib_z(h)
+    except Exception:                                 # noqa: BLE001
+        z = np.array([])
+    if len(z) < 3 or abs(raw - 1) < 1e-12:
+        return float(f_s)
+    p = factors.params()
+    lo, hi = p["coverage80_lo"], p["coverage80_hi"]
+    cov = lambda x: float(np.mean(z <= stats.norm.ppf(0.9) * x))  # noqa: E731
+    if lo <= cov(f_s) <= hi:
+        return float(f_s)
+    for x in np.linspace(f_s, raw, 401):
+        if lo <= cov(x) <= hi:
+            return float(x)
+    return float(raw)
+
+
+def _calib_z(hedef: str):
+    """|z| of the out-of-sample PITs behind each factor (or RW errors / σ for the budget balance)."""
+    o = config.OUTPUT
+    if hedef in ("nonoil", "cpi") and (o / "NFR1_macro_fan_pit.csv").exists():
+        d = pd.read_csv(o / "NFR1_macro_fan_pit.csv")
+        pit = d[d["hedef"] == {"nonoil": "nonoil_realg", "cpi": "cpi_infl"}[hedef]]["pit"].to_numpy()
+        return np.abs(stats.norm.ppf(np.clip(pit, 1e-6, 1 - 1e-6)))
+    if hedef == "brent" and (o / "NFR1_brent_density_pit.csv").exists():
+        pit = pd.read_csv(o / "NFR1_brent_density_pit.csv")["pit"].to_numpy()
+        return np.abs(stats.norm.ppf(np.clip(pit, 1e-6, 1 - 1e-6)))
+    if hedef == "fis":
+        from . import backtest
+        mi = spine.micro_fr1_dataset()
+        b = (mi["balance_n"] / mi["gdp_n"] * 100).loc[2010:config.LAST_ACTUAL].dropna()
+        err = (b.shift(-2) - b).dropna().to_numpy()
+        s_fr1 = backtest.fiscal_fan_calibration()["sigma_fr1"]
+        return np.abs(err) / s_fr1
+    return np.array([])
+
+
+def calibration_report(n_boot: int = 2000, seed: int = 5) -> pd.DataFrame:
+    """NFR1_calibration_shrinkage.csv: raw factor (backtest), n, bootstrap 90 % interval of the raw factor, shrinkage
+    weight, shrunk factor, and the 80 % coverage re-tested on the same out-of-sample points BEFORE scaling, after the
+    RAW and after the SHRUNK factor (target band from hedler: coverage80_lo–hi)."""
+    raw, shr = calibration_factors(raw=True), calibration_factors()
+    p = factors.params()
+    z90 = stats.norm.ppf(0.9)
+    rng = np.random.default_rng(seed)
+    c = pd.read_csv(config.OUTPUT / "NFR1_calibration.csv") if (config.OUTPUT / "NFR1_calibration.csv").exists() else None
+    rows = []
+    for h in ("nonoil", "cpi", "brent", "fis"):
+        z = _calib_z(h)
+        n = int(c[c["hedef"] == h]["n"].iloc[0]) if c is not None and (c["hedef"] == h).any() else len(z)
+        cov = lambda f: float(np.mean(z <= z90 * f)) if len(z) else np.nan  # noqa: E731
+        if len(z) >= 3:
+            est = (lambda v: np.clip(np.sqrt(np.mean(v ** 2)), 0.25, 1.0)) if h == "fis" else \
+                (lambda v: np.clip(np.quantile(v, 0.8) / z90, 0.25, 2.0))
+            bs = [est(rng.choice(z, len(z))) for _ in range(n_boot)]
+            lo, hi = np.quantile(bs, [0.05, 0.95])
+        else:
+            lo = hi = np.nan
+        rows.append({"hedef": h, "n": n, "n_test": len(z), "miqyas_xam": raw[h], "xam_90_asagi": lo, "xam_90_yuxari": hi,
+                     "cekI_w": n / (n + CALIB_N0), "miqyas_buzulmus": 1 + n / (n + CALIB_N0) * (raw[h] - 1),
+                     "ehate80_buzulmus": cov(1 + n / (n + CALIB_N0) * (raw[h] - 1)), "miqyas_istifade": shr[h], "ehate80_evvel": cov(1.0),
+                     "ehate80_xam": cov(raw[h]), "ehate80_istifade": cov(shr[h]),
+                     "tolerans": f"[{p['coverage80_lo']:.2f}; {p['coverage80_hi']:.2f}]",
+                     "qeyd": f"büzülmə: 1 + n/(n+{CALIB_N0})·(xam − 1); örtük eyni nümunədən kənar nöqtələrdə yenidən "
+                             "yoxlanılır — tolerans xaricindədirsə, tolerans daxilində ən yaxın əmsala qədər xam əmsala tərəf"})
+    return pd.DataFrame(rows)
 
 
 # ---------------------------------------------------------------- summaries
@@ -446,12 +801,14 @@ def distribution_table(res: SimResult) -> pd.DataFrame:
         for j, y in enumerate(res.years):
             q = np.quantile(tot[:, j], QS)
             tail = tot[:, j][tot[:, j] <= q[1]] if kind != "cpi" else tot[:, j][tot[:, j] >= q[5]]
-            rows.append({"gosterici": kind, "ad": name, "vahid": unit, "il": y, "baza": res.base[kind][j],
+            rows.append({"baxis": res.meta.get("view", "baseline"), "gosterici": kind, "ad": name, "vahid": unit,
+                         "il": y, "baza": res.base[kind][j],
                          **{f"p{int(x*100):02d}": v for x, v in zip(QS, q)},
                          "orta": tot[:, j].mean(), "ES10": tail.mean()})
     for j, y in enumerate(res.years):
         q = np.quantile(res.brent[:, j], QS)
-        rows.append({"gosterici": "brent", "ad": "Brent neft qiyməti", "vahid": "USD/barel", "il": y,
+        rows.append({"baxis": res.meta.get("view", "baseline"), "gosterici": "brent", "ad": "Brent neft qiyməti",
+                     "vahid": "USD/barel", "il": y,
                      "baza": res.brent_base[j], **{f"p{int(x*100):02d}": v for x, v in zip(QS, q)},
                      "orta": res.brent[:, j].mean(), "ES10": res.brent[:, j][res.brent[:, j] <= q[1]].mean()})
     return pd.DataFrame(rows)

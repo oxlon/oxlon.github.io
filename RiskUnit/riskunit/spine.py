@@ -27,14 +27,28 @@ def _sha(path) -> str:
     return h.hexdigest()
 
 
+def _nrows(p) -> float:
+    if p.suffix.lower() != ".csv":
+        return np.nan                                  # xlsx / json: rows are not meaningful
+    with open(p, "rb") as f:
+        return sum(1 for _ in f) - 1
+
+
 def manifest() -> pd.DataFrame:
+    """Hash of every upstream file. The v1 files are mandatory; the v2 additions (OxLon dictionary,
+    MicroUnit FR3–FR12 tidy tables, Ministry workbooks) are listed with status 'yoxdur' if absent."""
     rows = []
     for unit, files in (("makro §15.5.1", config.MACRO_FILES), ("mikro §15.5.2", config.MICRO_FILES)):
         for key, p in files.items():
             if not p.exists():
                 raise FileNotFoundError(f"Yuxarı axın faylı tapılmadı: {p} (MIIS_MACRO_DIR / MIIS_MICRO_DIR)")
-            rows.append({"unit": unit, "key": key, "path": str(p), "sha256": _sha(p),
-                         "rows": sum(1 for _ in open(p, "rb")) - 1})
+            rows.append({"unit": unit, "key": key, "path": str(p), "sha256": _sha(p), "rows": _nrows(p)})
+    for unit, files in (("makro §15.5.1", config.MACRO_FILES_V2), ("mikro §15.5.2", config.MICRO_FILES_V2),
+                        ("nazirlik (MU)", config.MINISTRY_FILES)):
+        for key, p in files.items():
+            ok = p.exists()
+            rows.append({"unit": unit, "key": key, "path": str(p), "sha256": _sha(p) if ok else "",
+                         "rows": _nrows(p) if ok else np.nan})
     return pd.DataFrame(rows)
 
 
@@ -216,6 +230,64 @@ def live() -> dict:
     return out
 
 
+# ---------------------------------------------------------------- v2: shared helpers for D*/C*/V*/K*/S*/M* outputs
+CATALOG_COLS = ["file", "owner_module", "description_az", "columns", "update_frequency", "updated_utc"]
+
+
+def register_output(file: str, owner: str, description_az: str, columns=None, frequency: str = "gündəlik") -> None:
+    """Upsert one row of output/_catalog_v2.csv (read-modify-write, one row per file; atomic replace)."""
+    import os
+    import tempfile
+    from datetime import datetime, timezone
+    cols = ";".join(columns) if isinstance(columns, (list, tuple, pd.Index)) else (columns or "")
+    row = {"file": file, "owner_module": owner, "description_az": description_az, "columns": cols,
+           "update_frequency": frequency,
+           "updated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
+    p = config.CATALOG_V2
+    cur = pd.read_csv(p, dtype=str) if p.exists() else pd.DataFrame(columns=CATALOG_COLS)
+    cur = cur[cur["file"] != file]
+    cur = pd.concat([cur, pd.DataFrame([row])], ignore_index=True).sort_values("file")
+    fd, tmp = tempfile.mkstemp(dir=p.parent, prefix=".catalog_", suffix=".csv")
+    os.close(fd)
+    cur.to_csv(tmp, index=False)
+    os.replace(tmp, p)
+
+
+def upstream_store() -> pd.DataFrame:
+    """Tidy store of all upstream series (OxLon mx:*, Ministry mn:*, MicroUnit fr<k>:*) — see upstream.py."""
+    from . import upstream
+    return upstream.store()
+
+
+def upstream_series(sid: str, scenario: str | None = None) -> pd.DataFrame:
+    """One upstream series by stable id (e.g. 'mx:brent_usd', 'fr1:rgdpnon', 'mn:bu60:...')."""
+    from . import upstream
+    return upstream.series(sid, scenario)
+
+
+def market_panel() -> pd.DataFrame:
+    """Tidy daily/monthly market & statistics panel built by the AZ feeds (output/D4_market_panel.csv)."""
+    p = config.OUTPUT / "D4_market_panel.csv"
+    if not p.exists():
+        from . import feeds_az
+        return feeds_az.market_panel()
+    return pd.read_csv(p)
+
+
+def consensus_table() -> pd.DataFrame:
+    """Cross-source baseline table (output/D3_consensus_baselines.csv); built on demand."""
+    p = config.OUTPUT / "D3_consensus_baselines.csv"
+    if not p.exists():
+        from . import consensus
+        return consensus.build()
+    return pd.read_csv(p)
+
+
 def clear_caches():
     for f in (baseline_id, _csv, annual_panel, baseline, multipliers, precip_monthly):
         f.cache_clear()
+    try:
+        from . import upstream
+        upstream.clear_caches()
+    except Exception:                                   # noqa: BLE001 (optional v2 module)
+        pass
