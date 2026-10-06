@@ -122,6 +122,51 @@ def _med(res, kind):
     return np.median(res.total(kind), axis=0)
 
 
+STRESS_KINDS = (("g", "qeyri-neft artımı, f.b."), ("cpi", "inflyasiya, f.b."), ("fis", "büdcə balansı, % ÜDM"))
+_REF = {}
+
+
+def neutral_overrides() -> dict:
+    """Deterministic stress mode: only the declared shocks act (no residual, no random events, factor paths at zero)."""
+    T = len(config.FORECAST_YEARS)
+    return {"deterministic": True, "spi": [0.0] * T, "quake_damage": [0.0] * T, "remit_dev": [0.0] * T,
+            "partner_dev": [0.0] * T, "lend_dev": [0.0] * T}
+
+
+def stress_centre() -> list:
+    """Brent reference path of the stress set = the baseline-view centre (2026 observed months at the YTD average)."""
+    return list(simulate.run(n=200).meta["brent_centre"])
+
+
+def stress_vector(overrides: dict, with_measures: bool = True, n: int = N_SCEN) -> pd.DataFrame:
+    """The S1–S8 rule applied to ANY factor-shock vector (public; used by stress_scenarios and the API):
+    deviation = median(run with {neutral + centre + overrides}) − median(neutral reference run), per outcome and year;
+    with_measures: the same with the T09 floor (no procyclical investment cut) in both runs.
+    `overrides` = simulate.run override keys (brent_path, partner_dev, remit_dev, lend_dev, spi, quake_damage,
+    deval_year, imp_dev, food_dev, fiscal_react_off, ...). Returns rows kind, gosterici, il, sapma, sapma_tedbirle,
+    tedbirin_effekti (sapma_tedbirle/tedbirin_effekti NaN without measures)."""
+    yrs = config.FORECAST_YEARS
+    neutral = neutral_overrides()
+    centre = stress_centre()
+    full = {**neutral, **(overrides or {})}
+    full.setdefault("brent_path", centre)
+    key = (tuple(np.round(centre, 6)), n)
+    if key not in _REF:
+        _REF.clear()
+        _REF[key] = {"ref": simulate.run(n=n, overrides={**neutral, "brent_path": centre}),
+                     "ref_floor": simulate.run(n=n, overrides={**neutral, "brent_path": centre, "fiscal_react_floor": True})}
+    a = simulate.run(n=n, overrides=full)
+    b = simulate.run(n=n, overrides={**full, "fiscal_react_floor": True}) if with_measures else None
+    rows = []
+    for kind, var in STRESS_KINDS:
+        d = _med(a, kind) - _med(_REF[key]["ref"], kind)
+        dm = _med(b, kind) - _med(_REF[key]["ref_floor"], kind) if b is not None else np.full(len(yrs), np.nan)
+        for t, y in enumerate(yrs):
+            rows.append({"kind": kind, "gosterici": var, "il": y, "sapma": float(d[t]), "sapma_tedbirle": float(dm[t]),
+                         "tedbirin_effekti": float(dm[t] - d[t])})
+    return pd.DataFrame(rows)
+
+
 def levers(res: simulate.SimResult) -> pd.DataFrame:
     """Size of each policy lever needed to close the Growth-at-Risk gap, from the FR1 step
     responses, and the model-based effect of avoiding the procyclical investment cut (T09)."""
@@ -161,13 +206,14 @@ def levers(res: simulate.SimResult) -> pd.DataFrame:
 
 
 def stress_scenarios() -> pd.DataFrame:
-    """Named standing stress set (Methodology Blueprint L4), each a shock vector through the
-    same transmission, with and without the mitigation package (no procyclical cut, T09)."""
+    """Named standing stress set (Methodology Blueprint L4), each a shock vector through the same transmission
+    (stress_vector), with and without the mitigation package (no procyclical cut, T09). v2.1: every shock is a
+    shock-year impulse or an explicit path; S3 devaluation through the single FX module (riskunit.fx)."""
     yrs = config.FORECAST_YEARS
     T = len(yrs)
     L = spine.live()
     B = spine.baseline()
-    centre = simulate.run(n=200).meta["brent_centre"]
+    centre = stress_centre()
     y26 = [L["brent_ytd_avg"] * 0.75 + 0.25 * x for x in (45.0, 60.0)]
     p = factors.params()
     S = {
@@ -175,12 +221,12 @@ def stress_scenarios() -> pd.DataFrame:
                {"brent_path": [y26[0]] + [45.0] * (T - 1)}),
         "S2": ("Tərəfdaş ölkələrdə resessiya", "tərəfdaş artımı baza yolundan 2027: −3 f.b., 2028: −1,5 f.b.",
                {"partner_dev": [0, -3.0, -1.5] + [0] * (T - 3)}),
-        "S3": ("Məzənnəyə təzyiq və ehtiyatların azalması", "S1 + 2027-də 25% devalvasiya",
+        "S3": ("Məzənnəyə təzyiq və ehtiyatların azalması", "S1 + 2027-də 25% devalvasiya (vahid məzənnə modulu)",
                {"brent_path": [y26[0]] + [45.0] * (T - 1), "deval_year": 2027}),
         "S4": ("Regional münaqişənin eskalasiyası", "pul baratları 2027: −30%; tərəfdaş −2 f.b.; kredit faizi +1 f.b. (2014–2015 analoqu)",
                {"remit_dev": [0, -30.0] + [0] * (T - 2), "partner_dev": [0, -2.0] + [0] * (T - 2),
                 "lend_dev": [0, 1.0] + [0] * (T - 2)}),
-        "S5": ("Güclü seysmik hadisə", f"2027: birbaşa zərər ÜDM-in {p['eq_damage_p90_tier2']:.0f}%-i (M ≥ 6 üçün P90)",
+        "S5": ("Güclü seysmik hadisə", f"2027: birbaşa zərər ÜDM-in {p['eq_damage_p90_tier2']:.0f}%-i (M ≥ 6 üçün P90); bərpa 25/50/25%",
                {"quake_damage": [0, p["eq_damage_p90_tier2"]] + [0] * (T - 2)}),
         "S6": ("Enerji keçidi — tələbin struktur azalması", "Brent mərkəzi yoldan hər il −5% (2027-dən)",
                {"brent_path": [centre[0]] + [centre[k] * 0.95 ** k for k in range(1, T)]}),
@@ -188,44 +234,33 @@ def stress_scenarios() -> pd.DataFrame:
         "S8": ("Cari neft şokunun geri dönməsi", "Brent 2027: 60 USD, 2028–2030: makro baza yolu",
                {"brent_path": [y26[1], 60.0] + list(B["brent_usd"].iloc[2:])}),
     }
-    ref = simulate.run(n=200)
-    neutral = {"deterministic": True, "spi": [0.0] * T, "quake_damage": [0.0] * T, "remit_dev": [0.0] * T,
-               "partner_dev": [0.0] * T, "lend_dev": [0.0] * T}
-    ref_det = simulate.run(n=N_SCEN, overrides={**neutral, "brent_path": list(ref.meta["brent_centre"])})
     rows = []
     for sid, (name, desc, ov) in S.items():
-        full = {**neutral, **ov}
-        if "brent_path" not in full:
-            full["brent_path"] = list(ref.meta["brent_centre"])
-        a = simulate.run(n=N_SCEN, overrides=full)
-        b = simulate.run(n=N_SCEN, overrides={**full, "fiscal_react_floor": True})
-        b_ref = simulate.run(n=N_SCEN, overrides={**neutral, "brent_path": list(ref.meta["brent_centre"]),
-                                                  "fiscal_react_floor": True})
-        for kind, var in (("g", "qeyri-neft artımı, f.b."), ("cpi", "inflyasiya, f.b."), ("fis", "büdcə balansı, % ÜDM")):
-            d = _med(a, kind) - _med(ref_det, kind)
-            dm = _med(b, kind) - _med(b_ref, kind)
-            for t, y in enumerate(yrs):
-                rows.append({"ssenari": sid, "ad": name, "sok_vektoru": desc, "gosterici": var, "il": y,
-                             "sapma": d[t], "sapma_tedbirle": dm[t], "tedbirin_effekti": dm[t] - d[t]})
-    out = pd.DataFrame(rows)
-    return out
+        V = stress_vector(ov)
+        for r in V.itertuples():
+            rows.append({"ssenari": sid, "ad": name, "sok_vektoru": desc, "gosterici": r.gosterici, "il": r.il,
+                         "sapma": r.sapma, "sapma_tedbirle": r.sapma_tedbirle, "tedbirin_effekti": r.tedbirin_effekti})
+    return pd.DataFrame(rows)
 
 
 def analogues() -> pd.DataFrame:
     """Historical check of the transmission engine: observed factor moves in each year passed
     through the first-year responses, against the observed non-oil growth deviation from the
-    previous five-year average. Tolerance: same sign and |error| ≤ 3 pp for named episodes."""
+    previous five-year average. Tolerance: same sign and |error| ≤ 3 pp for named episodes.
+    v2.1: the devaluation term comes from the single FX module (level loss per log unit, two-year timing);
+    the investment reaction is the EXCESS over FR1's embedded elasticity (no double count with the Brent term)."""
+    from . import fx
     P = factors.channels()["_panel"]
     ch = factors.channels()
     M = spine.multipliers()
-    p = factors.params()
-    dv = factors.devaluation()
     mi = spine.micro_fr1_dataset()
+    c = fx.calibration()
     k_b = float(M["brent10"]["rgdpnon"].iloc[0])
     k_x = float(M["extdem10"]["rgdpnon"].iloc[0])
     k_i = float(M["stateinv1bn"]["rgdpnon"].iloc[0])
     k_r = float(M["credit_ease200"]["rgdpnon"].iloc[0])
-    b0, b1 = ch[("inv_brent", "dln_brent")]["coef"], ch[("inv_brent", "dln_brent_l1")]["coef"]
+    e_fr1 = simulate.fr1_embedded_inv_elasticity(M, spine.baseline()["brent_usd"].to_numpy())
+    b0, b1 = ch[("inv_brent", "dln_brent")]["coef"] - e_fr1, ch[("inv_brent", "dln_brent_l1")]["coef"]
     b_spi = ch[("agri_spi", "spi")]["coef"]
     rows = []
     for y in range(2006, config.LAST_ACTUAL + 1):
@@ -240,8 +275,9 @@ def analogues() -> pd.DataFrame:
         part = (P.at[y, "partner_g"] - pre["partner_g"].mean()) / 10 * k_x
         rate = -(P.at[y, "lendrate"] - P.at[y - 1, "lendrate"]) / 2 * k_r if not np.isnan(P.at[y - 1, "lendrate"]) else 0.0
         drought = b_spi * P.at[y, "spi"] * P.at[y, "agri_share_nonoil"] / 100
-        dev = (dv["nonoil_residual"] * np.log(P.at[y, "usd_azn"] / P.at[y - 1, "usd_azn"]) / dv["dln_fx_2014_2017"]
-               if P.at[y, "usd_azn"] / P.at[y - 1, "usd_azn"] > 1.10 else 0.0)
+        dl0 = 100 * np.log(P.at[y, "usd_azn"] / P.at[y - 1, "usd_azn"])
+        dl1 = 100 * np.log(P.at[y - 1, "usd_azn"] / P.at[y - 2, "usd_azn"])
+        dev = c["L"] / 100 * (c["w0g"] * dl0 + (1 - c["w0g"]) * dl1) if max(dl0, dl1) > 10 else 0.0
         pred = direct + react + part + rate + drought + dev
         rows.append({"il": y, "faktiki_sapma": act, "proqnoz_sapma": pred, "xeta": act - pred,
                      "neft_birbasa": direct, "fiskal_reaksiya": react, "terefdas": part, "faiz": rate,
@@ -251,3 +287,82 @@ def analogues() -> pd.DataFrame:
     A = pd.DataFrame(rows)
     A["tolerans_odenilir"] = (np.sign(A["faktiki_sapma"]) == np.sign(A["proqnoz_sapma"])) & (A["xeta"].abs() <= 3)
     return A
+
+
+# ---------------------------------------------------------------- v2: strategy, cost, workflow (input/tedbirler_v2.csv)
+STATUS_FLOW = ["təklif", "təsdiqlənib", "icrada", "tamamlanıb"]          # təklif → təsdiq → icrada → tamamlandı
+STATUS_LABEL = {"təklif": "təklif", "təsdiqlənib": "təsdiq", "icrada": "icrada", "tamamlanıb": "tamamlandı",
+                "dayandırılıb": "dayandırılıb"}
+STRATEGY_V2 = {"qaçınma", "ötürmə", "azaltma", "qəbul"}
+V2_FILE = config.INPUT / "tedbirler_v2.csv"
+
+
+def load_v2() -> pd.DataFrame:
+    """Register + v2 attributes (strategy type, cost mln AZN with basis, lead time, KPI threshold,
+    effect model used by riskunit.optimize). Every register measure must have a v2 row."""
+    m = load()
+    if not V2_FILE.exists():
+        raise FileNotFoundError(f"{V2_FILE} yoxdur")
+    a = pd.read_csv(V2_FILE, dtype={"tedbir_id": str}).fillna({"effekt_kanal": "", "effekt_esasi": ""})
+    missing = sorted(set(m["tedbir_id"]) - set(a["tedbir_id"]))
+    if missing:
+        raise ValueError(f"tedbirler_v2.csv: atributu olmayan tədbirlər {missing}")
+    bad = sorted(set(a["strategiya_v2"]) - STRATEGY_V2)
+    if bad:
+        raise ValueError(f"tedbirler_v2.csv: naməlum strategiya {bad}")
+    out = m.merge(a, on="tedbir_id", how="left")
+    out["status_az"] = out["status"].map(STATUS_LABEL).fillna(out["status"])
+    out["merhele_no"] = out["status"].map({s: i + 1 for i, s in enumerate(STATUS_FLOW)}).fillna(0).astype(int)
+    out["novbeti_addim"] = out["status"].map({"təklif": "təsdiq üçün təqdim", "təsdiqlənib": "icraya başlanması",
+                                              "icrada": "KPI ölçümü və tamamlanma", "tamamlanıb": "effektin qiymətləndirilməsi",
+                                              "dayandırılıb": "yenidən baxış"}).fillna("")
+    return out
+
+
+# ---------------------------------------------------------------- stage F entry point (run_all._measures_any)
+def run(ctx: dict | None = None) -> dict:
+    """FR3 stage: register, coverage, residual risk, levers, stress S1–S8, analogues — plus the v2.1 core-transmission
+    outputs that need the scored simulation: FR1_fx_transmission (riskunit.fx), FR2_model_risk (R19 consensus-shifted
+    alternative), FR2_threshold_sensitivity (R11–R13), NFR1_calibration_shrinkage. Sets ctx stress/levers/measures/
+    coverage/residual (report.py)."""
+    from . import fx, scoring
+    ctx = ctx if ctx is not None else {}
+    res = ctx.get("sim") or simulate.run()
+    S = ctx.get("S")
+    if S is None:
+        S = scoring.score(res)
+    m = load()
+    cov = coverage(m)
+    if cov.attrs.get("unknown_links"):
+        print("   DİQQƏT: reyestrdə olmayan risk ID-ləri:", cov.attrs["unknown_links"])
+    resid = residual(S, m)
+    track_status(m)
+    lev = levers(res)
+    stress = stress_scenarios()
+    out = config.OUTPUT
+    m.to_csv(out / "FR3_measures_register.csv", index=False)
+    cov.to_csv(out / "FR3_coverage.csv", index=False)
+    resid.to_csv(out / "FR3_residual_risk.csv", index=False, float_format="%.5g")
+    lev.to_csv(out / "FR3_levers.csv", index=False, float_format="%.5g")
+    stress.to_csv(out / "FR3_stress_scenarios.csv", index=False, float_format="%.5g")
+    analogues().to_csv(out / "FR3_historical_analogues.csv", index=False, float_format="%.4g")
+    extra = {
+        "FR2_model_risk.csv": (scoring.model_risk_table(res),
+                               "R19 model riski (istilik xəritəsindən kənar): köhnəlməmiş konsensus (köhnəlmiş CAEM/Bottom-up xaric), "
+                               "baza ilə fərq, konsensusa sürüşdürülmüş alternativ paylanma və hədd ehtimalları; xəbərdarlıq ≥ 0,5 f.b."),
+        "FR2_threshold_sensitivity.csv": (scoring.threshold_sensitivity(res),
+                                          "R11–R13 nəticə riskləri: hədd şəbəkəsi üzrə ehtimal, bazanın həddə məsafəsi (σ) və yalnız "
+                                          "qalıq qeyri-müəyyənlikdən gələn ehtimal (yaxınlıq effekti)"),
+        "NFR1_calibration_shrinkage.csv": (simulate.calibration_report(),
+                                           "NFR1 kalibrləmə əmsallarının 1-ə doğru büzülməsi (n/(n+10)), butstrap aralığı və miqyaslamadan "
+                                           "sonra 80% örtüyün yenidən yoxlanılması"),
+    }
+    for f, (df, desc) in extra.items():
+        df.to_csv(out / f, index=False, float_format="%.5g")
+        spine.register_output(f, "riskunit.measures/scoring/simulate", desc, list(df.columns), "hər tam dövr")
+    try:
+        fx.run(ctx)
+    except Exception as exc:                                 # noqa: BLE001
+        print(f"   DİQQƏT: FR1_fx_transmission yazılmadı ({type(exc).__name__}: {exc})")
+    ctx.update({"measures": m, "coverage": cov, "residual": resid, "levers": lev, "stress": stress})
+    return ctx

@@ -1,3 +1,6 @@
-# NFR2 — Linux/Unix serverləri üçün (crontab -e). Gündəlik 07:00 tam dövr + hər 30 dəqiqədən bir yerli giriş yoxlaması.
-0 7 * * *    cd /opt/miis/Risk_Unit && /usr/bin/python3 update.py            >> output/NFR2_cron.log 2>&1
-*/30 * * * * cd /opt/miis/Risk_Unit && /usr/bin/python3 update.py --no-fetch >> output/NFR2_cron.log 2>&1
+# MİİS §15.5.3 NFR2 — scheduler/install.py tərəfindən yaradılıb. `crontab -e` ilə əlavə edin.
+# Qovluq: /Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit
+MIIS_PYTHON=/Users/econ0757/venvs/miis-model/bin/python3
+30 6 * * *  /bin/sh /Users/econ0757/My\ Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/scheduler/run_update.sh --full
+30 13 * * *  /bin/sh /Users/econ0757/My\ Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/scheduler/run_update.sh --daily
+30 18 * * *  /bin/sh /Users/econ0757/My\ Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/scheduler/run_update.sh --daily

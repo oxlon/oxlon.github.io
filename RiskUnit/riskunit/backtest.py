@@ -341,11 +341,12 @@ def gpr_probability_backtest() -> dict:
 ARCHIVE = config.OUTPUT / "forecast_archive"
 
 
-def archive_forecast(res: simulate.SimResult) -> None:
+def archive_forecast(res: simulate.SimResult, *more: simulate.SimResult) -> None:
     """Freeze this run's predictive distribution (quantiles) with its as-of date and input
-    hashes: the real-time record the quarterly backtest scores once outcomes are published."""
+    hashes: the real-time record the quarterly backtest scores once outcomes are published.
+    v2: every view passed is archived (column baxis); R1 scores the baseline-centred view."""
     ARCHIVE.mkdir(exist_ok=True)
-    tab = simulate.distribution_table(res)
+    tab = pd.concat([simulate.distribution_table(r) for r in (res, *more)], ignore_index=True)
     tab.insert(0, "as_of", config.as_of().isoformat())
     tab["baseline_id"] = spine.baseline_id()
     man = feeds.read_manifest()
@@ -360,6 +361,8 @@ def evaluate_archive() -> pd.DataFrame:
            "cpi": spine.macro_series("cpi_infl", "actual")["value"]}
     for f in sorted(ARCHIVE.glob("risk_forecast_*.csv")) if ARCHIVE.exists() else []:
         t = pd.read_csv(f)
+        if "baxis" in t:
+            t = t[t["baxis"] == "baseline"]
         for r in t[t["gosterici"].isin(act)].itertuples():
             a = act[r.gosterici]
             if r.il in a.index and r.il > int(r.as_of[:4]) - 1:
@@ -369,6 +372,35 @@ def evaluate_archive() -> pd.DataFrame:
                 rows.append({"as_of": r.as_of, "gosterici": r.gosterici, "il": r.il, "faktiki": y, "pit": pit,
                              "p10_pozuldu": y < r.p10})
     return pd.DataFrame(rows, columns=["as_of", "gosterici", "il", "faktiki", "pit", "p10_pozuldu"])
+
+
+def fiscal_fan_calibration(h: int = 2) -> dict:
+    """The budget-balance fan has no archived forecasts to test, so its width is checked against the
+    simplest benchmark: h-year random-walk errors of the FR1 balance ratio (2010–2025, h = horizon of
+    the score year). A density whose σ is several times the naive error σ is over-dispersed; the residual
+    σ is scaled to the RW RMSE (never widened, floor 0,25)."""
+    mi = spine.micro_fr1_dataset()
+    b = (mi["balance_n"] / mi["gdp_n"] * 100).loc[2010:config.LAST_ACTUAL].dropna()
+    err = (b.shift(-h) - b).dropna()
+    rmse = float(np.sqrt(np.mean(err ** 2))) if len(err) else np.nan
+    yr = config.LAST_ACTUAL + h
+    sig = simulate.fiscal_sigma()
+    s_fr1 = float(sig[config.FORECAST_YEARS.index(yr)]) if yr in config.FORECAST_YEARS else float(np.nanmean(sig))
+    cov = float((np.abs(err) <= stats.norm.ppf(0.9) * s_fr1).mean()) if len(err) else np.nan
+    scale = float(np.clip(rmse / s_fr1, 0.25, 1.0)) if len(err) and s_fr1 > 0 else 1.0
+    return {"n": int(len(err)), "rmse_rw": rmse, "sigma_fr1": s_fr1, "ehate80": cov, "miqyas": scale, "h": h,
+            "pencere": f"{err.index.min()}–{err.index.max() + h}" if len(err) else "—"}
+
+
+def verdict(kecdi, n) -> str:
+    """'keçdi' / 'keçmədi', or 'yoxlanıla bilmir (n=…)' when there is nothing to test — never a default pass."""
+    try:
+        n_ok = n is not None and not pd.isna(n) and int(n) > 0
+    except (TypeError, ValueError):
+        n_ok = False
+    if not n_ok or kecdi is None or (isinstance(kecdi, float) and np.isnan(kecdi)):
+        return f"yoxlanıla bilmir (n={0 if not n_ok else int(n)})"
+    return "keçdi" if bool(kecdi) else "keçmədi"
 
 
 # ---------------------------------------------------------------- the quarterly run
@@ -397,7 +429,7 @@ def run_all() -> dict:
     rows = []
     def add(tid, model, hedef, n, pencere, metrik, deyer, hedd, kecdi, basis, qeyd=""):
         rows.append({"test_id": tid, "model": model, "hedef": hedef, "n": n, "pencere": pencere, "metrik": metrik,
-                     "deyer": deyer, "hedd": hedd, "netice": "keçdi" if kecdi else "keçmədi",
+                     "deyer": deyer, "hedd": hedd, "netice": verdict(kecdi, n),
                      "melumat_bazasi": basis, "qeyd": qeyd})
     # (1) accuracy against a simple benchmark
     for r in macro.itertuples():
@@ -460,9 +492,26 @@ def run_all() -> dict:
     add("E4", "Brent sıxlığı: P(12 ayda ≥30% eniş)", "brent", brent["n"], brent["pencere"], "Brier / Brier(klimatologiya)",
         brent["brier_crash"] / brent["brier_clim"], "< 1", brent["brier_crash"] < brent["brier_clim"], RT)
     # (2) archived real-time forecasts
-    add("R1", "arxivləşdirilmiş real vaxt risk proqnozları", "nonoil_g; cpi", len(arch), "—",
-        "yetişmiş proqnoz sayı", len(arch), "≥ 0", True, "real vaxt (arxivdən)",
-        "nəticəsi açıqlanmış hədəf ili olan arxiv proqnozları ilk buraxılış rəqəmi ilə qiymətləndirilir")
+    # R1: the RU predictive distribution itself, scored only on archived real-time vintages whose target
+    # year has an outturn. With no matured forecast the test is NOT passed: it is "yoxlanıla bilmir (n=0)".
+    n_arch = len(arch)
+    if n_arch:
+        cov_r1 = float(((arch["pit"] >= 0.10) & (arch["pit"] <= 0.90)).mean())
+        ok_r1 = p["coverage80_lo"] <= cov_r1 <= p["coverage80_hi"] if n_arch >= 5 else None
+    else:
+        cov_r1, ok_r1 = np.nan, None
+    add("R1", "arxivləşdirilmiş real vaxt risk proqnozları (RU paylanması)", "nonoil_g; cpi", n_arch,
+        f"{arch['il'].min()}–{arch['il'].max()}" if n_arch else "—", "80% interval əhatəsi (PIT ∈ [0,1; 0,9])",
+        cov_r1, f"[{p['coverage80_lo']:.2f}; {p['coverage80_hi']:.2f}], n ≥ 5", ok_r1, "real vaxt (arxivdən)",
+        "nəticəsi açıqlanmış hədəf ili olan arxiv proqnozları ilk buraxılış rəqəmi ilə qiymətləndirilir; "
+        f"arxivdə {len(list(ARCHIVE.glob('risk_forecast_*.csv'))) if ARCHIVE.exists() else 0} vintaj var — "
+        "ilk yetişmə: 2026 faktiki (2027-ci ilin yazı)")
+    fc = fiscal_fan_calibration()
+    add("P15", "FR1 büdcə balansı yelpiyi (RU fiskal paylanmasının eni)", "balance_pct", fc["n"], fc["pencere"],
+        "RW xətalarının FR1 80% intervalına düşmə payı", fc["ehate80"],
+        f"[{p['coverage80_lo']:.2f}; {p['coverage80_hi']:.2f}]",
+        p["coverage80_lo"] <= fc["ehate80"] <= p["coverage80_hi"] if fc["n"] else None, PRT,
+        f"etalon: {fc['h']} illik təsadüfi gəzinti xətası RMSE {fc['rmse_rw']:.2f} f.b. / FR1 σ {fc['sigma_fr1']:.2f} f.b.")
     T = pd.DataFrame(rows)
     T.insert(0, "rub", quarter())
     T.insert(1, "tarix", config.as_of().isoformat())
@@ -489,6 +538,12 @@ def run_all() -> dict:
     cal.append({"hedef": "brent", "miqyas": sb, "ehate80": brent["ehate80"], "n": int(brent["n"]),
                 "qerar": "dəyişiklik yoxdur — əhatə tolerans daxilindədir" if ok_b else
                 f"Brent innovasiyaları {sb:.2f} dəfə miqyaslanır (əhatə {brent['ehate80']:.2f} tolerans xaricindədir)",
+                "rub": quarter(), "tarix": config.as_of().isoformat()})
+    ok_f = fc["n"] and p["coverage80_lo"] <= fc["ehate80"] <= p["coverage80_hi"]
+    cal.append({"hedef": "fis", "miqyas": 1.0 if ok_f else fc["miqyas"], "ehate80": fc["ehate80"], "n": fc["n"],
+                "qerar": "dəyişiklik yoxdur — əhatə tolerans daxilindədir" if ok_f else
+                f"büdcə qalıq σ {fc['miqyas']:.2f} dəfə miqyaslanır (FR1 σ {fc['sigma_fr1']:.2f} f.b. ≫ RW xətası "
+                f"{fc['rmse_rw']:.2f} f.b.; əhatə {fc['ehate80']:.2f})",
                 "rub": quarter(), "tarix": config.as_of().isoformat()})
     C = pd.DataFrame(cal)
     C.to_csv(config.OUTPUT / "NFR1_calibration.csv", index=False, float_format="%.4g")

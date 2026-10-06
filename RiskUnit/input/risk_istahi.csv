@@ -1,0 +1,5 @@
+acar,deyer,vahid,izah,menbe
+P_g_max,0.2,ehtimal,P(qeyri-neft artımı < GaR həddi) üçün yuxarı hədd,FƏRZİYYƏ — risk iştahı Nazirlik qərarıdır (DR10)
+P_cpi_max,0.5,ehtimal,P(inflyasiya > 6%) üçün yuxarı hədd,FƏRZİYYƏ — risk iştahı Nazirlik qərarıdır (DR10)
+P_fis_max,0.4,ehtimal,P(büdcə balansı < −1% ÜDM) üçün yuxarı hədd,FƏRZİYYƏ — risk iştahı Nazirlik qərarıdır (DR10)
+CaR_max_mln_usd,16500.0,mln USD,"Fiskal kapitala risk (CaR95, 1 il) üçün yuxarı hədd",FƏRZİYYƏ — risk iştahı Nazirlik qərarıdır (DR10)

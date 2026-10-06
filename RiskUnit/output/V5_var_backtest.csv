@@ -1,0 +1,128 @@
+portfel,horizont,metod,etibarlilik,test,n,pozuntu,gozlenilen,statistika,p_deyer,netice,pencere,dovr,qeyd
+sofaz,1g,hs,0.95,Kupiec POF,360,25.0,18.0,2.569466,0.108945,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,hs,0.95,Christoffersen müstəqillik,360,25.0,18.0,8.497717,0.003556,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,hs,0.95,Christoffersen şərti örtük,360,25.0,18.0,11.067183,0.003952,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,hs,0.95,Acerbi–Székely Z2 (ES),360,25.0,18.0,-0.460687,0.054,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1g,hs,0.99,Kupiec POF,360,6.0,3.6,1.346106,0.24596,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,hs,0.99,Christoffersen müstəqillik,360,6.0,3.6,3.466255,0.062633,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,hs,0.99,Christoffersen şərti örtük,360,6.0,3.6,4.812361,0.090159,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,hs,0.99,Acerbi–Székely Z2 (ES),360,6.0,3.6,-0.987659,0.101,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1g,hs,0.99,Bazel svetoforu (son 250 gün),250,4.0,2.5,4.0,,yaşıl zona,250.0,2024-12-18–2026-09-29,"0–4 yaşıl, 5–9 sarı, ≥10 qırmızı"
+sofaz,1g,awhs,0.95,Kupiec POF,360,22.0,18.0,0.876478,0.349168,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,awhs,0.95,Christoffersen müstəqillik,360,22.0,18.0,4.433173,0.035247,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,awhs,0.95,Christoffersen şərti örtük,360,22.0,18.0,5.309651,0.070311,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,awhs,0.95,Acerbi–Székely Z2 (ES),360,22.0,18.0,-0.340076,0.088,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1g,awhs,0.99,Kupiec POF,360,6.0,3.6,1.346106,0.24596,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,awhs,0.99,Christoffersen müstəqillik,360,6.0,3.6,3.466255,0.062633,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,awhs,0.99,Christoffersen şərti örtük,360,6.0,3.6,4.812361,0.090159,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,awhs,0.99,Acerbi–Székely Z2 (ES),360,6.0,3.6,-1.030229,0.02,keçmədi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1g,awhs,0.99,Bazel svetoforu (son 250 gün),250,4.0,2.5,4.0,,yaşıl zona,250.0,2024-12-18–2026-09-29,"0–4 yaşıl, 5–9 sarı, ≥10 qırmızı"
+sofaz,1g,cf,0.95,Kupiec POF,360,28.0,18.0,5.037924,0.024798,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,cf,0.95,Christoffersen müstəqillik,360,28.0,18.0,1.645987,0.199506,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,cf,0.95,Christoffersen şərti örtük,360,28.0,18.0,6.683911,0.035368,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,cf,0.95,Acerbi–Székely Z2 (ES),360,28.0,18.0,-0.208227,0.246,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1g,cf,0.99,Kupiec POF,360,4.0,3.6,0.043333,0.835099,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,cf,0.99,Christoffersen müstəqillik,360,4.0,3.6,5.479846,0.019237,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,cf,0.99,Christoffersen şərti örtük,360,4.0,3.6,5.523179,0.063191,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,cf,0.99,Acerbi–Székely Z2 (ES),360,4.0,3.6,-0.206645,0.32,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1g,cf,0.99,Bazel svetoforu (son 250 gün),250,1.0,2.5,1.0,,yaşıl zona,250.0,2024-12-18–2026-09-29,"0–4 yaşıl, 5–9 sarı, ≥10 qırmızı"
+sofaz,1g,evt,0.95,Kupiec POF,360,24.0,18.0,1.914624,0.166451,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,evt,0.95,Christoffersen müstəqillik,360,24.0,18.0,6.06017,0.013826,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,evt,0.95,Christoffersen şərti örtük,360,24.0,18.0,7.974793,0.018548,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,evt,0.95,Acerbi–Székely Z2 (ES),360,24.0,18.0,-0.404247,0.055,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1g,evt,0.99,Kupiec POF,360,7.0,3.6,2.542207,0.11084,keçdi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,evt,0.99,Christoffersen müstəqillik,360,7.0,3.6,8.849072,0.002932,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,evt,0.99,Christoffersen şərti örtük,360,7.0,3.6,11.391279,0.003361,keçmədi,250.0,2024-12-18–2026-09-29,
+sofaz,1g,evt,0.99,Acerbi–Székely Z2 (ES),360,7.0,3.6,-1.073408,0.045,keçmədi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1g,evt,0.99,Bazel svetoforu (son 250 gün),250,4.0,2.5,4.0,,yaşıl zona,250.0,2024-12-18–2026-09-29,"0–4 yaşıl, 5–9 sarı, ≥10 qırmızı"
+sofaz,1a,hs,0.95,Kupiec POF,127,6.0,6.35,0.02067,0.885681,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,hs,0.95,Christoffersen müstəqillik,127,6.0,6.35,0.60025,0.438483,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,hs,0.95,Christoffersen şərti örtük,127,6.0,6.35,0.62092,0.733109,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,hs,0.95,Acerbi–Székely Z2 (ES),127,6.0,6.35,-0.186079,0.318,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1a,hs,0.99,Kupiec POF,127,3.0,1.27,1.721486,0.189502,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,hs,0.99,Christoffersen müstəqillik,127,3.0,1.27,0.146356,0.702042,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,hs,0.99,Christoffersen şərti örtük,127,3.0,1.27,1.867842,0.39301,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,hs,0.99,Acerbi–Székely Z2 (ES),127,3.0,1.27,-2.335527,0.093,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1a,awhs,0.95,Kupiec POF,127,6.0,6.35,0.02067,0.885681,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,awhs,0.95,Christoffersen müstəqillik,127,6.0,6.35,0.60025,0.438483,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,awhs,0.95,Christoffersen şərti örtük,127,6.0,6.35,0.62092,0.733109,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,awhs,0.95,Acerbi–Székely Z2 (ES),127,6.0,6.35,-0.208391,0.265,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1a,awhs,0.99,Kupiec POF,127,1.0,1.27,0.062546,0.802517,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,awhs,0.99,Christoffersen müstəqillik,127,1.0,1.27,0.016,0.899343,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,awhs,0.99,Christoffersen şərti örtük,127,1.0,1.27,0.078546,0.961488,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,awhs,0.99,Acerbi–Székely Z2 (ES),127,1.0,1.27,-0.896483,0.046,keçmədi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1a,cf,0.95,Kupiec POF,127,5.0,6.35,0.324881,0.568689,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,cf,0.95,Christoffersen müstəqillik,127,5.0,6.35,0.413341,0.520279,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,cf,0.95,Christoffersen şərti örtük,127,5.0,6.35,0.738221,0.691349,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,cf,0.95,Acerbi–Székely Z2 (ES),127,5.0,6.35,-0.029449,0.438,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1a,cf,0.99,Kupiec POF,127,2.0,1.27,0.360768,0.54808,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,cf,0.99,Christoffersen müstəqillik,127,2.0,1.27,0.064519,0.799491,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,cf,0.99,Christoffersen şərti örtük,127,2.0,1.27,0.425287,0.808444,keçdi,120.0,2016-02-01–2026-08-01,
+sofaz,1a,cf,0.99,Acerbi–Székely Z2 (ES),127,2.0,1.27,-1.370958,0.084,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+sofaz,1a,evt,0.95,bütün testlər,0,,,,,yoxlanıla bilməz,120.0,2016-02-01–2026-08-01,proqnoz qurulmadı
+sofaz,1a,evt,0.99,bütün testlər,0,,,,,yoxlanıla bilməz,120.0,2016-02-01–2026-08-01,proqnoz qurulmadı
+sofaz,1il,bütün,,bütün testlər,0,,,,,yoxlanıla bilməz,,,illik müstəqil müşahidə sayı < 25 (üst-üstə düşən 12 aylıq pəncərələr)
+net_fx,1g,hs,0.95,Kupiec POF,360,25.0,18.0,2.569466,0.108945,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,hs,0.95,Christoffersen müstəqillik,360,25.0,18.0,8.497717,0.003556,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,hs,0.95,Christoffersen şərti örtük,360,25.0,18.0,11.067183,0.003952,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,hs,0.95,Acerbi–Székely Z2 (ES),360,25.0,18.0,-0.459329,0.054,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1g,hs,0.99,Kupiec POF,360,7.0,3.6,2.542207,0.11084,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,hs,0.99,Christoffersen müstəqillik,360,7.0,3.6,8.849072,0.002932,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,hs,0.99,Christoffersen şərti örtük,360,7.0,3.6,11.391279,0.003361,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,hs,0.99,Acerbi–Székely Z2 (ES),360,7.0,3.6,-1.23338,0.052,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1g,hs,0.99,Bazel svetoforu (son 250 gün),250,4.0,2.5,4.0,,yaşıl zona,250.0,2024-12-18–2026-09-29,"0–4 yaşıl, 5–9 sarı, ≥10 qırmızı"
+net_fx,1g,awhs,0.95,Kupiec POF,360,22.0,18.0,0.876478,0.349168,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,awhs,0.95,Christoffersen müstəqillik,360,22.0,18.0,4.433173,0.035247,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,awhs,0.95,Christoffersen şərti örtük,360,22.0,18.0,5.309651,0.070311,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,awhs,0.95,Acerbi–Székely Z2 (ES),360,22.0,18.0,-0.341648,0.085,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1g,awhs,0.99,Kupiec POF,360,6.0,3.6,1.346106,0.24596,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,awhs,0.99,Christoffersen müstəqillik,360,6.0,3.6,3.466255,0.062633,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,awhs,0.99,Christoffersen şərti örtük,360,6.0,3.6,4.812361,0.090159,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,awhs,0.99,Acerbi–Székely Z2 (ES),360,6.0,3.6,-1.024226,0.02,keçmədi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1g,awhs,0.99,Bazel svetoforu (son 250 gün),250,4.0,2.5,4.0,,yaşıl zona,250.0,2024-12-18–2026-09-29,"0–4 yaşıl, 5–9 sarı, ≥10 qırmızı"
+net_fx,1g,cf,0.95,Kupiec POF,360,27.0,18.0,4.134063,0.042028,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,cf,0.95,Christoffersen müstəqillik,360,27.0,18.0,2.000528,0.157244,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,cf,0.95,Christoffersen şərti örtük,360,27.0,18.0,6.134591,0.046547,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,cf,0.95,Acerbi–Székely Z2 (ES),360,27.0,18.0,-0.190351,0.261,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1g,cf,0.99,Kupiec POF,360,4.0,3.6,0.043333,0.835099,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,cf,0.99,Christoffersen müstəqillik,360,4.0,3.6,5.479846,0.019237,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,cf,0.99,Christoffersen şərti örtük,360,4.0,3.6,5.523179,0.063191,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,cf,0.99,Acerbi–Székely Z2 (ES),360,4.0,3.6,-0.210058,0.317,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1g,cf,0.99,Bazel svetoforu (son 250 gün),250,1.0,2.5,1.0,,yaşıl zona,250.0,2024-12-18–2026-09-29,"0–4 yaşıl, 5–9 sarı, ≥10 qırmızı"
+net_fx,1g,evt,0.95,Kupiec POF,360,23.0,18.0,1.349091,0.245437,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,evt,0.95,Christoffersen müstəqillik,360,23.0,18.0,6.821218,0.009008,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,evt,0.95,Christoffersen şərti örtük,360,23.0,18.0,8.17031,0.016821,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,evt,0.95,Acerbi–Székely Z2 (ES),360,23.0,18.0,-0.377329,0.086,keçdi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1g,evt,0.99,Kupiec POF,360,7.0,3.6,2.542207,0.11084,keçdi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,evt,0.99,Christoffersen müstəqillik,360,7.0,3.6,8.849072,0.002932,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,evt,0.99,Christoffersen şərti örtük,360,7.0,3.6,11.391279,0.003361,keçmədi,250.0,2024-12-18–2026-09-29,
+net_fx,1g,evt,0.99,Acerbi–Székely Z2 (ES),360,7.0,3.6,-1.080716,0.049,keçmədi,250.0,2024-12-18–2026-09-29,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1g,evt,0.99,Bazel svetoforu (son 250 gün),250,4.0,2.5,4.0,,yaşıl zona,250.0,2024-12-18–2026-09-29,"0–4 yaşıl, 5–9 sarı, ≥10 qırmızı"
+net_fx,1a,hs,0.95,Kupiec POF,127,6.0,6.35,0.02067,0.885681,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,hs,0.95,Christoffersen müstəqillik,127,6.0,6.35,0.60025,0.438483,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,hs,0.95,Christoffersen şərti örtük,127,6.0,6.35,0.62092,0.733109,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,hs,0.95,Acerbi–Székely Z2 (ES),127,6.0,6.35,-0.189454,0.309,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1a,hs,0.99,Kupiec POF,127,3.0,1.27,1.721486,0.189502,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,hs,0.99,Christoffersen müstəqillik,127,3.0,1.27,0.146356,0.702042,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,hs,0.99,Christoffersen şərti örtük,127,3.0,1.27,1.867842,0.39301,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,hs,0.99,Acerbi–Székely Z2 (ES),127,3.0,1.27,-2.367676,0.093,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1a,awhs,0.95,Kupiec POF,127,6.0,6.35,0.02067,0.885681,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,awhs,0.95,Christoffersen müstəqillik,127,6.0,6.35,0.60025,0.438483,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,awhs,0.95,Christoffersen şərti örtük,127,6.0,6.35,0.62092,0.733109,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,awhs,0.95,Acerbi–Székely Z2 (ES),127,6.0,6.35,-0.212272,0.268,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1a,awhs,0.99,Kupiec POF,127,1.0,1.27,0.062546,0.802517,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,awhs,0.99,Christoffersen müstəqillik,127,1.0,1.27,0.016,0.899343,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,awhs,0.99,Christoffersen şərti örtük,127,1.0,1.27,0.078546,0.961488,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,awhs,0.99,Acerbi–Székely Z2 (ES),127,1.0,1.27,-0.947908,0.052,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1a,cf,0.95,Kupiec POF,127,5.0,6.35,0.324881,0.568689,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,cf,0.95,Christoffersen müstəqillik,127,5.0,6.35,0.413341,0.520279,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,cf,0.95,Christoffersen şərti örtük,127,5.0,6.35,0.738221,0.691349,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,cf,0.95,Acerbi–Székely Z2 (ES),127,5.0,6.35,-0.029621,0.439,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1a,cf,0.99,Kupiec POF,127,2.0,1.27,0.360768,0.54808,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,cf,0.99,Christoffersen müstəqillik,127,2.0,1.27,0.064519,0.799491,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,cf,0.99,Christoffersen şərti örtük,127,2.0,1.27,0.425287,0.808444,keçdi,120.0,2016-02-01–2026-08-01,
+net_fx,1a,cf,0.99,Acerbi–Székely Z2 (ES),127,2.0,1.27,-1.399219,0.084,keçdi,120.0,2016-02-01–2026-08-01,p-dəyəri H0 altında 1000 simulyasiya (metodun öz proqnoz paylanması)
+net_fx,1a,evt,0.95,bütün testlər,0,,,,,yoxlanıla bilməz,120.0,2016-02-01–2026-08-01,proqnoz qurulmadı
+net_fx,1a,evt,0.99,bütün testlər,0,,,,,yoxlanıla bilməz,120.0,2016-02-01–2026-08-01,proqnoz qurulmadı
+net_fx,1il,bütün,,bütün testlər,0,,,,,yoxlanıla bilməz,,,illik müstəqil müşahidə sayı < 25 (üst-üstə düşən 12 aylıq pəncərələr)
+oil_rev,1il,bütün,,bütün testlər,0,,,,,yoxlanıla bilməz,,,büdcə neft gəlirlərinin illik faktiki seriyası qısadır; VaR proqnoz arxivi yığılır

@@ -1,0 +1,487 @@
+fr,workbook,sheet,eq_name,lhs,series_code,sample_start,sample_end,adj_r2,se_regression,id
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_neft_deflyatoru,oil_defl,oil_defl,2001,2025,0.9247,7.7537,mx:oil_defl
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_neft_deflyatoru_brent,oil_defl,oil_defl,2001,2025,0.7917,12.8984,mx:oil_defl
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_neft_deflyatoru_brent_d22,oil_defl,oil_defl,2001,2025,0.9117,8.3971,mx:oil_defl
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_neft_deflyatoru_d22,oil_defl,oil_defl,2001,2025,0.9239,7.7965,mx:oil_defl
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_nuve_gelir,income_realg,income_realg,2001,2025,0.5755,4.5107,mx:income_realg
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR1_nuve_investisiya,inv_total_g,inv_total_g,2008,2025,0.5887,9.6636,mx:inv_total_g
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR1_nuve_investisiya_dummisiz,inv_total_g,inv_total_g,2007,2025,0.1667,13.7811,mx:inv_total_g
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,macro_annual.csv,FR1_nuve_istehlak,final_consumption,final_consumption,2001,2025,0.6628,3.2608,mx:final_consumption
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,macro_annual.csv,FR1_nuve_istehlak_nominal,final_consumption,final_consumption,2001,2025,0.8608,3.4953,mx:final_consumption
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_nuve_teleb,nonoil_realg_demand,nonoil_realg_demand,2001,2025,0.8728,1.8779,mx:nonoil_realg_demand
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_nuve_teleb_dummisiz,nonoil_realg_demand,nonoil_realg_demand,2001,2025,0.7409,2.6797,mx:nonoil_realg_demand
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_nuve_teleb_pandemiya,nonoil_realg_demand,nonoil_realg_demand,2001,2025,0.8695,1.9021,mx:nonoil_realg_demand
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_ozel_pay_ar1,private_share_gdp,private_share_gdp,1996,2025,0.9627,2.1589,mx:private_share_gdp
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_qeyri_neft_deflyatoru,nonoil_defl,nonoil_defl,2001,2025,0.7868,3.1759,mx:nonoil_defl
+FR1,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR1_qeyri_neft_deflyatoru_sade,nonoil_defl,nonoil_defl,2001,2025,0.7233,3.6184,mx:nonoil_defl
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_ilkin_gelirler_struktur,Δ primary_income,primary_income,2011,2025,0.795,693.5664,mx:primary_income
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_ilkin_gelirler_struktur_d15,Δ primary_income,primary_income,2011,2025,0.9088,462.6179,mx:primary_income
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_credit_nonoil_ehti̇yat_səvi̇yyəsi̇,pi_credit_nonoil,pi_credit_nonoil,2010,2025,,258.098,mx:pi_credit_nonoil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_credit_nonoil_orta3,pi_credit_nonoil,pi_credit_nonoil,2010,2025,,398.57,mx:pi_credit_nonoil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_credit_nonoil_sürüşmə,pi_credit_nonoil,pi_credit_nonoil,2010,2025,,303.546,mx:pi_credit_nonoil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_credit_oil_orta3,pi_credit_oil,pi_credit_oil,2010,2025,,279.122,mx:pi_credit_oil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_credit_oil_qeyri̇neft,pi_credit_oil,pi_credit_oil,2010,2025,,343.389,mx:pi_credit_oil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_credit_oil_sürüşmə,pi_credit_oil,pi_credit_oil,2010,2025,,333.7,mx:pi_credit_oil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_nonoil_orta3,pi_debit_nonoil,pi_debit_nonoil,2010,2025,,282.834,mx:pi_debit_nonoil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_nonoil_qeyri̇neft,pi_debit_nonoil,pi_debit_nonoil,2010,2025,,188.54,mx:pi_debit_nonoil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_nonoil_sürüşmə,pi_debit_nonoil,pi_debit_nonoil,2010,2025,,192.473,mx:pi_debit_nonoil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_nonoil_xari̇ci̇_i̇nvesti̇si̇ya,pi_debit_nonoil,pi_debit_nonoil,2010,2025,,180.105,mx:pi_debit_nonoil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_oil_di_i̇xracda_pay,pi_debit_oil_di,pi_debit_oil_di,2010,2025,,644.777,mx:pi_debit_oil_di
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_oil_di_neft_i̇xrac,pi_debit_oil_di,pi_debit_oil_di,2010,2025,,605.256,mx:pi_debit_oil_di
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_oil_di_orta3,pi_debit_oil_di,pi_debit_oil_di,2010,2025,,1625.926,mx:pi_debit_oil_di
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_oil_di_sürüşmə,pi_debit_oil_di,pi_debit_oil_di,2010,2025,,1791.514,mx:pi_debit_oil_di
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_oil_i̇xracda_pay,pi_debit_oil,pi_debit_oil,2010,2025,,412.352,mx:pi_debit_oil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_oil_neft_i̇xrac,pi_debit_oil,pi_debit_oil,2010,2025,,727.598,mx:pi_debit_oil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_oil_orta3,pi_debit_oil,pi_debit_oil,2010,2025,,1597.339,mx:pi_debit_oil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_pi_debit_oil_sürüşmə,pi_debit_oil,pi_debit_oil,2010,2025,,1789.966,mx:pi_debit_oil
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_credit_barat_orta3,si_credit,si_credit,2010,2025,,1114.986,mx:si_credit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_credit_barat_sürüşmə,si_credit,si_credit,2010,2025,,1457.612,mx:si_credit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_credit_orta3,si_credit,si_credit,2010,2025,,1106.432,mx:si_credit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_credit_qeyri̇neft,si_credit,si_credit,2010,2025,,1332.637,mx:si_credit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_credit_sürüşmə,si_credit,si_credit,2010,2025,,1313.714,mx:si_credit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_debit_barat_orta3,si_debit,si_debit,2010,2025,,139.054,mx:si_debit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_debit_barat_sürüşmə,si_debit,si_debit,2010,2025,,83.956,mx:si_debit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_debit_orta3,si_debit,si_debit,2010,2025,,139.552,mx:si_debit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_debit_qeyri̇neft,si_debit,si_debit,2010,2025,,153.847,mx:si_debit
+FR11,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR11_si_debit_sürüşmə,si_debit,si_debit,2010,2025,,103.917,mx:si_debit
+FR12,MOE BOP.xlsx + Statistik data dinamika 05.06.2026 +.xlsx,BOP / Tədiyyə Balansı,FR12_bpm6_baglanis,reserve_assets,reserve_assets,2010,2030,,,mx:reserve_assets
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_capital_account_orta3,capital_account,capital_account,2010,2025,,19.239,mx:capital_account
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_capital_account_orta5,capital_account,capital_account,2010,2025,,10.543,mx:capital_account
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_assets_neft_i̇nvesti̇si̇ya,fdi_assets,fdi_assets,2010,2025,,1256.892,mx:fdi_assets
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_assets_orta3,fdi_assets,fdi_assets,2010,2025,,1052.547,mx:fdi_assets
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_assets_orta5,fdi_assets,fdi_assets,2010,2025,,1105.709,mx:fdi_assets
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_inward_nonoil_orta3,fdi_inward_nonoil,fdi_inward_nonoil,2010,2025,,568.98,mx:fdi_inward_nonoil
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_inward_nonoil_qeyri̇neft,fdi_inward_nonoil,fdi_inward_nonoil,2010,2025,,558.357,mx:fdi_inward_nonoil
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_inward_nonoil_sürüşmə,fdi_inward_nonoil,fdi_inward_nonoil,2010,2025,,518.248,mx:fdi_inward_nonoil
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_inward_nonoil_xari̇ci̇_i̇nvesti̇si̇ya,fdi_inward_nonoil,fdi_inward_nonoil,2010,2025,,535.328,mx:fdi_inward_nonoil
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_inward_oil_neft_i̇nvesti̇si̇ya,fdi_inward_oil,fdi_inward_oil,2010,2025,,767.907,mx:fdi_inward_oil
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_inward_oil_orta3,fdi_inward_oil,fdi_inward_oil,2010,2025,,1169.633,mx:fdi_inward_oil
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_inward_oil_sürüşmə,fdi_inward_oil,fdi_inward_oil,2010,2025,,910.787,mx:fdi_inward_oil
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_repatriation_i̇xracda_pay,fdi_repatriation,fdi_repatriation,2010,2025,,1582.505,mx:fdi_repatriation
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_repatriation_neft_i̇xrac,fdi_repatriation,fdi_repatriation,2010,2025,,2019.799,mx:fdi_repatriation
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_repatriation_orta3,fdi_repatriation,fdi_repatriation,2010,2025,,2690.228,mx:fdi_repatriation
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fdi_repatriation_sürüşmə,fdi_repatriation,fdi_repatriation,2010,2025,,2591.027,mx:fdi_repatriation
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_fin_derivatives_net_orta3,fin_derivatives_net,fin_derivatives_net,2010,2025,,2.127,mx:fin_derivatives_net
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_oil_bonus_orta3,oil_bonus,oil_bonus,2010,2025,,198.417,mx:oil_bonus
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_oil_bonus_orta5,oil_bonus,oil_bonus,2010,2025,,235.12,mx:oil_bonus
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_other_inv_net_orta3,other_inv_net,other_inv_net,2010,2025,,3124.174,mx:other_inv_net
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_other_inv_net_orta5,other_inv_net,other_inv_net,2010,2025,,3519.609,mx:other_inv_net
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_other_inv_net_sürüşmə,other_inv_net,other_inv_net,2010,2025,,2556.709,mx:other_inv_net
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_portfolio_net_orta3,portfolio_net,portfolio_net,2010,2025,,1119.408,mx:portfolio_net
+FR12,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR12_portfolio_net_orta5,portfolio_net,portfolio_net,2010,2025,,1271.358,mx:portfolio_net
+FR13,INDUSTRY.xlsx,eq,NAZIRLIK №01 — eq_pi_ind3_1,DLOG(PI_IND3_1),PI_IND3_1,1995,2024,,,mx:PI_IND3_1
+FR13,INDUSTRY.xlsx,eq,NAZIRLIK №02 — eq_pi_ind3_2,DLOG(PI_IND3_2),PI_IND3_2,1995,2024,,,mx:PI_IND3_2
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №03 — MS_TP,DLOG(MS_TP),MS_TP,1995,2024,,,mx:MS_TP
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №04 — ECM_MS_TP,ECM_MS_TP,ECM_MS_TP,1995,2024,,,mx:ECM_MS_TP
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №05 — MS_TRAVB,DLOG(MS_TRAVB),MS_TRAVB,1995,2024,,,mx:MS_TRAVB
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №06 — MS_TRAVP,DLOG(MS_TRAVP),MS_TRAVP,1995,2024,,,mx:MS_TRAVP
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №07 — XS_IFORM,DLOG(XS_IFORM),XS_IFORM,1995,2024,,,mx:XS_IFORM
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №08 — OI_L_OS,OI_L_OS,OI_L_OS,1995,2024,,,mx:OI_L_OS
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №09 — eq_dmgo,DLOG(MGO),MGO,1995,2024,,,mx:MGO
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №10 — eq_mgo,ECM_MGO,ECM_MGO,1995,2024,,,mx:ECM_MGO
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №11 — eq_drxgno,DLOG(RXGNO),RXGNO,1995,2024,,,mx:RXGNO
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №12 — eq_rxgno,ecm_rxgno,ecm_rxgno,1995,2024,,,mx:ecm_rxgno
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №13 — eq_dmgno_fin,DLOG(MGNO),MGNO,1995,2024,,,mx:MGNO
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №14 — eq_mgno,ECM_MGNO,ECM_MGNO,1995,2024,,,mx:ECM_MGNO
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №15 — eq_msc_fin,MSC,MSC,1995,2024,,,mx:MSC
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №16 — RACBAR,DLOG(RACBAR),RACBAR,1995,2024,,,mx:RACBAR
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №17 — eq_drmngo,DLOG(MGNO/CPICMTP),MGNO,1995,2024,,,mx:MGNO
+FR13,MOE BOP.xlsx,eq14,NAZIRLIK №18 — eq_drmngo_new,DLOG(MGNO/(CPIMTP/NERMTP)),MGNO,1995,2024,,,mx:MGNO
+FR13,MOE INF.xlsx,eq,NAZIRLIK №19 — eq_m2_m1,DLOG(M2_M1),M2_M1,1995,2024,,,mx:M2_M1
+FR13,MOE INF.xlsx,eq,NAZIRLIK №20 — eq_m3_m2usd_fin,DLOG(M3_M2USD),M3_M2USD,1995,2024,,,mx:M3_M2USD
+FR13,MOE INF.xlsx,eq,NAZIRLIK №21 — eq_dcpi,DLOG(CPI),CPI,1995,2024,,,mx:CPI
+FR13,MOE INF.xlsx,eq,NAZIRLIK №22 — eq_m1,M1/MB,M1,1995,2024,,,mx:M1
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №23 — eq_driea,DLOG(RIEA),RIEA,1995,2024,,,mx:RIEA
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №24 — eq_riea_tmp,ECM_RIEA,ECM_RIEA,1995,2024,,,mx:ECM_RIEA
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №25 — eq_drhc_none,DLOG(RHC),RHC,1995,2024,,,mx:RHC
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №26 — eq_rhc_tmp,ECM_RHC,ECM_RHC,1995,2024,,,mx:ECM_RHC
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №27 — eq_pbcrhc,PBCRHC,PBCRHC,1995,2024,,,mx:PBCRHC
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №28 — eq_drva_const,DLOG(RVA_CONST),RVA_CONST,1995,2024,,,mx:RVA_CONST
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №29 — eq_rva_const_tmp,ECM_RVA_CONST,ECM_RVA_CONST,1995,2024,,,mx:ECM_RVA_CONST
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №30 — eq_dridns,DLOG(RIDNS),RIDNS,1995,2024,,,mx:RIDNS
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №31 — eq_ridns,ecm_ridns,ecm_ridns,1995,2024,,,mx:ecm_ridns
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №32 — eq01,eq01,eq01,1995,2024,,,mx:eq01
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №33 — eq_drva_trade,DLOG(RVA_TRADE),RVA_TRADE,1995,2024,,,mx:RVA_TRADE
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №34 — eq_rva_trade,ECM_RVA_TRADEFIN,ECM_RVA_TRADEFIN,1995,2024,,,mx:ECM_RVA_TRADEFIN
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №35 — eq_drva_accom,DLOG(RVA_ACCOM),RVA_ACCOM,1995,2024,,,mx:RVA_ACCOM
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №36 — eq_rva_accom,ecm_rva_accom,ecm_rva_accom,1995,2024,,,mx:ecm_rva_accom
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №37 — eq_drva_rest,DLOG(RVA_REST),RVA_REST,1995,2024,,,mx:RVA_REST
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №38 — eq_defid,DLOG(DEFID),DEFID,1995,2024,,,mx:DEFID
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №39 — eq_ci,CI,CI,1995,2024,,,mx:CI
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №40 — eq_dgfcf,DLOG(GFCF),GFCF,1995,2024,,,mx:GFCF
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №41 — GFCF,DLOG(GFCF),GFCF,1995,2024,,,mx:GFCF
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №42 — GFCF,DLOG(GFCF),GFCF,1995,2024,,,mx:GFCF
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №43 — eq_hc_test,DLOG(HC),HC,1995,2024,,,mx:HC
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №44 — eq_drxgno,DLOG(RXGNO),RXGNO,1995,2024,,,mx:RXGNO
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №45 — eq_rxgno,ecm_rxgno,ecm_rxgno,1995,2024,,,mx:ecm_rxgno
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №46 — eq_drxgno_new,DLOG(RXGNO),RXGNO,1995,2024,,,mx:RXGNO
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №47 — eq_drva_accom,DLOG(RVA_ACCOM),RVA_ACCOM,1995,2024,,,mx:RVA_ACCOM
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №48 — eq_tikinti,DLOG(RVA_CONST),RVA_CONST,1995,2024,,,mx:RVA_CONST
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №49 — RVA_CONST,DLOG(RVA_CONST),RVA_CONST,1995,2024,,,mx:RVA_CONST
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №50 — eq_dlog_rhc,DLOG(RHC),RHC,1995,2024,,,mx:RHC
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №51 — eq0201,DLOG(TIKINTI) = 0.0157401339192 + 0.388120544769*DLOG(RIO) + 0.523320713218*DLOG(RINO) - 0.260651744716*(T=2005),TIKINTI,1995,2024,,,mx:TIKINTI
+FR13,MOE SNA.xlsx,eq,NAZIRLIK №52 — eq_drxgno_new,DLOG(RXGNO),RXGNO,1995,2024,,,mx:RXGNO
+FR13,MOE SNA.xlsx,eq2,NAZIRLIK №53 — eq_dfpi_az,DLOG(FPI_AZ),FPI_AZ,1995,2024,,,mx:FPI_AZ
+FR13,MOE SNA.xlsx,eq2,NAZIRLIK №54 — eq_ddef_constr,DLOG(DEF_CONSTR),DEF_CONSTR,1995,2024,,,mx:DEF_CONSTR
+FR13,MOE SNA.xlsx,eq2,NAZIRLIK №55 — eq_ddef_accom,DLOG(DEF_ACCOM),DEF_ACCOM,1995,2024,,,mx:DEF_ACCOM
+FR13,MOE SNA.xlsx,eq2,NAZIRLIK №56 — eq_ddef_transp,DLOG(DEF_TRANSP),DEF_TRANSP,1995,2024,,,mx:DEF_TRANSP
+FR13,MOE SNA.xlsx,eq2,NAZIRLIK №57 — eq_def_ntp,LOG(DEF_NTP),DEF_NTP,1995,2024,,,mx:DEF_NTP
+FR13,MOE SNA.xlsx,eq2,NAZIRLIK №58 — eq_ddef_finance,DLOG(DEF_FINANCE),DEF_FINANCE,1995,2024,,,mx:DEF_FINANCE
+FR13,MOE SNA.xlsx,eq2,NAZIRLIK №59 — eq_ddef_rest,DLOG(DEF_REST),DEF_REST,1995,2024,,,mx:DEF_REST
+FR13,MOE SNA.xlsx,eq2,NAZIRLIK №60 — eq_ddef_accom,DLOG(DEF_ACCOM),DEF_ACCOM,1995,2024,,,mx:DEF_ACCOM
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №61 — eq_dw_agr,DLOG(W_AGR),W_AGR,1995,2024,,,mx:W_AGR
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №62 — eq_dw_mine,DLOG(W_MINE),W_MINE,1995,2024,,,mx:W_MINE
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №63 — eq_dw_manu,DLOG(W_MANU),W_MANU,1995,2024,,,mx:W_MANU
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №64 — eq_dw_elec,DLOG(W_ELEC),W_ELEC,1995,2024,,,mx:W_ELEC
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №65 — eq_dw_wate,LOG(W_WATE),W_WATE,1995,2024,,,mx:W_WATE
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №66 — eq_dw_const_fin,DLOG(W_CONST),W_CONST,1995,2024,,,mx:W_CONST
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №67 — eq_dw_trade,DLOG(W_TRADE),W_TRADE,1995,2024,,,mx:W_TRADE
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №68 — eq_dw_accom,DLOG(W_ACCOM),W_ACCOM,1995,2024,,,mx:W_ACCOM
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №69 — eq_dw_trans,DLOG(W_TRANS),W_TRANS,1995,2024,,,mx:W_TRANS
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №70 — eq_dw_inform,DLOG(W_INFORM),W_INFORM,1995,2024,,,mx:W_INFORM
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №71 — eq_dw_finance,DLOG(W_FINANCE),W_FINANCE,1995,2024,,,mx:W_FINANCE
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №72 — eq_dw_prof,DLOG(W_PROF),W_PROF,1995,2024,,,mx:W_PROF
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №73 — eq_dw_admn,DLOG(W_ADMN),W_ADMN,1995,2024,,,mx:W_ADMN
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №74 — eq_dw_rest,DLOG(W_REST),W_REST,1995,2024,,,mx:W_REST
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №75 — eq_dw_stmanag_fin,DLOG(W_STMANAG),W_STMANAG,1995,2024,,,mx:W_STMANAG
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №76 — eq_w_stmanag,ECM_W_STMANAGSON,ECM_W_STMANAGSON,1995,2024,,,mx:ECM_W_STMANAGSON
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №77 — eq_dw_educ,DLOG(W_EDUC),W_EDUC,1995,2024,,,mx:W_EDUC
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №78 — eq_dw_health,DLOG(W_HEALTH),W_HEALTH,1995,2024,,,mx:W_HEALTH
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №79 — eq_dw_art,DLOG(W_ART),W_ART,1995,2024,,,mx:W_ART
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №80 — eq_dw_other,DLOG(W_OTHER),W_OTHER,1995,2024,,,mx:W_OTHER
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №81 — eq_driea,DLOG(RIEA),RIEA,1995,2024,,,mx:RIEA
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №82 — eq_riea_tmp,ECM_RIEA,ECM_RIEA,1995,2024,,,mx:ECM_RIEA
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №83 — NONOILWAGE,DLOG(NONOILWAGE),NONOILWAGE,1995,2024,,,mx:NONOILWAGE
+FR13,MOE SOCIAL.xlsx,eq8,NAZIRLIK №84 — SERVICES_PAID,DLOG(SERVICES_PAID) = -0.0055219162031 + 0.779733104285*DLOG(TRADE) + 0.140233190678*DLOG(WAGE),SERVICES_PAID,1995,2024,,,mx:SERVICES_PAID
+FR13,MOE SOCIAL.xlsx,eq9,NAZIRLIK №85 — L_MINE,DLOG(L_MINE),L_MINE,1995,2024,,,mx:L_MINE
+FR13,MOE SOCIAL.xlsx,eq9,NAZIRLIK №86 — ecm_l_mine,ecm_l_mine,ecm_l_mine,1995,2024,,,mx:ecm_l_mine
+FR13,MOE SOCIAL.xlsx,eq9,NAZIRLIK №87 — eq_dl_mine_fin,DLOG(L_MINE),L_MINE,1995,2024,,,mx:L_MINE
+FR13,MOE SOCIAL.xlsx,eq9,NAZIRLIK №88 — eq_dl_trans,DLOG(L_TRANS),L_TRANS,1995,2024,,,mx:L_TRANS
+FR13,MOE SOCIAL.xlsx,eq9,NAZIRLIK №89 — L_MANU,DLOG(L_MANU),L_MANU,1995,2024,,,mx:L_MANU
+FR13,MOE SOCIAL.xlsx,eq9,NAZIRLIK №90 — eq_dl_manu,DLOG(L_MANU),L_MANU,1995,2024,,,mx:L_MANU
+FR13,MOE T&C.xlsx,eq,NAZIRLIK №91 — eq_dtrans_p,DLOG(TRANS_P),TRANS_P,1995,2024,,,mx:TRANS_P
+FR13,MOE T&C.xlsx,eq,NAZIRLIK №92 — eq_trans_p,ECM_TRANS_P,ECM_TRANS_P,1995,2024,,,mx:ECM_TRANS_P
+FR1B,DSK 27 (027en),027 — Gross domestic product use,FR1b_ehtiyatlar_normasi,use_inventories,use_inventories,2016,2025,,,mx:use_inventories
+FR1B,DSK 27 (027en),027 — Gross domestic product use,FR1b_ev_teserrufati_istehlaki_korpusu,use_hh_cons,use_hh_cons,2025,2030,,,mx:use_hh_cons
+FR1B,DSK 27 (027en),027 — Gross domestic product use,FR1b_qapanma_qaydasi,use_gfcf,use_gfcf,2013,2025,,,mx:use_gfcf
+FR1B,DSK 27 (027en),027 — Gross domestic product use,FR1b_qht_istehlaki,use_npish_cons,use_npish_cons,2021,2025,,,mx:use_npish_cons
+FR1B,DSK 27 (027en),027 — Gross domestic product use,FR1b_resurslar_istifade_eynilikleri,use_resources,use_resources,2013,2030,,,mx:use_resources
+FR1B,DSK 27 (027en),027 — Gross domestic product use,FR1b_ticaret_korpusu,"use_exports, use_imports",use_exports,2013,2030,,,mx:use_exports
+FR1B,DSK 27 (027en),027 — Gross domestic product use,FR1b_yigim_investisiya_korpusu,use_gfcf_behavioural,use_gfcf_behavioural,2023,2025,,,mx:use_gfcf_behavioural
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_agri,d_agri,d_agri,2010,2025,0.7386,2.0957,mx:d_agri
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_constr,d_constr,d_constr,2001,2025,0.4587,5.2237,mx:d_constr
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_ict,d_ict,d_ict,2010,2025,0.8434,1.5306,mx:d_ict
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_manuf,d_manuf,d_manuf,2006,2025,0.2414,9.8805,mx:d_manuf
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_mining,d_mining,d_mining,2007,2025,0.9642,6.5386,mx:d_mining
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_net_taxes,net_taxes_defl,net_taxes,2014,2025,-0.2967,9.9022,mx:net_taxes
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_power,d_power,d_power,2006,2025,0.7496,20.3659,mx:d_power
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_social,d_social,d_social,2001,2025,0.4463,7.4237,mx:d_social
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_tourism,d_tourism,d_tourism,2001,2025,0.6277,6.8986,mx:d_tourism
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_trade,d_trade,d_trade,2001,2025,0.6721,4.7712,mx:d_trade
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_transport,d_transport,d_transport,2015,2025,0.8101,4.4748,mx:d_transport
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_defl_water,d_water,d_water,2010,2025,-0.0441,15.8228,mx:d_water
+FR2,,,FR2_nonoil_agregasiya,gdp_nonoil_prod,gdp_nonoil_prod,2025,2030,,,mx:gdp_nonoil_prod
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_agri,g_agri,g_agri,2014,2024,0.4161,2.0264,mx:g_agri
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_agri_v2suruce,g_agri,g_agri,2013,2025,-0.0873,2.6675,mx:g_agri
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_constr,g_constr,g_constr,2011,2025,-0.0195,13.6466,mx:g_constr
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_constr_alt,g_constr,g_constr,1997,2025,0.7407,10.4862,mx:g_constr
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_constr_v2suruce,g_constr,g_constr,2001,2025,0.8511,8.4745,mx:g_constr
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_ict,g_ict,g_ict,2014,2024,0.0197,5.5075,mx:g_ict
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_ict_alt,g_ict,g_ict,2011,2025,0.0563,4.8159,mx:g_ict
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_ict_v2suruce,g_ict,g_ict,2013,2025,0.3638,4.0664,mx:g_ict
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_manuf,g_manuf,g_manuf,2011,2025,0.1623,4.7741,mx:g_manuf
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_manuf_v2suruce,g_manuf,g_manuf,2001,2025,0.0665,6.0668,mx:g_manuf
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Mədənçıxarma,FR2_va_mining_nonoil,va_mining_nonoil_g,va_mining_nonoil,2017,2025,-0.1412,21.6052,mx:va_mining_nonoil
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_power,g_power,g_power,2014,2024,-0.0498,3.5591,mx:g_power
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_power_v2suruce,g_power,g_power,2001,2025,0.2029,5.2278,mx:g_power
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_social,g_social,g_social,2011,2025,0.1243,2.7174,mx:g_social
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_social_alt,g_social,g_social,2000,2025,0.4551,2.3631,mx:g_social
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_social_v2suruce,g_social,g_social,2000,2025,0.3513,2.5784,mx:g_social
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_tourism,g_tourism,g_tourism,2011,2025,0.4784,16.6887,mx:g_tourism
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_tourism_alt,g_tourism,g_tourism,2001,2025,0.9675,3.6116,mx:g_tourism
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_tourism_v2suruce,g_tourism,g_tourism,2001,2025,0.3474,16.1944,mx:g_tourism
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_trade,g_trade,g_trade,2000,2025,0.9552,1.0365,mx:g_trade
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_trade_v2suruce,g_trade,g_trade,2001,2025,0.6357,3.0089,mx:g_trade
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_transport,g_transport,g_transport,2014,2024,0.2163,7.9905,mx:g_transport
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_transport_alt,g_transport,g_transport,2007,2025,0.1788,6.6962,mx:g_transport
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_transport_v2suruce,g_transport,g_transport,2013,2025,0.1993,7.3889,mx:g_transport
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_water,g_water,g_water,2017,2025,-0.1428,6.9978,mx:g_water
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_water_alt,g_water,g_water,2010,2025,0.1179,5.6621,mx:g_water
+FR2,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR2_va_water_v2suruce,g_water,g_water,2010,2025,0.0171,5.9768,mx:g_water
+FR4,8 vərəq,2.4.1.4.,v4_r006_minton,Δln(Q),v4_r006_minton,2014,2024,-0.0327,0.117,mx:v4_r006_minton
+FR4,8 vərəq,2.4.1.4.,v4_r007_minton,Δln(Q),v4_r007_minton,2014,2024,0.0247,0.1247,mx:v4_r007_minton
+FR4,8 vərəq,2.4.1.4.,v4_r008_minton,Δln(Q),v4_r008_minton,2014,2024,-0.0552,0.4501,mx:v4_r008_minton
+FR4,8 vərəq,2.4.1.4.,v4_r009_minton,Δln(Q),v4_r009_minton,2014,2024,-0.0973,0.0526,mx:v4_r009_minton
+FR4,8 vərəq,2.4.1.4.,v4_r010_minton,Δln(Q),v4_r010_minton,2014,2024,-0.0246,0.0721,mx:v4_r010_minton
+FR4,8 vərəq,2.4.1.4.,v4_r011_minton,Δln(Q),v4_r011_minton,2014,2024,0.1258,0.077,mx:v4_r011_minton
+FR4,8 vərəq,2.4.1.4.,v4_r012_minton,Δln(Q),v4_r012_minton,2014,2024,0.1756,0.344,mx:v4_r012_minton
+FR4,8 vərəq,2.4.1.4.,v4_r013_minton,Δln(Q),v4_r013_minton,2014,2024,0.1695,0.1683,mx:v4_r013_minton
+FR4,8 vərəq,2.4.1.4.,v4_r014_minton,Δln(Q),v4_r014_minton,2014,2024,0.0757,0.2738,mx:v4_r014_minton
+FR4,8 vərəq,2.4.1.4.,v4_r015_minton,Δln(Q),v4_r015_minton,2014,2024,0.0936,0.2431,mx:v4_r015_minton
+FR4,8 vərəq,2.4.1.4.,v4_r016_minton,Δln(Q),v4_r016_minton,2014,2024,-0.0556,0.0316,mx:v4_r016_minton
+FR4,8 vərəq,2.4.1.4.,v4_r017_minton,Δln(Q),v4_r017_minton,2014,2024,-0.0841,0.0944,mx:v4_r017_minton
+FR4,8 vərəq,2.4.1.4.,v4_r018_minton,Δln(Q),v4_r018_minton,2014,2024,0.2481,0.2033,mx:v4_r018_minton
+FR4,8 vərəq,2.4.1.4.,v4_r020_minton,Δln(Q),v4_r020_minton,2014,2024,-0.1018,0.1702,mx:v4_r020_minton
+FR4,8 vərəq,2.4.1.4.,v4_r021_minton,Δln(Q),v4_r021_minton,2014,2024,-0.0941,0.1801,mx:v4_r021_minton
+FR4,8 vərəq,2.4.1.4.,v4_r022_minton,Δln(Q),v4_r022_minton,2014,2024,-0.0807,0.2264,mx:v4_r022_minton
+FR4,8 vərəq,2.4.1.4.,v4_r023_minton,Δln(Q),v4_r023_minton,2014,2024,-0.0981,0.1095,mx:v4_r023_minton
+FR4,8 vərəq,2.4.1.4.,v4_r024_mlneded,Δln(Q),v4_r024_mlneded,2014,2024,-0.0209,0.049,mx:v4_r024_mlneded
+FR4,8 vərəq,2.4.1.4.,v4_r025_minton,Δln(Q),v4_r025_minton,2014,2024,0.1286,0.012,mx:v4_r025_minton
+FR4,8 vərəq,2.4.1.4.,v4_r026_minton,Δln(Q),v4_r026_minton,2014,2024,-0.1109,0.023,mx:v4_r026_minton
+FR4,8 vərəq,2.4.1.4.,v4_r027_ton,Δln(Q),v4_r027_ton,2014,2024,0.2783,3.2963,mx:v4_r027_ton
+FR4,8 vərəq,2.4.1.4.,v4_r028_minbas,Δln(Q),v4_r028_minbas,2014,2024,-0.0101,0.013,mx:v4_r028_minbas
+FR4,8 vərəq,2.4.1.4.,v4_r029_minbas,Δln(Q),v4_r029_minbas,2014,2024,-0.1042,0.0139,mx:v4_r029_minbas
+FR4,8 vərəq,2.4.1.4.,v4_r030_minbas,Δln(Q),v4_r030_minbas,2014,2024,-0.0593,0.0267,mx:v4_r030_minbas
+FR4,8 vərəq,2.4.1.4.,v4_r031_minbas,Δln(Q),v4_r031_minbas,2014,2024,-0.0727,0.1661,mx:v4_r031_minbas
+FR4,8 vərəq,2.4.1.4.,v4_r032_mlnbas,Δln(Q),v4_r032_mlnbas,2014,2024,0.0235,0.059,mx:v4_r032_mlnbas
+FR4,8 vərəq,2.4.1.4.,v4_r035_minton,Δln(Q),v4_r035_minton,2014,2024,0.5783,0.0199,mx:v4_r035_minton
+FR4,8 vərəq,2.4.1.4.,v4_r036_mlnm3,Δln(Q),v4_r036_mlnm3,2014,2024,0.119,0.0587,mx:v4_r036_mlnm3
+FR4,8 vərəq,2.4.1.4.,v4_r037_mlnm3,Δln(Q),v4_r037_mlnm3,2014,2024,0.0436,0.0832,mx:v4_r037_mlnm3
+FR4,8 vərəq,2.4.1.4.,v4_r039_kq,Δln(Q),v4_r039_kq,2014,2024,-0.0344,4.458,mx:v4_r039_kq
+FR4,8 vərəq,2.4.1.4.,v4_r040_ton,Δln(Q),v4_r040_ton,2014,2024,0.0447,3.0133,mx:v4_r040_ton
+FR4,8 vərəq,2.4.1.4.,v4_r042_minton,Δln(Q),v4_r042_minton,2014,2024,-0.1056,0.9914,mx:v4_r042_minton
+FR4,8 vərəq,2.4.1.4.,v4_r043_minton,Δln(Q),v4_r043_minton,2014,2024,-0.0694,0.6727,mx:v4_r043_minton
+FR4,8 vərəq,2.4.1.4.,v4_r044_minton,Δln(Q),v4_r044_minton,2014,2024,0.3415,0.4155,mx:v4_r044_minton
+FR4,8 vərəq,2.4.1.4.,v4_r045_minton,Δln(Q),v4_r045_minton,2014,2024,-0.0808,2.1102,mx:v4_r045_minton
+FR4,8 vərəq,2.4.1.4.,v4_r048_minton,Δln(Q),v4_r048_minton,2001,2024,-0.045,0.0227,mx:v4_r048_minton
+FR4,8 vərəq,2.4.1.4.,v4_r049_minton,Δln(Q),v4_r049_minton,2001,2024,0.0785,0.0711,mx:v4_r049_minton
+FR4,8 vərəq,2.4.1.4.,v4_r051_minton,Δln(Q),v4_r051_minton,2001,2024,0.0686,0.0154,mx:v4_r051_minton
+FR4,8 vərəq,2.4.1.4.,v4_r052_minton,Δln(Q),v4_r052_minton,2001,2024,0.0466,0.8654,mx:v4_r052_minton
+FR4,8 vərəq,2.4.1.4.,v4_r053_minton,Δln(Q),v4_r053_minton,2001,2024,-0.0341,0.0838,mx:v4_r053_minton
+FR4,8 vərəq,2.4.1.4.,v4_r054_minton,Δln(Q),v4_r054_minton,2001,2024,-0.0087,0.0526,mx:v4_r054_minton
+FR4,8 vərəq,2.4.1.4.,v4_r055_minton,Δln(Q),v4_r055_minton,2001,2024,0.0261,0.2701,mx:v4_r055_minton
+FR4,8 vərəq,2.4.1.4.,v4_r056_minton,Δln(Q),v4_r056_minton,2001,2024,-0.0009,0.2415,mx:v4_r056_minton
+FR4,8 vərəq,2.4.1.4.,v4_r057_minton,Δln(Q),v4_r057_minton,2001,2024,0.0558,0.0308,mx:v4_r057_minton
+FR4,8 vərəq,2.4.1.4.,v4_r058_minton,Δln(Q),v4_r058_minton,2001,2024,-0.0335,0.2891,mx:v4_r058_minton
+FR4,8 vərəq,2.4.1.4.,v4_r060_mindkl,Δln(Q),v4_r060_mindkl,2014,2024,0.3185,3.9993,mx:v4_r060_mindkl
+FR4,8 vərəq,2.4.1.4.,v4_r061_mindkl,Δln(Q),v4_r061_mindkl,2014,2024,0.0782,0.2459,mx:v4_r061_mindkl
+FR4,8 vərəq,2.4.1.4.,v4_r062_mindkl,Δln(Q),v4_r062_mindkl,2014,2024,0.169,0.2343,mx:v4_r062_mindkl
+FR4,8 vərəq,2.4.1.4.,v4_r063_mindkl,Δln(Q),v4_r063_mindkl,2014,2024,0.3091,0.1535,mx:v4_r063_mindkl
+FR4,8 vərəq,2.4.1.4.,v4_r064_mindkl,Δln(Q),v4_r064_mindkl,2014,2024,0.3199,1.3928,mx:v4_r064_mindkl
+FR4,8 vərəq,2.4.1.4.,v4_r065_mindkl,Δln(Q),v4_r065_mindkl,2014,2024,0.1653,1.1766,mx:v4_r065_mindkl
+FR4,8 vərəq,2.4.1.4.,v4_r067_ton,Δln(Q),v4_r067_ton,2014,2024,-0.095,0.3979,mx:v4_r067_ton
+FR4,8 vərəq,2.4.1.4.,v4_r068_mlneded,Δln(Q),v4_r068_mlneded,2014,2024,-0.0686,0.5112,mx:v4_r068_mlneded
+FR4,8 vərəq,2.4.1.4.,v4_r070_minton,Δln(Q),v4_r070_minton,2014,2024,0.0386,0.4278,mx:v4_r070_minton
+FR4,8 vərəq,2.4.1.4.,v4_r071_ton,Δln(Q),v4_r071_ton,2014,2024,-0.0781,0.3314,mx:v4_r071_ton
+FR4,8 vərəq,2.4.1.4.,v4_r072_minm2,Δln(Q),v4_r072_minm2,2014,2024,-0.0164,0.834,mx:v4_r072_minm2
+FR4,8 vərəq,2.4.1.4.,v4_r074_mineded,Δln(Q),v4_r074_mineded,2014,2024,-0.1111,0.8603,mx:v4_r074_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r075_mineded,Δln(Q),v4_r075_mineded,2014,2024,-0.0214,0.2377,mx:v4_r075_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r076_mineded,Δln(Q),v4_r076_mineded,2014,2024,0.1291,0.3208,mx:v4_r076_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r077_mineded,Δln(Q),v4_r077_mineded,2014,2024,-0.1044,0.5549,mx:v4_r077_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r078_mincut,Δln(Q),v4_r078_mincut,2014,2024,-0.1074,0.5042,mx:v4_r078_mincut
+FR4,8 vərəq,2.4.1.4.,v4_r079_mineded,Δln(Q),v4_r079_mineded,2014,2024,-0.0997,0.3149,mx:v4_r079_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r080_mineded,Δln(Q),v4_r080_mineded,2014,2024,-0.0513,0.4781,mx:v4_r080_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r081_mineded,Δln(Q),v4_r081_mineded,2014,2024,-0.0721,0.5454,mx:v4_r081_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r082_mineded,Δln(Q),v4_r082_mineded,2014,2024,-0.093,0.288,mx:v4_r082_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r084_minkvm,Δln(Q),v4_r084_minkvm,2014,2024,-0.1071,0.8298,mx:v4_r084_minkvm
+FR4,8 vərəq,2.4.1.4.,v4_r085_ton,Δln(Q),v4_r085_ton,2014,2024,-0.0145,0.8087,mx:v4_r085_ton
+FR4,8 vərəq,2.4.1.4.,v4_r086_mincut,Δln(Q),v4_r086_mincut,2014,2024,0.1036,0.4232,mx:v4_r086_mincut
+FR4,8 vərəq,2.4.1.4.,v4_r088_minkvm,Δln(Q),v4_r088_minkvm,2014,2024,0.0841,0.3357,mx:v4_r088_minkvm
+FR4,8 vərəq,2.4.1.4.,v4_r089_eded,Δln(Q),v4_r089_eded,2014,2024,0.5399,0.4501,mx:v4_r089_eded
+FR4,8 vərəq,2.4.1.4.,v4_r091_ton,Δln(Q),v4_r091_ton,2014,2024,-0.1023,0.1149,mx:v4_r091_ton
+FR4,8 vərəq,2.4.1.4.,v4_r092_ton,Δln(Q),v4_r092_ton,2014,2024,0.0871,0.5608,mx:v4_r092_ton
+FR4,8 vərəq,2.4.1.4.,v4_r094_mineded,Δln(Q),v4_r094_mineded,2014,2024,0.0221,0.1751,mx:v4_r094_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r095_mineded,Δln(Q),v4_r095_mineded,2014,2024,0.2033,0.53,mx:v4_r095_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r097_minton,Δln(Q),v4_r097_minton,2014,2024,-0.0883,0.1061,mx:v4_r097_minton
+FR4,8 vərəq,2.4.1.4.,v4_r098_minton,Δln(Q),v4_r098_minton,2014,2024,-0.0876,0.0904,mx:v4_r098_minton
+FR4,8 vərəq,2.4.1.4.,v4_r099_minton,Δln(Q),v4_r099_minton,2014,2024,-0.0589,0.3267,mx:v4_r099_minton
+FR4,8 vərəq,2.4.1.4.,v4_r100_minton,Δln(Q),v4_r100_minton,2014,2024,-0.111,0.1751,mx:v4_r100_minton
+FR4,8 vərəq,2.4.1.4.,v4_r101_minton,Δln(Q),v4_r101_minton,2014,2024,-0.0231,0.0806,mx:v4_r101_minton
+FR4,8 vərəq,2.4.1.4.,v4_r102_minton,Δln(Q),v4_r102_minton,2014,2024,0.0998,1.0607,mx:v4_r102_minton
+FR4,8 vərəq,2.4.1.4.,v4_r103_minton,Δln(Q),v4_r103_minton,2014,2024,-0.0617,0.1727,mx:v4_r103_minton
+FR4,8 vərəq,2.4.1.4.,v4_r104_minton,Δln(Q),v4_r104_minton,2014,2024,0.1825,0.2015,mx:v4_r104_minton
+FR4,8 vərəq,2.4.1.4.,v4_r105_minton,Δln(Q),v4_r105_minton,2014,2021,-0.0433,0.3002,mx:v4_r105_minton
+FR4,8 vərəq,2.4.1.4.,v4_r106_minton,Δln(Q),v4_r106_minton,2014,2024,-0.0236,0.7334,mx:v4_r106_minton
+FR4,8 vərəq,2.4.1.4.,v4_r107_minton,Δln(Q),v4_r107_minton,2014,2024,-0.0451,0.1181,mx:v4_r107_minton
+FR4,8 vərəq,2.4.1.4.,v4_r109_minton,Δln(Q),v4_r109_minton,2014,2024,-0.1401,0.3114,mx:v4_r109_minton
+FR4,8 vərəq,2.4.1.4.,v4_r110_minton,Δln(Q),v4_r110_minton,2014,2024,-0.046,5.5682,mx:v4_r110_minton
+FR4,8 vərəq,2.4.1.4.,v4_r111_minton,Δln(Q),v4_r111_minton,2014,2024,-0.1394,0.2347,mx:v4_r111_minton
+FR4,8 vərəq,2.4.1.4.,v4_r116_minton,Δln(Q),v4_r116_minton,2014,2024,-0.0362,1.095,mx:v4_r116_minton
+FR4,8 vərəq,2.4.1.4.,v4_r121_minmanat,Δln(Q),v4_r121_minmanat,2014,2024,0.3413,0.1822,mx:v4_r121_minmanat
+FR4,8 vərəq,2.4.1.4.,v4_r122_minmanat,Δln(Q),v4_r122_minmanat,2014,2024,0.0487,0.4929,mx:v4_r122_minmanat
+FR4,8 vərəq,2.4.1.4.,v4_r124_ton,Δln(Q),v4_r124_ton,2014,2024,0.0807,1.0785,mx:v4_r124_ton
+FR4,8 vərəq,2.4.1.4.,v4_r125_ton,Δln(Q),v4_r125_ton,2014,2024,0.0913,0.3457,mx:v4_r125_ton
+FR4,8 vərəq,2.4.1.4.,v4_r126_ton,Δln(Q),v4_r126_ton,2014,2024,0.3436,0.6556,mx:v4_r126_ton
+FR4,8 vərəq,2.4.1.4.,v4_r128_mineded,Δln(Q),v4_r128_mineded,2014,2024,-0.1106,0.2568,mx:v4_r128_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r130_minton,Δln(Q),v4_r130_minton,2014,2024,0.0974,0.1175,mx:v4_r130_minton
+FR4,8 vərəq,2.4.1.4.,v4_r131_minm3,Δln(Q),v4_r131_minm3,2014,2024,0.118,0.4499,mx:v4_r131_minm3
+FR4,8 vərəq,2.4.1.4.,v4_r132_minton,Δln(Q),v4_r132_minton,2014,2024,0.2497,0.3943,mx:v4_r132_minton
+FR4,8 vərəq,2.4.1.4.,v4_r133_minton,Δln(Q),v4_r133_minton,2014,2024,0.1818,0.1347,mx:v4_r133_minton
+FR4,8 vərəq,2.4.1.4.,v4_r134_minm3,Δln(Q),v4_r134_minm3,2014,2024,0.2154,0.1743,mx:v4_r134_minm3
+FR4,8 vərəq,2.4.1.4.,v4_r135_minm2,Δln(Q),v4_r135_minm2,2014,2024,-0.111,0.1604,mx:v4_r135_minm2
+FR4,8 vərəq,2.4.1.4.,v4_r136_ton,Δln(Q),v4_r136_ton,2014,2024,-0.0428,0.347,mx:v4_r136_ton
+FR4,8 vərəq,2.4.1.4.,v4_r139_ton,Δln(Q),v4_r139_ton,2014,2024,0.0898,0.4745,mx:v4_r139_ton
+FR4,8 vərəq,2.4.1.4.,v4_r142_ton,Δln(Q),v4_r142_ton,2014,2024,-0.111,8.2717,mx:v4_r142_ton
+FR4,8 vərəq,2.4.1.4.,v4_r147_minmanat,Δln(Q),v4_r147_minmanat,2014,2024,-0.1035,0.2489,mx:v4_r147_minmanat
+FR4,8 vərəq,2.4.1.4.,v4_r148_ton,Δln(Q),v4_r148_ton,2014,2024,-0.0891,0.5909,mx:v4_r148_ton
+FR4,8 vərəq,2.4.1.4.,v4_r149_ton,Δln(Q),v4_r149_ton,2014,2024,0.1149,0.1785,mx:v4_r149_ton
+FR4,8 vərəq,2.4.1.4.,v4_r151_eded,Δln(Q),v4_r151_eded,2014,2024,0.1581,2.3434,mx:v4_r151_eded
+FR4,8 vərəq,2.4.1.4.,v4_r153_eded,Δln(Q),v4_r153_eded,2014,2024,-0.1108,0.5592,mx:v4_r153_eded
+FR4,8 vərəq,2.4.1.4.,v4_r156_ton,Δln(Q),v4_r156_ton,2014,2024,0.3082,0.2894,mx:v4_r156_ton
+FR4,8 vərəq,2.4.1.4.,v4_r157_eded,Δln(Q),v4_r157_eded,2014,2024,0.0511,0.2061,mx:v4_r157_eded
+FR4,8 vərəq,2.4.1.4.,v4_r158_eded,Δln(Q),v4_r158_eded,2014,2024,0.1684,1.3944,mx:v4_r158_eded
+FR4,8 vərəq,2.4.1.4.,v4_r160_minmanat,Δln(Q),v4_r160_minmanat,2014,2024,-0.0829,0.3373,mx:v4_r160_minmanat
+FR4,8 vərəq,2.4.1.4.,v4_r161_eded,Δln(Q),v4_r161_eded,2014,2024,-0.0521,0.9369,mx:v4_r161_eded
+FR4,8 vərəq,2.4.1.4.,v4_r164_eded,Δln(Q),v4_r164_eded,2014,2024,-0.0789,3.146,mx:v4_r164_eded
+FR4,8 vərəq,2.4.1.4.,v4_r166_eded,Δln(Q),v4_r166_eded,2014,2024,-0.1038,1.9357,mx:v4_r166_eded
+FR4,8 vərəq,2.4.1.4.,v4_r168_minmanat,Δln(Q),v4_r168_minmanat,2014,2024,-0.1102,0.2065,mx:v4_r168_minmanat
+FR4,8 vərəq,2.4.1.4.,v4_r169_minmanat,Δln(Q),v4_r169_minmanat,2014,2024,-0.0823,1.1056,mx:v4_r169_minmanat
+FR4,8 vərəq,2.4.1.4.,v4_r170_minmanat,Δln(Q),v4_r170_minmanat,2014,2024,-0.0043,1.7865,mx:v4_r170_minmanat
+FR4,8 vərəq,2.4.1.4.,v4_r172_eded,Δln(Q),v4_r172_eded,2014,2024,-0.0339,0.5653,mx:v4_r172_eded
+FR4,8 vərəq,2.4.1.4.,v4_r173_eded,Δln(Q),v4_r173_eded,2014,2024,0.0005,0.676,mx:v4_r173_eded
+FR4,8 vərəq,2.4.1.4.,v4_r174_eded,Δln(Q),v4_r174_eded,2014,2024,-0.0052,0.6606,mx:v4_r174_eded
+FR4,8 vərəq,2.4.1.4.,v4_r175_eded,Δln(Q),v4_r175_eded,2014,2024,-0.111,0.1692,mx:v4_r175_eded
+FR4,8 vərəq,2.4.1.4.,v4_r177_minmanat,Δln(Q),v4_r177_minmanat,2014,2024,-0.0471,1.8446,mx:v4_r177_minmanat
+FR4,8 vərəq,2.4.1.4.,v4_r182_qvts,Δln(Q),v4_r182_qvts,2014,2024,-0.0608,0.6344,mx:v4_r182_qvts
+FR4,8 vərəq,2.4.1.4.,v4_r183_mlnm3,Δln(Q),v4_r183_mlnm3,2014,2024,-0.1213,0.1448,mx:v4_r183_mlnm3
+FR4,8 vərəq,2.4.1.4.,v4_r184_qvts,Δln(Q),v4_r184_qvts,2014,2024,-0.0886,2.2244,mx:v4_r184_qvts
+FR4,8 vərəq,2.4.1.4.,v4_r187_mlnm3,Δln(Q),v4_r187_mlnm3,2014,2024,-0.1069,0.6952,mx:v4_r187_mlnm3
+FR4,8 vərəq,2.4.1.4.,v4_r190_mlnton,Δln(Q),v4_r190_mlnton,2014,2024,0.4079,0.0638,mx:v4_r190_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r191_mlnton,Δln(Q),v4_r191_mlnton,2014,2024,0.2951,0.0965,mx:v4_r191_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r192_mlnton,Δln(Q),v4_r192_mlnton,2014,2024,0.2182,0.1041,mx:v4_r192_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r193_mlnton,Δln(Q),v4_r193_mlnton,2014,2024,-0.0305,0.2434,mx:v4_r193_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r194_mlnton,Δln(Q),v4_r194_mlnton,2014,2024,0.3579,0.2526,mx:v4_r194_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r195_mlnton,Δln(Q),v4_r195_mlnton,2014,2024,0.6774,0.0247,mx:v4_r195_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r196_mlnton,Δln(Q),v4_r196_mlnton,2014,2024,0.4189,0.042,mx:v4_r196_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r197_mlnton,Δln(Q),v4_r197_mlnton,2014,2024,-0.1043,0.0509,mx:v4_r197_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r198_mlnton,Δln(Q),v4_r198_mlnton,2014,2024,0.1282,0.0602,mx:v4_r198_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r199_mlnton,Δln(Q),v4_r199_mlnton,2014,2024,0.0326,0.1194,mx:v4_r199_mlnton
+FR4,8 vərəq,2.4.1.4.,v4_r200_mlrdtkm,Δln(Q),v4_r200_mlrdtkm,2014,2024,0.5351,0.049,mx:v4_r200_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r201_mlrdtkm,Δln(Q),v4_r201_mlrdtkm,2014,2024,0.4306,0.1061,mx:v4_r201_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r202_mlrdtkm,Δln(Q),v4_r202_mlrdtkm,2014,2024,0.267,0.1994,mx:v4_r202_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r203_mlrdtkm,Δln(Q),v4_r203_mlrdtkm,2014,2024,-0.0755,0.2761,mx:v4_r203_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r204_mlrdtkm,Δln(Q),v4_r204_mlrdtkm,2014,2024,0.2598,0.2099,mx:v4_r204_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r205_mlrdtkm,Δln(Q),v4_r205_mlrdtkm,2014,2024,0.4325,0.0417,mx:v4_r205_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r206_mlrdtkm,Δln(Q),v4_r206_mlrdtkm,2014,2024,0.2654,0.0538,mx:v4_r206_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r207_mlrdtkm,Δln(Q),v4_r207_mlrdtkm,2014,2024,-0.1043,0.0509,mx:v4_r207_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r208_mlrdtkm,Δln(Q),v4_r208_mlrdtkm,2014,2024,0.1553,0.0793,mx:v4_r208_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r209_mlrdtkm,Δln(Q),v4_r209_mlrdtkm,2014,2024,-0.1049,0.1361,mx:v4_r209_mlrdtkm
+FR4,8 vərəq,2.4.1.4.,v4_r210_mlnsernkm,Δln(Q),v4_r210_mlnsernkm,2014,2024,0.3875,0.1766,mx:v4_r210_mlnsernkm
+FR4,8 vərəq,2.4.1.4.,v4_r211_mlnsernkm,Δln(Q),v4_r211_mlnsernkm,2014,2024,0.2377,0.4178,mx:v4_r211_mlnsernkm
+FR4,8 vərəq,2.4.1.4.,v4_r212_mlnsernkm,Δln(Q),v4_r212_mlnsernkm,2014,2024,0.3102,0.1384,mx:v4_r212_mlnsernkm
+FR4,8 vərəq,2.4.1.4.,v4_r213_mlnsernkm,Δln(Q),v4_r213_mlnsernkm,2014,2024,-0.0161,0.3735,mx:v4_r213_mlnsernkm
+FR4,8 vərəq,2.4.1.4.,v4_r214_mlnsernkm,Δln(Q),v4_r214_mlnsernkm,2014,2024,0.3883,0.4984,mx:v4_r214_mlnsernkm
+FR4,8 vərəq,2.4.1.4.,v4_r215_mlnsernkm,Δln(Q),v4_r215_mlnsernkm,2014,2024,0.4135,0.3589,mx:v4_r215_mlnsernkm
+FR4,8 vərəq,2.4.1.4.,v4_r217_minnefer,Δln(Q),v4_r217_minnefer,2014,2024,0.2721,0.0292,mx:v4_r217_minnefer
+FR4,8 vərəq,2.4.1.4.,v4_r218_mineded,Δln(Q),v4_r218_mineded,2014,2024,-0.1025,0.0193,mx:v4_r218_mineded
+FR4,8 vərəq,2.4.1.4.,v4_r219_eded,Δln(Q),v4_r219_eded,2014,2024,-0.1075,0.039,mx:v4_r219_eded
+FR5,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5_dln_brent_surusme,Δln(brent_usd),brent_usd,1992,2025,-0,0.2769,mx:brent_usd
+FR5,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5_dln_brent_terefdas,Δln(brent_usd),brent_usd,2000,2025,0.4708,0.2148,mx:brent_usd
+FR5,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5_ln_brent_ar1,ln(brent_usd),brent_usd,1992,2025,0.8391,0.2733,mx:brent_usd
+FR5B,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5b_cekili_qiymet_indeksi,oilgas_pw_g,oilgas_pw_g,1998,2025,,,mx:oilgas_pw_g
+FR5B,Statistik data dinamika 05.06.2026 +.xlsx,Mədənçıxarma,FR5b_elave_deyer_payi_rho,oilgas_va_nom,oilgas_va_nom,2016,2025,,,mx:oilgas_va_nom
+FR5B,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5b_neft_ixrac_qiymeti_nisbet,oilgas_p_oil_exp,oilgas_p_oil_exp,2021,2025,,,mx:oilgas_p_oil_exp
+FR5B,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5b_neft_qaz_real_artim,oil_realg,oil_realg,2007,2025,0.9705,1.6974,mx:oil_realg
+FR5B,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5b_qaz_qiymeti_ar1,ln(oilgas_p_gas_exp),oilgas_p_gas_exp,2007,2025,0.474,0.3391,mx:oilgas_p_gas_exp
+FR5B,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5b_qaz_qiymeti_ecm,Δln(oilgas_p_gas_exp),oilgas_p_gas_exp,2007,2025,0.4504,0.301,mx:oilgas_p_gas_exp
+FR5B,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR5b_qaz_qiymeti_nisbet,oilgas_p_gas_exp,oilgas_p_gas_exp,2021,2025,,,mx:oilgas_p_gas_exp
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Fiskal sektor,FR6_dovlet_investisiyasi_devq,inv_state_g,inv_state_g,2011,2025,0.2634,17.2123,mx:inv_state_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Fiskal sektor,FR6_dovlet_investisiyasi_devq_d15,inv_state_g,inv_state_g,2011,2025,0.4649,14.6697,mx:inv_state_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Fiskal sektor,FR6_dovlet_investisiyasi_iki_termli,inv_state_g,inv_state_g,2011,2025,0.2178,17.737,mx:inv_state_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Fiskal sektor,FR6_dovlet_investisiyasi_iki_termli_oz_vesait,inv_state_g,inv_state_g,2011,2025,0.2022,17.9131,mx:inv_state_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR6_investisiya_deflyatoru_iqi,inv_defl_g,inv_defl_g,2008,2025,0.0992,5.9309,mx:inv_defl_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR6_investisiya_deflyatoru_onlarin_formasi,inv_defl_g,inv_defl_g,2009,2025,-0.0463,6.561,mx:inv_defl_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR6_investisiya_deflyatoru_proxy_defl,inv_defl_g,inv_defl_g,2008,2025,0.5159,4.3479,mx:inv_defl_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR6_investisiya_deflyatoru_tikinti_idxal,inv_defl_g,inv_defl_g,2008,2025,0.9999,0.0713,mx:inv_defl_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR6_investisiya_kredit_kanali,inv_total_g,inv_total_g,2008,2025,0.5887,9.6636,mx:inv_total_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR6_investisiya_kredit_kanali_2015_16_cixarilib,inv_total_g,inv_total_g,2007,2025,0.2713,11.7978,mx:inv_total_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR6_investisiya_kredit_kanali_dummisiz_gecikmesiz,inv_total_g,inv_total_g,2007,2025,0.1667,13.7811,mx:inv_total_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR6_investisiya_kredit_kanali_sunili_gecikmesiz,inv_total_g,inv_total_g,2007,2025,0.2054,13.4573,mx:inv_total_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR6_neft_investisiyasi_brent,inv_oil_g,inv_oil_g,2006,2025,0.007,19.4751,mx:inv_oil_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR6_neft_investisiyasi_hecm,inv_oil_g,inv_oil_g,2007,2025,0.0339,19.481,mx:inv_oil_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR6_neft_investisiyasi_hecm_qiymet,inv_oil_g,inv_oil_g,2007,2025,0.0436,19.3828,mx:inv_oil_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR6_neft_investisiyasi_qiymet,inv_oil_g,inv_oil_g,2006,2025,0.0192,19.3546,mx:inv_oil_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR6_neft_investisiyasi_qiymet_l1,inv_oil_g,inv_oil_g,2006,2025,0.0114,19.4321,mx:inv_oil_g
+FR6,Statistik data dinamika 05.06.2026 +.xlsx,Fiskal sektor,FR6_oz_vesait_tek_termli,inv_state_g,inv_state_g,2000,2025,-0.0368,39.3303,mx:inv_state_g
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_business_neft_i̇nvesti̇si̇ya,Δ ln exp_serv_business,exp_serv_business,2010,2025,,377.08,mx:exp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_business_pay,Δ ln exp_serv_business,exp_serv_business,2010,2025,,245.235,mx:exp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_business_qeyri̇neft,Δ ln exp_serv_business,exp_serv_business,2010,2025,,311.584,mx:exp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_business_qeyri̇neft_i̇xrac,Δ ln exp_serv_business,exp_serv_business,2010,2025,,372.136,mx:exp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_business_sürüşmə,Δ ln exp_serv_business,exp_serv_business,2010,2025,,364.928,mx:exp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_oil_neft_artim,Δ ln exp_serv_oil,exp_serv_oil,2015,2025,,349.355,mx:exp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_oil_neft_i̇nvesti̇si̇ya,Δ ln exp_serv_oil,exp_serv_oil,2015,2025,,310.916,mx:exp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_oil_neft_i̇xrac,Δ ln exp_serv_oil,exp_serv_oil,2015,2025,,381.196,mx:exp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_oil_pay,Δ ln exp_serv_oil,exp_serv_oil,2015,2025,,467.409,mx:exp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_oil_sürüşmə,Δ ln exp_serv_oil,exp_serv_oil,2015,2025,,314.053,mx:exp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_other_pay,Δ ln exp_serv_other,exp_serv_other,2010,2025,,90.95,mx:exp_serv_other
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_other_qeyri̇neft,Δ ln exp_serv_other,exp_serv_other,2010,2025,,105.272,mx:exp_serv_other
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_other_qeyri̇neft_i̇xrac,Δ ln exp_serv_other,exp_serv_other,2010,2025,,101.019,mx:exp_serv_other
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_other_sürüşmə,Δ ln exp_serv_other,exp_serv_other,2010,2025,,97.292,mx:exp_serv_other
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_telecom_i̇kt+qeyri̇neft,Δ ln exp_serv_telecom,exp_serv_telecom,2010,2025,,27.568,mx:exp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_telecom_i̇kt_sahəsi̇,Δ ln exp_serv_telecom,exp_serv_telecom,2010,2025,,30.515,mx:exp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_telecom_pay,Δ ln exp_serv_telecom,exp_serv_telecom,2010,2025,,51.031,mx:exp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_telecom_qeyri̇neft,Δ ln exp_serv_telecom,exp_serv_telecom,2010,2025,,25.342,mx:exp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_telecom_sürüşmə,Δ ln exp_serv_telecom,exp_serv_telecom,2010,2025,,24.756,mx:exp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_transport_nəqli̇yyat_sahəsi̇,Δ ln exp_serv_transport,exp_serv_transport,2010,2025,,423.001,mx:exp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_transport_pay,Δ ln exp_serv_transport,exp_serv_transport,2010,2025,,592.235,mx:exp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_transport_sürüşmə,Δ ln exp_serv_transport,exp_serv_transport,2010,2025,,224.365,mx:exp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_transport_ti̇carət+tərəfdaş,Δ ln exp_serv_transport,exp_serv_transport,2010,2025,,334.859,mx:exp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_transport_ti̇carət_həcmi̇,Δ ln exp_serv_transport,exp_serv_transport,2010,2025,,272.752,mx:exp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_travel_pay,Δ ln exp_serv_travel,exp_serv_travel,2010,2025,,622.783,mx:exp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_travel_sürüşmə,Δ ln exp_serv_travel,exp_serv_travel,2010,2025,,939.125,mx:exp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_travel_turi̇zm+tərəfdaş,Δ ln exp_serv_travel,exp_serv_travel,2010,2025,,454.598,mx:exp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_travel_turi̇zm_sahəsi̇,Δ ln exp_serv_travel,exp_serv_travel,2010,2025,,448.323,mx:exp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_exp_serv_travel_tərəfdaş,Δ ln exp_serv_travel,exp_serv_travel,2010,2025,,1028.039,mx:exp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_business_neft_i̇nv+qeyri̇neft,Δ ln imp_serv_business,imp_serv_business,2010,2025,,240.502,mx:imp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_business_neft_i̇nvesti̇si̇ya,Δ ln imp_serv_business,imp_serv_business,2010,2025,,284.664,mx:imp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_business_pay,Δ ln imp_serv_business,imp_serv_business,2010,2025,,227.221,mx:imp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_business_qeyri̇neft,Δ ln imp_serv_business,imp_serv_business,2010,2025,,252.584,mx:imp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_business_sürüşmə,Δ ln imp_serv_business,imp_serv_business,2010,2025,,290.265,mx:imp_serv_business
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_oil_neft_artim,Δ ln imp_serv_oil,imp_serv_oil,2010,2025,,265.855,mx:imp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_oil_neft_i̇nv+artim,Δ ln imp_serv_oil,imp_serv_oil,2010,2025,,426.173,mx:imp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_oil_neft_i̇nvesti̇si̇ya,Δ ln imp_serv_oil,imp_serv_oil,2010,2025,,450.159,mx:imp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_oil_pay,Δ ln imp_serv_oil,imp_serv_oil,2010,2025,,625.936,mx:imp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_oil_sürüşmə,Δ ln imp_serv_oil,imp_serv_oil,2010,2025,,419.214,mx:imp_serv_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_other_i̇dxal_həcmi̇,Δ ln imp_serv_other,imp_serv_other,2010,2025,,232.049,mx:imp_serv_other
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_other_pay,Δ ln imp_serv_other,imp_serv_other,2010,2025,,264.043,mx:imp_serv_other
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_other_qeyri̇neft,Δ ln imp_serv_other,imp_serv_other,2010,2025,,212.288,mx:imp_serv_other
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_other_sürüşmə,Δ ln imp_serv_other,imp_serv_other,2010,2025,,215.427,mx:imp_serv_other
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_telecom_i̇kt_sahəsi̇,Δ ln imp_serv_telecom,imp_serv_telecom,2010,2025,,35.74,mx:imp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_telecom_pay,Δ ln imp_serv_telecom,imp_serv_telecom,2010,2025,,41.205,mx:imp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_telecom_qeyri̇neft,Δ ln imp_serv_telecom,imp_serv_telecom,2010,2025,,36.616,mx:imp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_telecom_sürüşmə,Δ ln imp_serv_telecom,imp_serv_telecom,2010,2025,,35.15,mx:imp_serv_telecom
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_transport_i̇dxal_həcmi̇,Δ ln imp_serv_transport,imp_serv_transport,2010,2025,,239.926,mx:imp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_transport_nəqli̇yyat_sahəsi̇,Δ ln imp_serv_transport,imp_serv_transport,2010,2025,,226.899,mx:imp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_transport_pay,Δ ln imp_serv_transport,imp_serv_transport,2010,2025,,550.011,mx:imp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_transport_sürüşmə,Δ ln imp_serv_transport,imp_serv_transport,2010,2025,,252.865,mx:imp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_transport_ti̇carət_həcmi̇,Δ ln imp_serv_transport,imp_serv_transport,2010,2025,,190.728,mx:imp_serv_transport
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_travel_pay,Δ ln imp_serv_travel,imp_serv_travel,2010,2025,,477.217,mx:imp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_travel_qeyri̇neft,Δ ln imp_serv_travel,imp_serv_travel,2010,2025,,498.345,mx:imp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_travel_sürüşmə,Δ ln imp_serv_travel,imp_serv_travel,2010,2025,,693.528,mx:imp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_imp_serv_travel_turi̇zm_sahəsi̇,Δ ln imp_serv_travel,imp_serv_travel,2010,2025,,292.505,mx:imp_serv_travel
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_neft_ixrac_hecmi,Δ ln V,exp_goods_oil,2013,2025,0.0705,13.1772,mx:exp_goods_oil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR7_neft_ixrac_qiymeti_ecm,Δ ln oil_export_price,oil_export_price,1998,2025,0.9469,0.066,mx:oil_export_price
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Neft-Qaz sektoru,FR7_neft_ixrac_qiymeti_uzunmuddetli,ln oil_export_price,oil_export_price,1997,2025,0.9746,0.1113,mx:oil_export_price
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_qeyri_neft_idxal_absorbsiya,Δ ln imp_goods_nonoil,imp_goods_nonoil,2011,2025,0.1626,14.9866,mx:imp_goods_nonoil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_qeyri_neft_idxal_absorbsiya_reer,Δ ln imp_goods_nonoil,imp_goods_nonoil,2011,2025,0.2051,14.6014,mx:imp_goods_nonoil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_qeyri_neft_ixrac_reer_sinagi,Δ ln exp_goods_nonoil,exp_goods_nonoil,2011,2025,0.5403,10.6226,mx:exp_goods_nonoil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_qeyri_neft_ixrac_terefdas,Δ ln exp_goods_nonoil,exp_goods_nonoil,2011,2025,0.1698,14.2747,mx:exp_goods_nonoil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_qeyri_neft_ixrac_terefdas_brent,Δ ln exp_goods_nonoil,exp_goods_nonoil,2011,2025,0.3952,12.184,mx:exp_goods_nonoil
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_xidmet_idxal,Δ ln imp_services,imp_services,2013,2025,0.6735,8.9675,mx:imp_services
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_xidmet_idxal_robustluk,Δ ln imp_services,imp_services,2013,2025,0.6339,9.718,mx:imp_services
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_xidmet_ixrac,Δ ln exp_services,exp_services,2013,2025,0.6502,11.917,mx:exp_services
+FR7,Statistik data dinamika 05.06.2026 +.xlsx,Tədiyyə Balansı,FR7_xidmet_ixrac_qeyri_neft,Δ ln exp_services,exp_services,2013,2025,0.2407,17.5579,mx:exp_services
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,MOE FISCAL `Pension Fund`,FR8_dsmf_korpu,income_transfers,income_transfers,2001,2024,0.3576,0.0973,mx:income_transfers
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_emek_haqqi_iqi,wage_avg,wage_avg,2011,2025,-0.0501,4.0582,mx:wage_avg
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_emek_haqqi_pille,wage_avg,wage_avg,2011,2025,0.4811,2.8526,mx:wage_avg
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR8_gelir_ayaq_diger,income_other,income_other,2001,2025,0.6862,0.0723,mx:income_other
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_gelir_ayaq_emek_odenisleri_aqreqat,income_wage_bill,income_wage_bill,2001,2025,0.5206,0.0638,mx:income_wage_bill
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_gelir_ayaq_emek_odenisleri_sahe,income_wage_bill,income_wage_bill,2001,2025,0.6416,0.0552,mx:income_wage_bill
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,MOE FISCAL `Pension Fund`,FR8_gelir_ayaq_transfertler_dsmf,income_transfers,income_transfers,2001,2024,0.2076,0.1149,mx:income_transfers
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_gelir_ayaq_transfertler_pensiya,income_transfers,income_transfers,2001,2025,-0.0331,0.1297,mx:income_transfers
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Real sektor,FR8_gelir_v2_birbasa,income_realg_v2,income_realg_v2,2001,2025,0.5755,4.5107,mx:income_realg_v2
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,macro_annual.csv,FR8_istehlak_xerc_pay,final_consumption,final_consumption,2010,2025,-0.0563,0.0159,mx:final_consumption
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,macro_annual.csv,FR8_mpc,final_consumption,final_consumption,2001,2025,0.6628,3.2608,mx:final_consumption
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_odenişli_xidmet,paid_services_g,paid_services_g,2001,2025,0.5928,8.39,mx:paid_services_g
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_okun_issizlik,unemployment_rate,unemployment_rate,2011,2025,0.2838,0.5832,mx:unemployment_rate
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_okun_meshgulluq,employment_g,employment_g,2001,2025,-0.0128,0.6301,mx:employment_g
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_pay_dovlet_emek_haqqi,wage_state,wage_state,2005,2025,0.444,0.058,mx:wage_state
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_pay_neft_emek_haqqi,wage_oil,wage_oil,2005,2025,0.0251,0.7863,mx:wage_oil
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_pay_ozel_emek_haqqi,wage_private,wage_private,2005,2025,0.6624,0.083,mx:wage_private
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_pay_qeyrineft_emek_haqqi,wage_nonoil,wage_nonoil,2005,2025,0.203,0.0196,mx:wage_nonoil
+FR8,Statistik data dinamika 05.06.2026 +.xlsx,Sosial sektor,FR8_serencam_pay,disposable_income,disposable_income,2010,2025,0.513,0.0092,mx:disposable_income
+FR9,Statistik data dinamika 05.06.2026 +.xlsx,macro_annual.csv,FR9_ar1_etalon,cpi_infl,cpi_infl,2000,2025,0.1154,5.0043,mx:cpi_infl
+FR9,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR9_filips_baza,cpi_infl,cpi_infl,2005,2025,0.2747,4.7459,mx:cpi_infl
+FR9,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR9_filips_diaqnostik,cpi_infl,cpi_infl,2008,2025,0.2471,4.7622,mx:cpi_infl
+FR9,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR9_filips_gecikmeli,cpi_infl,cpi_infl,2005,2025,-0.0808,5.7935,mx:cpi_infl
+FR9,Statistik data dinamika 05.06.2026 +.xlsx,Monetar sektoru,FR9_filips_uzun_numune,cpi_infl,cpi_infl,2001,2025,0.3402,4.3442,mx:cpi_infl

@@ -62,6 +62,114 @@ def gpr_transition_probability() -> dict:
             "sample": f"{full.index.min()}–{full.index.max()}"}
 
 
+MODEL_RISK_VARS = {"nonoil_gdp_growth": ("g", -1), "cpi_inflation": ("cpi", +1)}
+MR_FILE = "FR2_model_risk.csv"
+
+
+def _consensus_sources() -> tuple[pd.DataFrame | None, set]:
+    """D3 long table and the set of STALE sources: any value flagged 'köhnəlmiş' (an old vintage that still carries a
+    projection for an observed year — CAEM CF04, Bottom-up/8 vərəq), plus CAEM whenever C6 lists CF04."""
+    f = config.OUTPUT / "D3_consensus_long.csv"
+    if not f.exists():
+        return None, set()
+    L = pd.read_csv(f)
+    stale = set(L[L["flag"] == "köhnəlmiş"]["source"])
+    c6 = config.OUTPUT / "C6_caem_findings.csv"
+    if c6.exists() and (pd.read_csv(c6)["finding_id"] == "CF04").any():
+        stale.add("caem")
+    return L, stale
+
+
+def model_risk_table(res: simulate.SimResult | None = None) -> pd.DataFrame:
+    """R19 (audit M3) — NOT a P×I risk: the vote share of v2.0 counted stale sources and is not a probability. Per
+    variable and year: the NON-STALE consensus of the other units (median of distinct values, excluding stale and
+    'qeyri-real' values and OxLon itself), its gap to the baseline, and — when `res` is given — the consensus-shifted
+    ALTERNATIVE distribution (the baseline-view draws shifted by the gap) with the threshold probabilities in both.
+    Alert ('xeberdarliq') when the adverse gap ≥ model_risk_gap_pp (hedler, 0,5 f.b.)."""
+    p = factors.params()
+    thr = float(p.get("model_risk_gap_pp", 0.5))
+    L, stale = _consensus_sources()
+    if L is None:
+        return pd.DataFrame()
+    rows = []
+    for var, (kind, sgn) in MODEL_RISK_VARS.items():
+        for y in sorted(L[L["variable"] == var]["year"].unique()):
+            if res is not None and y not in res.years:
+                continue
+            g = L[(L["variable"] == var) & (L["year"] == y)]
+            b = g[g["source"] == "oxlon"]["value"]
+            if b.empty:
+                continue
+            base = float(b.iloc[0])
+            ok = g[(g["source"] != "oxlon") & ~g["source"].isin(stale) & (g["flag"].fillna("") != "qeyri-real")]
+            vals = ok.drop_duplicates("value")
+            allv = g[(g["source"] != "oxlon")].drop_duplicates("value")
+            cons = float(vals["value"].median()) if len(vals) else np.nan
+            gap = cons - base if np.isfinite(cons) else np.nan
+            adverse = sgn * gap if np.isfinite(gap) else np.nan
+            r = {"gosterici": kind, "deyisen": var, "il": int(y), "baza_oxlon": base, "konsensus_kohnelmemis": cons,
+                 "n_menbe": int(len(vals)), "menbeler": ";".join(vals["source"]), "kohnelmis_xaric": ";".join(sorted(stale)),
+                 "konsensus_hamisi": float(allv["value"].median()) if len(allv) else np.nan,
+                 "ferq": gap, "elverissiz_ferq": adverse,
+                 "yayilma_kohnelmemis": float(vals["value"].max() - vals["value"].min()) if len(vals) > 1 else 0.0,
+                 "hedd": thr, "xeberdarliq": bool(np.isfinite(adverse) and adverse >= thr)}
+            if res is not None and np.isfinite(gap):
+                j = res.col(int(y))
+                x = res.total(kind)[:, j]
+                h = float(p["nonoil_gar_threshold"] if kind == "g" else p["cpi_threshold"])
+                P = (lambda v: float((v < h).mean())) if kind == "g" else (lambda v: float((v > h).mean()))
+                for nm, v in (("baza", x), ("alt", x + gap)):
+                    q = np.quantile(v, [0.05, 0.5, 0.95])
+                    r.update({f"{nm}_p05": q[0], f"{nm}_p50": q[1], f"{nm}_p95": q[2], f"{nm}_P_hedd": P(v)})
+                r["hedd_gosterici"] = h
+            rows.append(r)
+    return pd.DataFrame(rows)
+
+
+def model_risk(year: int, res: simulate.SimResult | None = None) -> dict:
+    """R19 summary row for FR2_risk_scores (kept for schema stability; outside the heat map: P_bal = I_bal = 0)."""
+    T = model_risk_table(res)
+    out = {"ehtimal": 0.0, "tesir_g": 0.0, "tesir_cpi": 0.0, "tesir_fis": 0.0, "dispersiya_payi": np.nan,
+           "quyruq_tohfesi": np.nan, "istilik_xeritesi": False,
+           "tesir_menbe": "istilik xəritəsindən kənar — ayrıca göstərici (FR2_model_risk.csv)"}
+    if T.empty:
+        out["ehtimal_menbe"] = "D3 cədvəli yoxdur — yoxlanıla bilmir"
+        return out
+    t = T[T["il"] == year]
+    for r in t.itertuples():
+        out[f"model_riski_ferq_{r.gosterici}"] = r.ferq
+        out[f"tesir_{r.gosterici}"] = max(float(r.elverissiz_ferq), 0.0) if np.isfinite(r.elverissiz_ferq) else 0.0
+    out["model_riski_xeberdarliq"] = bool(t["xeberdarliq"].any()) if len(t) else False
+    out["ehtimal_menbe"] = (f"model riski (P×T deyil): köhnəlməmiş konsensus ({', '.join(sorted(set(';'.join(t['menbeler']).split(';')) - {''}))}) "
+                            f"ilə baza fərqi; köhnəlmiş xaric: {t['kohnelmis_xaric'].iloc[0] if len(t) else ''}; hədd {t['hedd'].iloc[0] if len(t) else ''} f.b.")
+    return out
+
+
+def threshold_sensitivity(res: simulate.SimResult) -> pd.DataFrame:
+    """Outcome risks R11–R13 (audit M3): P(threshold crossing) on a grid of thresholds, with the distance of the
+    baseline to the threshold in σ units and P from the core residual alone (how much is mere proximity of the
+    baseline to the threshold, not risk factors)."""
+    p = factors.params()
+    j = res.col(res.score_year)
+    spec = {"R12": ("cpi", +1, p["cpi_threshold"], (4.0, 5.0, 5.5, 6.0, 6.5, 7.0, 8.0)),
+            "R13": ("g", -1, p["nonoil_gar_threshold"], (0.0, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0)),
+            "R11": ("fis", -1, p["fiscal_threshold"], (-3.0, -2.0, -1.5, -1.0, -0.5, 0.0))}
+    rows = []
+    for rid, (kind, side, thr0, grid) in spec.items():
+        x = res.total(kind)[:, j]
+        med = float(np.median(x))
+        sd = float(x.std())
+        rr = {"g": res.comp_g, "cpi": res.comp_cpi, "fis": res.comp_fis}[kind]["resid"][:, j]
+        core = med + rr - np.median(rr)          # same median, core residual only: pure proximity to the threshold
+        for h in grid:
+            P = float((x > h).mean()) if side > 0 else float((x < h).mean())
+            Pc = float((core > h).mean()) if side > 0 else float((core < h).mean())
+            rows.append({"risk_id": rid, "gosterici": kind, "il": res.score_year, "hedd": h, "esas_hedd": bool(abs(h - thr0) < 1e-9),
+                         "median": med, "baza": float(res.base[kind][j]), "mesafe_sigma": (h - med) / sd * side if sd else np.nan,
+                         "P": P, "P_yalniz_qaliq": Pc, "P_amillerin_payi": P - Pc})
+    return pd.DataFrame(rows)
+
+
 def score(res: simulate.SimResult) -> pd.DataFrame:
     p = factors.params()
     sc = scales(p)
@@ -75,7 +183,9 @@ def score(res: simulate.SimResult) -> pd.DataFrame:
         rid = r.risk_id
         out = {"risk_id": rid, "aile": r.aile, "ad": r.ad, "nov": r.nov, "sahib": r.sahib,
                "ufuq": res.score_year}
-        if rid in OUTCOME:
+        if r.nov == "model":                           # R19: forecast disagreement (D3), outside the MC and the heat map
+            out.update(model_risk(res.score_year, res))
+        elif rid in OUTCOME:
             kind = OUTCOME[rid]
             x = res.total(kind)[:, j]
             if rid == "R11":
@@ -131,12 +241,16 @@ def score(res: simulate.SimResult) -> pd.DataFrame:
         out["I_bal"] = max(ig, ic, ifs)
         out["I_olcu"] = ("qeyri-neft ÜDM" if ig == out["I_bal"] else
                          "inflyasiya" if ic == out["I_bal"] else "büdcə")
+        out.setdefault("istilik_xeritesi", True)
+        if not out["istilik_xeritesi"]:            # R19: separate indicator, not a P × I cell (audit M3)
+            out["P_bal"], out["I_bal"] = 0, 0
         out["skor"] = out["P_bal"] * out["I_bal"]
         out["gozlenilen_itki_g"] = out["ehtimal"] * max(out["tesir_g"], 0)
         rows.append(out)
     S = pd.DataFrame(rows)
     S["prioritet"] = np.where(S["skor"] >= p["score_high"], "yüksək",
                               np.where(S["skor"] >= p["score_medium"], "orta", "aşağı"))
+    S.loc[~S["istilik_xeritesi"].astype(bool), "prioritet"] = "ayrıca göstərici"
     S["kemiyyet_sirasi"] = S["quyruq_tohfesi"].rank(method="min").astype("Int64")
     S = S.sort_values(["skor", "gozlenilen_itki_g", "ehtimal"], ascending=False).reset_index(drop=True)
     S.insert(0, "sira", range(1, len(S) + 1))
@@ -182,8 +296,21 @@ def previous_scores(as_of: str) -> pd.Series:
     return last.set_index("risk_id")["skor"]
 
 
+D5_RISK = (("brent", "R01"), ("azeri", "R01"), ("sofaz", "R01"), ("usd_azn", "R03"), ("policy_rate", "R02"),
+          ("bfb", "R02"), ("vix", "R02"), ("ust", "R02"), ("cpi", "R12"), ("dsk_gdp_nonoil", "R13"),
+          ("dsk_budget", "R11"), ("gpr", "R06"), ("epu", "R06"), ("strategic_reserves", "R03"))
+
+
+def _d5_risk(ind: str) -> str:
+    return next((rid for k, rid in D5_RISK if str(ind).startswith(k)), "")
+
+
 def alerts(S: pd.DataFrame, res: simulate.SimResult, ind: pd.DataFrame, measures: pd.DataFrame | None = None,
-           feed_status: pd.DataFrame | None = None) -> pd.DataFrame:
+           feed_status: pd.DataFrame | None = None, res_live: simulate.SimResult | None = None,
+           monitor: pd.DataFrame | None = None, d2: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Alert types: yüksək prioritet, skor artımı, göstərici həddi, baza köhnəlib (live view vs baseline),
+    tədbir gecikir, məlumat köhnəlib (v1 feeds and v2 D2 freshness), gündəlik monitor (D5 'xəbərdarlıq'),
+    model riski (R19). `res` is the baseline-centred run; `res_live` the live-conditioned one."""
     p = factors.params()
     A = []
     def add(tip, sev, rid, msg):
@@ -199,17 +326,36 @@ def alerts(S: pd.DataFrame, res: simulate.SimResult, ind: pd.DataFrame, measures
         add("göstərici həddi", "orta", "", f"{r.ad}: son dəyər {r.son_deyer:.4g} ({r.son_tarix}), "
             f"tarixi paylanmanın {r.tarixi_faiz:.0f}-cı faizi" if not np.isnan(r.tarixi_faiz)
             else f"{r.ad}: {r.son_deyer:.4g} ({r.son_tarix})")
-    j = res.col(res.score_year)
-    med = float(np.median(res.total("g")[:, j]))
-    base = float(res.base["g"][j])
-    if abs(med - base) >= 1.0:
+    rl = res_live if res_live is not None else res
+    j = rl.col(rl.score_year)
+    for kind, nm, unit in (("g", "qeyri-neft artımının", "%"), ("cpi", "inflyasiyanın", "%"),
+                           ("fis", "büdcə balansının", "% ÜDM")):
+        med = float(np.median(rl.total(kind)[:, j]))
+        base = float(rl.base[kind][j])
+        if abs(med - base) >= (1.0 if kind != "fis" else 0.5):
+            add("baza köhnəlib", "orta", {"g": "R13", "cpi": "R12", "fis": "R11"}[kind],
+                f"{rl.score_year}: canlı məlumatla şərtləndirilmiş {nm} medianı {med:.1f}{unit} — rəsmi baza "
+                f"{base:.1f}{unit}. Fərq həddi aşır: yuxarı axın modelinin fərziyyələrinin yenilənməsi tövsiyə olunur")
+    c = rl.meta["brent_centre"][j]
+    if abs(c / rl.brent_base[j] - 1) >= 0.20:
         add("baza köhnəlib", "orta", "R01",
-            f"{res.score_year}: canlı məlumatla şərtləndirilmiş qeyri-neft artımının medianı {med:.1f}% — "
-            f"makro baza yolu {base:.1f}%. Fərq ≥ 1 f.b.: makro modelin Brent fərziyyəsinin yenilənməsi tövsiyə olunur")
-    c = res.meta["brent_centre"][j]
-    if abs(c / res.brent_base[j] - 1) >= 0.20:
-        add("baza köhnəlib", "orta", "R01",
-            f"{res.score_year}: Brent mərkəzi yolu {c:.0f} USD (canlı) — makro fərziyyə {res.brent_base[j]:.0f} USD")
+            f"{rl.score_year}: Brent mərkəzi yolu {c:.0f} USD (canlı) — makro fərziyyə {rl.brent_base[j]:.0f} USD")
+    if monitor is not None and len(monitor):
+        w = monitor[monitor["signal"].astype(str).str.startswith("xəbərdarlıq")].drop_duplicates("indicator")
+        for r in w.itertuples():
+            z = f", z = {r.z_score:.1f}" if pd.notna(getattr(r, "z_score", np.nan)) else ""
+            add("gündəlik monitor", "orta", _d5_risk(r.indicator),
+                f"{r.label_az}: {r.latest:.4g} ({r.date}){z} — {r.signal}")
+    if d2 is not None and len(d2) and "tazelik" in d2:
+        for r in d2[d2["tazelik"].isin(["köhnə", "köhnəlir"])].itertuples():
+            add("məlumat köhnəlib", "aşağı" if r.tazelik == "köhnəlir" else "orta", "",
+                f"{r.feed} ({r.source}): son müşahidə {r.last_obs}, {int(r.yas_gun)} gün — {r.tazelik}; status: {r.status}")
+        for r in d2[d2["status"].astype(str).str.startswith(("xəta", "uğursuz"))].itertuples():
+            add("axın xətası", "orta", "", f"{r.feed}: {r.status} — son yaxşı keş istifadə olunur")
+    for r in S[S["risk_id"] == "R19"].itertuples():
+        if bool(getattr(r, "model_riski_xeberdarliq", False)):
+            add("model riski", "orta", "R19", f"{r.ad}: {r.ehtimal_menbe}; əlverişsiz fərq {max(r.tesir_g, r.tesir_cpi):.2f} f.b. "
+                f"(hədd {p.get('model_risk_gap_pp', 0.5):g} f.b.; alternativ paylanma FR2_model_risk.csv)")
     if measures is not None and len(measures):
         for r in measures[measures["gecikir"]].itertuples():
             add("tədbir gecikir", "orta", r.risk_idler, f"{r.tedbir_id}: {r.tedbir[:80]} — müddət {r.muddet}, status {r.status}")

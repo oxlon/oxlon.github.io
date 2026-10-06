@@ -54,6 +54,71 @@ def regional_gpr_monthly() -> pd.Series:
     return pd.concat([feeds.monthly("gpr", s) for s in REGIONAL_GPR], axis=1).dropna().mean(axis=1)
 
 
+# ---------------------------------------------------------------- R17 / R18 inputs (CAEM categories)
+INV_SAMPLE_START = 2007
+IMPFOOD_SAMPLE = (2001, config.LAST_ACTUAL)
+
+
+def _resid(y: pd.Series, X: pd.DataFrame) -> pd.Series:
+    d = pd.concat([y, X], axis=1).dropna()
+    if len(d) < 8:
+        return pd.Series(0.0, index=y.index)
+    r = sm.OLS(d.iloc[:, 0], sm.add_constant(d.iloc[:, 1:])).fit()
+    return r.resid.reindex(y.index)
+
+
+def _impfood_panel(P: pd.DataFrame) -> None:
+    """Adds imp (OxLon import-price inflation), food_g (IMF food index, FRED PFOODINDEXM, annual
+    average growth), dln_fx, and their Brent-orthogonal parts imp_own / food_own to the panel.
+    A missing food feed leaves food_own = 0 (channel off, logged in the channel table)."""
+    from . import caem
+    lo, hi = IMPFOOD_SAMPLE
+    try:
+        P["imp"] = caem.external_block()["import_price_infl"].reindex(P.index)
+    except Exception:                                   # noqa: BLE001
+        P["imp"] = np.nan
+    fm, _ = caem.food_monthly()
+    if fm is not None and len(fm):
+        a = fm.groupby(fm.index.year).agg(["mean", "count"])
+        a = a[a["count"] == 12]["mean"]
+        P["food_g"] = (np.log(a).diff() * 100).reindex(P.index)
+    else:
+        P["food_g"] = np.nan
+    P["dln_fx"] = np.log(P["usd_azn"]).diff() * 100
+    # v2.1 (audit M1): food first, then imports — world food prices are part of the import-price index (corr 0,94),
+    # so food_own = food ⟂ Brent and imp_own = import prices ⟂ (Brent, food_own); the v2.0 order (imp first) made
+    # food_own ⟂ imports by construction and its CPI pass-through ≈ 0 (R18 dropped out).
+    P["impA"] = P["imp"] + P["dln_fx"]                           # import-price inflation in AZN
+    P["impA_l1"] = P["impA"].shift(1)
+    win = (P.index >= lo) & (P.index <= hi)
+    P["food_own"] = _resid(P["food_g"].where(win), P[["dln_brent"]]).fillna(0.0).where(win, np.nan)
+    P["imp_own"] = _resid(P["imp"].where(win), P[["dln_brent", "food_own"]]).fillna(0.0).where(win, np.nan)
+
+
+def _impfood_thresholds(P: pd.DataFrame) -> dict:
+    """Event thresholds as in the CAEM sheets: import prices > mean + 1σ (`Risk-import price` adverse
+    band), food prices > mean + 0,5σ (`Risk-food price`), on the 2001–2025 history; baseline paths:
+    OxLon assumptions.csv import_price_infl and the Ministry's FPI_WEO path (historical mean if absent)."""
+    from . import caem
+    lo, hi = IMPFOOD_SAMPLE
+    imp, food = P["imp"].loc[lo:hi].dropna(), P["food_g"].loc[lo:hi].dropna()
+    yrs = config.FORECAST_YEARS
+    try:
+        ib = caem.oxlon_assumption("import_price_infl").reindex(yrs)
+    except Exception:                                   # noqa: BLE001
+        ib = pd.Series(np.nan, index=yrs)
+    try:
+        fb = caem.fpi_weo_growth().reindex(yrs)
+    except Exception:                                   # noqa: BLE001
+        fb = pd.Series(np.nan, index=yrs)
+    im, isd = (float(imp.mean()), float(imp.std())) if len(imp) else (0.0, 1.0)
+    fmn, fsd = (float(food.mean()), float(food.std())) if len(food) else (0.0, 1.0)
+    return {"imp_thr": im + 1.0 * isd, "food_thr": fmn + 0.5 * fsd, "imp_mean": im, "imp_sd": isd,
+            "food_mean": fmn, "food_sd": fsd, "imp_base": ib.fillna(im).to_numpy(float),
+            "food_base": fb.fillna(fmn).to_numpy(float), "n_imp": len(imp), "n_food": len(food),
+            "imp_hist": imp, "food_hist": food}
+
+
 # ---------------------------------------------------------------- transmission channels
 @lru_cache(maxsize=1)
 def channels() -> dict:
@@ -65,8 +130,12 @@ def channels() -> dict:
     P["dl_gpr_reg"] = np.log(P["gpr_reg"]).diff() * 100
     P["remit_gw"] = P["remit_g"].clip(-60, 60)
     mi = spine.micro_fr1_dataset()
-    P["inv_state_g"] = mi["rinv_state"].pct_change(fill_method=None).reindex(P.index) * 100
+    # v2: log growth, 2007–2025 only — rinv_state has a real/nominal splice in 2005–06 (deflator ratio
+    # 1.6 → 0.9, +257 % "real" growth in 2006) that inflated the v1 elasticity (0.80 + 0.61 → 0.53 + 0.35)
+    g_inv = np.log(mi["rinv_state"]).diff() * 100
+    P["inv_state_g"] = g_inv.where(g_inv.index >= INV_SAMPLE_START).reindex(P.index)
     P["dln_brent_l1"] = P["dln_brent"].shift(1)
+    _impfood_panel(P)
     rows, ch = [], {}
 
     def add(key, label_az, y, xs, use_for):
@@ -85,10 +154,27 @@ def channels() -> dict:
 
     add("remit", "Pul baratlarının artımı ← Brent (tərəfdaş artımı əmsalı yanlış işarəli və əhəmiyyətsiz olduğu üçün çıxarılıb)",
         "remit_gw", ["dln_brent"], "R07 barat kanalı: Brent hissəsi R01-ə aid edilir")
-    add("inv_brent", "Dövlət investisiyasının real artımı ← Brent (cari və 1 il gecikmə; tarixi prosiklik reaksiya)",
-        "inv_state_g", ["dln_brent", "dln_brent_l1"], "R01 prosiklik fiskal reaksiya kanalı (FR3 T09 ilə idarə olunur)")
+    add("inv_brent", "Dövlət investisiyasının real artımı (log) ← Brent (cari və 1 il gecikmə; 2007–2025, 2005–06 sıra qırılması xaric)",
+        "inv_state_g", ["dln_brent", "dln_brent_l1"],
+        "R01 prosiklik investisiya reaksiyası: FR1 Brent multiplikatorunda olan hissədən ARTIQ hissə; ARDNF transferi ilə maliyyələşir (büdcə balansına neytral; T09)")
+    add("food_brent", "Dünya ərzaq qiymətləri artımı ← Brent (ortoqonallaşdırma; qalıq = R18 amili)",
+        "food_g", ["dln_brent"], "R18: Brent hissəsi R01-ə aid edilir (ikiqat hesablanmır)")
+    add("imp_brent", "İdxal qiymətləri inflyasiyası (USD) ← Brent, ərzaq qiymətlərinin öz hissəsi (qalıq = R17 amili)", "imp",
+        ["dln_brent", "food_own"], "R17: Brent hissəsi R01-ə, ərzaq hissəsi R18-ə aid edilir")
+    # ONE external-price pass-through (also the FX module's CPI channel): AZN import-price inflation, current + 1 lag
+    est_ext = add("cpi_ext", "İnflyasiya ← AZN ilə idxal qiymətləri inflyasiyası (cari + 1 il gecikmə; asılı dəyişənin gecikməsi yoxdur)",
+                  "cpi", ["impA", "impA_l1"], "R01/R17/R18 inflyasiya kanalı və məzənnə ötürməsi (riskunit.fx) — vahid qiymətləndirmə")
+    ch[("cpi_ext", "cov")] = est_ext["cov"].loc[["impA", "impA_l1"], ["impA", "impA_l1"]].to_numpy()
+    ch[("cpi_ext", "meta")] = {"n": est_ext["n"], "sample": est_ext["sample"], "r2": est_ext["r2"]}
+    a_f = ch[("food_brent", "dln_brent")]["coef"]
+    ch["_impfood"] = {"a_imp": ch[("imp_brent", "dln_brent")]["coef"], "a_food": a_f,
+                      "gamma": ch[("imp_brent", "food_own")]["coef"], **_impfood_thresholds(P)}
     add("agri_spi", "Kənd təsərrüfatı əlavə dəyəri ← SPI (quraqlıq indeksi)", "agri_g", ["spi"],
         "R09 quraqlıq kanalı")
+    # v2.1 (audit: drought SPI −3 → CPI −0,24 pp in the S-grid): is there a domestic food-supply price channel?
+    add("cpi_spi", "İnflyasiya ← SPI (AZN idxal qiymətləri nəzarətdə) — quraqlığın təklif-qiymət kanalının yoxlanması",
+        "cpi", ["impA", "impA_l1", "spi"], "yoxlama — istifadə olunmur: SPI əmsalı müsbət/əhəmiyyətsizdirsə təklif kanalı "
+        "təsdiqlənmir; S-şəbəkədə quraqlığın İQİ təsiri yalnız FR1 tələb (əmək haqqı) kanalıdır")
     P["d_lend"] = P["lendrate"].diff()
     P["d_us"] = P["us_rate"].diff()
     add("lend_us", "Daxili kredit faizi dəyişməsi ← ABŞ faiz dəyişməsi", "d_lend", ["d_us"],
@@ -193,33 +279,21 @@ def hazards() -> dict:
 # ---------------------------------------------------------------- devaluation analogue
 @lru_cache(maxsize=1)
 def devaluation() -> dict:
-    """Conditional devaluation frequency and the 2015-2016 analogue impact net of the oil
-    and public-investment channels (both from the FR1 structural multipliers)."""
-    p = params()
+    """Conditional devaluation frequency and the 2015–16 analogue — v2.1: delegated to the single FX module
+    (riskunit.fx). Consecutive trigger years form ONE episode (1998; 2015–16; 2020 → p_dev = 1/3; v2.0 counted 2015
+    and 2016 separately, 2/4). Keys kept for FR1_hazard_parameters; units: cpi_passthrough = pp per log unit
+    (cumulative over two years), nonoil_residual = 2015–16 level residual (%), nonoil_level_per_log = % per log unit."""
+    from . import fx
+    c = fx.calibration()
     P = spine.annual_panel()
     br = P["brent"]
     drop = (br / br.shift(1).rolling(3).mean() - 1) * 100
-    fx = P["usd_azn"].pct_change(fill_method=None) * 100
-    trig = drop[drop <= p["devaluation_brent_drop"]].dropna()
-    dev_years = [int(y) for y in trig.index if fx.get(y, 0) > 10]
-    p_dev = len(dev_years) / max(len(trig), 1)
-    # analogue 2016 vs 2010-2014 average, nonoil growth
-    mi = spine.micro_fr1_dataset()
-    M = spine.multipliers()
-    pre = P.loc[2010:2014, "nonoil_g"].mean()
-    actual_dev = P.loc[[2015, 2016], "nonoil_g"].mean() - pre
-    d_brent = P.loc[[2015, 2016], "brent"].mean() - P.loc[2010:2014, "brent"].mean()
-    oil_ch = d_brent / 10 * float(M["brent10"]["rgdpnon"].iloc[0])           # % level, 1st-year response
-    d_inv = (mi.loc[[2015, 2016], "rinv_state"].mean() - mi.loc[2010:2014, "rinv_state"].mean()) / 1000
-    inv_ch = d_inv * float(M["stateinv1bn"]["rgdpnon"].iloc[0])
-    resid = actual_dev - oil_ch - inv_ch
-    # CPI pass-through: 2016-2017 inflation over 2012-2014 average per log-unit depreciation
     dln_fx = np.log(P.loc[2017, "usd_azn"] / P.loc[2014, "usd_azn"])
-    pt = (P.loc[[2016, 2017], "cpi"].mean() - P.loc[2012:2014, "cpi"].mean()) / dln_fx
-    return {"trigger_years": [int(y) for y in trig.index], "dev_years": dev_years, "p_dev": p_dev,
-            "nonoil_actual_dev": actual_dev, "nonoil_oil_channel": oil_ch, "nonoil_inv_channel": inv_ch,
-            "nonoil_residual": resid, "cpi_passthrough": pt, "dln_fx_2014_2017": dln_fx,
-            "drop_series": drop}
+    return {"trigger_years": c["trigger_years"], "dev_years": [y for ep in c["dev_episodes"] for y in ep],
+            "episodes": c["episodes"], "p_dev": c["p_dev"],
+            "nonoil_actual_dev": c["resid16"] + c["oil_ch"] + c["inv_ch"], "nonoil_oil_channel": c["oil_ch"],
+            "nonoil_inv_channel": c["inv_ch"], "nonoil_residual": c["resid16"], "nonoil_level_per_log": c["L"],
+            "cpi_passthrough": c["pt"] * 100, "cpi_w0": c["w0"], "dln_fx_2014_2017": dln_fx, "drop_series": drop}
 
 
 # ---------------------------------------------------------------- indicator base
@@ -290,15 +364,32 @@ def indicator_base() -> pd.DataFrame:
             tail = pct if worse_high else 100 - pct
             status = "xəbərdarlıq" if tail >= 90 else ("izləmə" if tail >= 75 else "normal")
             first = str(hist.index[0])[:10]
+            # v2.1 (UI review): the reference is the indicator's OWN history, not a forecast assumption (D5 is) —
+            # say so in the row, because the same level can be «normal» here and «xəbərdarlıq» in D5.
+            ref = (f"tarixi paylanmaya görə ({str(hist.index[0])[:7]} – {str(hist.index[-1])[:7]}, "
+                   f"{len(hist)} müşahidə); z = (son − tarixi orta) / tarixi σ")
+            rule = ("birtərəfli, risk istiqamətində: " + ("yüksək" if worse_high else "aşağı") +
+                    " quyruqda tarixi faiz ≥ 90 → xəbərdarlıq, ≥ 75 → izləmə" +
+                    ("" if worse_high else " (yüksək dəyər risk deyil — yalnız aşağı quyruq)"))
         else:
             pct, z, first = np.nan, np.nan, ""
             status = "xəbərdarlıq" if (code == "fr10_watch" and last > 0) else (
                 "izləmə" if (code == "fr12_score" and last >= 0.25) else "normal")
+            ref = "tarixi paylanma yoxdur (< 10 müşahidə) — mikro EWS qaydası"
+            rule = ("izləmə siyahısında sahə > 0 → xəbərdarlıq" if code == "fr10_watch" else
+                    "ən yüksək bal ≥ 0,25 → izləmə" if code == "fr12_score" else "qayda yoxdur → normal")
         rows.append({"gosterici": code, "aile": fam, "ad": name, "vahid": unit, "tezlik": freq,
                      "menbe": src, "ilk_musahide": first, "son_tarix": when, "son_deyer": last,
-                     "tarixi_faiz": pct, "z": z, "yuksek_pisdir": worse_high, "status": status})
+                     "tarixi_faiz": pct, "z": z, "yuksek_pisdir": worse_high, "status": status,
+                     "istinad": ref, "status_qaydasi": rule})
     out = pd.DataFrame(rows)
     out.to_csv(config.OUTPUT / "FR1_indicator_base.csv", index=False, float_format="%.6g")
+    spine.register_output(
+        "FR1_indicator_base.csv", "riskunit.factors",
+        "Risk göstəriciləri bazası — son dəyər TARİXİ PAYLANMAYA GÖRƏ (göstəricinin öz tarixi: tarixi faiz, z = (son − "
+        "tarixi orta)/tarixi σ); status birtərəfli, yalnız risk istiqamətində (≥ 90 faiz xəbərdarlıq, ≥ 75 izləmə). "
+        "Proqnoz fərziyyəsindən sapma deyil — onu D5 (gündəlik monitor) verir, ona görə eyni səviyyə burada «normal», "
+        "D5-də «xəbərdarlıq» ola bilər", list(out.columns), "hər tam dövr")
     return out
 
 
@@ -345,3 +436,6 @@ def event_chronology() -> pd.DataFrame:
 def clear_caches():
     for f in (params, channels, hazards, devaluation):
         f.cache_clear()
+    from . import fx
+    fx.calibration.cache_clear()
+    fx.chain_step.cache_clear()

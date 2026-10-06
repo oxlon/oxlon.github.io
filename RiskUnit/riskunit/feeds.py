@@ -41,10 +41,67 @@ GPR_COLS = {"GPR": "gpr_global", "GPRC_RUS": "gpr_rus", "GPRC_TUR": "gpr_tur",
             "GPRC_SAU": "gpr_sau"}
 
 
-def _get(url: str, timeout: int = 60) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": "MIIS-15.5.3-risk-unit"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+class NoNetwork(RuntimeError):
+    """RISK_NO_NETWORK=1 — the caller falls back to the last good cached vintage."""
+
+
+_LAST_HIT: dict[str, float] = {}
+MIN_INTERVAL = 1.0           # polite: at most one request per second per host
+BROWSER_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) "
+              "Chrome/120.0 Safari/537.36 MIIS-15.5.3-risk-unit")
+
+
+_DEAD_HOSTS: dict[str, tuple[str, float]] = {}   # host -> (reason, time): a connection-level failure (after one
+DEAD_TTL = 600.0                   # retry) skips the host for 10 min (v2.4: 9 × 30 s timeouts cost 4,5 min on 2026-10-06)
+
+
+class HostDown(RuntimeError):
+    """The host failed at connection level earlier in this run — not retried again."""
+
+
+def _reason(exc: Exception) -> str:
+    r = getattr(exc, "reason", None)
+    return f"{type(exc).__name__}: {r if r is not None else exc}"[:160]
+
+
+def _get(url: str, timeout: int = 20, ua: str | None = None) -> bytes:
+    """HTTP GET with a ≤ 20 s timeout, ≤ 1 request/s per host, one retry on a connection-level error,
+    a per-run dead-host breaker, and RISK_NO_NETWORK=1 support."""
+    import time
+    import urllib.error
+    from urllib.parse import urlparse
+    if config.no_network():
+        raise NoNetwork("şəbəkə qadağandır (RISK_NO_NETWORK=1)")
+    host = urlparse(url).netloc
+    if host in _DEAD_HOSTS and time.time() - _DEAD_HOSTS[host][1] < DEAD_TTL:
+        raise HostDown(f"{host} əlçatmaz (bu dövrdə əvvəlki sorğu: {_DEAD_HOSTS[host][0]})")
+    for attempt in (1, 2):
+        try:
+            return _get_once(url, host, timeout, ua)
+        except urllib.error.HTTPError:
+            raise                                   # the server answered: not a connectivity problem
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+            if attempt == 2:
+                _DEAD_HOSTS[host] = (_reason(exc), time.time())
+                raise
+            time.sleep(2.0)
+    raise RuntimeError("unreachable")
+
+
+def _get_once(url: str, host: str, timeout: int, ua: str | None) -> bytes:
+    import time
+    wait = MIN_INTERVAL - (time.time() - _LAST_HIT.get(host, 0.0))
+    if wait > 0:
+        time.sleep(wait)
+    headers = {"User-Agent": ua or "MIIS-15.5.3-risk-unit", "Accept": "*/*"}
+    if host.endswith("stlouisfed.org"):            # FRED's bot filter (2026-10) drops custom/browser UAs: urllib default
+        headers = {}
+    req = urllib.request.Request(url, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=min(timeout, 20)) as r:
+            return r.read()
+    finally:
+        _LAST_HIT[host] = time.time()
 
 
 def _fred(series_id: str, code: str):
@@ -135,6 +192,11 @@ def _store(feed: str, df: pd.DataFrame, url: str, man: pd.DataFrame, vintage: st
             "last_obs": str(df["date"].max()), "url": url, "status": "ok"}
 
 
+def _fail_status(exc: Exception) -> str:
+    """'keş: şəbəkə yoxdur' offline; otherwise 'xeta: <type>: <reason>' (the reason was dropped before v2.4)."""
+    return "keş: şəbəkə yoxdur" if isinstance(exc, NoNetwork) else f"xeta: {_reason(exc)}"
+
+
 def fetch_all(verbose: bool = True) -> pd.DataFrame:
     """Download every feed once; returns the manifest rows written by this call."""
     vintage = config.as_of().isoformat()
@@ -143,25 +205,36 @@ def fetch_all(verbose: bool = True) -> pd.DataFrame:
     rows = []
     for feed, (url, parse) in feed_specs(end).items():
         try:
+            prev = None
+            if url.startswith(FRED.split("?")[0]):    # incremental: fetch the last ~4 months, merge with the history
+                try:
+                    prev = latest(feed)
+                    start = (pd.Timestamp(prev["date"].max()) - pd.Timedelta(days=120)).date().isoformat()
+                    url = f"{url}&cosd={start}"
+                except FileNotFoundError:
+                    prev = None
             df = parse(_get(url))
+            if prev is not None:
+                df = (pd.concat([prev[["series", "date", "value"]], df], ignore_index=True)
+                      .drop_duplicates(["series", "date"], keep="last").sort_values("date").reset_index(drop=True))
             rows.append(_store(feed, df, url, man, vintage))
         except Exception as exc:                       # keep the last good vintage
             rows.append({"feed": feed, "vintage": vintage,
                          "retrieved_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                          "path": "", "sha256": "", "n_obs": 0, "first_obs": "", "last_obs": "",
-                         "url": url, "status": f"xeta: {type(exc).__name__}"})
+                         "url": url, "status": _fail_status(exc)})
         if verbose:
             r = rows[-1]
             print(f"  {feed:9s} {r['status']:>10s}  {r['n_obs']:>7} müşahidə, son: {r['last_obs']}")
     try:
-        raw = {k: _get(ERA5_URL.format(lat=la, lon=lo, end=end), timeout=120)
+        raw = {k: _get(ERA5_URL.format(lat=la, lon=lo, end=end), timeout=20)
                for k, (la, lo) in ERA5_POINTS.items()}
         rows.append(_store("era5", _era5(raw), ERA5_URL.split("?")[0], man, vintage))
     except Exception as exc:
         rows.append({"feed": "era5", "vintage": vintage,
                      "retrieved_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                      "path": "", "sha256": "", "n_obs": 0, "first_obs": "", "last_obs": "",
-                     "url": ERA5_URL.split("?")[0], "status": f"xeta: {type(exc).__name__}"})
+                     "url": ERA5_URL.split("?")[0], "status": _fail_status(exc)})
     if verbose:
         r = rows[-1]
         print(f"  {'era5':9s} {r['status']:>10s}  {r['n_obs']:>7} müşahidə, son: {r['last_obs']}")

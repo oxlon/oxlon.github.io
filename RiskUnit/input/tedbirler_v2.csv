@@ -1,0 +1,31 @@
+tedbir_id,strategiya_v2,xerc_mln_azn,xerc_esasi,hazirliq_ay,kpi_hedd,effekt_modeli,effekt_kanal,effekt_guc,effekt_esasi
+T01,azaltma,0.5,"FƏRZİYYƏ (Nazirlik təsdiq etməlidir): analitik iş; birbaşa büdcə xərci yoxdur, fürsət xərci — yüksək neft qiymətində xərc artımının məhdudlaşması",3,büdcə Brent-i ≤ RU P25 yolu,react_cushion,fiscal_react,0.25,RU Monte Karlo: Brent baza ilə P25 arasında olduqda prosiklik investisiya kəsintisi baş vermir
+T02,azaltma,0.4,"FƏRZİYYƏ (Nazirlik təsdiq etməlidir): aktuari/konsaltinq qiymətləndirməsi ~0,1 mln/il × 4",4,örtük nisbəti ≥ 3 il neft gəliri itkisi,none,,0,imkanlandırıcı (T26–T29 üçün məlumat bazası) — birbaşa makro effekt kəmiyyətlənmir
+T03,qəbul,0.0,sistem funksiyası (icrada),0,xəbərdarlıq ≤ 24 saat,none,,0,izləmə — qəbul edilmiş risk üçün erkən xəbərdarlıq
+T04,azaltma,0.8,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): AMB stress testinin kalibrlənməsi; banklar üçün kapital xərci büdcədən kənar,8,stress testində kapital adekvatlığı ≥ normativ,scale,rate;bank,0.3,ekspert parametri (reyestr: təsir −30%) × RU ötürmə kanalları
+T05,qəbul,0.1,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): məlumat mübadiləsi protokolu,2,aylıq məlumat vaxtında,none,,0,izləmə
+T06,azaltma,120.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): hədəfli sosial transfer: 300 min ailə × 100 AZN × 4 ay (yalnız devalvasiya halında),6,devalvasiyadan sonra 12 ayda inflyasiya ≤ hədəf + 4 f.b.,scale,deval,0.2,ekspert (reyestr: −20%) × RU devalvasiya İQİ kanalı
+T07,qəbul,0.1,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): məlumat sorğusu,3,sıraların daxil edilməsi,none,,0,imkanlandırıcı (R04 kəmiyyət metodu)
+T08,azaltma,60.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): AZPROMO ixrac təşviqi ~30 mln AZN/il × 2 il,24,qeyri-neft ixracında HHI −10%,scale,partner,0.15,ekspert (reyestr: −15%) × RU tərəfdaş kanalı
+T09,azaltma,1000.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): ehtiyat layihə portfeli 1 mlrd AZN (ARDNF-dən; yalnız GaR pozulduqda xərclənir),6,GaR (P10) itkisinin örtülməsi ≥ 50%,floor_inject,fiscal_react,1000,RU override fiscal_react_floor + MikroUnit zənciri istate_add +1 mlrd → qeyri-neft ÜDM/büdcə cavabı (GaR < hədd olan çəkilişlərdə)
+T10,azaltma,150.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): Orta Dəhliz darboğazları üzrə alternativ marşrut kapitalı (ekspert),8,alternativ marşrut ötürmə qabiliyyəti ≥ 30%,scale,gpr,0.2,ekspert (reyestr: −20%) × RU geosiyasi kanal
+T11,qəbul,0.0,sistem funksiyası (icrada),0,aylıq indeks ≤ 24 saat,none,,0,izləmə
+T12,azaltma,5.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): rəsmi köçürmə kanalları üzrə kommunikasiya və komissiya güzəştləri,12,baratların ölkə HHI −10%,scale,remit,0.1,ekspert (reyestr: −10%) × RU barat kanalı
+T13,ötürmə,204.0,"FƏRZİYYƏ (Nazirlik təsdiq etməlidir): parametrik sığorta / fəlakət istiqrazı: örtük 1 700 mln AZN, mükafat 3%/il × 4 il (IBRD fəlakət istiqrazları diapazonu 2–8%)",12,sığortalanmış dövlət aktivlərinin payı ≥ 30%,cat_cover,quake,1700,"RU Monte Karlo zəlzələ fiskal kanalı: zərərin 0,3% ÜDM-dən yuxarı hissəsi örtük həddinə qədər ödənilir"
+T14,qəbul,0.2,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): məlumat sorğusu,3,kalibrləmə fərziyyələrinin əvəzi,none,,0,imkanlandırıcı (T13/T29 kalibrlənməsi)
+T15,azaltma,300.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): meliorasiya və suvarma səmərəliliyi kapitalı 2027–2029 (ekspert),36,k/t əlavə dəyərinin SPI həssaslığı −30%,scale,drought,0.3,ekspert (reyestr: −30%) × RU quraqlıq kanalı
+T16,ötürmə,120.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): aqrar sığorta mükafat subsidiyası ~30 mln AZN/il × 4,12,sığortalanmış əkin sahəsi ≥ 40%,none,,0,zərəri fermerdən sığortaçıya köçürür — makro (ÜDM/İQİ/büdcə) effekti kəmiyyətlənmir
+T17,qəbul,0.3,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): məlumat sorğusu,5,sıraların daxil edilməsi,none,,0,imkanlandırıcı (R10 kəmiyyət metodu)
+T18,azaltma,0.3,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): analitik iş,5,stress ssenarisində qeyri-neft kəsiri lövbər daxilində,none,,0,imkanlandırıcı — T28 fiskal qaydasının hazırlığı
+T19,azaltma,0.0,AMB alətləri — büdcə xərci yoxdur,2,inflyasiyanın hədəfə qayıtma müddəti ≤ 8 rüb,rate_response,rate,1.0,"MikroUnit zənciri: İQİ > 6% olan çəkilişlərdə uçot dərəcəsi +1 f.b. (depozit +0,5) → İQİ/ÜDM cavabı"
+T20,qəbul,0.0,sistem funksiyası (icrada),0,rüblük icmal vaxtında,none,,0,izləmə
+T21,azaltma,1.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): strategiya sənədi üzrə analitik iş,12,ssenari strategiyada,scale,transition,0.2,ekspert (reyestr: −20%) × RU enerji keçidi kanalı
+T22,azaltma,50.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): KOBİA sahə dəstəyi (ekspert),8,izləmə siyahısında marjanın bərpası,scale,manuf,0.25,ekspert (reyestr: −25%) × RU FR10 siqnal kanalı
+T23,azaltma,1.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): bazar təhlili,5,hesabat,scale,compet,0.2,ekspert (reyestr: −20%) × RU FR12 siqnal kanalı
+T24,azaltma,240.0,"FƏRZİYYƏ (Nazirlik təsdiq etməlidir): 3 aylıq buğda ehtiyatı ~0,45 mln t × 450 AZN/t ≈ 200 mln + saxlama 5%/il",12,ehtiyat ≥ 90 gün; ötürmə əmsalı −30%,scale,food,0.3,ekspert × RU ərzaq kanalı (R18)
+T25,azaltma,80.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): şok ilində itirilən gömrük rüsumu gəliri (gözlənilən dəyər),6,işə salınma ≤ 30 gün,scale,import,0.2,ekspert × RU idxal qiyməti kanalı (R17)
+T26,ötürmə,-1.0,model: Blek–Şoulz mükafatı × hedc həcmi × 4 il (avtomatik hesablanır),9,ORaR95 −20%,put_hedge,brent,0.25,RU Monte Karlo Brent + var.oil_revenue: put ödənişi büdcəyə; mükafat hər çəkilişdə çıxılır
+T27,azaltma,5.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): əməliyyat xərcləri (spred),6,ARDNF VaR95 (1 il) −5%,var_rebalance,fx_eur;fx_gbp;fx_oth,0.25,"V4 Euler töhfələri × 25% (birinci tərtib, diversifikasiya dəyişməsi nəzərə alınmır)"
+T28,azaltma,0.5,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): qanunvericilik/analitik iş; fürsət xərci,12,prosiklik xərc dəyişməsi = 0,fiscal_rule,brent;fiscal_react;transition,1.0,MikroUnit FR1 rıçaqları fiscal_rule=nobd + istate_rule=policy_level: Brent ±1σ cavablarının nisbəti → RU kanallarına
+T29,qəbul,48.0,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): 400 mln AZN ehtiyatın fürsət xərci 3%/il × 4 il,3,ehtiyat ≥ 400 mln; istifadədən sonra 12 ayda bərpa,reserve_layer,quake;flood,400,RU Monte Karlo: zəlzələ/daşqın fiskal zərərinin ilk 400 mln AZN-i planlaşdırılmış ehtiyatdan
+T30,azaltma,0.3,FƏRZİYYƏ (Nazirlik təsdiq etməlidir): analitik iş,5,rüblük konsensus hesabatı,none,,0,baza seçimi qərarı — kəmiyyətlənmir (R19)

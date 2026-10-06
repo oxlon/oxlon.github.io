@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValCurs Date="01.11.2017" Name="AZN məzənnələri" Description="Azərbaycan Respublikası Mərkəzi Bankının 01.11.2017 tarixdən etibarən xarici valyutaların və bank metallarının Azərbaycan manatına qarşı rəsmi məzənnələri bülleteni">
+
+    <ValType Type="Bank metalları">
+        <Valute Code="XPD">
+            <Nominal>1 t.u.</Nominal>
+            <Name>Palladium</Name>
+            <Value>1661.1931</Value>
+        </Valute>
+        <Valute Code="XPT">
+            <Nominal>1 t.u.</Nominal>
+            <Name>Platin</Name>
+            <Value>1555.7745</Value>
+        </Valute>
+        <Valute Code="XAG">
+            <Nominal>1 t.u.</Nominal>
+            <Name>Gümüş</Name>
+            <Value>28.4460</Value>
+        </Valute>
+        <Valute Code="XAU">
+            <Nominal>1 t.u.</Nominal>
+            <Name>Qızıl</Name>
+            <Value>2159.6360</Value>
+        </Valute>
+    </ValType>
+
+    <ValType Type="Xarici valyutalar">
+        
+                            <Valute Code="USD">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 ABŞ dolları</Name>
+
+
+
+                        
+                    <Value>1.7003</Value>
+                </Valute>
+            
+        
+                            <Valute Code="EUR">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Avro</Name>
+
+
+
+                        
+                    <Value>1.9776</Value>
+                </Valute>
+            
+        
+                            <Valute Code="AUD">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Avstraliya dolları</Name>
+
+
+
+                        
+                    <Value>1.3023</Value>
+                </Valute>
+            
+        
+                            <Valute Code="ARS">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Argentina pesosu</Name>
+
+
+
+                        
+                    <Value>0.0964</Value>
+                </Valute>
+            
+        
+                            <Valute Code="BYN">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Belarus rublu</Name>
+
+
+
+                        
+                    <Value>0.8613</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="BRL">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Braziliya realı</Name>
+
+
+
+                        
+                    <Value>0.5198</Value>
+                </Valute>
+            
+        
+                            <Valute Code="AED">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 BƏƏ dirhəmi</Name>
+
+
+
+                        
+                    <Value>0.4629</Value>
+                </Valute>
+            
+        
+                            <Valute Code="ZAR">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Cənubi Afrika randı</Name>
+
+
+
+                        
+                    <Value>0.1202</Value>
+                </Valute>
+            
+        
+                            <Valute Code="KRW">
+
+
+
+
+
+                    
+                        <Nominal>100</Nominal>
+
+                        <Name>100 Cənubi Koreya vonu</Name>
+
+
+
+                        
+                    <Value>0.1524</Value>
+                </Valute>
+            
+        
+                            <Valute Code="CZK">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Çexiya kronu</Name>
+
+
+
+                        
+                    <Value>0.0771</Value>
+                </Valute>
+            
+        
+                            <Valute Code="CLP">
+
+
+
+
+
+                    
+                        <Nominal>100</Nominal>
+
+                        <Name>100 Çili pesosu</Name>
+
+
+
+                        
+                    <Value>0.2672</Value>
+                </Valute>
+            
+        
+                            <Valute Code="CNY">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Çin yuanı</Name>
+
+
+
+                        
+                    <Value>0.2567</Value>
+                </Valute>
+            
+        
+                            <Valute Code="DKK">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Danimarka kronu</Name>
+
+
+
+                        
+                    <Value>0.2658</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="GEL">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Gürcü larisi</Name>
+
+
+
+                        
+                    <Value>0.6515</Value>
+                </Valute>
+            
+        
+                            <Valute Code="HKD">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Honq Konq dolları</Name>
+
+
+
+                        
+                    <Value>0.2179</Value>
+                </Valute>
+            
+        
+                            <Valute Code="INR">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Hindistan rupisi</Name>
+
+
+
+                        
+                    <Value>0.0263</Value>
+                </Valute>
+            
+        
+                            <Valute Code="GBP">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 İngilis funt sterlinqi</Name>
+
+
+
+                        
+                    <Value>2.2561</Value>
+                </Valute>
+            
+        
+                            <Valute Code="IDR">
+
+
+
+
+
+                    
+                        <Nominal>100</Nominal>
+
+                        <Name>100 İndoneziya rupiası</Name>
+
+
+
+                        
+                    <Value>0.0125</Value>
+                </Valute>
+            
+        
+                            <Valute Code="IRR">
+
+
+
+
+
+                    
+                        <Nominal>100</Nominal>
+
+
+                        <Name>100 İran rialı</Name>
+
+
+
+                            
+                    <Value>0.0043</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="SEK">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 İsveç kronu</Name>
+
+
+
+                        
+                    <Value>0.2029</Value>
+                </Valute>
+            
+        
+                            <Valute Code="CHF">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 İsveçrə frankı</Name>
+
+
+
+                        
+                    <Value>1.7017</Value>
+                </Valute>
+            
+        
+                            <Valute Code="ILS">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 İsrail şekeli</Name>
+
+
+
+                        
+                    <Value>0.4828</Value>
+                </Valute>
+            
+        
+                            <Valute Code="CAD">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Kanada dolları</Name>
+
+
+
+                        
+                    <Value>1.3180</Value>
+                </Valute>
+            
+        
+                            <Valute Code="KWD">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Küveyt dinarı</Name>
+
+
+
+                        
+                    <Value>5.6171</Value>
+                </Valute>
+            
+        
+                            <Valute Code="KZT">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+
+                        <Name>1 Qazaxıstan tengəsi</Name>
+
+
+
+                            
+                    <Value>0.0051</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="KGS">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Qırğız somu</Name>
+
+
+
+                        
+                    <Value>0.0247</Value>
+                </Valute>
+            
+        
+                            <Valute Code="LBP">
+
+
+
+
+
+                    
+                        <Nominal>100</Nominal>
+
+                        <Name>100 Livan funtu</Name>
+
+
+
+                        
+                    <Value>0.1122</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="MYR">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Malayziya rinqqiti</Name>
+
+
+
+                        
+                    <Value>0.4016</Value>
+                </Valute>
+            
+        
+                            <Valute Code="MXN">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Meksika pesosu</Name>
+
+
+
+                        
+                    <Value>0.0886</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="MDL">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Moldova leyi</Name>
+
+
+
+                        
+                    <Value>0.0981</Value>
+                </Valute>
+            
+        
+                            <Valute Code="EGP">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Misir funtu</Name>
+
+
+
+                        
+                    <Value>0.0963</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="NOK">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Norveç kronu</Name>
+
+
+
+                        
+                    <Value>0.2078</Value>
+                </Valute>
+            
+        
+                            <Valute Code="UZS">
+
+
+
+
+
+                    
+                        <Nominal>100</Nominal>
+
+                        <Name>100 Özbək somu</Name>
+
+
+
+                        
+                    <Value>0.0210</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="PLN">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Polşa zlotısı</Name>
+
+
+
+                        
+                    <Value>0.4665</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="RUB">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+
+                        <Name>1 Rusiya rublu</Name>
+
+
+
+                            
+                    <Value>0.0292</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="SGD">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Sinqapur dolları</Name>
+
+
+
+                        
+                    <Value>1.2480</Value>
+                </Valute>
+            
+        
+                            <Valute Code="SAR">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Səudiyyə Ərəbistanı rialı</Name>
+
+
+
+                        
+                    <Value>0.4534</Value>
+                </Valute>
+            
+        
+                            <Valute Code="SDR">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 SDR (BVF-nin xüsusi borcalma hüquqları)</Name>
+
+
+
+                        
+                    <Value>2.3884</Value>
+                </Valute>
+            
+        
+                            <Valute Code="TJS">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Tacikistan somonisi</Name>
+
+
+
+                        
+                    <Value>0.1931</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="TWD">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Tayvan dolları</Name>
+
+
+
+                        
+                    <Value>0.0564</Value>
+                </Valute>
+            
+        
+                            <Valute Code="TRY">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Türk lirəsi</Name>
+
+
+
+                        
+                    <Value>0.4483</Value>
+                </Valute>
+            
+        
+                            <Valute Code="TMT">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Türkmənistan manatı</Name>
+
+
+
+                        
+                    <Value>0.4859</Value>
+                </Valute>
+            
+        
+                            <Valute Code="UAH">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Ukrayna qrivnası</Name>
+
+
+
+                        
+                    <Value>0.0632</Value>
+                </Valute>
+            
+        
+            
+        
+                            <Valute Code="JPY">
+
+
+
+
+
+                    
+                        <Nominal>100</Nominal>
+
+                        <Name>100 Yapon yeni</Name>
+
+
+
+                        
+                    <Value>1.4933</Value>
+                </Valute>
+            
+        
+                            <Valute Code="NZD">
+
+
+
+
+
+                    
+                        <Nominal>1</Nominal>
+
+                        <Name>1 Yeni Zelandiya dolları</Name>
+
+
+
+                        
+                    <Value>1.1749</Value>
+                </Valute>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+            </ValType>
+</ValCurs>

@@ -174,9 +174,11 @@ class NFR1_Backtesting(unittest.TestCase):
 
     def test_calibration_feeds_simulation(self):
         C = pd.read_csv(OUT / "NFR1_calibration.csv")
-        f = simulate.calibration_factors()
+        f, raw = simulate.calibration_factors(), simulate.calibration_factors(raw=True)
         for r in C.itertuples():
-            self.assertAlmostEqual(f[r.hedef], r.miqyas, places=6)
+            self.assertAlmostEqual(raw[r.hedef], r.miqyas, places=6)
+            lo, hi = sorted([1.0, r.miqyas])           # v2.1: shrunk toward 1, never beyond the raw factor
+            self.assertTrue(lo - 1e-9 <= f[r.hedef] <= hi + 1e-9, r.hedef)
 
 
 class NFR2_Adaptation(unittest.TestCase):

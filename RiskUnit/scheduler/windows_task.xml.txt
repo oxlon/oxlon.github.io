@@ -1,3 +1,6 @@
-Windows Task Scheduler (schtasks):
-schtasks /Create /TN "MIIS_Risk_Update" /SC DAILY /ST 07:00 /TR "cmd /c cd /d C:\miis\Risk_Unit && python update.py >> output\NFR2_cron.log 2>&1"
-schtasks /Create /TN "MIIS_Risk_Watch" /SC MINUTE /MO 30 /TR "cmd /c cd /d C:\miis\Risk_Unit && python update.py --no-fetch >> output\NFR2_cron.log 2>&1"
+Windows Task Scheduler (schtasks) — RiskUnit qovluğunda işlədin:
+schtasks /Create /TN "MIIS_Risk_full" /XML "scheduler\windows_task_full.xml"
+rem və ya: schtasks /Create /TN "MIIS_Risk_full_0630" /SC DAILY /ST 06:30 /TR "cmd /c \"%MIIS_RISK_DIR%\scheduler\run_update.bat\" --full"
+schtasks /Create /TN "MIIS_Risk_daily" /XML "scheduler\windows_task_daily.xml"
+rem və ya: schtasks /Create /TN "MIIS_Risk_daily_1330" /SC DAILY /ST 13:30 /TR "cmd /c \"%MIIS_RISK_DIR%\scheduler\run_update.bat\" --daily"
+rem və ya: schtasks /Create /TN "MIIS_Risk_daily_1830" /SC DAILY /ST 18:30 /TR "cmd /c \"%MIIS_RISK_DIR%\scheduler\run_update.bat\" --daily"

@@ -59,6 +59,12 @@ svg .s3{fill:none;stroke:var(--status-gap);stroke-width:1.8}svg .s4{fill:none;st
 svg .ref{stroke:var(--status-gap);stroke-dasharray:6 4;stroke-width:1.4}svg .ref2{stroke:var(--ink-3);stroke-dasharray:2 3;stroke-width:1.2}
 svg rect.neg{fill:var(--status-gap)}svg rect.pos{fill:var(--status-done)}svg rect.alt{fill:var(--ink-3);fill-opacity:.55}
 .dl-row{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 26px;font-size:14.5px}
+.panel-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 26px;padding:14px 16px;background:var(--accent-soft);border:1px solid var(--rule);border-radius:8px}
+.panel-cta p{margin:0;flex:1 1 260px;font-size:14.5px;color:var(--ink)}
+a.btn-panel{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:6px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;font-size:15px;white-space:nowrap}
+a.btn-panel:hover,a.btn-panel:focus-visible{filter:brightness(1.12);text-decoration:none;color:#fff}
+.nav-panel a{font-weight:600}
+@media print{.panel-cta,.nav-panel{display:none}}
 @media print{body{font-size:12px}.heat-wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px}
 table.heat td{height:48px}.heat-wrap .tbl-dense{min-width:0;font-size:12px}.heat-wrap th,.heat-wrap td{padding:5px 6px}h2{break-after:avoid;margin-top:26px}.table-wrap,figure,table.heat,ul.alerts li{break-inside:avoid}
 .table-wrap{overflow:visible}.count-strip li{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
@@ -450,6 +456,9 @@ LEAD = {
 }
 
 
+PANEL_CTA = ('<div class="panel-cta"><p><strong>İş paneli</strong> — interaktiv qərar dəstəyi: risk reyestri və drill-down, canlı monitor, VaR/CaR, miqyaslanma, stress testləri, tədbirlərin optimallaşdırılması və hesabat qurucusu.</p><a class="btn-panel" href="../panel/index.html">İş panelini aç →</a></div>')
+
+
 def _nav(role: str, sections: list[tuple[str, str]], for_print: bool) -> str:
     pages = [("index.html", "rehberlik"), ("analitik.html", "analitik")]
     lis = []
@@ -466,9 +475,13 @@ def _nav(role: str, sections: list[tuple[str, str]], for_print: bool) -> str:
               ("Sənədlər", '<li><a href="../docs/Risk_Metodologiyasi.md">Metodologiya</a></li>'
                            '<li><a href="../output/risk_api.json">JSON API (MİİS)</a></li>'
                            '<li><a href="../README.md">README</a></li>'),
-              ("Əlaqəli modullar", '<li><a href="https://oxlon.uk/1551/">§15.5.1 Makroiqtisadi model</a></li>'
+              ("Əlaqəli modullar", '<li><a href="../../1551_v3/index.html">§15.5.1 Makroiqtisadi model</a></li>'
                                    '<li><a href="../../MicroUnit/site/index.html">§15.5.2 Mikroiqtisadi təhlil</a></li>')]
-    return "".join(f'<div class="nav-group"><span class="nav-title">{esc(t)}</span><ul>{u}</ul></div>' for t, u in groups)
+    html = "".join(f'<div class="nav-group"><span class="nav-title">{esc(t)}</span><ul>{u}</ul></div>' for t, u in groups)
+    if not for_print:                                   # interactive decision-support panel (RiskUnit/panel)
+        html = ('<div class="nav-group nav-panel"><span class="nav-title">İnteraktiv</span><ul>'
+                '<li><a href="../panel/index.html">İş paneli →</a></li></ul></div>') + html
+    return html
 
 
 def build_html(c: dict, role: str, for_print: bool = False) -> str:
@@ -528,6 +541,7 @@ def build_html(c: dict, role: str, for_print: bool = False) -> str:
 <h1>İqtisadi risklər — {ROLE_TITLE[role]}</h1>
 <p class="page-kicker">{kicker}</p>
 <p class="lead-in">{LEAD[role]}</p>
+{"" if for_print else PANEL_CTA}
 {chr(10).join(body)}
 {footer}
 </main>

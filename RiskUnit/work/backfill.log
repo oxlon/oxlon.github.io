@@ -1,0 +1,27 @@
+  cbar_fx                                           ok    14658 müşahidə, son: 2026-10-05
+  cbar_rate                                         ok      215 müşahidə, son: 2026-09-24
+  dsk_macro                                         ok      354 müşahidə, son: 2026-08-01
+  dsk_cpi                                           ok        7 müşahidə, son: 2026-08-01
+  dsk_tables                                        ok      412 müşahidə, son: 2026-04-01
+  minfin                                            ok        5 müşahidə, son: 2026-03-01
+  sofaz                                             ok       15 müşahidə, son: 2026-06-30
+  bfb                                               ok       60 müşahidə, son: 2026-10-01
+       feed    son_deyer   last_obs  tazelik             status
+    cbar_fx     1.700000 2026-10-05     təzə                 ok
+  cbar_rate     6.500000 2026-02-05     təzə                 ok
+  dsk_macro     1.200000 2026-08-01     təzə                 ok
+    dsk_cpi     5.700000 2026-08-01     təzə                 ok
+ dsk_tables     1.769724 2026-04-01     təzə                 ok
+     minfin 38356.000000 2025-01-01    köhnə                 ok
+      sofaz 72596.600000 2026-06-30     təzə                 ok
+        bfb     7.184400 2026-09-29     təzə                 ok
+      brent   113.960000 2026-09-29 köhnəlir keş: şəbəkə yoxdur
+        vix    15.310000 2026-10-02     təzə keş: şəbəkə yoxdur
+      ust10     5.280000 2026-10-02     təzə keş: şəbəkə yoxdur
+   fedfunds     3.750000 2026-09-01     təzə keş: şəbəkə yoxdur
+     eurusd     1.125900 2026-10-02     təzə keş: şəbəkə yoxdur
+        gpr   146.209900 2026-09-01     təzə keş: şəbəkə yoxdur
+        epu   241.690491 2026-07-01 köhnəlir keş: şəbəkə yoxdur
+       usgs     4.500000 2026-10-01     təzə keş: şəbəkə yoxdur
+       era5    10.300000 2026-09-01     təzə keş: şəbəkə yoxdur
+azeri_light   114.630572 2026-09-29 köhnəlir                 ok

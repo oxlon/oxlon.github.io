@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Risk bölməsi — MİİS §15.5.3</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="panel/assets/hub.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">Azərbaycan Respublikası İqtisadiyyat Nazirliyi</div>
+    <h1>İqtisadi risklərin idarəedilməsi və qərar dəstək sistemi — MİİS §15.5.3</h1>
+    <p class="lead">Makro (OxLon və Nazirlik) və mikro (FR1–FR12) proqnozların ətrafında risk paylanması: hər gün yenilənən
+    məlumat və onun rəsmi proqnozlara təsiri, risk reyestri (ehtimal × təsir), riskə məruz dəyər (VaR) və kapital (CaR),
+    miqyaslanma, stress testləri, risk azaldıcı tədbirlər və onların optimal portfeli, CAEM risk vərəqləri və geriyə doğru sınaqlar.</p>
+    <div class="facts">
+      <span class="fact"><b>19</b> risk reyestrdə</span>
+      <span class="fact"><b>45</b> avtomatik məlumat axını</span>
+      <span class="fact"><b>12 824</b> proqnoz təsiri sətri (D6)</span>
+      <span class="fact"><b>30</b> risk azaldıcı tədbir</span>
+      <span class="fact"><b>82</b> çıxış faylı</span>
+      <span class="fact">vəziyyət tarixi <b>2026-10-06</b></span>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <section>
+    <h2><span class="dot" style="background:var(--moe)"></span>Haradan başlamalı</h2>
+    <p class="sec-note">Gündəlik iş və qərar üçün <b>Risk paneli</b>. Əvvəlki (v1) rəhbərlik və analitik hesabat səhifələri
+    <b>Klassik hesabat</b> kimi saxlanılır. Hər iki görünüş eyni çıxış fayllarından yığılır və brauzerdə birbaşa açılır;
+    canlı hesablamalar (stress, miqyaslanma, optimallaşdırma, məlumatın yenilənməsi) üçün yerli server lazımdır.</p>
+    <div class="pair">
+      <a class="card" style="--k: var(--moe)" href="panel/index.html">
+        <span class="kind">Risk paneli</span>
+        <h3>Bu gün, reyestr, paylanmalar, tədbirlər</h3>
+        <p>Rəhbərlik üçün «Bu gün» xülasəsi və hər riskin tam təhlili — bir neçə kliklə.</p>
+        <ul>
+          <li>Bu günün məlumatı rəsmi proqnozları necə dəyişir (D6, D7)</li>
+          <li>R01–R19: ehtimal, təsir, trend, istilik xəritəsi, ötürmə və təsirlənən dəyişənlər</li>
+          <li>VaR / ES / CaR, borc davamlılığı, ARDNF adekvatlığı; miqyaslanma və stress testləri</li>
+          <li>Tədbirlər portfeli (büdcə üzrə səmərəli sərhəd), icra planı; hesabat qurucusu (PDF, Excel, Word, CSV)</li>
+        </ul>
+        <span class="go">Risk panelini aç →</span>
+        <span class="file">panel/index.html</span>
+      </a>
+      <div class="card" style="--k: var(--caem)">
+        <span class="kind">Klassik hesabat</span>
+        <h3>Rəhbərlik və analitik səhifələri (v1)</h3>
+        <p>Əvvəlki statik hesabat: rəhbərlik paneli və analitik paneli, PDF və Excel hesabatları.</p>
+        <ul>
+          <li><a href="site/index.html">Rəhbərlik səhifəsi</a> · <a href="site/analitik.html">Analitik səhifəsi</a></li>
+          <li>Hesabat faylları: <code>reports/</code></li>
+        </ul>
+        <a class="go" href="site/index.html">Klassik hesabatı aç →</a>
+        <span class="file">site/index.html · site/analitik.html</span>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2><span class="dot" style="background:var(--caem)"></span>Sənədlər, hesabatlar, API</h2>
+    <div class="note"><h3>Metodologiya</h3><ul><li><a href="docs/Avtomatik_yenilenme_ve_gundelik_monitor.md">Avtomatik yenilənmə və gündəlik monitor</a> · <a href="panel/index.html#/metod/Avtomatik_yenilenme_ve_gundelik_monitor">paneldə oxu</a></li><li><a href="docs/CAEM_inteqrasiya.md">CAEM inteqrasiyası</a> · <a href="panel/index.html#/metod/CAEM_inteqrasiya">paneldə oxu</a></li><li><a href="docs/Miqyaslanma_ve_tedbirler.md">Miqyaslanma və tədbirlər</a> · <a href="panel/index.html#/metod/Miqyaslanma_ve_tedbirler">paneldə oxu</a></li><li><a href="docs/Risk_Metodologiyasi.md">Risk metodologiyası (FR1–FR4, NFR1–NFR3)</a> · <a href="panel/index.html#/metod/Risk_Metodologiyasi">paneldə oxu</a></li><li><a href="docs/VaR_CaR_metodologiya.md">VaR, ES və CaR metodologiyası</a> · <a href="panel/index.html#/metod/VaR_CaR_metodologiya">paneldə oxu</a></li></ul>
+    <h3 style="margin-top:12px">Hesabat faylları</h3><ul><li><a href="reports/risk_hesabati_analitik.pdf">risk_hesabati_analitik.pdf</a></li><li><a href="reports/risk_hesabati_analitik.xlsx">risk_hesabati_analitik.xlsx</a></li><li><a href="reports/risk_hesabati_rehberlik.pdf">risk_hesabati_rehberlik.pdf</a></li><li><a href="reports/risk_hesabati_rehberlik.xlsx">risk_hesabati_rehberlik.xlsx</a></li></ul>
+    <h3 style="margin-top:12px">API</h3><ul><li><a href="api/openapi.yaml">API təsviri (OpenAPI)</a> <code>api/openapi.yaml</code></li><li><a href="output/risk_api.json">Maşın üçün JSON (FR4)</a> <code>output/risk_api.json</code></li></ul></div>
+  </section>
+  <div class="note">
+    <h3>Canlı hesablamalar üçün</h3>
+    <p><b>RiskModel_Baslat.command</b> (macOS) və ya <b>RiskModel_Baslat.bat</b> (Windows) faylını iki dəfə klikləyin — yerli server başlayır və panel brauzerdə açılır.
+    Server olmadan panel tam işləyir (bütün nəticələr paketdədir); yalnız yeni hesablama aparıla bilməz.</p>
+    <h3 style="margin-top:12px">Yeniləmə</h3>
+    <p><code>python3 run_all.py --daily</code> (gündəlik dövr) və ya <code>python3 run_all.py --fetch</code> (tam dövr), sonra
+    <code>python3 panel/build_panel.py</code> — panel və bu səhifə yenidən yığılır.</p>
+  </div>
+  <footer>Yığılıb 2026-10-06 13:04 · 82 çıxış faylı · möhür 40fa7949a2</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+version,year,category,category_az,weight,score,weighted,s_signal,s_indicator,s_fr2,fr2_risk,n_components,read_off_az,note_az
+"Nazirlik (əl ilə yazılmış, CAEM)",2022,oil,Neft qiymətləri,12.0,1.0,12.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2022,geo,Geosiyasi risklər,2.0,5.0,10.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2022,tp,Regional ticarət tərəfdaşlarının artımı,2.0,1.5,3.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2022,imp,İdxal qiymətləri,2.0,4.0,8.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2022,food,Ərzaq qiymətləri,2.0,5.0,10.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2022,CƏMİ,Ümumi risk indeksi,20.0,,43.0,,,,,,risklər müsbət makroiqtisadi nəticələrə doğru meyllidir (<45),'Balance of risks'!B8:D8 = SUMPRODUCT
+"Nazirlik (əl ilə yazılmış, CAEM)",2024,oil,Neft qiymətləri,12.0,2.0,24.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2024,geo,Geosiyasi risklər,2.0,3.3,6.6,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2024,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.4,4.8,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2024,imp,İdxal qiymətləri,2.0,3.3,6.6,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2024,food,Ərzaq qiymətləri,2.0,2.5,5.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2024,CƏMİ,Ümumi risk indeksi,20.0,,47.0,,,,,,risklər balanslaşdırılıb (45–55),'Balance of risks'!B8:D8 = SUMPRODUCT
+"Nazirlik (əl ilə yazılmış, CAEM)",2025,oil,Neft qiymətləri,12.0,2.5,30.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2025,geo,Geosiyasi risklər,2.0,3.5,7.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2025,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.5,5.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2025,imp,İdxal qiymətləri,2.0,2.5,5.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2025,food,Ərzaq qiymətləri,2.0,1.0,2.0,,,,,,,'Balance of risks'!B2:D6
+"Nazirlik (əl ilə yazılmış, CAEM)",2025,CƏMİ,Ümumi risk indeksi,20.0,,49.0,,,,,,risklər balanslaşdırılıb (45–55),'Balance of risks'!B8:D8 = SUMPRODUCT
+məlumat əsaslı (RU),2022,oil,Neft qiymətləri,12.0,0.847,10.164,0.847,,,R01,1.0,,siqnal: əlverişli (z=+1.08; tarix)
+məlumat əsaslı (RU),2022,geo,Geosiyasi risklər,2.0,5.0,10.0,5.0,,,R06,1.0,,siqnal: mənfi (z=+4.29; tarix)
+məlumat əsaslı (RU),2022,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.167,4.334,2.167,,,R05,1.0,,siqnal: neytral (z=+0.67; tarix)
+məlumat əsaslı (RU),2022,imp,İdxal qiymətləri,2.0,2.912,5.824,2.912,,,,1.0,,siqnal: neytral (z=+0.82; tarix)
+məlumat əsaslı (RU),2022,food,Ərzaq qiymətləri,2.0,3.714,7.428,3.714,,,,1.0,,siqnal: mənfi (z=+0.86; tarix)
+məlumat əsaslı (RU),2022,CƏMİ,Ümumi risk indeksi,20.0,,37.75,,,,,,risklər müsbət makroiqtisadi nəticələrə doğru meyllidir (<45),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"
+məlumat əsaslı (RU),2023,oil,Neft qiymətləri,12.0,2.181,26.172,2.181,,,R01,1.0,,siqnal: neytral (z=+0.32; tarix)
+məlumat əsaslı (RU),2023,geo,Geosiyasi risklər,2.0,5.0,10.0,5.0,,,R06,1.0,,siqnal: mənfi (z=+2.17; tarix)
+məlumat əsaslı (RU),2023,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.492,4.984,2.492,,,R05,1.0,,siqnal: neytral (z=+0.02; tarix)
+məlumat əsaslı (RU),2023,imp,İdxal qiymətləri,2.0,1.516,3.032,1.516,,,,1.0,,siqnal: əlverişli (z=-1.24; tarix)
+məlumat əsaslı (RU),2023,food,Ərzaq qiymətləri,2.0,1.396,2.792,1.396,,,,1.0,,siqnal: əlverişli (z=-0.80; tarix)
+məlumat əsaslı (RU),2023,CƏMİ,Ümumi risk indeksi,20.0,,46.98,,,,,,risklər balanslaşdırılıb (45–55),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"
+məlumat əsaslı (RU),2024,oil,Neft qiymətləri,12.0,2.261,27.132,2.261,,,R01,1.0,,siqnal: neytral (z=+0.24; tarix)
+məlumat əsaslı (RU),2024,geo,Geosiyasi risklər,2.0,5.0,10.0,5.0,,,R06,1.0,,siqnal: mənfi (z=+2.39; tarix)
+məlumat əsaslı (RU),2024,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.506,5.012,2.506,,,R05,1.0,,siqnal: neytral (z=-0.01; tarix)
+məlumat əsaslı (RU),2024,imp,İdxal qiymətləri,2.0,2.117,4.234,2.117,,,,1.0,,siqnal: neytral (z=-0.77; tarix)
+məlumat əsaslı (RU),2024,food,Ərzaq qiymətləri,2.0,1.956,3.912,1.956,,,,1.0,,siqnal: əlverişli (z=-0.52; tarix)
+məlumat əsaslı (RU),2024,CƏMİ,Ümumi risk indeksi,20.0,,50.29,,,,,,risklər balanslaşdırılıb (45–55),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"
+məlumat əsaslı (RU),2025,oil,Neft qiymətləri,12.0,2.729,32.748,2.729,,,R01,1.0,,siqnal: neytral (z=-0.23; tarix)
+məlumat əsaslı (RU),2025,geo,Geosiyasi risklər,2.0,5.0,10.0,5.0,,,R06,1.0,,siqnal: mənfi (z=+2.13; tarix)
+məlumat əsaslı (RU),2025,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.564,5.128,2.564,,,R05,1.0,,siqnal: neytral (z=-0.13; tarix)
+məlumat əsaslı (RU),2025,imp,İdxal qiymətləri,2.0,2.019,4.038,2.019,,,,1.0,,siqnal: neytral (z=-0.96; tarix)
+məlumat əsaslı (RU),2025,food,Ərzaq qiymətləri,2.0,1.736,3.472,1.736,,,,1.0,,siqnal: əlverişli (z=-0.63; tarix)
+məlumat əsaslı (RU),2025,CƏMİ,Ümumi risk indeksi,20.0,,55.39,,,,,,risklər mənfi makroiqtisadi nəticələrə doğru meyllidir (>55),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"
+məlumat əsaslı (RU),2026,oil,Neft qiymətləri,12.0,1.367,16.41,2.735,0.0,,R01,2.0,,siqnal: neytral (z=-0.24; proqnoz); göstərici bazası brent: z=+1.89 (2026-09-29)
+məlumat əsaslı (RU),2026,geo,Geosiyasi risklər,2.0,4.981,9.961,5.0,4.96112,,R06,2.0,,siqnal: mənfi (z=+2.69; canlı); göstərici bazası gpr_reg: z=+1.48 (2026-09)
+məlumat əsaslı (RU),2026,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.621,5.242,2.621,,,R05,1.0,,siqnal: neytral (z=-0.24; proqnoz)
+məlumat əsaslı (RU),2026,imp,İdxal qiymətləri,2.0,2.513,5.026,2.513,,,,1.0,,siqnal: neytral (z=+0.03; proqnoz)
+məlumat əsaslı (RU),2026,food,Ərzaq qiymətləri,2.0,2.333,4.666,2.333,,,,1.0,,siqnal: neytral (z=-0.17; proqnoz)
+məlumat əsaslı (RU),2026,CƏMİ,Ümumi risk indeksi,20.0,,41.31,,,,,,risklər müsbət makroiqtisadi nəticələrə doğru meyllidir (<45),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"
+məlumat əsaslı (RU),2027,oil,Neft qiymətləri,12.0,3.522,42.262,2.736,,4.3076923076923075,R01,2.0,,"siqnal: neytral (z=-0.24; proqnoz); FR2 R01: P=0.48, skor=16"
+məlumat əsaslı (RU),2027,geo,Geosiyasi risklər,2.0,2.6,5.2,,,2.6,R06,1.0,,"FR2 R06: P=0.41, skor=4"
+məlumat əsaslı (RU),2027,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.808,5.615,2.615,,3.0,R05,2.0,,"siqnal: neytral (z=-0.23; proqnoz); FR2 R05: P=0.14, skor=6"
+məlumat əsaslı (RU),2027,imp,İdxal qiymətləri,2.0,2.546,5.092,2.546,,,,1.0,,siqnal: neytral (z=+0.09; proqnoz)
+məlumat əsaslı (RU),2027,food,Ərzaq qiymətləri,2.0,2.333,4.666,2.333,,,,1.0,,siqnal: neytral (z=-0.17; proqnoz)
+məlumat əsaslı (RU),2027,CƏMİ,Ümumi risk indeksi,20.0,,62.84,,,,,,risklər mənfi makroiqtisadi nəticələrə doğru meyllidir (>55),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"
+məlumat əsaslı (RU),2028,oil,Neft qiymətləri,12.0,2.718,32.616,2.718,,,R01,1.0,,siqnal: neytral (z=-0.22; proqnoz)
+məlumat əsaslı (RU),2028,geo,Geosiyasi risklər,2.0,2.5,5.0,,,,R06,0.0,,"kəmiyyət komponenti yoxdur → neytral 2,5"
+məlumat əsaslı (RU),2028,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.6,5.2,2.6,,,R05,1.0,,siqnal: neytral (z=-0.20; proqnoz)
+məlumat əsaslı (RU),2028,imp,İdxal qiymətləri,2.0,2.49,4.98,2.49,,,,1.0,,siqnal: neytral (z=-0.02; proqnoz)
+məlumat əsaslı (RU),2028,food,Ərzaq qiymətləri,2.0,2.333,4.666,2.333,,,,1.0,,siqnal: neytral (z=-0.17; proqnoz)
+məlumat əsaslı (RU),2028,CƏMİ,Ümumi risk indeksi,20.0,,52.46,,,,,,risklər balanslaşdırılıb (45–55),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"
+məlumat əsaslı (RU),2029,oil,Neft qiymətləri,12.0,2.715,32.58,2.715,,,R01,1.0,,siqnal: neytral (z=-0.22; proqnoz)
+məlumat əsaslı (RU),2029,geo,Geosiyasi risklər,2.0,2.5,5.0,,,,R06,0.0,,"kəmiyyət komponenti yoxdur → neytral 2,5"
+məlumat əsaslı (RU),2029,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.613,5.226,2.613,,,R05,1.0,,siqnal: neytral (z=-0.23; proqnoz)
+məlumat əsaslı (RU),2029,imp,İdxal qiymətləri,2.0,2.478,4.956,2.478,,,,1.0,,siqnal: neytral (z=-0.04; proqnoz)
+məlumat əsaslı (RU),2029,food,Ərzaq qiymətləri,2.0,2.333,4.666,2.333,,,,1.0,,siqnal: neytral (z=-0.17; proqnoz)
+məlumat əsaslı (RU),2029,CƏMİ,Ümumi risk indeksi,20.0,,52.43,,,,,,risklər balanslaşdırılıb (45–55),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"
+məlumat əsaslı (RU),2030,oil,Neft qiymətləri,12.0,2.727,32.724,2.727,,,R01,1.0,,siqnal: neytral (z=-0.23; proqnoz)
+məlumat əsaslı (RU),2030,geo,Geosiyasi risklər,2.0,2.5,5.0,,,,R06,0.0,,"kəmiyyət komponenti yoxdur → neytral 2,5"
+məlumat əsaslı (RU),2030,tp,Regional ticarət tərəfdaşlarının artımı,2.0,2.624,5.248,2.624,,,R05,1.0,,siqnal: neytral (z=-0.25; proqnoz)
+məlumat əsaslı (RU),2030,imp,İdxal qiymətləri,2.0,2.494,4.988,2.494,,,,1.0,,siqnal: neytral (z=-0.01; proqnoz)
+məlumat əsaslı (RU),2030,food,Ərzaq qiymətləri,2.0,2.333,4.666,2.333,,,,1.0,,siqnal: neytral (z=-0.17; proqnoz)
+məlumat əsaslı (RU),2030,CƏMİ,Ümumi risk indeksi,20.0,,52.63,,,,,,risklər balanslaşdırılıb (45–55),"SUMPRODUCT(bal, çəki); bal = mövcud komponentlərin sadə ortası"

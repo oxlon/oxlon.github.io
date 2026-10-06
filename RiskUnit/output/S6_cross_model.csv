@@ -1,0 +1,681 @@
+amil,konsept,konsept_ad,il,model,deyer,vahid,miqyaslama
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),1.16719,%,+1σ birbaşa
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),2.00266,%,+1σ birbaşa
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),2.18079,%,+1σ birbaşa
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),2.32393,%,+1σ birbaşa
+brent,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+brent,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0.397256,f.b.,+1σ birbaşa
+brent,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.282881,f.b.,+1σ birbaşa
+brent,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),0.059989,f.b.,+1σ birbaşa
+brent,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),0.0481883,f.b.,+1σ birbaşa
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.0814181,% ÜDM,+1σ birbaşa
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),-0.0182799,% ÜDM,+1σ birbaşa
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),-0.053062,% ÜDM,+1σ birbaşa
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),-0.0912357,% ÜDM,+1σ birbaşa
+brent,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+brent,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),4.35352,% ÜDM,+1σ birbaşa
+brent,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),3.8611,% ÜDM,+1σ birbaşa
+brent,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),3.60813,% ÜDM,+1σ birbaşa
+brent,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),3.34371,% ÜDM,+1σ birbaşa
+gas,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+gas,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),0.649952,%,+1σ birbaşa
+gas,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),0.700868,%,+1σ birbaşa
+gas,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),0.757181,%,+1σ birbaşa
+gas,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),0.793742,%,+1σ birbaşa
+gas,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+gas,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0.221941,f.b.,+1σ birbaşa
+gas,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.017366,f.b.,+1σ birbaşa
+gas,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),0.0192058,f.b.,+1σ birbaşa
+gas,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),0.0124742,f.b.,+1σ birbaşa
+gas,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+gas,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.0537906,% ÜDM,+1σ birbaşa
+gas,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),-0.0256291,% ÜDM,+1σ birbaşa
+gas,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),-0.072444,% ÜDM,+1σ birbaşa
+gas,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),-0.108783,% ÜDM,+1σ birbaşa
+gas,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+gas,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),4.33084,% ÜDM,+1σ birbaşa
+gas,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),3.63022,% ÜDM,+1σ birbaşa
+gas,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),3.39491,% ÜDM,+1σ birbaşa
+gas,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),3.05061,% ÜDM,+1σ birbaşa
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),-0.105719,%,+1σ birbaşa
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),-1.85594,%,+1σ birbaşa
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),-1.85768,%,+1σ birbaşa
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),-1.86226,%,+1σ birbaşa
+fx,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+fx,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),3.11837,f.b.,+1σ birbaşa
+fx,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),1.47395,f.b.,+1σ birbaşa
+fx,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),-0.000421497,f.b.,+1σ birbaşa
+fx,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),-0.00143235,f.b.,+1σ birbaşa
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),-0.0709876,% ÜDM,+1σ birbaşa
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),-0.107883,% ÜDM,+1σ birbaşa
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),-0.123328,% ÜDM,+1σ birbaşa
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),-0.141658,% ÜDM,+1σ birbaşa
+fx,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+fx,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),2.51126,% ÜDM,+1σ birbaşa
+fx,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),2.05519,% ÜDM,+1σ birbaşa
+fx,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),1.88728,% ÜDM,+1σ birbaşa
+fx,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),1.67616,% ÜDM,+1σ birbaşa
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),0.369475,%,+1σ birbaşa
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),0.376376,%,+1σ birbaşa
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),0.384294,%,+1σ birbaşa
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),0.394162,%,+1σ birbaşa
+partner,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+partner,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0.126356,f.b.,+1σ birbaşa
+partner,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.00236111,f.b.,+1σ birbaşa
+partner,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),0.00270994,f.b.,+1σ birbaşa
+partner,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),0.00337975,f.b.,+1σ birbaşa
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.0327781,% ÜDM,+1σ birbaşa
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),0.0368239,% ÜDM,+1σ birbaşa
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),0.0400916,% ÜDM,+1σ birbaşa
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),0.0436741,% ÜDM,+1σ birbaşa
+partner,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+partner,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),0.101583,% ÜDM,+1σ birbaşa
+partner,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),0.11401,% ÜDM,+1σ birbaşa
+partner,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),0.12427,% ÜDM,+1σ birbaşa
+partner,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),0.136166,% ÜDM,+1σ birbaşa
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),-0.538549,%,+1σ birbaşa
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),-0.534893,%,+1σ birbaşa
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),-0.532694,%,+1σ birbaşa
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),-0.532331,%,+1σ birbaşa
+rate,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+rate,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),-0.185086,f.b.,+1σ birbaşa
+rate,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.00126229,f.b.,+1σ birbaşa
+rate,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),0.000759466,f.b.,+1σ birbaşa
+rate,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),0.000125455,f.b.,+1σ birbaşa
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),-0.0980269,% ÜDM,+1σ birbaşa
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),-0.107227,% ÜDM,+1σ birbaşa
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),-0.11455,% ÜDM,+1σ birbaşa
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),-0.122446,% ÜDM,+1σ birbaşa
+rate,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+rate,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),0.376707,% ÜDM,+1σ birbaşa
+rate,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),0.374547,% ÜDM,+1σ birbaşa
+rate,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),0.368971,% ÜDM,+1σ birbaşa
+rate,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),0.366801,% ÜDM,+1σ birbaşa
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),3.17806,%,+1σ birbaşa
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),3.50642,%,+1σ birbaşa
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),3.75908,%,+1σ birbaşa
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),3.98458,%,+1σ birbaşa
+state_inv,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+state_inv,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),1.07073,f.b.,+1σ birbaşa
+state_inv,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.109093,f.b.,+1σ birbaşa
+state_inv,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),0.0837504,f.b.,+1σ birbaşa
+state_inv,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),0.0746365,f.b.,+1σ birbaşa
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),-5.1113,% ÜDM,+1σ birbaşa
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),-5.29732,% ÜDM,+1σ birbaşa
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),-5.35894,% ÜDM,+1σ birbaşa
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),-5.45332,% ÜDM,+1σ birbaşa
+state_inv,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+state_inv,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),-0.659082,% ÜDM,+1σ birbaşa
+state_inv,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.711859,% ÜDM,+1σ birbaşa
+state_inv,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-0.737585,% ÜDM,+1σ birbaşa
+state_inv,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),-0.75875,% ÜDM,+1σ birbaşa
+remit,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+remit,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),0.812294,%,+1σ birbaşa
+remit,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),0.814023,%,+1σ birbaşa
+remit,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),0.817613,%,+1σ birbaşa
+remit,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),0.823977,%,+1σ birbaşa
+remit,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+remit,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0.277135,f.b.,+1σ birbaşa
+remit,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.000588789,f.b.,+1σ birbaşa
+remit,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),0.00122347,f.b.,+1σ birbaşa
+remit,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),0.00217038,f.b.,+1σ birbaşa
+remit,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+remit,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.121072,% ÜDM,+1σ birbaşa
+remit,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),0.133879,% ÜDM,+1σ birbaşa
+remit,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),0.144235,% ÜDM,+1σ birbaşa
+remit,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),0.155375,% ÜDM,+1σ birbaşa
+remit,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+remit,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),-0.430448,% ÜDM,+1σ birbaşa
+remit,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.429694,% ÜDM,+1σ birbaşa
+remit,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-0.424921,% ÜDM,+1σ birbaşa
+remit,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),-0.424069,% ÜDM,+1σ birbaşa
+drought,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+drought,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),0.266035,%,+1σ birbaşa
+drought,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),0.00311291,%,+1σ birbaşa
+drought,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),0.00311488,%,+1σ birbaşa
+drought,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),0.00312194,%,+1σ birbaşa
+drought,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+drought,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0.0910319,f.b.,+1σ birbaşa
+drought,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),-0.0901722,f.b.,+1σ birbaşa
+drought,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),6.7665e-07,f.b.,+1σ birbaşa
+drought,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),2.42743e-06,f.b.,+1σ birbaşa
+drought,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+drought,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.0235495,% ÜDM,+1σ birbaşa
+drought,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),0.00184205,% ÜDM,+1σ birbaşa
+drought,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),0.00182741,% ÜDM,+1σ birbaşa
+drought,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),0.00183059,% ÜDM,+1σ birbaşa
+drought,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+drought,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),0.00748013,% ÜDM,+1σ birbaşa
+drought,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.0008698,% ÜDM,+1σ birbaşa
+drought,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-0.000853861,% ÜDM,+1σ birbaşa
+drought,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),-0.00084543,% ÜDM,+1σ birbaşa
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),-0.138843,%,+1σ birbaşa
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),-0.214557,%,+1σ birbaşa
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),-0.221442,%,+1σ birbaşa
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),-0.228416,%,+1σ birbaşa
+food,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+food,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0.836984,f.b.,+1σ birbaşa
+food,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.396664,f.b.,+1σ birbaşa
+food,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),-0.00237038,f.b.,+1σ birbaşa
+food,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),-0.00240335,f.b.,+1σ birbaşa
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.00499953,% ÜDM,+1σ birbaşa
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),0.00987354,% ÜDM,+1σ birbaşa
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),0.0118725,% ÜDM,+1σ birbaşa
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),0.0133877,% ÜDM,+1σ birbaşa
+food,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+food,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),-0.00871816,% ÜDM,+1σ birbaşa
+food,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.00869282,% ÜDM,+1σ birbaşa
+food,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-0.00451739,% ÜDM,+1σ birbaşa
+food,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),6.66773e-05,% ÜDM,+1σ birbaşa
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),-0.092128,%,+1σ birbaşa
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),-0.142403,%,+1σ birbaşa
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),-0.146983,%,+1σ birbaşa
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),-0.151621,%,+1σ birbaşa
+import,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+import,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0.55458,f.b.,+1σ birbaşa
+import,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.262772,f.b.,+1σ birbaşa
+import,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),-0.00157577,f.b.,+1σ birbaşa
+import,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),-0.00159697,f.b.,+1σ birbaşa
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.00319138,% ÜDM,+1σ birbaşa
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),0.00635129,% ÜDM,+1σ birbaşa
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),0.00766917,% ÜDM,+1σ birbaşa
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),0.00866584,% ÜDM,+1σ birbaşa
+import,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+import,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),-0.00572543,% ÜDM,+1σ birbaşa
+import,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.00568618,% ÜDM,+1σ birbaşa
+import,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-0.00292319,% ÜDM,+1σ birbaşa
+import,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),0.000110512,% ÜDM,+1σ birbaşa
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),-0.842184,%,+1σ birbaşa
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),-0.886803,%,+1σ birbaşa
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),-0.914067,%,+1σ birbaşa
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),-0.941885,%,+1σ birbaşa
+costpush,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+costpush,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),5.18736,f.b.,+1σ birbaşa
+costpush,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),-0.0154552,f.b.,+1σ birbaşa
+costpush,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),-0.00945193,f.b.,+1σ birbaşa
+costpush,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),-0.00965452,f.b.,+1σ birbaşa
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.0482944,% ÜDM,+1σ birbaşa
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),0.0571254,% ÜDM,+1σ birbaşa
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),0.0659443,% ÜDM,+1σ birbaşa
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),0.0728036,% ÜDM,+1σ birbaşa
+costpush,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+costpush,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),-0.0612675,% ÜDM,+1σ birbaşa
+costpush,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.0404711,% ÜDM,+1σ birbaşa
+costpush,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-0.0229724,% ÜDM,+1σ birbaşa
+costpush,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),-0.00373643,% ÜDM,+1σ birbaşa
+geo,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+geo,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),0.294629,%,+1σ birbaşa
+geo,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),0.00950626,%,+1σ birbaşa
+geo,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),-0.00114136,%,+1σ birbaşa
+geo,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),-0.00185039,%,+1σ birbaşa
+geo,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+geo,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0.100788,f.b.,+1σ birbaşa
+geo,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),-0.0977806,f.b.,+1σ birbaşa
+geo,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),-0.00363432,f.b.,+1σ birbaşa
+geo,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),-0.000240671,f.b.,+1σ birbaşa
+geo,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+geo,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0.0395323,% ÜDM,+1σ birbaşa
+geo,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),0.00344507,% ÜDM,+1σ birbaşa
+geo,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),0.00338562,% ÜDM,+1σ birbaşa
+geo,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),0.00335969,% ÜDM,+1σ birbaşa
+geo,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+geo,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),-0.0495016,% ÜDM,+1σ birbaşa
+geo,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.000147341,% ÜDM,+1σ birbaşa
+geo,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-9.54172e-05,% ÜDM,+1σ birbaşa
+geo,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),-4.73584e-05,% ÜDM,+1σ birbaşa
+geo_stress,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+geo_stress,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),-0.435326,%,+1σ birbaşa
+geo_stress,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),0.00407904,%,+1σ birbaşa
+geo_stress,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),0.00410775,%,+1σ birbaşa
+geo_stress,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),0.00413952,%,+1σ birbaşa
+geo_stress,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+geo_stress,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),-0.149526,f.b.,+1σ birbaşa
+geo_stress,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.151184,f.b.,+1σ birbaşa
+geo_stress,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),9.86547e-06,f.b.,+1σ birbaşa
+geo_stress,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),1.0922e-05,f.b.,+1σ birbaşa
+geo_stress,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+geo_stress,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),-0.0562517,% ÜDM,+1σ birbaşa
+geo_stress,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),-0.00374709,% ÜDM,+1σ birbaşa
+geo_stress,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),-0.00363864,% ÜDM,+1σ birbaşa
+geo_stress,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),-0.00356909,% ÜDM,+1σ birbaşa
+geo_stress,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+geo_stress,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),0.119792,% ÜDM,+1σ birbaşa
+geo_stress,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.000339531,% ÜDM,+1σ birbaşa
+geo_stress,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-0.000358806,% ÜDM,+1σ birbaşa
+geo_stress,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),-0.000381335,% ÜDM,+1σ birbaşa
+npl,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+npl,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+npl,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+npl,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+npl,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+npl,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+npl,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+npl,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+npl,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+npl,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+npl,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+npl,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+quake,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,MikroUnit zənciri (RU S1),0,%,+1σ birbaşa
+quake,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,MikroUnit zənciri (RU S1),-0.483909,%,+1σ birbaşa
+quake,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,MikroUnit zənciri (RU S1),-0.0774193,%,+1σ birbaşa
+quake,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,MikroUnit zənciri (RU S1),0.0764503,%,+1σ birbaşa
+quake,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,MikroUnit zənciri (RU S1),0.0450356,%,+1σ birbaşa
+quake,cpi_infl,İnflyasiya,2026,MikroUnit zənciri (RU S1),0,f.b.,+1σ birbaşa
+quake,cpi_infl,İnflyasiya,2027,MikroUnit zənciri (RU S1),-0.166258,f.b.,+1σ birbaşa
+quake,cpi_infl,İnflyasiya,2028,MikroUnit zənciri (RU S1),0.139952,f.b.,+1σ birbaşa
+quake,cpi_infl,İnflyasiya,2029,MikroUnit zənciri (RU S1),0.0528585,f.b.,+1σ birbaşa
+quake,cpi_infl,İnflyasiya,2030,MikroUnit zənciri (RU S1),-0.0107951,f.b.,+1σ birbaşa
+quake,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+quake,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit zənciri (RU S1),-0.388352,% ÜDM,+1σ birbaşa
+quake,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit zənciri (RU S1),-0.704136,% ÜDM,+1σ birbaşa
+quake,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit zənciri (RU S1),-0.372005,% ÜDM,+1σ birbaşa
+quake,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit zənciri (RU S1),-0.0676131,% ÜDM,+1σ birbaşa
+quake,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2026,MikroUnit zənciri (RU S1),0,% ÜDM,+1σ birbaşa
+quake,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2027,MikroUnit zənciri (RU S1),0.0235922,% ÜDM,+1σ birbaşa
+quake,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2028,MikroUnit zənciri (RU S1),-0.044976,% ÜDM,+1σ birbaşa
+quake,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2029,MikroUnit zənciri (RU S1),-0.0351117,% ÜDM,+1σ birbaşa
+quake,ca_pct,Cari hesab (MikroUnit: mal ticarəti proksisi),2030,MikroUnit zənciri (RU S1),-0.00703435,% ÜDM,+1σ birbaşa
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,Nazirlik CAEM modeli — müqayisə,1.58216,%,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,Nazirlik CAEM modeli — müqayisə,4.39824,%,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,Nazirlik CAEM modeli — müqayisə,7.67537,%,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,Nazirlik CAEM modeli — müqayisə,11.0705,%,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,Nazirlik CAEM modeli — müqayisə,14.4047,%,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,cpi_infl,İnflyasiya,2026,Nazirlik CAEM modeli — müqayisə,0.465351,f.b.,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,cpi_infl,İnflyasiya,2027,Nazirlik CAEM modeli — müqayisə,0.836292,f.b.,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,cpi_infl,İnflyasiya,2028,Nazirlik CAEM modeli — müqayisə,0.925963,f.b.,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,cpi_infl,İnflyasiya,2029,Nazirlik CAEM modeli — müqayisə,0.795355,f.b.,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,cpi_infl,İnflyasiya,2030,Nazirlik CAEM modeli — müqayisə,0.577859,f.b.,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,Nazirlik CAEM modeli — müqayisə,-1.07628,% ÜDM,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,Nazirlik CAEM modeli — müqayisə,-2.20078,% ÜDM,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,Nazirlik CAEM modeli — müqayisə,-2.9507,% ÜDM,8a `dPoil` × 34.3 (səviyyə şoku)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,Nazirlik CAEM modeli — müqayisə,-3.22215,% ÜDM,8a `dPoil` × 34.3 (səviyyə şoku)
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,Nazirlik CAEM modeli — müqayisə,0,%,8a `dS` × 16.5 (səviyyə şoku)
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,Nazirlik CAEM modeli — müqayisə,0,%,8a `dS` × 16.5 (səviyyə şoku)
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,Nazirlik CAEM modeli — müqayisə,0,%,8a `dS` × 16.5 (səviyyə şoku)
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,Nazirlik CAEM modeli — müqayisə,0,%,8a `dS` × 16.5 (səviyyə şoku)
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,Nazirlik CAEM modeli — müqayisə,0,%,8a `dS` × 16.5 (səviyyə şoku)
+fx,cpi_infl,İnflyasiya,2026,Nazirlik CAEM modeli — müqayisə,0,f.b.,8a `dS` × 16.5 (səviyyə şoku)
+fx,cpi_infl,İnflyasiya,2027,Nazirlik CAEM modeli — müqayisə,0,f.b.,8a `dS` × 16.5 (səviyyə şoku)
+fx,cpi_infl,İnflyasiya,2028,Nazirlik CAEM modeli — müqayisə,0,f.b.,8a `dS` × 16.5 (səviyyə şoku)
+fx,cpi_infl,İnflyasiya,2029,Nazirlik CAEM modeli — müqayisə,0,f.b.,8a `dS` × 16.5 (səviyyə şoku)
+fx,cpi_infl,İnflyasiya,2030,Nazirlik CAEM modeli — müqayisə,0,f.b.,8a `dS` × 16.5 (səviyyə şoku)
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dS` × 16.5 (səviyyə şoku)
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dS` × 16.5 (səviyyə şoku)
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dS` × 16.5 (səviyyə şoku)
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dS` × 16.5 (səviyyə şoku)
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dS` × 16.5 (səviyyə şoku)
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,Nazirlik CAEM modeli — müqayisə,0.680197,%,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,Nazirlik CAEM modeli — müqayisə,0.886638,%,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,Nazirlik CAEM modeli — müqayisə,0.79533,%,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,Nazirlik CAEM modeli — müqayisə,0.632311,%,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,Nazirlik CAEM modeli — müqayisə,0.512448,%,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,cpi_infl,İnflyasiya,2026,Nazirlik CAEM modeli — müqayisə,0.200057,f.b.,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,cpi_infl,İnflyasiya,2027,Nazirlik CAEM modeli — müqayisə,0.324723,f.b.,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,cpi_infl,İnflyasiya,2028,Nazirlik CAEM modeli — müqayisə,0.29914,f.b.,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,cpi_infl,İnflyasiya,2029,Nazirlik CAEM modeli — müqayisə,0.187872,f.b.,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,cpi_infl,İnflyasiya,2030,Nazirlik CAEM modeli — müqayisə,0.073389,f.b.,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,Nazirlik CAEM modeli — müqayisə,-0.0492956,% ÜDM,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,Nazirlik CAEM modeli — müqayisə,-0.0859418,% ÜDM,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,Nazirlik CAEM modeli — müqayisə,-0.0908812,% ÜDM,8a `dy_f` × 2.68 (səviyyə şoku)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,Nazirlik CAEM modeli — müqayisə,-0.0708334,% ÜDM,8a `dy_f` × 2.68 (səviyyə şoku)
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,Nazirlik CAEM modeli — müqayisə,-0.303139,%,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,Nazirlik CAEM modeli — müqayisə,-0.775739,%,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,Nazirlik CAEM modeli — müqayisə,-1.27731,%,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,Nazirlik CAEM modeli — müqayisə,-1.73894,%,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,Nazirlik CAEM modeli — müqayisə,-2.1517,%,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,cpi_infl,İnflyasiya,2026,Nazirlik CAEM modeli — müqayisə,-0.0891575,f.b.,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,cpi_infl,İnflyasiya,2027,Nazirlik CAEM modeli — müqayisə,-0.269529,f.b.,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,cpi_infl,İnflyasiya,2028,Nazirlik CAEM modeli — müqayisə,-0.478497,f.b.,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,cpi_infl,İnflyasiya,2029,Nazirlik CAEM modeli — müqayisə,-0.656717,f.b.,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,cpi_infl,İnflyasiya,2030,Nazirlik CAEM modeli — müqayisə,-0.778207,f.b.,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,Nazirlik CAEM modeli — müqayisə,0.021968,% ÜDM,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,Nazirlik CAEM modeli — müqayisə,0.0666021,% ÜDM,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,Nazirlik CAEM modeli — müqayisə,0.122459,% ÜDM,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,Nazirlik CAEM modeli — müqayisə,0.176244,% ÜDM,8a `CR` × 3.81 (davamlı axın: IRF cəmi)
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,Nazirlik CAEM modeli — müqayisə,0.0106114,%,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,Nazirlik CAEM modeli — müqayisə,0.10779,%,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,Nazirlik CAEM modeli — müqayisə,0.313821,%,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,Nazirlik CAEM modeli — müqayisə,0.610552,%,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,Nazirlik CAEM modeli — müqayisə,0.966495,%,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,cpi_infl,İnflyasiya,2026,Nazirlik CAEM modeli — müqayisə,-0.0943751,f.b.,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,cpi_infl,İnflyasiya,2027,Nazirlik CAEM modeli — müqayisə,-0.236351,f.b.,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,cpi_infl,İnflyasiya,2028,Nazirlik CAEM modeli — müqayisə,-0.372325,f.b.,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,cpi_infl,İnflyasiya,2029,Nazirlik CAEM modeli — müqayisə,-0.477441,f.b.,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,cpi_infl,İnflyasiya,2030,Nazirlik CAEM modeli — müqayisə,-0.551334,f.b.,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,Nazirlik CAEM modeli — müqayisə,0.00469146,% ÜDM,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,Nazirlik CAEM modeli — müqayisə,0.0131423,% ÜDM,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,Nazirlik CAEM modeli — müqayisə,0.0225135,% ÜDM,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,Nazirlik CAEM modeli — müqayisə,0.0306524,% ÜDM,8a `gcap_y` × 3.9 (davamlı axın: IRF cəmi)
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,Nazirlik CAEM modeli — müqayisə,-0.113588,%,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,Nazirlik CAEM modeli — müqayisə,-0.294306,%,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,Nazirlik CAEM modeli — müqayisə,-0.461254,%,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,Nazirlik CAEM modeli — müqayisə,-0.552495,%,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,Nazirlik CAEM modeli — müqayisə,-0.548752,%,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,cpi_infl,İnflyasiya,2026,Nazirlik CAEM modeli — müqayisə,1.01023,f.b.,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,cpi_infl,İnflyasiya,2027,Nazirlik CAEM modeli — müqayisə,1.21738,f.b.,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,cpi_infl,İnflyasiya,2028,Nazirlik CAEM modeli — müqayisə,1.14864,f.b.,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,cpi_infl,İnflyasiya,2029,Nazirlik CAEM modeli — müqayisə,1.00353,f.b.,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,cpi_infl,İnflyasiya,2030,Nazirlik CAEM modeli — müqayisə,0.867086,f.b.,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,Nazirlik CAEM modeli — müqayisə,-0.0502117,% ÜDM,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,Nazirlik CAEM modeli — müqayisə,-0.115294,% ÜDM,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,Nazirlik CAEM modeli — müqayisə,-0.167302,% ÜDM,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,Nazirlik CAEM modeli — müqayisə,-0.196355,% ÜDM,8a `dP` × 1.04 (davamlı axın: IRF cəmi)
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,Nazirlik CAEM modeli — müqayisə,-0.0752437,%,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,Nazirlik CAEM modeli — müqayisə,-0.194956,%,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,Nazirlik CAEM modeli — müqayisə,-0.305547,%,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,Nazirlik CAEM modeli — müqayisə,-0.365988,%,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,Nazirlik CAEM modeli — müqayisə,-0.363508,%,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,cpi_infl,İnflyasiya,2026,Nazirlik CAEM modeli — müqayisə,0.669206,f.b.,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,cpi_infl,İnflyasiya,2027,Nazirlik CAEM modeli — müqayisə,0.806424,f.b.,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,cpi_infl,İnflyasiya,2028,Nazirlik CAEM modeli — müqayisə,0.760891,f.b.,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,cpi_infl,İnflyasiya,2029,Nazirlik CAEM modeli — müqayisə,0.664764,f.b.,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,cpi_infl,İnflyasiya,2030,Nazirlik CAEM modeli — müqayisə,0.574381,f.b.,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,Nazirlik CAEM modeli — müqayisə,-0.0332616,% ÜDM,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,Nazirlik CAEM modeli — müqayisə,-0.0763741,% ÜDM,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,Nazirlik CAEM modeli — müqayisə,-0.110825,% ÜDM,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,Nazirlik CAEM modeli — müqayisə,-0.130071,% ÜDM,8a `dP` × 0.691 (davamlı axın: IRF cəmi)
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,Nazirlik CAEM modeli — müqayisə,-0.478545,%,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,Nazirlik CAEM modeli — müqayisə,-1.23991,%,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,Nazirlik CAEM modeli — müqayisə,-1.94326,%,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,Nazirlik CAEM modeli — müqayisə,-2.32766,%,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,Nazirlik CAEM modeli — müqayisə,-2.31189,%,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,cpi_infl,İnflyasiya,2026,Nazirlik CAEM modeli — müqayisə,4.25611,f.b.,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,cpi_infl,İnflyasiya,2027,Nazirlik CAEM modeli — müqayisə,5.12881,f.b.,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,cpi_infl,İnflyasiya,2028,Nazirlik CAEM modeli — müqayisə,4.83922,f.b.,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,cpi_infl,İnflyasiya,2029,Nazirlik CAEM modeli — müqayisə,4.22786,f.b.,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,cpi_infl,İnflyasiya,2030,Nazirlik CAEM modeli — müqayisə,3.65303,f.b.,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,Nazirlik CAEM modeli — müqayisə,0,% ÜDM,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,Nazirlik CAEM modeli — müqayisə,-0.211542,% ÜDM,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,Nazirlik CAEM modeli — müqayisə,-0.485734,% ÜDM,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,Nazirlik CAEM modeli — müqayisə,-0.704843,% ÜDM,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,Nazirlik CAEM modeli — müqayisə,-0.827242,% ÜDM,8a `dP` × 4.4 (davamlı axın: IRF cəmi)
+brent,gdp_level,Real ÜDM səviyyəsi,2026,MikroUnit FR1,0.420238,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2026,MikroUnit FR1,0.56281,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2026,MikroUnit FR1,0.192666,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit FR1,0.308265,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,policy_rate,Uçot dərəcəsi,2026,MikroUnit FR1,,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_exports,Qeyri-neft ixracı (real),2026,MikroUnit FR1,0.302825,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,gdp_level,Real ÜDM səviyyəsi,2027,MikroUnit FR1,0.161159,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2027,MikroUnit FR1,0.667756,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2027,MikroUnit FR1,0.0358131,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit FR1,0.205586,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,policy_rate,Uçot dərəcəsi,2027,MikroUnit FR1,,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_exports,Qeyri-neft ixracı (real),2027,MikroUnit FR1,0.356545,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,gdp_level,Real ÜDM səviyyəsi,2028,MikroUnit FR1,-0.0448797,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2028,MikroUnit FR1,0.766356,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2028,MikroUnit FR1,0.0337731,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit FR1,0.106533,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,policy_rate,Uçot dərəcəsi,2028,MikroUnit FR1,,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_exports,Qeyri-neft ixracı (real),2028,MikroUnit FR1,0.416158,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,gdp_level,Real ÜDM səviyyəsi,2029,MikroUnit FR1,-0.0428398,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2029,MikroUnit FR1,0.818489,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2029,MikroUnit FR1,0.0179066,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit FR1,0.0718529,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,policy_rate,Uçot dərəcəsi,2029,MikroUnit FR1,,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_exports,Qeyri-neft ixracı (real),2029,MikroUnit FR1,0.453331,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,gdp_level,Real ÜDM səviyyəsi,2030,MikroUnit FR1,-0.157306,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2030,MikroUnit FR1,0.863142,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2030,MikroUnit FR1,0.0151866,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit FR1,0.0364931,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,policy_rate,Uçot dərəcəsi,2030,MikroUnit FR1,,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,nonoil_exports,Qeyri-neft ixracı (real),2030,MikroUnit FR1,0.490957,"baza ilə fərq, %",C5 `brent10` × 2.27 (xətti miqyas)
+brent,ca_pct,Cari hesab balansı,2026,OxLon FR12 (Brent lo80/hi80 yollarından qismən həssaslıq),8.81298,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,ca_pct,Cari hesab balansı,2027,OxLon FR12 (Brent lo80/hi80 yollarından qismən həssaslıq),7.89045,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,ca_pct,Cari hesab balansı,2028,OxLon FR12 (Brent lo80/hi80 yollarından qismən həssaslıq),6.99852,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,ca_pct,Cari hesab balansı,2029,OxLon FR12 (Brent lo80/hi80 yollarından qismən həssaslıq),6.5028,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,ca_pct,Cari hesab balansı,2030,OxLon FR12 (Brent lo80/hi80 yollarından qismən həssaslıq),5.82281,"ÜDM-ə %, baza ilə fərq",C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2026,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),4.98709,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2027,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),0.929555,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2028,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),0.140079,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2029,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),0.0169999,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2030,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),0.0158666,faiz bəndi,C5 `brent10` × 2.27 (xətti miqyas)
+partner,gdp_level,Real ÜDM səviyyəsi,2026,MikroUnit FR1,0.275242,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2026,MikroUnit FR1,0.368636,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,cpi_infl,İstehlak qiymətləri inflyasiyası,2026,MikroUnit FR1,0.125474,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit FR1,0.0312745,"ÜDM-ə %, baza ilə fərq",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,policy_rate,Uçot dərəcəsi,2026,MikroUnit FR1,,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2026,MikroUnit FR1,3.62792,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,gdp_level,Real ÜDM səviyyəsi,2027,MikroUnit FR1,0.285202,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2027,MikroUnit FR1,0.371482,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,cpi_infl,İstehlak qiymətləri inflyasiyası,2027,MikroUnit FR1,0.000966422,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit FR1,0.0352207,"ÜDM-ə %, baza ilə fərq",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,policy_rate,Uçot dərəcəsi,2027,MikroUnit FR1,,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2027,MikroUnit FR1,3.62768,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,gdp_level,Real ÜDM səviyyəsi,2028,MikroUnit FR1,0.297067,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2028,MikroUnit FR1,0.378354,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,cpi_infl,İstehlak qiymətləri inflyasiyası,2028,MikroUnit FR1,0.00233552,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit FR1,0.0392743,"ÜDM-ə %, baza ilə fərq",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,policy_rate,Uçot dərəcəsi,2028,MikroUnit FR1,,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2028,MikroUnit FR1,3.62749,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,gdp_level,Real ÜDM səviyyəsi,2029,MikroUnit FR1,0.304396,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2029,MikroUnit FR1,0.386247,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,cpi_infl,İstehlak qiymətləri inflyasiyası,2029,MikroUnit FR1,0.00268451,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit FR1,0.0425226,"ÜDM-ə %, baza ilə fərq",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,policy_rate,Uçot dərəcəsi,2029,MikroUnit FR1,,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2029,MikroUnit FR1,3.62728,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,gdp_level,Real ÜDM səviyyəsi,2030,MikroUnit FR1,0.315966,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2030,MikroUnit FR1,0.396099,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,cpi_infl,İstehlak qiymətləri inflyasiyası,2030,MikroUnit FR1,0.00332879,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit FR1,0.046093,"ÜDM-ə %, baza ilə fərq",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,policy_rate,Uçot dərəcəsi,2030,MikroUnit FR1,,faiz bəndi,C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2030,MikroUnit FR1,3.6272,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2026,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),12.2628,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2027,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),12.2628,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2028,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),12.2628,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2029,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),12.2628,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+partner,nonoil_exports,Qeyri-neft ixracı (real),2030,OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi),12.2628,"baza ilə fərq, %",C5 `extdem10` × 0.268 (xətti miqyas)
+rate,gdp_level,Real ÜDM səviyyəsi,2026,MikroUnit FR1,-0.408348,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2026,MikroUnit FR1,-0.546816,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,cpi_infl,İstehlak qiymətləri inflyasiyası,2026,MikroUnit FR1,-0.187104,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit FR1,-0.0966989,"ÜDM-ə %, baza ilə fərq",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,policy_rate,Uçot dərəcəsi,2026,MikroUnit FR1,,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_exports,Qeyri-neft ixracı (real),2026,MikroUnit FR1,-0.00457746,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,gdp_level,Real ÜDM səviyyəsi,2027,MikroUnit FR1,-0.413116,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2027,MikroUnit FR1,-0.538043,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,cpi_infl,İstehlak qiymətləri inflyasiyası,2027,MikroUnit FR1,0.00305164,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit FR1,-0.105854,"ÜDM-ə %, baza ilə fərq",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,policy_rate,Uçot dərəcəsi,2027,MikroUnit FR1,,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_exports,Qeyri-neft ixracı (real),2027,MikroUnit FR1,-0.00381455,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,gdp_level,Real ÜDM səviyyəsi,2028,MikroUnit FR1,-0.41941,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2028,MikroUnit FR1,-0.534228,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,cpi_infl,İstehlak qiymətləri inflyasiyası,2028,MikroUnit FR1,0.00133509,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit FR1,-0.115009,"ÜDM-ə %, baza ilə fərq",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,policy_rate,Uçot dərəcəsi,2028,MikroUnit FR1,,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_exports,Qeyri-neft ixracı (real),2028,MikroUnit FR1,-0.00324237,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,gdp_level,Real ÜDM səviyyəsi,2029,MikroUnit FR1,-0.418838,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2029,MikroUnit FR1,-0.53213,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,cpi_infl,İstehlak qiymətləri inflyasiyası,2029,MikroUnit FR1,0.00076291,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit FR1,-0.122256,"ÜDM-ə %, baza ilə fərq",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,policy_rate,Uçot dərəcəsi,2029,MikroUnit FR1,,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_exports,Qeyri-neft ixracı (real),2029,MikroUnit FR1,-0.00247946,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,gdp_level,Real ÜDM səviyyəsi,2030,MikroUnit FR1,-0.423415,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2030,MikroUnit FR1,-0.531558,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,cpi_infl,İstehlak qiymətləri inflyasiyası,2030,MikroUnit FR1,0.000190728,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit FR1,-0.130267,"ÜDM-ə %, baza ilə fərq",C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,policy_rate,Uçot dərəcəsi,2030,MikroUnit FR1,,faiz bəndi,C5 `rate_m200` × -1.91 (xətti miqyas)
+rate,nonoil_exports,Qeyri-neft ixracı (real),2030,MikroUnit FR1,-0.00190728,"baza ilə fərq, %",C5 `rate_m200` × -1.91 (xətti miqyas)
+state_inv,gdp_level,Real ÜDM səviyyəsi,2026,MikroUnit FR1,2.46432,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2026,MikroUnit FR1,3.30018,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,cpi_infl,İstehlak qiymətləri inflyasiyası,2026,MikroUnit FR1,1.12572,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,MikroUnit FR1,-5.1901,"ÜDM-ə %, baza ilə fərq",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,policy_rate,Uçot dərəcəsi,2026,MikroUnit FR1,,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_exports,Qeyri-neft ixracı (real),2026,MikroUnit FR1,1.89383,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,gdp_level,Real ÜDM səviyyəsi,2027,MikroUnit FR1,2.83542,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2027,MikroUnit FR1,3.68831,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,cpi_infl,İstehlak qiymətləri inflyasiyası,2027,MikroUnit FR1,0.131624,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,MikroUnit FR1,-5.30967,"ÜDM-ə %, baza ilə fərq",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,policy_rate,Uçot dərəcəsi,2027,MikroUnit FR1,,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_exports,Qeyri-neft ixracı (real),2027,MikroUnit FR1,2.07264,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,gdp_level,Real ÜDM səviyyəsi,2028,MikroUnit FR1,3.11357,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2028,MikroUnit FR1,3.95688,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,cpi_infl,İstehlak qiymətləri inflyasiyası,2028,MikroUnit FR1,0.091179,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,MikroUnit FR1,-5.40865,"ÜDM-ə %, baza ilə fərq",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,policy_rate,Uçot dərəcəsi,2028,MikroUnit FR1,,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_exports,Qeyri-neft ixracı (real),2028,MikroUnit FR1,2.24116,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,gdp_level,Real ÜDM səviyyəsi,2029,MikroUnit FR1,3.27783,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2029,MikroUnit FR1,4.14634,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,cpi_infl,İstehlak qiymətləri inflyasiyası,2029,MikroUnit FR1,0.0645703,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,MikroUnit FR1,-5.38346,"ÜDM-ə %, baza ilə fərq",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,policy_rate,Uçot dərəcəsi,2029,MikroUnit FR1,,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_exports,Qeyri-neft ixracı (real),2029,MikroUnit FR1,2.38662,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,gdp_level,Real ÜDM səviyyəsi,2030,MikroUnit FR1,3.44884,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_level,Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi,2030,MikroUnit FR1,4.30989,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,cpi_infl,İstehlak qiymətləri inflyasiyası,2030,MikroUnit FR1,0.055346,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,MikroUnit FR1,-5.39481,"ÜDM-ə %, baza ilə fərq",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,policy_rate,Uçot dərəcəsi,2030,MikroUnit FR1,,faiz bəndi,C5 `stateinv1bn` × 3.55 (xətti miqyas)
+state_inv,nonoil_exports,Qeyri-neft ixracı (real),2030,MikroUnit FR1,2.53846,"baza ilə fərq, %",C5 `stateinv1bn` × 3.55 (xətti miqyas)
+brent,cpi_infl,İnflyasiya,2026,dispersiya (modellər arası),0.465351,f.b.,max − min; n_model = 2
+brent,cpi_infl,İnflyasiya,2027,dispersiya (modellər arası),0.439036,f.b.,max − min; n_model = 2
+brent,cpi_infl,İnflyasiya,2028,dispersiya (modellər arası),0.643081,f.b.,max − min; n_model = 2
+brent,cpi_infl,İnflyasiya,2029,dispersiya (modellər arası),0.735366,f.b.,max − min; n_model = 2
+brent,cpi_infl,İnflyasiya,2030,dispersiya (modellər arası),0.529671,f.b.,max − min; n_model = 2
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2026,dispersiya (modellər arası),4.79443,faiz bəndi,max − min; n_model = 2
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2027,dispersiya (modellər arası),0.893742,faiz bəndi,max − min; n_model = 2
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2028,dispersiya (modellər arası),0.106306,faiz bəndi,max − min; n_model = 2
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2029,dispersiya (modellər arası),0.000906662,faiz bəndi,max − min; n_model = 2
+brent,cpi_infl,İstehlak qiymətləri inflyasiyası,2030,dispersiya (modellər arası),0.000679996,faiz bəndi,max − min; n_model = 2
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,dispersiya (modellər arası),0,% ÜDM,max − min; n_model = 2
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,dispersiya (modellər arası),1.1577,% ÜDM,max − min; n_model = 2
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,dispersiya (modellər arası),2.1825,% ÜDM,max − min; n_model = 2
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,dispersiya (modellər arası),2.89764,% ÜDM,max − min; n_model = 2
+brent,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,dispersiya (modellər arası),3.13092,% ÜDM,max − min; n_model = 2
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,dispersiya (modellər arası),1.58216,%,max − min; n_model = 2
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,dispersiya (modellər arası),3.23105,%,max − min; n_model = 2
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,dispersiya (modellər arası),5.67271,%,max − min; n_model = 2
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,dispersiya (modellər arası),8.88968,%,max − min; n_model = 2
+brent,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,dispersiya (modellər arası),12.0808,%,max − min; n_model = 2
+costpush,cpi_infl,İnflyasiya,2026,dispersiya (modellər arası),4.25611,f.b.,max − min; n_model = 2
+costpush,cpi_infl,İnflyasiya,2027,dispersiya (modellər arası),0.0585522,f.b.,max − min; n_model = 2
+costpush,cpi_infl,İnflyasiya,2028,dispersiya (modellər arası),4.85467,f.b.,max − min; n_model = 2
+costpush,cpi_infl,İnflyasiya,2029,dispersiya (modellər arası),4.23731,f.b.,max − min; n_model = 2
+costpush,cpi_infl,İnflyasiya,2030,dispersiya (modellər arası),3.66268,f.b.,max − min; n_model = 2
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,dispersiya (modellər arası),0,% ÜDM,max − min; n_model = 2
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,dispersiya (modellər arası),0.259836,% ÜDM,max − min; n_model = 2
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,dispersiya (modellər arası),0.542859,% ÜDM,max − min; n_model = 2
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,dispersiya (modellər arası),0.770787,% ÜDM,max − min; n_model = 2
+costpush,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,dispersiya (modellər arası),0.900046,% ÜDM,max − min; n_model = 2
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,dispersiya (modellər arası),0.478545,%,max − min; n_model = 2
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,dispersiya (modellər arası),0.397725,%,max − min; n_model = 2
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,dispersiya (modellər arası),1.05646,%,max − min; n_model = 2
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,dispersiya (modellər arası),1.41359,%,max − min; n_model = 2
+costpush,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,dispersiya (modellər arası),1.37,%,max − min; n_model = 2
+food,cpi_infl,İnflyasiya,2026,dispersiya (modellər arası),1.01023,f.b.,max − min; n_model = 2
+food,cpi_infl,İnflyasiya,2027,dispersiya (modellər arası),0.380394,f.b.,max − min; n_model = 2
+food,cpi_infl,İnflyasiya,2028,dispersiya (modellər arası),0.751977,f.b.,max − min; n_model = 2
+food,cpi_infl,İnflyasiya,2029,dispersiya (modellər arası),1.0059,f.b.,max − min; n_model = 2
+food,cpi_infl,İnflyasiya,2030,dispersiya (modellər arası),0.86949,f.b.,max − min; n_model = 2
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,dispersiya (modellər arası),0,% ÜDM,max − min; n_model = 2
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,dispersiya (modellər arası),0.0552112,% ÜDM,max − min; n_model = 2
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,dispersiya (modellər arası),0.125168,% ÜDM,max − min; n_model = 2
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,dispersiya (modellər arası),0.179175,% ÜDM,max − min; n_model = 2
+food,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,dispersiya (modellər arası),0.209743,% ÜDM,max − min; n_model = 2
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,dispersiya (modellər arası),0.113588,%,max − min; n_model = 2
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,dispersiya (modellər arası),0.155463,%,max − min; n_model = 2
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,dispersiya (modellər arası),0.246697,%,max − min; n_model = 2
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,dispersiya (modellər arası),0.331053,%,max − min; n_model = 2
+food,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,dispersiya (modellər arası),0.320337,%,max − min; n_model = 2
+fx,cpi_infl,İnflyasiya,2026,dispersiya (modellər arası),0,f.b.,max − min; n_model = 2
+fx,cpi_infl,İnflyasiya,2027,dispersiya (modellər arası),3.11837,f.b.,max − min; n_model = 2
+fx,cpi_infl,İnflyasiya,2028,dispersiya (modellər arası),1.47395,f.b.,max − min; n_model = 2
+fx,cpi_infl,İnflyasiya,2029,dispersiya (modellər arası),0.000421497,f.b.,max − min; n_model = 2
+fx,cpi_infl,İnflyasiya,2030,dispersiya (modellər arası),0.00143235,f.b.,max − min; n_model = 2
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,dispersiya (modellər arası),0,% ÜDM,max − min; n_model = 2
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,dispersiya (modellər arası),0.0709876,% ÜDM,max − min; n_model = 2
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,dispersiya (modellər arası),0.107883,% ÜDM,max − min; n_model = 2
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,dispersiya (modellər arası),0.123328,% ÜDM,max − min; n_model = 2
+fx,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,dispersiya (modellər arası),0.141658,% ÜDM,max − min; n_model = 2
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,dispersiya (modellər arası),0,%,max − min; n_model = 2
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,dispersiya (modellər arası),0.105719,%,max − min; n_model = 2
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,dispersiya (modellər arası),1.85594,%,max − min; n_model = 2
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,dispersiya (modellər arası),1.85768,%,max − min; n_model = 2
+fx,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,dispersiya (modellər arası),1.86226,%,max − min; n_model = 2
+import,cpi_infl,İnflyasiya,2026,dispersiya (modellər arası),0.669206,f.b.,max − min; n_model = 2
+import,cpi_infl,İnflyasiya,2027,dispersiya (modellər arası),0.251844,f.b.,max − min; n_model = 2
+import,cpi_infl,İnflyasiya,2028,dispersiya (modellər arası),0.498118,f.b.,max − min; n_model = 2
+import,cpi_infl,İnflyasiya,2029,dispersiya (modellər arası),0.66634,f.b.,max − min; n_model = 2
+import,cpi_infl,İnflyasiya,2030,dispersiya (modellər arası),0.575978,f.b.,max − min; n_model = 2
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,dispersiya (modellər arası),0,% ÜDM,max − min; n_model = 2
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,dispersiya (modellər arası),0.036453,% ÜDM,max − min; n_model = 2
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,dispersiya (modellər arası),0.0827253,% ÜDM,max − min; n_model = 2
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,dispersiya (modellər arası),0.118495,% ÜDM,max − min; n_model = 2
+import,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,dispersiya (modellər arası),0.138737,% ÜDM,max − min; n_model = 2
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,dispersiya (modellər arası),0.0752437,%,max − min; n_model = 2
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,dispersiya (modellər arası),0.102828,%,max − min; n_model = 2
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,dispersiya (modellər arası),0.163144,%,max − min; n_model = 2
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,dispersiya (modellər arası),0.219004,%,max − min; n_model = 2
+import,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,dispersiya (modellər arası),0.211888,%,max − min; n_model = 2
+partner,cpi_infl,İnflyasiya,2026,dispersiya (modellər arası),0.200057,f.b.,max − min; n_model = 2
+partner,cpi_infl,İnflyasiya,2027,dispersiya (modellər arası),0.198367,f.b.,max − min; n_model = 2
+partner,cpi_infl,İnflyasiya,2028,dispersiya (modellər arası),0.296779,f.b.,max − min; n_model = 2
+partner,cpi_infl,İnflyasiya,2029,dispersiya (modellər arası),0.185162,f.b.,max − min; n_model = 2
+partner,cpi_infl,İnflyasiya,2030,dispersiya (modellər arası),0.0700093,f.b.,max − min; n_model = 2
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,dispersiya (modellər arası),0,% ÜDM,max − min; n_model = 2
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,dispersiya (modellər arası),0.0820737,% ÜDM,max − min; n_model = 2
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,dispersiya (modellər arası),0.122766,% ÜDM,max − min; n_model = 2
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,dispersiya (modellər arası),0.130973,% ÜDM,max − min; n_model = 2
+partner,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,dispersiya (modellər arası),0.114507,% ÜDM,max − min; n_model = 2
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,dispersiya (modellər arası),0.680197,%,max − min; n_model = 2
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,dispersiya (modellər arası),0.517164,%,max − min; n_model = 2
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,dispersiya (modellər arası),0.418954,%,max − min; n_model = 2
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,dispersiya (modellər arası),0.248017,%,max − min; n_model = 2
+partner,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,dispersiya (modellər arası),0.118286,%,max − min; n_model = 2
+rate,cpi_infl,İnflyasiya,2026,dispersiya (modellər arası),0.0891575,f.b.,max − min; n_model = 2
+rate,cpi_infl,İnflyasiya,2027,dispersiya (modellər arası),0.0844429,f.b.,max − min; n_model = 2
+rate,cpi_infl,İnflyasiya,2028,dispersiya (modellər arası),0.47976,f.b.,max − min; n_model = 2
+rate,cpi_infl,İnflyasiya,2029,dispersiya (modellər arası),0.657476,f.b.,max − min; n_model = 2
+rate,cpi_infl,İnflyasiya,2030,dispersiya (modellər arası),0.778332,f.b.,max − min; n_model = 2
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,dispersiya (modellər arası),0,% ÜDM,max − min; n_model = 2
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,dispersiya (modellər arası),0.119995,% ÜDM,max − min; n_model = 2
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,dispersiya (modellər arası),0.173829,% ÜDM,max − min; n_model = 2
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,dispersiya (modellər arası),0.237008,% ÜDM,max − min; n_model = 2
+rate,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,dispersiya (modellər arası),0.29869,% ÜDM,max − min; n_model = 2
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,dispersiya (modellər arası),0.303139,%,max − min; n_model = 2
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,dispersiya (modellər arası),0.237189,%,max − min; n_model = 2
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,dispersiya (modellər arası),0.742413,%,max − min; n_model = 2
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,dispersiya (modellər arası),1.20625,%,max − min; n_model = 2
+rate,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,dispersiya (modellər arası),1.61937,%,max − min; n_model = 2
+state_inv,cpi_infl,İnflyasiya,2026,dispersiya (modellər arası),0.0943751,f.b.,max − min; n_model = 2
+state_inv,cpi_infl,İnflyasiya,2027,dispersiya (modellər arası),1.30708,f.b.,max − min; n_model = 2
+state_inv,cpi_infl,İnflyasiya,2028,dispersiya (modellər arası),0.481419,f.b.,max − min; n_model = 2
+state_inv,cpi_infl,İnflyasiya,2029,dispersiya (modellər arası),0.561191,f.b.,max − min; n_model = 2
+state_inv,cpi_infl,İnflyasiya,2030,dispersiya (modellər arası),0.62597,f.b.,max − min; n_model = 2
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2026,dispersiya (modellər arası),0,% ÜDM,max − min; n_model = 2
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2027,dispersiya (modellər arası),5.11599,% ÜDM,max − min; n_model = 2
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2028,dispersiya (modellər arası),5.31046,% ÜDM,max − min; n_model = 2
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2029,dispersiya (modellər arası),5.38146,% ÜDM,max − min; n_model = 2
+state_inv,fiscal_pct,Büdcə balansı (CAEM: ilkin balans),2030,dispersiya (modellər arası),5.48397,% ÜDM,max − min; n_model = 2
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2026,dispersiya (modellər arası),0.0106114,%,max − min; n_model = 2
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2027,dispersiya (modellər arası),3.07027,%,max − min; n_model = 2
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2028,dispersiya (modellər arası),3.1926,%,max − min; n_model = 2
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2029,dispersiya (modellər arası),3.14853,%,max − min; n_model = 2
+state_inv,nonoil_level,Qeyri-neft ÜDM səviyyəsi,2030,dispersiya (modellər arası),3.01808,%,max − min; n_model = 2

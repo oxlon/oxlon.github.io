@@ -1,0 +1,612 @@
+openapi: 3.0.3
+info:
+  title: MİİS §15.5.3 — Risk modulunun API-si (RiskUnit v2)
+  version: 2.0.0
+  description: |
+    İqtisadi risklərin idarəedilməsi və qərar dəstək sisteminin (§15.5.3) **məlumat, analiz və avtonom icra** interfeysi.
+
+      * **Oxumaq** — vəziyyət (son icra, mərhələ müddətləri, baseline_id, axınların təzəliyi, xəbərdarlıqlar),
+        çıxış kataloqu (`_catalog_v2.csv`) və istənilən çıxış CSV faylı (süzgəc, sıralama, səhifələmə ilə),
+        risk reyestri + skorlar + hər risk üzrə ətraflı paket, gündəlik monitor (D5/D6/D7).
+      * **Canlı analiz** — stress testi (`stress/run`: amil şokları → MikroUnit zənciri FR1→FR12 + RU birgə
+        Monte Karlo), miqyaslanma (`scalability/run`: amil × ölçü → bütün komponentlərə təsir), tədbir portfelinin
+        optimallaşdırılması (`optimize/run`: büdcə, risk iştahı, daxil/xaric tədbirlər → portfel, qalıq risk).
+      * **Ssenarilər** — saxlanmış ssenarilər (SQLite), yenidən hesablana bilər.
+      * **Yeniləmə** — `update.py --daily` / `--full` fon prosesi kimi; eyni anda yalnız biri (409), jurnal,
+        irəliləyiş, ləğvetmə. Avtonom rejim: gündəlik cədvəl və yuxarı axın vintajlarının izlənməsi.
+
+    Nişanlar: `Authorization: Bearer <nişan>`. GET üçün `read`, POST/PUT/DELETE üçün `write` icazəsi.
+    Bütün cavablar JSON-dur (hesabat istisna — .xlsx); xəta mesajları Azərbaycan dilindədir:
+    `{"error": {"code": "...", "message": "...", "detail": "..."}}`.
+    Ədədlər JSON-da nöqtə ilə (maşın formatı) verilir; NaN → null.
+    RU öz mərkəzi yolunu dərc etmir: bazalar makro (OxLon §15.5.1) və mikro (MicroUnit §15.5.2) bölmələrindəndir;
+    stress/miqyaslanma cavabları bazadan **fərq** kimi verilir.
+servers:
+  - url: http://127.0.0.1:8791
+    description: Yerli istinad serveri (RiskModel_Baslat)
+security:
+  - bearerAuth: []
+tags:
+  - name: Sistem
+  - name: Məlumat
+  - name: Canlı analiz
+  - name: Ssenarilər
+  - name: Yeniləmə
+  - name: Hesabatlar
+paths:
+  /api/v1/health:
+    get:
+      tags: [Sistem]
+      summary: Xidmətin vəziyyəti (nişan tələb olunmur)
+      security: []
+      responses:
+        "200":
+          description: İşləyir
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+                  version: { type: string }
+                  time: { type: string, format: date-time }
+                  root: { type: string }
+                  no_network: { type: boolean }
+  /api/v1/openapi.yaml:
+    get:
+      tags: [Sistem]
+      summary: Bu müqavilə (nişan tələb olunmur)
+      security: []
+      responses:
+        "200": { description: OpenAPI sənədi, content: { application/yaml: {} } }
+  /api/v1/status:
+    get:
+      tags: [Sistem]
+      summary: Son icra, mərhələlər, baseline_id, axınların təzəliyi (D2), xəbərdarlıqlar, aktiv yeniləmə, avtonom rejim
+      responses:
+        "200":
+          description: Vəziyyət
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  baseline_id: { type: string, example: B-57b92d66be }
+                  as_of: { type: string }
+                  score_year: { type: integer }
+                  last_run: { type: object, description: "_run_summary_v2.json xülasəsi (rejim, vaxt, müddət, uğursuz mərhələlər, başlıq)" }
+                  last_daily: { type: object, description: "_run_summary_daily.json xülasəsi" }
+                  stages: { type: array, items: { $ref: "#/components/schemas/Stage" } }
+                  feeds: { type: object, description: "D2: say təzəlik üzrə (təzə/köhnə/...) + siyahı (feed, son_musahide, yas_gun, tazelik, status)" }
+                  alerts: { type: object, description: "FR2_alerts: say ciddilik üzrə + ilk 50 sətir" }
+                  high_priority: { type: array, items: { type: string } }
+                  stages_daily: { type: array, items: { $ref: "#/components/schemas/Stage" } }
+                  update_log: { type: array, items: { type: object }, description: "NFR2_update_log.csv son 10 sətir" }
+                  refresh: { $ref: "#/components/schemas/Job" }
+                  busy: { type: object, nullable: true, description: "aktiv yeniləmə (api) və ya xarici kilid (cron/launchd)" }
+                  analysis_ready: { type: object, description: "analiz keşinin isidilməsi: status (gözlənilir/isinir/hazır/xəta), seconds" }
+                  autonomous: { type: object }
+                  upstream: { type: object, description: "yuxarı axın manifestinin xülasəsi: fayl sayı, son dəyişiklik, son vintaj hash-i" }
+  /api/v1/events:
+    get:
+      tags: [Sistem]
+      summary: Hadisələr lenti (yeniləmələr, cədvəl, izləmə, xətalar) — `since` sıra nömrəsindən sonrakılar
+      parameters:
+        - { name: since, in: query, schema: { type: integer, default: 0 } }
+        - { name: limit, in: query, schema: { type: integer, default: 100 } }
+      responses:
+        "200":
+          description: Hadisələr
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  last: { type: integer }
+                  events: { type: array, items: { $ref: "#/components/schemas/Event" } }
+  /api/v1/catalog:
+    get:
+      tags: [Məlumat]
+      summary: Çıxış faylları kataloqu (_catalog_v2.csv + diskdə olub kataloqda olmayanlar)
+      parameters:
+        - { name: prefix, in: query, description: "məs. D, V, K, S, M, FR2", schema: { type: string } }
+      responses:
+        "200":
+          description: Kataloq
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  files:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        file: { type: string }
+                        owner_module: { type: string }
+                        description_az: { type: string }
+                        columns: { type: array, items: { type: string } }
+                        update_frequency: { type: string }
+                        updated_utc: { type: string }
+                        exists: { type: boolean }
+                        bytes: { type: integer }
+                        mtime_utc: { type: string }
+  /api/v1/outputs/{file}:
+    get:
+      tags: [Məlumat]
+      summary: Çıxış faylı (CSV → JSON sətirləri; JSON faylı olduğu kimi)
+      description: |
+        Süzgəc: istənilən sütun adı sorğu parametri kimi (`?risk_id=R01&il=2027`), çoxlu dəyər vergüllə
+        (`?amil=brent,fx`). `q` — bütün mətn sütunlarında axtarış. `cols` — qaytarılan sütunlar.
+        `sort=-skor` (mənfi işarə = azalan). `limit` (standart 500, maks. 20000), `offset`.
+        `format=csv` — xam CSV. Yalnız `output/` qovluğundakı fayllar (alt qovluqlar: `forecast_archive/…`).
+      parameters:
+        - { name: file, in: path, required: true, schema: { type: string, example: FR2_risk_scores.csv } }
+        - { name: limit, in: query, schema: { type: integer, default: 500 } }
+        - { name: offset, in: query, schema: { type: integer, default: 0 } }
+        - { name: sort, in: query, schema: { type: string } }
+        - { name: cols, in: query, schema: { type: string } }
+        - { name: q, in: query, schema: { type: string } }
+        - { name: format, in: query, schema: { type: string, enum: [json, csv] } }
+      responses:
+        "200":
+          description: Sətirlər
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  file: { type: string }
+                  columns: { type: array, items: { type: string } }
+                  total: { type: integer, description: süzgəcdən sonra sətir sayı }
+                  offset: { type: integer }
+                  limit: { type: integer }
+                  rows: { type: array, items: { type: object } }
+                  catalog: { type: object }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/risks:
+    get:
+      tags: [Məlumat]
+      summary: Risk reyestri (input/risk_reyestri.csv) + FR2 skorları + qalıq risk + tədbir sayı + xəbərdarlıqlar
+      parameters:
+        - { name: priority, in: query, schema: { type: string, enum: [yüksək, orta, aşağı] } }
+        - { name: family, in: query, description: "aile (MAL, XAR, TƏB, DAX, ...)", schema: { type: string } }
+      responses:
+        "200":
+          description: Risklər (skora görə sıralanmış)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  baseline_id: { type: string }
+                  score_year: { type: integer }
+                  risks: { type: array, items: { $ref: "#/components/schemas/RiskRow" } }
+                  heatmap: { type: array, items: { type: object }, description: "FR2_heatmap.csv (P_bal × I_bal → riskler)" }
+  /api/v1/risks/{risk_id}:
+    get:
+      tags: [Məlumat]
+      summary: Bir risk üzrə ətraflı paket (drill-down)
+      description: |
+        reyestr sətri, skor, skor tarixçəsi (FR2_score_history), kanal töhfələri (FR2_contributions),
+        xəbərdarlıqlar, əlaqəli tədbirlər (FR3_measures_register / M1), qalıq risk (FR3/M5), miqyaslanma
+        amilləri (S0 — risk_idler bu riski ehtiva edən amillər, S7 gündəlik qərar sətirləri), stress ssenariləri,
+        CAEM kateqoriyası (C3), monitor göstəriciləri (D5).
+      parameters:
+        - { name: risk_id, in: path, required: true, schema: { type: string, example: R01 } }
+      responses:
+        "200": { description: Paket, content: { application/json: { schema: { $ref: "#/components/schemas/RiskBundle" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/monitor:
+    get:
+      tags: [Məlumat]
+      summary: Gündəlik monitor — D5 (göstəricilər, z, siqnal), D6 (proqnoza təsir), D7 (dəyişikliklər)
+      parameters:
+        - { name: signal, in: query, description: "D5 siqnalının başlanğıcı, məs. xəbərdarlıq", schema: { type: string } }
+        - { name: driver, in: query, description: "D6 driver süzgəci (brent, fx, ...)", schema: { type: string } }
+        - { name: year, in: query, schema: { type: integer } }
+        - { name: targets, in: query, description: "D6 target_id-lər vergüllə; standart: başlıq göstəriciləri", schema: { type: string } }
+        - { name: d6_limit, in: query, schema: { type: integer, default: 400 } }
+      responses:
+        "200":
+          description: Monitor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  as_of: { type: string }
+                  D5: { type: array, items: { type: object } }
+                  D6: { type: array, items: { type: object } }
+                  D6_total: { type: integer }
+                  D7: { type: array, items: { type: object } }
+                  feeds: { type: array, items: { type: object }, description: D2 }
+  /api/v1/stress/inputs:
+    get:
+      tags: [Canlı analiz]
+      summary: Stress testi lüğəti — amillər (S0, σ, vahid), RU şok açarları, illər, daimi ssenarilər S1–S8
+      responses:
+        "200": { description: Lüğət, content: { application/json: { schema: { type: object } } } }
+  /api/v1/stress/run:
+    post:
+      tags: [Canlı analiz]
+      summary: Fərdi amil şokları → MikroUnit zənciri (FR1→FR12) + RU birgə Monte Karlo → təsirlər və paylanmalar (< 10 s)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/StressRequest" } } }
+      responses:
+        "200": { description: Nəticə, content: { application/json: { schema: { $ref: "#/components/schemas/StressResult" } } } }
+        "400": { $ref: "#/components/responses/Error" }
+        "422": { $ref: "#/components/responses/Error" }
+  /api/v1/scalability/factors:
+    get:
+      tags: [Canlı analiz]
+      summary: Miqyaslanma amilləri (S0) — σ, vahid, ötürmə kanalı, bugünkü canlı sapma (k σ)
+      responses:
+        "200": { description: Amillər, content: { application/json: { schema: { type: object } } } }
+  /api/v1/scalability/run:
+    post:
+      tags: [Canlı analiz]
+      summary: Amil × ölçü(lər) → MikroUnit zənciri üzrə bütün komponentlərə təsir (< 5 s)
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/ScalabilityRequest" } } }
+      responses:
+        "200": { description: Nəticə, content: { application/json: { schema: { $ref: "#/components/schemas/ScalabilityResult" } } } }
+        "400": { $ref: "#/components/responses/Error" }
+  /api/v1/optimize/inputs:
+    get:
+      tags: [Canlı analiz]
+      summary: Tədbirlər (xərc, effekt modeli, status), risk iştahı hədləri, büdcə şəbəkəsi, metrikaların izahı
+      responses:
+        "200": { description: Girişlər, content: { application/json: { schema: { type: object } } } }
+  /api/v1/optimize/run:
+    post:
+      tags: [Canlı analiz]
+      summary: Büdcə + risk iştahı + daxil/xaric tədbirlər → optimal portfel, sərhəd nöqtəsi, qalıq risk
+      description: |
+        İlk çağırış hazırlığı (RU Monte Karlo 20 000 ssenari + MikroUnit cavabları) ≈ 5–15 s çəkir və yaddaşda
+        saxlanılır (baseline_id dəyişənə qədər); sonrakı çağırışlar ≈ 1–5 s. Server başlayanda fonda isidilir.
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/OptimizeRequest" } } }
+      responses:
+        "200": { description: Nəticə, content: { application/json: { schema: { $ref: "#/components/schemas/OptimizeResult" } } } }
+        "400": { $ref: "#/components/responses/Error" }
+  /api/v1/scenarios/saved:
+    get:
+      tags: [Ssenarilər]
+      summary: Saxlanmış ssenarilər (növ üzrə süzgəc)
+      parameters:
+        - { name: kind, in: query, schema: { type: string, enum: [stress, scalability, optimize] } }
+      responses:
+        "200": { description: Siyahı, content: { application/json: { schema: { type: object, properties: { scenarios: { type: array, items: { $ref: "#/components/schemas/SavedScenario" } } } } } } }
+    post:
+      tags: [Ssenarilər]
+      summary: Ssenarini saxla (sorğu + istəyə görə son nəticə)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, kind, request]
+              properties:
+                name: { type: string }
+                kind: { type: string, enum: [stress, scalability, optimize] }
+                request: { type: object, description: "müvafiq /run sorğusunun gövdəsi" }
+                note: { type: string }
+                result: { type: object, description: istəyə görə — saxlanılan nəticə }
+      responses:
+        "201": { description: Saxlanıldı, content: { application/json: { schema: { $ref: "#/components/schemas/SavedScenario" } } } }
+  /api/v1/scenarios/saved/{id}:
+    parameters:
+      - { name: id, in: path, required: true, schema: { type: string } }
+    get:
+      tags: [Ssenarilər]
+      summary: Ssenari (sorğu və saxlanmış nəticə ilə)
+      responses:
+        "200": { description: Ssenari, content: { application/json: { schema: { $ref: "#/components/schemas/SavedScenario" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+    post:
+      tags: [Ssenarilər]
+      summary: PUT ilə eyni (PUT göndərə bilməyən müştərilər üçün)
+      responses:
+        "200": { description: Yeniləndi }
+    put:
+      tags: [Ssenarilər]
+      summary: Ssenarini yenilə (name, note, request, result — verilən sahələr)
+      responses:
+        "200": { description: Yeniləndi }
+    delete:
+      tags: [Ssenarilər]
+      summary: Ssenarini sil
+      responses:
+        "200": { description: Silindi }
+  /api/v1/scenarios/saved/{id}/run:
+    post:
+      tags: [Ssenarilər]
+      summary: Saxlanmış ssenarini cari bazada yenidən hesabla (nəticə ssenaridə yenilənir)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: Nəticə (növə uyğun StressResult / ScalabilityResult / OptimizeResult) }
+  /api/v1/refresh:
+    get:
+      tags: [Yeniləmə]
+      summary: Yeniləmə işlərinin siyahısı (son 50) və aktiv iş
+      responses:
+        "200": { description: Siyahı, content: { application/json: { schema: { type: object, properties: { active: { $ref: "#/components/schemas/Job" }, jobs: { type: array, items: { $ref: "#/components/schemas/Job" } } } } } } }
+    post:
+      tags: [Yeniləmə]
+      summary: Yeniləməni fon prosesi kimi başlat (eyni anda biri; cron/launchd ilə ortaq kilid output/.update.lock)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                mode:
+                  type: string
+                  enum: [daily, full, pipeline]
+                  default: daily
+                  description: "daily = update.py --daily (≈1–6 dəq); full = update.py --full (axınlar + tam boru xətti + hesabatlar, ≈10–15 dəq); pipeline = run_all.py --no-pdf (axın yükləmədən)"
+                no_fetch: { type: boolean, default: false, description: "--no-fetch (yalnız yerli girişlər); RISK_NO_NETWORK=1 olduqda axınlar onsuz da keşdən oxunur" }
+                note: { type: string }
+      responses:
+        "202": { description: Başladı, content: { application/json: { schema: { $ref: "#/components/schemas/Job" } } } }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/refresh/{id}:
+    get:
+      tags: [Yeniləmə]
+      summary: İşin vəziyyəti, mərhələ irəliləyişi və jurnalın sonu
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - { name: tail, in: query, schema: { type: integer, default: 200 }, description: jurnalın son N sətri }
+      responses:
+        "200": { description: İş, content: { application/json: { schema: { $ref: "#/components/schemas/Job" } } } }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/refresh/{id}/cancel:
+    post:
+      tags: [Yeniləmə]
+      summary: İşi ləğv et (proses qrupu dayandırılır; son yaxşı nəticələr qalır)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: Ləğv edildi }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/autonomous:
+    get:
+      tags: [Yeniləmə]
+      summary: Avtonom rejimin vəziyyəti (cədvəl, növbəti icra, izləmə, son aşkarlanan vintaj)
+      responses:
+        "200": { description: Vəziyyət, content: { application/json: { schema: { type: object } } } }
+  /api/v1/reports:
+    get:
+      tags: [Hesabatlar]
+      summary: Hazır hesabatların siyahısı (reports/ qovluğu) — yükləmək üçün /api/v1/reports/{file}
+      responses:
+        "200": { description: Siyahı }
+  /api/v1/reports/{file}:
+    get:
+      tags: [Hesabatlar]
+      summary: reports/ qovluğundakı faylı yüklə (xlsx, pdf, html, json)
+      parameters:
+        - { name: file, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: Fayl }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/reports/xlsx:
+    post:
+      tags: [Hesabatlar]
+      summary: Server tərəfində Excel ixracı — seçilmiş çıxış faylları və/və ya analiz nəticəsi (stress/miqyaslanma/optimallaşdırma)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                files: { type: array, items: { type: string }, description: "output/ faylları, məs. [FR2_risk_scores.csv, V3_var_es.csv]; standart: əsas dəst" }
+                result: { type: object, description: "/run cavabı (bir neçə cədvəl vərəqlərə yazılır)" }
+                scenario_id: { type: string, description: saxlanmış ssenarinin nəticəsi }
+                title: { type: string }
+      responses:
+        "200": { description: Excel faylı, content: { application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: {} } }
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer }
+  responses:
+    Error:
+      description: Xəta (Azərbaycan dilində)
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: object
+                properties:
+                  code: { type: string, example: bad_parameter }
+                  message: { type: string }
+                  detail: { type: string, nullable: true }
+  schemas:
+    Stage:
+      type: object
+      properties:
+        stage: { type: string, example: E1 }
+        name: { type: string }
+        status: { type: string, example: ok }
+        seconds: { type: number }
+        required: { type: boolean }
+    Event:
+      type: object
+      properties:
+        seq: { type: integer }
+        time: { type: string }
+        kind: { type: string, example: "refresh.finished" }
+        message: { type: string }
+        data: { type: object }
+    Job:
+      type: object
+      nullable: true
+      properties:
+        id: { type: string }
+        mode: { type: string }
+        trigger: { type: string, description: "api | cədvəl | izləmə (yeni vintaj)" }
+        actor: { type: string }
+        status: { type: string, enum: [queued, running, ok, failed, cancelled] }
+        status_az: { type: string }
+        started: { type: string }
+        finished: { type: string, nullable: true }
+        seconds: { type: number }
+        returncode: { type: integer, nullable: true }
+        command: { type: array, items: { type: string } }
+        progress:
+          type: object
+          properties:
+            stage: { type: string }
+            name: { type: string }
+            done: { type: integer }
+            expected: { type: integer }
+            pct: { type: number }
+        log: { type: string, description: jurnal faylının yolu }
+        log_tail: { type: array, items: { type: string } }
+    RiskRow:
+      type: object
+      description: "risk_reyestri.csv sütunları + FR2_risk_scores sütunları (sira, ehtimal, tesir_g/cpi/fis, P_bal, I_bal, skor, prioritet, ...) + əlavələr"
+      properties:
+        risk_id: { type: string }
+        ad: { type: string }
+        aile: { type: string }
+        skor: { type: number }
+        prioritet: { type: string }
+        ehtimal: { type: number }
+        qaliq_skor: { type: number, nullable: true }
+        qaliq_prioritet: { type: string, nullable: true }
+        tedbir_sayi: { type: integer }
+        xeberdarliq_sayi: { type: integer }
+        skor_evvelki: { type: number, nullable: true }
+        caem_kateqoriya: { type: string }
+    RiskBundle:
+      type: object
+      properties:
+        risk: { $ref: "#/components/schemas/RiskRow" }
+        register: { type: object }
+        score: { type: object }
+        history: { type: array, items: { type: object } }
+        contributions: { type: array, items: { type: object } }
+        alerts: { type: array, items: { type: object } }
+        measures: { type: array, items: { type: object } }
+        residual: { type: array, items: { type: object } }
+        factors: { type: array, items: { type: object }, description: "S0 amilləri (risk_idler bu riski ehtiva edir)" }
+        daily_decision: { type: array, items: { type: object }, description: S7 sətirləri }
+        stress: { type: array, items: { type: object }, description: "FR3_stress_scenarios (əlaqəli ssenarilər)" }
+        caem: { type: array, items: { type: object }, description: C3 kateqoriya xəritəsi }
+        monitor: { type: array, items: { type: object }, description: D5 sətirləri (göstərici reyestrdəki gosterici sahəsinə uyğun) }
+    FactorShock:
+      type: object
+      required: [factor]
+      description: "S0 amili; ölçü ya σ vahidində (k_sigma), ya təbii vahiddə (size — S0.vahid; log amillər üçün şok ilinin səviyyə dəyişməsi)"
+      properties:
+        factor: { type: string, example: brent, description: "brent, gas, fx, partner, rate, state_inv, remit, drought, food, import, costpush, geo, geo_stress, npl, quake" }
+        k_sigma: { type: number, example: -2 }
+        size: { type: number, example: -25 }
+    StressRequest:
+      type: object
+      properties:
+        name: { type: string, example: "Neft −2σ + devalvasiya" }
+        shocks: { type: array, items: { $ref: "#/components/schemas/FactorShock" } }
+        ru_overrides:
+          type: object
+          description: |
+            RU birgə Monte Karlo (simulate.run) şok açarları, illər 2026–2030 (5 dəyər):
+            brent_path (USD/barel), partner_dev (f.b. artım sapması), remit_dev (% artım sapması),
+            lend_dev (f.b.), spi (SPI vahidi), quake_damage (% ÜDM), deval_year (il), imp_dev, food_dev (f.b.).
+            Verilməyən açarlar `shocks`-dan uyğunlaşdırılır (cavabda `ru_overrides_used`).
+        micro_overrides: { type: object, description: "MikroUnit chain.run_chain üçün xam override-lar {FR1: {exogenous, coefficients, levers}, RU: {addf: {var: [5 dəyər]}, overlays: bool}} — shocks ilə birləşdirilir (pct mürəkkəb, add/əmsal sürüşmələri/RU.addf cəmlənir)" }
+        with_measures: { type: boolean, default: true, description: "T09 (prosiklik investisiya kəsintisindən imtina) ilə müqayisə" }
+        stochastic: { type: boolean, default: true, description: "şoka şərtli paylanma (digər amillər təsadüfi) + şərtsiz paylanma ilə müqayisə" }
+        n: { type: integer, default: 4000, maximum: 20000 }
+        top_components: { type: integer, default: 40 }
+    StressResult:
+      type: object
+      properties:
+        name: { type: string }
+        baseline_id: { type: string }
+        score_year: { type: integer }
+        seconds: { type: number }
+        timings: { type: object }
+        shocks: { type: array, items: { type: object }, description: "həll olunmuş şoklar (k_sigma, size, vahid, risk_idler)" }
+        micro:
+          type: object
+          properties:
+            headline: { type: array, items: { type: object }, description: "hedef_id, hedef_ad, vahid, il, baza, ssenari, delta, delta_pct" }
+            components: { type: object, description: "n_affected, top_pct (olcu_sinfi «%»), top_abs (yaxın-sıfır baza: səviyyə fərqi, mln AZN axınları «% ÜDM (f.b.)», dərəcələr «f.b.») — scalability.effect, qiymətləndirmə ili" }
+            warnings: { type: array, items: { type: string } }
+            overrides: { type: object }
+        ru:
+          type: object
+          properties:
+            ru_overrides_used: { type: object }
+            deviation: { type: array, items: { type: object }, description: "measures.stress_vector çıxışı: kind (g/cpi/fis), gosterici, il, sapma, sapma_tedbirle, tedbirin_effekti (with_measures=false olduqda son ikisi null)" }
+            distribution: { type: array, items: { type: object }, description: "kind, il, baxis (sərtsiz/şərtli), p05…p95, orta, P_hedd" }
+            metrics: { type: object, description: "ES10, P(hədd pozulması) şərtsiz vs şərtli" }
+        notes: { type: array, items: { type: string } }
+    ScalabilityRequest:
+      type: object
+      required: [factor]
+      properties:
+        factor: { type: string, example: brent }
+        k_sigma: { type: array, items: { type: number }, example: [-2, -1, 1, 2] }
+        sizes: { type: array, items: { type: number }, description: "təbii vahiddə (k_sigma əvəzinə)" }
+        live: { type: boolean, default: true, description: "bugünkü canlı sapmanı da əlavə et (S0.canli_k_sigma)" }
+        targets: { type: array, items: { type: string }, description: "başlıq id-ləri (standart: ru:* + fr1 başlıq)" }
+        top_components: { type: integer, default: 60 }
+    ScalabilityResult:
+      type: object
+      properties:
+        factor: { type: object, description: S0 sətri }
+        sizes: { type: array, items: { type: object }, description: "k_sigma, size, variant" }
+        headline: { type: array, items: { type: object }, description: S1 formatında sətirlər }
+        elasticity: { type: array, items: { type: object }, description: "hedef_id, il, delta_per_sigma (ölçülərə görə), asimmetriya" }
+        components: { type: array, items: { type: object }, description: "komponent_id, komponent_ad, modul, qrup, tesir (hər ölçü üçün), ehemiyyet" }
+        groups: { type: array, items: { type: object } }
+        parameters: { type: array, items: { type: object }, description: "S5 — ötürməni daşıyan parametrlər (bu amil üçün)" }
+        seconds: { type: number }
+    OptimizeRequest:
+      type: object
+      properties:
+        budget: { type: number, default: 500, description: mln AZN }
+        appetite: { type: object, description: "P_g_max, P_cpi_max, P_fis_max, CaR_max_mln_usd (verilməyənlər input/risk_istahi.csv-dən)" }
+        include: { type: array, items: { type: string }, description: "məcburi daxil edilən tədbirlər (optimize.optimise fixed=; xərci büdcəyə daxildir, aşırsa 422 over_budget)" }
+        exclude: { type: array, items: { type: string }, description: "xaric edilən tədbirlər (optimize.optimise excluded=)" }
+        selection: { type: object, description: "yalnız qiymətləndirmə: {tedbir_id: güc 0..1} — optimallaşdırma aparılmır" }
+        frontier: { type: boolean, default: false, description: "bütün büdcə şəbəkəsi üzrə sərhəd (≈ +10–30 s)" }
+    OptimizeResult:
+      type: object
+      properties:
+        budget: { type: number }
+        portfolio: { type: array, items: { type: object }, description: "tedbir_id, tedbir, xerc_mln_azn, rol, marginal_tohfe, strategiya_v2, mesul" }
+        cost: { type: number }
+        objective: { type: number, description: "prioritet çəkili quyruq boşluğunun aradan qaldırılan payı, %" }
+        metrics: { type: array, items: { type: object }, description: "metrika, ad, vahid, baza, plan, delta" }
+        appetite: { type: object, description: "hədlər və ödənilmə (hər metrika)" }
+        frontier_point: { type: object }
+        frontier: { type: array, items: { type: object } }
+        residual: { type: array, items: { type: object }, description: "risk üzrə qalıq skor (M5 formatı)" }
+        seconds: { type: number }
+        notes: { type: array, items: { type: string } }
+    SavedScenario:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        kind: { type: string }
+        request: { type: object }
+        result: { type: object, nullable: true }
+        note: { type: string }
+        actor: { type: string }
+        baseline_id: { type: string }
+        created: { type: string }
+        updated: { type: string }

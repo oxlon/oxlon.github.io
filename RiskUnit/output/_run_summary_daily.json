@@ -1,0 +1,489 @@
+{
+ "yaradildi_utc": "2026-10-06T09:51:35Z",
+ "rejim": "daily",
+ "as_of": "2026-10-06",
+ "sebeke": "söndürülüb (RISK_NO_NETWORK=1)",
+ "baseline_id": "B-949799ba38",
+ "muddet_san": 3.0,
+ "merheleler": [
+  {
+   "stage": "A0",
+   "name": "məlumat onurğası: yuxarı axın faylları (hash manifesti)",
+   "status": "ok",
+   "seviyye": "ok",
+   "seconds": 0.15,
+   "required": true
+  },
+  {
+   "stage": "A1",
+   "name": "qlobal axınlar (yükləmə yoxdur — saxlanılmış vintajların təzəliyi)",
+   "status": "ok",
+   "seviyye": "ok",
+   "seconds": 0.1,
+   "required": false
+  },
+  {
+   "stage": "A2",
+   "name": "Azərbaycan axınları (AMB, DSK, MN, ARDNF, BFB) → D2, D4",
+   "status": "xəbərdarlıq: minfin (köhnə)",
+   "seviyye": "xəbərdarlıq",
+   "seconds": 0.23,
+   "required": false
+  },
+  {
+   "stage": "A3",
+   "name": "yuxarı axın anbarı (OxLon, Nazirlik, MicroUnit) → D1",
+   "status": "ok",
+   "seviyye": "ok",
+   "seconds": 0.45,
+   "required": false
+  },
+  {
+   "stage": "A5",
+   "name": "gündəlik monitor və proqnoz təsiri → D5–D7",
+   "status": "ok",
+   "seviyye": "ok",
+   "seconds": 1.96,
+   "required": false
+  }
+ ],
+ "ugursuz": [],
+ "xeberdarliq_merheleleri": [
+  {
+   "stage": "A2",
+   "name": "Azərbaycan axınları (AMB, DSK, MN, ARDNF, BFB) → D2, D4",
+   "status": "xəbərdarlıq: minfin (köhnə)",
+   "seviyye": "xəbərdarlıq",
+   "seconds": 0.23,
+   "required": false
+  }
+ ],
+ "vintajlar": {
+  "axinlar": {
+   "brent": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-09-29",
+    "son_hadise": "2026-09-29",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "vix": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "2026-10-02",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "ust10": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "2026-10-02",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "fedfunds": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-09-01",
+    "son_hadise": "2026-09-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "eurusd": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "2026-10-02",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "gpr": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-09-01",
+    "son_hadise": "2026-09-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "epu": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-07-01",
+    "son_hadise": "2026-07-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "usgs": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-10-01",
+    "son_hadise": "2026-10-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "era5": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-09-01",
+    "son_hadise": "2026-09-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   }
+  },
+  "az_axinlar": {
+   "cbar_fx": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-10-06",
+    "son_hadise": "2026-10-06",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "cbar_rate": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-02-05",
+    "son_hadise": "2026-09-24",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "dsk_macro": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-08-01",
+    "son_hadise": "2026-08-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "dsk_cpi": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-08-01",
+    "son_hadise": "2026-08-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "dsk_tables": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-04-01",
+    "son_hadise": "2026-04-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "minfin": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2025-01-01",
+    "son_hadise": "2026-03-01",
+    "tazelik": "köhnə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "xəbərdarlıq"
+   },
+   "sofaz": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-06-30",
+    "son_hadise": "2026-06-30",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "bfb": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-09-29",
+    "son_hadise": "2026-10-01",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "azeri_light": {
+    "vintage": "2026-10-06",
+    "son_musahide": "2026-09-29",
+    "son_hadise": "2026-09-29",
+    "tazelik": "təzə",
+    "status": "keş: şəbəkə yoxdur",
+    "seviyye": "ok"
+   },
+   "fred_brent": {
+    "vintage": "",
+    "son_musahide": "2026-09-29",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_gas_hh": {
+    "vintage": "",
+    "son_musahide": "2026-09-29",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_eurusd": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_gbpusd": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_usdcny": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_usdjpy": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_usd_broad": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_ust2": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_ust5": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_ust10": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_spx": {
+    "vintage": "",
+    "son_musahide": "2026-10-05",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_em_spread": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_em_hy_spread": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_vix": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_baa_spread": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_ovx": {
+    "vintage": "",
+    "son_musahide": "2026-10-02",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "ecb_try": {
+    "vintage": "",
+    "son_musahide": "2026-10-05",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "cbar_fx_daily": {
+    "vintage": "",
+    "son_musahide": "2026-10-06",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "keş: yeni gün yoxdur",
+    "seviyye": "xəbərdarlıq"
+   },
+   "wb_pinksheet": {
+    "vintage": "",
+    "son_musahide": "2026-09-01",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_gas_eu": {
+    "vintage": "",
+    "son_musahide": "2026-07-01",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_eq_oecd_us": {
+    "vintage": "",
+    "son_musahide": "2026-08-01",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_usdrub_m": {
+    "vintage": "",
+    "son_musahide": "2026-08-01",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "fred_usdtry_m": {
+    "vintage": "",
+    "son_musahide": "2026-08-01",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "canlı",
+    "seviyye": "ok"
+   },
+   "sofaz_highlights_pdf": {
+    "vintage": "",
+    "son_musahide": "2026-06-30",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "keş: şəbəkəsiz rejim",
+    "seviyye": "ok"
+   },
+   "sofaz_recent": {
+    "vintage": "",
+    "son_musahide": "2026-06-30",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "keş: şəbəkəsiz rejim",
+    "seviyye": "ok"
+   },
+   "minfin_debt_bulletin": {
+    "vintage": "",
+    "son_musahide": "2026-07-01",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "keş: şəbəkəsiz rejim",
+    "seviyye": "ok"
+   },
+   "cbar_bulletin": {
+    "vintage": "",
+    "son_musahide": "",
+    "son_hadise": "",
+    "tazelik": "",
+    "status": "keş: şəbəkəsiz rejim",
+    "seviyye": "ok"
+   }
+  },
+  "yuxari_axin": {
+   "forecast_long": "27b1a1630f4d",
+   "validation_backtest": "604a4b064e5c",
+   "assumptions": "92518ed96fff",
+   "external_block": "f0b0f5d78023",
+   "monthly_panel": "8311f07c9ea4",
+   "macro_annual": "bd1e2213b7e2",
+   "public_panel": "969eefe11dc2",
+   "fr1_multipliers": "518d6f7b03e4",
+   "fr1_forecast": "0705bf37e5c8",
+   "fr1_draws": "16ca9de73665",
+   "fr1_holdout": "66f337259a1a",
+   "fr10_ews": "5857c9bbae3b",
+   "fr10_plausibility": "f9afe2165a1d",
+   "fr12_ews": "ce9f19423336",
+   "fr12_false_listing": "ed39611d1fab",
+   "fr12_scenarios": "b24c0e95f921",
+   "equations_catalog": "e4faab795e3d",
+   "series_dictionary": "f29cc65b3df6",
+   "assumption_registry": "fe179cfc2c93",
+   "fr1_tidy": "143b83c2184a",
+   "fr3_tidy": "262b1469f9c8",
+   "fr4_tidy": "2998aaaf3d8f",
+   "fr5_tidy": "b2d68e3f75b6",
+   "fr10_tidy": "c379349dd19f",
+   "fr12_tidy": "9432cdfab007",
+   "fr1_catalog": "02a50fe1373c",
+   "fr3_catalog": "f7e2b183691e",
+   "fr4_catalog": "f438e635d437",
+   "fr5_catalog": "19d24bcce175",
+   "fr10_catalog": "822c79d542df",
+   "fr12_catalog": "dae06ebe3767",
+   "fr1_equations": "aa65b246a24e",
+   "fr3_equations": "61127005a9f3",
+   "fr4_equations": "5ff123ce7879",
+   "fr5_equations": "21e9ed0dba09",
+   "fr10_equations": "8e6f5b73a555",
+   "fr12_equations": "941bf6904997",
+   "fr10_cross_multipliers": "16ae0a512a7f",
+   "caem": "de2ef02c1905",
+   "bottomup_report": "7a8d25506961",
+   "vereq8": "b0b3650d9de3",
+   "eviews_data": "e430a0cfeeba"
+  },
+  "yuxari_axin_mtime": {
+   "forecast_long": "2026-08-24T11:26:06Z",
+   "validation_backtest": "2026-08-24T11:26:06Z",
+   "assumptions": "2026-08-24T11:25:57Z",
+   "external_block": "2026-07-05T04:31:16Z",
+   "monthly_panel": "2026-07-05T04:31:16Z",
+   "macro_annual": "2026-07-05T04:31:16Z",
+   "public_panel": "2026-08-23T22:10:21Z",
+   "fr1_multipliers": "2026-10-06T09:13:16Z",
+   "fr1_forecast": "2026-10-06T09:13:16Z",
+   "fr1_draws": "2026-10-06T09:13:16Z",
+   "fr1_holdout": "2026-10-06T09:13:16Z",
+   "fr10_ews": "2026-10-06T09:15:48Z",
+   "fr10_plausibility": "2026-10-06T09:15:48Z",
+   "fr12_ews": "2026-10-06T09:16:12Z",
+   "fr12_false_listing": "2026-10-06T09:16:12Z",
+   "fr12_scenarios": "2026-10-06T09:16:12Z"
+  }
+ }
+}

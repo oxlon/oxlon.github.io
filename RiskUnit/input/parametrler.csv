@@ -1,0 +1,35 @@
+acar,deyer,vahid,izah,menbe,esaslandirma,modul,status
+dsa_int_eff,0.038,pay/il,Dövlət borcunun effektiv faiz dərəcəsi,"Maliyyə Nazirliyi, dövlət borcu bülleteni (2026 I yarımil faiz ödənişləri / borc qalığı, illikləşdirilmiş)",Borc xidmətinin gəlirə nisbəti (K3) üçün faiz xərci = dərəcə × əvvəlki ilin borcu,dsa,məlumat
+dsa_amort_ext,0.119,pay/il,Xarici dövlət borcunun illik əsas borc ödənişi payı,"Maliyyə Nazirliyi, xarici borcun ödəmə qrafiki (5 il ərzində 59,5% → ≈ 11,9%/il)",Ümumi maliyyələşmə ehtiyacı və profisit ilə borcun geri alınması həddi,dsa;car,məlumat
+dsa_amort_dom,0.074,pay/il,Daxili dövlət borcunun illik əsas borc ödənişi payı,"Maliyyə Nazirliyi, daxili borc (DQK) ödəmə profili",Eyni,dsa;car,məlumat
+dsa_amort_guar,0.131,pay/il,Dövlət zəmanətli borcun illik əsas borc ödənişi payı,"Maliyyə Nazirliyi, zəmanətli borcun ödəmə qrafiki",CCA qəza həddi (qısamüddətli hissə),dsa;car,məlumat
+dsa_phi_debt,1.0,pay,Büdcə kəsirinin borcla maliyyələşən payı (əsas variant),MicroUnit FR1 qaydası (φ = 1),FR1 ilə uyğunluq üçün,dsa,FƏRZİYYƏ
+dsa_phi_debt_alt,0.5,pay,Alternativ variant: kəsirin yalnız yarısı borcla (qalanı ARDNF-dən),"2016–2025 təcrübəsi: kəsirlər əsasən ARDNF transfertləri ilə örtülüb (Nazirlik təsdiq etməlidir)",K3 2-ci variant — maliyyələşmə qaydasına həssaslıq,dsa,FƏRZİYYƏ
+dsa_cl_p0,0.02,ehtimal/il,Zəmanət çağırışı ehtimalı (normal il),FƏRZİYYƏ — ekspert,Şərti öhdəliklər variantı,dsa,FƏRZİYYƏ
+dsa_cl_p_stress,0.20,ehtimal/il,Zəmanət çağırışı ehtimalı (devalvasiya və ya Brent < 45),FƏRZİYYƏ — 2015–2016 (Beynəlxalq Bank) analoqu,Şərti öhdəliklər variantı,dsa,FƏRZİYYƏ
+dsa_cl_call,0.50,pay,Çağırılan zəmanətli borcun payı,FƏRZİYYƏ — ekspert,Şərti öhdəliklər variantı,dsa,FƏRZİYYƏ
+dsa_bank_loss_deval,0.15,pay,Devalvasiya ilində kredit itkisi dərəcəsi,"FƏRZİYYƏ — 2015–2017 problemli kreditlər (AMB, MBNP)",Bank rekapitalizasiyası,dsa,FƏRZİYYƏ
+dsa_bank_loss_oil,0.05,pay,Brent < 45 ilində kredit itkisi dərəcəsi,FƏRZİYYƏ — ekspert,Bank rekapitalizasiyası,dsa,FƏRZİYYƏ
+dsa_bank_cap_floor,0.10,pay,Bank kapitalının kreditlərə minimum nisbəti,"AMB prudensial normativ (təxmini, ümumi kapital adekvatlığı)",Rekapitalizasiya = itki − (kapital − hədd × kreditlər),dsa,FƏRZİYYƏ
+dsa_thr_debt_info_1,20.0,% ÜDM,Məlumat xarakterli borc həddi 1 (risk iştahı deyil),"RU: cari səviyyəyə yaxın (2025: 20,1% FR1) — ehtimal həssas olsun deyə","30/45/60% heç vaxt aşılmır (P ≤ 0,002) → məlumatsızdır",dsa,məlumat xarakterli
+dsa_thr_debt_info_2,25.0,% ÜDM,Məlumat xarakterli borc həddi 2,RU: 2023–2024 pik səviyyəsinə yaxın (FR1: 26 850–27 380 mln AZN),Eyni,dsa,məlumat xarakterli
+dsa_thr_gfn_info,5.0,% ÜDM,Ümumi maliyyələşmə ehtiyacı üçün məlumat xarakterli hədd,RU (cari GFN p95 ≈ 2–3% ÜDM),Erkən xəbərdarlıq,dsa,məlumat xarakterli
+dsa_thr_gfn_imf,15.0,% ÜDM,BVF MAC DSA bençmarkı: inkişaf etməkdə olan bazarlar üçün GFN həddi,"IMF (2013), Staff Guidance Note for Public Debt Sustainability Analysis in Market-Access Countries",Beynəlxalq müqayisə (risk iştahı Nazirlik qərarıdır),dsa,bençmark
+dsa_thr_debt_imf,70.0,% ÜDM,BVF MAC DSA bençmarkı: inkişaf etməkdə olan bazarlar üçün borc həddi,"IMF (2013), MAC DSA Guidance Note",Beynəlxalq müqayisə,dsa,bençmark
+dsa_thr_ds_rev,10.0,% gəlir,Borc xidmətinin (faiz + əsas borc) büdcə gəlirlərinə nisbəti üçün məlumat xarakterli hədd,"RU; MN: borc xidməti büdcə xərclərinin 5,6%-i (2026 I yarımil)",Likvidlik riski,dsa,məlumat xarakterli
+car_cbar_deval_drain,0.60,pay,Devalvasiya ilində AMB ehtiyatlarının itkisi,"AMB: 2015-də ehtiyatlar 13,8 → 5,0 mlrd USD (≈ −64%)",Fiskal kapital (K2) və CCA,car,məlumat
+car_kappa_ca,0.10,pay,Cari hesabın neftlə bağlı sapmasının AMB ehtiyatlarına düşən payı,FƏRZİYYƏ — sapmanın əsas hissəsi ARDNF axınlarında artıq var,K2,car,FƏRZİYYƏ
+car_carry_equities,0.015,pay/il,ARDNF səhm portfelinin daşıma gəliri (dividend gəliri),"MSCI ACWI dividend gəlirliliyi ≈ 1,5–2% (2024–2026)",Qiymət dəyişməsi kopuladan (sıfır drift); gəlir ayrıca,car,FƏRZİYYƏ
+car_carry_real_estate,0.03,pay/il,Daşınmaz əmlak/infrastrukturun daşıma gəliri (icarə gəliri),"ARDNF illik hesabatları (daşınmaz əmlak gəlirliliyi ≈ 3–4%)",Eyni,car,FƏRZİYYƏ
+car_carry_gold,0.0,pay/il,Qızılın daşıma gəliri,Qızıl faiz gətirmir,Eyni,car,məlumat
+car_carry_fi_source,ust5,sıra,Sabit gəlirli hissənin daşıma gəliri = UST 5 il gəlirliliyinin son dəyəri,FRED DGS5 (V2),"Cəmi daşıma ≈ 2,3%/il = çəkili orta (2026-10)",car,məlumat
+cca_cbar_available,0.50,pay,AMB ehtiyatlarının suveren öhdəliklər üçün əlçatan payı,"FƏRZİYYƏ — qalan hissə pul bazasını və valyuta depozitlərini (14,7 mlrd AZN) təmin edir",CCA yenidən qurulması (K5),car,FƏRZİYYƏ
+var_re_beta,0.5,beta,Daşınmaz əmlak/infrastrukturun səhm bazarına betası,"FƏRZİYYƏ — birbaşa daşınmaz əmlak indeksləri: β ≈ 0,4–0,6 (MSCI/NCREIF ədəbiyyatı)",V3 ARDNF portfeli,var,FƏRZİYYƏ
+var_credit_spread_share,0.376,pay,Kredit spredinə həssas sabit gəlirli pay (A + BBB + NIG),"ARDNF: reytinq bölgüsü A 25,3% + BBB 11,5% + NIG 0,8% (2026-06-30)",V1-də yenilənir; bu dəyər ehtiyat dəyəridir,var,məlumat
+var_oil_rev_anchor,baza,mətn,Neft gəlirləri VaR-ının vahid lövbəri,RU qaydası: FR1 baza Brent (büdcə ili) — spot deyil,Simulyasiya və tarixi metodlar eyni lövbərdən,var,qayda
+hedge_strike_ratio,0.90,pay,Put opsionunun icra qiyməti = pay × büdcə Brent fərziyyəsi,FƏRZİYYƏ (Meksika hedc proqramı analoqu: büdcə qiymətinə yaxın),T26,optimize,FƏRZİYYƏ
+hedge_tenor_years,1.0,il,Hedcin müddəti (mükafat və fayda eyni müddət üzrə),RU qaydası: 1 büdcə ili,T26,optimize,qayda
+hedge_forward_proxy,spot,mətn,Forvard qiymətinin proksisi,"Pulsuz fyuçers mənbəyi yoxdur → son Brent spotu (FRED DCOILBRENTEU), düz forvard əyrisi FƏRZİYYƏSİ",T26,optimize,FƏRZİYYƏ
+sim_f_obs_growth,0.5,pay,Cari ildə qalan illik innovasiya payı (3 rüb müşahidə olunub),RU qaydası (simulate.py; sahibi: simulyasiya bölməsi),Cari il üçün yelpik daralması,simulate,qayda
+sim_transition_drift,-0.03,pay/il,Enerji keçidi (R14) ssenarisində Brent-in illik sürüşməsi (2-ci ildən),"FƏRZİYYƏ — IEA APS/NZE ssenarilərində neft qiymətinin enişi (simulate.py; sahibi: simulyasiya bölməsi)",R14 ötürmə,simulate,FƏRZİYYƏ
+obj_fk_tail_weight,0.5,pay,"Məqsəd funksiyasında konsolidasiya olunmuş fiskal kapitalın quyruq çəkisi λ (0 = yaxşı və pis illər simmetrik, orta; 1 = yalnız ES10 quyruğu)","FƏRZİYYƏ — risk iştahı Nazirlik qərarıdır (DR10)","Fiskal kapital bufer kimi: ortadakı dəyişmə (qənaət/xərc) və quyruq birlikdə; M1-də λ = 0 və λ = 1 variantları da verilir",optimize,FƏRZİYYƏ

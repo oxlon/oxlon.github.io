@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- NFR2: gündəlik yeniləmə (07:00). Quraşdırma:
-     1) RISK_UNIT_DIR və PYTHON yollarını bu serverə uyğun dəyişin;
-     2) cp az.miis.risk.update.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/az.miis.risk.update.plist -->
+<!-- MİİS §15.5.3 NFR2 — scheduler/install.py tərəfindən yaradılıb (/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit). Əl ilə redaktə etməyin:
+     qovluq köçürüldükdə `python3 scheduler/install.py --install` yenidən işlədin. -->
 <plist version="1.0"><dict>
   <key>Label</key><string>az.miis.risk.update</string>
   <key>ProgramArguments</key><array>
-    <string>/bin/sh</string><string>-c</string>
-    <string>cd "$RISK_UNIT_DIR" &amp;&amp; "$PYTHON" update.py &gt;&gt; output/NFR2_cron.log 2&gt;&amp;1</string>
+    <string>/bin/sh</string><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/scheduler/run_update.sh</string><string>--full</string>
   </array>
-  <key>EnvironmentVariables</key><dict>
-    <key>RISK_UNIT_DIR</key><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/Risk_Unit</string>
-    <key>PYTHON</key><string>/Users/econ0757/venvs/miis-model/bin/python3</string>
-  </dict>
-  <key>StartCalendarInterval</key><dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
-  <key>RunAtLoad</key><true/>
+  <key>WorkingDirectory</key><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit</string>
+  <key>EnvironmentVariables</key><dict><key>MIIS_PYTHON</key><string>/Users/econ0757/venvs/miis-model/bin/python3</string></dict>
+  <key>StartCalendarInterval</key><array><dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>30</integer></dict></array>
+  <key>StandardOutPath</key><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/output/NFR2_launchd.log</string>
+  <key>StandardErrorPath</key><string>/Users/econ0757/My Drive/OxLon/MIIS_Micro_Risk_Policy/RiskUnit/output/NFR2_launchd.log</string>
+  <key>RunAtLoad</key><false/>
 </dict></plist>

@@ -1,9 +1,19 @@
 as_of,tip,ciddilik,risk_id,mesaj,baseline_id
-2026-10-02,yüksək prioritet,yüksək,R12,"İnflyasiyanın hədəf diapazonundan yuxarı olması: ehtimal 57%, skor 25 (P 5 × T 5, ölçü: inflyasiya)",B-7854a9d6fc
-2026-10-02,yüksək prioritet,yüksək,R11,"Büdcə balansının pisləşməsi: ehtimal 35%, skor 20 (P 4 × T 5, ölçü: büdcə)",B-7854a9d6fc
-2026-10-02,yüksək prioritet,yüksək,R01,"Neft qiymətinin kəskin enməsi: ehtimal 26%, skor 15 (P 3 × T 5, ölçü: qeyri-neft ÜDM)",B-7854a9d6fc
-2026-10-02,yüksək prioritet,yüksək,R14,"Enerji keçidi: karbohidrogen tələbinin struktur azalması: ehtimal 25%, skor 12 (P 3 × T 4, ölçü: qeyri-neft ÜDM)",B-7854a9d6fc
-2026-10-02,göstərici həddi,orta,,"Regional geosiyasi risk (Rusiya, Ukrayna, İsrail, Türkiyə ortası): son dəyər 1.134 (2026-09), tarixi paylanmanın 91-cı faizi",B-7854a9d6fc
-2026-10-02,göstərici həddi,orta,,FR10 izləmə siyahısındakı emal sahələri: 3 (2025),B-7854a9d6fc
-2026-10-02,baza köhnəlib,orta,R01,2027: canlı məlumatla şərtləndirilmiş qeyri-neft artımının medianı 7.4% — makro baza yolu 5.4%. Fərq ≥ 1 f.b.: makro modelin Brent fərziyyəsinin yenilənməsi tövsiyə olunur,B-7854a9d6fc
-2026-10-02,baza köhnəlib,orta,R01,2027: Brent mərkəzi yolu 84 USD (canlı) — makro fərziyyə 69 USD,B-7854a9d6fc
+2026-10-06,yüksək prioritet,yüksək,R12,"İnflyasiyanın hədəf diapazonundan yuxarı olması: ehtimal 47%, skor 20 (P 4 × T 5, ölçü: inflyasiya)",B-949799ba38
+2026-10-06,yüksək prioritet,yüksək,R01,"Neft qiymətinin kəskin enməsi: ehtimal 48%, skor 16 (P 4 × T 4, ölçü: qeyri-neft ÜDM)",B-949799ba38
+2026-10-06,göstərici həddi,orta,,"Regional geosiyasi risk (Rusiya, Ukrayna, İsrail, Türkiyə ortası): son dəyər 1.134 (2026-09), tarixi paylanmanın 91-cı faizi",B-949799ba38
+2026-10-06,göstərici həddi,orta,,FR10 izləmə siyahısındakı emal sahələri: 3 (2025),B-949799ba38
+2026-10-06,baza köhnəlib,orta,R01,2027: Brent mərkəzi yolu 84 USD (canlı) — makro fərziyyə 69 USD,B-949799ba38
+2026-10-06,gündəlik monitor,orta,R01,"Brent (spot): 114 (2026-09-29), z = 2.7 — xəbərdarlıq ↑",B-949799ba38
+2026-10-06,gündəlik monitor,orta,R01,"Brent 2026 illik ortası (YTD + spot): 98.36 (2026-09-29), z = 6.9 — xəbərdarlıq ↑",B-949799ba38
+2026-10-06,gündəlik monitor,orta,R01,"Azeri Light (proksi) vs FR1 ixrac qiyməti: 114.6 (2026-09-29), z = 3.0 — xəbərdarlıq ↑",B-949799ba38
+2026-10-06,gündəlik monitor,orta,R11,"Dövlət büdcəsi xərcləri: icra (illik planın %-i): 54.83 (2026-08-01), z = -2.4 — xəbərdarlıq ↓",B-949799ba38
+2026-10-06,gündəlik monitor,orta,R11,"Dövlət büdcəsinin balansı (Yanvar–ay) vs illik fərziyyə: 3716 (2026-08-01), z = 4.5 — xəbərdarlıq ↑",B-949799ba38
+2026-10-06,gündəlik monitor,orta,R01,"ARDNF aktivləri vs Nazirlik ilsonu fərziyyəsi: 7.26e+04 (2026-06-30), z = 4.6 — xəbərdarlıq ↑",B-949799ba38
+2026-10-06,məlumat köhnəlib,orta,,"minfin (Maliyyə Nazirliyi: təsdiq olunmuş büdcə göstəriciləri): son müşahidə 2025-01-01, 643 gün — köhnə; status: keş: şəbəkə yoxdur",B-949799ba38
+2026-10-06,model riski,orta,R19,"Proqnoz qeyri-müəyyənliyi / model riski: model riski (P×T deyil): köhnəlməmiş konsensus (fr1, imf, mspec) ilə baza fərqi; köhnəlmiş xaric: bu60;caem;v8; hədd 0.5 f.b.; əlverişsiz fərq 1.04 f.b. (hədd 0.5 f.b.; alternativ paylanma FR2_model_risk.csv)",B-949799ba38
+2026-10-06,məlumat köhnəlib,aşağı,,dsk_macro: son müşahidə 2026-08-01 (66 gün),B-949799ba38
+2026-10-06,məlumat köhnəlib,aşağı,,dsk_cpi: son müşahidə 2026-08-01 (66 gün),B-949799ba38
+2026-10-06,məlumat köhnəlib,aşağı,,dsk_tables: son müşahidə 2026-04-01 (188 gün),B-949799ba38
+2026-10-06,məlumat köhnəlib,aşağı,,minfin: son müşahidə 2026-03-01 (219 gün),B-949799ba38
+2026-10-06,məlumat köhnəlib,aşağı,,sofaz: son müşahidə 2026-06-30 (98 gün),B-949799ba38
