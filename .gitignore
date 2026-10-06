@@ -1,2 +1,14 @@
 .DS_Store
 Icon?
+# local working files of the MİİS units (not part of the published site)
+RiskUnit/work/
+**/chrome-profile*/
+__pycache__/
+*.pyc
+*.db
+*.sqlite
+*.sqlite3
+MicroUnit/logs/
+RiskUnit/logs/
+**/.run_all.lock
+**/.update.lock

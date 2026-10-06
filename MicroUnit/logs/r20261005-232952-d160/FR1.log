@@ -1,6 +1,0 @@
-$ /Users/econ0757/venvs/miis-model/bin/jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 --ExecutePreprocessor.kernel_name=miis-model FR1.ipynb
-[NbConvertApp] Converting notebook FR1.ipynb to notebook
-[NbConvertApp] Writing 3346791 bytes to FR1.ipynb
-
-$ /Users/econ0757/venvs/miis-model/bin/python3 -m microlib.docrefresh FR1
-docrefresh FR1: docs/FR1_Methodology.md: 33 v2.2 blocks unchanged; docs/az/FR1_Metodologiya.md: 33 v2.2 blocks unchanged
