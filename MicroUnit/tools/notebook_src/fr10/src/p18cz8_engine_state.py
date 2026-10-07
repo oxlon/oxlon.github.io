@@ -14,9 +14,11 @@
 # %%
 from microlib.engines import base as EB_
 _regeq = {e['id']: e for e in REGX.equations}
-def _coef_row(eid, name, label_az, sign=None, value=None, ci=None):
+COEF_LABEL_EN = {}
+def _coef_row(eid, name, label_az, sign=None, value=None, ci=None, label_en=None):
     r = next(c for c in _regeq[eid]['coefficients'] if c['name'] == name)
     v = r['used_value'] if value is None else value
+    COEF_LABEL_EN[(eid, name)] = label_en           # English label: methodology document only (the engine inputs are Azerbaijani)
     return dict(eq_id=eid, name=name, label_az=label_az, value=float(v), se=r['se'], ci_low=(ci or (r['ci_low'], r['ci_high']))[0],
                 ci_high=(ci or (r['ci_low'], r['ci_high']))[1], estimate=r['coef'], sign_expected=sign, editable=True,
                 min=None, max=None)
@@ -33,15 +35,20 @@ _exo = [dict(id=f'fr1_{v}', label_az=DV_AZ[v][0], unit=DV_AZ[v][1], years=FC_YEA
 _exo += [dict(id=f'fr4_hired_{s_}', label_az=f'FR4: muzdlu işçilərin indeksi, {SECT_AZ[s_].lower()} (2025 = 1)', unit='indeks (2025 = 1)', years=FC_YEARS,
               min=1e-9, max=None, step=None, source='FR4_hired_by_activity.csv', baseline={sc: [float(x) for x in fr4_index(sc)[s_][0, 1:]] for sc in SCEN})
          for s_ in SECV]
-_coefs = [_coef_row('FR10.pooled', 'x', 'Əlaqəli sektor elastikliyi β (qeyri-neft sahə payları)', +1),
-          _coef_row('FR10.mining_08', 'x', 'Digər faydalı qazıntılar: tikinti əlavə dəyərinə elastiklik (yalnız quarrying_rule = construction_link olduqda)',
-                    +1, value=MINING_RULES['e08'])]
-_coefs += [_coef_row(f'FR10.oil_{b}', 'dln_oil_azn', f'{BNAME_AZ[b]}: deflyatorun neft qiymətinə elastikliyi', +1) for b in OIL]
+# v2.4: the quarrying construction-link elasticity (1, the unit-link rule) is a LEVER (`quarrying_link_elasticity`, below), not a
+# coefficient — the registry estimate FR10.mining_08|x (0.11; unit elasticity rejected) is not what the engine uses.
+_coefs = [_coef_row('FR10.pooled', 'x', 'Əlaqəli sektor elastikliyi β (qeyri-neft sahə payları)', +1,
+                    label_en='Related-sector elasticity β (non-oil branch shares)')]
+_coefs += [_coef_row(f'FR10.oil_{b}', 'dln_oil_azn', f'{BNAME_AZ[b]}: deflyatorun neft qiymətinə elastikliyi', +1,
+                     label_en=f'{BNAME[b]}: elasticity of the deflator to the oil price') for b in OIL]
 if 'FR10.mining_07' in _regeq:
+    COEF_LABEL_EN[('FR10.mining_07', next(c for c in _regeq['FR10.mining_07']['coefficients'])['name'])] = 'Metal ores: elasticity to the driver (rule: 1)'
     _r7 = next(c for c in _regeq['FR10.mining_07']['coefficients'])
     _coefs.append(dict(eq_id='FR10.mining_07', name=_r7['name'], label_az='Metal filizləri: sürücüyə elastiklik (qayda: 1)', value=1.0, se=None,
                        ci_low=None, ci_high=None, estimate=1.0, sign_expected=+1, editable=True, min=None, max=None))
-_coefs += [_coef_row('FR10.reg_system', slug(k), f'{REGION_AZ[k]}: neft-sektor qarışığına elastiklik (büzülmüş)', None) for k in REG_SLOPES]
+_coefs += [_coef_row('FR10.reg_system', slug(k), f'{REGION_AZ[k]}: neft-sektor qarışığına elastiklik (büzülmüş)', None,
+                     label_en=f'{k}: elasticity to the oil-sector mix (shrunk)') for k in REG_SLOPES]
+_m8x = next(c for c in _regeq['FR10.mining_08']['coefficients'] if c['name'] == 'x')     # the estimate, shown with the lever
 _levers = [dict(id=f'cap_factor_{b}', label_az=f'{BNAME_AZ[b]}: emal həcmi əmsalı (2026–30 / 2025)', value=float(CAPF[b]), default=float(CAPF[b]),
                 min=0.5, max=1.5, step=0.005, note_az=f'baza: 2023–25 orta emal həcmi; maksimum 2015–25: {CAPMAX[b]:.3f}') for b in OIL]
 _levers += [dict(id='quarrying_rule', label_az='Digər faydalı qazıntılar (08): proqnoz qaydası',
@@ -49,6 +56,14 @@ _levers += [dict(id='quarrying_rule', label_az='Digər faydalı qazıntılar (08
                  default='construction_link' if MINING_RULES['rule08'].startswith('unit') else 'neutral', options=['neutral', 'construction_link'],
                  note_az=f"neutral: real buraxılış 2025 faktiki səviyyəsində sabit (baza, DM p = {MINING_RULES['unit08_dm_p']:.3f}); "
                          "construction_link: FR1 tikinti əlavə dəyəri indeksi^elastiklik (həssaslıq)"),
+            dict(id='quarrying_link_elasticity', eq_id='FR10.mining_08',
+                 label_az='Digər faydalı qazıntılar (08): tikinti əlaqəsinin elastikliyi — rıçaq (vahid əlaqə qaydası), qiymətləndirilmiş əmsal deyil',
+                 value=float(MINING_RULES['e08']), default=float(MINING_RULES['e08']), min=0.0, max=2.0, step=0.05,
+                 estimate=float(E08_EST), estimate_se=float(E08_SE), estimate_ci=[float(_m8x['ci_low']), float(_m8x['ci_high'])],
+                 unit_elasticity_p=float(MINING_RULES['unit08_wald_p']),
+                 note_az=(f"Yalnız quarrying_rule = construction_link olduqda təsir edir; baza proqnozu lövbərlənmiş neytral qaydadır (real buraxılış "
+                          f"{LAST_ACT} faktiki səviyyəsində). Reyestrdəki qiymətləndirmə (FR10.mining_08): {E08_EST:.3f} (95% interval "
+                          f"{_m8x['ci_low']:.2f} – {_m8x['ci_high']:.2f}); vahid elastiklik rədd edilir (p = {MINING_RULES['unit08_wald_p']:.3f}).")),
             dict(id='labour_share_shift_pp', label_az='Əməyin əlavə dəyərdə payına düzəliş (faiz bəndi, marja qaydası)', value=0.0, default=0.0,
                  min=-20.0, max=20.0, step=0.5),
             dict(id='margin_mode', label_az='Marja qaydası', value='labour_share', default='labour_share',

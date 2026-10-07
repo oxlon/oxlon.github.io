@@ -128,7 +128,11 @@ Reyestr: {len(E)} tənlik ({n_used}-i proqnozda); {len(cat)} komponent × 3 ssen
 
 
 def main():
+    from ._fr3_v236 import blocks as v236_blocks
     en, azd = texts()
+    e6, a6 = v236_blocks()
+    en.update(e6)
+    azd.update(a6)
     LEG = ('<!-- AUTO:v22 -->', '<!-- /AUTO:v22 -->')
 
     def filler(blocks):

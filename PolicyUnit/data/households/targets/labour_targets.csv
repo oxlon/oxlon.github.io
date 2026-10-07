@@ -1,0 +1,221 @@
+year,key,value,unit,source,status
+2018,employed:agr,1769.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:mining,40.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:manuf,254.8,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:elec,27.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:water,41.1,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:constr,354.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:trade,706.1,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:transp,203.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:hotel,78.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:ict,62.8,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:fin,27.4,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:realest,90.8,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:prof,74.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:admsup,59.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:pubadm,281.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:educ,380.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:health,190.0,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:art,81.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:othsvc,156.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,employed:total,4879.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2018,hired:agr,51.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:mining,34.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:manuf,109.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:elec,27.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:water,41.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:constr,106.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:trade,287.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:transp,72.0,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:hotel,23.4,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:ict,26.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:fin,25.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:realest,18.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:prof,53.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:admsup,28.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:pubadm,108.8,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:educ,334.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:health,132.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:art,54.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:othsvc,16.4,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2018,hired:total,1551.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,employed:agr,1720.4,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:mining,40.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:manuf,259.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:elec,30.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:water,30.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:constr,363.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:trade,699.4,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:transp,198.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:hotel,77.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:ict,60.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:fin,28.0,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:realest,87.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:prof,62.4,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:admsup,70.4,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:pubadm,242.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:educ,370.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:health,188.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:art,66.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:othsvc,189.0,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,employed:total,4785.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2019,hired:agr,54.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:mining,34.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:manuf,121.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:elec,30.4,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:water,30.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:constr,119.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:trade,294.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:transp,75.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:hotel,27.4,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:ict,28.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:fin,28.0,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:realest,17.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:prof,56.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:admsup,68.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:pubadm,113.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:educ,336.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:health,135.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:art,55.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:othsvc,19.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2019,hired:total,1646.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,employed:agr,1696.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:mining,40.1,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:manuf,255.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:elec,28.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:water,29.9,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:constr,358.0,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:trade,682.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:transp,195.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:hotel,65.5,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:ict,58.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:fin,28.9,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:realest,84.4,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:prof,61.1,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:admsup,90.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:pubadm,238.1,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:educ,369.9,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:health,187.1,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:art,63.1,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:othsvc,188.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,employed:total,4721.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2020,hired:agr,61.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:mining,34.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:manuf,127.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:elec,28.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:water,29.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:constr,134.0,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:trade,312.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:transp,76.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:hotel,25.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:ict,29.8,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:fin,28.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:realest,18.0,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:prof,58.4,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:admsup,76.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:pubadm,112.0,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:educ,332.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:health,140.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:art,54.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:othsvc,18.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2020,hired:total,1698.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,employed:agr,1782.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:mining,39.70000000000002,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:manuf,293.79999999999995,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:elec,29.7,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:water,45.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:constr,403.8,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:trade,715.4,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:transp,207.6,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:hotel,103.59999999999998,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:ict,60.2,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:fin,39.599999999999994,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:realest,86.00000000000001,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:prof,70.69999999999999,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:admsup,94.69999999999996,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:pubadm,228.40000000000003,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:educ,371.8,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:health,190.3,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:art,66.29999999999998,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:othsvc,200.69999999999996,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,employed:total,5029.8,min nəfər,MicroUnit FR4_dsk_employed_by_activity_history.csv (DSK LFS),D
+2024,hired:agr,44.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:mining,33.0,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:manuf,136.0,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:elec,29.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:water,45.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:constr,117.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:trade,329.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:transp,75.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:hotel,62.4,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:ict,34.4,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:fin,39.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:realest,19.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:prof,68.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:admsup,78.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:pubadm,112.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:educ,329.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:health,150.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:art,53.9,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:othsvc,19.1,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired:total,1780.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_history.csv (DSK 2.12),D
+2024,hired_state:agr,9.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:mining,11.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:manuf,18.4,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:elec,29.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:water,41.8,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:constr,24.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:trade,3.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:transp,42.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:hotel,1.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:ict,14.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:fin,7.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:realest,5.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:prof,31.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:admsup,50.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:pubadm,107.6,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:educ,311.7,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:health,121.5,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:art,47.8,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:othsvc,4.2,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2024,hired_state:total,884.3,min nəfər,MicroUnit FR4_dsk_hired_by_activity_and_property.csv,D
+2018,hired_state:total,884.8,min nəfər,DSK 2.12 (fr345_public_sources_panel; inv_requirements §5),D
+2019,hired_state:total,916.7,min nəfər,DSK 2.12 (inv_requirements §5),D
+2020,hired_state:total,912.2,min nəfər,DSK 2.12 (inv_requirements §5),D
+2018,unemp_rate,4.9,%,MicroUnit FR1_annual_raw (DSK LFS),D
+2019,unemp_rate,5.0,%,FR1_annual_raw,D
+2020,unemp_rate,7.2,%,FR1_annual_raw,D
+2024,unemp_rate,5.3,%,DSK 008_1 (282.3/5312.1),D
+2025,unemp_rate,5.2,%,DSK 008_1,D
+2018,wage_avg,544.6,AZN/ay,DSK 004_2,D
+2019,wage_avg,635.1,AZN/ay,DSK 004_2,D
+2020,wage_avg,707.7,AZN/ay,DSK 004_2,D
+2024,wage_avg,1009.4,AZN/ay,DSK 004_2,D
+2025,wage_avg,1103.2,AZN/ay,DSK 004_2,D
+2018,wage_state,435.5,AZN/ay,DSK 2.12 (inv_requirements §5),D
+2019,wage_state,531.7,AZN/ay,DSK,D
+2020,wage_state,631.4,AZN/ay,DSK,D
+2024,wage_state,975.9,AZN/ay,DSK,D
+2018,wage_nonstate,690.4,AZN/ay,DSK 2.12,D
+2019,wage_nonstate,767.9,AZN/ay,DSK,D
+2020,wage_nonstate,801.6,AZN/ay,DSK,D
+2024,wage_nonstate,1043.8,AZN/ay,DSK,D
+2018,pension_avg,208.4,AZN/ay,MicroUnit FR1_annual_raw (DSMF),D
+2019,pension_avg,221.4,AZN/ay,FR1_annual_raw,D
+2020,pension_avg,263.6,AZN/ay,FR1_annual_raw,D
+2024,pension_avg,441.3,AZN/ay,FR1_annual_raw,D
+2025,pension_avg,496.6,AZN/ay,FR1_annual_raw,D
+2018,pension_spend,3593.0,mln AZN/il,MicroUnit dsmf_sspf_budget (labour pensions),D
+2019,pension_spend,3747.5,mln AZN/il,dsmf_sspf_budget,D
+2020,pension_spend,4505.1,mln AZN/il,dsmf_sspf_budget,D
+2024,pension_spend,6468.9,mln AZN/il,dsmf_sspf_budget,D
+2024,utsy_families,61.5,min ailə,DSK/DSMF 01.07.2024 (azadliq.org 33513208),V
+2024,utsy_members,266.3,min nəfər,DSK/DSMF 01.07.2024,V
+2024,utsy_avg_pp,109.6,AZN/ay/nəfər,DSK/DSMF 01.07.2024,V
+2018,population,9939.8,min nəfər,DSK orta illik (yoxlanılmayıb),K
+2019,population,10024.3,min nəfər,DSK orta illik (yoxlanılmayıb),K
+2024,population,10150.0,min nəfər,"DSK orta illik (yoxlanılmayıb; 01.01.2024 10127, 01.01.2025 ~10180)",K
+2024,urban_share,54.4,%,DSK (yoxlanılmayıb),K
+2018,urban_share,53.0,%,DSK (yoxlanılmayıb),K
+2024,hh_size_avg,4.2,nəfər,DSK EBT 001en (yoxlanılmayıb),K
+2018,hh_size_avg,4.4,nəfər,DSK EBT (yoxlanılmayıb),K

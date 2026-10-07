@@ -71,6 +71,17 @@ NOT_FC = pd.DataFrame([
     ('fr10:regional_nonstate_share:<region>', 'Regionlarda qeyri-dövlət sektorunun payı', 'regional non-state share',
      'Regional mülkiyyət strukturu üçün model yoxdur; tarixi göstərici', 'FR10_regional_history.csv')],
     columns=['id_pattern', 'label_az', 'label_en', 'reason_az', 'source_csv'])
+NOT_FC.insert(4, 'reason_en', NOT_FC.id_pattern.str.split(':').str[1].map({   # English reason, for the English methodology document
+    'tfp': 'TFP is measured by growth accounting; forecasting it needs branch capital stocks and intermediate consumption, which FR1 does not provide by branch',
+    'early_warning': 'The flags are decision rules on recent observed changes (2023–25 vs 2020–22); not a forecast object',
+    'investment_rate': 'FR1 has no exogenous driver for these efficiency indicators; a forecast from their own history is not allowed (no autoregression)',
+    'sme_share': 'Only 2023–2024 (two years) available; held at the 2024 level, no model',
+    'enterprises': 'No structural driver model for entry and exit has been built; a forecast from their own history is not allowed',
+    'dvx': 'Only 2021–2025 (5 years) and economy-wide, not by branch — not enough for a forecast',
+    'product_location_share': 'No driver for the shares by place of production; descriptive indicator',
+    'firm': f'Layer B runs on the {DATA_MODE} panel; in synthetic mode it is a pipeline demonstration only (FR10_SYNTHETIC_firm_forecast.csv), not a Layer-A component',
+    'regional_nonstate_share': 'No model for the regional ownership structure; historical indicator'}))
+assert NOT_FC.reason_en.notna().all(), NOT_FC[NOT_FC.reason_en.isna()].id_pattern.tolist()
 NOT_FC.to_csv(OUT / 'FR10_not_forecast.csv', index=False)
 print(f"imputed history points (volume-index replacements): {int(TIDY.imputed.sum())} rows, {sum(1 for c in CAT if c['imputed_years'])} components")
 print(f'catalogue: {len(CATALOG)} components; forecast table: {len(TIDY):,} rows, {len(COMP)} components x {len(SCEN)} scenarios x '

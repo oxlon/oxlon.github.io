@@ -23,11 +23,11 @@ real_gdp_growth,Real ÜDM artımı,%,rate,v8,Nazirlik 8 vərəq,2028,2.31236,for
 real_gdp_growth,Real ÜDM artımı,%,rate,v8,Nazirlik 8 vərəq,2029,3.79116,forecast,mn:v8:2_4_1_1:udm_bazar_qiymetleri_ile.real_artim_tempi,8 vərəq.xlsx/2.4.1.1.!R5,,
 real_gdp_growth,Real ÜDM artımı,%,rate,v8,Nazirlik 8 vərəq,2030,0.970389,forecast,mn:v8:2_4_1_1:udm_bazar_qiymetleri_ile.real_artim_tempi,8 vərəq.xlsx/2.4.1.1.!R5,,
 real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2025,1.4,actual,fr1:rgdp,fr1:rgdp,,
-real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2026,0.242638,forecast,fr1:rgdp,fr1:rgdp,kənar dəyər,digər mənbələrin medianından -2.46 (hədd ±2.00)
-real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2027,2.83192,forecast,fr1:rgdp,fr1:rgdp,,
-real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2028,2.61543,forecast,fr1:rgdp,fr1:rgdp,,
-real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2029,4.44675,forecast,fr1:rgdp,fr1:rgdp,,
-real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2030,3.28157,forecast,fr1:rgdp,fr1:rgdp,kənar dəyər,digər mənbələrin medianından +2.31 (hədd ±2.00)
+real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2026,0.241571,forecast,fr1:rgdp,fr1:rgdp,kənar dəyər,digər mənbələrin medianından -2.46 (hədd ±2.00)
+real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2027,2.54776,forecast,fr1:rgdp,fr1:rgdp,,
+real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2028,2.4696,forecast,fr1:rgdp,fr1:rgdp,,
+real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2029,4.37427,forecast,fr1:rgdp,fr1:rgdp,,
+real_gdp_growth,Real ÜDM artımı,%,rate,fr1,MicroUnit FR1,2030,3.24749,forecast,fr1:rgdp,fr1:rgdp,kənar dəyər,digər mənbələrin medianından +2.28 (hədd ±2.00)
 real_gdp_growth,Real ÜDM artımı,%,rate,imf,BVF Art. IV (istinad),2026,2.2,forecast,mx:imf:gdp_realg,mx:imf:gdp_realg,,
 real_gdp_growth,Real ÜDM artımı,%,rate,imf,BVF Art. IV (istinad),2027,2.5,forecast,mx:imf:gdp_realg,mx:imf:gdp_realg,,
 real_gdp_growth,Real ÜDM artımı,%,rate,imf,BVF Art. IV (istinad),2028,2.5,forecast,mx:imf:gdp_realg,mx:imf:gdp_realg,,
@@ -57,11 +57,11 @@ nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,v8,Nazirlik 8 vərəq,2028,3.9
 nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,v8,Nazirlik 8 vərəq,2029,3.56198,forecast,mn:v8:2_4_1_1:qeyri_neft_qaz_sektoru_udm_baz.real_artim_tempi,8 vərəq.xlsx/2.4.1.1.!R12,,
 nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,v8,Nazirlik 8 vərəq,2030,1.4962,forecast,mn:v8:2_4_1_1:qeyri_neft_qaz_sektoru_udm_baz.real_artim_tempi,8 vərəq.xlsx/2.4.1.1.!R12,,
 nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2025,2.7,actual,fr1:rgdpnon,fr1:rgdpnon,,
-nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2026,0.662577,forecast,fr1:rgdpnon,fr1:rgdpnon,kənar dəyər,digər mənbələrin medianından -4.05 (hədd ±2.00)
-nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2027,5.17839,forecast,fr1:rgdpnon,fr1:rgdpnon,,
-nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2028,4.49092,forecast,fr1:rgdpnon,fr1:rgdpnon,,
-nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2029,4.87123,forecast,fr1:rgdpnon,fr1:rgdpnon,,
-nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2030,4.31812,forecast,fr1:rgdpnon,fr1:rgdpnon,kənar dəyər,digər mənbələrin medianından +2.82 (hədd ±2.00)
+nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2026,0.661141,forecast,fr1:rgdpnon,fr1:rgdpnon,kənar dəyər,digər mənbələrin medianından -4.05 (hədd ±2.00)
+nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2027,4.80517,forecast,fr1:rgdpnon,fr1:rgdpnon,,
+nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2028,4.30947,forecast,fr1:rgdpnon,fr1:rgdpnon,,
+nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2029,4.78271,forecast,fr1:rgdpnon,fr1:rgdpnon,,
+nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,fr1,MicroUnit FR1,2030,4.27889,forecast,fr1:rgdpnon,fr1:rgdpnon,kənar dəyər,digər mənbələrin medianından +2.78 (hədd ±2.00)
 nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,imf,BVF Art. IV (istinad),2026,3.7,forecast,mx:imf:nonoil_realg,mx:imf:nonoil_realg,,
 nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,imf,BVF Art. IV (istinad),2027,3.6,forecast,mx:imf:nonoil_realg,mx:imf:nonoil_realg,,
 nonoil_gdp_growth,Qeyri-neft ÜDM artımı,%,rate,imf,BVF Art. IV (istinad),2028,3.5,forecast,mx:imf:nonoil_realg,mx:imf:nonoil_realg,,
@@ -120,11 +120,11 @@ cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,v8,Nazirlik 8 vərəq,202
 cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,v8,Nazirlik 8 vərəq,2029,7.0662,forecast,mn:v8:2_4_1_5_7:inflyasiya_iqi_orta_illik,8 vərəq.xlsx/2.4.1.5.-7.!R54,qeyri-real,8 vərəq İQİ sətri ticarət deflyatoru ilə eynidir — qırıq keçid
 cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,v8,Nazirlik 8 vərəq,2030,7.20356,forecast,mn:v8:2_4_1_5_7:inflyasiya_iqi_orta_illik,8 vərəq.xlsx/2.4.1.5.-7.!R54,qeyri-real,8 vərəq İQİ sətri ticarət deflyatoru ilə eynidir — qırıq keçid
 cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2025,5.2,actual,fr1:infl,fr1:infl,,
-cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2026,5.70128,forecast,fr1:infl,fr1:infl,,
-cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2027,5.93002,forecast,fr1:infl,fr1:infl,,
-cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2028,5.06686,forecast,fr1:infl,fr1:infl,,
-cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2029,4.87212,forecast,fr1:infl,fr1:infl,,
-cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2030,4.53051,forecast,fr1:infl,fr1:infl,,
+cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2026,5.70025,forecast,fr1:infl,fr1:infl,,
+cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2027,6.12653,forecast,fr1:infl,fr1:infl,,
+cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2028,5.18213,forecast,fr1:infl,fr1:infl,,
+cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2029,4.9412,forecast,fr1:infl,fr1:infl,,
+cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,fr1,MicroUnit FR1,2030,4.5826,forecast,fr1:infl,fr1:infl,,
 cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,imf,BVF Art. IV (istinad),2026,6,forecast,mx:imf:cpi_infl,mx:imf:cpi_infl,,
 cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,imf,BVF Art. IV (istinad),2027,5.1,forecast,mx:imf:cpi_infl,mx:imf:cpi_infl,,
 cpi_inflation,"İnflyasiya (İQİ, orta illik)",%,rate,imf,BVF Art. IV (istinad),2028,4.1,forecast,mx:imf:cpi_infl,mx:imf:cpi_infl,,
@@ -258,11 +258,11 @@ state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,bu60,Nazirlik 
 state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,bu60,Nazirlik Bottom-up (base 60),2029,-2919.8,forecast,mn:bu60:budce_kesiri,MOE REPORT 3 PAGES.xlsx/base 60!R92,,
 state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,bu60,Nazirlik Bottom-up (base 60),2030,-2919.82,forecast,mn:bu60:budce_kesiri,MOE REPORT 3 PAGES.xlsx/base 60!R92,,
 state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2025,579.3,actual,fr1:balance_n,fr1:balance_n,,
-state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2026,886.608,forecast,fr1:balance_n,fr1:balance_n,kənar dəyər,digər mənbələrin medianından +4165.66 (hədd ±1500.00)
-state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2027,469.589,forecast,fr1:balance_n,fr1:balance_n,kənar dəyər,digər mənbələrin medianından +3562.35 (hədd ±1500.00)
-state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2028,52.7876,forecast,fr1:balance_n,fr1:balance_n,kənar dəyər,digər mənbələrin medianından +3487.73 (hədd ±1500.00)
-state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2029,188.287,forecast,fr1:balance_n,fr1:balance_n,kənar dəyər,digər mənbələrin medianından +3433.89 (hədd ±1500.00)
-state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2030,265.366,forecast,fr1:balance_n,fr1:balance_n,,
+state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2026,886.466,forecast,fr1:balance_n,fr1:balance_n,kənar dəyər,digər mənbələrin medianından +4165.51 (hədd ±1500.00)
+state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2027,381.672,forecast,fr1:balance_n,fr1:balance_n,kənar dəyər,digər mənbələrin medianından +3474.43 (hədd ±1500.00)
+state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2028,-96.691,forecast,fr1:balance_n,fr1:balance_n,kənar dəyər,digər mənbələrin medianından +3338.26 (hədd ±1500.00)
+state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2029,-10.1447,forecast,fr1:balance_n,fr1:balance_n,kənar dəyər,digər mənbələrin medianından +3235.46 (hədd ±1500.00)
+state_budget_balance,Dövlət büdcəsinin balansı,mln AZN,level,fr1,MicroUnit FR1,2030,24.2051,forecast,fr1:balance_n,fr1:balance_n,,
 current_account_pct_gdp,Cari hesab balansı / ÜDM,%,rate,oxlon,OxLon (makro §15.5.1),2025,4.57619,actual,mx:ca_gdp_ratio,mx:ca_gdp_ratio,,
 current_account_pct_gdp,Cari hesab balansı / ÜDM,%,rate,oxlon,OxLon (makro §15.5.1),2026,3.1303,forecast,mx:ca_gdp_ratio,mx:ca_gdp_ratio,,
 current_account_pct_gdp,Cari hesab balansı / ÜDM,%,rate,oxlon,OxLon (makro §15.5.1),2027,1.79523,forecast,mx:ca_gdp_ratio,mx:ca_gdp_ratio,,
@@ -321,8 +321,8 @@ nominal_gdp,Nominal ÜDM,mln AZN,level,v8,Nazirlik 8 vərəq,2028,146693,forecas
 nominal_gdp,Nominal ÜDM,mln AZN,level,v8,Nazirlik 8 vərəq,2029,159372,forecast,mn:v8:2_4_1_1:udm_bazar_qiymetleri_ile,8 vərəq.xlsx/2.4.1.1.!R4,,
 nominal_gdp,Nominal ÜDM,mln AZN,level,v8,Nazirlik 8 vərəq,2030,168393,forecast,mn:v8:2_4_1_1:udm_bazar_qiymetleri_ile,8 vərəq.xlsx/2.4.1.1.!R4,,
 nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2025,129094,actual,fr1:gdp_n,fr1:gdp_n,,
-nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2026,135245,forecast,fr1:gdp_n,fr1:gdp_n,,
-nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2027,146221,forecast,fr1:gdp_n,fr1:gdp_n,,
-nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2028,157442,forecast,fr1:gdp_n,fr1:gdp_n,,
-nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2029,173037,forecast,fr1:gdp_n,fr1:gdp_n,kənar dəyər,digər mənbələrin medianından +13664.58 (hədd ±12000.00)
-nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2030,188130,forecast,fr1:gdp_n,fr1:gdp_n,kənar dəyər,digər mənbələrin medianından +19737.29 (hədd ±12000.00)
+nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2026,135242,forecast,fr1:gdp_n,fr1:gdp_n,,
+nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2027,146021,forecast,fr1:gdp_n,fr1:gdp_n,,
+nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2028,157133,forecast,fr1:gdp_n,fr1:gdp_n,,
+nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2029,172660,forecast,fr1:gdp_n,fr1:gdp_n,kənar dəyər,digər mənbələrin medianından +13288.10 (hədd ±12000.00)
+nominal_gdp,Nominal ÜDM,mln AZN,level,fr1,MicroUnit FR1,2030,187727,forecast,fr1:gdp_n,fr1:gdp_n,kənar dəyər,digər mənbələrin medianından +19334.01 (hədd ±12000.00)

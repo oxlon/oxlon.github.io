@@ -88,8 +88,8 @@ def build(texts):
          "görə çəkilərək ümumi dəyərə doğru sıxılır; intensivlik kəsimdən əvvəl eyni qayda ilə seçilir.</p>",
          html.h2("anchoring", 6, "Lövbər və əlavə amillər"),
          "<p>Hər tənliyin son faktiki ildəki qalığı <strong>sabit əlavə amil</strong> (add-factor) kimi proqnoz üfüqündə "
-         "saxlanılır, beləliklə model son faktiki ili dəqiq təkrarlayır. Qalıqların azalması (ρ̂ ilə) yalnız həssaslıq kimi "
-         "göstərilir. FR1-də 2026 ili yanvar–aprel məlumatına lövbərlənir və bu artım bir illik yarımömürlə sönür.</p>",
+         "saxlanılır, beləliklə model son faktiki ili dəqiq təkrarlayır. Düzəliş əmsallarının sönməsi yalnız həssaslıq kimi, "
+         "sabit yarımömür qaydası ilə (1 il, hər il 0,5 əmsalı; qalıq dinamikası qiymətləndirilmir) göstərilir. FR1-də 2026 ili yanvar–aprel məlumatına lövbərlənir və bu artım bir illik yarımömürlə sönür.</p>",
          html.h2("uncertainty", 7, "Qeyri-müəyyənlik"),
          "<p>Zolaqlar qalıq dinamikasının modeli ilə deyil, <strong>tarixi qalıq yollarının təkrar seçilməsi</strong> ilə "
          "qurulur (bütün tənliklərin birgə beşillik qalıq yolları), üstəgəl <strong>parametr çəkilişləri</strong> (işarəni "

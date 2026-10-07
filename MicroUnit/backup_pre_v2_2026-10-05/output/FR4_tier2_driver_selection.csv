@@ -1,8 +1,0 @@
-specification,n_predictions,pooled_OOS_RMSE_pct,median_abs_err_pct,DM_stat_vs_null,DM_p_vs_null,DM_target_years
-trend,96,9.855,4.962,-2.05,0.11,5.0
-pooled output elasticity (FD),96,10.642,6.409,-0.91,0.416,5.0
-combination: constant + pooled (equal weights),96,10.712,6.745,-1.0,0.375,5.0
-constant shares,96,10.811,6.78,,,
-income per capita,96,10.985,7.04,2.37,0.077,5.0
-relative output share,96,11.374,7.112,5.09,0.007,5.0
-income per capita + relative output,96,13.709,7.791,3.42,0.027,5.0

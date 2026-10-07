@@ -1,6 +1,6 @@
 check,kind,result,tolerance,unit,passed
 the 13 budget shares sum to 1 in every scenario and year,arithmetic check - holds by construction,4.440892098500626e-14,1e-09,%,True
-value by type sums to the total value,arithmetic check - holds by construction,5.551115123125783e-14,1e-09,%,True
+value by type sums to the total value,arithmetic check - holds by construction,4.440892098500626e-14,1e-09,%,True
 value = volume x deflator (the Part 5 identity),arithmetic check - holds by construction,0.0,1e-09,%,True
 value = volume x deflator holds for every type,arithmetic check - holds by construction,2.220446049250313e-14,1e-09,%,True
 model reproduces the 2025 volume,arithmetic check - holds by construction,0.0,1e-09,%,True
@@ -8,5 +8,5 @@ model reproduces the 2025 shares,arithmetic check - holds by construction,5.5511
 smallest predicted share is positive (reported as the shortfall below zero),arithmetic check - holds by construction,0.0,1e-12,pp,True
 no non-positive volume by type (count),arithmetic check - holds by construction,0.0,0.0,count,True
 legal entities + individual entrepreneurs = total value,arithmetic check - holds by construction,2.220446049250313e-14,1e-09,%,True
-state + non-state = total value,arithmetic check - holds by construction,1.1102230246251565e-14,1e-09,%,True
+state + non-state = total value,arithmetic check - holds by construction,2.220446049250313e-14,1e-09,%,True
 "share-weighted expenditure elasticities = 1 (mechanical, holds for any coefficients)",arithmetic check - holds by construction,0.0,1e-09,deviation,True

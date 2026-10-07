@@ -19,8 +19,19 @@
     if (ch) A.listeners.forEach(function (f) { try { f(on); } catch (e) { if (window.console) console.error(e); } });
   }
   A.fileMode = function () { return location.protocol === 'file:' && !U.ls('riskPanel.api'); };
+  /* live request: server when reachable; otherwise the in-browser Python backend (pyweb.js) for the routes it supports */
+  A.mode = function () { return U.PY ? U.PY.mode(A.online) : (A.online ? 'server' : 'paket'); };
   A.req = function (method, path, body, opt) {
-    opt = opt || {};
+    if (U.PY && A.online !== true && U.PY.supports(method, path)) {
+      return (A.online === null ? A.ping() : Promise.resolve(false)).then(function (on) { return on ? A.net(method, path, body, opt) : A.viaPy(method, path, body); });
+    }
+    return A.net(method, path, body, opt);
+  };
+  A.viaPy = function (method, path, body) {
+    return U.PY.req(method, path, body).then(function (r) { A.lastVia = 'brauzer'; if (r.status >= 400) throw A.err(r.body, r.status); return r.body; });
+  };
+  A.net = function (method, path, body, opt) {
+    opt = opt || {}; A.lastVia = 'server';
     if (A.fileMode()) { set(false); return Promise.reject(new Error('Panel fayl kimi açılıb: canlı hesablama üçün serveri başladın (RiskModel_Baslat.command / .bat) və paneli http://127.0.0.1:' + A.PORT + '/panel/ ünvanında açın.')); }
     var h = { Authorization: 'Bearer ' + A.token() };
     if (body !== undefined) h['Content-Type'] = 'application/json';
@@ -50,6 +61,7 @@
   /* analysis calls wait until the server's analysis cache is warm (status.analysis_ready.status === 'hazır') */
   A.whenReady = function (tries) {
     tries = tries == null ? 45 : tries;
+    if (A.online !== true && U.PY && U.PY.able()) return (A.online === null ? A.ping() : Promise.resolve(false)).then(function (on) { return on ? A.whenReady(tries) : {}; });
     return A.status().then(function (s) {
       var st = ((s && s.analysis_ready) || {}).status;
       if (!st || st === 'hazır' || st === 'ready') return s;
@@ -85,6 +97,11 @@
       '<ol class="small" style="margin:4px 0 8px;padding-left:18px"><li><b>RiskModel_Baslat.command</b> (macOS) və ya <b>RiskModel_Baslat.bat</b> (Windows) faylını <code>RiskUnit</code> qovluğunda iki dəfə klikləyin.</li>' +
       '<li>Brauzerdə <code>http://127.0.0.1:' + A.PORT + '/panel/</code> açılacaq. Və ya terminalda: <code>python3 api/server.py</code>.</li></ol>' +
       '<button type="button" class="btn sm" data-api="retry">Yenidən yoxla</button> <button type="button" class="btn sm ghost" data-api="set">Server ayarları</button></div>';
+  };
+  /* note shown instead of the launcher when the browser computes */
+  A.browserHtml = function (what) {
+    return '<div class="card pad" role="note" style="border-left:3px solid var(--accent, #0E6F7C)"><b>Server yoxdur — ' + U.esc(what || 'canlı hesablama') + ' bu brauzerdə Python ilə aparılır.</b>' +
+      '<p class="small" style="margin:6px 0 0">API-nin çağırdığı eyni Python funksiyaları (MikroUnit zənciri + RU birgə Monte Karlo, eyni toxum) Pyodide ilə brauzerdə icra olunur; ilk dəfə ≈ ' + U.nf(U.PY.estMB(), 0) + ' MB yüklənir (sonra brauzer yaddaşından). Saxlama və hesabatların serverdə yaradılması yalnız serverlə mümkündür.</p></div>';
   };
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('[data-api]'); if (!b) return;

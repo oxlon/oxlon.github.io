@@ -1,17 +1,17 @@
 {
- "yaradildi_utc": "2026-10-06T13:18:09Z",
+ "yaradildi_utc": "2026-10-07T00:58:20Z",
  "rejim": "full",
- "as_of": "2026-10-06",
+ "as_of": "2026-10-07",
  "sebeke": "söndürülüb (RISK_NO_NETWORK=1)",
- "baseline_id": "B-949799ba38",
- "muddet_san": 39.6,
+ "baseline_id": "B-d7e77e886f",
+ "muddet_san": 43.4,
  "merheleler": [
   {
    "stage": "A0",
    "name": "məlumat onurğası: yuxarı axın faylları (hash manifesti)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.07,
+   "seconds": 0.12,
    "required": true
   },
   {
@@ -19,7 +19,7 @@
    "name": "qlobal axınlar (yükləmə yoxdur — saxlanılmış vintajların təzəliyi)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.08,
+   "seconds": 0.11,
    "required": false
   },
   {
@@ -27,7 +27,7 @@
    "name": "Azərbaycan axınları (AMB, DSK, MN, ARDNF, BFB) → D2, D4",
    "status": "xəbərdarlıq: minfin (köhnə)",
    "seviyye": "xəbərdarlıq",
-   "seconds": 0.18,
+   "seconds": 0.27,
    "required": false
   },
   {
@@ -35,7 +35,7 @@
    "name": "yuxarı axın anbarı (OxLon, Nazirlik, MicroUnit) → D1",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.46,
+   "seconds": 0.47,
    "required": false
   },
   {
@@ -43,7 +43,7 @@
    "name": "bölmələrarası konsensus və model riski → D3",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.71,
+   "seconds": 0.64,
    "required": false
   },
   {
@@ -51,7 +51,7 @@
    "name": "gündəlik monitor və proqnoz təsiri → D5–D7",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 2.29,
+   "seconds": 2.63,
    "required": false
   },
   {
@@ -59,7 +59,7 @@
    "name": "FR1 risk amilləri: göstəricilər, kanallar (R17/R18 daxil), təhlükələr, xronologiya",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.28,
+   "seconds": 0.25,
    "required": true
   },
   {
@@ -67,7 +67,7 @@
    "name": "CAEM risk vərəqləri (C1–C6)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 3.15,
+   "seconds": 3.72,
    "required": false
   },
   {
@@ -83,7 +83,7 @@
    "name": "FR2 birgə simulyasiya — baza mərkəzli və canlı baxış (20 000 ssenari)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.63,
+   "seconds": 0.6,
    "required": true
   },
   {
@@ -91,7 +91,7 @@
    "name": "FR2 skorlama (R01–R19), istilik xəritəsi, GaR yoxlaması",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.29,
+   "seconds": 0.18,
    "required": true
   },
   {
@@ -99,7 +99,7 @@
    "name": "FR3 tədbirlər, qalıq risk, alətlər, stress S1–S8 (+ işarə yoxlaması)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 4.99,
+   "seconds": 4.94,
    "required": true
   },
   {
@@ -107,7 +107,7 @@
    "name": "məruz qalmalar (V1)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.74,
+   "seconds": 0.79,
    "required": false
   },
   {
@@ -115,7 +115,7 @@
    "name": "VaR / ES (V3–V6)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 6.1,
+   "seconds": 6.23,
    "required": false
   },
   {
@@ -131,7 +131,7 @@
    "name": "riskə məruz kapital / CCA (K1, K2, K4, K5)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.57,
+   "seconds": 0.58,
    "required": false
   },
   {
@@ -139,7 +139,7 @@
    "name": "scalability (S*/M*)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 4.05,
+   "seconds": 3.94,
    "required": false
   },
   {
@@ -147,7 +147,7 @@
    "name": "optimize (S*/M*)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 7.71,
+   "seconds": 7.45,
    "required": false
   },
   {
@@ -163,7 +163,7 @@
    "name": "FR4/NFR3 panellər, PDF, Excel, JSON API",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.35,
+   "seconds": 3.36,
    "required": false
   },
   {
@@ -171,7 +171,7 @@
    "name": "metodologiya sənədinin AUTO blokları",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 0.02,
+   "seconds": 0.1,
    "required": false
   },
   {
@@ -179,7 +179,7 @@
    "name": "Risk paneli: məlumat paketlərinin yenidən qurulması (panel/build_panel.py)",
    "status": "ok",
    "seviyye": "ok",
-   "seconds": 6.27,
+   "seconds": 6.33,
    "required": false
   }
  ],
@@ -190,7 +190,7 @@
    "name": "Azərbaycan axınları (AMB, DSK, MN, ARDNF, BFB) → D2, D4",
    "status": "xəbərdarlıq: minfin (köhnə)",
    "seviyye": "xəbərdarlıq",
-   "seconds": 0.18,
+   "seconds": 0.27,
    "required": false
   }
  ],
@@ -347,7 +347,7 @@
     "son_musahide": "2026-09-29",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_gas_hh": {
@@ -355,7 +355,7 @@
     "son_musahide": "2026-09-29",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_eurusd": {
@@ -363,7 +363,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_gbpusd": {
@@ -371,7 +371,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_usdcny": {
@@ -379,7 +379,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_usdjpy": {
@@ -387,7 +387,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_usd_broad": {
@@ -395,7 +395,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_ust2": {
@@ -403,7 +403,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_ust5": {
@@ -411,7 +411,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_ust10": {
@@ -419,7 +419,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_spx": {
@@ -427,7 +427,7 @@
     "son_musahide": "2026-10-05",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_em_spread": {
@@ -435,7 +435,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_em_hy_spread": {
@@ -443,7 +443,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_vix": {
@@ -451,7 +451,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_baa_spread": {
@@ -459,7 +459,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_ovx": {
@@ -467,7 +467,7 @@
     "son_musahide": "2026-10-02",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "ecb_try": {
@@ -475,7 +475,7 @@
     "son_musahide": "2026-10-05",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "cbar_fx_daily": {
@@ -488,18 +488,18 @@
    },
    "wb_pinksheet": {
     "vintage": "",
-    "son_musahide": "2026-09-01",
+    "son_musahide": "2026-10-06",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_gas_eu": {
     "vintage": "",
-    "son_musahide": "2026-07-01",
+    "son_musahide": "2026-09-01",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_eq_oecd_us": {
@@ -507,23 +507,23 @@
     "son_musahide": "2026-08-01",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_usdrub_m": {
     "vintage": "",
-    "son_musahide": "2026-08-01",
+    "son_musahide": "2026-10-06",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "fred_usdtry_m": {
     "vintage": "",
-    "son_musahide": "2026-08-01",
+    "son_musahide": "2026-10-05",
     "son_hadise": "",
     "tazelik": "təzə",
-    "status": "canlı",
+    "status": "keş: canlı yükləmə 2026-10-06",
     "seviyye": "ok"
    },
    "sofaz_highlights_pdf": {
@@ -567,36 +567,36 @@
    "monthly_panel": "8311f07c9ea4",
    "macro_annual": "bd1e2213b7e2",
    "public_panel": "969eefe11dc2",
-   "fr1_multipliers": "518d6f7b03e4",
-   "fr1_forecast": "0705bf37e5c8",
-   "fr1_draws": "16ca9de73665",
-   "fr1_holdout": "66f337259a1a",
+   "fr1_multipliers": "ddd4a7ab87e3",
+   "fr1_forecast": "f0b3882798dc",
+   "fr1_draws": "253867b4b19c",
+   "fr1_holdout": "f37dcfaef864",
    "fr10_ews": "5857c9bbae3b",
-   "fr10_plausibility": "f9afe2165a1d",
+   "fr10_plausibility": "d169f879b84b",
    "fr12_ews": "ce9f19423336",
    "fr12_false_listing": "ed39611d1fab",
    "fr12_scenarios": "b24c0e95f921",
    "equations_catalog": "e4faab795e3d",
    "series_dictionary": "f29cc65b3df6",
    "assumption_registry": "fe179cfc2c93",
-   "fr1_tidy": "143b83c2184a",
-   "fr3_tidy": "262b1469f9c8",
-   "fr4_tidy": "2998aaaf3d8f",
-   "fr5_tidy": "b2d68e3f75b6",
-   "fr10_tidy": "c379349dd19f",
-   "fr12_tidy": "9432cdfab007",
-   "fr1_catalog": "02a50fe1373c",
+   "fr1_tidy": "1d9571b4891c",
+   "fr3_tidy": "85fb8445f54d",
+   "fr4_tidy": "39d98e3870a8",
+   "fr5_tidy": "9b7bff3fc75e",
+   "fr10_tidy": "49d481fa73f3",
+   "fr12_tidy": "4dbc4bd7aeea",
+   "fr1_catalog": "7453ed449385",
    "fr3_catalog": "f7e2b183691e",
    "fr4_catalog": "f438e635d437",
    "fr5_catalog": "19d24bcce175",
    "fr10_catalog": "822c79d542df",
    "fr12_catalog": "dae06ebe3767",
-   "fr1_equations": "aa65b246a24e",
-   "fr3_equations": "61127005a9f3",
-   "fr4_equations": "5ff123ce7879",
-   "fr5_equations": "21e9ed0dba09",
-   "fr10_equations": "8e6f5b73a555",
-   "fr12_equations": "941bf6904997",
+   "fr1_equations": "e858a4dd3c42",
+   "fr3_equations": "f97516ac7a65",
+   "fr4_equations": "512d91438743",
+   "fr5_equations": "6da9d4459865",
+   "fr10_equations": "fa5584595a7f",
+   "fr12_equations": "dff057eeec9e",
    "fr10_cross_multipliers": "16ae0a512a7f",
    "caem": "de2ef02c1905",
    "bottomup_report": "7a8d25506961",
@@ -611,15 +611,15 @@
    "monthly_panel": "2026-07-05T04:31:16Z",
    "macro_annual": "2026-07-05T04:31:16Z",
    "public_panel": "2026-08-23T22:10:21Z",
-   "fr1_multipliers": "2026-10-06T09:13:16Z",
-   "fr1_forecast": "2026-10-06T09:13:16Z",
-   "fr1_draws": "2026-10-06T09:13:16Z",
-   "fr1_holdout": "2026-10-06T09:13:16Z",
-   "fr10_ews": "2026-10-06T09:15:48Z",
-   "fr10_plausibility": "2026-10-06T09:15:48Z",
-   "fr12_ews": "2026-10-06T09:16:12Z",
-   "fr12_false_listing": "2026-10-06T09:16:12Z",
-   "fr12_scenarios": "2026-10-06T09:16:12Z"
+   "fr1_multipliers": "2026-10-06T23:56:26Z",
+   "fr1_forecast": "2026-10-06T23:56:26Z",
+   "fr1_draws": "2026-10-06T23:56:26Z",
+   "fr1_holdout": "2026-10-06T23:56:26Z",
+   "fr10_ews": "2026-10-06T23:59:00Z",
+   "fr10_plausibility": "2026-10-06T23:59:00Z",
+   "fr12_ews": "2026-10-06T23:59:23Z",
+   "fr12_false_listing": "2026-10-06T23:59:23Z",
+   "fr12_scenarios": "2026-10-06T23:59:22Z"
   }
  },
  "qiymetlendirme_ili": 2027,
@@ -627,24 +627,24 @@
   "baza_merkezli": {
    "g": {
     "baza": 5.43,
-    "p05": 0.107,
+    "p05": 0.106,
     "p50": 5.43,
-    "orta": 5.333,
+    "orta": 5.337,
     "p95": 10.356
    },
    "cpi": {
     "baza": 5.742,
-    "p05": 1.637,
+    "p05": 1.645,
     "p50": 5.742,
-    "orta": 6.475,
-    "p95": 13.713
+    "orta": 6.481,
+    "p95": 13.739
    },
    "fis": {
-    "baza": 0.321,
-    "p05": -1.335,
-    "p50": 0.321,
-    "orta": 0.319,
-    "p95": 1.988
+    "baza": 0.261,
+    "p05": -1.398,
+    "p50": 0.261,
+    "orta": 0.259,
+    "p95": 1.929
    },
    "brent": {
     "merkez": 68.97,
@@ -655,24 +655,24 @@
   "canli": {
    "g": {
     "baza": 5.43,
-    "p05": 0.934,
-    "p50": 6.203,
-    "orta": 6.138,
-    "p95": 11.228
+    "p05": 0.936,
+    "p50": 6.196,
+    "orta": 6.131,
+    "p95": 11.215
    },
    "cpi": {
     "baza": 5.742,
-    "p05": 2.106,
-    "p50": 6.398,
-    "orta": 7.086,
-    "p95": 14.465
+    "p05": 2.109,
+    "p50": 6.39,
+    "orta": 7.088,
+    "p95": 14.48
    },
    "fis": {
-    "baza": 0.321,
-    "p05": -1.227,
-    "p50": 0.429,
-    "orta": 0.429,
-    "p95": 2.096
+    "baza": 0.261,
+    "p05": -1.298,
+    "p50": 0.356,
+    "orta": 0.355,
+    "p95": 2.02
    },
    "brent": {
     "merkez": 83.57,
@@ -689,23 +689,23 @@
   "R12",
   "R01"
  ],
- "xeberdarliq_sayi": 18,
+ "xeberdarliq_sayi": 19,
  "stress_isare_yoxlamasi": "keçdi",
  "kalibrləmə": {
   "nonoil": 0.6656322368421053,
   "cpi": 1.0,
   "brent": 1.1687500000000002,
-  "fis": 0.3604029166666667
+  "fis": 0.3171578125
  },
  "D6_uygunluq": {
   "il": 2027,
   "brent_baza": 68.97,
   "brent_canli_merkez": 83.57,
   "brent_spot_D6": 113.96,
-  "D6_balans_mln_azn": 636.3,
-  "RU_canli_balans_mln_azn": 157.4,
-  "D6_mln_azn_per_usd": 14.14,
-  "RU_mln_azn_per_usd": 10.78,
+  "D6_balans_mln_azn": 593.6,
+  "RU_canli_balans_mln_azn": 138.4,
+  "D6_mln_azn_per_usd": 13.19,
+  "RU_mln_azn_per_usd": 9.48,
   "izah": "eyni FR1 multiplikatorları; D6 spotu saxlayır (şərti ssenari), canlı baxış tərs-MSE mərkəzi"
  }
 }

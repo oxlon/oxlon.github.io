@@ -1,0 +1,19 @@
+event,variant,compare_to,indicator,observed,model_static,model_behavioural,naive_trend,model_plus_trend,beats_naive_combined,dev,rel_dev_pct,sign_ok,beats_naive,sample,unit
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,wage_avg,16.6,0.488,,3.0,3.488,True,-16.112,97.1,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,wage_state,22.1,1.071,,10.1,11.171,True,-21.029,95.2,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,wage_nonstate,11.2,0.0,,-2.9,-2.9,False,-11.2,100.0,False,True,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,hbs_employment_pc,7.5,4.861,,3.2,8.061,True,-2.639,35.2,True,True,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,hbs_pensions_pc,9.8,2.484,,5.0,7.484,True,-7.316,74.7,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,hbs_benefits_pc,25.0,2.594,,17.6,20.194,True,-22.406,89.6,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,hbs_total_pc,6.0,2.031,,2.8,4.831,True,-3.969,66.2,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,poverty_rate,-0.3,-0.864,,-0.3,-1.164,False,-0.564,188.0,True,False,out-of-sample (2018 kalibrləməsi),f.b.
+E1+E2 2019 paketi,2019 orta illik qaydalar,2019 vs 2018,nonstate_employees,9.4,0.0,5.923,3.2,3.2,False,-9.4,100.0,False,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,wage_avg,29.9,1.951,,6.0,7.951,True,-27.949,93.5,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,wage_state,45.0,4.095,,20.2,24.295,True,-40.905,90.9,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,wage_nonstate,16.1,0.158,,-5.8,-5.642,True,-15.942,99.0,True,True,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,hbs_employment_pc,12.7,6.289,,6.4,12.689,True,-6.411,50.5,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,hbs_pensions_pc,28.1,8.616,,10.0,18.616,True,-19.484,69.3,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,hbs_benefits_pc,53.3,2.417,,35.2,37.617,True,-50.883,95.5,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,hbs_total_pc,5.6,3.361,,5.6,8.961,False,-2.239,40.0,True,False,out-of-sample (2018 kalibrləməsi),%
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,poverty_rate,1.1,-1.262,,-0.6,-1.862,False,-2.362,214.7,False,False,out-of-sample (2018 kalibrləməsi),f.b.
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),2020 vs 2018,nonstate_employees,17.9,0.0,5.918,6.4,6.4,False,-17.9,100.0,False,False,out-of-sample (2018 kalibrləməsi),%

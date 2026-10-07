@@ -10,6 +10,7 @@ Writes panel/data/*.js:
   eqidx.js, eq_frX.js equation registries (index + full regression output, loaded on demand), sens.js tornado data
   synthetic.js, synecon.js  FR10/FR12 Layer B (demonstration + full firm-level econometrics)
   inputs.js, saved.js scenario-builder inputs (engines) and saved custom scenarios; meta.js texts and lists
+  ../py/microunit_bundle.zip, ../py/bundle.js  in-browser Python backend (Pyodide; _build/pybundle.py, --no-pybundle skips)
 and MicroUnit/index.html (hub), panel/coverage_report.csv, panel/i18n/untranslated.txt.
 
 Checks (exit 1 on failure): completeness — every catalog component × scenario × 2026–2030 has a value;
@@ -25,7 +26,7 @@ from pathlib import Path
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from _build import pcore as C, p_tidy, p_eq, p_i18n, p_synth, p_synecon, p_inputs, p_meta, p_hub   # noqa: E402
+from _build import pcore as C, p_tidy, p_eq, p_i18n, p_synth, p_synecon, p_inputs, p_meta, p_hub, pybundle   # noqa: E402
 
 SKIP = {"i", "id", "f", "k", "src", "eq", "comp", "n", "c", "r", "egt", "_allow", "eq_id", "rule_key", "part", "model_id",
         "model", "term", "dependent", "regressors", "section", "parameter", "sample", "ratio_type", "options",
@@ -79,6 +80,7 @@ def check_links(out, idx):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", default=None, help="saxlanmış ssenarilər üçün SQLite (standart: api/micro.db)")
+    ap.add_argument("--no-pybundle", action="store_true", help="brauzer üçün Python paketini (panel/py/) yeniləmə")
     a = ap.parse_args()
     data = C.PANEL / "data"
     data.mkdir(parents=True, exist_ok=True)
@@ -108,6 +110,8 @@ def main():
     bad += p_i18n.scan_js(sorted((C.PANEL / "js").glob("*.js")))
     bad += p_i18n.scan_html(C.PANEL / "index.html") + p_i18n.scan_html(hub)
     p_i18n.dump_report(bad, C.PANEL / "i18n" / "untranslated.txt")
+    if not a.no_pybundle:                                  # in-browser backend: panel/py/microunit_bundle.zip + bundle.js
+        print(pybundle.report(pybundle.build(C.PANEL, "micro_web")))
     lerr = check_links(out, idx)
     ok = True
     print("tamlıq:", C.pd.DataFrame(cov).status.value_counts().to_dict())

@@ -358,7 +358,7 @@ def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None =
     if YEARS[0] == as_of.year:
         x_fx[:, 0] *= f_rem[0]                     # a devaluation in the running year: remaining months of the average
     fxr = fx.responses(x_fx, pt=fxp["pt"], L=fxp["L"])
-    lv_deval, cpi_deval = fxr["nonoil_lvl"], fxr["cpi"]
+    lv_deval, cpi_deval, fis_deval = fxr["nonoil_lvl"], fxr["cpi"], fxr["fis"]
     debt_deval = fxr["debt_gdp"]
 
     # ---------------- micro signals and expert overlays (independent Bernoulli per year)
@@ -480,7 +480,7 @@ def run(n: int = config.N_SIM, seed: int = config.SEED, score_year: int | None =
                     "import": cpi_imp, "food": cpi_food, "quake": c_qr}
     res.comp_fis = {"brent": f_b_own, "fiscal_react": f_fr_own, "gpr": f_b_gpr + f_x_gpr + f_fr_gpr,
                     "transition": f_b_tr + f_fr_tr, "partner": f_x_own,
-                    "rate": f_r, "quake": fis_quake, "bank": f04, "flood": f10}
+                    "rate": f_r, "quake": fis_quake, "bank": f04, "flood": f10, "deval": fis_deval}
 
     # ---------------- centring targets: official baseline (+ live gap response in the live view); running year =
     # YTD nowcast in BOTH views (v2.1, audit C3: observed months fixed, unobserved months as in the view)
@@ -790,6 +790,8 @@ def calibration_report(n_boot: int = 2000, seed: int = 5) -> pd.DataFrame:
 
 # ---------------------------------------------------------------- summaries
 QS = [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
+BASE_NOTE = {False: "rəsmi proqnoz", True: "rəsmi proqnoz (YTD məlumatından əvvəl) — zolaq il-əvvəlindən faktiki ilə "
+             "şərtləndirilib, 'baza' zolaqdan kənar ola bilər; mərkəz = 'merkez'"}
 
 
 def distribution_table(res: SimResult) -> pd.DataFrame:
@@ -801,16 +803,22 @@ def distribution_table(res: SimResult) -> pd.DataFrame:
         for j, y in enumerate(res.years):
             q = np.quantile(tot[:, j], QS)
             tail = tot[:, j][tot[:, j] <= q[1]] if kind != "cpi" else tot[:, j][tot[:, j] >= q[5]]
+            obs = res.meta.get("obs_share", {}).get(kind, np.nan) if j == 0 else np.nan
             rows.append({"baxis": res.meta.get("view", "baseline"), "gosterici": kind, "ad": name, "vahid": unit,
                          "il": y, "baza": res.base[kind][j],
                          **{f"p{int(x*100):02d}": v for x, v in zip(QS, q)},
-                         "orta": tot[:, j].mean(), "ES10": tail.mean()})
+                         "orta": tot[:, j].mean(), "ES10": tail.mean(),
+                         "merkez": float(res.meta.get("targets", {}).get(kind, res.base[kind])[j]),
+                         "musahide_payi": obs, "baza_izah": BASE_NOTE[np.isfinite(obs)]})
     for j, y in enumerate(res.years):
         q = np.quantile(res.brent[:, j], QS)
+        fr = res.meta.get("f_rem", np.ones(len(res.years)))[j]
         rows.append({"baxis": res.meta.get("view", "baseline"), "gosterici": "brent", "ad": "Brent neft qiyməti",
                      "vahid": "USD/barel", "il": y,
                      "baza": res.brent_base[j], **{f"p{int(x*100):02d}": v for x, v in zip(QS, q)},
-                     "orta": res.brent[:, j].mean(), "ES10": res.brent[:, j][res.brent[:, j] <= q[1]].mean()})
+                     "orta": res.brent[:, j].mean(), "ES10": res.brent[:, j][res.brent[:, j] <= q[1]].mean(),
+                     "merkez": float(res.meta["brent_centre"][j]), "musahide_payi": 1 - fr if fr < 1 else np.nan,
+                     "baza_izah": BASE_NOTE[bool(fr < 1)]})
     return pd.DataFrame(rows)
 
 

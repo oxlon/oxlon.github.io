@@ -567,8 +567,16 @@ def run_all() -> dict:
             "archive": arch}
 
 
-def due() -> bool:
-    """True when the current quarter has no block in the register yet (quarterly cadence)."""
+def due(baseline_id: str | None = None) -> bool:
+    """True when the current quarter has no block in the register yet (quarterly cadence) OR — when `baseline_id`
+    is given — the quarter's block was computed on another baseline vintage (contract: a new vintage triggers
+    re-computation, NFR2)."""
     if not REGISTER.exists():
         return True
-    return quarter() not in set(pd.read_csv(REGISTER)["rub"])
+    reg = pd.read_csv(REGISTER, dtype=str)
+    blk = reg[reg["rub"] == quarter()]
+    if blk.empty:
+        return True
+    if baseline_id and "baseline_id" in blk.columns:
+        return set(blk["baseline_id"].dropna()) != {baseline_id}
+    return False

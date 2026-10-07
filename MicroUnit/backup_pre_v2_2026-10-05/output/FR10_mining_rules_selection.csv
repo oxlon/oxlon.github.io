@@ -1,6 +1,0 @@
-rule,RMSE_log_pct,DM_p_vs_first,decision,branch
-unit elasticity to construction,89.66814011803189,,CHOSEN,08
-estimated elasticity to construction,84.15654046319463,0.44317737543149605,,08
-neutral: held at trailing 3-year average,79.00593691784478,,,07
-grows with FR1 mining VA,72.2973119245116,0.008883699020565405,CHOSEN,07
-grows with FR1 construction VA,85.6596500545995,0.19830109172631305,,07

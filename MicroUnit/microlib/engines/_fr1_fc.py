@@ -37,6 +37,8 @@ def run_forecast(M, CF, CAL, ex_path, base_addf, anchor=True, oilrev_ref=None, a
                     if k in sol0 and sol0[k] > 0:
                         d = np.log(tgt/sol0[k]); inc[k] = inc.get(k, 0.0) + 0.7*d
                         worst = max(worst, abs(d))
+                for k, tgt in (M.get('NOWCAST_RATE') or {}).items():     # v2.3.4: rate targets (CPI), additive pp
+                    d = tgt - sol0[k]; inc[k] = inc.get(k, 0.0) + 0.7*d; worst = max(worst, abs(d)/100)
                 if worst < 1e-8: break
             if info is not None: info['anchor_max_log_gap'] = float(worst)
             if worst >= 5e-3 and warn is not None:
@@ -79,7 +81,7 @@ def build_ex(S, scenario, exo, changed):
     simple = {'brent': 'brent', 'gas_exp_price': 'gas_exp_price', 'istate_level': 'istate_level',
               'istate_add': 'istate_add', 'fx': 'fx', 'polrate': 'polrate', 'deprate': 'deprate',
               'extdem': 'extdem', 'minwage': 'minwage', 'npl_ratio': 'npl_ratio', 'oil_prod': 'oil_prod',
-              'gas_prod': 'gas_prod', 'rinv_oil': 'rinv_oil'}
+              'gas_prod': 'gas_prod', 'rinv_oil': 'rinv_oil', 'pm_usd_infl': 'pm_usd_infl'}
     for k, f in simple.items():
         if k in changed:
             for i, y in enumerate(FY): ex[y][f] = float(exo[k][i])
@@ -97,6 +99,13 @@ def build_ex(S, scenario, exo, changed):
             ex[y]['dln_fx'] = (np.log(fx)-np.log(fx_prev))*100
             ex[y]['dln_oil_azn'] = (np.log(br*fx)-np.log(brent_prev*fx_prev))*100
             fx_prev, brent_prev = fx, br
+    if 'fx' in changed or 'pm_usd_infl' in changed:   # v2.3.3: regressor lags of G4 (previous year's FX / import-price change)
+        d25 = S['d25']; dl_prev, dlpm_prev, dlpd_prev = d25['dln_fx'], d25['dln_pm_azn'], d25['dln_pm_dsk']
+        for y in FY:
+            if 'pm_usd_infl' in changed: ex[y]['pm_dsk_infl'] = ex[y]['pm_usd_infl']   # one import-price assumption
+            ex[y]['dln_fx_L1'], ex[y]['dln_pm_azn_L1'], ex[y]['dln_pm_dsk_L1'] = dl_prev, dlpm_prev, dlpd_prev
+            dl_prev = ex[y]['dln_fx']; dlpm_prev = np.log(1 + ex[y]['pm_usd_infl']/100)*100 + ex[y]['dln_fx']
+            dlpd_prev = np.log(1 + ex[y]['pm_dsk_infl']/100)*100 + ex[y]['dln_fx']
     if 'pop_g' in changed:
         pop = a['pop']
         for i, y in enumerate(FY):
@@ -108,7 +117,10 @@ def build_ex(S, scenario, exo, changed):
             cum = cum + (g[i] if y > M['NOWCAST_Y'] else 0.0)
             ex[y]['tfp_cum'] = cum
     if 'pension_real_g' in changed:
-        for i, y in enumerate(FY): ex[y]['pension_real_g'] = float(exo['pension_real_g'][i])/100
+        cum = 1.0
+        for i, y in enumerate(FY):
+            ex[y]['pension_real_g'] = float(exo['pension_real_g'][i])/100
+            cum *= 1 + ex[y]['pension_real_g']; ex[y]['pens_real_cum'] = cum      # v2.3.5: policy cost index
     if 'dsmf_add_g' in changed:                       # v2.2: extra DSMF spending growth (income-by-source lever)
         for i, y in enumerate(FY): ex[y]['dsmf_add_g'] = float(exo['dsmf_add_g'][i])/100
     if 'sip_n' in changed:

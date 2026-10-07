@@ -43,6 +43,11 @@ FULL = {
 }
 
 FRAG = [
+    ('long-run homogeneity IMPOSED on theory grounds although rejected on this short sample: with a sum of price elasticities c != 1 the real wage would drift by (c-1) x inflation every year forever (money illusion). The rejection reflects episodes such as the 2021-22 inflation spike, when nominal pay lagged prices, and the 2019 floor reform. The unrestricted version is a sensitivity',
+     'uzunmüddətli homogenlik nəzəri əsaslarla TƏTBİQ EDİLİB, baxmayaraq ki, bu qısa nümunədə rədd olunur: qiymət elastikliklərinin cəmi c ≠ 1 olduqda real əmək haqqı hər il (c−1) × inflyasiya qədər sonsuzadək sürüşərdi (pul illüziyası). Rədd edilmə 2021–22 inflyasiya sıçrayışı (nominal əmək haqqı qiymətlərdən geri qaldıqda) və 2019 minimum əmək haqqı islahatı kimi epizodları əks etdirir. Məhdudiyyətsiz versiya həssaslıq variantıdır'),
+    ('the D18 dummy passed the break test but could not be scored out of sample (not estimable before 2019), so the baseline uses the scored specification without it; the D18 version is a sensitivity',
+     'D18 süni dəyişəni (2019) qırılma testindən keçdi, lakin nümunədən kənar qiymətləndirilə bilmədi (2019-dan əvvəl qiymətləndirilə bilmir), buna görə baza yolu onsuz qiymətləndirilmiş spesifikasiyadan istifadə edir; D18 versiyası həssaslıq variantıdır'),
+    ('chosen on rolling origins <= 2020 (Part 9.2); ', 'sürüşən başlanğıclar üzrə seçilib (≤ 2020, 9.2-ci hissə); '),
     # FR1
     ("K + construction + exports", "K + tikinti + ixrac"),
     ("K + construction + agriculture", "K + tikinti + kənd təsərrüfatı"),

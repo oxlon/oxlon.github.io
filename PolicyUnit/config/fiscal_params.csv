@@ -1,0 +1,34 @@
+param,value,unit,year,source_az,note_az
+vat_rate,18,%,2026,Vergi Məcəlləsi (ƏDV standart dərəcəsi),
+vat_rev_gdp,4.4,% ÜDM,2024,"Dövlət büdcəsinin icrası 2024, Vergi Xidməti (ƏDV daxilolmaları ~5,4 mlrd AZN / ÜDM 123,9 mlrd)",təqribi; Nazirlik dəqiqləşdirməlidir
+cit_rate,20,%,2026,Vergi Məcəlləsi (mənfəət vergisi),
+cit_rev_gdp,3.5,% ÜDM,2024,"Dövlət büdcəsinin icrası 2024 (mənfəət vergisi, neft sektoru daxil)",təqribi
+pit_rate,10,%,2026,Orta effektiv dərəcə (fərziyyə: 14 % / 25 % / qeyri-neft özəl 3–7 % qarışığı),təqribi
+pit_rev_gdp,1.9,% ÜDM,2024,Dövlət büdcəsinin icrası 2024 (gəlir vergisi),təqribi
+customs_rate,5,%,2026,Orta çəkili idxal rüsumu (fərziyyə),təqribi
+customs_base_gdp,14,% ÜDM,2024,"Qeyri-neft idxalı (DGK), ÜDM-ə %",təqribi
+tsa_spending,304,mln AZN,2026,"Ehtiyat baza (mikrosimulyasiya əlçatan olmadıqda): eng_microsim.tsa_spending 2027 bazası 328 mln AZN nominal ÜDM ilə 2026-ya endirilib","C6: əsas tərif mikrosimulyasiyanın benefisiar əsaslı xərcidir (P1 = P3)"
+pension_spending,6990,mln AZN,2025,"DSMF əmək pensiyaları 2024 faktiki 6 469 mln AZN (MicroUnit data/macro_module/dsmf_sspf_budget_1995_2024.csv) × 1,08 (2025 indeksasiyası, təqribi)","FR1 orta pensiya yolu ilə (fr1:pension / 496,6) böyüdülür; FR1 CAL 7 783 əvəzinə (≈11 % yüksək) — fərq overlay-də düzəldilir"
+dsmf_spending,7440,mln AZN,2025,"DSMF xərcləri 2024 faktiki 6 889 mln AZN (eyni mənbə) × 1,08",FR1 orta pensiya yolu ilə böyüdülür; pensiya bazasından böyükdür (uzlaşdırılıb)
+public_wagebill,6000,mln AZN,2026,Büdcə təşkilatlarının əmək haqqı fondu (təqribi),nominal ÜDM ilə böyüdülür
+vat_passthrough,0.7,pay,,"ƏDV dəyişməsinin istehlak qiymətlərinə ötürülməsi (ədəbiyyat intervalı 0,5–1,0)",fərziyyə
+fuel_cpi_weight,3.0,% İQİ,2024,"İQİ səbətində motor yanacağının çəkisi (DSK, təqribi)",
+fuel_indirect,0.5,pay,,"Yanacaq qiymətinin dolayı (nəqliyyat, istehsal xərci) ötürülməsi; dəqiq dəyər IO qiymət modelindən",fərziyyə
+utility_cpi_weight,6.0,% İQİ,2024,"İQİ səbətində elektrik, qaz, su (DSK, təqribi)",
+utility_indirect,0.3,pay,,Kommunal tariflərin dolayı ötürülməsi,fərziyyə
+export_price_elasticity,1.5,elastiklik,,İxrac qiymət elastikliyi (ədəbiyyat intervalı 1–2),fərziyyə
+agri_supply_mult,0.6,AZN/AZN,,"1 AZN aqrar subsidiyanın k/t əlavə dəyərinə birbaşa təsiri (fərziyyə, intervalı 0,3–1,0)",fərziyyə
+credit_lend_pass,1.40,əmsal,,"FR1 G3: lendrate = 1,40 × deprate",FR1 tənliyi
+pit_hh_share,0.9,pay,,Gəlir vergisinin ev təsərrüfatlarının sərəncamda qalan gəlirinə düşən payı,fərziyyə
+employer_ssc,22,%,2026,Məcburi dövlət sosial sığorta haqqı — işəgötürən payı (Sosial sığorta haqqında Qanun),büdcə təşkilatları üçün
+mw_spill_share,0.5,pay,,"Minimum əmək haqqı artımının yuxarı maaşlara ötürülməsi (sıxılma fərziyyəsi: yeni minimumdan bir qədər yuxarı maaşlar artımın 50 %-ni alır, xətti azalır)",fərziyyə; həssaslıq 0–1
+mw_spill_range,0.25,pay,,Sıxılma zonası: yeni minimum əmək haqqından 25 %-ə qədər yuxarı maaşlar,fərziyyə
+mw_budget_sectors,pubadm;educ;health;art,siyahı,2025,"Büdcə sektorunun maaş profili üçün NACE bölmələri (DSK 004_11-12 əmək haqqı intervalları × sektor, noyabr 2025)",FR4 fr4:budget sayına miqyaslanır
+fuel_sales_base,4200,mln AZN,2026,"Benzin və dizelin pərakəndə satışı (≈4 mlrd litr × ~1,05 AZN; DSK enerji balansı əsasında təqribi)",C7: tənzimlənən qiymət artımının gəlir kanalı
+fuel_price_elasticity,-0.2,elastiklik,,"Yanacaq tələbinin qısamüddətli qiymət elastikliyi (ədəbiyyat −0,1…−0,3)",fərziyyə
+fuel_margin_tax,20,%,,Əlavə marjadan dövlətə qayıdış (mənfəət vergisi; SOCAR dividend/subsidiyanın azalması daxil deyil — konservativ),fərziyyə
+cit_nonoil_share,0.5,pay,2024,"Mənfəət vergisinin qeyri-neft müəssisələrinə düşən payı (Vergi Xidməti, təqribi)",investisiya reaksiyası yalnız qeyri-neft özəl investisiyaya
+inv_usercost_elast,0.5,elastiklik,,"Özəl investisiyanın kapitalın istifadə dəyərinə elastikliyi (Chirinko və b.: 0,25–1,0)",fərziyyə
+inv_cashflow_elast,0.3,elastiklik,,"İnvestisiyanın daxili vəsaitə (bölüşdürülməmiş mənfəət) həssaslığı: ΔI/I = 0,3 × Δ(vergidən sonrakı mənfəət)/I",fərziyyə
+inv_import_share,0.4,pay,,"İnvestisiya mallarının idxal payı (IO 2021, təqribi)",tələb sızması
+agri_income_passthrough,1.0,pay,,Aqrar subsidiyanın fermer gəlirinə ötürülməsi (mikrosimulyasiya: tam ötürmə — yuxarı hədd; parametr kimi dəyişdirilə bilər),mikrosimulyasiya agenti oxuyur (sənədləşdirilib)

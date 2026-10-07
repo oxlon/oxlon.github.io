@@ -20,8 +20,10 @@ Sual: *risk amili X qədər dəyişsə, hansı dəyişənlər, hansı ölçüdə
    sabitinin sürüşməsi (E3 — sərəncamda qalan gəlir: baratlar; C1 — kənd təsərrüfatı: SPI; G4 — inflyasiya:
    ərzaq/idxal qiymətləri və xərc şoku). Sabitin sürüşməsi 2025 düzəliş əmsalına udulmasın deyə
    `addf_recalibrate=False` istifadə olunur (Baseline dəyişmir — test edilib). Ərzaq və idxal qiymətlərinin İQİ-yə
-   ötürülməsi HAC OLS ilə qiymətləndirilir (cari dövr, gecikmiş asılı dəyişən yoxdur): ərzaq 0,29 (se 0,11),
-   idxal 0,21 (se 0,07), 2004–2025, n = 22. Mühərrikin tanımadığı açar yalnız xəbərdarlıq verir —
+   ötürülməsi (v2.1: vahid qiymətləndirmə, gecikmiş asılı dəyişən yoxdur):
+   <!-- AUTO:s_passthrough -->
+Vahid xarici qiymət ötürməsi (`cpi_ext`, HAC, 2001–2025, n = 25): AZN idxal qiymətləri b0 = 0,176, b1 = 0,084; ərzaq → USD idxal qiymətləri γ = 0,68; Brent → idxal qiymətləri 0,46.
+<!-- /AUTO:s_passthrough --> Mühərrikin tanımadığı açar yalnız xəbərdarlıq verir —
    modul belə halda **xəta ilə dayanır** (`EngineError`); sərhədə qədər kəsilmə qeyd olunur.
 3. **Şəbəkə** (`S1_scalability_grid.csv`): k ∈ {−3; −2; −1; −0,5; +0,5; +1; +2; +3}σ və bugünkü canlı sapma (D5).
    Baş göstəricilər: qeyri-neft ÜDM səviyyəsi və artımı, İQİ, büdcə balansı (Δ mln AZN / Baseline ÜDM —
@@ -88,7 +90,17 @@ Fiskal hissə FK-nın əminlik ekvivalentidir: E − λ·(E − ES10), λ = 0,5 
 M1-də λ = 0 (`effekt_hedef_simmetrik`) və λ = 1 (`effekt_hedef_quyruq`) də verilir. Əvvəlki versiyada yalnız dövlət
 büdcəsinin ES-i sayılırdı (T09 −7,85, T28 −7,27).
 
-**Nəticə (06.10.2026):** T09 +0,88 (1 000 mln ilə məhdud ehtiyat; artım quyruğu +0,30 f.b.); T28 λ = 0,5-də −17,5,
+Cari məqsəd funksiyası dəyərləri (`M1_measures_v2.csv`, λ — FK quyruq çəkisi):
+
+<!-- AUTO:m_results -->
+| tedbir_id | λ = 0,5 | λ = 0 | λ = 1 |
+|---|---:|---:|---:|
+| T09 | 0,86 | 0,86 | 0,87 |
+| T26 | 0,34 | 0,30 | 0,38 |
+| T28 | −18,53 | −0,58 | −36,48 |
+<!-- /AUTO:m_results -->
+
+**Nəticə (06.10.2026 vintajı; cari rəqəmlər yuxarıdakı AUTO cədvəldədir):** T09 +0,88 (1 000 mln ilə məhdud ehtiyat; artım quyruğu +0,30 f.b.); T28 λ = 0,5-də −17,5,
 λ = 0-da −0,70, λ = 1-də −34,4: qayda artım quyruğunu +0,68 f.b. yaxşılaşdırır, lakin neft riskini ARDNF buferinə
 keçirir (FK quyruğu −19,8% ÜDM, 5 il cəmi) — bu, qaydanın məqsədidir və qiymətləndirmə Nazirliyin λ seçimindən asılıdır.
 T26: Asiya put mükafatı 0,74 USD/barel (forvard 114,0, OVX 0,51 → orta üzrə σ 0,35), 1 il → 30,7 mln AZN (əvvəl
@@ -132,8 +144,7 @@ idarəsi; SEK: hədəfli diaqnostika.
 
 * **Şok ilinin impulsu:** bütün amillər yalnız qiymətləndirmə ilində verilir (2026 = 0); qiymət/faiz/artım
   innovasiyalarında səviyyə qalır, SPI, xərc şoku, ərzaq/idxal inflyasiyası və GPR sıçrayışı keçici impulsdur. v2.0-da
-  ərzaq +11% hər il İQİ-ni +3,77 f.b. artırırdı; indi ərzaqın Brent-dən asılı olmayan hissəsi +1σ (5,9%) İQİ-ni şok
-  ilində +0,81, növbəti ildə +0,38 f.b., sonra ≈ 0 dəyişir. S0 `sok_qaydasi`, `qeyd` sütunları əlavə olundu.
+  ərzaq +11% hər il İQİ-ni +3,77 f.b. artırırdı; indi ərzaqın Brent-dən asılı olmayan hissəsi +1σ İQİ-ni yalnız şok ilində və növbəti ildə dəyişir (cari rəqəmlər: AUTO:s_food).b., sonra ≈ 0 dəyişir. S0 `sok_qaydasi`, `qeyd` sütunları əlavə olundu.
 * **RU qatı:** override-ın `RU` açarı — `addf` (FR1 tənliyinə bir illik düzəliş impulsu: `infl`, `rva_agr`, `rhhdisp`,
   `lendrate`) və `overlays` (məzənnə modulu; R01 investisiya reaksiyası). Qat yalnız `ru:*` başlıq göstəricilərinə daxil
   olur; `fr1:*` komponentləri və S4 təmiz zəncir nəticəsidir. S1-ə `ru_qat` (qatın payı) və `izah` (real ÜDM-in
@@ -145,3 +156,22 @@ idarəsi; SEK: hədəfli diaqnostika.
   vektoruna (API bunu istifadə edir); S3 devalvasiyası vahid məzənnə modulundan (İQİ iki il, qeyri-neft analoqu).
 * **Public API:** `scalability.head_rows`, `effect`, `base_levels`, `labels` (köhnə `_`-li adlar saxlanılıb),
   `scalability.ru_overlays`, `addf_impulse`, `fx.responses / chain_part / overlay`.
+
++1σ şoka cavablar (S1, cari vintaj):
+
+<!-- AUTO:s_food -->
+| Amil (+1σ) | Göstərici | 2026 | 2027 | 2028 | 2029 | 2030 |
+|---|---|---:|---:|---:|---:|---:|
+| Daxili xərc şoku (inflyasiya sürprizi) | Büdcə balansı | 0,00 | 0,01 | 0,01 | 0,02 | 0,02 |
+| Daxili xərc şoku (inflyasiya sürprizi) | Qeyri-neft real ÜDM səviyyəsi | 0,00 | −1,02 | −1,06 | −1,09 | −1,11 |
+| Daxili xərc şoku (inflyasiya sürprizi) | İnflyasiya (İQİ, illik orta) | 0,00 | 4,77 | −0,01 | −0,01 | −0,01 |
+| Dünya ərzaq qiymətləri (Brent-dən asılı olmayan hissə) | Büdcə balansı | 0,00 | 0,00 | 0,00 | 0,00 | 0,00 |
+| Dünya ərzaq qiymətləri (Brent-dən asılı olmayan hissə) | Qeyri-neft real ÜDM səviyyəsi | 0,00 | −0,17 | −0,26 | −0,26 | −0,27 |
+| Dünya ərzaq qiymətləri (Brent-dən asılı olmayan hissə) | İnflyasiya (İQİ, illik orta) | 0,00 | 0,77 | 0,36 | 0,00 | 0,00 |
+| Manatın məzənnəsi (+ = devalvasiya) | Büdcə balansı | 0,00 | −0,12 | −0,18 | −0,20 | −0,22 |
+| Manatın məzənnəsi (+ = devalvasiya) | Qeyri-neft real ÜDM səviyyəsi | 0,00 | −0,10 | −1,85 | −1,86 | −1,86 |
+| Manatın məzənnəsi (+ = devalvasiya) | İnflyasiya (İQİ, illik orta) | 0,00 | 3,12 | 1,47 | 0,00 | 0,00 |
+| İdxal qiymətləri (Brent və ərzaqdan asılı olmayan hissə) | Büdcə balansı | 0,00 | 0,00 | 0,00 | 0,00 | 0,00 |
+| İdxal qiymətləri (Brent və ərzaqdan asılı olmayan hissə) | Qeyri-neft real ÜDM səviyyəsi | 0,00 | −0,11 | −0,17 | −0,18 | −0,18 |
+| İdxal qiymətləri (Brent və ərzaqdan asılı olmayan hissə) | İnflyasiya (İQİ, illik orta) | 0,00 | 0,51 | 0,24 | 0,00 | 0,00 |
+<!-- /AUTO:s_food -->

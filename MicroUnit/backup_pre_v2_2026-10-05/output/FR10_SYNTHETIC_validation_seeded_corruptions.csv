@@ -1,7 +1,0 @@
-WATERMARK,row,firm_id,year,field,rule,severity,dataset
-"SYNTHETIC — pipeline test, not results",10844,SYN-21-02493,2022,cash,negative value,error,with 6 seeded corruptions
-"SYNTHETIC — pipeline test, not results",13404,SYN-23-02876,2023,cash,negative value,error,with 6 seeded corruptions
-"SYNTHETIC — pipeline test, not results",1292,SYN-10-00403,2021,nace2,not a NACE Rev.2 division,error,with 6 seeded corruptions
-"SYNTHETIC — pipeline test, not results",21584,SYN-33-04731,2024,nace2,not a NACE Rev.2 division,error,with 6 seeded corruptions
-"SYNTHETIC — pipeline test, not results",6689,SYN-14-01461,2024,equity,balance sheet does not balance (equity + liabilities != total assets),error,with 6 seeded corruptions
-"SYNTHETIC — pipeline test, not results",19226,SYN-31-04459,2024,equity,balance sheet does not balance (equity + liabilities != total assets),error,with 6 seeded corruptions

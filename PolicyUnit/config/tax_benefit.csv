@@ -1,0 +1,101 @@
+param,valid_from,value,unit,regime,label_az,source,status
+minwage,2013-09-01,105,AZN/ay,all,Minimum aylıq əmək haqqı,DSK 004_1 (stat.gov.az/source/labour/en/004_1en.xls),D
+minwage,2017-01-01,116,AZN/ay,all,Minimum aylıq əmək haqqı,DSK 004_1,D
+minwage,2018-01-01,130,AZN/ay,all,Minimum aylıq əmək haqqı,DSK 004_1,D
+minwage,2019-03-01,180,AZN/ay,all,Minimum aylıq əmək haqqı,DSK 004_1,D
+minwage,2019-09-01,250,AZN/ay,all,Minimum aylıq əmək haqqı,DSK 004_1,D
+minwage,2022-01-01,300,AZN/ay,all,Minimum aylıq əmək haqqı,DSK 004_1,D
+minwage,2023-01-01,345,AZN/ay,all,Minimum aylıq əmək haqqı,DSK 004_1,D
+minwage,2025-01-01,400,AZN/ay,all,Minimum aylıq əmək haqqı,DSK 004_1 (Fərman 23.12.2024),D
+minwage,2026-01-01,400,AZN/ay,all,Minimum aylıq əmək haqqı 2026 (dəyişməyib; 2027+ üçün qanun yoxdur → MikroUnit FR3 baza yolu),playroll.com/minimum-wage/azerbaijan; report.az/en/finance/minimum-wage-in-azerbaijan-may-remain-at-azn400-in-2026,V
+min_pension,2017-07-01,110,AZN/ay,all,Əmək pensiyasının minimum məbləği,pensiya.az / sosial.gov.az (axtarış 2026-10-06),V
+min_pension,2018-01-01,116,AZN/ay,all,Əmək pensiyasının minimum məbləği (2018 indeksasiyası ilə),2019-un əvvəli 119.75 / 1.03 (hesablanmış),K
+min_pension,2019-01-01,119.75,AZN/ay,all,Əmək pensiyasının minimum məbləği,sosial.gov.az (axtarış 2026-10-06),V
+min_pension,2019-03-01,160,AZN/ay,all,Əmək pensiyasının minimum məbləği (2019 sosial paketi),Prezidentin Fərmanı 2019 (inv_requirements E1),K
+min_pension,2019-10-01,200,AZN/ay,all,Əmək pensiyasının minimum məbləği,Prezidentin Fərmanı 2019 (inv_requirements E1),K
+min_pension,2022-01-01,240,AZN/ay,all,Əmək pensiyasının minimum məbləği,pensiya.az/news/36 (240→280),V
+min_pension,2023-02-01,280,AZN/ay,all,Əmək pensiyasının minimum məbləği,pensiya.az/news/36; sosial.gov.az,V
+min_pension,2025-02-01,320,AZN/ay,all,Əmək pensiyasının minimum məbləği,sosial.gov.az/media/xeberler/fevralin-1-den-minimum-pensiya-320-manatdir,V
+pension_index,2019-01-01,3.0,%,all,Pensiyaların sığorta hissəsinin indeksasiyası (əvvəlki ilin orta maaş artımı),Qayda: Əmək pensiyaları haqqında Qanun; dəyər DSK 004_2 maaş artımı 2018,K
+pension_index,2020-01-01,16.6,%,all,Pensiyaların indeksasiyası,DSK maaş artımı 2019 (544.6→635.1),K
+pension_index,2021-01-01,11.4,%,all,Pensiyaların indeksasiyası,DSK maaş artımı 2020,K
+pension_index,2022-01-01,3.4,%,all,Pensiyaların indeksasiyası,DSK maaş artımı 2021,K
+pension_index,2023-01-01,14.7,%,all,Pensiyaların indeksasiyası,fed.az/az/sosial/...-147-faiz-artirilib-serencam-154611,V
+pension_index,2024-01-01,11.2,%,all,Pensiyaların indeksasiyası,DSK maaş artımı 2023 (840.0→933.9),K
+pension_index,2025-01-01,8.1,%,all,Pensiyaların indeksasiyası,sosial.gov.az (Sərəncam: pensiyalar 8.1% artırıldı),V
+pension_index,2026-01-01,9.3,%,all,Pensiyaların indeksasiyası,Prezidentin Sərəncamı 2026 (bakivaxti.az; oxu.az),V
+need_criterion,2018-01-01,130,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,muhasibat.az (illər üzrə); illik qanun,V
+need_criterion,2019-01-01,143,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,muhasibat.az; illik qanun,V
+need_criterion,2020-01-01,170,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,sosial.gov.az/3022 (2020 qanunu),V
+need_criterion,2021-01-01,170,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,muhasibat.az,V
+need_criterion,2022-01-01,200,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,president.az/az/articles/view/54811,V
+need_criterion,2023-01-01,246,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,muhasibat.az,V
+need_criterion,2024-01-01,270,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,vergiler.az/news/social/27431.html,V
+need_criterion,2025-01-01,285,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,apa.az/maliyye/...-877536,V
+need_criterion,2026-01-01,300,AZN/ay/nəfər,all,ÜSY ehtiyac meyarının həddi,president.az/az/articles/view/71156; dsmf.gov.az ÜSY,V
+utsy_formula,2006-01-01,1,flag,all,ÜSY = ailə üzvləri × ehtiyac meyarı − ailənin orta aylıq gəliri (yuxarı hədd yoxdur),dsmf.gov.az/az/muraciet/en-cox-verilen-suallar/unvanli-sosial-yardim,V
+subsist_min,2018-01-01,173,AZN/ay,all,Yaşayış minimumu (ölkə üzrə),illik qanun (yoxlanılmayıb),K
+subsist_min,2019-01-01,180,AZN/ay,all,Yaşayış minimumu (ölkə üzrə),illik qanun (yoxlanılmayıb),K
+subsist_min,2024-01-01,270,AZN/ay,all,Yaşayış minimumu (ölkə üzrə),vergiler.az/news/social/27431.html (yalnız ümumi),K
+subsist_min,2025-01-01,285,AZN/ay,all,Yaşayış minimumu (ölkə üzrə),azertag.az 2025 yaşayış minimumu 285,V
+subsist_min,2026-01-01,300,AZN/ay,all,Yaşayış minimumu (ölkə üzrə),president.az/az/articles/view/71146,V
+subsist_min_work,2025-01-01,305,AZN/ay,all,Yaşayış minimumu — əmək qabiliyyətli,azertag.az; meclis.gov.az,V
+subsist_min_pens,2025-01-01,232,AZN/ay,all,Yaşayış minimumu — pensiyaçı,azertag.az,V
+subsist_min_child,2025-01-01,246,AZN/ay,all,Yaşayış minimumu — uşaq,azertag.az,V
+subsist_min_work,2026-01-01,317,AZN/ay,all,Yaşayış minimumu — əmək qabiliyyətli,president.az/az/articles/view/71146,V
+subsist_min_pens,2026-01-01,245,AZN/ay,all,Yaşayış minimumu — pensiyaçı,president.az/az/articles/view/71146,V
+subsist_min_child,2026-01-01,260,AZN/ay,all,Yaşayış minimumu — uşaq,president.az/az/articles/view/71146,V
+pit_thr1,2013-01-01,2500,AZN/ay,state,Gəlir vergisi: 1-ci pillənin yuxarı həddi (dövlət/neft-qaz),taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income,V
+pit_r1,2013-01-01,0.14,pay,state,Gəlir vergisi: ≤2500 AZN dərəcəsi (dövlət/neft-qaz),PwC Tax Summaries; VM 101.1,V
+pit_r2,2013-01-01,0.25,pay,state,Gəlir vergisi: >2500 AZN hissəyə dərəcə (350 AZN + 25%),PwC Tax Summaries; VM 101.1,V
+pit_exempt,2018-01-01,173,AZN/ay,state,Vergi tutulmayan aylıq məbləğ (2018),inv_requirements E2 (173→200); yoxlanılmayıb,K
+pit_exempt,2019-01-01,200,AZN/ay,state,Vergi tutulmayan aylıq məbləğ (yalnız aylıq gəlir ≤2500 AZN olduqda; VM 102.1.6),vergiler.az/news/taxes/22180.html,V
+pit_exempt_cap,2019-01-01,2500,AZN/ay,state,200 AZN azadolmanın tətbiq olunduğu maksimal gəlir,vergiler.az/news/taxes/22180.html,V
+pit_thr1,2013-01-01,2500,AZN/ay,priv,Gəlir vergisi: 1-ci pillə həddi (qeyri-neft özəl),PwC Tax Summaries,V
+pit_thr2,2013-01-01,8000,AZN/ay,priv,Gəlir vergisi: 2-ci pillə həddi (qeyri-neft özəl),PwC Tax Summaries; VM 101.1-1,V
+pit_r1,2013-01-01,0.14,pay,priv,Gəlir vergisi ≤2500 (2019-dan əvvəl ümumi rejim),VM 101.1 (2018 redaksiyası); yoxlanılmayıb,K
+pit_r2,2013-01-01,0.25,pay,priv,Gəlir vergisi 2500–8000 (2019-dan əvvəl ümumi rejim),VM 101.1 (2018 redaksiyası); yoxlanılmayıb,K
+pit_r3,2013-01-01,0.25,pay,priv,Gəlir vergisi >8000 (2019-dan əvvəl ümumi rejim),VM 101.1 (2018 redaksiyası); yoxlanılmayıb,K
+pit_exempt,2018-01-01,173,AZN/ay,priv,Vergi tutulmayan aylıq məbləğ (2018),inv_requirements E2; yoxlanılmayıb,K
+pit_exempt,2019-01-01,0,AZN/ay,priv,Vergi tutulmayan məbləğ (qeyri-neft özəl: güzəşt rejimində tətbiq olunmur),model fərziyyəsi; yoxlanılmayıb,K
+pit_r1,2019-01-01,0.0,pay,priv,Qeyri-neft özəl sektor ≤2500: 0% (2019–2025 güzəşti),PwC Tax Summaries; apa.az 487711,V
+pit_r2,2019-01-01,0.0,pay,priv,Qeyri-neft özəl sektor 2500–8000: 0% (2019–2025 güzəşti),PwC Tax Summaries,V
+pit_r3,2019-01-01,0.14,pay,priv,Qeyri-neft özəl sektor >8000: 14%,VM 101.1-1 (2019 redaksiyası); inv_data 2c,K
+pit_r1,2026-01-01,0.03,pay,priv,Qeyri-neft özəl ≤2500: 3% (2026),apa.az 487711; PwC Tax Summaries,V
+pit_r2,2026-01-01,0.10,pay,priv,Qeyri-neft özəl 2500–8000: 75 AZN + 10% (2026),apa.az 487711; PwC,V
+pit_r3,2026-01-01,0.14,pay,priv,Qeyri-neft özəl >8000: 625 AZN + 14% (2026),apa.az 487711; PwC,V
+pit_r1,2027-01-01,0.05,pay,priv,Qeyri-neft özəl ≤2500: 5% (2027),PwC Tax Summaries,V
+pit_r1,2028-01-01,0.07,pay,priv,Qeyri-neft özəl ≤2500: 7% (2028-dən),PwC Tax Summaries,V
+ssc_ee,2013-01-01,0.03,pay,state,Sosial sığorta — işçi (dövlət/neft-qaz),PwC Tax Summaries (other taxes),V
+ssc_er,2013-01-01,0.22,pay,state,Sosial sığorta — işəgötürən (dövlət/neft-qaz),PwC Tax Summaries,V
+ssc_ee,2013-01-01,0.03,pay,priv,Sosial sığorta — işçi (2019-dan əvvəl ümumi),Sosial sığorta haqqında Qanun (2018); yoxlanılmayıb,K
+ssc_er,2013-01-01,0.22,pay,priv,Sosial sığorta — işəgötürən (2019-dan əvvəl ümumi),Sosial sığorta haqqında Qanun (2018); yoxlanılmayıb,K
+ssc_thr,2019-01-01,200,AZN/ay,priv,Qeyri-neft özəl: güzəştli sxemin həddi,apa.az/finance/...-484258,V
+ssc_ee_hi,2019-01-01,0.10,pay,priv,Qeyri-neft özəl: 200 AZN-dən artıq hissə — işçi 10% (6 AZN + 10%),apa.az 484258,V
+ssc_er_hi,2019-01-01,0.15,pay,priv,Qeyri-neft özəl: 200 AZN-dən artıq hissə — işəgötürən 15% (44 AZN + 15%),apa.az 484258,V
+ssc_thr2,2026-01-01,8000,AZN/ay,priv,Qeyri-neft özəl: yuxarı pillə həddi (2026),apa.az 484258; PwC,V
+ssc_er_top,2026-01-01,0.11,pay,priv,Qeyri-neft özəl: >8000 hissə — işəgötürən 11% (2026),apa.az 484258; PwC,V
+ui_ee,2018-01-01,0.005,pay,all,İşsizlikdən sığorta haqqı — işçi,PwC Tax Summaries (1 yanvar 2018),V
+ui_er,2018-01-01,0.005,pay,all,İşsizlikdən sığorta haqqı — işəgötürən,PwC Tax Summaries,V
+med_r,2021-01-01,0.02,pay,all,İcbari tibbi sığorta — hər tərəf (həddə qədər),PwC Tax Summaries (1 yanvar 2021),V
+med_r_hi,2021-01-01,0.005,pay,all,İcbari tibbi sığorta — həddən artıq hissə (hər tərəf),PwC Tax Summaries,V
+med_thr,2021-01-01,8000,AZN/ay,state,İcbari tibbi sığorta həddi (dövlət/neft-qaz),PwC Tax Summaries,V
+med_thr,2021-01-01,8000,AZN/ay,priv,İcbari tibbi sığorta həddi (qeyri-neft özəl 2021–2025),inv_data 2c,K
+med_thr,2026-01-01,2500,AZN/ay,priv,İcbari tibbi sığorta həddi (qeyri-neft özəl 2026-dan),PwC Tax Summaries,V
+med_priv_factor,2021-01-01,0.5,ratio,priv,Qeyri-neft özəl sektorda tibbi sığorta haqqına güzəşt əmsalı (2021–2022; ehtimal),yoxlanılmayıb — Nazirliklə təsdiq,K
+med_priv_factor,2023-01-01,1.0,ratio,priv,Güzəşt əmsalı (2023-dən tam dərəcə),yoxlanılmayıb,K
+vat_rate,2001-01-01,0.18,pay,all,ƏDV dərəcəsi,Vergi Məcəlləsi 173 (e-qanun.az/framework/46948),K
+vat_refund_cashless,2019-01-01,0.15,pay,all,ƏDV-nin fiziki şəxslərə geri qaytarılması — nağdsız,inv_requirements E2 (BDO/PwC 2019),K
+vat_refund_cash,2019-01-01,0.10,pay,all,ƏDV-nin geri qaytarılması — nağd,inv_requirements E2,K
+simpl_tax_rate,2019-01-01,0.02,pay,all,Sadələşdirilmiş vergi (bütün ölkədə 2%),inv_requirements E2; VM 220,K
+simpl_tax_thr,2019-01-01,200000,AZN/il,all,Sadələşdirilmiş vergi dövriyyə həddi,inv_data 2c (2023 dəyişiklikləri yoxlanılmalı),K
+pov_line_dsk,2015-01-01,135.6,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2016-01-01,148.5,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2017-01-01,165.7,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2018-01-01,175.2,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2019-01-01,185.5,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2020-01-01,194.9,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2021-01-01,204.7,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2022-01-01,229.6,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2023-01-01,247.1,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D
+pov_line_dsk,2024-01-01,270.1,AZN/ay/nəfər,all,DSK rəsmi yoxsulluq həddi (il üzrə),DSK 5.4 (budget_households/en/5.4en.xls),D

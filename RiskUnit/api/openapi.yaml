@@ -549,9 +549,10 @@ components:
           type: object
           properties:
             ru_overrides_used: { type: object }
-            deviation: { type: array, items: { type: object }, description: "measures.stress_vector çıxışı: kind (g/cpi/fis), gosterici, il, sapma, sapma_tedbirle, tedbirin_effekti (with_measures=false olduqda son ikisi null)" }
-            distribution: { type: array, items: { type: object }, description: "kind, il, baxis (sərtsiz/şərtli), p05…p95, orta, P_hedd" }
-            metrics: { type: object, description: "ES10, P(hədd pozulması) şərtsiz vs şərtli" }
+            deviation: { type: array, items: { type: object }, description: "measures.stress_vector çıxışı: kind (g/cpi/fis), gosterici, il, sapma, sapma_tedbirle, tedbirin_effekti (with_measures=false olduqda son ikisi null); micro_overrides olduqda + siyaset_sapmasi, sapma_siyasetle" }
+            distribution: { type: array, items: { type: object }, description: "baxis, kind, il, p05…p95, orta, P_hedd, ES10. Siyasət baxışı = baza mərkəzli Monte Karlo ssenarilərinin policy_shift qədər deterministik sürüşdürülməsi (qeyri-müəyyənlik dəyişmir)" }
+            policy_shift: { type: array, items: { type: object }, description: "yalnız micro_overrides olduqda: kind, gosterici, il, deyisme — MikroUnit zənciri (override-lar vs Baseline) → qeyri-neft artımı f.b., İQİ f.b., büdcə balansı Δ mln AZN / FR1 gdp_n (% ÜDM)" }
+            metrics: { type: object, description: "qiymətləndirmə ili, hər kind üzrə baxışlar (şərtsiz, şoka şərtli, «şoka şərtli + siyasət» / «siyasətlə») → P_hedd, ES10, median; micro_overrides olduqda siyasetin_effekti (siyasətlə − siyasətsiz)" }
         notes: { type: array, items: { type: string } }
     ScalabilityRequest:
       type: object

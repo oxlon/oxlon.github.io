@@ -1,22 +1,22 @@
 check,kind,result,tolerance,unit,passed
 Baseline: manufacturing branch shares sum to 1,arithmetic check - holds by construction,3.3306690738754696e-16,1e-12,abs,True
-Baseline: industry branch shares sum to 1,arithmetic check - holds by construction,4.440892098500626e-16,1e-12,abs,True
+Baseline: industry branch shares sum to 1,arithmetic check - holds by construction,3.3306690738754696e-16,1e-12,abs,True
 Baseline: regional shares sum to 1,arithmetic check - holds by construction,3.3306690738754696e-16,1e-12,abs,True
 Baseline: manufacturing branches add up to section output,arithmetic check - holds by construction,2.220446049250313e-16,1e-12,ratio,True
 Baseline: mining branches (oil part = residual) reconcile with FR1 mining output,arithmetic check - holds by construction,2.220446049250313e-16,1e-12,ratio,True
 Baseline: nominal = real x deflator for every branch (oil-linked: oil-price deflator),arithmetic check - holds by construction,2.220446049250313e-16,1e-12,ratio,True
 Baseline: non-oil + oil-linked branches add up to manufacturing output,arithmetic check - holds by construction,2.220446049250313e-16,1e-12,ratio,True
 Baseline: section VA = compensation + other taxes + GOS,arithmetic check - holds by construction,0.0,1e-09,mn AZN,True
-Adverse: manufacturing branch shares sum to 1,arithmetic check - holds by construction,4.440892098500626e-16,1e-12,abs,True
+Adverse: manufacturing branch shares sum to 1,arithmetic check - holds by construction,3.3306690738754696e-16,1e-12,abs,True
 Adverse: industry branch shares sum to 1,arithmetic check - holds by construction,2.220446049250313e-16,1e-12,abs,True
-Adverse: regional shares sum to 1,arithmetic check - holds by construction,4.440892098500626e-16,1e-12,abs,True
+Adverse: regional shares sum to 1,arithmetic check - holds by construction,3.3306690738754696e-16,1e-12,abs,True
 Adverse: manufacturing branches add up to section output,arithmetic check - holds by construction,2.220446049250313e-16,1e-12,ratio,True
 Adverse: mining branches (oil part = residual) reconcile with FR1 mining output,arithmetic check - holds by construction,0.0,1e-12,ratio,True
 Adverse: nominal = real x deflator for every branch (oil-linked: oil-price deflator),arithmetic check - holds by construction,2.220446049250313e-16,1e-12,ratio,True
 Adverse: non-oil + oil-linked branches add up to manufacturing output,arithmetic check - holds by construction,2.220446049250313e-16,1e-12,ratio,True
 Adverse: section VA = compensation + other taxes + GOS,arithmetic check - holds by construction,0.0,1e-09,mn AZN,True
 Reform: manufacturing branch shares sum to 1,arithmetic check - holds by construction,4.440892098500626e-16,1e-12,abs,True
-Reform: industry branch shares sum to 1,arithmetic check - holds by construction,4.440892098500626e-16,1e-12,abs,True
+Reform: industry branch shares sum to 1,arithmetic check - holds by construction,3.3306690738754696e-16,1e-12,abs,True
 Reform: regional shares sum to 1,arithmetic check - holds by construction,3.3306690738754696e-16,1e-12,abs,True
 Reform: manufacturing branches add up to section output,arithmetic check - holds by construction,2.220446049250313e-16,1e-12,ratio,True
 Reform: mining branches (oil part = residual) reconcile with FR1 mining output,arithmetic check - holds by construction,0.0,1e-12,ratio,True

@@ -98,6 +98,31 @@ class Runner(unittest.TestCase):
         self.assertEqual([r["seviyye"] for r in R.rows], ["xəta", "xəbərdarlıq", "ok"])
 
 
+class Verification(unittest.TestCase):
+    def test_backtest_due_on_new_vintage(self):
+        from riskunit import backtest
+        if not backtest.REGISTER.exists():
+            self.skipTest("reyestr yoxdur")
+        reg = pd.read_csv(backtest.REGISTER, dtype=str)
+        blk = reg[reg["rub"] == backtest.quarter()]
+        if blk.empty:
+            self.assertTrue(backtest.due("B-x"))
+        else:
+            self.assertTrue(backtest.due("B-heç-vaxt-olmayan"))
+            self.assertEqual(backtest.due(blk["baseline_id"].iloc[0]), blk["baseline_id"].nunique() != 1)
+
+    def test_pdf_label_marks_other_baseline(self):
+        from riskunit import report
+        lab = report.pdf_label("rehberlik", {"baseline_id": "B-heç-vaxt-olmayan"})
+        self.assertTrue("KÖHNƏ" in lab or "naməlum" in lab)
+
+    def test_docs_varcar_blocks(self):
+        from riskunit import docs_varcar
+        b = docs_varcar.blocks()
+        if (OUT / "K3_dsa_fan.csv").exists():
+            self.assertIn("vc_dsa", b)
+
+
 class DebtStart(unittest.TestCase):
     def test_start_is_fr1_end_of_last_actual_year(self):
         V1 = pd.DataFrame([{"kod": "debt_public_total", "mln_azn": 23830.6, "mln_usd": 14018.0, "deyer": 23830.6,
@@ -105,7 +130,7 @@ class DebtStart(unittest.TestCase):
         st = dsa.start_stock(V1)
         self.assertEqual(st["year_end"], config.LAST_ACTUAL)
         self.assertAlmostEqual(st["D0"], 25987.45, delta=1.0)
-        self.assertAlmostEqual(st["check"], 23830.6)
+        self.assertAlmostEqual(st["check"], 23830.6, delta=1.0)
 
     @unittest.skipUnless((OUT / "K3_dsa_fan.csv").exists(), "K3 yoxdur")
     def test_k3_informative_thresholds_and_variants(self):

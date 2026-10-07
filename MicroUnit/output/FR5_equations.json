@@ -1,6 +1,6 @@
 {
  "module": "FR5",
- "generated": "2026-10-05T23:33:26+01:00",
+ "generated": "2026-10-07T00:58:21+01:00",
  "data_mode": "OBSERVED",
  "schema_version": "2.0",
  "verdict_rule_az": "Dayanıqlıq hökmü: 'stabil' — proqnozda istifadə olunan bütün meyl əmsalları (sabit, trend və dummy dəyişənlər nəzərə alınmır) rekursiv (genişlənən pəncərə, minimum n = k+5) və bir ili çıxarmaqla qiymətləndirmələrdə işarəsini saxlayır və bütün mümkün Chow testlərinin (nümunənin ortası, 2015, 2020) və CUSUM testinin p-dəyəri > 0.05; 'qeyri-stabil' — rekursiv yolun son yarısında hər hansı əmsalın işarəsi dəyişir və ya hər hansı Chow testinin p-dəyəri < 0.01; qalan hallarda 'qismən stabil'. Rekursiv yol qurula bilmirsə, hökm 'stabil' ola bilməz.",

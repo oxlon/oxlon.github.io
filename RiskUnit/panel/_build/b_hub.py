@@ -14,7 +14,19 @@ def build(stats, stamp):
     from .b_docs import TITLES
     docs = "".join(f'<li><a href="docs/{p.name}">{TITLES.get(p.name, p.stem.replace("_", " "))}</a> · <a href="panel/index.html#/metod/{p.stem}">paneldə oxu</a></li>'
                    for p in sorted(C.DOCS.glob("*.md")))
-    reps = "".join(f'<li><a href="reports/{p.name}">{p.name}</a></li>' for p in sorted((U / "reports").glob("*.*")))
+    def _rep(p):                                  # PDFs carry a provenance sidecar; a PDF of another baseline is marked
+        if p.suffix != ".pdf":
+            return f'<li><a href="reports/{p.name}">{p.name}</a></li>'
+        import json
+        try:
+            m = json.loads(p.with_suffix(".pdf.json").read_text(encoding="utf-8"))
+        except Exception:                                          # noqa: BLE001
+            m = {}
+        cur = stamp.get("baseline_id", "")
+        tag = (f" — {m.get('yaradildi_utc', '')[:10]}, {m.get('baseline_id', '')}"
+               + (" <b>(KÖHNƏ: başqa baza)</b>" if m.get("baseline_id") != cur else "")) if m else " — <b>tarixi naməlum</b>"
+        return f'<li><a href="reports/{p.name}">{p.name}</a>{tag}</li>'
+    reps = "".join(_rep(p) for p in sorted((U / "reports").glob("*.*")) if not p.name.endswith(".pdf.json"))
     apis = "".join(f'<li><a href="{h}">{t}</a> <code>{h}</code></li>' for h, t in api)
     launch = ("RiskModel_Baslat.command" if (U / "RiskModel_Baslat.command").exists() else None)
     html = f"""<!doctype html>
@@ -83,6 +95,10 @@ def build(stats, stamp):
     <h3 style="margin-top:12px">Hesabat faylları</h3><ul>{reps}</ul>
     <h3 style="margin-top:12px">API</h3><ul>{apis}</ul></div>
   </section>
+  <section>
+    <h2><span class="dot" style="background:var(--caem)"></span>Əlaqəli modullar (MİİS §15.5)</h2>
+    <div class="note"><ul><li><a href="../1551_v3/index.html">§15.5.1 Makroiqtisadi model</a></li><li><a href="../MicroUnit/index.html">§15.5.2 Mikroiqtisadi təhlil</a></li><li><a href="../PolicyUnit/index.html">§15.5.4 İqtisadi siyasətlərin təsir analizi</a></li></ul></div>
+  </section>
   <div class="note">
     <h3>Canlı hesablamalar üçün</h3>
     <p>{('<b>' + launch + '</b> (macOS) və ya <b>RiskModel_Baslat.bat</b> (Windows) faylını iki dəfə klikləyin — yerli server başlayır və panel brauzerdə açılır.') if launch else 'Yerli serveri başladın (<code>RiskModel_Baslat.command</code> / <code>.bat</code> və ya <code>python3 api/server.py</code>) və paneli serverin ünvanında açın.'}
@@ -91,7 +107,7 @@ def build(stats, stamp):
     <p><code>python3 run_all.py --daily</code> (gündəlik dövr) və ya <code>python3 run_all.py --fetch</code> (tam dövr), sonra
     <code>python3 panel/build_panel.py</code> — panel və bu səhifə yenidən yığılır.</p>
   </div>
-  <footer>Yığılıb {stamp['date']} · {stats['outputs']} çıxış faylı · möhür {stamp['md5']}</footer>
+  <footer>Yığılıb {stamp['date']} · baza {stamp.get('baseline_id', '')} · {stats['outputs']} çıxış faylı · möhür {stamp['md5']}</footer>
 </div>
 </body>
 </html>

@@ -98,13 +98,116 @@ def blocks(c: dict) -> dict[str, str]:
     return out
 
 
-def update_methodology(c: dict) -> None:
-    if not DOC.exists():
+def _csv(name):
+    p = config.OUTPUT / name
+    return pd.read_csv(p) if p.exists() else None
+
+
+def blocks_v21(c: dict) -> dict[str, str]:
+    """v2.1 evidence that must stay current (audit: hard-coded numbers drifted from the outputs)."""
+    out, res = {}, c["res"]
+    sy = res.score_year
+    j = res.col(sy)
+    rl = c.get("res_live")
+    st = c.get("stress")
+    rows = [{"Göstərici": f"Büdcə balansının medianı {sy}, % ÜDM", "Baza baxışı": float(np.median(res.total("fis")[:, j])),
+             "Canlı baxış": float(np.median(rl.total("fis")[:, j])) if rl is not None else np.nan}]
+    if st is not None and len(st):
+        for sid in ("S1", "S3"):
+            for var in sorted(st["gosterici"].unique()):
+                v = st[(st["ssenari"] == sid) & (st["il"] == sy) & (st["gosterici"] == var)]["sapma"]
+                if len(v):
+                    rows.append({"Göstərici": f"{sid} sapması {sy}: {var}", "Baza baxışı": float(v.iloc[0]), "Canlı baxış": np.nan})
+    out["v2_evidence"] = _md(pd.DataFrame(rows), num={"Baza baxışı": 2, "Canlı baxış": 2})
+    A = _csv("FR3_historical_analogues.csv")
+    T = c.get("bt_table")
+    if A is not None:
+        ratio = float(np.sqrt((A["xeta"] ** 2).mean()) / np.sqrt((A["faktiki_sapma"] ** 2).mean()))
+        d4 = T[T["test_id"] == "D4"]["deyer"] if T is not None and "test_id" in T else pd.Series(dtype=float)
+        out["d4_note"] = (f"Cari analoq cədvəli üzrə RMSE / RMSE(sıfır sapma) = {az(ratio, 3)} (n = {len(A)}); NFR1 D4 sətri "
+                          + (f"{az(float(d4.iloc[0]), 3)} — rüblük sınağın ({T['rub'].iloc[0]}) vintajıdır, analoq düsturu "
+                             "v2.1-də dəyişdiyi üçün növbəti rüblük sınaqda yenilənir" if len(d4) else "yoxdur")
+                          + ". Korrelyasiya və RMSE nisbəti fərqli metrikalardır.")
+    F = _csv("FR1_fx_transmission.csv")
+    if F is not None:
+        P = F[F["setir_novu"] == "parametr"][["parametr", "deyer", "izah", "n", "numune"]]
+        R = F[F["setir_novu"] == "cavab"].pivot_table(index="parametr", columns="il", values="cemi").reset_index()
+        R.columns = [str(x) for x in R.columns]
+        out["fx_table"] = (_md(P, num={"deyer": 3}) + "\n\n+16,5% devalvasiyaya kalibrlənmiş cəmi cavab:\n\n" +
+                           _md(R, num={k: 2 for k in R.columns if k != "parametr"}))
+    return out
+
+
+def blocks_caem(c: dict) -> dict[str, str]:
+    out = {}
+    C2 = _csv("C2_balance_of_risks.csv")
+    if C2 is not None:
+        t = C2[C2["category"] == "CƏMİ"].pivot_table(index="version", columns="year", values="weighted").reset_index()
+        t.columns = [str(x) for x in t.columns]
+        out["c2_index"] = _md(t, num={k: 1 for k in t.columns if k != "version"})
+    S = c.get("S")
+    if S is not None and (S["risk_id"] == "R01").any():
+        r = S[S["risk_id"] == "R01"].iloc[0]
+        out["c2_r01"] = f"FR2 R01 skoru {int(r['skor'])}-dir ({r['prioritet']} prioritet; P {int(r['P_bal'])} × T {int(r['I_bal'])})"
+    C5 = _csv("C5_transmission_comparison.csv")
+    if C5 is not None:
+        C5 = C5.dropna(subset=["year"])
+        g = C5.groupby(["shock_az", "concept_az", "model"])
+        t = g.apply(lambda d: f"{az(d.sort_values('year')['value'].iloc[0], 2)} → {az(d.sort_values('year')['value'].iloc[-1], 2)}")
+        t = t.rename("2026 → 2030").reset_index()
+        out["c5_table"] = _md(t.rename(columns={"shock_az": "Şok", "concept_az": "Göstərici", "model": "Model"}))
+    return out
+
+
+def blocks_scal(c: dict) -> dict[str, str]:
+    out = {}
+    from . import factors
+    ch = factors.channels()
+    b0, b1 = ch[("cpi_ext", "impA")]["coef"], ch[("cpi_ext", "impA_l1")]["coef"]
+    meta = ch[("cpi_ext", "meta")]
+    out["s_passthrough"] = (f"Vahid xarici qiymət ötürməsi (`cpi_ext`, HAC, {meta['sample']}, n = {meta['n']}): AZN idxal qiymətləri "
+                            f"b0 = {az(b0, 3)}, b1 = {az(b1, 3)}; ərzaq → USD idxal qiymətləri γ = {az(ch['_impfood']['gamma'], 2)}; "
+                            f"Brent → idxal qiymətləri {az(ch['_impfood']['a_imp'], 2)}.")
+    S1 = _csv("S1_scalability_grid.csv")
+    if S1 is not None:
+        g = S1[(S1["variant"] == "σ-şəbəkə") & (S1["k_sigma"] == 1.0) & S1["amil"].isin(["food", "import", "costpush", "fx"])
+               & S1["hedef_id"].isin(["ru:cpi", "ru:nonoil_lvl", "ru:budget_gdp"])]
+        t = g.pivot_table(index=["amil_ad", "hedef_ad"], columns="il", values="delta").reset_index()
+        t.columns = [str(x) for x in t.columns]
+        t = t.rename(columns={"amil_ad": "Amil (+1σ)", "hedef_ad": "Göstərici"})
+        out["s_food"] = _md(t, num={k: 2 for k in t.columns if k not in ("Amil (+1σ)", "Göstərici")})
+    M1 = _csv("M1_measures_v2.csv")
+    if M1 is not None:
+        t = M1[M1["tedbir_id"].isin(["T09", "T26", "T28"])][["tedbir_id", "effekt_hedef_funksiya", "effekt_hedef_simmetrik",
+                                                               "effekt_hedef_quyruq"]]
+        out["m_results"] = _md(t.rename(columns={"effekt_hedef_funksiya": "λ = 0,5", "effekt_hedef_simmetrik": "λ = 0",
+                                                 "effekt_hedef_quyruq": "λ = 1"}), num={"λ = 0,5": 2, "λ = 0": 2, "λ = 1": 2})
+    return out
+
+
+def _apply(path, bl: dict, strict: bool) -> None:
+    if not path.exists():
         return
-    text = DOC.read_text(encoding="utf-8")
-    for tag, body in blocks(c).items():
+    text = path.read_text(encoding="utf-8")
+    for tag, body in bl.items():
         pat = re.compile(rf"(<!-- AUTO:{tag} -->)(.*?)(<!-- /AUTO:{tag} -->)", re.S)
         if not pat.search(text):
-            raise KeyError(f"Metodologiya sənədində AUTO:{tag} markeri yoxdur")
+            if strict:
+                raise KeyError(f"{path.name}: AUTO:{tag} markeri yoxdur")
+            continue
         text = pat.sub(lambda m: f"{m.group(1)}\n{body}\n{m.group(3)}", text)
-    DOC.write_text(text, encoding="utf-8")
+    path.write_text(text, encoding="utf-8")
+
+
+def update_methodology(c: dict) -> None:
+    """Main methodology (strict: every block must have its marker) + v2.1 blocks and the CAEM / scalability docs
+    (blocks rendered from the outputs wherever their markers exist)."""
+    _apply(DOC, blocks(c), strict=True)
+    for path, fn in ((DOC, blocks_v21), (config.DOCS / "CAEM_inteqrasiya.md", blocks_caem),
+                     (config.DOCS / "Miqyaslanma_ve_tedbirler.md", blocks_scal)):
+        try:
+            _apply(path, fn(c), strict=False)
+        except Exception as exc:                          # noqa: BLE001 — one stale doc must not stop the run
+            print(f"   DİQQƏT: {path.name} AUTO blokları yenilənmədi ({type(exc).__name__}: {exc})")
+    from . import docs_varcar                      # VaR/CaR methodology §15: numbers rendered from the outputs
+    docs_varcar.update()

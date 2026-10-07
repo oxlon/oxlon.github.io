@@ -32,7 +32,7 @@ from . import config, spine
 K_GRID = (-3.0, -2.0, -1.0, -0.5, 0.5, 1.0, 2.0, 3.0)
 YEARS = list(config.FORECAST_YEARS)
 CACHE = config.ROOT / "work" / "scalability_cache"
-VERSION = "s-2026-10-06b"      # v2.1: shock-year impulses, RU layer (FX + R01 reaction overlays)
+VERSION = "s-2026-10-07a"      # v2.1: shock-year impulses, RU layer (FX + R01 reaction overlays)
 PEG = 1.7
 
 
@@ -141,7 +141,8 @@ def ru_overlays(ov: dict | None) -> dict:
         x = fx.path_from_fx(_exo_path(exo["fx"], b), b)
         if np.any(np.abs(x) > 1e-9):
             o = fx.overlay(x)
-            for v in ("cpi", "nonoil_lvl", "debt_gdp"):
+            o["budget_gdp"] = o["fis"]
+            for v in ("cpi", "nonoil_lvl", "debt_gdp", "budget_gdp"):
                 for t, y in enumerate(YEARS):
                     out[(f"ru:ovl:fx:{v}", y)] = float(o[v][0, t])
     if "brent" in exo:
@@ -254,7 +255,7 @@ def derived_delta(base: dict, shock: dict, rgdpnon_2025: float) -> dict:
         out[("ru:nonoil_lvl", y)] = (g(shock, "fr1:rgdpnon") / g(base, "fr1:rgdpnon") - 1) * 100
         out[("ru:nonoil_g", y)] = gs - gb
         out[("ru:cpi", y)] = g(shock, "fr1:infl") - g(base, "fr1:infl")
-        out[("ru:budget_gdp", y)] = (g(shock, "fr1:balance_n") - g(base, "fr1:balance_n")) / gdp0 * 100
+        out[("ru:budget_gdp", y)] = (g(shock, "fr1:balance_n") - g(base, "fr1:balance_n")) / gdp0 * 100 + _ovl(shock, "budget_gdp", y)
         out[("ru:tb_gdp", y)] = (_tb(shock, y) - _tb(base, y)) / gdp0 * 100
         out[("ru:debt_gdp", y)] = ((g(shock, "fr1:debt_azn") / g(shock, "fr1:gdp_n") - g(base, "fr1:debt_azn") / gdp0) * 100
                                   + _ovl(shock, "debt_gdp", y))
@@ -674,7 +675,7 @@ def labels() -> dict:
 
 
 PRICE_FACTORS = {"brent", "gas", "fx", "geo"}
-OVL_VAR = {"ru:cpi": "cpi", "ru:nonoil_lvl": "nonoil_lvl", "ru:debt_gdp": "debt_gdp"}
+OVL_VAR = {"ru:cpi": "cpi", "ru:nonoil_lvl": "nonoil_lvl", "ru:debt_gdp": "debt_gdp", "ru:budget_gdp": "budget_gdp"}
 
 
 def _pct_ok(b0: float, v: float) -> bool:

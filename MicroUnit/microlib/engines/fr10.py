@@ -291,7 +291,8 @@ def run(overrides=None, scenario="Baseline", upstream=None):
     for b in st["oil"]:
         eps[b] = cf.get(f"FR10.oil_{b}|dln_oil_azn", eps[b])
     beta = cf.get("FR10.pooled|x", st["beta"])
-    e08 = cf.get("FR10.mining_08|x", st["mining_rules"]["e08"])
+    # quarrying construction-link elasticity: a lever (the unit-link rule, 1), not the registry estimate FR10.mining_08|x
+    e08 = float(lev.get("quarrying_link_elasticity", st["mining_rules"]["e08"]))
     e07 = next((v for k, v in cf.items() if k.startswith("FR10.mining_07|")), 1.0)
     rg = st["reg"]
     units = st["reg_names"]
@@ -318,8 +319,8 @@ def run(overrides=None, scenario="Baseline", upstream=None):
     if q08 not in ("neutral", "construction_link"):
         W.append(f"quarrying_rule '{q08}' naməlumdur — neutral istifadə olunur")
         q08 = "neutral"
-    if q08 == "neutral" and any(c == ("coefficients", "FR10.mining_08|x") for c in ov["changed"]):
-        W.append("FR10.mining_08|x yalnız quarrying_rule = construction_link olduqda təsir edir")
+    if q08 == "neutral" and any(c == ("levers", "quarrying_link_elasticity") for c in ov["changed"]):
+        W.append("quarrying_link_elasticity yalnız quarrying_rule = construction_link olduqda təsir edir")
     o = _core(st, D, emp_idx, beta, w_combo, capf, eps, e08, e07, regb, margin=mode,
               ls_shift=float(lev.get("labour_share_shift_pp", 0.0)), q08=q08)
     ser = _series(st, o)

@@ -1,0 +1,20 @@
+{
+ "id": "pension10_2027",
+ "name_az": "Pensiyalar +10 % (2027-dən)",
+ "description_az": "Orta pensiya 2027-ci ildən indeksasiyadan əlavə 10 % artırılır (daimi).",
+ "start_year": 2027,
+ "instruments": [
+  {
+   "instrument": "pension_index",
+   "years": "all",
+   "size": 10,
+   "unit": "pct",
+   "financing": "deficit",
+   "target": null
+  }
+ ],
+ "tags": [
+  "sosial",
+  "fiskal"
+ ]
+}

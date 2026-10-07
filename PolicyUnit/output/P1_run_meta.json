@@ -1,0 +1,45 @@
+{
+ "run_at": "2026-10-07T01:56:21",
+ "scenarios": [
+  "agri_sub300",
+  "export_sub_man",
+  "fuel_dereg20",
+  "fx_deval10",
+  "mw20_2027",
+  "pension10_2027",
+  "polrate_m100",
+  "profit_tax_minus2",
+  "pubinv1bn_deficit",
+  "pubinv1bn_sofaz",
+  "tsa_plus30",
+  "vat_minus2"
+ ],
+ "recomputed": [
+  "agri_sub300",
+  "export_sub_man",
+  "fuel_dereg20",
+  "fx_deval10",
+  "mw20_2027",
+  "pension10_2027",
+  "polrate_m100",
+  "profit_tax_minus2",
+  "pubinv1bn_deficit",
+  "pubinv1bn_sofaz",
+  "tsa_plus30",
+  "vat_minus2"
+ ],
+ "seconds": 26.0,
+ "long_end": 2035,
+ "catalogue_errors": [],
+ "vintage": {
+  "micro_vintage": "7099d341e599",
+  "caem_md5": "12c22d22eda046e050643004a8d7eec5",
+  "oxlon_forecast_long_md5": "31bf31752d9319f905bd6aeb636f2633",
+  "io_table": "DSK 2021 → 2025 GRAS",
+  "io_table_year": 2021,
+  "io_update_year": 2025,
+  "io_benchmark_md5": "fe7164da6dfcfb70f9416a8438ef10f6",
+  "riskunit_baseline_id": "B-d7e77e886f",
+  "caem_pinned_ok": true
+ }
+}

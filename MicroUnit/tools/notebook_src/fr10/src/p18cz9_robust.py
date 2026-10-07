@@ -78,6 +78,11 @@ for l in ENG.inputs()['levers']:
     elif l['id'] == 'quarrying_rule':
         _sens('lever', l['id'], l['label_az'], np.nan, None, np.nan, np.nan, {'levers': {l['id']: 'neutral'}}, {'levers': {l['id']: 'construction_link'}},
               'aşağı = neytral qayda (baza), yuxarı = FR1 tikinti əlaqəsi (vahid elastiklik)')
+    elif l['id'] == 'quarrying_link_elasticity':                  # the unit-link rule's elasticity, ± the estimate's s.e., with the link switched on
+        _q8 = {'quarrying_rule': 'construction_link'}; _s8 = l['estimate_se']
+        _sens('lever', l['id'], l['label_az'], l['value'], _s8, l['value'] - _s8, l['value'] + _s8, {'levers': {**_q8, l['id']: l['value'] - _s8}},
+              {'levers': {**_q8, l['id']: l['value'] + _s8}}, 'quarrying_rule = construction_link ilə, ±1 s.x. (qiymətləndirmənin); baza: neytral qayda',
+              base=ENG.run({'levers': _q8}, 'Baseline')['series'])
     elif l['id'] == 'margin_mode':
         _sens('lever', l['id'], l['label_az'], np.nan, None, np.nan, np.nan, {'levers': {l['id']: 'fr1_wage'}}, {'levers': {l['id']: 'product_wage'}},
               'aşağı = FR1 əmək haqqı yolu, yuxarı = məhsul ifadəsində sabit əmək haqqı')

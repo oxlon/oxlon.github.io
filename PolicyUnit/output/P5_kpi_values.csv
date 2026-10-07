@@ -1,0 +1,133 @@
+scenario,scenario_name,kpi,name_az,value,unit,direction,weight,source_engine,norm,available
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),gdp_short,ÜDM-ə təsir — qısa müddət,0.1496349147195431,% baza ilə fərq,higher,1.0,micro|caem,0.41785590027722663,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),gdp_medium,ÜDM-ə təsir — orta müddət,0.129115515870736,% baza ilə fərq,higher,1.0,micro|caem,0.3942096626488016,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),gdp_long,ÜDM-ə təsir — uzun müddət,0.09598678546404031,% baza ilə fərq,higher,1.0,longrun|caem,0.38857795419676394,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),inflation_short,İnflyasiyaya təsir — qısa müddət,8.881784197001252e-16,f.b.,lower,1.0,micro|caem,0.6950675257330299,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),unemployment,İşsizliyə təsir — orta müddət,-0.00478185975650095,f.b.,lower,1.0,micro|caem,0.38486666180721696,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),1200.0,mln AZN,lower,1.0,micro|longrun,0.5095408178425485,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),debt_gdp,Dövlət borcuna təsir — uzun müddət,0.3902466222396992,f.b. ÜDM,lower,1.0,longrun|caem,0.6936747995537587,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.0378,f.b.,higher,0.5,risk,0.5864250299196444,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),side_effects,Yan təsirlərin sayı,2.0,say,lower,1.0,risk,0.9090909090909091,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.0454384259369249,ehtimal (0–1),lower,1.0,risk,0.8595979607696409,True
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),model_disagreement,Metodlar arası fikir ayrılığı,0.8581772057049786,pay,lower,1.0,ranges,0.5518136093758105,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),gdp_short,ÜDM-ə təsir — qısa müddət,0.3951661866880831,% baza ilə fərq,higher,1.0,micro|caem,0.6195371799951247,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),gdp_medium,ÜDM-ə təsir — orta müddət,0.31450017776859723,% baza ilə fərq,higher,1.0,micro|caem,0.5430073830817226,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),gdp_long,ÜDM-ə təsir — uzun müddət,0.15782129881838297,% baza ilə fərq,higher,1.0,longrun|caem,0.45248499602579384,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),inflation_short,İnflyasiyaya təsir — qısa müddət,0.07897669685375065,f.b.,lower,1.0,micro|caem,0.6568147770961257,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),unemployment,İşsizliyə təsir — orta müddət,-0.01265955252054235,f.b.,lower,1.0,micro|caem,0.5515681471542204,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),800.0,mln AZN,lower,1.0,micro|longrun,0.5983650765824338,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),debt_gdp,Dövlət borcuna təsir — uzun müddət,0.13526502495890075,f.b. ÜDM,lower,1.0,longrun|caem,0.7632306631887732,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.0984,f.b.,higher,0.5,risk,0.6900324841853309,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),side_effects,Yan təsirlərin sayı,3.0,say,lower,1.0,risk,0.8181818181818181,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.0248377507460024,ehtimal (0–1),lower,1.0,risk,0.9389750669963068,True
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),model_disagreement,Metodlar arası fikir ayrılığı,0.4073294699783319,pay,lower,1.0,ranges,0.8642783407963857,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),gdp_short,ÜDM-ə təsir — qısa müddət,-0.35907214444893343,% baza ilə fərq,higher,1.0,micro|caem,0.0,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),gdp_medium,ÜDM-ə təsir — orta müddət,-0.36202389684602776,% baza ilə fərq,higher,1.0,micro|caem,0.0,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),gdp_long,ÜDM-ə təsir — uzun müddət,-0.27998944517207097,% baza ilə fərq,higher,1.0,longrun|caem,0.0,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),inflation_short,İnflyasiyaya təsir — qısa müddət,0.4775693845808124,f.b.,lower,1.0,micro|caem,0.46375446311051405,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),unemployment,İşsizliyə təsir — orta müddət,0.013405508583549549,f.b.,lower,1.0,micro|caem,0.0,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),-1008.6722213746649,mln AZN,lower,1.0,micro|longrun,1.0,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),debt_gdp,Dövlət borcuna təsir — uzun müddət,0.21600193438593993,f.b. ÜDM,lower,1.0,longrun|caem,0.7412066209743253,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),-0.1102,f.b.,higher,0.5,risk,0.3333903231321594,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),side_effects,Yan təsirlərin sayı,7.0,say,lower,1.0,risk,0.4545454545454546,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.1057771114473544,ehtimal (0–1),lower,1.0,risk,0.6271050834755412,True
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),model_disagreement,Metodlar arası fikir ayrılığı,0.7420718366557426,pay,lower,1.0,ranges,0.6322816478766238,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",gdp_short,ÜDM-ə təsir — qısa müddət,0.01204475395131785,% baza ilə fərq,higher,1.0,micro|caem,0.30483828147108716,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",gdp_medium,ÜDM-ə təsir — orta müddət,-0.11922226964601759,% baza ilə fərq,higher,1.0,micro|caem,0.1948830516770073,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",gdp_long,ÜDM-ə təsir — uzun müddət,-0.09540838487072953,% baza ilə fərq,higher,1.0,longrun|caem,0.19076772665659017,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",inflation_short,İnflyasiyaya təsir — qısa müddət,1.4350377222238184,f.b.,lower,1.0,micro|caem,0.0,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",unemployment,İşsizliyə təsir — orta müddət,0.0018933626170793499,f.b.,lower,1.0,micro|caem,0.24361090101177896,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),0.0,mln AZN,lower,1.0,micro|longrun,0.7760135940622045,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",debt_gdp,Dövlət borcuna təsir — uzun müddət,0.8119166062937577,f.b. ÜDM,lower,1.0,longrun|caem,0.57864838108818,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),-0.3052,f.b.,higher,0.5,risk,0.0,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",side_effects,Yan təsirlərin sayı,12.0,say,lower,1.0,risk,0.0,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.2214999999999999,ehtimal (0–1),lower,1.0,risk,0.1812096003242134,True
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",model_disagreement,Metodlar arası fikir ayrılığı,0.9772218141058874,pay,lower,1.0,ranges,0.4693085003480243,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),gdp_short,ÜDM-ə təsir — qısa müddət,0.8583500789323202,% baza ilə fərq,higher,1.0,micro|caem,1.0,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),gdp_medium,ÜDM-ə təsir — orta müddət,0.8838598529754882,% baza ilə fərq,higher,1.0,micro|caem,1.0,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),gdp_long,ÜDM-ə təsir — uzun müddət,0.6875801932375452,% baza ilə fərq,higher,1.0,longrun|caem,1.0,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),inflation_short,İnflyasiyaya təsir — qısa müddət,1.1809285053751353,f.b.,lower,1.0,micro|caem,0.12307903958598865,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),unemployment,İşsizliyə təsir — orta müddət,-0.0338507755919832,f.b.,lower,1.0,micro|caem,1.0,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),436.84615168293305,mln AZN,lower,1.0,micro|longrun,0.6790072550456844,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),debt_gdp,Dövlət borcuna təsir — uzun müddət,-0.7326966468856961,f.b. ÜDM,lower,1.0,longrun|caem,1.0,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.2797,f.b.,higher,0.5,risk,1.0,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),side_effects,Yan təsirlərin sayı,10.0,say,lower,1.0,risk,0.18181818181818177,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.2685291787545906,ehtimal (0–1),lower,1.0,risk,0.0,True
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),model_disagreement,Metodlar arası fikir ayrılığı,0.9950358790085798,pay,lower,1.0,ranges,0.4569622766360273,True
+pension10_2027,Pensiyalar +10 % (2027-dən),gdp_short,ÜDM-ə təsir — qısa müddət,0.2422533531738226,% baza ilə fərq,higher,1.0,micro|caem,0.4939333996652714,True
+pension10_2027,Pensiyalar +10 % (2027-dən),gdp_medium,ÜDM-ə təsir — orta müddət,0.2436039504135445,% baza ilə fərq,higher,1.0,micro|caem,0.48610301510581044,True
+pension10_2027,Pensiyalar +10 % (2027-dən),gdp_long,ÜDM-ə təsir — uzun müddət,0.18842203268925678,% baza ilə fərq,higher,1.0,longrun|caem,0.4841113851311526,True
+pension10_2027,Pensiyalar +10 % (2027-dən),inflation_short,İnflyasiyaya təsir — qısa müddət,0.051311074567552246,f.b.,lower,1.0,micro|caem,0.6702147562970441,True
+pension10_2027,Pensiyalar +10 % (2027-dən),unemployment,İşsizliyə təsir — orta müddət,-0.009734897188899,f.b.,lower,1.0,micro|caem,0.48967891098872407,True
+pension10_2027,Pensiyalar +10 % (2027-dən),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),3494.6020606136312,mln AZN,lower,1.0,micro|longrun,0.0,True
+pension10_2027,Pensiyalar +10 % (2027-dən),debt_gdp,Dövlət borcuna təsir — uzun müddət,2.9331567255744875,f.b. ÜDM,lower,1.0,longrun|caem,0.0,True
+pension10_2027,Pensiyalar +10 % (2027-dən),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.0085,f.b.,higher,0.5,risk,0.5363309967515816,True
+pension10_2027,Pensiyalar +10 % (2027-dən),side_effects,Yan təsirlərin sayı,4.0,say,lower,1.0,risk,0.7272727272727273,True
+pension10_2027,Pensiyalar +10 % (2027-dən),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.1957499999999999,ehtimal (0–1),lower,1.0,risk,0.28042773110845587,True
+pension10_2027,Pensiyalar +10 % (2027-dən),model_disagreement,Metodlar arası fikir ayrılığı,0.8257036052720665,pay,lower,1.0,ranges,0.5743197772756556,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),gdp_short,ÜDM-ə təsir — qısa müddət,0.10597571554423116,% baza ilə fərq,higher,1.0,micro|caem,0.38199389748410073,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),gdp_medium,ÜDM-ə təsir — orta müddət,0.10716965951301285,% baza ilə fərq,higher,1.0,micro|caem,0.37659497238506945,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),gdp_long,ÜDM-ə təsir — uzun müddət,0.0657714193982568,% baza ilə fərq,higher,1.0,longrun|caem,0.3573498494006604,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),inflation_short,İnflyasiyaya təsir — qısa müddət,0.0232191567260536,f.b.,lower,1.0,micro|caem,0.6838212138310855,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),unemployment,İşsizliyə təsir — orta müddət,-0.00437185850237215,f.b.,lower,1.0,micro|caem,0.37619054049802014,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),0.0,mln AZN,lower,1.0,micro|longrun,0.7760135940622045,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),debt_gdp,Dövlət borcuna təsir — uzun müddət,-0.1676752333186071,f.b. ÜDM,lower,1.0,longrun|caem,0.8458690634459559,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.0273,f.b.,higher,0.5,risk,0.5684732432894513,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),side_effects,Yan təsirlərin sayı,1.0,say,lower,1.0,risk,1.0,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.009,ehtimal (0–1),lower,1.0,risk,1.0,True
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),model_disagreement,Metodlar arası fikir ayrılığı,0.31397040786624275,pay,lower,1.0,ranges,0.9289818137361227,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),gdp_short,ÜDM-ə təsir — qısa müddət,0.11123953147399125,% baza ilə fərq,higher,1.0,micro|caem,0.386317636470186,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),gdp_medium,ÜDM-ə təsir — orta müddət,0.10986522715127785,% baza ilə fərq,higher,1.0,micro|caem,0.3787585511608992,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),gdp_long,ÜDM-ə təsir — uzun müddət,0.16724623591295576,% baza ilə fərq,higher,1.0,longrun|caem,0.46222583195163425,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),inflation_short,İnflyasiyaya təsir — qısa müddət,8.881784197001252e-16,f.b.,lower,1.0,micro|caem,0.6950675257330299,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),unemployment,İşsizliyə təsir — orta müddət,-0.00406838319639075,f.b.,lower,1.0,micro|caem,0.36976863680254235,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),2322.3924024321886,mln AZN,lower,1.0,micro|longrun,0.2603016349392526,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),debt_gdp,Dövlət borcuna təsir — uzun müddət,1.6258043201977084,f.b. ÜDM,lower,1.0,longrun|caem,0.3566297591710288,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.0332,f.b.,higher,0.5,risk,0.5785604376816551,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),side_effects,Yan təsirlərin sayı,4.0,say,lower,1.0,risk,0.7272727272727273,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.0881769931565835,ehtimal (0–1),lower,1.0,risk,0.6949206500150302,True
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),model_disagreement,Metodlar arası fikir ayrılığı,0.49037499999999995,pay,lower,1.0,ranges,0.8067227689754976,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",gdp_short,ÜDM-ə təsir — qısa müddət,0.3513737059618487,% baza ilə fərq,higher,1.0,micro|caem,0.5835656987085373,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",gdp_medium,ÜDM-ə təsir — orta müddət,0.2265765616471514,% baza ilə fərq,higher,1.0,micro|caem,0.47243609893579674,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",gdp_long,ÜDM-ə təsir — uzun müddət,0.05933466638803414,% baza ilə fərq,higher,1.0,longrun|caem,0.3506973535443387,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",inflation_short,İnflyasiyaya təsir — qısa müddət,0.07982106616137,f.b.,lower,1.0,micro|caem,0.6564058027002873,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",unemployment,İşsizliyə təsir — orta müddət,-0.00946697253403125,f.b.,lower,1.0,micro|caem,0.4840093019718038,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),3000.0,mln AZN,lower,1.0,micro|longrun,0.10983165351306412,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",debt_gdp,Dövlət borcuna təsir — uzun müddət,1.3023410020691601,f.b. ÜDM,lower,1.0,longrun|caem,0.44486659934542727,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.0174,f.b.,higher,0.5,risk,0.5515472730381262,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",side_effects,Yan təsirlərin sayı,6.0,say,lower,1.0,risk,0.5454545454545454,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.2165,ehtimal (0–1),lower,1.0,risk,0.2004752567871727,True
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",model_disagreement,Metodlar arası fikir ayrılığı,0.9515201582049632,pay,lower,1.0,ranges,0.4871213013709743,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",gdp_short,ÜDM-ə təsir — qısa müddət,0.3513737059618487,% baza ilə fərq,higher,1.0,micro|caem,0.5835656987085373,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",gdp_medium,ÜDM-ə təsir — orta müddət,0.2265765616471514,% baza ilə fərq,higher,1.0,micro|caem,0.47243609893579674,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",gdp_long,ÜDM-ə təsir — uzun müddət,0.05933466638803414,% baza ilə fərq,higher,1.0,longrun|caem,0.3506973535443387,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",inflation_short,İnflyasiyaya təsir — qısa müddət,0.07982106616137,f.b.,lower,1.0,micro|caem,0.6564058027002873,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",unemployment,İşsizliyə təsir — orta müddət,-0.00946697253403125,f.b.,lower,1.0,micro|caem,0.4840093019718038,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),3000.0,mln AZN,lower,1.0,micro|longrun,0.10983165351306412,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",debt_gdp,Dövlət borcuna təsir — uzun müddət,-0.05539215739143918,f.b. ÜDM,lower,1.0,longrun|caem,0.8152396125326441,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.021,f.b.,higher,0.5,risk,0.5577021713113354,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",side_effects,Yan təsirlərin sayı,5.0,say,lower,1.0,risk,0.6363636363636364,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.0396280019815387,ehtimal (0–1),lower,1.0,risk,0.8819862871353653,True
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",model_disagreement,Metodlar arası fikir ayrılığı,0.9515201582049632,pay,lower,1.0,ranges,0.4871213013709743,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),gdp_short,ÜDM-ə təsir — qısa müddət,0.0427212113982781,% baza ilə fərq,higher,1.0,micro|caem,0.33003616011811876,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),gdp_medium,ÜDM-ə təsir — orta müddət,0.03638990590445275,% baza ilə fərq,higher,1.0,micro|caem,0.3197840912585599,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),gdp_long,ÜDM-ə təsir — uzun müddət,0.027005178819824997,% baza ilə fərq,higher,1.0,longrun|caem,0.31728426751432565,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),inflation_short,İnflyasiyaya təsir — qısa müddət,0.00881536475889795,f.b.,lower,1.0,micro|caem,0.6907977607808546,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),unemployment,İşsizliyə təsir — orta müddət,-0.00146307094346015,f.b.,lower,1.0,micro|caem,0.31463708555206304,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),359.72651211080876,mln AZN,lower,1.0,micro|longrun,0.6961324920938871,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),debt_gdp,Dövlət borcuna təsir — uzun müddət,0.2395270606741661,f.b. ÜDM,lower,1.0,longrun|caem,0.7347892540209826,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.0115,f.b.,higher,0.5,risk,0.5414600786459225,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),side_effects,Yan təsirlərin sayı,1.0,say,lower,1.0,risk,1.0,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.0143286574143154,ehtimal (0–1),lower,1.0,risk,0.9794679833693993,True
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),model_disagreement,Metodlar arası fikir ayrılığı,0.2115,pay,lower,1.0,ranges,1.0,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),gdp_short,ÜDM-ə təsir — qısa müddət,0.47335310944303877,% baza ilə fərq,higher,1.0,micro|caem,0.6837605211279982,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),gdp_medium,ÜDM-ə təsir — orta müddət,0.47724430845992194,% baza ilə fərq,higher,1.0,micro|caem,0.6736328372740894,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),gdp_long,ÜDM-ə təsir — uzun müddət,0.36869490487238943,% baza ilə fərq,higher,1.0,longrun|caem,0.6704265246589339,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),inflation_short,İnflyasiyaya təsir — qısa müddət,-0.6295641604643456,f.b.,lower,1.0,micro|caem,1.0,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),unemployment,İşsizliyə təsir — orta müddət,-0.0176720452137173,f.b.,lower,1.0,micro|caem,0.6576385414018113,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),3243.9766891116287,mln AZN,lower,1.0,micro|longrun,0.05565403211268427,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),debt_gdp,Dövlət borcuna təsir — uzun müddət,1.3631523227901554,f.b. ÜDM,lower,1.0,longrun|caem,0.4282780142214716,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),0.1452,f.b.,higher,0.5,risk,0.7700461617370491,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),side_effects,Yan təsirlərin sayı,4.0,say,lower,1.0,risk,0.7272727272727273,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),0.0716888797860048,ehtimal (0–1),lower,1.0,risk,0.7584515155990106,True
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),model_disagreement,Metodlar arası fikir ayrılığı,1.6543755964775073,pay,lower,1.0,ranges,0.0,True

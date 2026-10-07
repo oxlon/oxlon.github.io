@@ -34,26 +34,27 @@ def scen_table(F, lang):
     return SCEN_TPL[lang].format(OIL=fmt("oil"), GAS=fmt("gas"), SIP=sp(F.sip))
 
 
-RES_LAB = {"en": ["| | Baseline | Adverse | Reform |", "Real GDP growth, avg % p.a. 2026–30", "v2: 2.56; first round 1.34; original 1.23",
-                  "Real non-oil GDP growth, avg % p.a.", "v2: 4.18; first round 2.68; original 2.35", "CPI inflation 2030, %",
+RES_LAB = {"en": ["| | Baseline | Adverse | Reform |", "Real GDP growth, avg % p.a. 2026–30", "v2 (2026-10-05) 2.56; first round 1.34; original 1.23",
+                  "Real non-oil GDP growth, avg % p.a.", "v2 (2026-10-05) 4.18; first round 2.68; original 2.35", "CPI inflation 2030, %",
                   "Unemployment 2030, %", "Budget balance 2030, % of GDP", "Public debt 2030, % of GDP",
                   "Hydrocarbon share of value added 2030, %", "Nominal GDP 2030, bn AZN",
                   "Non-oil budget balance 2030, % of non-oil GDP (v2.2)"],
-           "az": ["| | Əsas | Mənfi | İslahat |", "Real ÜDM artımı, orta illik %, 2026–30", "v2: 2.56; birinci raund 1.34; ilkin versiya 1.23",
-                  "Real qeyri-neft ÜDM artımı, orta illik %", "v2: 4.18; birinci raund 2.68; ilkin versiya 2.35", "İQİ inflyasiyası 2030, %",
+           "az": ["| | Əsas | Mənfi | İslahat |", "Real ÜDM artımı, orta illik %, 2026–30", "v2 (2026-10-05) 2.56; birinci raund 1.34; ilkin versiya 1.23",
+                  "Real qeyri-neft ÜDM artımı, orta illik %", "v2 (2026-10-05) 4.18; birinci raund 2.68; ilkin versiya 2.35", "İQİ inflyasiyası 2030, %",
                   "İşsizlik 2030, %", "Büdcə balansı 2030, ÜDM-ə nisbətən %", "Dövlət borcu 2030, ÜDM-ə nisbətən %",
                   "Əlavə dəyərdə karbohidrogenlərin payı 2030, %", "Nominal ÜDM 2030, mlrd AZN",
                   "Qeyri-neft büdcə balansı 2030, qeyri-neft ÜDM-ə nisbətən % (v2.2)"]}
 
 
 def results_table(F, lang):
-    L = RES_LAB[lang]; v21 = F.ref["v21"]
+    L = RES_LAB[lang] + (["this run", "earlier versions"] if lang == "en" else ["cari icra", "əvvəlki versiyalar"])
+    v21, v22 = F.ref["v21"], F.ref["v22"]
     c = {s: F.fc[s].loc[2030] for s in SCEN}
     row = lambda lab, f: f"| {lab} | " + " | ".join(f(s) for s in SCEN) + " |"
     g, n = F.avg_rgdp, F.avg_non
     out = [L[0], "|---|---|---|---|",
-           f"| {L[1]} | **{g['Baseline']:.2f}** (v2.1: {v21['avg_growth_rgdp']['Baseline']:.2f}; {L[2]}) | {g['Adverse']:.2f} | {g['Reform']:.2f} |",
-           f"| {L[3]} | **{n['Baseline']:.2f}** (v2.1: {v21['avg_growth_rgdpnon']['Baseline']:.2f}; {L[4]}) | {n['Adverse']:.2f} | {n['Reform']:.2f} |",
+           f"| {L[1]} | **{g['Baseline']:.2f}** ({L[-2]}; {L[-1]}: v2.2 {v22['avg_growth_rgdp']['Baseline']:.2f}, v2.1 {v21['avg_growth_rgdp']['Baseline']:.2f}, {L[2]}) | {g['Adverse']:.2f} | {g['Reform']:.2f} |",
+           f"| {L[3]} | **{n['Baseline']:.2f}** ({L[-2]}; {L[-1]}: v2.2 {v22['avg_growth_rgdpnon']['Baseline']:.2f}, v2.1 {v21['avg_growth_rgdpnon']['Baseline']:.2f}, {L[4]}) | {n['Adverse']:.2f} | {n['Reform']:.2f} |",
            row(L[5], lambda s: f"{c[s].infl:.2f}"), row(L[6], lambda s: f"{c[s].unemp:.2f}"),
            row(L[7], lambda s: pm(c[s].balance_n / c[s].gdp_n * 100)), row(L[8], lambda s: num(c[s].debt_azn / c[s].gdp_n * 100)),
            row(L[9], lambda s: num(F.hc30[s])), row(L[10], lambda s: num(c[s].gdp_n / 1000, 0)),

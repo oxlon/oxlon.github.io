@@ -1,0 +1,47 @@
+{
+ "FR1": {
+  "orig": "İqtisadi sektorların və bazarların dərin təhlili, sektorlara xas olan xüsusi dinamikaların və trendlərin proqnazlaşdırılması mümkün olmalıdır;",
+  "extra": [
+   "Sektorlar üzrə bölgünün Dövlət Statistika Komitəsinin strukturuna və Data Kataloqunda müəyyən edilmiş məlumat təsnifatına uyğun olaraq aparılması ilə razıyıq. Təhlil zamanı sənaye, o cümlədən qeyri-neft-qaz sənayesi, kənd təsərrüfatı, tikinti, ticarət və nəqliyyat vasitələrinin təmiri, nəqliyyat və anbar təsərrüfatı, turistlərin yerləşdirilməsi və ictimai iaşə, informasiya və rabitə, sosial və digər xidmətlər üzrə bölgü nəzərə alınmalıdır. Bu sektorların hər birinin struktur, dinamik və çoxdəyişənli ekonometrik modelləri hazırlanıb hər bir sektor ayrılıqda və birlikdə yuxarıda qeyd olunan qruplar üzrə təhlil olunub, proqnozları verilməlidir."
+  ],
+  "source": "micro_tasks.md"
+ },
+ "FR3": {
+  "orig": "Orta aylıq əmək haqqının (onların iqtisadiyyatın sahələri, dövlət və qeyri-dövlət sektoru, büdcə və qeyri-büdcə təşkilatları, neft və qeyri-neft sektoru üzrə səviyyəsi və artım sürətləri) təhlili və proqnazlaşdırılması mümkün olmalıdır;",
+  "extra": [
+   "Göstəricilərin sektor, dövlət və qeyri-dövlət sektoru, büdcə və qeyri-büdcə təşkilatları, neft və qeyri-neft sektoru üzrə təhlili təmin edilməlidir. Müvafiq bölgülər üzrə məlumatların müqayisəli təhlili və mümkün kəsişmələr əsasında analitik nəticələrin formalaşdırılması nəzərdə tutulmalıdır. Texniki həll hazırlanarkən məlumatların mövcudluğu və əldə edilmə imkanları nəzərə alınmalıdır."
+  ],
+  "source": "micro_tasks.md"
+ },
+ "FR4": {
+  "orig": "Əhalinin məşğulluq göstəriciləri (onların iqtisadiyyatın sahələri, dövlət və qeyri dövlət sektoru, büdcə və qeyri-büdcə təşkilatları, neft və qeyri-neft sektoru üzrə sayı və artım sürətləri) təhlili və proqnazlaşdırılması mümkün olmalıdır;",
+  "extra": [
+   "Dövlət Statistika Komitəsinin strukturuna uyğun olaraq FR3 və FR4 üzrə Göstəricilərin sektor, dövlət və qeyri-dövlət sektoru, büdcə və qeyri-büdcə təşkilatları, neft və qeyri-neft sektoru üzrə təhlili təmin edilməlidir. Müvafiq bölgülər üzrə məlumatların müqayisəli təhlili və mümkün kəsişmələr əsasında analitik nəticələrin formalaşdırılması nəzərdə tutulmalıdır. Texniki həll hazırlanarkən məlumatların mövcudluğu və əldə edilmə imkanları nəzərə alınmalıdır."
+  ],
+  "source": "micro_tasks.md"
+ },
+ "FR10": {
+  "orig": "Müəssisələrin və istehsalatların maliyyə vəziyyəti, istehsal effektivliyi və bazar paylarının təhlili və proqnazlaşdırılması mümkün olmalıdır;",
+  "extra": [
+   "<strong>Təsdiq (D.Ə., 24 Avqust 2026):</strong> FR10 üzrə müəssisə və istehsalatların maliyyə vəziyyətinin, istehsal effektivliyinin və bazardakı mövqeyinin analitik qiymətləndirilməsi, müqayisəli təhlili və proqnozlaşdırılması təmin edilməlidir. Bu məqsədlə müəssisə, maliyyə, istehsal və bazar göstəricilərinin müxtəlif məlumat mənbələrindən əldə edilərək əlaqələndirilməsi, tələb olunan analitik göstəricilərin formalaşdırılması və nəticələrin təhlil üçün təqdim edilməsi nəzərdə tutulmalıdır. İcraçı tərəfindən Sifarişçi ilə birgə tələb olunan məlumat göstəriciləri, məlumat mənbələri, məlumatların əldə edilməsi və inteqrasiya imkanları, analitik göstəricilərin hesablanması metodologiyası və nəticələrin təqdim olunma forması müəyyən edilməlidir. Məlumatların mövcud olmadığı hallarda alternativ məlumat mənbələri və həll imkanları müəyyən edilərək Sifarişçiyə təqdim olunmalıdır."
+  ],
+  "source": "Sorğu cvb Bakiniti 24.08.2026.xlsx",
+  "html": true
+ },
+ "FR12": {
+  "orig": "Rəqabət mühitinin təhlili, sektorlarda rəqabət intensivliyinin və müəssisələrin rəqabət strategiyalarının qiymətləndirilməsi və proqnazlaşdırılması mümkün olmalıdır;",
+  "extra": [
+   "<strong>Təklif olunan və razılaşdırılmış redaksiya:</strong><ul><li>sektorlar üzrə rəqabət intensivliyinin ölçülməsi və müəssisələrin bazara giriş və çıxış tezliyi və həmin göstəricilərin proqnozlaşdırılması;</li><li>konkret siyasət və ya bazar dəyişikliyinə sektorlar üzər ehtimal olunan reaksiyasının ssenari təhlili, sənaye iqtisadiyyatı nəzəriyyəsi əsasında və fərziyyələr açıq göstərilməklə;</li><li>rəqabət şəraitinin pisləşdiyi sektorların erkən xəbərdarlıq göstəriciləri vasitəsilə aşkarlanması.</li></ul>",
+   "<strong>Tövsiyə (D.Ə., 24 Avqust 2026):</strong> İrad nəzərə alınsın. FR12-nin mövcud redaksiyasının məlumatlarla ölçülə bilən və analitik olaraq əsaslandırıla bilən göstəricilər əsasında dəqiqləşdirilməsi məqsədəuyğundur. Rəqabət strategiyasının birbaşa qiymətləndirilməsi əvəzinə sektorlar üzrə rəqabət intensivliyinin, bazara giriş və çıxış dinamikasının, bazar konsentrasiyasının və rəqabət mühitindəki dəyişikliklərin təhlili və proqnozlaşdırılması nəzərdə tutula bilər. Göstəricilər müvafiq məlumatların əlçatanlığı nəzərə alınmaqla Sifarişçi ilə razılaşdırılmalıdır."
+  ],
+  "source": "Sorğu cvb Bakiniti 24.08.2026.xlsx",
+  "html": true
+ },
+ "FR5": {
+  "orig": "Əhaliyə göstərilən pullu xidmətlərin həcmi və artım sürətinin təhlili və proqnazlaşdırılması mümkün olmalıdır;",
+  "extra": [
+   "Qəbul meyarı: Sistem əhaliyə göstərilən pullu xidmətlərin həcmini xidmət növləri üzrə proqnozlaşdırır və illik artım sürəti faiz formatında əks olunur."
+  ],
+  "source": "MIIS_Etrafli_Texniki Tapşırıq.docx (FR5 sətri)"
+ }
+}

@@ -135,7 +135,12 @@ def solve(overrides=None, scenario="Baseline", upstream=None):
     emp_el = ov['coefficients'].get('FR3.PAN_sec_emp_2w|ln_gva', S['EMP_EL'])
     beta = ov['coefficients'].get('FR3.PAN_ind_between|ln_prod', S['BETA_BETWEEN'])
     lv = ov['levers']
-    mwg = _lever_path(lv.get('mw_growth'), len(FY), 100.0, W, 'mw_growth') or [S['MW_GROWTH'][scenario]]*len(FY)
+    # v2.3.6: a scalar growth rate applies from the second forecast year (the first has the legal level in force); a 5-value
+    # list is used as given (its first element is a change against the legal first-year level)
+    _mg = lv.get('mw_growth')
+    mwg = _lever_path(_mg, len(FY), 100.0, W, 'mw_growth') or [S['MW_GROWTH'][scenario]]*len(FY)
+    if 'MW_LEGAL26' in S and not isinstance(_mg, (list, tuple, np.ndarray)):
+        mwg = [0.0] + list(mwg[1:])
     ppath = _lever_path(lv.get('prem_path'), len(FY), 1.0, W, 'prem_path')
     pt = lv.get('prem_target')
     pt = S['PREM_TARGET'][scenario] if pt is None else float(pt)

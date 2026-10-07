@@ -968,6 +968,12 @@ def run(ctx: dict | None = None, verbose: bool = True) -> dict:
         attempted = fetch_all_az(fx_budget=ctx.get("fx_budget", 40), bfb_pages=ctx.get("bfb_pages", 2), verbose=verbose)
     st = feed_status_table()
     allst = write_feed_status(st)
+    try:                                                 # market-factor rows: status of THIS run + last value (D2)
+        from . import feeds_market
+        feeds_market.annotate_d2(fetched_this_run=False)
+        allst = pd.read_csv(config.OUTPUT / "D2_feed_status.csv")
+    except Exception:                                    # noqa: BLE001
+        pass
     P = market_panel()
     P.to_csv(config.OUTPUT / "D4_market_panel.csv", index=False, float_format="%.8g")
     spine.register_output("D2_feed_status.csv", "feeds_az", "Bütün avtomatik məlumat axınları (AMB, DSK, Maliyyə Nazirliyi, ARDNF, "

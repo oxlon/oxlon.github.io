@@ -1,21 +1,21 @@
-baseline_id,baxis,gosterici,ad,vahid,il,baza,p05,p10,p25,p50,p75,p90,p95,orta,ES10
-B-949799ba38,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2026,5.312,1.4794,1.9261,2.5384,3.1707,3.7924,4.394,4.8275,3.1633,1.2927
-B-949799ba38,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2027,5.43,0.1067,1.3314,3.3178,5.43,7.4047,9.1735,10.356,5.3334,-0.47797
-B-949799ba38,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2028,5.603,0.41916,1.6349,3.5677,5.603,7.5071,9.1732,10.186,5.4804,-0.045644
-B-949799ba38,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2029,5.632,0.83092,1.9194,3.7216,5.632,7.5442,9.2809,10.348,5.6255,0.3929
-B-949799ba38,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2030,5.727,0.52218,1.7007,3.6381,5.727,7.7385,9.58,10.792,5.7004,0.10648
-B-949799ba38,baseline,cpi,İnflyasiya (illik orta),%,2026,5.2991,3.7603,4.0775,4.6891,5.5664,6.588,7.5665,8.1637,5.7179,8.3902
-B-949799ba38,baseline,cpi,İnflyasiya (illik orta),%,2027,5.7416,1.6375,2.1792,3.4945,5.7416,8.6059,11.719,13.713,6.475,14.735
-B-949799ba38,baseline,cpi,İnflyasiya (illik orta),%,2028,5.8752,1.734,2.2426,3.4914,5.8752,8.9367,11.917,13.976,6.5903,14.63
-B-949799ba38,baseline,cpi,İnflyasiya (illik orta),%,2029,5.9149,1.7049,2.2448,3.49,5.9149,9.0126,11.932,13.962,6.63,14.688
-B-949799ba38,baseline,cpi,İnflyasiya (illik orta),%,2030,5.9278,1.6759,2.2349,3.4939,5.9278,8.9717,11.911,13.888,6.61,14.697
-B-949799ba38,baseline,fis,Büdcə balansı / ÜDM,%,2026,0.65556,0.0065747,0.17607,0.41501,0.65556,0.88881,1.1339,1.2954,0.65347,-0.079124
-B-949799ba38,baseline,fis,Büdcə balansı / ÜDM,%,2027,0.32115,-1.3348,-0.91768,-0.29624,0.32115,0.92926,1.539,1.9883,0.31857,-1.5565
-B-949799ba38,baseline,fis,Büdcə balansı / ÜDM,%,2028,0.033528,-1.6575,-1.2313,-0.59923,0.033528,0.655,1.2718,1.6824,0.01893,-1.9039
-B-949799ba38,baseline,fis,Büdcə balansı / ÜDM,%,2029,0.10881,-1.3174,-0.93352,-0.41645,0.10881,0.65246,1.2268,1.6258,0.11871,-1.5499
-B-949799ba38,baseline,fis,Büdcə balansı / ÜDM,%,2030,0.14105,-1.8211,-1.2938,-0.57177,0.14105,0.86462,1.6033,2.1361,0.14439,-2.0884
-B-949799ba38,baseline,brent,Brent neft qiyməti,USD/barel,2026,68.98,73.944,74.472,80.69,87.015,91.617,93.549,93.587,85.751,72.814
-B-949799ba38,baseline,brent,Brent neft qiyməti,USD/barel,2027,68.97,32.573,38.738,52.732,68.136,86.629,96.804,103.29,69.299,32.813
-B-949799ba38,baseline,brent,Brent neft qiyməti,USD/barel,2028,69.4,27.415,33.659,46.599,68.184,93.125,118.74,133.35,72.496,26.448
-B-949799ba38,baseline,brent,Brent neft qiyməti,USD/barel,2029,69.46,23.247,29.309,43.998,67.876,100.72,137.86,163.46,77.108,22.278
-B-949799ba38,baseline,brent,Brent neft qiyməti,USD/barel,2030,69.19,19.601,25.871,40.832,66.931,104.97,151.82,186.63,80.19,18.886
+baseline_id,baxis,gosterici,ad,vahid,il,baza,p05,p10,p25,p50,p75,p90,p95,orta,ES10,merkez,musahide_payi,baza_izah
+B-d7e77e886f,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2026,5.312,1.4829,1.927,2.5406,3.1707,3.793,4.3956,4.8279,3.164,1.2934,3.1707,0.66667,"rəsmi proqnoz (YTD məlumatından əvvəl) — zolaq il-əvvəlindən faktiki ilə şərtləndirilib, 'baza' zolaqdan kənar ola bilər; mərkəz = 'merkez'"
+B-d7e77e886f,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2027,5.43,0.10625,1.3413,3.32,5.43,7.4034,9.1734,10.356,5.3368,-0.47318,5.43,,rəsmi proqnoz
+B-d7e77e886f,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2028,5.603,0.42215,1.631,3.5683,5.603,7.5085,9.1745,10.187,5.483,-0.042561,5.603,,rəsmi proqnoz
+B-d7e77e886f,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2029,5.632,0.83106,1.9166,3.7215,5.632,7.5482,9.2804,10.34,5.6261,0.3922,5.632,,rəsmi proqnoz
+B-d7e77e886f,baseline,g,Qeyri-neft ÜDM-in real artımı,%,2030,5.727,0.51737,1.6949,3.6383,5.727,7.7328,9.5721,10.783,5.6985,0.10415,5.727,,rəsmi proqnoz
+B-d7e77e886f,baseline,cpi,İnflyasiya (illik orta),%,2026,5.2991,3.7606,4.0784,4.6894,5.5664,6.5879,7.5652,8.1632,5.7184,8.3917,5.5664,0.66667,"rəsmi proqnoz (YTD məlumatından əvvəl) — zolaq il-əvvəlindən faktiki ilə şərtləndirilib, 'baza' zolaqdan kənar ola bilər; mərkəz = 'merkez'"
+B-d7e77e886f,baseline,cpi,İnflyasiya (illik orta),%,2027,5.7416,1.6451,2.1844,3.5003,5.7416,8.6064,11.726,13.739,6.4812,14.757,5.7416,,rəsmi proqnoz
+B-d7e77e886f,baseline,cpi,İnflyasiya (illik orta),%,2028,5.8752,1.7357,2.2456,3.492,5.8752,8.926,11.919,13.972,6.589,14.643,5.8752,,rəsmi proqnoz
+B-d7e77e886f,baseline,cpi,İnflyasiya (illik orta),%,2029,5.9149,1.7076,2.245,3.4907,5.9149,9.0055,11.933,13.963,6.6278,14.7,5.9149,,rəsmi proqnoz
+B-d7e77e886f,baseline,cpi,İnflyasiya (illik orta),%,2030,5.9278,1.6833,2.2405,3.4985,5.9278,8.9748,11.908,13.902,6.6152,14.719,5.9278,,rəsmi proqnoz
+B-d7e77e886f,baseline,fis,Büdcə balansı / ÜDM,%,2026,0.65547,0.088243,0.23418,0.44325,0.65547,0.86148,1.0738,1.2148,0.6531,0.011732,0.65547,,rəsmi proqnoz
+B-d7e77e886f,baseline,fis,Büdcə balansı / ÜDM,%,2027,0.26138,-1.3976,-0.97178,-0.35462,0.26138,0.86947,1.4821,1.9288,0.25945,-1.6145,0.26138,,rəsmi proqnoz
+B-d7e77e886f,baseline,fis,Büdcə balansı / ÜDM,%,2028,-0.061535,-1.6841,-1.2699,-0.66776,-0.061535,0.53932,1.1256,1.5141,-0.073536,-1.9122,-0.061535,,rəsmi proqnoz
+B-d7e77e886f,baseline,fis,Büdcə balansı / ÜDM,%,2029,-0.0058755,-1.4689,-1.0884,-0.54829,-0.0058755,0.55078,1.1307,1.5417,0.0014916,-1.7083,-0.0058755,,rəsmi proqnoz
+B-d7e77e886f,baseline,fis,Büdcə balansı / ÜDM,%,2030,0.012894,-1.7048,-1.2471,-0.61611,0.012894,0.65637,1.3149,1.785,0.018828,-1.9492,0.012894,,rəsmi proqnoz
+B-d7e77e886f,baseline,brent,Brent neft qiyməti,USD/barel,2026,68.98,73.944,74.472,80.69,87.015,91.617,93.549,93.587,85.751,72.814,87.015,0.75,"rəsmi proqnoz (YTD məlumatından əvvəl) — zolaq il-əvvəlindən faktiki ilə şərtləndirilib, 'baza' zolaqdan kənar ola bilər; mərkəz = 'merkez'"
+B-d7e77e886f,baseline,brent,Brent neft qiyməti,USD/barel,2027,68.97,32.573,38.738,52.732,68.136,86.629,96.804,103.29,69.299,32.813,68.97,,rəsmi proqnoz
+B-d7e77e886f,baseline,brent,Brent neft qiyməti,USD/barel,2028,69.4,27.415,33.659,46.599,68.184,93.125,118.74,133.35,72.496,26.448,69.4,,rəsmi proqnoz
+B-d7e77e886f,baseline,brent,Brent neft qiyməti,USD/barel,2029,69.46,23.247,29.309,43.998,67.876,100.72,137.86,163.46,77.108,22.278,69.46,,rəsmi proqnoz
+B-d7e77e886f,baseline,brent,Brent neft qiyməti,USD/barel,2030,69.19,19.601,25.871,40.832,66.931,104.97,151.82,186.63,80.19,18.886,69.19,,rəsmi proqnoz

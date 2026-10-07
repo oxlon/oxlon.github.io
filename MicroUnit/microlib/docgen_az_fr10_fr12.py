@@ -16,7 +16,10 @@ How a block is translated
     ⟦k:da⟧ (number + locative suffix, 2026-da).
   * numbers in prose get the Azerbaijani format (decimal comma, space thousands separator); numbers in tables keep the
     decimal point as produced by the code (only the thousands separator becomes a space); code spans are kept verbatim.
-  * lines already in Azerbaijani (the v2 notes) are copied, only their prose numbers converted.
+  * lines already in Azerbaijani are copied, only their prose numbers converted.
+  * blocks the notebook words in both languages (the v2 blocks: English in the English document, the same block in
+    Azerbaijani in output/<module>_doc_blocks_az.json, written by `write_az_sources`) are rendered from the Azerbaijani
+    wording — used only while its recorded English text equals the block in the English document (else translated).
   * cells that are numbers or identifiers (codes, file names, T1/T2 flags) are kept.
   * text without a template is kept in English and listed in docs/az/_untranslated_<module>.txt (and printed), so a
     change of wording in a notebook is visible; numbers alone never cause a miss.
@@ -276,6 +279,25 @@ def units(text):
     return U
 
 
+def az_sources(module):
+    """Azerbaijani sources of AUTO blocks written by the notebook next to the English document:
+    output/<module>_doc_blocks_az.json = {tag: {"en": English block, "az": the same block worded in Azerbaijani}}.
+    For such a block the Azerbaijani wording is rendered (numbers converted as for any Azerbaijani prose) instead of a
+    translation of the English block — but only while "en" equals the block now in the English document."""
+    p = os.path.join(project_root(), "output", f"{module}_doc_blocks_az.json")
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+
+
+def write_az_sources(module, en_blocks, az_blocks):
+    """Called by the notebook's documentation step: en_blocks / az_blocks = {tag: text between the markers}."""
+    p = os.path.join(project_root(), "output", f"{module}_doc_blocks_az.json")
+    d = {t: {"en": en_blocks[t], "az": az_blocks[t]} for t in az_blocks}
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(d, f, ensure_ascii=False, indent=1)
+    print(f"output/{module}_doc_blocks_az.json: Azerbaijani sources of {len(d)} AUTO blocks: {sorted(d)}")
+    return p
+
+
 def sync(module):
     """Write every AUTO block of docs/<module>_Methodology.md, in Azerbaijani, into docs/az/<module>_Metodologiya.md."""
     root = project_root()
@@ -290,7 +312,16 @@ def sync(module):
     assert not missing and not extra, (f"{module}: AUTO markers differ between the English and the Azerbaijani "
                                        f"document — missing in docs/az: {missing}; not in English: {extra}")
     tm = TM(module)
-    blocks = {m.group(2): render(tm, m.group(2), m.group(3)) for m in AUTO.finditer(en)}
+    side = az_sources(module)
+    blocks = {}
+    for m in AUTO.finditer(en):
+        tag, body = m.group(2), m.group(3)
+        s = side.get(tag)
+        if s is not None and s.get("en") != body:
+            print(f"    {module} AUTO:{tag}: the Azerbaijani source in output/{module}_doc_blocks_az.json is not from the run "
+                  f"that wrote the English block — the English block is translated instead")
+            s = None
+        blocks[tag] = render(tm, tag, s["az"] if s is not None else body)
     new = AUTO.sub(lambda m: m.group(1) + blocks[m.group(2)] + m.group(4), az)
     if new != az:
         with open(azp, "w", encoding="utf-8") as f:

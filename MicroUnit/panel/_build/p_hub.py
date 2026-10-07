@@ -74,6 +74,10 @@ def build(stats, meta):
     <h2><span class="dot" style="background:var(--caem)"></span>Altı tələb</h2>
     <div class="note"><ul>{rows}</ul></div>
   </section>
+  <section>
+    <h2><span class="dot" style="background:var(--caem)"></span>Əlaqəli modullar (MİİS §15.5)</h2>
+    <div class="note"><ul><li><a href="../1551_v3/index.html">§15.5.1 Makroiqtisadi model</a></li><li><a href="../RiskUnit/index.html">§15.5.3 İqtisadi risklərin idarəedilməsi</a></li><li><a href="../PolicyUnit/index.html">§15.5.4 İqtisadi siyasətlərin təsir analizi</a></li></ul></div>
+  </section>
   <div class="note">
     <h3>Ssenarini yenidən hesablamaq üçün</h3>
     <p><b>MikroModel_Baslat.command</b> (macOS) və ya <b>MikroModel_Baslat.bat</b> (Windows) faylını iki dəfə klikləyin —

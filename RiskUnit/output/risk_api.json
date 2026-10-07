@@ -1,153 +1,161 @@
 {
  "alerts": [
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "yüksək",
-   "mesaj": "İnflyasiyanın hədəf diapazonundan yuxarı olması: ehtimal 47%, skor 20 (P 4 × T 5, ölçü: inflyasiya)",
+   "mesaj": "İnflyasiyanın hədəf diapazonundan yuxarı olması: ehtimal 48%, skor 20 (P 4 × T 5, ölçü: inflyasiya)",
    "risk_id": "R12",
    "tip": "yüksək prioritet"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "yüksək",
    "mesaj": "Neft qiymətinin kəskin enməsi: ehtimal 48%, skor 16 (P 4 × T 4, ölçü: qeyri-neft ÜDM)",
    "risk_id": "R01",
    "tip": "yüksək prioritet"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "Regional geosiyasi risk (Rusiya, Ukrayna, İsrail, Türkiyə ortası): son dəyər 1.134 (2026-09), tarixi paylanmanın 91-cı faizi",
    "risk_id": "",
    "tip": "göstərici həddi"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "FR10 izləmə siyahısındakı emal sahələri: 3 (2025)",
    "risk_id": "",
    "tip": "göstərici həddi"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "2027: Brent mərkəzi yolu 84 USD (canlı) — makro fərziyyə 69 USD",
    "risk_id": "R01",
    "tip": "baza köhnəlib"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "Brent (spot): 114 (2026-09-29), z = 2.7 — xəbərdarlıq ↑",
    "risk_id": "R01",
    "tip": "gündəlik monitor"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "Brent 2026 illik ortası (YTD + spot): 98.36 (2026-09-29), z = 6.9 — xəbərdarlıq ↑",
    "risk_id": "R01",
    "tip": "gündəlik monitor"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "Azeri Light (proksi) vs FR1 ixrac qiyməti: 114.6 (2026-09-29), z = 3.0 — xəbərdarlıq ↑",
    "risk_id": "R01",
    "tip": "gündəlik monitor"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "Dövlət büdcəsi xərcləri: icra (illik planın %-i): 54.83 (2026-08-01), z = -2.4 — xəbərdarlıq ↓",
    "risk_id": "R11",
    "tip": "gündəlik monitor"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "Dövlət büdcəsinin balansı (Yanvar–ay) vs illik fərziyyə: 3716 (2026-08-01), z = 4.5 — xəbərdarlıq ↑",
    "risk_id": "R11",
    "tip": "gündəlik monitor"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
    "mesaj": "ARDNF aktivləri vs Nazirlik ilsonu fərziyyəsi: 7.26e+04 (2026-06-30), z = 4.6 — xəbərdarlıq ↑",
    "risk_id": "R01",
    "tip": "gündəlik monitor"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
-   "mesaj": "minfin (Maliyyə Nazirliyi: təsdiq olunmuş büdcə göstəriciləri): son müşahidə 2025-01-01, 643 gün — köhnə; status: keş: şəbəkə yoxdur",
+   "mesaj": "minfin (Maliyyə Nazirliyi: təsdiq olunmuş büdcə göstəriciləri): son müşahidə 2025-01-01, 644 gün — köhnə; status: keş: şəbəkə yoxdur",
    "risk_id": "",
    "tip": "məlumat köhnəlib"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "orta",
-   "mesaj": "Proqnoz qeyri-müəyyənliyi / model riski: model riski (P×T deyil): köhnəlməmiş konsensus (fr1, imf, mspec) ilə baza fərqi; köhnəlmiş xaric: bu60;caem;v8; hədd 0.5 f.b.; əlverişsiz fərq 1.04 f.b. (hədd 0.5 f.b.; alternativ paylanma FR2_model_risk.csv)",
+   "mesaj": "Proqnoz qeyri-müəyyənliyi / model riski: model riski (P×T deyil): köhnəlməmiş konsensus (fr1, imf, mspec) ilə baza fərqi; köhnəlmiş xaric: bu60;caem;v8; hədd 0.5 f.b.; əlverişsiz fərq 1.23 f.b. (hədd 0.5 f.b.; alternativ paylanma FR2_model_risk.csv)",
    "risk_id": "R19",
    "tip": "model riski"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "aşağı",
-   "mesaj": "dsk_macro: son müşahidə 2026-08-01 (66 gün)",
+   "mesaj": "brent: son müşahidə 2026-09-29 (8 gün)",
    "risk_id": "",
    "tip": "məlumat köhnəlib"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "aşağı",
-   "mesaj": "dsk_cpi: son müşahidə 2026-08-01 (66 gün)",
+   "mesaj": "dsk_macro: son müşahidə 2026-08-01 (67 gün)",
    "risk_id": "",
    "tip": "məlumat köhnəlib"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "aşağı",
-   "mesaj": "dsk_tables: son müşahidə 2026-04-01 (188 gün)",
+   "mesaj": "dsk_cpi: son müşahidə 2026-08-01 (67 gün)",
    "risk_id": "",
    "tip": "məlumat köhnəlib"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "aşağı",
-   "mesaj": "minfin: son müşahidə 2026-03-01 (219 gün)",
+   "mesaj": "dsk_tables: son müşahidə 2026-04-01 (189 gün)",
    "risk_id": "",
    "tip": "məlumat köhnəlib"
   },
   {
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "ciddilik": "aşağı",
-   "mesaj": "sofaz: son müşahidə 2026-06-30 (98 gün)",
+   "mesaj": "minfin: son müşahidə 2026-03-01 (220 gün)",
+   "risk_id": "",
+   "tip": "məlumat köhnəlib"
+  },
+  {
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "ciddilik": "aşağı",
+   "mesaj": "sofaz: son müşahidə 2026-06-30 (99 gün)",
    "risk_id": "",
    "tip": "məlumat köhnəlib"
   }
  ],
  "backtest": [
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.4568,
    "hedd": "> 0",
    "hedef": "nonoil_realg",
@@ -159,11 +167,11 @@
    "pencere": "2016–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.1939,
    "hedd": "> 0",
    "hedef": "cpi_infl",
@@ -175,11 +183,11 @@
    "pencere": "2011–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.2146,
    "hedd": "> 0",
    "hedef": "brent_usd",
@@ -191,11 +199,11 @@
    "pencere": "2008–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.4734,
    "hedd": "> 0",
    "hedef": "current_account",
@@ -207,11 +215,11 @@
    "pencere": "2018–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 1.042,
    "hedd": "< 1",
    "hedef": "nonoil_g",
@@ -223,11 +231,11 @@
    "pencere": "2013–2025",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D2"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 1.32,
    "hedd": "< 1",
    "hedef": "nonoil_g",
@@ -239,12 +247,12 @@
    "pencere": "2013–2025",
    "qeyd": "etalon: genişlənən pəncərənin şərtsiz empirik kvantili",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D3"
   },
   {
-   "baseline_id": "B-57b92d66be",
-   "deyer": 0.652,
+   "baseline_id": "B-d7e77e886f",
+   "deyer": 0.7159,
    "hedd": "< 1",
    "hedef": "nonoil_g sapması",
    "melumat_bazasi": "psevdo-real vaxt (son buraxılış; vintaj arxivi 2026-10-02-dən yığılır)",
@@ -253,13 +261,13 @@
    "n": 20,
    "netice": "keçdi",
    "pencere": "2006–2025",
-   "qeyd": "korrelyasiya 0.82; epizodlar 2009/2015/2016/2020",
+   "qeyd": "korrelyasiya 0.76; epizodlar 2009/2015/2016/2020",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D4"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.5,
    "hedd": "≥ 0,5",
    "hedef": "nonoil_g sapması",
@@ -271,11 +279,11 @@
    "pencere": "2009;2020",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D5"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 1.006,
    "hedd": "< 1",
    "hedef": "brent 12 ay",
@@ -287,11 +295,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": "etalon: ilk 24 müşahidənin σ-sı ilə normal paylanma",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "D6"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 1.0,
    "hedd": "[0.75; 0.85]",
    "hedef": "nonoil_realg",
@@ -303,11 +311,11 @@
    "pencere": "2016–2024",
    "qeyd": "RMSE/σ_yelpik = 0.60",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.814,
    "hedd": "> 0.05",
    "hedef": "nonoil_realg",
@@ -319,11 +327,11 @@
    "pencere": "2016–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P2"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.1685,
    "hedd": "> 0.05",
    "hedef": "nonoil_realg",
@@ -335,11 +343,11 @@
    "pencere": "2016–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P3"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.7857,
    "hedd": "[0.75; 0.85]",
    "hedef": "cpi_infl",
@@ -351,11 +359,11 @@
    "pencere": "2011–2024",
    "qeyd": "RMSE/σ_yelpik = 0.96",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.9212,
    "hedd": "> 0.05",
    "hedef": "cpi_infl",
@@ -367,11 +375,11 @@
    "pencere": "2011–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P2"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.7087,
    "hedd": "> 0.05",
    "hedef": "cpi_infl",
@@ -383,11 +391,11 @@
    "pencere": "2011–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P3"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.9412,
    "hedd": "[0.75; 0.85]",
    "hedef": "brent_usd",
@@ -399,11 +407,11 @@
    "pencere": "2008–2024",
    "qeyd": "RMSE/σ_yelpik = 0.78",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.5835,
    "hedd": "> 0.05",
    "hedef": "brent_usd",
@@ -415,11 +423,11 @@
    "pencere": "2008–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P2"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.5428,
    "hedd": "> 0.05",
    "hedef": "brent_usd",
@@ -431,11 +439,11 @@
    "pencere": "2008–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P3"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 1.0,
    "hedd": "[0.75; 0.85]",
    "hedef": "current_account",
@@ -447,11 +455,11 @@
    "pencere": "2018–2024",
    "qeyd": "RMSE/σ_yelpik = 0.45",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.5328,
    "hedd": "> 0.05",
    "hedef": "current_account",
@@ -463,11 +471,11 @@
    "pencere": "2018–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P2"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.2246,
    "hedd": "> 0.05",
    "hedef": "current_account",
@@ -479,11 +487,11 @@
    "pencere": "2018–2024",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P3"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.7333,
    "hedd": "[0.75; 0.85]",
    "hedef": "brent 12 ay",
@@ -495,11 +503,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P4"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.8,
    "hedd": "[0.86; 0.94]",
    "hedef": "brent 12 ay",
@@ -511,11 +519,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P5"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.8632,
    "hedd": "> 0.05",
    "hedef": "brent 12 ay",
@@ -527,11 +535,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P6"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.1585,
    "hedd": "> 0.05",
    "hedef": "brent 12 ay",
@@ -543,11 +551,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P7"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.07962,
    "hedd": "> 0.05",
    "hedef": "brent 12 ay",
@@ -559,11 +567,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P8"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.2616,
    "hedd": "> 0.05",
    "hedef": "brent 12 ay",
@@ -575,11 +583,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P9"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.2115,
    "hedd": "> 0.05",
    "hedef": "brent 12 ay",
@@ -591,11 +599,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P10"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.5385,
    "hedd": "[0.75; 0.85]",
    "hedef": "nonoil_g",
@@ -607,11 +615,11 @@
    "pencere": "2013–2025",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P11"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.01019,
    "hedd": "> 0.05",
    "hedef": "nonoil_g",
@@ -623,11 +631,11 @@
    "pencere": "2013–2025",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P12"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 7.7e-09,
    "hedd": "> 0.05",
    "hedef": "nonoil_g",
@@ -639,11 +647,11 @@
    "pencere": "2013–2025",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P13"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.0008352,
    "hedd": "> 0.05",
    "hedef": "nonoil_g",
@@ -655,11 +663,11 @@
    "pencere": "2013–2025",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P14"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.8788,
    "hedd": "≥ 0.70",
    "hedef": "nonoil_g",
@@ -671,11 +679,11 @@
    "pencere": "2012–2025",
    "qeyd": "siqnallar: Brent enişi, dövlət investisiyasının azalması (istiqamət əvvəlcədən); səs-küy/siqnal = 0.55; hadisə sayı 3 — kiçik nümunə; hədd Nazirliyin yanlış həyəcan tolerantlığı ilə dəqiqləşdirilməlidir",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "E1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.2911,
    "hedd": "≥ 0.70",
    "hedef": "brent",
@@ -687,11 +695,11 @@
    "pencere": "2000-01–2025-09",
    "qeyd": "neft qiymətinin çöküşü bazar siqnalları ilə proqnozlaşdırılmır (səs-küy/siqnal 2.42); R01 ehtimalı EWS ilə deyil, paylanma ilə verilir",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "E1b"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.3667,
    "hedd": "≥ 0.70",
    "hedef": "nonoil_g",
@@ -703,11 +711,11 @@
    "pencere": "2013–2025",
    "qeyd": "hadisə sayı 3",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "E2"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 0.8948,
    "hedd": "< 1",
    "hedef": "regional GPR ≥ P90",
@@ -719,11 +727,11 @@
    "pencere": "1996–2025",
    "qeyd": "AUROC 0.59",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "E3"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 1.075,
    "hedd": "< 1",
    "hedef": "brent",
@@ -735,11 +743,11 @@
    "pencere": "1995-12–2024-12",
    "qeyd": null,
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "E4"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": null,
    "hedd": "[0.75; 0.85], n ≥ 5",
    "hedef": "nonoil_g; cpi",
@@ -749,13 +757,13 @@
    "n": 0,
    "netice": "yoxlanıla bilmir (n=0)",
    "pencere": "—",
-   "qeyd": "nəticəsi açıqlanmış hədəf ili olan arxiv proqnozları ilk buraxılış rəqəmi ilə qiymətləndirilir; arxivdə 1 vintaj var — ilk yetişmə: 2026 faktiki (2027-ci ilin yazı)",
+   "qeyd": "nəticəsi açıqlanmış hədəf ili olan arxiv proqnozları ilk buraxılış rəqəmi ilə qiymətləndirilir; arxivdə 3 vintaj var — ilk yetişmə: 2026 faktiki (2027-ci ilin yazı)",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "R1"
   },
   {
-   "baseline_id": "B-57b92d66be",
+   "baseline_id": "B-d7e77e886f",
    "deyer": 1.0,
    "hedd": "[0.75; 0.85]",
    "hedef": "balance_pct",
@@ -765,23 +773,23 @@
    "n": 14,
    "netice": "keçmədi",
    "pencere": "2010–2025",
-   "qeyd": "etalon: 2 illik təsadüfi gəzinti xətası RMSE 1.00 f.b. / FR1 σ 3.49 f.b.",
+   "qeyd": "etalon: 2 illik təsadüfi gəzinti xətası RMSE 1.00 f.b. / FR1 σ 3.33 f.b.",
    "rub": "2026Q4",
-   "tarix": "2026-10-06",
+   "tarix": "2026-10-07",
    "test_id": "P15"
   }
  ],
  "forecast_result": [
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.312,
    "confidence_interval": {
-    "p05": 1.4794,
-    "p10": 1.9261,
-    "p90": 4.394,
-    "p95": 4.8275
+    "p05": 1.4829,
+    "p10": 1.927,
+    "p90": 4.3956,
+    "p95": 4.8279
    },
-   "forecast_id": "RISK-2026-10-06-g-2026",
+   "forecast_id": "RISK-2026-10-07-g-2026",
    "horizon": 0,
    "indicator_code": "g",
    "model_id": "MIIS-15.5.3-MC",
@@ -791,15 +799,15 @@
    "value": 3.1707
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.43,
    "confidence_interval": {
-    "p05": 0.1067,
-    "p10": 1.3314,
-    "p90": 9.1735,
-    "p95": 10.3564
+    "p05": 0.1063,
+    "p10": 1.3413,
+    "p90": 9.1734,
+    "p95": 10.3557
    },
-   "forecast_id": "RISK-2026-10-06-g-2027",
+   "forecast_id": "RISK-2026-10-07-g-2027",
    "horizon": 1,
    "indicator_code": "g",
    "model_id": "MIIS-15.5.3-MC",
@@ -809,15 +817,15 @@
    "value": 5.43
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.603,
    "confidence_interval": {
-    "p05": 0.4192,
-    "p10": 1.6349,
-    "p90": 9.1732,
-    "p95": 10.1857
+    "p05": 0.4222,
+    "p10": 1.631,
+    "p90": 9.1745,
+    "p95": 10.1866
    },
-   "forecast_id": "RISK-2026-10-06-g-2028",
+   "forecast_id": "RISK-2026-10-07-g-2028",
    "horizon": 2,
    "indicator_code": "g",
    "model_id": "MIIS-15.5.3-MC",
@@ -827,15 +835,15 @@
    "value": 5.603
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.632,
    "confidence_interval": {
-    "p05": 0.8309,
-    "p10": 1.9194,
-    "p90": 9.2809,
-    "p95": 10.3478
+    "p05": 0.8311,
+    "p10": 1.9166,
+    "p90": 9.2804,
+    "p95": 10.3399
    },
-   "forecast_id": "RISK-2026-10-06-g-2029",
+   "forecast_id": "RISK-2026-10-07-g-2029",
    "horizon": 3,
    "indicator_code": "g",
    "model_id": "MIIS-15.5.3-MC",
@@ -845,15 +853,15 @@
    "value": 5.632
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.727,
    "confidence_interval": {
-    "p05": 0.5222,
-    "p10": 1.7007,
-    "p90": 9.58,
-    "p95": 10.7916
+    "p05": 0.5174,
+    "p10": 1.6949,
+    "p90": 9.5721,
+    "p95": 10.7825
    },
-   "forecast_id": "RISK-2026-10-06-g-2030",
+   "forecast_id": "RISK-2026-10-07-g-2030",
    "horizon": 4,
    "indicator_code": "g",
    "model_id": "MIIS-15.5.3-MC",
@@ -863,15 +871,15 @@
    "value": 5.727
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.2991,
    "confidence_interval": {
-    "p05": 3.7603,
-    "p10": 4.0775,
-    "p90": 7.5665,
-    "p95": 8.1637
+    "p05": 3.7606,
+    "p10": 4.0784,
+    "p90": 7.5652,
+    "p95": 8.1632
    },
-   "forecast_id": "RISK-2026-10-06-cpi-2026",
+   "forecast_id": "RISK-2026-10-07-cpi-2026",
    "horizon": 0,
    "indicator_code": "cpi",
    "model_id": "MIIS-15.5.3-MC",
@@ -881,15 +889,15 @@
    "value": 5.5664
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.7416,
    "confidence_interval": {
-    "p05": 1.6375,
-    "p10": 2.1792,
-    "p90": 11.7191,
-    "p95": 13.7129
+    "p05": 1.6451,
+    "p10": 2.1844,
+    "p90": 11.7257,
+    "p95": 13.7392
    },
-   "forecast_id": "RISK-2026-10-06-cpi-2027",
+   "forecast_id": "RISK-2026-10-07-cpi-2027",
    "horizon": 1,
    "indicator_code": "cpi",
    "model_id": "MIIS-15.5.3-MC",
@@ -899,15 +907,15 @@
    "value": 5.7416
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.8752,
    "confidence_interval": {
-    "p05": 1.734,
-    "p10": 2.2426,
-    "p90": 11.9173,
-    "p95": 13.9763
+    "p05": 1.7357,
+    "p10": 2.2456,
+    "p90": 11.9188,
+    "p95": 13.972
    },
-   "forecast_id": "RISK-2026-10-06-cpi-2028",
+   "forecast_id": "RISK-2026-10-07-cpi-2028",
    "horizon": 2,
    "indicator_code": "cpi",
    "model_id": "MIIS-15.5.3-MC",
@@ -917,15 +925,15 @@
    "value": 5.8752
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.9149,
    "confidence_interval": {
-    "p05": 1.7049,
-    "p10": 2.2448,
-    "p90": 11.9317,
-    "p95": 13.962
+    "p05": 1.7076,
+    "p10": 2.245,
+    "p90": 11.9332,
+    "p95": 13.9628
    },
-   "forecast_id": "RISK-2026-10-06-cpi-2029",
+   "forecast_id": "RISK-2026-10-07-cpi-2029",
    "horizon": 3,
    "indicator_code": "cpi",
    "model_id": "MIIS-15.5.3-MC",
@@ -935,15 +943,15 @@
    "value": 5.9149
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 5.9278,
    "confidence_interval": {
-    "p05": 1.6759,
-    "p10": 2.2349,
-    "p90": 11.9114,
-    "p95": 13.8879
+    "p05": 1.6833,
+    "p10": 2.2405,
+    "p90": 11.9076,
+    "p95": 13.9024
    },
-   "forecast_id": "RISK-2026-10-06-cpi-2030",
+   "forecast_id": "RISK-2026-10-07-cpi-2030",
    "horizon": 4,
    "indicator_code": "cpi",
    "model_id": "MIIS-15.5.3-MC",
@@ -953,97 +961,97 @@
    "value": 5.9278
   },
   {
-   "baseline_id": "B-949799ba38",
-   "baseline_value": 0.6556,
+   "baseline_id": "B-d7e77e886f",
+   "baseline_value": 0.6555,
    "confidence_interval": {
-    "p05": 0.0066,
-    "p10": 0.1761,
-    "p90": 1.1339,
-    "p95": 1.2954
+    "p05": 0.0882,
+    "p10": 0.2342,
+    "p90": 1.0738,
+    "p95": 1.2148
    },
-   "forecast_id": "RISK-2026-10-06-fis-2026",
+   "forecast_id": "RISK-2026-10-07-fis-2026",
    "horizon": 0,
    "indicator_code": "fis",
    "model_id": "MIIS-15.5.3-MC",
    "period": 2026,
    "scenario_id": "RISK-DIST",
    "unit": "% ÜDM",
-   "value": 0.6556
+   "value": 0.6555
   },
   {
-   "baseline_id": "B-949799ba38",
-   "baseline_value": 0.3211,
+   "baseline_id": "B-d7e77e886f",
+   "baseline_value": 0.2614,
    "confidence_interval": {
-    "p05": -1.3348,
-    "p10": -0.9177,
-    "p90": 1.539,
-    "p95": 1.9883
+    "p05": -1.3976,
+    "p10": -0.9718,
+    "p90": 1.4821,
+    "p95": 1.9288
    },
-   "forecast_id": "RISK-2026-10-06-fis-2027",
+   "forecast_id": "RISK-2026-10-07-fis-2027",
    "horizon": 1,
    "indicator_code": "fis",
    "model_id": "MIIS-15.5.3-MC",
    "period": 2027,
    "scenario_id": "RISK-DIST",
    "unit": "% ÜDM",
-   "value": 0.3211
+   "value": 0.2614
   },
   {
-   "baseline_id": "B-949799ba38",
-   "baseline_value": 0.0335,
+   "baseline_id": "B-d7e77e886f",
+   "baseline_value": -0.0615,
    "confidence_interval": {
-    "p05": -1.6575,
-    "p10": -1.2313,
-    "p90": 1.2718,
-    "p95": 1.6824
+    "p05": -1.6841,
+    "p10": -1.2699,
+    "p90": 1.1256,
+    "p95": 1.5141
    },
-   "forecast_id": "RISK-2026-10-06-fis-2028",
+   "forecast_id": "RISK-2026-10-07-fis-2028",
    "horizon": 2,
    "indicator_code": "fis",
    "model_id": "MIIS-15.5.3-MC",
    "period": 2028,
    "scenario_id": "RISK-DIST",
    "unit": "% ÜDM",
-   "value": 0.0335
+   "value": -0.0615
   },
   {
-   "baseline_id": "B-949799ba38",
-   "baseline_value": 0.1088,
+   "baseline_id": "B-d7e77e886f",
+   "baseline_value": -0.0059,
    "confidence_interval": {
-    "p05": -1.3174,
-    "p10": -0.9335,
-    "p90": 1.2268,
-    "p95": 1.6258
+    "p05": -1.4689,
+    "p10": -1.0884,
+    "p90": 1.1307,
+    "p95": 1.5417
    },
-   "forecast_id": "RISK-2026-10-06-fis-2029",
+   "forecast_id": "RISK-2026-10-07-fis-2029",
    "horizon": 3,
    "indicator_code": "fis",
    "model_id": "MIIS-15.5.3-MC",
    "period": 2029,
    "scenario_id": "RISK-DIST",
    "unit": "% ÜDM",
-   "value": 0.1088
+   "value": -0.0059
   },
   {
-   "baseline_id": "B-949799ba38",
-   "baseline_value": 0.1411,
+   "baseline_id": "B-d7e77e886f",
+   "baseline_value": 0.0129,
    "confidence_interval": {
-    "p05": -1.8211,
-    "p10": -1.2938,
-    "p90": 1.6033,
-    "p95": 2.1361
+    "p05": -1.7048,
+    "p10": -1.2471,
+    "p90": 1.3149,
+    "p95": 1.785
    },
-   "forecast_id": "RISK-2026-10-06-fis-2030",
+   "forecast_id": "RISK-2026-10-07-fis-2030",
    "horizon": 4,
    "indicator_code": "fis",
    "model_id": "MIIS-15.5.3-MC",
    "period": 2030,
    "scenario_id": "RISK-DIST",
    "unit": "% ÜDM",
-   "value": 0.1411
+   "value": 0.0129
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 68.98,
    "confidence_interval": {
     "p05": 73.9445,
@@ -1051,7 +1059,7 @@
     "p90": 93.5495,
     "p95": 93.5866
    },
-   "forecast_id": "RISK-2026-10-06-brent-2026",
+   "forecast_id": "RISK-2026-10-07-brent-2026",
    "horizon": 0,
    "indicator_code": "brent",
    "model_id": "MIIS-15.5.3-MC",
@@ -1061,7 +1069,7 @@
    "value": 87.0153
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 68.97,
    "confidence_interval": {
     "p05": 32.5733,
@@ -1069,7 +1077,7 @@
     "p90": 96.804,
     "p95": 103.2911
    },
-   "forecast_id": "RISK-2026-10-06-brent-2027",
+   "forecast_id": "RISK-2026-10-07-brent-2027",
    "horizon": 1,
    "indicator_code": "brent",
    "model_id": "MIIS-15.5.3-MC",
@@ -1079,7 +1087,7 @@
    "value": 68.1363
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 69.4,
    "confidence_interval": {
     "p05": 27.4149,
@@ -1087,7 +1095,7 @@
     "p90": 118.7425,
     "p95": 133.3539
    },
-   "forecast_id": "RISK-2026-10-06-brent-2028",
+   "forecast_id": "RISK-2026-10-07-brent-2028",
    "horizon": 2,
    "indicator_code": "brent",
    "model_id": "MIIS-15.5.3-MC",
@@ -1097,7 +1105,7 @@
    "value": 68.1843
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 69.46,
    "confidence_interval": {
     "p05": 23.247,
@@ -1105,7 +1113,7 @@
     "p90": 137.8607,
     "p95": 163.4556
    },
-   "forecast_id": "RISK-2026-10-06-brent-2029",
+   "forecast_id": "RISK-2026-10-07-brent-2029",
    "horizon": 3,
    "indicator_code": "brent",
    "model_id": "MIIS-15.5.3-MC",
@@ -1115,7 +1123,7 @@
    "value": 67.8759
   },
   {
-   "baseline_id": "B-949799ba38",
+   "baseline_id": "B-d7e77e886f",
    "baseline_value": 69.19,
    "confidence_interval": {
     "p05": 19.6013,
@@ -1123,7 +1131,7 @@
     "p90": 151.8168,
     "p95": 186.6264
    },
-   "forecast_id": "RISK-2026-10-06-brent-2030",
+   "forecast_id": "RISK-2026-10-07-brent-2030",
    "horizon": 4,
    "indicator_code": "brent",
    "model_id": "MIIS-15.5.3-MC",
@@ -1345,8 +1353,8 @@
   }
  ],
  "meta": {
-  "as_of": "2026-10-06",
-  "baseline_id": "B-949799ba38",
+  "as_of": "2026-10-07",
+  "baseline_id": "B-d7e77e886f",
   "module": "MİİS §15.5.3",
   "schema": "TT §3.5: Indicator Time Series, Scenario, Forecast Result, Risk Register, Policy Measure",
   "score_year": 2027
@@ -1930,10 +1938,10 @@
    "P_bal": 4,
    "ad": "İnflyasiyanın hədəf diapazonundan yuxarı olması",
    "aile": "DAX",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "dispersiya_payi": null,
-   "ehtimal": 0.4745,
+   "ehtimal": 0.47525,
    "ehtimal_menbe": "model (birgə simulyasiya)",
    "gozlenilen_itki_g": 0.0,
    "istilik_xeritesi": true,
@@ -1948,7 +1956,7 @@
    "sahib": "Mərkəzi Bank (AMB)",
    "sira": 1,
    "skor": 20,
-   "tesir_cpi": 3.6686694842,
+   "tesir_cpi": 3.6706177892,
    "tesir_fis": 0.0,
    "tesir_g": 0.0,
    "tesir_menbe": "model: həddən kənar gözlənilən çatışmazlıq",
@@ -1960,12 +1968,12 @@
    "P_bal": 4,
    "ad": "Neft qiymətinin kəskin enməsi",
    "aile": "MAL",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.2478071752,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.2438872252,
    "ehtimal": 0.4781,
    "ehtimal_menbe": "model (birgə simulyasiya)",
-   "gozlenilen_itki_g": 0.5489715485,
+   "gozlenilen_itki_g": 0.5442592784,
    "istilik_xeritesi": true,
    "kemiyyet_sirasi": 1,
    "model_riski_ferq_cpi": null,
@@ -1973,14 +1981,14 @@
    "model_riski_xeberdarliq": null,
    "nov": "amil",
    "prioritet": "yüksək",
-   "quyruq_tohfesi": -1.5975228793,
+   "quyruq_tohfesi": -1.5745525318,
    "risk_id": "R01",
    "sahib": "Maliyyə Nazirliyi; ARDNF",
    "sira": 2,
    "skor": 16,
-   "tesir_cpi": -2.7052396056,
-   "tesir_fis": 0.2433484991,
-   "tesir_g": 1.1482358262,
+   "tesir_cpi": -2.6947857777,
+   "tesir_fis": 0.2425556024,
+   "tesir_g": 1.1383795825,
    "tesir_menbe": "model: hadisə baş verən simulyasiyalarda kanal töhfəsinin sürüşməsi",
    "ufuq": 2027
   },
@@ -1990,12 +1998,12 @@
    "P_bal": 2,
    "ad": "Qeyri-neft artımının kəskin zəifləməsi (Growth-at-Risk)",
    "aile": "DAX",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "dispersiya_payi": null,
-   "ehtimal": 0.141,
+   "ehtimal": 0.1406,
    "ehtimal_menbe": "model (birgə simulyasiya)",
-   "gozlenilen_itki_g": 0.2610542263,
+   "gozlenilen_itki_g": 0.2602925554,
    "istilik_xeritesi": true,
    "kemiyyet_sirasi": null,
    "model_riski_ferq_cpi": null,
@@ -2010,7 +2018,7 @@
    "skor": 10,
    "tesir_cpi": 0.0,
    "tesir_fis": 0.0,
-   "tesir_g": 1.8514484135,
+   "tesir_g": 1.8512984023,
    "tesir_menbe": "model: həddən kənar gözlənilən çatışmazlıq",
    "ufuq": 2027
   },
@@ -2020,12 +2028,12 @@
    "P_bal": 2,
    "ad": "Manatın məzənnəsinə təzyiq və devalvasiya",
    "aile": "MAL",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.0044573278,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0046967511,
    "ehtimal": 0.09805,
    "ehtimal_menbe": "model: P(Brent çöküşü) × P(devalvasiya | çöküş) — birgə simulyasiya",
-   "gozlenilen_itki_g": 0.0182944878,
+   "gozlenilen_itki_g": 0.0193192042,
    "istilik_xeritesi": true,
    "kemiyyet_sirasi": 5,
    "model_riski_ferq_cpi": null,
@@ -2033,14 +2041,14 @@
    "model_riski_xeberdarliq": null,
    "nov": "amil",
    "prioritet": "orta",
-   "quyruq_tohfesi": -0.0293909649,
+   "quyruq_tohfesi": -0.0309619389,
    "risk_id": "R03",
    "sahib": "Mərkəzi Bank (AMB)",
    "sira": 4,
    "skor": 10,
    "tesir_cpi": 4.0987092265,
-   "tesir_fis": 0.0,
-   "tesir_g": 0.1865832517,
+   "tesir_fis": 0.0356658765,
+   "tesir_g": 0.1970342089,
    "tesir_menbe": "model: hadisə baş verən simulyasiyalarda kanal töhfəsinin sürüşməsi",
    "ufuq": 2027
   },
@@ -2050,9 +2058,9 @@
    "P_bal": 3,
    "ad": "Pul baratlarının kəskin azalması",
    "aile": "XSI",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.0247025975,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0246666562,
    "ehtimal": 0.22365,
    "ehtimal_menbe": "model (birgə simulyasiya)",
    "gozlenilen_itki_g": 0.1494409899,
@@ -2063,7 +2071,7 @@
    "model_riski_xeberdarliq": null,
    "nov": "amil",
    "prioritet": "orta",
-   "quyruq_tohfesi": -0.1087739525,
+   "quyruq_tohfesi": -0.1081681073,
    "risk_id": "R07",
    "sahib": "İqtisadiyyat Nazirliyi; Mərkəzi Bank (AMB)",
    "sira": 5,
@@ -2080,12 +2088,12 @@
    "P_bal": 3,
    "ad": "Enerji keçidi: karbohidrogen tələbinin struktur azalması",
    "aile": "DAX",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "dispersiya_payi": null,
    "ehtimal": 0.2497,
    "ehtimal_menbe": "EKSPERT ÖRTÜYÜ — Nazirlik təsdiq etməlidir",
-   "gozlenilen_itki_g": 0.1389140158,
+   "gozlenilen_itki_g": 0.1376167733,
    "istilik_xeritesi": true,
    "kemiyyet_sirasi": null,
    "model_riski_ferq_cpi": null,
@@ -2098,9 +2106,9 @@
    "sahib": "İqtisadiyyat Nazirliyi; ARDNF",
    "sira": 6,
    "skor": 9,
-   "tesir_cpi": -1.1702948234,
-   "tesir_fis": 0.1326579915,
-   "tesir_g": 0.5563236516,
+   "tesir_cpi": -1.1645599397,
+   "tesir_fis": 0.1269041995,
+   "tesir_g": 0.5511284475,
    "tesir_menbe": "model: hadisə baş verən simulyasiyalarda kanal töhfəsinin sürüşməsi",
    "ufuq": 2030
   },
@@ -2110,12 +2118,12 @@
    "P_bal": 2,
    "ad": "Tərəfdaş ölkələrdə iqtisadi tənəzzül",
    "aile": "XSI",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.042829891,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0421171501,
    "ehtimal": 0.14235,
    "ehtimal_menbe": "model (birgə simulyasiya)",
-   "gozlenilen_itki_g": 0.0980931889,
+   "gozlenilen_itki_g": 0.09722491,
    "istilik_xeritesi": true,
    "kemiyyet_sirasi": 2,
    "model_riski_ferq_cpi": null,
@@ -2123,14 +2131,14 @@
    "model_riski_xeberdarliq": null,
    "nov": "amil",
    "prioritet": "orta",
-   "quyruq_tohfesi": -0.2618013632,
+   "quyruq_tohfesi": -0.2581448028,
    "risk_id": "R05",
    "sahib": "İqtisadiyyat Nazirliyi",
    "sira": 7,
    "skor": 6,
-   "tesir_cpi": -0.2345258143,
-   "tesir_fis": 0.0543303451,
-   "tesir_g": 0.6890986223,
+   "tesir_cpi": -0.2276000372,
+   "tesir_fis": 0.0534599645,
+   "tesir_g": 0.6829990167,
    "tesir_menbe": "model: hadisə baş verən simulyasiyalarda kanal töhfəsinin sürüşməsi",
    "ufuq": 2027
   },
@@ -2140,9 +2148,9 @@
    "P_bal": 2,
    "ad": "Bank sektorunda aktiv keyfiyyətinin pisləşməsi",
    "aile": "MAL",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.0025047964,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0025053138,
    "ehtimal": 0.0962,
    "ehtimal_menbe": "EKSPERT ÖRTÜYÜ — Nazirlik təsdiq etməlidir",
    "gozlenilen_itki_g": 0.035221972,
@@ -2170,10 +2178,10 @@
    "P_bal": 2,
    "ad": "Büdcə balansının pisləşməsi",
    "aile": "DAX",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "dispersiya_payi": null,
-   "ehtimal": 0.0873,
+   "ehtimal": 0.0963,
    "ehtimal_menbe": "model (birgə simulyasiya)",
    "gozlenilen_itki_g": 0.0,
    "istilik_xeritesi": true,
@@ -2189,7 +2197,7 @@
    "sira": 9,
    "skor": 6,
    "tesir_cpi": 0.0,
-   "tesir_fis": 0.6435914764,
+   "tesir_fis": 0.6387268468,
    "tesir_g": 0.0,
    "tesir_menbe": "model: həddən kənar gözlənilən çatışmazlıq",
    "ufuq": 2027
@@ -2200,9 +2208,9 @@
    "P_bal": 4,
    "ad": "Rəqabət mühitinin pisləşməsi",
    "aile": "SEK",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.0015844085,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0015858799,
    "ehtimal": 0.46545,
    "ehtimal_menbe": "siqnal əsaslı (mikro EWS → ehtimal xəritələnməsi)",
    "gozlenilen_itki_g": 0.0420911652,
@@ -2213,7 +2221,7 @@
    "model_riski_xeberdarliq": null,
    "nov": "siqnal",
    "prioritet": "aşağı",
-   "quyruq_tohfesi": -0.0073953693,
+   "quyruq_tohfesi": -0.0074803736,
    "risk_id": "R16",
    "sahib": "Rəqabətin Mühafizəsi Agentliyi; İqtisadiyyat Nazirliyi",
    "sira": 10,
@@ -2230,12 +2238,12 @@
    "P_bal": 2,
    "ad": "Maliyyə şəraitinin sərtləşməsi (kredit faizi)",
    "aile": "MAL",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.0003427505,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0003229842,
    "ehtimal": 0.089,
    "ehtimal_menbe": "model (birgə simulyasiya)",
-   "gozlenilen_itki_g": 0.0174529393,
+   "gozlenilen_itki_g": 0.0172962083,
    "istilik_xeritesi": true,
    "kemiyyet_sirasi": 14,
    "model_riski_ferq_cpi": null,
@@ -2243,14 +2251,14 @@
    "model_riski_xeberdarliq": null,
    "nov": "amil",
    "prioritet": "aşağı",
-   "quyruq_tohfesi": 0.0063962352,
+   "quyruq_tohfesi": 0.0064214664,
    "risk_id": "R02",
    "sahib": "Mərkəzi Bank (AMB)",
    "sira": 11,
    "skor": 4,
-   "tesir_cpi": -0.0671309344,
-   "tesir_fis": 0.0322160341,
-   "tesir_g": 0.1961004416,
+   "tesir_cpi": -0.0651267619,
+   "tesir_fis": 0.031988328,
+   "tesir_g": 0.1943394188,
    "tesir_menbe": "model: hadisə baş verən simulyasiyalarda kanal töhfəsinin sürüşməsi",
    "ufuq": 2027
   },
@@ -2260,9 +2268,9 @@
    "P_bal": 4,
    "ad": "Regional geosiyasi eskalasiya",
    "aile": "XSI",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.013304809,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0131902283,
    "ehtimal": 0.4090909091,
    "ehtimal_menbe": "empirik keçid tezliyi: 4/10 (1985–2025)",
    "gozlenilen_itki_g": 0.0,
@@ -2273,14 +2281,14 @@
    "model_riski_xeberdarliq": null,
    "nov": "amil",
    "prioritet": "aşağı",
-   "quyruq_tohfesi": -0.0670629759,
+   "quyruq_tohfesi": -0.0668226169,
    "risk_id": "R06",
    "sahib": "Xarici İşlər Nazirliyi; İqtisadiyyat Nazirliyi",
    "sira": 12,
    "skor": 4,
-   "tesir_cpi": 0.0347866658,
-   "tesir_fis": -0.005204131,
-   "tesir_g": -0.1195370182,
+   "tesir_cpi": 0.0344480215,
+   "tesir_fis": -0.0051098647,
+   "tesir_g": -0.1192364995,
    "tesir_menbe": "model: hadisə baş verən simulyasiyalarda kanal töhfəsinin sürüşməsi",
    "ufuq": 2027
   },
@@ -2290,8 +2298,8 @@
    "P_bal": 2,
    "ad": "Dünya ərzaq qiymətlərinin şoku",
    "aile": "XSI",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "dispersiya_payi": 0.0,
    "ehtimal": 0.078,
    "ehtimal_menbe": "model (birgə simulyasiya)",
@@ -2320,12 +2328,12 @@
    "P_bal": 3,
    "ad": "Güclü zəlzələ",
    "aile": "TEB",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.0022745295,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0022920028,
    "ehtimal": 0.196,
    "ehtimal_menbe": "model (birgə simulyasiya)",
-   "gozlenilen_itki_g": 0.0173149356,
+   "gozlenilen_itki_g": 0.0173831463,
    "istilik_xeritesi": true,
    "kemiyyet_sirasi": 6,
    "model_riski_ferq_cpi": null,
@@ -2333,14 +2341,14 @@
    "model_riski_xeberdarliq": null,
    "nov": "amil",
    "prioritet": "aşağı",
-   "quyruq_tohfesi": -0.0233904727,
+   "quyruq_tohfesi": -0.0234875298,
    "risk_id": "R08",
    "sahib": "Fövqəladə Hallar Nazirliyi",
    "sira": 14,
    "skor": 3,
-   "tesir_cpi": 0.0127408685,
-   "tesir_fis": 0.0536888438,
-   "tesir_g": 0.0883415082,
+   "tesir_cpi": 0.0123405065,
+   "tesir_fis": 0.053726889,
+   "tesir_g": 0.0886895219,
    "tesir_menbe": "model: hadisə baş verən simulyasiyalarda kanal töhfəsinin sürüşməsi",
    "ufuq": 2027
   },
@@ -2350,9 +2358,9 @@
    "P_bal": 3,
    "ad": "Quraqlıq",
    "aile": "TEB",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.0006736773,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0006746846,
    "ehtimal": 0.155,
    "ehtimal_menbe": "model (birgə simulyasiya)",
    "gozlenilen_itki_g": 0.0141074113,
@@ -2363,7 +2371,7 @@
    "model_riski_xeberdarliq": null,
    "nov": "amil",
    "prioritet": "aşağı",
-   "quyruq_tohfesi": -0.0007571154,
+   "quyruq_tohfesi": -0.0007614686,
    "risk_id": "R09",
    "sahib": "Kənd Təsərrüfatı Nazirliyi",
    "sira": 15,
@@ -2380,9 +2388,9 @@
    "P_bal": 3,
    "ad": "Emal sənayesi sahələrində maliyyə gərginliyi",
    "aile": "SEK",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 4.87867e-05,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 4.8796e-05,
    "ehtimal": 0.1652,
    "ehtimal_menbe": "siqnal əsaslı (mikro EWS → ehtimal xəritələnməsi)",
    "gozlenilen_itki_g": 0.004656895,
@@ -2410,9 +2418,9 @@
    "P_bal": 2,
    "ad": "Daşqın və Xəzər dənizinin səviyyəsinin dəyişməsi",
    "aile": "TEB",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
-   "dispersiya_payi": 0.0001592895,
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
+   "dispersiya_payi": 0.0001588549,
    "ehtimal": 0.10565,
    "ehtimal_menbe": "EKSPERT ÖRTÜYÜ — Nazirlik təsdiq etməlidir",
    "gozlenilen_itki_g": 0.0094570395,
@@ -2423,7 +2431,7 @@
    "model_riski_xeberdarliq": null,
    "nov": "ekspert",
    "prioritet": "aşağı",
-   "quyruq_tohfesi": -0.00048,
+   "quyruq_tohfesi": -0.00053,
    "risk_id": "R10",
    "sahib": "Fövqəladə Hallar Nazirliyi; Ekologiya və Təbii Sərvətlər Nazirliyi",
    "sira": 17,
@@ -2440,8 +2448,8 @@
    "P_bal": 1,
    "ad": "Qeyri-neft idxal qiymətlərinin kəskin artımı",
    "aile": "XSI",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "dispersiya_payi": 0.0,
    "ehtimal": 0.04515,
    "ehtimal_menbe": "model (birgə simulyasiya)",
@@ -2470,8 +2478,8 @@
    "P_bal": 0,
    "ad": "Proqnoz qeyri-müəyyənliyi / model riski",
    "aile": "DAX",
-   "as_of": "2026-10-06",
-   "baseline_id": "B-949799ba38",
+   "as_of": "2026-10-07",
+   "baseline_id": "B-d7e77e886f",
    "dispersiya_payi": null,
    "ehtimal": 0.0,
    "ehtimal_menbe": "model riski (P×T deyil): köhnəlməmiş konsensus (fr1, imf, mspec) ilə baza fərqi; köhnəlmiş xaric: bu60;caem;v8; hədd 0.5 f.b.",
@@ -2479,7 +2487,7 @@
    "istilik_xeritesi": false,
    "kemiyyet_sirasi": null,
    "model_riski_ferq_cpi": -0.6416,
-   "model_riski_ferq_g": -1.040805,
+   "model_riski_ferq_g": -1.227415,
    "model_riski_xeberdarliq": true,
    "nov": "model",
    "prioritet": "ayrıca göstərici",
@@ -2490,7 +2498,7 @@
    "skor": 0,
    "tesir_cpi": 0.0,
    "tesir_fis": 0.0,
-   "tesir_g": 1.040805,
+   "tesir_g": 1.227415,
    "tesir_menbe": "istilik xəritəsindən kənar — ayrıca göstərici (FR2_model_risk.csv)",
    "ufuq": 2027
   }
@@ -2507,97 +2515,97 @@
    "type": "stoxastik"
   },
   {
-   "assumptions": "Brent 2027–2030: 45 USD/barel",
+   "assumptions": "Brent 2026-nın qalan ayları (IV rüb) və 2027–2030: 45 USD/barel",
    "author": "risk bölməsi",
    "name": "Davamlı aşağı neft qiyməti",
    "results": [
     {
-     "deviation": -0.1779,
-     "deviation_with_measure": -0.1779,
+     "deviation": -0.1763,
+     "deviation_with_measure": -0.1763,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2026
     },
     {
-     "deviation": -1.3174,
-     "deviation_with_measure": -0.9816,
+     "deviation": -1.3044,
+     "deviation_with_measure": -0.973,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2027
     },
     {
-     "deviation": -1.0503,
-     "deviation_with_measure": 0.3527,
+     "deviation": -1.0411,
+     "deviation_with_measure": 0.3492,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.2794,
-     "deviation_with_measure": -0.0765,
+     "deviation": -0.2769,
+     "deviation_with_measure": -0.0761,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.1635,
-     "deviation_with_measure": -0.036,
+     "deviation": -0.162,
+     "deviation_with_measure": -0.0358,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2030
     },
     {
-     "deviation": -0.6347,
-     "deviation_with_measure": -0.6355,
+     "deviation": -0.633,
+     "deviation_with_measure": -0.6337,
      "indicator": "inflyasiya, f.b.",
      "period": 2026
     },
     {
-     "deviation": -3.5862,
-     "deviation_with_measure": -3.4239,
+     "deviation": -3.5743,
+     "deviation_with_measure": -3.4141,
      "indicator": "inflyasiya, f.b.",
      "period": 2027
     },
     {
-     "deviation": -1.7917,
-     "deviation_with_measure": -1.3633,
+     "deviation": -1.7824,
+     "deviation_with_measure": -1.3644,
      "indicator": "inflyasiya, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.1258,
-     "deviation_with_measure": -0.0585,
+     "deviation": -0.123,
+     "deviation_with_measure": -0.0577,
      "indicator": "inflyasiya, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.0279,
-     "deviation_with_measure": 0.0148,
+     "deviation": -0.0262,
+     "deviation_with_measure": 0.0151,
      "indicator": "inflyasiya, f.b.",
      "period": 2030
     },
     {
-     "deviation": -0.0815,
-     "deviation_with_measure": -0.0815,
+     "deviation": -0.0813,
+     "deviation_with_measure": -0.0813,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2026
     },
     {
-     "deviation": -0.2804,
-     "deviation_with_measure": -0.7532,
+     "deviation": -0.2766,
+     "deviation_with_measure": -0.7484,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2027
     },
     {
-     "deviation": -0.1846,
-     "deviation_with_measure": -2.5401,
+     "deviation": -0.1703,
+     "deviation_with_measure": -2.5178,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2028
     },
     {
-     "deviation": -0.0997,
-     "deviation_with_measure": -2.4856,
+     "deviation": -0.0826,
+     "deviation_with_measure": -2.4198,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2029
     },
     {
-     "deviation": -0.0615,
-     "deviation_with_measure": -2.4629,
+     "deviation": -0.0426,
+     "deviation_with_measure": -2.3994,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2030
     }
@@ -2617,20 +2625,20 @@
      "period": 2026
     },
     {
-     "deviation": -0.412,
-     "deviation_with_measure": -0.412,
+     "deviation": -0.4083,
+     "deviation_with_measure": -0.4083,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2027
     },
     {
-     "deviation": -0.2092,
-     "deviation_with_measure": -0.2092,
+     "deviation": -0.2076,
+     "deviation_with_measure": -0.2076,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.0093,
-     "deviation_with_measure": -0.0093,
+     "deviation": -0.0095,
+     "deviation_with_measure": -0.0095,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2029
     },
@@ -2647,14 +2655,14 @@
      "period": 2026
     },
     {
-     "deviation": -0.1402,
-     "deviation_with_measure": -0.1402,
+     "deviation": -0.1361,
+     "deviation_with_measure": -0.1361,
      "indicator": "inflyasiya, f.b.",
      "period": 2027
     },
     {
-     "deviation": -0.0712,
-     "deviation_with_measure": -0.0712,
+     "deviation": -0.0692,
+     "deviation_with_measure": -0.0692,
      "indicator": "inflyasiya, f.b.",
      "period": 2028
     },
@@ -2665,8 +2673,8 @@
      "period": 2029
     },
     {
-     "deviation": -0.0043,
-     "deviation_with_measure": -0.0043,
+     "deviation": -0.0042,
+     "deviation_with_measure": -0.0042,
      "indicator": "inflyasiya, f.b.",
      "period": 2030
     },
@@ -2677,26 +2685,26 @@
      "period": 2026
     },
     {
-     "deviation": -0.0323,
-     "deviation_with_measure": -0.0323,
+     "deviation": -0.0318,
+     "deviation_with_measure": -0.0318,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2027
     },
     {
-     "deviation": -0.0516,
-     "deviation_with_measure": -0.0516,
+     "deviation": -0.0497,
+     "deviation_with_measure": -0.0497,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2028
     },
     {
-     "deviation": -0.0566,
-     "deviation_with_measure": -0.0566,
+     "deviation": -0.0541,
+     "deviation_with_measure": -0.0541,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2029
     },
     {
-     "deviation": -0.0621,
-     "deviation_with_measure": -0.0621,
+     "deviation": -0.0594,
+     "deviation_with_measure": -0.0594,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2030
     }
@@ -2705,97 +2713,97 @@
    "type": "stress"
   },
   {
-   "assumptions": "S1 + 2027-də 25% devalvasiya (vahid məzənnə modulu)",
+   "assumptions": "S1 (Brent 2026 IV rüb – 2030: 45 USD) + 2027-də 25% devalvasiya (vahid məzənnə modulu: İQİ, qeyri-neft, büdcə, borc)",
    "author": "risk bölməsi",
    "name": "Məzənnəyə təzyiq və ehtiyatların azalması",
    "results": [
     {
-     "deviation": -0.1779,
-     "deviation_with_measure": -0.1779,
+     "deviation": -0.1763,
+     "deviation_with_measure": -0.1763,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2026
     },
     {
-     "deviation": -1.528,
-     "deviation_with_measure": -1.1736,
+     "deviation": -1.527,
+     "deviation_with_measure": -1.1755,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2027
     },
     {
-     "deviation": -3.5957,
-     "deviation_with_measure": -2.2714,
+     "deviation": -3.5929,
+     "deviation_with_measure": -2.281,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.2794,
-     "deviation_with_measure": -0.0765,
+     "deviation": -0.2769,
+     "deviation_with_measure": -0.0761,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.1635,
-     "deviation_with_measure": -0.036,
+     "deviation": -0.162,
+     "deviation_with_measure": -0.0358,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2030
     },
     {
-     "deviation": -0.6347,
-     "deviation_with_measure": -0.6355,
+     "deviation": -0.633,
+     "deviation_with_measure": -0.6337,
      "indicator": "inflyasiya, f.b.",
      "period": 2026
     },
     {
-     "deviation": 0.972,
-     "deviation_with_measure": 1.1472,
+     "deviation": 0.986,
+     "deviation_with_measure": 1.1542,
      "indicator": "inflyasiya, f.b.",
      "period": 2027
     },
     {
-     "deviation": 0.3755,
-     "deviation_with_measure": 0.8103,
+     "deviation": 0.3869,
+     "deviation_with_measure": 0.8083,
      "indicator": "inflyasiya, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.1258,
-     "deviation_with_measure": -0.0585,
+     "deviation": -0.123,
+     "deviation_with_measure": -0.0577,
      "indicator": "inflyasiya, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.0279,
-     "deviation_with_measure": 0.0148,
+     "deviation": -0.0262,
+     "deviation_with_measure": 0.0151,
      "indicator": "inflyasiya, f.b.",
      "period": 2030
     },
     {
-     "deviation": -0.0815,
-     "deviation_with_measure": -0.0815,
+     "deviation": -0.0813,
+     "deviation_with_measure": -0.0813,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2026
     },
     {
-     "deviation": -0.2804,
-     "deviation_with_measure": -0.7532,
+     "deviation": -0.3162,
+     "deviation_with_measure": -0.7879,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2027
     },
     {
-     "deviation": -0.1846,
-     "deviation_with_measure": -2.5401,
+     "deviation": -0.3246,
+     "deviation_with_measure": -2.6721,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2028
     },
     {
-     "deviation": -0.0997,
-     "deviation_with_measure": -2.4856,
+     "deviation": -0.3187,
+     "deviation_with_measure": -2.6558,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2029
     },
     {
-     "deviation": -0.0615,
-     "deviation_with_measure": -2.4629,
+     "deviation": -0.3055,
+     "deviation_with_measure": -2.6624,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2030
     }
@@ -2815,26 +2823,26 @@
      "period": 2026
     },
     {
-     "deviation": -0.9592,
-     "deviation_with_measure": -0.9592,
+     "deviation": -0.9555,
+     "deviation_with_measure": -0.9555,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2027
     },
     {
-     "deviation": 0.1435,
-     "deviation_with_measure": 0.1435,
+     "deviation": 0.143,
+     "deviation_with_measure": 0.143,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.0064,
-     "deviation_with_measure": -0.0064,
+     "deviation": -0.007,
+     "deviation_with_measure": -0.007,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.0063,
-     "deviation_with_measure": -0.0063,
+     "deviation": -0.0065,
+     "deviation_with_measure": -0.0065,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2030
     },
@@ -2845,27 +2853,27 @@
      "period": 2026
     },
     {
-     "deviation": -0.1425,
-     "deviation_with_measure": -0.1425,
+     "deviation": -0.1383,
+     "deviation_with_measure": -0.1383,
      "indicator": "inflyasiya, f.b.",
      "period": 2027
     },
     {
-     "deviation": 0.0491,
-     "deviation_with_measure": 0.0491,
+     "deviation": 0.0479,
+     "deviation_with_measure": 0.0479,
      "indicator": "inflyasiya, f.b.",
      "period": 2028
+    },
+    {
+     "deviation": -0.0023,
+     "deviation_with_measure": -0.0023,
+     "indicator": "inflyasiya, f.b.",
+     "period": 2029
     },
     {
      "deviation": -0.0022,
      "deviation_with_measure": -0.0022,
      "indicator": "inflyasiya, f.b.",
-     "period": 2029
-    },
-    {
-     "deviation": -0.0021,
-     "deviation_with_measure": -0.0021,
-     "indicator": "inflyasiya, f.b.",
      "period": 2030
     },
     {
@@ -2875,26 +2883,26 @@
      "period": 2026
     },
     {
-     "deviation": -0.045,
-     "deviation_with_measure": -0.045,
+     "deviation": -0.0445,
+     "deviation_with_measure": -0.0445,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2027
     },
     {
-     "deviation": -0.0284,
-     "deviation_with_measure": -0.0284,
+     "deviation": -0.0264,
+     "deviation_with_measure": -0.0264,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2028
     },
     {
-     "deviation": -0.0306,
-     "deviation_with_measure": -0.0306,
+     "deviation": -0.0293,
+     "deviation_with_measure": -0.0293,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2029
     },
     {
-     "deviation": -0.0334,
-     "deviation_with_measure": -0.0334,
+     "deviation": -0.032,
+     "deviation_with_measure": -0.032,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2030
     }
@@ -2914,26 +2922,26 @@
      "period": 2026
     },
     {
-     "deviation": -0.7315,
-     "deviation_with_measure": -0.7315,
+     "deviation": -0.7348,
+     "deviation_with_measure": -0.7348,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2027
     },
     {
-     "deviation": 0.6656,
-     "deviation_with_measure": 0.6656,
+     "deviation": 0.661,
+     "deviation_with_measure": 0.661,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2028
     },
     {
-     "deviation": 0.2854,
-     "deviation_with_measure": 0.2854,
+     "deviation": 0.2879,
+     "deviation_with_measure": 0.2879,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.1015,
-     "deviation_with_measure": -0.1015,
+     "deviation": -0.0975,
+     "deviation_with_measure": -0.0975,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2030
     },
@@ -2944,26 +2952,26 @@
      "period": 2026
     },
     {
-     "deviation": 0.1083,
-     "deviation_with_measure": 0.1083,
+     "deviation": 0.1049,
+     "deviation_with_measure": 0.1049,
      "indicator": "inflyasiya, f.b.",
      "period": 2027
     },
     {
-     "deviation": 0.1375,
-     "deviation_with_measure": 0.1375,
+     "deviation": 0.1331,
+     "deviation_with_measure": 0.1331,
      "indicator": "inflyasiya, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.0817,
-     "deviation_with_measure": -0.0817,
+     "deviation": -0.0791,
+     "deviation_with_measure": -0.0791,
      "indicator": "inflyasiya, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.1241,
-     "deviation_with_measure": -0.1241,
+     "deviation": -0.1202,
+     "deviation_with_measure": -0.1202,
      "indicator": "inflyasiya, f.b.",
      "period": 2030
     },
@@ -2974,26 +2982,26 @@
      "period": 2026
     },
     {
-     "deviation": -0.4616,
-     "deviation_with_measure": -0.4616,
+     "deviation": -0.462,
+     "deviation_with_measure": -0.462,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2027
     },
     {
-     "deviation": -0.9687,
-     "deviation_with_measure": -0.9687,
+     "deviation": -0.9583,
+     "deviation_with_measure": -0.9583,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2028
     },
     {
-     "deviation": -0.5925,
-     "deviation_with_measure": -0.5925,
+     "deviation": -0.5713,
+     "deviation_with_measure": -0.5713,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2029
     },
     {
-     "deviation": -0.1687,
-     "deviation_with_measure": -0.1687,
+     "deviation": -0.1581,
+     "deviation_with_measure": -0.1581,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2030
     }
@@ -3013,26 +3021,26 @@
      "period": 2026
     },
     {
-     "deviation": -0.1754,
-     "deviation_with_measure": -0.1692,
+     "deviation": -0.1736,
+     "deviation_with_measure": -0.1675,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2027
     },
     {
-     "deviation": -0.3135,
+     "deviation": -0.3105,
      "deviation_with_measure": -0.0249,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.3432,
-     "deviation_with_measure": -0.1055,
+     "deviation": -0.34,
+     "deviation_with_measure": -0.1046,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.3592,
-     "deviation_with_measure": -0.1077,
+     "deviation": -0.3559,
+     "deviation_with_measure": -0.1069,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2030
     },
@@ -3043,26 +3051,26 @@
      "period": 2026
     },
     {
-     "deviation": -0.4742,
-     "deviation_with_measure": -0.4721,
+     "deviation": -0.4704,
+     "deviation_with_measure": -0.4702,
      "indicator": "inflyasiya, f.b.",
      "period": 2027
     },
     {
-     "deviation": -0.7143,
-     "deviation_with_measure": -0.6182,
+     "deviation": -0.7118,
+     "deviation_with_measure": -0.6186,
      "indicator": "inflyasiya, f.b.",
      "period": 2028
     },
     {
-     "deviation": -0.7285,
-     "deviation_with_measure": -0.6463,
+     "deviation": -0.7247,
+     "deviation_with_measure": -0.6452,
      "indicator": "inflyasiya, f.b.",
      "period": 2029
     },
     {
-     "deviation": -0.7342,
-     "deviation_with_measure": -0.6469,
+     "deviation": -0.7301,
+     "deviation_with_measure": -0.6459,
      "indicator": "inflyasiya, f.b.",
      "period": 2030
     },
@@ -3073,26 +3081,26 @@
      "period": 2026
     },
     {
-     "deviation": -0.0434,
-     "deviation_with_measure": -0.0434,
+     "deviation": -0.0433,
+     "deviation_with_measure": -0.0433,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2027
+    },
+    {
+     "deviation": -0.0659,
+     "deviation_with_measure": -0.4531,
+     "indicator": "büdcə balansı, % ÜDM",
+     "period": 2028
+    },
+    {
+     "deviation": -0.0696,
+     "deviation_with_measure": -0.7027,
+     "indicator": "büdcə balansı, % ÜDM",
+     "period": 2029
     },
     {
      "deviation": -0.0678,
-     "deviation_with_measure": -0.4544,
-     "indicator": "büdcə balansı, % ÜDM",
-     "period": 2028
-    },
-    {
-     "deviation": -0.0735,
-     "deviation_with_measure": -0.7146,
-     "indicator": "büdcə balansı, % ÜDM",
-     "period": 2029
-    },
-    {
-     "deviation": -0.0739,
-     "deviation_with_measure": -0.9501,
+     "deviation_with_measure": -0.9316,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2030
     }
@@ -3112,14 +3120,14 @@
      "period": 2026
     },
     {
-     "deviation": -0.1552,
-     "deviation_with_measure": -0.1528,
+     "deviation": -0.1554,
+     "deviation_with_measure": -0.1527,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2027
     },
     {
-     "deviation": 0.1464,
-     "deviation_with_measure": 0.1464,
+     "deviation": 0.1467,
+     "deviation_with_measure": 0.1468,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2028
     },
@@ -3200,97 +3208,97 @@
    "type": "stress"
   },
   {
-   "assumptions": "Brent 2027: 60 USD, 2028–2030: makro baza yolu",
+   "assumptions": "Brent 2026 IV rüb və 2027: 60 USD, 2028–2030: makro baza yolu",
    "author": "risk bölməsi",
    "name": "Cari neft şokunun geri dönməsi",
    "results": [
     {
-     "deviation": -0.0664,
-     "deviation_with_measure": -0.0664,
+     "deviation": -0.0658,
+     "deviation_with_measure": -0.0658,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2026
     },
     {
-     "deviation": -0.4622,
-     "deviation_with_measure": -0.4548,
+     "deviation": -0.4576,
+     "deviation_with_measure": -0.4503,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2027
     },
     {
-     "deviation": 0.1172,
-     "deviation_with_measure": 0.4381,
+     "deviation": 0.1156,
+     "deviation_with_measure": 0.4337,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2028
     },
     {
-     "deviation": 0.301,
-     "deviation_with_measure": 0.0179,
+     "deviation": 0.2984,
+     "deviation_with_measure": 0.0177,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2029
     },
     {
-     "deviation": 0.0378,
-     "deviation_with_measure": 0.0262,
+     "deviation": 0.0375,
+     "deviation_with_measure": 0.026,
      "indicator": "qeyri-neft artımı, f.b.",
      "period": 2030
     },
     {
-     "deviation": -0.2328,
-     "deviation_with_measure": -0.2331,
+     "deviation": -0.2322,
+     "deviation_with_measure": -0.2325,
      "indicator": "inflyasiya, f.b.",
      "period": 2026
     },
     {
-     "deviation": -1.1705,
-     "deviation_with_measure": -1.1573,
+     "deviation": -1.1659,
+     "deviation_with_measure": -1.1523,
      "indicator": "inflyasiya, f.b.",
      "period": 2027
     },
     {
-     "deviation": 0.7326,
-     "deviation_with_measure": 0.8282,
+     "deviation": 0.7295,
+     "deviation_with_measure": 0.8238,
      "indicator": "inflyasiya, f.b.",
      "period": 2028
     },
     {
-     "deviation": 0.6481,
+     "deviation": 0.6458,
      "deviation_with_measure": 0.5519,
      "indicator": "inflyasiya, f.b.",
      "period": 2029
     },
     {
-     "deviation": 0.0129,
-     "deviation_with_measure": 0.009,
+     "deviation": 0.0125,
+     "deviation_with_measure": 0.0087,
      "indicator": "inflyasiya, f.b.",
      "period": 2030
     },
     {
-     "deviation": -0.0305,
-     "deviation_with_measure": -0.0305,
+     "deviation": -0.0304,
+     "deviation_with_measure": -0.0304,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2026
     },
     {
-     "deviation": -0.1049,
-     "deviation_with_measure": -0.1049,
+     "deviation": -0.1035,
+     "deviation_with_measure": -0.1035,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2027
     },
     {
-     "deviation": 0.0376,
-     "deviation_with_measure": -0.4003,
+     "deviation": 0.0428,
+     "deviation_with_measure": -0.3954,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2028
     },
     {
-     "deviation": 0.0329,
-     "deviation_with_measure": -0.0126,
+     "deviation": 0.0348,
+     "deviation_with_measure": -0.0003,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2029
     },
     {
-     "deviation": 0.012,
-     "deviation_with_measure": -0.0304,
+     "deviation": 0.0135,
+     "deviation_with_measure": -0.0292,
      "indicator": "büdcə balansı, % ÜDM",
      "period": 2030
     }

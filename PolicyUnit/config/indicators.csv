@@ -1,0 +1,55 @@
+indicator,label_az,unit,group,kind,compare
+gdp_real,Real ÜDM,mln AZN 2015,makro,level,yes
+gdp_nonoil_real,Real qeyri-neft ÜDM,mln AZN 2015,makro,level,yes
+gdp_nominal,Nominal ÜDM,mln AZN,makro,level,no
+cpi,İstehlak qiymətləri indeksi (səviyyə),2015 = 100,makro,level,yes
+infl,İnflyasiya (İQİ),%,makro,rate,yes
+unemp_rate,İşsizlik səviyyəsi,%,əmək,rate,yes
+employment,Məşğulluq (ümumi; FR1 / İQS),min nəfər,əmək,level,yes
+employment_hired,Muzdlu işçilər (formal; FR4),min nəfər,əmək,level,yes
+wage_nominal,Orta aylıq nominal əmək haqqı,AZN,əmək,level,no
+wage_real,Real orta əmək haqqı,AZN 2015,əmək,level,yes
+hh_disp_real,Real sərəncamda qalan gəlir,mln AZN 2015,sosial,level,yes
+cons_real,Real ev təsərrüfatı istehlakı,mln AZN 2015,makro,level,yes
+budget_balance,Dövlət büdcəsinin balansı,mln AZN,fiskal,level,no
+budget_balance_pct,Büdcə balansı (ÜDM-ə %),% ÜDM,fiskal,rate,yes
+debt,Dövlət borcu,mln AZN,fiskal,level,no
+debt_pct,Dövlət borcu (ÜDM-ə %),% ÜDM,fiskal,rate,yes
+fiscal_cost,"Birbaşa fiskal xərc / gəlir itkisi (ex ante; core = brutto, mikrosimulyasiya = xalis: vergi-müavinət qarşılıqlı təsirindən sonra)",mln AZN,fiskal,flow,no
+sofaz_assets,ARDNF aktivlərinin dəyişməsi,mln AZN,fiskal,flow,no
+ca_proxy,Cari hesab proksisi (qeyri-neft xalis ixrac + neft ixracı),mln AZN,xarici,level,yes
+exports_nonoil_real,Real qeyri-neft ixracı,mln AZN 2015,xarici,level,yes
+imports_nonoil_real,Real qeyri-neft idxalı,mln AZN 2015,xarici,level,yes
+policy_rate,Uçot dərəcəsi,%,monetar,rate,yes
+capital_nonoil,Qeyri-neft kapital ehtiyatı,mln AZN 2015,uzun,level,no
+tfp_nonoil,Qeyri-neft TFP (səviyyə),indeks,uzun,level,no
+sector_va:<fr1 sector>,Sektor əlavə dəyəri (FR1: agr min man elc wat con trd tou tra ict oth),mln AZN 2015,sektor,level,yes
+sector_price:<fr1 sector>,Sektor deflatoru (FR1),indeks,sektor,level,no
+sector_emp:<fr4 sector>,Sektor məşğulluğu (FR4 19 NACE bölməsi),min nəfər,sektor,level,yes
+sector_hired:<fr4 sector>,Sektor muzdlu işçiləri (FR4),min nəfər,sektor,level,yes
+industry_output:<NACE 2 rəqəm>,Sənaye sahəsinin real buraxılışı (FR10),mln AZN 2015,sektor,level,no
+industry_margin:<NACE 2 rəqəm>,Sahənin mənfəət marjası proksisi (FR10),%,sektor,rate,no
+hhi_man,Emal sənayesində konsentrasiya (HHI; FR10),indeks,bazar,level,no
+hhi:<FR12 sector>,Konsentrasiya HHI yuxarı sərhəd (FR12),indeks,bazar,level,no
+entry:<FR12 sector>,Yeni müəssisələr (FR12),say,bazar,level,no
+exit:<FR12 sector>,Fəaliyyətini dayandıran müəssisələr (FR12),say,bazar,level,no
+services_real,Pullu xidmətlərin real həcmi (FR5),mln AZN,xidmət,level,no
+region_output:<region>,Regional sənaye buraxılışı (FR10),mln AZN,regional,level,no
+gini,Gini əmsalı (mikrosimulyasiya),0–100,sosial,rate,yes
+poverty_rate,Yoxsulluq səviyyəsi,%,sosial,rate,yes
+poverty_gap,Yoxsulluq dərinliyi,%,sosial,rate,yes
+io_output:<io sector>,Sektor ümumi buraxılışı (IO),mln AZN,sektor,level,no
+io_va:<io sector>,Sektor əlavə dəyəri (IO; FR1 qrupuna toplanaraq sector_va ilə müqayisə),mln AZN,sektor,level,yes
+io_emp:<io sector>,Sektor məşğulluğu (IO; FR4 bölməsinə toplanaraq sector_emp ilə müqayisə),min nəfər,sektor,level,yes
+io_price:<io sector>,Sektorun əsas qiyməti (IO Leontief qiymət modeli),indeks (baza=100),sektor,level,no
+io_output_ghosh:<io sector>,Sektor buraxılışı (Ghosh təklif modeli; məhdud şərh),mln AZN,sektor,level,no
+io_output_total,Ümumi buraxılış (IO cəmi),mln AZN,makro,level,no
+io_va_total,Əlavə dəyər əsas qiymətlərlə (IO cəmi; gdp_real ilə müqayisə),mln AZN,makro,level,yes
+io_imports_total,İdxal (aralıq + son tələbin idxal hissəsi; IO),mln AZN,xarici,level,no
+io_output_total_t2,Ümumi buraxılış (IO tip II; yuxarı sərhəd),mln AZN,makro,level,no
+io_emp_total_t2,Məşğulluq (IO tip II; yuxarı sərhəd),min nəfər,əmək,level,no
+io_output_ghosh_total,Ümumi buraxılış (Ghosh təklif modeli cəmi),mln AZN,makro,level,no
+io_cpi,İQİ səviyyəsinə təsir (IO qiymət modeli; cpi ilə müqayisə),indeks (baza=100),makro,level,yes
+revenue_pct,Büdcə gəlirləri (ÜDM-ə %; CAEM),% ÜDM,fiskal,rate,no
+market:<FR12 bazar>:<göstərici>,FR12 bazar ssenarisi (giriş): qiymət/marja/buraxılış/istehlakçı rifahı,%,bazar,rate,no
+oxlon:<seriya>,OxLon FR13 seriyası (ministry_spec),müxtəlif,makro,level,no

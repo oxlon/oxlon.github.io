@@ -38,7 +38,7 @@ arasında yaradılır, buna görə sənəd nəticələrdən fərqlənə bilməz.
 <!-- /AUTO:mode_header -->
 
 <!-- AUTO:rev -->
-Bu icra: DSK-nın 19 arxivləşdirilmiş buraxılışı və 141 giriş faylı (hər biri URL və SHA-256 ilə); 18 məlumat bütövlüyü tapıntısı; mənbə matrisində 26 göstərici (hazırda mövcud 21, sorğu edilib 4, mövcud deyil 1); Əsas ssenari, 2030, qeydiyyatdan keçmiş sahibkarlıq subyektləri: 104 899 yeni qeydiyyat (90% zolaq 95 561–123 498), giriş əmsalı 5,50% (4,94–6,45), çıxış əmsalı 2,18%; statistik vahidlər 299 080 (291 625–310 434); erkən xəbərdarlıq həddi z* = 2, müşahidə siyahısı: boşdur; 70 FR12 CSV faylı, onlardan 18 SİNTETİK; icra müddəti 24 san.
+Bu icra: DSK-nın 19 arxivləşdirilmiş buraxılışı və 141 giriş faylı (hər biri URL və SHA-256 ilə); 18 məlumat bütövlüyü tapıntısı; mənbə matrisində 26 göstərici (hazırda mövcud 21, sorğu edilib 4, mövcud deyil 1); Əsas ssenari, 2030, qeydiyyatdan keçmiş sahibkarlıq subyektləri: 104 893 yeni qeydiyyat (90% zolaq 95 603–123 368), giriş əmsalı 5,50% (4,94–6,45), çıxış əmsalı 2,18%; statistik vahidlər 298 998 (292 369–311 669); erkən xəbərdarlıq həddi z* = 2, müşahidə siyahısı: boşdur; 70 FR12 CSV faylı, onlardan 18 SİNTETİK; icra müddəti 24 san.
 <!-- /AUTO:rev -->
 
 Tətbiq olunan standartlar (FR10-da olduğu kimi): gecikmiş asılı dəyişən, dəyişənin öz tarixi əsasında proqnoz və
@@ -645,28 +645,28 @@ sürücü çəkilişləri və ehtiyat eyniliyi vasitəsilə yenə də tədricən
 | panel | il | N Mənfi | N Əsas | N İslahat | giriş Mənfi | giriş Əsas | giriş İslahat | çıxış Mənfi | çıxış Əsas | çıxış İslahat | yeni Mənfi | yeni Əsas | yeni İslahat |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | fəaliyyət | 2025 | 1 576 172 | 1 576 172 | 1 576 172 | 6.64 | 6.64 | 6.64 | 2.18 | 2.18 | 2.18 | 104 650 | 104 650 | 104 650 |
-| fəaliyyət | 2026 | 1 644 900 | 1 644 901 | 1 644 901 | 6.36 | 6.36 | 6.36 | 2.18 | 2.18 | 2.18 | 104 597 | 104 597 | 104 597 |
-| fəaliyyət | 2027 | 1 712 436 | 1 712 546 | 1 712 660 | 6.12 | 6.13 | 6.14 | 2.18 | 2.18 | 2.18 | 104 871 | 104 982 | 105 098 |
-| fəaliyyət | 2028 | 1 778 488 | 1 778 683 | 1 778 898 | 5.89 | 5.90 | 5.90 | 2.18 | 2.18 | 2.18 | 104 819 | 104 907 | 105 012 |
-| fəaliyyət | 2029 | 1 843 182 | 1 843 481 | 1 843 793 | 5.69 | 5.69 | 5.70 | 2.18 | 2.18 | 2.18 | 104 861 | 104 968 | 105 072 |
-| fəaliyyət | 2030 | 1 906 476 | 1 906 842 | 1 907 249 | 5.50 | 5.50 | 5.51 | 2.18 | 2.18 | 2.18 | 104 825 | 104 899 | 105 001 |
-| region | 2026 | 239 571 | 240 597 | 240 398 | 5.77 | 6.17 | 6.09 | 0.37 | 0.37 | 0.37 | 13 819 | 14 848 | 14 648 |
-| region | 2027 | 251 507 | 255 102 | 254 549 | 5.03 | 5.92 | 5.76 | 0.28 | 0.24 | 0.20 | 12 648 | 15 112 | 14 661 |
-| region | 2028 | 263 389 | 269 788 | 268 603 | 4.81 | 5.70 | 5.46 | 0.29 | 0.26 | 0.23 | 12 657 | 15 384 | 14 659 |
-| region | 2029 | 275 837 | 284 476 | 282 660 | 4.80 | 5.41 | 5.19 | 0.29 | 0.25 | 0.22 | 13 240 | 15 396 | 14 666 |
-| region | 2030 | 288 830 | 299 080 | 296 635 | 4.79 | 5.15 | 4.94 | 0.29 | 0.26 | 0.23 | 13 839 | 15 393 | 14 660 |
+| fəaliyyət | 2026 | 1 644 900 | 1 644 900 | 1 644 900 | 6.36 | 6.36 | 6.36 | 2.18 | 2.18 | 2.18 | 104 596 | 104 596 | 104 596 |
+| fəaliyyət | 2027 | 1 712 363 | 1 712 488 | 1 712 617 | 6.12 | 6.13 | 6.13 | 2.18 | 2.18 | 2.18 | 104 797 | 104 924 | 105 056 |
+| fəaliyyət | 2028 | 1 778 373 | 1 778 598 | 1 778 843 | 5.89 | 5.90 | 5.90 | 2.18 | 2.18 | 2.18 | 104 776 | 104 879 | 105 000 |
+| fəaliyyət | 2029 | 1 843 040 | 1 843 383 | 1 843 742 | 5.69 | 5.69 | 5.70 | 2.18 | 2.18 | 2.18 | 104 831 | 104 955 | 105 074 |
+| fəaliyyət | 2030 | 1 906 314 | 1 906 741 | 1 907 208 | 5.50 | 5.50 | 5.51 | 2.18 | 2.18 | 2.18 | 104 803 | 104 893 | 105 011 |
+| region | 2026 | 239 573 | 240 598 | 240 399 | 5.77 | 6.17 | 6.09 | 0.37 | 0.37 | 0.37 | 13 821 | 14 850 | 14 651 |
+| region | 2027 | 251 454 | 255 060 | 254 519 | 5.03 | 5.93 | 5.76 | 0.31 | 0.26 | 0.21 | 12 650 | 15 114 | 14 663 |
+| region | 2028 | 263 300 | 269 723 | 268 564 | 4.81 | 5.70 | 5.46 | 0.31 | 0.27 | 0.23 | 12 657 | 15 385 | 14 661 |
+| region | 2029 | 275 723 | 284 399 | 282 623 | 4.80 | 5.41 | 5.19 | 0.30 | 0.25 | 0.22 | 13 240 | 15 396 | 14 667 |
+| region | 2030 | 288 695 | 298 998 | 296 608 | 4.79 | 5.15 | 4.94 | 0.30 | 0.27 | 0.23 | 13 838 | 15 393 | 14 661 |
 
 Əsas ssenari zolaqları (5–95%):
 
 | panel | il | new_baseline | new_p5 | new_p95 | entry_baseline | entry_p5 | entry_p95 | exit_baseline | exit_p5 | exit_p95 | N_baseline | N_p5 | N_p95 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | fəaliyyət | 2025 | 104 650 | 95 664 | 122 736 | 6.64 | 6.10 | 7.68 | 2.18 | 1.93 | 2.49 | 1 576 172 | 1 567 558 | 1 597 783 |
-| fəaliyyət | 2026 | 104 597 | 95 367 | 122 909 | 6.36 | 5.77 | 7.40 | 2.18 | 1.93 | 2.50 | 1 644 901 | 1 627 819 | 1 687 874 |
-| fəaliyyət | 2028 | 104 907 | 95 683 | 123 342 | 5.90 | 5.32 | 6.92 | 2.18 | 1.93 | 2.51 | 1 778 683 | 1 746 398 | 1 834 353 |
-| fəaliyyət | 2030 | 104 899 | 95 561 | 123 498 | 5.50 | 4.94 | 6.45 | 2.18 | 1.93 | 2.51 | 1 906 842 | 1 860 142 | 1 975 696 |
-| region | 2026 | 14 848 | 13 392 | 16 749 | 6.17 | 5.61 | 6.90 | 0.37 | 0.13 | 0.62 | 240 597 | 238 916 | 242 819 |
-| region | 2028 | 15 384 | 12 818 | 19 542 | 5.70 | 4.83 | 7.04 | 0.26 | 0.08 | 0.53 | 269 788 | 263 755 | 278 982 |
-| region | 2030 | 15 393 | 13 838 | 17 918 | 5.15 | 4.70 | 5.89 | 0.26 | 0.07 | 0.61 | 299 080 | 291 625 | 310 434 |
+| fəaliyyət | 2026 | 104 596 | 95 404 | 122 901 | 6.36 | 5.77 | 7.40 | 2.18 | 1.93 | 2.50 | 1 644 900 | 1 627 805 | 1 687 855 |
+| fəaliyyət | 2028 | 104 879 | 95 684 | 123 246 | 5.90 | 5.32 | 6.92 | 2.18 | 1.93 | 2.51 | 1 778 598 | 1 746 269 | 1 834 178 |
+| fəaliyyət | 2030 | 104 893 | 95 603 | 123 368 | 5.50 | 4.94 | 6.45 | 2.18 | 1.93 | 2.51 | 1 906 741 | 1 860 171 | 1 975 333 |
+| region | 2026 | 14 850 | 13 359 | 16 920 | 6.17 | 5.60 | 6.97 | 0.37 | 0.13 | 0.63 | 240 598 | 238 784 | 243 064 |
+| region | 2028 | 15 385 | 12 848 | 19 532 | 5.70 | 4.82 | 7.06 | 0.27 | 0.07 | 0.53 | 269 723 | 264 001 | 277 941 |
+| region | 2030 | 15 393 | 13 808 | 18 439 | 5.15 | 4.71 | 5.95 | 0.27 | 0.08 | 0.59 | 298 998 | 292 369 | 311 669 |
 
 Zolaqların qurulması:
 
@@ -684,7 +684,7 @@ qarşı, habelə son faktiki giriş əmsalının 2026-cı il zolağına qarşı 
 
 | panel | vahid | dəyişən | forecast_mean_2026_30 | hist_min | hist_max | recent_2obs_mean | işarə |
 |---|---|---|---|---|---|---|---|
-| fəaliyyət | ACC | ehtiyatın artımı, ildə % | 3.75 | 2.87 | 6.20 | 6.15 | son ortadan 25%-dən çox fərqlənir |
+| fəaliyyət | ACC | ehtiyatın artımı, ildə % | 3.74 | 2.87 | 6.20 | 6.15 | son ortadan 25%-dən çox fərqlənir |
 | fəaliyyət | AGR | giriş əmsalı, % | 6.67 | 7.31 | 12.46 | 9.51 | tarixi intervaldan kənar |
 | fəaliyyət | AGR | çıxış əmsalı, % | 2.88 | 0.87 | 5.94 | 1.42 | son ortadan 25%-dən çox fərqlənir |
 | fəaliyyət | AGR | ehtiyatın artımı, ildə % | 3.95 | 5.86 | 41.30 | 9.35 | tarixi intervaldan kənar |
@@ -704,31 +704,31 @@ qarşı, habelə son faktiki giriş əmsalının 2026-cı il zolağına qarşı 
 | fəaliyyət | TRA | giriş əmsalı, % | 6.42 | 7.35 | 12.88 | 8.05 | tarixi intervaldan kənar |
 | fəaliyyət | TRA | ehtiyatın artımı, ildə % | 3.85 | 7.41 | 18.55 | 7.76 | tarixi intervaldan kənar |
 | fəaliyyət | TRD | giriş əmsalı, % | 4.81 | 5.28 | 7.26 | 5.92 | tarixi intervaldan kənar |
-| fəaliyyət | TRD | ehtiyatın artımı, ildə % | 3.55 | 4.00 | 5.41 | 4.77 | tarixi intervaldan kənar |
+| fəaliyyət | TRD | ehtiyatın artımı, ildə % | 3.54 | 4.00 | 5.41 | 4.77 | tarixi intervaldan kənar |
 | region | Abşeron-Xızı | giriş əmsalı, % | 5.98 | 6.81 | 7.66 | 7.55 | tarixi intervaldan kənar |
-| region | Abşeron-Xızı | ehtiyatın artımı, ildə % | 5.99 | 7.61 | 8.23 | 8.13 | tarixi intervaldan kənar |
+| region | Abşeron-Xızı | ehtiyatın artımı, ildə % | 5.98 | 7.61 | 8.23 | 8.13 | tarixi intervaldan kənar |
 | region | Bakı şəhəri | giriş əmsalı, % | 6.47 | 7.37 | 11.68 | 7.80 | tarixi intervaldan kənar |
-| region | Bakı şəhəri | çıxış əmsalı, % | 0.20 | 0.22 | 0.32 | 0.23 | tarixi intervaldan kənar |
-| region | Bakı şəhəri | ehtiyatın artımı, ildə % | 6.52 | 7.66 | 12.83 | 8.15 | tarixi intervaldan kənar |
-| region | Şərqi Zəngəzur | giriş əmsalı, % | 6.02 | 4.00 | 12.90 | 10.76 | son ortadan 25%-dən çox fərqlənir |
-| region | Şərqi Zəngəzur | doğulmalar | 100.98 | 42.00 | 167.00 | 143.50 | son ortadan 25%-dən çox fərqlənir |
-| region | Şərqi Zəngəzur | çıxış əmsalı, % | 0.15 | 0.00 | 0.31 | 0.26 | son ortadan 25%-dən çox fərqlənir |
-| region | Şərqi Zəngəzur | ehtiyatın artımı, ildə % | 6.10 | 3.14 | 14.80 | 11.19 | son ortadan 25%-dən çox fərqlənir |
+| region | Bakı şəhəri | çıxış əmsalı, % | 0.21 | 0.22 | 0.32 | 0.23 | tarixi intervaldan kənar |
+| region | Bakı şəhəri | ehtiyatın artımı, ildə % | 6.51 | 7.66 | 12.83 | 8.15 | tarixi intervaldan kənar |
+| region | Şərqi Zəngəzur | giriş əmsalı, % | 6.03 | 4.00 | 12.90 | 10.76 | son ortadan 25%-dən çox fərqlənir |
+| region | Şərqi Zəngəzur | doğulmalar | 100.99 | 42.00 | 167.00 | 143.50 | son ortadan 25%-dən çox fərqlənir |
+| region | Şərqi Zəngəzur | çıxış əmsalı, % | 0.16 | 0.00 | 0.31 | 0.26 | son ortadan 25%-dən çox fərqlənir |
+| region | Şərqi Zəngəzur | ehtiyatın artımı, ildə % | 6.09 | 3.14 | 14.80 | 11.19 | son ortadan 25%-dən çox fərqlənir |
 | region | Gəncə-Daşkəsən | giriş əmsalı, % | 3.78 | 3.99 | 4.81 | 4.03 | tarixi intervaldan kənar |
-| region | Qazax-Tovuz | çıxış əmsalı, % | 0.29 | 0.08 | 1.11 | 0.39 | son ortadan 25%-dən çox fərqlənir |
+| region | Gəncə-Daşkəsən | ehtiyatın artımı, ildə % | 3.54 | 3.55 | 4.51 | 3.80 | tarixi intervaldan kənar |
 | region | Qarabağ | giriş əmsalı, % | 3.86 | 3.12 | 6.37 | 5.59 | son ortadan 25%-dən çox fərqlənir |
-| region | Qarabağ | ehtiyatın artımı, ildə % | 3.68 | 3.79 | 6.19 | 5.56 | tarixi intervaldan kənar |
+| region | Qarabağ | ehtiyatın artımı, ildə % | 3.67 | 3.79 | 6.19 | 5.56 | tarixi intervaldan kənar |
 | region | Naxçıvan | giriş əmsalı, % | 6.99 | 2.55 | 22.09 | 10.07 | son ortadan 25%-dən çox fərqlənir |
-| region | Naxçıvan | ehtiyatın artımı, ildə % | 3.71 | 2.40 | 27.44 | 7.38 | son ortadan 25%-dən çox fərqlənir |
-| region | Şəki-Zaqatala | çıxış əmsalı, % | 0.30 | 0.17 | 0.62 | 0.45 | son ortadan 25%-dən çox fərqlənir |
+| region | Naxçıvan | ehtiyatın artımı, ildə % | 3.70 | 2.40 | 27.44 | 7.38 | son ortadan 25%-dən çox fərqlənir |
+| region | Şəki-Zaqatala | çıxış əmsalı, % | 0.31 | 0.17 | 0.62 | 0.45 | son ortadan 25%-dən çox fərqlənir |
 
 Son faktiki giriş əmsalı 2026-cı il zolağına qarşı: 27 vahiddən zolaqdan kənarda olanlar 3, hər biri səbəbi ilə:
 
 | panel | vahid | last_year | last_actual_entry | band2026_p5 | band2026_p95 | daxilində | izah |
 |---|---|---|---|---|---|---|---|
 | fəaliyyət | IND | 2024 | 7.30 | 6.12 | 6.47 | xeyr | 2026-cı ildə doğulmalar 2024-ə nisbətən -4.1%, ehtiyat +11.4%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən +3% idi |
-| fəaliyyət | ACC | 2024 | 6.51 | 5.24 | 6.16 | xeyr | 2026-cı ildə doğulmalar 2024-ə nisbətən -4.0%, ehtiyat +8.8%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən -1% idi |
-| fəaliyyət | EDU | 2024 | 10.82 | 8.92 | 9.19 | xeyr | 2026-cı ildə doğulmalar 2024-ə nisbətən -1.1%, ehtiyat +18.0%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən -6% idi |
+| fəaliyyət | ACC | 2024 | 6.51 | 5.22 | 6.18 | xeyr | 2026-cı ildə doğulmalar 2024-ə nisbətən -4.0%, ehtiyat +8.8%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən -1% idi |
+| fəaliyyət | EDU | 2024 | 10.82 | 8.92 | 9.18 | xeyr | 2026-cı ildə doğulmalar 2024-ə nisbətən -1.1%, ehtiyat +18.0%: ehtiyat doğulmalardan sürətlə artır, ona görə əmsal düşür; 2024-cü ilin doğulmaları əvvəlki iki müşahidəyə nisbətən -6% idi |
 <!-- /AUTO:plaus -->
 
 İşarələrin əsas səbəbi: doğulmalar 2022–2024-cü illər səviyyəsinə yaxın proqnozlaşdırılır (fəaliyyət panelində ildə
@@ -752,17 +752,17 @@ konsentrasiya müəssisə məlumatları olmadan proqnozlaşdırıla bilməz (B q
 <!-- AUTO:concpaths -->
 | qrup | hhi_lower 2026 | hhi_lower 2030 | hhi_upper 2026 | hhi_upper 2030 | large_share 2026 | large_share 2030 |
 |---|---|---|---|---|---|---|
-| ACC | 24.40 | 23.90 | 528.10 | 523.70 | 22.70 | 22.70 |
+| ACC | 24.40 | 23.90 | 528.10 | 524.10 | 22.70 | 22.70 |
 | AGR | 50.70 | 49.40 | 3156.00 | 3156.00 | 36.30 | 36.30 |
 | CON | 38.40 | 38.20 | 3965.90 | 3964.80 | 62.90 | 62.90 |
 | EDU | 6.80 | 6.30 | 5967.00 | 5967.00 | 9.20 | 9.20 |
 | HEA | 33.40 | 32.50 | 2963.70 | 2963.70 | 37.60 | 37.60 |
-| ICT | 131.00 | 130.60 | 4380.50 | 4377.20 | 66.10 | 66.10 |
+| ICT | 131.00 | 130.60 | 4380.50 | 4377.30 | 66.10 | 66.10 |
 | IND | 35.00 | 35.00 | 8277.60 | 8277.60 | 91.00 | 91.00 |
 | OTH | 20.90 | 20.70 | 2578.00 | 2577.60 | 50.70 | 50.70 |
-| REA | 112.70 | 112.10 | 1436.00 | 1437.50 | 37.70 | 37.70 |
+| REA | 112.70 | 112.10 | 1436.00 | 1437.20 | 37.70 | 37.70 |
 | TRA | 118.70 | 118.70 | 6757.40 | 6757.20 | 82.20 | 82.20 |
-| TRD | 4.70 | 4.60 | 907.50 | 907.20 | 30.10 | 30.10 |
+| TRD | 4.70 | 4.60 | 907.60 | 907.30 | 30.10 | 30.10 |
 <!-- /AUTO:concpaths -->
 
 ## 15. Sənaye təşkilatı nəzəriyyəsi ilə ssenari təhlili
@@ -1088,16 +1088,16 @@ Eyni qaydalar (sürücülər, ankerləmə, kombinasiya, uyğunluq filtri) doldur
 |---|---|---|---|---|
 | fr12:act:entry:ALL | Əsas | 5.501 | 5.499 | -0.05 |
 | fr12:act:exit:ALL | Əsas | 2.178 | 2.182 | 0.19 |
-| fr12:act:N:ALL | Əsas | 1 906 842.145 | 1 905 936.842 | -0.05 |
-| fr12:act:new:ALL | Əsas | 104 899.177 | 104 801.869 | -0.09 |
-| fr12:act:entry:ALL | Mənfi | 5.498 | 5.496 | -0.04 |
-| fr12:act:exit:ALL | Mənfi | 2.178 | 2.183 | 0.18 |
-| fr12:act:N:ALL | Mənfi | 1 906 475.611 | 1 905 632.490 | -0.04 |
-| fr12:act:new:ALL | Mənfi | 104 825.324 | 104 740.507 | -0.08 |
-| fr12:act:entry:ALL | İslahat | 5.505 | 5.502 | -0.06 |
+| fr12:act:N:ALL | Əsas | 1 906 740.911 | 1 905 853.274 | -0.05 |
+| fr12:act:new:ALL | Əsas | 104 893.430 | 104 797.124 | -0.09 |
+| fr12:act:entry:ALL | Mənfi | 5.498 | 5.496 | -0.03 |
+| fr12:act:exit:ALL | Mənfi | 2.179 | 2.183 | 0.18 |
+| fr12:act:N:ALL | Mənfi | 1 906 313.614 | 1 905 498.719 | -0.04 |
+| fr12:act:new:ALL | Mənfi | 104 803.121 | 104 722.172 | -0.08 |
+| fr12:act:entry:ALL | İslahat | 5.506 | 5.503 | -0.06 |
 | fr12:act:exit:ALL | İslahat | 2.178 | 2.182 | 0.19 |
-| fr12:act:N:ALL | İslahat | 1 907 248.603 | 1 906 274.397 | -0.05 |
-| fr12:act:new:ALL | İslahat | 105 000.781 | 104 886.269 | -0.11 |
+| fr12:act:N:ALL | İslahat | 1 907 208.277 | 1 906 241.113 | -0.05 |
+| fr12:act:new:ALL | İslahat | 105 011.183 | 104 894.853 | -0.11 |
 
 KOS-un buraxılış payı 2030: maksimal |dəyişmə| 1,44 faiz bəndi.
 <!-- /AUTO:v2_gapsens -->
@@ -1134,28 +1134,31 @@ Kataloq: 378 id, onlardan 377 tam proqnozlaşdırılır (3 ssenari × 2026–203
 
 | bölmə | h1_2026_observed | nowcast_fy_2026 | allocation_2026_before | adjusted_2026 | change_2026_pct | h1_2027_implied_before | h1_2027_implied |
 |---|---|---|---|---|---|---|---|
-| G | 1 921.0 | 4 225.3 | 5 142.3 | 4 334.1 | -15.7 | 2 379.5 | 2 198.2 |
-| M | 843.0 | 1 806.0 | 1 630.6 | 1 852.5 | 13.6 | 774.7 | 825.8 |
-| N | 540.0 | 1 217.0 | 1 207.7 | 1 248.3 | 3.4 | 545.4 | 554.3 |
-| C | 503.0 | 1 088.6 | 1 128.6 | 1 116.6 | -1.1 | 530.8 | 528.1 |
-| F | 501.0 | 1 183.9 | 995.8 | 1 214.4 | 22.0 | 428.9 | 474.6 |
-| H | 342.0 | 750.8 | 849.8 | 770.1 | -9.4 | 394.0 | 376.1 |
+| G | 1 921.0 | 4 225.3 | 5 143.1 | 4 334.8 | -15.7 | 2 379.8 | 2 198.4 |
+| M | 843.0 | 1 806.0 | 1 630.9 | 1 852.8 | 13.6 | 774.8 | 825.9 |
+| N | 540.0 | 1 217.0 | 1 207.9 | 1 248.5 | 3.4 | 545.5 | 554.4 |
+| C | 503.0 | 1 088.6 | 1 128.8 | 1 116.8 | -1.1 | 530.9 | 528.1 |
+| F | 501.0 | 1 183.9 | 996.0 | 1 214.6 | 22.0 | 428.9 | 474.6 |
+| H | 342.0 | 750.8 | 849.9 | 770.2 | -9.4 | 394.0 | 376.1 |
 
 KOS-un işçi sayında payı: qayda **kombinasiya: FE + size | lövbərlənmiş** (ən yaxşı namizəd struktur: FE + size | lövbərlənmiş, sıfır modelə qarşı DM p = 0,62); son mənbə ilində tətbiq olunan: size (size: uyğun).
 <!-- /AUTO:v2_alloc -->
 
-Proqnozlaşdırılmayan yeganə komponent:
+Proqnozlaşdırılmayan komponent və müşahidə ilindəki boşluqlar:
 
 HHI-nin "iri müəssisələr ≥ 30 mln AZN" variantı v2-də tavanları atılmış qruplar (AGR, EDU, HEA) üçün də hesablanır: KOS hissəsinin
 supremumu Σ S², döşəmə yalnız iri sinfə tətbiq olunur. Variant yalnız **mümkün olmadıqda** (iri vahidlərin sayı × 30 mln > iri sinfin
-buraxılışı) boş qalır və səbəbi yazılır.
+buraxılışı) boş qalır və səbəbi yazılır. EDU üçün bu, proqnoz illərində baş verir, ona görə id proqnozlaşdırılmır; HEA üçün yalnız
+2023–2024 müşahidə illərində (proqnoz illərində fərziyyə mümkündür və dəyərlər verilir) — `scope = history` sətri həmin boş müşahidə
+dəyərlərini izah edir.
 
 <!-- AUTO:v2_notforecast -->
-`FR12_not_forecast.csv`: 1 id. conc: 1.
+`FR12_not_forecast.csv`: 2 id. conc: 2.
 
 | id | səbəb (azərbaycanca) |
 |---|---|
 | fr12:conc:hhi_upper_floor30:EDU | Fərziyyə mümkün deyil (2025, 2026, 2027, 2028): 19 iri vahidin hər birinin gəliri ≥ 30 mln AZN olsaydı, iri sinfin buraxılışını aşardı (iri pay 9.2–9.2%). Əsas yuxarı hədd (hhi_upper) və 15 mln AZN variantı verilir. |
+| fr12:conc:hhi_upper_floor30:HEA | Müşahidə illərində (2023, 2024) fərziyyə mümkün deyil: 56 iri vahidin hər birinin gəliri ≥ 30 mln AZN olsaydı (cəmi ≥ 1 680 mln AZN), iri sinfin buraxılışını (1 122–1 394 mln AZN; iri pay 27.0–29.7%) aşardı — həmin illərdə dəyər yoxdur. Proqnoz illərində fərziyyə mümkündür və dəyər verilir; əsas yuxarı hədd (hhi_upper) və 15 mln AZN variantı bütün illər üçün verilir. |
 <!-- /AUTO:v2_notforecast -->
 
 ### 20.4 B qatının ekonometrikası (sintetik məlumat — texniki nümayiş)

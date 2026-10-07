@@ -1,0 +1,19 @@
+{
+ "id": "profit_tax_minus2",
+ "name_az": "Mənfəət vergisi −2 f.b. (2027-dən)",
+ "description_az": "Mənfəət vergisi dərəcəsi 20 %-dən 18 %-ə endirilir (2027-dən daimi).",
+ "start_year": 2027,
+ "instruments": [
+  {
+   "instrument": "profit_tax",
+   "years": "all",
+   "size": -2,
+   "unit": "pp",
+   "financing": "deficit",
+   "target": null
+  }
+ ],
+ "tags": [
+  "vergi"
+ ]
+}

@@ -134,9 +134,9 @@ FR1,fr1:exp_tot_n,Fiskal blok,Büdcə xərcləri,Reform,5,OK
 FR1,fr1:balance_n,Fiskal blok,Büdcə balansı,Baseline,5,OK
 FR1,fr1:balance_n,Fiskal blok,Büdcə balansı,Adverse,5,OK
 FR1,fr1:balance_n,Fiskal blok,Büdcə balansı,Reform,5,OK
-FR1,fr1:debt_azn,Fiskal blok,Dövlət borcu,Baseline,5,OK
-FR1,fr1:debt_azn,Fiskal blok,Dövlət borcu,Adverse,5,OK
-FR1,fr1:debt_azn,Fiskal blok,Dövlət borcu,Reform,5,OK
+FR1,fr1:debt_azn,Fiskal blok,"Dövlət borcu (xarici + daxili, Maliyyə Nazirliyinin anlayışı; dövlət zəmanətli borc daxil deyil)",Baseline,5,OK
+FR1,fr1:debt_azn,Fiskal blok,"Dövlət borcu (xarici + daxili, Maliyyə Nazirliyinin anlayışı; dövlət zəmanətli borc daxil deyil)",Adverse,5,OK
+FR1,fr1:debt_azn,Fiskal blok,"Dövlət borcu (xarici + daxili, Maliyyə Nazirliyinin anlayışı; dövlət zəmanətli borc daxil deyil)",Reform,5,OK
 FR1,fr1:rinv_state,Fiskal blok,Dövlət investisiyaları (real),Baseline,5,OK
 FR1,fr1:rinv_state,Fiskal blok,Dövlət investisiyaları (real),Adverse,5,OK
 FR1,fr1:rinv_state,Fiskal blok,Dövlət investisiyaları (real),Reform,5,OK
@@ -1106,24 +1106,24 @@ FR1,fr1:acc:exp_cap:nominal,Fiskal,Əsaslı xərclər: nominal dəyər,Reform,5,
 FR1,fr1:acc:exp_cap:nominal_growth_pct,Fiskal,"Əsaslı xərclər: nominal artım, %",Baseline,5,OK
 FR1,fr1:acc:exp_cap:nominal_growth_pct,Fiskal,"Əsaslı xərclər: nominal artım, %",Adverse,5,OK
 FR1,fr1:acc:exp_cap:nominal_growth_pct,Fiskal,"Əsaslı xərclər: nominal artım, %",Reform,5,OK
-FR1,fr1:acc:debt:real,Fiskal,Dövlət borcu: real dəyər,Baseline,5,OK
-FR1,fr1:acc:debt:real,Fiskal,Dövlət borcu: real dəyər,Adverse,5,OK
-FR1,fr1:acc:debt:real,Fiskal,Dövlət borcu: real dəyər,Reform,5,OK
-FR1,fr1:acc:debt:real_growth_pct,Fiskal,"Dövlət borcu: real artım, %",Baseline,5,OK
-FR1,fr1:acc:debt:real_growth_pct,Fiskal,"Dövlət borcu: real artım, %",Adverse,5,OK
-FR1,fr1:acc:debt:real_growth_pct,Fiskal,"Dövlət borcu: real artım, %",Reform,5,OK
-FR1,fr1:acc:debt:deflator,Fiskal,Dövlət borcu: deflyator,Baseline,5,OK
-FR1,fr1:acc:debt:deflator,Fiskal,Dövlət borcu: deflyator,Adverse,5,OK
-FR1,fr1:acc:debt:deflator,Fiskal,Dövlət borcu: deflyator,Reform,5,OK
-FR1,fr1:acc:debt:deflator_growth_pct,Fiskal,"Dövlət borcu: deflyator inflyasiyası, %",Baseline,5,OK
-FR1,fr1:acc:debt:deflator_growth_pct,Fiskal,"Dövlət borcu: deflyator inflyasiyası, %",Adverse,5,OK
-FR1,fr1:acc:debt:deflator_growth_pct,Fiskal,"Dövlət borcu: deflyator inflyasiyası, %",Reform,5,OK
-FR1,fr1:acc:debt:nominal,Fiskal,Dövlət borcu: nominal dəyər,Baseline,5,OK
-FR1,fr1:acc:debt:nominal,Fiskal,Dövlət borcu: nominal dəyər,Adverse,5,OK
-FR1,fr1:acc:debt:nominal,Fiskal,Dövlət borcu: nominal dəyər,Reform,5,OK
-FR1,fr1:acc:debt:nominal_growth_pct,Fiskal,"Dövlət borcu: nominal artım, %",Baseline,5,OK
-FR1,fr1:acc:debt:nominal_growth_pct,Fiskal,"Dövlət borcu: nominal artım, %",Adverse,5,OK
-FR1,fr1:acc:debt:nominal_growth_pct,Fiskal,"Dövlət borcu: nominal artım, %",Reform,5,OK
+FR1,fr1:acc:debt:real,Fiskal,"Dövlət borcu (xarici + daxili, MN): real dəyər",Baseline,5,OK
+FR1,fr1:acc:debt:real,Fiskal,"Dövlət borcu (xarici + daxili, MN): real dəyər",Adverse,5,OK
+FR1,fr1:acc:debt:real,Fiskal,"Dövlət borcu (xarici + daxili, MN): real dəyər",Reform,5,OK
+FR1,fr1:acc:debt:real_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): real artım, %",Baseline,5,OK
+FR1,fr1:acc:debt:real_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): real artım, %",Adverse,5,OK
+FR1,fr1:acc:debt:real_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): real artım, %",Reform,5,OK
+FR1,fr1:acc:debt:deflator,Fiskal,"Dövlət borcu (xarici + daxili, MN): deflyator",Baseline,5,OK
+FR1,fr1:acc:debt:deflator,Fiskal,"Dövlət borcu (xarici + daxili, MN): deflyator",Adverse,5,OK
+FR1,fr1:acc:debt:deflator,Fiskal,"Dövlət borcu (xarici + daxili, MN): deflyator",Reform,5,OK
+FR1,fr1:acc:debt:deflator_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): deflyator inflyasiyası, %",Baseline,5,OK
+FR1,fr1:acc:debt:deflator_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): deflyator inflyasiyası, %",Adverse,5,OK
+FR1,fr1:acc:debt:deflator_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): deflyator inflyasiyası, %",Reform,5,OK
+FR1,fr1:acc:debt:nominal,Fiskal,"Dövlət borcu (xarici + daxili, MN): nominal dəyər",Baseline,5,OK
+FR1,fr1:acc:debt:nominal,Fiskal,"Dövlət borcu (xarici + daxili, MN): nominal dəyər",Adverse,5,OK
+FR1,fr1:acc:debt:nominal,Fiskal,"Dövlət borcu (xarici + daxili, MN): nominal dəyər",Reform,5,OK
+FR1,fr1:acc:debt:nominal_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): nominal artım, %",Baseline,5,OK
+FR1,fr1:acc:debt:nominal_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): nominal artım, %",Adverse,5,OK
+FR1,fr1:acc:debt:nominal_growth_pct,Fiskal,"Dövlət borcu (xarici + daxili, MN): nominal artım, %",Reform,5,OK
 FR1,fr1:acc:cpi:deflator,Qiymətlər,İstehlak qiymətləri indeksi: deflyator,Baseline,5,OK
 FR1,fr1:acc:cpi:deflator,Qiymətlər,İstehlak qiymətləri indeksi: deflyator,Adverse,5,OK
 FR1,fr1:acc:cpi:deflator,Qiymətlər,İstehlak qiymətləri indeksi: deflyator,Reform,5,OK

@@ -1,0 +1,20 @@
+{
+ "id": "fx_deval10",
+ "name_az": "Manat −10 % (2027, siyasət devalvasiyası)",
+ "description_az": "AZN/USD məzənnəsi 2027-ci ildən bazadan 10 % yüksək (OxLon, CAEM və MikroUnit müqayisəsi).",
+ "start_year": 2027,
+ "instruments": [
+  {
+   "instrument": "fx_deval",
+   "years": "all",
+   "size": 10,
+   "unit": "pct",
+   "target": null,
+   "financing": null
+  }
+ ],
+ "tags": [
+  "monetar",
+  "xarici"
+ ]
+}

@@ -1,0 +1,3 @@
+year,effective_date,index_pct,applies_to,source,checked
+2025,2025-01-01,8.1,all labour pensions,"Presidential Order on indexing labour pensions; sosial.gov.az (Ministry of Labour and Social Protection) news",2026-10-07 via PolicyUnit config/tax_benefit.csv
+2026,2026-01-01,9.3,"all labour pensions (about 1.1 million pensioners; +640 mln AZN a year); rule: 2025 average monthly wage growth (DSK)","Presidential Order 'On indexing labour pensions'; https://sosial.gov.az/az/media/xeberler/prezident-ilham-eliyevin-yeni-serencami-ile-pensiyalar-indekslesdirilerek-93-faiz-artirilir-8989",2026-10-07 (official announcement read; matches PolicyUnit config/tax_benefit.csv)

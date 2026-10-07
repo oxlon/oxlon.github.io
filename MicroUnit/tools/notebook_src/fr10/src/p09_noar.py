@@ -14,7 +14,7 @@
 # | Zəncirvari həcm səviyyələri $Q_t = Q_{t-1} I_t/100$ | Hissə 5 | Dərc olunmuş səviyyə ilə dərc olunmuş indeks arasında rəsmi zəncirvari əlaqələndirmə eyniliyi |
 # | Fasiləsiz inventar $K_t = (1-\delta)K_{t-1} + I_t$ | Hissə 7.2 | Müşahidə olunan axınlardan qurulan ehtiyat üçün uçot eyniliyi |
 # | **Digər** dəyişənlərin birillik gecikmələri (investisiya norması, nisbi qiymət, mülkiyyət, ehtiyatlar) | amillər paneli, Hissə 10 | Əvvəlcədən müəyyən olunmuş izahedici dəyişənlər; sahə buraxılışının artımı heç vaxt sağ tərəfdə yer almır |
-# | Sabit düzəliş əmsalı (sonuncu faktiki ilin öz qalığı); ρ̂ ilə sönmə | Hissə 11–14 | 2025-ci ili lövbərləyən sabit səviyyə düzəlişi; ρ̂ ilə sönmə yalnız işarələnmiş həssaslıq variantıdır |
+# | Sabit düzəliş əmsalı (sonuncu faktiki ilin öz qalığı) | Hissə 11–14 | 2025-ci ili lövbərləyən sabit səviyyə düzəlişi; proqnoz dövrü boyu sabit saxlanılır — FR10-da sönmə tətbiq olunmur |
 # | Tarixi qalıq trayektoriyaları $e_h = u_{s+h} - u_s$ | yelpik qrafikləri, Hissə 15 | Müşahidə olunmuş xəta trayektoriyalarını təkrarlayır; qiymətləndirilmiş dinamika yoxdur |
 # | "Sonuncu faktiki dəyərdə saxlanılan" proqnoz qaydaları (nisbi qiymətlər, sahədaxili mülkiyyət payları, KOB payları, Aİ/buraxılış nisbətləri) | Hissə 14 | Qiymətləndirmə deyil, açıq göstərilmiş ssenari fərziyyəsidir; hər biri fərziyyələr cədvəlində sadalanır |
 #
@@ -32,7 +32,7 @@ NOAR = pd.DataFrame([
     ('chained volume levels', 'Part 5', 'chain-linking identity'),
     ('perpetual inventory capital', 'Part 7.2', 'stock-flow identity'),
     ('one-year lags of other regressors', 'determinants panel', 'predetermined regressors; dependent variable never lagged'),
-    ('constant add-factor; decay at rho-hat (sensitivity)', 'share systems', 'level anchor; decay is a labelled sensitivity'),
+    ('constant add-factor (2025 anchor; no decay)', 'share systems', 'level anchor held constant over the horizon; FR10 applies no decay'),
     ('historical residual paths', 'fan charts', 'replay of observed error paths'),
     ('held-at-last-value forecast rules', 'Part 14', 'scenario assumptions, listed')], columns=['construct', 'where', 'why not autoregressive'])
 display(NOAR)

@@ -108,6 +108,40 @@ def flush_status() -> Path:
     return STATUS_FILE
 
 
+D2_COLMAP = {"ecb_try": "usdtry", "cbar_fx_daily": "usdazn", "wb_pinksheet": "gold", "fred_usdrub_m": "usdrub",
+             "fred_usdtry_m": "usdtry"}
+
+
+def annotate_d2(fetched_this_run: bool = False) -> None:
+    """D2 rows of this module reflect the CURRENT run (v2.4 verification finding 5): a row whose 'canlı' status comes
+    from an earlier fetch becomes 'keş: canlı yükləmə <date>'; son_deyer / last_obs come from the V2 panel."""
+    if not STATUS_FILE.exists():
+        return
+    d = pd.read_csv(STATUS_FILE, dtype=str)
+    if "owner_module" not in d.columns:
+        return
+    try:
+        V = pd.read_csv(config.OUTPUT / "V2_market_factors.csv")
+    except Exception:                                              # noqa: BLE001
+        V = None
+    if "son_deyer" not in d.columns:
+        d["son_deyer"] = ""
+    m = d["owner_module"] == OWNER
+    for i in d.index[m]:
+        f = str(d.at[i, "feed"])
+        if not fetched_this_run and str(d.at[i, "status"]) == "canlı":
+            d.at[i, "status"] = f"keş: canlı yükləmə {str(d.at[i, 'retrieved_utc'])[:10]}"
+            d.at[i, "seviyye"] = "ok"
+        col = D2_COLMAP.get(f, f[5:] if f.startswith("fred_") else None)
+        if V is not None and col in V.columns:
+            x = V[["tarix", col]].dropna()
+            if len(x):
+                x = x.sort_values("tarix")
+                d.at[i, "son_deyer"] = f"{float(x[col].iloc[-1]):.6g}"
+                d.at[i, "last_obs"] = str(x["tarix"].iloc[-1])[:10]
+    d.to_csv(STATUS_FILE, index=False, lineterminator="\n")
+
+
 def fetch_raw(feed: str, source: str, name: str, url: str, accept: str | None = None,
               validate=None) -> tuple[bytes, str, Path]:
     """Fetch one raw response; cache it; fall back to the last good cache. Returns
@@ -412,6 +446,7 @@ def build(ctx: dict | None = None) -> dict:
     out.round(6).to_csv(path, index=False, lineterminator="\n")
     bad = [f"{r['feed']} ({r['status']})" for r in _STATUS_ROWS if r.get("seviyye") != "ok"]
     flush_status()
+    annotate_d2(fetched_this_run=True)
     level = ("xəbərdarlıq: " + "; ".join(bad))[:300] if bad else "ok"   # market factors: never core (V2 keeps the cache)
     return {"daily": d, "monthly": m, "path": path, "stage_status": level}
 

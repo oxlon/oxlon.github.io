@@ -136,36 +136,74 @@ def components(B, fl, top, hy=None):
     return {"n_affected": len(rows), "top_pct": pct, "top_abs": other}
 
 
-def ru_block(B, ru_ov, with_measures, stochastic, n):
+def policy_shift(B, micro_raw):
+    """Deterministic policy shift from `micro_overrides` ALONE: MicroUnit chain with the overrides vs the chain Baseline,
+    headline deltas in the joint simulation's units (scalability.derived_delta: non-oil real growth pp, CPI pp,
+    budget balance Δ mln AZN / Baseline FR1 gdp_n × 100). Returns ({kind: np.array[T]}, chain warnings)."""
+    st = B.sc_state()
+    sc = B.mods[2]
+    ov, _ = merge_overrides([micro_raw], sc.coef_base)
+    fl, clip = sc.run_chain(ov, "api-policy")
+    dd = sc.derived_delta(st["base"], fl, st["D"]["rgdpnon_2025"])
+    sh = {k: np.array([float(dd.get((tid, y), np.nan)) for y in st["years"]])
+          for k, tid in (("g", "ru:nonoil_g"), ("cpi", "ru:cpi"), ("fis", "ru:budget_gdp"))}
+    return {k: np.nan_to_num(v) for k, v in sh.items()}, clip
+
+
+def _tail_stats(x, side, h):
+    m = max(int(0.1 * len(x)), 1)
+    xs = np.sort(x)
+    tail = xs[:m] if side == "<" else xs[-m:]
+    P = float((x < h).mean() if side == "<" else (x > h).mean())
+    return P, float(tail.mean())
+
+
+def ru_block(B, ru_ov, with_measures, stochastic, n, policy=None):
     st = B.sc_state()
     factors = B.mods[1]
-    yrs, T = st["years"], len(st["years"])
+    yrs = st["years"]
     from riskunit import measures
     D = measures.stress_vector(ru_ov, with_measures=with_measures, n=4000)     # the S1–S8 rule (public, FR3 owner)
     dev = []
     for r in D.to_dict("records"):
-        dev.append({k: (None if isinstance(v, float) and v != v else v) for k, v in r.items()})
+        row = {k: (None if isinstance(v, float) and v != v else v) for k, v in r.items()}
+        if policy is not None:
+            ps = float(policy[row["kind"]][yrs.index(row["il"])])
+            row["siyaset_sapmasi"], row["sapma_siyasetle"] = ps, row["sapma"] + ps
+        dev.append(row)
     out = {"ru_overrides_used": ru_ov, "deviation": dev}
+    if policy is not None:
+        out["policy_shift"] = [{"kind": k, "gosterici": KIND_AZ[k], "il": y, "deyisme": float(policy[k][t])}
+                               for k in ("g", "cpi", "fis") for t, y in enumerate(yrs)]
     if stochastic:
         p = factors.params()
         thr = {"g": ("<", float(p["nonoil_gar_threshold"])), "cpi": (">", float(p["cpi_threshold"])),
                "fis": ("<", float(p["fiscal_threshold"]))}
         U = B.sim(n, None, cache_key="uncond")
-        Cn = B.sim(n, ru_ov or None)
+        Cn = B.sim(n, ru_ov) if ru_ov else U
+        views = [("şərtsiz", U, None)] + ([("şoka şərtli", Cn, None)] if ru_ov else [])
+        if policy is not None:
+            views.append(("şoka şərtli + siyasət" if ru_ov else "siyasətlə", Cn, policy))
         dist, met = [], {}
-        for view, r in (("şərtsiz", U), ("şoka şərtli", Cn)):
+        for view, r, shift in views:
             for kind in ("g", "cpi", "fis"):
                 X = r.total(kind)
+                if shift is not None:
+                    X = X + shift[kind][None, :]               # deterministic policy shift of every draw
                 side, h = thr[kind]
                 for t, y in enumerate(yrs):
                     x = X[:, t]
-                    P = float((x < h).mean() if side == "<" else (x > h).mean())
+                    P, es = _tail_stats(x, side, h)
                     dist.append({"baxis": view, "kind": kind, "gosterici": KIND_AZ[kind], "il": y, "baza": float(r.base[kind][t]),
                                  **{"p%02d" % round(q * 100): float(np.quantile(x, q)) for q in QS},
-                                 "orta": float(x.mean()), "P_hedd": P, "hedd": "%s %g" % (side, h)})
+                                 "orta": float(x.mean()), "P_hedd": P, "ES10": es, "hedd": "%s %g" % (side, h)})
                     if y == st["hy"]:
-                        tail = np.sort(x)[: max(int(0.1 * len(x)), 1)] if side == "<" else np.sort(x)[-max(int(0.1 * len(x)), 1):]
-                        met.setdefault(kind, {})[view] = {"P_hedd": P, "ES10": float(tail.mean()), "median": float(np.median(x))}
+                        met.setdefault(kind, {})[view] = {"P_hedd": P, "ES10": es, "median": float(np.median(x))}
+        if policy is not None:
+            a, b = views[-2][0], views[-1][0]
+            for kind, d in met.items():
+                d["siyasetin_effekti"] = {"P_hedd": d[b]["P_hedd"] - d[a]["P_hedd"], "ES10": d[b]["ES10"] - d[a]["ES10"],
+                                          "median": d[b]["median"] - d[a]["median"], "muqayise": "%s − %s" % (b, a)}
         out["distribution"], out["metrics"] = dist, met
     return out
 
@@ -177,6 +215,8 @@ def run(B, req):
     tim = {"prepare_s": B.timings.get("sc_prepare_s")}
     shocks = [B.resolve(s) for s in (req.get("shocks") or [])]
     micro_raw = req.get("micro_overrides") or {}
+    if not isinstance(micro_raw, dict):
+        raise ApiError(400, "bad_override", "«micro_overrides» obyekt olmalıdır ({\"FR1\": {...}})")
     if not shocks and not micro_raw and not req.get("ru_overrides"):
         raise ApiError(400, "empty_scenario", "Ən azı bir şok verilməlidir (shocks, ru_overrides və ya micro_overrides)")
     sc = B.mods[2]
@@ -190,14 +230,23 @@ def run(B, req):
         res["micro"] = {"headline": head, "components": comp, "warnings": clip, "overrides": ov}
     else:
         res["micro"] = None
+    policy = None
+    if micro_raw:
+        policy, _ = policy_shift(B, micro_raw)
     tim["micro_chain_s"] = round(time.time() - t, 3)
     t = time.time()
     derived, n2 = ru_from_shocks(B, shocks)
     ru_ov = {**derived, **validate_ru(req.get("ru_overrides"), len(st["years"]), st["years"])}
     res["notes"] += n2
     n = int(min(max(int(_num(req.get("n", 4000), "n")), 500), 20000))
-    if ru_ov:
-        res["ru"] = ru_block(B, ru_ov, req.get("with_measures", True) is not False, req.get("stochastic", True) is not False, n)
+    if ru_ov or policy is not None:
+        res["ru"] = ru_block(B, ru_ov, req.get("with_measures", True) is not False, req.get("stochastic", True) is not False,
+                             n, policy)
+        if policy is not None:
+            res["notes"].append("micro_overrides (siyasət) RU paylanmasına deterministik sürüşmə kimi daxil edilib: MikroUnit "
+                                "zənciri override-larla vs Baseline → qeyri-neft artımı (f.b.), İQİ (f.b.), büdcə balansı "
+                                "(Δ mln AZN / FR1 gdp_n, % ÜDM); hər ssenari bu yolla sürüşdürülür, hədd ehtimalı və ES10 "
+                                "siyasətlə/siyasətsiz yenidən hesablanır (qeyri-müəyyənlik dəyişmir).")
     else:
         res["ru"] = None
         res["notes"].append("RU birgə Monte Karlo-ya uyğun şok yoxdur — yalnız MikroUnit zənciri")

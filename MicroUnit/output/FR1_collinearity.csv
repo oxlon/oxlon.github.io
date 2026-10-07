@@ -1,6 +1,6 @@
 equation,n_regressors,max_VIF,worst,condition_number,verdict
-E2_wage,3,19.42,ln_prod_non,9.6,high
 D3_xnon,2,12.05,ln_va_man,6.8,high
+E2_wage,2,11.83,ln_prod_non,6.7,high
 C4_elc,2,11.02,ln_gdpnon,6.5,high
 G7_dep,2,8.07,ln_gdpnon,5.5,moderate
 E3_hhdisp,2,8.05,ln_g_rel,5.5,moderate
@@ -19,7 +19,7 @@ G5_defl_min,2,1.46,dln_xpi,1.9,ok
 D2_inv,2,1.37,ln_inv_state,1.8,ok
 F3_expcur,2,1.34,ln_gdpnon,1.7,ok
 G6_defl_gdp,2,1.17,infl,1.5,ok
-G4_infl,2,1.08,dln_wage,1.3,ok
+G4_infl,3,1.1,dln_wage,1.4,ok
 D4_mnon,2,1.08,ln_cons,1.3,ok
 G3_lendrate,2,1.07,deprate,1.3,ok
 B2_mining,2,1.01,ln_gas,1.1,ok

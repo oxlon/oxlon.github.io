@@ -1,0 +1,57 @@
+scenario,engine,status,rows,seconds,message_az
+agri_sub300,micro,ok,990,0.22,
+agri_sub300,caem,ok,140,0.31,
+agri_sub300,io,ok,193,0.0,
+agri_sub300,microsim,ok,320,0.99,
+agri_sub300,longrun,ok,50,0.0,
+export_sub_man,micro,ok,990,0.22,
+export_sub_man,caem,ok,140,0.01,
+export_sub_man,io,ok,300,0.01,
+export_sub_man,microsim,ok,320,2.46,
+export_sub_man,longrun,ok,50,0.0,
+fuel_dereg20,micro,ok,990,0.22,
+fuel_dereg20,caem,ok,140,0.01,
+fuel_dereg20,io,ok,217,0.0,
+fuel_dereg20,microsim,ok,320,0.99,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+fuel_dereg20,longrun,ok,50,0.0,
+fx_deval10,micro,ok,990,0.23,"Büdcə işarəsi: neft gəliri AZN ilə artır (+1,1 mlrd/il), lakin FR1 fiskal qaydaları (F3: cari xərc gəlirə, istate_rule = policy_oilrev: dövlət investisiyası neft gəlirinə bağlıdır) əlavə gəliri xərcləyir — balans azca pisləşir. İQİ üçün əsas mənbə RiskUnit FX ötürməsidir (riskfx)"
+fx_deval10,caem,tətbiq edilmir,0,0.0,CAEM-də bu alətin şoku heç bir dəyişənə ötürülmür (məs. dS: B2 sütunu sıfırdır) — CAEM bu ssenari üçün tətbiq edilmir
+fx_deval10,oxlon,ok,80,0.76,
+fx_deval10,riskfx,ok,40,0.0,
+fx_deval10,io,ok,217,0.0,
+fx_deval10,microsim,ok,320,0.99,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+fx_deval10,longrun,ok,50,0.0,
+mw20_2027,micro,ok,990,0.23,"YAN TƏSİR XƏBƏRDARLIĞI: modeldə minimum əmək haqqının işdən çıxarma (disemployment) və qeyri-formallaşma kanalı yoxdur — məşğulluq təsiri yuxarı sərhəddir; risk FR4 yan təsir mərhələsində qiymətləndirilir. Büdcə xərci: büdcə təşkilatlarında yeni minimuma qaldırma + sıxılma + 22 % sosial ayırma (mw_budget). Nəticə metodlar arası diapazondur (P1_ranges.csv): MikroUnit makro reaksiyası yuxarı, mikrosimulyasiyanın statik döşəməsi aşağı sərhəd; NFR1 retrospektiv yoxlama: MikroUnit zənciri minimum əmək haqqı şokunda maaşı və inflyasiyanı yüksək qiymətləndirir (maaş artımı 2019: zəncir 16,4 % / fakt 12,2 %; inflyasiya 2019: zəncir 5,3 f.b. / fakt 0,3 f.b.; maaş artımı 2025: zəncir 5,8 % / fakt 1,8 %) — makro rəqəm yuxarı sərhəd kimi oxunmalıdır."
+mw20_2027,microsim,ok,360,2.04,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+mw20_2027,longrun,ok,50,0.0,
+pension10_2027,micro,ok,990,0.23,
+pension10_2027,caem,ok,140,0.01,
+pension10_2027,microsim,ok,320,1.01,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+pension10_2027,longrun,ok,50,0.0,
+polrate_m100,micro,ok,990,0.23,
+polrate_m100,caem,ok,140,0.01,
+polrate_m100,microsim,ok,400,2.38,
+polrate_m100,longrun,ok,50,0.0,
+profit_tax_minus2,micro,ok,990,0.22,
+profit_tax_minus2,caem,ok,140,0.01,"ETİBARSIZ: CAEM-də vergi şokunun fiskal nəticəsi (balans, borc, gəlir) etibarsızdır — vergi endirimi balansı yaxşılaşdırır, borc isə artır (işarə uyğunsuzluğu; gəlir dəyişməsi xərclərə ötürülür). Fiskal KPI-lardan çıxarılıb; makro nəticələr yalnız müqayisə üçündür"
+profit_tax_minus2,microsim,ok,320,1.73,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+profit_tax_minus2,longrun,ok,50,0.0,
+pubinv1bn_deficit,micro,ok,990,0.22,
+pubinv1bn_deficit,caem,ok,140,0.01,
+pubinv1bn_deficit,io,ok,225,0.0,
+pubinv1bn_deficit,microsim,ok,240,1.91,
+pubinv1bn_deficit,longrun,ok,50,0.0,
+pubinv1bn_sofaz,micro,ok,995,0.22,
+pubinv1bn_sofaz,caem,ok,140,0.01,
+pubinv1bn_sofaz,io,ok,225,0.0,
+pubinv1bn_sofaz,microsim,ok,240,1.86,
+pubinv1bn_sofaz,longrun,ok,50,0.0,
+tsa_plus30,micro,ok,990,0.23,
+tsa_plus30,caem,ok,140,1.09,
+tsa_plus30,microsim,ok,320,0.96,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+tsa_plus30,longrun,ok,50,0.0,
+vat_minus2,micro,ok,990,0.22,
+vat_minus2,caem,ok,140,0.01,"ETİBARSIZ: CAEM-də vergi şokunun fiskal nəticəsi (balans, borc, gəlir) etibarsızdır — vergi endirimi balansı yaxşılaşdırır, borc isə artır (işarə uyğunsuzluğu; gəlir dəyişməsi xərclərə ötürülür). Fiskal KPI-lardan çıxarılıb; makro nəticələr yalnız müqayisə üçündür"
+vat_minus2,io,ok,10,0.0,
+vat_minus2,microsim,ok,320,0.99,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+vat_minus2,longrun,ok,50,0.0,

@@ -1,0 +1,18 @@
+check,status,message_az
+təzəlik:P3_microsim_headline.csv,ok,
+təzəlik:P4_kpi_inputs.csv,ok,
+təzəlik:P4_risk_profile.csv,ok,
+təzəlik:V_nfr1_comparisons.csv,ok,
+təzəlik:P5_ranking.csv,ok,
+təzəlik:P5_kpi_values.csv,ok,
+ardıcıllıq:P5_ranking.csv>P4_kpi_inputs.csv,ok,
+ardıcıllıq:P5_ranking.csv>V_nfr1_comparisons.csv,ok,
+uyğunluq:P5.risk_breach=P4,ok,
+uyğunluq:P3.gini=P1,ok,maks. fərq 0
+vintaj:micro_vintage,ok,7099d341e599
+vintaj:caem_md5,ok,12c22d22eda046e050643004a8d7eec5
+vintaj:oxlon_forecast_long_md5,ok,31bf31752d9319f905bd6aeb636f2633
+vintaj:io_table,ok,DSK 2021 → 2025 GRAS
+vintaj:io_benchmark_md5,ok,fe7164da6dfcfb70f9416a8438ef10f6
+vintaj:riskunit_baseline_id(P4),ok,B-d7e77e886f
+təzəlik:panel/data,ok,

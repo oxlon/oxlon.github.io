@@ -1,0 +1,17 @@
+effective_date,azn,source
+2000-01-01,5.5,inferred: workbook 'Sosial sektor' row 51 shifted one year (year t shows the level in force from 1 January t+1)
+2003-01-01,9,inferred: workbook row 51 shifted one year
+2004-01-01,20,inferred: workbook row 51 shifted one year
+2005-01-01,30,inferred: workbook row 51 shifted one year
+2007-01-01,50,inferred: workbook row 51 shifted one year
+2008-01-01,75,inferred: workbook row 51 shifted one year
+2010-01-01,85,inferred: workbook row 51 shifted one year
+2011-01-01,93.5,inferred: workbook row 51 shifted one year
+2013-01-01,105,inferred: workbook row 51 shifted one year
+2017-01-01,116,DSK table 004_1 (minimum monthly wage)
+2018-01-01,130,DSK table 004_1
+2019-03-01,180,DSK table 004_1
+2019-09-01,250,DSK table 004_1
+2022-01-01,300,DSK table 004_1
+2023-01-01,345,DSK table 004_1
+2025-01-01,400,DSK table 004_1

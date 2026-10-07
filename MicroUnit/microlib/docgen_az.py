@@ -8,7 +8,8 @@ Azerbaijani document with Azerbaijani wording and the same numbers:
     docgen_az.fr4_results(globals())     # FR4 Part 20.2   (AUTO:e2gap, AUTO:results)
     docgen_az.fr4_v2(globals())          # FR4 Part 26     (AUTO:v2, AUTO:cells)
     docgen_az.fr5_blocks(globals())      # FR5 Part 18     (16 AUTO blocks)
-    docgen_az.copy_v2('FR3') / copy_v2('FR5')   # v2 blocks, already Azerbaijani in the English document
+    docgen_az.copy_v2('FR3')             # v2 block, already Azerbaijani in the English document
+    docgen_az.write_v2('FR5', _v2_az)     # FR5 Part 19.11: the Azerbaijani twin of the English v2 block
 
 Number convention (stated at the top of each Azerbaijani document): decimal comma and space thousands separator in prose;
 tables, formulas, code and file names keep the numerals exactly as produced by the code.
@@ -205,10 +206,21 @@ def fr4_results(ns):
 
 
 def fr4_v2(ns):
+    """FR4 Part 26: AUTO:v2 from the Azerbaijani lines the notebook builds next to the English ones (`LV2_AZ`; the English
+    document gets English), or — for a notebook that has no `LV2_AZ` — copied from the English document."""
     from ._docgen_az_fr4 import cells
-    with open(en_path("FR4"), encoding="utf-8") as f:
-        en = f.read()
-    return write_blocks("FR4", {"v2": az_prose(get_block(en, "v2")), "cells": cells(ns)})
+    if "LV2_AZ" in ns:
+        v2 = "\n" + "\n".join(ns["LV2_AZ"]) + "\n"
+    else:
+        with open(en_path("FR4"), encoding="utf-8") as f:
+            v2 = get_block(f.read(), "v2")
+    return write_blocks("FR4", {"v2": az_prose(v2), "cells": cells(ns)})
+
+
+def write_v2(module, text_az, tag="v2"):
+    """FR5 Part 19.11 (and any module whose notebook words a block in both languages): the Azerbaijani text of one AUTO
+    block, prose numbers converted (`az_prose`); the English document carries the English text."""
+    return write_blocks(module, {tag: az_prose("\n" + text_az + "\n")})
 
 
 def fr5_blocks(ns):

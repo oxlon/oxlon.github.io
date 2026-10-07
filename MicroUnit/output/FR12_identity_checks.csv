@@ -7,7 +7,7 @@ size classes sum to commercial organisations (1_3 vs 1_1),0.0,True,arithmetic
 "HHI lower <= floor variants <= headline upper; CR4 lower <= CR4 upper (all groups, years)",0.0,True,arithmetic
 "CR4 bounds consistent with HHI bounds: CR4^2/4 <= HHI_upper (all groups, years)",0.0,True,arithmetic
 stock-flow identity N(t) = N(t-1) + births(t) - deaths(t) in every forecast path,1.1641532182693481e-10,True,arithmetic
-projected upper bounds evolve continuously (max year-on-year change < 25%),0.002649898178381793,True,arithmetic
+projected upper bounds evolve continuously (max year-on-year change < 25%),0.0021313588718288035,True,arithmetic
 "Cournot calibration reproduces P = 1, Q = 1 at the calibration point",0.0,True,arithmetic
 "linear Cournot pass-through equals N/(N+θ), θ = 1.0",6.661338147750939e-16,True,arithmetic
 "linear Cournot pass-through equals N/(N+θ), θ = 0.5",5.773159728050814e-15,True,arithmetic

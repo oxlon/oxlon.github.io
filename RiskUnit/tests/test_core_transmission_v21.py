@@ -124,3 +124,30 @@ class RunningYearAndBands(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Followups20261007(unittest.TestCase):
+    def test_fx_fiscal_and_debt_revaluation(self):
+        c = fx.calibration()
+        x = np.full(len(YRS), 100 * np.log(1.165))
+        r = fx.responses(x)
+        self.assertAlmostEqual(float(r["debt_gdp"][0, 0]), c["s_ext"] * c["debt_gdp"] * 0.165, places=6)
+        self.assertLess(float(r["fis_interest"][0, 0]), 0.0)
+        np.testing.assert_allclose(fx.chain_part(x)["debt_gdp"], 0.0)      # FR1 does not revalue the debt stock
+
+    def test_s3_fiscal_differs_from_s1(self):
+        T = len(YRS)
+        c = measures.stress_centre()
+        s1 = measures.stress_vector({"brent_path": [c[0]] + [45.0] * (T - 1)}, with_measures=False, n=200)
+        s3 = measures.stress_vector({"brent_path": [c[0]] + [45.0] * (T - 1), "deval_year": YRS[1]}, with_measures=False, n=200)
+        f1, f3 = (v[v.kind == "fis"]["sapma"].to_numpy() for v in (s1, s3))
+        self.assertLess(f3[2], f1[2])
+
+    def test_minwage_row_and_base_label(self):
+        from riskunit import monitor
+        D5 = monitor.daily_monitor(YRS[0])
+        if monitor.MINWAGE_FILE.exists():
+            self.assertTrue((D5["indicator"] == "minwage").any())
+        d = simulate.distribution_table(sim())
+        self.assertIn("baza_izah", d.columns)
+        self.assertIn("merkez", d.columns)

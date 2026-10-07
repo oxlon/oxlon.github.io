@@ -1,0 +1,675 @@
+openapi: 3.0.3
+info:
+  title: MİİS §15.5.4 — İqtisadi siyasətlərin təsir analizi modulunun API-si (PolicyUnit)
+  version: 1.0.0
+  description: |
+    Siyasət ssenarilərinin **konfiqurasiya ilə yaradılması, yoxlanması, hesablanması və müqayisəsi** interfeysi.
+
+      * **Oxumaq** — vəziyyət (son icra, baza vintaj id-ləri, mühərriklərin mövcudluğu), çıxış kataloqu
+        (`output/_catalog.csv`) və istənilən çıxış faylı (süzgəc, sıralama, səhifələmə, CSV).
+      * **Alətlər** — siyasət alətləri kataloqu (ailə, vahid, min/max, mühərriklər, adapterlər); NFR4: yeni alət
+        konfiqurasiya ilə (`instruments/new`: mövcud mühərrik girişinə adapter xəritəsi, yoxlama ilə).
+      * **Ssenarilər** — CRUD: rəsmi ssenarilər `config/scenarios/<id>.json`, istifadəçi qaralamaları SQLite-da;
+        yoxlama (Azərbaycan dilində xətalar), surət, idxal/ixrac (JSON), qaralamanın rəsmiləşdirilməsi.
+      * **Hesablama** — `scenarios/{id}/run`: bütün uyğun mühərriklər → üfüqlər üzrə (qısa/orta/uzun) harmonizə
+        olunmuş nəticələr, metodların müqayisəsi (NFR2), yan təsirlər + risk profili + yumşaltma təklifləri (FR4),
+        KPI dəyərləri (FR5), qısa izah mətni. Hədəf < 30 s; uzun işlər üçün `runs/{run_id}` irəliləyişi.
+      * **Müqayisə** — bir neçə ssenari yanaşı, istifadəçinin seçdiyi **≥ 5 KPI** və çəkilərlə reytinq.
+      * **Yeniləmə** — `run_all.py` fon prosesi kimi (kilid, irəliləyiş, ləğvetmə); avtonom rejim (cədvəl və
+        yuxarı axın vintajlarının izlənməsi: MicroUnit/output, RiskUnit/output, CAEM, IO məlumatı).
+
+    Nişanlar: `Authorization: Bearer <nişan>`; GET üçün `read`, POST/PUT/DELETE üçün `write` icazəsi
+    (standart sınaq nişanları: `demo-read`, `demo-write`; istehsalda `POLICY_API_TOKENS`).
+    Xəta formatı: `{"error": {"code": "...", "message": "<Azərbaycan dilində>", "detail": "..."}}`;
+    ssenari/alət yoxlaması uğursuz olarsa 422 + `errors: ["...", ...]`. Ədədlər JSON-da nöqtə ilə; NaN → null.
+    Siyasət təsiri = ssenari − eyni vintajlı baza (əks-faktual). Sintetik ev təsərrüfatı məlumatı ilə hesablanan
+    göstəricilər «SİNTETİK — real ev təsərrüfatı məlumatı deyil» qeydi daşıyır.
+servers:
+  - url: http://127.0.0.1:8792
+    description: Yerli server (SiyasetModel_Baslat)
+security:
+  - bearerAuth: []
+tags:
+  - name: Sistem
+  - name: Məlumat
+  - name: Alətlər
+  - name: Ssenarilər
+  - name: Hesablama
+  - name: KPI
+  - name: Yeniləmə
+  - name: Hesabatlar
+paths:
+  /api/v1/health:
+    get:
+      tags: [Sistem]
+      summary: Xidmətin vəziyyəti (nişan tələb olunmur)
+      security: []
+      responses:
+        "200":
+          description: İşləyir
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+                  version: { type: string }
+                  time: { type: string, format: date-time }
+                  root: { type: string }
+                  no_network: { type: boolean }
+  /api/v1/openapi.yaml:
+    get:
+      tags: [Sistem]
+      summary: Bu müqavilə (nişan tələb olunmur)
+      security: []
+      responses:
+        "200": { description: OpenAPI sənədi, content: { application/yaml: {} } }
+  /api/v1/status:
+    get:
+      tags: [Sistem]
+      summary: Son icra (P1_run_meta.json), baza vintaj id-ləri, mühərriklərin mövcudluğu, aktiv yeniləmə, avtonom rejim
+      responses:
+        "200":
+          description: Vəziyyət
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  last_run: { type: object, description: "run_at, seconds, scenarios, catalogue_errors" }
+                  vintage: { type: object, description: "micro_vintage, caem_md5, caem_pinned_ok, io_year, oxlon_md5, ... (cari)" }
+                  vintage_last_run: { type: object, description: "son run_all icrasının vintajı" }
+                  vintage_changed: { type: boolean, description: "cari yuxarı axın vintajı son icradan fərqlidir" }
+                  engines: { type: array, items: { $ref: "#/components/schemas/Engine" } }
+                  run_status: { type: array, items: { type: object }, description: "P1_run_status.csv (ssenari × mühərrik)" }
+                  scenarios: { type: object, description: "{official: n, draft: n}" }
+                  risk_api: { type: object, description: "RiskUnit API-nin əlçatanlığı (url, ok)" }
+                  refresh: { $ref: "#/components/schemas/Job" }
+                  busy: { type: object, nullable: true }
+                  autonomous: { type: object }
+                  horizons: { type: object, description: "qısa/orta/uzun təriflər (Nazirlik, 24.08.2026)" }
+                  vintage_changed_keys: { type: array, items: { type: string } }
+                  risk_autostart: { type: object, description: "RiskUnit-in avtomatik başladılması vəziyyəti" }
+                  analysis_ready: { type: object, description: "mühərrik keşinin isidilməsi (gözlənilir | isinir | hazır | xəta)" }
+                  runs_active: { type: array, items: { type: string }, description: "gedən hesablamaların run_id-ləri" }
+  /api/v1/events:
+    get:
+      tags: [Sistem]
+      summary: Hadisələr lenti (ssenari saxlandı, hesablama, yeniləmə, yeni vintaj ...)
+      parameters:
+        - { name: since, in: query, schema: { type: integer, default: 0 }, description: "bu seq-dən sonrakılar" }
+        - { name: limit, in: query, schema: { type: integer, default: 100 } }
+      responses:
+        "200": { description: "{last, events: [{seq, time, kind, message, data}]}" }
+  /api/v1/catalog:
+    get:
+      tags: [Məlumat]
+      summary: Çıxış faylları kataloqu (output/_catalog.csv + mövcudluq, ölçü, vaxt)
+      parameters:
+        - { name: prefix, in: query, schema: { type: string }, description: "P1_,P2_,P3_,P4_,P5_,V_,N2_,D_ (vergüllə)" }
+      responses:
+        "200": { description: "{files: [{file, owner, description_az, columns[], frequency, rows, updated, exists, bytes, mtime_utc}], n}" }
+  /api/v1/outputs/{file}:
+    get:
+      tags: [Məlumat]
+      summary: Çıxış faylı (CSV → JSON sətirlər; JSON olduğu kimi). İstənilən sütun adı = süzgəc (vergüllə bir neçə dəyər)
+      parameters:
+        - { name: file, in: path, required: true, schema: { type: string }, example: P1_headline.csv }
+        - { name: limit, in: query, schema: { type: integer, default: 500, maximum: 20000 } }
+        - { name: offset, in: query, schema: { type: integer, default: 0 } }
+        - { name: sort, in: query, schema: { type: string }, description: "sütun, azalan üçün -sütun; vergüllə" }
+        - { name: cols, in: query, schema: { type: string }, description: "qaytarılacaq sütunlar (vergüllə)" }
+        - { name: q, in: query, schema: { type: string }, description: "mətn axtarışı (mətn sütunlarında)" }
+        - { name: format, in: query, schema: { type: string, enum: [json, csv] } }
+        - { name: scenario, in: query, schema: { type: string }, description: "nümunə süzgəc: scenario=mw20_2027,vat_minus2" }
+      responses:
+        "200": { description: "{file, columns, total, offset, limit, rows, catalog}" }
+        "400": { $ref: "#/components/responses/Error" }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/instruments:
+    get:
+      tags: [Alətlər]
+      summary: Siyasət alətləri kataloqu (config/instruments.csv) + adapterlər, ailələr, vahidlər, mühərriklər
+      parameters:
+        - { name: family, in: query, schema: { type: string }, description: "vergi, xərc, sosial, əmək, monetar, ticarət, sektor, tənzimləmə" }
+      responses:
+        "200":
+          description: Kataloq
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  instruments: { type: array, items: { $ref: "#/components/schemas/Instrument" } }
+                  families: { type: array, items: { type: string } }
+                  units: { type: array, items: { type: object, properties: { id: { type: string }, label_az: { type: string } } } }
+                  engines: { type: array, items: { $ref: "#/components/schemas/Engine" } }
+                  financing: { type: array, items: { type: object } }
+                  catalogue_errors: { type: array, items: { type: string } }
+  /api/v1/instruments/{id}:
+    get:
+      tags: [Alətlər]
+      summary: Bir alət + onun adapter sətirləri + ondan istifadə edən ssenarilər
+      parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: "Instrument + adapters[] + used_by[]" }
+        "404": { $ref: "#/components/responses/Error" }
+    delete:
+      tags: [Alətlər]
+      summary: API ilə əlavə edilmiş aləti silmək (yalnız heç bir ssenaridə istifadə olunmursa; ehtiyat nüsxə saxlanılır)
+      parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: "{deleted, backup}" }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/instruments/schema:
+    get:
+      tags: [Alətlər]
+      summary: Yeni alət forması üçün sxem — sahələr, transform qrammatikası, hər mühərrikin qəbul etdiyi target_key nümunələri
+      responses:
+        "200": { description: "{fields[], transforms[], target_keys: {engine: [{key, label_az}]}, cost_rules[], procedure_az[]}" }
+  /api/v1/instruments/validate:
+    post:
+      tags: [Alətlər]
+      summary: Yeni alət + adapter sətirlərinin yoxlanması (heç nə yazılmır)
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/NewInstrument" } } } }
+      responses:
+        "200": { description: "{valid, errors[], warnings[], instrument, adapters}" }
+  /api/v1/instruments/new:
+    post:
+      tags: [Alətlər]
+      summary: "NFR4: yeni aləti konfiqurasiya ilə əlavə etmək (instruments.csv + adapters.csv sonuna; ehtiyat nüsxə config/_backup/)"
+      description: |
+        Alət mövcud mühərrik girişinə adapter vasitəsilə bağlanır (kod yazılmır). Yoxlama: id formatı, ailə, vahid,
+        min ≤ default ≤ max, mühərriklər qoşulub, hər mühərrik üçün ən azı bir adapter, transform qrammatikası,
+        target_key mühərrikin tanıdığı açardır; `dry_run: true` — yalnız yoxlama + sınaq hesablaması.
+        Uğurdan sonra `test_run` (default_size ilə sınaq ssenarisi) nəticəsi qaytarılır.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/NewInstrument" } } } }
+      responses:
+        "201": { description: "{instrument, adapters, files_changed[], backup, test_run}" }
+        "409": { $ref: "#/components/responses/Error" }
+        "422": { $ref: "#/components/responses/ValidationError" }
+  /api/v1/scenarios:
+    get:
+      tags: [Ssenarilər]
+      summary: Ssenarilər siyahısı (rəsmi JSON + istifadəçi qaralamaları)
+      parameters:
+        - { name: source, in: query, schema: { type: string, enum: [all, official, draft], default: all } }
+        - { name: tag, in: query, schema: { type: string } }
+        - { name: q, in: query, schema: { type: string } }
+      responses:
+        "200": { description: "{scenarios: [ScenarioSummary], n}" }
+    post:
+      tags: [Ssenarilər]
+      summary: "Yeni ssenari (NFR4). Standart — qaralama (SQLite); `store: official` — config/scenarios/<id>.json"
+      parameters:
+        - { name: store, in: query, schema: { type: string, enum: [draft, official], default: draft } }
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/Scenario" } } } }
+      responses:
+        "201": { description: "ScenarioRecord" }
+        "409": { $ref: "#/components/responses/Error" }
+        "422": { $ref: "#/components/responses/ValidationError" }
+  /api/v1/scenarios/schema:
+    get:
+      tags: [Ssenarilər]
+      summary: Ssenari forması üçün sxem — sahələr, illər, maliyyələşmə, hədəf kodları (IO sektorları, FR12 bazarları), nümunə
+      responses:
+        "200": { description: "{fields[], years{first,last,micro_last}, financing[], targets{io_sectors[], fr12_markets[]}, example}" }
+  /api/v1/scenarios/validate:
+    post:
+      tags: [Ssenarilər]
+      summary: Ssenarinin yoxlanması — Azərbaycan dilində xətalar, normallaşdırılmış forma, tətbiq olunacaq mühərriklər
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/Scenario" } } } }
+      responses:
+        "200":
+          description: Nəticə (yanlış ssenari də 200 qaytarır)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  valid: { type: boolean }
+                  errors: { type: array, items: { type: string }, example: ["alət #1 (vat_rate): ölçü 40 icazə verilən [-10, 10] intervalından kənardır"] }
+                  warnings: { type: array, items: { type: string } }
+                  normalised: { $ref: "#/components/schemas/Scenario" }
+                  engines: { type: array, items: { type: string } }
+  /api/v1/scenarios/import:
+    post:
+      tags: [Ssenarilər]
+      summary: "JSON idxalı: bir ssenari və ya {scenarios: [...]} — qaralama kimi (store=official — rəsmi)"
+      parameters:
+        - { name: store, in: query, schema: { type: string, enum: [draft, official], default: draft } }
+        - { name: overwrite, in: query, schema: { type: boolean, default: false } }
+      requestBody: { required: true, content: { application/json: { schema: { oneOf: [ { $ref: "#/components/schemas/Scenario" }, { type: object, properties: { scenarios: { type: array, items: { $ref: "#/components/schemas/Scenario" } } } } ] } } } }
+      responses:
+        "200": { description: "{imported: [id], errors: {id: [..]}}" }
+  /api/v1/scenarios/{id}:
+    parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+    get:
+      tags: [Ssenarilər]
+      summary: Ssenari (tam JSON) + mənbə (official/draft) + son hesablamanın xülasəsi
+      responses:
+        "200": { description: "ScenarioRecord" }
+        "404": { $ref: "#/components/responses/Error" }
+    put:
+      tags: [Ssenarilər]
+      summary: Ssenarini dəyişmək (id dəyişdirilə bilməz). Rəsmi ssenari faylı əvvəlcə config/_backup/-a köçürülür
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/Scenario" } } } }
+      responses:
+        "200": { description: "ScenarioRecord" }
+        "422": { $ref: "#/components/responses/ValidationError" }
+    delete:
+      tags: [Ssenarilər]
+      summary: "Qaralamanı silmək; rəsmi ssenari yalnız ?force=1 ilə (fayl config/scenarios/_arxiv/-ə köçürülür)"
+      parameters: [ { name: force, in: query, schema: { type: boolean } } ]
+      responses:
+        "200": { description: "{deleted, source, archived?}" }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/scenarios/{id}/export:
+    get:
+      tags: [Ssenarilər]
+      summary: Ssenarinin JSON faylı (yükləmə; config/scenarios/ formatında)
+      parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: "application/json (Content-Disposition: attachment)" }
+  /api/v1/scenarios/{id}/duplicate:
+    post:
+      tags: [Ssenarilər]
+      summary: Surət (qaralama kimi). Gövdə istəyə görə {new_id, name_az}; verilməsə <id>_kopya
+      parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+      requestBody: { content: { application/json: { schema: { type: object, properties: { new_id: { type: string }, name_az: { type: string } } } } } }
+      responses:
+        "201": { description: "ScenarioRecord" }
+  /api/v1/scenarios/{id}/promote:
+    post:
+      tags: [Ssenarilər]
+      summary: Qaralamanı rəsmi ssenariyə çevirmək (config/scenarios/<id>.json yazılır, run_all.py onu görür)
+      parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: "ScenarioRecord (source=official)" }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/scenarios/{id}/run:
+    post:
+      tags: [Hesablama]
+      summary: Ssenarini bütün uyğun mühərriklərlə hesablamaq → RunResult (və ya uzun işdə 202 + run_id)
+      description: |
+        Mühərriklər: micro (MikroUnit zənciri — əsas), caem (müqayisə), oxlon, io, microsim, longrun — alətin
+        `engines` siyahısına görə. Yan təsirlər (FR4): qaydalar kitabxanası + avtomatik yan təsir ssenariləri (neft −1σ,
+        manat −1σ, zəif ötürmə, alternativ maliyyələşmə) + RiskUnit risk profili (HTTP, 8791) + yumşaltma təklifləri.
+        `wait` saniyə ərzində bitərsə 200 + nəticə; bitməzsə 202 + `{run_id, progress}` — `GET /runs/{run_id}` ilə izləyin.
+        Eyni ssenari + eyni vintaj + eyni parametrlər üçün nəticə keşdən verilir (`cached: true`), `force: true` — yenidən.
+      parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+      requestBody:
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/RunRequest" }
+      responses:
+        "200": { description: RunResult, content: { application/json: { schema: { $ref: "#/components/schemas/RunResult" } } } }
+        "202": { description: "{run_id, status: running, status_az, progress, poll: /api/v1/runs/{run_id}}" }
+        "422": { $ref: "#/components/responses/ValidationError" }
+  /api/v1/runs:
+    get:
+      tags: [Hesablama]
+      summary: Hesablamalar siyahısı (son 100)
+      parameters: [ { name: scenario, in: query, schema: { type: string } } ]
+      responses:
+        "200": { description: "{runs: [{run_id, scenario_id, status, started, finished, seconds, vintage_id, progress}]}" }
+    post:
+      tags: [Hesablama]
+      summary: "Saxlanmamış ssenarini hesablamaq: {scenario: {...}, ...RunRequest} (panelin «ön baxış» düyməsi)"
+      requestBody: { required: true, content: { application/json: { schema: { allOf: [ { $ref: "#/components/schemas/RunRequest" }, { type: object, properties: { scenario: { $ref: "#/components/schemas/Scenario" } } } ] } } } }
+      responses:
+        "200": { description: RunResult }
+        "202": { description: "{run_id, progress}" }
+  /api/v1/runs/{run_id}:
+    get:
+      tags: [Hesablama]
+      summary: Hesablamanın vəziyyəti, irəliləyişi (mərhələlər) və bitibsə nəticəsi
+      parameters:
+        - { name: run_id, in: path, required: true, schema: { type: string } }
+        - { name: detail, in: query, schema: { type: string, enum: [full, summary], default: full }, description: "summary — effects cədvəli olmadan" }
+      responses:
+        "200": { description: "{run_id, status, status_az, progress{pct, stage, stage_az, steps[]}, result?: RunResult, error?}" }
+        "404": { $ref: "#/components/responses/Error" }
+  /api/v1/runs/{run_id}/cancel:
+    post:
+      tags: [Hesablama]
+      summary: Gedən hesablamanı ləğv etmək (növbəti mərhələ sərhədində dayanır)
+      parameters: [ { name: run_id, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: "{run_id, cancel_requested: true}" }
+  /api/v1/compare:
+    post:
+      tags: [Hesablama]
+      summary: "Ssenariləri yanaşı müqayisə: ≥ 2 ssenari, istifadəçinin seçdiyi ≥ 5 KPI və çəkilər → normallaşdırılmış bal, reytinq"
+      description: |
+        Ssenarilərin son nəticələri (cari vintaj) istifadə olunur; yoxdursa hesablanır. KPI-lar `kpis` (≥ 5 fərqli id)
+        və ya saxlanmış `kpi_set` ilə verilir; 5-dən az olarsa 422. Normallaşdırma ssenarilər arasında min–max
+        (istiqamət nəzərə alınır), bal = Σ çəki × norm / Σ çəki; xərc-effektivlik = bal / 1 mlrd AZN.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [scenarios]
+              properties:
+                scenarios: { type: array, items: { type: string }, minItems: 2, example: [mw20_2027, vat_minus2, pubinv1bn_deficit] }
+                kpis: { type: array, items: { type: string }, minItems: 5 }
+                weights: { type: object, additionalProperties: { type: number } }
+                kpi_set: { type: string, description: "saxlanmış KPI dəsti id-si (kpis/weights əvəzinə)" }
+                side_effects: { type: boolean, default: false, description: "müqayisədə FR4 (sürətli rejim: yalnız qaydalar)" }
+      responses:
+        "200":
+          description: Müqayisə
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  scenarios: { type: array, items: { type: object } }
+                  kpis: { type: array, items: { $ref: "#/components/schemas/Kpi" } }
+                  values: { type: array, items: { type: object }, description: "scenario, kpi, name_az, value, unit, direction, weight, norm, available" }
+                  matrix: { type: array, items: { type: object }, description: "KPI × ssenari (geniş format)" }
+                  ranking: { type: array, items: { type: object }, description: "rank, scenario, score, kpis_used, kpis_missing, cost_mln_azn, score_per_bn_azn, note_az" }
+                  headline: { type: array, items: { type: object }, description: "əsas göstəricilər × üfüq × ssenari" }
+                  text_az: { type: string }
+        "422": { $ref: "#/components/responses/Error" }
+  /api/v1/kpi:
+    get:
+      tags: [KPI]
+      summary: KPI kataloqu (config/kpi.csv), minimum seçim sayı (5), standart seçim və çəkilər
+      responses:
+        "200": { description: "{kpis: [Kpi], min_selected: 5, default_selected: [id], stats: [..]}" }
+  /api/v1/kpi/sets:
+    get:
+      tags: [KPI]
+      summary: Saxlanmış KPI dəstləri (istifadəçi seçimi + çəkilər)
+      responses:
+        "200": { description: "{sets: [KpiSet]}" }
+    post:
+      tags: [KPI]
+      summary: Yeni KPI dəsti (≥ 5 KPI; çəkilər ≥ 0)
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/KpiSet" } } } }
+      responses:
+        "201": { description: KpiSet }
+        "422": { $ref: "#/components/responses/Error" }
+  /api/v1/kpi/sets/{id}:
+    parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+    get: { tags: [KPI], summary: KPI dəsti, responses: { "200": { description: KpiSet } } }
+    put:
+      tags: [KPI]
+      summary: KPI dəstini dəyişmək
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/KpiSet" } } } }
+      responses: { "200": { description: KpiSet } }
+    delete: { tags: [KPI], summary: KPI dəstini silmək, responses: { "200": { description: "{deleted}" } } }
+  /api/v1/refresh:
+    get:
+      tags: [Yeniləmə]
+      summary: Yeniləmə işləri (run_all.py)
+      responses:
+        "200": { description: "{active: Job|null, busy, jobs: [Job]}" }
+    post:
+      tags: [Yeniləmə]
+      summary: Boru xəttini fon prosesi kimi işə salmaq (eyni anda yalnız biri — 409)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                only: { type: string, description: "mərhələlər (vergüllə), məs. core.validate,core.scenarios; boş — hamısı" }
+                skip: { type: string }
+                scenario: { type: string, description: "ssenari id-ləri (vergüllə)" }
+                kpi: { type: string, description: "KPI id-ləri (vergüllə, ≥ 5)" }
+                note: { type: string }
+      responses:
+        "202": { description: Job }
+        "409": { $ref: "#/components/responses/Error" }
+  /api/v1/refresh/{job_id}:
+    get:
+      tags: [Yeniləmə]
+      summary: İşin vəziyyəti, irəliləyiş (mərhələlər), jurnalın sonu
+      parameters:
+        - { name: job_id, in: path, required: true, schema: { type: string } }
+        - { name: tail, in: query, schema: { type: integer, default: 200 } }
+      responses:
+        "200": { description: Job }
+  /api/v1/refresh/{job_id}/cancel:
+    post:
+      tags: [Yeniləmə]
+      summary: Ləğv (SIGTERM → SIGKILL)
+      parameters: [ { name: job_id, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: "{job_id, cancel_requested}" }
+  /api/v1/autonomous:
+    get:
+      tags: [Yeniləmə]
+      summary: Avtonom rejimin vəziyyəti (cədvəl, izləmə, aşkar edilən vintajlar)
+      responses:
+        "200": { description: "{schedule, watch, no_network}" }
+  /api/v1/reports:
+    get:
+      tags: [Hesabatlar]
+      summary: reports/ qovluğundakı fayllar
+      responses:
+        "200": { description: "{reports: [{file, bytes, mtime, url}]}" }
+  /api/v1/reports/{file}:
+    get:
+      tags: [Hesabatlar]
+      summary: Hesabat faylını yükləmək
+      parameters: [ { name: file, in: path, required: true, schema: { type: string } } ]
+      responses:
+        "200": { description: fayl }
+  /api/v1/reports/xlsx:
+    post:
+      tags: [Hesabatlar]
+      summary: "Excel ixracı: {run_id} və/və ya {compare: <compare cavabı>} və/və ya {files: [çıxış CSV]}"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                run_id: { type: string }
+                compare: { type: object }
+                files: { type: array, items: { type: string } }
+                title: { type: string }
+                save: { type: boolean, description: "reports/ qovluğunda da saxla" }
+      responses:
+        "200": { description: .xlsx, content: { application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: {} } }
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer }
+  responses:
+    Error:
+      description: Xəta (Azərbaycan dilində)
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+    ValidationError:
+      description: Yoxlama uğursuz oldu
+      content:
+        application/json:
+          schema:
+            allOf:
+              - { $ref: "#/components/schemas/Error" }
+              - { type: object, properties: { errors: { type: array, items: { type: string } } } }
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code: { type: string, example: invalid_scenario }
+            message: { type: string, example: "Ssenari yoxlanışı uğursuz oldu" }
+            detail: { type: string, nullable: true }
+    Engine:
+      type: object
+      properties:
+        id: { type: string, enum: [micro, caem, oxlon, io, microsim, longrun] }
+        label_az: { type: string }
+        available: { type: boolean }
+        message_az: { type: string }
+    Instrument:
+      type: object
+      properties:
+        id: { type: string, example: vat_rate }
+        name_az: { type: string }
+        family: { type: string, enum: [vergi, xərc, sosial, əmək, monetar, ticarət, sektor, tənzimləmə] }
+        unit: { type: string, enum: [pct, pp, mln_azn, abs] }
+        unit_az: { type: string }
+        default_size: { type: number }
+        min: { type: number }
+        max: { type: number }
+        engines: { type: array, items: { type: string } }
+        description_az: { type: string }
+        cost_rule: { type: string }
+        cost_in_fr1: { type: string }
+        needs_target: { type: string, nullable: true, description: "hədəf tələb olunursa: fr12_market | io_sector" }
+        adapters: { type: array, items: { $ref: "#/components/schemas/Adapter" } }
+        origin: { type: string, enum: [config, api] }
+    Adapter:
+      type: object
+      properties:
+        instrument: { type: string }
+        engine: { type: string }
+        target_key: { type: string, example: "FR1/exogenous/minwage" }
+        transform: { type: string, example: "pct", description: "pct | add | level | target | target_gdp | shock_gdp | target_rev | custom:<fn>; istəyə görə *k" }
+        note_az: { type: string }
+    NewInstrument:
+      type: object
+      required: [instrument, adapters]
+      properties:
+        instrument:
+          type: object
+          required: [id, name_az, family, unit, default_size, min, max]
+          properties:
+            id: { type: string, pattern: "^[a-z][a-z0-9_]{1,40}$" }
+            name_az: { type: string }
+            family: { type: string }
+            unit: { type: string }
+            default_size: { type: number }
+            min: { type: number }
+            max: { type: number }
+            engines: { type: array, items: { type: string }, description: "verilməsə adapterlərdən" }
+            description_az: { type: string }
+            cost_rule: { type: string, default: none }
+            cost_in_fr1: { type: string, default: "no" }
+        adapters: { type: array, minItems: 1, items: { $ref: "#/components/schemas/Adapter" } }
+        dry_run: { type: boolean, default: false }
+        test_run: { type: boolean, default: true, description: "əlavədən sonra default_size ilə sınaq hesablaması" }
+    ScenarioInstrument:
+      type: object
+      required: [instrument, size]
+      properties:
+        instrument: { type: string, example: min_wage }
+        years: { oneOf: [ { type: string, enum: [all] }, { type: array, items: { type: integer } } ], example: all }
+        size: { type: number, example: 20 }
+        unit: { type: string, enum: [pct, abs, pp, mln_azn] }
+        target: { type: string, nullable: true, description: "sektor kodu (IO / FR12) və ya qrup" }
+        financing: { type: string, nullable: true, enum: [deficit, sofaz, tax, reallocation, null] }
+    Scenario:
+      type: object
+      required: [id, name_az, start_year, instruments]
+      properties:
+        id: { type: string, pattern: "^[a-z0-9_]+$", example: mw20_2027 }
+        name_az: { type: string }
+        description_az: { type: string }
+        start_year: { type: integer, minimum: 2026, maximum: 2030 }
+        instruments: { type: array, minItems: 1, items: { $ref: "#/components/schemas/ScenarioInstrument" } }
+        tags: { type: array, items: { type: string } }
+    ScenarioRecord:
+      type: object
+      properties:
+        id: { type: string }
+        source: { type: string, enum: [official, draft] }
+        scenario: { $ref: "#/components/schemas/Scenario" }
+        valid: { type: boolean }
+        errors: { type: array, items: { type: string } }
+        engines: { type: array, items: { type: string } }
+        created: { type: string }
+        updated: { type: string }
+        actor: { type: string }
+        last_run: { type: object, nullable: true, description: "{run_id, finished, seconds, vintage_id}" }
+    RunRequest:
+      type: object
+      properties:
+        engines: { type: array, items: { type: string }, description: "alt çoxluq; boş — hamısı" }
+        side_effects: { type: string, enum: [full, rules, none], default: full, description: "full — qaydalar + avtomatik yan təsir ssenariləri + risk profili + yumşaltma; rules — yalnız qaydalar (sürətli)" }
+        risk: { type: boolean, default: true, description: "RiskUnit API ilə risk profili (əlçatan deyilsə xəbərdarlıq)" }
+        kpis: { type: array, items: { type: string }, description: "≥ 5 KPI; boş — standart seçim" }
+        weights: { type: object, additionalProperties: { type: number } }
+        kpi_set: { type: string }
+        detail: { type: string, enum: [full, summary], default: full }
+        wait: { type: number, default: 60, description: "sinxron gözləmə, saniyə (0 — dərhal 202)" }
+        force: { type: boolean, default: false }
+    RunResult:
+      type: object
+      properties:
+        run_id: { type: string }
+        cached: { type: boolean }
+        scenario: { $ref: "#/components/schemas/Scenario" }
+        vintage: { type: object, description: "baza vintaj id-ləri (MikroUnit hash, CAEM md5, IO cədvəl ili, ...); vintage_id" }
+        seconds: { type: number }
+        timings: { type: object, description: "mərhələ → saniyə (engines, side_effects, risk, kpi)" }
+        engines: { type: array, items: { type: object }, description: "id, label_az, status (ok | tətbiq edilmir | xəta | yoxdur), rows, seconds, message_az" }
+        horizons: { type: object, description: "{qısa: {years: [2027, 2028], label_az}, orta: {...}, uzun: {...}}" }
+        headline: { type: array, items: { type: object }, description: "P1_headline sətirləri: indicator, label_az, horizon, years, effect, effect_unit, method, source_engine, tier, note_az" }
+        headline_wide: { type: array, items: { type: object }, description: "indicator, label_az, effect_unit, qısa, orta, uzun, source_engine, tier" }
+        effects: { type: array, items: { type: object }, description: "P1_effects sətirləri (engine, horizon, indicator, year, baseline, value, delta, delta_pct, method, tier, group, note_az); detail=summary-də yoxdur" }
+        sectors: { type: array, items: { type: object }, description: "FR2: təsirlənən sektorlar (IO/MikroUnit): sector, label_az, horizon, delta_pct, engine" }
+        social: { type: array, items: { type: object }, description: "FR3: Gini, yoxsulluq, desillər (mikrosimulyasiya; SİNTETİK qeydi)" }
+        comparison: { type: array, items: { type: object }, description: "NFR2: indicator, horizon, micro, caem, oxlon, io, microsim, spread, sign_agree, explanation_az" }
+        side_effects:
+          type: object
+          description: "FR4"
+          properties:
+            status: { type: string }
+            items: { type: array, items: { type: object }, description: "rule_id, name_az, family, value, unit, severity (1–4), severity_az, horizon, year, affected_group, affected_sector, risk_ids, tier, explanation_az, variant" }
+            variants: { type: array, items: { type: object }, description: "avtomatik yan təsir ssenarilərinin cədvəli (side_effects.variant_table sətirləri)" }
+            variant_ids: { type: array, items: { type: string }, description: "hesablanmış yan təsir ssenariləri (oil_m1s, fx_p1s, weak_coef, fin_alt)" }
+            risk_profile: { type: object, nullable: true, description: "{rows (RISK_COLS + esas_menbe), status[], calls[]} — RiskUnit şərti risk paylanmaları" }
+            sensitivity: { type: object, nullable: true, description: "{cached, drivers} — FR4 həssaslıq (yalnız keşdən)" }
+            esas_menbe: { type: array, items: { type: string }, description: "risk profili və yumşaltma sətirlərinin əsas mənbələri (risk_link `esas_menbe`)" }
+            status_detail: { type: object, description: "side_effects.analyse status (riskunit, sensitivity, variant:*)" }
+            mitigation: { type: array, items: { type: object }, description: "rule_id, risk_ids, measures, proposal_type, proposal_az, responsible_az, kpi_az" }
+            warnings: { type: array, items: { type: string } }
+        kpi: { type: object, description: "{selected: [id], values: [{kpi, name_az, value, unit, direction, weight}]} — tək ssenari üçün xam dəyərlər" }
+        text_az: { type: string, description: "qısa izah mətni (NFR3)" }
+        warnings: { type: array, items: { type: string } }
+    Kpi:
+      type: object
+      properties:
+        id: { type: string }
+        name_az: { type: string }
+        indicator: { type: string }
+        horizon: { type: string }
+        stat: { type: string }
+        unit: { type: string }
+        direction: { type: string, enum: [higher, lower] }
+        default_weight: { type: number }
+        default_selected: { type: string }
+        source_engine: { type: string }
+        description_az: { type: string }
+    KpiSet:
+      type: object
+      required: [name, kpis]
+      properties:
+        id: { type: string, readOnly: true }
+        name: { type: string }
+        kpis: { type: array, minItems: 5, items: { type: string } }
+        weights: { type: object, additionalProperties: { type: number } }
+        note: { type: string }
+    Job:
+      type: object
+      properties:
+        id: { type: string }
+        trigger: { type: string, description: "api | cədvəl | izləmə (yeni vintaj)" }
+        status: { type: string, enum: [running, ok, failed, cancelled, interrupted] }
+        status_az: { type: string }
+        started: { type: string }
+        finished: { type: string, nullable: true }
+        seconds: { type: number }
+        progress: { type: object, description: "{stage, done, expected, pct}" }
+        log_tail: { type: array, items: { type: string } }

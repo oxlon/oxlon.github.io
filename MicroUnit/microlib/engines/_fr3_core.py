@@ -100,7 +100,8 @@ def base_addf(S, coefs):
 def build_ex(S, fc, mw_growth, prem_target):
     '''fc: DataFrame indexed by year with the FR1 columns; mw_growth: list of 5 rates (fractions).'''
     M, W25 = S['M'], S['W25']
-    ex, mw = {}, float(W25['minwage'])
+    # v2.3.6: the first forecast year starts from the LEGAL level in force (MW_LEGAL26); mw_growth[0] is a change against it
+    ex, mw = {}, float(S.get('MW_LEGAL26', W25['minwage']))
     hired0, emp0 = float(W25['hired_dvx']), float(W25['emp_tot'])
     sh = S['SH25']
     for i, y in enumerate(M['FY']):

@@ -47,6 +47,41 @@ def econ_interpret(T, extra, tag):
                              "asılı dəyişən fərqdir, sağ tərəfdə gecikmiş asılı dəyişən yoxdur.")
     return I
 
+ECON_TAG_EN = {'SYNTHETIC': 'synthetic data — pipeline demonstration', 'REAL': 'real register data'}
+MODEL_EN = {'entry_poisson': 'Entry counts: Poisson (region and year fixed effects)', 'entry_nb2': 'Entry counts: negative binomial NB2 (region and year fixed effects)',
+            'entry_poisson_secfe': 'Entry counts: Poisson + section fixed effects', 'exit_logit': 'Exit: discrete-time hazard model, logit',
+            'exit_cloglog': 'Exit: discrete-time hazard model, cloglog', 'boone_pooled': 'Boone indicator: pooled regression (common slope + trend)',
+            'boone_sector': 'Boone indicator: slopes by section', 'scp': 'Structure–conduct–performance: margin (PCM) on HHI',
+            'mob_instability': 'Determinants of market-share instability', 'mob_rank': 'Determinants of rank mobility',
+            'entrant_profile': 'Relative size of new firms: age profile', 'postentry_growth': 'Post-entry growth (change in relative size) by age',
+            'recovery_revenue': 'Parameter recovery G1: revenue–cost elasticity', 'recovery_exit': 'Parameter recovery G2: exit hazard (conditional Poisson)',
+            'recovery': 'Parameter recovery (G1, G2, (b))'}
+
+def econ_interpret_en(T, extra, tag):
+    '''The same interpretations in English (for the English methodology document); same numbers as econ_interpret.'''
+    I = {}
+    for m in ['entry_poisson', 'entry_nb2', 'entry_poisson_secfe']:
+        I[m] = (f"{tag}: with demand growth 1 percentage point higher, entry counts change by {(_r(T, m, 'dem') - 1) * 100:+.2f}% (IRR {_r(T, m, 'dem'):.3f}); "
+                f"HHI 10% higher: {(_r(T, m, 'ln_hhi_l1') ** np.log(1.1) - 1) * 100:+.1f}%; market 10% larger: {(_r(T, m, 'ln_size_l1') ** np.log(1.1) - 1) * 100:+.1f}%.")
+    I['entry_nb2'] += f" Overdispersion α = {extra['alpha']:.2f} (LR p = {extra['lr_p']:.3g}): Poisson standard errors are valid only with the cluster correction."
+    for m, nm in [('exit_logit', 'odds ratio'), ('exit_cloglog', 'hazard ratio')]:
+        I[m] = (f"{tag}: {nm} for large firms {_r(T, m, 'large'):.3f}, medium {_r(T, m, 'medium'):.3f}, small {_r(T, m, 'small'):.3f} (micro = 1); "
+                f"age 1 {_r(T, m, 'age1'):.2f}, age 2 {_r(T, m, 'age2'):.2f} (age 10+ = 1); state ownership {_r(T, m, 'state'):.2f}.")
+    I['boone_pooled'] = (f"{tag}: common Boone slope {_r(T, 'boone_pooled', 'ln_avc', 'coef'):.2f} — a firm with 1% higher cost has "
+                         f"{abs(_r(T, 'boone_pooled', 'ln_avc', 'coef')):.2f}% lower profit; trend {_r(T, 'boone_pooled', 'ln_avc_trend', 'coef'):+.3f} a year "
+                         f"(a negative trend = stronger competition). Profitable firms only: selection bias pulls the slope towards zero.")
+    I['boone_sector'] = f"{tag}: Boone slopes by section range from {extra['boone_min']:.2f} to {extra['boone_max']:.2f}; more negative = fiercer competition (read as a ranking)."
+    I['scp'] = (f"{tag}: a 1-unit rise in ln HHI changes the margin by {_r(T, 'scp', 'ln_hhi', 'coef'):+.2f} percentage points (p = {_r(T, 'scp', 'ln_hhi', 'p'):.2f}). "
+                "Endogeneity: concentration and margins are determined jointly (Demsetz) — a conditional association, not a causal effect; import shares are not in the register.")
+    I['mob_instability'] = (f"{tag}: with ln HHI(t−1) 1 unit higher, share instability changes by {_r(T, 'mob_instability', 'ln_hhi_l1', 'coef'):+.2f} pp; "
+                            f"with the entry rate 1 pp higher, by {_r(T, 'mob_instability', 'entry_rate', 'coef'):+.3f} pp.")
+    I['mob_rank'] = f"{tag}: rank mobility (1 − Spearman ρ): ln HHI(t−1) coefficient {_r(T, 'mob_rank', 'ln_hhi_l1', 'coef'):+.4f}, entry-rate coefficient {_r(T, 'mob_rank', 'entry_rate', 'coef'):+.4f}."
+    I['entrant_profile'] = (f"{tag}: in its registration year a firm is {(np.exp(_r(T, 'entrant_profile', 'age0', 'coef')) - 1) * 100:+.0f}% the size of firms aged 5+ in the same "
+                            f"section-year-size cell; at age 2 the gap is {(np.exp(_r(T, 'entrant_profile', 'age2', 'coef')) - 1) * 100:+.1f}%.")
+    I['postentry_growth'] = (f"{tag}: annual growth of relative size at age 2 is {_r(T, 'postentry_growth', 'age2', 'coef'):+.3f} log units (relative to age 5+); "
+                             "the dependent variable is a difference; there is no lagged dependent variable on the right-hand side.")
+    return I
+
 def layer_b_econ(REG, mode, outdir, LB, write=True):
     '''Models (a)-(g) on a loaded register; writes FR12_SYNTHETIC_econ_*.csv (watermarked) or FR12_FIRM_econ_*.csv.'''
     t0 = time.time(); P = econ_prep(REG, LB); tag = ECON_TAG[mode]; pre = 'FR12_SYNTHETIC_econ_' if mode == 'SYNTHETIC' else 'FR12_FIRM_econ_'
@@ -86,6 +121,11 @@ def layer_b_econ(REG, mode, outdir, LB, write=True):
         SUMM.loc[len(SUMM)] = dict(model='recovery', model_az='Parametr bərpası (G1, G2, (b))', n=len(rec), interpretation_az=(
             f"{tag}: {int(rec.covered.sum())} / {len(rec)} həqiqi dəyər 95% EI daxilindədir; " + '; '.join(f"{' '.join(b.split(' ')[:2]).rstrip(',') if b.startswith('(b)') else b.split(' ')[0]} {g.covered.mean():.0%}" for b, g in rec.groupby('block', sort=False))))
     tabs['summary'] = SUMM
+    INT_EN = econ_interpret_en(COEF, xb, ECON_TAG_EN[mode])          # English twin (methodology document only; not written to a CSV)
+    SUMM_EN = pd.DataFrame([dict(model=k, model_en=MODEL_EN[k], n=int(COEF[COEF.model == k].n.iloc[0]), interpretation_en=INT_EN.get(k, '')) for k in COEF.model.unique()])
+    if rec is not None:
+        SUMM_EN.loc[len(SUMM_EN)] = dict(model='recovery', model_en=MODEL_EN['recovery'], n=len(rec), interpretation_en=(
+            f"{ECON_TAG_EN[mode]}: {int(rec.covered.sum())} / {len(rec)} true values inside the 95% CI; " + '; '.join(f"{' '.join(b.split(' ')[:2]).rstrip(',') if b.startswith('(b)') else b.split(' ')[0]} {g.covered.mean():.0%}" for b, g in rec.groupby('block', sort=False))))
     tabs['survival'] = surv.assign(interpretation_az=f'{tag}: kohortlar üzrə Kaplan–Meyer sağ qalması və təhlükə modellərinin (logit, cloglog) proqnozlaşdırdığı sağ qalma, tam yaş illəri üzrə')
     tabs['cohorts'] = en['cohorts'].assign(interpretation_az=f'{tag}: kohort × yaş — müəssisələrin sayı, nisbi ölçü (bölmə × il × ölçü qrupu ortasına nisbətən, log), sağ qalanların payı')
     if 'recovery_not_defined' in tabs: tabs['recovery_not_defined']['interpretation_az'] = f'{tag}: bu modellər üçün generatorun həqiqi parametri yoxdur'
@@ -95,4 +135,4 @@ def layer_b_econ(REG, mode, outdir, LB, write=True):
             if mode == 'SYNTHETIC': v.insert(0, 'WATERMARK', SYN_MARK)
             v.to_csv(Path(outdir) / f'{pre}{k}.csv', index=False)
     return dict(models=M, wls=W, recovery=rec, recovery_fits=rfits, tables=tabs, overdispersion=od, exit_meta=dict(dropped=ex['_dropped'], bands=ex['_bands']),
-                P=P, D=D, runtime=time.time() - t0, prefix=pre)
+                P=P, D=D, runtime=time.time() - t0, prefix=pre, summary_en=SUMM_EN)

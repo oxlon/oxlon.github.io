@@ -70,25 +70,25 @@ yollarını yuxarı axındakı FR4 nəticəsindən götürür, beləliklə FR4-d
 məhsuldarlığına çatır; FR3 FR10 tərəfindən istifadə olunmur (F13).
 
 <!-- AUTO:v21 -->
-Həcm indekslərinin yoxlanması: **15 sahədə 64 sahə-il indeksi əvəz olunub** (T1 41, T2 23; 2005–2025 dövründə 29). Zolaqlar T1-in heç vaxt işarələmədiyi 17 sahə əsasında müəyyən edilir: onların 1996–2025 dövründə deflyatorunun bir illik dəyişmələri ×0,34–×2,85 intervalındadır (T1 zolağı ×1/3–×3), 2005–2025 dövründə emal sənayesinə nisbətən deflyatorları isə 0,26–5,24 intervalındadır (T2 zolağı 1/6–6). Düzəlişdən sonra hər sahə hər ildə hər iki yoxlamadan keçir və bütün ssenarilərdə hər sahənin 2030-cu il real buraxılışı C bölməsinin real buraxılışından aşağıdır (ən böyüyü: 06, 13 084, müqayisədə 18 374+ mln manat, 2015-ci il qiymətləri ilə). Tam siyahı: `FR10_volume_index_validation.csv`; sahələr üzrə deflyator diapazonları: `FR10_branch_deflator_check.csv`.
+Həcm indekslərinin yoxlanması: **15 sahədə 64 sahə-il indeksi əvəz olunub** (T1 41, T2 23; 2005–2025 dövründə 29). Zolaqlar T1-in heç vaxt işarələmədiyi 17 sahə əsasında müəyyən edilir: onların 1996–2025 dövründə deflyatorunun bir illik dəyişmələri ×0,34–×2,85 intervalındadır (T1 zolağı ×1/3–×3), 2005–2025 dövründə emal sənayesinə nisbətən deflyatorları isə 0,26–5,24 intervalındadır (T2 zolağı 1/6–6). Düzəlişdən sonra hər sahə hər ildə hər iki yoxlamadan keçir və bütün ssenarilərdə hər sahənin 2030-cu il real buraxılışı C bölməsinin real buraxılışından aşağıdır (ən böyüyü: 06, 13 084, müqayisədə 18 341+ mln manat, 2015-ci il qiymətləri ilə). Tam siyahı: `FR10_volume_index_validation.csv`; sahələr üzrə deflyator diapazonları: `FR10_branch_deflator_check.csv`.
 
 | nace2 | sahə | əvəz olunub (il, test, dərc olunmuş indeks) | real/nominal 2025, dərc olunmuş indekslər | real/nominal 2025, yoxlanılmış | real buraxılış 2030 (Əsas), mln manat, 2015 qiymətləri ilə | əmək məhsuldarlığı 2030, min manat, 2015 qiymətləri ilə |
 |---|---|---|---|---|---|---|
-| 07 | Metal filizlərinin hasilatı | 2000 (T1, 631.7), 2003 (T1, 829.3), 2008 (T1, 159.7) | 0.22 | 0.22 | 151.61 | 64.17 |
-| 14 | Geyim | 1998 (T2, 82.6) | 1.31 | 1.31 | 408.36 | 74.15 |
-| 16 | Ağac emalı | 1997 (T1, 21.1), 1999 (T2, 103.1), 2000 (T1, 194.5), 2013 (T1, 91.6), 2014 (T1, 305.9), 2020 (T2, 256), 2023 (T1, 165.1), 2024 (T2, 125.9) | 44.24 | 4.20 | 248.50 | 299.81 |
-| 17 | Kağız və karton | 1999 (T2, 171), 2002 (T2, 61.3) | 0.31 | 0.31 | 134.04 | 55.55 |
-| 21 | Əczaçılıq məhsulları | 2011 (T2, 83.7), 2016 (T1, 122.4), 2020 (T1, 11200) | 194.91 | 0.96 | 45.18 | 75.36 |
-| 22 | Rezin və plastik kütlə | 1996 (T1, 77.8), 1998 (T2, 80.5), 1999 (T2, 40.3), 2000 (T2, 76.7), 2001 (T1, 52.9), 2002 (T2, 86.9), 2004 (T2, 126.5) | 1.75 | 1.75 | 1 808.95 | 246.05 |
-| 25 | Hazır metal məmulatları | 1996 (T1, 85.7) | 0.79 | 0.79 | 901.99 | 128.06 |
-| 26 | Kompüter və elektronika | 2000 (T2, 36.9), 2002 (T2, 54.4), 2004 (T2, 67.5), 2005 (T1, 75.7), 2006 (T2, 64.9), 2007 (T2, 92.3) | 2.26 | 2.26 | 246.17 | 960.74 |
-| 27 | Elektrik avadanlığı | 2011 (T1, 72.9), 2016 (T1, 333.8), 2020 (T1, 8500) | 428.67 | 1.11 | 473.61 | 156.84 |
-| 28 | Maşın və avadanlıq | 2025 (T1, 84.1) | 1.42 | 0.40 | 81.33 | 28.03 |
-| 29 | Avtomobil və qoşqular | 1997 (T1, 112.3), 2000 (T1, 1156.4), 2003 (T1, 119.5), 2006 (T1, 2230.7), 2009 (T1, 23), 2010 (T1, 84400), 2012 (T1, 27.8), 2014 (T1, 158.2), 2017 (T1, 1.2), 2018 (T1, 31000) | 4.17 | 0.76 | 396.34 | 403.44 |
-| 30 | Digər nəqliyyat vasitələri | 1996 (T2, 124.6), 1997 (T1, 110.5), 1998 (T2, 114.9), 1999 (T1, 88.2), 2000 (T1, 143), 2002 (T2, 178.6), 2003 (T2, 117.4), 2004 (T1, 97.9), 2005 (T2, 208.2), 2006 (T2, 105.7), 2014 (T1, 339.9), 2021 (T1, 12.5), 2024 (T1, 54.9) | 0.13 | 2.62 | 168.32 | 118.52 |
-| 31 | Mebel | 2002 (T1, 47.1), 2010 (T1, 24.1) | 0.87 | 0.87 | 539.85 | 59.79 |
-| 33 | Maşın və avadanlığın təmiri və quraşdırılması | 1996 (T1, 104.9) | 0.40 | 0.40 | 683.54 | 65.36 |
-| 36 | Su təchizatı, tullantılar | 1996 (T1, 95), 1998 (T1, 89.5), 1999 (T1, 96.6) | 0.57 | 0.57 | 475.23 | 9.47 |
+| 07 | Metal filizlərinin hasilatı | 2000 (T1, 631.7), 2003 (T1, 829.3), 2008 (T1, 159.7) | 0.22 | 0.22 | 151.61 | 64.16 |
+| 14 | Geyim | 1998 (T2, 82.6) | 1.31 | 1.31 | 410.80 | 74.55 |
+| 16 | Ağac emalı | 1997 (T1, 21.1), 1999 (T2, 103.1), 2000 (T1, 194.5), 2013 (T1, 91.6), 2014 (T1, 305.9), 2020 (T2, 256), 2023 (T1, 165.1), 2024 (T2, 125.9) | 44.24 | 4.20 | 249.98 | 301.42 |
+| 17 | Kağız və karton | 1999 (T2, 171), 2002 (T2, 61.3) | 0.31 | 0.31 | 134.85 | 55.85 |
+| 21 | Əczaçılıq məhsulları | 2011 (T2, 83.7), 2016 (T1, 122.4), 2020 (T1, 11200) | 194.91 | 0.96 | 45.45 | 75.76 |
+| 22 | Rezin və plastik kütlə | 1996 (T1, 77.8), 1998 (T2, 80.5), 1999 (T2, 40.3), 2000 (T2, 76.7), 2001 (T1, 52.9), 2002 (T2, 86.9), 2004 (T2, 126.5) | 1.75 | 1.75 | 1 819.75 | 247.38 |
+| 25 | Hazır metal məmulatları | 1996 (T1, 85.7) | 0.79 | 0.79 | 907.05 | 128.70 |
+| 26 | Kompüter və elektronika | 2000 (T2, 36.9), 2002 (T2, 54.4), 2004 (T2, 67.5), 2005 (T1, 75.7), 2006 (T2, 64.9), 2007 (T2, 92.3) | 2.26 | 2.26 | 247.64 | 965.90 |
+| 27 | Elektrik avadanlığı | 2011 (T1, 72.9), 2016 (T1, 333.8), 2020 (T1, 8500) | 428.67 | 1.11 | 476.16 | 157.59 |
+| 28 | Maşın və avadanlıq | 2025 (T1, 84.1) | 1.42 | 0.40 | 81.77 | 28.16 |
+| 29 | Avtomobil və qoşqular | 1997 (T1, 112.3), 2000 (T1, 1156.4), 2003 (T1, 119.5), 2006 (T1, 2230.7), 2009 (T1, 23), 2010 (T1, 84400), 2012 (T1, 27.8), 2014 (T1, 158.2), 2017 (T1, 1.2), 2018 (T1, 31000) | 4.17 | 0.76 | 398.47 | 405.38 |
+| 30 | Digər nəqliyyat vasitələri | 1996 (T2, 124.6), 1997 (T1, 110.5), 1998 (T2, 114.9), 1999 (T1, 88.2), 2000 (T1, 143), 2002 (T2, 178.6), 2003 (T2, 117.4), 2004 (T1, 97.9), 2005 (T2, 208.2), 2006 (T2, 105.7), 2014 (T1, 339.9), 2021 (T1, 12.5), 2024 (T1, 54.9) | 0.13 | 2.62 | 169.23 | 119.09 |
+| 31 | Mebel | 2002 (T1, 47.1), 2010 (T1, 24.1) | 0.87 | 0.87 | 543.08 | 60.11 |
+| 33 | Maşın və avadanlığın təmiri və quraşdırılması | 1996 (T1, 104.9) | 0.40 | 0.40 | 687.22 | 65.67 |
+| 36 | Su təchizatı, tullantılar | 1996 (T1, 95), 1998 (T1, 89.5), 1999 (T1, 96.6) | 0.57 | 0.57 | 472.06 | 9.41 |
 
 Məhsullar: 2025-ci il faktiki səviyyəsinə lövbərlənib; 2025-ci ildən 2026-cı ilə 25%-dən çox dəyişən məhsulların sayı: 127 məhsuldan 0 (Əsas). Regional pay tənlikləri: 13 əmsal proqnozda istifadə olunan dəyərin əsasında duran qiyməti, apriori ortanı, büzülmə çəkisini, κ və τ²-ni qeyd edən `eb_shrinkage` məhdudiyyətini (`imposed: true`, `fixed: true`) daşıyır.
 <!-- /AUTO:v21 -->
@@ -119,7 +119,7 @@ arasında yaradılır, buna görə sənəd nəticələrdən fərqlənə bilməz.
 <!-- /AUTO:mode_header -->
 
 <!-- AUTO:rev -->
-Bu icra: 114 DSK cədvəli, 15 bütövlük tapıntısı, mənbə matrisində 52 göstərici (hazırda mövcud 40, sorğu edilib 7, mövcud deyil 5); sahə modeli: Neft emalı məhsulları emal gücü və neft qiyməti ilə, qeyri-neft sahələri əlaqəli sektorlar üzrə birləşdirilmiş modelin (β = 0,219) və sabit payların bərabər çəkili kombinasiyası ilə; regionlar MNL: neft sektoru qarışığı (FR1 mədənçıxarma/emal sənayesi əlavə dəyəri) (κ = 0,5); Əsas ssenaridə sənaye buraxılışı 2026–2030 dövründə ildə +4,21% (nominal); 88 FR10 CSV faylı, onlardan 24 SİNTETİK.
+Bu icra: 114 DSK cədvəli, 15 bütövlük tapıntısı, mənbə matrisində 52 göstərici (hazırda mövcud 40, sorğu edilib 7, mövcud deyil 5); sahə modeli: Neft emalı məhsulları emal gücü və neft qiyməti ilə, qeyri-neft sahələri əlaqəli sektorlar üzrə birləşdirilmiş modelin (β = 0,219) və sabit payların bərabər çəkili kombinasiyası ilə; regionlar MNL: neft sektoru qarışığı (FR1 mədənçıxarma/emal sənayesi əlavə dəyəri) (κ = 0,5); Əsas ssenaridə sənaye buraxılışı 2026–2030 dövründə ildə +4,76% (nominal); 88 FR10 CSV faylı, onlardan 24 SİNTETİK.
 <!-- /AUTO:rev -->
 
 Tətbiq olunan standartlar (FR1–FR5 yoxlamasının dərsləri): gecikmiş asılı dəyişən və dəyişənin öz tarixi əsasında
@@ -205,7 +205,7 @@ investisiya; r10 özəl payı), `Regionlar*` (regionlar üzrə müəssisələr, 
 | F11 | KOS (SME) göstəriciləri yalnız iki il üzrə mövcuddur; statistik registr yalnız bir tarixə olan vəziyyəti əks etdirir | DSK sahibkarlıq cədvəlləri 2023 və 2024 illərini əhatə edir; st_units cədvəlləri 1 iyul 2026 tarixinə olan vəziyyəti əks etdirir (giriş/çıxış: 2026, yanvar-iyun) | KOS (SME) payları və registr əsasında giriş/çıxış əmsalları modelləşdirilmir, yalnız təqdim olunur: proqnozu müəyyənləşdirmək üçün zaman sırası mövcud deyil |
 | F15 | Kiçik sahələrin DSK həcm indeksləri onların öz nominal buraxılışı ilə uyğun gəlmir | 64 sahə-il həcm indeksi (DSK 009, 9.1 vərəqi) 15 sahədə yoxlamadan keçmir: T1 (deflyatorun bir illik dəyişməsi x1/3-x3 intervalından kənar) 41, T2 (emal sənayesi deflyatoruna nisbətən deflyator, 2015 = 1, 1/6-6 intervalından kənar) 23. Əvəz olunanlar (il və dərc olunmuş indeks, əvvəlki il = 100): 07: 2000 631.7, 2003 829.3, 2008 159.7; 14: 1998 82.6; 16: 1997 21.1, 1999 103.1, 2000 194.5, 2013 91.6, 2014 305.9, 2020 256, 2023 165.1, 2024 125.9; 17: 1999 171, 2002 61.3; 21: 2011 83.7, 2016 122.4, 2020 11200; 22: 1996 77.8, 1998 80.5, 1999 40.3, 2000 76.7, 2001 52.9, 2002 86.9, 2004 126.5; 25: 1996 85.7; 26: 2000 36.9, 2002 54.4, 2004 67.5, 2005 75.7, 2006 64.9, 2007 92.3; 27: 2011 72.9, 2016 333.8, 2020 8500; 28: 2025 84.1; 29: 1997 112.3, 2000 1156.4, 2003 119.5, 2006 2230.7, 2009 23, 2010 84400, 2012 27.8, 2014 158.2, 2017 1.2, 2018 31000; 30: 1996 124.6, 1997 110.5, 1998 114.9, 1999 88.2, 2000 143, 2002 178.6, 2003 117.4, 2004 97.9, 2005 208.2, 2006 105.7, 2014 339.9, 2021 12.5, 2024 54.9; 31: 2002 47.1, 2010 24.1; 33: 1996 104.9; 36: 1996 95, 1998 89.5, 1999 96.6. Dərc olunmuş indekslərlə zəncirləndikdə 2025 ilində real / nominal buraxılış nisbəti 429 (27), 195 (21), 44.2 (16) idi | Yoxlamadan keçməyən hər indeks sahənin nominal artımının həmin ilin emal sənayesi deflyatoru dəyişməsinə bölünməsi ilə əvəz olunur (nisbi qiymət sabit saxlanılır); təsirlənən real buraxılış və əmək məhsuldarlığı dəyərləri doldurulmuş kimi işarələnir (FR10_volume_index_validation.csv); indekslər DSK ilə dəqiqləşdirilməlidir |
 | F12 | Bəzi illərdə sənayedə dərc edilmiş qeyri-dövlət payı onun öz sahə bölgüsü ilə uyğun gəlmir | buraxılışla çəkilənmiş sahə qeyri-dövlət payları (DSK 010_2 x 010) sənaye üzrə dərc edilmiş yekundan fərqlənir: 2005: -0.8 faiz bəndi, 2013: +6.3 faiz bəndi, 2014: +7.6 faiz bəndi, 2015: +7.9 faiz bəndi, 2016: +6.7 faiz bəndi; digər bütün illərdə fərq 0.15 faiz bəndi daxilindədir | Qeyri-dövlət payının proqnozu sahə strukturu əsasında qurulur (konstruksiyaya görə uyğundur); həmin illər üzrə dərc edilmiş yekun göstərici barədə DSK-ya sorğu göndərilməlidir |
-| F13 | FR3-ün sahə əmək haqqı trayektoriyaları 2025 ilinin sahə əmək haqlarına bağlanmayıb və vahid artım tempinə malikdir | FR3 2026 sahə əmək haqqı / DSK 2025 sahə əmək haqqı - 1 nisbəti 29 sahə üzrə -21% ilə +21% arasında dəyişir; 2026-2030 illərində artım hər sahə üçün ildə 7.49-7.49% təşkil edir | FR10 FR1-in orta əmək haqqı indeksini hər sahənin DSK üzrə 2025 əmək haqqına tətbiq edir; səviyyələr üçün FR3-dən istifadə edilmir |
+| F13 | FR3-ün sahə əmək haqqı trayektoriyaları 2025 ilinin sahə əmək haqlarına bağlanmayıb və vahid artım tempinə malikdir | FR3 2026 sahə əmək haqqı / DSK 2025 sahə əmək haqqı - 1 nisbəti 29 sahə üzrə -21% ilə +20% arasında dəyişir; 2026-2030 illərində artım hər sahə üçün ildə 7.18-7.18% təşkil edir | FR10 FR1-in orta əmək haqqı indeksini hər sahənin DSK üzrə 2025 əmək haqqına tətbiq edir; səviyyələr üçün FR3-dən istifadə edilmir |
 <!-- /AUTO:integrity -->
 
 ## 5. Göstəricilər sistemi: hansı məlumatlar, hansı mənbədən, hansı göstərici üçün, hansı formada
@@ -413,7 +413,7 @@ tələb edir və B qatında müəyyən edilir.
 | Qalıqların ADF testi, bir sabit gecikmə | `eg_coint_p` | test statistikası |
 | Zəncirlənmiş həcm səviyyələri; fasiləsiz inventar | məlumatların qurulması | mühasibat eynilikləri |
 | Digər izahedici dəyişənlərin bir illik gecikmələri | amillər paneli | əvvəlcədən müəyyən olunmuş izahedici dəyişənlər; sahə artımı heç vaxt sağ tərəfdə deyil |
-| Sabit düzəliş əmsalı (2025 lövbəri) | pay sistemləri | səviyyə lövbəri; ρ̂ ilə sönmə yalnız işarələnmiş həssaslıq kimi |
+| Sabit düzəliş əmsalı (2025 lövbəri) | pay sistemləri | səviyyə lövbəri proqnoz dövrü boyu sabit saxlanılır; FR10-da sönmə tətbiq olunmur (ρ̂ ilə sönmə həssaslığı yoxdur) |
 | Tarixi qalıq yolları | yelpik qrafikləri | müşahidə olunmuş xəta yollarının təkrar tətbiqi |
 | 2025 səviyyəsində saxlanılan proqnoz qaydaları | proqnoz | açıq bəyan edilmiş fərziyyələr (`FR10_forecast_assumptions.csv`) |
 
@@ -576,7 +576,7 @@ də tətbiq olunur (neft emalı neft hissəsidir); elektrik enerjisi və su təc
 | FR1 mədənçıxarma əlavə dəyəri ilə birgə artır | 72.297 | 0.009 | CHOSEN | 7 |
 | FR1 tikinti əlavə dəyəri ilə birgə artır | 85.660 | 0.198 | — | 7 |
 
-Digər faydalı qazıntılar: **neytral: son faktiki səviyyədə saxlanılır** — FR1-in tikinti əlavə dəyəri ilə vahid elastiklikli əlaqə neytral sıfır modelə qarşı: DM/HLN p = 0,042 (hər iki qayda başlanğıcın son faktiki dəyərinə lövbərlənib; kəsimdən əvvəl RMSE 89,7, sıfır model üçün 67,4 log-%; əlaqə yalnız əhəmiyyətli dərəcədə DAHA dəqiq olduqda qəbul edilir, p < 0,10); sərbəst elastiklik 0,111 (s.x. 0,334) vahid məhdudiyyətini rədd edir (p = 0,016). Tikinti əlaqəsi mühərrikdə `quarrying_rule` rıçağı kimi saxlanılır. Metal filizlərinin hasilatı: FR1-in mədənçıxarma əlavə dəyəri ilə artır. Xam neft və təbii qaz hasilatı: 33 349,0 → 31 475,2 mln manat nominal, real ildə -1,21%. Metal filizlərinin hasilatı: 729,9 → 854,2 mln manat nominal, real ildə -1,10%. Digər faydalı qazıntılar: 244,8 → 273,1 mln manat nominal, real ildə +0,00%. Mədənçıxarma sahəsində xidmətlər: 2 698,4 → 2 546,8 mln manat nominal, real ildə -1,21%. Uzlaşdırma: dörd sahənin cəmi hər ssenaridə və hər ildə FR1-in mədənçıxarma buraxılışına 2,2·10⁻¹⁴% dəqiqliklə bərabərdir (yoxlanılır); neft hissəsinin nəzərdə tutulan deflyatoru ildə +0,06% artır, FR1-in mədənçıxarma deflyatoru isə +0,07%.
+Digər faydalı qazıntılar: **neytral: son faktiki səviyyədə saxlanılır** — FR1-in tikinti əlavə dəyəri ilə vahid elastiklikli əlaqə neytral sıfır modelə qarşı: DM/HLN p = 0,042 (hər iki qayda başlanğıcın son faktiki dəyərinə lövbərlənib; kəsimdən əvvəl RMSE 89,7, sıfır model üçün 67,4 log-%; əlaqə yalnız əhəmiyyətli dərəcədə DAHA dəqiq olduqda qəbul edilir, p < 0,10); sərbəst elastiklik 0,111 (s.x. 0,334) vahid məhdudiyyətini rədd edir (p = 0,016). Tikinti əlaqəsi mühərrikdə `quarrying_rule` rıçağı kimi saxlanılır. Metal filizlərinin hasilatı: FR1-in mədənçıxarma əlavə dəyəri ilə artır. Xam neft və təbii qaz hasilatı: 33 349,0 → 31 439,6 mln manat nominal, real ildə -1,21%. Metal filizlərinin hasilatı: 729,9 → 884,9 mln manat nominal, real ildə -1,10%. Digər faydalı qazıntılar: 244,8 → 280,8 mln manat nominal, real ildə +0,00%. Mədənçıxarma sahəsində xidmətlər: 2 698,4 → 2 543,9 mln manat nominal, real ildə -1,21%. Uzlaşdırma: dörd sahənin cəmi hər ssenaridə və hər ildə FR1-in mədənçıxarma buraxılışına 2,2·10⁻¹⁴% dəqiqliklə bərabərdir (yoxlanılır); neft hissəsinin nəzərdə tutulan deflyatoru ildə +0,03% artır, FR1-in mədənçıxarma deflyatoru isə +0,07%.
 <!-- /AUTO:mining -->
 
 ### 11.5 Regionlar
@@ -586,7 +586,7 @@ dərəcədə daha dəqiq olan κ dəyərləri arasında (heç biri belə deyils�
 olan κ kimi seçilir.
 
 <!-- AUTO:regions -->
-Seçilib: MNL: neft sektoru qarışığı (FR1 mədənçıxarma/emal sənayesi əlavə dəyəri), κ = 0,5. Bakının sənaye buraxılışındakı payı 2025-ci ildə 79,9%; 2030-cu ildə: Əsas 78,0%, Mənfi 76,9%, İslahat 78,4%.
+Seçilib: MNL: neft sektoru qarışığı (FR1 mədənçıxarma/emal sənayesi əlavə dəyəri), κ = 0,5. Bakının sənaye buraxılışındakı payı 2025-ci ildə 79,9%; 2030-cu ildə: Əsas 77,8%, Mənfi 76,8%, İslahat 78,2%.
 <!-- /AUTO:regions -->
 
 ## 12. Nümunədən kənar yoxlama, 2020–2025
@@ -668,18 +668,18 @@ il üzrə DSK-nın işçi sayı × FR4-ün bölmə indeksi; əmək haqqı (məhs
 <!-- AUTO:forecast -->
 | ssenari | sənaye nominal buraxılışının artımı, illik % | emal sənayesi nominal artım, illik % | emal sənayesi real artım, illik % (FR1 rva_man) | neft emalı real artım, illik % | mədənçıxarmanın sənayedə payı 2030 % | qeyri-dövlət payı 2030 % (struktur üzrə) | HHI emal sənayesi 2030 | Bakı şəhərinin payı 2030 % | emal sənayesi ümumi mənfəət, ƏD-nin %-i 2030 |
 |---|---|---|---|---|---|---|---|---|---|
-| Əsas | 4.21 | 10.52 | 6.38 | -0.36 | 45.39 | 77.36 | 1203.20 | 77.97 | 65.81 |
-| Mənfi | -1.53 | 6.62 | 2.90 | -0.36 | 38.05 | 73.89 | 1218.78 | 76.91 | 65.81 |
-| İslahat | 8.80 | 14.30 | 9.74 | -0.36 | 48.79 | 79.44 | 1189.66 | 78.41 | 65.81 |
+| Əsas | 4.76 | 11.36 | 6.35 | -0.36 | 44.21 | 76.85 | 1198.44 | 77.83 | 65.81 |
+| Mənfi | -1.16 | 7.12 | 2.86 | -0.36 | 37.33 | 73.53 | 1213.19 | 76.82 | 65.81 |
+| İslahat | 9.53 | 15.49 | 9.72 | -0.36 | 47.18 | 78.79 | 1187.32 | 78.22 | 65.81 |
 
 Bölmələr, Əsas ssenari:
 
 | bölmə | nominal buraxılışın artımı, ildə % | GOS, əlavə dəyərin %-i, 2025 | GOS, əlavə dəyərin %-i, 2030 |
 |---|---|---|---|
 | Mədənçıxarma | -1.03 | 93.56 | 94.39 |
-| Emal sənayesi | 10.52 | 65.82 | 65.81 |
-| Elektrik enerjisi | 8.69 | 65.44 | 65.89 |
-| Su təchizatı | 8.54 | -51.61 | -40.05 |
+| Emal sənayesi | 11.36 | 65.82 | 65.81 |
+| Elektrik enerjisi | 11.23 | 65.44 | 65.89 |
+| Su təchizatı | 9.12 | -51.61 | -40.05 |
 <!-- /AUTO:forecast -->
 
 **Sahələr.**
@@ -687,38 +687,38 @@ Bölmələr, Əsas ssenari:
 <!-- AUTO:branches -->
 | nace2 | sahə | model | nominal artım, illik % | real artım, illik % | sənayedə payı 2030, % | əmək məhsuldarlığının artımı, illik % |
 |---|---|---|---|---|---|---|
-| 06 | Xam neft və təbii qaz hasilatı | FR1 neft və qaz (real); qalıq (nominal) | -1.15 | -1.21 | 40.65 | -0.51 |
-| 07 | Metal filizlərinin hasilatı | metal filizləri: FR1 mədənçıxarma əlavə dəyəri ilə birgə artır | 3.20 | -1.10 | 1.10 | -0.40 |
-| 08 | Digər faydalı qazıntılar | digər faydalı qazıntılar: neytral: son faktiki səviyyədə saxlanılır | 2.21 | 0.00 | 0.35 | 0.70 |
-| 09 | Mədənçıxarma sahəsində xidmətlər | FR1 neft və qaz (real); qalıq (nominal) | -1.15 | -1.21 | 3.29 | -0.51 |
-| 10 | Qida məhsulları | əlaqəli sektor: rcons | 13.47 | 9.22 | 12.11 | 8.42 |
-| 11 | İçkilər | əlaqəli sektor: rcons | 13.47 | 9.22 | 2.23 | 8.42 |
-| 12 | Tütün məmulatları | sektor üzrə cəmi | 13.77 | 9.50 | 2.75 | 8.70 |
-| 13 | Toxuculuq məhsulları | sektor üzrə cəmi | 13.77 | 9.50 | 1.02 | 8.70 |
-| 14 | Geyim | sektor üzrə cəmi | 13.77 | 9.50 | 0.49 | 8.70 |
-| 15 | Dəri və ayaqqabı | sektor üzrə cəmi | 13.77 | 9.50 | 0.09 | 8.70 |
-| 16 | Ağac emalı | sektor üzrə cəmi | 13.77 | 9.50 | 0.09 | 8.70 |
-| 17 | Kağız və karton | sektor üzrə cəmi | 13.77 | 9.50 | 0.67 | 8.70 |
-| 18 | Poliqrafiya | sektor üzrə cəmi | 13.77 | 9.50 | 0.38 | 8.70 |
-| 19 | Neft emalı məhsulları | istehsal gücü + neft qiyməti | -0.96 | -0.36 | 6.76 | -1.09 |
-| 20 | Kimya məhsulları | sektor üzrə cəmi | 13.77 | 9.50 | 3.89 | 8.70 |
-| 21 | Əczaçılıq məhsulları | sektor üzrə cəmi | 13.77 | 9.50 | 0.07 | 8.70 |
-| 22 | Rezin və plastik kütlə | sektor üzrə cəmi | 13.77 | 9.50 | 1.61 | 8.70 |
-| 23 | Digər qeyri-metal mineral məhsullar | əlaqəli sektor: rva_con | 13.12 | 8.88 | 3.55 | 8.08 |
-| 24 | Metallurgiya | sektor üzrə cəmi | 13.77 | 9.50 | 2.77 | 8.70 |
-| 25 | Hazır metal məmulatları | əlaqəli sektor: rva_con | 13.12 | 8.88 | 1.78 | 8.08 |
-| 26 | Kompüter və elektronika | sektor üzrə cəmi | 13.77 | 9.50 | 0.17 | 8.70 |
-| 27 | Elektrik avadanlığı | əlaqəli sektor: rinv_non | 13.31 | 9.06 | 0.67 | 8.26 |
-| 28 | Maşın və avadanlıq | əlaqəli sektor: rinv_non | 13.31 | 9.06 | 0.31 | 8.26 |
-| 29 | Avtomobil və qoşqular | əlaqəli sektor: rinv_non | 13.31 | 9.06 | 0.82 | 8.26 |
-| 30 | Digər nəqliyyat vasitələri | əlaqəli sektor: rinv_non | 13.31 | 9.06 | 0.10 | 8.26 |
-| 31 | Mebel | sektor üzrə cəmi | 13.77 | 9.50 | 0.97 | 8.70 |
-| 32 | Digər hazır məmulatlar | sektor üzrə cəmi | 13.77 | 9.50 | 0.30 | 8.70 |
-| 33 | Maşın və avadanlığın təmiri və quraşdırılması | əlaqəli sektor: rinv_non | 13.31 | 9.06 | 2.64 | 8.26 |
-| 35 | Elektrik enerjisi, qaz və buxar | sektor üzrə cəmi | 8.69 | 2.90 | 7.08 | 2.38 |
-| 36 | Su təchizatı, tullantılar | sektor üzrə cəmi | 8.54 | 4.53 | 1.29 | 3.87 |
+| 06 | Xam neft və təbii qaz hasilatı | FR1 neft və qaz (real); qalıq (nominal) | -1.17 | -1.21 | 39.54 | -0.51 |
+| 07 | Metal filizlərinin hasilatı | metal filizləri: FR1 mədənçıxarma əlavə dəyəri ilə birgə artır | 3.93 | -1.10 | 1.11 | -0.40 |
+| 08 | Digər faydalı qazıntılar | digər faydalı qazıntılar: neytral: son faktiki səviyyədə saxlanılır | 2.78 | 0.00 | 0.35 | 0.70 |
+| 09 | Mədənçıxarma sahəsində xidmətlər | FR1 neft və qaz (real); qalıq (nominal) | -1.17 | -1.21 | 3.20 | -0.51 |
+| 10 | Qida məhsulları | əlaqəli sektor: rcons | 14.44 | 9.29 | 12.31 | 8.48 |
+| 11 | İçkilər | əlaqəli sektor: rcons | 14.44 | 9.29 | 2.26 | 8.48 |
+| 12 | Tütün məmulatları | sektor üzrə cəmi | 14.80 | 9.63 | 2.80 | 8.82 |
+| 13 | Toxuculuq məhsulları | sektor üzrə cəmi | 14.80 | 9.63 | 1.03 | 8.82 |
+| 14 | Geyim | sektor üzrə cəmi | 14.80 | 9.63 | 0.50 | 8.82 |
+| 15 | Dəri və ayaqqabı | sektor üzrə cəmi | 14.80 | 9.63 | 0.09 | 8.82 |
+| 16 | Ağac emalı | sektor üzrə cəmi | 14.80 | 9.63 | 0.09 | 8.82 |
+| 17 | Kağız və karton | sektor üzrə cəmi | 14.80 | 9.63 | 0.68 | 8.82 |
+| 18 | Poliqrafiya | sektor üzrə cəmi | 14.80 | 9.63 | 0.39 | 8.82 |
+| 19 | Neft emalı məhsulları | istehsal gücü + neft qiyməti | -0.96 | -0.36 | 6.58 | -1.10 |
+| 20 | Kimya məhsulları | sektor üzrə cəmi | 14.80 | 9.63 | 3.97 | 8.82 |
+| 21 | Əczaçılıq məhsulları | sektor üzrə cəmi | 14.80 | 9.63 | 0.07 | 8.82 |
+| 22 | Rezin və plastik kütlə | sektor üzrə cəmi | 14.80 | 9.63 | 1.64 | 8.82 |
+| 23 | Digər qeyri-metal mineral məhsullar | əlaqəli sektor: rva_con | 14.14 | 9.00 | 3.62 | 8.19 |
+| 24 | Metallurgiya | sektor üzrə cəmi | 14.80 | 9.63 | 2.83 | 8.82 |
+| 25 | Hazır metal məmulatları | əlaqəli sektor: rva_con | 14.14 | 9.00 | 1.82 | 8.19 |
+| 26 | Kompüter və elektronika | sektor üzrə cəmi | 14.80 | 9.63 | 0.17 | 8.82 |
+| 27 | Elektrik avadanlığı | əlaqəli sektor: rinv_non | 14.32 | 9.18 | 0.68 | 8.37 |
+| 28 | Maşın və avadanlıq | əlaqəli sektor: rinv_non | 14.32 | 9.18 | 0.32 | 8.37 |
+| 29 | Avtomobil və qoşqular | əlaqəli sektor: rinv_non | 14.32 | 9.18 | 0.83 | 8.37 |
+| 30 | Digər nəqliyyat vasitələri | əlaqəli sektor: rinv_non | 14.32 | 9.18 | 0.10 | 8.37 |
+| 31 | Mebel | sektor üzrə cəmi | 14.80 | 9.63 | 0.98 | 8.82 |
+| 32 | Digər hazır məmulatlar | sektor üzrə cəmi | 14.80 | 9.63 | 0.30 | 8.82 |
+| 33 | Maşın və avadanlığın təmiri və quraşdırılması | əlaqəli sektor: rinv_non | 14.32 | 9.18 | 2.69 | 8.37 |
+| 35 | Elektrik enerjisi, qaz və buxar | sektor üzrə cəmi | 11.23 | 2.90 | 7.74 | 2.35 |
+| 36 | Su təchizatı, tullantılar | sektor üzrə cəmi | 9.12 | 4.39 | 1.29 | 3.73 |
 
-Emal sənayesi sahələri, Əsas ssenaridə 2026–2030 dövründə real artım: minimum -0,36% (Neft emalı məhsulları), maksimum +9,50% (Tütün məmulatları). Qeyri-neft emal sənayesinin nəzərdə tutulan real artımı ildə +8,86%; müqayisə üçün: +8,11% (2010–19), +9,45% (2021–25), ən yaxşı beşillik +10,32% — tarixi hədlər daxilində.
+Emal sənayesi sahələri, Əsas ssenaridə 2026–2030 dövründə real artım: minimum -0,36% (Neft emalı məhsulları), maksimum +9,63% (Tütün məmulatları). Qeyri-neft emal sənayesinin nəzərdə tutulan real artımı ildə +8,95%; müqayisə üçün: +8,11% (2010–19), +9,45% (2021–25), ən yaxşı beşillik +10,32% — tarixi hədlər daxilində.
 
 Nəzərdə tutulan sektorlararası multiplikatorlar (sektor cəmi verilmiş halda əlaqəli sektorda 1% dəyişməyə görə sahə buraxılışının %-lə dəyişməsi):
 
@@ -743,54 +743,54 @@ işçi olmayanlara ödənişləri də nəzərə almır və DSK-nın sahə burax�
 və ev təsərrüfatı istehsalı daxil olduğundan, qeyri-formal buraxılışı çox olan sahələrdə marjaları şişirdir.
 
 <!-- AUTO:margin -->
-Əsas ssenari (əməyin əlavə dəyərdəki payı 2023–25 ortasında saxlanılır): emal sənayesində GOS 2025-ci ildə əlavə dəyərin 65,8%-i, 2030-cu ildə 65,8%-i. Həssaslıqlar: FR1-in əmək haqqı yolu 70,5%; məhsul ifadəsində sabit əmək haqqı 73,8%. Sahələr üzrə GOS proksi marjasının medianı 2030: Əsas ssenari 19,7%, FR1-in əmək haqqı yolu 23,9%.
+Əsas ssenari (əməyin əlavə dəyərdəki payı 2023–25 ortasında saxlanılır): emal sənayesində GOS 2025-ci ildə əlavə dəyərin 65,8%-i, 2030-cu ildə 65,8%-i. Həssaslıqlar: FR1-in əmək haqqı yolu 71,7%; məhsul ifadəsində sabit əmək haqqı 73,7%. Sahələr üzrə GOS proksi marjasının medianı 2030: Əsas ssenari 19,7%, FR1-in əmək haqqı yolu 24,5%.
 
 | rıçaq | emal sənayesi sahələrinin real artımı, minimum, illik % | emal sənayesi sahələrinin real artımı, maksimum, illik % | neft emalı real artım, illik % | tikinti materialları real artım, illik % | emal sənayesi ümumi mənfəət, ƏD-nin %-i 2030 | sahələr üzrə median ümumi mənfəət (proksi) marjası 2030 | HHI emal sənayesi 2030 |
 |---|---|---|---|---|---|---|---|
-| Əsas | -0.36 | 9.50 | -0.36 | 8.88 | 65.81 | 19.71 | 1203.20 |
-| bölgü: yalnız birləşdirilmiş model | -0.36 | 9.74 | -0.36 | 8.49 | 65.81 | 19.71 | 1200.75 |
-| bölgü: sabit paylar | -0.36 | 9.26 | -0.36 | 9.26 | 65.81 | 19.71 | 1205.74 |
-| neftlə bağlı sahələr maksimal emal həcmində | 0.66 | 9.30 | 0.66 | 8.68 | 65.81 | 19.71 | 1208.47 |
-| marja: FR1 əmək haqqı trayektoriyası | -0.36 | 9.50 | -0.36 | 8.88 | 70.51 | 23.86 | 1203.20 |
-| marja: məhsul ifadəsində sabit əmək haqqı | -0.36 | 9.50 | -0.36 | 8.88 | 73.76 | 25.39 | 1203.20 |
+| Əsas | -0.36 | 9.63 | -0.36 | 9.00 | 65.81 | 19.71 | 1198.44 |
+| bölgü: yalnız birləşdirilmiş model | -0.36 | 9.89 | -0.36 | 8.63 | 65.81 | 19.71 | 1194.16 |
+| bölgü: sabit paylar | -0.36 | 9.37 | -0.36 | 9.37 | 65.81 | 19.71 | 1202.82 |
+| neftlə bağlı sahələr maksimal emal həcmində | 0.66 | 9.44 | 0.66 | 8.81 | 65.81 | 19.71 | 1202.62 |
+| marja: FR1 əmək haqqı trayektoriyası | -0.36 | 9.63 | -0.36 | 9.00 | 71.65 | 24.46 | 1198.44 |
+| marja: məhsul ifadəsində sabit əmək haqqı | -0.36 | 9.63 | -0.36 | 9.00 | 73.70 | 25.46 | 1198.44 |
 <!-- /AUTO:margin -->
 
 **Qeyri-dövlət payı.**
 
 <!-- AUTO:ns -->
-Mədənçıxarmanın sənaye buraxılışındakı payı 58,8%-dən 45,4%-ə enir (Əsas ssenari); sahələr daxilində qeyri-dövlət payları sabit saxlanıldıqda (mədənçıxarma 94,1%, neft emalı 1,9%, elektrik enerjisi 3,4%) sənayedə qeyri-dövlət payı 78,1%-dən 77,4%-ə dəyişir — **bu, mülkiyyət proqnozu deyil, sırf tərkib effektidir**.
+Mədənçıxarmanın sənaye buraxılışındakı payı 58,8%-dən 44,2%-ə enir (Əsas ssenari); sahələr daxilində qeyri-dövlət payları sabit saxlanıldıqda (mədənçıxarma 94,1%, neft emalı 1,9%, elektrik enerjisi 3,4%) sənayedə qeyri-dövlət payı 78,1%-dən 76,8%-ə dəyişir — **bu, mülkiyyət proqnozu deyil, sırf tərkib effektidir**.
 
 | nace2 | sahə | qeyri-dövlət payı sabit saxlanılır (2025), % | sənayedə pay 2025, % | sənayedə pay 2030, % |
 |---|---|---|---|---|
-| 6 | Xam neft və təbii qaz hasilatı | 95.71 | 52.93 | 40.65 |
-| 7 | Metal filizlərinin hasilatı | 39.61 | 1.16 | 1.10 |
+| 6 | Xam neft və təbii qaz hasilatı | 95.71 | 52.93 | 39.54 |
+| 7 | Metal filizlərinin hasilatı | 39.61 | 1.16 | 1.11 |
 | 8 | Digər faydalı qazıntılar | 98.02 | 0.39 | 0.35 |
-| 9 | Mədənçıxarma sahəsində xidmətlər | 88.50 | 4.28 | 3.29 |
-| 10 | Qida məhsulları | 99.99 | 7.91 | 12.11 |
-| 11 | İçkilər | 99.11 | 1.45 | 2.23 |
-| 12 | Tütün məmulatları | 100.00 | 1.77 | 2.75 |
-| 13 | Toxuculuq məhsulları | 91.75 | 0.65 | 1.02 |
-| 14 | Geyim | 95.73 | 0.31 | 0.49 |
+| 9 | Mədənçıxarma sahəsində xidmətlər | 88.50 | 4.28 | 3.20 |
+| 10 | Qida məhsulları | 99.99 | 7.91 | 12.31 |
+| 11 | İçkilər | 99.11 | 1.45 | 2.26 |
+| 12 | Tütün məmulatları | 100.00 | 1.77 | 2.80 |
+| 13 | Toxuculuq məhsulları | 91.75 | 0.65 | 1.03 |
+| 14 | Geyim | 95.73 | 0.31 | 0.50 |
 | 15 | Dəri və ayaqqabı | 94.94 | 0.06 | 0.09 |
 | 16 | Ağac emalı | 99.84 | 0.06 | 0.09 |
-| 17 | Kağız və karton | 100.00 | 0.43 | 0.67 |
-| 18 | Poliqrafiya | 98.44 | 0.24 | 0.38 |
-| 19 | Neft emalı məhsulları | 1.86 | 8.72 | 6.76 |
-| 20 | Kimya məhsulları | 20.13 | 2.51 | 3.89 |
+| 17 | Kağız və karton | 100.00 | 0.43 | 0.68 |
+| 18 | Poliqrafiya | 98.44 | 0.24 | 0.39 |
+| 19 | Neft emalı məhsulları | 1.86 | 8.72 | 6.58 |
+| 20 | Kimya məhsulları | 20.13 | 2.51 | 3.97 |
 | 21 | Əczaçılıq məhsulları | 100.00 | 0.05 | 0.07 |
-| 22 | Rezin və plastik kütlə | 100.00 | 1.04 | 1.61 |
-| 23 | Digər qeyri-metal mineral məhsullar | 99.60 | 2.36 | 3.55 |
-| 24 | Metallurgiya | 100.00 | 1.79 | 2.77 |
-| 25 | Hazır metal məmulatları | 60.39 | 1.18 | 1.78 |
+| 22 | Rezin və plastik kütlə | 100.00 | 1.04 | 1.64 |
+| 23 | Digər qeyri-metal mineral məhsullar | 99.60 | 2.36 | 3.62 |
+| 24 | Metallurgiya | 100.00 | 1.79 | 2.83 |
+| 25 | Hazır metal məmulatları | 60.39 | 1.18 | 1.82 |
 | 26 | Kompüter və elektronika | 92.74 | 0.11 | 0.17 |
-| 27 | Elektrik avadanlığı | 98.83 | 0.44 | 0.67 |
-| 28 | Maşın və avadanlıq | 93.75 | 0.21 | 0.31 |
-| 29 | Avtomobil və qoşqular | 76.47 | 0.54 | 0.82 |
+| 27 | Elektrik avadanlığı | 98.83 | 0.44 | 0.68 |
+| 28 | Maşın və avadanlıq | 93.75 | 0.21 | 0.32 |
+| 29 | Avtomobil və qoşqular | 76.47 | 0.54 | 0.83 |
 | 30 | Digər nəqliyyat vasitələri | 87.96 | 0.07 | 0.10 |
-| 31 | Mebel | 100.00 | 0.62 | 0.97 |
+| 31 | Mebel | 100.00 | 0.62 | 0.98 |
 | 32 | Digər hazır məmulatlar | 89.80 | 0.19 | 0.30 |
-| 33 | Maşın və avadanlığın təmiri və quraşdırılması | 54.15 | 1.74 | 2.64 |
-| 35 | Elektrik enerjisi, qaz və buxar | 3.37 | 5.73 | 7.08 |
+| 33 | Maşın və avadanlığın təmiri və quraşdırılması | 54.15 | 1.74 | 2.69 |
+| 35 | Elektrik enerjisi, qaz və buxar | 3.37 | 5.73 | 7.74 |
 | 36 | Su təchizatı, tullantılar | 29.10 | 1.05 | 1.29 |
 <!-- /AUTO:ns -->
 
@@ -820,7 +820,7 @@ düzəliş əmsalı; məhsul modeli deyil, işarələnmiş törəmə hesablama);
 həlledicisini dəqiq təkrarlayır.
 
 <!-- AUTO:bands -->
-FR1-in 500 təkrarlaması; sahə bölüşdürməsi üçün 16, regionlar üçün 11 tarixi model xətası yolu (2019-cu il əhatə qırılmasını keçən yollar istisna edilib). 2026–2030 dövründə orta artım — sənaye buraxılışı: Əsas +4,21%, median +4,81%, 90% zolaq -4,3%-dən +14,6%-ədək; mədənçıxarma: Əsas -1,03%, median -0,96%, 90% zolaq -12,1%-dən +10,2%-ədək; emal sənayesi: Əsas +10,52%, median +10,22%, 90% zolaq -0,4%-dən +22,7%-ədək; elektrik enerjisi: Əsas +8,69%, median +8,71%, 90% zolaq -13,6%-dən +43,5%-ədək; su təchizatı: Əsas +8,54%, median +8,45%, 90% zolaq -1,8%-dən +19,9%-ədək. Əsas ssenari FR1-in ssenari yoludur, median isə təkrarlamaların medianıdır; FR1-in çəkilişləri onun ssenarisi ətrafında mərkəzləşmədiyindən onlar fərqlənir. Sənaye və elektrik enerjisi üzrə geniş quyruqlar FR1-in neft və elektrik enerjisi qiymətləri çəkilişlərindən irəli gəlir: FR1-in qiymətləri baza yollarında saxlanıldıqda zolaqlar belədir — sənaye: Əsas +4,21%, median +4,16%, 90% zolaq +1,3%-dən +8,2%-ədək; elektrik enerjisi: Əsas +8,69%, median +8,69%, 90% zolaq +6,0%-dən +11,7%-ədək. 2030-cu ildə neft emalının emal sənayesindəki payı: 9,0–24,4% (Əsas 14,6%). 2030-cu ildə emal sənayesində GOS-un əlavə dəyərdəki payı: 65,8–65,8%. Sıra-illərin 98,8%-ində Əsas ssenari kvartillərarası zolağın, 100,0%-ində 90% zolağın daxilindədir.
+FR1-in 500 təkrarlaması; sahə bölüşdürməsi üçün 16, regionlar üçün 11 tarixi model xətası yolu (2019-cu il əhatə qırılmasını keçən yollar istisna edilib). 2026–2030 dövründə orta artım — sənaye buraxılışı: Əsas +4,76%, median +5,12%, 90% zolaq -3,4%-dən +14,4%-ədək; mədənçıxarma: Əsas -1,03%, median -1,06%, 90% zolaq -11,0%-dən +9,3%-ədək; emal sənayesi: Əsas +11,36%, median +11,06%, 90% zolaq +0,8%-dən +22,4%-ədək; elektrik enerjisi: Əsas +11,23%, median +11,37%, 90% zolaq -4,8%-dən +33,8%-ədək; su təchizatı: Əsas +9,12%, median +9,16%, 90% zolaq +1,1%-dən +19,0%-ədək. Əsas ssenari FR1-in ssenari yoludur, median isə təkrarlamaların medianıdır; FR1-in çəkilişləri onun ssenarisi ətrafında mərkəzləşmədiyindən onlar fərqlənir. Sənaye və elektrik enerjisi üzrə geniş quyruqlar FR1-in neft və elektrik enerjisi qiymətləri çəkilişlərindən irəli gəlir: FR1-in qiymətləri baza yollarında saxlanıldıqda zolaqlar belədir — sənaye: Əsas +4,76%, median +4,72%, 90% zolaq +1,9%-dən +8,8%-ədək; elektrik enerjisi: Əsas +11,23%, median +11,23%, 90% zolaq +8,2%-dən +14,4%-ədək. 2030-cu ildə neft emalının emal sənayesindəki payı: 9,9–20,0% (Əsas 14,1%). 2030-cu ildə emal sənayesində GOS-un əlavə dəyərdəki payı: 65,8–65,8%. Sıra-illərin 98,6%-ində Əsas ssenari kvartillərarası zolağın, 100,0%-ində 90% zolağın daxilindədir.
 <!-- /AUTO:bands -->
 
 ## 14. İnandırıcılıq və erkən xəbərdarlıq
@@ -835,38 +835,38 @@ Hər proqnoz artım tempi vahidin öz 2010–2019 və 2021–2025 orta göstəri
 | 07 | Metal filizlərinin hasilatı | -1.10 | 10.43 | -0.42 | 252.03 | -8.81 | — | xeyr |
 | 08 | Digər faydalı qazıntılar | 0.00 | 12.22 | 15.14 | 27.98 | -8.70 | — | xeyr |
 | 09 | Mədənçıxarma sahəsində xidmətlər | -1.21 | 18.79 | -18.41 | 27.50 | -20.68 | — | xeyr |
-| 10 | Qida məhsulları | 9.22 | 3.80 | 10.22 | 10.22 | 2.39 | — | bəli |
-| 11 | İçkilər | 9.22 | 8.73 | 7.56 | 10.96 | 0.24 | — | bəli |
-| 12 | Tütün məmulatları | 9.50 | 16.66 | 13.10 | 50.73 | -14.63 | — | bəli |
-| 13 | Toxuculuq məhsulları | 9.50 | 18.84 | 11.63 | 43.24 | -22.65 | — | bəli |
-| 14 | Geyim | 9.50 | 10.32 | 5.29 | 21.66 | 0.71 | — | bəli |
-| 15 | Dəri və ayaqqabı | 9.50 | -9.20 | 10.64 | 19.67 | -18.10 | — | bəli |
-| 16 | Ağac emalı | 9.50 | 41.13 | -12.70 | 73.42 | -17.94 | — | xeyr |
-| 17 | Kağız və karton | 9.50 | 6.84 | 7.41 | 60.85 | -18.43 | — | bəli |
-| 18 | Poliqrafiya | 9.50 | 31.14 | -12.71 | 38.68 | -12.71 | — | xeyr |
+| 10 | Qida məhsulları | 9.29 | 3.80 | 10.22 | 10.22 | 2.39 | — | bəli |
+| 11 | İçkilər | 9.29 | 8.73 | 7.56 | 10.96 | 0.24 | — | bəli |
+| 12 | Tütün məmulatları | 9.63 | 16.66 | 13.10 | 50.73 | -14.63 | — | bəli |
+| 13 | Toxuculuq məhsulları | 9.63 | 18.84 | 11.63 | 43.24 | -22.65 | — | bəli |
+| 14 | Geyim | 9.63 | 10.32 | 5.29 | 21.66 | 0.71 | — | bəli |
+| 15 | Dəri və ayaqqabı | 9.63 | -9.20 | 10.64 | 19.67 | -18.10 | — | bəli |
+| 16 | Ağac emalı | 9.63 | 41.13 | -12.70 | 73.42 | -17.94 | — | xeyr |
+| 17 | Kağız və karton | 9.63 | 6.84 | 7.41 | 60.85 | -18.43 | — | bəli |
+| 18 | Poliqrafiya | 9.63 | 31.14 | -12.71 | 38.68 | -12.71 | — | xeyr |
 | 19 | Neft emalı məhsulları | -0.36 | -3.18 | 3.78 | 3.78 | -5.46 | — | xeyr |
-| 20 | Kimya məhsulları | 9.50 | 12.52 | 10.04 | 17.94 | -3.85 | — | bəli |
-| 21 | Əczaçılıq məhsulları | 9.50 | -3.24 | 40.95 | 55.64 | -30.70 | — | bəli |
-| 22 | Rezin və plastik kütlə | 9.50 | 11.86 | 16.26 | 28.01 | -2.69 | — | bəli |
-| 23 | Digər qeyri-metal mineral məhsullar | 8.88 | 14.58 | 25.80 | 29.01 | -3.50 | — | bəli |
-| 24 | Metallurgiya | 9.50 | 8.71 | 5.98 | 28.12 | -15.56 | — | bəli |
-| 25 | Hazır metal məmulatları | 8.88 | 6.32 | 15.15 | 29.97 | -17.49 | — | bəli |
-| 26 | Kompüter və elektronika | 9.50 | 14.59 | -2.03 | 31.08 | -4.94 | — | bəli |
-| 27 | Elektrik avadanlığı | 9.06 | 29.25 | 3.96 | 49.69 | 1.45 | — | bəli |
-| 28 | Maşın və avadanlıq | 9.06 | -3.70 | -22.20 | 33.34 | -22.20 | — | bəli |
-| 29 | Avtomobil və qoşqular | 9.06 | 32.29 | 28.95 | 151.62 | -27.11 | — | bəli |
-| 30 | Digər nəqliyyat vasitələri | 9.06 | -1.18 | 91.08 | 91.08 | -23.93 | — | bəli |
-| 31 | Mebel | 9.50 | 32.66 | 21.72 | 34.29 | 9.58 | ən zəif 5 illik dövrdən AŞAĞI | xeyr |
-| 32 | Digər hazır məmulatlar | 9.50 | 12.63 | 30.95 | 30.95 | -27.63 | — | bəli |
-| 33 | Maşın və avadanlığın təmiri və quraşdırılması | 9.06 | 23.16 | 4.10 | 57.65 | -11.50 | — | bəli |
+| 20 | Kimya məhsulları | 9.63 | 12.52 | 10.04 | 17.94 | -3.85 | — | bəli |
+| 21 | Əczaçılıq məhsulları | 9.63 | -3.24 | 40.95 | 55.64 | -30.70 | — | bəli |
+| 22 | Rezin və plastik kütlə | 9.63 | 11.86 | 16.26 | 28.01 | -2.69 | — | bəli |
+| 23 | Digər qeyri-metal mineral məhsullar | 9.00 | 14.58 | 25.80 | 29.01 | -3.50 | — | bəli |
+| 24 | Metallurgiya | 9.63 | 8.71 | 5.98 | 28.12 | -15.56 | — | bəli |
+| 25 | Hazır metal məmulatları | 9.00 | 6.32 | 15.15 | 29.97 | -17.49 | — | bəli |
+| 26 | Kompüter və elektronika | 9.63 | 14.59 | -2.03 | 31.08 | -4.94 | — | bəli |
+| 27 | Elektrik avadanlığı | 9.18 | 29.25 | 3.96 | 49.69 | 1.45 | — | bəli |
+| 28 | Maşın və avadanlıq | 9.18 | -3.70 | -22.20 | 33.34 | -22.20 | — | bəli |
+| 29 | Avtomobil və qoşqular | 9.18 | 32.29 | 28.95 | 151.62 | -27.11 | — | bəli |
+| 30 | Digər nəqliyyat vasitələri | 9.18 | -1.18 | 91.08 | 91.08 | -23.93 | — | bəli |
+| 31 | Mebel | 9.63 | 32.66 | 21.72 | 34.29 | 9.58 | — | xeyr |
+| 32 | Digər hazır məmulatlar | 9.63 | 12.63 | 30.95 | 30.95 | -27.63 | — | bəli |
+| 33 | Maşın və avadanlığın təmiri və quraşdırılması | 9.18 | 23.16 | 4.10 | 57.65 | -11.50 | — | bəli |
 | 35 | Elektrik enerjisi, qaz və buxar | 2.90 | 3.96 | 2.08 | 7.48 | 0.73 | — | bəli |
-| 36 | Su təchizatı, tullantılar | 4.53 | 4.47 | 9.07 | 9.07 | -4.22 | — | bəli |
+| 36 | Su təchizatı, tullantılar | 4.39 | 4.47 | 9.07 | 9.07 | -4.22 | — | bəli |
 | B | Mədənçıxarma | -1.10 | -2.21 | -1.39 | 23.44 | -3.37 | — | — |
-| C | Emal sənayesi | 6.38 | 4.32 | 8.09 | 10.15 | 1.28 | — | — |
+| C | Emal sənayesi | 6.35 | 4.32 | 8.09 | 10.15 | 1.28 | — | — |
 | D | Elektrik enerjisi | 2.90 | 4.21 | 2.06 | 7.57 | 0.36 | — | — |
-| E | Su təchizatı | 4.53 | 4.51 | 8.88 | 8.88 | 0.59 | — | — |
+| E | Su təchizatı | 4.39 | 4.51 | 8.88 | 8.88 | 0.59 | — | — |
 
-İşarələnmiş vahidlər: 1 / 34.
+İşarələnmiş vahidlər: 0 / 34.
 <!-- /AUTO:plaus -->
 
 Erkən xəbərdarlıq işarələri 2023–25-ci illərin ortasını 2020–22-ci illərin ortası ilə müqayisə edir və hər sahənin öz
@@ -1335,15 +1335,16 @@ axında FR1 (sürücü yolları `fr1:<code>`) və v2.1-dən etibarən FR4 (`fr4:
 indeksləri, 2025 = 1); yuxarı axın nəticələri olmadıqda vəziyyət faylındakı CSV baza dəyərləri istifadə olunur; FR3
 istifadə olunmur (F13). FR4-ün indeksləri redaktə edilə bilən ekzogen giriş məlumatlarıdır. Əmsallar reyestrdən
 götürülən dəyər, s.x. və etibarlılıq intervalı ilə redaktə edilə bilər; rıçaqlar: neft emalı zavodunun güc əmsalı,
-əməyin payının sürüşməsi və marja qaydası, qeyri-neft bölüşdürməsinin kombinasiya çəkisi, regional sistemin κ-sı.
+əməyin payının sürüşməsi və marja qaydası, qeyri-neft bölüşdürməsinin kombinasiya çəkisi, regional sistemin κ-sı, digər faydalı
+qazıntıların qaydası və — qiymətləndirilmiş əmsal kimi deyil, rıçaq kimi — onun tikinti əlaqəsinin elastikliyi
+(`quarrying_link_elasticity` = 1, vahid əlaqə qaydası; baza proqnozu lövbərlənmiş neytral qaydadır).
 
 <!-- AUTO:v2_engine -->
-Giriş məlumatları: 20 ekzogen yol (FR1 sürücüləri və FR4 indeksləri, 2026–2030, hər ssenari üzrə), 17 əmsal, 6 rıçaq. Öz-özünə test: Əsas — 2070 dəyər üzrə maksimal nisbi fərq 1,2·10⁻¹⁵, Mənfi — 2070 dəyər üzrə maksimal nisbi fərq 1,5·10⁻¹⁵, İslahat — 2070 dəyər üzrə maksimal nisbi fərq 1,4·10⁻¹⁵ — KEÇDİ; icra müddəti hər ssenari üçün 0,007 san.
+Giriş məlumatları: 20 ekzogen yol (FR1 sürücüləri və FR4 indeksləri, 2026–2030, hər ssenari üzrə), 16 əmsal, 7 rıçaq. Öz-özünə test: Əsas — 2070 dəyər üzrə maksimal nisbi fərq 1,3·10⁻¹⁵, Mənfi — 2070 dəyər üzrə maksimal nisbi fərq 1,1·10⁻¹⁵, İslahat — 2070 dəyər üzrə maksimal nisbi fərq 1,4·10⁻¹⁵ — KEÇDİ; icra müddəti hər ssenari üçün 0,008 san.
 
 | eq_id | ad | ad (azərbaycanca) | dəyər | s.x. | ci_low | ci_high |
 |---|---|---|---|---|---|---|
 | FR10.pooled | x | Əlaqəli sektor elastikliyi β (qeyri-neft sahə payları) | 0.219 | 0.090 | 0.031 | 0.408 |
-| FR10.mining_08 | x | Digər faydalı qazıntılar: tikinti əlavə dəyərinə elastiklik (yalnız quarrying_rule = construction_link olduqda) | 1.000 | 0.334 | -0.590 | 0.813 |
 | FR10.oil_19 | dln_oil_azn | Neft emalı məhsulları: deflyatorun neft qiymətinə elastikliyi | 0.330 | 0.074 | 0.175 | 0.486 |
 | FR10.mining_07 | dln_rva_min | Metal filizləri: sürücüyə elastiklik (qayda: 1) | 1.000 | — | — | — |
 | FR10.reg_system | Nakhchivan_AR | Naxçıvan MR: neft-sektor qarışığına elastiklik (büzülmüş) | -0.161 | 0.130 | -0.417 | 0.094 |
@@ -1359,6 +1360,8 @@ Giriş məlumatları: 20 ekzogen yol (FR1 sürücüləri və FR4 indeksləri, 20
 | FR10.reg_system | Shaki_Zagatala | Şəki-Zaqatala: neft-sektor qarışığına elastiklik (büzülmüş) | -0.254 | 0.129 | -0.508 | -0.001 |
 | FR10.reg_system | Eastern_Zangezur | Şərqi Zəngəzur: neft-sektor qarışığına elastiklik (büzülmüş) | -0.096 | 0.153 | -0.397 | 0.204 |
 | FR10.reg_system | Shirvan_Salyan | Şirvan-Salyan: neft-sektor qarışığına elastiklik (büzülmüş) | -0.119 | 0.122 | -0.358 | 0.120 |
+
+Digər faydalı qazıntıların (08) tikinti əlaqəsinin elastikliyi rıçaqdır (`quarrying_link_elasticity` = 1,000, vahid əlaqə qaydası), qiymətləndirilmiş əmsal deyil: yalnız `quarrying_rule = construction_link` olduqda təsir edir; baza proqnozu lövbərlənmiş neytral qaydadır. Qiymətləndirmə (`FR10.mining_08`): 0,111 (95% interval -0,59 – 0,81); vahid elastiklik rədd edilir (p = 0,016).
 <!-- /AUTO:v2_engine -->
 
 **Dayanıqlıq və həssaslıq** (`output/FR10_robustness_summary.csv`, `output/FR10_coef_sensitivity.csv`). Reyestrin
@@ -1373,7 +1376,7 @@ Dayanıqlıq hökmləri: A qeyri-stabil: 39, A qismən stabil: 46, A stabil: 34,
 
 | komponent (azərbaycanca) | növ | giriş | effect_low_pct | effect_high_pct |
 |---|---|---|---|---|
-| Emal sənayesi: Ümumi mənfəət / əlavə dəyər | rıçaq | margin_mode | +7.149 | +12.075 |
+| Emal sənayesi: Ümumi mənfəət / əlavə dəyər | rıçaq | margin_mode | +8.877 | +11.995 |
 | Emal sənayesi: Ümumi mənfəət / əlavə dəyər | rıçaq | labour_share_shift_pp | +1.520 | -1.520 |
 | 19 Neft emalı məhsulları: Emal sənayesində pay | rıçaq | cap_factor_19 | -5.091 | +5.091 |
 | 19 Neft emalı məhsulları: Emal sənayesində pay | əmsal | FR10.oil_19/dln_oil_azn | +0.683 | -0.678 |
@@ -1382,26 +1385,25 @@ Hər əmsalın istənilən komponentə ən böyük 2030 təsiri (± 1 s.x.):
 
 | giriş | komponent (azərbaycanca) | effect_low_pct | effect_high_pct |
 |---|---|---|---|
-| FR10.pooled/x | 23 Digər qeyri-metal mineral məhsullar: Real buraxılış (2015 qiymətləri) | +0.725 | -0.718 |
-| FR10.mining_08/x | 08 Digər faydalı qazıntılar: Real buraxılış (2015 qiymətləri) | -1.590 | +1.616 |
+| FR10.pooled/x | 23 Digər qeyri-metal mineral məhsullar: Real buraxılış (2015 qiymətləri) | +0.694 | -0.688 |
 | FR10.oil_19/dln_oil_azn | 19 Neft emalı məhsulları: Nominal buraxılış | +0.683 | -0.678 |
-| FR10.reg_system/Nakhchivan_AR | Naxçıvan MR: sənaye buraxılışında pay | +7.399 | -6.894 |
-| FR10.reg_system/Absheron_Khizi | Abşeron-Xızı: sənaye buraxılışında pay | +6.687 | -6.301 |
-| FR10.reg_system/Daghlig_Shirvan | Dağlıq Şirvan: sənaye buraxılışında pay | +6.144 | -5.789 |
-| FR10.reg_system/Ganja_Dashkasan | Gəncə-Daşkəsən: sənaye buraxılışında pay | +7.451 | -6.945 |
-| FR10.reg_system/Garabagh | Qarabağ: sənaye buraxılışında pay | +7.347 | -6.856 |
-| FR10.reg_system/Gazakh_Tovuz | Qazax-Tovuz: sənaye buraxılışında pay | +5.966 | -5.635 |
-| FR10.reg_system/Guba_Khachmaz | Quba-Xaçmaz: sənaye buraxılışında pay | +7.502 | -6.982 |
-| FR10.reg_system/Lankaran_Astara | Lənkəran-Astara: sənaye buraxılışında pay | +4.817 | -4.598 |
-| FR10.reg_system/Central_Aran | Mərkəzi Aran: sənaye buraxılışında pay | +7.646 | -7.111 |
-| FR10.reg_system/Mil_Mughan | Mil-Muğan: sənaye buraxılışında pay | +7.160 | -6.687 |
-| FR10.reg_system/Shaki_Zagatala | Şəki-Zaqatala: sənaye buraxılışında pay | +7.325 | -6.830 |
-| FR10.reg_system/Eastern_Zangezur | Şərqi Zəngəzur: sənaye buraxılışında pay | +8.819 | -8.105 |
-| FR10.reg_system/Shirvan_Salyan | Şirvan-Salyan: sənaye buraxılışında pay | +6.849 | -6.417 |
+| FR10.reg_system/Nakhchivan_AR | Naxçıvan MR: sənaye buraxılışında pay | +7.924 | -7.347 |
+| FR10.reg_system/Absheron_Khizi | Abşeron-Xızı: sənaye buraxılışında pay | +7.156 | -6.715 |
+| FR10.reg_system/Daghlig_Shirvan | Dağlıq Şirvan: sənaye buraxılışında pay | +6.577 | -6.172 |
+| FR10.reg_system/Ganja_Dashkasan | Gəncə-Daşkəsən: sənaye buraxılışında pay | +7.978 | -7.401 |
+| FR10.reg_system/Garabagh | Qarabağ: sənaye buraxılışında pay | +7.867 | -7.306 |
+| FR10.reg_system/Gazakh_Tovuz | Qazax-Tovuz: sənaye buraxılışında pay | +6.385 | -6.007 |
+| FR10.reg_system/Guba_Khachmaz | Quba-Xaçmaz: sənaye buraxılışında pay | +8.034 | -7.441 |
+| FR10.reg_system/Lankaran_Astara | Lənkəran-Astara: sənaye buraxılışında pay | +5.154 | -4.903 |
+| FR10.reg_system/Central_Aran | Mərkəzi Aran: sənaye buraxılışında pay | +8.187 | -7.578 |
+| FR10.reg_system/Mil_Mughan | Mil-Muğan: sənaye buraxılışında pay | +7.667 | -7.128 |
+| FR10.reg_system/Shaki_Zagatala | Şəki-Zaqatala: sənaye buraxılışında pay | +7.844 | -7.279 |
+| FR10.reg_system/Eastern_Zangezur | Şərqi Zəngəzur: sənaye buraxılışında pay | +9.449 | -8.634 |
+| FR10.reg_system/Shirvan_Salyan | Şirvan-Salyan: sənaye buraxılışında pay | +7.333 | -6.840 |
 <!-- /AUTO:v2_sens -->
 
 **Azərbaycan dilində sətirlər** (`output/FR10_strings_az.csv`).
 
 <!-- AUTO:v2_strings -->
-FR10-un CSV fayllarında 1083 ingiliscə sətir; tərcümə şablonu 866, DSK az (018) 137, DSK az (018_1) 49, sahələr lüğəti 24, regionlar lüğəti 4, icra zamanı tərtib olunan (v2.1) 3. DSK-nın rəsmi Azərbaycan dilində adı olan məhsullar: 142 / 142.
+FR10-un CSV fayllarında 1082 ingiliscə sətir; tərcümə şablonu 865, DSK az (018) 137, DSK az (018_1) 49, sahələr lüğəti 24, regionlar lüğəti 4, icra zamanı tərtib olunan (v2.1) 3. DSK-nın rəsmi Azərbaycan dilində adı olan məhsullar: 142 / 142.
 <!-- /AUTO:v2_strings -->

@@ -1,0 +1,12 @@
+{
+  "what": "Minimum-wage path for the forecast years - the ONE source read by FR1 (exogenous 'minwage', every scenario) and FR3 (its baseline path and scenario default).",
+  "first_forecast_year_rule": "annual average (months / 12) of the level in force under the decree schedule minwage_decrees.csv (DSK table 004_1); no decree after 2025-01-01, so 2026 = the legal 400 AZN",
+  "legal_level_first_forecast_year_azn": 400.0,
+  "growth_pct_a_year_from_second_forecast_year": {
+    "Baseline": 6.0,
+    "Adverse": 3.0,
+    "Reform": 9.0
+  },
+  "growth_note": "Assumption (no decree exists beyond 2025): 2027-2030 nominal growth a year = FR3's documented scenario levers (Baseline 6%, Adverse 3%, Reform 9%), now shared by FR1. Before 2026-10-06 FR1 used 2025 x 1.05 (420 AZN in 2026) and +5% a year in every scenario, while FR3 used 400 AZN then 6/3/9%.",
+  "date": "2026-10-06"
+}

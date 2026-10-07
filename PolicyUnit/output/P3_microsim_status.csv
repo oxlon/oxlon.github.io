@@ -1,0 +1,21 @@
+scenario,scenario_name,status,channel,rows,message_az
+ex_mw20,Minimum əmək haqqı +20 % (2026),ok,birbaşa alət (vergi-müavinət qaydası),90,
+ex_tsa30,ÜSY ödənişləri +30 % (2026),ok,birbaşa alət (vergi-müavinət qaydası),80,
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),ok,birbaşa alət (vergi-müavinət qaydası),80,
+ex_pens10,Pensiyalar +10 % (2026),ok,birbaşa alət (vergi-müavinət qaydası),80,
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",ok,birbaşa alət (vergi-müavinət qaydası),80,
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),ok,birbaşa alət (vergi-müavinət qaydası),80,
+ex_vat_m2,ƏDV −2 f.b. (2026),ok,birbaşa alət (vergi-müavinət qaydası),80,
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),ok,birbaşa alət (vergi-müavinət qaydası),80,
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),ok,birbaşa alət (vergi-müavinət qaydası),320,
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),ok,əlaqə: MikroUnit FR4 (muzdlu işçilər),320,
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),ok,birbaşa alət (vergi-müavinət qaydası),320,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",ok,birbaşa alət (vergi-müavinət qaydası),320,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),ok,birbaşa alət (vergi-müavinət qaydası),360,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+pension10_2027,Pensiyalar +10 % (2027-dən),ok,birbaşa alət (vergi-müavinət qaydası),320,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),ok,əlaqə: MikroUnit FR4 (muzdlu işçilər),400,
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),ok,əlaqə: MikroUnit FR4 (muzdlu işçilər),320,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",ok,əlaqə: MikroUnit FR4 (muzdlu işçilər),240,
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",ok,əlaqə: MikroUnit FR4 (muzdlu işçilər),240,
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),ok,birbaşa alət (vergi-müavinət qaydası),320,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),ok,birbaşa alət (vergi-müavinət qaydası),320,mikrosimulyasiya 2030-dan sonrakı illər üçün hesablanmır (MikroUnit baza üfüqü); uzun müddət üçün longrun mühərrikinə baxın

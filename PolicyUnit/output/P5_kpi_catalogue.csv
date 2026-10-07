@@ -1,0 +1,32 @@
+id,name_az,formula,indicator,horizon,stat,unit,direction,default_weight,default_selected,source_engine,description_az,selected
+gdp_short,ÜDM-ə təsir — qısa müddət,mean(Δ% real ÜDM; t0..t0+1),gdp_real,qısa,effect,% baza ilə fərq,higher,1.0,yes,micro|caem,"Başlanğıc il və növbəti il (t0, t0+1) üzrə real ÜDM səviyyəsinin bazadan orta sapması",True
+gdp_medium,ÜDM-ə təsir — orta müddət,mean(Δ% real ÜDM; t0+2..t0+3),gdp_real,orta,effect,% baza ilə fərq,higher,1.0,yes,micro|caem,başlanğıc ildən 2–3 il sonra (t0+2…t0+3),True
+gdp_long,ÜDM-ə təsir — uzun müddət,mean(Δ% real ÜDM; ≥t0+4),gdp_real,uzun,effect,% baza ilə fərq,higher,1.0,yes,longrun|caem,başlanğıc ildən ≥ 4 il sonra (≥ t0+4; struktur ekstrapolyasiya),True
+nonoil_gdp,Qeyri-neft ÜDM-ə təsir — orta müddət,mean(Δ% real qeyri-neft ÜDM),gdp_nonoil_real,orta,effect,% baza ilə fərq,higher,1.0,no,micro|caem,,False
+inflation_short,İnflyasiyaya təsir — qısa müddət,mean(Δ İQİ inflyasiyası; f.b.),infl,qısa,effect,f.b.,lower,1.0,yes,micro|caem,Yüksək inflyasiya mənfi qiymətləndirilir,True
+cpi_level,Qiymət səviyyəsinə təsir — orta müddət,mean(Δ% İQİ səviyyəsi),cpi,orta,effect,% baza ilə fərq,lower,0.5,no,micro|caem,,False
+unemployment,İşsizliyə təsir — orta müddət,mean(Δ işsizlik səviyyəsi; f.b.),unemp_rate,orta,effect,f.b.,lower,1.0,yes,micro|caem,FR1 ümumi məşğulluq elastikliyi kiçikdir — FR4 formal iş yerləri ilə birlikdə oxuyun,True
+formal_jobs,Formal məşğulluğa təsir (FR4 muzdlu işçilər),mean(Δ% muzdlu işçilər),employment_hired,orta,effect,% baza ilə fərq,higher,1.0,no,micro,,False
+emp_elasticity,Məşğulluq elastikliyi,Δ% muzdlu işçilər / Δ% qeyri-neft ÜDM (orta müddət),employment_hired,orta,elasticity,elastiklik,higher,0.5,no,micro,TT nümunəsi: məşğulluq elastikliyi,False
+real_wage,Real əmək haqqına təsir,mean(Δ% real orta əmək haqqı),wage_real,orta,effect,% baza ilə fərq,higher,0.5,no,micro,,False
+real_income,Real sərəncamda qalan gəlirə təsir,mean(Δ% real sərəncamda qalan gəlir),hh_disp_real,orta,effect,% baza ilə fərq,higher,0.5,no,micro,,False
+gini,Gini əmsalına təsir,mean(Δ Gini; bənd),gini,orta,effect,bənd,lower,1.0,no,microsim,Mikrosimulyasiya (SİNTETİK məlumat xəbərdarlığı ilə),False
+poverty_rate,Yoxsulluq səviyyəsinə təsir,mean(Δ yoxsulluq səviyyəsi; f.b.),poverty_rate,orta,effect,f.b.,lower,1.0,no,microsim,,False
+poverty_gap,Yoxsulluq dərinliyinə təsir,mean(Δ yoxsulluq dərinliyi; f.b.),poverty_gap,orta,effect,f.b.,lower,0.5,no,microsim,,False
+fiscal_cost,Birbaşa fiskal xərc (qısa + orta müddət),Σ birbaşa xərc / gəlir itkisi (mln AZN),fiscal_cost,qısa+orta,sum,mln AZN,lower,1.0,yes,micro|longrun,Ex ante statik xərc (geri əlaqədən əvvəl),True
+fiscal_cost_gdp,Fiskal xərc (ÜDM-ə %),mean(birbaşa xərc / nominal ÜDM × 100),fiscal_cost,qısa+orta,cost_gdp,% ÜDM,lower,0.5,no,micro,,False
+cost_per_job,Bir formal iş yerinə xərc,Σ xərc / Δ muzdlu işçilər (orta müddət),fiscal_cost,qısa+orta,cost_per_job,min AZN / iş yeri,lower,0.5,no,micro,Muzdlu işçi artımı sıfıra yaxındırsa hesablanmır,False
+multiplier,Fiskal multiplikator,Σ Δ nominal ÜDM / Σ birbaşa xərc (qısa + orta),gdp_nominal,qısa+orta,multiplier,AZN / AZN,higher,1.0,no,micro,Xərcsiz alətlər üçün hesablanmır,False
+budget_balance,Büdcə balansına təsir,mean(Δ balans / ÜDM; f.b.),budget_balance_pct,orta,effect,f.b. ÜDM,higher,0.5,no,micro|caem,Geri əlaqədən sonra xalis təsir,False
+debt_gdp,Dövlət borcuna təsir — uzun müddət,mean(Δ borc / ÜDM; f.b.),debt_pct,uzun,effect,f.b. ÜDM,lower,1.0,yes,longrun|caem,,True
+current_account,Cari hesab proksisinə təsir,Σ Δ (qeyri-neft xalis ixrac; mln AZN),ca_proxy,orta,effect,mln AZN,higher,0.5,no,micro,FR1-də cari hesab yoxdur — proksi,False
+ulc,Vahid əmək xərci (rəqabətlilik),Δ% nominal maaş − Δ% (qeyri-neft ÜDM / məşğulluq),wage_nominal,orta,ulc,% baza ilə fərq,lower,0.5,no,micro,Rəqabətlilik göstəricisi (Blueprint §5.3),False
+export_share,Qeyri-neft ixracının ÜDM-də payı,Δ (real qeyri-neft ixracı / real ÜDM × 100; f.b.),exports_nonoil_real,orta,share_gdp,f.b.,higher,0.5,no,micro,,False
+manufacturing,Emal sənayesi əlavə dəyəri,mean(Δ% emal sənayesi ƏD),sector_va:man,orta,effect,% baza ilə fərq,higher,0.5,no,micro|io,Sektor performansı (FR2/FR10),False
+concentration,Bazar konsentrasiyası (HHI),mean_sectors(Δ% HHI; FR12),hhi:,orta,mean_prefix,% baza ilə fərq,lower,0.5,no,micro,Bazar müvazinəti (FR12),False
+regional,Regional fərqlər,std_regions(Δ% regional buraxılış; FR10),region_output:,orta,std_prefix,f.b.,lower,0.5,no,micro,Kiçik dəyər = bərabər regional təsir,False
+risk_es,Risk göstəricisi (ES10 qeyri-neft artımı),RiskUnit stress/run: ES10 dəyişməsi (siyasət ilə − siyasətsiz),risk_es,orta,external,f.b.,higher,0.5,yes,risk,FR4 (P4_kpi_inputs.csv); defolt çəki 0.5 — ES10 ÜDM artımına təsirlə qismən üst-üstə düşür,True
+side_effects,Yan təsirlərin sayı,FR4 avtomatik yan təsir qaydalarından tetiklənənlərin sayı,side_effects,orta,external,say,lower,1.0,yes,risk,FR4 (P4_kpi_inputs.csv); defolt çəki 1.0 — yan təsirlər (qeyri-formallaşma və s.) makro göstəricilərlə bərabər çəkidə,True
+evidence,Sübut səviyyəsi,C və ya daha yaxşı səviyyəli nəticələrin payı,gdp_real,qısa+orta+uzun,evidence,pay,higher,0.25,no,all,A–D pillələri (Blueprint §6.3),False
+risk_breach,Hədd pozulması ehtimalının artımı (İQİ / fiskal / artım),"max_{növ, il} ΔP(hədd pozulması) — RiskUnit, əsas variant (P4_risk_profile.csv)",cpi;fis;g,orta,risk_profile,ehtimal (0–1),lower,1.0,yes,risk,"FR4/RiskUnit: siyasətin İQİ (> 6 %), fiskal və qeyri-neft artımı hədlərini pozma ehtimalını ən çox artırdığı il; defolt çəki 1.0",True
+model_disagreement,Metodlar arası fikir ayrılığı,"mean_göstəricilər((yuxarı − aşağı sərhəd) / max(|orta nöqtə|, 0,1)), maks. 5 — P1_ranges (ÜDM, İQİ, maaş, formal məşğulluq; qısa + orta)",gdp_real;cpi;wage_nominal;employment_hired,qısa+orta,disagreement,pay,lower,1.0,yes,ranges,"NFR2: metodlar razılaşmırsa nəticə etibarsızdır (məs. minimum əmək haqqı: makro +7 % / statik +0,8 % maaş); defolt çəki 1.0 — makro göstəricilərlə bərabər",True

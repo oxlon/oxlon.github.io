@@ -1,0 +1,10 @@
+param,value,rule_az,status_az
+rel_ok,0.25,"«uyğun»: |sapma| ≤ max(rel_ok·|fakt|, min(sig_ok·σ_əf, cap_ok·|fakt|))",TƏKLİF — Nazirliklə razılaşdırılmalıdır
+cap_ok,0.35,əks-faktual səs-küyü tolerantlığı ən çox cap_ok·|fakt|-a qədər genişləndirir,TƏKLİF — Nazirliklə razılaşdırılmalıdır
+sig_ok,1.0,σ_əf — yalnız əks-faktualın səs-küyü; model intervalı ayrıca göstərilir (toplanmır),TƏKLİF — Nazirliklə razılaşdırılmalıdır
+rel_part,0.5,"«qismən uyğun»: |sapma| ≤ max(rel_part·|fakt|, min(sig_part·σ_əf, cap_part·|fakt|))",TƏKLİF — Nazirliklə razılaşdırılmalıdır
+cap_part,0.75,qismən uyğunluq üçün yuxarı hədd,TƏKLİF — Nazirliklə razılaşdırılmalıdır
+sig_part,2.0,əks halda «uyğunsuz»; istiqamət səhvdirsə həmişə «uyğunsuz»,TƏKLİF — Nazirliklə razılaşdırılmalıdır
+naive_required,True,sadə etalonu (əvvəlki ilin nəticəsi / tam mexaniki ötürmə) üstələməyən müqayisə ən çox «qismən uyğun»,TƏKLİF — Nazirliklə razılaşdırılmalıdır
+min_decisive,2,«keçdi» üçün ən azı bu qədər həlledici əsas müqayisə; az olduqda ən çox «şərti keçdi»,TƏKLİF — Nazirliklə razılaşdırılmalıdır
+ident_sigma,1.0,|fakt| < ident_sigma·σ_əf → təsir müəyyən edilmir (aşağı güc); yalnız 2σ_əf-dən böyük səhv həlledicidir,TƏKLİF — Nazirliklə razılaşdırılmalıdır

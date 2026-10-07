@@ -1,8 +1,0 @@
-test,passed,detail
-real-named file with neutral data_status -> DATA_MODE = REAL,True,"mode REAL, file FR10_firm_panel.csv"
-REAL file passes the validator (0 hard errors),True,0 warnings
-"REAL mode writes FR10_FIRM_* only, without watermark, all tests pass",True,"11 files, e.g. ['FR10_FIRM_cohort_survival.csv', 'FR10_FIRM_concentration_nace.csv', 'FR10_FIRM_concentration_nace_region_2025.csv']"
-"Azerbaijani headers (xlsx, FIRM_PANEL_PATH) load and validate",True,"3000 rows, unknown columns [], mode REAL"
-FIRM_PANEL_PATH has priority over the real-named file,True,loaded panel_az.xlsx
-broken file: missing required column reported as fatal,True,required column missing (EN or AZ header)
-broken file: total assets < current assets flagged per row and the run stops,True,"firm panel rejected: 15 hard errors (first: row 2, field total_assets: total assets < current + fixed assets); see rep.csv"

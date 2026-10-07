@@ -1,0 +1,35 @@
+id,name_az,family,unit,default_size,min,max,engines,description_az,cost_rule,cost_in_fr1
+pub_invest,Dövlət əsaslı investisiyası (əlavə),xərc,mln_azn,1000,-5000,10000,micro;caem;io;microsim;longrun,"Dövlət investisiyasına əlavə (nominal mln AZN/il); maliyyələşmə: deficit (borc), sofaz (ARDNF transferti), tax (vergi artımı), reallocation (cari xərcin azaldılması)",spend,yes
+gov_current,Dövlət cari xərcləri (əlavə),xərc,mln_azn,500,-5000,5000,caem;io;microsim,Mal və xidmət alışı üzrə əlavə cari xərc (nominal mln AZN/il); MikroUnit-də ayrıca kanal yoxdur,spend,no
+public_wage,Büdcə təşkilatlarında əmək haqqı,xərc,pct,10,-20,50,caem;io;microsim,Büdcə sektorunun əmək haqqı fondunun artımı (bazaya %); xərc = % × büdcə əmək haqqı fondu,benefit:public_wagebill,no
+min_wage,Minimum əmək haqqı,əmək,pct,20,-20,100,micro;microsim;longrun,Minimum aylıq əmək haqqı səviyyəsi bazaya nisbətən % (göstərilən illərdə qüvvədə); büdcə xərci: büdcə təşkilatlarında yeni minimuma qaldırma + sıxılma + 22 % sosial ayırma,mw_budget,no
+pension_index,Pensiyaların artımı (indeksasiyadan əlavə),sosial,pct,10,-20,50,micro;caem;microsim;longrun,Orta pensiya səviyyəsi bazaya nisbətən %; FR1 v2.3.5: büdcədən DSMF-ə transfert kimi xərclənir,benefit:pension_spending,yes
+tsa_benefit,Ünvanlı dövlət sosial yardımı (ÜSY),sosial,pct,30,-50,200,micro;caem;microsim;longrun,ÜSY ödənişlərinin həcmi bazaya nisbətən %; xərc = mikrosimulyasiyanın benefisiar əsaslı tərifi (eng_microsim.tsa_spending; P1 = P3),tsa_microsim,no
+vat_rate,ƏDV dərəcəsi,vergi,pp,-2,-10,5,micro;caem;io;microsim;longrun,ƏDV dərəcəsinin dəyişməsi (faiz bəndi; baza 18 %),revenue:vat,no
+profit_tax,Mənfəət vergisi dərəcəsi,vergi,pp,-2,-10,10,micro;caem;longrun;microsim,Mənfəət vergisi dərəcəsinin dəyişməsi (faiz bəndi; baza 20 %); MikroUnit: proksi (gəlir itkisi + istifadə dəyəri/daxili vəsait kanalı ilə özəl investisiya),revenue:cit,no
+pit_rate,Fiziki şəxslərin gəlir vergisi (orta effektiv dərəcə),vergi,pp,-2,-10,10,micro;caem;microsim;longrun,Gəlir vergisinin orta effektiv dərəcəsinin dəyişməsi (faiz bəndi),revenue:pit,no
+import_tariff,İdxal gömrük rüsumu (orta dərəcə),ticarət,pp,2,-10,20,micro;caem;io;microsim,Orta ad valorem idxal rüsumunun dəyişməsi (faiz bəndi),revenue:customs,no
+export_subsidy,Qeyri-neft ixracına subsidiya,ticarət,mln_azn,200,0,2000,micro;caem;io;longrun;microsim,Qeyri-neft ixracatçılarına ödəniş (nominal mln AZN/il); target = sektor (məs. man),spend,no
+policy_rate,AMB uçot dərəcəsi,monetar,pp,-1,-5,5,micro;caem;longrun;microsim,Uçot dərəcəsinin dəyişməsi (faiz bəndi),none,no
+fx_deval,Manatın məzənnəsinin dəyişməsi (AZN/USD),monetar,pct,10,-30,50,micro;caem;oxlon;io;microsim;riskfx,AZN/USD səviyyəsi bazaya nisbətən % (+ = devalvasiya),none,no
+credit_subsidy,Kredit faizinin subsidiyalaşdırılması,monetar,mln_azn,100,0,1000,micro;longrun;microsim,Kredit faizinə subsidiya (nominal mln AZN/il) → orta kredit faizinin azalması,spend,no
+agri_subsidy,Kənd təsərrüfatı subsidiyası,sektor,mln_azn,300,0,2000,micro;caem;io;microsim;longrun,Aqrar istehsal subsidiyası (nominal mln AZN/il),spend,no
+sector_tfp,Məhsuldarlıq (TFP) proqramı,sektor,pp,0.5,-3,3,micro;caem;longrun;microsim,Təklif sektorlarında əlavə illik TFP artımı (faiz bəndi/il),none,no
+fuel_price,Tənzimlənən yanacaq qiymətləri,tənzimləmə,pct,20,-50,100,micro;caem;io;microsim,"Benzin/dizel tənzimlənən qiymətləri bazaya nisbətən %; fiskal kanal: satış dəyərindən ƏDV + əlavə marjadan mənfəət vergisi (fuel_revenue, mənfi xərc = gəlir)",fuel_revenue,no
+utility_tariff,Kommunal tariflər (elektrik/qaz/su),tənzimləmə,pct,10,-50,100,micro;caem;io;microsim,Kommunal xidmət tarifləri bazaya nisbətən %,none,no
+market_entry,Bazara girişin liberallaşdırılması,tənzimləmə,abs,2,0,20,micro;microsim,"Hədəf bazara əlavə daxil olan firma sayı (target = FR12 bazar kodu: CEM, MOB, BNK, ICT ...)",none,no
+io_sector_demand,Sektor məhsuluna əlavə son tələb (sektor proqramı),sektor,mln_azn,100,-5000,5000,io;microsim,"Hədəf sektorun məhsuluna əlavə son tələb / sektor proqramı alışları (nominal mln AZN/il); target = IO sektoru (config/io_sectors.csv), FR1/FR4 sektoru və ya NACE bölməsi",spend,no
+io_export_demand,Sektor ixracına əlavə xarici tələb,ticarət,mln_azn,100,-5000,5000,io;microsim,Hədəf sektorun ixracının ekzogen artımı (nominal mln AZN/il; məs. yeni bazar); target = IO sektoru (defolt: emal sənayesi),none,no
+elec_tariff,Elektrik enerjisi tarifi,tənzimləmə,pct,10,-50,100,io;microsim,Tənzimlənən elektrik tarifi bazaya nisbətən %; IO qiymət modelində D bölməsinin 55 %-i (fərziyyə),none,no
+gas_tariff,Təbii qaz tarifi,tənzimləmə,pct,10,-50,100,io;microsim,Tənzimlənən qaz tarifi bazaya nisbətən %; IO qiymət modelində D bölməsinin 40 %-i (fərziyyə),none,no
+water_tariff,Su və kanalizasiya tarifi,tənzimləmə,pct,10,-50,100,io;microsim,"Su təchizatı, kanalizasiya və tullantı xidməti tarifləri bazaya nisbətən % (E bölməsi)",none,no
+product_tax,Məhsul üzrə dolayı vergi / subsidiya (aksiz tipli),vergi,pp,2,-20,50,io;microsim,Hədəf məhsulun əsas qiymətinə faiz bəndi ilə əvəzləşdirilməyən vergi (mənfi = subsidiya); aralıq və son istifadəçilər ödəyir; target = IO sektoru,none,no
+labour_cost,Əmək xərci şoku (əmək haqqı / sosial ayırmalar),əmək,pct,5,-30,50,io;microsim,Hədəf sektorda (null = bütün) əmək ödənişi xərcinin bazaya nisbətən % dəyişməsi → IO qiymət modeli,none,no
+sector_productivity,Sektor məhsuldarlığı şoku,sektor,pct,5,-20,30,io;microsim,Hədəf sektorda məhsuldarlığın % artımı: vahid ilkin xərc və məşğulluq əmsalı azalır (IO qiymət modeli),none,no
+sector_supply_shock,Sektor təklif şoku (Ghosh modeli),sektor,pct,-10,-50,50,io;microsim,Hədəf sektorun ilkin resurslarının % dəyişməsi (məs. enerji təchizatı kəsintisi) → Ghosh irəli ötürülmə; şərhi məhduddur,none,no
+tsa_need,ÜSY ehtiyac meyarının həddi,sosial,pct,10,-30,100,microsim,"Ehtiyac meyarı (AZN/nəfər) bazaya nisbətən %; həm ödəniş məbləği, həm əhatə dəyişir (mikrosimulyasiya)",none,no
+min_pension,Əmək pensiyasının minimum məbləği,sosial,pct,10,-20,100,microsim,Minimum əmək pensiyası bazaya nisbətən % (yalnız minimuma qədər olan pensiyalar artır),none,no
+pit_nonoil_private,Qeyri-neft özəl sektor gəlir vergisi (≤2500 AZN pilləsi),vergi,pp,2,-7,10,microsim,"Qeyri-neft özəl sektor muzdlu işçilərinin ≤2500 AZN hissəsinə dərəcənin dəyişməsi (f.b.; 2026: 3 %, 2027: 5 %, 2028: 7 %)",none,no
+ssc_employee,Məcburi sosial sığorta haqqı — işçi payı,vergi,pp,1,-3,5,microsim,İşçinin sosial sığorta haqqı dərəcələrinin dəyişməsi (f.b.; bütün pillələr),none,no
+consumer_price,İstehlak malları qiyməti (kateqoriya üzrə),tənzimləmə,pct,10,-50,100,microsim,Göstərilən istehlak kateqoriyasının qiyməti bazaya nisbətən % (target: food;housing;transport ... — EBT desil səbətləri ilə yükün bölüşdürülməsi),none,no
+sector_jobs,Sektorda formal iş yerləri,sektor,pct,5,-50,100,microsim,Hədəf FR4 bölməsində (target: agr ... othsvc) muzdlu işçilərin sayı bazaya nisbətən % (mikrosimulyasiyada çəki bölünməsi ilə),none,no

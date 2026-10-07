@@ -477,8 +477,9 @@ def optimise(C, M, E, m0, W, A, budget, cand, fixed=(), excluded=()) -> dict:
     best, bm, bok = score(C, M, sel | fx, m0, W, A, need_app)
     for _ in range(60):                                              # add / drop / swap local search (exact)
         improved = False
-        moves = [sel | {t} for t in cand if t not in sel] + [sel - {t} for t in sel] + \
-                [(sel - {a}) | {b} for a in sel for b in cand if b not in sel]
+        # deterministic move order (sets iterate in hash order, which made the result depend on PYTHONHASHSEED)
+        moves = [sel | {t} for t in cand if t not in sel] + [sel - {t} for t in sorted(sel)] + \
+                [(sel - {a}) | {b} for a in sorted(sel) for b in cand if b not in sel]
         for s_ in moves:
             if cost_of(s_) > free + 1e-9:
                 continue

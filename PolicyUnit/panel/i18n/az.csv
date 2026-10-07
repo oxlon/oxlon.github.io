@@ -1,0 +1,108 @@
+mode,en,az
+regex,"— Absheron_Khizi(?=$| \(|,|;)",— Abşeron-Xızı
+regex,"— Baku_city(?=$| \(|,|;)",— Bakı şəhəri
+regex,"— Central_Aran(?=$| \(|,|;)",— Mərkəzi Aran
+regex,"— Daghlig_Shirvan(?=$| \(|,|;)",— Dağlıq Şirvan
+regex,"— Eastern_Zangezur(?=$| \(|,|;)",— Şərqi Zəngəzur
+regex,"— Ganja_Dashkasan(?=$| \(|,|;)",— Gəncə-Daşkəsən
+regex,"— Garabagh(?=$| \(|,|;)",— Qarabağ
+regex,"— Gazakh_Tovuz(?=$| \(|,|;)",— Qazax-Tovuz
+regex,"— Guba_Khachmaz(?=$| \(|,|;)",— Quba-Xaçmaz
+regex,"— Lankaran_Astara(?=$| \(|,|;)",— Lənkəran-Astara
+regex,"— Mil_Mughan(?=$| \(|,|;)",— Mil-Muğan
+regex,"— Nakhchivan_AR(?=$| \(|,|;)",— Naxçıvan MR
+regex,"— Shaki_Zagatala(?=$| \(|,|;)",— Şəki-Zaqatala
+regex,"— Shirvan_Salyan(?=$| \(|,|;)",— Şirvan-Salyan
+regex,"— AGR(?=$| \(|,|;)",— kənd təsərrüfatı
+regex,"— IND(?=$| \(|,|;)",— sənaye
+regex,"— CON(?=$| \(|,|;)",— tikinti
+regex,"— TRD(?=$| \(|,|;)",— ticarət
+regex,"— TRA(?=$| \(|,|;)",— nəqliyyat
+regex,"— ACC(?=$| \(|,|;)",— yerləşdirmə və iaşə
+regex,"— ICT(?=$| \(|,|;)",— informasiya və rabitə
+regex,"— REA(?=$| \(|,|;)",— daşınmaz əmlak
+regex,"— EDU(?=$| \(|,|;)",— təhsil
+regex,"— HEA(?=$| \(|,|;)",— səhiyyə
+regex,"— OTH(?=$| \(|,|;)",— digər sahələr
+regex,"— agr(?=$| \(|,|;)",— kənd təsərrüfatı
+regex,"— mining(?=$| \(|,|;)",— mədənçıxarma
+regex,"— manuf(?=$| \(|,|;)",— emal sənayesi
+regex,"— elec(?=$| \(|,|;)",— elektrik enerjisi
+regex,"— water(?=$| \(|,|;)",— su təchizatı
+regex,"— constr(?=$| \(|,|;)",— tikinti
+regex,"— trade(?=$| \(|,|;)",— ticarət
+regex,"— transp(?=$| \(|,|;)",— nəqliyyat
+regex,"— hotel(?=$| \(|,|;)",— yerləşdirmə və iaşə
+regex,"— ict(?=$| \(|,|;)",— informasiya və rabitə
+regex,"— fin(?=$| \(|,|;)",— maliyyə
+regex,"— realest(?=$| \(|,|;)",— daşınmaz əmlak
+regex,"— prof(?=$| \(|,|;)",— peşə fəaliyyəti
+regex,"— admsup(?=$| \(|,|;)",— inzibati xidmətlər
+regex,"— pubadm(?=$| \(|,|;)",— dövlət idarəetməsi
+regex,"— educ(?=$| \(|,|;)",— təhsil
+regex,"— health(?=$| \(|,|;)",— səhiyyə
+regex,"— art(?=$| \(|,|;)",— incəsənət
+regex,"— othsvc(?=$| \(|,|;)",— digər xidmətlər
+regex,"— utilities(?=$| \(|,|;)",— kommunal xidmətlər
+regex,"— communication(?=$| \(|,|;)",— rabitə
+regex,"— culture(?=$| \(|,|;)",— mədəniyyət
+regex,"— education(?=$| \(|,|;)",— təhsil
+regex,"— household(?=$| \(|,|;)",— məişət xidmətləri
+regex,"— housing(?=$| \(|,|;)",— mənzil-kommunal
+regex,"— legal_bank(?=$| \(|,|;)",— hüquqi və bank xidmətləri
+regex,"— medical(?=$| \(|,|;)",— tibbi xidmətlər
+regex,"— other(?=$| \(|,|;)",— digər
+regex,"— sanatoria(?=$| \(|,|;)",— sanatoriya
+regex,"— sport(?=$| \(|,|;)",— idman
+regex,"— tourism(?=$| \(|,|;)",— turizm
+regex,"— transport(?=$| \(|,|;)",— nəqliyyat
+regex,"— deflyator(?=$| \(|,|;)",— deflyator
+regex,"— telekomunikasiya(?=$| \(|,|;)",— telekommunikasiya
+regex,"— turizm(?=$| \(|,|;)",— turizm
+phrase,"deficit (borc), sofaz (ARDNF transferti), tax (vergi artımı), reallocation (cari xərcin azaldılması)","""deficit"" (borc), ""sofaz"" (ARDNF transferti), ""tax"" (vergi artımı), ""reallocation"" (cari xərcin azaldılması)"
+regex,<b>(deficit|sofaz|tax|reallocation)</b>,<b><code>\1</code></b>
+phrase,PwC Tax Summaries (other taxes),PwC Tax Summaries (digər vergilər)
+phrase,ModuleNotFoundError: No module named,modul tapılmadı:
+phrase,RiskUnit import edilmir,RiskUnit idxal edilmir
+phrase,Normallaşdırma ssenarilər arasında,Normallaşdırma ssenarilər arasında
+exact,ratio,nisbət
+exact,state,dövlət sektoru
+exact,all,hamısı
+regex,"\(scenario, kpi, value\)","(ssenari, KPI, dəyər)"
+phrase,(tax),(vergi artımı)
+phrase,(deficit),(borc)
+phrase,(sofaz),(ARDNF transferti)
+phrase,(reallocation),(xərclərin yenidən bölüşdürülməsi)
+phrase,prosesinə import edilmir,prosesinə idxal edilmir
+regex,"\((scenario, variant, rule_id,[^)]*)\)","(<code>\1</code>)"
+phrase,Absheron_Khizi,Abşeron-Xızı
+phrase,Absheron Khizi,Abşeron-Xızı
+phrase,Baku_city,Bakı şəhəri
+phrase,Baku city,Bakı şəhəri
+phrase,Central_Aran,Mərkəzi Aran
+phrase,Central Aran,Mərkəzi Aran
+phrase,Daghlig_Shirvan,Dağlıq Şirvan
+phrase,Daghlig Shirvan,Dağlıq Şirvan
+phrase,Eastern_Zangezur,Şərqi Zəngəzur
+phrase,Eastern Zangezur,Şərqi Zəngəzur
+phrase,Ganja_Dashkasan,Gəncə-Daşkəsən
+phrase,Ganja Dashkasan,Gəncə-Daşkəsən
+phrase,Garabagh,Qarabağ
+phrase,Gazakh_Tovuz,Qazax-Tovuz
+phrase,Gazakh Tovuz,Qazax-Tovuz
+phrase,Guba_Khachmaz,Quba-Xaçmaz
+phrase,Guba Khachmaz,Quba-Xaçmaz
+phrase,Lankaran_Astara,Lənkəran-Astara
+phrase,Lankaran Astara,Lənkəran-Astara
+phrase,Mil_Mughan,Mil-Muğan
+phrase,Mil Mughan,Mil-Muğan
+phrase,Nakhchivan_AR,Naxçıvan MR
+phrase,Nakhchivan AR,Naxçıvan MR
+phrase,Shaki_Zagatala,Şəki-Zaqatala
+phrase,Shaki Zagatala,Şəki-Zaqatala
+phrase,Shirvan_Salyan,Şirvan-Salyan
+phrase,Shirvan Salyan,Şirvan-Salyan
+regex,\((shock)\),(<code>\1</code>)
+exact,True,bəli
+exact,False,xeyr
+regex,«(level|data)»,«<code>\1</code>»

@@ -12,3 +12,10 @@ MicroUnit/logs/
 RiskUnit/logs/
 **/.run_all.lock
 **/.update.lock
+# MİİS deploy (deploy/sync_to_repo.py): scratch never published
+**/work/
+**/logs/
+**/backup_*/
+*.db-shm
+*.db-wal
+_ci/

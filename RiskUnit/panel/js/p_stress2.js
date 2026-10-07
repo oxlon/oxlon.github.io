@@ -66,7 +66,7 @@
         else { loc.splice(+id.slice(1), 1); U.ls('riskPanel.stressSaved', JSON.stringify(loc)); savedList(el); }
       };
     };
-    if (U.API.fileMode()) render([]); else U.API.saved('stress').then(function (j) { render(j.scenarios || []); }, function () { render([]); });
+    if (U.API.fileMode() || U.API.online === false) render([]); else U.API.saved('stress').then(function (j) { render(j.scenarios || []); }, function () { render([]); });
   }
   function req() { return { name: B.name, shocks: B.shocks.map(function (s) { return { factor: s.factor, k_sigma: s.k_sigma }; }), with_measures: B.with_measures, stochastic: B.stochastic, n: B.n, top_components: 40 }; }
   ST.builder = function (el) {
@@ -78,7 +78,8 @@
       '<div class="toolbar" style="padding:0 16px 12px"><button class="btn pri" id="sb-run">' + U.icon('play', 14) + ' Hesabla</button><button class="btn" id="sb-save">Saxla</button><button class="btn ghost" id="sb-exp">JSON ixrac</button><label class="btn ghost">JSON idxal<input type="file" id="sb-imp" accept=".json" hidden></label></div></div>' +
       '<div id="sb-off"></div><div id="sb-res"></div>' + U.sec('Saxlanmış ssenarilər', '', '<div id="sb-saved"></div>');
     var off = U.$('#sb-off', el);
-    if (U.API.fileMode() || U.API.online === false) { off.innerHTML = U.API.offlineHtml('Stress testinin hesablanması') + '<div id="sb-pv"></div>'; preview(U.$('#sb-pv', el)); }
+    if (U.API.mode() === 'brauzer') off.innerHTML = U.API.browserHtml('stress testinin hesablanması');
+    else if (U.API.fileMode() || U.API.online === false) { off.innerHTML = U.API.offlineHtml('Stress testinin hesablanması') + '<div id="sb-pv"></div>'; preview(U.$('#sb-pv', el)); }
     if (ST.last) result(U.$('#sb-res', el), ST.last);
     savedList(U.$('#sb-saved', el));
     var redraw = function () { save(); U.$('#sb-rows', el).innerHTML = rows(); var pv = U.$('#sb-pv', el); if (pv) preview(pv); };

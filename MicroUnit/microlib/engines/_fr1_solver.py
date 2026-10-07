@@ -37,7 +37,13 @@ def solve_year(M, c, CAL, prev, ex, maxit=800, tol=1e-10, damp=0.5, addf=None, i
         # ===== Block G: prices and rates =====
         s['gap'] = 100*(np.log(s['rgdpnon']) - Lin(c['POT'], trend=ex['trend']))
         dln_wage = (np.log(s['wage']) - np.log(prev['wage']))*100
-        s['infl'] = Lin(c['G4_infl'], dln_fx=ex['dln_fx'], dln_wage=dln_wage) + A_.get('infl', 0)
+        _post = float(ex['trend'] >= 15)                    # v2.3.3 candidates: floating regime from 2015
+        s['infl'] = Lin(c['G4_infl'], dln_fx=ex['dln_fx'], dln_wage=dln_wage, dln_fx_L1=ex.get('dln_fx_L1', 0.0),
+                        fx_post15=ex['dln_fx']*_post, fx_post15_L1=ex.get('dln_fx_L1', 0.0)*float(ex['trend'] - 1 >= 15),
+                        dln_pm_azn=np.log(1 + ex.get('pm_usd_infl', 0.0)/100)*100 + ex['dln_fx'],
+                        dln_pm_azn_L1=ex.get('dln_pm_azn_L1', 0.0),
+                        dln_pm_dsk=np.log(1 + ex.get('pm_dsk_infl', 0.0)/100)*100 + ex['dln_fx'],
+                        dln_pm_dsk_L1=ex.get('dln_pm_dsk_L1', 0.0)) + A_.get('infl', 0)
         s['cpi'] = prev['cpi']*(1 + s['infl']/100)
         s['p_cons'] = prev['p_cons']*(1 + s['infl']/100)
         s['p_inv'] = prev['p_inv'] *(1 + s['infl']/100)
@@ -52,15 +58,18 @@ def solve_year(M, c, CAL, prev, ex, maxit=800, tol=1e-10, damp=0.5, addf=None, i
                                                  + b4*ex['dln_fx'])/100)
         s['lendrate'] = Lin(c['G3_lendrate'], deprate=ex['deprate'], npl_ratio=ex['npl_ratio']) + A_.get('lendrate', 0)
         s['realrate'] = s['lendrate'] - s['infl']
+        # 2026-10-07: a decided indexation (pension_index_pct, latest-actual rule) replaces CPI in that year
+        _pidx = ex.get('pension_index_pct')
         s['pension'] = ex['pension'] if ex.get('pension') is not None else \
-            prev['pension']*(1 + s['infl']/100)*(1 + ex.get('pension_real_g', 0.0))
+            prev['pension']*(1 + (s['infl'] if _pidx is None else _pidx)/100)*(1 + ex.get('pension_real_g', 0.0))
         # ===== Block E: income and labour =====
         s['lf'] = pop*np.exp(Lin(c['E4_lf'], trend=ex['trend']) + A_.get('lf', 0))
         s['emp'] = s['lf']*np.exp(Lin(c['E1_emp'], ln_gdpnon_pc=np.log(s['rgdpnon'])-lpop) + A_.get('emp', 0))
         s['unemp'] = 100*(s['lf'] - s['emp'])/s['lf']
         prod_non = s['rgdpnon']/s['emp']
+        _pr = {f'pubref{str(r)[2:]}': float(ex['trend'] + 2000 >= r) for r in (2019, 2022, 2023)}   # v2.3.6 candidates
         s['wage'] = np.exp(Lin(c['E2_wage'], ln_prod_non=np.log(prod_non), ln_cpi=np.log(s['cpi']),
-                               ln_minwage=np.log(ex['minwage'])) + A_.get('wage', 0))
+                               ln_minwage=np.log(ex['minwage']), pubref=sum(_pr.values()), **_pr) + A_.get('wage', 0))
         s['rwage'] = s['wage']/s['cpi']*100
         if CAL.get('e3_mode', 'share') in ('legs', 'legs_real'):
             # v2.2 lever: household income by source (E3a-E3d growth equations from the 2025 actual levels)
@@ -167,6 +176,11 @@ def solve_year(M, c, CAL, prev, ex, maxit=800, tol=1e-10, damp=0.5, addf=None, i
         s['rexp_cur'] = np.exp(Lin(c['F3_expcur'], ln_rev_r=np.log(s['rev_tot_n']/s['p_gdp']), ln_gdpnon=np.log(s['rgdpnon']),
                                    ln_rev_non_r=np.log(s['rrev_nonoil']), ln_rev_oil_r=np.log(max(s['rev_oil_n']/s['p_gdp'], 1e-6)))
                                + A_.get('rexp_cur', 0))
+        # v2.3.5: budget transfer to DSMF for a real pension increase above CPI indexation (policy)
+        _R = ex.get('pens_real_cum', 1.0)
+        if ex.get('pension_cost', True) and _R != 1.0 and 'pens_exp_base' in CAL:
+            s['rexp_cur'] += (CAL['pens_exp_base']*(s['pension']/CAL['pens_base_pension'])*(pop/CAL['pens_base_pop'])
+                              *(1 - 1/_R))/s['p_gdp']
         s['rexp_soc'] = CAL['soc_share']*s['rexp_cur']
         s['exp_cap_n'] = CAL['capexp_ratio']*s['rinv_state']*s['p_inv']
         debt_serv = CAL['debtserv_ratio']*prev['debt_azn']
@@ -178,7 +192,11 @@ def solve_year(M, c, CAL, prev, ex, maxit=800, tol=1e-10, damp=0.5, addf=None, i
         else:
             s['exp_tot_n'] = s['rexp_cur']*s['p_gdp'] + s['exp_cap_n'] + debt_serv
         s['balance_n'] = s['rev_tot_n'] - s['exp_tot_n']
-        s['debt_azn'] = prev['debt_azn'] - s['balance_n']
+        # 2026-10-07: 2026 debt anchor in every run: observed mid-year stock - remaining share x THIS run's balance
+        if ex.get('debt_stock_obs') is not None:
+            s['debt_azn'] = ex['debt_stock_obs'] - ex['debt_rem_share']*s['balance_n']
+        else:
+            s['debt_azn'] = prev['debt_azn'] - s['balance_n']
         s['debt_serv_n'] = debt_serv
         s['nobd_pct'] = 100*(s['rev_tot_n'] - s['rev_oil_n'] - s['exp_tot_n'])/s['gdpnon_n']    # v2.2
         s['exp_pubinv_n'] = ex.get('sip_ratio', np.nan)*s['rinv_state']*s['p_inv']             # v2.2 (programme)
