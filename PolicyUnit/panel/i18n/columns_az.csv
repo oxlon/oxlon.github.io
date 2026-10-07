@@ -1,0 +1,452 @@
+key,az
+scenario,Ssenari
+scenario_name,Ssenarinin adı
+scenario_name_az,Ssenarinin adı
+start_year,Başlanğıc il
+engine,Mühərrik
+engines,Mühərriklər
+horizon,Müddət
+indicator,Göstərici (kod)
+label_az,Göstərici
+unit,Vahid
+year,İl
+years,İllər
+baseline,Baza
+value,Ssenari
+delta,Fərq (ssenari − baza)
+delta_pct,"Fərq, % (və ya f.b.)"
+method,Metod
+method_az,Metod
+methods,Metodlar
+tier,Sübut səviyyəsi
+group,Qrup
+note_az,Qeyd
+effect,Təsir
+effect_unit,Təsirin vahidi
+source_engine,Mənbə mühərrik
+status,Vəziyyət
+rows,Sətir sayı
+seconds,"Vaxt, s"
+message_az,Mesaj
+micro,MikroUnit
+caem,CAEM (Nazirlik)
+oxlon,OxLon
+io,IO
+microsim,Mikrosimulyasiya
+spread,Metodlar arası fərq
+sign_agree,İşarələr uyğundur
+explanation_az,İzah
+sector,Sektor
+name_az,Ad
+name_en,Ad (ingiliscə)
+kind,Növ
+rank,Rütbə
+table,Cədvəl
+code,Kod
+cpa,CPA kodu
+product_name_en,Məhsul (ingiliscə ad)
+nace_section,NACE bölməsi
+nace_list,NACE bölmələri
+cpa_products,CPA məhsulları
+fr1_group,FR1 qrupu
+fr4_sector_map,FR4 sektoru
+fr10_branch_map,FR10 sahələri
+fr10_branches,FR10 sahələri
+output,"Buraxılış, mln AZN"
+output_mln,"Buraxılış, mln AZN"
+va_mln,"Əlavə dəyər, mln AZN"
+emp_thsd,"Məşğulluq, min nəfər"
+lab_prod_thsd_azn,"Əmək məhsuldarlığı, min AZN/nəfər"
+ulc_comp_va,Vahid əmək xərci (əmək ödənişi / ƏD)
+comp_per_emp_azn_month,"Orta əmək ödənişi, AZN/ay"
+import_penetration,İdxal nüfuzu
+export_orientation,İxrac yönümü
+import_content_direct,Birbaşa idxal tutumu
+va_in_exports_share,İxracda daxili əlavə dəyərin payı
+domestic_va_per_export_azn,1 AZN ixracda daxili əlavə dəyər
+fr10_share_of_industry_2025_pct,"FR10: sənayedə pay 2025, %"
+fr10_lp_2025_thsd_azn,"FR10: məhsuldarlıq 2025, min AZN"
+fr10_nonstate_share_2025_pct,"FR10: qeyri-dövlət payı 2025, %"
+fr10_forecast_growth_2026_30_pct_pa,"FR10: proqnoz artım 2026–2030, %/il"
+output_I,Buraxılış multiplikatoru (tip I)
+output_II,Buraxılış multiplikatoru (tip II)
+va_I,Əlavə dəyər multiplikatoru (tip I)
+va_II,Əlavə dəyər multiplikatoru (tip II)
+comp_I,Əmək ödənişi multiplikatoru (tip I)
+comp_II,Əmək ödənişi multiplikatoru (tip II)
+emp_I,"Məşğulluq (nəfər / 1 mln AZN, tip I)"
+emp_II,"Məşğulluq (nəfər / 1 mln AZN, tip II)"
+imp_I,İdxal multiplikatoru (tip I)
+imp_II,İdxal multiplikatoru (tip II)
+type_ratio_output,Tip II / tip I nisbəti
+emp_direct,Birbaşa məşğulluq (nəfər / 1 mln AZN)
+emp_typeI_mult,Məşğulluq multiplikatoru (tip I)
+income_typeI_mult,Gəlir multiplikatoru (tip I)
+rank_output_I,Rütbə (buraxılış)
+rank_emp_I,Rütbə (məşğulluq)
+bl_raw,Geri əlaqə (xam)
+bl_index,Geri əlaqə indeksi
+fl_ghosh_raw,İrəli əlaqə (Ghosh; xam)
+fl_index,İrəli əlaqə indeksi
+fl_leontief_index,İrəli əlaqə indeksi (Leontief)
+bl_cv,Geri əlaqənin dispersiyası (CV)
+extract_total_pct,"Hipotetik çıxarma: ümumi itki, %"
+extract_backward_pct,"Hipotetik çıxarma: geri, %"
+extract_forward_pct,"Hipotetik çıxarma: irəli, %"
+own_output_share_pct,"Buraxılışda pay, %"
+rank_bl,Rütbə (geri əlaqə)
+rank_fl,Rütbə (irəli əlaqə)
+rank_extraction,Rütbə (çıxarma)
+shock,Şok
+size,Ölçü
+target,Hədəf
+dp_basic_pct,"Əsas qiymətin dəyişməsi, %"
+dp_consumer_item_pct,"İstehlak qiymətinin dəyişməsi, %"
+shocked_sector,Şoklanan sektor
+shock_pct,"Şok, %"
+dx_mln,"Buraxılışın dəyişməsi, mln AZN"
+dx_pct,"Buraxılışın dəyişməsi, %"
+x_base,"Buraxılış 2021, min AZN"
+x_target,"Buraxılış hədəfi 2025, min AZN"
+va_base,"Əlavə dəyər 2021, min AZN"
+va_target,"Əlavə dəyər hədəfi 2025, min AZN"
+ic_col_target,"Aralıq istehlak hədəfi (sütun), min AZN"
+ic_row_target,"Aralıq tələb hədəfi (sətir), min AZN"
+ic_col_result,"Aralıq istehlak nəticəsi, min AZN"
+ic_row_na_implied,"Aralıq tələb (MH-dən), min AZN"
+fd_na_target,"Son tələb hədəfi, min AZN"
+fd_result,"Son tələb nəticəsi, min AZN"
+ic_row_result,"Aralıq tələb nəticəsi, min AZN"
+iterations,İterasiya sayı
+max_rel_resid,Maksimal nisbi qalıq
+converged,Yığıldı
+na_discrepancy_thsd,"MH uyğunsuzluğu, min AZN"
+na_discrepancy_pct_output,"MH uyğunsuzluğu, buraxılışın %-i"
+check,Yoxlama
+fd_hh,Ev təsərrüfatlarının son istehlakı
+fd_gov,Dövlətin son istehlakı
+fd_npish,ETXQT son istehlakı
+fd_gfcf,Əsas kapitala investisiya
+fd_dinv,Ehtiyatların dəyişməsi
+fd_valu,Qiymətlilər
+fd_exp,İxrac
+imports,İdxal
+import_share_s,İdxal payı
+va_ce,Əmək ödənişi
+va_sc,Sosial ayırmalar
+va_ni,Xalis mənfəət / qarışıq gəlir
+va_tp,İstehsala vergilər
+va_cfc,Əsas kapitalın istehlakı
+net_product_taxes_paid,Xalis məhsul vergiləri
+pair,Cədvəl cütü
+sector_name,Sektor
+x_obs_mln,"Fakt buraxılış, mln AZN"
+x_io_mln,"IO proqnozu, mln AZN"
+x_naive_mln,"Sadə etalon, mln AZN"
+err_io_pct,"IO xətası, %"
+err_naive_pct,"Etalon xətası, %"
+n_sectors,Sektor sayı
+io_rmse_mln,"IO: RMSE, mln AZN"
+io_mape,"IO: MAPE, %"
+io_wmape,"IO: çəkili MAPE, %"
+io_median_ape,"IO: median APE, %"
+io_total_err_pct,"IO: cəmin xətası, %"
+naive_rmse_mln,"Etalon: RMSE, mln AZN"
+naive_mape,"Etalon: MAPE, %"
+naive_wmape,"Etalon: çəkili MAPE, %"
+naive_median_ape,"Etalon: median APE, %"
+naive_total_err_pct,"Etalon: cəmin xətası, %"
+io_beats_naive_wmape,IO etalondan yaxşıdır
+observed_2024_pct,"Fakt 2024, %"
+observed_2023_pct,"Fakt 2023, %"
+observed_excess_pp,"Fakt artıqlıq, f.b."
+counterfactual,Əks-faktual
+model_pct,"Model, %"
+naive_pct,"Sadə etalon, %"
+deviation_pp,"Sapma, f.b."
+rel_deviation,Nisbi sapma
+sign_match,İşarə uyğundur
+model_better_than_naive,Model etalondan yaxşıdır
+dp_fuel_only_pct,"Qiymət (yalnız yanacaq), %"
+cpi_item_fuel_only_pct,"İQİ maddəsi (yalnız yanacaq), %"
+cpi_item_package_pct,"İQİ maddəsi (paket), %"
+cpi_weight,İQİ çəkisi
+variant,Variant
+dp_PETR_pct,"Neft məhsulları qiyməti, %"
+cpi_fuel_only_pp,"İQİ (yalnız yanacaq), f.b."
+cpi_package_pp,"İQİ (paket), f.b."
+other_transport_pct,"Digər nəqliyyat, %"
+decile,Desil
+baseline_income_decile_pc,"Baza gəliri (adambaşına), AZN/ay"
+value_income_decile_pc,"Ssenari gəliri (adambaşına), AZN/ay"
+delta_pct_income_decile_pc,"Gəlirin dəyişməsi, %"
+value_winners_share,"Qazananların payı, %"
+value_losers_share,"Uduzanların payı, %"
+employment_hired,"Muzdlu (formal) işçilər, min nəfər"
+employment_informal,"Qeyri-formal məşğulluq, min nəfər"
+fiscal_cost,"Fiskal xərc, mln AZN"
+gini,"Gini (gəlir), bənd"
+gini_cons,"Gini (istehlak), bənd"
+income_mean_pc,"Orta gəlir (adambaşına), AZN"
+income_median_pc,"Median gəlir (adambaşına), AZN"
+poverty_gap,"Yoxsulluq dərinliyi, f.b."
+poverty_rate,"Yoxsulluq səviyyəsi, f.b."
+poverty_rate:need,"Ehtiyac meyarı ilə yoxsulluq, f.b."
+poverty_severity,"Yoxsulluğun kəskinliyi, f.b."
+wage_nominal,"Nominal əmək haqqı, AZN"
+id,Kod
+formula,Düstur
+stat,Statistika
+direction,İstiqamət
+default_weight,Standart çəki
+default_selected,Standart seçim
+description_az,Təsvir
+selected,Seçilib
+kpi,KPI
+weight,Çəki
+norm,Normallaşdırılmış bal (0–1)
+available,Mövcuddur
+score,Bal
+kpis_used,İstifadə olunan KPI sayı
+kpis_missing,Çatışmayan KPI
+cost_mln_azn,"Xərc, mln AZN"
+score_per_bn_azn,Bal / 1 mlrd AZN
+event,Hadisə
+compare_to,Müqayisə
+observed,Fakt
+model_static,Model (statik)
+model_behavioural,Model (davranışla)
+naive_trend,Sadə trend
+model_plus_trend,Model + trend
+beats_naive_combined,Etalondan yaxşıdır (birgə)
+dev,Sapma
+rel_dev_pct,"Nisbi sapma, %"
+sign_ok,İşarə düzgündür
+beats_naive,Etalondan yaxşıdır
+beats_naive_comb,Etalondan yaxşıdır (birgə)
+sample,Nümunə
+n,Say
+median_rel_dev_pct,"Median nisbi sapma, %"
+target_value,Hədəf
+model,Model
+dev_pct,"Sapma, %"
+type,Növ
+event_id,Hadisə
+row_id,Sətir
+primary_method,Əsas metod
+primary_row,Əsas sətir
+in_sample,Nümunədaxili
+pred,Proqnoz
+pred_lo,Proqnoz (aşağı)
+pred_hi,Proqnoz (yuxarı)
+obs_effect,Müşahidə olunan təsir
+obs_effect_alt,Müşahidə olunan təsir (alternativ)
+sigma_cf,σ (əks-faktual)
+error,Xəta
+abs_error,Mütləq xəta
+pct_error,"Xəta, %"
+dir_hit,İstiqamət düzgündür
+in_model_band,Model intervalında
+in_band_cf,Əks-faktual intervalında
+sigma_model,σ (model)
+sigma_total,σ (cəmi)
+tol_ok,Tolerantlıq (uyğun)
+tol_part,Tolerantlıq (qismən)
+power,Test gücü
+class_az,Sinif
+class_alt_cf,Sinif (alternativ əks-faktual)
+tier_model,Sübut səviyyəsi (model)
+tier_obs,Sübut səviyyəsi (fakt)
+event_name_az,Hadisə
+event_date_az,Tarix
+n_rows,Sətir sayı
+n_comparisons,Müqayisə sayı
+n_methods,Metod sayı
+rows_with_2plus_methods,≥2 metodlu sətirlər
+nfr2_ok,NFR2 təmin olunub
+primary_mean_score,Əsas metodun orta balı
+share_ok,Uyğun payı
+share_part,Qismən payı
+share_fail,Uyğunsuz payı
+dir_hit_rate,İstiqamət dəqiqliyi
+beats_naive_rate,Etalondan yaxşı payı
+verdict_az,Hökm
+events,Hadisələr
+mean_score,Orta bal
+median_pct_error,"Median xəta, %"
+mean_error,Orta xəta
+obs_raw,Fakt (xam)
+cf,Əks-faktual
+cf_alt,Alternativ əks-faktual
+sigma_n,σ üçün müşahidə sayı
+obs_check,Yoxlama
+series,Sıra
+cf_rule,Əks-faktual qaydası
+obs_source,Mənbə
+obs_note_az,Qeyd
+param,Parametr
+rule_az,Qayda
+status_az,Status
+file,Fayl
+owner,Mənbə modul
+columns,Sütunlar
+frequency,Yenilənmə
+updated,Yenilənib
+family,Ailə
+default_size,Standart ölçü
+min,Minimum
+max,Maksimum
+cost_rule,Xərc qaydası
+cost_in_fr1,Xərc FR1 büdcəsindədir
+instrument,Alət
+target_key,Mühərrik girişi
+transform,Çevirmə
+compare,Müqayisədə
+instruments,Alətlər
+metric,Metrik
+op,Müqayisə operatoru
+thresholds,Həddlər (ciddilik 1–4)
+affected_group,Təsirlənən qrup
+affected_sector,Təsirlənən sektor
+risk_ids,RiskUnit riskləri
+params,Parametrlər
+template_az,İzah şablonu
+rule_id,Qayda
+measures,RiskUnit tədbirləri
+proposal_type,Təklifin növü
+proposal_az,Təklif
+responsible_az,Məsul qurum
+kpi_az,İzləmə göstəricisi
+event_start,Başlanğıc il
+in_sample_note_az,Nümunədaxili qeyd
+instruments_az,Alətlər
+legal_source,Hüquqi mənbə
+primary,Əsas
+obs_registered,Qeydə alınmış fakt
+source_az,Mənbə
+valid_from,Qüvvədədir
+regime,Rejim
+label,Ad
+source,Mənbə
+n_decisive,Həlledici test sayı
+n_low_power,Aşağı güclü test sayı
+note,Qeyd
+ACCOM,Yerləşdirmə və iaşə
+AGR,Kənd təsərrüfatı
+BUS,Peşə və inzibati xidmətlər
+CHEM,Kimya
+CONS,Tikinti
+EDU,Təhsil
+ENERGY,Enerji
+FIN,Maliyyə
+FOOD,Qida
+HEALTH,Səhiyyə
+ICT,İnformasiya və rabitə
+LIGHT,Yüngül sənaye
+MACH,Maşınqayırma
+METMIN,Metallurgiya və mineral
+MINOTH,Digər mədənçıxarma
+OILGAS,Neft-qaz
+OTHSERV,Digər xidmətlər
+PETR,Neft emalı
+PUB,Dövlət idarəetməsi
+REAL,Daşınmaz əmlak
+TRADE,Ticarət
+TRANS,Nəqliyyat
+WATER,Su təchizatı
+n_primary_decisive,Əsas metodun həlledici test sayı
+P_without,Ehtimal: siyasətsiz
+P_with,Ehtimal: siyasətlə
+ES10_without,ES10: siyasətsiz
+ES10_with,ES10: siyasətlə
+p10_without,P10: siyasətsiz
+p10_with,P10: siyasətlə
+median_without,Median: siyasətsiz
+median_with,Median: siyasətlə
+baseline_id,Baza identifikatoru
+factor_value,Parametrin dəyəri
+n_rejected,Rədd edilən çəkilişlər
+central,Mərkəzi təsir
+ru_policy_shift,RiskUnit: siyasət sürüşməsi
+P_with_pu,Ehtimal: siyasətlə (PolicyUnit sürüşməsi)
+shift_pu,PolicyUnit sürüşməsi
+dP_pu,Ehtimal fərqi (PolicyUnit)
+agree_dP,Ehtimal fərqləri uyğundur
+ru_chain_shift,RiskUnit zəncir sürüşməsi
+dP,Ehtimal fərqi
+dES10,ES10 fərqi
+es_method,ES metodu
+fetched_at,Alınıb
+shift,Sürüşmə
+indicator_az,Göstərici
+threshold,Hədd
+variant_name_az,Şərt
+severity,Ciddilik (1–4)
+severity_az,Ciddilik
+low,Aşağı sərhəd
+high,Yuxarı sərhəd
+change_vs_base,Əsasa nisbətən
+change,Dəyişmə
+effect_base,Əsas təsir
+effect_variant,Şərtlə təsir
+P_with_ru,Ehtimal: siyasətlə (RiskUnit sürüşməsi)
+dP_ru,Ehtimal fərqi (RiskUnit)
+shift_ru,RiskUnit sürüşməsi
+esas_menbe,Əsas mənbə
+esas_menbe_izah,Əsas mənbənin izahı
+low_method,Aşağı sərhədin metodu
+high_method,Yuxarı sərhədin metodu
+core_micro,MikroUnit (əsas metod)
+v2029,Sapma 2029
+v2030,Sapma 2030
+v2031,Sapma 2031
+step_2029_30,Addım 2029→2030
+step_2030_31,Addım 2030→2031
+limit,Limit
+ok,Uyğun
+caem_reliable,CAEM fiskal nəticəsi etibarlıdır
+complete,Bütün KPI-lar hesablanıb
+kpis_selected,Seçilmiş KPI sayı
+measure,Ölçü
+riskfx,RiskUnit FX ötürməsi
+microsim_spill,Mikrosimulyasiya + spill-over
+share_rejected_all,Qeyri-sabit çəkilişlərin payı (bütün)
+mean_z_rejected,Rədd edilənlərdə orta z (SE ilə)
+reject_rate_z_gt_1,Rədd payı: z > +1
+reject_rate_z_lt_-1,Rədd payı: z < −1
+share_rejected,Qeyri-sabit çəkilişlərin payı
+worst_region_az,Ən qeyri-sabit bölgə
+n_draws,Çəkiliş sayı
+se,Standart xəta
+factor,Parametr (kod)
+factor_label_az,Parametr
+p05,P5
+p25,P25
+p50,Median
+p75,P75
+p95,P95
+naive,Sadə etalon
+placebo,Plasebo
+beats_zero,Sıfırdan yaxşıdır
+tol_set,Qayda dəsti
+n_ok,Uyğun sayı
+n_part,Qismən sayı
+n_fail,Uyğunsuz sayı
+naive_rule,Sadə etalon qaydası
+outcome,Nəticə (kod)
+outcome_label_az,Nəticə
+base_effect,Əsas təsir
+block,Blok
+top1_stability,1-ci sürücünün sabitliyi
+conv_diff,Yığılma fərqi
+N,Çəkiliş sayı
+S1,S1
+ST,ST
+ci_halfwidth,± (95 %)
+top3,İlk 3-də
+excluded_az,Kənarlaşdırılan (ETİBARSIZ)
+score_conservative,Ehtiyatlı bal
+rank_conservative,Ehtiyatlı reytinq
+channel,Kanal
+area,Sahə (FR)
+files,Çıxış faylları

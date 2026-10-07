@@ -470,13 +470,15 @@ def _nav(role: str, sections: list[tuple[str, str]], for_print: bool) -> str:
                 f'<li><a href="#{i}">{esc(t)}</a></li>' for i, t in sections) + "</ul>"
         lis.append(f'<li><a{cur} href="{href}">{ROLE_TITLE[r]}</a>{sub}</li>')
     groups = [("Panellər (§15.5.3)", "".join(lis)),
-              ("Hesabatlar", "".join(f'<li><a href="../reports/risk_hesabati_{r}.{ext}">{ROLE_TITLE[r]} — {ext.upper()}</a></li>'
+              ("Hesabatlar", "".join(f'<li><a href="../reports/risk_hesabati_{r}.{ext}">{ROLE_TITLE[r]} — {ext.upper()}'
+                                     f'{pdf_label(r) if ext == "pdf" else ""}</a></li>'
                                      for r in ("rehberlik", "analitik") for ext in ("pdf", "xlsx"))),
               ("Sənədlər", '<li><a href="../docs/Risk_Metodologiyasi.md">Metodologiya</a></li>'
                            '<li><a href="../output/risk_api.json">JSON API (MİİS)</a></li>'
                            '<li><a href="../README.md">README</a></li>'),
               ("Əlaqəli modullar", '<li><a href="../../1551_v3/index.html">§15.5.1 Makroiqtisadi model</a></li>'
-                                   '<li><a href="../../MicroUnit/site/index.html">§15.5.2 Mikroiqtisadi təhlil</a></li>')]
+                                   '<li><a href="../../MicroUnit/site/index.html">§15.5.2 Mikroiqtisadi təhlil</a></li>'
+                                   '<li><a href="../../PolicyUnit/index.html">§15.5.4 Siyasətlərin təsir analizi</a></li>')]
     html = "".join(f'<div class="nav-group"><span class="nav-title">{esc(t)}</span><ul>{u}</ul></div>' for t, u in groups)
     if not for_print:                                   # interactive decision-support panel (RiskUnit/panel)
         html = ('<div class="nav-group nav-panel"><span class="nav-title">İnteraktiv</span><ul>'
@@ -563,6 +565,26 @@ def find_chrome() -> str | None:
         if shutil.which(name):
             return shutil.which(name)
     return None
+
+
+def pdf_meta(role: str) -> dict:
+    import json as _json
+    m = config.REPORTS / f"risk_hesabati_{role}.pdf.json"
+    try:
+        return _json.loads(m.read_text(encoding="utf-8"))
+    except Exception:                                              # noqa: BLE001
+        return {}
+
+
+def pdf_label(role: str, c: dict | None = None) -> str:
+    """' (05.10.2026, B-…; KÖHNƏ)' — a PDF from another baseline/run is never presented as current."""
+    from . import spine
+    c = c or {"baseline_id": spine.baseline_id()}
+    m = pdf_meta(role)
+    if not m:
+        return " (tarixi naməlum — köhnə ola bilər)"
+    stale = m.get("baseline_id") != c.get("baseline_id")
+    return f" ({m.get('yaradildi_utc', '')[:10]}, {m.get('baseline_id', '')}{'; KÖHNƏ' if stale else ''})"
 
 
 def write_pdf(html_text: str, out: Path) -> bool:
@@ -689,5 +711,11 @@ def build_all(c: dict, pdf: bool = True) -> dict:
         if pdf:
             f = config.REPORTS / f"risk_hesabati_{role}.pdf"
             out[f"pdf_{role}"] = f if write_pdf(build_html(c, role, for_print=True), f) else None
+            if out[f"pdf_{role}"]:                  # provenance sidecar: the site shows date + baseline id of each PDF
+                import json as _json
+                from datetime import datetime as _dt, timezone as _tz
+                f.with_suffix(".pdf.json").write_text(_json.dumps(
+                    {"baseline_id": c.get("baseline_id", ""), "as_of": config.as_of().isoformat(),
+                     "yaradildi_utc": _dt.now(_tz.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}, ensure_ascii=False))
     out["api"] = write_api(c)
     return out

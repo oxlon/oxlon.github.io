@@ -14,11 +14,11 @@ C10_ict,DOLS(+/-1),DOLS(+/-1),12,,,True,"ln_K_ict_pc=+0.803, trend=+0.066","ln_K
 C11_oth,DOLS(+/-1),DOLS(+/-1),12,,,True,"ln_hhdisp_pc=+0.319, trend=+0.012","ln_hhdisp_pc=+0.393, trend=+0.003"
 C12_nettax,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too small)",8,,,True,"ln_cons=+1.064, ln_m_non=-0.147","ln_cons=+0.665, ln_m_non=-0.076"
 D1_cons,DOLS(0: contemporaneous dX only),DOLS(+/-1),13,,rejected/free,True,ln_hhdisp_pc=+0.929,ln_hhdisp_pc=+1.130
-D2_inv,DOLS(0: contemporaneous dX only),2SLS (DWH rule),9,rejected/free,rejected/free,True,"ln_gdpnon=+0.196, ln_inv_state=+0.887, ln_cred=+0.000","ln_gdpnon=+0.329, ln_inv_state=+0.825, ln_cred=+0.000"
+D2_inv,DOLS(0: contemporaneous dX only),2SLS (DWH rule),9,rejected/free,rejected/free,True,"ln_gdpnon=+0.196, ln_inv_state=+0.887, ln_cred=+0.000","ln_gdpnon=+0.325, ln_inv_state=+0.825, ln_cred=+0.000"
 D3_xnon,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too small)",8,,,True,"ln_va_man=+0.348, ln_va_agr=+1.064","ln_va_man=+1.028, ln_va_agr=+0.618"
 D4_mnon,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too small)",7,rejected/free,,True,"ln_cons=+1.047, ln_relprice=-0.245","ln_cons=+0.614, ln_relprice=-0.722"
 E1_emp,DOLS(+/-1),DOLS(+/-1),13,,,True,ln_gdpnon_pc=+0.034,ln_gdpnon_pc=+0.056
-E2_wage,DOLS(+/-1),DOLS(0: contemporaneous dX only),13,,,True,"ln_prod_non=+0.817, ln_cpi=+0.617, ln_minwage=+0.186","ln_prod_non=+0.871, ln_cpi=+0.642, ln_minwage=+0.211"
+E2_wage,DOLS(+/-1),DOLS(0: contemporaneous dX only),15,IMPOSED,IMPOSED,True,"ln_prod_non=+0.858, ln_cpi=+0.440, ln_minwage=+0.272","ln_prod_non=+0.529, ln_cpi=+0.545, ln_minwage=+0.359"
 E3_hhdisp,DOLS(+/-1),DOLS(0: contemporaneous dX only),15,IMPOSED,IMPOSED,True,"ln_gdpnon=+0.603, ln_pens_r=+0.021, ln_wagebill_r=+0.377","ln_gdpnon=+0.690, ln_pens_r=+0.208, ln_wagebill_r=+0.102"
 E4_lf,OLS (no stochastic regressor),OLS (no stochastic regressor),24,,,True,trend=+0.000,trend=+0.001
 F1_revoil,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too small)",9,,,True,ln_xoil_azn=+0.611,ln_xoil_azn=+0.459
@@ -26,6 +26,6 @@ F2_revnon,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too
 F3_expcur,DOLS(0: contemporaneous dX only),"OLS (static; DOLS infeasible, df too small)",8,,,True,"ln_rev_r=+0.992, ln_gdpnon=+0.215","ln_rev_r=+0.501, ln_gdpnon=+0.558"
 F4_pubinv,OLS (no stochastic regressor),OLS (no stochastic regressor),10,IMPOSED,IMPOSED,True,ln_rev_oil=+1.000,ln_rev_oil=+1.000
 G1_credit,DOLS(0: contemporaneous dX only),DOLS(0: contemporaneous dX only),9,,,True,"ln_dep_r=+0.517, polrate=-0.043","ln_dep_r=+0.544, polrate=-0.045"
-G2_credhh,DOLS(0: contemporaneous dX only),2SLS (DWH rule),9,,,True,"ln_cred_tot_r=+0.575, ln_hhdisp=+1.180","ln_cred_tot_r=+0.713, ln_hhdisp=+0.679"
+G2_credhh,DOLS(0: contemporaneous dX only),2SLS (DWH rule),9,,,True,"ln_cred_tot_r=+0.575, ln_hhdisp=+1.180","ln_cred_tot_r=+0.742, ln_hhdisp=+0.649"
 G3_lendrate,DOLS(0: contemporaneous dX only),DOLS(0: contemporaneous dX only),9,,,False,"deprate=+1.402, npl_ratio=+0.186","deprate=+0.898, npl_ratio=-0.039"
 G7_dep,DOLS(+/-1),DOLS(0: contemporaneous dX only),10,,,True,"ln_gdpnon=+0.934, ln_hhdisp=+0.293","ln_gdpnon=+1.152, ln_hhdisp=+0.466"

@@ -1,0 +1,21 @@
+{
+ "base_year": 2024,
+ "factors": {
+  "employment": 0.8936833981687041,
+  "pensions": 1.155951716782959,
+  "benefits": 1.203176295608878
+ },
+ "uprate": {
+  "2024": {}
+ },
+ "p_takeup": 1.6167294228828457,
+ "takeup_rule": "P = min(1, a*(gap/(n*need))**gamma)",
+ "takeup_gamma": 1.5,
+ "kappa": 1.2117438423868534,
+ "pov_line": 270.1,
+ "weight_err": 4.1522341120980855e-14,
+ "n_households": 12000,
+ "n_persons": 51677,
+ "seed": 20241,
+ "data_status": "SİNTETİK — real ev təsərrüfatı məlumatı deyil"
+}

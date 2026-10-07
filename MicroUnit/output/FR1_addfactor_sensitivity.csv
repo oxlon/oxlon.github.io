@@ -1,6 +1,6 @@
 ,Baseline,Adverse,Reform
-"real GDP, constant base add-factors",2.739202703226029,1.6214995709089797,3.6744225982599854
-"real GDP, base add-factors decay at a fixed half-life",2.140625988446354,1.0606440439676401,3.0431489620797336
-"non-oil GDP, constant base add-factors",4.001362710651302,2.9218659249802714,5.012798743926816
-"non-oil GDP, base add-factors decay at a fixed half-life",3.3440181252663903,2.3291652251406614,4.310273905511952
+"real GDP, constant base add-factors",2.5671789225913955,1.3241210574252982,3.623120910228206
+"real GDP, base add-factors decay at a fixed half-life",2.3109528859282413,1.1194669135057733,3.333194881979451
+"non-oil GDP, constant base add-factors",3.755434142696057,2.5394620208767593,4.909425093991615
+"non-oil GDP, base add-factors decay at a fixed half-life",3.505502415651529,2.3482951723706513,4.620870345307226
 add-factor half-life (years),1.0,1.0,1.0

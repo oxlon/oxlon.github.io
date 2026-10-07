@@ -171,13 +171,14 @@ MULT_EXP = {  # the notebook's Part 14 experiments expressed as engine overrides
 
 
 def _multipliers_check(base, tol):
-    """Engine overrides reproduce FR1_multipliers.csv (deviation from the Baseline, % or pp for inflation)."""
+    """Engine overrides reproduce FR1_multipliers.csv (deviation from the Baseline: %, pp for inflation, mln AZN for the
+    budget balance - v2.3.1)."""
     ref_all = pd.read_csv(_out("FR1_multipliers.csv"), index_col=[0, 1])
     mx = 0.0
     for lbl, ov in MULT_EXP.items():
         fc = run_frames(ov, 'Baseline')[0]['fc']; ref = ref_all.loc[lbl]
         for k in ref.columns:
-            d = (fc[k] - base[k]) if k == 'infl' else (fc[k]/base[k] - 1)*100
+            d = (fc[k] - base[k]) if k in ('infl', 'balance_n') else (fc[k]/base[k] - 1)*100   # v2.3.1: balance in mln AZN
             mx = max(mx, float(np.max(np.abs(d.reindex(ref.index).to_numpy() - ref[k].to_numpy()))))
     return dict(ok=bool(mx <= 1e-8), max_abs_diff=mx, n_rows=int(len(ref_all)))
 

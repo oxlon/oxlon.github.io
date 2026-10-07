@@ -5,14 +5,19 @@ FR5: the detailed Technical Assignment (docx table row FR5: requirement + accept
 FR10, FR12: the Ministry's written approvals, `Sorğu cvb Bakiniti 24.08.2026.xlsx`, sheet
 "Yazılı təsdiq tələbi" (approved wording / recommendation of 24 Aug 2026).
 """
+import json
 import re
 import zipfile
+from pathlib import Path
 
 from . import core
 
 TASKS = core.ROOT / "micro_tasks.md"
 XLSX = core.ROOT / "Sorğu cvb Bakiniti 24.08.2026.xlsx"
 DOCX = core.ROOT / "MIIS_Etrafli_Texniki Tapşırıq.docx"
+# The three source documents sit one level above MicroUnit and are not part of the published deploy tree
+# (GitHub): every build that can read them refreshes this snapshot, a build without them reads it.
+SNAPSHOT = Path(__file__).with_name("req_snapshot.json")
 
 
 def _tasks():
@@ -73,11 +78,18 @@ def _xlsx():
 
 
 def texts():
+    if not all(p.exists() for p in (TASKS, DOCX, XLSX)):
+        core.mark(SNAPSHOT)
+        return json.loads(SNAPSHOT.read_text(encoding="utf-8"))
     t = _tasks()
     fr5 = _docx_fr5()
     if fr5:
         t["FR5"] = fr5
     t.update(_xlsx())
+    try:
+        SNAPSHOT.write_text(json.dumps(t, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    except OSError:
+        pass
     return t
 
 

@@ -1,6 +1,6 @@
 """FR1 v2.3 passages, Azerbaijani (docs/az/FR1_Metodologiya.md): the v2.3 note and the formerly hand-written text."""
 from .common import az, azpm
-from ._fr1_v23_vals import FISC, LBL, v23_vals
+from ._fr1_v23_vals import FISC, LBL, mult_fix, v23_vals
 from ._fr1_v23_blocks_az import blocks_az
 
 FISC_AZ = {"F3s": "F3: qeyri-neft və neft gəlirləri ayrıca", "F3n": "F3: yalnız qeyri-neft gəlirləri (neft gəlirləri yığılır)",
@@ -60,10 +60,78 @@ qarşı {a(N.med.U_rw, 3)} (v2.2-də {a(N.med22.U_rw, 3)}), sabit artıma qarş�
 görə dəyişdirilmiş əmsal məhdudiyyəti saxlayır; öz-özünü yoxlama hər ssenari üzrə hər iki rejimdə keçir. Heç bir CSV-də olmayan icradan asılı
 rəqəmlər (§7.1 həlledici iterasiyaları, §7.2 yanvar–aprel ankoru, §7.5 yelpik diaqnostikası, v2.2 müqayisə rəqəmləri) `FR1_doc_figures.json`-a
 (Hissə 18.17) ixrac olunur və burada `microlib.docrefresh` ilə yaradılır. FR3, FR4 və FR5 v2.3 proqnozu ilə yenidən icra olunub. §6–§9 v2.3
-icrasına istinad edir."""
+icrasına istinad edir.
+
+{_mfix_az(F)}
+
+{_dfix_az(F)}
+
+{_g4fix_az(F)}"""
+
+
+def _mfix_az(F):
+    from .fr1 import EXP
+    m = mult_fix(F); p = lambda e: ", ".join(azpm(v, 0) for v in m["path"][e].tolist())
+    old = ", ".join(azpm(v, 0) for v in m["old"])
+    return f"""**v2.3.1 düzəlişi (2026-10-06): büdcə balansı multiplikatorları.** `FR1_multipliers.csv` büdcə balansını sıfırdan keçən Əsas
+ssenari balansından (2028-ci ildə {azpm(m['b28'], 0)} mln AZN) faiz kənarlaşması kimi verirdi, buna görə reaksiyalar partlayır və işarəsini
+dəyişirdi (dövlət investisiyası +1 mlrd AZN: 2026–30-da {old} "%"; v2.2-də 2028-ci ildə +{az(m['old22'], 0)}%). Modelin özü səhv deyildi:
+hər şok həlli yığılıb (ən böyük qalıq {m['conv']:.0e}), pul ifadəsində reaksiyalar isə hamardır. Balans sütunu indi cari qiymətlərlə mln
+AZN fərqidir (inflyasiya f.b.-də, digər sütunlar %-lə qalır): dövlət investisiyası +1 mlrd AZN {p(EXP[1])}; Brent +10 ABŞ dolları/barel
+{p(EXP[0])}; xarici tələb +10% {p(EXP[4])}. Real və qiymət reaksiyaları və proqnoz dəyişmir. Notebook indi hər şok həllinin yığıldığını və
+balance_n, rgdpnon və infl reaksiyalarının 2-ci ildən sonra işarəsini dəyişmədiyini yoxlayır (assert).""".replace("e-", "e−")
 
 
 def v23_az(F):
     B = {"v23_note": (note_az(F), False)}
     B.update(blocks_az(F))
     return B
+
+
+def _dfix_az(F):
+    from ._fr1_v23_vals import SCEN
+    pre = F.ref["v23"]["pre_debt_fix"]; d = F.docfig["v23"]; y5 = d["debt"][str(F.LAST)]
+    cur = {s: (F.fc[s].loc[2030, "debt_azn"] / F.fc[s].loc[2030, "gdp_n"] * 100, F.fc[s].loc[2030, "balance_n"] / F.fc[s].loc[2030, "gdp_n"] * 100)
+           for s in SCEN}
+    ds = F.base.loc[2026, "debt_serv_n"]
+    return f"""**v2.3.2 düzəlişi (2026-10-06): dövlət borcu.** `debt_azn` iş kitabındakı ümumi dövlət borcunu məzənnə ilə çevirirdi, lakin bu
+sətir üç fərqli əsasdadır (§2.3, 5-ci bənd): {F.LAST}-ci il {az(d['debt_old_2025'], 0)} mln AZN idi, düzgün dəyər isə **{az(y5['external x FX + domestic (mln AZN)'], 1)} mln AZN**-dir (xarici
+{az(y5['external, mln USD'], 1)} mln ABŞ dolları × {az(y5['FX end-year'], 2)} + daxili {az(y5['domestic, mln AZN'], 1)} mln AZN; ÜDM-in {az(d['debt_gdp_2025'], 1)}%-i); 2010–2020 isə məzənnə qədər təhrif olunmuşdu.
+Dövlət borcu indi hər il xarici borc × ilin sonuna məzənnə + daxili borc kimi hesablanır — Maliyyə Nazirliyinin anlayışı (dövlət zəmanətli
+borc daxil deyil və iş kitabında yoxdur); `fr1:debt_azn` müvafiq adlandırılıb. Kalibrlənmiş borc xidməti dərəcəsi (2023–25 üzrə borc xidməti
+/ borc ortası) və borc eyniliyi düzəldilmiş qalıqdan istifadə edir: 2026 borc xidməti {az(ds, 0)} mln AZN (əvvəl {az(pre['Baseline']['debt_serv_2026'], 0)});
+2030 dövlət borcu ÜDM-in {az(cur['Baseline'][0], 1)} / {az(cur['Adverse'][0], 1)} / {az(cur['Reform'][0], 1)}%-i (Əsas / Mənfi / İslahat; əvvəl {az(pre['Baseline']['debt_gdp_2030'], 1)} /
+{az(pre['Adverse']['debt_gdp_2030'], 1)} / {az(pre['Reform']['debt_gdp_2030'], 1)}); 2030 büdcə balansı {azpm(cur['Baseline'][1])} / {azpm(cur['Adverse'][1])} / {azpm(cur['Reform'][1])}% (əvvəl {azpm(pre['Baseline']['bal_gdp_2030'])} / {azpm(pre['Adverse']['bal_gdp_2030'])} / {azpm(pre['Reform']['bal_gdp_2030'])})."""
+
+
+def _g4fix_az(F):
+    from ._fr1_v23_vals import SCEN
+    g = F.docfig["v23"]["deval"]; e, n4 = g["engine"], g["engine_no_f4"]; v0 = F.ref["v23"]["pre_g4_deval"]
+    dec = F.dec23[F.dec23.group == "G4"].set_index("spec")
+    NM = {"fx_lag": "əvvəlki ilin məzənnə dəyişməsi", "pm_azn": "manatla idxal qiymətləri (cari il)",
+          "pm_azn_lag": "manatla idxal qiymətləri (cari + əvvəlki il)", "fx_post15_lag": "2015-dən sonrakı rejim (cari + əvvəlki il)"}
+    rows = "; ".join(f"{NM[k]} {az(r.U_rw)} ({azpm(r.U_loss_pct, 0)}%)" for k, r in dec.iterrows())
+    infl27 = {s: F.fc[s].loc[[2027, 2028, 2029, 2030], "infl"].mean() for s in SCEN}
+    cn = g["cpi_nowcast"]; w = F.base["wage"]; cn_w26 = (w.loc[2026] / F.A.loc[F.LAST, "wage"] - 1) * 100
+    return f"""**v2.3.3 (2026-10-06): məzənnənin ötürülməsi.** G4-də ötürülmə 0,06 idi (+16,5% devalvasiya: İQİ 1-ci ildə {azpm(v0['infl_2026'])} f.b., 2-ci ildə
+{azpm(v0['infl_2027'])} f.b., qeyri-neft ÜDM isə 2030-a qədər {azpm(v0['rgdpnon_2030'])}% *artırdı*); 2015–17-də ötürülmə ≈{az(g['hist_passthrough_2015_17'])} olub. Namizədlər (Hissə 11.7; yalnız
+izahedici dəyişənlərin gecikmələri, gecikmiş inflyasiya yoxdur), inflyasiyanın təsadüfi gəzişməyə qarşı nümunədən kənar U-su (v2.2 forması
+{az(dec.U_rw_v22.iloc[0])}): {rows}. **Qəbul edilib: manatla idxal qiymətləri, cari + əvvəlki il** (ən böyük qazanc; işarələr düzgün; 2015-dən sonrakı rejim
+forması daha yaxşı deyil). İndi +16,5% devalvasiya: İQİ **1-ci ildə {azpm(e['infl'][2026])} f.b., 2-ci ildə {azpm(e['infl'][2027])} f.b.** (2030-a qədər İQİ səviyyəsi {azpm(e['cpi'][2030], 1)}%),
+qeyri-neft ÜDM 2026-da {azpm(e['rgdpnon'][2026])}%, 2030-da {azpm(e['rgdpnon'][2030])}%, real sərəncamda qalan gəlir {azpm(e['rhhdisp'][2030])}%, istehlak {azpm(e['rcons'][2030])}%, dövlət borcu ÜDM-in
+{azpm(e['debt_gdp'][2030])} f.b.-i. Qeyri-neft ÜDM əvvəl niyə artırdı: ötürülmə demək olar ki, olmadığından real gəlirlər az azalırdı, manatla neft gəlirləri
+({azpm(e['rev_oil_n'][2030], 1)}%) isə cari xərcləri (F3) və dövlət investisiyasını (F4, {azpm(e['rinv_state'][2030], 1)}%) artırır; real gəlir kanalı (E3-də real əmək haqqı fondu,
+İQİ-yə indeksləşən pensiyalar) mövcud idi, lakin çox zəif idi. F4 reaksiyası olmadan qeyri-neft ÜDM {azpm(n4['rgdpnon'][2030])}% azalardı. **2026 İQİ ankoru və Əsas ssenari.** 2026 inflyasiyası, real
+sektorların yanvar–aprel məlumatında olduğu kimi, son aylıq İQİ-yə ankorlanır: {cn['source'].split(' (md5')[0].split('/')[-1]} {int(cn['year'])}-ci ilin {int(cn['month'])}-ci ayı üçün illik {az(cn['yoy_latest'], 1)}% verir;
+qalan aylarda ötən ilin aylıq dəyişmələri təkrarlanır (1:1; 2021–25-də bu körpünün RMSE-si {az(cn['bridge_rmse_pp'], 1)} f.b.), deməli {int(cn['year'])}-cı ilin dekabrı = {az(cn['infl_2026'], 1)}%.
+G4-ün düzəliş əmsalı Əsas ssenaridə {int(cn['year'])} inflyasiyası nowcast-a bərabər olacaq şəkildə seçilir (2025 qalığı {azpm(g['infl_addf_2025'], 2)} f.b. + ankor
+sürüşməsi {azpm(g['cpi_shift'], 2)} f.b.) və 2027-dən sabit saxlanılır; `data/dsk_cpi/`-yə yeni aylıq fayl və ya RiskUnit DSK vintajı gəldikdə nowcast
+yenilənir. Modelin öz 2026 dəyəri nowcast-a artıq yaxın idi, buna görə ankor az dəyişir: Əsas ssenaridə 2027–30 İQİ inflyasiyası orta hesabla
+{az(infl27['Baseline'], 1)}%-dir (Mənfi {az(infl27['Adverse'], 1)}, İslahat {az(infl27['Reform'], 1)}) — əmək haqqı artımı 2026-da yanvar–aprel ankoru ilə {az(cn_w26, 1)}%-dən təxminən 8%-ə qayıdır,
+düzəliş əmsalı isə birdəfəlik deyil (2023–24 qalıqları da eyni ölçüdədir, makro modulun sırasında ABŞ dolları ilə idxal qiymətləri düşür). İdxal qiymətləri yolu redaktə edilə bilən fərziyyədir (`pm_usd_infl`)."""
+
+
+def _g4fix_az(F):                    # v2.3.4: supersedes the v2.3.3 version above
+    from ._fr1_v234 import g4_az
+    from ._fr1_v235 import v235_az
+    return g4_az(F) + "\n\n" + v235_az(F) + "\n\n" + __import__('microlib.docrefresh._fr1_v236', fromlist=['x']).v236_az(F)

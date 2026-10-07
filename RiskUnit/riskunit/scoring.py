@@ -298,7 +298,7 @@ def previous_scores(as_of: str) -> pd.Series:
 
 D5_RISK = (("brent", "R01"), ("azeri", "R01"), ("sofaz", "R01"), ("usd_azn", "R03"), ("policy_rate", "R02"),
           ("bfb", "R02"), ("vix", "R02"), ("ust", "R02"), ("cpi", "R12"), ("dsk_gdp_nonoil", "R13"),
-          ("dsk_budget", "R11"), ("gpr", "R06"), ("epu", "R06"), ("strategic_reserves", "R03"))
+          ("dsk_budget", "R11"), ("gpr", "R06"), ("epu", "R06"), ("strategic_reserves", "R03"), ("minwage", "R12"))
 
 
 def _d5_risk(ind: str) -> str:

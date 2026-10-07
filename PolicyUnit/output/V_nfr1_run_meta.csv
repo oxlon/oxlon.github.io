@@ -1,0 +1,16 @@
+key,value
+run_at,2026-10-07T01:57:22
+seconds,1.55
+n_events,4
+n_comparisons,45
+chain_offset,1
+tolerance,"{""rel_ok"": 0.25, ""cap_ok"": 0.35, ""sig_ok"": 1.0, ""rel_part"": 0.5, ""cap_part"": 0.75, ""sig_part"": 2.0, ""ident_sigma"": 1.0, ""sigma"": ""cf"", ""naive_required"": true, ""min_decisive"": 2}"
+micro_vintage,7099d341e599
+events_md5,98414cf5ef8f
+panel_md5,fd4967d58477
+macro_md5,efe6012097a6
+fr1raw_md5,7d3ef61529b1
+pov_md5,2bf3ca24252d
+io_e7_md5,801340e6b93c
+mw_md5,1a93a4a75865
+caem_md5,12c22d22eda046e050643004a8d7eec5

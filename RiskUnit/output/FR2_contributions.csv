@@ -1,40 +1,41 @@
 kanal,ad,risk_id,orta,dispersiya_payi,quyruq_tohfesi,quyruq_tohfesi_merkezlesmis,gosterici,il
-resid,Modelin qalıq qeyri-müəyyənliyi,,0.024723,0.65937,-3.6755,-3.7002,g,2027
-fiscal_react,Neft qiyməti — prosiklik investisiya reaksiyası (R01),R01,0.32756,0.13147,-0.59291,-0.92047,g,2027
-brent,Neft qiyməti — birbaşa (R01),R01,-0.33834,0.11634,-1.0154,-0.67705,g,2027
-partner,Tərəfdaş tələbi (R05),R05,-0.00072673,0.04283,-0.26253,-0.2618,g,2027
-remit,Pul baratları (R07),R07,-0.066631,0.024703,-0.1754,-0.10877,g,2027
-gpr,Geosiyasi eskalasiya (R06),R06,-0.0096332,0.013305,-0.076696,-0.067063,g,2027
-deval,Devalvasiya (R03),R03,-0.020283,0.0044573,-0.049674,-0.029391,g,2027
-quake,Zəlzələ (R08),R08,-0.017352,0.0022745,-0.040742,-0.02339,g,2027
-bank,"Bank sektoru (R04, ekspert)",R04,0.00106,0.0025048,-0.018,-0.01906,g,2027
-compet,Rəqabət (R16),R16,8.5004e-05,0.0015844,-0.0073104,-0.0073954,g,2027
-transition,Enerji keçidi (R14),R14,-0.025298,-6.4476e-05,-0.027219,-0.0019206,g,2027
-drought,Quraqlıq (R09),R09,0.028654,0.00067368,0.027897,-0.00075712,g,2027
-flood,"Daşqın (R10, ekspert)",R10,-0.00017,0.00015929,-0.00065,-0.00048,g,2027
-manuf,Emal sahələri (R15),R15,0.00020964,4.8787e-05,0.00020288,-6.7626e-06,g,2027
-rate,Kredit faizi (R02),R02,-0.00044443,0.00034275,0.0059518,0.0063962,g,2027
-resid,Modelin qalıq qeyri-müəyyənliyi,,1.4706,0.47262,6.8499,5.3793,cpi,2027
-brent,Neft qiyməti — birbaşa (R01),R01,-1.3761,0.43213,0.87594,2.252,cpi,2027
-food,Dünya ərzaq qiymətləri (R18),R18,0.0086256,0.031812,0.25175,0.24313,cpi,2027
-fiscal_react,Neft qiyməti — prosiklik investisiya reaksiyası (R01),R01,0.11173,0.029058,0.26802,0.15629,cpi,2027
-import,İdxal qiymətləri (R17),R17,0.0029418,0.016171,0.1526,0.14966,cpi,2027
-partner,Tərəfdaş tələbi (R05),R05,-0.00024734,0.01186,0.07381,0.074057,cpi,2027
-gpr,Geosiyasi eskalasiya (R06),R06,-7.2623e-05,0.0019471,0.01288,0.012953,cpi,2027
-transition,Enerji keçidi (R14),R14,-0.068952,0.0013991,-0.058691,0.010261,cpi,2027
-rate,Kredit faizi (R02),R02,-0.00015214,0.00093538,0.0090233,0.0091754,cpi,2027
-compet,Rəqabət (R16),R16,0.1206,0.0010114,0.12644,0.0058427,cpi,2027
-bank,"Bank sektoru (R04, ekspert)",R04,0.00962,0.00010054,0.01095,0.00133,cpi,2027
-quake,Zəlzələ (R08),R08,0.0039462,0.00012699,0.0051887,0.0012425,cpi,2027
-flood,"Daşqın (R10, ekspert)",R10,0.0052825,1.3945e-05,0.0054,0.0001175,cpi,2027
-deval,Devalvasiya (R03),R03,0.44557,0.00080684,0.41038,-0.035189,cpi,2027
-resid,Modelin qalıq qeyri-müəyyənliyi,,0.081606,0.90498,-1.6193,-1.7009,fis,2027
-brent,Neft qiyməti — birbaşa (R01),R01,-0.048539,0.075016,-0.17503,-0.12649,fis,2027
-quake,Zəlzələ (R08),R08,-0.019441,0.012809,-0.054757,-0.035316,fis,2027
-partner,Tərəfdaş tələbi (R05),R05,-1.1262e-05,0.0059538,-0.0108,-0.010789,fis,2027
-gpr,Geosiyasi eskalasiya (R06),R06,0.00036945,0.00088519,-0.00094038,-0.0013098,fis,2027
-rate,Kredit faizi (R02),R02,-2.5114e-05,0.00053527,-0.00051484,-0.00048972,fis,2027
-flood,"Daşqın (R10, ekspert)",R10,-0.0052825,0.00022519,-0.00565,-0.0003675,fis,2027
-bank,"Bank sektoru (R04, ekspert)",R04,-0.00481,4.3151e-05,-0.00495,-0.00014,fis,2027
+resid,Modelin qalıq qeyri-müəyyənliyi,,0.028576,0.66392,-3.6958,-3.7244,g,2027
+fiscal_react,Neft qiyməti — prosiklik investisiya reaksiyası (R01),R01,0.32493,0.12912,-0.57974,-0.90466,g,2027
+brent,Neft qiyməti — birbaşa (R01),R01,-0.33523,0.11477,-1.0051,-0.66989,g,2027
+partner,Tərəfdaş tələbi (R05),R05,-0.00071991,0.042117,-0.25886,-0.25814,g,2027
+remit,Pul baratları (R07),R07,-0.066631,0.024667,-0.1748,-0.10817,g,2027
+gpr,Geosiyasi eskalasiya (R06),R06,-0.009638,0.01319,-0.076461,-0.066823,g,2027
+deval,Devalvasiya (R03),R03,-0.021419,0.0046968,-0.052381,-0.030962,g,2027
+quake,Zəlzələ (R08),R08,-0.017464,0.002292,-0.040952,-0.023488,g,2027
+bank,"Bank sektoru (R04, ekspert)",R04,0.00106,0.0025053,-0.018,-0.01906,g,2027
+compet,Rəqabət (R16),R16,8.5004e-05,0.0015859,-0.0073954,-0.0074804,g,2027
+transition,Enerji keçidi (R14),R14,-0.025048,-6.3657e-05,-0.027063,-0.0020155,g,2027
+drought,Quraqlıq (R09),R09,0.028654,0.00067468,0.027893,-0.00076147,g,2027
+flood,"Daşqın (R10, ekspert)",R10,-0.00017,0.00015885,-0.0007,-0.00053,g,2027
+manuf,Emal sahələri (R15),R15,0.00020964,4.8796e-05,0.00020288,-6.7626e-06,g,2027
+rate,Kredit faizi (R02),R02,-0.00044209,0.00032298,0.0059794,0.0064215,g,2027
+resid,Modelin qalıq qeyri-müəyyənliyi,,1.4766,0.47756,6.8988,5.4223,cpi,2027
+brent,Neft qiyməti — birbaşa (R01),R01,-1.3728,0.42863,0.86184,2.2346,cpi,2027
+food,Dünya ərzaq qiymətləri (R18),R18,0.0086256,0.03171,0.24974,0.24112,cpi,2027
+fiscal_react,Neft qiyməti — prosiklik investisiya reaksiyası (R01),R01,0.10851,0.027905,0.25891,0.15041,cpi,2027
+import,İdxal qiymətləri (R17),R17,0.0029418,0.016075,0.15076,0.14782,cpi,2027
+partner,Tərəfdaş tələbi (R05),R05,-0.00023991,0.011422,0.071237,0.071477,cpi,2027
+gpr,Geosiyasi eskalasiya (R06),R06,-7.8233e-05,0.0019066,0.01258,0.012658,cpi,2027
+transition,Enerji keçidi (R14),R14,-0.068687,0.0013957,-0.058602,0.010085,cpi,2027
+rate,Kredit faizi (R02),R02,-0.00014815,0.00090083,0.0087274,0.0088755,cpi,2027
+compet,Rəqabət (R16),R16,0.1206,0.0010087,0.12657,0.0059722,cpi,2027
+bank,"Bank sektoru (R04, ekspert)",R04,0.00962,0.00010057,0.0109,0.00128,cpi,2027
+quake,Zəlzələ (R08),R08,0.0038217,0.00012166,0.0050313,0.0012095,cpi,2027
+flood,"Daşqın (R10, ekspert)",R10,0.0052825,1.3923e-05,0.00545,0.0001675,cpi,2027
+deval,Devalvasiya (R03),R03,0.44557,0.0012549,0.41308,-0.032489,cpi,2027
+resid,Modelin qalıq qeyri-müəyyənliyi,,0.095847,0.90322,-1.6012,-1.697,fis,2027
+brent,Neft qiyməti — birbaşa (R01),R01,-0.058317,0.075634,-0.18503,-0.12671,fis,2027
+quake,Zəlzələ (R08),R08,-0.019383,0.012752,-0.055222,-0.035839,fis,2027
+partner,Tərəfdaş tələbi (R05),R05,-1.2402e-05,0.0058895,-0.010566,-0.010554,fis,2027
+deval,Devalvasiya (R03),R03,-0.0038772,0.001277,-0.0063269,-0.0024497,fis,2027
+gpr,Geosiyasi eskalasiya (R06),R06,0.00036834,0.00088725,-0.00091889,-0.0012872,fis,2027
+rate,Kredit faizi (R02),R02,-2.6499e-05,0.00051812,-0.00048524,-0.00045874,fis,2027
+flood,"Daşqın (R10, ekspert)",R10,-0.0052825,0.00022489,-0.0056,-0.0003175,fis,2027
+bank,"Bank sektoru (R04, ekspert)",R04,-0.00481,4.4653e-05,-0.00495,-0.00014,fis,2027
 fiscal_react,Neft qiyməti — prosiklik investisiya reaksiyası (R01),R01,0,0,0,0,fis,2027
-transition,Enerji keçidi (R14),R14,-0.0064515,-0.00044428,-0.0056469,0.00080461,fis,2027
+transition,Enerji keçidi (R14),R14,-0.0064441,-0.00044739,-0.0056482,0.00079589,fis,2027

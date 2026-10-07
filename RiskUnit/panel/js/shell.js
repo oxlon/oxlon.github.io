@@ -25,7 +25,7 @@
     $('#scenbar').innerHTML = '<span><b>Vəziyyət</b> ' + U.esc(st.as_of || '') + '</span>' +
       '<span><b>Baxış</b>' + U.help('Baza mərkəzli: paylanmanın medianı rəsmi baza proqnozudur (skorlar və istilik xəritəsi bununla). Canlı: bugünkü bazar məlumatı (cari Brent) ilə şərtləndirilmiş paylanma — gündəlik monitorla (D6) uyğun.') + '</span>' +
       U.seg('view-seg', [['baseline', U.VIEWN.baseline], ['live', U.VIEWN.live]], VIEW) +
-      '<span class="srv ' + (api ? 'on' : 'off') + '" id="srv" title="' + (api ? 'Yerli server əlçatandır — canlı hesablamalar işləyir' : 'Server yoxdur — bütün nəticələr paketdən göstərilir; canlı hesablama üçün serveri başladın') + '"><i></i>' + (api ? 'Server: canlı' : 'Fayl rejimi') + '</span>' +
+      '<span class="srv ' + (api ? 'on' : U.PY && U.PY.mode(api) === 'brauzer' ? 'py' : 'off') + '" id="srv" title="' + U.esc(U.PY ? U.PY.title(api) : (api ? 'Yerli server əlçatandır — canlı hesablamalar işləyir' : 'Server yoxdur — bütün nəticələr paketdən göstərilir; canlı hesablama üçün serveri başladın')) + '"><i></i>' + (U.PY ? U.PY.label(api) : (api ? 'Server: canlı' : 'Fayl rejimi')) + '</span>' +
       '<span class="muted small stamp">baza ' + U.esc(st.baseline_id || '') + ' · yığım ' + U.esc(st.date || '') + '</span>';
     $('#view-seg').onclick = function (e) { var b = e.target.closest('[data-v]'); if (b) U.setView(b.getAttribute('data-v')); };
     $('#srv').onclick = function () { if (U.API) U.API.openSettings(); };
@@ -118,6 +118,7 @@
     });
     window.addEventListener('hashchange', function () { U.closeModal(true); route(false); });
     if (U.API) U.API.onChange(function () { renderBar(); });
+    if (U.PY) U.PY.onChange(function () { renderBar(); });
     route(false);
     $('#boot').hidden = true;
     if (U.API) U.API.ping();

@@ -350,10 +350,48 @@ def stock_rows(Y: int) -> list[dict]:
     return out
 
 
+MINWAGE_FILE = config.MICRO_DIR / "data" / "dsk_minwage" / "minwage_decrees.csv"
+
+
+def minwage_implied(Y: int) -> dict:
+    """Legal minimum monthly wage (DSK table 004_1 / decree schedule, read from MicroUnit's single source
+    minwage_decrees.csv): level in force today, its Y annual average, and the path if today's level persists."""
+    if not MINWAGE_FILE.exists():
+        return {}
+    d = pd.read_csv(MINWAGE_FILE, parse_dates=["effective_date"]).sort_values("effective_date")
+    today = pd.Timestamp(config.as_of())
+    d = d[d["effective_date"] <= today]
+    if d.empty:
+        return {}
+    cur, cd, src = float(d["azn"].iloc[-1]), d["effective_date"].iloc[-1], str(d["source"].iloc[-1])
+    months = pd.date_range(f"{Y}-01-01", f"{Y}-12-01", freq="MS")
+    lev = [float(d[d["effective_date"] <= m]["azn"].iloc[-1]) if (d["effective_date"] <= m).any() else np.nan for m in months]
+    a = d.set_index("effective_date")["azn"].resample("YS").last().ffill()
+    g = (a.pct_change().dropna() * 100).loc["2010":]
+    return {"level": cur, "date": cd, "source": src, "avg_Y": float(np.nanmean(lev)), "sd_g": float(g.std()) if len(g) > 3 else np.nan,
+            "path": {y: (float(np.nanmean(lev)) if y == Y else cur) for y in config.FORECAST_YEARS if y >= Y}}
+
+
+def minwage_rows(Y: int) -> list[dict]:
+    m = minwage_implied(Y)
+    if not m:
+        return []
+    out = []
+    for yr in (Y, Y + 1):
+        a = base("fr1:exo:minwage", yr)
+        lat = m["avg_Y"] if yr == Y else m["level"]
+        sig = a * m["sd_g"] / 100 if np.isfinite(a) and np.isfinite(m["sd_g"]) else np.nan
+        out.append(row("minwage", f"Minimum aylıq əmək haqqı (qanuni) vs FR1 fərziyyəsi ({yr})", lat, m["date"], "AZN",
+                       SRC["fr1"], yr, a, sig, "minimum əmək haqqının illik artımının sd (2010-dan) × fərziyyə",
+                       f"qüvvədə olan səviyyə {m['level']:.0f} AZN ({m['date'].date()}; {m['source'][:40]}); "
+                       + ("il ortası" if yr == Y else "yeni qərar olmadıqda səviyyə saxlanılır")))
+    return out
+
+
 def daily_monitor(Y: int | None = None) -> pd.DataFrame:
     Y = Y or config.as_of().year
     rows = []
-    for f in (brent_rows, fx_rows, rate_rows, cpi_rows, gdp_rows, budget_rows, stock_rows):
+    for f in (brent_rows, fx_rows, rate_rows, cpi_rows, gdp_rows, budget_rows, stock_rows, minwage_rows):
         try:
             rows += f(Y)
         except Exception as exc:                     # noqa: BLE001 — one failing block must not stop the monitor
@@ -614,6 +652,14 @@ def forecast_impact(D5: pd.DataFrame, Y: int) -> pd.DataFrame:
                                       extra={"deprate": dep}))
         except Exception as exc:                     # noqa: BLE001
             print(f"  DİQQƏT: uçot dərəcəsi zənciri işləmədi ({type(exc).__name__}: {exc})")
+    mw = minwage_implied(Y)
+    if mw and any(abs(v - base("fr1:exo:minwage", y)) > 1e-6 for y, v in mw["path"].items() if np.isfinite(base("fr1:exo:minwage", y))):
+        try:
+            parts.append(chain_impact("minwage", "minwage", mw["path"],
+                                      f"Minimum əmək haqqı: {Y} il ortası {mw['avg_Y']:.0f} AZN; sonrakı illər qüvvədə olan "
+                                      f"{mw['level']:.0f} AZN saxlanılır (yeni qərar olmadıqda) — FR1 fərziyyəsi ilə fərq"))
+        except Exception as exc:                     # noqa: BLE001
+            print(f"  DİQQƏT: minimum əmək haqqı zənciri işləmədi ({type(exc).__name__}: {exc})")
     parts.append(observation_impact(D5, Y))
     parts = [x for x in parts if len(x)]
     return pd.concat(parts, ignore_index=True) if parts else pd.DataFrame(columns=D6_COLS)

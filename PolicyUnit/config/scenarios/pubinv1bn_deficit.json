@@ -1,0 +1,25 @@
+{
+ "id": "pubinv1bn_deficit",
+ "name_az": "Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",
+ "description_az": "Əlavə dövlət əsaslı investisiyası 2026–2028-ci illərdə ildə 1 000 mln AZN; kəsir borcla maliyyələşir.",
+ "start_year": 2026,
+ "instruments": [
+  {
+   "instrument": "pub_invest",
+   "years": [
+    2026,
+    2027,
+    2028
+   ],
+   "size": 1000,
+   "unit": "mln_azn",
+   "financing": "deficit",
+   "target": null
+  }
+ ],
+ "tags": [
+  "xərc",
+  "fiskal",
+  "UAT"
+ ]
+}

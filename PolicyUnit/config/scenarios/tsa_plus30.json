@@ -1,0 +1,19 @@
+{
+ "id": "tsa_plus30",
+ "name_az": "Ünvanlı sosial yardım +30 % (2027-dən)",
+ "description_az": "ÜSY ödənişlərinin həcmi 2027-ci ildən 30 % artırılır.",
+ "start_year": 2027,
+ "instruments": [
+  {
+   "instrument": "tsa_benefit",
+   "years": "all",
+   "size": 30,
+   "unit": "pct",
+   "financing": "deficit",
+   "target": null
+  }
+ ],
+ "tags": [
+  "sosial"
+ ]
+}

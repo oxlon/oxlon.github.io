@@ -1,0 +1,155 @@
+# MİİS — daily refresh of MicroUnit → RiskUnit → PolicyUnit and deployment of the whole oxlon.uk site
+# to GitHub Pages as an ARTIFACT (generated outputs are never committed back to main).
+# Settings → Pages → Source must be "GitHub Actions". See MIIS_Micro_Risk_Policy/deploy/DEPLOY_az.md.
+name: MİİS gündəlik yeniləmə
+
+on:
+  schedule:
+    - cron: "30 2 * * *"          # 02:30 UTC = 06:30 Bakı, every day
+  workflow_dispatch:
+    inputs:
+      fetch:
+        description: "RiskUnit canlı məlumat axınlarını yüklə (--fetch)"
+        type: boolean
+        default: true
+      pdf:
+        description: "RiskUnit PDF hesabatları (headless Chrome)"
+        type: boolean
+        default: true
+  push:                             # with Pages source = Actions, site edits are published only by this workflow
+    branches: [main]
+    paths-ignore: ["**/*.md"]
+
+permissions:
+  contents: write                   # force-push of the small `miis-state` branch only (never main)
+  pages: write
+  id-token: write
+
+concurrency:
+  group: miis-refresh
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PYTHONDONTWRITEBYTECODE: "1"
+  MPLBACKEND: Agg
+  TZ: Asia/Baku
+  PYTHON: python
+  MICRO_KERNEL: miis-model
+  POLICY_OXLON_DISABLED: "1"        # OxLon model copy (126 MB) is not in the repo → engine marked unavailable
+  RISK_NO_NETWORK: "0"
+  POLICY_NO_NETWORK: "0"
+  RISK_FETCH: ${{ (github.event_name != 'workflow_dispatch' || inputs.fetch) && '1' || '0' }}
+  RISK_PDF: ${{ (github.event_name != 'workflow_dispatch' || inputs.pdf) && '1' || '0' }}
+
+jobs:
+  refresh:
+    name: Modellər və panellər
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: .github/miis/requirements.txt
+
+      - name: Paketlər və Jupyter kernel (miis-model)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r .github/miis/requirements.txt
+          python -m ipykernel install --user --name miis-model --display-name "MİİS (miis-model)"
+
+      - name: Chrome (PDF ixracı)
+        run: |
+          # Ubuntu 24.04 restricts unprivileged user namespaces; Chrome's sandbox needs them.
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
+          google-chrome --version || echo "::warning::Chrome yoxdur — PDF-lər köhnə kimi işarələnəcək"
+
+      - name: Vəziyyət — keşdən bərpa
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            RiskUnit/data/vintages
+            RiskUnit/output/FR2_score_history.csv
+            RiskUnit/output/FR3_status_history.csv
+            RiskUnit/output/NFR2_update_log.csv
+            RiskUnit/output/forecast_archive
+            RiskUnit/output/monitor_history
+            RiskUnit/output/_ci_state.json
+            MicroUnit/logs/history.jsonl
+            PolicyUnit/work/fr4_cache
+          key: miis-state-v1-${{ github.run_id }}
+          restore-keys: miis-state-v1-
+
+      - name: Vəziyyət — miis-state budağı (keşdən yenidirsə)
+        run: python .github/miis/ci_state.py restore
+
+      - name: 1 · MicroUnit
+        run: python .github/miis/ci_summary.py run micro -- bash .github/miis/pipeline.sh micro
+
+      - name: 2 · RiskUnit (--fetch; uğursuz axınlar keşə qayıdır)
+        run: python .github/miis/ci_summary.py run risk -- bash .github/miis/pipeline.sh risk
+
+      - name: 3 · PolicyUnit (FR4 öz RiskUnit API serverini başladır)
+        run: python .github/miis/ci_summary.py run policy -- bash .github/miis/pipeline.sh policy
+
+      - name: 4 · Bütün panellər və saytlar
+        run: python .github/miis/ci_summary.py run panels -- bash .github/miis/pipeline.sh panels
+
+      - name: Vəziyyət — miis-state budağına yaz
+        if: always()
+        run: python .github/miis/ci_summary.py run state -- python .github/miis/ci_state.py save
+
+      - name: Vəziyyət — keşə yaz
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            RiskUnit/data/vintages
+            RiskUnit/output/FR2_score_history.csv
+            RiskUnit/output/FR3_status_history.csv
+            RiskUnit/output/NFR2_update_log.csv
+            RiskUnit/output/forecast_archive
+            RiskUnit/output/monitor_history
+            RiskUnit/output/_ci_state.json
+            MicroUnit/logs/history.jsonl
+            PolicyUnit/work/fr4_cache
+          key: miis-state-v1-${{ github.run_id }}
+
+      - name: İş xülasəsi
+        id: summary
+        if: always()
+        run: python .github/miis/ci_summary.py report
+
+      - name: Artefakt üçün təmizlik (work/, logs/, DB, simvolik keçidlər)
+        if: always()
+        run: |
+          python .github/miis/ci_state.py prune-artifact
+          test -z "$(find . -path ./.git -prune -o -type l -print)" || { echo "simvolik keçid qalıb"; exit 1; }
+          du -sh --exclude=.git .
+
+      - uses: actions/configure-pages@v5
+        if: always()
+
+      - uses: actions/upload-pages-artifact@v3
+        if: always()
+        with:
+          path: .
+
+  deploy:
+    name: GitHub Pages
+    needs: refresh
+    if: always() && needs.refresh.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

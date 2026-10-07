@@ -1,0 +1,2 @@
+date,stock_azn,months_done,remaining_share,debt_2025,change_since_2025_pct,source,method,target_2026,balance_2026,sfa_2026
+2026-07-01,23830.6,6.0,0.5,25987.45,-8.299583067980898,RiskUnit/data/vintages/minfin/2026-10-07/debt_parsed.json (md5 8b9a2466f2af25495b214b9e727b29a4),end-2026 = observed stock - 2026 budget balance x remaining months / 12; one-off stock-flow adjustment,23387.367028451292,886.4659430974124,-1713.6170284512955

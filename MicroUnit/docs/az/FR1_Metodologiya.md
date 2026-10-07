@@ -8,7 +8,7 @@
 **Məlumat mənbəyi:** `Statistik data dinamika 05.06.2026 +.xlsx` (41 vərəq, İqtisadiyyat Nazirliyinin statistik dinamika məlumat bazası)
 **Məlumat buraxılışı (vintage):** 2025-ci ilədək illik faktiki məlumatlar; 2026-cı ilin aprel ayınadək kumulyativ aylıq faktiki məlumatlar
 **Proqnoz üfüqü:** 2026–2030
-**İcra:** `FR1.ipynb` (əvvəldən sona xətasız icra olunur; <!-- AUTO:v23_cells -->Hissə 1–17 = 68 kod xanası<!-- /AUTO:v23_cells -->, Hissə 18 (v2) = reyestr, mühərrik üçün ixrac, kataloq və öz-özünə test; nüvə (kernel) `miis-model`) və ssenari mühərriki `microlib/engines/fr1.py`
+**İcra:** `FR1.ipynb` (əvvəldən sona xətasız icra olunur; <!-- AUTO:v23_cells -->Hissə 1–17 = 70 kod xanası<!-- /AUTO:v23_cells -->, Hissə 18 (v2) = reyestr, mühərrik üçün ixrac, kataloq və öz-özünə test; nüvə (kernel) `miis-model`) və ssenari mühərriki `microlib/engines/fr1.py`
 **Nəticələr:** `MicroUnit/output/` qovluğunda `FR1_*.csv` CSV faylları, o cümlədən `FR1_forecast_full.csv` (indi `pop` sütunu ilə,
 min nəfər) və `FR1_fan_draws.csv` (FR3–FR5 üçün Əsas ssenari üzrə 500 təkrarlama)
 
@@ -91,9 +91,9 @@ təkrarlanır; bir ssenari ~0,06 s.
 (`FR1_investment_by_sector.csv`; kapital eyniliyinin istifadə etdiyi axın; v2.1-dən 2025-ci ilin payları ilə). Proqnozlaşdırılmayanlar səbəbi ilə
 `FR1_not_forecast.csv`-dədir. İngilis mətnləri: `FR1_strings_az.csv` (240 sətir).
 
-**Əmsal həssaslığı** (`FR1_coef_sensitivity.csv`, ±1 s.x., 2030, Əsas ssenari): ən güclü təsir E3 homogenlik əmsalı
-(ev təsərrüfatlarının gəliri −3,2/+4,1%), D1 gəlir elastikliyi (qeyri-neft ÜDM −2,3/+3,7%), D3 emal elastikliyi, C3 ixrac
-elastikliyi; İQİ üçün G4 əmək haqqı ötürülməsi (+2,3/−2,8%); məşğulluq üçün E4 iştirak trendi (±0,6%).
+<!-- AUTO:fr1v236_coefsens -->
+**Əmsal həssaslığı** (`FR1_coef_sensitivity.csv`, ±1 s.x., 2030, Əsas ssenari; cari icra): ən güclü təsirlər E3 ev təsərrüfatlarının gəliri tənliyinin əmsallarındandır — qeyri-neft ÜDM (ev təsərrüfatlarının gəliri −7,61/+22,52%, qeyri-neft ÜDM −3,66/+10,94%, İQİ −1,19/+3,35%) və real əmək haqqı fondu (ev təsərrüfatlarının gəliri −2,10/+1,82%); sonra D1 gəlir elastikliyi (qeyri-neft ÜDM −1,74/+2,56%); İQİ üçün G4 əmək haqqı ötürülməsi (+2,35/−2,50%); məşğulluq üçün E4 iştirak trendi (−0,63/+0,64%). E3 təsirləri asimmetrikdir: ±1 s.x. dəyişikliyi eksponent daxilindəki loqarifmik səviyyəyə vurulur və gəlir–istehlak dövrəsi ilə güclənir.
+<!-- /AUTO:fr1v236_coefsens -->
 
 **v2-də düzəldilmiş iki xəta (yalnız diaqnostika / həssaslıq çıxışları dəyişir).** (1) `FR1_iv_dwh.csv`: E2 və G1-də daxil
 edilmiş ekzogen dəyişən (`ln_minwage`, `polrate`) həm də xaric edilmiş alət kimi sayılırdı (təkrarlanan sütun). İndi daxil edilmiş
@@ -128,7 +128,7 @@ K<sub>s,t</sub> = (1−δ<sub>s</sub>)K<sub>s,t−1</sub> + pay<sub>s</sub>·I<s
 istifadə olunur (dərc edilən sektor investisiyası və əsas fondlar uzlaşmış qalır). Əhəmiyyətli olanlar K<sub>man</sub> (C3) və
 K<sub>ict</sub> (C10): 2025-ci il payları ilə (emal 3,0%, orta 4,5%; İKT 1,8%, orta 2,1%) hər iki fond 2030-da ~9,6% aşağıdır və Əsas
 ssenaridə 2030-cu il əlavə dəyəri azalır — emal −3,2%, İKT −7,6%, qeyri-neft ÜDM −0,93%, real ÜDM −0,78% (2026 dəyişmir: yanvar–aprel
-məlumatlarına ankorlanıb). 2026–30 orta artımı: real ÜDM 2,56 → **2,40%** (Mənfi 1,51 → 1,37, İslahat 3,50 → 3,32); qeyri-neft
+məlumatlarına ankorlanıb). 2026–30 orta artımı (v2 → v2.1, hər ikisi 2026-10-05; cari icra §7-dədir): real ÜDM 2,56 → **2,40%** (Mənfi 1,51 → 1,37, İslahat 3,50 → 3,32); qeyri-neft
 4,18 → **3,99%** (3,07 → 2,90, 5,26 → 5,03). §6–§9-dakı və yuxarıdakı v2 qeydindəki icradan asılı bütün rəqəmlər
 v2.1 icrasına aiddir (çıxış CSV fayllarından və icra olunmuş notebook-dan skriptlə yenilənib). `FR1_forecast_full.csv` və `FR1_fan_draws.csv`-ni oxuyan
 FR3, FR4 və FR5 yenidən icra edilib; FR10 və FR12 də həmin faylları oxuyur.
@@ -167,34 +167,118 @@ fiskal namizədlər üçün isə 2030 büdcə balansının Mənfi < Əsas < İsl
 
 | Məsələ | Qərar | Sübut |
 |---|---|---|
-| 1. Düzəliş əmsallarının sönməsi üzrə həssaslıq | **Dəyişdirilib.** v2.2-yə qədər `base_addf_decay` rıçağı baza düzəliş əmsallarını hər tənliyin *qiymətləndirilmiş* qalıq avtokorrelyasiyası ρ̂ ilə söndürürdü — bu, qiymətləndirilmiş qalıq-AR prosesidir və sifarişçinin məhdudiyyətləri ilə istisna olunur. İndi sabit, qiymətləndirilməyən yarımparçalanma müddəti: `addf_halflife` rıçağı (standart 1 il, ildə 0,50 əmsalı — yanvar–aprel ankor əlavələrinin qaydası); ρ̂ proqnoz yolunun heç bir yerində qiymətləndirilmir (DW və BG diaqnostik test kimi qalır) | Proqnoz (sabit düzəliş əmsalları) bu bənddən dəyişmir. `FR1_addfactor_sensitivity.csv`, sönmə ilə 2026–30 orta artım: real ÜDM 2,14 / 1,06 / 3,04% (Əsas / Mənfi / İslahat; sabit düzəliş əmsalları ilə 2,74%), qeyri-neft 3,34 / 2,33 / 4,31% (4,00%); ρ̂ ilə (v2.2 icrası) real ÜDM 2,42%, qeyri-neft 3,67% |
-| 2. D4 qeyri-neft idxalı: nisbi qiymət ln(p_gdp/fx), əmsal −0,245 | **Yenidən parametrləşdirilib (qəbul edilib).** Real idxal = ABŞ dolları ilə idxal × məzənnə / ÜDM deflyatoru (Hissə 3), buna görə ln(p_gdp/fx) asılı dəyişənə tərif üzrə −1 əmsalı ilə daxildir. İdxal həcmi (sabit ABŞ dolları qiymətləri) ilə ifadə edildikdə eyni qiymətləndirmə həcm elastikliyini verir: **c = +0,755** (p = 0,0001; ≤2020: +0,278) — işarə düzgündür: real möhkəmlənmə idxal həcmini artırır. Həlledici ÜDM qiymətləri ilə real idxal üçün c − 1 istifadə edir, buna görə proqnoz və nümunədən kənar yoxlama eynidir. Həddin çıxarılması (= əmsalın 0 həddində məhdudlaşdırılması; hədd məcburidir) rədd edilib | İdxal U 0,85 / 0,56 (v2.2 ilə eyni). Hədsiz: idxal 0,95 / 0,63 (+12%, əhəmiyyətli itki), qeyri-neft gəlirləri U 0,87 — 0,43-ə qarşı, büdcə balansı 0,94 — 0,61-ə qarşı. Birinci fərqlərdə həcm elastikliyi +0,08 [−0,26, +0,42]-dir, uzunmüddətli qiymət bu intervaldan kənardadır — v2.2 formasında olduğu kimi (göstərilir) |
-| 3. E3 ev təsərrüfatlarının gəliri: + real əmək haqqı fondu | **Qəbul edilib.** ln(gəlir / pensiya xərcləri) ln(qeyri-neft ÜDM / pensiya xərcləri) və ln(əmək haqqı fondu / pensiya xərcləri) üzrə, homogenlik qoyulub: elastikliklər qeyri-neft ÜDM 0,603, **real əmək haqqı fondu 0,377** (2025-ci ildə əmək ödənişlərinin ev təsərrüfatlarının gəlirindəki payı 0,425), pensiya xərcləri 0,021; ≤2020: 0,690, 0,102, 0,208. Homogenlik seçim nümunəsində rədd edilmir (p = 0,16), tam nümunədə isə rədd edilir (p = 0,001); orada sərbəst formada qeyri-neft ÜDM elastikliyi səhv işarəlidir (−1,34) — buna görə "yoxla və qoy" variantı rədd edilib. Əmək haqqı elastikliyi uyğundur (birinci fərqlərdə 0,20 [−0,20, +0,59]) | Real sərəncamda qalan gəlir üzrə U 1,31 / 1,04 — 1,23 / 0,98-ə qarşı (+5,8%, 10%-dən az); istehlak U 0,08 — 0,14-ə qarşı. **Minimum əmək haqqı +10%** (Əsas ssenari 2030, şok konvensiyası): real sərəncamda qalan gəlir −0,05% → **+0,94%**, istehlak −0,05% → +1,03%, qeyri-neft ÜDM −0,05% → +0,41% (əmək haqqı +2,61%, İQİ +0,78%; gəlir ayaqları rıçağı ilə +0,84%) |
-| 4. Fiskal blok: Mənfi ssenari ən yaxşı büdcə balansı ilə bitir | **Saxlanılıb — heç bir namizəd keçmir.** Diaqnostika, 2030, Mənfi — Əsas: gəlirlər −8,4 mlrd AZN (neft −3,9, qeyri-neft −4,5), xərclər −9,8 mlrd (cari −5,2, əsaslı −4,6): **itirilən hər manat gəlirə 1,17 manat xərc azalması düşür**. Bunu iki əlaqə yaradır: F3 (cari xərclər ümumi real gəlirlər üzrə, elastiklik 0,99, 95% interval [0,52, 1,46]) və ssenarilərin dövlət investisiyası yolları (Mənfi ildə −4%: real dövlət investisiyası −23,3%, real neft gəlirləri −16,9%; F4 vahid elastiklik, sərbəst qiymət 0,90 [0,22, 1,58]). Əsas ssenarinin dövlət investisiyası səviyyəsi ilə Mənfi ssenari ÜDM-in −1,74%-i ilə bitərdi | Sıranı bərpa edən hər struktur düzəliş nümunədən kənar balans xətasında ciddi itirir (v2.2-də U 0,61, RMSE ÜDM-in 1,1 f.b.-i) — aşağıdakı cədvəl. Deməli, sıra qiymətləndirilmiş fiskal reaksiyanın xassəsidir (xərclər gəlirləri, əsaslı xərclər neft gəlirlərini izləyir), kod xətası deyil; o, gizlədilmir, açıqlanır |
+| 1. Düzəliş əmsallarının sönməsi üzrə həssaslıq | **Dəyişdirilib.** v2.2-yə qədər `base_addf_decay` rıçağı baza düzəliş əmsallarını hər tənliyin *qiymətləndirilmiş* qalıq avtokorrelyasiyası ρ̂ ilə söndürürdü — bu, qiymətləndirilmiş qalıq-AR prosesidir və sifarişçinin məhdudiyyətləri ilə istisna olunur. İndi sabit, qiymətləndirilməyən yarımparçalanma müddəti: `addf_halflife` rıçağı (standart 1 il, ildə 0,50 əmsalı — yanvar–aprel ankor əlavələrinin qaydası); ρ̂ proqnoz yolunun heç bir yerində qiymətləndirilmir (DW və BG diaqnostik test kimi qalır) | Proqnoz (sabit düzəliş əmsalları) bu bənddən dəyişmir. `FR1_addfactor_sensitivity.csv`, sönmə ilə 2026–30 orta artım: real ÜDM 2,31 / 1,12 / 3,33% (Əsas / Mənfi / İslahat; sabit düzəliş əmsalları ilə 2,57%), qeyri-neft 3,51 / 2,35 / 4,62% (3,76%); ρ̂ ilə (v2.2 icrası) real ÜDM 2,42%, qeyri-neft 3,67% |
+| 2. D4 qeyri-neft idxalı: nisbi qiymət ln(p_gdp/fx), əmsal −0,245 | **Yenidən parametrləşdirilib (qəbul edilib).** Real idxal = ABŞ dolları ilə idxal × məzənnə / ÜDM deflyatoru (Hissə 3), buna görə ln(p_gdp/fx) asılı dəyişənə tərif üzrə −1 əmsalı ilə daxildir. İdxal həcmi (sabit ABŞ dolları qiymətləri) ilə ifadə edildikdə eyni qiymətləndirmə həcm elastikliyini verir: **c = +0,755** (p = 0,0001; ≤2020: +0,278) — işarə düzgündür: real möhkəmlənmə idxal həcmini artırır. Həlledici ÜDM qiymətləri ilə real idxal üçün c − 1 istifadə edir, buna görə proqnoz və nümunədən kənar yoxlama eynidir. Həddin çıxarılması (= əmsalın 0 həddində məhdudlaşdırılması; hədd məcburidir) rədd edilib | İdxal U 0,84 / 0,56 (v2.2 ilə eyni). Hədsiz: idxal 0,95 / 0,63 (+13%, əhəmiyyətli itki), qeyri-neft gəlirləri U 0,87 — 0,44-ə qarşı, büdcə balansı 0,99 — 0,61-ə qarşı. Birinci fərqlərdə həcm elastikliyi +0,08 [−0,26, +0,42]-dir, uzunmüddətli qiymət bu intervaldan kənardadır — v2.2 formasında olduğu kimi (göstərilir) |
+| 3. E3 ev təsərrüfatlarının gəliri: + real əmək haqqı fondu | **Qəbul edilib.** ln(gəlir / pensiya xərcləri) ln(qeyri-neft ÜDM / pensiya xərcləri) və ln(əmək haqqı fondu / pensiya xərcləri) üzrə, homogenlik qoyulub: elastikliklər qeyri-neft ÜDM 0,603, **real əmək haqqı fondu 0,377** (2025-ci ildə əmək ödənişlərinin ev təsərrüfatlarının gəlirindəki payı 0,425), pensiya xərcləri 0,021; ≤2020: 0,690, 0,102, 0,208. Homogenlik seçim nümunəsində rədd edilmir (p = 0,16), tam nümunədə isə rədd edilir (p = 0,001); orada sərbəst formada qeyri-neft ÜDM elastikliyi səhv işarəlidir (−1,34) — buna görə "yoxla və qoy" variantı rədd edilib. Əmək haqqı elastikliyi uyğundur (birinci fərqlərdə 0,20 [−0,20, +0,59]) | Real sərəncamda qalan gəlir üzrə U 1,26 / 1,00 — 1,24 / 0,98-ə qarşı (+2,3%, 10%-dən az); istehlak U 0,08 — 0,14-ə qarşı. **Minimum əmək haqqı +10%** (Əsas ssenari 2030, şok konvensiyası): real sərəncamda qalan gəlir −0,31% → **+1,19%**, istehlak −0,35% → +1,31%, qeyri-neft ÜDM −0,21% → +0,51% (əmək haqqı +3,59%, İQİ +1,16%; gəlir ayaqları rıçağı ilə +1,03%) |
+| 4. Fiskal blok: Mənfi ssenari ən yaxşı büdcə balansı ilə bitir | **Saxlanılıb — heç bir namizəd keçmir.** Diaqnostika, 2030, Mənfi — Əsas: gəlirlər −9,2 mlrd AZN (neft −3,9, qeyri-neft −5,3), xərclər −10,7 mlrd (cari −5,7, əsaslı −5,0): **itirilən hər manat gəlirə 1,17 manat xərc azalması düşür**. Bunu iki əlaqə yaradır: F3 (cari xərclər ümumi real gəlirlər üzrə, elastiklik 0,99, 95% interval [0,52, 1,46]) və ssenarilərin dövlət investisiyası yolları (Mənfi ildə −4%: real dövlət investisiyası −23,4%, real neft gəlirləri −15,9%; F4 vahid elastiklik, sərbəst qiymət 0,90 [0,22, 1,58]). Əsas ssenarinin dövlət investisiyası səviyyəsi ilə Mənfi ssenari ÜDM-in −1,85%-i ilə bitərdi | Sıranı bərpa edən hər struktur düzəliş nümunədən kənar balans xətasında ciddi itirir (v2.2-də U 0,61, RMSE ÜDM-in 1,1 f.b.-i) — aşağıdakı cədvəl. Deməli, sıra qiymətləndirilmiş fiskal reaksiyanın xassəsidir (xərclər gəlirləri, əsaslı xərclər neft gəlirlərini izləyir), kod xətası deyil; o, gizlədilmir, açıqlanır |
 
 | Fiskal namizəd (v2.2 modelində, nümunədən kənar yoxlamada olduğu kimi) | 2030 balansı, ÜDM-ə nisbətdə % (Əsas / Mənfi / İslahat) | Mənfi < Əsas < İslahat | Balansın nümunədən kənar U-su (dəyişmə) | Qərar |
 |---|---|---|---|---|
-| F3: qeyri-neft və neft gəlirləri ayrıca | +1,53 / +2,64 / +1,12 | xeyr | 0,88 (+46%) | rədd edilib |
-| F3: yalnız qeyri-neft gəlirləri (neft gəlirləri yığılır) | −0,18 / −0,96 / +0,76 | bəli | 1,31 (+116%) | rədd edilib |
-| F3: gəlir elastikliyi 95% etibarlılıq intervalının aşağı həddində | +0,30 / +0,35 / +0,64 | xeyr | 1,25 (+107%) | rədd edilib |
-| F4: ssenari kapital xərcləri qaydası (Əsas ssenarinin siyasət səviyyəsi + F4 reaksiyası), vahid elastiklik | +0,22 / +0,41 / +0,29 | xeyr | 0,61 (+0%) | rədd edilib |
-| F4: ssenari kapital xərcləri qaydası, neft gəlirləri elastikliyi 95% intervalın aşağı həddində | +0,22 / −1,12 / +1,30 | bəli | 0,72 (+19%) | rədd edilib |
+| F3: qeyri-neft və neft gəlirləri ayrıca | +1,84 / +3,06 / +1,33 | xeyr | 0,92 (+50%) | rədd edilib |
+| F3: yalnız qeyri-neft gəlirləri (neft gəlirləri yığılır) | −0,13 / −0,76 / +0,67 | bəli | 1,43 (+134%) | rədd edilib |
+| F3: gəlir elastikliyi 95% etibarlılıq intervalının aşağı həddində | +0,43 / +0,62 / +0,64 | xeyr | 1,41 (+131%) | rədd edilib |
+| F4: ssenari kapital xərcləri qaydası (Əsas ssenarinin siyasət səviyyəsi + F4 reaksiyası), vahid elastiklik | +0,43 / +0,67 / +0,46 | xeyr | 0,61 (+0%) | rədd edilib |
+| F4: ssenari kapital xərcləri qaydası, neft gəlirləri elastikliyi 95% intervalın aşağı həddində | +0,43 / −0,83 / +1,43 | bəli | 0,75 (+23%) | rədd edilib |
 
 **Proqnoza təsir (Əsas ssenari 2030, v2.2 icrası ilə müqayisədə)** — hamısı E3-ün əmək haqqı fondu həddindən irəli gəlir (1-ci və 2-ci bəndlər
-proqnozu dəyişmir): real ÜDM −0,76%, qeyri-neft ÜDM −0,93%, nominal ÜDM −1,01%, İQİ −0,27%, real sərəncamda qalan gəlir
-−1,88%, istehlak −2,07%, qeyri-neft idxalı −2,10%: proqnozda real əmək haqqı fondu qeyri-neft
-ÜDM-dən yavaş artır. 2026–30 orta artım: real ÜDM **2,74%** (v2.2 2,90; Mənfi
-1,62, İslahat 3,67), qeyri-neft **4,00%** (4,20; 2,92, 5,01). 2030 büdcə balansı: Əsas +0,09, Mənfi
-+0,99, İslahat −0,26% (ÜDM-ə nisbətdə; v2.2 +0,22 / +1,10 / −0,12). §6.2-nin 14 dəyişəni üzrə median U: təsadüfi gəzişməyə
-qarşı 0,592 (v2.2-də 0,592), sabit artıma qarşı 1,023 (1,022).
+proqnozu dəyişmir): real ÜDM −1,59%, qeyri-neft ÜDM −2,10%, nominal ÜDM +1,68%, İQİ +4,25%, real sərəncamda qalan gəlir
+−4,26%, istehlak −4,63%, qeyri-neft idxalı −5,60%: proqnozda real əmək haqqı fondu qeyri-neft
+ÜDM-dən yavaş artır. 2026–30 orta artım: real ÜDM **2,57%** (v2.2 2,90; Mənfi
+1,32, İslahat 3,62), qeyri-neft **3,76%** (4,20; 2,54, 4,91). 2030 büdcə balansı: Əsas +0,01, Mənfi
++0,98, İslahat −0,39% (ÜDM-ə nisbətdə; v2.2 +0,22 / +1,10 / −0,12). §6.2-nin 14 dəyişəni üzrə median U: təsadüfi gəzişməyə
+qarşı 0,591 (v2.2-də 0,592), sabit artıma qarşı 1,036 (1,035).
 
-**Reyestr, mühərrik, sənədləşmə.** `FR1_equations.json`: 164 tənlik (proqnozda 47; v2.2-də 157), yeni: 7 v2.3 spesifikasiyası
+**Reyestr, mühərrik, sənədləşmə.** `FR1_equations.json`: 174 tənlik (proqnozda 47; v2.2-də 157), yeni: 8 v2.3 spesifikasiyası
 (D4 və E3-ün əvəz olunmuş v2.2 formaları və rədd edilmiş namizədlər), hər biri nümunədən kənar müqayisəsi və qərar sətri ilə. Mühərrik:
 `addf_halflife` rıçağı; E3 homogenlik bağı indi üç üzvlüdür (pensiya xərcləri elastikliyi = 1 − qeyri-neft ÜDM − əmək haqqı fondu), buna
 görə dəyişdirilmiş əmsal məhdudiyyəti saxlayır; öz-özünü yoxlama hər ssenari üzrə hər iki rejimdə keçir. Heç bir CSV-də olmayan icradan asılı
 rəqəmlər (§7.1 həlledici iterasiyaları, §7.2 yanvar–aprel ankoru, §7.5 yelpik diaqnostikası, v2.2 müqayisə rəqəmləri) `FR1_doc_figures.json`-a
 (Hissə 18.17) ixrac olunur və burada `microlib.docrefresh` ilə yaradılır. FR3, FR4 və FR5 v2.3 proqnozu ilə yenidən icra olunub. §6–§9 v2.3
 icrasına istinad edir.
+
+**v2.3.1 düzəlişi (2026-10-06): büdcə balansı multiplikatorları.** `FR1_multipliers.csv` büdcə balansını sıfırdan keçən Əsas
+ssenari balansından (2028-ci ildə −97 mln AZN) faiz kənarlaşması kimi verirdi, buna görə reaksiyalar partlayır və işarəsini
+dəyişirdi (dövlət investisiyası +1 mlrd AZN: 2026–30-da −306, −849, +2248, −3359, −1569 "%"; v2.2-də 2028-ci ildə +52 130%). Modelin özü səhv deyildi:
+hər şok həlli yığılıb (ən böyük qalıq 1e−10), pul ifadəsində reaksiyalar isə hamardır. Balans sütunu indi cari qiymətlərlə mln
+AZN fərqidir (inflyasiya f.b.-də, digər sütunlar %-lə qalır): dövlət investisiyası +1 mlrd AZN −1980, −2139, −2352, −2577, −2812; Brent +10 ABŞ dolları/barel
++183, +124, +62, +41, +14; xarici tələb +10% +155, +183, +220, +262, +309. Real və qiymət reaksiyaları və proqnoz dəyişmir. Notebook indi hər şok həllinin yığıldığını və
+balance_n, rgdpnon və infl reaksiyalarının 2-ci ildən sonra işarəsini dəyişmədiyini yoxlayır (assert).
+
+**v2.3.2 düzəlişi (2026-10-06): dövlət borcu.** `debt_azn` iş kitabındakı ümumi dövlət borcunu məzənnə ilə çevirirdi, lakin bu
+sətir üç fərqli əsasdadır (§2.3, 5-ci bənd): 2025-ci il 38 451 mln AZN idi, düzgün dəyər isə **25 987,5 mln AZN**-dir (xarici
+4 813,5 mln ABŞ dolları × 1,70 + daxili 17 804,5 mln AZN; ÜDM-in 20,1%-i); 2010–2020 isə məzənnə qədər təhrif olunmuşdu.
+Dövlət borcu indi hər il xarici borc × ilin sonuna məzənnə + daxili borc kimi hesablanır — Maliyyə Nazirliyinin anlayışı (dövlət zəmanətli
+borc daxil deyil və iş kitabında yoxdur); `fr1:debt_azn` müvafiq adlandırılıb. Kalibrlənmiş borc xidməti dərəcəsi (2023–25 üzrə borc xidməti
+/ borc ortası) və borc eyniliyi düzəldilmiş qalıqdan istifadə edir: 2026 borc xidməti 1 491 mln AZN (əvvəl 1 871);
+2030 dövlət borcu ÜDM-in 12,3 / 12,9 / 11,5%-i (Əsas / Mənfi / İslahat; əvvəl 20,5 /
+22,2 / 18,9); 2030 büdcə balansı +0,01 / +0,98 / −0,39% (əvvəl +0,09 / +0,99 / −0,26).
+
+**v2.3.3 (2026-10-06): məzənnənin ötürülməsi.** G4-də (məzənnə + əmək haqqı) ötürülmə 0,06 idi: +16,5% devalvasiya İQİ-ni 1-ci ildə
++1,14 f.b., 2-ci ildə +0,02 f.b. artırır, qeyri-neft ÜDM isə *artırdı* (2030-a qədər +0,44%); 2015–17-də ötürülmə ≈0,29 olub.
+Namizədlər (Hissə 11.7; yalnız izahedici dəyişənlərin gecikmələri, gecikmiş inflyasiya yoxdur), inflyasiyanın təsadüfi gəzişməyə qarşı U-su (v2.3
+forması 1,30): əvvəlki ilin məzənnə dəyişməsi 1,37; manatla idxal qiymətləri (cari il) 0,73; manatla idxal qiymətləri (cari + əvvəlki il) 0,51; 2015-dən sonrakı rejim (cari + əvvəlki il) 1,39; manatla idxal qiymətləri, DSK ilə birləşdirilmiş 0,88. v2.3.3-də manatla idxal qiymətləri forması qəbul edilmişdi (makro modulun ABŞ dolları ilə idxal qiymətləri +
+məzənnə, cari + əvvəlki il; U 0,50): devalvasiyada İQİ +3,63 / +0,99 f.b., lakin Əsas ssenaridə 2027–30 inflyasiyası 7,3%.
+Qeyri-neft ÜDM niyə artırdı: ötürülmə demək olar ki, olmadığından real gəlirlər az azalırdı, manatla neft gəlirləri isə cari xərcləri (F3) və
+dövlət investisiyasını (F4) artırır; real gəlir kanalı (E3-də real əmək haqqı fondu, İQİ-yə indeksləşən pensiyalar) mövcud idi, lakin zəif idi.
+
+**v2.3.4 (2026-10-06): idxal qiymətləri məlumatlarının yoxlanılması — G4 = məzənnə + məzənnə (t−1) + əmək haqqı.** v2.3.3-ün 2023–25
+qalıqları (−0,5, +3,2, +3,4 f.b.) idxal qiymətləri sırasından irəli gəlirdi: 2021–25-də ABŞ dolları ilə idxal qiymətlərinin artımı makro modulun
+sırasında +33,5, +15,3, −12,7, −6,3, −8,9%, iş kitabının DSK idxal qiymətləri indeksində (`Monetar sektoru`, 98-ci sətir, yalnız 2021–25) isə +20,5, +21,9, +15,8, +19,4, +32,1%-dir —
+5 ilin 3-də əks işarəli. (A) 2021–25 üçün DSK indeksi ilə birləşdirilmiş sıra (2020-yə qədər makro modulun artım templəri, 2021–25 DSK):
+nümunədən kənar U 0,88 (makro forma 0,51; 10% qaydasından kənar), 2023–25 qalıqları −5,2, −1,9, −3,9 f.b. — aradan qalxmır,
+işarəsini dəyişir. İki mənbə uzlaşdırıla bilmədiyi üçün (B) **məzənnə + məzənnə (t−1)** qəbul edilib (U 1,37, v2.3 formasına qarşı
++5%, qayda daxilində; 2023–25 qalıqları −2,9, +0,8, +0,8 f.b.; `FR1_v234_g4_check.csv`). İdxal qiymətləri formaları reyestrdə qalır
+(`used_in_forecast = false`). İndi +16,5% devalvasiya: İQİ **1-ci ildə +0,82 f.b., 2-ci ildə +2,20 f.b.** (2030-a qədər səviyyə +2,9%),
+qeyri-neft ÜDM +0,26% (2026) / −0,07% (2030), real sərəncamda qalan gəlir −0,68%, dövlət borcu ÜDM-in −0,02 f.b.-i;
+F4 reaksiyası olmadan qeyri-neft ÜDM −0,60%.
+
+**2026 İQİ ankoru.** 2026 inflyasiyası, real sektorların yanvar–aprel məlumatında olduğu kimi, son aylıq İQİ-yə ankorlanır:
+dsk_cpi.csv 2026-ci ilin 8-ci ayı üçün illik 5,7% verir; qalan aylarda ötən ilin aylıq dəyişmələri təkrarlanır
+(1:1; 2021–25-də RMSE 3,6 f.b.), deməli 2026-cı ilin dekabrı = 5,7%. Real sektorların yanvar–aprel ankorlarında olduğu kimi,
+bu natamam il məlumatı **əlavə (increment)** kimi daxil olur: G4-ün baza düzəliş əmsalı 2025 qalığı olaraq qalır (+0,77 f.b., sabit), 2026
+əlavəsi isə (+2,69 f.b. = nowcast − model) 2026-da tam tətbiq olunur və 2027-dən bir illik yarımsönmə ilə azalır (×0,5, ×0,25, …).
+`data/dsk_cpi/`-yə yeni aylıq fayl və ya RiskUnit DSK vintajı gəldikdə yenilənir. Əsas ssenaridə 2026–30 İQİ inflyasiyası: 5,7, 6,1, 5,2, 4,9, 4,6%
+(2027–30 ortası 5,2%; Mənfi 4,4, İslahat 6,0).
+
+**2026 dövlət borcu ankoru (v2.3.4).** Maliyyə Nazirliyinin son qalıq məlumatı — 2026-07-01 tarixinə 23 830,6 mln AZN (2025-ci ilin sonu
+25 987,5 ilə müqayisədə −8,3%; debt_parsed.json) — 2026-cı ili İQİ və real sektorlar kimi ankorlayır: 2026-cı ilin sonuna
+borc = müşahidə olunan qalıq − modelin 2026 büdcə balansı × ilin qalan 6/12 hissəsi = **23 387,4 mln AZN** (ÜDM-in 17,3%-i).
+Yalnız eynilik (borc − balans) 25 101,0 verərdi; fərq, −1714 mln AZN, Əsas ssenaridə nəzərdə tutulan 2026 qalıq-axın
+düzəlişidir (büdcə balansından kənar maliyyələşdirilən ödənişlər, məs. ARDNF-dən). Düstur həlledicinin daxilində hər hesablamada (ssenarilər,
+şoklar, mühərrik) tətbiq olunur, ona görə 2026-cı ilin sonuna borcu yalnız ikinci yarımilin balansı dəyişir (Δborc = −0,50 × Δbalans):
+Mənfi 23 518,5, İslahat 23 479,8 mln AZN; 2027-dən eynilik tətbiq olunur. `data/minfin_debt/`-yə daha
+yeni bülleten və ya RiskUnit MinFin vintajı gəldikdə yenilənir (`FR1_debt_nowcast.csv`). 2030 dövlət borcu: ÜDM-in 12,3 / 12,9 /
+11,5%-i (Əsas / Mənfi / İslahat).
+
+**v2.3.5 (2026-10-06): pensiya xərci, məşğulluq, minimum əmək haqqı.** (1) Pensiyanın real artımı büdcə balansını yaxşılaşdırırdı: pensiyaları
+dövlət büdcəsindən kənar DSMF ödəyir, FR1-də isə maliyyələşdirmə eyniliyi yox idi, buna görə yalnız gəlir qazancı (istehlak → ƏDV) görünürdü. İQİ
+indeksasiyasından yuxarı real artım (siyasət girişi `pension_real_g`) indi dövlət büdcəsindən DSMF-ə transfertlə (cari xərclər) maliyyələşdirilir =
+DSMF pensiya xərcləri (2025-də 7 783 mln AZN, 2024-dən körpü ilə) × (1 − 1/məcmu real artım); tarixdə və nümunədən kənar yoxlamada faktiki
+artımlar müşahidə olunan xərclərin içindədir (orada söndürülüb). 2026-dan +10% real pensiya: balans 2026–30-da −825, −902, −1001, −1106, −1216 mln AZN (əvvəl:
++30, +36, +43, +50, +58); xərclər +912, +998, +1109, +1227, +1352, gəlirlər +87, +97, +108, +121, +136. (2) Məşğulluq: FR1-in E1 tənliyi məşğulluq SƏVİYYƏSİNİ adambaşına qeyri-neft
+ÜDM ilə 0,034 elastikliklə əlaqələndirir (p = 0,008; ölçülən işsizlik çox sabitdir), buna görə +1 mlrd AZN dövlət investisiyası
+2030-a qədər qeyri-neft ÜDM-i +1,20%, məşğulluğu isə cəmi +0,040% artırır — bu qiymətləndirilmiş elastiklikdir, yenidən spesifikasiya
+edilməyib. FR4-ün sektor tənlikləri muzdlu (formal) işçilər üçün ümumi məşğulluqdan daha yüksək elastiklik verir: sektor payı 0,174 — 0,108-ə qarşı, bazar xidmətləri 1,63 — 0,70-ə qarşı; siyasət bölməsi FR1-in məşğulluğunu özünüməşğulluq və kənd təsərrüfatının üstünlük təşkil etdiyi ümumi (İQM) məşğulluq kimi oxumalı, formal iş yerlərinə təsiri isə FR4-dən götürməlidir. (3) İş kitabındakı minimum əmək haqqı (`Sosial sektor`, 51-ci sətir) t ilində t+1 ilin 1 yanvarından qüvvədə olan səviyyəni göstərir (2024: 400,
+01.01.2025-dən). FR1 indi qüvvədə olan səviyyənin illik ortasından istifadə edir (`data/dsk_minwage/`, DSK 004_1): 2019 203,3 (v2.3.5; v2.3.6-da 195,0),
+2024 345, 2025 400. E2 yenidən qiymətləndirilib: minimum əmək haqqı elastikliyi 0,186 (p = 0,14) → **0,384**
+(p = 0,000), məhsuldarlıq 0,82 → 0,49, İQİ 0,62 → 0,39; əmək haqqının nümunədən kənar U-su
+0,52 → 0,58 (məlumat düzəlişidir, spesifikasiya seçimi deyil). Minimum əmək haqqı +10% (2030): əmək haqqı +2,64 →
++4,67%, real sərəncamda qalan gəlir +0,91 → +1,59%, İQİ +0,85 → +1,50%. Əsas ssenaridə 2026–30
+İQİ inflyasiyası: 5,7, 5,2, 4,5, 4,3, 4,0% (əvvəl: 5,7, 5,9, 5,1, 4,9, 4,5). (v2.3.5 icrası; v2.3.6-da düzəldilib.)
+
+**v2.3.6 (2026-10-06): minimum əmək haqqı — ayların çəkisi və dövlət sektoru kanalı.** (1) İllik minimum əmək haqqı DSK 004_1 cədvəli üzrə
+qüvvədə olan səviyyənin ay çəkili ortasıdır: 2019 = (2×130 + 6×180 + 4×250)/12 = 195,0 (v2.3.5: 203,3); FR3 eyni sırayı və 2026-nın qanuni səviyyəsini
+(400 AZN, 01.01.2025-dən) istifadə edir, artım rıçağı 2027-dən tətbiq olunur. (2) Minimum əmək haqqının hər artımı (2019, 2022, 2023) dövlət sektorunda
+əmək haqqı islahatı ilə üst-üstə düşüb. Minimum əmək haqqı elastikliyi DÖVLƏT əmək haqları üçün +0,598 (p = 0,000), QEYRİ-DÖVLƏT
+əmək haqları üçün −0,032-dir (p = 0,69), yəni vahid orta əmək haqqı elastikliyi dövlət sektorunun artımını bütün işçilərə aid edir.
+Namizədlər (Hissə 11.7; əmək haqqının U-su, v2.3.5 forması 0,55): dövlət sektoru islahatı addımları: U 0,55 (yanlış işarə — rədd edilib); islahatların məcmu indeksi: U 0,25 (yanlış işarə — rədd edilib); dövlət / qeyri-dövlət kanalları ilə məhdudlaşdırılmış elastiklik: U 0,49. **Qəbul edilib: dövlət / qeyri-dövlət kanalları ilə
+məhdudlaşdırılmış minimum əmək haqqı elastikliyi**: **0,384 → 0,272**; məhsuldarlıq və İQİ yenidən qiymətləndirilib (0,86, 0,44).
+Minimum əmək haqqı +20% (Əsas ssenari, 2030): orta əmək haqqı +9,11 → **+6,98%**, real ÜDM +1,13 → +0,85%, real sərəncamda qalan
+gəlir +3,07 → +2,30%, İQİ +2,86 → +2,21% (inflyasiya 2026-da +3,04 → +2,36 f.b.). (3) G4-də əmək haqqının
+ötürülməsi 0,347-dir (s.x. 0,176, p = 0,06): dövlət sektorunun əmək haqqı artımlarını özəl sektorun vahid əmək xərcləri kimi qəbul
+edir, buna görə minimum əmək haqqı → əmək haqqı → İQİ reaksiyası güclü tərəfdə qalır (PolicyUnit-in 2019 yoxlaması: faktiki İQİ reaksiyası xeyli kiçik);
+qeyri-dövlət əmək haqqı xərci həddi ayrıca qeyri-dövlət əmək haqqı bloku tələb edir və burada qəbul edilməyib. Əsas ssenaridə 2026–30 İQİ
+inflyasiyası: 5,7, 6,1, 5,2, 4,9, 4,6% (v2.3.5: 5,7, 5,2, 4,5, 4,3, 4,0).
 <!-- /AUTO:v23_note -->
 
 <!-- AUTO:v22_note -->
@@ -211,11 +295,11 @@ istifadə olunmur.
 | Bənd | Qərar | Nümunədən kənar yoxlama (Theil U təsadüfi gəzişməyə 2020 / sabit artıma 2010–19 qarşı; RMSE) |
 |---|---|---|
 | 1. Neft və qaz hasilatı | **Qəbul edilib** (fərziyyə): Əsas ssenari 2027–30 = Nazirliyin planının artım tempi (`8_vereq_original.xlsx`, 2.4.1.4), yanvar–mart faktiki göstəricisindən 2026 səviyyəsinə tətbiq olunur; Mənfi = v2.2-dən əvvəlki Əsas ssenarinin neft azalması (−4,2…−3,0%), qaz plan − 1 f.b.; İslahat = plan + v2.2-dən əvvəlki İslahat fərqləri | Plan qiymətləndirmə deyil. Plan 2025-ci il neft hasilatını artıq göstərib (28,45 əvəzinə 27,68 mln ton, +2,8%; qaz −1,0%). Əsas ssenaridə 2030 neft hasilatı: 26,0 mln ton (əvvəl 22,8) |
-| 2. Gəlirin mənbələr üzrə bölgüsü (əmək haqqı fondu + DSMF transfertləri + digər gəlirlər, Δln ayaqları) | Proqnoz üçün **rədd edilib**; mühərrik rıçağı `income_block = legs` | Nümunədaxili ayaqlar daha yaxşıdır (≤2020 real gəlir artımının bir addımlıq RMSE-si 3,5 və 5,0 f.b.; elastikliklər 0,83 əmək haqqı fondu, 0,52 DSMF, 1,24 digər gəlirlər — makro modulda olduğu kimi). Dinamik yoxlamada real sərəncamda qalan gəlir: U 1,76 / 1,40, RMSE 11,4% — **1,27 / 1,01, 8,2%**-ə qarşı; istehlak 0,24 — 0,13-ə qarşı. Ayaqlar nominaldır: kəsimdən əvvəlki model 2025 qiymət səviyyəsini 30% aşağı proqnozlaşdırır, tam indeksləşməyən nominal ayaqlar bunu artıq real gəlirə çevirir. İstehlak qiymətləri ilə deflyasiya edilmiş forma: 1,53 / 1,21 (rədd edilib). Nominal sərəncamda qalan gəlir ayaqlarla daha yaxşıdır (U 0,49 — 0,61-ə qarşı) |
-| 3. Mədənçıxarma deflyatoru ixrac dəyəri ilə çəkili neft+qaz ixrac qiymətləri indeksi + məzənnə üzrə | **Qəbul edilib** (makro modulun forması, İQİ həddi olmadan) | Mədənçıxarma deflyatoru U **0,13 / 0,16** (RMSE 6,8%) — 0,50 / 0,61 (26,5%)-ə qarşı; nominal ÜDM 0,46 / 0,72 — 0,61 / 0,96-ya qarşı; ÜDM deflyatoru 0,34 — 0,58-ə qarşı. Yan təsirlər: real ÜDM 0,72 / 1,11 — 0,62 / 0,96-ya qarşı (zəncirvari çəkilər), idxal 0,85 — 0,66-ya qarşı (D4-də yanlış işarəli nisbi qiymət). İQİ əlavə olunmuş variant (≤2020 ən kiçik standart xəta) daha pisdir (0,60) və rədd edilib. Yeni tənlik: 2,5 + 1,02 Δln XPI + 0,51 Δln FX, düzəldilmiş R² 0,80; dayanıqlıq *qeyri-stabil* (2016 orta nöqtəsində Chow, p = 0,005) |
+| 2. Gəlirin mənbələr üzrə bölgüsü (əmək haqqı fondu + DSMF transfertləri + digər gəlirlər, Δln ayaqları) | Proqnoz üçün **rədd edilib**; mühərrik rıçağı `income_block = legs` | Nümunədaxili ayaqlar daha yaxşıdır (≤2020 real gəlir artımının bir addımlıq RMSE-si 3,5 və 5,0 f.b.; elastikliklər 0,83 əmək haqqı fondu, 0,52 DSMF, 1,24 digər gəlirlər — makro modulda olduğu kimi). Dinamik yoxlamada real sərəncamda qalan gəlir: U 1,79 / 1,42, RMSE 11,6% — **1,27 / 1,01, 8,3%**-ə qarşı; istehlak 0,28 — 0,13-ə qarşı. Ayaqlar nominaldır: kəsimdən əvvəlki model 2025 qiymət səviyyəsini 31% aşağı proqnozlaşdırır, tam indeksləşməyən nominal ayaqlar bunu artıq real gəlirə çevirir. İstehlak qiymətləri ilə deflyasiya edilmiş forma: 1,52 / 1,21 (rədd edilib). Nominal sərəncamda qalan gəlir ayaqlarla daha yaxşıdır (U 0,53 — 0,65-ə qarşı) |
+| 3. Mədənçıxarma deflyatoru ixrac dəyəri ilə çəkili neft+qaz ixrac qiymətləri indeksi + məzənnə üzrə | **Qəbul edilib** (makro modulun forması, İQİ həddi olmadan) | Mədənçıxarma deflyatoru U **0,13 / 0,16** (RMSE 6,8%) — 0,52 / 0,63 (27,3%)-ə qarşı; nominal ÜDM 0,48 / 0,75 — 0,64 / 1,00-ya qarşı; ÜDM deflyatoru 0,36 — 0,62-ə qarşı. Yan təsirlər: real ÜDM 0,72 / 1,12 — 0,62 / 0,96-ya qarşı (zəncirvari çəkilər), idxal 0,83 — 0,68-ya qarşı (D4-də yanlış işarəli nisbi qiymət). İQİ əlavə olunmuş variant (≤2020 ən kiçik standart xəta) daha pisdir (0,63) və rədd edilib. Yeni tənlik: 2,5 + 1,02 Δln XPI + 0,51 Δln FX, düzəldilmiş R² 0,80; dayanıqlıq *qeyri-stabil* (2016 orta nöqtəsində Chow, p = 0,005) |
 | 4. 2026 Dövlət İnvestisiya Proqramı | **Qəbul edilib**: 2 700 mln AZN (öz iş kitabı, `DİP 2016-2026`, nəzərdə tutulmuş vəsait; 2025 faktiki 2 305; makro modul eyni xanaya istinad edir) | Fərziyyə. Proqramın 2025-ci ildə real dövlət investisiyasındakı payı (20,4%) 2026-da modelin öz 2026 investisiya deflyatoru ilə proqramla əvəz olunur (tərpənməz nöqtə); 2026 real dövlət investisiyası +3,9% (əvvəl +1,5%). `fr1:exp_pubinv_n` kimi dərc olunur (hər ssenaridə 2026 = 2 700) |
-| 5. Fiskal qapanma: qeyri-neft balansı / qeyri-neft ÜDM kəsim ilinin səviyyəsində | **Rədd edilib**; mühərrik rıçağı `fiscal_rule = nobd`; nisbət dərc olunur (`fr1:nobd_pct`) | Ümumi xərclər yaxşılaşır (U 0,30 — 0,53-ə qarşı), lakin qaydanın məqsədi olan büdcə balansı xeyli pisləşir: RMSE ÜDM-in 4,9 f.b.-i — 1,1-ə qarşı (U 2,66 — 0,61-ə qarşı), çünki neft gəlirlərinin xətaları balansa 1:1 keçir. F3 ilə Mənfi ssenari 2030-da ən yaxşı balansı saxlayır (ÜDM-in +1,1%-i; Əsas +0,2, İslahat −0,1): xərclər gəlirləri izləyir və Mənfi ssenari dövlət investisiyasını ildə 4% azaldır. Rıçaqla 2030 balansları −12,3 / −14,4 / −10,5 mlrd AZN-dir (Mənfi ən pis) |
-| 6. İdxal udma + real effektiv məzənnə üzrə | **Rədd edilib** | REER hər iki nümunədə yanlış işarəlidir (≤2020 −1,06, p = 0,02; tam −0,32, p = 0,12); idxal U 1,32 / 0,87 — 0,66 / 0,44-ə qarşı. D4 dəyişməyib |
+| 5. Fiskal qapanma: qeyri-neft balansı / qeyri-neft ÜDM kəsim ilinin səviyyəsində | **Rədd edilib**; mühərrik rıçağı `fiscal_rule = nobd`; nisbət dərc olunur (`fr1:nobd_pct`) | Ümumi xərclər yaxşılaşır (U 0,32 — 0,51-ə qarşı), lakin qaydanın məqsədi olan büdcə balansı xeyli pisləşir: RMSE ÜDM-in 5,2 f.b.-i — 1,1-ə qarşı (U 2,80 — 0,61-ə qarşı), çünki neft gəlirlərinin xətaları balansa 1:1 keçir. F3 ilə Mənfi ssenari 2030-da ən yaxşı balansı saxlayır (ÜDM-in +1,1%-i; Əsas +0,2, İslahat −0,1): xərclər gəlirləri izləyir və Mənfi ssenari dövlət investisiyasını ildə 4% azaldır. Rıçaqla 2030 balansları −13,4 / −15,2 / −12,0 mlrd AZN-dir (Mənfi ən pis) |
+| 6. İdxal udma + real effektiv məzənnə üzrə | **Rədd edilib** | REER hər iki nümunədə yanlış işarəlidir (≤2020 −1,06, p = 0,02; tam −0,32, p = 0,12); idxal U 1,31 / 0,87 — 0,68 / 0,45-ə qarşı. D4 dəyişməyib |
 | 7. Sektor deflyatorları sektor qiymət sürücüləri üzrə | **Buraxılıb** | Sürücülərin (kənd təsərrüfatı istehsalçı qiymətləri, nəqliyyat və rabitə tarifləri, tikinti deflyatoru) 2026–30 üçün ekzogen yolu yoxdur: makro modul onları AR/orta profillərlə proqnozlaşdırır (`pdrv_*`), bir neçəsi yalnız 2021-dən mövcuddur |
 
 **Proqnoza təsiri (Əsas ssenari, v2.1-ə nisbətən).** 2026 real göstəricilərdə dəyişmir (yanvar–aprel ilə ankorlanıb); dəyişikliklər
@@ -223,15 +307,15 @@ istifadə olunmur.
 +0,3%, real sərəncamda qalan gəlir +0,9%. 2026–30 orta artım: real ÜDM **2,90%** (v2.1 2,40; Mənfi 1,76, İslahat 3,85), qeyri-neft **4,20%**
 (3,99; 3,09, 5,23). Fəallıq üzrə ssenari sırası dəyişməyib (Mənfi < Əsas < İslahat). 2030 büdcə balansı ÜDM-in +0,22%-i (Əsas); 2026
 balansı aşağıdır (+948 əvəzinə +636 mln AZN: proqram). §6.2-nin 14 dəyişəni üzrə median U: təsadüfi gəzişməyə qarşı 0,59 (əvvəl 0,58),
-sabit artıma qarşı 1,02 (1,02); median RMSE 13,0% (14,3%).
+sabit artıma qarşı 1,04 (1,02); median RMSE 13,2% (14,6%).
 
 **Reyestr və mühərrik.** `FR1_equations.json`: 157 tənlik (47-si proqnozda): yeni — gəlirin dörd ayağı (E3a–E3d, qiymətləndirilib və
 reyestrdədir, `used_in_forecast = false`, nümunədən kənar müqayisəsi ilə), onların İQİ ilə deflyasiya edilmiş variantları, v2.2-dən əvvəlki
 və İQİ əlavə olunmuş mədənçıxarma deflyatorları, udma + REER ilə D4; G5_defl_min əvəz olunub. Mühərrik (`microlib/engines/fr1.py`,
 `_fr1_*.py`): yeni girişlər `sip_n` (proqram, nominal) və `dsmf_add_g`; rıçaqlar `income_block`, `fiscal_rule`; yeni sıralar
 `fr1:gdpnon_n`, `hhdisp_n`, `nobd_pct`, `exp_pubinv_n`, `gas_exp_price`, `xsh_oil`, `dln_xpi` (kataloqda 478 komponent).
-`income_block = legs` ilə minimum əmək haqqının 10% artması 2030-a qədər real sərəncamda qalan gəliri ~0,8% artırır; proqnoz modelində
-(E3) artırmır (−0,05%, qiymətlər vasitəsilə). Öz-özünü yoxlama bütün ssenarilər üzrə hər iki rejimdə keçir; FR3, FR4 və FR5 yenidən icra
+`income_block = legs` ilə minimum əmək haqqının 10% artması 2030-a qədər real sərəncamda qalan gəliri ~1,0% artırır; proqnoz modelində
+(E3) artırmır (−0,31%, qiymətlər vasitəsilə). Öz-özünü yoxlama bütün ssenarilər üzrə hər iki rejimdə keçir; FR3, FR4 və FR5 yenidən icra
 olunub. Bu qeyd v2.2 mərhələsini qeyd edir (proqnoz rəqəmləri v2.2 icrasınındır; v2 və v2.1 qeydləri də öz icralarının rəqəmlərini
 saxlayır); §6–§9 cari (v2.3) icraya istinad edir.
 <!-- /AUTO:v22_note -->
@@ -337,10 +421,10 @@ Təxminən on illik müşahidədən az olan sıralar (idxal/ixrac qiymət indeks
 çıxarılır və yalnız diaqnostika və ya ssenari girişləri kimi istifadə olunur. Beş müşahidəli izahedici dəyişən struktur
 elastikliyi identifikasiya edə bilməz.
 
-### 2.3 Yoxlanılmış eyniliklər — dörd real problem aşkarlanıb
+### 2.3 Yoxlanılmış eyniliklər — beş real problem aşkarlanıb
 
 Qiymətləndirmədən əvvəl iyirmi dörd eynilik test edilir (dözümlülük həddi 1%, büdcə balansı və işsizlik eynilikləri üçün 5%);
-onlardan on doqquzu ödənilir. Dörd uyğunsuzluq araşdırılmış və
+onlardan on doqquzu ödənilir. Dörd uyğunsuzluq araşdırılmış (beşincisi, dövlət borcu, v2.3.2-də aşkarlanıb) və
 hər biri modeldə dəyişikliyə səbəb olmuşdur:
 
 1. **Büdcə xərcləri** — `total ≠ current + capital`; həqiqi eynilik `total = current + capital + debt service` şəklindədir və
@@ -352,6 +436,15 @@ hər biri modeldə dəyişikliyə səbəb olmuşdur:
    və çatışmayan dəyər kimi yenidən təyin edilib.
 4. **2024-cü ildə sənaye investisiyası** — alt komponentlərin cəmi dərc edilmiş yekundan 3,6% aşağıdır. Bu, mənbədəki həqiqi uyğunsuzluqdur;
    düzəliş edilmək əvəzinə qeyd olunub və bu məsələnin məlumat təqdimatçısı qarşısında qaldırılmasına dəyər.
+<!-- AUTO:v23_debt -->
+5. **Dövlət borcu (v2.3.2)** — iş kitabındakı cəm ('Ümumi dövlət borcu', `Fiskal sektor` 22-ci sətir, mln ABŞ dolları kimi
+   işarələnib) üç fərqli əsasdadır: 2010–2020-də mln AZN-lə (2020: 16 938,8 = xarici 8 821,5 mln ABŞ dolları × 1,7000 + daxili
+   1 942,3 mln AZN), 2021–2024-də mln ABŞ dolları ilə (2024: 16 106,0), 2025-ci ildə isə çevrilmədən toplanmış
+   22 618,0 = 4 813,5 (ABŞ dolları) + 17 804,5 (AZN). Bütün sətrin məzənnə ilə çevrilməsi 2025 üçün 38 451 mln AZN
+   verir, 2010–2020-ni isə məzənnə qədər təhrif edirdi (2010-da ×0,80, 2020-də ×1,70). Dövlət borcu indi hər il xarici borc (24-cü sətir) × ilin sonuna məzənnə + daxili
+   borc (23-cü sətir) kimi hesablanır — Maliyyə Nazirliyinin anlayışı, dövlət zəmanətli borc daxil deyil: **2025-ci ildə
+   25 987,5 mln AZN (ÜDM-in 20,1%-i)**. Üç əsas notebook-da yoxlanılır (assert).
+<!-- /AUTO:v23_debt -->
 
 ### 2.4 Törəmə dəyişənlər
 
@@ -470,8 +563,12 @@ texniki tərəqqi trendə malik izahedici dəyişən vasitəsilə gizli şəkild
 - **Qeyri-neft gəlirləri** — qeyri-neft ÜDM-ə görə uzunmüddətli elastiklik (buoyancy) 1,32; vahid elastiklik rədd edilmir (aşağı güc: p = 0,12, s.x. 0,19)
   və qoyulub, üstəgəl idxal (0,56).
 - **Kredit (G1)** — real depozitlər (0,52) və uçot dərəcəsi (−0,043); qeyri-neft ÜDM çıxarılıb (səhv işarə, −0,67).
-- **İnflyasiya** — struktur xərc əlavəsi (cost markup): məzənnə dəyişikliyi (0,057) və əmək haqqı artımı (0,31), hər ikisi yalnız 10% səviyyəsində əhəmiyyətlidir
-  (R² 0,20): bu, uyğunluğu ən zəif olan tənlikdir və məhz buna görə İQİ yelpiyi genişdir.
+<!-- AUTO:v23_g4 -->
+- **İnflyasiya** — struktur xərc əlavəsi (v2.3.4): cari ildə məzənnə dəyişməsi (0,041, p = 0,25) və əvvəlki ildə məzənnə
+  dəyişməsi (0,131, p = 0,010; izahedici dəyişənin gecikməsi, gecikmiş inflyasiya yoxdur) və əmək haqqı artımı (0,347, p = 0,06);
+  R² 0,31. Məzənnənin məcmu ötürülməsi 0,17 (2015–17 tarixi: 0,29); idxal qiymətləri formaları çıxarılıb, çünki
+  iki idxal qiyməti mənbəyi 2021–25-də bir-birinə ziddir (v2.3.4 qeydi).
+<!-- /AUTO:v23_g4 -->
 - **Deflyatorlar** — hər sektorun deflyator inflyasiyası İQİ inflyasiyası üzrə; mədənçıxarma (v2.2, makro modulun forması) ixrac dəyəri ilə
   çəkili neft + qaz ixrac qiymətləri indeksi (ABŞ dolları) və məzənnə üzrə, İQİ həddi olmadan. Sosial və digər
   xidmətlər üçün sərbəst qiymətləndirmə (dreyf 6,6 f.b., ötürülmə əmsalı 0,59) ildə ~9% nəzərdə tuturdu; “dreyf yoxdur, vahid
@@ -495,8 +592,8 @@ altında yenidən qiymətləndirmə yolu ilə); rədd edilməmə test edilmiş k
 | Neft-qaz ÜDM: neft + qaz elastiklikləri = 1 | 1.246 | 0.000 | 0.026 | Rədd edilib |
 | Emal sənayesi: kapital elastikliyi = amil payı 0.56 | 0.241 | 0.029 | 0.120 | **Rədd edilib** |
 | İnvestisiyanın kredit elastikliyi = regional panel qiyməti 0.134 | −0.135 | 0.028 | — | **Rədd edilib** (kredit termini çıxarılıb) |
-| Ev təsərrüfatlarının gəliri: qeyri-neft ÜDM + pensiya elastiklikləri = 1 | 0.631 | 0.118 | 0.222 | Rədd edilməyib (aşağı güc) — qoyulub |
-| Sosial xidmətlərin deflyatoru: ötürülmə əmsalı 1 (dreyf sərbəst) | 0.59 | 0.222 | — | Rədd edilməyib — qoyulub (dreyfsiz birgə test rədd edilib, p = 0.001) |
+| <!-- AUTO:fr1v236_e3hom -->Ev təsərrüfatlarının gəliri: qeyri-neft ÜDM + pensiya fondu + əmək haqqı fondu elastiklikləri = 1 | 0.342 | 0.001 | 0.132 | **Rədd edilib** — nəzəri əsaslarla qoyulub (v2.3)<!-- /AUTO:fr1v236_e3hom --> |
+| <!-- AUTO:fr1v236_socdefl -->Sosial xidmətlərin deflyatoru: ötürülmə əmsalı 1 (dreyf sərbəst) | 0.59 | 0.222 | — | Rədd edilməyib — qoyulub (dreyfsiz birgə test rədd edilib, p = 0.001)<!-- /AUTO:fr1v236_socdefl --> |
 | Qeyri-neft vergi elastikliyi (buoyancy) = 1 | 1.322 | 0.124 | 0.192 | Rədd edilməyib (aşağı güc) — qoyulub |
 | Dövlət investisiyasının neft gəlirlərinə görə elastikliyi = 1 | 0.901 | 0.757 | 0.312 | Rədd edilməyib (aşağı güc) — qoyulub |
 
@@ -626,25 +723,25 @@ qədər müəyyəndir) və yalnız göstərici xarakter daşıyır.
 | | Nəticə (14 dəyişən) |
 |---|---|
 | 2020-ci ildən (pandemiyanın dib nöqtəsi) təsadüfi gəzişməni üstələyir | 14-dən 14-ü, median U **0.59** |
-| 2019-cu ildən təsadüfi gəzişməni üstələyir | 14-dən 12-si, median U 0.58 |
-| 2010–2019 sabit artımını üstələyir (pandemiyadan əvvəl) | **14-dən 6-sı, median U 1.02** |
-| 2010–2020 sabit artımını üstələyir | 14-dən 7-si, median U 0.95 |
+| 2019-cu ildən təsadüfi gəzişməni üstələyir | 14-dən 11-i, median U 0.58 |
+| 2010–2019 sabit artımını üstələyir (pandemiyadan əvvəl) | **14-dən 6-sı, median U 1.04** |
+| 2010–2020 sabit artımını üstələyir | 14-dən 8-i, median U 0.95 |
 | Statistik əhəmiyyətli üstünlüklər (HLN-DM p < 0.10) | RW2020 ilə müqayisədə 2; 2010–19 sabit artımı ilə müqayisədə 1 |
-| 5 ildən sonra real ÜDM səviyyəsinin xətası | **−11.4%** (RW2020 ilə müqayisədə U 0.70, CG 2010–19 ilə müqayisədə 1.09) |
-| 5 ildən sonra real qeyri-neft ÜDM səviyyəsinin xətası | −10.8% (RW2020 ilə müqayisədə U 0.48, CG 2010–19 ilə müqayisədə 1.40) |
+| 5 ildən sonra real ÜDM səviyyəsinin xətası | **−11.4%** (RW2020 ilə müqayisədə U 0.71, CG 2010–19 ilə müqayisədə 1.10) |
+| 5 ildən sonra real qeyri-neft ÜDM səviyyəsinin xətası | −10.6% (RW2020 ilə müqayisədə U 0.47, CG 2010–19 ilə müqayisədə 1.39) |
 | Siyasət səviyyəsi variantı | RW2020 ilə müqayisədə median U 0.54, CG 2010–19 ilə müqayisədə 0.90 |
 
-*(v2.2 rəqəmləri: mədənçıxarma deflyatoru karbohidrogen ixrac qiymətləri indeksi üzrə — v2.2 qeydinə bax. Onun öz xətası 26,5%-dən
-6,8%-ə, nominal ÜDM-in xətası 24,6%-dən 18,4%-ə enir, real ÜDM-inki isə 7,3%-dən 8,4%-ə qalxır: 2021–22-nin daha dəqiq mədənçıxarma
+*(v2.2 rəqəmləri: mədənçıxarma deflyatoru karbohidrogen ixrac qiymətləri indeksi üzrə — v2.2 qeydinə bax. Onun öz xətası 27,3%-dən
+6,8%-ə, nominal ÜDM-in xətası 25,6%-dən 19,1%-ə enir, real ÜDM-inki isə 7,3%-dən 8,5%-ə qalxır: 2021–22-nin daha dəqiq mədənçıxarma
 qiymətləri həcmi azalan mədənçıxarmaya zəncirvari çəkidə daha böyük pay verir.)*
 <!-- /AUTO:v22_holdout -->
 
 <!-- AUTO:v22_headline62 -->
 **Əsas nəticə:** 2020-ci ildən təsadüfi gəzişmə modeli olduğundan yaxşı göstərir (2020-ci il pandemiyanın dib nöqtəsi idi). Pandemiyadan
-əvvəlki onillik üzrə qiymətləndirilmiş sabit artımla müqayisədə model təxminən **eyni səviyyədədir** (median U 1,02; 1 statistik əhəmiyyətli
-üstünlük). Yaxşı izlənilənlər: istehlak (RMSE 1,1%), ticarət 2,2%, məşğulluq 3,0%, kənd təsərrüfatı 4,3%, real ÜDM 8,3%. Zəif izlənilənlər:
-tikinti 21,1%, nəqliyyat 17,6%, emal sənayesi 14,5%, dövlət investisiyası 17,4%, İKT 25,8% (v2.1: kəsim ili olan 2020 İKT investisiyasının dib nöqtəsi idi) — 2020-ci ildən sonra transformasiyaya uğramış sektorlar
-(yeni emal sənayesi gücləri, Qarabağ və Şərqi Zəngəzurun bərpası, Orta Dəhliz). Real cari xərclər 2025-ci ilədək 32% yüksək proqnozlaşdırılır.
+əvvəlki onillik üzrə qiymətləndirilmiş sabit artımla müqayisədə model təxminən **eyni səviyyədədir** (median U 1,04; 1 statistik əhəmiyyətli
+üstünlük). Yaxşı izlənilənlər: istehlak (RMSE 1,1%), ticarət 2,4%, məşğulluq 3,0%, kənd təsərrüfatı 4,3%, real ÜDM 8,3%. Zəif izlənilənlər:
+tikinti 21,0%, nəqliyyat 17,6%, emal sənayesi 14,5%, dövlət investisiyası 17,9%, İKT 25,7% (v2.1: kəsim ili olan 2020 İKT investisiyasının dib nöqtəsi idi) — 2020-ci ildən sonra transformasiyaya uğramış sektorlar
+(yeni emal sənayesi gücləri, Qarabağ və Şərqi Zəngəzurun bərpası, Orta Dəhliz). Real cari xərclər 2025-ci ilədək 33% yüksək proqnozlaşdırılır.
 <!-- /AUTO:v22_headline62 -->
 
 ### 6.3 Digər yoxlamalar
@@ -661,8 +758,8 @@ eyniliklərin qapanması, həll edilən hər il üçün yığılma (konvergensiy
 
 ### 7.1 Həlledici
 
-Hər il tərpənməz nöqtəyə qədər **sönümləndirilmiş Gauss–Seidel** iterasiyası ilə həll edilir (qalıq < 1e-10; hər proqnoz ili üçün <!-- AUTO:v23_solver -->62–70
-iterasiya, nümunədən kənar yoxlamada 55–63<!-- /AUTO:v23_solver -->), eyniliklər isə hər iterasiyada dəqiq şəkildə qoyulur.
+Hər il tərpənməz nöqtəyə qədər **sönümləndirilmiş Gauss–Seidel** iterasiyası ilə həll edilir (qalıq < 1e-10; hər proqnoz ili üçün <!-- AUTO:v23_solver -->57–78
+iterasiya, nümunədən kənar yoxlamada 52–57<!-- /AUTO:v23_solver -->), eyniliklər isə hər iterasiyada dəqiq şəkildə qoyulur.
 
 ### 7.2 2026-cı ilin müşahidə olunan məlumatlara lövbərlənməsi
 
@@ -673,20 +770,20 @@ istisna edilib: onun yanvar–aprel artımı 2020-ci ilin baza effektidir); onun
 üçün 6,4 f.b.-yə qarşı 3,9 f.b.-dir, lakin HLN düzəlişli Diebold–Mariano testində (birtərəfli p = 0,126) 1:1 uyğunluğu
 **üstələmir**, buna görə də **1:1 uyğunluq** istifadə olunur. Hər komponentin nəzərdə tutulan tam il səviyyəsi düzəliş əmsalı
 əlavələri (increments) vasitəsilə çatılan lövbərləmə hədəfidir; **əlavələr 2026-cı ildə tam tətbiq olunur və hər il yarıbayarı azalır**
-(2030-cu ildə 1/16 hissəsi qalır). Ən böyüyü tikinti komponentinə aiddir (−0,212 loqarifmik bənd,
+(2030-cu ildə 1/16 hissəsi qalır). Ən böyüyü tikinti komponentinə aiddir (−0,210 loqarifmik bənd,
 yanvar–aprel artımının −19% olmasından irəli gəlir).
 <!-- /AUTO:v23_anchor -->
 
 **2026→2027 mişar dişi effekti (sawtooth).** Tikinti lövbəri bir illik yarımsönmə dövrü ilə aradan qalxdığından, tikinti <!-- AUTO:v22_sawtooth -->−19,0% (2026) →
-+12,3% (2027) → +6,5% (2028) dinamikası göstərir; qeyri-neft ÜDM +0,68% → +5,47% → +4,64%<!-- /AUTO:v22_sawtooth --> (v2.3), yəni 2027-ci il qeyri-neft göstəricisinin
++12,1% (2027) → +6,4% (2028) dinamikası göstərir; qeyri-neft ÜDM +0,66% → +4,81% → +4,31%<!-- /AUTO:v22_sawtooth --> (v2.3), yəni 2027-ci il qeyri-neft göstəricisinin
 təxminən 1 f.b.-si lövbərin aradan qalxmasının nəticəsidir. Kənd təsərrüfatı (<!-- AUTO:v23_agr -->+2,0% → +4,8%<!-- /AUTO:v23_agr -->,
-ikincisi onun qiymətləndirilmiş trendidir) lövbərdən qaynaqlanan mişar dişi effekti göstərmir; informasiya və rabitə (ICT) (<!-- AUTO:v22_sawtooth_ict -->+9,0% → +6,4%<!-- /AUTO:v22_sawtooth_ict -->) isə v2.1-dən göstərir: <!-- AUTO:v23_ict -->yanvar–aprel lövbəri 2026-cı ildə 1,7 f.b. əlavə edir, 2027-ci ildə 0,8 f.b. geri alır, adambaşına İKT kapitalı isə 2025-ci ilin investisiya payı ilə artıq artmır (2027-ci ildə −0,1 f.b.<!-- /AUTO:v23_ict -->, `FR1_sector_decomposition_all.csv`).
+ikincisi onun qiymətləndirilmiş trendidir) lövbərdən qaynaqlanan mişar dişi effekti göstərmir; informasiya və rabitə (ICT) (<!-- AUTO:v22_sawtooth_ict -->+9,0% → +6,3%<!-- /AUTO:v22_sawtooth_ict -->) isə v2.1-dən göstərir: <!-- AUTO:v23_ict -->yanvar–aprel lövbəri 2026-cı ildə 1,7 f.b. əlavə edir, 2027-ci ildə 0,9 f.b. geri alır, adambaşına İKT kapitalı isə 2025-ci ilin investisiya payı ilə artıq artmır (2027-ci ildə −0,1 f.b.<!-- /AUTO:v23_ict -->, `FR1_sector_decomposition_all.csv`).
 
 <!-- AUTO:v23_jantable -->
 | | Dərc olunmuş yanvar–aprel | Model 2026 (tam il) | Fərq |
 |---|---|---|---|
-| Real ÜDM artımı | +0,20% | +0,25% | +0,05 f.b. |
-| Real qeyri-neft ÜDM artımı | +0,70% | +0,68% | −0,02 f.b. |
+| Real ÜDM artımı | +0,20% | +0,24% | +0,04 f.b. |
+| Real qeyri-neft ÜDM artımı | +0,70% | +0,66% | −0,04 f.b. |
 <!-- /AUTO:v23_jantable -->
 
 İstifadəçiyə iki məlumat ziddiyyəti çatdırılır: ümumi investisiya 15% artdığı halda tikintinin 19% azalması və I rübdə həm ixracın, həm də
@@ -697,7 +794,7 @@ idxalın kəskin enməsi.
 Karbohidrogenlər ekzogen olduğundan, proqnoz öz quruluşuna görə ssenaridən asılıdır — bu xüsusiyyət fərziyyələri açıq şəkildə ifadə etməyə
 məcbur edir. 2025-ci ilin başlanğıc nöqtəsinə əsasən kalibrlənmişdir (Brent 69,1, neft 27,68 mln ton, qaz 50,92 mlrd kub metr, məzənnə 1,70,
 uçot dərəcəsi 6,75%). Bütün ssenarilər üçün ümumi: əhali ildə +0,483% (hesablanmış), neft sektoruna investisiya neft hasilatı
-trayektoriyası ilə birlikdə dəyişir (mürəkkəb artımla), pensiyalar İQİ-yə indeksləşdirilir, minimum əmək haqqı ildə +5%; v2.2: 2026-cı ilin neft və qaz hasilatı hər ssenaridə yanvar–mart
+trayektoriyası ilə birlikdə dəyişir (mürəkkəb artımla), <!-- AUTO:fr1v236_pens -->pensiyalar 2026-cı ildə qərar verilmiş indeksasiya ilə (+9,3%, Prezidentin Sərəncamı; `data/dsmf_pension/pension_indexation.csv`), 2027-ci ildən İQİ-yə indeksləşdirilir<!-- /AUTO:fr1v236_pens -->, <!-- AUTO:fr1v236_mw -->minimum əmək haqqı 2026-cı ildə qanuni 400 manat, sonra ildə +6% (Mənfi ssenaridə +3%, İslahatda +9%; `data/dsk_minwage/minwage_path.json`, FR3 ilə eyni yol)<!-- /AUTO:fr1v236_mw -->; v2.2: 2026-cı ilin neft və qaz hasilatı hər ssenaridə yanvar–mart
 faktiki göstəricisindən, 2026-cı ilin dövlət investisiyası isə <!-- AUTO:v22_sip -->təsdiq edilmiş Dövlət İnvestisiya Proqramına (2 700 mln AZN, `DİP 2016-2026`)<!-- /AUTO:v22_sip --> ankorlanır.
 
 <!-- AUTO:v22_scenarios -->
@@ -720,15 +817,15 @@ faktiki göstəricisindən, 2026-cı ilin dövlət investisiyası isə <!-- AUTO
 <!-- AUTO:v22_results -->
 | | Əsas | Mənfi | İslahat |
 |---|---|---|---|
-| Real ÜDM artımı, orta illik %, 2026–30 | **2.74** (v2.1: 2.40; v2: 2.56; birinci raund 1.34; ilkin versiya 1.23) | 1.62 | 3.67 |
-| Real qeyri-neft ÜDM artımı, orta illik % | **4.00** (v2.1: 3.99; v2: 4.18; birinci raund 2.68; ilkin versiya 2.35) | 2.92 | 5.01 |
-| İQİ inflyasiyası 2030, % | 4.48 | 4.17 | 4.83 |
-| İşsizlik 2030, % | 4.63 | 4.80 | 4.48 |
-| Büdcə balansı 2030, ÜDM-ə nisbətən % | +0.09 | +0.99 | −0.26 |
-| Dövlət borcu 2030, ÜDM-ə nisbətən % | 20.5 | 22.2 | 18.9 |
-| Əlavə dəyərdə karbohidrogenlərin payı 2030, % | 17.2 | 12.3 | 20.7 |
-| Nominal ÜDM 2030, mlrd AZN | 183 | 161 | 203 |
-| Qeyri-neft büdcə balansı 2030, qeyri-neft ÜDM-ə nisbətən % (v2.2) | −11.6 | −8.5 | −13.7 |
+| Real ÜDM artımı, orta illik %, 2026–30 | **2.57** (cari icra; əvvəlki versiyalar: v2.2 2.90, v2.1 2.40, v2 (2026-10-05) 2.56; birinci raund 1.34; ilkin versiya 1.23) | 1.32 | 3.62 |
+| Real qeyri-neft ÜDM artımı, orta illik % | **3.76** (cari icra; əvvəlki versiyalar: v2.2 4.20, v2.1 3.99, v2 (2026-10-05) 4.18; birinci raund 2.68; ilkin versiya 2.35) | 2.54 | 4.91 |
+| İQİ inflyasiyası 2030, % | 4.58 | 3.86 | 5.34 |
+| İşsizlik 2030, % | 4.67 | 4.86 | 4.49 |
+| Büdcə balansı 2030, ÜDM-ə nisbətən % | +0.01 | +0.98 | −0.39 |
+| Dövlət borcu 2030, ÜDM-ə nisbətən % | 12.3 | 12.9 | 11.5 |
+| Əlavə dəyərdə karbohidrogenlərin payı 2030, % | 16.7 | 12.2 | 19.8 |
+| Nominal ÜDM 2030, mlrd AZN | 188 | 163 | 212 |
+| Qeyri-neft büdcə balansı 2030, qeyri-neft ÜDM-ə nisbətən % (v2.2) | −11.3 | −8.4 | −13.1 |
 <!-- /AUTO:v22_results -->
 
 <!-- AUTO:v22_path -->
@@ -736,36 +833,36 @@ faktiki göstəricisindən, 2026-cı ilin dövlət investisiyası isə <!-- AUTO
 
 | | 2026 | 2027 | 2028 | 2029 | 2030 |
 |---|---|---|---|---|---|
-| Real ÜDM | 0.25 | 3.01 | 2.69 | 4.50 | 3.29 |
-| Real qeyri-neft ÜDM | 0.68 | 5.47 | 4.64 | 4.94 | 4.35 |
-| İstehlak | 4.63 | 3.31 | 3.52 | 4.24 | 3.91 |
-| Emal sənayesi | 6.20 | 6.12 | 6.25 | 6.78 | 6.54 |
+| Real ÜDM | 0.24 | 2.55 | 2.47 | 4.37 | 3.25 |
+| Real qeyri-neft ÜDM | 0.66 | 4.81 | 4.31 | 4.78 | 4.28 |
+| İstehlak | 4.60 | 1.83 | 2.79 | 3.89 | 3.77 |
+| Emal sənayesi | 6.20 | 6.05 | 6.20 | 6.75 | 6.53 |
 | Kənd təsərrüfatı | 2.00 | 4.75 | 4.29 | 4.06 | 3.94 |
-| Tikinti | −19.00 | 12.33 | 6.52 | 5.32 | 2.77 |
-| İnformasiya və rabitə (ICT) | 9.00 | 6.40 | 6.95 | 7.38 | 7.59 |
+| Tikinti | −19.00 | 12.07 | 6.39 | 5.27 | 2.74 |
+| İnformasiya və rabitə (ICT) | 9.00 | 6.35 | 6.90 | 7.34 | 7.55 |
 <!-- /AUTO:v22_path -->
 
 **Nəticələr niyə birinci yenidənbaxmadakından yüksəkdir.** Yenidən spesifikasiya edilmiş ev təsərrüfatlarının gəliri tənliyi gəliri
 qeyri-neft ÜDM-ə bağlayır (pay əlaqəsi), buna görə də qeyri-neft ÜDM → gəlir → istehlak → ticarət, vergilər və xidmətlər → qeyri-neft ÜDM
-tələb dövrəsi daha güclüdür; istehlak indi <!-- AUTO:v22_whycons -->ildə 3,3–4,6% artır<!-- /AUTO:v22_whycons --> (tarixən təxminən 5%), halbuki birinci yenidənbaxmanın əmək haqqı fonduna
+tələb dövrəsi daha güclüdür; istehlak indi <!-- AUTO:v22_whycons -->ildə 1,8–4,6% artır<!-- /AUTO:v22_whycons --> (tarixən təxminən 5%), halbuki birinci yenidənbaxmanın əmək haqqı fonduna
 əsaslanan versiyası 0,1–2,4% verir və nümunədaxili istehlakı 23%-ə qədər aşağı proqnozlaşdırırdı. İlin əvvəlindən (YTD) məlumatların 1:1
-uyğunluğu, nəqliyyat tənliyindəki tranzit termini və deflyator vahidləri üzrə düzəliş də töhfə verir. <!-- AUTO:v22_whynonoil -->İldə 4,0% (v2.3)<!-- /AUTO:v22_whynonoil --> qeyri-neft artımı 2021–25
+uyğunluğu, nəqliyyat tənliyindəki tranzit termini və deflyator vahidləri üzrə düzəliş də töhfə verir. <!-- AUTO:v22_whynonoil -->İldə 3,8% (v2.3)<!-- /AUTO:v22_whynonoil --> qeyri-neft artımı 2021–25
 diapazonu (2,7–9,1%) daxilindədir, lakin 2015–25 ortalamasından (təxminən 3%) yüksəkdir.
 
-**Açıqlanan inandırıcılıq xəbərdarlıqları.** *Emal sənayesi* <!-- AUTO:v22_man -->ildə ~6,4% artır (v2.3<!-- /AUTO:v22_man -->; v2.1-dən əvvəlki 3 illik investisiya payları ilə 6,9%): istehsal gücü üstəgəl ildə +3% xarici tələbə tətbiq edilən
+**Açıqlanan inandırıcılıq xəbərdarlıqları.** *Emal sənayesi* <!-- AUTO:v22_man -->ildə ~6,3% artır (v2.3<!-- /AUTO:v22_man -->; v2.1-dən əvvəlki 3 illik investisiya payları ilə 6,9%): istehsal gücü üstəgəl ildə +3% xarici tələbə tətbiq edilən
 ixrac ↔ emal sənayesi dövrəsi (C3 ixrac elastikliyi 0,71 × D3 emal sənayesi elastikliyi 0,35; dövrə gücləndirmə əmsalı 0,25). Son dövrün
 tarixi müqayisə ediləndir (2021–25-də ildə ≈8%), lakin <!-- AUTO:v22_manrmse -->emal sənayesi üçün nümunədən kənar yoxlama RMSE-si 14,5%-dir<!-- /AUTO:v22_manrmse -->; kəsimdən əvvəlki heç
 bir sübut fərqli spesifikasiyanı dəstəkləmir (hər bir namizəd kəsimdən əvvəlki məlumatlar üzrə işarə yoxlamasından keçmir). *Kənd təsərrüfatı*
 ildə ~4,2% artır, bunun 90%-i qiymətləndirilmiş determinist trenddir, son illərdə isə bu göstərici 0,9–3,4% olmuşdur; 2015-ci ildə trend
 qırılması kəsimdən əvvəlki məlumatlar üzrə yoxlanılmış və statistik əhəmiyyətli olmamışdır (p = 0,52), buna görə də heç bir qırılma qoyulmur.
-Nəqliyyatda <!-- AUTO:v22_trend -->(102%), informasiya və rabitədə (97%; v2.3), kənd təsərrüfatında (90%) və elektrik enerjisində (65%)<!-- /AUTO:v22_trend --> 2027–2030-cu illər artımının
+Nəqliyyatda <!-- AUTO:v22_trend -->(102%), informasiya və rabitədə (98%; v2.3), kənd təsərrüfatında (90%) və elektrik enerjisində (65%)<!-- /AUTO:v22_trend --> 2027–2030-cu illər artımının
 yarıdan çoxu determinist trenddir — bu trayektoriyalar yalnız tarixi trendin davam edəcəyi fərziyyəsi qədər etibarlıdır.
 
 **Düzəliş əmsallarına həssaslıq:** baza düzəliş əmsalları sabit saxlanılmaq əvəzinə sabit, qiymətləndirilməyən yarımparçalanma
 müddəti ilə sönərsə (v2.3; qalıq avtokorrelyasiyası qiymətləndirilmir), orta artım
-daha aşağı olur — <!-- AUTO:v22_addfactor -->real ÜDM 2,14% (Əsas), 1,06% (Mənfi), 3,04% (İslahat); qeyri-neft 3,34%, 2,33%, 4,31% (v2.3, yarımparçalanma müddəti 1 il; sabit düzəliş əmsalları ilə: 2,74% və 4,00%)<!-- /AUTO:v22_addfactor --> (v2: hər həssaslıq hesablaması indi öz neft gəlirləri istinad trayektoriyasını qurur).
+daha aşağı olur — <!-- AUTO:v22_addfactor -->real ÜDM 2,31% (Əsas), 1,12% (Mənfi), 3,33% (İslahat); qeyri-neft 3,51%, 2,35%, 4,62% (v2.3, yarımparçalanma müddəti 1 il; sabit düzəliş əmsalları ilə: 2,57% və 3,76%)<!-- /AUTO:v22_addfactor --> (v2: hər həssaslıq hesablaması indi öz neft gəlirləri istinad trayektoriyasını qurur).
 
-**Ən aydın struktur nəticə:** Əsas ssenaridə əlavə dəyərdə karbohidrogenlərin payı <!-- AUTO:v22_hcshare -->25,6%-dən 17,2%-ə düşür (v2.2: Nazirliyin hasilat planı; v2.1-də 14,5%)<!-- /AUTO:v22_hcshare -->, çünki neft həcmləri azalır,
+**Ən aydın struktur nəticə:** Əsas ssenaridə əlavə dəyərdə karbohidrogenlərin payı <!-- AUTO:v22_hcshare -->25,6%-dən 16,7%-ə düşür (v2.2: Nazirliyin hasilat planı; v2.1-də 14,5%)<!-- /AUTO:v22_hcshare -->, çünki neft həcmləri azalır,
 qeyri-neft sektorları isə artır.
 
 ### 7.5 Qeyri-müəyyənlik
@@ -775,40 +872,40 @@ qeyri-neft sektorları isə artır.
 ili s (2010–2020) çəkilir və bütün 29 davranış qalığının birgə kənarlaşmaları u_{s+h} − u_s (h = 1…5) sabit düzəliş əmsallarına əlavə olunur;
 qalıq dinamikası üzrə heç nə qiymətləndirilmir; trayektoriyalar mərkəzləşdirilir və hər iki işarə ilə istifadə olunur (antitetik); (2) log
 Brent, neft və qaz hasilatı üçün eyni beşillik tarix, **eyni başlanğıc ili ilə**; (3) N(β̂, V̂_HAC)-dan antitetik, işarəni qoruyan parametr
-çəkilişləri (əmsal çəkilişlərinin 21,8%-i işarə dəyişməsinə görə rədd edilmişdir), baza düzəliş əmsalları isə 2025-ci ili təkrarlamaq üçün
+çəkilişləri (əmsal çəkilişlərinin 21,1%-i işarə dəyişməsinə görə rədd edilmişdir), baza düzəliş əmsalları isə 2025-ci ili təkrarlamaq üçün
 yenidən hesablanır. 2026 kənarlaşmaları 0,84 (yanvar–aprel məlum olduqdan sonra qalan tam il qeyri-müəyyənliyi), ekzogen amillər üçün isə
 2/3 ilə miqyaslanır.
 
-**Diaqnostika.** 500 etibarlı təkrarlama (56,6%) əldə etmək üçün 884 təkrarlamaya (442 antitetik cüt) cəhd edilmişdir. Kənarlaşdırılmışdır:
-204-ü bir illik dəyişikliyin Əsas ssenarinin müvafiq dəyişikliyindən 0,3 loqarifmik bənddən çox fərqlənməsinə görə (və ya, daha böyük olduğu
+**Diaqnostika.** 500 etibarlı təkrarlama (58,4%) əldə etmək üçün 856 təkrarlamaya (428 antitetik cüt) cəhd edilmişdir. Kənarlaşdırılmışdır:
+194-ü bir illik dəyişikliyin Əsas ssenarinin müvafiq dəyişikliyindən 0,3 loqarifmik bənddən çox fərqlənməsinə görə (və ya, daha böyük olduğu
 hallarda, dəyişənin 2000–2025-ci illərdə etdiyi ən böyük dəyişikliyin 1,5 mislindən çox — məsələn, turizm, dövlət investisiyası, neftlə bağlı
-qiymətlər), 9-u sonlu olmayan qiymətlərə görə, 0-ı partlayıcı dinamikaya görə, 0-ı yığılmamağa görə (uğursuz üzv öz antitetik
+qiymətlər), 7-si sonlu olmayan qiymətlərə görə, 0-ı partlayıcı dinamikaya görə, 1-i yığılmamağa görə (uğursuz üzv öz antitetik
 cütünü də kənarlaşdırır). Buna görə də bu filtr quyruqları müəyyən qədər kəsir. İxrac edilmiş çəkilişlərdə |Δlog| > 0,3 olan çəkiliş-illərin payı
-real ÜDM üçün 0,0%, qeyri-neft ÜDM üçün 0,0%, İQİ üçün 0,0%, məşğulluq üçün 0,0%, istehlak üçün 0,1%, real cari xərclər
-üçün 12,3% və qeyri-neft investisiyası üçün 22%-dir (onun öz tarixində dəyişikliklər daha böyükdür).
+real ÜDM üçün 0,0%, qeyri-neft ÜDM üçün 0,0%, İQİ üçün 0,0%, məşğulluq üçün 0,0%, istehlak üçün 0,2%, real cari xərclər
+üçün 10,0% və qeyri-neft investisiyası üçün 18%-dir (onun öz tarixində dəyişikliklər daha böyükdür).
 
 **Mərkəzləşdirmə.** Şoklar və parametr kənarlaşmaları simmetrikdir, lakin aqreqatlar log-normal şoklara məruz qalan hissələrin hesabi
 cəmləridir (zəncirvari ÜDM, neft + qeyri-neft büdcə gəlirləri, gəlir dövrəsi), buna görə də xam median Əsas ssenaridən yuxarıda yerləşir:
-2030-cu ilədək +1,6% (real ÜDM), +2,1% (qeyri-neft), +0,9% (istehlak), +0,9% (gəlir), +3,7% (cari xərclər), +8,4% (büdcə gəlirləri). Daha sonra ixrac edilmiş çəkilişlər Əsas ssenari üzrə mərkəzləşdirilir (səviyyələr üçün multiplikativ, dərəcələr üçün
-additiv şəkildə): median hər il dərc edilmiş Əsas ssenariyə bərabərdir (maksimal fərq 6e−14), səpələnmə dəyişmir; dəyişənlərarası eyniliklər
+2030-cu ilədək +1,6% (real ÜDM), +2,4% (qeyri-neft), +3,1% (istehlak), +1,6% (gəlir), +6,2% (cari xərclər), +5,6% (büdcə gəlirləri). Daha sonra ixrac edilmiş çəkilişlər Əsas ssenari üzrə mərkəzləşdirilir (səviyyələr üçün multiplikativ, dərəcələr üçün
+additiv şəkildə): median hər il dərc edilmiş Əsas ssenariyə bərabərdir (maksimal fərq 1e−13), səpələnmə dəyişmir; dəyişənlərarası eyniliklər
 yalnız bu sürüşmələr dəqiqliyi ilə ödənilir.
 <!-- /AUTO:v23_fan -->
 
 <!-- AUTO:v22_bands -->
 | 2030, Əsas | 5–95% zolağı (medianın %-i) | 25–75% | nümunədən kənar yoxlamanın 5 illik xətası |
 |---|---|---|---|
-| Real ÜDM | 23.3 | 9.6 | −11.4% |
-| Real qeyri-neft ÜDM | 30.4 | 14.5 | −10.8% |
-| İQİ səviyyəsi | 104.8 | 37.2 | −30.1% |
-| Məşğulluq | 9.2 | 4.3 | −4.2% |
-| Real sərəncamda qalan gəlir | 41.6 | 14.1 | +10.0% |
-| Real istehlak | 54.5 | 22.0 | +0.2% |
-| Real cari xərclər | 74.1 | 38.1 | +32.1% |
+| Real ÜDM | 19.5 | 7.8 | −11.4% |
+| Real qeyri-neft ÜDM | 25.3 | 10.3 | −10.6% |
+| İQİ səviyyəsi | 52.6 | 31.3 | −30.7% |
+| Məşğulluq | 8.9 | 4.2 | −4.2% |
+| Real sərəncamda qalan gəlir | 42.9 | 15.1 | +10.5% |
+| Real istehlak | 58.7 | 25.7 | +0.7% |
+| Real cari xərclər | 67.8 | 27.5 | +32.5% |
 <!-- /AUTO:v22_bands -->
 
 Zolaqlar istehlak istisna olmaqla modelin 2021–25 üzrə öz xətaları ilə eyni tərtibdədir (istehlak zolağı gəlir dövrəsi səbəbindən onun kiçik
-nümunədən kənar yoxlama xətasından xeyli genişdir). **Artım və İQİ zolaqları** — real ÜDM artımı üçün p5–p95 <!-- AUTO:v22_growthband -->ildə təxminən −4%-dən +12%-ə
-qədər, İQİ inflyasiyası üçün təxminən −12%-dən +20%-ə qədər<!-- /AUTO:v22_growthband --> — 2015–16 devalvasiyasını, 2020 pandemiyasını və 2021–22 inflyasiya epizodunu
+nümunədən kənar yoxlama xətasından xeyli genişdir). **Artım və İQİ zolaqları** — real ÜDM artımı üçün p5–p95 <!-- AUTO:v22_growthband -->ildə təxminən −4%-dən +14%-ə
+qədər, İQİ inflyasiyası üçün təxminən −5%-dən +16%-ə qədər<!-- /AUTO:v22_growthband --> — 2015–16 devalvasiyasını, 2020 pandemiyasını və 2021–22 inflyasiya epizodunu
 *hər iki işarə ilə* təkrarlayır: İQİ-nin yuxarı quyruğu 2016 devalvasiyasıdır (15,7%), deflyasiya xarakterli aşağı quyruq isə həmin
 epizodların güzgü əksidir və sabitlənmiş məzənnə (peg) rejimi şəraitində tarixi presedenti yoxdur — onu asimmetrik tarixin simmetrik təkrar
 seçiminin artefaktı kimi oxumaq lazımdır.
@@ -821,17 +918,21 @@ Hər təcrübə **həll edilmiş** sistemdə bir ekzogen amilə şok verir və �
 <!-- AUTO:v22_multipliers -->
 | | Brent +10 USD/barel | Dövlət investisiyası +1 mlrd AZN | Kredit şərtlərinin yumşaldılması (qiymətləndirilmiş) | Kredit şərtlərinin yumşaldılması + ekspert mülahizəsinə əsaslanan əlavə (overlay) | Xarici tələb +10% |
 |---|---|---|---|---|---|
-| Tikinti | +1.70 | +5.61 | +0.02 | +1.33 | +0.14 |
-| Emal sənayesi | +0.62 | +2.07 | +0.00 | +0.41 | +9.47 |
-| Ticarət | +0.36 | +1.16 | +0.87 | +1.10 | +1.40 |
-| İnformasiya və rabitə (ICT) | +0.99 | +3.53 | −0.00 | +0.36 | −0.01 |
-| Real ÜDM (zəncirvari) | −0.08 | +0.98 | +0.23 | +0.43 | +1.19 |
-| Real qeyri-neft ÜDM | +0.38 | +1.23 | +0.28 | +0.53 | +1.49 |
-| İstehlak | +0.37 | +1.20 | +0.90 | +1.15 | +1.46 |
-| Qeyri-neft investisiyası | +3.41 | +11.40 | −0.02 | +1.19 | −0.04 |
-| Büdcə gəlirləri | +3.82 | +1.43 | +0.58 | +0.88 | +1.76 |
-| Qeyri-neft idxalı | −0.17 | +1.19 | +0.92 | +1.17 | +1.43 |
+| Tikinti | +1.72 | +5.60 | +0.02 | +1.32 | +0.12 |
+| Emal sənayesi | +0.62 | +2.07 | +0.00 | +0.40 | +9.46 |
+| Ticarət | +0.35 | +1.12 | +0.85 | +1.08 | +1.36 |
+| İnformasiya və rabitə (ICT) | +1.00 | +3.52 | −0.01 | +0.36 | −0.02 |
+| Real ÜDM (zəncirvari) | −0.06 | +0.96 | +0.22 | +0.41 | +1.17 |
+| Real qeyri-neft ÜDM | +0.38 | +1.20 | +0.27 | +0.52 | +1.46 |
+| İstehlak | +0.36 | +1.16 | +0.89 | +1.12 | +1.41 |
+| Qeyri-neft investisiyası | +3.47 | +11.42 | −0.03 | +1.17 | −0.08 |
+| Büdcə gəlirləri | +3.78 | +1.41 | +0.57 | +0.86 | +1.75 |
+| Qeyri-neft idxalı | −0.16 | +1.14 | +0.91 | +1.14 | +1.37 |
 <!-- /AUTO:v22_multipliers -->
+
+<!-- AUTO:fr1v236_brent -->
+**Brent +10 və zəncirvari real ÜDM.** Heç bir sektorun əlavə dəyəri azalmasa da (ən kiçik sektor kənarlaşması +0,00%), real ÜDM 2026–2030-cu illərdə +0,18, +0,07, −0,01, −0,01, −0,06% kənarlaşır. Zəncirvari ÜDM hər sektorun artımını onun əvvəlki ilin nominal payı ilə çəkiləndirir; yüksək neft qiyməti real hasilatı azalan neft-qaz trayektoriyasını izləyən (ildə −1,1%) mədənçıxarmanın payını artırır, ona görə də eyni sektor həcmləri bir qədər aşağı aqreqat artım verir. Bu, indeksin çəki effektidir, azalma deyil; qeyri-neft ÜDM artır.
+<!-- /AUTO:fr1v236_brent -->
 
 Nəqliyyat artıq bu şokların heç birinə reaksiya vermir (onun tənliyi tranzit həcmi + trenddir). **Kredit şərtlərinin yumşaldılması** (uçot
 dərəcəsi −200 baza bəndi, depozit faiz dərəcəsi −100 baza bəndi) qiymətləndirilmiş modeldə yalnız ev təsərrüfatlarına kreditlər və istehlak
@@ -841,14 +942,14 @@ məlumatlar onu rədd edir, HAC-F p = 0,028).
 
 <!-- AUTO:v22_fiscal -->
 **Fiskal multiplikator (`FR1_fiscal_multiplier.csv`).** İldə +1 mlrd manat real dövlət investisiyası (F4 reaksiyasından sonra faktiki inyeksiya
-979 mln): 2030-cu ildə real qeyri-neft ÜDM +764 mln (2015-ci il qiymətləri ilə) — **2030-cu il üzrə səviyyə multiplikatoru 0,78**;
-**kumulyativ multiplikator** (2026–30 üzrə Δ qeyri-neft ÜDM cəmi / inyeksiyaların cəmi) **0,64** (zəncirvari çəkili real ÜDM üzrə 0,59). O,
-birinci yenidənbaxmadakından (0,54/0,46) böyükdür, çünki gəlir dövrəsi daha güclüdür; idxal indi artır (+1,19%).
+977 mln): 2030-cu ildə real qeyri-neft ÜDM +741 mln (2015-ci il qiymətləri ilə) — **2030-cu il üzrə səviyyə multiplikatoru 0,76**;
+**kumulyativ multiplikator** (2026–30 üzrə Δ qeyri-neft ÜDM cəmi / inyeksiyaların cəmi) **0,63** (zəncirvari çəkili real ÜDM üzrə 0,57). O,
+birinci yenidənbaxmadakından (0,54/0,46) böyükdür, çünki gəlir dövrəsi daha güclüdür; idxal indi artır (+1,14%).
 <!-- /AUTO:v22_fiscal -->
 
 <!-- AUTO:v22_oilprice -->
-**Neft qiymətinin artması zəncirvari çəkili real ÜDM-i azaldır** (−0,08%; v2.2-dən əvvəl −0,48%), eyni zamanda qeyri-neft ÜDM-i (+0,38%) və büdcə gəlirlərini
-(+3,82%) artırır: daha yüksək neft qiyməti mədənçıxarma deflyatorunu və deməli, mədənçıxarmanın zəncir çəkisini artırır, mədənçıxarmanın
+**Neft qiymətinin artması zəncirvari çəkili real ÜDM-i azaldır** (−0,06%; v2.2-dən əvvəl −0,48%), eyni zamanda qeyri-neft ÜDM-i (+0,38%) və büdcə gəlirlərini
+(+3,78%) artırır: daha yüksək neft qiyməti mədənçıxarma deflyatorunu və deməli, mədənçıxarmanın zəncir çəkisini artırır, mədənçıxarmanın
 həcmi (ekzogen) isə azalır. v2.2: mədənçıxarma deflyatoru indi ixrac dəyəri ilə çəkili neft + qaz ixrac qiymətləri indeksinə (2025-də neft karbohidrogen ixracının 58%-i) bağlıdır, manatla Brent qiymətinə deyil, buna görə çəki effekti — və real ÜDM-in azalması — daha kiçikdir.
 <!-- /AUTO:v22_oilprice -->
 
@@ -916,25 +1017,25 @@ Hesabların qurulması hər bir sıranın mənbə ilə uzlaşdırılmasını tə
 <!-- AUTO:v22_accounts -->
 | | Real artım<br>illik % | Deflyator inflyasiyası<br>illik % | Nominal artım<br>kumulyativ % | Nominal 2030<br>mln AZN |
 |---|---|---|---|---|
-| **ÜDM** | +2.7 | +4.3 | +41.6 | 182 747 |
-| **Qeyri-neft ÜDM** | +4.0 | +5.7 | +60.5 | 148 162 |
+| **ÜDM** | +2.6 | +5.1 | +45.4 | 187 727 |
+| **Qeyri-neft ÜDM** | +3.8 | +6.7 | +65.9 | 153 142 |
 | Neft-qaz ÜDM | −1.2 | −0.0 | −6.0 | 34 585 |
-| Turizm və ictimai iaşə | **+9.2** | +5.0 | +98.0 | 7 076 |
-| İnformasiya və rabitə | +7.5 | −2.8 | +24.1 | 3 312 |
-| Emal sənayesi | +6.4 | +3.9 | +64.9 | 12 731 |
-| Nəqliyyat və anbar təsərrüfatı | +5.0 | +1.3 | +36.1 | 12 398 |
-| Su təchizatı və tullantıların emalı | +4.5 | +3.8 | +50.6 | 454 |
-| Kənd təsərrüfatı | +3.8 | +3.4 | +42.5 | 10 900 |
-| Ticarət və nəqliyyat vasitələrinin təmiri | +3.8 | +6.3 | +63.1 | 23 856 |
-| Məhsula xalis vergilər | +3.7 | +6.3 | +62.8 | 20 185 |
-| Elektrik enerjisi, qaz və buxar | +2.9 | +5.6 | +51.7 | 2 208 |
-| Sosial və digər xidmətlər | +2.6 | +8.7 | +72.2 | 48 332 |
-| Tikinti | +1.0 | +2.2 | +17.0 | 9 861 |
+| Turizm və ictimai iaşə | **+8.2** | +5.9 | +97.5 | 7 055 |
+| İnformasiya və rabitə | +7.4 | −2.7 | +25.0 | 3 337 |
+| Emal sənayesi | +6.3 | +4.7 | +71.3 | 13 220 |
+| Nəqliyyat və anbar təsərrüfatı | +5.0 | +2.7 | +46.0 | 13 299 |
+| Su təchizatı və tullantıların emalı | +4.4 | +4.5 | +54.7 | 467 |
+| Kənd təsərrüfatı | +3.8 | +4.3 | +48.5 | 11 360 |
+| Ticarət və nəqliyyat vasitələrinin təmiri | +3.2 | +7.1 | +65.2 | 24 163 |
+| Məhsula xalis vergilər | +3.2 | +7.2 | +66.0 | 20 575 |
+| Elektrik enerjisi, qaz və buxar | +2.9 | +8.1 | +70.3 | 2 478 |
+| Sosial və digər xidmətlər | +2.4 | +9.7 | +79.0 | 50 244 |
+| Tikinti | +0.9 | +2.8 | +19.8 | 10 096 |
 | Mədənçıxarma | −1.1 | +0.1 | −5.1 | 31 433 |
 <!-- /AUTO:v22_accounts -->
 
-Turizmin ildə +10% artımı daha sürətlə artan adambaşına gəlirə görə onun gəlir elastikliyindən (1,9) və trenddən irəli gəlir — bu da ehtiyatla
-şərh edilməli olan tələb dövrəsinin daha bir nəticəsidir. Sosial xidmətlərin deflyatoru hələ də ildə 8,7% artır: İQİ-dən vahid ötürülmə əmsalı qoyulub, lakin
+<!-- AUTO:fr1v236_tou -->Turizmin ildə +8,2% artımı daha sürətlə artan adambaşına gəlirə görə onun gəlir elastikliyindən (1,9)<!-- /AUTO:fr1v236_tou --> və trenddən irəli gəlir — bu da ehtiyatla
+şərh edilməli olan tələb dövrəsinin daha bir nəticəsidir. Sosial xidmətlərin deflyatoru hələ də <!-- AUTO:fr1v236_soc -->ildə 9,7% artır<!-- /AUTO:fr1v236_soc -->: İQİ-dən vahid ötürülmə əmsalı qoyulub, lakin
 dreyfsiz hipotez rədd edildiyi üçün qiymətləndirilmiş dreyf saxlanılır.
 
 ## 9. Məhdudiyyətlər
@@ -957,7 +1058,7 @@ Hər biri ümumi xəbərdarlıq deyil, konkretdir və bilavasitə məlumatlarla 
    Məzənnəni dəyişən istənilən ssenari tək bir epizoddan ekstrapolyasiya edir.
 8. **Sektorlar üzrə investisiya deflyatorları dərc edilmir**, buna görə aqreqat investisiya deflyatoru hər sektora tətbiq olunur.
 9. **Zəncirvari həcmlər additiv deyil**; qeyri-neft fərqi (wedge) üçün ölçüsü göstərilən kalibrləşdirilmiş düzəliş istifadə olunur.
-10. **İnformasiya və rabitə, tikinti, nəqliyyat və emal sənayesi üzrə proqnozlar ən zəifdir** (nümunədən kənar yoxlamada <!-- AUTO:v22_lim10 -->RMSE 14,5–25,8%<!-- /AUTO:v22_lim10 -->; İKT-də ona görə ki, yoxlamanın kəsim ili olan 2020 onun investisiya payının dib nöqtəsi idi); pandemiyadan əvvəlki
+10. **İnformasiya və rabitə, tikinti, nəqliyyat və emal sənayesi üzrə proqnozlar ən zəifdir** (nümunədən kənar yoxlamada <!-- AUTO:v22_lim10 -->RMSE 14,5–25,7%<!-- /AUTO:v22_lim10 -->; İKT-də ona görə ki, yoxlamanın kəsim ili olan 2020 onun investisiya payının dib nöqtəsi idi); pandemiyadan əvvəlki
     sabit artımla müqayisədə model yalnız eyni səviyyədədir (median U 1,02).
 11. **Kalibrləşdirilmiş paylar sabit saxlanılır** (sektorlar üzrə investisiya və kredit payları — v2.1-dən 2025-ci ilin faktiki səviyyəsində —, sosial xərclərin payı, borcxidmət dərəcəsi).
 12. **Dövlət investisiyasının səviyyəsi proqnoz deyil, fərziyyədir** (Bölmə 5, sonuncu sətir).
@@ -972,7 +1073,7 @@ Hər biri ümumi xəbərdarlıq deyil, konkretdir və bilavasitə məlumatlarla 
 16. İnvestisiyada **aqreqat kredit kanalı yoxdur**; kredit şərtlərinin yumşaldılmasının investisiyaya təsiri ekspert mülahizəsinə əsaslanan əlavədir (overlay).
 <!-- AUTO:v23_lim17 -->
 17. **Yelpiklər** İQİ, istehlak və cari xərclər üçün genişdir, sıçrayışların süzgəcdən keçirilməsi ilə kəsilir (cəhd edilmiş təkrarlamaların
-    23,1%-i rədd edilir, antitetik cütləri ilə birlikdə 43,4%-i əvəz olunur), İQİ üzrə güzgü əksi şəklində deflyasiya quyruğuna
+    22,7%-i rədd edilir, antitetik cütləri ilə birlikdə 41,6%-i əvəz olunur), İQİ üzrə güzgü əksi şəklində deflyasiya quyruğuna
     malikdir və göstərilən median düzəlişindən sonra Əsas ssenari ətrafında mərkəzləşdirilir.
 <!-- /AUTO:v23_lim17 -->
 

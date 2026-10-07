@@ -9,7 +9,7 @@ Bu sənəddəki bütün rəqəmlər `AUTO` markerləri arasında yerləşir və 
 nəticə fayllarından yenidən yazılır. Sənəd nəticələrdən ayrıla bilməz.
 
 <!-- AUTO:status -->
-Vəziyyət tarixi **2026-10-06**, qiymətləndirmə ili **2027**, baza identifikatoru **B-949799ba38**. Birgə simulyasiya: 20000 ssenari, butstrap illəri 2003–2025. Qeyri-neft artımı 2027: median 5,43%, P10 1,33%, P5 0,11% (makro baza 5,43%). Yüksək prioritetli risklər: R12, R01; xəbərdarlıq sayı 18.
+Vəziyyət tarixi **2026-10-07**, qiymətləndirmə ili **2027**, baza identifikatoru **B-d7e77e886f**. Birgə simulyasiya: 20000 ssenari, butstrap illəri 2003–2025. Qeyri-neft artımı 2027: median 5,43%, P10 1,34%, P5 0,11% (makro baza 5,43%). Yüksək prioritetli risklər: R12, R01; xəbərdarlıq sayı 19.
 <!-- /AUTO:status -->
 
 ---
@@ -166,13 +166,13 @@ Eyler bölgüsüdür.
 <!-- AUTO:fr2_contrib -->
 | Kanal | Dispersiya payı % | P10 quyruğunda töhfə f.b. |
 |---|---:|---:|
-| Modelin qalıq qeyri-müəyyənliyi | 65,9 | −3,70 |
-| Neft qiyməti — prosiklik investisiya reaksiyası (R01) | 13,1 | −0,92 |
-| Neft qiyməti — birbaşa (R01) | 11,6 | −0,68 |
-| Tərəfdaş tələbi (R05) | 4,3 | −0,26 |
+| Modelin qalıq qeyri-müəyyənliyi | 66,4 | −3,72 |
+| Neft qiyməti — prosiklik investisiya reaksiyası (R01) | 12,9 | −0,90 |
+| Neft qiyməti — birbaşa (R01) | 11,5 | −0,67 |
+| Tərəfdaş tələbi (R05) | 4,2 | −0,26 |
 | Pul baratları (R07) | 2,5 | −0,11 |
 | Geosiyasi eskalasiya (R06) | 1,3 | −0,07 |
-| Devalvasiya (R03) | 0,4 | −0,03 |
+| Devalvasiya (R03) | 0,5 | −0,03 |
 | Zəlzələ (R08) | 0,2 | −0,02 |
 | Bank sektoru (R04, ekspert) | 0,3 | −0,02 |
 | Rəqabət (R16) | 0,2 | −0,01 |
@@ -195,17 +195,17 @@ Eyler bölgüsüdür.
 <!-- AUTO:fr2_scores -->
 | № | ID | Risk | Ehtimal % | Qeyri-neft f.b. | İnflyasiya f.b. | Büdcə % ÜDM | P | T | Skor | Prioritet | Quyruq töhfəsi f.b. |
 |---|---|---|---:|---:|---:|---:|---|---|---|---|---:|
-| 1 | R12 | İnflyasiyanın hədəf diapazonundan yuxarı olması | 47,4 | 0,00 | 3,67 | 0,00 | 4 | 5 | 20 | yüksək | — |
-| 2 | R01 | Neft qiymətinin kəskin enməsi | 47,8 | 1,15 | −2,71 | 0,24 | 4 | 4 | 16 | yüksək | −1,60 |
+| 1 | R12 | İnflyasiyanın hədəf diapazonundan yuxarı olması | 47,5 | 0,00 | 3,67 | 0,00 | 4 | 5 | 20 | yüksək | — |
+| 2 | R01 | Neft qiymətinin kəskin enməsi | 47,8 | 1,14 | −2,69 | 0,24 | 4 | 4 | 16 | yüksək | −1,57 |
 | 3 | R13 | Qeyri-neft artımının kəskin zəifləməsi (Growth-at-Risk) | 14,1 | 1,85 | 0,00 | 0,00 | 2 | 5 | 10 | orta | — |
-| 4 | R03 | Manatın məzənnəsinə təzyiq və devalvasiya | 9,8 | 0,19 | 4,10 | 0,00 | 2 | 5 | 10 | orta | −0,03 |
+| 4 | R03 | Manatın məzənnəsinə təzyiq və devalvasiya | 9,8 | 0,20 | 4,10 | 0,04 | 2 | 5 | 10 | orta | −0,03 |
 | 5 | R07 | Pul baratlarının kəskin azalması | 22,4 | 0,67 | 0,00 | 0,00 | 3 | 3 | 9 | orta | −0,11 |
-| 6 | R14 | Enerji keçidi: karbohidrogen tələbinin struktur azalması | 25,0 | 0,56 | −1,17 | 0,13 | 3 | 3 | 9 | orta | — |
-| 7 | R05 | Tərəfdaş ölkələrdə iqtisadi tənəzzül | 14,2 | 0,69 | −0,23 | 0,05 | 2 | 3 | 6 | orta | −0,26 |
+| 6 | R14 | Enerji keçidi: karbohidrogen tələbinin struktur azalması | 25,0 | 0,55 | −1,16 | 0,13 | 3 | 3 | 9 | orta | — |
+| 7 | R05 | Tərəfdaş ölkələrdə iqtisadi tənəzzül | 14,2 | 0,68 | −0,23 | 0,05 | 2 | 3 | 6 | orta | −0,26 |
 | 8 | R04 | Bank sektorunda aktiv keyfiyyətinin pisləşməsi | 9,6 | 0,37 | 0,09 | 0,05 | 2 | 3 | 6 | orta | −0,02 |
-| 9 | R11 | Büdcə balansının pisləşməsi | 8,7 | 0,00 | 0,00 | 0,64 | 2 | 3 | 6 | orta | — |
+| 9 | R11 | Büdcə balansının pisləşməsi | 9,6 | 0,00 | 0,00 | 0,64 | 2 | 3 | 6 | orta | — |
 | 10 | R16 | Rəqabət mühitinin pisləşməsi | 46,5 | 0,09 | 0,14 | 0,00 | 4 | 1 | 4 | aşağı | −0,01 |
-| 11 | R02 | Maliyyə şəraitinin sərtləşməsi (kredit faizi) | 8,9 | 0,20 | −0,07 | 0,03 | 2 | 2 | 4 | aşağı | 0,01 |
+| 11 | R02 | Maliyyə şəraitinin sərtləşməsi (kredit faizi) | 8,9 | 0,19 | −0,07 | 0,03 | 2 | 2 | 4 | aşağı | 0,01 |
 | 12 | R06 | Regional geosiyasi eskalasiya | 40,9 | −0,12 | 0,03 | −0,01 | 4 | 1 | 4 | aşağı | −0,07 |
 | 13 | R18 | Dünya ərzaq qiymətlərinin şoku | 7,8 | 0,00 | 0,73 | 0,00 | 2 | 2 | 4 | aşağı | 0,00 |
 | 14 | R08 | Güclü zəlzələ | 19,6 | 0,09 | 0,01 | 0,05 | 3 | 1 | 3 | aşağı | −0,02 |
@@ -213,7 +213,7 @@ Eyler bölgüsüdür.
 | 16 | R15 | Emal sənayesi sahələrində maliyyə gərginliyi | 16,5 | 0,03 | 0,00 | 0,00 | 3 | 1 | 3 | aşağı | 0,00 |
 | 17 | R10 | Daşqın və Xəzər dənizinin səviyyəsinin dəyişməsi | 10,6 | 0,09 | 0,04 | 0,04 | 2 | 1 | 2 | aşağı | 0,00 |
 | 18 | R17 | Qeyri-neft idxal qiymətlərinin kəskin artımı | 4,5 | 0,00 | 0,55 | 0,00 | 1 | 2 | 2 | aşağı | 0,00 |
-| 19 | R19 | Proqnoz qeyri-müəyyənliyi / model riski | 0,0 | 1,04 | 0,00 | 0,00 | 0 | 0 | 0 | ayrıca göstərici | — |
+| 19 | R19 | Proqnoz qeyri-müəyyənliyi / model riski | 0,0 | 1,23 | 0,00 | 0,00 | 0 | 0 | 0 | ayrıca göstərici | — |
 <!-- /AUTO:fr2_scores -->
 
 ### 4.3 Xəbərdarlıqlar
@@ -245,12 +245,12 @@ kifayət deyil. Panel bu modeli qərar üçün istifadə etmir; birgə simulyasi
 <!-- AUTO:fr3_stress -->
 | ssenari | ad | sapma büdcə balansı, % ÜDM | sapma inflyasiya, f.b. | sapma qeyri-neft artımı, f.b. | tedbirin_effekti büdcə balansı, % ÜDM | tedbirin_effekti inflyasiya, f.b. | tedbirin_effekti qeyri-neft artımı, f.b. |
 |---|---|---:|---:|---:|---:|---:|---:|
-| S1 | Davamlı aşağı neft qiyməti | −0,28 | −3,59 | −1,32 | −0,47 | 0,16 | 0,34 |
+| S1 | Davamlı aşağı neft qiyməti | −0,28 | −3,57 | −1,30 | −0,47 | 0,16 | 0,33 |
 | S2 | Tərəfdaş ölkələrdə resessiya | −0,03 | −0,14 | −0,41 | 0,00 | 0,00 | 0,00 |
-| S3 | Məzənnəyə təzyiq və ehtiyatların azalması | −0,28 | 0,97 | −1,53 | −0,47 | 0,18 | 0,35 |
+| S3 | Məzənnəyə təzyiq və ehtiyatların azalması | −0,32 | 0,99 | −1,53 | −0,47 | 0,17 | 0,35 |
 | S4 | Regional münaqişənin eskalasiyası | −0,04 | −0,14 | −0,96 | 0,00 | 0,00 | 0,00 |
-| S5 | Güclü seysmik hadisə | −0,46 | 0,11 | −0,73 | 0,00 | 0,00 | 0,00 |
-| S6 | Enerji keçidi — tələbin struktur azalması | −0,04 | −0,47 | −0,18 | 0,00 | 0,00 | 0,01 |
+| S5 | Güclü seysmik hadisə | −0,46 | 0,10 | −0,73 | 0,00 | 0,00 | 0,00 |
+| S6 | Enerji keçidi — tələbin struktur azalması | −0,04 | −0,47 | −0,17 | 0,00 | 0,00 | 0,01 |
 | S7 | Şiddətli quraqlıq | 0,00 | 0,00 | −0,16 | 0,00 | 0,00 | 0,00 |
 | S8 | Cari neft şokunun geri dönməsi | −0,10 | −1,17 | −0,46 | 0,00 | 0,01 | 0,01 |
 <!-- /AUTO:fr3_stress -->
@@ -263,11 +263,15 @@ artımının əvvəlki beş ilin ortasından faktiki sapması ilə müqayisə ol
 
 | il | faktiki_sapma | proqnoz_sapma | fiskal_reaksiya | neft_birbasa | terefdas | devalvasiya | tolerans_odenilir | kalibrləməyə_daxil |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| 2009 | −8,52 | −1,96 | −0,08 | −0,87 | −0,97 | 0,00 | False | False |
-| 2015 | −7,70 | −3,08 | −1,70 | −1,16 | 0,02 | −0,25 | False | True |
-| 2016 | −11,94 | −4,85 | −1,46 | −0,22 | 0,04 | −3,45 | False | True |
-| 2020 | −3,98 | −2,57 | −0,84 | −0,55 | −1,10 | 0,00 | True | False |
+| 2009 | −8,52 | −1,94 | −0,08 | −0,87 | −0,96 | 0,00 | False | False |
+| 2015 | −7,70 | −3,06 | −1,68 | −1,15 | 0,02 | −0,26 | False | True |
+| 2016 | −11,94 | −4,86 | −1,45 | −0,21 | 0,04 | −3,48 | False | True |
+| 2020 | −3,98 | −2,54 | −0,83 | −0,55 | −1,09 | 0,00 | True | False |
 <!-- /AUTO:fr3_analogues -->
+
+<!-- AUTO:d4_note -->
+Cari analoq cədvəli üzrə RMSE / RMSE(sıfır sapma) = 0,716 (n = 20); NFR1 D4 sətri 0,716 — rüblük sınağın (2026Q4) vintajıdır, analoq düsturu v2.1-də dəyişdiyi üçün növbəti rüblük sınaqda yenilənir. Korrelyasiya və RMSE nisbəti fərqli metrikalardır.
+<!-- /AUTO:d4_note -->
 
 ## 6. FR4 və NFR3 — qərar dəstək paneli və rol əsaslı hesabatlar
 
@@ -311,7 +315,7 @@ Rüb 2026Q4: 22/39 test keçdi.
 | D1 | makro §15.5.1 ansamblı | current_account | 7 | bacarıq RW-yə qarşı (1 − RMSE/RMSE_RW) | 0,473 | > 0 | keçdi |
 | D2 | GaR kvantil reqressiyası — müstəqil yoxlama (median) | nonoil_g | 13 | RMSE / RMSE(tarixi orta) | 1,042 | < 1 | keçmədi |
 | D3 | GaR kvantil reqressiyası — müstəqil yoxlama (P10) | nonoil_g | 13 | pinball(0,10) / etalon | 1,320 | < 1 | keçmədi |
-| D4 | ötürmə mühərriki (tarixi analoqlar) | nonoil_g sapması | 20 | RMSE / RMSE(sıfır sapma etalonu) | 0,652 | < 1 | keçdi |
+| D4 | ötürmə mühərriki (tarixi analoqlar) | nonoil_g sapması | 20 | RMSE / RMSE(sıfır sapma etalonu) | 0,716 | < 1 | keçdi |
 | D5 | ötürmə mühərriki (adlı epizodlar, kalibrləmədən kənar) | nonoil_g sapması | 2 | tolerans (eyni işarə, |xəta| ≤ 3 f.b.) ödənilən pay | 0,500 | ≥ 0,5 | keçdi |
 | D6 | Brent sıxlığı (CRPS) | brent 12 ay | 30 | CRPS / CRPS(normal etalon) | 1,006 | < 1 | keçmədi |
 | P1 | makro §15.5.1 yelpiyi | nonoil_realg | 9 | 80% interval əhatəsi | 1,000 | [0.75; 0.85] | keçmədi |
@@ -352,7 +356,7 @@ Kalibrləmə qərarları:
 | nonoil | 0,66 | 1,00 | 9 | qalıq σ 0.66 dəfə miqyaslanır (əhatə 1.00 tolerans xaricindədir) |
 | cpi | 1,00 | 0,79 | 14 | dəyişiklik yoxdur — əhatə tolerans daxilindədir |
 | brent | 1,23 | 0,73 | 30 | Brent innovasiyaları 1.23 dəfə miqyaslanır (əhatə 0.73 tolerans xaricindədir) |
-| fis | 0,29 | 1,00 | 14 | büdcə qalıq σ 0.29 dəfə miqyaslanır (FR1 σ 3.49 f.b. ≫ RW xətası 1.00 f.b.; əhatə 1.00) |
+| fis | 0,30 | 1,00 | 14 | büdcə qalıq σ 0.30 dəfə miqyaslanır (FR1 σ 3.33 f.b. ≫ RW xətası 1.00 f.b.; əhatə 1.00) |
 <!-- /AUTO:nfr1 -->
 
 **Erkən xəbərdarlıq.** Neft qiymətinin 12 ayda ≥ 30% enişi bazar siqnalları ilə proqnozlaşdırılmır (E1b, mənfi
@@ -372,24 +376,24 @@ gecikməni saatla yazır. Cədvəl `scheduler/`-dədir (macOS launchd, Linux cro
 <!-- AUTO:nfr2 -->
 | feed | vintage | last_obs | age_days | n_obs |
 |---|---|---|---:|---:|
-| brent | 2026-10-06 | 2026-09-29 | 7 | 9 097 |
-| vix | 2026-10-06 | 2026-10-02 | 4 | 9 287 |
-| ust10 | 2026-10-06 | 2026-10-02 | 4 | 16 174 |
-| fedfunds | 2026-10-06 | 2026-09-01 | 35 | 867 |
-| eurusd | 2026-10-06 | 2026-10-02 | 4 | 6 960 |
-| gpr | 2026-10-06 | 2026-09-01 | 35 | 3 507 |
-| epu | 2026-10-06 | 2026-07-01 | 97 | 355 |
-| usgs | 2026-10-06 | 2026-10-01 | 5 | 251 |
-| era5 | 2026-10-06 | 2026-09-01 | 35 | 3 204 |
-| cbar_fx | 2026-10-06 | 2026-10-06 | 0 | 14 700 |
-| cbar_rate | 2026-10-06 | 2026-09-24 | 12 | 215 |
-| dsk_macro | 2026-10-06 | 2026-08-01 | 66 | 354 |
-| dsk_cpi | 2026-10-06 | 2026-08-01 | 66 | 7 |
-| dsk_tables | 2026-10-06 | 2026-04-01 | 188 | 412 |
-| minfin | 2026-10-06 | 2026-03-01 | 219 | 5 |
-| sofaz | 2026-10-06 | 2026-06-30 | 98 | 15 |
-| bfb | 2026-10-06 | 2026-10-01 | 5 | 60 |
-| azeri_light | 2026-10-06 | 2026-09-29 | 7 | 2 981 |
+| brent | 2026-10-06 | 2026-09-29 | 8 | 9 097 |
+| vix | 2026-10-06 | 2026-10-02 | 5 | 9 287 |
+| ust10 | 2026-10-06 | 2026-10-02 | 5 | 16 174 |
+| fedfunds | 2026-10-06 | 2026-09-01 | 36 | 867 |
+| eurusd | 2026-10-06 | 2026-10-02 | 5 | 6 960 |
+| gpr | 2026-10-06 | 2026-09-01 | 36 | 3 507 |
+| epu | 2026-10-06 | 2026-07-01 | 98 | 355 |
+| usgs | 2026-10-06 | 2026-10-01 | 6 | 251 |
+| era5 | 2026-10-06 | 2026-09-01 | 36 | 3 204 |
+| cbar_fx | 2026-10-06 | 2026-10-06 | 1 | 14 700 |
+| cbar_rate | 2026-10-06 | 2026-09-24 | 13 | 215 |
+| dsk_macro | 2026-10-06 | 2026-08-01 | 67 | 354 |
+| dsk_cpi | 2026-10-06 | 2026-08-01 | 67 | 7 |
+| dsk_tables | 2026-10-06 | 2026-04-01 | 189 | 412 |
+| minfin | 2026-10-06 | 2026-03-01 | 220 | 5 |
+| sofaz | 2026-10-06 | 2026-06-30 | 99 | 15 |
+| bfb | 2026-10-06 | 2026-10-01 | 6 | 60 |
+| azeri_light | 2026-10-06 | 2026-09-29 | 8 | 2 981 |
 <!-- /AUTO:nfr2 -->
 
 ## 9. Məhdudiyyətlər və məlumat sorğuları
@@ -442,12 +446,26 @@ sətirləri), «məlumat köhnəlib»/«axın xətası» (D2 təzəliyi), «mode
 
 | Məsələ | v1 | v2 | Səbəb və sübut |
 |---|---|---|---|
-| (a) Büdcə balansının medianı | −2,4% ÜDM (baza +0,46; reaksiya kanalı −3,1 f.b.) | baza baxışı +0,46 (= baza); canlı +0,60 | reaksiya FR1-in deficitlə maliyyələşən «+1 mlrd investisiya» multiplikatoru ilə büdcəyə yazılırdı və canlı Brent fərqi (84 vs 69) daimi səviyyə sürüşməsi yaradırdı |
-| (b) S1 (Brent 45) büdcəyə təsiri | +4,2 f.b. (dərc olunmuş v1: +0,45) | −0,37 f.b.; artım −1,23; İQİ −0,37 | investisiya kəsintisi «qənaət» kimi sayılırdı; FR1: Brent +10 → balans +198…+77 mln AZN; reduksiya forması Δbalans ← Δln Brent = +1,57 (st.x. 0,79; n = 15) — müsbət işarə |
-| (c) Mərkəz | median 7,25% (baza 5,43) | baza baxışı 5,43; canlı 6,21 | iki baxış ayrıca etiketlənir |
-| (d) Qeyri-neft yelpiyi P5–P95 | −0,18…13,02 (σ ≈ 4,0) | −0,22…10,08 (σ 3,20) | makro yelpik σ 4,85, NFR1 P1 əhatəsi 1,00 (n = 9), RMSE/σ = 0,60 → əmsal 0,66; FR1 mikro yelpiyi (kalibrlənməmiş) −0,35…13,54 |
-| (d) Büdcə yelpiyi P5–P95 | −8,3…3,8% ÜDM | −1,03…1,92 | FR1 yelpiyi σ 3,49 f.b. ≫ 2 illik RW xətası 1,00 f.b. (n = 14; P15) → əmsal 0,29 |
+| (a) Büdcə balansının medianı | −2,4% ÜDM (baza +0,46; reaksiya kanalı −3,1 f.b.) | cari dəyər: aşağıdakı AUTO:v2_evidence cədvəli (v2.0-da baza +0,46; canlı +0,60) | reaksiya FR1-in deficitlə maliyyələşən «+1 mlrd investisiya» multiplikatoru ilə büdcəyə yazılırdı və canlı Brent fərqi (84 vs 69) daimi səviyyə sürüşməsi yaradırdı |
+| (b) S1 (Brent 45) büdcəyə təsiri | +4,2 f.b. (dərc olunmuş v1: +0,45) | cari dəyər: AUTO:v2_evidence (v2.0-da büdcə −0,37, artım −1,23, İQİ −0,37; v2.1-də İQİ Brent → idxal qiymətləri kanalı ilə) | investisiya kəsintisi «qənaət» kimi sayılırdı; FR1: Brent +10 → balans +198…+77 mln AZN; reduksiya forması Δbalans ← Δln Brent = +1,57 (st.x. 0,79; n = 15) — müsbət işarə |
+| (c) Mərkəz | median 7,25% (baza 5,43) | baza baxışı = rəsmi baza; canlı = baza + canlı fərqin təsiri (AUTO:v2_views) | iki baxış ayrıca etiketlənir |
+| (d) Qeyri-neft yelpiyi P5–P95 | −0,18…13,02 (σ ≈ 4,0) | v2.0: −0,22…10,08 (σ 3,20); cari — AUTO:v2_views | makro yelpik σ 4,85, NFR1 P1 əhatəsi 1,00 (n = 9), RMSE/σ = 0,60 → əmsal 0,66; FR1 mikro yelpiyi (kalibrlənməmiş) −0,35…13,54 |
+| (d) Büdcə yelpiyi P5–P95 | −8,3…3,8% ÜDM | v2.0: −1,03…1,92; cari — AUTO:v2_views | FR1 yelpiyi σ 3,49 f.b. ≫ 2 illik RW xətası 1,00 f.b. (n = 14; P15) → əmsal 0,29 |
 | (e) R1 (arxiv proqnozları) | «keçdi», n = 0 | «yoxlanıla bilmir (n=0)» | n = 0 heç vaxt keçid sayılmır; hər test n ilə |
+
+Cari dəyərlər (hər işə salınmada nəticələrdən yenilənir):
+
+<!-- AUTO:v2_evidence -->
+| Göstərici | Baza baxışı | Canlı baxış |
+|---|---:|---:|
+| Büdcə balansının medianı 2027, % ÜDM | 0,26 | 0,36 |
+| S1 sapması 2027: büdcə balansı, % ÜDM | −0,28 | — |
+| S1 sapması 2027: inflyasiya, f.b. | −3,57 | — |
+| S1 sapması 2027: qeyri-neft artımı, f.b. | −1,30 | — |
+| S3 sapması 2027: büdcə balansı, % ÜDM | −0,32 | — |
+| S3 sapması 2027: inflyasiya, f.b. | 0,99 | — |
+| S3 sapması 2027: qeyri-neft artımı, f.b. | −1,53 | — |
+<!-- /AUTO:v2_evidence -->
 | (f) Borc anlayışı | FR1 `debt_azn` 38 451 (2025) | FR1 v2.3.2: 25 987,5 (MN anlayışı) | DSA başlanğıc qalığı MN bülletenidir (23 830,6 mln AZN, 2026-07; zəmanətlər «şərti öhdəliklər» variantında) — dəyişiklik tələb olunmadı |
 
 <!-- AUTO:v2_views -->
@@ -455,12 +473,12 @@ Qiymətləndirmə ili 2027; Brent mərkəzi: baza 69,0 USD, canlı 83,6 USD.
 
 | Baxış | Göstərici | Baza | P5 | P50 | Orta | P95 | Hədəf σ | Ümumi σ |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| baza mərkəzli | Qeyri-neft artımı, % | 5,43 | 0,11 | 5,43 | 5,33 | 10,36 | 3,23 | 3,23 |
-| baza mərkəzli | İnflyasiya, % | 5,74 | 1,64 | 5,74 | 6,47 | 13,71 | 4,65 | 4,65 |
-| baza mərkəzli | Büdcə balansı, % ÜDM | 0,32 | −1,33 | 0,32 | 0,32 | 1,99 | 1,06 | 1,06 |
-| canlı | Qeyri-neft artımı, % | 5,43 | 0,93 | 6,20 | 6,14 | 11,23 | 3,23 | 3,23 |
-| canlı | İnflyasiya, % | 5,74 | 2,11 | 6,40 | 7,09 | 14,47 | 4,65 | 4,65 |
-| canlı | Büdcə balansı, % ÜDM | 0,32 | −1,23 | 0,43 | 0,43 | 2,10 | 1,06 | 1,06 |
+| baza mərkəzli | Qeyri-neft artımı, % | 5,43 | 0,11 | 5,43 | 5,34 | 10,36 | 3,23 | 3,23 |
+| baza mərkəzli | İnflyasiya, % | 5,74 | 1,65 | 5,74 | 6,48 | 13,74 | 4,65 | 4,65 |
+| baza mərkəzli | Büdcə balansı, % ÜDM | 0,26 | −1,40 | 0,26 | 0,26 | 1,93 | 1,06 | 1,06 |
+| canlı | Qeyri-neft artımı, % | 5,43 | 0,94 | 6,20 | 6,13 | 11,22 | 3,23 | 3,23 |
+| canlı | İnflyasiya, % | 5,74 | 2,11 | 6,39 | 7,09 | 14,48 | 4,65 | 4,65 |
+| canlı | Büdcə balansı, % ÜDM | 0,26 | −1,30 | 0,36 | 0,35 | 2,02 | 1,06 | 1,06 |
 <!-- /AUTO:v2_views -->
 
 Qeyd: canlı baxışın Brent mərkəzi (tərs-MSE birləşməsi) D6 monitorunun şərti ssenarisindən (spot səviyyəsində
@@ -488,6 +506,32 @@ konvolyusiyası, MikroUnit mühərrik barmaq izi dəyişəndə yenidən hesablan
 əlavə olunduqca qat avtomatik kiçilir (bu gün İQİ üçün cəmi 4,60 vs zəncir 4,62 f.b. — qat yalnız vaxt bölgüsüdür).
 Devalvasiya ehtimalı: ardıcıl çöküş illəri bir epizoddur (1998; 2015–16; 2020) → P = 1/3 (v2.0: 2/4); simulyasiyada
 yalnız epizodun ilk ili tetikləyir.
+
+Məzənnə modulunun cari parametrləri və cavabları (`FR1_fx_transmission.csv`):
+
+<!-- AUTO:fx_table -->
+| parametr | deyer | izah | n | numune |
+|---|---:|---|---|---|
+| pt_reg | 0,260 | b0 0.176 + b1 0.084; se(cəm) 0.037 | 25.0 | 2001–2025 |
+| pt_episode | 0,301 | 2015–18 artıq İQİ 25.1 f.b., USD idxal hissəsi çıxılmaqla 23.7 f.b. / 78.6 log bənd | 4.0 | 2015–2018 |
+| w0 | 0,677 | epizod LS: 0.58 (cəm 0.331) | 25.0 | 2001–2025 |
+| pt_range | 0,146 | [0.223; 0.368] | — | — |
+| L_nonoil | −12,323 | aralıq [-20.6; -4.1] (etalon: simmetrik 5.87, əvvəl 8.80, sonra 2.93) | 2.0 | 2015–2016 |
+| w0g | 0,079 | 2015 qalığı -0.69 / 2016 məcmu -8.75 | 2.0 | 2015–2016 |
+| s_ext | 0,329 | borc/ÜDM 18.2%, xarici 6.0% (zəmanətli xarici 3.8% daxil deyil) | — | 2026-07-01 |
+| p_dev | 0,333 | epizodlar [[1998], [2015, 2016], [2020]]; devalvasiya: [[2015, 2016]] | 3.0 | — |
+| fis_chain | 0,012 | +16.5%: AZN neft-qaz gəliri +1.30, ümumi xərc +2.03% ÜDM (2026); valyuta faizi -0.038% ÜDM | — | — |
+
++16,5% devalvasiyaya kalibrlənmiş cəmi cavab:
+
+| parametr | 2026.0 | 2027.0 | 2028.0 | 2029.0 | 2030.0 |
+|---|---:|---:|---:|---:|---:|
+| cpi | 3,11 | 1,48 | 0,00 | 0,00 | 0,00 |
+| debt_gdp | 0,99 | 0,99 | 0,99 | 0,99 | 0,99 |
+| fis | −0,03 | −0,10 | −0,16 | −0,18 | −0,20 |
+| nonoil_g | −0,15 | −1,73 | 0,00 | 0,00 | 0,00 |
+| nonoil_lvl | −0,15 | −1,88 | −1,88 | −1,88 | −1,88 |
+<!-- /AUTO:fx_table -->
 
 **13.2 Şok ilinin impulsu (C2).** S-şəbəkədə hər amil yalnız şok ilində (qiymətləndirmə ili) verilir, 2026 = 0.
 Dəyişmə ilə ölçülən amillər (Brent, qaz, məzənnə, faiz, investisiya, tərəfdaş artımı, baratlar, NPL) bir dəfəlik
@@ -535,3 +579,5 @@ uçot dərəcəsi FR1-də yalnız G1 (kredit həcmi) ilə işləyir; depozit fai
 vermir (D1 istehlak tənliyində real faiz yoxdur) — NPL-in sıfır təsiri konstruksiyadır; təklif: NPL → kredit təklifi
 (G1) və ya D1/D2-yə real faiz (AMB bank paneli ilə qiymətləndirilməlidir). Canlı faiz sətrində 2026 indi effektiv orta
 (YTD + cari) ilə hesablanır; D6 faiz şoku FR1 multiplikatoru kimi depozit faizini 0,5× dəyişir.
+
+**13.9 Düzəlişlər (2026-10-07).** (i) Devalvasiyanın büdcə kanalı: FR1 zəncirinin `fx` cavabı (neft-qaz gəlirinin AZN dəyəri artır, xərclər əsasən eyni qədər artır — xalis kiçik mənfi) + xarici borcun faiz xərci (effektiv faiz `dsa_int_eff` × xarici borc × devalvasiya); S3 artıq S1-dən fərqlənir. (ii) Borcun yenidənqiymətləndirilməsi birbaşa: xarici borc payı × devalvasiya × borc/ÜDM (FR1 borcu yenidən qiymətləndirmir; v2.1-in `debt_reval` sətri kəsir axını idi). (iii) D5/D6: qanuni minimum əmək haqqı (DSK 004_1 qərar cədvəli, MikroUnit `minwage_decrees.csv`) vs FR1 fərziyyəsi və zəncir təsiri. (iv) Baza baxışında cari il (2026) üçün `baza` sütunu **rəsmi proqnozdur (YTD məlumatından əvvəl)**: zolaq il-əvvəlindən faktiki ilə şərtləndirildiyi üçün `baza` zolaqdan kənar ola bilər; zolağın mərkəzi `merkez` sütunudur (`baza_izah`). (v) S1/S3/S8 etiketləri 2026-nın IV rübünün də şoklandığını göstərir.

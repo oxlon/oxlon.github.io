@@ -1,0 +1,2 @@
+iterations,max_rel_resid,converged,na_discrepancy_thsd,na_discrepancy_pct_output,check
+16,5.0046893137955495e-08,True,-1051604.707179442,-0.556601154915467,"{""row_resid_max"": 5.26762817211128e-08, ""col_resid_max"": 2.4434424653715096e-16, ""x_total"": 188933260.0}"

@@ -1,6 +1,6 @@
 """FR1 v2.3 passages, English (docs/FR1_Methodology.md): the v2.3 note and the formerly hand-written run-dependent text."""
 from .common import pm
-from ._fr1_v23_vals import FISC, SCEN, gfmt, v23_vals
+from ._fr1_v23_vals import FISC, SCEN, gfmt, mult_fix, v23_vals
 from ._fr1_v23_blocks_en import blocks_en
 
 
@@ -54,10 +54,75 @@ decision row. Engine: lever `addf_halflife`; the E3 homogeneity tie now has thre
 GDP − wage bill), so a changed coefficient keeps the restriction; self-test passes for every scenario in both modes. The
 run-dependent figures that no CSV holds (solver iterations §7.1, the January–April anchor §7.2, the fan diagnostics §7.5, the
 v2.2 comparison figures) are exported to `FR1_doc_figures.json` (Part 18.17) and rendered here by `microlib.docrefresh`.
-FR3, FR4 and FR5 were re-run on the v2.3 forecast. §6–§9 quote the v2.3 run."""
+FR3, FR4 and FR5 were re-run on the v2.3 forecast. §6–§9 quote the v2.3 run.
+
+{_mfix_en(F)}
+
+{_dfix_en(F)}
+
+{_g4fix_en(F)}"""
+
+
+def _mfix_en(F):
+    from .fr1 import EXP
+    m = mult_fix(F); p = lambda e: ", ".join(pm(v, 0) for v in m["path"][e].tolist())
+    old = ", ".join(f"{v:+,.0f}".replace(",", " ").replace("-", "−") for v in m["old"])
+    return f"""**v2.3.1 fix (2026-10-06): budget-balance multipliers.** `FR1_multipliers.csv` reported the budget balance as a % deviation
+from a Baseline balance that crosses zero ({pm(m['b28'], 0)} mln AZN in 2028), so the responses exploded and changed sign (state
+investment +1 bn AZN: {old} "%" in 2026–30; +{f"{m['old22']:,.0f}".replace(",", " ")}% in 2028 in v2.2). The model itself was not wrong: every shocked solve
+converged (largest residual {m['conv']:.0e}) and the responses in money are smooth. The balance column is now the difference in
+mln AZN at current prices (inflation stays in pp, the other columns in %): state investment +1 bn AZN {p(EXP[1])}; Brent
++10 USD/bbl {p(EXP[0])}; external demand +10% {p(EXP[4])}. The real and price responses and the forecast are unchanged. The
+notebook now asserts that every shocked run converged and that balance_n, rgdpnon and infl keep one sign from year 2 on.""".replace("e-", "e−")
 
 
 def v23_en(F):
     B = {"v23_note": (note_en(F), False)}
     B.update(blocks_en(F))
     return B
+
+
+def _dfix_en(F):
+    pre = F.ref["v23"]["pre_debt_fix"]; d = F.docfig["v23"]; y5 = d["debt"][str(F.LAST)]
+    t = lambda v, k=1: f"{v:,.{k}f}".replace(",", " ")
+    cur = {s: (F.fc[s].loc[2030, "debt_azn"] / F.fc[s].loc[2030, "gdp_n"] * 100, F.fc[s].loc[2030, "balance_n"] / F.fc[s].loc[2030, "gdp_n"] * 100)
+           for s in SCEN}
+    ds = F.base.loc[2026, "debt_serv_n"]
+    return f"""**v2.3.2 fix (2026-10-06): public debt.** `debt_azn` converted the workbook's total public debt at the exchange rate, but that
+row is on three bases (§2.3, item 5): {F.LAST} was {t(d['debt_old_2025'], 0)} mln AZN instead of **{t(y5['external x FX + domestic (mln AZN)'])} mln AZN** (external
+{t(y5['external, mln USD'])} mln USD × {y5['FX end-year']:.2f} + domestic {t(y5['domestic, mln AZN'])} mln AZN; {d['debt_gdp_2025']:.1f}% of GDP), and 2010–2020 were mis-scaled by the exchange
+rate. Public debt is now external × end-year rate + domestic in every year — the Ministry of Finance concept (state-guaranteed
+debt is not included and not in the workbook); `fr1:debt_azn` is labelled accordingly. The calibrated debt-service rate (2023–25
+average of debt service / debt) and the debt identity use the corrected stock: 2026 debt service {t(ds, 0)} mln AZN (was
+{t(pre['Baseline']['debt_serv_2026'], 0)}); 2030 public debt {cur['Baseline'][0]:.1f} / {cur['Adverse'][0]:.1f} / {cur['Reform'][0]:.1f}% of GDP (Baseline / Adverse / Reform; was
+{pre['Baseline']['debt_gdp_2030']:.1f} / {pre['Adverse']['debt_gdp_2030']:.1f} / {pre['Reform']['debt_gdp_2030']:.1f}); budget balance 2030 {pm(cur['Baseline'][1])} / {pm(cur['Adverse'][1])} / {pm(cur['Reform'][1])}% (was {pm(pre['Baseline']['bal_gdp_2030'])} / {pm(pre['Adverse']['bal_gdp_2030'])} / {pm(pre['Reform']['bal_gdp_2030'])})."""
+
+
+def _g4fix_en(F):
+    g = F.docfig["v23"]["deval"]; e, n4 = g["engine"], g["engine_no_f4"]; v0 = F.ref["v23"]["pre_g4_deval"]
+    dec = F.dec23[F.dec23.group == "G4"].set_index("spec")
+    rows = "; ".join(f"{r.variant.split(': ', 1)[1]} {r.U_rw:.2f} ({pm(r.U_loss_pct, 0)}%)" for _, r in dec.iterrows())
+    infl27 = {s: F.fc[s].loc[[2027, 2028, 2029, 2030], "infl"].mean() for s in SCEN}
+    cn = g["cpi_nowcast"]; w = F.base["wage"]; cn_w26 = (w.loc[2026] / F.A.loc[F.LAST, "wage"] - 1) * 100
+    return f"""**v2.3.3 (2026-10-06): exchange-rate pass-through.** G4 had a pass-through of 0.06 (a +16.5% devaluation: CPI {pm(v0['infl_2026'])} pp in
+year 1, {pm(v0['infl_2027'])} pp in year 2, and non-oil GDP *rising* {pm(v0['rgdpnon_2030'])}% by 2030), against ≈{g['hist_passthrough_2015_17']:.2f} in 2015–17. Candidates (Part 11.7, lags of
+regressors only, no lagged inflation), hold-out U of inflation vs RW (v2.2 form {dec.U_rw_v22.iloc[0]:.2f}): {rows}. **Adopted: manat import-price inflation, current +
+previous year** (largest gain; signs right; the post-2015 regime interaction is not better). Devaluation +16.5% now: CPI **{pm(e['infl'][2026])} pp
+in year 1, {pm(e['infl'][2027])} pp in year 2** (CPI level {pm(e['cpi'][2030], 1)}% by 2030), non-oil GDP {pm(e['rgdpnon'][2026])}% in 2026 and {pm(e['rgdpnon'][2030])}% in 2030, real disposable
+income {pm(e['rhhdisp'][2030])}%, consumption {pm(e['rcons'][2030])}%, public debt {pm(e['debt_gdp'][2030])} pp of GDP. Why non-oil GDP rose before: with almost no pass-through real
+incomes barely fell, while manat oil revenue ({pm(e['rev_oil_n'][2030], 1)}%) raises current spending (F3) and state investment (F4, {pm(e['rinv_state'][2030], 1)}%); the real-income
+channel (real wage bill in E3, CPI-indexed pensions) was present but too weak. Without the F4 response non-oil GDP would fall
+{pm(n4['rgdpnon'][2030])}%. **2026 CPI anchor and the Baseline.** 2026 inflation is anchored on the latest monthly CPI, as the real sectors are on
+January–April: {cn['source'].split(' (md5')[0].split('/')[-1]} gives {cn['yoy_latest']:.1f}% y/y in month {int(cn['month'])} of {int(cn['year'])}; the remaining months repeat last year's month-on-month
+changes (1:1; on 2021–25 this bridge has an RMSE of {cn['bridge_rmse_pp']:.1f} pp), so December {int(cn['year'])} = {cn['infl_2026']:.1f}%. G4's add-factor is set so that Baseline {int(cn['year'])}
+inflation equals the nowcast (2025 residual {pm(g['infl_addf_2025'], 2)} pp + anchor shift {pm(g['cpi_shift'], 2)} pp) and is held from 2027; the nowcast refreshes when a new
+monthly file arrives in `data/dsk_cpi/` or a RiskUnit DSK vintage. The model's own 2026 value was already close to the nowcast, so the
+anchor changes little: Baseline CPI inflation 2027–30 averages {infl27['Baseline']:.1f}% (Adverse {infl27['Adverse']:.1f}, Reform {infl27['Reform']:.1f}) — wage growth
+recovers from its January–April-anchored {cn_w26:.1f}% in 2026 to about 8%, and the add-factor is not a one-off (the 2023–24 residuals are of the same size, with
+USD import prices falling in the macro-module series). The import-price path is an editable assumption (`pm_usd_infl`)."""
+
+
+def _g4fix_en(F):                    # v2.3.4: supersedes the v2.3.3 version above (history + data check + CPI anchor)
+    from ._fr1_v234 import g4_en
+    from ._fr1_v235 import v235_en
+    return g4_en(F) + "\n\n" + v235_en(F) + "\n\n" + __import__('microlib.docrefresh._fr1_v236', fromlist=['x']).v236_en(F)

@@ -37,6 +37,26 @@ def blocks_en(F):
   has a wrongly signed non-oil GDP term). Non-oil GDP stands for the remaining market income (entrepreneurial and property
   income); the wage bill carries the wage and minimum-wage channel. The pension bill is a **proxy**: average pension × total
   population (the workbook has no count of pensioners). Pensions are a policy variable, CPI-indexed in the forecast.""", False)
+    db = d["v23"]["debt"]; y5 = db[str(F.LAST)]; y0 = db["2020"]; y4 = db["2024"]; old = d["v23"]["debt_old_2025"]
+    t = lambda v, k: f"{v:,.{k}f}".replace(",", " ")
+    B["v23_debt"] = (f"""5. **Public debt (v2.3.2)** — the workbook total ('Ümumi dövlət borcu', `Fiskal sektor` row 22, labelled mln USD) is on three
+   bases: 2010–2020 in mln AZN (2020: {t(y0['total (row 22)'], 1)} = external {t(y0['external, mln USD'], 1)} mln USD × {y0['FX end-year']:.4f} + domestic
+   {t(y0['domestic, mln AZN'], 1)} mln AZN), 2021–2024 in mln USD (2024: {t(y4['total (row 22)'], 1)}), and {F.LAST} the unconverted sum {t(y5['total (row 22)'], 1)} =
+   {t(y5['external, mln USD'], 1)} (USD) + {t(y5['domestic, mln AZN'], 1)} (AZN). Converting the whole row at the exchange rate gave {t(old, 0)} mln AZN for {F.LAST}
+   and mis-scaled 2010–2020 by the exchange rate (×{float(F.A.loc[2010, 'fx']):.2f} in 2010, ×{y0['FX end-year']:.2f} in 2020). Public debt is now external (row 24) × end-year exchange rate + domestic (row 23) in every
+   year — the Ministry of Finance concept, without state-guaranteed debt: **{t(y5['external x FX + domestic (mln AZN)'], 1)} mln AZN in {F.LAST}
+   ({d['v23']['debt_gdp_2025']:.1f}% of GDP)**. The three bases are asserted in the notebook.""", False)
+    g4 = d["v23"]["deval"]; cf4, p4 = g4["g4_cf"], g4["g4_p"]
+    if "dln_fx_L1" in cf4:
+        B["v23_g4"] = (f"""- **Inflation** — a structural cost markup (v2.3.4): the exchange-rate change in the current year ({cf4['dln_fx']:.3f}, p = {p4['dln_fx']:.2f}) and
+  the previous year ({cf4['dln_fx_L1']:.3f}, p = {p4['dln_fx_L1']:.3f}; a lag of the regressor, no lagged inflation) and wage growth ({cf4['dln_wage']:.3f}, p = {p4['dln_wage']:.2f});
+  R² {g4['g4_r2']:.2f}. Cumulative exchange-rate pass-through {cf4['dln_fx'] + cf4['dln_fx_L1']:.2f} (2015–17 history: {g4['hist_passthrough_2015_17']:.2f}); the import-price
+  forms were dropped because the two import-price sources contradict each other in 2021–25 (v2.3.4 note).""", False)
+    else:
+        B["v23_g4"] = (f"""- **Inflation** — a structural cost markup (v2.3.3): manat import-price inflation (USD import prices + exchange rate) in the
+  current year ({cf4['dln_pm_azn']:.3f}, p = {p4['dln_pm_azn']:.3f}) and the previous year ({cf4['dln_pm_azn_L1']:.3f}, p = {p4['dln_pm_azn_L1']:.2f}; a lag of the regressor, no lagged
+  inflation) and wage growth ({cf4['dln_wage']:.3f}, p = {p4['dln_wage']:.2f}); R² {g4['g4_r2']:.2f}. Cumulative exchange-rate pass-through {cf4['dln_pm_azn'] + cf4['dln_pm_azn_L1']:.2f} (2015–17
+  history: {g4['hist_passthrough_2015_17']:.2f}). USD import prices are a base assumption (0% a year, input `pm_usd_infl`).""", False)
     B["v23_solver"] = (f"{S['forecast_iter'][0]}–{S['forecast_iter'][1]} iterations per forecast year,\n"
                        f"{S['holdout_iter'][0]}–{S['holdout_iter'][1]} in the hold-out", True)
     li = A["largest_increment"]; beat = A["choice"] != "1:1 mapping"

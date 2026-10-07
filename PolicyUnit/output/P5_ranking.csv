@@ -1,0 +1,13 @@
+rank,scenario,scenario_name,score,kpis_used,kpis_selected,complete,kpis_missing,cost_mln_azn,score_per_bn_azn,note_az,score_conservative,rank_conservative
+1,export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),0.6811,11,11,True,,800.0,0.8514,,0.5842,5
+2,polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),0.6677,11,11,True,,0.0,,xərcsiz və ya gəlir artıran alət,0.7255,1
+3,mw20_2027,Minimum əmək haqqı +20 % (2027-dən),0.661,11,11,True,,436.8,1.5132,XƏBƏRDARLIQ: işdən çıxarma/qeyri-formallaşma kanalı modeldə yoxdur — bal yuxarı sərhəddir (FR4),0.7154,2
+4,tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),0.6337,11,11,True,,359.7,1.7616,,0.6904,3
+5,agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),0.5807,11,11,True,,1200.0,0.4839,,0.6033,4
+6,vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),0.5753,11,11,True,,3244.0,0.1773,,0.4505,9
+7,pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",0.5482,11,11,True,,3000.0,0.1827,,0.5665,6
+8,profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),0.5169,11,11,True,,2322.4,0.2226,,0.529,7
+9,pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",0.4391,11,11,True,,3000.0,0.1464,,0.4588,8
+10,pension10_2027,Pensiyalar +10 % (2027-dən),0.4261,11,11,True,,3494.6,0.1219,,0.4491,10
+11,fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),0.3891,11,11,True,,-1008.7,,xərcsiz və ya gəlir artıran alət,0.4038,11
+12,fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",0.2799,11,11,True,,0.0,,xərcsiz və ya gəlir artıran alət,0.3192,12

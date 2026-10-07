@@ -1,0 +1,8 @@
+method,method_az,n,n_decisive,events,mean_score,share_ok,share_part,share_fail,dir_hit_rate,median_pct_error,mean_error,beats_naive_rate
+e2_direct,"MikroUnit FR1 E2 tənliyi (birbaşa, qismən tarazlıq)",5,3,E1;E3,2.0,1.0,0.0,0.0,1.0,30.214972144995496,-0.19186013922342832,0.8
+micro_chain,MikroUnit struktur zənciri (köçürülmüş şok),21,14,E1;E3;E5;E7,1.2142857142857142,0.35714285714285715,0.5,0.14285714285714285,1.0,44.32232459633383,-0.5726498600049089,0.8095238095238095
+microsim,Ev təsərrüfatı mikrosimulyasiyası (SİNTETİK),7,5,E1;E3,0.8,0.2,0.4,0.4,1.0,74.22396070041464,-3.500996672333904,0.5714285714285714
+fr3_direct,MikroUnit FR3 E4 dövlət sektoru tənliyi (birbaşa),5,5,E1;E3,1.2,0.4,0.4,0.2,1.0,72.94544319394099,2.928971079071166,0.6
+io_price,"IO qiymət modeli (Leontief, tam ötürmə)",1,1,E5,0.0,0.0,0.0,1.0,1.0,107.60634507698525,26.611085634073685,0.0
+io_e7,IO qiymət modeli — E7 xüsusi şoku (IO agenti),5,4,E7,0.75,0.0,0.75,0.25,1.0,43.621869413820605,-1.5846746241230292,0.8
+caem,Nazirlik CAEM modeli — müqayisə,1,0,E7,,,,,,87.72327949631457,-2.412427380819156,0.0

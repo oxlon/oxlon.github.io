@@ -686,7 +686,7 @@ s0683,"residual ADF, one fixed lag","qalıqlar üzrə ADF, bir sabit lağ"
 s0684,chained volume levels,zəncirvari həcm səviyyələri
 s0685,perpetual inventory capital,daimi inventar metodu ilə kapital
 s0686,one-year lags of other regressors,digər izahedici dəyişənlərin bir illik lağları
-s0687,constant add-factor; decay at rho-hat (sensitivity),sabit düzəliş əmsalı; rho-hat ilə sönmə (həssaslıq)
+s0687,constant add-factor ({0} anchor; no decay),sabit düzəliş əmsalı ({0} lövbəri; sönmə yoxdur)
 s0688,historical residual paths,tarixi qalıq trayektoriyaları
 s0689,held-at-last-value forecast rules,son qiymətdə saxlama proqnoz qaydaları
 s0690,all equations,bütün tənliklər
@@ -700,7 +700,7 @@ s0697,test statistic,test statistikası
 s0698,chain-linking identity,zəncirvari əlaqələndirmə eyniliyi
 s0699,stock-flow identity,ehtiyat-axın eyniliyi
 s0700,predetermined regressors; dependent variable never lagged,əvvəlcədən müəyyən edilmiş izahedici dəyişənlər; asılı dəyişənin lağından heç vaxt istifadə edilmir
-s0701,level anchor; decay is a labelled sensitivity,səviyyə lövbəri; sönmə ayrıca qeyd olunmuş həssaslıq variantıdır
+s0701,level anchor held constant over the horizon; FR10 applies no decay,səviyyə lövbəri proqnoz dövrü boyu sabit saxlanılır; FR10-da sönmə tətbiq olunmur
 s0702,replay of observed error paths,müşahidə edilmiş xəta trayektoriyalarının təkrar tətbiqi
 s0703,"scenario assumptions, listed","ssenari fərziyyələri, siyahı şəklində"
 s0704,why not autoregressive,niyə avtoreqressiv deyil

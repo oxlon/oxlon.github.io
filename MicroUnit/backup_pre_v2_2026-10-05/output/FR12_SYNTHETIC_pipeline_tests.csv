@@ -1,9 +1,0 @@
-WATERMARK,test,value,passed
-"SYNTHETIC — pipeline demonstration, not findings",HHI >= 10000 / N in every market,4.547473508864641e-13,True
-"SYNTHETIC — pipeline demonstration, not findings",CR4 <= CR8 <= 100,0.0,True
-"SYNTHETIC — pipeline demonstration, not findings",entropy <= ln N,8.881784197001252e-16,True
-"SYNTHETIC — pipeline demonstration, not findings",shares add to 1 in every national division market with revenue,2.220446049250313e-16,True
-"SYNTHETIC — pipeline demonstration, not findings","Kaplan-Meier survival non-increasing and in [0, 1]",0.0,True
-"SYNTHETIC — pipeline demonstration, not findings","calibration: births, deaths, revenue and SME revenue shares reproduce DSK where published (max |relative error| %)",4.1125232051788284e-05,True
-"SYNTHETIC — pipeline demonstration, not findings",DGP check: Boone slope negative (efficient firms larger) in >= 90% of section-years,1.0,True
-"SYNTHETIC — pipeline demonstration, not findings",DGP check: low-Pareto-alpha sections more concentrated (median HHI ratio),14.074552311480739,True

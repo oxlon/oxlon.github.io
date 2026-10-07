@@ -1,13 +1,13 @@
 """Live end-to-end: stress/run and scalability/run against the REAL riskunit modules and the MicroUnit chain
 (read-only; offline with RISK_NO_NETWORK=1). Skipped when the upstream units are not on this machine.
 Targets (contract): stress/run < 10 s, scalability/run < 5 s (after the one-off cache preparation)."""
-import time, unittest
+import os, time, unittest
 from pathlib import Path
 
 from helpers import API, Live
 
 ROOT = API.parent
-MICRO = ROOT.parent / "MicroUnit" / "microlib" / "engines" / "chain.py"
+MICRO = Path(os.environ.get("MIIS_MICRO_DIR", ROOT.parent / "MicroUnit")) / "microlib" / "engines" / "chain.py"
 
 
 @unittest.skipUnless(MICRO.exists() and (ROOT / "output" / "S0_factor_sigma.csv").exists(), "MicroUnit / RU çıxışları yoxdur")
@@ -72,6 +72,28 @@ class LiveTest(unittest.TestCase):
         self.assertTrue(b["residual"] and b["metrics"])
         st, b, _ = self.L.req("POST", "/api/v1/optimize/run", {"budget": 500, "include": ["T99"]})
         self.assertEqual((st, b["error"]["code"]), (400, "unknown_measure"))
+
+    def test_micro_overrides_shift_distribution(self):
+        """+1 bn AZN (2015 prices) extra state investment from the score year: the Monte Carlo part must move."""
+        pol = {"FR1": {"exogenous": {"istate_add": {"add": [0, 1000, 1000, 1000, 1000]}}}}
+        base = {"shocks": [{"factor": "brent", "k_sigma": -1}], "n": 4000}
+        st, a, _ = self.L.req("POST", "/api/v1/stress/run", base)
+        st2, b, _ = self.L.req("POST", "/api/v1/stress/run", {**base, "micro_overrides": pol})
+        self.assertEqual((st, st2), (200, 200), b)
+        hy = b["score_year"]
+        ga, gb = a["ru"]["metrics"]["g"], b["ru"]["metrics"]["g"]
+        self.assertNotIn("şoka şərtli + siyasət", ga)
+        self.assertGreater(gb["şoka şərtli + siyasət"]["median"], gb["şoka şərtli"]["median"] + 0.3)
+        self.assertLess(gb["siyasetin_effekti"]["P_hedd"], 0)                       # fewer GaR breaches
+        self.assertGreater(gb["siyasetin_effekti"]["ES10"], 0)
+        self.assertLess(b["ru"]["metrics"]["fis"]["siyasetin_effekti"]["median"], 0)   # costs budget balance
+        sh = {(r["kind"], r["il"]): r["deyisme"] for r in b["ru"]["policy_shift"]}
+        self.assertGreater(sh[("g", hy)], 0.3)
+        dv = [r for r in b["ru"]["deviation"] if r["kind"] == "g" and r["il"] == hy][0]
+        self.assertAlmostEqual(dv["sapma_siyasetle"] - dv["sapma"], sh[("g", hy)], places=9)
+        # policy alone (no factor shock) still yields a Monte Carlo block
+        st, c, _ = self.L.req("POST", "/api/v1/stress/run", {"micro_overrides": pol, "n": 2000})
+        self.assertEqual(set(c["ru"]["metrics"]["g"]) - {"siyasetin_effekti"}, {"şərtsiz", "siyasətlə"})
 
     def test_stress_errors_real(self):
         st, b, _ = self.L.req("POST", "/api/v1/stress/run", {"micro_overrides": {"FR1": {"exogenous": {"bogus": {"pct": 1}}}}})

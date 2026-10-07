@@ -5,15 +5,15 @@
   var U = window.U, B = U.B;
   function num(s) { return U.parseNum(s); }
   U.bHead = function (sub) {
-    var on = U.API.online;
+    var on = U.API.online, md = U.API.mode();
     return '<div class="eyebrow">Ssenarilər</div><div class="hrow"><h1 class="h1" style="margin-top:4px">' + (sub === 'saxlanmis' ? 'Saxlanmış ssenarilər' : sub === 'hazir' ? 'Hazır ssenarilər: Əsas, Mənfi, İslahat' : 'Ssenari qurucusu') + '</h1>' +
-      '<span class="hbtns"><span class="chip ' + (on ? 'acc' : on === false ? 'bad' : '') + '" id="api-pill">' + (on ? 'server: qoşulub' : on === false ? 'server: əlçatan deyil' : 'server yoxlanılır…') + '</span>' +
+      '<span class="hbtns"><span class="chip ' + (on ? 'acc' : md === 'brauzer' ? 'warn' : on === false ? 'bad' : '') + '" id="api-pill" title="' + U.esc(U.PY ? U.PY.title(on) : '') + '">' + (on ? 'Server: qoşulub' : on === null ? 'server yoxlanılır…' : md === 'brauzer' ? 'Brauzer: Python' : 'Yalnız paket') + '</span>' +
       '<button type="button" class="btn sm ghost" id="api-set2">Server ayarları</button></span></div>' +
       '<div class="toolbar" style="margin-top:6px">' + U.seg('ss-sub', [['qurucu', 'Qurucu'], ['saxlanmis', 'Saxlanmış ssenarilər'], ['hazir', 'Hazır ssenarilər']], sub) + '</div>';
   };
   function page(v) {
     var mods = U.MODS.map(function (m) { var n = U.bCount(m); return [m, m + (n ? ' · ' + n : '')]; });
-    var h = U.bHead('qurucu') + (U.API.online === false ? U.API.offlineHtml() : '') +
+    var h = U.bHead('qurucu') + (U.API.online === false ? (U.API.mode() === 'brauzer' ? U.API.browserHtml() : U.API.offlineHtml()) : '') +
       '<p class="lead" style="font-size:14.5px">Üç addım: <b>1.</b> baza ssenarisini seçin; <b>2.</b> ekzogen fərziyyələri, əmsalları və ya alətləri dəyişin (sarı xanalar); <b>3.</b> «Hesabla» — FR1-in nəticəsi FR3, FR4, FR5, FR10 və FR12-yə ötürülür və bütün modulların 2026–2030 nəticələri Əsas ilə müqayisədə göstərilir.</p>' +
       '<div class="scen-layout"><div class="card bld-l"><div class="toolbar" style="margin:12px 16px"><span class="small muted">Baza ssenarisi</span>' +
       U.seg('b-base', [['Baseline', 'Əsas'], ['Adverse', 'Mənfi'], ['Reform', 'İslahat']], B.base) + '</div>' +
@@ -49,14 +49,14 @@
   function status(t, cls) { var el = U.$('#b-status'); if (el) { el.className = 'small ' + (cls || 'muted'); el.innerHTML = t; } }
   U.bRun = function () {
     B.name = (U.$('#b-name') || {}).value || B.name; B.note = (U.$('#b-note') || {}).value || B.note;
-    status('Hesablanır… (zəncir: FR1 → FR3, FR4, FR5, FR10 → FR12)');
+    status('Hesablanır… ' + (U.API.mode() === 'brauzer' ? '(bu brauzerdə, Python; ilk dəfə mühit yüklənir) ' : '') + '(zəncir: FR1 → FR3, FR4, FR5, FR10 → FR12)');
     var btn = U.$('#b-run'); if (btn) btn.disabled = true;
     return U.API.run({ overrides: U.bClean(), scenario: B.base, save: false }).then(function (j) {
       U.bSetResult(j.result, { seconds: j.seconds, base: B.base, overrides: U.bClean(), name: B.name || 'Adsız ssenari' });
       // re-render the builder (the «Nəticələr ↓» buttons appear) and jump to the results
       if (U.$('#b-inputs')) { U.route(true); setTimeout(U.bJump, 60); }
       else { var r = U.$('#b-results'); if (r) { r.innerHTML = U.bResultsHtml(); U.bResultsBind(); U.bJump(); } }
-      status('Hazırdır: ' + (j.seconds != null ? U.nf(j.seconds, 1) + ' san.' : '') + ' · nəticələr aşağıda', 'up');
+      status('Hazırdır: ' + (j.seconds != null ? U.nf(j.seconds, 1) + ' san.' : '') + (U.API.lastVia === 'brauzer' ? ' · brauzerdə hesablandı (Python, Pyodide)' : '') + ' · nəticələr aşağıda', 'up');
     }).catch(function (e) { status(U.esc(e.message), 'down'); if (window.console) console.warn(e); }).then(function () { var b2 = U.$('#b-run'); if (b2) b2.disabled = false; });
   };
   U.bSave = function () {
@@ -159,4 +159,5 @@
     U.$('#b-imp').onchange = function (e) { if (e.target.files[0]) importFile(e.target.files[0]); };
   };
   U.API.onChange(function () { if (/^#\/ssenari/.test(location.hash)) U.route(true); });
+  if (U.PY) U.PY.onChange(function (st) { if (st === 'failed' && /^#\/ssenari/.test(location.hash)) U.route(true); });
 })();

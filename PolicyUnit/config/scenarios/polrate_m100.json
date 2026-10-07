@@ -1,0 +1,25 @@
+{
+ "id": "polrate_m100",
+ "name_az": "Uçot dərəcəsi −100 b.b. (2026–2030)",
+ "description_az": "AMB uçot dərəcəsi 2026–2030-cu illərdə bazadan 1 f.b. aşağı.",
+ "start_year": 2026,
+ "instruments": [
+  {
+   "instrument": "policy_rate",
+   "years": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+   ],
+   "size": -1,
+   "unit": "pp",
+   "target": null,
+   "financing": null
+  }
+ ],
+ "tags": [
+  "monetar"
+ ]
+}

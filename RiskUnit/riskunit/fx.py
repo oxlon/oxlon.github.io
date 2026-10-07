@@ -39,6 +39,11 @@ def _diff(a: np.ndarray) -> np.ndarray:
     return np.diff(np.concatenate([np.zeros((a.shape[0], 1)), a], axis=1), axis=1)
 
 
+def _param(key, default):
+    from . import parametrler
+    return parametrler.get(key, default)
+
+
 def _ext_debt() -> dict:
     """External (FX) public debt share and debt/GDP — MinFin bulletin (cached parse, offline) or the seed."""
     from . import exposures
@@ -122,6 +127,7 @@ def calibration() -> dict:
             "L": L["simmetrik"], "L_lo": min(L.values()), "L_hi": max(L.values()), "L_all": L, "w0g": w0g,
             "bench": benches, "oil_ch": oil16, "inv_ch": inv16, "resid15": R["simmetrik"][0], "resid16": R["simmetrik"][1],
             "dfx_1516": dfx_1516, **_ext_debt(),
+            "int_eff": float(_param("dsa_int_eff", 0.038)),
             "trigger_years": trig, "episodes": eps, "dev_episodes": dev_eps,
             "p_dev": len(dev_eps) / max(len(eps), 1)}
 
@@ -136,8 +142,14 @@ def responses(dlog, pt=None, w0=None, L=None, w0g=None) -> dict:
     dx = _diff(x)
     cpi = pt * (w0 * dx + (1 - w0) * _lag(dx))
     lvl = L / 100 * (w0g * x + (1 - w0g) * _lag(x))
-    debt = c["s_ext"] * c["debt_gdp"] * (np.exp(x / 100) - 1)
-    return {"cpi": cpi, "nonoil_lvl": lvl, "nonoil_g": _diff(lvl), "debt_gdp": debt}
+    debt = c["s_ext"] * c["debt_gdp"] * (np.exp(x / 100) - 1)          # revaluation of the FX debt stock (FR1: none)
+    interest = -c["int_eff"] * debt                                    # FX interest bill in AZN (budget, % GDP)
+    try:
+        fis_chain = chain_part(x)["fis"]                               # FR1: AZN oil/gas revenue ↑, spending response
+    except Exception:                                                  # noqa: BLE001 — engine unavailable
+        fis_chain = np.zeros_like(x)
+    return {"cpi": cpi, "nonoil_lvl": lvl, "nonoil_g": _diff(lvl), "debt_gdp": debt,
+            "fis": fis_chain + interest, "fis_interest": interest + 0 * x}
 
 
 def draw_params(rng, n: int) -> dict:
@@ -159,7 +171,7 @@ def chain_step() -> dict:
     """MicroUnit chain response per log point to a sustained +10 % USD/AZN step from the first forecast year
     (ru:cpi pp, ru:nonoil_lvl %, ru:debt_gdp pp, debt_reval pp) — cached per engine fingerprint."""
     key = _fingerprint()
-    p = CACHE / f"fx_step3_{key}.json"
+    p = CACHE / f"fx_step4_{key}.json"
     if p.exists():
         return {k: np.asarray(v, float) for k, v in json.loads(p.read_text()).items()}
     from . import scalability as sc
@@ -170,10 +182,11 @@ def chain_step() -> dict:
     out = {k: [dd[(f"ru:{k}", y)] / u for y in YEARS] for k in ("cpi", "nonoil_lvl", "debt_gdp", "budget_gdp")}
     # the chain's own revaluation of the debt stock (Δ debt_azn / GDP); its nominal-GDP denominator effect is NOT an
     # FX-debt channel and stays in the chain (overlay for debt = calibrated revaluation − chain revaluation)
-    # impact-year stock change only: later debt_azn changes are deficit FLOWS (already in the chain), not revaluation
-    y0 = YEARS[0]
-    r0 = (shock[("fr1:debt_azn", y0)] - base[("fr1:debt_azn", y0)]) / base[("fr1:gdp_n", y0)] * 100 / u
-    out["debt_reval"] = [r0] * len(YEARS)
+    # FR1 does NOT revalue the debt stock (debt_azn accumulates AZN deficits; its change is a flow): chain revaluation 0.
+    out["debt_reval"] = [0.0] * len(YEARS)
+    # fiscal decomposition of the chain response (documentation): AZN oil/gas revenue and total spending, % GDP
+    for k, v in (("rev_oil_gdp", "fr1:rev_oil_n"), ("exp_gdp", "fr1:exp_tot_n")):
+        out[k] = [(shock[(v, y)] - base[(v, y)]) / base[("fr1:gdp_n", y)] * 100 / u for y in YEARS]
     CACHE.mkdir(parents=True, exist_ok=True)
     for old in CACHE.glob("fx_step*.json"):
         old.unlink()
@@ -187,7 +200,8 @@ def chain_part(dlog) -> dict:
     x = np.atleast_2d(np.asarray(dlog, float))
     st = chain_step()
     out = {k: _convolve(x, st[k]) for k in ("cpi", "nonoil_lvl")}
-    out["debt_gdp"] = _convolve(x, st["debt_reval"])
+    out["debt_gdp"] = np.zeros_like(x)                  # FR1 has no FX revaluation of the debt stock
+    out["fis"] = _convolve(x, st["budget_gdp"])
     out["nonoil_g"] = _diff(out["nonoil_lvl"])
     return out
 
@@ -195,7 +209,7 @@ def chain_part(dlog) -> dict:
 def overlay(dlog) -> dict:
     """Calibrated total − chain part: what a consumer that already ran the chain must ADD (never double counts)."""
     t, c = responses(dlog), chain_part(dlog)
-    return {k: t[k] - c[k] for k in t}
+    return {k: t[k] - c[k] for k in t if k in c}
 
 
 def path_from_fx(fx_new, fx_base) -> np.ndarray:
@@ -223,6 +237,15 @@ def table(size: float = 0.165) -> pd.DataFrame:
         ("p_dev", c["p_dev"], f"epizodlar {c['episodes']}; devalvasiya: {c['dev_episodes']}", len(c["episodes"]), "",
          "P(devalvasiya | Brent çöküşü epizodu)"),
     ]
+    try:
+        st = chain_step()
+        u = 100 * np.log1p(size)
+        rows.append(("fis_chain", float(st["budget_gdp"][0] * u),
+                     f"+{size * 100:g}%: AZN neft-qaz gəliri {st['rev_oil_gdp'][0] * u:+.2f}, ümumi xərc {st['exp_gdp'][0] * u:+.2f}% ÜDM "
+                     f"({YEARS[0]}); valyuta faizi {-c['int_eff'] * c['s_ext'] * c['debt_gdp'] * np.expm1(u / 100):+.3f}% ÜDM",
+                     np.nan, "", "büdcə kanalı: FR1 zənciri (neft gəlirinin AZN dəyəri xərclərlə əsasən qarşılanır) + faiz"))
+    except Exception:                                   # noqa: BLE001
+        pass
     T = pd.DataFrame(rows, columns=["parametr", "deyer", "izah", "n", "numune", "qeyd"])
     T["setir_novu"] = "parametr"
     x = np.zeros(len(YEARS))
@@ -234,7 +257,8 @@ def table(size: float = 0.165) -> pd.DataFrame:
         chp = None
     R = []
     for k, lab in (("cpi", "inflyasiya, f.b."), ("nonoil_lvl", "qeyri-neft səviyyəsi, %"), ("nonoil_g", "qeyri-neft artımı, f.b."),
-                   ("debt_gdp", "dövlət borcu, % ÜDM (f.b.)")):
+                   ("debt_gdp", "dövlət borcu, % ÜDM (f.b.) — xarici borcun yenidənqiymətləndirilməsi (FR1-də yoxdur)"),
+                   ("fis", "büdcə balansı, % ÜDM (f.b.) — FR1: AZN neft-qaz gəliri ↑ və xərc cavabı; RU: valyuta faizi")):
         for t, y in enumerate(YEARS):
             ch = float(chp[k][0, t]) if chp is not None else np.nan
             R.append({"parametr": k, "deyer": float(tot[k][0, t]), "izah": lab, "n": np.nan, "numune": str(y),

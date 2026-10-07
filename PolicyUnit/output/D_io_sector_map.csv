@@ -1,0 +1,82 @@
+cpa,product_name_en,sector
+01,"Products of agriculture, hunting and related services",AGR
+02,"Products of forestry, logging and related services",AGR
+03,Fish and other fishing products; aquaculture products; support services to fishing,AGR
+05,Coal and lignite,MINOTH
+06,Crude petroleum and natural gas,OILGAS
+07,Metal ores,MINOTH
+08,Other mining and quarrying products,MINOTH
+09,Mining support services,OILGAS
+10,Food products,FOOD
+11,Beverages,FOOD
+12,Tobacco products,FOOD
+13,Textiles,LIGHT
+14,Wearing apparel,LIGHT
+15,Leather and related products,LIGHT
+16,"Wood and of products of wood and cork, except furniture; articles of straw and plaiting materials",LIGHT
+17,Paper and paper products,LIGHT
+18,Printing and recording services,LIGHT
+19,Coke and refined petroleum products,PETR
+20,Chemicals and chemical products,CHEM
+21,Basic pharmaceutical products and pharmaceutical preparations,CHEM
+22,Rubber and plastics products,CHEM
+23,Other non-metallic mineral products,METMIN
+24,Basic metals,METMIN
+25,"Fabricated metal products, except machinery and equipment",METMIN
+26,"Computer, electronic and optical products",MACH
+27,Electrical equipment,MACH
+28,Machinery and equipment not elsewhere classified,MACH
+29,"Motor vehicles, trailers and semi-trailers",MACH
+30,Other transport equipment,MACH
+31,Furniture,MACH
+32,Other manufactured goods,MACH
+33,Repair and installation services of machinery and equipment,MACH
+35,"Electricity, gas, steam and air conditioning",ENERGY
+36,Natural water; water treatment and supply services,WATER
+37,Sewerage services; sewage sludge,WATER
+38,"Waste collection, treatment and disposal services; materials recovery services",WATER
+39,Remediation services and other waste management services,WATER
+41-43,Constructions and construction works,CONS
+45-47,Wholesale and retail trade services; repair services of motor vehicles and motorcycles,TRADE
+49,Land transport services and transport services via pipelines,TRANS
+50,Water transport services,TRANS
+51,Air transport services,TRANS
+52,Warehousing and support services for transportation,TRANS
+53,Postal and courier services,TRANS
+55,Accommodation services,ACCOM
+56,Food and beverage serving services,ACCOM
+58,Publishing services,ICT
+59,"Motion picture, video and television programme production services, sound recording and music publishing",ICT
+60,Programming and broadcasting services,ICT
+61,Telecommunications services,ICT
+62,"Computer programming, consultancy and related services",ICT
+63,Information services,ICT
+64,"Financial services, except insurance and pension funding",FIN
+65,"Insurance, reinsurance and pension funding services, except compulsory social security",FIN
+66,Services auxiliary to financial services and insurance services,FIN
+68,Real estate services,REAL
+69,Legal and accounting services,BUS
+70,Services of head offices; management consulting services,BUS
+71,Architectural and engineering services; technical testing and analysis services,BUS
+72,Scientific research and development services,BUS
+73,Advertising and market research services,BUS
+74,"Other professional, scientific and technical services",BUS
+75,Veterinary services,BUS
+77,Rental and leasing services,BUS
+78,Employment services,BUS
+79,"Travel agency, tour operator and other reservation services and related services",BUS
+80,Security and investigation services,BUS
+81,Services to buildings and landscape,BUS
+82,"Office administrative, office support and other business support services",BUS
+84,Public administration and defence services; compulsory social security services,PUB
+85,Education services,EDU
+86,Human health services,HEALTH
+87,Residential care services,HEALTH
+88,Social work services without accommodation,HEALTH
+90,"Creative, arts and entertainment services",OTHSERV
+91,"Library, archive, museum and other cultural services",OTHSERV
+92,Gambling and betting services,OTHSERV
+93,Sporting services and amusement and recreation services,OTHSERV
+94,Services furnished by membership organisations,OTHSERV
+95,Repair services of computers and personal and household goods,OTHSERV
+96,Other personal services,OTHSERV

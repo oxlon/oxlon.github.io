@@ -63,14 +63,17 @@ SUMPRODUCT(bal, çəki), 0–100. Oxu: >55 mənfi tərəfə meyl, 45–55 balans
    aşağı quyruğu ölçdüyü üçün bu komponent 2-dən aşağı düşmür. R01 → neft, R06 → geosiyasət, R05 → tərəfdaş.
 4. Heç bir komponent yoxdursa (məs. 2028–2030 geosiyasət) bal neytral 2,5 qəbul olunur və qeyd edilir.
 
-| İl | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030 |
-|---|---|---|---|---|---|---|---|---|---|
-| Nazirlik (əl ilə) | 43 | – | 47 | 49 | – | – | – | – | – |
-| Məlumat əsaslı | 37,8 | 47,0 | 50,3 | 55,4 | 41,3 | 62,4 | 52,5 | 52,4 | 52,6 |
+<!-- AUTO:c2_index -->
+| version | 2022 | 2023 | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Nazirlik (əl ilə yazılmış, CAEM) | 43,0 | — | 47,0 | 49,0 | — | — | — | — | — |
+| məlumat əsaslı (RU) | 37,8 | 47,0 | 50,3 | 55,4 | 41,3 | 62,8 | 52,5 | 52,4 | 52,6 |
+<!-- /AUTO:c2_index -->
 
 2025-də fərq geosiyasətdən gəlir (GPR z = +2,1 → 5,0, Nazirlik 3,5). 2026 aşağıdır, çünki faktiki
-Brent yüksəkdir (göstərici z = +1,9 → neft balı 1,4). 2027 yüksəkdir, çünki FR2 R01 skoru 15-dir
-(yüksək prioritet → 4,2). Nazirliyin ərzaq balı öz siqnalına uyğun gəlmir (2024: zolaq 2 → 0–1,
+Brent yüksəkdir (göstərici z = +1,9 → neft balı 1,4). 2027 yüksəkdir, çünki <!-- AUTO:c2_r01 -->
+FR2 R01 skoru 16-dir (yüksək prioritet; P 4 × T 4)
+<!-- /AUTO:c2_r01 --> (yüksək prioritet → 4–5). Nazirliyin ərzaq balı öz siqnalına uyğun gəlmir (2024: zolaq 2 → 0–1,
 yazılıb 2,5; 2025: neytral → 2–3, yazılıb 1,0).
 
 ## 4. Kateqoriya xəritəsi (C3)
@@ -89,15 +92,61 @@ Kitabxana: 8a-nın 26 struktur şoku (+1, h=1) və 7. Scenario-nun 14 şoku (h=1
 şokuna xəritələnib, bax `C4_caem_shock_index.csv`) — 40 × 48 × 13.
 
 **Ötürmə müqayisəsi (C5, 2026 → 2030):**
-| Şok | Göstərici | CAEM | MikroUnit FR1 | OxLon |
-|---|---|---|---|---|
-| Brent +10 USD | ÜDM səviyyəsi, % | +0,79 → −0,04 | +0,18 → −0,08 | – |
-| | qeyri-neft səviyyəsi, % | +0,67 → +2,34 | +0,25 → +0,38 | – |
-| | inflyasiya, pp | +0,20 → −0,03 | +0,07 → +0,01 | FR13: +2,20 → +0,01 |
-| | büdcə, ÜDM-ə % | 0,00 → −0,36 (ilkin) | +0,15 → +0,04 | FR12 cari hesab +3,9 → +2,6 |
-| Xarici tələb +10% | ÜDM səviyyəsi, % | +2,98 → −0,11 | +1,03 → +1,19 | – |
-| Uçot dərəcəsi −200 bp | ÜDM səviyyəsi, % | +0,20 → +0,53 | +0,22 → +0,23 | kanal yoxdur |
-| Dövlət investisiyası +1 mlrd | ÜDM səviyyəsi, % | 0,00 → +0,14 | +0,70 → +0,98 | kanal yoxdur |
+<!-- AUTO:c5_table -->
+| Şok | Göstərici | Model | 2026 → 2030 |
+|---|---|---|---|
+| Brent +10 USD/barel (davamlı səviyyə) | Büdcə balansı (CAEM: ilkin balans) | CAEM AZE Model (Nazirlik — müqayisə) | 0,00 → −0,36 |
+| Brent +10 USD/barel (davamlı səviyyə) | Büdcə balansı (CAEM: ilkin balans) | MikroUnit FR1 | 0,14 → 0,01 |
+| Brent +10 USD/barel (davamlı səviyyə) | Cari hesab balansı | OxLon FR12 (Brent lo80/hi80 yollarından qismən həssaslıq) | 3,89 → 2,57 |
+| Brent +10 USD/barel (davamlı səviyyə) | Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi | CAEM AZE Model (Nazirlik — müqayisə) | 0,67 → 2,34 |
+| Brent +10 USD/barel (davamlı səviyyə) | Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi | MikroUnit FR1 | 0,25 → 0,38 |
+| Brent +10 USD/barel (davamlı səviyyə) | Qeyri-neft ixracı (real) | CAEM AZE Model (Nazirlik — müqayisə) | −0,03 → −0,05 |
+| Brent +10 USD/barel (davamlı səviyyə) | Qeyri-neft ixracı (real) | MikroUnit FR1 | 0,13 → 0,22 |
+| Brent +10 USD/barel (davamlı səviyyə) | Real ÜDM səviyyəsi | CAEM AZE Model (Nazirlik — müqayisə) | 0,79 → −0,03 |
+| Brent +10 USD/barel (davamlı səviyyə) | Real ÜDM səviyyəsi | MikroUnit FR1 | 0,18 → −0,06 |
+| Brent +10 USD/barel (davamlı səviyyə) | Uçot dərəcəsi | CAEM AZE Model (Nazirlik — müqayisə) | 0,49 → 0,50 |
+| Brent +10 USD/barel (davamlı səviyyə) | Uçot dərəcəsi | MikroUnit FR1 | — → — |
+| Brent +10 USD/barel (davamlı səviyyə) | İstehlak qiymətləri inflyasiyası | CAEM AZE Model (Nazirlik — müqayisə) | 0,20 → −0,02 |
+| Brent +10 USD/barel (davamlı səviyyə) | İstehlak qiymətləri inflyasiyası | MikroUnit FR1 | 0,08 → 0,01 |
+| Brent +10 USD/barel (davamlı səviyyə) | İstehlak qiymətləri inflyasiyası | OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi) | 2,20 → 0,01 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Büdcə balansı (CAEM: ilkin balans) | CAEM AZE Model (Nazirlik — müqayisə) | 0,00 → 0,00 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Büdcə balansı (CAEM: ilkin balans) | MikroUnit FR1 | −1,46 → −1,50 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi | CAEM AZE Model (Nazirlik — müqayisə) | 0,00 → 0,11 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi | MikroUnit FR1 | 0,92 → 1,20 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Qeyri-neft ixracı (real) | CAEM AZE Model (Nazirlik — müqayisə) | 0,00 → 0,16 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Qeyri-neft ixracı (real) | MikroUnit FR1 | 0,53 → 0,71 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Real ÜDM səviyyəsi | CAEM AZE Model (Nazirlik — müqayisə) | 0,00 → 0,14 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Real ÜDM səviyyəsi | MikroUnit FR1 | 0,69 → 0,96 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Uçot dərəcəsi | CAEM AZE Model (Nazirlik — müqayisə) | −0,04 → −0,30 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | Uçot dərəcəsi | MikroUnit FR1 | — → — |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | İstehlak qiymətləri inflyasiyası | CAEM AZE Model (Nazirlik — müqayisə) | −0,02 → −0,04 |
+| Dövlət investisiyası +1 mlrd AZN (davamlı) | İstehlak qiymətləri inflyasiyası | MikroUnit FR1 | 0,31 → 0,02 |
+| Uçot dərəcəsi −200 bp (davamlı) | Büdcə balansı (CAEM: ilkin balans) | CAEM AZE Model (Nazirlik — müqayisə) | 0,00 → −0,06 |
+| Uçot dərəcəsi −200 bp (davamlı) | Büdcə balansı (CAEM: ilkin balans) | MikroUnit FR1 | 0,05 → 0,07 |
+| Uçot dərəcəsi −200 bp (davamlı) | Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi | CAEM AZE Model (Nazirlik — müqayisə) | 0,17 → 0,66 |
+| Uçot dərəcəsi −200 bp (davamlı) | Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi | MikroUnit FR1 | 0,28 → 0,27 |
+| Uçot dərəcəsi −200 bp (davamlı) | Qeyri-neft ixracı (real) | CAEM AZE Model (Nazirlik — müqayisə) | −0,01 → −0,17 |
+| Uçot dərəcəsi −200 bp (davamlı) | Qeyri-neft ixracı (real) | MikroUnit FR1 | 0,00 → 0,00 |
+| Uçot dərəcəsi −200 bp (davamlı) | Real ÜDM səviyyəsi | CAEM AZE Model (Nazirlik — müqayisə) | 0,20 → 0,53 |
+| Uçot dərəcəsi −200 bp (davamlı) | Real ÜDM səviyyəsi | MikroUnit FR1 | 0,21 → 0,22 |
+| Uçot dərəcəsi −200 bp (davamlı) | Uçot dərəcəsi | CAEM AZE Model (Nazirlik — müqayisə) | −2,00 → −2,00 |
+| Uçot dərəcəsi −200 bp (davamlı) | Uçot dərəcəsi | MikroUnit FR1 | — → — |
+| Uçot dərəcəsi −200 bp (davamlı) | İstehlak qiymətləri inflyasiyası | CAEM AZE Model (Nazirlik — müqayisə) | 0,05 → 0,23 |
+| Uçot dərəcəsi −200 bp (davamlı) | İstehlak qiymətləri inflyasiyası | MikroUnit FR1 | 0,10 → 0,00 |
+| Xarici tələb +10% (davamlı səviyyə) | Büdcə balansı (CAEM: ilkin balans) | CAEM AZE Model (Nazirlik — müqayisə) | 0,00 → −0,09 |
+| Xarici tələb +10% (davamlı səviyyə) | Büdcə balansı (CAEM: ilkin balans) | MikroUnit FR1 | 0,11 → 0,16 |
+| Xarici tələb +10% (davamlı səviyyə) | Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi | CAEM AZE Model (Nazirlik — müqayisə) | 2,53 → 0,73 |
+| Xarici tələb +10% (davamlı səviyyə) | Qeyri-neft (qeyri-əmtəə) ÜDM səviyyəsi | MikroUnit FR1 | 1,36 → 1,46 |
+| Xarici tələb +10% (davamlı səviyyə) | Qeyri-neft ixracı (real) | CAEM AZE Model (Nazirlik — müqayisə) | 32,87 → 7,27 |
+| Xarici tələb +10% (davamlı səviyyə) | Qeyri-neft ixracı (real) | MikroUnit FR1 | 13,51 → 13,51 |
+| Xarici tələb +10% (davamlı səviyyə) | Qeyri-neft ixracı (real) | OxLon FR13 (ministry_spec: Nazirliyin 92 tənliyi) | 45,68 → 45,68 |
+| Xarici tələb +10% (davamlı səviyyə) | Real ÜDM səviyyəsi | CAEM AZE Model (Nazirlik — müqayisə) | 2,98 → −0,11 |
+| Xarici tələb +10% (davamlı səviyyə) | Real ÜDM səviyyəsi | MikroUnit FR1 | 1,02 → 1,17 |
+| Xarici tələb +10% (davamlı səviyyə) | Uçot dərəcəsi | CAEM AZE Model (Nazirlik — müqayisə) | 1,86 → 2,26 |
+| Xarici tələb +10% (davamlı səviyyə) | Uçot dərəcəsi | MikroUnit FR1 | — → — |
+| Xarici tələb +10% (davamlı səviyyə) | İstehlak qiymətləri inflyasiyası | CAEM AZE Model (Nazirlik — müqayisə) | 0,75 → −0,08 |
+| Xarici tələb +10% (davamlı səviyyə) | İstehlak qiymətləri inflyasiyası | MikroUnit FR1 | 0,45 → 0,01 |
+<!-- /AUTO:c5_table -->
 
 CAEM cavabları qısamüddətli və daha kəskindir, gecikmiş hədlər və vahid köklər səbəbindən səviyyələr
 "sürüşür"; dövlət investisiyası kanalı demək olar ki, işləmir (gcap_y g_y/pb_y-yə düşmür — C6).

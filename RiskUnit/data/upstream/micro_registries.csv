@@ -21,7 +21,7 @@ FR1,FR1.D2_inv,"{'code': 'D2_inv', 'label_az': 'ln real qeyri-neft investisiyala
 FR1,FR1.D3_xnon,"{'code': 'D3_xnon', 'label_az': 'ln real qeyri-neft ixracı', 'label_en': 'ln real non-oil goods exports'}",,,OBSERVED
 FR1,FR1.D4_mnon,"{'code': 'D4_mnon', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'ln non-oil imports at constant USD prices (= ln real imports + ln relprice)'}",,,OBSERVED
 FR1,FR1.E1_emp,"{'code': 'E1_emp', 'label_az': 'ln məşğulluq / işçi qüvvəsi', 'label_en': 'ln employment rate (employment / labour force)'}",,,OBSERVED
-FR1,FR1.E2_wage,"{'code': 'E2_wage', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'ln average nominal wage'}",,,OBSERVED
+FR1,FR1.E2_wage,"{'code': 'E2_wage', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'ln average nominal wage - theta x ln minimum wage'}",,,OBSERVED
 FR1,FR1.E3_hhdisp,"{'code': 'E3_hhdisp', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'ln real disposable income - ln real pension bill'}",,,OBSERVED
 FR1,FR1.E3a_wb,"{'code': 'E3a_wb', 'label_az': 'əmək ödənişlərinin artımı, %', 'label_en': 'growth of compensation of employees, % (log difference x 100)'}",,,OBSERVED
 FR1,FR1.E3b_tr,"{'code': 'E3b_tr', 'label_az': 'transfertlərin artımı, %', 'label_en': 'growth of transfers received, % (log difference x 100)'}",,,OBSERVED
@@ -111,7 +111,12 @@ FR1,FR1.G4_infl.v233_pm_azn_lag,"{'code': 'infl', 'label_az': 'İQİ inflyasiyas
 FR1,FR1.G4_infl.v234_pm_dsk_lag,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — manat import prices, DSK index spliced for 2021–25 (rejected)'}",,,OBSERVED
 FR1,FR1.G4_infl.v23_pm_azn,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — manat import prices, current year only (rejected)'}",,,OBSERVED
 FR1,FR1.G4_infl.v23_fx_post15,"{'code': 'infl', 'label_az': 'İQİ inflyasiyası, %', 'label_en': 'CPI inflation (cost markup) — pass-through in the post-2015 regime, current + previous year (rejected)'}",,,OBSERVED
+FR1,FR1.E2_wage.v235_base,"{'code': 'wage', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'Average nominal wage — v2.3.5 form: productivity + CPI + minimum wage, free (replaced)'}",,,OBSERVED
+FR1,FR1.E2_wage.v236_pubref_steps,"{'code': 'wage', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'Average nominal wage — with public-pay reform steps 2019/2022/2023 (rejected)'}",,,OBSERVED
+FR1,FR1.E2_wage.v236_pubref_index,"{'code': 'wage', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'Average nominal wage — with a cumulative public-pay reform index (rejected)'}",,,OBSERVED
 FR1,FR1.F4_pubinv.v23_cap,"{'code': 'F4_pubinv.v23_cap', 'label_az': 'ln real dövlət investisiyaları − ln real neft gəlirləri', 'label_en': 'Public investment reaction function — oil-revenue elasticity at its 95% CI lower bound (rejected)'}",,,OBSERVED
+FR1,FR1.E2_wage.diag_nonstate,"{'code': 'wage_priv', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'Average nominal wage — non-state-sector wage (diagnostic)'}",,,OBSERVED
+FR1,FR1.E2_wage.diag_state,"{'code': 'wage_state', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'Average nominal wage — state-sector wage (diagnostic)'}",,,OBSERVED
 FR1,FR1.C3_man.2SLS,"{'code': 'rva_man', 'label_az': 'ln real emal ƏD', 'label_en': 'Manufacturing real value added — 2SLS'}",,,OBSERVED
 FR1,FR1.C4_elc.2SLS,"{'code': 'rva_elc', 'label_az': 'ln real elektrik ƏD', 'label_en': 'Electricity real value added — 2SLS'}",,,OBSERVED
 FR1,FR1.C5_wat.2SLS,"{'code': 'C5_wat.2SLS', 'label_az': 'ln adambaşına real su ƏD', 'label_en': 'Water supply real VA per capita — 2SLS'}",,,OBSERVED
@@ -125,7 +130,7 @@ FR1,FR1.D2_inv.2SLS,"{'code': 'rinv_non', 'label_az': 'ln real qeyri-neft invest
 FR1,FR1.D3_xnon.2SLS,"{'code': 'rx_non', 'label_az': 'ln real qeyri-neft ixracı', 'label_en': 'Real non-oil goods exports — 2SLS'}",,,OBSERVED
 FR1,FR1.D4_mnon.2SLS,"{'code': 'D4_mnon.2SLS', 'label_az': 'ln qeyri-neft idxalı sabit ABŞ dolları qiymətləri ilə (= ln real idxal + ln nisbi qiymət)', 'label_en': 'Real non-oil goods imports — 2SLS'}",,,OBSERVED
 FR1,FR1.E1_emp.2SLS,"{'code': 'E1_emp.2SLS', 'label_az': 'ln məşğulluq / işçi qüvvəsi', 'label_en': 'Employment rate (Okun-type) — 2SLS'}",,,OBSERVED
-FR1,FR1.E2_wage.2SLS,"{'code': 'wage', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'Average nominal wage — 2SLS'}",,,OBSERVED
+FR1,FR1.E2_wage.2SLS,"{'code': 'E2_wage.2SLS', 'label_az': 'ln orta nominal əmək haqqı', 'label_en': 'Average nominal wage — 2SLS'}",,,OBSERVED
 FR1,FR1.E3_hhdisp.2SLS,"{'code': 'E3_hhdisp.2SLS', 'label_az': 'ln real gəlir − ln real pensiya fondu', 'label_en': 'Real household disposable income — 2SLS'}",,,OBSERVED
 FR1,FR1.F2_revnon.2SLS,"{'code': 'F2_revnon.2SLS', 'label_az': 'ln real qeyri-neft gəlirləri − ln qeyri-neft ÜDM', 'label_en': 'Real non-oil revenue — 2SLS'}",,,OBSERVED
 FR1,FR1.F3_expcur.2SLS,"{'code': 'rexp_cur', 'label_az': 'ln real cari xərclər', 'label_en': 'Real current expenditure — 2SLS'}",,,OBSERVED
@@ -183,7 +188,7 @@ FR3,FR3.C_E4_mw,"{'code': 'ln_rw_state', 'label_az': 'ln dövlət sektorunda əm
 FR3,FR3.C_E4_exp_pe_mw,"{'code': 'ln_rw_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'Candidate E4: exp_pe + mw (not chosen)'}",,,OBSERVED
 FR3,FR3.S_E3_unrestricted,"{'code': 'ln_w_priv', 'label_az': 'ln qeyri-dövlət (özəl) sektorda əmək haqqı', 'label_en': 'E3 unrestricted (homogeneity not imposed)'}",,,OBSERVED
 FR3,FR3.S_E4_unrestricted,"{'code': 'ln_w_state', 'label_az': 'ln dövlət sektorunda əmək haqqı', 'label_en': 'E4 unrestricted (homogeneity not imposed)'}",,,OBSERVED
-FR3,FR3.S_E4_D18,"{'code': 'ln_rw_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'E4 with the 2018 break dummy (unscorable before 2018)'}",,,OBSERVED
+FR3,FR3.S_E4_D18,"{'code': 'ln_rw_state', 'label_az': 'ln dövlət sektorunda əmək haqqı (real, İQİ ilə deflyasiya)', 'label_en': 'E4 with the 2019 break dummy (unscorable before 2019)'}",,,OBSERVED
 FR3,FR3.T_E1_prod_tot_mw,"{'code': 'ln_w_avg', 'label_az': 'ln orta aylıq əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E1: prod_tot + mw [nominal + D18, <= 2020]'}",,,OBSERVED
 FR3,FR3.T_E1_prod_tot,"{'code': 'ln_w_avg', 'label_az': 'ln orta aylıq əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E1: prod_tot [nominal + D18, <= 2020]'}",,,OBSERVED
 FR3,FR3.T_E2_prod_non_mw,"{'code': 'ln_w_non', 'label_az': 'ln qeyri-neft sektorunda əmək haqqı (nominal)', 'label_en': 'Break and homogeneity test regression E2: prod_non + mw [nominal + D18, <= 2020]'}",,,OBSERVED

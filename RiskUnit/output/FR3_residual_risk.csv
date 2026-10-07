@@ -1,13 +1,13 @@
 risk_id,ad,skor,ehtimal_cari,skor_cari,ehtimal_hedef,skor_hedef
-R12,İnflyasiyanın hədəf diapazonundan yuxarı olması,20,0.4745,20,0.4745,12
+R12,İnflyasiyanın hədəf diapazonundan yuxarı olması,20,0.47525,20,0.47525,12
 R01,Neft qiymətinin kəskin enməsi,16,0.4781,16,0.4781,8
-R13,Qeyri-neft artımının kəskin zəifləməsi (Growth-at-Risk),10,0.141,10,0.141,6
+R13,Qeyri-neft artımının kəskin zəifləməsi (Growth-at-Risk),10,0.1406,10,0.1406,6
 R03,Manatın məzənnəsinə təzyiq və devalvasiya,10,0.09805,10,0.09805,8
 R07,Pul baratlarının kəskin azalması,9,0.22365,9,0.20128,9
 R14,Enerji keçidi: karbohidrogen tələbinin struktur azalması,9,0.2497,9,0.2497,6
 R05,Tərəfdaş ölkələrdə iqtisadi tənəzzül,6,0.14235,6,0.14235,6
 R04,Bank sektorunda aktiv keyfiyyətinin pisləşməsi,6,0.0962,6,0.0962,4
-R11,Büdcə balansının pisləşməsi,6,0.0873,6,0.0873,2
+R11,Büdcə balansının pisləşməsi,6,0.0963,6,0.0963,2
 R16,Rəqabət mühitinin pisləşməsi,4,0.46545,4,0.37236,4
 R02,Maliyyə şəraitinin sərtləşməsi (kredit faizi),4,0.089,4,0.089,4
 R06,Regional geosiyasi eskalasiya,4,0.40909,4,0.40909,4

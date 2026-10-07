@@ -58,4 +58,7 @@ assert not missing, f'doc markers missing: {missing}'
 left = set(re.findall(r'<!-- AUTO:(\w+) -->', doc)) - set(G_)
 assert not left, f'doc has markers the notebook does not fill: {left}'
 DOC.write_text(doc)
+# Azerbaijani wording of the v2 blocks (built with them in the v2 cell) for docs/az/FR12_Metodologiya.md (microlib/docgen_az_fr10_fr12.py)
+from microlib import docgen_az_fr10_fr12 as _DAZ
+_DAZ.write_az_sources('FR12', {k: '\n' + G_[k] + '\n' for k in G_AZ}, {k: '\n' + v + '\n' for k, v in G_AZ.items()})
 print(f'docs/FR12_Methodology.md: {len(G_)} generated blocks filled from this run\'s CSV outputs; total runtime {time.time() - T0:.0f} s')

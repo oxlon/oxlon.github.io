@@ -1,6 +1,0 @@
-panel,dep,rule,best_candidate,dm_p_vs_null,implied_rw_weight,train_years,applied_at_last_origin
-activity,lnB,combination: FE + dem | anchored,structural: FE + dem | anchored,0.1730310417214007,0.5,3,dem
-activity,exit,null (FE + fixed terms),structural: FE + dem + pcm,0.8277640506980284,0.0,3,no driver (null)
-region,lnB,combination: FE + reg + lend | anchored,structural: FE + reg + lend | anchored,0.12207212240601062,0.5,2,"reg, lend"
-region,exit,combination: FE + non | anchored,structural: FE + non | anchored,0.13393120255719193,0.5,2,non
-sme,lo,combination: FE + size,structural: FE + size,0.5572177611324514,0.0,3,see Part 14

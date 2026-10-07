@@ -23,7 +23,7 @@ toxunulmamış 2020–2025 pəncərəsi). Nəticə (`FR5_macro_module_competitio
 `FR5.M1_cons_growth`, `FR5.M2_ministry_reest`, `FR5.M3_ministry_fixed` (rədd edilib).
 
 **Pay modelləri — dəyişməzlik davranışı.** κ = 512 büzülmə və 2025 lövbəri ilə paylar dəyişməz yola yaxındır: 2025→2030 median
-dəyişmə 0,02 f.b. (ən çox 0,29 f.b.), 13 növdən 12-si 0,1 f.b.-dən az dəyişir, yoxlamada U (təsadüfi gəzişmə) 11 növ üçün
+dəyişmə 0,02 f.b. (ən çox 0,25 f.b.), 13 növdən 12-si 0,1 f.b.-dən az dəyişir, yoxlamada U (təsadüfi gəzişmə) 11 növ üçün
 1,00-dır (`FR5_share_change_check.csv`). Bu, ≤2019 κ seçiminin nəticəsidir, öz keçmişinə əsaslanan model deyil.
 <!-- /AUTO:v22_note -->
 
@@ -35,7 +35,7 @@ düzəlişləri hər tənliyin qiymətləndirilmiş birinci tərtib qalıq avtok
 müştərinin tələbinin istisna etdiyi qiymətləndirilmiş AR(1) əmsalıdır. v2.3-dən sönmə **sabitdir, qiymətləndirilmir**: 0,5^(h/H),
 h — 2025-dən sonrakı illər, yarımsönmə dövrü **H = 1 il** (ildə 0,50; layihənin natamam il qaydası). H mühərrikdə
 `addf_half_life` rıçağıdır (0,25–10 il, yalnız `addf_decay` açıq olduqda). ρ̂ yalnız diaqnostika kimi göstərilir. Ssenarilər sabit
-düzəlişlərlə qalır və dəyişmir. Sönmə həssaslığında 2030 ümumi həcm Əsas ssenariyə nisbətən −492 mln manat
+düzəlişlərlə qalır və dəyişmir. Sönmə həssaslığında 2030 ümumi həcm Əsas ssenariyə nisbətən −480 mln manat
 (−4,62%); v2.2-də (ρ̂ ilə sönmə) −483 (−4,44%).
 <!-- /AUTO:v23_note -->
 
@@ -66,7 +66,7 @@ həcm, deflyator və artım templəri, 13 növün həcmi, dəyəri, payı, defly
 `FR5_not_forecast.csv`: regional sıralar (milli sıra ilə uzlaşmır, Hissə 13).
 
 **Əmsal həssaslığı** (`FR5_coef_sensitivity.csv`, ±1 SE, 2030, Əsas; başlıq: cəmi həcm və dəyər, 2030 dəyərinə görə ən böyük üç növ —
-Rabitə xidmətləri, Kommunal xidmətlər, Nəqliyyat xidmətləri): ən böyük təsirlər — Pullu xidmətlər, cəmi: nominal dəyər: FR5.E1_income_relprice|ln_income_pc (-1,65% / +1,67%); Rabitə xidmətləri: real həcm: FR5.E1_income_relprice|ln_income_pc (-1,65% / +1,68%); Pullu xidmətlər, cəmi: real həcm: FR5.E1_income_relprice|ln_income_pc (-1,65% / +1,67%); Nəqliyyat xidmətləri: real həcm: FR5.E1_income_relprice|ln_income_pc (-1,68% / +1,71%); Kommunal xidmətlər: real həcm: FR5.E1_income_relprice|ln_income_pc (-1,68% / +1,71%). Mətnlər: `FR5_strings_az.csv` (446 ingiliscə mətn → azərbaycanca). Kernel: `miis-model` (Python 3.13).
+Rabitə xidmətləri, Kommunal xidmətlər, Nəqliyyat xidmətləri): ən böyük təsirlər — Pullu xidmətlər, cəmi: nominal dəyər: FR5.E1_income_relprice|ln_relprice (+1,57% / -1,54%); Rabitə xidmətləri: real həcm: FR5.E1_income_relprice|ln_relprice (+1,57% / -1,55%); Pullu xidmətlər, cəmi: real həcm: FR5.E1_income_relprice|ln_relprice (+1,57% / -1,54%); Nəqliyyat xidmətləri: real həcm: FR5.E1_income_relprice|ln_relprice (+1,60% / -1,57%); Kommunal xidmətlər: real həcm: FR5.E1_income_relprice|ln_relprice (+1,60% / -1,57%). Mətnlər: `FR5_strings_az.csv` (446 ingiliscə mətn → azərbaycanca). Kernel: `miis-model` (Python 3.13).
 <!-- /AUTO:v2 -->
 
 ---
@@ -77,7 +77,7 @@ Rabitə xidmətləri, Kommunal xidmətlər, Nəqliyyat xidmətləri): ən böyü
 generasiya olunur** (sonuncu kod xanası), buna görə sənəd nəticələrdən ayrı düşə bilməz.
 
 <!-- AUTO:rev -->
-Cari əsas nəticələr (bu icra): 1-ci pillə = gəlir + nisbi qiymət, η = 1,155; 2-ci pillə = MNL: Engel həddi, koherent olduqda səviyyə meyli, əks halda fərq forması, Engel meylinin büzülməsi κ = 512; 2026–2030-cu illərdə həcm ildə +4,04%, dəyər +7,58%; E1 üzrə işarəyə görə rədd edilmə nisbəti 22,8%; FR5-in 56 CSV çıxışı.
+Cari əsas nəticələr (bu icra): 1-ci pillə = gəlir + nisbi qiymət, η = 1,155; 2-ci pillə = MNL: Engel həddi, koherent olduqda səviyyə meyli, əks halda fərq forması, Engel meylinin büzülməsi κ = 512; 2026–2030-cu illərdə həcm ildə +3,51%, dəyər +7,65%; E1 üzrə işarəyə görə rədd edilmə nisbəti 22,8%; FR5-in 56 CSV çıxışı.
 <!-- /AUTO:rev -->
 
 Nə dəyişdi və nə üçün:
@@ -377,7 +377,7 @@ məlumatlar daha kəskin sıralamanı dəstəkləmir.
 ### 8.5 İnstitusional bölgülər
 
 <!-- AUTO:splits -->
-Hər iki bölgü 2025-ci ilin dəyərlərində sabit paylarla proqnozlaşdırılır (fərdi sahibkarlar 24,87%, dövlət 22,19%). 2030-cu il üçün Əsas ssenari dəyərləri: hüquqi şəxslər 16 192, fərdi sahibkarlar 5 361, dövlət 4 783, qeyri-dövlət 16 770 mln manat. 2030-cu il üçün 90% zolaqlar: fərdi sahibkarların payı 20,1–28,9%, dövlətin payı 19,7–28,2%.
+Hər iki bölgü 2025-ci ilin dəyərlərində sabit paylarla proqnozlaşdırılır (fərdi sahibkarlar 24,87%, dövlət 22,19%). 2030-cu il üçün Əsas ssenari dəyərləri: hüquqi şəxslər 16 242, fərdi sahibkarlar 5 378, dövlət 4 798, qeyri-dövlət 16 822 mln manat. 2030-cu il üçün 90% zolaqlar: fərdi sahibkarların payı 20,1–28,9%, dövlətin payı 19,7–28,2%.
 <!-- /AUTO:splits -->
 
 ---
@@ -413,7 +413,7 @@ olunmuş yekunla idarə olunur; sabit artım müqayisə meyarı = kəsimdən əv
 <!-- /AUTO:holdout -->
 
 **FR1 ilə müqayisə.** <!-- AUTO:fr1gap -->
-FR5 bu sıra üzrə FR1-in öz proqnozundan 2026-cı ildə +0,67%, 2030-cu ildə +1,06%, ən çox isə +1,87% (2028) fərqlənir. Hər ikisi 2025-ci ilin eyni dəyərindən başlayır və eyni FR1 amillərindən istifadə edir, lakin tənliklər fərqlidir: bu fərq təsdiq deyil, modelləşdirmədəki real fərqdir.
+FR5 bu sıra üzrə FR1-in öz proqnozundan 2026-cı ildə -1,07%, 2030-cu ildə -0,42%, ən çox isə -1,07% (2026) fərqlənir. Hər ikisi 2025-ci ilin eyni dəyərindən başlayır və eyni FR1 amillərindən istifadə edir, lakin tənliklər fərqlidir: bu fərq təsdiq deyil, modelləşdirmədəki real fərqdir.
 <!-- /AUTO:fr1gap -->
 
 ---
@@ -423,10 +423,10 @@ FR5 bu sıra üzrə FR1-in öz proqnozundan 2026-cı ildə +0,67%, 2030-cu ildə
 <!-- AUTO:forecast -->
 | | 2025 | 2030 | illik |
 |---|---|---|---|
-| Həcm, 2015-ci il qiymətləri ilə mln manat | 8 735 | 10 650 | **+4.04%** |
-| Dəyər, cari qiymətlərlə mln manat | 14 957 | 21 554 | **+7.58%** |
+| Həcm, 2015-ci il qiymətləri ilə mln manat | 8 735 | 10 382 | **+3.51%** |
+| Dəyər, cari qiymətlərlə mln manat | 14 957 | 21 620 | **+7.65%** |
 
-Həcmin illik artımı: 2026 +0,64%, 2027 +5,55%, 2028 +4,70%, 2029 +5,01%, 2030 +4,41%. FR1 Əsas ssenarisində adambaşına real gəlir: 2026 +0,04%, 2027 +4,17%, 2028 +3,46%, 2029 +3,72%, 2030 +3,21%; xidmətlər deflyatorunun artımı orta hesabla ildə +3,40%; xidmətlərin nisbi qiyməti 2030-cu ilədək -0,047 log bəndi dəyişir.
+Həcmin illik artımı: 2026 -0,35%, 2027 +4,62%, 2028 +4,26%, 2029 +4,81%, 2030 +4,33%. FR1 Əsas ssenarisində adambaşına real gəlir: 2026 -0,93%, 2027 +3,31%, 2028 +3,05%, 2029 +3,53%, 2030 +3,14%; xidmətlər deflyatorunun artımı orta hesabla ildə +3,99%; xidmətlərin nisbi qiyməti 2030-cu ilədək -0,063 log bəndi dəyişir.
 <!-- /AUTO:forecast -->
 
 **Növlər üzrə həcm artımı onların öz tarixi ilə müqayisədə** (ildə, %):
@@ -434,30 +434,30 @@ Həcmin illik artımı: 2026 +0,64%, 2027 +5,55%, 2028 +4,70%, 2029 +5,01%, 2030
 <!-- AUTO:types -->
 | növ | ad | proqnoz ortası 2026–30, % | proqnozun maks. ili, % | 2010–19, % | 2021–25, % | ən yaxşı 5 illik orta, % | pəncərə | ən yaxşı 5 illiyi aşır |
 |---|---|---|---|---|---|---|---|---|
-| Mənzil xidmətləri | Mənzil xidmətləri | 4.18 | 5.74 | -1.06 | 20.59 | 51.93 | 2005-2010 | xeyr |
-| Digər pullu xidmətlər | Digər pullu xidmətlər | 4.18 | 5.74 | 7.65 | 7.30 | 100.30 | 2006-2011 | xeyr |
-| Hüquqi və bank xidmətləri | Hüquqi və bank xidmətləri | 4.14 | 5.69 | -4.01 | 8.60 | 78.20 | 2005-2010 | xeyr |
-| Bədən tərbiyəsi və idman xidmətləri | Bədən tərbiyəsi və idman | 4.14 | 5.68 | 8.04 | 13.08 | 79.97 | 2005-2010 | xeyr |
-| Mədəniyyət xidmətləri | Mədəniyyət xidmətləri | 4.13 | 5.68 | 7.36 | 14.47 | 61.25 | 2005-2010 | xeyr |
-| Sanatoriya-sağlamlıq xidmətləri | Sanatoriya-sağlamlıq xidmətləri | 4.13 | 5.68 | 6.58 | 24.92 | 44.52 | 2005-2010 | xeyr |
-| Təhsil xidmətləri | Təhsil xidmətləri | 4.13 | 5.67 | 6.81 | 22.90 | 45.52 | 2005-2010 | xeyr |
-| Turizm və ekskursiya xidmətləri | Turizm və ekskursiya xidmətləri | 4.13 | 5.67 | 11.47 | 30.77 | 34.46 | 2006-2011 | xeyr |
-| Kommunal xidmətlər | Kommunal xidmətlər | 4.12 | 5.66 | 5.92 | 7.15 | 9.31 | 2005-2010 | xeyr |
-| Nəqliyyat xidmətləri | Nəqliyyat xidmətləri | 4.12 | 5.65 | 6.18 | 16.14 | 25.94 | 2005-2010 | xeyr |
-| Tibbi xidmətlər | Tibbi xidmətlər | 4.11 | 5.64 | 15.05 | 15.64 | 51.14 | 2005-2010 | xeyr |
-| Rabitə xidmətləri | Rabitə xidmətləri | 4.06 | 5.58 | 9.09 | 6.95 | 22.19 | 2005-2010 | xeyr |
-| Məişət xidmətləri | Məişət (fərdi) xidmətləri | 3.50 | 4.77 | 3.43 | 11.25 | 16.39 | 2005-2010 | xeyr |
-| CƏMİ | CƏMİ | 4.04 | 5.55 | 4.67 | 9.87 | 29.34 | 2003-2008 | xeyr |
+| Mənzil xidmətləri | Mənzil xidmətləri | 3.63 | 4.97 | -1.06 | 20.59 | 51.93 | 2005-2010 | xeyr |
+| Digər pullu xidmətlər | Digər pullu xidmətlər | 3.63 | 4.97 | 7.65 | 7.30 | 100.30 | 2006-2011 | xeyr |
+| Hüquqi və bank xidmətləri | Hüquqi və bank xidmətləri | 3.60 | 4.93 | -4.01 | 8.60 | 78.20 | 2005-2010 | xeyr |
+| Bədən tərbiyəsi və idman xidmətləri | Bədən tərbiyəsi və idman | 3.59 | 4.92 | 8.04 | 13.08 | 79.97 | 2005-2010 | xeyr |
+| Mədəniyyət xidmətləri | Mədəniyyət xidmətləri | 3.59 | 4.92 | 7.36 | 14.47 | 61.25 | 2005-2010 | xeyr |
+| Sanatoriya-sağlamlıq xidmətləri | Sanatoriya-sağlamlıq xidmətləri | 3.59 | 4.92 | 6.58 | 24.92 | 44.52 | 2005-2010 | xeyr |
+| Təhsil xidmətləri | Təhsil xidmətləri | 3.59 | 4.91 | 6.81 | 22.90 | 45.52 | 2005-2010 | xeyr |
+| Turizm və ekskursiya xidmətləri | Turizm və ekskursiya xidmətləri | 3.59 | 4.91 | 11.47 | 30.77 | 34.46 | 2006-2011 | xeyr |
+| Kommunal xidmətlər | Kommunal xidmətlər | 3.58 | 4.90 | 5.92 | 7.15 | 9.31 | 2005-2010 | xeyr |
+| Nəqliyyat xidmətləri | Nəqliyyat xidmətləri | 3.58 | 4.90 | 6.18 | 16.14 | 25.94 | 2005-2010 | xeyr |
+| Tibbi xidmətlər | Tibbi xidmətlər | 3.57 | 4.88 | 15.05 | 15.64 | 51.14 | 2005-2010 | xeyr |
+| Rabitə xidmətləri | Rabitə xidmətləri | 3.53 | 4.83 | 9.09 | 6.95 | 22.19 | 2005-2010 | xeyr |
+| Məişət xidmətləri | Məişət (fərdi) xidmətləri | 3.05 | 4.15 | 3.43 | 11.25 | 16.39 | 2005-2010 | xeyr |
+| CƏMİ | CƏMİ | 3.51 | 4.81 | 4.67 | 9.87 | 29.34 | 2003-2008 | xeyr |
 
 Qeyd edilənlər (proqnoz ortası növün öz ən yaxşı beş illik ortasından yuxarıdır): yoxdur.
 <!-- /AUTO:types -->
 
 **Qeyri-müəyyənlik.** <!-- AUTO:bands -->
-*Ehtiyat: yalnız 9 birgə tarixi qalıq yolu (başlanğıc illəri 2006–2014) istifadə oluna bilir; zolaqlar göstərici xarakteri daşıyır.* 1 000 təkrarlama (mərkəzləşdirilmiş yollar, işarə məhdudiyyəti ilə parametr çəkilişləri — E1 çəkilişlərinin 22,8%-i rədd edilir — və FR1-in 500 makro çəkilişi): 2030-cu ildə həcmin 90% zolağı 8 589–14 144 mln manat (median 10 619); həcmin orta artımı -0,3% ilə +10,1% arası (median +3,98%); dəyərin orta artımı +1,5% ilə +15,7% arası (median +7,74%). Yalnız FR5-in öz qalıq və parametr qeyri-müəyyənliyi: +2,2% ilə +6,7% arası. E1 və bölgü yollarının öz tam nümunələri üzrə birləşdirildiyi variant: həcm -0,6% ilə +11,2% arası, dəyər +1,3% ilə +16,9% arası. Kvartillərarası zolağın daxilində olan nöqtəvi proqnozlar: həcm 5/5 il, dəyər 5/5, paylar 64/65 növ-il.
+*Ehtiyat: yalnız 9 birgə tarixi qalıq yolu (başlanğıc illəri 2006–2014) istifadə oluna bilir; zolaqlar göstərici xarakteri daşıyır.* 1 000 təkrarlama (mərkəzləşdirilmiş yollar, işarə məhdudiyyəti ilə parametr çəkilişləri — E1 çəkilişlərinin 22,8%-i rədd edilir — və FR1-in 500 makro çəkilişi): 2030-cu ildə həcmin 90% zolağı 8 130–13 742 mln manat (median 10 499); həcmin orta artımı -1,4% ilə +9,5% arası (median +3,75%); dəyərin orta artımı +2,3% ilə +14,9% arası (median +7,85%). Yalnız FR5-in öz qalıq və parametr qeyri-müəyyənliyi: +1,8% ilə +6,2% arası. E1 və bölgü yollarının öz tam nümunələri üzrə birləşdirildiyi variant: həcm -1,5% ilə +10,5% arası, dəyər +1,8% ilə +15,3% arası. Kvartillərarası zolağın daxilində olan nöqtəvi proqnozlar: həcm 5/5 il, dəyər 5/5, paylar 64/65 növ-il.
 <!-- /AUTO:bands -->
 
 <!-- AUTO:scen -->
-**Ssenarilər** (2030-cu ildə həcm): Əsas 10 650, Mənfi 10 096, İslahat 11 191 mln manat — 10,9% diapazon; həcmin artımı: Əsas +4,04%, Mənfi +2,94%, İslahat +5,08%; dəyərin artımı: Əsas +7,58%, Mənfi +6,23%, İslahat +8,85%.
+**Ssenarilər** (2030-cu ildə həcm): Əsas 10 382, Mənfi 9 668, İslahat 11 103 mln manat — 14,8% diapazon; həcmin artımı: Əsas +3,51%, Mənfi +2,05%, İslahat +4,92%; dəyərin artımı: Əsas +7,65%, Mənfi +5,70%, İslahat +9,52%.
 <!-- /AUTO:scen -->
 
 ## 11. Rıçaqlar
@@ -465,18 +465,18 @@ Qeyd edilənlər (proqnoz ortası növün öz ən yaxşı beş illik ortasından
 <!-- AUTO:levers -->
 | rıçaq | həcm, 2030 | həcm, Əsas ssenariyə nisbətən % | dəyər, Əsas ssenariyə nisbətən % |
 |---|---|---|---|
-| seçilmiş spesifikasiya (gəlir + nisbi qiymət), eta = 1.44: onun fərq forması qiymətləndirməsi | 11 094 | 4.17 | 4.17 |
-| alternativ spesifikasiya: xidmət qiyməti ilə deflyasiya edilmiş gəlir (DOLS 2005–2025; koherent deyil), eta = 0.43, eps = -0.43 | 9 708 | -8.84 | -8.84 |
-| alternativ spesifikasiya: yalnız gəlir (DOLS 2000–2025), eta = 1.67, eps = +0.00 | 11 361 | 6.68 | 6.68 |
-| xidmətlərin nisbi qiyməti 10% yüksək (tarif rıçağı) | 10 467 | -1.72 | 8.11 |
-| xidmətlərin nisbi qiyməti 10% aşağı | 10 856 | 1.94 | -8.26 |
-| əhali artımı 0.3 f.b. aşağı | 10 675 | 0.23 | 0.23 |
-| əhali artımı 0.3 f.b. yüksək | 10 625 | -0.23 | -0.23 |
-| düzəliş əmsalları sabit yarımsönmə dövrü ilə sönür (1 il) | 10 158 | -4.62 | -4.62 |
-| növlər üzrə nisbi qiymətlər: 2020–25 meyli davam edir, 0.5 sönmə ilə | 10 650 | 0.00 | 0.00 |
-| növlər üzrə nisbi qiymətlər: inzibati tariflər ildə +2% | 10 650 | 0.00 | 0.00 |
+| seçilmiş spesifikasiya (gəlir + nisbi qiymət), eta = 1.44: onun fərq forması qiymətləndirməsi | 10 739 | 3.45 | 3.45 |
+| alternativ spesifikasiya: xidmət qiyməti ilə deflyasiya edilmiş gəlir (DOLS 2005–2025; koherent deyil), eta = 0.43, eps = -0.43 | 9 671 | -6.84 | -6.84 |
+| alternativ spesifikasiya: yalnız gəlir (DOLS 2000–2025), eta = 1.67, eps = +0.00 | 10 905 | 5.04 | 5.04 |
+| xidmətlərin nisbi qiyməti 10% yüksək (tarif rıçağı) | 10 203 | -1.72 | 8.11 |
+| xidmətlərin nisbi qiyməti 10% aşağı | 10 583 | 1.94 | -8.26 |
+| əhali artımı 0.3 f.b. aşağı | 10 406 | 0.23 | 0.23 |
+| əhali artımı 0.3 f.b. yüksək | 10 358 | -0.23 | -0.23 |
+| düzəliş əmsalları sabit yarımsönmə dövrü ilə sönür (1 il) | 9 902 | -4.62 | -4.62 |
+| növlər üzrə nisbi qiymətlər: 2020–25 meyli davam edir, 0.5 sönmə ilə | 10 382 | 0.00 | 0.00 |
+| növlər üzrə nisbi qiymətlər: inzibati tariflər ildə +2% | 10 382 | 0.00 | 0.00 |
 
-Növlər üzrə nisbi qiymət rıçaqları yalnız növlərin daxilində həcm/qiymət bölgüsünü dəyişir; məsələn, rabitə xidmətlərinin 2026-cı ildə həcm artımı Əsas ssenaridə +0,64%, 2020–25-ci illərin qiymət dreyfi davam etdirilsə +6,10% olur.
+Növlər üzrə nisbi qiymət rıçaqları yalnız növlərin daxilində həcm/qiymət bölgüsünü dəyişir; məsələn, rabitə xidmətlərinin 2026-cı ildə həcm artımı Əsas ssenaridə -0,35%, 2020–25-ci illərin qiymət dreyfi davam etdirilsə +5,06% olur.
 <!-- /AUTO:levers -->
 
 Alternativ spesifikasiyalar parametri deyil, tənliyi dəyişir və belə olduqları işarələnir. Düzəliş əmsallarının sönməsi halı

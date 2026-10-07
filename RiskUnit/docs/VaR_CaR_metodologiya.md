@@ -205,13 +205,12 @@ devalvasiya itkisi 0,60, daşıma gəlirləri səhm 1,5% / daşınmaz əmlak 3% 
    sınağın n-i qısadır. LBMA/FRED qızıl seriyası əlçatan deyil (FRED seriyanı ləğv edib, LBMA 403 qaytarır).
 2. Qlobal səhm proksisi ABŞ indeksidir (S&P 500 / OECD); ARDNF səhmlərinin yalnız ≈ 27,5%-i Şimali Amerikadadır.
    Valyuta tərcüməsi ayrıca modelləşdirildiyi üçün bu, əsasən yerli səhm bazarlarının korrelyasiya xətasıdır.
-3. EM korporativ spredi (ICE BofA, FRED-də yalnız son 3 il) Azərbaycan suveren spredinin proksisidir (DR06).
+3. Kredit spredi amili: Moody's Baa − UST 10 il (FRED BAA10Y, korporativ — suveren spred deyil); ICE BofA EM OAS
+   FRED-də yalnız son 3 ildir və yalnız məlumat üçün V2-də qalır (DR06).
 4. Devalvasiya riski VaR-da yoxdur (bağlı məzənnə rejimi); CaR/DSA-da RU-nun şərti devalvasiya hadisəsi istifadə olunur.
-5. **RU birgə simulyasiyasının fiskal kanalı** (MikroUnit v2.3.1 multiplikatorları, balance_n mln AZN): Brent-in
-   bazadan yuxarı mərkəzi yolu prosiklik investisiya reaksiyası kanalı vasitəsilə büdcə balansını mediana görə
-   ≈ 3% ÜDM pisləşdirir; bu, DSA-nın əsas variantında borcun yüksək quyruğunu böyüdür. Buna görə «reaksiya xaric»
-   variantı ayrıca verilir. `simulate.py`-ın `via()` funksiyası balance_n-i mln AZN kimi qəbul edir (gdp_n-ə bölür) —
-   yeni vahidlə uyğundur; ara versiya v2.3 (faiz sapması) ilə uyğun deyildi.
+5. **RU birgə simulyasiyasının fiskal kanalı** (MikroUnit multiplikatorları, balance_n mln AZN): prosiklik investisiya
+   reaksiyası transfertlə maliyyələşir və büdcə balansına neytraldır; buna görə v2.3-dəki «reaksiya xaric» DSA variantı
+   əsas variantla eyni idi və φ = 0,5 variantı ilə əvəz olunub. Cari rəqəmlər §15-də avtomatik verilir.
 6. 1 illik VaR-da tarixi üst-üstə düşən pəncərələr effektiv olaraq ≈ 20 müstəqil müşahidədir — yoxlanıla bilməz.
 7. Nazirlik «base 60» ARDNF aktivləri (2025: 58 984 mln USD) faktiki qalıqdan (73 541) xeyli aşağıdır (DR12);
    ARDNF yolu faktiki qalıqdan başlayır, Nazirlik planından yalnız axınlar götürülür.
@@ -229,48 +228,53 @@ RISK_NO_NETWORK=1 python3 -m unittest tests.test_var tests.test_car -v
 Hər modulda `run(ctx: dict) -> dict` var; eyni `ctx` ötürüldükdə `var` → `dsa` → `car` ardıcıllığı simulyasiyanı və
 kopulanı təkrar hesablamır.
 
-## 15. İlk canlı işə salmanın nəticələri (06.10.2026)
+## 15. Son işə salmanın nəticələri (avtomatik — hər dövrdə çıxış fayllarından yenilənir)
 
-**Məruz qalmalar (V1).** ARDNF aktivləri 72 596,6 mln USD (30.06.2026): sabit gəlirli 33,8%, səhm 28,1%, qızıl 31,4%
-(178,1 ton), daşınmaz əmlak 6,7%; valyuta: USD 69,7% (qızıl daxil), EUR 17,7%, GBP 4,9%, CNY 2,3%, JPY 1,5%, digər
-3,9%. AMB ehtiyatları 15 301,3 mln USD (31.08.2026). Dövlət borcu 23 830,6 mln AZN (ÜDM-in 18,2%-i, 01.07.2026):
-xarici 4 616,8 mln USD, daxili 15 982,0 mln AZN; dövlət zəmanətli borc 7 232,3 mln AZN (5,5%). Büdcənin neft gəlirləri
-2025: 18 828 mln AZN (ümumi gəlirlərin 48,0%-i). Neft-qaz ixracı 2025: 20 605 mln USD (mal ixracının 85,6%-i).
-Bank sektoru (31.08.2026): aktivlər 62 476, kapital 7 753 mln AZN, QİK 946,8 mln AZN (2,88%). Fiskal kapital
-73 880 mln USD (zəmanətlər çıxılmaqla 69 626).
+Bu bölmədəki bütün rəqəmlər `riskunit/docs_varcar.py` tərəfindən V1, V3, V5, K2–K5 və FR3 stress fayllarından yazılır
+(əl ilə redaktə etməyin).
 
-**ARDNF portfelinin VaR-ı (mln USD; 95% / 99%).**
+**Məruz qalmalar (V1).**
+<!-- AUTO:vc_exposures -->
+ARDNF aktivləri 72 596,6 mln USD (2026-06-30): sabit gəlirli 33,8%, səhm 28,1%, qızıl 31,4%, daşınmaz əmlak 6,7%. AMB ehtiyatları 15 301,3 mln USD (2026-08-31). Dövlət borcu (MN bülleteni) 23 830,6 mln AZN (2026-07-01); zəmanətli borc 7 232,3 mln AZN.
+<!-- /AUTO:vc_exposures -->
 
-| Horizont | HS | Yaşa çəkili HS | MK t-kopula | EVT | Kornish–Fişer | Kök-zaman (təxmini) |
-|---|---|---|---|---|---|---|
-| 1 gün | 673 / 1 177 | 820 / 1 408 | 637 / 1 198 | 663 / 1 243 | 644 / 1 654 | — |
-| 1 ay | 2 463 / 4 919 | 2 410 / 4 697 | 2 678 / 4 682 | 2 515 / 4 962 | 2 972 / 5 323 | 3 082 / 5 393 |
-| 1 il | 7 913 / 12 298 | 6 666 / 9 952 | 6 819 / 11 376 | 8 314 / 12 389 | 7 678 / 12 450 | 10 678 / 18 681 |
+**VaR / ES (V3).**
+<!-- AUTO:vc_var -->
+VaR, mln USD (95% / 99%):
 
-t-kopulanın ν = 10 (gündəlik və aylıq). 99% 1 illik VaR portfelin ≈ 15,7%-idir (MK). Kök-zaman 1 illik VaR-ı
-≈ 50% şişirdir — yalnız müqayisə üçündür. Büdcənin neft gəlirlərinə risk (2027, FR1 bazası 17 723 mln AZN): birgə
-simulyasiya 2 809 / 4 728 mln AZN (95/99%); yalnız Brent-in tarixi 12 aylıq dəyişmələri ilə −14 / 2 050 (cari Brent
-bazadan yüksək olduğundan 95%-də çatışmazlıq yoxdur).
+| Horizont | Portfel | HS | Yaşa çəkili HS | MK t-kopula | EVT | Kornish–Fişer | Kök-zaman |
+|---|---|---|---|---|---|---|---|
+| 1 gün | sofaz | 666 / 1 163 | 824 / 1 412 | 635 / 1 186 | 665 / 1 251 | 645 / 1 653 | — |
+| 1 ay | sofaz | 2 521 / 5 075 | 2 380 / 4 662 | 2 722 / 4 772 | 2 581 / 5 188 | 3 074 / 5 724 | 3 054 / 5 330 |
+| 1 il | sofaz | 8 281 / 13 071 | 6 737 / 10 067 | 6 978 / 11 598 | 8 797 / 13 163 (etibarsız) | 7 989 / 13 151 | 10 580 / 18 464 |
+| 1 gün | net_fx | 663 / 1 153 | 811 / 1 414 | 629 / 1 178 | 660 / 1 243 | 641 / 1 651 | — |
+| 1 ay | net_fx | 2 466 / 5 039 | 2 344 / 4 603 | 2 688 / 4 729 | 2 531 / 5 126 | 3 038 / 5 683 | 3 036 / 5 284 |
+| 1 il | net_fx | 8 087 / 12 907 | 6 531 / 9 799 | 6 851 / 11 426 | 8 656 / 13 023 (etibarsız) | 7 839 / 12 963 | 10 517 / 18 306 |
 
-**Geriyə doğru sınaq (ARDNF).** Gündəlik, n = 360 (18.12.2024–29.09.2026): HS 99% — 6 pozuntu (gözlənilən 3,6),
-Kupiec p = 0,25, Christoffersen p = 0,06, Acerbi–Székely p = 0,10, svetofor yaşıl (son 250 gündə 4); HS 95% —
-Kupiec keçdi (p = 0,11), **müstəqillik keçmədi** (p = 0,004: pozuntular qruplaşır — sabit pəncərəli HS-in gözlənilən
-zəifliyi, dəyişkənlik dinamikası qəsdən modelləşdirilmir); yaşa çəkili HS 99% ES testi keçmədi (p = 0,019); KF 95%
-Kupiec keçmədi (30 pozuntu). Aylıq, n = 127 (2016–2026): bütün HS/yaşa çəkili HS testləri keçdi; KF 99% ES testi
-keçmədi (p = 0,031); EVT aylıq pəncərədə (120 ay) yoxlanıla bilməz. 1 illik horizont yoxlanıla bilməz.
+Büdcənin neft gəlirlərinə risk (mln AZN, 95% / 99%, vahid lövbər — FR1 bazası): awhs 3 996 / 6 310; cf 4 036 / 6 648; evt 4 916 / 6 690; hs 5 046 / 6 288; sim_joint 5 568 / 6 840.
+<!-- /AUTO:vc_var -->
 
-**Fiskal kapital (K2, şərti öhdəliklər xaric).** 2027: orta 80 459 mln USD, CaR95 15 034, CaR99 21 503, ES99 24 349;
-2030: orta 92 936, CaR95 31 655, CaR99 43 807. Şərti öhdəliklər daxil 2030 CaR99 44 102. NW/ÜDM < 75% ehtimalı 2030-da 0,4.
+**Geriyə doğru sınaq (V5).**
+<!-- AUTO:vc_backtest -->
+ARDNF, Kupiec testi: 1g hs 95%: n = 360, pozuntu 25 (gözlənilən 18,0), p = 0,109 → keçdi; 1g hs 99%: n = 360, pozuntu 6 (gözlənilən 3,6), p = 0,246 → keçdi; 1g awhs 95%: n = 360, pozuntu 22 (gözlənilən 18,0), p = 0,349 → keçdi; 1g awhs 99%: n = 360, pozuntu 6 (gözlənilən 3,6), p = 0,246 → keçdi; 1g cf 95%: n = 360, pozuntu 28 (gözlənilən 18,0), p = 0,025 → keçmədi; 1g cf 99%: n = 360, pozuntu 4 (gözlənilən 3,6), p = 0,835 → keçdi; 1g evt 95%: n = 360, pozuntu 24 (gözlənilən 18,0), p = 0,166 → keçdi; 1g evt 99%: n = 360, pozuntu 7 (gözlənilən 3,6), p = 0,111 → keçdi; 1a hs 95%: n = 127, pozuntu 6 (gözlənilən 6,3), p = 0,886 → keçdi; 1a hs 99%: n = 127, pozuntu 3 (gözlənilən 1,3), p = 0,190 → keçdi; 1a awhs 95%: n = 127, pozuntu 6 (gözlənilən 6,3), p = 0,886 → keçdi; 1a awhs 99%: n = 127, pozuntu 1 (gözlənilən 1,3), p = 0,803 → keçdi; 1a cf 95%: n = 127, pozuntu 5 (gözlənilən 6,3), p = 0,569 → keçdi; 1a cf 99%: n = 127, pozuntu 2 (gözlənilən 1,3), p = 0,548 → keçdi. 1 illik horizont yoxlanıla bilməz (n < 25).
+<!-- /AUTO:vc_backtest -->
 
-**DSA (K3).** Əsas variant: borc/ÜDM 2027 median 18,3%, p95 22,6%; 2030 median 21,5%, p95 48,8%;
-P(> 30%) = 0,28, P(> 45%) = 0,07 (2030); GFN p95 17,8% ÜDM. Prosiklik reaksiya xaric: 2030 median 11,8%, p95 20,8%,
-P(> 30%) ≈ 0. Fərq tamamilə RU fiskal kanalından irəli gəlir (§13.5).
+**Fiskal kapital (K2).**
+<!-- AUTO:vc_car -->
+Fiskal kapital (K2, şərti öhdəliklər xaric): 2027: orta 80 164, CaR95 17 112, CaR99 23 479 mln USD; 2030: orta 96 004, CaR95 44 123, CaR99 55 413 mln USD
+<!-- /AUTO:vc_car -->
 
-**ARDNF adekvatlığı (K4).** İstinad yolunda transfert örtüyü 11,6 il (2027) → 16,5 il (2030). S1 (Brent 45): 2030
-aktivləri 76,5 mlrd USD (istinaddan −22,3 mlrd), örtük 12,7 il; S3: 77,5 mlrd. Stoxastik: 2027 örtüyün p05-i 9,6 il,
-P(örtük < 3 il) ≈ 0. Qeyd: RU stress dəstində S1/S3 büdcə balansını yaxşılaşdırır (+0,45…+2,0% ÜDM), ona görə ψ = 1
-əlavə çıxarış yaratmır — bu, `measures.py`/`simulate.py` fiskal kanalının yoxlanılmalı xüsusiyyətidir.
+**DSA (K3).**
+<!-- AUTO:vc_dsa -->
+Əsas variant: borc/ÜDM 2027 median 16,0%, p95 20,3%; 2030 median 12,7%, p95 19,5% (FR1 baza 12,3%). Maksimum ehtimallar (bütün illər, əsas): P(> 20%) = 0,077, P(> 25%) = 0,002, P(> 30%, DR10) = 0,000; GFN p95 maks. 3,2% ÜDM; borc xidməti/gəlir p95 maks. 9,0%.
+<!-- /AUTO:vc_dsa -->
 
-**CCA (K5, təxmini).** Qəzaya qədər məsafə: V1 41,6; V2 29,9; V3 (S3 + borcun p95-i) 7,9 — risk-neytral ehtimal ≈ 0.
-Likvid valyuta aktivləri valyuta borcunu ≈ 18 dəfə üstələyir; suveren balansın zəif yeri likvidlik deyil, fiskal axın
-(neft gəlirlərindən asılılıq, 48%) və ARDNF-in bazar riskidir.
+**ARDNF adekvatlığı (K4).**
+<!-- AUTO:vc_sofaz -->
+İstinad yolunda transfert örtüyü 11,1 il (2027) → 15,1 il (2030); stoxastik 2027: örtüyün p05-i 9,4 il, P(örtük < 3 il) = 0,000. S1: 2030 aktivləri 76,2 mlrd USD (istinaddan -14,6 mlrd). S3: 2030 aktivləri 76,8 mlrd USD (istinaddan -14,0 mlrd). Stress dəstində S1/S3-ün büdcə balansı sapması: S1 -0,28…-0,04% ÜDM; S3 -0,32…-0,08% ÜDM.
+<!-- /AUTO:vc_sofaz -->
+
+**CCA (K5, əlavə).**
+<!-- AUTO:vc_cca -->
+CCA (əlavə, məlumatsız): qəzaya qədər məsafə V1 40,7; V2 28,4; V3 24,7; V4 (yenidən qurulmuş) 32,0; aktivlərin qəzaya qədər düşməsi 87–95%.
+<!-- /AUTO:vc_cca -->

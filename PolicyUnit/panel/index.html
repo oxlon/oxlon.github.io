@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Siyasət paneli</title>
+<script>window.onerror=function(m,s,l){var e=document.documentElement;e.setAttribute("data-err",(e.getAttribute("data-err")||"")+" | "+m+" @"+String(s).split("/").pop()+":"+l);};window.addEventListener("unhandledrejection",function(ev){var e=document.documentElement;e.setAttribute("data-err",(e.getAttribute("data-err")||"")+" | rejection: "+(ev.reason&&ev.reason.message||ev.reason));});</script>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/panel.css">
+<link rel="stylesheet" href="assets/panel-v2.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/policy.css">
+</head>
+<body>
+<div class="boot" id="boot"><div>Siyasət paneli yüklənir…</div></div>
+
+<header class="bar">
+  <a class="brand" href="#/"><span class="mark" aria-hidden="true"></span><span><b>Siyasət paneli</b><small>MİİS §15.5.4 · siyasət təsiri</small></span></a>
+  <nav class="tabs" id="tabs" aria-label="Bölmələr"></nav>
+  <div class="bar-r">
+    <button class="kbtn" id="open-pal" aria-label="Axtarış"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Ssenari, alət, KPI axtar…</span><kbd>Ctrl K</kbd></button>
+    <button class="ibtn" id="tour-btn" title="Qısa tur: panelə 1 dəqiqədə baxış">?</button>
+    <a class="ibtn" id="classic" href="../index.html" title="Bölmənin mərkəz səhifəsi: sənədlər, API, əlaqəli modullar">Mərkəz</a>
+  </div>
+</header>
+<div class="scenbar" id="scenbar"></div>
+<main class="view" id="view" tabindex="-1"></main>
+<div class="scrim" id="scrim" hidden></div>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Ətraflı"><button class="ibtn modal-x" id="modal-x" aria-label="Bağla">✕</button><div class="modal-body" id="modal-body"></div></div>
+<div class="scrim" id="pal-scrim" hidden style="z-index:50"></div>
+<div class="pal" id="pal" hidden role="dialog" aria-label="Axtarış"><input id="pal-in" placeholder="Ssenari, alət, KPI, göstərici, sektor və ya bölmə yazın…" autocomplete="off"><div class="pal-list" id="pal-list"></div><div class="pal-foot">↑ ↓ seçmək · Enter açmaq · Esc bağlamaq</div></div>
+<div id="tour" hidden></div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="data/core.js"></script>
+<script src="assets/plotly.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/labels.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/tables.js"></script>
+<script src="js/xlsx.js"></script>
+<script src="js/docx.js"></script>
+<script src="py/bundle.js"></script>
+<script src="js/pyweb.js"></script>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/p_extra.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/p_home.js"></script>
+<script src="js/p_build.js"></script>
+<script src="js/p_build2.js"></script>
+<script src="js/p_build3.js"></script>
+<script src="js/p_build4.js"></script>
+<script src="js/p_eff.js"></script>
+<script src="js/p_eff2.js"></script>
+<script src="js/p_sec.js"></script>
+<script src="js/p_sec2.js"></script>
+<script src="js/p_soc.js"></script>
+<script src="js/p_risk.js"></script>
+<script src="js/p_kpi.js"></script>
+<script src="js/p_cmp.js"></script>
+<script src="js/p_val.js"></script>
+<script src="js/p_rep.js"></script>
+<script src="js/p_rep2.js"></script>
+<script src="js/p_met.js"></script>
+<script>window.U.boot();</script>
+</body>
+</html>

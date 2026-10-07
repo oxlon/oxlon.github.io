@@ -1,3 +1,0 @@
-window,series,RMSE_pct,U_vs_random_walk,U_vs_constant_growth,final_year_err_pct
-A: pre-pandemic 2014-2019,total volume,10.42,0.866,0.135,-9.8
-B: pandemic 2020-2025,total volume,12.04,0.522,0.354,-3.77

@@ -158,7 +158,7 @@ def _factors_stage():
 
 
 def _backtest_stage(run_backtest):
-    do_bt = backtest.due() if run_backtest is None else run_backtest
+    do_bt = backtest.due(spine.baseline_id()) if run_backtest is None else run_backtest
     if do_bt:
         bt = backtest.run_all()
         return bt["table"], bt["calibration"], True
@@ -189,11 +189,11 @@ def _simulation_stage(bid):
                                           "proqnozla (Brent — makro fərziyyə); cari ilin (2026) müşahidə olunmuş ayları "
                                           "ilin əvvəlindən faktiki məlumatla sabitlənir, ona görə 2026 medianı rəsmi bazadan "
                                           "fərqlənə bilər; sonrakı illərdə median = rəsmi baza. Skorlar və istilik xəritəsi "
-                                          "bununla hesablanır"),
+                                          "bununla hesablanır; «merkez» sütunu paylanmanın mərkəzi, «baza_izah» — rəsmi proqnozun (YTD məlumatından əvvəl) izahı"),
                  ("FR2_distribution_live.csv", "Birgə Monte Karlo paylanması — CANLI ŞƏRTLƏNDİRİLMİŞ baxış: cari ilin "
                                                "müşahidə olunmuş ayları faktiki məlumatla, qalan aylar son müşahidə olunmuş "
                                                "templə; Brent mərkəzi cari bazar qiymətinə şərtləndirilir (median = baza + canlı "
-                                               "fərqin deterministik təsiri; D6 ilə uyğun)"),
+                                               "fərqin deterministik təsiri; D6 ilə uyğun); «merkez» və «baza_izah» sütunları baza baxışı ilə eynidir"),
                  ("FR2_band_layering.csv", "Yelpik qatları: hədəf σ (kalibrlənmiş makro/FR1 yelpiyi), amillərin σ-sı, qalıq σ, "
                                            "mərkəzləmə və canlı sürüşmə — hər baxış, göstərici və il üzrə")):
         spine.register_output(f, "simulate", d, list(pd.read_csv(config.OUTPUT / f, nrows=0).columns), "hər tam dövr")
@@ -439,12 +439,21 @@ def main(argv=None) -> dict:
     c = build_context(run_backtest=True if a.backtest else None, fetch=a.fetch, backfill=a.backfill)
     R = c["runner"]
     from riskunit import docs, report
-    out = R("J1", "FR4/NFR3 panellər, PDF, Excel, JSON API", lambda: report.build_all(c, pdf=not a.no_pdf), False) or {}
+    def pdf_status(o):
+        if a.no_pdf:
+            return "xəbərdarlıq: PDF buraxıldı (--no-pdf) — reports/*.pdf əvvəlki dövrə aiddir"
+        miss = [k for k, v in (o or {}).items() if k.startswith("pdf_") and not v]
+        return f"xəbərdarlıq: PDF yaradılmadı ({', '.join(miss)}; Chrome?)" if miss else "ok"
+    out = R("J1", "FR4/NFR3 panellər, PDF, Excel, JSON API", lambda: report.build_all(c, pdf=not a.no_pdf), False,
+            check=pdf_status) or {}
     R("J2", "metodologiya sənədinin AUTO blokları", lambda: docs.update_methodology(c), False)
+    mode = "full" + (" + fetch" if a.fetch else "")
+    c["elapsed"], c["stages"] = time.time() - t0, R.rows
+    write_summary(c, mode)                       # BEFORE the panel build: the panel/hub stamp shows THIS run
     R("J3", "Risk paneli: məlumat paketlərinin yenidən qurulması (panel/build_panel.py)", lambda: build_panel(), False)
     c["elapsed"] = time.time() - t0
     c["stages"] = R.rows
-    write_summary(c, "full" + (" + fetch" if a.fetch else ""))
+    write_summary(c, mode)
     S = c["S"]
     print(f"\nHazırdır ({c['elapsed']:.1f} san). Baza {c['baseline_id']}, qiymətləndirmə ili {c['res'].score_year}.")
     print(f"Yüksək prioritet: {', '.join(S[S['prioritet'] == 'yüksək']['risk_id'])}; xəbərdarlıq: {len(c['alerts'])}.")

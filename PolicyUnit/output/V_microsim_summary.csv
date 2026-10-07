@@ -1,0 +1,5 @@
+event,variant,n,sign_ok,beats_naive,beats_naive_comb,median_rel_dev_pct
+E1+E2 2019 paketi,2019 orta illik qaydalar,9,0.7777777777777778,0.2222222222222222,0.6666666666666666,95.2
+E1+E2 2019 paketi,2019-un sonu səviyyələri (2020 ilə),9,0.7777777777777778,0.1111111111111111,0.6666666666666666,93.5
+E3 2025 MƏH 345→400,"+ qeyri-siyasi artım 5,6 % (İQİ 2025)",3,,0.6666666666666666,,13.2
+E3 2025 MƏH 345→400,yalnız minimum əmək haqqı,3,,0.6666666666666666,,12.4

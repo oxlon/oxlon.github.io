@@ -1,6 +1,0 @@
-specification,n_predictions,RMSE_pct,median_abs_pct
-income only,24,10.14,6.65
-income + relative price,24,13.64,7.92
-income + trend,24,20.18,16.97
-income deflated by service price,24,25.2,19.99
-trend only,24,148.93,114.36

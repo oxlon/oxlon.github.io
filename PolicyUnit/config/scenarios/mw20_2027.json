@@ -1,0 +1,21 @@
+{
+ "id": "mw20_2027",
+ "name_az": "Minimum əmək haqqı +20 % (2027-dən)",
+ "description_az": "Minimum aylıq əmək haqqı 2027-ci ildən bazaya nisbətən 20 % yüksək (daimi).",
+ "start_year": 2027,
+ "instruments": [
+  {
+   "instrument": "min_wage",
+   "years": "all",
+   "size": 20,
+   "unit": "pct",
+   "target": null,
+   "financing": null
+  }
+ ],
+ "tags": [
+  "əmək",
+  "sosial",
+  "UAT"
+ ]
+}

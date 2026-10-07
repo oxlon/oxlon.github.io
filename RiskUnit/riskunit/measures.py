@@ -217,11 +217,11 @@ def stress_scenarios() -> pd.DataFrame:
     y26 = [L["brent_ytd_avg"] * 0.75 + 0.25 * x for x in (45.0, 60.0)]
     p = factors.params()
     S = {
-        "S1": ("Davamlı aşağı neft qiyməti", "Brent 2027–2030: 45 USD/barel",
+        "S1": ("Davamlı aşağı neft qiyməti", "Brent 2026-nın qalan ayları (IV rüb) və 2027–2030: 45 USD/barel",
                {"brent_path": [y26[0]] + [45.0] * (T - 1)}),
         "S2": ("Tərəfdaş ölkələrdə resessiya", "tərəfdaş artımı baza yolundan 2027: −3 f.b., 2028: −1,5 f.b.",
                {"partner_dev": [0, -3.0, -1.5] + [0] * (T - 3)}),
-        "S3": ("Məzənnəyə təzyiq və ehtiyatların azalması", "S1 + 2027-də 25% devalvasiya (vahid məzənnə modulu)",
+        "S3": ("Məzənnəyə təzyiq və ehtiyatların azalması", "S1 (Brent 2026 IV rüb – 2030: 45 USD) + 2027-də 25% devalvasiya (vahid məzənnə modulu: İQİ, qeyri-neft, büdcə, borc)",
                {"brent_path": [y26[0]] + [45.0] * (T - 1), "deval_year": 2027}),
         "S4": ("Regional münaqişənin eskalasiyası", "pul baratları 2027: −30%; tərəfdaş −2 f.b.; kredit faizi +1 f.b. (2014–2015 analoqu)",
                {"remit_dev": [0, -30.0] + [0] * (T - 2), "partner_dev": [0, -2.0] + [0] * (T - 2),
@@ -231,7 +231,7 @@ def stress_scenarios() -> pd.DataFrame:
         "S6": ("Enerji keçidi — tələbin struktur azalması", "Brent mərkəzi yoldan hər il −5% (2027-dən)",
                {"brent_path": [centre[0]] + [centre[k] * 0.95 ** k for k in range(1, T)]}),
         "S7": ("Şiddətli quraqlıq", "2027: SPI = −2,0", {"spi": [0, -2.0] + [0] * (T - 2)}),
-        "S8": ("Cari neft şokunun geri dönməsi", "Brent 2027: 60 USD, 2028–2030: makro baza yolu",
+        "S8": ("Cari neft şokunun geri dönməsi", "Brent 2026 IV rüb və 2027: 60 USD, 2028–2030: makro baza yolu",
                {"brent_path": [y26[1], 60.0] + list(B["brent_usd"].iloc[2:])}),
     }
     rows = []

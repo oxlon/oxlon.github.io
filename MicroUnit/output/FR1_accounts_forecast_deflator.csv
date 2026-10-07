@@ -1,148 +1,148 @@
 ,,2026,2027,2028,2029,2030
-Baseline,"Agriculture, forestry & fishing",1.696,1.7604,1.8234,1.8901,1.9564
+Baseline,"Agriculture, forestry & fishing",1.7311,1.8181,1.8936,1.968,2.0388
 Baseline,Mining & quarrying,2.673,2.6327,2.6232,2.6629,2.7388
-Baseline,Manufacturing,1.5794,1.6468,1.7136,1.7845,1.8556
-Baseline,"Electricity, gas & steam",1.7097,1.825,1.9365,2.0593,2.1806
-Baseline,Water supply & waste,2.1088,2.1963,2.2834,2.3755,2.4683
-Baseline,Construction,1.4604,1.4964,1.5312,1.5676,1.6032
-Baseline,Trade & vehicle repair,2.1718,2.3164,2.4658,2.6267,2.7942
-Baseline,Tourism & catering,1.823,1.9214,2.0205,2.1266,2.2346
-Baseline,Transport & storage,1.4233,1.4506,1.4731,1.498,1.5193
-Baseline,Information & communication,0.9338,0.9081,0.8827,0.8582,0.834
-Baseline,Social & other services,2.3549,2.5696,2.7972,3.0476,3.3148
-Baseline,Net taxes on products,1.9845,2.1183,2.2564,2.4053,2.5601
-Baseline,GDP at market prices,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Non-oil GDP,1.8908,2.0086,2.127,2.2498,2.3778
+Baseline,Manufacturing,1.6104,1.698,1.7762,1.8542,1.9298
+Baseline,"Electricity, gas & steam",1.8113,1.9986,2.1538,2.3071,2.4492
+Baseline,Water supply & waste,2.1442,2.2545,2.3544,2.4545,2.5522
+Baseline,Construction,1.4808,1.5295,1.5709,1.6111,1.6487
+Baseline,Trade & vehicle repair,2.2135,2.3868,2.5538,2.7269,2.9032
+Baseline,Tourism & catering,1.8624,1.9871,2.1017,2.218,2.3329
+Baseline,Transport & storage,1.4738,1.5325,1.5709,1.6044,1.6297
+Baseline,Information & communication,0.938,0.9146,0.8901,0.8658,0.8416
+Baseline,Social & other services,2.4099,2.6646,2.9186,3.1892,3.4723
+Baseline,Net taxes on products,2.0263,2.189,2.3448,2.5061,2.6699
+Baseline,GDP at market prices,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Non-oil GDP,1.9343,2.0811,2.2166,2.351,2.487
 Baseline,Oil and gas GDP,2.5234,2.4893,2.4884,2.5144,2.5867
-Baseline,Industry (total),2.4655,2.4674,2.4922,2.5523,2.6367
-Baseline,Non-oil industry,1.8236,1.9078,1.9908,2.0793,2.1677
-Baseline,Goods production,2.2115,2.2322,2.2677,2.3267,2.4008
-Baseline,Services production,1.9895,2.1209,2.2572,2.4054,2.5603
-Baseline,Consumer market (total),2.0238,2.121,2.2178,2.3209,2.4249
-Baseline,Retail trade turnover,2.0971,2.2054,2.3149,2.4316,2.5506
-Baseline,Catering turnover,1.9881,2.0929,2.1988,2.3118,2.427
-Baseline,Paid services to households,1.7598,1.8244,1.8886,1.956,2.0238
-Baseline,Fixed investment (total),1.6618,1.7416,1.8211,1.9058,1.9912
-Baseline,State investment,1.6618,1.7416,1.8211,1.9058,1.9912
-Baseline,Non-state investment,1.6618,1.7416,1.8211,1.9058,1.9912
-Baseline,Non-oil investment,1.6618,1.7416,1.8211,1.9058,1.9912
-Baseline,Oil and gas investment,1.6618,1.7416,1.8211,1.9058,1.9912
+Baseline,Industry (total),2.4804,2.4932,2.5246,2.589,2.6761
+Baseline,Non-oil industry,1.8696,1.9847,2.0854,2.1855,2.2814
+Baseline,Goods production,2.2315,2.2661,2.3096,2.3736,2.4507
+Baseline,Services production,2.0356,2.1988,2.3544,2.516,2.6806
+Baseline,Consumer market (total),2.069,2.1958,2.3095,2.4237,2.5347
+Baseline,Retail trade turnover,2.1365,2.271,2.3957,2.5223,2.648
+Baseline,Catering turnover,2.0275,2.1586,2.2798,2.4028,2.5248
+Baseline,Paid services to households,1.785,1.8656,1.9386,2.0115,2.0825
+Baseline,Fixed investment (total),1.6989,1.803,1.8964,1.9901,2.0813
+Baseline,State investment,1.6989,1.803,1.8964,1.9901,2.0813
+Baseline,Non-state investment,1.6989,1.803,1.8964,1.9901,2.0813
+Baseline,Non-oil investment,1.6989,1.803,1.8964,1.9901,2.0813
+Baseline,Oil and gas investment,1.6989,1.803,1.8964,1.9901,2.0813
 Baseline,Employment,1.0,1.0,1.0,1.0,1.0
 Baseline,Labour force,1.0,1.0,1.0,1.0,1.0
-Baseline,Average monthly wage,1.9871,2.0825,2.1775,2.2788,2.3809
-Baseline,Total wage bill,1.9871,2.0825,2.1775,2.2788,2.3809
+Baseline,Average monthly wage,2.0314,2.1559,2.2676,2.3797,2.4887
+Baseline,Total wage bill,2.0314,2.1559,2.2676,2.3797,2.4887
 Baseline,Unemployment rate,,,,,
-Baseline,Credit to the economy,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Household credit,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Deposits,2.1284,2.2183,2.3179,2.4342,2.5611
+Baseline,Credit to the economy,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Household credit,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Deposits,2.1643,2.2788,2.3931,2.5194,2.653
 Baseline,Average lending rate,,,,,
-Baseline,Non-oil goods exports,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Non-oil goods imports,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Oil and gas exports,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Budget revenue (total),2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Oil and gas revenue,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Non-oil revenue,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Budget expenditure (total),2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Current expenditure,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Capital expenditure,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Public debt,2.1284,2.2183,2.3179,2.4342,2.5611
-Baseline,Consumer price index,198.7112,208.2518,217.7542,227.8815,238.0916
-Baseline,GDP deflator,2.1284,2.2183,2.3179,2.4342,2.5611
-Adverse,"Agriculture, forestry & fishing",1.6959,1.7528,1.8095,1.869,1.9291
+Baseline,Non-oil goods exports,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Non-oil goods imports,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Oil and gas exports,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Budget revenue (total),2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Oil and gas revenue,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Non-oil revenue,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Budget expenditure (total),2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Current expenditure,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Capital expenditure,2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,"Public debt (external + domestic, MinFin)",2.1643,2.2788,2.3931,2.5194,2.653
+Baseline,Consumer price index,203.1446,215.5903,226.7624,237.9672,248.8723
+Baseline,GDP deflator,2.1643,2.2788,2.3931,2.5194,2.653
+Adverse,"Agriculture, forestry & fishing",1.7311,1.8036,1.8652,1.9243,1.9807
 Adverse,Mining & quarrying,2.3229,2.0307,1.8858,1.9144,1.9632
-Adverse,Manufacturing,1.5793,1.6401,1.7012,1.7655,1.831
-Adverse,"Electricity, gas & steam",1.7097,1.8031,1.8952,1.995,2.0961
-Adverse,Water supply & waste,2.1088,2.1886,2.2693,2.3539,2.4404
-Adverse,Construction,1.4603,1.4921,1.5232,1.5556,1.588
-Adverse,Trade & vehicle repair,2.1718,2.3072,2.4484,2.5994,2.7581
-Adverse,Tourism & catering,1.823,1.9128,2.0045,2.1017,2.2021
-Adverse,Transport & storage,1.4233,1.4401,1.4541,1.4695,1.4835
-Adverse,Information & communication,0.9338,0.9072,0.8812,0.856,0.8314
-Adverse,Social & other services,2.3549,2.5572,2.7732,3.0092,3.2628
-Adverse,Net taxes on products,1.9844,2.1091,2.2388,2.3779,2.5238
-Adverse,GDP at market prices,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Non-oil GDP,1.899,2.0124,2.1248,2.2403,2.3612
+Adverse,Manufacturing,1.6104,1.6851,1.7509,1.8151,1.8776
+Adverse,"Electricity, gas & steam",1.8113,1.9539,2.0642,2.1658,2.258
+Adverse,Water supply & waste,2.1442,2.2398,2.3258,2.4102,2.4932
+Adverse,Construction,1.4808,1.5212,1.5549,1.5867,1.6167
+Adverse,Trade & vehicle repair,2.2135,2.3691,2.5182,2.6707,2.8265
+Adverse,Tourism & catering,1.8624,1.9705,2.0689,2.1667,2.2637
+Adverse,Transport & storage,1.4738,1.5116,1.531,1.5443,1.5516
+Adverse,Information & communication,0.938,0.913,0.8871,0.8616,0.8363
+Adverse,Social & other services,2.4099,2.6406,2.8695,3.1096,3.3613
+Adverse,Net taxes on products,2.0263,2.1712,2.309,2.4495,2.5926
+Adverse,GDP at market prices,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Non-oil GDP,1.9426,2.0759,2.1957,2.3116,2.4285
 Adverse,Oil and gas GDP,2.1929,1.9241,1.7963,1.8249,1.8764
-Adverse,Industry (total),2.2201,2.0457,1.9764,2.0249,2.0876
-Adverse,Non-oil industry,1.8235,1.898,1.9727,2.0518,2.1324
-Adverse,Goods production,2.0486,1.9534,1.9276,1.977,2.0355
-Adverse,Services production,1.9895,2.1109,2.2383,2.3761,2.522
-Adverse,Consumer market (total),2.0238,2.1112,2.1996,2.2929,2.3885
-Adverse,Retail trade turnover,2.097,2.1969,2.2989,2.4068,2.5183
-Adverse,Catering turnover,1.9881,2.0844,2.1827,2.287,2.3946
-Adverse,Paid services to households,1.7598,1.819,1.8786,1.9408,2.0042
-Adverse,Fixed investment (total),1.6618,1.7336,1.8061,1.8828,1.9613
-Adverse,State investment,1.6618,1.7336,1.8061,1.8828,1.9613
-Adverse,Non-state investment,1.6618,1.7336,1.8061,1.8828,1.9613
-Adverse,Non-oil investment,1.6618,1.7336,1.8061,1.8828,1.9613
-Adverse,Oil and gas investment,1.6618,1.7336,1.8061,1.8828,1.9613
+Adverse,Industry (total),2.2351,2.068,2.0015,2.05,2.1108
+Adverse,Non-oil industry,1.8696,1.9655,2.0477,2.127,2.203
+Adverse,Goods production,2.0687,1.9829,1.9603,2.0095,2.0655
+Adverse,Services production,2.0356,2.1791,2.3152,2.4543,2.5968
+Adverse,Consumer market (total),2.069,2.177,2.2726,2.3661,2.4574
+Adverse,Retail trade turnover,2.1365,2.2545,2.3631,2.4714,2.5794
+Adverse,Catering turnover,2.0275,2.142,2.2471,2.3517,2.4559
+Adverse,Paid services to households,1.785,1.8553,1.9185,1.9805,2.0413
+Adverse,Fixed investment (total),1.6989,1.7876,1.866,1.9428,2.0178
+Adverse,State investment,1.6989,1.7876,1.866,1.9428,2.0178
+Adverse,Non-state investment,1.6989,1.7876,1.866,1.9428,2.0178
+Adverse,Non-oil investment,1.6989,1.7876,1.866,1.9428,2.0178
+Adverse,Oil and gas investment,1.6989,1.7876,1.866,1.9428,2.0178
 Adverse,Employment,1.0,1.0,1.0,1.0,1.0
 Adverse,Labour force,1.0,1.0,1.0,1.0,1.0
-Adverse,Average monthly wage,1.9871,2.0729,2.1597,2.2513,2.3452
-Adverse,Total wage bill,1.9871,2.0729,2.1597,2.2513,2.3452
+Adverse,Average monthly wage,2.0314,2.1375,2.2313,2.3231,2.4128
+Adverse,Total wage bill,2.0314,2.1375,2.2313,2.3231,2.4128
 Adverse,Unemployment rate,,,,,
-Adverse,Credit to the economy,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Household credit,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Deposits,2.0607,2.0976,2.1678,2.2746,2.3904
+Adverse,Credit to the economy,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Household credit,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Deposits,2.0967,2.1503,2.2264,2.3335,2.4457
 Adverse,Average lending rate,,,,,
-Adverse,Non-oil goods exports,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Non-oil goods imports,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Oil and gas exports,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Budget revenue (total),2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Oil and gas revenue,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Non-oil revenue,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Budget expenditure (total),2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Current expenditure,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Capital expenditure,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Public debt,2.0607,2.0976,2.1678,2.2746,2.3904
-Adverse,Consumer price index,198.7075,207.2928,215.9654,225.1322,234.5193
-Adverse,GDP deflator,2.0607,2.0976,2.1678,2.2746,2.3904
-Reform,"Agriculture, forestry & fishing",1.696,1.7666,1.8357,1.9089,1.982
+Adverse,Non-oil goods exports,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Non-oil goods imports,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Oil and gas exports,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Budget revenue (total),2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Oil and gas revenue,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Non-oil revenue,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Budget expenditure (total),2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Current expenditure,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Capital expenditure,2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,"Public debt (external + domestic, MinFin)",2.0967,2.1503,2.2264,2.3335,2.4457
+Adverse,Consumer price index,203.1444,213.7513,223.1317,232.3125,241.2759
+Adverse,GDP deflator,2.0967,2.1503,2.2264,2.3335,2.4457
+Reform,"Agriculture, forestry & fishing",1.7311,1.8312,1.9202,2.0092,2.0955
 Reform,Mining & quarrying,2.7613,2.9754,3.1718,3.3289,3.463
-Reform,Manufacturing,1.5794,1.6523,1.7246,1.8013,1.8787
-Reform,"Electricity, gas & steam",1.7098,1.8434,1.9736,2.1174,2.2619
-Reform,Water supply & waste,2.1089,2.2026,2.2959,2.3946,2.4944
-Reform,Construction,1.4604,1.5,1.5382,1.5781,1.6174
-Reform,Trade & vehicle repair,2.1719,2.3241,2.4813,2.6509,2.8281
-Reform,Tourism & catering,1.823,1.9285,2.0348,2.1486,2.2651
-Reform,Transport & storage,1.4234,1.4594,1.4901,1.5234,1.5533
-Reform,Information & communication,0.9338,0.9088,0.884,0.86,0.8364
-Reform,Social & other services,2.3549,2.5799,2.8185,3.0817,3.3636
-Reform,Net taxes on products,1.9845,2.126,2.2719,2.4296,2.5942
-Reform,GDP at market prices,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Non-oil GDP,1.8888,2.0086,2.1307,2.2592,2.3953
+Reform,Manufacturing,1.6104,1.7097,1.7999,1.8911,1.9808
+Reform,"Electricity, gas & steam",1.8113,2.0394,2.24,2.4456,2.6459
+Reform,Water supply & waste,2.1442,2.2676,2.3812,2.496,2.6096
+Reform,Construction,1.4808,1.537,1.5858,1.6338,1.6796
+Reform,Trade & vehicle repair,2.2135,2.4028,2.587,2.7798,2.9781
+Reform,Tourism & catering,1.8624,2.0021,2.1325,2.2664,2.4006
+Reform,Transport & storage,1.4738,1.5513,1.6086,1.6619,1.7076
+Reform,Information & communication,0.938,0.9161,0.8928,0.8698,0.8468
+Reform,Social & other services,2.4099,2.6862,2.9648,3.2644,3.5812
+Reform,Net taxes on products,2.0263,2.2051,2.3783,2.5595,2.7455
+Reform,GDP at market prices,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Non-oil GDP,1.9323,2.0898,2.239,2.3904,2.547
 Reform,Oil and gas GDP,2.6068,2.807,2.996,3.1249,3.2474
-Reform,Industry (total),2.5274,2.7058,2.8705,3.0116,3.1382
-Reform,Non-oil industry,1.8236,1.9158,2.0065,2.1032,2.2002
-Reform,Goods production,2.2526,2.3895,2.5161,2.6287,2.7318
-Reform,Services production,1.9896,2.1292,2.2736,2.4307,2.5952
-Reform,Consumer market (total),2.0239,2.1291,2.2339,2.3457,2.459
-Reform,Retail trade turnover,2.0971,2.2126,2.3291,2.4535,2.5809
-Reform,Catering turnover,1.9881,2.1001,2.213,2.3337,2.4574
-Reform,Paid services to households,1.7598,1.8289,1.8974,1.9695,2.0421
-Reform,Fixed investment (total),1.6618,1.7483,1.8343,1.9261,2.0192
-Reform,State investment,1.6618,1.7483,1.8343,1.9261,2.0192
-Reform,Non-state investment,1.6618,1.7483,1.8343,1.9261,2.0192
-Reform,Non-oil investment,1.6618,1.7483,1.8343,1.9261,2.0192
-Reform,Oil and gas investment,1.6618,1.7483,1.8343,1.9261,2.0192
+Reform,Industry (total),2.5423,2.7348,2.9101,3.0601,3.1947
+Reform,Non-oil industry,1.8696,2.0017,2.1204,2.24,2.3568
+Reform,Goods production,2.2726,2.4275,2.567,2.69,2.8021
+Reform,Services production,2.0356,2.2163,2.3908,2.5737,2.7617
+Reform,Consumer market (total),2.069,2.2125,2.344,2.4776,2.6099
+Reform,Retail trade turnover,2.1365,2.2858,2.4262,2.5702,2.7148
+Reform,Catering turnover,2.0275,2.1735,2.3104,2.4509,2.592
+Reform,Paid services to households,1.785,1.8749,1.9575,2.0406,2.1225
+Reform,Fixed investment (total),1.6989,1.8167,1.9247,2.0344,2.1431
+Reform,State investment,1.6989,1.8167,1.9247,2.0344,2.1431
+Reform,Non-state investment,1.6989,1.8167,1.9247,2.0344,2.1431
+Reform,Non-oil investment,1.6989,1.8167,1.9247,2.0344,2.1431
+Reform,Oil and gas investment,1.6989,1.8167,1.9247,2.0344,2.1431
 Reform,Employment,1.0,1.0,1.0,1.0,1.0
 Reform,Labour force,1.0,1.0,1.0,1.0,1.0
-Reform,Average monthly wage,1.9871,2.0905,2.1933,2.3031,2.4144
-Reform,Total wage bill,1.9871,2.0905,2.1933,2.3031,2.4144
+Reform,Average monthly wage,2.0314,2.1723,2.3014,2.4327,2.5626
+Reform,Total wage bill,2.0314,2.1723,2.3014,2.4327,2.5626
 Reform,Unemployment rate,,,,,
-Reform,Credit to the economy,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Household credit,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Deposits,2.1455,2.2877,2.4287,2.5718,2.7158
+Reform,Credit to the economy,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Household credit,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Deposits,2.1814,2.3557,2.5201,2.6829,2.8448
 Reform,Average lending rate,,,,,
-Reform,Non-oil goods exports,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Non-oil goods imports,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Oil and gas exports,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Budget revenue (total),2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Oil and gas revenue,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Non-oil revenue,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Budget expenditure (total),2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Current expenditure,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Capital expenditure,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Public debt,2.1455,2.2877,2.4287,2.5718,2.7158
-Reform,Consumer price index,198.7136,209.0468,219.3341,230.3133,241.4391
-Reform,GDP deflator,2.1455,2.2877,2.4287,2.5718,2.7158
+Reform,Non-oil goods exports,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Non-oil goods imports,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Oil and gas exports,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Budget revenue (total),2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Oil and gas revenue,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Non-oil revenue,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Budget expenditure (total),2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Current expenditure,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Capital expenditure,2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,"Public debt (external + domestic, MinFin)",2.1814,2.3557,2.5201,2.6829,2.8448
+Reform,Consumer price index,203.1447,217.2297,230.1438,243.2664,256.2577
+Reform,GDP deflator,2.1814,2.3557,2.5201,2.6829,2.8448

@@ -6,6 +6,7 @@
     python3 panel/build_panel.py --shots    # + headless-Chrome screenshots of every page (desktop 1440, phone 390), 0 JS errors
 
 Writes panel/data/*.js (window.RISK.<bundle> = {<output file stem>: compact table, ...}), RiskUnit/index.html (hub),
+panel/py/riskunit_bundle.zip + py/bundle.js (in-browser Python backend, _build/pybundle.py; --no-pybundle skips),
 panel/i18n/untranslated.txt and panel/coverage_report.csv. Checks (exit 1 on failure): required outputs exist;
 every bundle parses; routes and links resolve; completeness (every risk has a drill-down, every output is shown or
 listed as intentionally hidden); no untranslated English. Output is deterministic (sorted keys, fixed rounding,
@@ -21,7 +22,7 @@ from pathlib import Path
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from _build import bcore as C, b_core, b_mon, b_tables, b_docs, b_hub, b_check, b_i18n, b_labels   # noqa: E402
+from _build import bcore as C, b_core, b_mon, b_tables, b_docs, b_hub, b_check, b_i18n, b_labels, pybundle   # noqa: E402
 
 
 def build(data_dir):
@@ -48,6 +49,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--verify", action="store_true", help="ikinci yığımla determinizm yoxlaması")
     ap.add_argument("--shots", action="store_true", help="hər səhifənin ekran görüntüləri (headless Chrome)")
+    ap.add_argument("--no-pybundle", action="store_true", help="brauzer üçün Python paketini (panel/py/) yeniləmə")
     a = ap.parse_args()
     data = C.PANEL / "data"
     sizes, stamp = build(data)
@@ -66,6 +68,8 @@ def main():
     stats = {"risks": len(reg), "feeds": len(d2), "impact": len(d6), "measures": len(sc),
              "outputs": len({p.name for p in C.OUT.glob("*.csv")} | set(cat["file"]))}
     hub = b_hub.build(stats, stamp)
+    if not a.no_pybundle:                                  # in-browser backend: panel/py/riskunit_bundle.zip + bundle.js
+        print(pybundle.report(pybundle.build(C.PANEL, "risk_web")))
     labels = b_labels.build()
     checks = []
     checks.append(("PAKETLƏR", b_check.check_parse(data)))

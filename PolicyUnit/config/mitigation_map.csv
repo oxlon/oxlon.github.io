@@ -1,0 +1,31 @@
+rule_id,risk_ids,measures,proposal_type,proposal_az,responsible_az,kpi_az
+SE01,R11,T18;T29,maliyyələşmə,"Xərci orta müddətli xərclər çərçivəsində (MTEF) qeyri-neft kəsiri lövbərinə bağlamaq; geri əlaqə xərclərini (faiz, gəlir itkisi) büdcə proqnozuna daxil etmək",Maliyyə Nazirliyi,qeyri-neft ilkin kəsir (% qeyri-neft ÜDM)
+SE01,R11,T28,maliyyələşmə,"Kəsiri borc əvəzinə qismən xərclərin yenidən bölüşdürülməsi və ya vergi ilə maliyyələşdirmək (FR4 alternativ maliyyələşmə ssenarisinə baxın)",Maliyyə Nazirliyi; İqtisadiyyat Nazirliyi,xalis kəsir / ex ante xərc
+SE02,R11,T18,ardıcıllıq,"Daimi artımı mərhələli tətbiq etmək (məs. 3 il ərzində bərabər addımlar) və hər il yenidən qiymətləndirmə maddəsi (sunset/review) daxil etmək",Maliyyə Nazirliyi; Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi,son il / ilk il xərc nisbəti
+SE03,R11,T18;T29,maliyyələşmə,"Xərcin ÜDM-ə nisbətini büdcə zərfi ilə məhdudlaşdırmaq; ehtiyat fondu (kontingent) yaratmaq",Maliyyə Nazirliyi,birbaşa xərc (% ÜDM)
+SE04,R12,T19;T06,ardıcıllıq,"Tətbiqi illər üzrə bölmək (birdəfəlik sıçrayış əvəzinə mərhələli) və AMB ilə əvvəlcədən kommunikasiya; inflyasiya gözləntilərinin idarə olunması",Mərkəzi Bank (AMB); İqtisadiyyat Nazirliyi,İQİ inflyasiyası (f.b.)
+SE05,R12;R03,T19;T24,kompensasiya,"Qiymət səviyyəsinin artımından ən çox zərər çəkən qruplar üçün hədəfli kompensasiya (ÜSY, pensiya indeksasiyası)",Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi,real pensiya / ÜSY dəyəri
+SE06,R03;R17,T25,hədəfləmə,"Layihələrdə yerli tərkib (local content) tələbləri və yerli təchizatçılar üçün tender imkanları; idxal tutumu yüksək komponentlərin mərhələlənməsi",İqtisadiyyat Nazirliyi; Dövlət Satınalmaları Agentliyi,Δ idxal / Δ qeyri-neft ÜDM
+SE07,R03,T05;T27,monitorinq,"Valyuta bazarına təzyiqin AMB ilə aylıq monitorinqi; ARDNF valyuta strukturunun uyğunlaşdırılması",Mərkəzi Bank (AMB); ARDNF,cari hesab (% ÜDM)
+SE08,R19;R13,T30,ardıcıllıq,"Minimum əmək haqqını mərhələli artırmaq (Kaitz indeksi ≤ 0,5); bölgə/sektor üzrə 'bite' monitorinqi; artımdan əvvəl və sonra DiD qiymətləndirmə (Tier B)",Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi; İqtisadiyyat Nazirliyi,formal muzdlu işçilər (min nəfər); Kaitz indeksi
+SE08,R19,,kompensasiya,"KOS üçün müvəqqəti sosial sığorta ayırmaları güzəşti (aşağı maaşlı işçilər üzrə) — formal məşğulluğun qorunması",Maliyyə Nazirliyi; DSMF,KOS-da formal iş yerləri
+SE08,R19,,tənzimləmə,"Əmək müfəttişliyi və elektron əmək müqaviləsi sistemi ilə qeyri-formal məşğulluğa nəzarətin gücləndirilməsi",Dövlət Əmək Müfəttişliyi Xidməti,qeyri-formal məşğulluq payı
+SE09,R19;R11,T30,ardıcıllıq,"Vergi yükünün artımını mərhələli tətbiq etmək və aşağı gəlirli muzdlu işçilər üçün azadolma həddini saxlamaq",Maliyyə Nazirliyi; Dövlət Vergi Xidməti,formal muzdlu işçilər
+SE10,R13,T20,monitorinq,"FR4 muzdlu işçilər göstəricisinin rüblük izlənməsi; mənfi sapmada dəstək tədbirlərinin işə salınması",İqtisadiyyat Nazirliyi,muzdlu işçilər (min nəfər)
+SE11,R16;R15,T23;T22,hədəfləmə,"Subsidiyanı nəticəyə bağlamaq (məhsuldarlıq/ixrac göstəriciləri), şəffaf rəqabətli seçim, açıq reyestr və müddətli (sunset) dizayn",İqtisadiyyat Nazirliyi; Rəqabətin Mühafizəsi Agentliyi; Kənd Təsərrüfatı Nazirliyi,1 AZN subsidiyaya düşən əlavə dəyər
+SE11,R16,T23,monitorinq,"Subsidiya alanların konsentrasiyasının (ilk 10 alıcının payı) illik auditi",Hesablama Palatası,ilk 10 alıcının payı
+SE12,R16,T23,tənzimləmə,"Konsentrasiyası artan bazarlarda rəqabət diaqnostikası və bazara girişin asanlaşdırılması",Rəqabətin Mühafizəsi Agentliyi,HHI
+SE13,R16;R15,T23;T22,tənzimləmə,"Xərc azalmasının qiymətə ötürülməsinin monitorinqi (marja izlənməsi)",Rəqabətin Mühafizəsi Agentliyi; İqtisadiyyat Nazirliyi,sahə marjası (f.b.)
+SE14,,,hədəfləmə,"Layihə/subsidiya portfelində regional kvota və ya regional əmsallar; regionlar üzrə nəticə monitorinqi",İqtisadiyyat Nazirliyi; Regional İnkişaf Agentliyi,regional buraxılış fərqi
+SE15,R02;R13,T04,maliyyələşmə,"Borclanmanı daxili bazarda mərhələli aparmaq (özəl kreditin sıxışdırılmaması üçün); xarici/ARDNF maliyyələşməsi ilə müqayisə",Maliyyə Nazirliyi; Mərkəzi Bank (AMB),özəl kredit artımı
+SE16,R15;R13,T22,kompensasiya,"İtirən sektor üçün keçid dəstəyi (yenidən təlim, məhsuldarlıq proqramı)",İqtisadiyyat Nazirliyi; KOBİA,sektor əlavə dəyəri
+SE17,R11;R03,T18;T02,maliyyələşmə,"Borc artımını orta müddətli borc strategiyası limiti ilə məhdudlaşdırmaq; borc xidmətinin stress testi",Maliyyə Nazirliyi; İctimai Borcun İdarə Edilməsi,dövlət borcu (% ÜDM)
+SE18,R11;R01,T02;T28,maliyyələşmə,"ARDNF transfertlərini struktur neft qiymətinə əsaslanan fiskal qaydaya bağlamaq; transfert limitini aşmamaq",Maliyyə Nazirliyi; ARDNF,ARDNF aktivləri (mln USD)
+SE19,R12,T06,kompensasiya,"Aşağı gəlirli ev təsərrüfatları üçün hədəfli kompensasiya (ÜSY ehtiyac meyarının artırılması)",Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi,real sərəncamda qalan gəlir
+SE20,R12,T06,kompensasiya,"Pensiya və ÜSY-nin qiymət artımı ilə eyni ildə indeksləşdirilməsi (bir illik gecikmənin aradan qaldırılması)",Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi; DSMF,pensiyanın real dəyəri
+SE21,,,kompensasiya,"Aşağı desillər üçün hədəfli transfert; mikrosimulyasiya ilə qalib/məğlub təhlili əsasında dizayn",Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi,Gini
+SE22,,,kompensasiya,"ÜSY əhatəsinin genişləndirilməsi; yoxsulluq dərinliyinə görə hədəflənmə",Əmək və Əhalinin Sosial Müdafiəsi Nazirliyi,yoxsulluq səviyyəsi
+SE23,R12,T19;T06;T24,ardıcıllıq,"İnflyasiya riskinin yüksək olduğu ildə tətbiqi təxirə salmaq və ya mərhələləmək; AMB reaksiya ssenarisi",Mərkəzi Bank (AMB),P(inflyasiya > 6 %)
+SE24,R11,T18;T28;T29,maliyyələşmə,"Büdcə həddi riskini azaltmaq üçün maliyyələşmə mənbəyini dəyişmək və ya ehtiyat fondu",Maliyyə Nazirliyi,P(balans < −1 % ÜDM)
+SE25,R13,T09;T20,monitorinq,"Growth-at-Risk göstəricisi ilə tətbiqin monitorinqi; kontrtsiklik investisiya ehtiyatı",İqtisadiyyat Nazirliyi; Maliyyə Nazirliyi,P(qeyri-neft artımı < 2 %)
+SE26,R03;R04,T05;T27,monitorinq,"Valyuta borcu olan müəssisələr və banklar üçün stress testi; dövlət xarici borcunun valyuta strukturunun hedcinqi",Mərkəzi Bank (AMB); Maliyyə Nazirliyi,valyuta borcu (% ÜDM)

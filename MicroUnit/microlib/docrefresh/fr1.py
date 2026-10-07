@@ -96,6 +96,10 @@ def data():
         raise RefreshError("missing output file output/FR1_doc_figures.json")
     with open(p, encoding="utf-8") as f:
         F.docfig = json.load(f)
+    dv = F.docfig.get("v23", {}).get("deval")
+    if dv:                                          # year keys of the devaluation paths back to int
+        for part in ("engine", "engine_no_f4"):
+            dv[part] = {k: {int(y): v for y, v in d.items()} for k, d in dv[part].items()}
     C23 = csv("FR1_v23_candidates.csv")
     F.c23 = lambda variant, var: C23[(C23.variant == variant) & (C23.variable == var)].iloc[0]
     F.cur23 = lambda var: F.c23("v2.3 model (adopted changes)", var)
@@ -128,5 +132,7 @@ def main():
             for tag, (body, inline) in blocks.items():
                 d.put(tag, body, inline=inline)
         return fill
-    run("FR1", [(Doc(DOCS / "FR1_Methodology.md"), filler(note_en(F), en_blocks(F), v23_en)),
-                (Doc(DOCS / "az" / "FR1_Metodologiya.md"), filler(note_az(F), az_blocks(F), v23_az))])
+    from ._fr1_v236_sweep import sweep_en, sweep_az
+    from ._fr1_v237 import blocks as v237
+    run("FR1", [(Doc(DOCS / "FR1_Methodology.md"), filler(note_en(F), en_blocks(F), lambda F: {**v23_en(F), **sweep_en(F), **v237(F, 'en')})),
+                (Doc(DOCS / "az" / "FR1_Metodologiya.md"), filler(note_az(F), az_blocks(F), lambda F: {**v23_az(F), **sweep_az(F), **v237(F, 'az')}))])

@@ -1,0 +1,556 @@
+scenario,scenario_name,year,indicator,label_az,baseline,value,delta
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2058.670463877098,19.899951467522214
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6181.3512214204775,59.73262572785006
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,249.22929679488107,2.389305029113956
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,926.4408393917824,9.557220116455937
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5369.195503916234,18.38602484877174
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,318.04022423499333,-4.936253111048245
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5719484635816,0.0
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9259.842519600046,91.55032868403396
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-23.3510516167282,-23.3510516167282
+ex_mw20,Minimum əmək haqqı +20 % (2026),2026,ms_fiscal:budget_wagebill@spill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9297.981988804208,129.68979788819524
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2038.7705124095758,0.0
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6121.618595692627,0.0
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,246.8399917657671,0.0
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,916.8836192753265,0.0
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5359.670743603815,8.861264536352792
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,419.86942054985406,96.89294320381248
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5719484635816,0.0
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9168.292190916012,0.0
+ex_tsa30,ÜSY ödənişləri +30 % (2026),2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,88.03167866745969,88.03167866745969
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2038.7705124095758,0.0
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6121.618595692627,0.0
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,246.8399917657671,0.0
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,916.8836192753265,0.0
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5521.81930606198,171.00982699451743
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,1870.9478973717564,1547.971420025715
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5719484635816,0.0
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9168.292190916012,0.0
+ex_need30,ÜSY ehtiyac meyarı +30 % (2026),2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,1376.9615930311975,1376.9615930311975
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2038.7705124095758,0.0
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6121.618595692627,0.0
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,246.8399917657671,0.0
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,916.8836192753265,0.0
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5448.559622855996,97.75014378853393
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,313.03073254333646,-9.945744802705121
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,8404.077,764.0070000000005
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5719484635816,0.0
+ex_pens10,Pensiyalar +10 % (2026),2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9168.292190916012,0.0
+ex_pens10,Pensiyalar +10 % (2026),2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,656.3111114087615,656.3111114087615
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2252.6179560339096,213.8474436243339
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6121.618595692627,0.0
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,246.8399917657671,0.0
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,916.8836192753265,0.0
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5331.81639054159,-18.993088525871826
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,334.8981314047689,11.921654058727313
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5719484635816,0.0
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9168.292190916012,0.0
+ex_pit_priv2,"Qeyri-neft özəl sektor gəlir vergisi ≤2500: +2 f.b. (3→5 %, 2026)",2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-182.93270103973475,-182.93270103973475
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,1586.5990828421038,-452.17142956747193
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6121.618595692627,0.0
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,246.8399917657671,0.0
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,916.8836192753265,0.0
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5392.652131577319,41.842652509856634
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,320.02025091256206,-2.9562264334795145
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5719484635816,0.0
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9168.292190916012,0.0
+ex_pit_m2,Gəlir vergisi bütün pillələr −2 f.b. (2026),2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,407.3725506241358,407.3725506241358
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2038.7705124095758,0.0
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6121.618595692627,0.0
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,246.8399917657671,0.0
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,916.8836192753265,0.0
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,4838.2798354786255,-512.5296435888367
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,322.9764773460416,0.0
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5719484635816,0.0
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9168.292190916012,0.0
+ex_vat_m2,ƏDV −2 f.b. (2026),2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,512.5296435888367,512.5296435888367
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2045.1963187047,6.4258062951241754
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6162.130846906677,40.512251214049684
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,248.46787665077377,1.6278848850066652
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,922.81346707436,5.929847799033496
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5363.849255613429,13.03977654596656
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,321.0711580778872,-1.9053192681543578
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.070000000001,1.8189894035458565e-12
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5719484635816,0.0
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9168.292190916014,1.8189894035458565e-12
+ex_constr_jobs10,Tikintidə formal iş yerləri +10 % (2026),2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-69.4408860073313,-69.4408860073313
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2497.022256014536,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6649.098187963328,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,268.219340787334,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,992.3616340440399,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5836.3562023845025,38.29134158897705
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,301.9169102081743,-7.782018401270136
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1068.0081423564488,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9854.606642208722,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-46.073359990247184,-46.073359990247184
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,2984.8985355905083,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7165.621427710426,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,289.15910520740294,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1065.643415702574,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6268.676448137184,41.54330716830191
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,300.51314287758447,-7.958252136291321
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.31579412405,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0989944863177,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10515.603231325667,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-49.50155930459323,-49.50155930459323
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3277.3422442524275,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7744.902321471181,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,312.6473395940917,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1147.2178889789816,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6770.008000069036,45.19976193477942
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,287.13276990989544,-7.9426911982819774
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.2405162147911,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11218.195770744183,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-53.142453133061395,-53.142453133061395
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3577.1930513895036,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8324.030230731938,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,336.13633184610245,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1227.7498127748538,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7270.524333933332,48.879606203062394
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,278.5054064886033,-7.337182482594756
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628558,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4737824806377,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11920.379835189817,0.0
+agri_sub300,Kənd təsərrüfatı subsidiyası +300 mln AZN/il (2027–2030),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-56.21678868565715,-56.21678868565715
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2513.1439959327986,16.121739918262392
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6684.901115019705,35.802927056376575
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,269.671990359426,1.4526495720920138
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,997.3802849765038,5.01865093246397
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5807.736774166385,9.671913370859329
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,310.45345574261125,0.7545271331668459
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1067.9083568842912,-0.0997854721576914
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9898.788177531273,44.18153532255019
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-23.231603866494936,-23.231603866494936
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,3001.592168890842,16.69363330033366
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7199.82864333353,34.207215623103366
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,290.54738691891345,1.3882817115105013
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1070.3975018025844,4.754086100010454
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6236.260114885401,9.126973916519091
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,309.22498340119154,0.7535883873157445
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.315794124048,-1.8189894035458565e-12
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0028783205653,-0.09611616575239168
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10557.135004854877,41.53177352921011
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-23.980944900705424,-23.980944900705424
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3293.6557538369893,16.31350958456187
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7777.664321054019,32.76199958283814
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,313.97737259527224,1.3300330011805386
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1151.7213452909527,4.503456311971149
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6733.522156508083,8.713918373826345
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,295.7902225787105,0.7147614705330625
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.147676630717,-0.09283958407422688
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11257.245864768818,39.050094024634745
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-23.950900943284466,-23.950900943284466
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3593.0752499324476,15.882198542944025
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8355.12879595047,31.098565218531803
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,337.3985236947204,1.262191848617931
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1231.980613486206,4.230800711352231
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7230.1438803513865,8.499152621116991
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,286.567384304816,0.7247953336179762
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628558,0.0
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4126797441809,-0.06110273645685993
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11957.188599993791,36.808764803974555
+export_sub_man,Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-23.50045154142731,-23.50045154142731
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2497.022256014536,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6649.098187963328,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,268.219340787334,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,992.3616340440399,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5798.064860795525,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,309.6989286094444,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1068.0081423564488,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9854.606642208722,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,0.0,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,2984.8985355905083,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7165.621427710426,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,289.15910520740294,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1065.643415702574,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6227.133140968882,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,308.4713950138758,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.31579412405,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0989944863177,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10515.603231325667,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,0.0,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3277.3422442524275,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7744.902321471181,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,312.6473395940917,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1147.2178889789816,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6724.8082381342565,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,295.0754611081774,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.2405162147911,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11218.195770744183,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,0.0,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3577.1930513895036,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8324.030230731938,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,336.13633184610245,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1227.7498127748538,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7221.64472773027,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,285.84258897119804,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628558,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4737824806377,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11920.379835189817,0.0
+fuel_dereg20,Tənzimlənən yanacaq qiymətləri +20 % (2027),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,0.0,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2497.022256014536,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6649.098187963328,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,268.219340787334,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,992.3616340440399,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5798.064860795525,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,309.6989286094444,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1068.0081423564488,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9854.606642208722,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,0.0,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,2984.8985355905083,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7165.621427710426,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,289.15910520740294,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1065.643415702574,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6227.133140968882,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,308.4713950138758,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.31579412405,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0989944863177,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10515.603231325667,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,0.0,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3277.3422442524275,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7744.902321471181,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,312.6473395940917,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1147.2178889789816,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6724.8082381342565,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,295.0754611081774,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.2405162147911,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11218.195770744183,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,0.0,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3577.1930513895036,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8324.030230731938,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,336.13633184610245,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1227.7498127748538,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7221.64472773027,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,285.84258897119804,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628558,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4737824806377,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11920.379835189817,0.0
+fx_deval10,"Manat −10 % (2027, siyasət devalvasiyası)",2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,0.0,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2518.0446423725266,21.0223863579904
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6705.138708071119,56.04052010779105
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,270.4609615916455,2.2416208043115375
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,1001.3281172612858,8.966483217245923
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5815.115864610961,17.05100381543525
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,305.34562068736,-4.3533079220844115
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1068.0081423564488,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9939.275359404099,84.6687171953763
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-25.006605029482273,-25.006605029482273
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2027,ms_fiscal:budget_wagebill@spill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9977.820351674167,123.21370946544448
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,3007.7370965980203,22.838561007512
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7220.438904531844,54.817476821417586
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,291.3518042802597,2.192699072856783
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1074.4142119940009,8.770796291426905
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6243.607555980729,16.47441501184676
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,304.3415976740352,-4.129797339840593
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.31579412405,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0989944863177,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10597.303087994536,81.69985666886896
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-27.523888876031663,-27.523888876031663
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2028,ms_fiscal:budget_wagebill@spill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10637.379380947066,121.77614962139887
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3298.844310284674,21.502066032246603
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7796.45777021749,51.555448746309594
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,314.7095575439441,2.062217949852368
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1155.4667607783913,8.248871799409699
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6740.396339040433,15.588100906176805
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,292.0785823105136,-2.9968787976638396
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.2405162147911,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11294.041056957938,75.84528621375466
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-26.108298017904247,-26.108298017904247
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2029,ms_fiscal:budget_wagebill@spill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11337.163053951439,118.9672832072556
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3598.39326253959,21.20021115008649
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8374.820120277365,50.789889545427286
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,338.16792742791955,2.0315955818171005
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1235.8761951021222,8.126382327268402
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7237.089021875927,15.444294145657295
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,283.6539693282057,-2.1886196429923643
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628558,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4737824806377,0.0
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11994.147255276346,73.76742008652946
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-26.01357230671948,-26.01357230671948
+mw20_2027,Minimum əmək haqqı +20 % (2027-dən),2030,ms_fiscal:budget_wagebill@spill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,12038.920849718374,118.54101452855684
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2497.022256014536,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6649.098187963328,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,268.219340787334,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,992.3616340440399,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5903.276351474295,105.21149067876922
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,299.81453783722026,-9.884390772224151
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8918.955290799453,810.8141173454051
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1068.0081423564488,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9854.606642208722,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,695.7182358944117,695.7182358944117
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,2984.8985355905083,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7165.621427710426,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,289.15910520740294,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1065.643415702574,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6339.3846144240915,112.25147345520963
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,298.1771730156023,-10.294221998273485
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,9381.147373536454,852.8315794124046
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0989944863177,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10515.603231325667,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,730.2858839589214,730.2858839589214
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3277.3422442524275,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7744.902321471181,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,312.6473395940917,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1147.2178889789816,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6844.436162969685,119.62792483542853
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,285.44305506021783,-9.632406047959591
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,9844.688871522616,894.9717155929648
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.2405162147911,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11218.195770744183,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,765.7113847095766,765.7113847095766
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3577.1930513895036,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8324.030230731938,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,336.13633184610245,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1227.7498127748538,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7348.705211308019,127.06048357774944
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,276.69715637339726,-9.145432597800777
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,10295.831130891414,935.9846482628564
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4737824806377,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11920.379835189817,0.0
+pension10_2027,Pensiyalar +10 % (2027-dən),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,799.7787320873061,799.7787320873061
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2042.3120936492926,3.541581239716834
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6130.198054828471,8.579459135843535
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,247.18789059507677,0.3478988293096563
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,918.1127685198221,1.229149244495602
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5353.26466473545,2.4551856679881894
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,323.0905633128815,0.114085966839923
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.5562274082209,-0.01572105536070012
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9179.058918002595,10.76672708658225
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-5.288182119292344,-5.288182119292344
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2501.1192407465855,4.09698473204935
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6658.281063328008,9.182875364679603
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,268.5917315833929,0.3723907960589372
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,993.6596155939573,1.297981549917381
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5800.6669578346455,2.6020970391200535
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,309.84218950074705,0.14326089130264563
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1067.9911527635436,-0.016989592905247264
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9865.94375270708,11.337110498358015
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-6.088947685069911,-6.088947685069911
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,2989.668077331247,4.769541740738532
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7175.445899392297,9.824471681870818
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,289.557578206397,0.3984729989940661
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1067.0205768978676,1.3771611952936382
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6229.882860337849,2.7497193689669075
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,308.63811418552444,0.16671917164865135
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.31579412405,0.0
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.080679377078,-0.018315109239665617
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10527.544938970768,11.941707645100905
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-7.029255278354071,-7.029255278354071
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3282.541028610238,5.198784357810382
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7755.480264050768,10.577942579587216
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,313.07645758315516,0.42911798906345666
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1148.6848409870915,1.4669520081099563
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6727.764082177826,2.9558440435694138
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,295.25492019478077,0.17945908660334453
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.2206859892801,-0.019830225510986565
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11230.813558559974,12.617787815790507
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-7.8512243012575595,-7.8512243012575595
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3582.918649857976,5.725598468472526
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8335.383837540441,11.353606808503173
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,336.5970735456697,0.46074169956722244
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1229.2990856524084,1.5492728775545856
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7224.812008860649,3.167281130379706
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,286.083326733148,0.24073776194995844
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628558,0.0
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4523993284638,-0.02138315217393938
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11933.697738306362,13.317903116545494
+polrate_m100,Uçot dərəcəsi −100 b.b. (2026–2030),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-8.7192432581557,-8.7192432581557
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2496.8780675883368,-0.14418842619943462
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6649.583475547684,0.48528758435622876
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,268.23930483387284,0.019964046538859748
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,992.397219575878,0.035585531838137285
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5797.986613031013,-0.07824776451252546
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,310.72934645644534,1.0304178470009333
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1067.9827077287162,-0.025434627732693116
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9848.811259489115,-5.795382719607005
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-5.108800472360031,-5.108800472360031
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,2984.842918836619,-0.055616753889353276
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7166.132323127362,0.5108954169354547
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,289.1801904115446,0.0210852041416274
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1065.6771521308938,0.033736428319798506
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6227.038145830762,-0.09499513811988436
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,309.53178330142845,1.0603882875526551
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.315794124048,-1.8189894035458565e-12
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0717732319386,-0.027221254379128368
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10509.371293357102,-6.231937968565035
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-5.61387609278097,-5.61387609278097
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3277.2707469443067,-0.07149730812079724
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7745.454557698996,0.5522362278152286
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,312.6702078972298,0.022868303138068313
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1147.2503223938027,0.03243341482107098
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6724.69798749344,-0.11025064081604796
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,296.13962798213845,1.0641668739610282
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.210796571553,-0.029719643238195204
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11211.372802200578,-6.822968543605384
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-6.214311309720074,-6.214311309720074
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3577.103757420125,-0.08929396937855927
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8324.616283102965,0.5860523710271082
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,336.1606921602543,0.02436031415186335
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1227.7796359585027,0.029823183648886697
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7221.522449643844,-0.12227808642546734
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,286.9291837027656,1.0865947315675726
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628556,-1.8189894035458565e-12
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4418960923326,-0.03188638830511081
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11913.018574898097,-7.3612602917201
+profit_tax_minus2,Mənfəət vergisi −2 f.b. (2027-dən),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-6.735215761483289,-6.735215761483289
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2049.887550590936,11.117038181360158
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6149.176640654666,27.558044962038366
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,247.95779288185776,1.1178011160906465
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,920.8088658337673,3.92524655844079
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5358.415137584064,7.605658516601579
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,323.55474484318563,0.5782674971440542
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.4985826896352,-0.07336577394642063
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9202.346447236177,34.05425632016522
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-16.764631291168683,-16.764631291168683
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2511.390660691373,14.36840467683669
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6681.009105708419,31.910917745090956
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,269.51394606582824,1.2946052784942594
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,996.844557329435,4.482923285395145
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5806.749450825582,8.684590030056825
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,310.4098021168472,0.7108735074027663
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454046,-1.8189894035458565e-12
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1067.9229410871935,-0.08520126925532168
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9893.4800605367,38.87341832797756
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-21.24235044975069,-21.24235044975069
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,3002.175929337907,17.27739374739849
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7201.056121625871,35.43469391544477
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,290.5970612569453,1.4379560495423789
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1070.577357165783,4.933941463209067
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6236.659336958271,9.526195989388725
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,309.2840651246542,0.8126701107784129
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.315794124048,-1.8189894035458565e-12
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0036231688825,-0.09537131743513783
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10558.12501850328,42.52178717761308
+pubinv1bn_deficit,"Dövlət investisiyası +1 mlrd AZN (2026–2028, borc hesabına)",2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-25.371095194028896,-25.371095194028896
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:pit,Gəlir vergisi (illik),2038.7705124095758,2049.887550590936,11.117038181360158
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6121.618595692627,6149.176640654666,27.558044962038366
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),246.8399917657671,247.95779288185776,1.1178011160906465
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),916.8836192753265,920.8088658337673,3.92524655844079
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5350.809479067462,5358.415137584064,7.605658516601579
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:utsy,ÜSY ödənişləri (illik),322.9764773460416,323.55474484318563,0.5782674971440542
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",7640.069999999999,7640.069999999999,0.0
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),969.5719484635816,969.4985826896352,-0.07336577394642063
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9168.292190916012,9202.346447236177,34.05425632016522
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2026,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-16.764631291168683,-16.764631291168683
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2511.390660691373,14.36840467683669
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6681.009105708419,31.910917745090956
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,269.51394606582824,1.2946052784942594
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,996.844557329435,4.482923285395145
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5806.749450825582,8.684590030056825
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,310.4098021168472,0.7108735074027663
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454046,-1.8189894035458565e-12
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1067.9229410871935,-0.08520126925532168
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9893.4800605367,38.87341832797756
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-21.24235044975069,-21.24235044975069
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,3002.175929337907,17.27739374739849
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7201.056121625871,35.43469391544477
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,290.5970612569453,1.4379560495423789
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1070.577357165783,4.933941463209067
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6236.659336958271,9.526195989388725
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,309.2840651246542,0.8126701107784129
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.315794124048,-1.8189894035458565e-12
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0036231688825,-0.09537131743513783
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10558.12501850328,42.52178717761308
+pubinv1bn_sofaz,"Dövlət investisiyası +1 mlrd AZN (2026–2028, ARDNF hesabına)",2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,-25.371095194028896,-25.371095194028896
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2497.022256014536,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6649.098187963328,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,268.219340787334,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,992.3616340440399,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5806.516993162805,8.452132367279773
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,402.60860719227776,92.90967858283335
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1068.0081423564488,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9854.606642208722,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,84.45754621555358,84.45754621555358
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,2984.8985355905083,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7165.621427710426,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,289.15910520740294,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1065.643415702574,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,6235.57169511794,8.438554149058291
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,401.01281351803846,92.54141850416266
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.31579412405,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0989944863177,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10515.603231325667,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,84.10286435510437,84.10286435510437
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3277.3422442524275,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7744.902321471181,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,312.6473395940917,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1147.2178889789816,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6732.829652693857,8.021414559600089
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,383.5980994406307,88.52263833245325
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.2405162147911,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11218.195770744183,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,80.50122377285317,80.50122377285317
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3577.1930513895036,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8324.030230731938,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,336.13633184610245,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1227.7498127748538,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,7229.36840656061,7.723678830340759
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,371.5953656625575,85.75277669135949
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628558,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4737824806377,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11920.379835189817,0.0
+tsa_plus30,Ünvanlı sosial yardım +30 % (2027-dən),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,78.02909786101873,78.02909786101873
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:pit,Gəlir vergisi (illik),2497.022256014536,2497.022256014536,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),6649.098187963328,6649.098187963328,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),268.219340787334,268.219340787334,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),992.3616340440399,992.3616340440399,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",5798.064860795525,5242.694663401318,-555.370197394207
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:utsy,ÜSY ödənişləri (illik),309.6989286094444,309.6989286094444,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8108.141173454048,8108.141173454048,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1068.0081423564488,1068.0081423564488,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),9854.606642208722,9854.606642208722,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2027,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,555.370197394207,555.370197394207
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:pit,Gəlir vergisi (illik),2984.8985355905083,2984.8985355905083,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7165.621427710426,7165.621427710426,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),289.15910520740294,289.15910520740294,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1065.643415702574,1065.643415702574,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6227.133140968882,5630.664449305195,-596.4686916636865
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:utsy,ÜSY ödənişləri (illik),308.4713950138758,308.4713950138758,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8528.31579412405,8528.31579412405,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1163.0989944863177,1163.0989944863177,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),10515.603231325667,10515.603231325667,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2028,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,596.4686916636865,596.4686916636865
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:pit,Gəlir vergisi (illik),3277.3422442524275,3277.3422442524275,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),7744.902321471181,7744.902321471181,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),312.6473395940917,312.6473395940917,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1147.2178889789816,1147.2178889789816,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",6724.8082381342565,6080.669518006456,-644.1387201278003
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:utsy,ÜSY ödənişləri (illik),295.0754611081774,295.0754611081774,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",8949.717155929651,8949.717155929651,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1269.2405162147911,1269.2405162147911,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11218.195770744183,11218.195770744183,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2029,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,644.1387201278003,644.1387201278003
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:pit,Gəlir vergisi (illik),3577.1930513895036,3577.1930513895036,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:ssc,Sosial sığorta haqları (işçi + işəgötürən) (illik),8324.030230731938,8324.030230731938,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:ui,İşsizlikdən sığorta haqları (illik),336.13633184610245,336.13633184610245,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:med,İcbari tibbi sığorta haqları (illik),1227.7498127748538,1227.7498127748538,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:vat,"ƏDV (ev təsərrüfatı istehlakı, EBT əsaslı) (illik)",7221.64472773027,6529.916305533885,-691.7284221963846
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:utsy,ÜSY ödənişləri (illik),285.84258897119804,285.84258897119804,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:pensions,"Pensiya xərcləri — DSMF əmək pensiyaları bazası (fiscal_params; artım = büdcədən DSMF-ə transfert, BRÜT) (illik)",9359.846482628558,9359.846482628558,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:benefits_other,Digər sosial müavinətlər (illik),1375.4737824806377,1375.4737824806377,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,ms_fiscal:budget_wagebill,Büdcə təşkilatlarının əmək xərci (illik),11920.379835189817,11920.379835189817,0.0
+vat_minus2,ƏDV dərəcəsi −2 f.b. (2027-dən),2030,fiscal_cost,"Birbaşa fiskal xərc (+) / gəlir (−), statik, XALİS (müavinət və əmək xərci artımı − vergi/haqq daxilolmalarının artımı)",0.0,691.7284221963846,691.7284221963846

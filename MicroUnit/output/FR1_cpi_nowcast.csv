@@ -1,0 +1,2 @@
+year,month,yoy_latest,source,infl_2026,method,bridge_years,bridge_rmse_pp,bridge_bias_pp,n_sources
+2026,8,5.7,RiskUnit/data/vintages/2026-10-06/dsk_cpi.csv (md5 0aa9697180e47e9d99f9b7ce186472ab),5.7,1:1 - remaining months repeat last year's month-on-month changes,2021-2025,3.6052739146977464,0.25999999999999945,3

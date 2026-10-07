@@ -15,7 +15,7 @@ FR1_VAR = {
     "p_gdp": "ÜDM deflyatoru", "x_g_oil_usd": "Neft-qaz ixracı, mln USD", "rev_oil_n": "Neft-qaz büdcə gəlirləri",
     "rrev_nonoil": "Qeyri-neft büdcə gəlirləri (real)", "rev_tot_n": "Büdcə gəlirləri", "rexp_cur": "Cari xərclər (real)",
     "rexp_soc": "Sosial xərclər (real)", "exp_cap_n": "Əsaslı xərclər", "exp_tot_n": "Büdcə xərcləri",
-    "balance_n": "Büdcə balansı", "debt_azn": "Dövlət borcu", "rretail": "Pərakəndə ticarət (real)",
+    "balance_n": "Büdcə balansı", "debt_azn": "Dövlət borcu (xarici + daxili, Maliyyə Nazirliyinin anlayışı)", "rretail": "Pərakəndə ticarət (real)",
     "rcater": "İctimai iaşə (real)", "rserv_hh": "Əhaliyə pullu xidmətlər (real)", "pension": "Orta pensiya",
     "oil_exp_price": "Neftin ixrac qiyməti", "cpi": "İstehlak qiymətləri indeksi", "p_cons": "İstehlak deflyatoru",
     "p_inv": "İnvestisiya deflyatoru", "p_retail": "Pərakəndə ticarət deflyatoru", "nom_retail": "Pərakəndə ticarət (nominal)",

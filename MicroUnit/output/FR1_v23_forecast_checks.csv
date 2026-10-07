@@ -1,289 +1,562 @@
 check,variant,scenario,variable,value
-"budget balance 2030, % of GDP",v2.2 model (before v2.3),Baseline,bal_gdp,0.22013866768571408
-level 2030,v2.2 model (before v2.3),Baseline,rgdp,71902.16616506348
-level 2030,v2.2 model (before v2.3),Baseline,rgdpnon,62898.20499438847
-level 2030,v2.2 model (before v2.3),Baseline,rhhdisp,49214.591700264864
-level 2030,v2.2 model (before v2.3),Baseline,rcons,53997.595405014894
-level 2030,v2.2 model (before v2.3),Baseline,rm_non,14767.806962788021
-level 2030,v2.2 model (before v2.3),Baseline,cpi,238.73776964734066
-level 2030,v2.2 model (before v2.3),Baseline,balance_n,406.4212300100005
-"budget balance 2030, % of GDP",v2.2 model (before v2.3),Adverse,bal_gdp,1.1004785335248544
-level 2030,v2.2 model (before v2.3),Adverse,rgdp,68035.04696830493
-level 2030,v2.2 model (before v2.3),Adverse,rgdpnon,59631.838687768395
-level 2030,v2.2 model (before v2.3),Adverse,rhhdisp,46921.03271839555
-level 2030,v2.2 model (before v2.3),Adverse,rcons,50945.53378856591
-level 2030,v2.2 model (before v2.3),Adverse,rm_non,14132.32674661549
-level 2030,v2.2 model (before v2.3),Adverse,cpi,235.07950070949167
-level 2030,v2.2 model (before v2.3),Adverse,balance_n,1794.0866447196963
-"budget balance 2030, % of GDP",v2.2 model (before v2.3),Reform,bal_gdp,-0.12087870584037905
-level 2030,v2.2 model (before v2.3),Reform,rgdp,75282.99859759485
-level 2030,v2.2 model (before v2.3),Reform,rgdpnon,66085.29109624997
-level 2030,v2.2 model (before v2.3),Reform,rhhdisp,51440.43977401788
-level 2030,v2.2 model (before v2.3),Reform,rcons,56751.75805391303
-level 2030,v2.2 model (before v2.3),Reform,rm_non,15335.364845184136
-level 2030,v2.2 model (before v2.3),Reform,cpi,242.16397300094226
-level 2030,v2.2 model (before v2.3),Reform,balance_n,-247.7755944014903
-"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,rhhdisp,-0.046202411850859715
-"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,rcons,-0.05200456343804616
-"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,wage,2.149214302344027
-"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,cpi,0.6429328545360491
-"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,rgdpnon,-0.05162619176026784
-"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,emp,-0.0017380428935398484
-"budget balance 2030, % of GDP","D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,bal_gdp,0.220138667683305
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rgdp,71902.1661650645
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rgdpnon,62898.204994389554
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rhhdisp,49214.59170026555
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rcons,53997.59540501574
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rm_non,14767.806962778453
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,cpi,238.73776964734117
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,balance_n,406.4212300055598
-"budget balance 2030, % of GDP","D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,bal_gdp,1.1004785335225684
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rgdp,68035.04696830604
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rgdpnon,59631.83868776951
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rhhdisp,46921.03271839638
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rcons,50945.53378856693
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rm_non,14132.326746608629
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,cpi,235.07950070949306
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,balance_n,1794.0866447160085
-"budget balance 2030, % of GDP","D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,bal_gdp,-0.12087870584392645
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rgdp,75282.99859759657
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rgdpnon,66085.2910962518
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rhhdisp,51440.43977401916
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rcons,56751.758053914615
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rm_non,15335.364845172258
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,cpi,242.16397300094442
-level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,balance_n,-247.77559440876905
-"budget balance 2030, % of GDP","D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,bal_gdp,0.33251397206944494
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rgdp,71846.98936827632
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rgdpnon,62839.31997845785
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rhhdisp,49173.35683541848
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rcons,53946.860638157974
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rm_non,15142.552991940098
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,cpi,238.67326510594765
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,balance_n,613.2663404265688
-"budget balance 2030, % of GDP","D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,bal_gdp,1.1658662819834338
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rgdp,67998.67910841742
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rgdpnon,59595.594848581444
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rhhdisp,46895.51039525954
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rcons,50914.449966837055
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rm_non,14356.425469602495
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,cpi,235.03803714552706
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,balance_n,1899.366489203537
-"budget balance 2030, % of GDP","D4: relative price dropped (coefficient bounded at 0, binding)",Reform,bal_gdp,0.030591720612023154
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rgdp,75209.69091048112
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rgdpnon,66004.53549955881
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rhhdisp,51384.18191941907
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rcons,56682.14973199769
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rm_non,15848.677694902803
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,cpi,242.07898965271232
-level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,balance_n,62.62678698201159
-"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity imposed",Baseline,bal_gdp,0.09298079590481796
-level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rgdp,71354.48942608084
-level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rgdpnon,62311.44883039153
-level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rhhdisp,48288.21287867644
-level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rcons,52880.71016750994
-level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rm_non,14457.15579415111
-level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,cpi,238.0916296137232
-level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,balance_n,169.91965999445884
-"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity imposed",Adverse,bal_gdp,0.9915251120939313
-level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rgdp,67556.68703005605
-level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rgdpnon,59144.035801424725
-level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rhhdisp,46143.3734358901
-level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rcons,50018.3552430572
-level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rm_non,13871.336468263662
-level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,cpi,234.51933415932695
-level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,balance_n,1601.2215987656423
-"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity imposed",Reform,bal_gdp,-0.2614746011367658
-level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rgdp,74661.80307031583
-level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rgdpnon,65400.921310979335
-level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rhhdisp,50367.19026043387
-level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rcons,55450.11936556177
-level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rm_non,14976.68064961821
-level 2030,"E3: + real wage bill, homogeneity imposed",Reform,cpi,241.43908556484266
-level 2030,"E3: + real wage bill, homogeneity imposed",Reform,balance_n,-530.182021157595
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,rhhdisp,0.9374493103848858
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,rcons,1.0338041624232908
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,wage,2.61044476077692
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,cpi,0.7791887473217685
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,rgdpnon,0.41424135776741977
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,emp,0.013914504643475212
-"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,bal_gdp,-1.3110649206246017
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rgdp,65700.1697492718
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rgdpnon,56242.04436362507
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rhhdisp,38688.12600454519
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rcons,41433.81396143114
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rm_non,11274.66015746428
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,cpi,231.10924609567473
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,balance_n,-2145.6467456037894
-"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity test-and-impose rule",Adverse,bal_gdp,-0.014718964111790158
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rgdp,63363.982449085335
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rgdpnon,54869.58211360728
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rhhdisp,39326.31679976087
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rcons,41953.7821889527
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rm_non,11601.172745626242
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,cpi,229.44740128756027
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,balance_n,-21.809656839332373
-"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity test-and-impose rule",Reform,bal_gdp,-1.990334107601843
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rgdp,67600.52338255581
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rgdpnon,57594.89041265886
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rhhdisp,38084.10303419863
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rcons,40762.74937065309
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rm_non,10933.909600347772
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,cpi,232.71602507109597
-level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,balance_n,-3542.56876459795
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rhhdisp,1.1569799987762197
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rcons,1.2740820936119945
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,wage,2.6505710215420253
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,cpi,0.7909775457703994
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rgdpnon,0.45480924140537393
-"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,emp,0.015274209816351636
-"budget balance 2030, % of GDP",F3: non-oil and oil revenue separately,Baseline,bal_gdp,1.529935699398145
-level 2030,F3: non-oil and oil revenue separately,Baseline,rgdp,71902.16616525495
-level 2030,F3: non-oil and oil revenue separately,Baseline,rgdpnon,62898.2049945873
-level 2030,F3: non-oil and oil revenue separately,Baseline,rhhdisp,49214.59170065868
-level 2030,F3: non-oil and oil revenue separately,Baseline,rcons,53997.59540549961
-level 2030,F3: non-oil and oil revenue separately,Baseline,rm_non,14767.806962864262
-level 2030,F3: non-oil and oil revenue separately,Baseline,cpi,238.73776964938546
-level 2030,F3: non-oil and oil revenue separately,Baseline,balance_n,2824.5757791221654
-"budget balance 2030, % of GDP",F3: non-oil and oil revenue separately,Adverse,bal_gdp,2.639389607227734
-level 2030,F3: non-oil and oil revenue separately,Adverse,rgdp,68035.04696833066
-level 2030,F3: non-oil and oil revenue separately,Adverse,rgdpnon,59631.8386877822
-level 2030,F3: non-oil and oil revenue separately,Adverse,rhhdisp,46921.03271844056
-level 2030,F3: non-oil and oil revenue separately,Adverse,rcons,50945.53378861943
-level 2030,F3: non-oil and oil revenue separately,Adverse,rm_non,14132.326746624
-level 2030,F3: non-oil and oil revenue separately,Adverse,cpi,235.0795007100548
-level 2030,F3: non-oil and oil revenue separately,Adverse,balance_n,4302.940493880762
-"budget balance 2030, % of GDP",F3: non-oil and oil revenue separately,Reform,bal_gdp,1.1167244016890705
-level 2030,F3: non-oil and oil revenue separately,Reform,rgdp,75282.99859775626
-level 2030,F3: non-oil and oil revenue separately,Reform,rgdpnon,66085.29109642148
-level 2030,F3: non-oil and oil revenue separately,Reform,rhhdisp,51440.43977436185
-level 2030,F3: non-oil and oil revenue separately,Reform,rcons,56751.758054338716
-level 2030,F3: non-oil and oil revenue separately,Reform,rm_non,15335.364845249316
-level 2030,F3: non-oil and oil revenue separately,Reform,cpi,242.16397300270353
-level 2030,F3: non-oil and oil revenue separately,Reform,balance_n,2289.0471112367654
-"budget balance 2030, % of GDP",F3: non-oil revenue only (oil revenue saved),Baseline,bal_gdp,-0.18062042478561388
-level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rgdp,71902.16616504593
-level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rgdpnon,62898.20499437013
-level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rhhdisp,49214.591700257595
-level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rcons,53997.59540500915
-level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rm_non,14767.806962783612
-level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,cpi,238.73776964784352
-level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,balance_n,-333.46243064939233
-"budget balance 2030, % of GDP",F3: non-oil revenue only (oil revenue saved),Adverse,bal_gdp,-0.9621400197997079
-level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rgdp,68035.04696836582
-level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rgdpnon,59631.83868780326
-level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rhhdisp,46921.0327184769
-level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rcons,50945.53378866294
-level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rm_non,14132.326746635274
-level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,cpi,235.07950071020548
-level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,balance_n,-1568.5563209941001
-"budget balance 2030, % of GDP",F3: non-oil revenue only (oil revenue saved),Reform,bal_gdp,0.7607219612620421
-level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rgdp,75282.9985977435
-level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rgdpnon,66085.29109641182
-level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rhhdisp,51440.43977433747
-level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rcons,56751.75805430376
-level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rm_non,15335.364845244012
-level 2030,F3: non-oil revenue only (oil revenue saved),Reform,cpi,242.1639730023362
-level 2030,F3: non-oil revenue only (oil revenue saved),Reform,balance_n,1559.3179527957184
-"budget balance 2030, % of GDP",F3: revenue elasticity at its 95% CI lower bound,Baseline,bal_gdp,0.30106674054311705
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rgdp,71902.16616506215
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rgdpnon,62898.204994385655
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rhhdisp,49214.59170027118
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rcons,53997.5954050225
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rm_non,14767.806962789266
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,cpi,238.73776964741305
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,balance_n,555.8310872552113
-"budget balance 2030, % of GDP",F3: revenue elasticity at its 95% CI lower bound,Adverse,bal_gdp,0.34686974426249945
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rgdp,68035.04696813365
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rgdpnon,59631.83868761331
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rhhdisp,46921.03271816857
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rcons,50945.53378828893
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rm_non,14132.326746554769
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,cpi,235.07950070993533
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,balance_n,565.4943342182902
-"budget balance 2030, % of GDP",F3: revenue elasticity at its 95% CI lower bound,Reform,bal_gdp,0.6357632518481161
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rgdp,75282.99859769797
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rgdpnon,66085.29109635965
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rhhdisp,51440.43977423958
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rcons,56751.758054187514
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rm_non,15335.36484522619
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,cpi,242.16397300203474
-level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,balance_n,1303.1792202864326
-"budget balance 2030, % of GDP","F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,bal_gdp,0.22013866768571408
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rgdp,71902.16616506348
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rgdpnon,62898.20499438847
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rhhdisp,49214.591700264864
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rcons,53997.595405014894
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rm_non,14767.806962788021
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,cpi,238.73776964734066
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,balance_n,406.4212300100005
-"budget balance 2030, % of GDP","F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,bal_gdp,0.4059474895308904
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rgdp,68366.40685818534
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rgdpnon,59950.79477844808
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rhhdisp,47145.56625033941
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rcons,51220.193678365045
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rm_non,14208.0318893389
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,cpi,235.44090201254352
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,balance_n,665.8115254765366
-"budget balance 2030, % of GDP","F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,bal_gdp,0.29101033333083554
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rgdp,75088.735401862
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rgdpnon,65870.33059555008
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rhhdisp,51290.67295317695
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rcons,56565.68074793612
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rm_non,15285.412161556513
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,cpi,241.93785027052164
-level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,balance_n,594.542168528383
-"budget balance 2030, % of GDP","F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,bal_gdp,0.22013866747192143
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rgdp,71902.16616476627
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rgdpnon,62898.20499407423
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rhhdisp,49214.59169971321
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rcons,53997.59540433499
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rm_non,14767.806962672415
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,cpi,238.7377696452494
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,balance_n,406.4212296091828
-"budget balance 2030, % of GDP","F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,bal_gdp,-1.1243582788061417
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rgdp,69102.24327590156
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rgdpnon,60715.022017006064
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rhhdisp,47683.0453466546
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rcons,51877.944164714514
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rm_non,14387.880498587278
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,cpi,236.30949727355463
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,balance_n,-1869.9149460443944
-"budget balance 2030, % of GDP","F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,bal_gdp,1.2978378878069312
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rgdp,74545.11521946572
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rgdpnon,65271.45577241607
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rhhdisp,50873.154675552694
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rcons,56047.64837484028
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rm_non,15145.53875417385
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,cpi,241.30195363559187
-level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,balance_n,2627.591180485577
-"budget balance 2030, % of GDP",v2.3 model (adopted changes),Baseline,bal_gdp,0.09298079590236064
-level 2030,v2.3 model (adopted changes),Baseline,rgdp,71354.48942608183
-level 2030,v2.3 model (adopted changes),Baseline,rgdpnon,62311.44883039262
-level 2030,v2.3 model (adopted changes),Baseline,rhhdisp,48288.212878677135
-level 2030,v2.3 model (adopted changes),Baseline,rcons,52880.710167510784
-level 2030,v2.3 model (adopted changes),Baseline,rm_non,14457.155794143226
-level 2030,v2.3 model (adopted changes),Baseline,cpi,238.0916296137243
-level 2030,v2.3 model (adopted changes),Baseline,balance_n,169.91965998997142
-"budget balance 2030, % of GDP",v2.3 model (adopted changes),Adverse,bal_gdp,0.9915251120920581
-level 2030,v2.3 model (adopted changes),Adverse,rgdp,67556.68703005684
-level 2030,v2.3 model (adopted changes),Adverse,rgdpnon,59144.03580142553
-level 2030,v2.3 model (adopted changes),Adverse,rhhdisp,46143.37343589067
-level 2030,v2.3 model (adopted changes),Adverse,rcons,50018.35524305791
-level 2030,v2.3 model (adopted changes),Adverse,rm_non,13871.336468258112
-level 2030,v2.3 model (adopted changes),Adverse,cpi,234.5193341593278
-level 2030,v2.3 model (adopted changes),Adverse,balance_n,1601.2215987626419
-"budget balance 2030, % of GDP",v2.3 model (adopted changes),Reform,bal_gdp,-0.26147460113974413
-level 2030,v2.3 model (adopted changes),Reform,rgdp,74661.8030703172
-level 2030,v2.3 model (adopted changes),Reform,rgdpnon,65400.92131098086
-level 2030,v2.3 model (adopted changes),Reform,rhhdisp,50367.190260434916
-level 2030,v2.3 model (adopted changes),Reform,rcons,55450.119365563056
-level 2030,v2.3 model (adopted changes),Reform,rm_non,14976.680649608283
-level 2030,v2.3 model (adopted changes),Reform,cpi,241.43908556484405
-level 2030,v2.3 model (adopted changes),Reform,balance_n,-530.1820211636466
-"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,rhhdisp,0.9374493103855519
-"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,rcons,1.033804162424068
-"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,wage,2.610444760777453
-"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,cpi,0.7791887473219017
-"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,rgdpnon,0.4142413577679305
-"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,emp,0.013914504643475212
+"budget balance 2030, % of GDP",v2.2 model (before v2.3),Baseline,bal_gdp,0.4303845533148986
+level 2030,v2.2 model (before v2.3),Baseline,rgdp,72126.86628538536
+level 2030,v2.2 model (before v2.3),Baseline,rgdpnon,63052.571346826575
+level 2030,v2.2 model (before v2.3),Baseline,rhhdisp,49496.30802178563
+level 2030,v2.2 model (before v2.3),Baseline,rcons,54324.62654821954
+level 2030,v2.2 model (before v2.3),Baseline,rm_non,14764.484819638188
+level 2030,v2.2 model (before v2.3),Baseline,cpi,246.77416371322695
+level 2030,v2.2 model (before v2.3),Baseline,balance_n,818.6359433042402
+"budget balance 2030, % of GDP",v2.2 model (before v2.3),Adverse,bal_gdp,1.425751971262853
+level 2030,v2.2 model (before v2.3),Adverse,rgdp,68276.5568078506
+level 2030,v2.2 model (before v2.3),Adverse,rgdpnon,59797.97927625985
+level 2030,v2.2 model (before v2.3),Adverse,rhhdisp,47203.67460112697
+level 2030,v2.2 model (before v2.3),Adverse,rcons,51271.52047612613
+level 2030,v2.2 model (before v2.3),Adverse,rm_non,14153.430344643573
+level 2030,v2.2 model (before v2.3),Adverse,cpi,241.0595311907636
+level 2030,v2.2 model (before v2.3),Adverse,balance_n,2382.500256931237
+"budget balance 2030, % of GDP",v2.2 model (before v2.3),Reform,bal_gdp,-0.012513491687667112
+level 2030,v2.2 model (before v2.3),Reform,rgdp,75515.55981468305
+level 2030,v2.2 model (before v2.3),Reform,rgdpnon,66234.17492344658
+level 2030,v2.2 model (before v2.3),Reform,rhhdisp,51725.547118377
+level 2030,v2.2 model (before v2.3),Reform,rcons,57083.67061271929
+level 2030,v2.2 model (before v2.3),Reform,rm_non,15308.984254159917
+level 2030,v2.2 model (before v2.3),Reform,cpi,252.3325827202322
+level 2030,v2.2 model (before v2.3),Reform,balance_n,-26.564019640835586
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.2 model (before v2.3),Baseline,infl_2026,1.0231041653050292
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.2 model (before v2.3),Baseline,infl_2027,0.010958476486391255
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.2 model (before v2.3),Baseline,cpi_2030,0.997648391732131
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.2 model (before v2.3),Baseline,rgdpnon_2026,0.306911724852732
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.2 model (before v2.3),Baseline,rgdpnon_2030,0.497495149823024
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.2 model (before v2.3),Baseline,rhhdisp_2030,0.3434824546903803
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.2 model (before v2.3),Baseline,rcons_2030,0.39064436796591995
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.2 model (before v2.3),Baseline,debt_gdp_2030,0.027694766258447245
+"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,rhhdisp,-0.3137191934830641
+"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,rcons,-0.34815242276158287
+"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,wage,4.178424123841995
+"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,cpi,1.2105250181245086
+"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,rgdpnon,-0.20877787548415627
+"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,emp,-0.007034042608000668
+"minimum wage +10%: 2030 deviation, %",v2.2 model (before v2.3),Baseline,rgdp,-0.11671113896305485
+"budget balance 2030, % of GDP","D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,bal_gdp,0.43038455331211317
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rgdp,72126.86628538679
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rgdpnon,63052.57134682809
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rhhdisp,49496.308021786695
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rcons,54324.62654822085
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,rm_non,14764.484819629128
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,cpi,246.77416371322806
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Baseline,balance_n,818.6359432989615
+"budget balance 2030, % of GDP","D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,bal_gdp,1.4257519712606332
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rgdp,68276.55680785156
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rgdpnon,59797.97927626083
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rhhdisp,47203.674601127655
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rcons,51271.52047612696
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,rm_non,14153.430344636807
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,cpi,241.05953119076455
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Adverse,balance_n,2382.500256927571
+"budget balance 2030, % of GDP","D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,bal_gdp,-0.012513491691013977
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rgdp,75515.55981468468
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rgdpnon,66234.17492344842
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rhhdisp,51725.547118378294
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rcons,57083.67061272089
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,rm_non,15308.984254148632
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,cpi,252.33258272023315
+level 2030,"D4: imports at constant USD prices (same fit, relative price re-parametrised)",Reform,balance_n,-26.564019647941095
+"budget balance 2030, % of GDP","D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,bal_gdp,0.5709403580482286
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rgdp,72059.38219350472
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rgdpnon,62980.695744303026
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rhhdisp,49445.760359726584
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rcons,54262.26043394806
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,rm_non,15224.115372946533
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,cpi,246.73246796848645
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Baseline,balance_n,1084.7798493744658
+"budget balance 2030, % of GDP","D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,bal_gdp,1.513297546246413
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rgdp,68231.51684705808
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rgdpnon,59752.740906714775
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rhhdisp,47171.68170673621
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rcons,51232.457446386994
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,rm_non,14439.035233355486
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,cpi,241.03229184413246
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Adverse,balance_n,2526.8280670864365
+"budget balance 2030, % of GDP","D4: relative price dropped (coefficient bounded at 0, binding)",Reform,bal_gdp,0.17297214980325137
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rgdp,75426.29757545803
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rgdpnon,66136.44454242014
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rhhdisp,51657.174931750626
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rcons,56998.84263763953
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,rm_non,15930.257942777524
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,cpi,252.27761841595154
+level 2030,"D4: relative price dropped (coefficient bounded at 0, binding)",Reform,balance_n,366.6816934163344
+"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity imposed",Baseline,bal_gdp,-0.06793524670080865
+level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rgdp,70143.45178492785
+level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rgdpnon,60931.5856098903
+level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rhhdisp,46094.95595473253
+level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rcons,50273.41424832123
+level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,rm_non,13633.058716220925
+level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,cpi,245.45574100870115
+level 2030,"E3: + real wage bill, homogeneity imposed",Baseline,balance_n,-124.9367940115009
+"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity imposed",Adverse,bal_gdp,0.8877538373906481
+level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rgdp,66066.6036103246
+level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rgdpnon,57543.30421966237
+level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rhhdisp,43562.484680270645
+level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rcons,46975.21633446151
+level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,rm_non,12936.551918206384
+level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,cpi,239.60744074701168
+level 2030,"E3: + real wage bill, homogeneity imposed",Adverse,balance_n,1425.307953630083
+"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity imposed",Reform,bal_gdp,-0.44845153630090673
+level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rgdp,73747.52928044806
+level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rgdpnon,64298.284564077854
+level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rhhdisp,48632.18602238278
+level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rcons,53384.991214344656
+level 2030,"E3: + real wage bill, homogeneity imposed",Reform,rm_non,14287.339347371031
+level 2030,"E3: + real wage bill, homogeneity imposed",Reform,cpi,251.16778796034697
+level 2030,"E3: + real wage bill, homogeneity imposed",Reform,balance_n,-925.6106266664647
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,rhhdisp,1.629752599672707
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,rcons,1.7972260880924518
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,wage,4.671434205564018
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,cpi,1.3502096501466276
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,rgdpnon,0.6996411265008717
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,emp,0.02346894092590812
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity imposed",Baseline,rgdp,0.5935442413266268
+"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,bal_gdp,-1.3287271026563698
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rgdp,65403.698787674075
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rgdpnon,55874.96829684994
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rhhdisp,38090.94729212112
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rcons,40743.862176321796
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rm_non,10978.252841528123
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,cpi,242.1607128250595
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Baseline,balance_n,-2246.2131980990102
+"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity test-and-impose rule",Adverse,bal_gdp,0.014032007061743231
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rgdp,62634.59795739141
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rgdpnon,54059.92876111814
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rhhdisp,38006.292957129175
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rcons,40418.472707227294
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,rm_non,11082.471120957092
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,cpi,237.2696032619742
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Adverse,balance_n,21.12205411551583
+"budget balance 2030, % of GDP","E3: + real wage bill, homogeneity test-and-impose rule",Reform,bal_gdp,-2.043327566815379
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rgdp,67709.1202845464
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rgdpnon,57670.85811567196
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rhhdisp,38192.95928985666
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rcons,40905.29072625675
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,rm_non,10852.684946424932
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,cpi,246.9667208419417
+level 2030,"E3: + real wage bill, homogeneity test-and-impose rule",Reform,balance_n,-3811.6343673506
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rhhdisp,1.3788715702764742
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rcons,1.5178776115153836
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,wage,4.574627147770394
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,cpi,1.3227442833879
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rgdpnon,0.5210144177759668
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,emp,0.017492055532719597
+"minimum wage +10%: 2030 deviation, %","E3: + real wage bill, homogeneity test-and-impose rule",Baseline,rgdp,0.4267697660529368
+"budget balance 2030, % of GDP",F3: non-oil and oil revenue separately,Baseline,bal_gdp,1.839038298714994
+level 2030,F3: non-oil and oil revenue separately,Baseline,rgdp,72126.86628507008
+level 2030,F3: non-oil and oil revenue separately,Baseline,rgdpnon,63052.57134649242
+level 2030,F3: non-oil and oil revenue separately,Baseline,rhhdisp,49496.308021224555
+level 2030,F3: non-oil and oil revenue separately,Baseline,rcons,54324.62654752742
+level 2030,F3: non-oil and oil revenue separately,Baseline,rm_non,14764.484819486814
+level 2030,F3: non-oil and oil revenue separately,Baseline,cpi,246.77416371190938
+level 2030,F3: non-oil and oil revenue separately,Baseline,balance_n,3498.041090994543
+"budget balance 2030, % of GDP",F3: non-oil and oil revenue separately,Adverse,bal_gdp,3.0584362043009756
+level 2030,F3: non-oil and oil revenue separately,Adverse,rgdp,68276.5568078396
+level 2030,F3: non-oil and oil revenue separately,Adverse,rgdpnon,59797.97927624523
+level 2030,F3: non-oil and oil revenue separately,Adverse,rhhdisp,47203.67460110057
+level 2030,F3: non-oil and oil revenue separately,Adverse,rcons,51271.52047609451
+level 2030,F3: non-oil and oil revenue separately,Adverse,rm_non,14153.430344637654
+level 2030,F3: non-oil and oil revenue separately,Adverse,cpi,241.05953119053905
+level 2030,F3: non-oil and oil revenue separately,Adverse,balance_n,5110.794296214622
+"budget balance 2030, % of GDP",F3: non-oil and oil revenue separately,Reform,bal_gdp,1.3326255913952265
+level 2030,F3: non-oil and oil revenue separately,Reform,rgdp,75515.55981426043
+level 2030,F3: non-oil and oil revenue separately,Reform,rgdpnon,66234.17492298619
+level 2030,F3: non-oil and oil revenue separately,Reform,rhhdisp,51725.547117664304
+level 2030,F3: non-oil and oil revenue separately,Reform,rcons,57083.67061183514
+level 2030,F3: non-oil and oil revenue separately,Reform,rm_non,15308.984253961418
+level 2030,F3: non-oil and oil revenue separately,Reform,cpi,252.33258271883665
+level 2030,F3: non-oil and oil revenue separately,Reform,balance_n,2828.9380188074792
+"budget balance 2030, % of GDP",F3: non-oil revenue only (oil revenue saved),Baseline,bal_gdp,-0.13138441956570426
+level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rgdp,72126.86628556566
+level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rgdpnon,63052.57134705932
+level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rhhdisp,49496.30802196642
+level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rcons,54324.626548587206
+level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,rm_non,14764.484819649708
+level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,cpi,246.7741637194111
+level 2030,F3: non-oil revenue only (oil revenue saved),Baseline,balance_n,-249.90675762175078
+"budget balance 2030, % of GDP",F3: non-oil revenue only (oil revenue saved),Adverse,bal_gdp,-0.761948916448654
+level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rgdp,68276.55680794879
+level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rgdpnon,59797.979276350976
+level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rhhdisp,47203.67460126876
+level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rcons,51271.520476305115
+level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,rm_non,14153.430344685823
+level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,cpi,241.05953119068522
+level 2030,F3: non-oil revenue only (oil revenue saved),Adverse,balance_n,-1273.2533608931426
+"budget balance 2030, % of GDP",F3: non-oil revenue only (oil revenue saved),Reform,bal_gdp,0.6707892554365925
+level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rgdp,75515.55981452449
+level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rgdpnon,66234.17492324742
+level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rhhdisp,51725.54711785741
+level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rcons,57083.67061224952
+level 2030,F3: non-oil revenue only (oil revenue saved),Reform,rm_non,15308.98425398366
+level 2030,F3: non-oil revenue only (oil revenue saved),Reform,cpi,252.3325827256542
+level 2030,F3: non-oil revenue only (oil revenue saved),Reform,balance_n,1423.97177392929
+"budget balance 2030, % of GDP",F3: revenue elasticity at its 95% CI lower bound,Baseline,bal_gdp,0.43477525588637467
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rgdp,72126.86628542855
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rgdpnon,63052.57134688084
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rhhdisp,49496.3080218019
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rcons,54324.62654827736
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,rm_non,14764.484819629088
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,cpi,246.77416371520772
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Baseline,balance_n,826.987513815807
+"budget balance 2030, % of GDP",F3: revenue elasticity at its 95% CI lower bound,Adverse,bal_gdp,0.617640279702037
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rgdp,68276.55680798434
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rgdpnon,59797.97927648213
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rhhdisp,47203.67460140484
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rcons,51271.52047655861
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,rm_non,14153.430344673645
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,cpi,241.05953119619312
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Adverse,balance_n,1032.1066740764766
+"budget balance 2030, % of GDP",F3: revenue elasticity at its 95% CI lower bound,Reform,bal_gdp,0.6436945074845631
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rgdp,75515.55981443376
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rgdpnon,66234.17492316349
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rhhdisp,51725.5471178694
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rcons,57083.67061214951
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,rm_non,15308.984254005101
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,cpi,252.33258272167865
+level 2030,F3: revenue elasticity at its 95% CI lower bound,Reform,balance_n,1366.454221276334
+"budget balance 2030, % of GDP","F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,bal_gdp,0.4303845533148986
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rgdp,72126.86628538536
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rgdpnon,63052.571346826575
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rhhdisp,49496.30802178563
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rcons,54324.62654821954
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,rm_non,14764.484819638188
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,cpi,246.77416371322695
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Baseline,balance_n,818.6359433042402
+"budget balance 2030, % of GDP","F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,bal_gdp,0.6731917382891849
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rgdp,68636.43165745749
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rgdpnon,60141.889190323986
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rhhdisp,47449.329028997025
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rcons,51571.8927984881
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,rm_non,14238.165743914746
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,cpi,241.27998772284826
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Adverse,balance_n,1131.5465283129015
+"budget balance 2030, % of GDP","F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,bal_gdp,0.45743261164987203
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rgdp,75291.72705355768
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rgdpnon,65989.35321051223
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rhhdisp,51553.74890356341
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rcons,56870.29446295081
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,rm_non,15250.671323164242
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,cpi,252.18648633910365
+level 2030,"F4: scenario capital-spending rule (Baseline policy level + F4 response), unit elasticity",Reform,balance_n,967.7583858939581
+"budget balance 2030, % of GDP","F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,bal_gdp,0.4303845531671027
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rgdp,72126.86628506286
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rgdpnon,63052.57134648595
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rhhdisp,49496.30802125283
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rcons,54324.62654756295
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,rm_non,14764.484819477653
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,cpi,246.7741637124004
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Baseline,balance_n,818.635943016129
+"budget balance 2030, % of GDP","F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,bal_gdp,-0.8299239136856038
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rgdp,69344.86917826107
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rgdpnon,60878.45212844903
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rhhdisp,47966.84189223823
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rcons,52205.54895625981
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,rm_non,14415.461539653183
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,cpi,241.73776187197825
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Adverse,balance_n,-1411.7639128840342
+"budget balance 2030, % of GDP","F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,bal_gdp,1.4299671996852483
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rgdp,74774.28455595167
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rgdpnon,65421.98238355284
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rhhdisp,51157.424802892994
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rcons,56378.396601641696
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,rm_non,15115.59023533855
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,cpi,251.85058873752212
+level 2030,"F4: scenario capital-spending rule, oil-revenue elasticity at its 95% CI lower bound",Reform,balance_n,3002.043981792974
+"budget balance 2030, % of GDP",G4: + exchange-rate change of the previous year,Baseline,bal_gdp,0.4384893216039306
+level 2030,G4: + exchange-rate change of the previous year,Baseline,rgdp,72126.27416657511
+level 2030,G4: + exchange-rate change of the previous year,Baseline,rgdpnon,63051.6829050078
+level 2030,G4: + exchange-rate change of the previous year,Baseline,rhhdisp,49495.688817417526
+level 2030,G4: + exchange-rate change of the previous year,Baseline,rcons,54323.80887332064
+level 2030,G4: + exchange-rate change of the previous year,Baseline,rm_non,14769.056961735556
+level 2030,G4: + exchange-rate change of the previous year,Baseline,cpi,246.38173635126694
+level 2030,G4: + exchange-rate change of the previous year,Baseline,balance_n,832.9389816096375
+"budget balance 2030, % of GDP",G4: + exchange-rate change of the previous year,Adverse,bal_gdp,1.446153817249426
+level 2030,G4: + exchange-rate change of the previous year,Adverse,rgdp,68271.70071600846
+level 2030,G4: + exchange-rate change of the previous year,Adverse,rgdpnon,59795.32652127886
+level 2030,G4: + exchange-rate change of the previous year,Adverse,rhhdisp,47201.802778077355
+level 2030,G4: + exchange-rate change of the previous year,Adverse,rcons,51269.198827660584
+level 2030,G4: + exchange-rate change of the previous year,Adverse,rm_non,14166.485011785964
+level 2030,G4: + exchange-rate change of the previous year,Adverse,cpi,239.97024672804037
+level 2030,G4: + exchange-rate change of the previous year,Adverse,balance_n,2406.885364089856
+"budget balance 2030, % of GDP",G4: + exchange-rate change of the previous year,Reform,bal_gdp,-0.02070837890727541
+level 2030,G4: + exchange-rate change of the previous year,Reform,rgdp,75517.81196719251
+level 2030,G4: + exchange-rate change of the previous year,Reform,rgdpnon,66233.80527030249
+level 2030,G4: + exchange-rate change of the previous year,Reform,rhhdisp,51725.295683483695
+level 2030,G4: + exchange-rate change of the previous year,Reform,rcons,57083.29099975073
+level 2030,G4: + exchange-rate change of the previous year,Reform,rm_non,15305.37347523284
+level 2030,G4: + exchange-rate change of the previous year,Reform,cpi,252.62947881452132
+level 2030,G4: + exchange-rate change of the previous year,Reform,balance_n,-44.002754661393695
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: + exchange-rate change of the previous year,Baseline,infl_2026,0.7814158868982819
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: + exchange-rate change of the previous year,Baseline,infl_2027,2.281183736946902
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: + exchange-rate change of the previous year,Baseline,cpi_2030,2.9234335445694093
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: + exchange-rate change of the previous year,Baseline,rgdpnon_2026,0.33792968854391425
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: + exchange-rate change of the previous year,Baseline,rgdpnon_2030,0.3716804624112946
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: + exchange-rate change of the previous year,Baseline,rhhdisp_2030,0.25493495292954194
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: + exchange-rate change of the previous year,Baseline,rcons_2030,0.2900081154356693
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: + exchange-rate change of the previous year,Baseline,debt_gdp_2030,-0.3441142207657375
+"budget balance 2030, % of GDP",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,bal_gdp,0.1426317240101009
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rgdp,72176.42744770882
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rgdpnon,63073.72293375549
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rhhdisp,49511.19015866665
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rcons,54343.04580062851
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rm_non,14606.86460410944
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Baseline,cpi,260.381447049461
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Baseline,balance_n,284.04711663797616
+"budget balance 2030, % of GDP",G4: manat import-price inflation (USD import prices + exchange rate),Adverse,bal_gdp,1.1705845487009476
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Adverse,rgdp,68348.73698093253
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Adverse,rgdpnon,59832.787158477484
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Adverse,rhhdisp,47228.28609219095
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Adverse,rcons,51301.62028453048
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Adverse,rm_non,13986.21652853108
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Adverse,cpi,255.3572737886757
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Adverse,balance_n,2060.593965962971
+"budget balance 2030, % of GDP",G4: manat import-price inflation (USD import prices + exchange rate),Reform,bal_gdp,-0.3107973536826679
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Reform,rgdp,75561.52298734407
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Reform,rgdpnon,66247.94857195627
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Reform,rhhdisp,51735.197120283556
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Reform,rcons,57095.709376355895
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Reform,rm_non,15160.69317478146
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Reform,cpi,265.258272773158
+level 2030,G4: manat import-price inflation (USD import prices + exchange rate),Reform,balance_n,-687.5287100605532
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,infl_2026,2.9231705356322992
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,infl_2027,0.005815982468628356
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,cpi_2030,2.781556877068647
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rgdpnon_2026,0.06521711345299774
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rgdpnon_2030,0.18664591925359186
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rhhdisp_2030,-0.11970364490054841
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,rcons_2030,-0.12365071149168516
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",G4: manat import-price inflation (USD import prices + exchange rate),Baseline,debt_gdp_2030,-0.11526107450730727
+"budget balance 2030, % of GDP","G4: manat import-price inflation, current + previous year",Baseline,bal_gdp,0.012130476103948238
+level 2030,"G4: manat import-price inflation, current + previous year",Baseline,rgdp,72202.79972536818
+level 2030,"G4: manat import-price inflation, current + previous year",Baseline,rgdpnon,63082.912702715985
+level 2030,"G4: manat import-price inflation, current + previous year",Baseline,rhhdisp,49517.6462457504
+level 2030,"G4: manat import-price inflation, current + previous year",Baseline,rcons,54350.99643719214
+level 2030,"G4: manat import-price inflation, current + previous year",Baseline,rm_non,14532.69878255214
+level 2030,"G4: manat import-price inflation, current + previous year",Baseline,cpi,266.9482550534353
+level 2030,"G4: manat import-price inflation, current + previous year",Baseline,balance_n,24.6887718603557
+"budget balance 2030, % of GDP","G4: manat import-price inflation, current + previous year",Adverse,bal_gdp,1.0676761132615278
+level 2030,"G4: manat import-price inflation, current + previous year",Adverse,rgdp,68383.31158726299
+level 2030,"G4: manat import-price inflation, current + previous year",Adverse,rgdpnon,59847.945117433046
+level 2030,"G4: manat import-price inflation, current + previous year",Adverse,rhhdisp,47238.99374289198
+level 2030,"G4: manat import-price inflation, current + previous year",Adverse,rcons,51314.69652885702
+level 2030,"G4: manat import-price inflation, current + previous year",Adverse,rm_non,13916.319346975164
+level 2030,"G4: manat import-price inflation, current + previous year",Adverse,cpi,261.5370856735239
+level 2030,"G4: manat import-price inflation, current + previous year",Adverse,balance_n,1921.3066000158506
+"budget balance 2030, % of GDP","G4: manat import-price inflation, current + previous year",Reform,bal_gdp,-0.4624011612091716
+level 2030,"G4: manat import-price inflation, current + previous year",Reform,rgdp,75588.89006161694
+level 2030,"G4: manat import-price inflation, current + previous year",Reform,rgdpnon,66253.43437159342
+level 2030,"G4: manat import-price inflation, current + previous year",Reform,rhhdisp,51739.03149820222
+level 2030,"G4: manat import-price inflation, current + previous year",Reform,rcons,57100.43982656246
+level 2030,"G4: manat import-price inflation, current + previous year",Reform,rm_non,15082.579727504919
+level 2030,"G4: manat import-price inflation, current + previous year",Reform,cpi,272.20579095152016
+level 2030,"G4: manat import-price inflation, current + previous year",Reform,balance_n,-1045.4279742280764
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import-price inflation, current + previous year",Baseline,infl_2026,3.4164875366438974
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import-price inflation, current + previous year",Baseline,infl_2027,0.9489956338865237
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import-price inflation, current + previous year",Baseline,cpi_2030,4.151293786158239
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import-price inflation, current + previous year",Baseline,rgdpnon_2026,0.0030863354837595836
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import-price inflation, current + previous year",Baseline,rgdpnon_2030,0.03746762474454712
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import-price inflation, current + previous year",Baseline,rhhdisp_2030,-0.3002902099944804
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import-price inflation, current + previous year",Baseline,rcons_2030,-0.32505364679279447
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import-price inflation, current + previous year",Baseline,debt_gdp_2030,-0.31876007282622965
+"budget balance 2030, % of GDP","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,bal_gdp,0.44215096540347876
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rgdp,72126.00886338734
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rgdpnon,63051.287091531165
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rhhdisp,49495.41433819523
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rcons,54323.44794799479
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rm_non,14771.11785053938
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,cpi,246.20505180285514
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,balance_n,839.3897271973758
+"budget balance 2030, % of GDP","G4: pass-through in the post-2015 floating regime, current + previous year",Adverse,bal_gdp,1.4553834244349555
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Adverse,rgdp,68269.51398286372
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Adverse,rgdpnon,59794.13519624598
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Adverse,rhhdisp,47200.96308588895
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Adverse,rcons,51268.15840511999
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Adverse,rm_non,14172.364235561303
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Adverse,cpi,239.4808664450481
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Adverse,balance_n,2417.8634713548695
+"budget balance 2030, % of GDP","G4: pass-through in the post-2015 floating regime, current + previous year",Reform,bal_gdp,-0.024381077427571948
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Reform,rgdp,75518.82753645911
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Reform,rgdpnon,66233.64427711113
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Reform,rhhdisp,51725.1879685582
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Reform,rcons,57083.12938398523
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Reform,rm_non,15303.752891198863
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Reform,cpi,252.76289729613956
+level 2030,"G4: pass-through in the post-2015 floating regime, current + previous year",Reform,balance_n,-51.82923766392455
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,infl_2026,1.2289047550600207
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,infl_2027,3.0404597585878443
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,cpi_2030,4.076372874056622
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rgdpnon_2026,0.2805549364920834
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rgdpnon_2030,0.24319488570192505
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rhhdisp_2030,0.0959583708836309
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,rcons_2030,0.11272441932761446
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: pass-through in the post-2015 floating regime, current + previous year",Baseline,debt_gdp_2030,-0.5301034183252717
+"budget balance 2030, % of GDP","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,bal_gdp,1.6321510412929636
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rgdp,71941.63895392674
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rgdpnon,62981.63293228741
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rhhdisp,49446.398780947784
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rcons,54263.066299895814
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rm_non,15326.522726982472
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,cpi,202.14342818328402
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,balance_n,2646.018924380657
+"budget balance 2030, % of GDP","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Adverse,bal_gdp,2.4422012879739095
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Adverse,rgdp,68022.87566707435
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Adverse,rgdpnon,59682.20820350856
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Adverse,rhhdisp,47121.81460160375
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Adverse,rcons,51171.53921683333
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Adverse,rm_non,14717.319748439779
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Adverse,cpi,197.02378002473375
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Adverse,balance_n,3438.1612042306538
+"budget balance 2030, % of GDP","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Reform,bal_gdp,1.299633020753046
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Reform,rgdp,75330.50777871453
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Reform,rgdpnon,66189.35436694464
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Reform,rhhdisp,51694.146050212425
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Reform,rcons,57044.76363569114
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Reform,rm_non,15869.729948124057
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Reform,cpi,207.12069354425373
+level 2030,"G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Reform,balance_n,2369.629085538253
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,infl_2026,3.1764300528866967
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,infl_2027,0.00630778024402634
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,cpi_2030,3.0236160695197745
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rgdpnon_2026,0.03327889891353575
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rgdpnon_2030,0.14078619089039623
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rhhdisp_2030,-0.18504290158694037
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,rcons_2030,-0.19624659387807997
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)","G4: manat import prices with the DSK index spliced for 2021-25, current + previous year",Baseline,debt_gdp_2030,-0.4838407805351803
+"budget balance 2030, % of GDP","E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,bal_gdp,0.32332035126158715
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rgdp,72147.02209153015
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rgdpnon,63059.25417558423
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rhhdisp,49501.09616450338
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rcons,54330.28488421743
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rm_non,14708.011458955836
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,cpi,251.57884664815717
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,balance_n,625.1300766728011
+"budget balance 2030, % of GDP","E2: + public-pay reform steps (2019, 2022, 2023)",Adverse,bal_gdp,1.3432920163438054
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Adverse,rgdp,68301.6650035064
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Adverse,rgdpnon,59808.85285999029
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Adverse,rhhdisp,47211.418221322834
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Adverse,rcons,51280.81903690963
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Adverse,rm_non,14101.66606054957
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Adverse,cpi,245.4305973998217
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Adverse,balance_n,2281.1097072339016
+"budget balance 2030, % of GDP","E2: + public-pay reform steps (2019, 2022, 2023)",Reform,bal_gdp,-0.13769850854257717
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Reform,rgdp,75536.81340073232
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Reform,rgdpnon,66237.98584965276
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Reform,rhhdisp,51728.327077448455
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Reform,rcons,57086.80092160783
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Reform,rm_non,15248.740210145823
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Reform,cpi,257.5021400731919
+level 2030,"E2: + public-pay reform steps (2019, 2022, 2023)",Reform,balance_n,-297.20301458598647
+"minimum wage +20%: 2030 deviation, %","E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rhhdisp,-0.40849631840436107
+"minimum wage +20%: 2030 deviation, %","E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rcons,-0.4533096348641408
+"minimum wage +20%: 2030 deviation, %","E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,wage,5.462746950998643
+"minimum wage +20%: 2030 deviation, %","E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,cpi,1.572792255158495
+"minimum wage +20%: 2030 deviation, %","E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rgdpnon,-0.2719294281797513
+"minimum wage +20%: 2030 deviation, %","E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,emp,-0.009164515515769356
+"minimum wage +20%: 2030 deviation, %","E2: + public-pay reform steps (2019, 2022, 2023)",Baseline,rgdp,-0.1521956487267606
+"budget balance 2030, % of GDP",E2: + cumulative public-pay reform index,Baseline,bal_gdp,0.3236521150663439
+level 2030,E2: + cumulative public-pay reform index,Baseline,rgdp,72147.00506723064
+level 2030,E2: + cumulative public-pay reform index,Baseline,rgdpnon,63059.2168474008
+level 2030,E2: + cumulative public-pay reform index,Baseline,rhhdisp,49501.07060039652
+level 2030,E2: + cumulative public-pay reform index,Baseline,rcons,54330.2524161076
+level 2030,E2: + cumulative public-pay reform index,Baseline,rm_non,14708.20668941319
+level 2030,E2: + cumulative public-pay reform index,Baseline,cpi,251.56193237716175
+level 2030,E2: + cumulative public-pay reform index,Baseline,balance_n,625.7359074734436
+"budget balance 2030, % of GDP",E2: + cumulative public-pay reform index,Adverse,bal_gdp,1.3439639995047037
+level 2030,E2: + cumulative public-pay reform index,Adverse,rgdp,68301.51645202158
+level 2030,E2: + cumulative public-pay reform index,Adverse,rgdpnon,59808.76486757616
+level 2030,E2: + cumulative public-pay reform index,Adverse,rhhdisp,47211.35649287579
+level 2030,E2: + cumulative public-pay reform index,Adverse,rcons,51280.74298985943
+level 2030,E2: + cumulative public-pay reform index,Adverse,rm_non,14102.113439931478
+level 2030,E2: + cumulative public-pay reform index,Adverse,cpi,245.39284259495597
+level 2030,E2: + cumulative public-pay reform index,Adverse,balance_n,2281.9361082605537
+"budget balance 2030, % of GDP",E2: + cumulative public-pay reform index,Reform,bal_gdp,-0.13781571013385074
+level 2030,E2: + cumulative public-pay reform index,Reform,rgdp,75536.8803353507
+level 2030,E2: + cumulative public-pay reform index,Reform,rgdpnon,66237.96139192216
+level 2030,E2: + cumulative public-pay reform index,Reform,rhhdisp,51728.31081335636
+level 2030,E2: + cumulative public-pay reform index,Reform,rcons,57086.77959935801
+level 2030,E2: + cumulative public-pay reform index,Reform,rm_non,15248.698524316973
+level 2030,E2: + cumulative public-pay reform index,Reform,cpi,257.50530060126124
+level 2030,E2: + cumulative public-pay reform index,Reform,balance_n,-297.45908374277315
+"minimum wage +20%: 2030 deviation, %",E2: + cumulative public-pay reform index,Baseline,rhhdisp,-0.40805229743011706
+"minimum wage +20%: 2030 deviation, %",E2: + cumulative public-pay reform index,Baseline,rcons,-0.45281688828551214
+"minimum wage +20%: 2030 deviation, %",E2: + cumulative public-pay reform index,Baseline,wage,5.456331860074837
+"minimum wage +20%: 2030 deviation, %",E2: + cumulative public-pay reform index,Baseline,cpi,1.570992120253134
+"minimum wage +20%: 2030 deviation, %",E2: + cumulative public-pay reform index,Baseline,rgdpnon,-0.27163000477280486
+"minimum wage +20%: 2030 deviation, %",E2: + cumulative public-pay reform index,Baseline,emp,-0.009154411129441709
+"minimum wage +20%: 2030 deviation, %",E2: + cumulative public-pay reform index,Baseline,rgdp,-0.15202734883456026
+"budget balance 2030, % of GDP",E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,bal_gdp,0.34263085361063533
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rgdp,72144.03932348406
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rgdpnon,63057.76674999995
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rhhdisp,49500.0478732748
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rcons,54328.99510849667
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rm_non,14718.567551077931
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,cpi,250.67216925584728
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,balance_n,660.4362463624734
+"budget balance 2030, % of GDP",E2: minimum-wage elasticity restricted to the state / non-state channels,Adverse,bal_gdp,1.363843516301386
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Adverse,rgdp,68296.23022372309
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Adverse,rgdpnon,59806.12859539666
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Adverse,rhhdisp,47209.49141216927
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Adverse,rcons,51278.46681942863
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Adverse,rm_non,14114.987533701753
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Adverse,cpi,244.3037342030512
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Adverse,balance_n,2306.4709484117984
+"budget balance 2030, % of GDP",E2: minimum-wage elasticity restricted to the state / non-state channels,Reform,bal_gdp,-0.12192692321037689
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Reform,rgdp,75534.7976420086
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Reform,rgdpnon,66237.04458269698
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Reform,rhhdisp,51727.6651019471
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Reform,rcons,57085.98521470599
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Reform,rm_non,15256.640596980551
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Reform,cpi,256.8125668127764
+level 2030,E2: minimum-wage elasticity restricted to the state / non-state channels,Reform,balance_n,-262.58380886280924
+"minimum wage +20%: 2030 deviation, %",E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rhhdisp,-0.41768128508318236
+"minimum wage +20%: 2030 deviation, %",E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rcons,-0.46349800402346597
+"minimum wage +20%: 2030 deviation, %",E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,wage,5.589163700106425
+"minimum wage +20%: 2030 deviation, %",E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,cpi,1.608183945820696
+"minimum wage +20%: 2030 deviation, %",E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rgdpnon,-0.277993901244733
+"minimum wage +20%: 2030 deviation, %",E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,emp,-0.009369174426077098
+"minimum wage +20%: 2030 deviation, %",E2: minimum-wage elasticity restricted to the state / non-state channels,Baseline,rgdp,-0.15554369661756606
+"budget balance 2030, % of GDP",v2.3 model (adopted changes),Baseline,bal_gdp,0.012893782400041664
+level 2030,v2.3 model (adopted changes),Baseline,rgdp,70759.11625183624
+level 2030,v2.3 model (adopted changes),Baseline,rgdpnon,61578.195771827086
+level 2030,v2.3 model (adopted changes),Baseline,rhhdisp,47115.83798564828
+level 2030,v2.3 model (adopted changes),Baseline,rcons,51498.92453225878
+level 2030,v2.3 model (adopted changes),Baseline,rm_non,13940.776090415522
+level 2030,v2.3 model (adopted changes),Baseline,cpi,248.8723141828174
+level 2030,v2.3 model (adopted changes),Baseline,balance_n,24.205104955087325
+"budget balance 2030, % of GDP",v2.3 model (adopted changes),Adverse,bal_gdp,0.9823366028291582
+level 2030,v2.3 model (adopted changes),Adverse,rgdp,66573.98793384613
+level 2030,v2.3 model (adopted changes),Adverse,rgdpnon,58053.42847406585
+level 2030,v2.3 model (adopted changes),Adverse,rhhdisp,44375.22930818729
+level 2030,v2.3 model (adopted changes),Adverse,rcons,47938.87717419528
+level 2030,v2.3 model (adopted changes),Adverse,rm_non,13193.892699508242
+level 2030,v2.3 model (adopted changes),Adverse,cpi,241.2759477503843
+level 2030,v2.3 model (adopted changes),Adverse,balance_n,1599.4633504181
+"budget balance 2030, % of GDP",v2.3 model (adopted changes),Reform,bal_gdp,-0.3892999398844666
+level 2030,v2.3 model (adopted changes),Reform,rgdp,74477.25959267063
+level 2030,v2.3 model (adopted changes),Reform,rgdpnon,65079.65405998373
+level 2030,v2.3 model (adopted changes),Reform,rhhdisp,49859.14256666855
+level 2030,v2.3 model (adopted changes),Reform,rcons,54868.4906710301
+level 2030,v2.3 model (adopted changes),Reform,rm_non,14644.629989378338
+level 2030,v2.3 model (adopted changes),Reform,cpi,256.2576529200923
+level 2030,v2.3 model (adopted changes),Reform,balance_n,-824.8258193769958
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.3 model (adopted changes),Baseline,infl_2026,0.8217199091800103
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.3 model (adopted changes),Baseline,infl_2027,2.2016013069673264
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.3 model (adopted changes),Baseline,cpi_2030,2.8943650485135475
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.3 model (adopted changes),Baseline,rgdpnon_2026,0.2595896576994994
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.3 model (adopted changes),Baseline,rgdpnon_2030,-0.06568436803487954
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.3 model (adopted changes),Baseline,rhhdisp_2030,-0.6772852846367416
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.3 model (adopted changes),Baseline,rcons_2030,-0.7381921947624104
+"devaluation +16.5%: deviation (pp for infl, debt_gdp; % otherwise)",v2.3 model (adopted changes),Baseline,debt_gdp_2030,-0.01575551150356702
+"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,rhhdisp,1.192058346283087
+"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,rcons,1.3142048791749295
+"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,wage,3.5870809257928293
+"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,cpi,1.1552902106964913
+"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,rgdpnon,0.5106784530609421
+"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,emp,0.01714589799408639
+"minimum wage +10%: 2030 deviation, %",v2.3 model (adopted changes),Baseline,rgdp,0.442044133289099

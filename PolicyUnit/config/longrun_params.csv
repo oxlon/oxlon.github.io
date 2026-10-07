@@ -1,0 +1,15 @@
+param,value,unit,source_az,note_az
+alpha_k,0.40,pay,"Kapitalın gəlir payı (qeyri-neft iqtisadiyyatı; MikroUnit FR1/FR10 əmək payı ~0,6 ilə uyğun)",Cobb–Duglas
+delta,auto,pay/il,"FR1 2030 bazası: δ = (I − ΔK) / K(−1) (eynilik, proqnoz deyil)",auto alınmazsa 0.06
+labour_halflife,3.0,il,"Məşğulluq effekti təbii işsizlik səviyyəsinə qayıdır (struktur fərziyyə)",
+cyclical_halflife,3.0,il,"2030-da qalıq TFP (tələb/istifadə səviyyəsi) effektinin sönməsi",
+tfp_growth,1.0,%/il,"Baza TFP artımı (balanslaşdırılmış artım; struktur parametr, fərziyyə)",yalnız baza səviyyələri üçün
+labour_growth,0.5,%/il,"Baza işçi qüvvəsi artımı (FR1 pop_g ilə uyğun)",yalnız baza səviyyələri üçün
+nonoil_share,auto,pay,"FR1 2030 bazası: qeyri-neft ÜDM / ÜDM",neft hasilatı siyasətdən asılı deyil
+tax_ratio,auto,pay,"FR1 2030 bazası: qeyri-neft gəlirləri / nominal ÜDM",fiskal geri əlaqə
+interest_rate,auto,pay,"FR1 2030 bazası: borc xidməti / borc",borc dinamikası
+demand_halflife,3.0,il,"Tələb tərəfi effektinin sönmə yarımömrü (siyasət bitdikdən sonra tam, davam etdikdə ψ səviyyəsinə qədər)",C4: kəsilməzlik
+active_demand_retained,0.5,pay,"Siyasət qüvvədə qaldıqca 2030 tələb effektinin uzunmüddətli saxlanan payı ψ (qiymət/maaş uyğunlaşması qalanını aradan qaldırır)",fərziyyə
+public_capital_elast,0.10,elastiklik,"Dövlət kapitalının buraxılış elastikliyi (Bom və Ligthart 2014: ~0,08–0,12)",fərziyyə
+public_capital_share,0.4,pay,"Dövlət kapitalının qeyri-neft kapital ehtiyatında payı (təqribi)",fərziyyə
+continuity_tol,0.05,f.b.,"2030→2031 sıçrayış yoxlaması: |Δ2031 − Δ2030| ≤ max(tol, 2 × |Δ2030 − Δ2029|)",P1_longrun_continuity.csv

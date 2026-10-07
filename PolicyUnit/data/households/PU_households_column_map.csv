@@ -1,0 +1,41 @@
+column,column_az,level,required,description_az
+data_status,məlumat_statusu,H,0,Sintetik su nişanı; real faylda boş/olmaya bilər
+hh_id,ev_id,H,1,Ev təsərrüfatının psevdonim identifikatoru
+person_id,şəxs_id,P,1,Şəxsin identifikatoru
+weight,çəki,H,1,Ev təsərrüfatının genişləndirmə çəkisi
+region,iqtisadi_rayon,H,1,İqtisadi rayon (2021 təsnifatı)
+urban,şəhər,H,1,"1 = şəhər, 0 = kənd"
+rel,qohumluq,P,0,head/spouse/child/parent/other
+age,yaş,P,1,Yaş (tam il)
+sex,cins,P,1,M/F
+status,fəaliyyət_statusu,P,1,employee/selfemp/agri/unemployed/pensioner/student/inactive/child
+sector,sektor,P,0,NACE bölməsi (MicroUnit FR4 açarı: agr ... othsvc)
+ownership,mülkiyyət,P,0,state/nonstate (muzdlu işçi)
+regime,vergi_rejimi,P,0,state (dövlət + neft-qaz) / priv (qeyri-neft özəl)
+budget,büdcə_təşkilatı,P,0,1 = büdcə təşkilatı işçisi
+formal_ft,tam_ştat,P,0,1 = tam iş günü (minimum əmək haqqı tətbiq olunur)
+wage_gross,əmək_haqqı_hesablanmış,P,0,"Hesablanmış (gross) aylıq əmək haqqı, AZN"
+wage_net,əmək_haqqı_xalis,P,0,Xalis aylıq əmək haqqı (gross yoxdursa)
+inc_selfemp,gəlir_özünüməşğulluq,P,1,"Qeyri-k/t özünüməşğulluq gəliri, AZN/ay"
+inc_agri,gəlir_kənd_təsərrüfatı,P,1,"K/t gəliri (həyətyanı daxil), AZN/ay"
+pension,pensiya,P,1,"Pensiya (baza ili), AZN/ay"
+pension_type,pensiya_növü,P,0,age/disability/survivor
+benefit_other,digər_müavinət,P,1,"ÜSY-dən başqa müavinətlər, AZN/ay"
+inc_property,gəlir_mülkiyyət,H,1,"Mülkiyyət gəliri (ev üzrə), AZN/ay"
+remit,xaricdən_pul,H,1,"Xaricdən pul köçürmələri (ev üzrə), AZN/ay"
+transfer_hh,ev_arası_transfer,H,1,"Digər ev təsərrüfatlarından gəlir, AZN/ay"
+utsy_u,üsy_müraciət_indeksi,H,0,"0–1 ÜSY müraciət indeksi (real fayl: 0 = ÜSY alır, 1 = almır)"
+cons_noise,istehlak_küyü,H,0,Yalnız sintetik generator üçün
+cons_food,istehlak_food,H,1,"İstehlak xərci — food, AZN/ay (ev üzrə)"
+cons_alc,istehlak_alc,H,1,"İstehlak xərci — alc, AZN/ay (ev üzrə)"
+cons_tobacco,istehlak_tobacco,H,1,"İstehlak xərci — tobacco, AZN/ay (ev üzrə)"
+cons_clothing,istehlak_clothing,H,1,"İstehlak xərci — clothing, AZN/ay (ev üzrə)"
+cons_housing,istehlak_housing,H,1,"İstehlak xərci — housing, AZN/ay (ev üzrə)"
+cons_furnish,istehlak_furnish,H,1,"İstehlak xərci — furnish, AZN/ay (ev üzrə)"
+cons_health,istehlak_health,H,1,"İstehlak xərci — health, AZN/ay (ev üzrə)"
+cons_transport,istehlak_transport,H,1,"İstehlak xərci — transport, AZN/ay (ev üzrə)"
+cons_comm,istehlak_comm,H,1,"İstehlak xərci — comm, AZN/ay (ev üzrə)"
+cons_recreation,istehlak_recreation,H,1,"İstehlak xərci — recreation, AZN/ay (ev üzrə)"
+cons_education,istehlak_education,H,1,"İstehlak xərci — education, AZN/ay (ev üzrə)"
+cons_restaurants,istehlak_restaurants,H,1,"İstehlak xərci — restaurants, AZN/ay (ev üzrə)"
+cons_misc,istehlak_misc,H,1,"İstehlak xərci — misc, AZN/ay (ev üzrə)"

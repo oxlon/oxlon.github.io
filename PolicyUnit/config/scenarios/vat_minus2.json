@@ -1,0 +1,20 @@
+{
+ "id": "vat_minus2",
+ "name_az": "ƏDV dərəcəsi −2 f.b. (2027-dən)",
+ "description_az": "ƏDV dərəcəsi 18 %-dən 16 %-ə endirilir (2027-dən daimi); gəlir itkisi borcla.",
+ "start_year": 2027,
+ "instruments": [
+  {
+   "instrument": "vat_rate",
+   "years": "all",
+   "size": -2,
+   "unit": "pp",
+   "financing": "deficit",
+   "target": null
+  }
+ ],
+ "tags": [
+  "vergi",
+  "UAT"
+ ]
+}

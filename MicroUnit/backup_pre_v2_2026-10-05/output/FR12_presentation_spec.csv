@@ -1,8 +1,0 @@
-view,name,content,feeding_csv,refresh
-V1,Competition dashboard by sector,"KPI cards per activity group: entry, exit, churn, net entry, PCM proxy, HHI bounds, early-warning score","FR12_indicators_groups.csv, FR12_concentration_bounds.csv, FR12_early_warning.csv",annual
-V2,Entry/exit dynamics with forecast fan,history 2019-2025 and 2026-2030 under three FR1 scenarios with 5-95% bands; stock of active units,"FR12_forecast_entry_exit.csv, FR12_fan_entry_exit.csv",annual
-V3,Region × sector heat map,entry and exit rates by region (2021-2025) and by NACE section; forecasts by region,"FR12_indicators_regions.csv, FR12_indicators_sections.csv, FR12_forecast_entry_exit.csv (panel = region)",annual
-V4,Concentration bounds chart,"range bars [lower, upper] for HHI and CR4 by group; projected bounds 2026-2030","FR12_concentration_bounds.csv, FR12_concentration_paths.csv",annual
-V5,Scenario simulator with assumptions panel,"Cournot toolkit: entry, merger, cost/tax, import, SOE scenarios; Δprice, Δmarkup, Δoutput, ΔCS, ΔPS with elasticity ranges",FR12_scenario_*.csv,on demand
-V6,Early-warning list,"flags per sector, composite score, watch list, insufficient-data markers",FR12_early_warning.csv,annual
-V7,Firm-level market structure view (Layer B),"HHI, CR4/CR8, entropy, Gini, share mobility, survival curves, Boone by NACE × region; SYNTHETIC watermark until the register arrives",FR12_SYNTHETIC_*.csv → FR12_FIRM_*.csv,annual

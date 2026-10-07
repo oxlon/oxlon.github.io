@@ -51,6 +51,15 @@ def v23_vals(F):
     return N
 
 
+def mult_fix(F):
+    """v2.3.1: budget-balance responses (mln AZN) from FR1_multipliers.csv, the frozen pre-fix % path, the 2028 balance"""
+    from .common import csv
+    M = csv("FR1_multipliers.csv"); M.columns = ["exp", "year"] + list(M.columns[2:])
+    path = {e: M[M.exp == e].set_index("year")["balance_n"] for e in M.exp.unique()}
+    return dict(path=path, old=F.ref["v23"]["mult_balance_pct_istate"], old22=F.ref["v23"]["mult_balance_pct_istate_v22_2028"],
+                b28=F.base.loc[2028, "balance_n"], conv=F.docfig["v23"]["shock_conv_max"])
+
+
 def code_cells_before_part18():
     """code cells of FR1.ipynb before the Part 18 heading (the header line of the methodology)"""
     import json

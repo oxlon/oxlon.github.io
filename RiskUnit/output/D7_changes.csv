@@ -1,8 +1,158 @@
-kind,item,label_az,previous,previous_date,latest,date,change,reference_day
-axın,azeri_light,yeni vintaj,2981,2026-09-29,2981,2026-09-29,0,2026-10-06
-axın,bfb,yeni vintaj,24,2026-10-01,60,2026-10-01,36,2026-10-06
-axın,cbar_fx,yeni vintaj,14658,2026-10-05,14700,2026-10-06,42,2026-10-06
-axın,eurusd,yeni vintaj,6955,2026-09-25,6960,2026-10-02,5,2026-10-02
-axın,usgs,yeni vintaj,250,2026-08-14,251,2026-10-01,1,2026-10-02
-axın,ust10,yeni vintaj,16172,2026-09-30,16174,2026-10-02,2,2026-10-02
-axın,vix,yeni vintaj,9285,2026-09-30,9287,2026-10-02,2,2026-10-02
+kind,item,label_az,baseline_source,previous,previous_date,latest,date,change,change_pct,previous_signal,signal,signal_changed,reference_day
+göstərici,azeri_light_proxy,Azeri Light (proksi) vs FR1 ixrac qiyməti,MicroUnit FR1,114.631,2026-09-29,114.631,2026-09-29,-0.000427591,-0.000373015,xəbərdarlıq ↑,xəbərdarlıq ↑,False,2026-10-06
+göstərici,brent_implied_annual,Brent 2026 illik ortası (YTD + spot),MicroUnit FR1,98.3607,2026-09-29,98.3607,2026-09-29,-3.08073e-05,-3.13208e-05,xəbərdarlıq ↑,xəbərdarlıq ↑,False,2026-10-06
+göstərici,brent_implied_annual,Brent 2026 illik ortası (YTD + spot),Nazirlik Bottom-up,98.3607,2026-09-29,98.3607,2026-09-29,-3.08073e-05,-3.13208e-05,xəbərdarlıq ↑,xəbərdarlıq ↑,False,2026-10-06
+göstərici,brent_implied_annual,Brent 2026 illik ortası (YTD + spot),Nazirlik CAEM,98.3607,2026-09-29,98.3607,2026-09-29,-3.08073e-05,-3.13208e-05,xəbərdarlıq ↑,xəbərdarlıq ↑,False,2026-10-06
+göstərici,brent_implied_annual,Brent 2026 illik ortası (YTD + spot),OxLon §15.5.1,98.3607,2026-09-29,98.3607,2026-09-29,-3.08073e-05,-3.13208e-05,xəbərdarlıq ↑,xəbərdarlıq ↑,False,2026-10-06
+göstərici,cny_azn,CNY/AZN — illik dəyişmə,tarixi orta illik dəyişmə,6.20025,2026-10-06,6.20025,2026-10-06,1.36154e-06,2.19595e-05,normal,normal,False,2026-10-06
+göstərici,dsk_budget_exp_ytd_exec,Dövlət büdcəsi xərcləri: icra (illik planın %-i),MicroUnit FR1,57.9305,2026-08-01,57.9306,2026-08-01,0.000143989,0.000248555,diqqət ↓,diqqət ↓,False,2026-10-06
+göstərici,dsk_budget_exp_ytd_exec,Dövlət büdcəsi xərcləri: icra (illik planın %-i),Nazirlik Bottom-up,54.8326,2026-08-01,54.8326,2026-08-01,4.68396e-05,8.54229e-05,xəbərdarlıq ↓,xəbərdarlıq ↓,False,2026-10-06
+göstərici,dsk_budget_exp_ytd_exec,Dövlət büdcəsi xərcləri: icra (illik planın %-i),Nazirlik CAEM,54.8326,2026-08-01,54.8326,2026-08-01,-1.91801e-05,-3.49793e-05,xəbərdarlıq ↓,xəbərdarlıq ↓,False,2026-10-06
+göstərici,dsk_budget_rev_ytd_exec,Dövlət büdcəsi gəlirləri: icra (illik planın %-i),MicroUnit FR1,65.8978,2026-08-01,65.8981,2026-08-01,0.000287854,0.000436819,normal,normal,False,2026-10-06
+göstərici,dsk_budget_rev_ytd_exec,Dövlət büdcəsi gəlirləri: icra (illik planın %-i),Nazirlik Bottom-up,68.8229,2026-08-01,68.8229,2026-08-01,1.802e-05,2.61832e-05,normal,normal,False,2026-10-06
+göstərici,dsk_budget_rev_ytd_exec,Dövlət büdcəsi gəlirləri: icra (illik planın %-i),Nazirlik CAEM,69.6796,2026-08-01,69.6796,2026-08-01,-2.50997e-05,-3.60216e-05,normal,normal,False,2026-10-06
+göstərici,dsk_q_gdp_real_yoy,Rüblük real ÜDM artımı (DSK 03qua),MicroUnit FR1,1.76972,2026-04-01,1.76972,2026-04-01,4.22459e-06,0.000238715,normal,normal,False,2026-10-06
+göstərici,epu,Qlobal siyasət qeyri-müəyyənliyi (EPU),son 10 ilin ortası,241.69,2026-07-01,241.69,2026-07-01,0.000491001,0.000203153,normal,normal,False,2026-10-06
+göstərici,gbp_azn,GBP/AZN — illik dəyişmə,tarixi orta illik dəyişmə,-1.72783,2026-10-06,-1.72783,2026-10-06,-3.42811e-06,-0.000198405,normal,normal,False,2026-10-06
+göstərici,gpr_gpr_global,Geosiyasi risk (GPR qlobal),son 10 ilin ortası,146.21,2026-09-01,146.21,2026-09-01,-0.000100098,-6.84616e-05,normal,normal,False,2026-10-06
+göstərici,gpr_gpr_rus,Geosiyasi risk (Rusiya),son 10 ilin ortası,1.4762,2026-09-01,1.4762,2026-09-01,8.19016e-07,5.54813e-05,normal,normal,False,2026-10-06
+göstərici,minwage,Minimum aylıq əmək haqqı (qanuni) vs FR1 fərziyyəsi (2026),MicroUnit FR1,,,400,2025-01-01,,,,normal,True,2026-10-06
+göstərici,minwage,Minimum aylıq əmək haqqı (qanuni) vs FR1 fərziyyəsi (2027),MicroUnit FR1,,,400,2025-01-01,,,,normal,True,2026-10-06
+göstərici,rub_azn,RUB/AZN (pul köçürmələri kanalı) — illik dəyişmə,tarixi orta illik dəyişmə,-3.05377,2026-10-06,-3.05377,2026-10-06,2.39607e-06,7.84627e-05,normal,normal,False,2026-10-06
+göstərici,try_azn,TRY/AZN (ticarət tərəfdaşı) — illik dəyişmə,tarixi orta illik dəyişmə,-15.1961,2026-10-06,-15.1961,2026-10-06,2.15686e-05,0.000141935,normal,normal,False,2026-10-06
+göstərici,xau_azn,Qızıl (XAU/AZN) — illik dəyişmə,tarixi orta illik dəyişmə,4.63977,2026-10-06,4.63977,2026-10-06,-6.93858e-07,-1.49546e-05,normal,normal,False,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2026,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,557.611,,556.883,,-0.728213,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2026,MicroUnit zənciri FR1→… (brent),,563.915,,563.237,,-0.67799,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2027,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,620.018,,593.621,,-26.3974,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2027,MicroUnit zənciri FR1→… (brent),,704.225,,687.259,,-16.9658,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2028,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,333.122,,304.621,,-28.5011,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2028,MicroUnit zənciri FR1→… (brent),,459.798,,441.873,,-17.9252,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2029,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,229.513,,199.342,,-30.1706,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2029,MicroUnit zənciri FR1→… (brent),,373.086,,354.143,,-18.9426,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2030,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,98.4609,,67.1677,,-31.2932,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:balance_n 2030,MicroUnit zənciri FR1→… (brent),,255.326,,235.32,,-20.0058,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:gdp_n 2026,MicroUnit zənciri FR1→… (brent),,10353.7,,10348.7,,-4.98144,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:gdp_n 2027,MicroUnit zənciri FR1→… (brent),,16623.3,,16618.6,,-4.651,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:gdp_n 2028,MicroUnit zənciri FR1→… (brent),,17251.5,,17247,,-4.51716,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:gdp_n 2029,MicroUnit zənciri FR1→… (brent),,18586.8,,18582.2,,-4.63589,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:gdp_n 2030,MicroUnit zənciri FR1→… (brent),,18959,,18954.1,,-4.90127,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2026,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,0.251665,,0.250386,,-0.00127878,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2026,MicroUnit zənciri FR1→… (brent),,0.238444,,0.237229,,-0.00121486,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2026,RU: Brent → idxal (ərzaq daxil) qiymətləri → İQİ (vahid ötürmə 'cpi_ext'),,2.96175,,2.96175,,-1.04083e-06,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2026,RU: R01 investisiya reaksiyasının İQİ təsiri,,0.0539066,,0.0536254,,-0.000281207,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2027,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,0.0738191,,0.0738978,,7.87138e-05,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2027,MicroUnit zənciri FR1→… (brent),,0.172513,,0.172591,,7.76576e-05,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2027,RU: Brent → idxal (ərzaq daxil) qiymətləri → İQİ (vahid ötürmə 'cpi_ext'),,2.8323,,2.8323,,1.54542e-06,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2027,RU: R01 investisiya reaksiyasının İQİ təsiri,,0.553361,,0.550552,,-0.0028092,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2028,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,0.0709835,,0.0710183,,3.47843e-05,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2028,MicroUnit zənciri FR1→… (brent),,0.0681594,,0.0681944,,3.50219e-05,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2028,RU: Brent → idxal (ərzaq daxil) qiymətləri → İQİ (vahid ötürmə 'cpi_ext'),,0.79962,,0.79962,,3.33874e-08,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2028,RU: R01 investisiya reaksiyasının İQİ təsiri,,0.212031,,0.211362,,-0.000668821,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2029,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,0.0374816,,0.0374932,,1.16058e-05,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2029,MicroUnit zənciri FR1→… (brent),,0.0343103,,0.0343242,,1.39266e-05,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2029,RU: Brent → idxal (ərzaq daxil) qiymətləri → İQİ (vahid ötürmə 'cpi_ext'),,0.0583868,,0.0583868,,-3.70015e-08,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2029,RU: R01 investisiya reaksiyasının İQİ təsiri,,0.0754459,,0.0754238,,-2.2103e-05,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2030,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,0.0314532,,0.0314497,,-3.54857e-06,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2030,MicroUnit zənciri FR1→… (brent),,0.0217808,,0.0217801,,-6.57933e-07,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2030,RU: Brent → idxal (ərzaq daxil) qiymətləri → İQİ (vahid ötürmə 'cpi_ext'),,-0.122499,,-0.122499,,1.14706e-07,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:infl 2030,RU: R01 investisiya reaksiyasının İQİ təsiri,,0.0377408,,0.0377941,,5.3299e-05,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rev_tot_n 2026,MicroUnit zənciri FR1→… (brent),,4759.79,,4757.61,,-2.17767,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rev_tot_n 2027,MicroUnit zənciri FR1→… (brent),,7682.43,,7681.73,,-0.704882,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rev_tot_n 2028,MicroUnit zənciri FR1→… (brent),,8174.74,,8175.13,,0.387911,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rev_tot_n 2029,MicroUnit zənciri FR1→… (brent),,8641.25,,8642.34,,1.0897,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rev_tot_n 2030,MicroUnit zənciri FR1→… (brent),,8854.72,,8856.26,,1.53728,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2026,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,350.303,,348.52,,-1.78338,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2026,MicroUnit zənciri FR1→… (brent),,332.713,,331.01,,-1.70339,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2027,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,234.631,,230.44,,-4.1906,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2027,MicroUnit zənciri FR1→… (brent),,326.764,,324.346,,-2.41846,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2028,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,-39.0272,,-44.0908,,-5.06356,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2028,MicroUnit zənciri FR1→… (brent),,82.6282,,79.5782,,-3.04998,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2029,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,-33.5121,,-39.1322,,-5.62014,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2029,MicroUnit zənciri FR1→… (brent),,89.5102,,86.0331,,-3.47709,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2030,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,-204.367,,-210.266,,-5.89861,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdp 2030,MicroUnit zənciri FR1→… (brent),,-81.7612,,-85.5406,,-3.7794,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2026,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,387.058,,385.088,,-1.97038,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2026,MicroUnit zənciri FR1→… (brent),,367.622,,365.74,,-1.88161,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2026,RU: R01 prosiklik investisiya reaksiyası (FR1-dən artıq hissə; simulate ilə eyni),,83.2034,,82.7671,,-0.436258,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2027,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,759.83,,756.906,,-2.92386,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2027,MicroUnit zənciri FR1→… (brent),,665.737,,664.07,,-1.66687,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2027,RU: R01 prosiklik investisiya reaksiyası (FR1-dən artıq hissə; simulate ilə eyni),,982.125,,977.372,,-4.75343,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2028,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,928.405,,925.515,,-2.89034,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2028,MicroUnit zənciri FR1→… (brent),,810.169,,808.633,,-1.53597,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2028,RU: R01 prosiklik investisiya reaksiyası (FR1-dən artıq hissə; simulate ilə eyni),,1382.56,,1376.76,,-5.79916,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2029,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,1038.8,,1035.9,,-2.90374,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2029,MicroUnit zənciri FR1→… (brent),,910.018,,908.525,,-1.49292,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2029,RU: R01 prosiklik investisiya reaksiyası (FR1-dən artıq hissə; simulate ilə eyni),,1582.49,,1576.54,,-5.95105,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2030,"FR1 multiplikatoru (Brent +10, xətti miqyas)",,1118.87,,1115.97,,-2.9012,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2030,MicroUnit zənciri FR1→… (brent),,989.416,,987.917,,-1.49918,,,,,2026-10-06
+proqnoz təsiri,brent→fr1:rgdpnon 2030,RU: R01 prosiklik investisiya reaksiyası (FR1-dən artıq hissə; simulate ilə eyni),,1720.12,,1714.12,,-5.99853,,,,,2026-10-06
+proqnoz təsiri,brent→mx:ca_gdp_ratio 2026,OxLon: Brent lo80/hi80 elastikliyi (ÜDM sabit),,11.4234,,11.4234,,4.36424e-05,,,,,2026-10-06
+proqnoz təsiri,brent→mx:ca_gdp_ratio 2027,OxLon: Brent lo80/hi80 elastikliyi (ÜDM sabit),,15.6613,,15.6613,,8.04053e-08,,,,,2026-10-06
+proqnoz təsiri,brent→mx:ca_gdp_ratio 2028,OxLon: Brent lo80/hi80 elastikliyi (ÜDM sabit),,13.7584,,13.7584,,-4.61607e-05,,,,,2026-10-06
+proqnoz təsiri,brent→mx:ca_gdp_ratio 2029,OxLon: Brent lo80/hi80 elastikliyi (ÜDM sabit),,12.7664,,12.7664,,-1.40612e-05,,,,,2026-10-06
+proqnoz təsiri,brent→mx:ca_gdp_ratio 2030,OxLon: Brent lo80/hi80 elastikliyi (ÜDM sabit),,11.501,,11.501,,-2.54019e-05,,,,,2026-10-06
+proqnoz təsiri,brent→mx:current_account 2026,OxLon: Brent lo80/hi80 ssenarilərindən cari hesab elastikliyi,,9507.11,,9507.11,,0.00386647,,,,,2026-10-06
+proqnoz təsiri,brent→mx:current_account 2027,OxLon: Brent lo80/hi80 ssenarilərindən cari hesab elastikliyi,,14337.6,,14337.6,,-0.0398942,,,,,2026-10-06
+proqnoz təsiri,brent→mx:current_account 2028,OxLon: Brent lo80/hi80 ssenarilərindən cari hesab elastikliyi,,13928.9,,13928.9,,-0.00351451,,,,,2026-10-06
+proqnoz təsiri,brent→mx:current_account 2029,OxLon: Brent lo80/hi80 ssenarilərindən cari hesab elastikliyi,,14477.2,,14477.2,,-0.015163,,,,,2026-10-06
+proqnoz təsiri,brent→mx:current_account 2030,OxLon: Brent lo80/hi80 ssenarilərindən cari hesab elastikliyi,,14539.1,,14539.1,,0.0096629,,,,,2026-10-06
+proqnoz təsiri,budget_execution→fr1:rev_tot_n 2026,icra tempi (Yanvar–ay icrası / ötən ay payı; mövsümilik nəzərə alınmır),,-463.531,,-463.374,,0.15725,,,,,2026-10-06
+proqnoz təsiri,cpi→fr1:infl 2026,müşahidə hesabı (Yanvar–ay faktiki; qalan aylarda son templər saxlanılır),,-0.000449711,,-0.000250784,,0.000198927,,,,,2026-10-06
+proqnoz təsiri,dsk_gdp→fr1:rgdp 2026,müşahidə hesabı (Yanvar–ay faktiki; qalan aylarda son templər saxlanılır),,0.9582,,0.958429,,0.000229144,,,,,2026-10-06
+proqnoz təsiri,dsk_gdp_nonoil→fr1:rgdpnon 2026,müşahidə hesabı (Yanvar–ay faktiki; qalan aylarda son templər saxlanılır),,1.43855,,1.43886,,0.00030859,,,,,2026-10-06
+proqnoz təsiri,eur_usd→sofaz:assets_usd 2026,ARDNF EUR mövqeyi × EUR/USD dəyişməsi (AMB kross-kursu),,-194.411,,-194.411,,0.000329412,,,,,2026-10-06
+proqnoz təsiri,gold→sofaz:assets_usd 2026,"ARDNF qızıl payı × XAU dəyişməsi (AMB bülleteni, AZN; USD peqi)",,781.358,,781.358,,0.000406531,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:balance_n 2027,MicroUnit zənciri FR1→… (minwage),,,,-98.1485,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:balance_n 2028,MicroUnit zənciri FR1→… (minwage),,,,-226.783,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:balance_n 2029,MicroUnit zənciri FR1→… (minwage),,,,-392.926,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:balance_n 2030,MicroUnit zənciri FR1→… (minwage),,,,-599.713,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:gdp_n 2027,MicroUnit zənciri FR1→… (minwage),,,,-1223.66,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:gdp_n 2028,MicroUnit zənciri FR1→… (minwage),,,,-2694.5,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:gdp_n 2029,MicroUnit zənciri FR1→… (minwage),,,,-4479.27,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:gdp_n 2030,MicroUnit zənciri FR1→… (minwage),,,,-6577.54,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:infl 2027,MicroUnit zənciri FR1→… (minwage),,,,-0.755922,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:infl 2028,MicroUnit zənciri FR1→… (minwage),,,,-0.75542,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:infl 2029,MicroUnit zənciri FR1→… (minwage),,,,-0.757506,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:infl 2030,MicroUnit zənciri FR1→… (minwage),,,,-0.760673,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rev_tot_n 2027,MicroUnit zənciri FR1→… (minwage),,,,-319.348,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rev_tot_n 2028,MicroUnit zənciri FR1→… (minwage),,,,-705.724,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rev_tot_n 2029,MicroUnit zənciri FR1→… (minwage),,,,-1185.76,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rev_tot_n 2030,MicroUnit zənciri FR1→… (minwage),,,,-1762.47,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rgdp 2027,MicroUnit zənciri FR1→… (minwage),,,,-167.766,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rgdp 2028,MicroUnit zənciri FR1→… (minwage),,,,-355.246,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rgdp 2029,MicroUnit zənciri FR1→… (minwage),,,,-560.03,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rgdp 2030,MicroUnit zənciri FR1→… (minwage),,,,-793.124,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rgdpnon 2027,MicroUnit zənciri FR1→… (minwage),,,,-181.812,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rgdpnon 2028,MicroUnit zənciri FR1→… (minwage),,,,-375.907,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rgdpnon 2029,MicroUnit zənciri FR1→… (minwage),,,,-591.518,,,,,,,2026-10-06
+proqnoz təsiri,minwage→fr1:rgdpnon 2030,MicroUnit zənciri FR1→… (minwage),,,,-827.133,,,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:balance_n 2026,MicroUnit zənciri FR1→… (polrate),,-0.812397,,-0.809034,,0.00336289,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:balance_n 2027,MicroUnit zənciri FR1→… (polrate),,-9.41822,,-9.40033,,0.017895,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:balance_n 2028,MicroUnit zənciri FR1→… (polrate),,-21.3515,,-21.3532,,-0.00172107,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:balance_n 2029,MicroUnit zənciri FR1→… (polrate),,-25.0789,,-25.0894,,-0.0104636,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:balance_n 2030,MicroUnit zənciri FR1→… (polrate),,-29.1851,,-29.2033,,-0.0181788,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:gdp_n 2026,MicroUnit zənciri FR1→… (polrate),,-4.66477,,-4.64104,,0.023731,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:gdp_n 2027,MicroUnit zənciri FR1→… (polrate),,-54.0616,,-54.0838,,-0.0221709,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:gdp_n 2028,MicroUnit zənciri FR1→… (polrate),,-119.636,,-119.769,,-0.132589,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:gdp_n 2029,MicroUnit zənciri FR1→… (polrate),,-132.787,,-132.966,,-0.179417,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:gdp_n 2030,MicroUnit zənciri FR1→… (polrate),,-146.858,,-147.076,,-0.217946,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:infl 2026,MicroUnit zənciri FR1→… (polrate),,-0.00114263,,-0.00113683,,5.79921e-06,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:infl 2027,MicroUnit zənciri FR1→… (polrate),,-0.0106599,,-0.0106663,,-6.42487e-06,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:infl 2028,MicroUnit zənciri FR1→… (polrate),,-0.0117451,,-0.0117578,,-1.27432e-05,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:infl 2029,MicroUnit zənciri FR1→… (polrate),,0.000137324,,0.000134003,,-3.3214e-06,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:infl 2030,MicroUnit zənciri FR1→… (polrate),,3.34637e-05,,3.16354e-05,,-1.8283e-06,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rev_tot_n 2026,MicroUnit zənciri FR1→… (polrate),,-2.29077,,-2.28088,,0.00989101,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rev_tot_n 2027,MicroUnit zənciri FR1→… (polrate),,-26.3552,,-26.3717,,-0.0164755,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rev_tot_n 2028,MicroUnit zənciri FR1→… (polrate),,-58.3016,,-58.3809,,-0.079292,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rev_tot_n 2029,MicroUnit zənciri FR1→… (polrate),,-65.3492,,-65.4562,,-0.106987,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rev_tot_n 2030,MicroUnit zənciri FR1→… (polrate),,-72.9836,,-73.1143,,-0.130667,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdp 2026,MicroUnit zənciri FR1→… (polrate),,-1.58838,,-1.58031,,0.00806871,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdp 2027,MicroUnit zənciri FR1→… (polrate),,-17.5102,,-17.5162,,-0.00602142,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdp 2028,MicroUnit zənciri FR1→… (polrate),,-36.7969,,-36.8341,,-0.0371525,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdp 2029,MicroUnit zənciri FR1→… (polrate),,-38.28,,-38.3274,,-0.0473909,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdp 2030,MicroUnit zənciri FR1→… (polrate),,-39.9023,,-39.9566,,-0.0543386,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdpnon 2026,MicroUnit zənciri FR1→… (polrate),,-1.75504,,-1.74612,,0.00891645,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdpnon 2027,MicroUnit zənciri FR1→… (polrate),,-19.0023,,-19.0087,,-0.00643851,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdpnon 2028,MicroUnit zənciri FR1→… (polrate),,-39.5052,,-39.5443,,-0.0391165,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdpnon 2029,MicroUnit zənciri FR1→… (polrate),,-41.1505,,-41.2003,,-0.0497829,,,,,2026-10-06
+proqnoz təsiri,policy_rate→fr1:rgdpnon 2030,MicroUnit zənciri FR1→… (polrate),,-42.8483,,-42.9053,,-0.0569975,,,,,2026-10-06

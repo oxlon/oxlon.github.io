@@ -4,17 +4,17 @@ sector relative wage: selection,"relative productivity (pooled, beta)",8 sectors
 sector employment shares,constant shares (beta = 0),8 sectors,16.88723583939475,,,,6.8272462190159615,0.0,,,
 sector employment shares,"long DSK panel, two-way FE (re-estimated at each origin)",8 sectors,15.496815031114577,,,,8.484048535434848,0.15362907500223164,,,
 sector employment shares,current: DVX 2021-2025 panel (beta = 0.333),8 sectors,14.21838756333761,,,,9.294767881235469,0.33287409891663766,,,
-aggregate wage: activity-panel growth equation (rejected),"pooled OLS, CPI + productivity + minimum wage",average wage,17.92457829446927,0.7289579515553007,3.8180568424791117,19.787606822712522,,,0.4936591045733142,3.0246157561772216,
-aggregate wage: activity-panel growth equation (rejected),"pooled OLS, CPI + productivity + minimum wage",state wage,17.39734137979483,0.591639984233373,1.918481328228192,18.540027171465766,,,0.32483636115952347,1.2397198194627117,
-aggregate wage: activity-panel growth equation (rejected),"pooled OLS, CPI + productivity + minimum wage",private wage,19.478374994556855,1.0393642906789338,8.699898559055454,22.409256860557747,,,0.873877591283304,8.478160891242192,
-sector wage,model: FR3 hold-out average wage x anchored relative wage,ind,31.511757367639465,2.864516218305213,2.3895466588356213,39.414989948219706,,,,,Industry
-sector wage,model: FR3 hold-out average wage x anchored relative wage,agr,17.023335233288282,0.8442112450757984,3.763543691374567,17.480257403259092,,,,,Agriculture
-sector wage,model: FR3 hold-out average wage x anchored relative wage,con,13.79205234997873,0.6217747993188162,1.0971508796916674,20.559540031843014,,,,,Construction
-sector wage,model: FR3 hold-out average wage x anchored relative wage,trd,24.21447128540071,1.5291195195190677,8.427249020634946,24.958993725714507,,,,,Trade
-sector wage,model: FR3 hold-out average wage x anchored relative wage,tou,14.278765200043258,0.6553261870683502,1.256488524963304,18.57953810190638,,,,,Tourism & catering
-sector wage,model: FR3 hold-out average wage x anchored relative wage,tra,8.790117845370016,0.3343802818632235,0.9551787193344276,5.475789819603194,,,,,Transport & storage
-sector wage,model: FR3 hold-out average wage x anchored relative wage,ict,10.843775065076741,0.43743589812972766,1.1278584546799855,7.329731760742009,,,,,Information & communication
-sector wage,model: FR3 hold-out average wage x anchored relative wage,oth,11.023991190784642,0.43853397558889334,1.301288034128799,7.162893236899004,,,,,Social & other services
+aggregate wage: activity-panel growth equation (rejected),"pooled OLS, CPI + productivity + minimum wage",average wage,10.360411718500341,0.4213379182213647,2.2068380188852994,11.748491908645441,,,0.34872512909092307,2.1366151464683405,
+aggregate wage: activity-panel growth equation (rejected),"pooled OLS, CPI + productivity + minimum wage",state wage,7.057323159065621,0.2400018756549021,0.7782420550570046,8.202128799495823,,,0.06908308016487055,0.2636517148640965,
+aggregate wage: activity-panel growth equation (rejected),"pooled OLS, CPI + productivity + minimum wage",private wage,16.025975541331206,0.8551445747198279,7.1579051927302375,18.747160861597756,,,0.9155862502847489,8.882808779115047,
+sector wage,model: FR3 hold-out average wage x anchored relative wage,ind,25.75371301385147,2.3410921755038188,1.9529123103764923,31.402265812694075,,,,,Industry
+sector wage,model: FR3 hold-out average wage x anchored relative wage,agr,12.034119476878047,0.5967889868666894,2.6605206217103694,10.728208041189191,,,,,Agriculture
+sector wage,model: FR3 hold-out average wage x anchored relative wage,con,9.061477209799984,0.40851049797995437,0.7208359887100763,13.630512267039506,,,,,Construction
+sector wage,model: FR3 hold-out average wage x anchored relative wage,trd,18.93163382367928,1.1955136445051784,6.588687843694973,17.777112169442045,,,,,Trade
+sector wage,model: FR3 hold-out average wage x anchored relative wage,tou,9.278338711758988,0.42583082256211235,0.816465986989733,11.764308783441258,,,,,Tourism & catering
+sector wage,model: FR3 hold-out average wage x anchored relative wage,tra,4.597639917014134,0.17489641872851125,0.49960283640651726,-0.5863158916625699,,,,,Transport & storage
+sector wage,model: FR3 hold-out average wage x anchored relative wage,ict,6.3795851580940015,0.25735129570452603,0.6635391286453571,1.1610727631822249,,,,,Information & communication
+sector wage,model: FR3 hold-out average wage x anchored relative wage,oth,6.5452277249430395,0.26036892498184433,0.7726082479307766,1.0038231011052945,,,,,Social & other services
 sector wage,information: actual average wage x anchored relative wage,ind,13.694447748411514,1.244867660613009,1.038454361019569,19.705866346171263,,,,,Industry
 sector wage,information: actual average wage x anchored relative wage,agr,1.6466759707934737,0.08166098784341645,0.36404951654240386,0.8720511062082492,,,,,Agriculture
 sector wage,information: actual average wage x anchored relative wage,con,5.32859133110422,0.2402241320925975,0.4238867804505835,3.5160149648741257,,,,,Construction
@@ -23,13 +23,13 @@ sector wage,information: actual average wage x anchored relative wage,tou,3.1907
 sector wage,information: actual average wage x anchored relative wage,tra,7.213903900168022,0.27442035043283886,0.7838993299041564,-9.435342615656062,,,,,Transport & storage
 sector wage,information: actual average wage x anchored relative wage,ict,5.271779452450116,0.21266261663350358,0.5483165217806009,-7.843492798775187,,,,,Information & communication
 sector wage,information: actual average wage x anchored relative wage,oth,5.6702755909659945,0.2255633603616834,0.6693276191026664,-7.986745328822065,,,,,Social & other services
-sector wage,information: FR3 hold-out average wage x relative productivity,ind,30.8819531902834,2.807265070444907,2.341788406251861,38.23209227251094,,,,,Industry
-sector wage,information: FR3 hold-out average wage x relative productivity,agr,17.329785105253656,0.8594085271841431,3.8312940743960167,18.907239505296957,,,,,Agriculture
-sector wage,information: FR3 hold-out average wage x relative productivity,con,14.885220425301933,0.6710571210072825,1.1841118543934164,22.35461758074353,,,,,Construction
-sector wage,information: FR3 hold-out average wage x relative productivity,trd,24.026693437255677,1.517261537176708,8.361897575698329,24.747273828465953,,,,,Trade
-sector wage,information: FR3 hold-out average wage x relative productivity,tou,14.940028555212686,0.6856749733338385,1.3146777175236384,18.489584148504747,,,,,Tourism & catering
-sector wage,information: FR3 hold-out average wage x relative productivity,tra,9.8685893264238,0.3754058521866248,1.072370891980242,6.790654142477837,,,,,Transport & storage
-sector wage,information: FR3 hold-out average wage x relative productivity,ict,11.214272990815209,0.4523817165304214,1.1663938554493458,8.2398067386648,,,,,Information & communication
-sector wage,information: FR3 hold-out average wage x relative productivity,oth,10.945914387499412,0.435428083144552,1.292071734142726,7.110429954889286,,,,,Social & other services
-budget / non-budget wage,model: FR3 hold-out wages x anchored ratios,budget,14.342184371073447,0.5744858984563943,2.1754650321897886,15.558365235717474,,,,,budget
-budget / non-budget wage,model: FR3 hold-out wages x anchored ratios,nonbudget,17.197673668605603,0.9020636252891944,4.293722856190108,17.072668507330203,,,,,nonbudget
+sector wage,information: FR3 hold-out average wage x relative productivity,ind,25.15170054727708,2.286367380120138,1.9072615121268996,30.287353887725075,,,,,Industry
+sector wage,information: FR3 hold-out average wage x relative productivity,agr,12.286019582673969,0.6092810690018553,2.716211063156355,12.07317590692285,,,,,Agriculture
+sector wage,information: FR3 hold-out average wage x relative productivity,con,10.146330827598806,0.4574179863928877,0.8071355524661913,15.322419696237976,,,,,Construction
+sector wage,information: FR3 hold-out average wage x relative productivity,trd,18.75186137846624,1.1841611953103586,6.526122481643391,17.57756064183067,,,,,Trade
+sector wage,information: FR3 hold-out average wage x relative productivity,tou,9.93966136630198,0.45618233038172873,0.8746603977171413,11.679524835171584,,,,,Tourism & catering
+sector wage,information: FR3 hold-out average wage x relative productivity,tra,5.466281661150368,0.20793996562423656,0.5939938472348306,0.6529780416954623,,,,,Transport & storage
+sector wage,information: FR3 hold-out average wage x relative productivity,ict,6.656780662389438,0.268533311529394,0.6923701668440158,2.018842176664304,,,,,Information & communication
+sector wage,information: FR3 hold-out average wage x relative productivity,oth,6.474902626343176,0.25757139507285276,0.764306970496572,0.9543750888749702,,,,,Social & other services
+budget / non-budget wage,model: FR3 hold-out wages x anchored ratios,budget,2.7949807201268753,0.11195484374115673,0.4239509592795426,0.5105501768045473,,,,,budget
+budget / non-budget wage,model: FR3 hold-out wages x anchored ratios,nonbudget,15.05814598770572,0.7898397202756731,3.7595495091460074,14.21465578213601,,,,,nonbudget

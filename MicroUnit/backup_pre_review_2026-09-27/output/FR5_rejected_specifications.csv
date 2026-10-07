@@ -1,7 +1,0 @@
-,specification,block,verdict,evidence
-0,volume per head on a deterministic trend,aggregate demand,REJECTED - not structural,fits (R2 = 0.840) but has no economic content and cannot respond to a scenario
-1,non-oil GDP per head in place of household income,aggregate demand,REJECTED - wrong-signed price term,price coefficient +1.536 when GDP replaces household income
-2,relative price in the aggregate demand equation,aggregate demand,REJECTED - fails out of sample,pooled OOS RMSE 13.64% vs 10.14% for income alone
-3,trend in the aggregate demand equation,aggregate demand,REJECTED - fails out of sample,pooled OOS RMSE 148.93%
-4,per-category choice of share specification,demand system,REJECTED - selection bias,wins the selection windows (1.31 pp) but loses the withheld window (2.01 vs 1.96 pp)
-5,unrestricted own-price coefficients in the demand system,demand system,RESTRICTED - violated the law of demand,"4 of 12 types implied a positive own-price elasticity (utilities, education, culture, medical); all are administered-price services"

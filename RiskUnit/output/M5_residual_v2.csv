@@ -1,35 +1,35 @@
 risk_id,ad,kanallar,FR2_skor,ehtimal,quyruq_g_baza,quyruq_g_cari,quyruq_g_plan,quyruq_cpi_baza,quyruq_cpi_cari,quyruq_cpi_plan,quyruq_fis_baza,quyruq_fis_cari,quyruq_fis_plan,qaliq_skor_plan,qaliq_prioritet,plandaki_tedbirler,metrika_baza,metrika_cari,metrika_plan
-R12,İnflyasiyanın hədəf diapazonundan yuxarı olması,,20,0.4745,0,0,0,0,0,0,0,0,0,20,yüksək,T06;T25,,,
-R01,Neft qiymətinin kəskin enməsi,brent;fiscal_react,16,0.4781,-1.6083,-1.6083,-1.57718,1.14396,1.14396,1.22786,-0.175032,-0.175032,-0.0801997,16,yüksək,T02;T03;T26,,,
-R13,Qeyri-neft artımının kəskin zəifləməsi (Growth-at-Risk),,10,0.141,0,0,0,0,0,0,0,0,0,10,orta,T08;T20,,,
-R03,Manatın məzənnəsinə təzyiq və devalvasiya,deval,10,0.09805,-0.0496742,-0.0496742,-0.0385502,0.410377,0.410377,0.244383,0,0,0,8,orta,T02;T05;T06;T27,,,
-R07,Pul baratlarının kəskin azalması,remit,9,0.22365,-0.175405,-0.175405,-0.188113,0,0,0,0,0,0,9,orta,T11,,,
-R14,Enerji keçidi: karbohidrogen tələbinin struktur azalması,transition,9,0.2497,-0.0272187,-0.0272187,-0.0274115,-0.058691,-0.058691,-0.0585118,-0.00564688,-0.00564688,-0.00641038,9,orta,T03,,,
-R05,Tərəfdaş ölkələrdə iqtisadi tənəzzül,partner,6,0.14235,-0.262528,-0.262528,-0.210445,0.0738098,0.0738098,0.0631595,-0.0108,-0.0108,-0.00174726,6,orta,T08;T11,,,
-R04,Bank sektorunda aktiv keyfiyyətinin pisləşməsi,bank,6,0.0962,-0.018,-0.018,-0.0098,0.01095,0.01095,0.00749,-0.00495,-0.00495,-0.0033775,4,aşağı,T04;T07,,,
-R11,Büdcə balansının pisləşməsi,,6,0.0873,0,0,0,0,0,0,0,0,0,6,orta,T02;T18;T26;T27;T29,,,
-R16,Rəqabət mühitinin pisləşməsi,compet,4,0.46545,-0.00731037,-0.00731037,-0.00482824,0.12644,0.12644,0.100945,0,0,0,4,aşağı,T23,,,
-R02,Maliyyə şəraitinin sərtləşməsi (kredit faizi),rate,4,0.089,0.0059518,0.0059518,0.00617243,0.00902327,0.00902327,0.00602037,-0.000514837,-0.000514837,-0.000744067,4,aşağı,T04,,,
-R06,Regional geosiyasi eskalasiya,gpr,4,0.40909,-0.0766962,-0.0766962,-0.0577285,0.0128802,0.0128802,0.0108814,-0.00094038,-0.00094038,-0.000127482,4,aşağı,T10;T11,,,
-R18,Dünya ərzaq qiymətlərinin şoku,food,4,0.078,0,0,0,0.251754,0.251754,0.252459,0,0,0,4,aşağı,,,,
-R08,Güclü zəlzələ,quake,3,0.196,-0.0407422,-0.0407422,-0.0404313,0.0051887,0.0051887,0.00521326,-0.0547571,-0.0547571,-0.0493246,3,aşağı,T14;T29,,,
-R09,Quraqlıq,drought,3,0.155,0.0278972,0.0278972,0.0276777,0,0,0,0,0,0,3,aşağı,,,,
+R12,İnflyasiyanın hədəf diapazonundan yuxarı olması,,20,0.47525,0,0,0,0,0,0,0,0,0,20,yüksək,T06;T25,,,
+R01,Neft qiymətinin kəskin enməsi,brent;fiscal_react,16,0.4781,-1.58485,-1.58485,-1.55003,1.12075,1.12075,1.21245,-0.185026,-0.185026,-0.0919512,16,yüksək,T02;T03;T26,,,
+R13,Qeyri-neft artımının kəskin zəifləməsi (Growth-at-Risk),,10,0.1406,0,0,0,0,0,0,0,0,0,10,orta,T08;T20,,,
+R03,Manatın məzənnəsinə təzyiq və devalvasiya,deval,10,0.09805,-0.0523813,-0.0523813,-0.0407752,0.413078,0.413078,0.246238,-0.00632689,-0.00632689,-0.00313181,8,orta,T02;T05;T06;T27,,,
+R07,Pul baratlarının kəskin azalması,remit,9,0.22365,-0.174799,-0.174799,-0.189437,0,0,0,0,0,0,9,orta,T11,,,
+R14,Enerji keçidi: karbohidrogen tələbinin struktur azalması,transition,9,0.2497,-0.0270634,-0.0270634,-0.0271403,-0.0586019,-0.0586019,-0.0582945,-0.00564822,-0.00564822,-0.00640515,9,orta,T03,,,
+R05,Tərəfdaş ölkələrdə iqtisadi tənəzzül,partner,6,0.14235,-0.258865,-0.258865,-0.207006,0.0712372,0.0712372,0.061115,-0.0105662,-0.0105662,-0.00189979,6,orta,T08;T11,,,
+R04,Bank sektorunda aktiv keyfiyyətinin pisləşməsi,bank,6,0.0962,-0.018,-0.018,-0.00994,0.0109,0.0109,0.007525,-0.00495,-0.00495,-0.003395,4,aşağı,T04;T07,,,
+R11,Büdcə balansının pisləşməsi,,6,0.0963,0,0,0,0,0,0,0,0,0,6,orta,T02;T18;T26;T27;T29,,,
+R16,Rəqabət mühitinin pisləşməsi,compet,4,0.46545,-0.00739537,-0.00739537,-0.00476024,0.126569,0.126569,0.100841,0,0,0,4,aşağı,T23,,,
+R02,Maliyyə şəraitinin sərtləşməsi (kredit faizi),rate,4,0.089,0.00597938,0.00597938,0.0061717,0.00872737,0.00872737,0.00581985,-0.000485241,-0.000485241,-0.000738199,4,aşağı,T04,,,
+R06,Regional geosiyasi eskalasiya,gpr,4,0.40909,-0.0764606,-0.0764606,-0.0574899,0.0125802,0.0125802,0.0109744,-0.000918893,-0.000918893,-0.000117084,4,aşağı,T10;T11,,,
+R18,Dünya ərzaq qiymətlərinin şoku,food,4,0.078,0,0,0,0.249742,0.249742,0.251612,0,0,0,4,aşağı,,,,
+R08,Güclü zəlzələ,quake,3,0.196,-0.040952,-0.040952,-0.0408221,0.00503126,0.00503126,0.00505137,-0.0552218,-0.0552218,-0.0495951,3,aşağı,T14;T29,,,
+R09,Quraqlıq,drought,3,0.155,0.0278928,0.0278928,0.0274992,0,0,0,0,0,0,3,aşağı,,,,
 R15,Emal sənayesi sahələrində maliyyə gərginliyi,manuf,3,0.1652,0.000202879,0.000202879,0.000219786,0,0,0,0,0,0,3,aşağı,,,,
-R10,Daşqın və Xəzər dənizinin səviyyəsinin dəyişməsi,flood,2,0.10565,-0.00065,-0.00065,-0.00085,0.0054,0.0054,0.0054,-0.00565,-0.00565,-0.005175,4,aşağı,T17;T29,,,
-R17,Qeyri-neft idxal qiymətlərinin kəskin artımı,import,2,0.04515,0,0,0,0.152604,0.152604,0.113674,0,0,0,2,aşağı,T25,,,
+R10,Daşqın və Xəzər dənizinin səviyyəsinin dəyişməsi,flood,2,0.10565,-0.0007,-0.0007,-0.0009,0.00545,0.00545,0.0054,-0.0056,-0.0056,-0.005225,4,aşağı,T17;T29,,,
+R17,Qeyri-neft idxal qiymətlərinin kəskin artımı,import,2,0.04515,0,0,0,0.150764,0.150764,0.113426,0,0,0,2,aşağı,T25,,,
 R19,Proqnoz qeyri-müəyyənliyi / model riski,,0,0,0,0,0,0,0,0,0,0,0,4,aşağı,T30,,,
-ÜMUMİ,Gözlənilən itki (ES10): qeyri-neft artımı,%,,,,,,,,,,,,,,,-0.477971,-0.477971,-0.410535
-ÜMUMİ,Riskə məruz dəyər (5%): qeyri-neft artımı,%,,,,,,,,,,,,,,,0.106703,0.106703,0.163006
-ÜMUMİ,P(qeyri-neft artımı < GaR həddi),ehtimal,,,,,,,,,,,,,,,0.141,0.141,0.13765
-ÜMUMİ,"Gözlənilən itki (ES10, yuxarı quyruq): inflyasiya",%,,,,,,,,,,,,,,,14.7352,14.7352,14.5903
-ÜMUMİ,P(inflyasiya > 6%),ehtimal,,,,,,,,,,,,,,,0.4745,0.4745,0.46355
-ÜMUMİ,Gözlənilən itki (ES10): dövlət büdcəsinin balansı (yalnız məlumat),% ÜDM,,,,,,,,,,,,,,,-1.55646,-1.55646,-1.32803
-ÜMUMİ,Riskə məruz dəyər (5%): büdcə balansı,% ÜDM,,,,,,,,,,,,,,,-1.33476,-1.33476,-1.11009
-ÜMUMİ,P(büdcə balansı < −1% ÜDM),ehtimal,,,,,,,,,,,,,,,0.0873,0.0873,0.06105
-ÜMUMİ,"Gözlənilən itki (ES10): konsolidasiya olunmuş fiskal kapital axını (büdcə + ARDNF), 2026–2030 cəmi",% ÜDM,,,,,,,,,,,,,,,0.227413,0.227413,0.639912
-ÜMUMİ,Konsolidasiya olunmuş fiskal kapital axınının ortası (yaxşı və pis illər simmetrik),% ÜDM,,,,,,,,,,,,,,,6.18113,6.18113,6.49092
-ÜMUMİ,"Konsolidasiya olunmuş fiskal kapital axınının VaR-ı (95%, orta − p05)",% ÜDM,,,,,,,,,,,,,,,5.38026,5.38026,5.31091
-ÜMUMİ,Büdcənin neft gəlirlərinə risk (95%),mln AZN,,,,,,,,,,,,,,,5591.11,5591.11,4537.03
+ÜMUMİ,Gözlənilən itki (ES10): qeyri-neft artımı,%,,,,,,,,,,,,,,,-0.473184,-0.473184,-0.406035
+ÜMUMİ,Riskə məruz dəyər (5%): qeyri-neft artımı,%,,,,,,,,,,,,,,,0.10625,0.10625,0.168737
+ÜMUMİ,P(qeyri-neft artımı < GaR həddi),ehtimal,,,,,,,,,,,,,,,0.1406,0.1406,0.1371
+ÜMUMİ,"Gözlənilən itki (ES10, yuxarı quyruq): inflyasiya",%,,,,,,,,,,,,,,,14.7567,14.7567,14.6118
+ÜMUMİ,P(inflyasiya > 6%),ehtimal,,,,,,,,,,,,,,,0.47525,0.47525,0.4638
+ÜMUMİ,Gözlənilən itki (ES10): dövlət büdcəsinin balansı (yalnız məlumat),% ÜDM,,,,,,,,,,,,,,,-1.61453,-1.61453,-1.38362
+ÜMUMİ,Riskə məruz dəyər (5%): büdcə balansı,% ÜDM,,,,,,,,,,,,,,,-1.3976,-1.3976,-1.16513
+ÜMUMİ,P(büdcə balansı < −1% ÜDM),ehtimal,,,,,,,,,,,,,,,0.0963,0.0963,0.06675
+ÜMUMİ,"Gözlənilən itki (ES10): konsolidasiya olunmuş fiskal kapital axını (büdcə + ARDNF), 2026–2030 cəmi",% ÜDM,,,,,,,,,,,,,,,0.432054,0.432054,0.901822
+ÜMUMİ,Konsolidasiya olunmuş fiskal kapital axınının ortası (yaxşı və pis illər simmetrik),% ÜDM,,,,,,,,,,,,,,,6.19365,6.19365,6.52455
+ÜMUMİ,"Konsolidasiya olunmuş fiskal kapital axınının VaR-ı (95%, orta − p05)",% ÜDM,,,,,,,,,,,,,,,5.20856,5.20856,5.10351
+ÜMUMİ,Büdcənin neft gəlirlərinə risk (95%),mln AZN,,,,,,,,,,,,,,,5568.37,5568.37,4515.3
 ÜMUMİ,"ARDNF portfelinin VaR-ı (95%, 1 il)",mln USD,,,,,,,,,,,,,,,6978.2,6978.2,6576.12
-ÜMUMİ,"Fiskal kapitala risk (CaR95, 1 il; K2 + ARDNF VaR və konsolidasiya olunmuş fiskal axının VaR dəyişməsi)",mln USD,,,,,,,,,,,,,,,17107.1,17107.1,16478.5
-ÜMUMİ,Fiskal kapitala risk — yalnız bazar hissəsi (məqsəd funksiyası üçün; fiskal axın ayrıca),mln USD,,,,,,,,,,,,,,,17107.1,17107.1,16705
+ÜMUMİ,"Fiskal kapitala risk (CaR95, 1 il; K2 + ARDNF VaR və konsolidasiya olunmuş fiskal axının VaR dəyişməsi)",mln USD,,,,,,,,,,,,,,,17111.8,17111.8,16473.4
+ÜMUMİ,Fiskal kapitala risk — yalnız bazar hissəsi (məqsəd funksiyası üçün; fiskal axın ayrıca),mln USD,,,,,,,,,,,,,,,17111.8,17111.8,16709.7

@@ -1,0 +1,24 @@
+code,name_az,name_en,nace_section,nace_list,cpa_products,fr1_group,fr4_sector_map,fr10_branch_map
+AGR,"Kənd, meşə və balıqçılıq təsərrüfatı","Agriculture, forestry, fishing",A,01;02;03,01;02;03,agr,agr,
+OILGAS,Neft-qaz hasilatı və xidmətləri,Crude oil and gas extraction and support,B,06;09,06;09,min,mining,06;09
+MINOTH,Digər mədənçıxarma,Other mining and quarrying,B,05;07;08,05;07;08,min,mining,07;08
+FOOD,"Qida məhsulları, içkilər, tütün","Food, beverages, tobacco",C,10;11;12,10;11;12,man,manuf,10;11;12
+LIGHT,"Yüngül sənaye, ağac, kağız, poliqrafiya","Textiles, apparel, leather, wood, paper, printing",C,13;14;15;16;17;18,13;14;15;16;17;18,man,manuf,13;14;15;16;17;18
+PETR,Neft məhsulları (koks və neft emalı),Coke and refined petroleum products,C,19,19,man,manuf,19
+CHEM,"Kimya, əczaçılıq, rezin və plastik","Chemicals, pharmaceuticals, rubber and plastics",C,20;21;22,20;21;22,man,manuf,20;21;22
+METMIN,"Qeyri-metal mineral, metallurgiya, metal məmulatları","Non-metallic minerals, basic and fabricated metals",C,23;24;25,23;24;25,man,manuf,23;24;25
+MACH,"Maşın, avadanlıq, nəqliyyat vasitələri, digər emal və təmir","Machinery, equipment, vehicles, other manufacturing, repair",C,26;27;28;29;30;31;32;33,26;27;28;29;30;31;32;33,man,manuf,26;27;28;29;30;31;32;33
+ENERGY,"Elektrik enerjisi, qaz, buxar",Electricity gas steam,D,35,35,elc,elec,35
+WATER,"Su təchizatı, tullantılar",Water supply and waste,E,36;37;38;39,36;37;38;39,wat,water,
+CONS,Tikinti,Construction,F,41;42;43,41-43,con,constr,
+TRADE,"Ticarət, nəqliyyat vasitələrinin təmiri",Wholesale and retail trade,G,45;46;47,45-47,trd,trade,
+TRANS,Nəqliyyat və anbar təsərrüfatı,Transport and storage,H,49;50;51;52;53,49;50;51;52;53,tra,transp,
+ACCOM,Turistlərin yerləşdirilməsi və ictimai iaşə,Accommodation and food service,I,55;56,55;56,tou,hotel,
+ICT,İnformasiya və rabitə,Information and communication,J,58;59;60;61;62;63,58;59;60;61;62;63,ict,ict,
+FIN,Maliyyə və sığorta fəaliyyəti,Financial and insurance,K,64;65;66,64;65;66,oth,fin,
+REAL,Daşınmaz əmlakla əməliyyatlar,Real estate,L,68,68,oth,realest,
+BUS,"Peşə, elmi, texniki, inzibati və yardımçı fəaliyyət","Professional, scientific, administrative and support",M;N,69;70;71;72;73;74;75;77;78;79;80;81;82,69;70;71;72;73;74;75;77;78;79;80;81;82,oth,prof;admsup,
+PUB,"Dövlət idarəetməsi və müdafiə, sosial təminat",Public administration and defence,O,84,84,oth,pubadm,
+EDU,Təhsil,Education,P,85,85,oth,educ,
+HEALTH,Səhiyyə və sosial xidmətlər,Human health and social work,Q,86;87;88,86;87;88,oth,health,
+OTHSERV,"İncəsənət, əyləncə və digər xidmətlər","Arts, entertainment and other services",R;S,90;91;92;93;94;95;96,90;91;92;93;94;95;96,oth,art;othsvc,

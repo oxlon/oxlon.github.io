@@ -25,6 +25,25 @@ def blocks_az(F):
   edilir, p = {az(e3['homog_p_full'], 3)}, orada sərbəst formada qeyri-neft ÜDM həddi səhv işarəlidir). Qeyri-neft ÜDM qalan bazar gəlirlərini (sahibkarlıq
   və mülkiyyət gəlirləri), əmək haqqı fondu isə əmək haqqı və minimum əmək haqqı kanalını təmsil edir. Pensiya xərcləri **proksidir**: orta
   pensiya × ümumi əhali (iş kitabında pensiyaçıların sayı yoxdur). Pensiyalar siyasət dəyişənidir və proqnozda İQİ-yə indeksləşdirilir.""", False)
+    db = d["v23"]["debt"]; y5 = db[str(F.LAST)]; y0 = db["2020"]; y4 = db["2024"]; old = d["v23"]["debt_old_2025"]
+    B["v23_debt"] = (f"""5. **Dövlət borcu (v2.3.2)** — iş kitabındakı cəm ('Ümumi dövlət borcu', `Fiskal sektor` 22-ci sətir, mln ABŞ dolları kimi
+   işarələnib) üç fərqli əsasdadır: 2010–2020-də mln AZN-lə (2020: {az(y0['total (row 22)'], 1)} = xarici {az(y0['external, mln USD'], 1)} mln ABŞ dolları × {az(y0['FX end-year'], 4)} + daxili
+   {az(y0['domestic, mln AZN'], 1)} mln AZN), 2021–2024-də mln ABŞ dolları ilə (2024: {az(y4['total (row 22)'], 1)}), {F.LAST}-ci ildə isə çevrilmədən toplanmış
+   {az(y5['total (row 22)'], 1)} = {az(y5['external, mln USD'], 1)} (ABŞ dolları) + {az(y5['domestic, mln AZN'], 1)} (AZN). Bütün sətrin məzənnə ilə çevrilməsi {F.LAST} üçün {az(old, 0)} mln AZN
+   verir, 2010–2020-ni isə məzənnə qədər təhrif edirdi (2010-da ×{az(float(F.A.loc[2010, 'fx']), 2)}, 2020-də ×{az(y0['FX end-year'], 2)}). Dövlət borcu indi hər il xarici borc (24-cü sətir) × ilin sonuna məzənnə + daxili
+   borc (23-cü sətir) kimi hesablanır — Maliyyə Nazirliyinin anlayışı, dövlət zəmanətli borc daxil deyil: **{F.LAST}-ci ildə
+   {az(y5['external x FX + domestic (mln AZN)'], 1)} mln AZN (ÜDM-in {az(d['v23']['debt_gdp_2025'], 1)}%-i)**. Üç əsas notebook-da yoxlanılır (assert).""", False)
+    g4 = d["v23"]["deval"]; cf4, p4 = g4["g4_cf"], g4["g4_p"]
+    if "dln_fx_L1" in cf4:
+        B["v23_g4"] = (f"""- **İnflyasiya** — struktur xərc əlavəsi (v2.3.4): cari ildə məzənnə dəyişməsi ({az(cf4['dln_fx'], 3)}, p = {az(p4['dln_fx'])}) və əvvəlki ildə məzənnə
+  dəyişməsi ({az(cf4['dln_fx_L1'], 3)}, p = {az(p4['dln_fx_L1'], 3)}; izahedici dəyişənin gecikməsi, gecikmiş inflyasiya yoxdur) və əmək haqqı artımı ({az(cf4['dln_wage'], 3)}, p = {az(p4['dln_wage'])});
+  R² {az(g4['g4_r2'])}. Məzənnənin məcmu ötürülməsi {az(cf4['dln_fx'] + cf4['dln_fx_L1'])} (2015–17 tarixi: {az(g4['hist_passthrough_2015_17'])}); idxal qiymətləri formaları çıxarılıb, çünki
+  iki idxal qiyməti mənbəyi 2021–25-də bir-birinə ziddir (v2.3.4 qeydi).""", False)
+    else:
+        B["v23_g4"] = (f"""- **İnflyasiya** — struktur xərc əlavəsi (v2.3.3): idxal qiymətlərinin manatla artımı (ABŞ dolları ilə idxal qiymətləri + məzənnə) cari
+      ildə ({az(cf4['dln_pm_azn'], 3)}, p = {az(p4['dln_pm_azn'], 3)}) və əvvəlki ildə ({az(cf4['dln_pm_azn_L1'], 3)}, p = {az(p4['dln_pm_azn_L1'])}; izahedici dəyişənin gecikməsi, gecikmiş
+      inflyasiya yoxdur) və əmək haqqı artımı ({az(cf4['dln_wage'], 3)}, p = {az(p4['dln_wage'])}); R² {az(g4['g4_r2'])}. Məzənnənin məcmu ötürülməsi {az(cf4['dln_pm_azn'] + cf4['dln_pm_azn_L1'])}
+      (2015–17 tarixi: {az(g4['hist_passthrough_2015_17'])}). ABŞ dolları ilə idxal qiymətləri baza fərziyyəsidir (ildə 0%, giriş `pm_usd_infl`).""", False)
     B["v23_solver"] = (f"{S['forecast_iter'][0]}–{S['forecast_iter'][1]}\niterasiya, nümunədən kənar yoxlamada "
                        f"{S['holdout_iter'][0]}–{S['holdout_iter'][1]}", True)
     li = A["largest_increment"]; beat = A["choice"] != "1:1 mapping"

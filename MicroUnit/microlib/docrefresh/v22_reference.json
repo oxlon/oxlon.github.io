@@ -71,6 +71,131 @@
      "Reform": 4.655628
     }
    }
+  },
+  "v23": {
+   "_comment": "v2.3 run before the v2.3.1 multiplier fix (2026-10-06): balance_n reported as % deviation",
+   "mult_balance_pct_istate": [
+    -306.394,
+    -849.177,
+    2247.558,
+    -3359.18,
+    -1568.751
+   ],
+   "mult_balance_pct_istate_v22_2028": 52130.0,
+   "pre_debt_fix": {
+    "Baseline": {
+     "debt_gdp_2030": 20.481411984347357,
+     "bal_gdp_2030": 0.09298079590236065,
+     "debt_serv_2026": 1870.7711133789364
+    },
+    "Adverse": {
+     "debt_gdp_2030": 22.217516605327265,
+     "bal_gdp_2030": 0.9915251120920581,
+     "debt_serv_2026": 1870.7711133789364
+    },
+    "Reform": {
+     "debt_gdp_2030": 18.92066543974637,
+     "bal_gdp_2030": -0.26147460113974413,
+     "debt_serv_2026": 1870.7711133789364
+    }
+   },
+   "pre_g4_deval": {
+    "_comment": "engine, v2.3.2 model (G4 = exchange rate + wages), Baseline, fx +16.5% from 2026, shock mode",
+    "infl_2026": 1.138,
+    "infl_2027": 0.02,
+    "cpi_2030": 1.154,
+    "rgdpnon_2026": 0.257,
+    "rgdpnon_2030": 0.444,
+    "debt_gdp_2030": -0.076,
+    "rhhdisp_2030": 0.238
+   },
+   "v233_g4": {
+    "_comment": "v2.3.3 run (G4 = macro-module manat import prices, current + previous year), before the v2.3.4 data check",
+    "deval": {
+     "infl_2026": 3.63,
+     "infl_2027": 0.99,
+     "cpi_2030": 4.4,
+     "rgdpnon_2026": -0.13,
+     "rgdpnon_2030": -0.19,
+     "rhhdisp_2030": -0.79,
+     "debt_gdp_2030": -0.26
+    },
+    "infl_2027_30": {
+     "Baseline": 7.3,
+     "Adverse": 7.0,
+     "Reform": 7.6
+    },
+    "U_infl": 0.504
+   },
+   "pre_v235": {
+    "_comment": "v2.3.4 run, before the pension-cost identity and the minimum-wage correction",
+    "e2_cf": {
+     "const": 0.668,
+     "ln_prod_non": 0.817,
+     "ln_cpi": 0.617,
+     "ln_minwage": 0.186
+    },
+    "e2_p_minwage": 0.138,
+    "e2_holdout_u": 0.522,
+    "e2_holdout_rmse": 12.83,
+    "minwage10_2030": {
+     "wage": 2.64,
+     "rhhdisp": 0.907,
+     "rcons": 1.0,
+     "cpi": 0.854
+    },
+    "pension10_dbal": [
+     30,
+     36,
+     43,
+     50,
+     58
+    ],
+    "pension10_dexp": [
+     58,
+     63,
+     68,
+     75,
+     82
+    ],
+    "infl_baseline": [
+     5.7,
+     5.93,
+     5.07,
+     4.87,
+     4.53
+    ]
+   },
+   "v235": {
+    "_comment": "v2.3.5 run (minimum wage shifted fix with the 2019 average 203.3; E2 free)",
+    "e2_cf": {
+     "ln_minwage": 0.384,
+     "ln_prod_non": 0.495,
+     "ln_cpi": 0.39
+    },
+    "e2_p_minwage": 0.0,
+    "e2_holdout_u": 0.584,
+    "minwage10_2030": {
+     "wage": 4.665,
+     "rhhdisp": 1.586,
+     "cpi": 1.495
+    },
+    "minwage20_2030": {
+     "wage": 9.11,
+     "rgdp": 1.13,
+     "rhhdisp": 3.07,
+     "cpi": 2.86,
+     "infl_2026": 3.04
+    },
+    "infl_baseline": [
+     5.7,
+     5.22,
+     4.5,
+     4.26,
+     4.01
+    ],
+    "minwage_2019": 203.3
+   }
   }
  },
  "FR4": {

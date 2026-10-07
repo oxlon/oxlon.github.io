@@ -1,0 +1,25 @@
+{
+ "id": "export_sub_man",
+ "name_az": "Emal sənayesi ixracına subsidiya 200 mln AZN/il (2027–2030)",
+ "description_az": "Qeyri-neft emal sənayesi ixracatçılarına ildə 200 mln AZN ödəniş.",
+ "start_year": 2027,
+ "instruments": [
+  {
+   "instrument": "export_subsidy",
+   "years": [
+    2027,
+    2028,
+    2029,
+    2030
+   ],
+   "size": 200,
+   "unit": "mln_azn",
+   "target": "man",
+   "financing": "deficit"
+  }
+ ],
+ "tags": [
+  "ticarət",
+  "sektor"
+ ]
+}

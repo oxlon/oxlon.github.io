@@ -130,6 +130,13 @@ curl -s -X POST -H "$W" $B/refresh/<id>/cancel
   0,5 × şok × FR1 G3 əmsalı; gas, state_inv, costpush, npl yalnız zəncirdə). (a) deterministik sapma —
   `measures.stress_vector` (S1–S8 ilə eyni qayda: yalnız elan olunmuş şoklar; T09 tədbiri ilə və tədbirsiz), (b) şoka
   şərtli paylanma (digər amillər təsadüfi) şərtsiz paylanma ilə müqayisədə: kvantillər, P(hədd pozulması), ES10.
+* **Siyasət (`micro_overrides`) Monte Karlo-da**: MikroUnit zənciri yalnız `micro_overrides` ilə Baseline-a qarşı
+  icra edilir; RU təriflərində (`scalability.derived_delta`) fərq yolları — qeyri-neft real artımı (f.b.), İQİ (f.b.),
+  büdcə balansı (Δ mln AZN / FR1 Baseline `gdp_n` × 100, % ÜDM) — `policy_shift` kimi qaytarılır və baza mərkəzli
+  Monte Karlo ssenarilərinin hər birinə **deterministik sürüşmə** kimi əlavə olunur. Hədd pozulma ehtimalı, ES10 və
+  median siyasətlə və siyasətsiz yenidən hesablanır (`metrics.*.siyasetin_effekti`); paylanmanın eni dəyişmir
+  (siyasətin öz qeyri-müəyyənliyi və şoklarla qarşılıqlı təsiri nəzərə alınmır). Nümunə: +1 mlrd AZN dövlət
+  investisiyası — `{"micro_overrides": {"FR1": {"exogenous": {"istate_add": {"add": [0,1000,1000,1000,1000]}}}}}`.
 * RU öz mərkəzi yolunu dərc etmir: hər şey OxLon/MicroUnit bazasından **fərq** kimi verilir.
 
 ## 4. Avtonom rejim

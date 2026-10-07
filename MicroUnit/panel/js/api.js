@@ -16,8 +16,19 @@
     var ch = A.online !== on; A.online = on; A.info = info || A.info;
     if (ch) A.listeners.forEach(function (f) { try { f(on); } catch (e) { if (window.console) console.error(e); } });
   }
+  /* live request: server when reachable; otherwise the in-browser Python backend (pyweb.js) for the routes it supports */
+  A.mode = function () { return U.PY ? U.PY.mode(A.online) : (A.online ? 'server' : 'paket'); };
   A.req = function (method, path, body, opt) {
-    opt = opt || {};
+    if (U.PY && A.online !== true && U.PY.supports(method, path)) {
+      return (A.online === null ? A.ping() : Promise.resolve(false)).then(function (on) { return on ? A.net(method, path, body, opt) : A.viaPy(method, path, body); });
+    }
+    return A.net(method, path, body, opt);
+  };
+  A.viaPy = function (method, path, body) {
+    return U.PY.req(method, path, body).then(function (r) { A.lastVia = 'brauzer'; if (r.status >= 400) throw A.err(r.body, r.status); return r.body; });
+  };
+  A.net = function (method, path, body, opt) {
+    opt = opt || {}; A.lastVia = 'server';
     if (location.protocol === 'file:' && !U.ls('mikroPanel.api')) { set(false); return Promise.reject(new Error('Panel fayl kimi açılıb: hesablama üçün serveri başladın (MikroModel_Baslat.command / .bat) və paneli http://127.0.0.1:8790/panel/ ünvanında açın.')); }
     var h = { Authorization: 'Bearer ' + A.token() };
     if (body !== undefined) h['Content-Type'] = 'application/json';
@@ -56,6 +67,11 @@
       '<ol class="small" style="margin:4px 0 8px;padding-left:18px"><li><b>MikroModel_Baslat.command</b> (macOS) və ya <b>MikroModel_Baslat.bat</b> (Windows) faylını <code>MicroUnit</code> qovluğunda iki dəfə klikləyin.</li>' +
       '<li>Brauzerdə <code>http://127.0.0.1:8790/panel/</code> açılacaq. Və ya terminalda: <code>python3 api/server.py</code>.</li></ol>' +
       '<button type="button" class="btn sm" id="api-retry">Yenidən yoxla</button> <button type="button" class="btn sm ghost" id="api-set">Server ayarları</button></div>';
+  };
+  /* note shown instead of the launcher when the browser computes */
+  A.browserHtml = function () {
+    return '<div class="card pad" role="note" style="border-left:3px solid var(--accent)"><b>Server yoxdur — «Hesabla» bu brauzerdə Python ilə işləyir.</b>' +
+      '<p class="small" style="margin:6px 0 0">Eyni Python funksiyaları (zəncir FR1 → FR3, FR4, FR5, FR10 → FR12) Pyodide ilə brauzerdə icra olunur; ilk dəfə ≈ ' + U.nf(U.PY.estMB(), 0) + ' MB yüklənir (sonra brauzer yaddaşından). Ssenarini serverdə saxlamaq mümkün deyil — «JSON ixrac» istifadə edin.</p></div>';
   };
   A.settingsHtml = function () {
     return '<h2 class="mh">Server ayarları</h2><p class="small muted">Standart: panel serverdən açılıbsa eyni ünvan; faylla açılıbsa http://127.0.0.1:8790/api/v1. Nişan — serverin API_TOKENS dəyişənindəki yazı nişanı (sınaq: demo-write).</p>' +

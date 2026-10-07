@@ -263,7 +263,7 @@ $$L_t = N_t \,\pi_t\,(1-u_t), \qquad H_t = \phi_t L_t$$
 - **E2 — məşğulluq səviyyəsi.** DOLS: $\ln(L/LF) = -0.860 + 0.0824\ln Q^{non} - 0.0036\,t$. Fərq forması
   0,0967 verir (95% etibarlılıq intervalı 0,021–0,172), bu interval səviyyə qiymətini ehtiva edir. Kointeqrasiya p-dəyəri
   0,225, DW isə 0,58-dir, buna görə səviyyə t-statistikaları təsviridir. FR1-in forması (adambaşına qeyri-neft ÜDM,
-  trendsiz, iştirak trendi ilə) 0,0337 verir (kointeqrasiya p = 0,171). <!-- AUTO:e2gap -->İki blok 2030-cu ildə məşğulluq üzrə 0,99% (bütün ssenarilər və illər üzrə ən çoxu 1,24%), işçi qüvvəsi üzrə isə ən çoxu 0,23% fərqlənir. Hər ikisi 2025-ci ilin göstəricisini təkrarlayır.<!-- /AUTO:e2gap -->
+  trendsiz, iştirak trendi ilə) 0,0337 verir (kointeqrasiya p = 0,171). <!-- AUTO:e2gap -->İki blok 2030-cu ildə məşğulluq üzrə 1,05% (bütün ssenarilər və illər üzrə ən çoxu 1,33%), işçi qüvvəsi üzrə isə ən çoxu 0,23% fərqlənir. Hər ikisi 2025-ci ilin göstəricisini təkrarlayır.<!-- /AUTO:e2gap -->
 - **E3 — muzdlu işçilərin payı.** 2019-cu ilədək məlumatlar üzrə trend +0,0006-dır (t = 0,28), tam nümunə üzrə isə
   t = 1,97. Fərq forması dreyf göstərmir və sıra U-formalıdır. O, **2025-ci ildən etibarən hər il üçün 2024-cü ilin
   faktiki səviyyəsində, 0,3540-da** saxlanılır.
@@ -429,30 +429,30 @@ bu, konstruksiya etibarilə belədir, buna görə bu, təsdiq deyil, uyğunluqdu
 <!-- AUTO:results (FR4.ipynb Hissə 20.2 tərəfindən icranın nəticələri əsasında yaradılır; əl ilə redaktə etməyin) -->
 ## 11. Əsas ssenarinin nəticələri, 2026–2030
 
-Ümumi məşğulluq (FR1) 5 105 min nəfərdən 5 272 min nəfərədək artır — **ildə +0,65%** (90% zolaq: -0,25% ilə +1,60% arası).
+Ümumi məşğulluq (FR1) 5 105 min nəfərdən 5 270 min nəfərədək artır — **ildə +0,64%** (90% zolaq: -0,27% ilə +1,52% arası).
 
 | Qrup | İllik, % | 90% zolaq |
 |---|---|---|
-| Yerləşdirmə və iaşə | +0.95 | -1.72 ilə +4.04 arası |
-| İnformasiya və rabitə | +0.86 | -0.28 ilə +1.98 arası |
-| Nəqliyyat və anbar | +0.74 | -0.62 ilə +2.22 arası |
-| Kənd, meşə və balıqçılıq | +0.67 | -0.19 ilə +1.59 arası |
-| Ticarət və təmir | +0.67 | -0.24 ilə +1.63 arası |
-| Digər xidmətlər (9 fəaliyyət) | +0.61 | -0.43 ilə +1.64 arası |
-| Sənaye | +0.55 | -0.59 ilə +1.70 arası |
-| Tikinti | +0.52 | -0.96 ilə +1.93 arası |
+| Yerləşdirmə və iaşə | +0.90 | -1.89 ilə +3.77 arası |
+| İnformasiya və rabitə | +0.86 | -0.32 ilə +1.96 arası |
+| Nəqliyyat və anbar | +0.74 | -0.61 ilə +2.20 arası |
+| Kənd, meşə və balıqçılıq | +0.67 | -0.21 ilə +1.52 arası |
+| Ticarət və təmir | +0.64 | -0.28 ilə +1.56 arası |
+| Digər xidmətlər (9 fəaliyyət) | +0.60 | -0.41 ilə +1.61 arası |
+| Sənaye | +0.55 | -0.64 ilə +1.64 arası |
+| Tikinti | +0.52 | -0.96 ilə +1.89 arası |
 
 - **Sənaye daxilində** (məşğul əhali əsasında): mədənçıxarma ildə -0,46% (onun neft hissəsi E9 tənliyinə tabedir), emal sənayesi +0,66%.
-- **Digər xidmətlər daxilində**: bazar xidmətləri artır (məşğul əhali üzrə ildə +1,75%, muzdlu işçilər üzrə +3,68%), büdcədən maliyyələşən xidmətlər isə məşğul əhali əsasında azalır (-0,07%), muzdlu işçilər əsasında azalır (-0,57%): digər xidmətlərin buraxılışı artdıqca E6 məşğulluğu büdcədən maliyyələşən blokdan bazar xidmətlərinə doğru keçirir və burada bu keçid büdcədən maliyyələşən bloku mütləq ifadədə kiçildəcək qədər sürətlidir.
-- **Tikinti**: FR1-də tikinti buraxılışı 2026-cı ildə -19,0% dəyişir; tikintidə məşğulluq həmin il -0,60%, ümumi məşğulluq isə +0,54% dəyişir — enmə var, lakin sönümlüdür (kiçik elastikliyə yarım çəki verilir).
+- **Digər xidmətlər daxilində**: bazar xidmətləri artır (məşğul əhali üzrə ildə +1,67%, muzdlu işçilər üzrə +3,49%), büdcədən maliyyələşən xidmətlər isə məşğul əhali əsasında azalır (-0,04%), muzdlu işçilər əsasında azalır (-0,50%): digər xidmətlərin buraxılışı artdıqca E6 məşğulluğu büdcədən maliyyələşən blokdan bazar xidmətlərinə doğru keçirir və burada bu keçid büdcədən maliyyələşən bloku mütləq ifadədə kiçildəcək qədər sürətlidir.
+- **Tikinti**: FR1-də tikinti buraxılışı 2026-cı ildə -19,0% dəyişir; tikintidə məşğulluq həmin il -0,60%, ümumi məşğulluq isə +0,53% dəyişir — enmə var, lakin sönümlüdür (kiçik elastikliyə yarım çəki verilir).
 
 Müqayisə üçün birinci versiya (FR1-in əvvəlki yolu ilə): yerləşdirmə və iaşə +2,42%, informasiya və rabitə +1,43%, tikinti +1,24% … ticarət +0,32%, cəmi +0,53%.
 
-- **Dövlət sektorunda** məşğulluq: 1 049,3 → 984,4 min nəfər (ildə -1,27%; zolaq -2,42% ilə -0,20% arası), pay 20,6% → 18,7%.
-- **Büdcə təşkilatları** (σ = 0,909): 594,2 → 577,4 min nəfər (ildə -0,57%; zolaq -1,96% ilə +0,60% arası), 2030-cu ildə muzdlu işçilərin 30,9%-i.
-- **Neft sektorunda** məşğulluq, vergi uçotu əsasında: 47,8 → 45,5 min nəfər (ildə -0,97%; zolaq -2,47% ilə +0,52% arası); statistik əsasda 30,9 → 29,4.
+- **Dövlət sektorunda** məşğulluq: 1 049,3 → 984,0 min nəfər (ildə -1,28%; zolaq -2,40% ilə -0,19% arası), pay 20,6% → 18,7%.
+- **Büdcə təşkilatları** (σ = 0,909): 594,2 → 579,5 min nəfər (ildə -0,50%; zolaq -1,75% ilə +0,55% arası), 2030-cu ildə muzdlu işçilərin 31,1%-i.
+- **Neft sektorunda** məşğulluq, vergi uçotu əsasında: 47,8 → 45,5 min nəfər (ildə -0,97%; zolaq -2,46% ilə +0,69% arası); statistik əsasda 30,9 → 29,4.
 
-**Ssenarilər.** 2030-cu ildə FR1-in ssenariləri real neft ÜDM-i üzrə 22,0%, qeyri-neft ÜDM üzrə 10,58%, məşğulluq üzrə 0,34% fərqlənir; buna görə FR4-ün məşğulluğu da 0,34% (17,8 min nəfər) fərqlənir. Neft sektorunda məşğulluq ssenarilər arasında 17,3% ayrılır (Mənfi 40,7, İslahat 47,8 min nəfər).
+**Ssenarilər.** 2030-cu ildə FR1-in ssenariləri real neft ÜDM-i üzrə 22,0%, qeyri-neft ÜDM üzrə 12,10%, məşğulluq üzrə 0,39% fərqlənir; buna görə FR4-ün məşğulluğu da 0,39% (20,3 min nəfər) fərqlənir. Neft sektorunda məşğulluq ssenarilər arasında 17,3% ayrılır (Mənfi 40,7, İslahat 47,8 min nəfər).
 
 **Yelpik qrafikləri** (`FR4_fan_employment.csv`, `FR4_fan_summary_2030.csv`): 2 000 təkrarlama — tarixi qalıq yollarının yenidən seçilməsi (18 tənlik üzrə 2011–2018 illərində başlayan 8 birgə 6 illik yol, mərkəzləşdirilmiş; E9 üçün başlanğıclar 2016–2020), parametr çəkilişləri və FR1-in 500 makro çəkilişi birləşdirilir. Hər nöqtəvi proqnoz öz kvartillərarası zolağının daxilindədir (Hissə 17.5-də yoxlanılır).
 
@@ -463,15 +463,15 @@ Müqayisə üçün birinci versiya (FR1-in əvvəlki yolu ilə): yerləşdirmə 
 | Rıçaq | 2030-cu ilə təsir |
 |---|---|
 | əhali artımı 0.3 faiz bəndi aşağı | ümumi -78.6 min (-1.5%); işçi qüvvəsi -82.4 min (-1.5%); kənd təsərrüfatı -27.9 min (-1.5%) |
-| əhali artımı 0.3 faiz bəndi yuxarı | ümumi +79.6 min (+1.5%); işçi qüvvəsi +83.4 min (+1.5%); kənd təsərrüfatı +28.2 min (+1.5%) |
-| muzdlu işçilərin payı 2030-a qədər +2 faiz bəndi | muzdlu işçilər +105.4 min (+5.7%); büdcə +32.6 min (+5.7%); qeyri-büdcə +72.8 min (+5.7%) |
-| dövlət payı 2024-cü il səviyyəsində dondurulmuş | dövlət +120.0 min (+12.2%); qeyri-dövlət -120.0 min (-2.8%) |
-| büdcə = 4 fəaliyyətin bütün muzdlu işçiləri (κ = 0.994, 1-ci versiya) | büdcə +53.7 min (+9.3%) |
-| 1-ci pillə + sənaye: təmiz sabit paylar | yerləşdirmə və iaşə -2.1 min (-1.9%); informasiya və rabitə -0.9 min (-1.4%); tikinti +3.0 min (+0.7%) |
-| 1-ci pillə + sənaye: yalnız birləşdirilmiş buraxılış sistemi | yerləşdirmə və iaşə +2.1 min (+1.9%); informasiya və rabitə +0.9 min (+1.4%); tikinti -3.0 min (-0.7%) |
-| 1-ci pillə sürücüsü: qrupa xas nisbi buraxılış payı (qəbul edilməyib) | yerləşdirmə və iaşə +7.1 min (+6.4%); informasiya və rabitə -1.2 min (-1.9%); tikinti +4.3 min (+1.0%) |
-| 1-ci pillə sürücüsü: qrupa xas adambaşına gəlir (qəbul edilməyib) | yerləşdirmə və iaşə +10.7 min (+9.6%); tikinti +19.0 min (+4.5%); sənaye +16.0 min (+3.8%) |
-| YALNIZ HƏSSASLIQ: düzəliş əmsalları sabit yarımsönmə dövrü ilə sönür (1 il; E6, E8) | bazar xidmətləri -17.8 min (-3.2%); dövlət +14.3 min (+1.4%); büdcə +4.7 min (+0.8%) |
+| əhali artımı 0.3 faiz bəndi yuxarı | ümumi +79.5 min (+1.5%); işçi qüvvəsi +83.4 min (+1.5%); kənd təsərrüfatı +28.2 min (+1.5%) |
+| muzdlu işçilərin payı 2030-a qədər +2 faiz bəndi | muzdlu işçilər +105.4 min (+5.7%); büdcə +32.7 min (+5.7%); qeyri-büdcə +72.7 min (+5.7%) |
+| dövlət payı 2024-cü il səviyyəsində dondurulmuş | dövlət +119.9 min (+12.2%); qeyri-dövlət -119.9 min (-2.8%) |
+| büdcə = 4 fəaliyyətin bütün muzdlu işçiləri (κ = 0.994, 1-ci versiya) | büdcə +53.9 min (+9.3%) |
+| 1-ci pillə + sənaye: təmiz sabit paylar | yerləşdirmə və iaşə -1.8 min (-1.7%); informasiya və rabitə -0.9 min (-1.5%); tikinti +2.9 min (+0.7%) |
+| 1-ci pillə + sənaye: yalnız birləşdirilmiş buraxılış sistemi | yerləşdirmə və iaşə +1.8 min (+1.7%); informasiya və rabitə +0.9 min (+1.5%); tikinti -2.9 min (-0.7%) |
+| 1-ci pillə sürücüsü: qrupa xas nisbi buraxılış payı (qəbul edilməyib) | yerləşdirmə və iaşə +6.5 min (+5.8%); informasiya və rabitə -1.2 min (-1.9%); tikinti +4.4 min (+1.0%) |
+| 1-ci pillə sürücüsü: qrupa xas adambaşına gəlir (qəbul edilməyib) | yerləşdirmə və iaşə +10.1 min (+9.1%); tikinti +17.9 min (+4.3%); sənaye +15.0 min (+3.5%) |
+| YALNIZ HƏSSASLIQ: düzəliş əmsalları sabit yarımsönmə dövrü ilə sönür (1 il; E6, E8) | bazar xidmətləri -17.8 min (-3.3%); dövlət +14.3 min (+1.4%); büdcə +4.7 min (+0.8%) |
 
 Sönmə sətri proqnoz qaydası deyil, yalnız həssaslıqdır. Ən böyük dəyişkənliyi yenə dövlət payı rıçağı yaradır: bu, ekonometrik deyil, siyasi qərardır.
 
@@ -541,9 +541,9 @@ Sönmə sətri proqnoz qaydası deyil, yalnız həssaslıqdır. Ən böyük dəy
 
 **Tam proqnoz cədvəli** (`FR4_forecast_tidy.csv`): 75 komponent × 3 ssenari, tarix ilk mövcud ildən, 2025 (nowcast) və 2026–2030; tamlıq yoxlanılır (1125 dəyər). 8 qrup və iki xidmət bloku indi hər üç ssenari üçün verilir (əvvəl qruplar yalnız Əsas ssenarinin fan cədvəlində idi). Zolaqlar (5–95%) Əsas ssenari üçün 14 sıra üzrə. Proqnozlaşdırılmayanlar və səbəbləri: `FR4_not_forecast.csv` (15 sıra: Məşğulluq Agentliyinin qırılan sıraları, vergi uçotu üzrə sahə bölgüsü, DVX r130/r107, regionlar). Kataloq: `FR4_indicator_catalog.csv` (id-lər `fr4:emp:<fəaliyyət>`, `fr4:hired:<fəaliyyət>`, `fr4:<əsas>:grp:<qrup>`, `fr4:<əsas>:bloc:pub|mkt`, `fr4:state`, `fr4:budget`, `fr4:oil:stat|tax`, `fr4:lf`, `fr4:phi` və s.).
 
-**Ssenari mühərriki** (`microlib/engines/fr4.py`, vəziyyət `output/engine/FR4_state.json`): notebook-un 15–17-ci hissələrdəki həllini təkrarlayır. Redaktə olunan girişlər: 16 ekzogen FR1 yolu (`fr1:emp`, `fr1:lf`, `fr1:pop`, `fr1:rgdpnon`, `fr1:rgdpoil`, 11 `fr1:rva_*`), 10 əmsal (birləşdirilmiş β-lar, birləşmə çəkiləri, E6, E8, E9) və 7 rıçaq (əhali artımı, muzdlu payı, dövlət payı trend/dondurulmuş, σ/κ, düzəliş əmsallarının sönməsi). `upstream={"FR1": ...}` verildikdə FR1 mühərrikinin yolları istifadə olunur; FR3 proqnozda istifadə olunmur. Özünü yoxlama: hər ssenari üzrə notebook CSV-ləri maksimal nisbi fərq 3,5·10⁻¹⁶ ilə təkrarlanır, 18-ci hissənin rıçaq cədvəli də (34 dəyər) təkrarlanır; bir ssenari ~16 ms.
+**Ssenari mühərriki** (`microlib/engines/fr4.py`, vəziyyət `output/engine/FR4_state.json`): notebook-un 15–17-ci hissələrdəki həllini təkrarlayır. Redaktə olunan girişlər: 16 ekzogen FR1 yolu (`fr1:emp`, `fr1:lf`, `fr1:pop`, `fr1:rgdpnon`, `fr1:rgdpoil`, 11 `fr1:rva_*`), 10 əmsal (birləşdirilmiş β-lar, birləşmə çəkiləri, E6, E8, E9) və 7 rıçaq (əhali artımı, muzdlu payı, dövlət payı trend/dondurulmuş, σ/κ, düzəliş əmsallarının sönməsi). `upstream={"FR1": ...}` verildikdə FR1 mühərrikinin yolları istifadə olunur; FR3 proqnozda istifadə olunmur. Özünü yoxlama: hər ssenari üzrə notebook CSV-ləri maksimal nisbi fərq 3,8·10⁻¹⁶ ilə təkrarlanır, 18-ci hissənin rıçaq cədvəli də (34 dəyər) təkrarlanır; bir ssenari ~16 ms.
 
-**Əmsal həssaslığı** (`FR4_coef_sensitivity.csv`, ±1 standart xəta, 2030, Əsas): dövlət məşğulluğu — `FR4.E8_state|trend` ilə -0,54% / +0,54%; büdcə təşkilatları — `FR4.E6_hired|ln_rva_oth` ilə +0,93% / -0,94%; ən böyük üç qrup (Kənd, meşə və balıqçılıq, Digər xidmətlər (9 fəaliyyət), Ticarət və təmir) birləşmə çəkisinə ən həssasdır (çəki üçün SE olmadığından ±0,25) — Kənd, meşə və balıqçılıq ±0,06%, Digər xidmətlər (9 fəaliyyət) ±0,09%, Ticarət və təmir ±0,11%. Ümumi məşğulluq FR1-dəndir və FR4 əmsallarından asılı deyil.
+**Əmsal həssaslığı** (`FR4_coef_sensitivity.csv`, ±1 standart xəta, 2030, Əsas): dövlət məşğulluğu — `FR4.E8_state|trend` ilə -0,54% / +0,54%; büdcə təşkilatları — `FR4.E6_hired|ln_rva_oth` ilə +0,87% / -0,88%; ən böyük üç qrup (Kənd, meşə və balıqçılıq, Digər xidmətlər (9 fəaliyyət), Ticarət və təmir) birləşmə çəkisinə ən həssasdır (çəki üçün SE olmadığından ±0,25) — Kənd, meşə və balıqçılıq ±0,07%, Digər xidmətlər (9 fəaliyyət) ±0,09%, Ticarət və təmir ±0,06%. Ümumi məşğulluq FR1-dəndir və FR4 əmsallarından asılı deyil.
 
 Yeni fayllar: `FR4_equations.json`, `FR4_indicator_catalog.csv`, `FR4_forecast_tidy.csv`, `FR4_not_forecast.csv`, `FR4_robustness_summary.csv`, `FR4_coef_sensitivity.csv`, `FR4_strings_az.csv` (istifadəçiyə görünən hər ingiliscə sətrin Azərbaycan dilində qarşılığı, 438 sətir), `engine/FR4_state.json` (yalnız sadə məlumat). v2-dən əvvəlki bütün CSV-lər dəyişməz qalır (reqressiya yoxlaması).
 
@@ -608,8 +608,8 @@ modeli isə fəaliyyətlər daxilində özəlləşdirməni tutmur. E8 siyasət r
 
 **Büdcə təşkilatları (σ).** `Dynamics_2.12` vərəqi (2005–2024) σ-nı hər il üçün verir (0,9586 — 2005, 0,9092 — 2024);
 2005–2022 tarixi artıq doldurulmuş deyil. 2010–2019 başlanğıclarında son dərc olunmuş il iki ilin ortasından dəqiqdir (RMSE
-1,46% və 1,59%): **σ = 0,9092** (əvvəl 0,913). Əsas ssenaridə büdcə məşğulluğu 2030-da 577,4 min
-(əvvəl 579,5, -0,36%); dövlət məşğulluğu dəyişmir.
+1,46% və 1,59%): **σ = 0,9092** (əvvəl 0,913). Əsas ssenaridə büdcə məşğulluğu 2030-da 579,5 min
+(əvvəl 579,5, 0,00%); dövlət məşğulluğu dəyişmir.
 
 **Sahə məşğulluğu.** 19 fəaliyyət artıq 1999–2024-ü əhatə edir; makro modul daha uzun tarix vermir, tənliklər dəyişmir.
 <!-- /AUTO:fr4v22_note -->
@@ -629,8 +629,8 @@ ssenari və ya həssaslıq yolunda istifadə olunmur; `FR4_add_factors.csv` ρ̂
 | kəmiyyət | v2.2: ρ̂ ilə sönmə | v2.3: yarımsönmə 1 il |
 |---|---|---|
 | dövlət sektorunda məşğulluq | +14,2 (+1,44%) | +14,3 (+1,45%) |
-| büdcə təşkilatları | +4,5 (+0,79%) | +4,7 (+0,82%) |
-| bazar xidmətləri | −11,4 (−2,09%) | −17,8 (−3,25%) |
+| büdcə təşkilatları | +4,5 (+0,79%) | +4,7 (+0,81%) |
+| bazar xidmətləri | −11,4 (−2,09%) | −17,8 (−3,26%) |
 | xidmətlər (cəmi) | 0,0 (0,00%) | 0,0 (0,00%) |
 
 Sabit sönmə ρ̂-dən sürətlidir: 2030-a qədər E6-nın 2024 düzəlişinin daha çox hissəsi aradan qalxır və bazar xidmətləri daha çox dəyişir; dövlət payına təsir az dəyişir (E8-in ρ̂-su 0,5-ə yaxın idi).
