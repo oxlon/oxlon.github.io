@@ -66,19 +66,19 @@
       var out = kit.floorRing(kit.empty(), -0.80), S = meta.S, H = 40, z0 = meta.z0;
       var X = function (t) { return -0.95 + 1.9 * t / H; }, yb = -0.64, zf = 0.62;
       kit.axis(out, [X(0), yb, zf], [X(40), yb, zf],
-        [0, 8, 16, 24, 32, 40].map(function (q, j) { return { f: q / 40, label: j ? j * 2 + ' yr' : 'now' }; }),
-        [0, 0, 0.03], { title: 'horizon', titleAt: [X(20), yb - 0.1, zf + 0.12] });
+        [0, 8, 16, 24, 32, 40].map(function (q, j) { return { f: q / 40, label: j ? j * 2 + ' yr' : 'Now' }; }),
+        [0, 0, 0.03], { title: 'Horizon', titleAt: [X(20), yb - 0.1, zf + 0.12] });
       var stepv = [0.5, 1, 2, 5][[0.5, 1, 2, 5].map(function (v) { return v * S >= 0.12; }).indexOf(true)] || 5, ticks = [];
       for (var v = -Math.floor(0.55 / S / stepv) * stepv; v <= 0.55 / S + 1e-9; v += stepv) ticks.push(v);
       var xa = X(0) - 0.07;
       kit.axis(out, [xa, ticks[0] * S, 0], [xa, ticks[ticks.length - 1] * S, 0],
         ticks.map(function (v) { return { f: (v - ticks[0]) / (ticks[ticks.length - 1] - ticks[0]), label: (v > 0 ? '+' : v < 0 ? '&minus;' : '') + Math.abs(v) }; }),
-        [-0.03, 0, 0], { title: 'inflation gap, pp', titleAt: [xa - 0.02, ticks[ticks.length - 1] * S + 0.09, 0] });
+        [-0.03, 0, 0], { title: 'Inflation Gap, pp', titleAt: [xa - 0.02, ticks[ticks.length - 1] * S + 0.09, 0] });
       kit.axis(out, [xa, yb, ticks[0] * S], [xa, yb, ticks[ticks.length - 1] * S],
         ticks.map(function (v) { return { f: (v - ticks[0]) / (ticks[ticks.length - 1] - ticks[0]), label: (v > 0 ? '+' : v < 0 ? '&minus;' : '') + Math.abs(v), major: true }; }),
-        [-0.03, 0, 0], { title: 'output gap, pp', titleAt: [xa - 0.1, yb - 0.08, ticks[0] * S - 0.1] });
+        [-0.03, 0, 0], { title: 'Output Gap, pp', titleAt: [xa - 0.1, yb - 0.08, ticks[0] * S - 0.1] });
       out.lines.push({ pts: [[X(0), 0, 0], [X(40), 0, 0]], col: C.steel, w: 1, dash: [0.02, 0.016] });
-      out.labels.push({ p: [X(40) + 0.06, 0, 0], t: 'target', cls: 'mark' });
+      out.labels.push({ p: [X(40) + 0.06, 0, 0], t: 'Target', cls: 'mark' });
       var rho = P.rho, th = P.theta;
       [8, 20, 40].forEach(function (h) {
         var r = Math.pow(rho, h), ct = Math.cos(th * h), st = Math.sin(th * h);
@@ -481,9 +481,9 @@
     },
     overlay: function (P) {
       var out = kit.floorRing(kit.empty(), -0.80), h = 0.525;
-      out.labels.push({ p: [0, -h - 0.12, h + 0.12], html: '<i>x</i> rings', cls: 'tick' });
-      out.labels.push({ p: [h + 0.16, 0, h + 0.1], html: '<i>y</i> rings', cls: 'tick' });
-      out.labels.push({ p: [h + 0.14, -h - 0.1, 0], html: '<i>z</i> rings', cls: 'tick' });
+      out.labels.push({ p: [0, -h - 0.12, h + 0.12], html: '<i>x</i> Rings', cls: 'tick' });
+      out.labels.push({ p: [h + 0.16, 0, h + 0.1], html: '<i>y</i> Rings', cls: 'tick' });
+      out.labels.push({ p: [h + 0.14, -h - 0.1, 0], html: '<i>z</i> Rings', cls: 'tick' });
       return out;
     },
     animate: function (t, P, ctx) {

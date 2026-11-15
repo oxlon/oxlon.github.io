@@ -151,13 +151,13 @@
         var yb = -0.62, zf = Z(0) + 0.07, xl = X(0, M) - 0.05, xr = X(M - 1, M) + 0.05;
         kit.axis(out, [X(0, M), yb, zf], [X(M - 1, M), yb, zf],
           kit.yearTicks(1990, 2026, function (y) { return ((y - y0) * 12) / (M - 1); }, 1, 10),
-          [0, 0, 0.03], { title: 'month', titleAt: [X(M - 1, M) + 0.02, yb, zf + 0.14], cls: 'below' });
+          [0, 0, 0.03], { title: 'Month', titleAt: [X(M - 1, M) + 0.02, yb, zf + 0.14], cls: 'below' });
         kit.axis(out, [xr, yb, Z(0)], [xr, yb, Z(1)],
           [0, 2, 3, 5, 7].map(function (j) { return { f: u[j], label: d.labels[j] }; }), [0.03, 0, 0],
-          { title: 'maturity', titleAt: [xr + 0.16, yb, Z(0.5)] });
+          { title: 'Maturity', titleAt: [xr + 0.16, yb, Z(0.5)] });
         kit.axis(out, [xl, Y(0), Z(1) - 0.04], [xl, Y(9), Z(1) - 0.04],
           [0, 2, 4, 6, 8].map(function (v) { return { f: v / 9, label: v + '%' }; }), [-0.03, 0, 0],
-          { title: 'yield', titleAt: [xl - 0.02, Y(9.8), Z(1) - 0.04] });
+          { title: 'Yield', titleAt: [xl - 0.02, Y(9.8), Z(1) - 0.04] });
         // the chosen month and its Nelson and Siegel fit
         var c = Math.round(P.date), row = d.y[c], fn = U.pchip(u, row), beta = nsFit(d.maturities, row), pts = [], fit = [];
         var l0 = Math.log(d.maturities[0]), l1 = Math.log(d.maturities[d.maturities.length - 1]);
@@ -276,19 +276,19 @@
         var f = FITS[P.fit], out = kit.floorRing(kit.empty(), -0.80), yb = -0.62;
         var nl = ['10M', '100M', '1B', '10B', '100B', '1T'], dl = ['1B', '10B', '100B', '1T', '10T', '100T'];
         kit.axis(out, [X(7), yb, Z(9) + 0.06], [X(12), yb, Z(9) + 0.06], nl.map(function (t, j) { return { f: j / 5, label: t }; }),
-          [0, 0, 0.03], { title: 'parameters <i>N</i>', titleAt: [X(9.5), yb - 0.09, Z(9) + 0.2] });
+          [0, 0, 0.03], { title: 'Parameters <i>N</i>', titleAt: [X(9.5), yb - 0.09, Z(9) + 0.2] });
         kit.axis(out, [X(7) - 0.06, yb, Z(9)], [X(7) - 0.06, yb, Z(14)], dl.map(function (t, j) { return { f: j / 5, label: t }; }),
-          [-0.03, 0, 0], { title: 'tokens <i>D</i>', titleAt: [X(7) - 0.24, yb - 0.06, Z(11.5)] });
+          [-0.03, 0, 0], { title: 'Tokens <i>D</i>', titleAt: [X(7) - 0.24, yb - 0.06, Z(11.5)] });
         kit.axis(out, [X(7) - 0.06, Y(1.8), Z(14) - 0.03], [X(7) - 0.06, Y(4.5), Z(14) - 0.03],
           [1.8, 2, 2.5, 3, 4, 4.5].map(function (v) { return { f: (Y(v) - Y(1.8)) / (Y(4.5) - Y(1.8)), label: String(v) }; }),
-          [-0.03, 0, 0], { title: 'loss <i>L</i>, log scale', titleAt: [X(7) - 0.06, Y(4.5) + 0.09, Z(14) - 0.03] });
+          [-0.03, 0, 0], { title: 'Loss <i>L</i>, Log Scale', titleAt: [X(7) - 0.06, Y(4.5) + 0.09, Z(14) - 0.03] });
         var cost = isocost(f, P.C, 160);
         if (cost.length) out.lines.push({ pts: cost, col: C.gold, w: 2 });
         var op = optimum(f, P.C), lgN = Math.log10(op.N), lgD = Math.log10(op.D);
         if (lgN >= 7 && lgN <= 12 && lgD >= 9 && lgD <= 14) {
           var p = P3(lgN, lgD, f);
           out.points.push({ p: p, s: 11, col: C.pale });
-          out.labels.push({ p: [p[0], p[1] + 0.07, p[2]], html: 'optimum', cls: 'cursor' });
+          out.labels.push({ p: [p[0], p[1] + 0.07, p[2]], html: 'Optimum', cls: 'cursor' });
         }
         MODELS.forEach(function (m) {
           var q = P3(Math.log10(m.N), Math.log10(m.D), f);

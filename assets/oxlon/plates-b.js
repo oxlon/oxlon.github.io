@@ -51,7 +51,7 @@
       var xl = pX(0, M) - 0.05, zb = pZ(E - 1, E) - 0.05;
       kit.axis(out, [xl, pY(0), zb], [xl, pY(57), zb], [0, 1, 5, 10, 20, 40].map(function (v) {
         return { f: (pY(v) - pY(0)) / (pY(57) - pY(0)), label: v + '%' };
-      }), [-0.03, 0, 0], { title: 'policy rate', titleAt: [xl, pY(57) + 0.08, zb] });
+      }), [-0.03, 0, 0], { title: 'Policy Rate', titleAt: [xl, pY(57) + 0.08, zb] });
       out.lines.push({ pts: [[pX(0, M), pY(0), zf - 0.02], [pX(M - 1, M), pY(0), zf - 0.02]], col: C.steelFaint, w: 1, dash: [0.02, 0.015] });
       var c = Math.round(P.date), sec = [];
       D.codes.forEach(function (code, e) {
@@ -188,13 +188,13 @@
         kit.yearTicks(1960, 2026, function (y) { return (F.idx(y, 1) - F.i0) / (F.last - F.i0); }, 5, 10), [0, 0, 0.03], {});
       kit.axis(out, [F.X(F.last), yb, zf], [F.X(F.last + F.H), yb, zf],
         [1, 2, 3, 4, 5].map(function (k) { return { f: k / 5, label: '+' + k + ' yr', major: true }; }), [0, 0, 0.03],
-        { title: 'simulated', titleAt: [F.X(F.last + F.H / 2), yb - 0.09, zf + 0.12] });
+        { title: 'Simulated', titleAt: [F.X(F.last + F.H / 2), yb - 0.09, zf + 0.12] });
       out.lines.push({ pts: [[F.SPLIT, yb, zf], [F.SPLIT, F.Y(15), zf]], col: C.steelFaint, w: 1, dash: [0.014, 0.012] });
       var xl = F.X(F.i0) - 0.05;
       kit.axis(out, [xl, F.Y(0), F.Z(15) - 0.03], [xl, F.Y(15), F.Z(15) - 0.03], [0, 5, 10, 15].map(function (v) { return { f: v / 15, label: v + '%' }; }),
-        [-0.03, 0, 0], { title: 'inflation', titleAt: [xl, F.Y(16.3), F.Z(15) - 0.03] });
+        [-0.03, 0, 0], { title: 'Inflation', titleAt: [xl, F.Y(16.3), F.Z(15) - 0.03] });
       kit.axis(out, [xl, yb, F.Z(2)], [xl, yb, F.Z(15)], [2, 5, 10, 15].map(function (v) { return { f: (v - 2) / 13, label: v + '%' }; }),
-        [-0.03, 0, 0], { title: 'unemployment', titleAt: [xl - 0.12, yb - 0.07, F.Z(8.5)] });
+        [-0.03, 0, 0], { title: 'Unemployment', titleAt: [xl - 0.12, yb - 0.07, F.Z(8.5)] });
       [[1974, 12, '1974'], [1980, 3, '1980'], [1982, 11, '1982'], [2009, 10, '2009'], [2020, 4, '2020'], [2022, 6, '2022']].forEach(function (e) {
         var t = F.idx(e[0], e[1]), u = D.u[t], p = D.pi[t];
         if (u === null || p === null) return;
