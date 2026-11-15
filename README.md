@@ -1,4 +1,28 @@
-# Oxlon website — deployment notes
+# Oxlon website, deployment notes
+
+## Home page (15 November 2026)
+
+`index.html` is the whole public face of the site. Ten live plates, one per field, sit in three
+groups (Economics and Finance, AI and Data, Mathematics and Computing), followed by the fields and
+the three founders. Each plate says what we do in that field, shows an example drawn live, and has a
+controls panel. The files are in `assets/oxlon/`:
+
+| File | Purpose |
+|------|---------|
+| `engine.js` | WebGL point renderer, morphing, axes and labels, controls panel, Canvas 2D fallback |
+| `plates-common.js` | Drawing kit, the yield-curve plate and the scaling-law plate |
+| `plates-a.js`, `plates-b.js` | Generators for the plates |
+| `plates-site.js` | Order, groups and wording of the ten plates, with their KaTeX equations |
+| `oxlon.css` | Styles |
+| `data/*.js` | Static data: Treasury yields, BIS policy rates, BLS unemployment and CPI, Cboe VIX |
+
+KaTeX 0.16.11 and Google Fonts load from their CDNs; everything else is local. To refresh the data,
+download the sources again and run the two scripts in `tools/oxlon-data/`. Bump the `?v=` numbers in
+`index.html` after any asset change.
+
+The older pages below (`about.html`, `econai.html` and the rest) are no longer linked from the home page.
+
+## Earlier notes
 
 Last updated: 21 April 2026
 

@@ -1,510 +1,170 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oxlon</title>
-<meta name="description" content="Oxlon website.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oxlon · Oxford and London</title>
+<meta name="description" content="Oxlon is a research and engineering company in Oxford and London. We work on forecasting, macroeconomic analysis, monetary policy, economic and financial analysis, risk, machine learning, deep learning, the economics of AI, mathematics and computing infrastructure.">
+<meta name="theme-color" content="#04101d">
+<link rel="canonical" href="https://oxlon.uk/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oxlon">
+<meta property="og:title" content="Oxlon · Oxford and London">
+<meta property="og:description" content="Economics, finance, AI and computing, shown as ten live plates.">
+<meta property="og:url" content="https://oxlon.uk/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --oxford:#002147;
-  --oxford-deep:#061525;
-  --ink:#09131F;
-  --paper:#F4F0E6;
-  --surface:#FBFAF5;
-  --surface-cool:#E8EEF0;
-  --surface-sage:#E4E8DD;
-  --brass:#A77D35;
-  --claret:#7B2E3A;
-  --muted:#687280;
-  --line:rgba(0,33,71,.18);
-  --line-soft:rgba(0,33,71,.1);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:
-    linear-gradient(180deg,var(--oxford-deep) 0,var(--oxford-deep) 420px,var(--paper) 420px,var(--paper) 100%),
-    var(--paper);
-  color:var(--ink);
-  font-family:"IBM Plex Sans",system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-.page{
-  min-height:100vh;
-  display:grid;
-  grid-template-rows:auto 1fr;
-}
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  padding:24px clamp(20px,4vw,58px);
-  background:var(--oxford-deep);
-  border-bottom:1px solid rgba(251,250,245,.14);
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10.5px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:rgba(251,250,245,.62);
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:24px;
-  font-weight:500;
-  letter-spacing:0;
-  text-transform:none;
-  color:var(--surface);
-}
-.brand em{font-style:italic;color:#D6BD82}
-.mark{
-  width:24px;
-  height:24px;
-  border:1.5px solid rgba(251,250,245,.78);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-family:"Cormorant Garamond",serif;
-  font-size:13px;
-  font-style:italic;
-}
-.mark::before{content:"o"}
-.nav-note{
-  color:rgba(251,250,245,.58);
-  white-space:nowrap;
-}
-.wrap{
-  width:min(100%,1240px);
-  margin:0 auto;
-  padding:0 clamp(20px,4vw,58px);
-}
-.hero{
-  color:var(--surface);
-  background:
-    linear-gradient(90deg,rgba(167,125,53,.18),rgba(123,46,58,.08) 42%,rgba(0,33,71,0)),
-    var(--oxford);
-  padding:104px 0 112px;
-  border-bottom:1px solid rgba(251,250,245,.16);
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(300px,480px);
-  gap:clamp(44px,7vw,96px);
-  align-items:end;
-}
-.eyebrow{
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.hero .eyebrow{color:rgba(251,250,245,.64)}
-h1{
-  margin-top:22px;
-  max-width:12ch;
-  font-family:"Cormorant Garamond",serif;
-  font-size:128px;
-  font-weight:300;
-  line-height:.9;
-  letter-spacing:0;
-}
-h1 em{
-  color:#D6BD82;
-  font-style:italic;
-}
-.intro{
-  padding-top:24px;
-  border-top:1px solid rgba(251,250,245,.22);
-  font-family:"Cormorant Garamond",serif;
-  font-size:30px;
-  font-style:italic;
-  line-height:1.35;
-  color:rgba(251,250,245,.82);
-}
-.section{
-  padding:92px 0;
-  background:var(--paper);
-  border-top:1px solid var(--line);
-}
-.section-head{
-  display:grid;
-  grid-template-columns:240px 1fr;
-  gap:clamp(28px,5vw,72px);
-  align-items:baseline;
-  margin-bottom:42px;
-}
-.number{
-  margin-top:14px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:64px;
-  font-style:italic;
-  font-weight:300;
-  line-height:.9;
-  color:var(--brass);
-}
-.section-title{
-  font-family:"Cormorant Garamond",serif;
-  font-size:76px;
-  font-weight:300;
-  line-height:.92;
-  letter-spacing:0;
-}
-.section-title em{
-  color:var(--oxford);
-  font-style:italic;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:16px;
-}
-.card{
-  min-height:330px;
-  padding:30px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:var(--surface);
-  box-shadow:0 18px 44px rgba(0,33,71,.06);
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-  position:relative;
-  overflow:hidden;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0 0 auto 0;
-  height:5px;
-  background:var(--brass);
-}
-.card:nth-child(2){
-  background:var(--surface-cool);
-}
-.card:nth-child(2)::before{background:var(--claret)}
-.card:nth-child(3){
-  background:var(--surface-sage);
-}
-.card:nth-child(3)::before{background:var(--oxford)}
-.meta{
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.name{
-  font-family:"Cormorant Garamond",serif;
-  font-size:56px;
-  font-weight:400;
-  line-height:.96;
-  letter-spacing:0;
-}
-.name em{
-  color:var(--oxford);
-  font-style:italic;
-}
-.founder-name{
-  font-size:clamp(34px,3.1vw,46px);
-  white-space:nowrap;
-}
-.desc{
-  max-width:34ch;
-  font-size:15px;
-  line-height:1.65;
-  color:#23344A;
-}
-.list{
-  margin-top:auto;
-  padding-top:20px;
-  border-top:1px solid var(--line-soft);
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-  list-style:none;
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10.5px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.list li{display:flex;gap:9px}
-.list li::before{content:"-";color:var(--brass)}
-.founder-card{
-  min-height:300px;
-}
-.degree{
-  padding-top:18px;
-  border-top:1px solid var(--line-soft);
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.profile-link{
-  width:max-content;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:6px;
-  border:1px solid rgba(0,33,71,.16);
-  border-radius:8px;
-  background:rgba(0,33,71,.045);
-  color:var(--oxford);
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10.5px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  text-decoration:none;
-  transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
-}
-.linkedin-mark{
-  width:30px;
-  height:30px;
-  border-radius:6px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(0,33,71,.84);
-  color:#E6D6AC;
-  font-family:Arial,Helvetica,sans-serif;
-  font-size:15px;
-  font-weight:700;
-  letter-spacing:-.05em;
-  line-height:1;
-  text-transform:none;
-}
-.profile-link:hover,
-.profile-link:focus-visible{
-  background:rgba(167,125,53,.12);
-  border-color:rgba(167,125,53,.42);
-  color:var(--oxford);
-  transform:translateY(-1px);
-  outline:none;
-}
-.profile-link:hover .linkedin-mark,
-.profile-link:focus-visible .linkedin-mark{
-  background:var(--oxford);
-  color:#F4E6BE;
-}
-.footer{
-  padding:28px clamp(20px,4vw,58px);
-  background:var(--oxford-deep);
-  border-top:1px solid rgba(251,250,245,.14);
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10.5px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:rgba(251,250,245,.62);
-}
-@media (max-width:1080px){
-  h1{font-size:92px}
-  .section-title{font-size:62px}
-  .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .card{min-height:auto}
-  .card{padding:24px}
-  .founder-name{font-size:clamp(30px,3vw,38px)}
-  .meta{font-size:9px}
-  .list{font-size:9.5px}
-}
-@media (max-width:860px){
-  .cards{grid-template-columns:1fr}
-  .card{padding:24px}
-  .founder-name{font-size:42px}
-}
-@media (max-width:760px){
-  body{
-    background:linear-gradient(180deg,var(--oxford-deep) 0,var(--oxford-deep) 340px,var(--paper) 340px,var(--paper) 100%);
-  }
-  .top,.footer{
-    align-items:flex-start;
-    flex-direction:column;
-    padding:20px;
-  }
-  .wrap{padding:0 20px}
-  .nav-note{font-size:10px}
-  .hero{
-    padding:68px 0 76px;
-  }
-  .hero-grid,.section-head{grid-template-columns:1fr}
-  h1{
-    max-width:9ch;
-    font-size:58px;
-    line-height:.94;
-  }
-  .intro{
-    max-width:34ch;
-    font-size:24px;
-  }
-  .section{
-    padding:62px 0;
-  }
-  .section-head{
-    gap:20px;
-    margin-bottom:30px;
-  }
-  .section-title{
-    font-size:44px;
-    line-height:.98;
-  }
-  .number{font-size:46px}
-  .card{gap:18px}
-  .meta{
-    flex-direction:column;
-    gap:8px;
-  }
-  .name{font-size:42px}
-  .founder-name{font-size:38px}
-  .desc{font-size:14.5px}
-  .profile-link{font-size:10px}
-}
-@media (max-width:380px){
-  h1{font-size:50px}
-  .section-title{font-size:38px}
-  .name{font-size:38px}
-  .founder-name{font-size:34px}
-  .card{padding:20px}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/oxlon/oxlon.css?v=24">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Oxlon","url":"https://oxlon.uk/","email":"info@oxlon.uk","founder":[
+{"@type":"Person","name":"Osman Ersoy","sameAs":["https://www.linkedin.com/in/osmanersoy/"]},
+{"@type":"Person","name":"Fatih Kansoy","sameAs":["https://www.linkedin.com/in/kansoy/","https://fatih.ai/"]},
+{"@type":"Person","name":"Mehman Ismayilli","sameAs":["https://www.linkedin.com/in/mismayilli/","https://mnismayilli.github.io/"]}]}
+</script>
 </head>
 <body>
-<div class="page">
-  <header class="top">
-    <div class="brand"><span class="mark"></span><span>Ox<em>lon</em></span></div>
-    <div class="nav-note">Oxford · London</div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">Oxlon</div>
-          <h1>Economic intelligence for <em>serious</em> decisions.</h1>
-        </div>
-        <p class="intro">A compact practice across economic platforms, advisory work, and executive learning.</p>
+<a class="skip" href="#fields">Skip to the text</a>
+<main>
+  <section class="vitrine" id="plates" aria-label="Our fields, as live plates">
+    <div class="layout">
+      <header class="masthead">
+        <div><h1 class="brand-h"><a class="brand" href="./">Ox<em>lon</em></a></h1><span class="place">Oxford · London</span></div>
+        <nav class="nav" aria-label="Site">
+          <a href="#plates">Plates</a>
+          <a href="#fields">Fields</a>
+          <a href="#founders">Founders</a>
+          <a href="mailto:info@oxlon.uk">info@oxlon.uk</a>
+        </nav>
+      </header>
+      <div class="stagewrap">
+        <canvas class="stage" role="img" aria-label="Live plate"></canvas>
+        <div class="labels3d" aria-hidden="true"></div>
+        <p class="hint" data-ui="hint" aria-hidden="true"><span class="long">Drag to turn · double-click to reset · ← → for the next plate</span><span class="short">Drag sideways to turn</span></p>
+        <noscript><p class="noscript">The plates are drawn with JavaScript.</p></noscript>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <header class="section-head">
-          <div>
-            <div class="eyebrow">Work</div>
-            <div class="number">i</div>
-          </div>
-          <h2 class="section-title">Three areas of <em>work.</em></h2>
-        </header>
-
-        <div class="cards">
-          <article class="card">
-            <div class="meta"><span>Practice 01</span><span>Platform</span></div>
-            <h3 class="name">Econ<em>AI</em></h3>
-            <p class="desc">Our flagship intelligence platform for economic modelling, nowcasting and policy simulation.</p>
-            <ul class="list">
-              <li>Forecasting &amp; nowcasting</li>
-              <li>DSGE &amp; VAR workbench</li>
-              <li>Secure on-prem option</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="meta"><span>Practice 02</span><span>Advisory</span></div>
-            <h3 class="name">Advis<em>ory</em></h3>
-            <p class="desc">Bespoke research engagements across model review, macro stress-testing, and the economics of frontier AI adoption.</p>
-            <ul class="list">
-              <li>Model review &amp; audit</li>
-              <li>Economics of AI</li>
-              <li>Strategic counsel</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="meta"><span>Practice 03</span><span>Learning</span></div>
-            <h3 class="name">At<em>las</em></h3>
-            <p class="desc">Executive workshops and residencies on how modern AI works, and where it should and should not be trusted.</p>
-            <ul class="list">
-              <li>Executive residencies</li>
-              <li>Team-level programmes</li>
-              <li>Oxford &amp; on-site</li>
-            </ul>
-          </article>
+      <div class="figbox" aria-hidden="true"></div>
+      <div class="colL" data-text-column>
+        <p class="statement">Oxlon is a small research and engineering company in Oxford and London. We work where economics meets computation. Each plate shows one of our fields, drawn live in your browser.</p>
+        <div class="plate-head sw">
+          <p class="plate-no">Plate <b data-ui="numeral">I</b> of X · <span data-ui="group">Economics and Finance</span></p>
+          <h2 class="plate-field" data-ui="field">Forecasting</h2>
+          <p class="practice" data-ui="practice"></p>
+          <ul class="offer" data-ui="offer"></ul>
+          <p class="plate-title"><span class="onplate">On the plate</span><span data-ui="title">A Fan of Futures</span></p>
+          <p class="plate-credit"><span data-ui="credit"></span> · <span data-ui="count">Computing…</span></p>
+        </div>
+        <div class="eqblock sw">
+          <div class="eq" data-ui="eq"></div>
+          <p class="eqkey" data-ui="eqkey"></p>
+          <p class="note" data-ui="note"></p>
         </div>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <header class="section-head">
-          <div>
-            <div class="eyebrow">Founders</div>
-            <div class="number">ii</div>
-          </div>
-          <h2 class="section-title">The people behind <em>Oxlon.</em></h2>
-        </header>
-
-        <div class="cards">
-          <article class="card founder-card">
-            <div class="meta"><span>Founder 01</span><span>AI &amp; engineering</span></div>
-            <h3 class="name founder-name">Osman <em>Ersoy</em></h3>
-            <div class="degree">PhD · Physics</div>
-            <a class="profile-link" href="https://www.linkedin.com/in/osmanersoy/" target="_blank" rel="noopener" aria-label="Osman Ersoy LinkedIn profile"><span class="linkedin-mark" aria-hidden="true">in</span></a>
-            <ul class="list">
-              <li>AI engineering</li>
-              <li>Data engineering</li>
-              <li>Deep learning</li>
-            </ul>
-          </article>
-
-          <article class="card founder-card">
-            <div class="meta"><span>Founder 02</span><span>Macro &amp; ML</span></div>
-            <h3 class="name founder-name">Fatih <em>Kansoy</em></h3>
-            <div class="degree">PhD · Economics &amp; Macro</div>
-            <a class="profile-link" href="https://www.linkedin.com/in/kansoy/" target="_blank" rel="noopener" aria-label="Fatih Kansoy LinkedIn profile"><span class="linkedin-mark" aria-hidden="true">in</span></a>
-            <ul class="list">
-              <li>Global Macro Financial Trends</li>
-              <li>Labor Market Dynamics</li>
-              <li>Machine Learning</li>
-              <li>Text as Data</li>
-            </ul>
-          </article>
-
-          <article class="card founder-card">
-            <div class="meta"><span>Founder 03</span><span>Applied policy</span></div>
-            <h3 class="name founder-name">Mehman <em>Ismayili</em></h3>
-            <div class="degree">PhD · Economics &amp; Micro</div>
-            <a class="profile-link" href="https://www.linkedin.com/in/mismayilli/" target="_blank" rel="noopener" aria-label="Mehman Ismayili LinkedIn profile"><span class="linkedin-mark" aria-hidden="true">in</span></a>
-            <ul class="list">
-              <li>Competition and Regulation</li>
-              <li>Applied Analytics</li>
-              <li>Market Structure</li>
-              <li>Policy Design</li>
-            </ul>
-          </article>
+      <div class="colR" data-text-column>
+        <div class="indexblock">
+          <div class="index-head"><span>Ten plates</span><button class="ctl" type="button" data-ui="tour" aria-pressed="true">Tour</button></div>
+          <ol class="index" data-ui="index"></ol>
+        </div>
+        <div class="panel sw" data-ui="panel">
+          <div class="panel-head"><span class="panel-title">Controls</span><button class="ctl" type="button" data-ui="reset">Reset view</button></div>
+          <div class="params" data-ui="params"></div>
+          <div class="acts" data-ui="actions"></div>
+          <div class="readout" data-ui="readout" aria-live="polite"></div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+    <div class="frame" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
+    <p class="sr" data-ui="live" aria-live="polite"></p>
+  </section>
 
-  <footer class="footer">
-    <div>Oxlon</div>
-    <div>info@oxlon.uk</div>
-  </footer>
-</div>
+  <section class="sheet" id="fields">
+    <div class="wrap sec">
+      <header class="sec-head">
+        <div><p class="kicker">Fields</p><h2 class="sec-title">What We <em>Work On</em></h2></div>
+        <p class="sec-lede">Our work falls into ten fields in three groups. Each field has its own plate above, drawn with the same methods we use in our projects.</p>
+      </header>
+      <div class="field-group">
+        <h3 class="fg-title">Economics and Finance</h3>
+        <ol class="field-list">
+          <li><span class="rn">I</span><h4 class="fn">Forecasting</h4><p>We build forecasting systems for inflation, output, labour markets and asset prices, from nowcasts to full predictive distributions.</p><button class="goto" type="button" data-goto="0">See plate I</button></li>
+          <li><span class="rn">II</span><h4 class="fn">Macroeconomic Analysis</h4><p>We model how prices, jobs and output move together and turn the models into scenarios for policy and planning.</p><button class="goto" type="button" data-goto="1">See plate II</button></li>
+          <li><span class="rn">III</span><h4 class="fn">Monetary Policy</h4><p>We analyse central bank decisions, how they pass through to the economy and how central banks communicate them.</p><button class="goto" type="button" data-goto="2">See plate III</button></li>
+          <li><span class="rn">IV</span><h4 class="fn">Economic and Financial Analysis</h4><p>We analyse bond markets, asset prices and the economy behind them, from term-structure models to competition and market structure.</p><button class="goto" type="button" data-goto="3">See plate IV</button></li>
+          <li><span class="rn">V</span><h4 class="fn">Risk and Volatility</h4><p>We measure financial risk, from market volatility and tail events to stress tests.</p><button class="goto" type="button" data-goto="4">See plate V</button></li>
+        </ol>
+      </div>
+      <div class="field-group">
+        <h3 class="fg-title">AI and Data</h3>
+        <ol class="field-list">
+          <li><span class="rn">VI</span><h4 class="fn">Machine Learning</h4><p>We train models that find structure in large economic, financial and administrative datasets, with or without labels.</p><button class="goto" type="button" data-goto="5">See plate VI</button></li>
+          <li><span class="rn">VII</span><h4 class="fn">Deep Learning</h4><p>We design, train and deploy neural networks for time series, text, documents and images.</p><button class="goto" type="button" data-goto="6">See plate VII</button></li>
+          <li><span class="rn">VIII</span><h4 class="fn">AI and the New Economy</h4><p>We study how AI changes work, firms and productivity and what its compute costs.</p><button class="goto" type="button" data-goto="7">See plate VIII</button></li>
+        </ol>
+      </div>
+      <div class="field-group">
+        <h3 class="fg-title">Mathematics and Computing</h3>
+        <ol class="field-list">
+          <li><span class="rn">IX</span><h4 class="fn">Mathematics</h4><p>Dynamical systems, optimisation, probability and numerical analysis sit under every model we build.</p><button class="goto" type="button" data-goto="8">See plate IX</button></li>
+          <li><span class="rn">X</span><h4 class="fn">Computing Infrastructure</h4><p>We build data pipelines, GPU computing and AI systems that run on an institution's own servers.</p><button class="goto" type="button" data-goto="9">See plate X</button></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet" id="founders">
+    <div class="wrap sec">
+      <header class="sec-head">
+        <div><p class="kicker">Founders</p><h2 class="sec-title">The People Behind <em>Oxlon</em></h2></div>
+        <p class="sec-lede">Oxlon brings together AI engineering, macro-financial economics and applied microeconomics.</p>
+      </header>
+      <div class="people">
+        <article class="person">
+          <p class="role">Founder · AI and Engineering</p>
+          <h3>Osman <em>Ersoy</em></h3>
+          <p class="degree">PhD · Physics</p>
+          <p class="bio">Osman leads the technical side of Oxlon, from data engineering and pipelines to deep-learning systems and AI that runs on premises.</p>
+          <ul class="expertise"><li>AI Engineering</li><li>Data Engineering</li><li>Deep Learning</li><li>On-Premise AI</li></ul>
+          <p class="links"><a href="https://www.linkedin.com/in/osmanersoy/" rel="noopener">LinkedIn ↗</a></p>
+        </article>
+        <article class="person">
+          <p class="role">Founder · Macro and Machine Learning</p>
+          <h3>Fatih <em>Kansoy</em></h3>
+          <p class="degree">PhD · Economics</p>
+          <p class="bio">Macro-financial research is Fatih's area, from monetary policy and central bank communication to text-as-data and machine-learning methods.</p>
+          <ul class="expertise"><li>Global Macro-Financial Trends</li><li>Labour Market Dynamics</li><li>Machine Learning</li><li>Text as Data</li></ul>
+          <p class="links"><a href="https://fatih.ai/" rel="noopener">fatih.ai ↗</a><a href="https://www.linkedin.com/in/kansoy/" rel="noopener">LinkedIn ↗</a></p>
+        </article>
+        <article class="person">
+          <p class="role">Founder · Applied Analytics and Policy</p>
+          <h3>Mehman <em>Ismayilli</em></h3>
+          <p class="degree">PhD · Economics</p>
+          <p class="bio">Mehman works with detailed data on firms and markets to answer questions of competition, regulation and policy design.</p>
+          <ul class="expertise"><li>Competition and Regulation</li><li>Applied Analytics</li><li>Market Structure</li><li>Policy Design</li></ul>
+          <p class="links"><a href="https://mnismayilli.github.io/" rel="noopener">Website ↗</a><a href="https://www.linkedin.com/in/mismayilli/" rel="noopener">LinkedIn ↗</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <span>Oxlon · Oxford and London</span>
+    <a href="mailto:info@oxlon.uk">info@oxlon.uk</a>
+    <a href="#plates">Back to the plates ↑</a>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script src="assets/oxlon/data/yields-us.js?v=24"></script>
+<script src="assets/oxlon/data/policy-rates.js?v=24"></script>
+<script src="assets/oxlon/data/us-macro.js?v=24"></script>
+<script src="assets/oxlon/data/vix.js?v=24"></script>
+<script src="assets/oxlon/engine.js?v=24"></script>
+<script src="assets/oxlon/plates-common.js?v=24"></script>
+<script src="assets/oxlon/plates-a.js?v=24"></script>
+<script src="assets/oxlon/plates-b.js?v=24"></script>
+<script src="assets/oxlon/plates-site.js?v=24"></script>
+<script>OX.start({ root: document.getElementById('plates'), plates: OX.PLATES_SITE, dwell: 15 });</script>
 </body>
 </html>
