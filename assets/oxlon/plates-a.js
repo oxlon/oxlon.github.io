@@ -345,7 +345,7 @@
       '<span class="l"><i>δ</i></span><span class="r">=</span><span class="x">lim <span class="frac"><span><i>r</i><sub><i>k</i></sub> &minus; <i>r</i><sub><i>k</i>&minus;1</sub></span><span><i>r</i><sub><i>k</i>+1</sub> &minus; <i>r</i><sub><i>k</i></sub></span></span> = 4.6692…</span>' +
       '<span class="l"><i>λ</i>(<span class="p" data-k="r"><i>r</i></span>)</span><span class="r">=</span><span class="x">lim <span class="frac"><span>1</span><span><i>n</i></span></span>&thinsp;Σ ln&thinsp;|<span class="p" data-k="r"><i>r</i></span>(1 &minus; 2<i>x</i><sub><i>k</i></sub>)|<span class="eqnote">Lyapunov exponent</span></span>' +
       '</div>',
-    note: 'One quadratic rule, applied again and again. As <i>r</i> rises, the long-run orbit splits into 2, 4, 8 and 16 values at intervals that shrink by Feigenbaum\'s constant <i>δ</i>. Near <i>r</i> ≈ 3.5699 it turns chaotic. Turn the plate on its side and every point falls on the parabola that produced it. The cobweb traces one orbit at the chosen <i>r</i>.',
+    note: 'One quadratic rule, applied again and again. As <i>r</i> rises, the long-run orbit splits into 2, 4, 8 and 16 values at intervals that shrink by Feigenbaum\'s constant <i>δ</i>. Near <i>r</i> ≈ 3.5699 it turns chaotic. Turn the figure on its side and every point falls on the parabola that produced it. The cobweb traces one orbit at the chosen <i>r</i>.',
     generate: function (N) {
       var Cn = Math.max(200, Math.floor(N / 200)), K = Math.floor(N / Cn), extra = N - Cn * K, rand = U.rng(11);
       var pos = new Float32Array(N * 3), warm = new Float32Array(N), i = 0;
@@ -523,7 +523,7 @@
     id: 'economic-analysis', numeral: 'IV', field: 'Economic and Financial Analysis', title: 'The US Yield Curve, 1990 to 2026',
     credit: 'Data · US Treasury par yield curve, monthly averages',
     alt: 'A surface of 442 monthly US Treasury yield curves from 1990 to 2026.',
-    note: 'The plate holds 442 monthly yield curves for US Treasuries, from three-month bills to ten-year notes. Where the surface folds, short rates sit above long ones, as in 2000, 2006, 2019 and from late 2022 to late 2024. The bright line is the chosen month. Beside it, the dashed line is the Nelson and Siegel curve fitted to that month with Diebold and Li\'s fixed <i>λ</i>.'
+    note: 'The figure holds 442 monthly yield curves for US Treasuries, from three-month bills to ten-year notes. Where the surface folds, short rates sit above long ones, as in 2000, 2006, 2019 and from late 2022 to late 2024. The bright line is the chosen month. Beside it, the dashed line is the Nelson and Siegel curve fitted to that month with Diebold and Li\'s fixed <i>λ</i>.'
   });
   var scaling = OX.makeScaling({
     id: 'ai-economy', numeral: 'V', field: 'AI and the New Economy', title: 'A Production Function for Language Models',

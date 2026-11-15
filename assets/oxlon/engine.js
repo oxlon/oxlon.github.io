@@ -989,8 +989,8 @@
         // The data may already have arrived; write the readout for whatever is current.
         if (ui.readout) ui.readout.innerHTML = (p.readout && i === active) ? p.readout(params[i], metas[i], ctx) : '';
         root.classList.remove('swapping');
-        if (ui.live) ui.live.textContent = 'Plate ' + p.numeral + ', ' + p.field + '. ' + p.titleText;
-        canvas.setAttribute('aria-label', 'Plate ' + p.numeral + ', ' + p.field + '. ' + (p.alt || ''));
+        if (ui.live) ui.live.textContent = p.field + '. ' + p.titleText;
+        canvas.setAttribute('aria-label', 'Interactive example for ' + p.field + '. ' + (p.alt || ''));
       };
       clearTimeout(textTimer);
       if (first || reduced) { apply(); return; }
@@ -1006,7 +1006,7 @@
     function syncTourButton() {
       if (!ui.tour) return;
       ui.tour.setAttribute('aria-pressed', String(tour.on));
-      ui.tour.innerHTML = tour.on ? '<span aria-hidden="true">❚❚</span> Pause tour' : '<span aria-hidden="true">▶</span> Tour';
+      ui.tour.innerHTML = tour.on ? '<span aria-hidden="true">❚❚</span> Pause' : '<span aria-hidden="true">▶</span> Play';
     }
     function scheduleTour() {
       clearTimeout(tour.timer);
@@ -1107,7 +1107,7 @@
     });
     function lost() {
       mode = 'none'; root.classList.add('no-gl');
-      if (ui.count) ui.count.textContent = 'Renderer stopped';
+      if (ui.count) ui.count.textContent = '';
     }
     if (!initGL()) {
       gl = null;

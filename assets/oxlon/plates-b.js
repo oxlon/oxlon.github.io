@@ -139,7 +139,7 @@
       '<span class="l"><i>z</i><sub><i>t</i></sub></span><span class="r">=</span><span class="x"><i>c</i> + <i>A</i><sub>1</sub><i>z</i><sub><i>t</i>&minus;1</sub> + <i>A</i><sub>2</sub><i>z</i><sub><i>t</i>&minus;2</sub> + <i>e</i><sub><i>t</i></sub>,&ensp;<i>e</i><sub><i>t</i></sub> ∼ N(0, Σ)</span>' +
       '<span class="l"><i>z</i><sub><i>t</i></sub></span><span class="r">=</span><span class="x">(<i>u</i><sub><i>t</i></sub>, <i>π</i><sub><i>t</i></sub>)′<span class="eqnote">unemployment rate, 12-month CPI inflation</span></span>' +
       '</div>',
-    note: 'The bright thread is US unemployment and inflation month by month since 1960, with time running from left to right. It loops through the stagflation of the 1970s, the disinflation of the early 1980s, the 2020 jump in unemployment and the inflation of 2022. After the break on the time axis, a VAR estimated in your browser on data since 1985 draws a fan of futures for the next five years.',
+    note: 'The bright thread is US unemployment and inflation month by month since 1960, with time running from left to right. It loops through the stagflation of the 1970s, the disinflation of the early 1980s, the 2020 jump in unemployment and the inflation of 2022. After the break on the time axis, a VAR estimated on data since 1985 draws a fan of futures for the next five years.',
     generate: function (N, P) {
       var F = macroFrame(), D = F.D, H = F.H, K = 90, rand = U.rng(500 + P.seed * 13), g = U.gaussian(rand);
       var pos = new Float32Array(N * 3), warm = new Float32Array(N), i = 0, t, k, m;

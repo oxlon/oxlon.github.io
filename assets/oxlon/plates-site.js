@@ -10,13 +10,13 @@
 
   var META = [
     { id: 'forecasting', group: EF, field: 'Forecasting', title: 'A Fan of Futures',
-      credit: 'Vector autoregression · simulated live',
+      credit: 'Vector autoregression · simulated in real time',
       practice: 'We build forecasting systems for inflation, output, labour markets and asset prices, from nowcasts to full predictive distributions.',
       offer: ['Nowcasting', 'Density forecasts', 'Scenario analysis'],
       eq: String.raw`\begin{aligned} z_{t+1} &= A\,z_t + \htmlClass{pk-sigma}{\sigma}\,\varepsilon_{t+1} \\ A &= \htmlClass{pk-rho}{\rho}\begin{pmatrix} \cos\htmlClass{pk-theta}{\theta} & -\sin\htmlClass{pk-theta}{\theta} \\ \sin\htmlClass{pk-theta}{\theta} & \cos\htmlClass{pk-theta}{\theta} \end{pmatrix} \\ \varepsilon_{t+1} &\sim N(0,\,I) \end{aligned}`,
       eqKey: '<i>z</i> holds the inflation gap and the output gap. <i>ε</i> are the shocks.' },
     { id: 'inflation-unemployment', group: EF, field: 'Macroeconomic Analysis', title: 'Inflation, Unemployment and Their Futures',
-      credit: 'US data since 1960 · VAR fitted live',
+      credit: 'US data since 1960 · VAR estimated in real time',
       practice: 'We model how prices, jobs and output move together and turn the models into scenarios for policy and planning.',
       offer: ['VAR and BVAR models', 'Phillips curves', 'Policy scenarios'],
       eq: String.raw`\begin{aligned} z_{\htmlClass{pk-date}{t}} &= c + A_1 z_{t-1} + A_2 z_{t-2} + e_t \\ e_t &\sim N(0,\,\Sigma) \\ z_t &= (u_t,\ \pi_t)' \end{aligned}`,
