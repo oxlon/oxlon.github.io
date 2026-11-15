@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About — Oxlon</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="Oxlon is an Oxford- and London-based firm pairing rigorous economic research with production AI — founded by Osman Ersoy, Fatih Kansoy and Mehman Ismayilli.">
+<meta name="description" content="Oxlon is an Oxford- and London-based firm pairing rigorous economic research with production AI — founded by Fatih Kansoy and Mehman Ismayilli.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 /* Founders grid */
 .founders{padding:120px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
-.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-top:52px}
+.f-grid{display:grid;grid-template-columns:repeat(2,1fr);max-width:calc(200% / 3);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-top:52px}
 .f-card{padding:44px 36px 40px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--cream);display:flex;flex-direction:column;gap:18px}
 .f-card .f-idx{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);opacity:.75;display:flex;justify-content:space-between;align-items:center}
 .f-card .avatar{aspect-ratio:1/1;background:var(--stone);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(84px,9vw,128px);color:var(--slate);letter-spacing:-0.04em;position:relative;overflow:hidden;margin:12px 0}
@@ -60,7 +60,7 @@
 .f-card .tags .tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);padding:4px 9px;border:1px solid var(--rule);background:transparent}
 .f-card .lnk{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding-bottom:3px;border-bottom:1px solid var(--clay);width:fit-content;transition:color .2s,gap .2s}
 .f-card .lnk:hover{color:var(--slate);gap:14px}
-@media (max-width:1040px){.f-grid{grid-template-columns:1fr}.f-grid{border-left:0}.f-card{border-right:0}}
+@media (max-width:1040px){.f-grid{grid-template-columns:1fr;max-width:none}.f-grid{border-left:0}.f-card{border-right:0}}
 
 /* Origin story (two columns) */
 .origin{padding:120px 0;background:var(--stone);border-bottom:1px solid var(--rule)}
@@ -125,7 +125,7 @@
     </div>
     <div class="hero-meta">
       <div class="cell"><div class="k">Founded</div><div class="v">2024 · Oxford</div></div>
-      <div class="cell"><div class="k">Founders</div><div class="v">Three · all PhDs</div></div>
+      <div class="cell"><div class="k">Founders</div><div class="v">Two · both PhDs</div></div>
       <div class="cell"><div class="k">Headcount</div><div class="v">Nine · growing</div></div>
       <div class="cell"><div class="k">Bases</div><div class="v">Oxford · London · Baku</div></div>
     </div>
@@ -197,31 +197,14 @@
         <div class="num">ii</div>
       </div>
       <div>
-        <h2>Three founders.<br>One <em>discipline.</em></h2>
-        <p>Oxlon was founded by three operators with complementary backgrounds in AI engineering, macro-financial research, and applied economic analysis &mdash; the three ingredients the work actually needs.</p>
+        <h2>Two founders.<br>One <em>discipline.</em></h2>
+        <p>Oxlon was founded by two economists with complementary backgrounds in macro-financial research and applied economic analysis.</p>
       </div>
     </div>
 
     <div class="f-grid">
-      <div class="f-card powder">
-        <div class="f-idx"><span>Founder · 01</span><span>AI &amp; engineering</span></div>
-        <div class="avatar">o</div>
-        <div>
-          <div class="name">Osman <em>Ersoy</em></div>
-          <div class="role">Co-founder · AI engineering</div>
-        </div>
-        <p class="bio">Leads Oxlon&rsquo;s technical bench &mdash; from data engineering and pipeline architecture to the deep-learning systems behind EconAI. Osman builds the infrastructure that turns heterogeneous economic feeds into reproducible, production-grade intelligence: vintage-aware ingestion, on-prem LLM deployments, and the orchestration layer under the econometric agent.</p>
-        <div class="tags">
-          <span class="tag">PhD · Physics</span>
-          <span class="tag">Data engineering</span>
-          <span class="tag">Deep learning</span>
-          <span class="tag">On-prem AI</span>
-        </div>
-        <a class="lnk" href="https://www.linkedin.com/in/osmanersoy/" target="_blank" rel="noopener">LinkedIn <span class="ar">→</span></a>
-      </div>
-
       <div class="f-card clay">
-        <div class="f-idx"><span>Founder · 02</span><span>Macro &amp; ML research</span></div>
+        <div class="f-idx"><span>Founder · 01</span><span>Macro &amp; ML research</span></div>
         <div class="avatar">f</div>
         <div>
           <div class="name">Fatih <em>Kansoy</em></div>
@@ -238,7 +221,7 @@
       </div>
 
       <div class="f-card sage">
-        <div class="f-idx"><span>Founder · 03</span><span>Applied &amp; policy</span></div>
+        <div class="f-idx"><span>Founder · 02</span><span>Applied &amp; policy</span></div>
         <div class="avatar">m</div>
         <div>
           <div class="name">Mehman <em>Ismayilli</em></div>
@@ -265,7 +248,7 @@
       <h2>Oxford and London.<br>Then <em>Baku.</em><br>Then, gradually, <em>further.</em></h2>
     </div>
     <div class="prose">
-      <p class="lead">Oxlon began in late 2024 as a working partnership between three former academics who had each, separately, reached the same conclusion &mdash; that the gap between what AI can now do, and what institutions know how to use, has become the binding constraint on serious economic work.</p>
+      <p class="lead">Oxlon began in late 2024 as a working partnership between former academics who had each, separately, reached the same conclusion &mdash; that the gap between what AI can now do, and what institutions know how to use, has become the binding constraint on serious economic work.</p>
       <p>The firm was set up in Oxford, where Fatih had been teaching, with operations in London and an early engagement in Baku &mdash; where we now deploy EconAI inside the Ministry of Economy of the Republic of Azerbaijan. That project was the first test of the full thesis: that on-premise AI, built around a classical econometric core and reviewed by a real research team, is a materially better surface for policy work than anything currently on the market.</p>
       <p>We grew deliberately from there. A second research track on the <em>Economics of AI</em> opened in 2025, and the Atlas learning programme ran its first executive cohort at Brasenose in the autumn. New engagements are taken selectively, on the basis of fit rather than fee.</p>
       <p>We are not a fast-scaling firm. The work we do is the work we can defend &mdash; and defensible work, at our bar, takes the time it takes.</p>
