@@ -1,6 +1,6 @@
 /* Oxlon interactive plates engine.
-   WebGL point-density renderer with dual Light/Dark shading, smooth plate morphing,
-   3D projected overlays/labels, Canvas 2D fallback, and on-demand rendering (0% idle GPU). */
+   Full-bleed WebGL point-density renderer with dual Light/Dark optical shading,
+   figbox-centered projection, smooth morphing, lazy plate generation, and throttled low-power sway. */
 (function () {
   'use strict';
   var OX = (window.OX = window.OX || {});
@@ -89,8 +89,8 @@
       packet: [0.98, 0.91, 0.74, 0.94]
     },
     light: {
-      steel: [0.22, 0.31, 0.44, 0.62],
-      steelFaint: [0.22, 0.31, 0.44, 0.20],
+      steel: [0.22, 0.31, 0.44, 0.60],
+      steelFaint: [0.22, 0.31, 0.44, 0.19],
       gold: [0.64, 0.39, 0.08, 0.96],
       pale: [0.08, 0.14, 0.26, 0.96],
       claret: [0.72, 0.16, 0.22, 0.96],
@@ -147,7 +147,6 @@
     '}'
   ].join('\n');
 
-  // Fallback when floating-point FBO is unavailable.
   var FS_POINTS_DIRECT = [
     'precision highp float;',
     'varying float vE; varying float vW; uniform float uShadow; uniform float uLight;',
@@ -170,9 +169,6 @@
     'void main(){ vUv = aP * 0.5 + 0.5; gl_Position = vec4(aP, 0.0, 1.0); }'
   ].join('\n');
 
-  // Dual-theme optical tone-mapping shader:
-  // Dark mode: luminous bronze/gold filaments on deep Oxford slate.
-  // Light mode: copperplate Oxford-navy & antique-bronze ink absorption on archival ivory paper.
   var FS_TONE = [
     'precision highp float;',
     'uniform sampler2D uTex; uniform vec2 uRes; uniform float uExpo; uniform float uDust; uniform float uLight;',
@@ -187,9 +183,9 @@
     '  float v = length(q);',
     '  vec3 col;',
     '  if (uLight > 0.5) {',
-    '    vec3 bg = mix(vec3(0.988, 0.980, 0.961), vec3(0.949, 0.935, 0.904), smoothstep(0.0, 0.95, v));',
-    '    vec3 paperShadow = vec3(0.75, 0.74, 0.70);',
-    '    vec3 baseCol = mix(bg, paperShadow, s * 0.36 * (1.0 - L * 0.8));',
+    '    vec3 bg = mix(vec3(0.984, 0.976, 0.957), vec3(0.953, 0.941, 0.914), smoothstep(0.0, 1.0, v));',
+    '    vec3 paperShadow = vec3(0.76, 0.75, 0.72);',
+    '    vec3 baseCol = mix(bg, paperShadow, s * 0.34 * (1.0 - L * 0.8));',
     '    vec3 coolInk = mix(vec3(0.14, 0.28, 0.47), vec3(0.05, 0.12, 0.24), smoothstep(0.35, 0.95, L));',
     '    vec3 warmInk = mix(vec3(0.70, 0.42, 0.10), vec3(0.47, 0.24, 0.04), smoothstep(0.35, 0.95, L));',
     '    vec3 ink = mix(coolInk, warmInk, smoothstep(0.14, 0.86, w));',
@@ -197,12 +193,12 @@
     '    col = mix(baseCol, ink, alpha);',
     '    col += (hash(gl_FragCoord.xy) - 0.5) * 0.005;',
     '  } else {',
-    '    vec3 bronze = vec3(0.36, 0.24, 0.11), gold = vec3(0.86, 0.67, 0.35), pale = vec3(0.98, 0.93, 0.81);',
+    '    vec3 bronze = vec3(0.35, 0.23, 0.10), gold = vec3(0.86, 0.67, 0.35), pale = vec3(0.98, 0.93, 0.81);',
     '    vec3 dust = mix(vec3(0.0), bronze, smoothstep(0.0, 0.30, L));',
     '    dust = mix(dust, gold, smoothstep(0.22, 0.70, L));',
     '    dust = mix(dust, pale, smoothstep(0.64, 1.0, L));',
     '    dust = mix(dust, dust * vec3(1.03, 1.0, 0.90) + vec3(0.05, 0.04, 0.01) * L, w);',
-    '    vec3 bg = mix(vec3(0.055, 0.086, 0.145), vec3(0.032, 0.051, 0.088), smoothstep(0.0, 0.95, v));',
+    '    vec3 bg = mix(vec3(0.043, 0.072, 0.122), vec3(0.022, 0.038, 0.068), smoothstep(0.0, 1.0, v));',
     '    col = bg + vec3(0.19, 0.31, 0.46) * s * 0.38 * (1.0 - L) + dust * uDust;',
     '    col += (hash(gl_FragCoord.xy) - 0.5) * 0.008;',
     '  }',
@@ -252,7 +248,7 @@
   var activeInstance = null;
   function updateThemeMeta(theme) {
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === 'light' ? '#F7F5F0' : '#0B111C');
+    if (meta) meta.setAttribute('content', theme === 'light' ? '#F8F6F1' : '#08101C');
     document.querySelectorAll('[data-theme-btn]').forEach(function (btn) {
       btn.setAttribute('aria-pressed', String(btn.dataset.themeBtn === theme));
     });
@@ -270,11 +266,11 @@
   OX.start = function (cfg) {
     var root = cfg.root, plates = cfg.plates;
     var canvas = root.querySelector('canvas.stage');
+    var figbox = root.querySelector('.figbox');
     var layer = root.querySelector('.labels3d');
     var ui = {};
     ['numeral', 'field', 'title', 'credit', 'eq', 'params', 'readout', 'note', 'actions',
-      'group', 'practice', 'offer', 'eqkey', 'index', 'tour', 'live', 'hint', 'reset',
-      'prev', 'next', 'zoomIn', 'zoomOut', 'status'].forEach(function (k) {
+      'group', 'practice', 'offer', 'eqkey', 'index', 'tour', 'live', 'hint', 'reset'].forEach(function (k) {
       ui[k] = root.querySelector('[data-ui="' + k + '"]');
     });
 
@@ -282,7 +278,6 @@
     syncPalette(isLight);
     updateThemeMeta(isLight ? 'light' : 'dark');
 
-    // Bind header theme buttons.
     document.querySelectorAll('[data-theme-btn]').forEach(function (btn) {
       btn.addEventListener('click', function () { OX.setTheme(btn.dataset.themeBtn); });
     });
@@ -293,7 +288,7 @@
     var weak = (navigator.deviceMemory && navigator.deviceMemory <= 4) ||
       (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
     var N = cfg.N || ((narrow || weak) ? 50000 : 95000);
-    var POINT_PX = narrow ? 1.95 : 1.80;
+    var POINT_PX = narrow ? 1.85 : 1.70;
     var DIST = 3.4, FLOOR = -0.80;
 
     var seeds = new Float32Array(N), dirs = new Float32Array(N * 3);
@@ -317,13 +312,13 @@
     });
     var cache = plates.map(function () { return null; });
     var metas = plates.map(function () { return {}; });
-    var active = -1, first = true, busy = false;
+    var active = -1, first = true;
 
     var clock0 = performance.now();
     function clock() { return (performance.now() - clock0) / 1000; }
 
     /* ------------------------------------------------ camera */
-    var cam = { yaw: 0, pitch: 0.3, zoom: 1, vy: 0, vp: 0, target: null, sway: 0, gain: 0 };
+    var cam = { yaw: 0, pitch: 0.3, zoom: 1, vy: 0, vp: 0, target: null, last: -1e9, sway: 0, gain: 0 };
     function wrapPi(a) { while (a > Math.PI) a -= 2 * Math.PI; while (a < -Math.PI) a += 2 * Math.PI; return a; }
     function camEase(v, dur) {
       if (!dur) { cam.yaw = v.yaw; cam.pitch = v.pitch; cam.zoom = v.zoom || 1; cam.target = null; return; }
@@ -334,7 +329,7 @@
       };
     }
     function freezeSway() { cam.yaw += cam.gain * 0.22 * Math.sin(cam.sway); cam.gain = 0; }
-    function touchInput() { freezeSway(); stopTour(); }
+    function touchInput() { freezeSway(); cam.last = clock(); stopTour(); }
     var rot = new Float32Array(9);
     function rotMatrix(yaw, pitch, out) {
       var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
@@ -353,35 +348,40 @@
       }
       if (!drag) {
         cam.yaw += cam.vy * dt; cam.pitch = clamp(cam.pitch + cam.vp * dt, -0.35, 1.3);
-        var damp = Math.exp(-dt * 4.2); cam.vy *= damp; cam.vp *= damp;
+        var damp = Math.exp(-dt * 4.0); cam.vy *= damp; cam.vp *= damp;
         if (Math.abs(cam.vy) < 2e-4) cam.vy = 0;
         if (Math.abs(cam.vp) < 2e-4) cam.vp = 0;
       }
-      // Subtle sway only when user explicitly enables Auto-tour (0% GPU burn when idle!).
-      var want = (!reduced && tour.on && !drag) ? 1 : 0;
-      cam.gain = want < cam.gain ? Math.max(0, cam.gain - dt * 3) : lerp(cam.gain, want, Math.min(1, dt * 2));
-      if (cam.gain > 0.001) cam.sway += dt * 0.22;
+      // Subtle, low-power ambient sway while visible (throttled to ~24 fps when idle).
+      var idle = t - cam.last;
+      var want = (!reduced && !drag) ? smoothstep(2.5, 6.0, idle) : 0;
+      cam.gain = want < cam.gain ? want : lerp(cam.gain, want, Math.min(1, dt * 1.8));
+      if (cam.gain > 0.001) cam.sway += dt * 0.18;
     }
     function viewYaw() { return cam.yaw + cam.gain * 0.22 * Math.sin(cam.sway); }
 
-    /* ------------------------------------------------ layout */
+    /* ------------------------------------------------ layout (figbox-centered) */
     var cssW = 1, cssH = 1, dpr = 1, devW = 1, devH = 1, maxDpr = narrow ? 1.5 : 1.75;
     var fit = { cx: 0, cy: 0, r: 100 };
     var scale = new Float32Array(2), off = new Float32Array(2);
     function measure() {
       var r = canvas.getBoundingClientRect();
+      var own = !figbox || figbox.offsetWidth === 0, b = own ? r : figbox.getBoundingClientRect();
       cssW = Math.max(1, r.width); cssH = Math.max(1, r.height);
-      fit.cx = cssW / 2; fit.cy = cssH / 2;
-      fit.r = Math.max(60, Math.min(cssW, cssH) / 2 * 0.82);
-      dpr = Math.min(maxDpr, window.devicePixelRatio || 1);
+      fit.cx = b.left + b.width / 2 - r.left;
+      fit.cy = b.top + b.height / 2 - r.top;
+      fit.r = Math.max(60, Math.min(b.width, b.height) / 2 * (own ? 0.78 : 0.94));
+      var area = cssW * cssH;
+      dpr = Math.min(maxDpr, window.devicePixelRatio || 1, area > 2.0e6 ? 1.4 : maxDpr);
       devW = Math.max(1, Math.round(cssW * dpr)); devH = Math.max(1, Math.round(cssH * dpr));
       if (canvas.width !== devW || canvas.height !== devH) { canvas.width = devW; canvas.height = devH; resizeTargets(); }
       kick();
     }
     function computeScale() {
-      var R = fit.r / 1.12 * cam.zoom;
+      var R = fit.r / 1.14 * cam.zoom;
       scale[0] = R / (cssW / 2); scale[1] = R / (cssH / 2);
-      off[0] = 0; off[1] = 0.04;
+      off[0] = fit.cx / cssW * 2 - 1;
+      off[1] = 1 - fit.cy / cssH * 2;
       return R;
     }
     function project(p, out) {
@@ -548,7 +548,6 @@
       });
       layer.textContent = '';
       layer.appendChild(frag);
-      // Batch measure label widths once outside the RAF loop (zero layout thrashing).
       for (var k = 0; k < ov.labels.length; k++) {
         ov.labels[k].w = ov.labels[k].node.offsetWidth || 40;
       }
@@ -562,7 +561,7 @@
         var half = L.w / 2 + 4;
         var vis = tmp[0] > half && tmp[0] < cssW - half && tmp[1] > 10 && tmp[1] < cssH - 10;
         L.node.style.transform = 'translate3d(' + tmp[0].toFixed(1) + 'px,' + tmp[1].toFixed(1) + 'px,0)';
-        L.node.style.opacity = vis ? (ov.alpha * clamp(0.78 + tmp[2] * 0.26, 0.56, 1)).toFixed(3) : '0';
+        L.node.style.opacity = vis ? (ov.alpha * clamp(0.76 + tmp[2] * 0.28, 0.54, 1)).toFixed(3) : '0';
       }
     }
     function lines2D(ctx2) {
@@ -641,8 +640,8 @@
       } else {
         gl.bindFramebuffer(gl.FRAMEBUFFER, null);
         gl.viewport(0, 0, devW, devH);
-        if (isLight) gl.clearColor(0.984, 0.976, 0.957, 1);
-        else gl.clearColor(0.035, 0.059, 0.102, 1);
+        if (isLight) gl.clearColor(0.980, 0.973, 0.953, 1);
+        else gl.clearColor(0.031, 0.055, 0.098, 1);
         gl.clear(gl.COLOR_BUFFER_BIT);
         gl.enable(gl.BLEND);
         if (isLight) gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
@@ -677,7 +676,6 @@
         gl.drawArrays(gl.TRIANGLES, 0, 3);
         disableAll();
       }
-      // overlay lines
       gl.enable(gl.BLEND);
       if (ov.lines) {
         var Lp = prog.lines;
@@ -693,7 +691,6 @@
         gl.drawArrays(gl.TRIANGLES, 0, ov.lines);
         disableAll();
       }
-      // sprites (markers and live all-reduce packets)
       var dyn = pl.animate ? pl.animate(t, params[active], ctx) : null;
       if (ov.spr || (dyn && dyn.count)) {
         var S = prog.spr;
@@ -720,7 +717,6 @@
       return !!(dyn && dyn.live);
     }
 
-    // Canvas 2D fallback (theme-aware)
     var c2d = null, acc2 = null, img2 = null, sub = 1;
     function init2D() {
       try { c2d = canvas.getContext('2d'); } catch (e) { c2d = null; }
@@ -746,9 +742,9 @@
       for (var q = 0, o = 0; q < acc2.length; q++, o += 4) {
         var L = 1 - Math.exp(-acc2[q] * kk);
         if (isLight) {
-          d[o] = 251 - 210 * L; d[o + 1] = 249 - 185 * L; d[o + 2] = 244 - 140 * L; d[o + 3] = 255;
+          d[o] = 250 - 210 * L; d[o + 1] = 248 - 185 * L; d[o + 2] = 243 - 140 * L; d[o + 3] = 255;
         } else {
-          d[o] = 11 + 236 * L * (0.86 + 0.12 * L); d[o + 1] = 18 + 216 * L * (0.72 + 0.2 * L); d[o + 2] = 30 + 158 * L * L; d[o + 3] = 255;
+          d[o] = 10 + 236 * L * (0.86 + 0.12 * L); d[o + 1] = 18 + 216 * L * (0.72 + 0.2 * L); d[o + 2] = 30 + 158 * L * L; d[o + 3] = 255;
         }
       }
       c2d.putImageData(img2, 0, 0);
@@ -756,9 +752,12 @@
       return false;
     }
 
-    /* ------------------------------------------------ render loop (strictly on demand) */
-    var raf = 0, lastT = 0, inView = true, frames = 0, slowFrames = 0, shadowOn = !weak, packetsLive = false;
-    function kick() { if (!raf && inView && !document.hidden) raf = requestAnimationFrame(frame); }
+    /* ------------------------------------------------ loop (full 60fps when active, throttled 24fps gentle sway when idle) */
+    var raf = 0, swayTimer = 0, lastT = 0, inView = true, frames = 0, slowFrames = 0, shadowOn = !weak, packetsLive = false;
+    function kick() {
+      if (swayTimer) { clearTimeout(swayTimer); swayTimer = 0; }
+      if (!raf && inView && !document.hidden) raf = requestAnimationFrame(frame);
+    }
     function frame() {
       raf = 0;
       var t = clock(), realDt = Math.max(0, t - lastT), dt = Math.min(0.05, realDt); lastT = t;
@@ -778,9 +777,15 @@
       frames++;
       if (frames > 20 && frames < 100 && dt > 0.034) slowFrames++;
       if (frames === 100 && slowFrames > 35 && dpr > 1) { maxDpr = 1; shadowOn = false; measure(); }
-      var moving = cam.target || Math.abs(cam.vy) > 0 || Math.abs(cam.vp) > 0 || drag || cam.gain > 0.001 ||
+
+      var activeAnim = cam.target || Math.abs(cam.vy) > 0 || Math.abs(cam.vp) > 0 || drag ||
         mixAt(t) < 1 || sweep || fade || paramAnim || packetsLive || (ov.alpha > 0 && ov.alpha < 1);
-      if (moving) kick();
+      if (activeAnim) {
+        kick();
+      } else if (!reduced && inView && !document.hidden) {
+        // Gentle low-power ambient sway at ~24 fps instead of burning 60 fps.
+        swayTimer = setTimeout(function () { swayTimer = 0; kick(); }, 42);
+      }
     }
 
     /* ------------------------------------------------ input */
@@ -815,7 +820,7 @@
         cam.yaw += dx * 0.0062;
         if (drag.type !== 'touch') cam.pitch = clamp(cam.pitch + dy * 0.0045, -0.35, 1.3);
         cam.vy = dx * 0.0062 / (dtm / 1000) * 0.4; cam.vp = drag.type !== 'touch' ? dy * 0.0045 / (dtm / 1000) * 0.4 : 0;
-        kick();
+        cam.last = clock(); kick();
       });
       function endPointer(e) {
         delete pointers[e.pointerId];
@@ -824,7 +829,7 @@
           if (performance.now() - drag.t > 80) { cam.vy = 0; cam.vp = 0; }
           drag = null;
         }
-        kick();
+        cam.last = clock(); kick();
       }
       canvas.addEventListener('pointerup', endPointer);
       canvas.addEventListener('pointercancel', endPointer);
@@ -853,11 +858,6 @@
       e.preventDefault(); stopTour();
     });
     if (ui.reset) ui.reset.addEventListener('click', resetView);
-    if (ui.zoomIn) ui.zoomIn.addEventListener('click', function () { zoomBy(1.16); });
-    if (ui.zoomOut) ui.zoomOut.addEventListener('click', function () { zoomBy(1 / 1.16); });
-    if (ui.prev) ui.prev.addEventListener('click', function () { stopTour(); select((active + plates.length - 1) % plates.length); });
-    if (ui.next) ui.next.addEventListener('click', function () { stopTour(); select((active + 1) % plates.length); });
-
     var hintHidden = false;
     function hideHint() { if (!hintHidden && ui.hint) { hintHidden = true; ui.hint.classList.add('gone'); } }
 
@@ -909,10 +909,10 @@
       clearTimeout(regenTimer);
       regenTimer = setTimeout(function () {
         var tok = selectToken;
-        setBusy(true);
+        root.classList.add('is-busy');
         getData(i).then(function (r) {
           if (tok !== selectToken || i !== active) return;
-          setBusy(false);
+          root.classList.remove('is-busy');
           morphTo(r.pos, r.warm, 'param');
           refreshOverlay();
         });
@@ -1015,35 +1015,22 @@
       if (ui.readout) ui.readout.innerHTML = pl.readout ? pl.readout(params[active], metas[active], ctx) : '';
     }
 
-    /* ------------------------------------------------ grouped index, text, opt-in tour */
+    /* ------------------------------------------------ sleek slim vertical index & tour */
     function buildIndex() {
       if (!ui.index) return;
       ui.index.textContent = '';
-      var groups = [], byName = {};
+      var group = null;
       plates.forEach(function (p, i) {
-        var gname = p.group || 'Areas';
-        if (!byName[gname]) {
-          byName[gname] = { name: gname, items: [] };
-          groups.push(byName[gname]);
+        if (p.group && p.group !== group) {
+          group = p.group;
+          ui.index.appendChild(el('li', 'grp', p.group));
         }
-        byName[gname].items.push({ plate: p, index: i });
-      });
-      groups.forEach(function (g, gi) {
-        var box = el('div', 'idx-group idx-group--' + g.items.length);
-        box.dataset.groupIdx = String(gi);
-        box.appendChild(el('div', 'idx-group-title', g.name));
-        var list = el('div', 'idx-group-items');
-        g.items.forEach(function (item) {
-          var p = item.plate, i = item.index;
-          var b = el('button', 'pl');
-          b.type = 'button';
-          b.dataset.plateIdx = String(i);
-          b.innerHTML = '<span class="rn">' + p.numeral + '</span><span class="nm">' + p.field + '</span><span class="bar" aria-hidden="true"></span>';
-          b.addEventListener('click', function () { stopTour(); select(i); });
-          list.appendChild(b);
-        });
-        box.appendChild(list);
-        ui.index.appendChild(box);
+        var li = el('li'), b = el('button', 'pl');
+        b.type = 'button';
+        b.dataset.plateIdx = String(i);
+        b.innerHTML = '<span class="rn">' + p.numeral + '</span><span class="nm">' + p.field + '</span><span class="bar" aria-hidden="true"></span>';
+        b.addEventListener('click', function () { stopTour(); select(i); });
+        li.appendChild(b); ui.index.appendChild(li);
       });
     }
     function updateIndex() {
@@ -1076,27 +1063,19 @@
         if (ui.readout) ui.readout.innerHTML = (p.readout && i === active) ? p.readout(params[i], metas[i], ctx) : '';
         root.classList.remove('swapping');
         if (ui.live) ui.live.textContent = p.field + '. ' + p.titleText;
-        canvas.setAttribute('aria-label', 'Interactive model for ' + p.field + '. ' + (p.alt || ''));
+        canvas.setAttribute('aria-label', 'Interactive example for ' + p.field + '. ' + (p.alt || ''));
       };
       clearTimeout(textTimer);
       if (first || reduced) { apply(); return; }
       root.classList.add('swapping');
       textTimer = setTimeout(apply, 140);
     }
-    function setBusy(b) {
-      busy = b;
-      root.classList.toggle('is-busy', b);
-      if (ui.status) ui.status.textContent = b ? 'Computing…' : '';
-    }
 
-    // Auto-tour is strictly opt-in (off by default so it never hijacks reading!).
-    var tour = { on: !reduced && cfg.tour === true, timer: 0, dwell: cfg.dwell || 14 };
+    var tour = { on: !reduced && cfg.tour === true, timer: 0, dwell: cfg.dwell || 15 };
     function syncTourButton() {
       if (!ui.tour) return;
       ui.tour.setAttribute('aria-pressed', String(tour.on));
-      ui.tour.innerHTML = tour.on
-        ? '<svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="3" width="3.2" height="10" rx="0.8" fill="currentColor"/><rect x="9.3" y="3" width="3.2" height="10" rx="0.8" fill="currentColor"/></svg><span>Pause tour</span>'
-        : '<svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 3.2L12.5 8l-8 4.8V3.2z" fill="currentColor"/></svg><span>Auto-tour</span>';
+      ui.tour.textContent = tour.on ? 'Pause' : 'Play';
     }
     function scheduleTour() {
       clearTimeout(tour.timer);
@@ -1104,7 +1083,6 @@
       var b = ui.index.querySelector('button.pl[data-plate-idx="' + active + '"]');
       if (b) { b.classList.remove('touring'); void b.offsetWidth; b.style.setProperty('--dwell', tour.dwell + 's'); b.classList.add('touring'); }
       tour.timer = setTimeout(function () { if (tour.on) select((active + 1) % plates.length, { tour: true }); }, tour.dwell * 1000);
-      kick();
     }
     function stopTour() {
       if (!tour.on) return;
@@ -1125,13 +1103,13 @@
       active = i;
       paramAnim = null;
       updateIndex(); setText(i);
-      if (!wasFirst) setBusy(true);
+      if (!wasFirst) root.classList.add('is-busy');
       if (cfg.hash !== false && !wasFirst) {
         try { history.replaceState(null, '', '#' + plates[i].id); } catch (e) { /* file preview */ }
       }
       getData(i).then(function (r) {
         if (tok !== selectToken) return;
-        setBusy(false);
+        root.classList.remove('is-busy');
         if (wasFirst) {
           first = false;
           to.set(r.pos); wTo.set(r.warm); from.set(r.pos); wFrom.set(r.warm); morph.dur = 0; uploadAll();
@@ -1174,8 +1152,7 @@
     document.querySelectorAll('[data-goto]').forEach(function (b) {
       b.addEventListener('click', function (e) {
         e.preventDefault(); stopTour();
-        var targetEl = document.getElementById('workbench') || root;
-        targetEl.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        root.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
         select(+b.dataset.goto);
       });
     });
@@ -1194,7 +1171,7 @@
       new ResizeObserver(function () {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () { measure(); if (active >= 0) refreshOverlay(); }, 50);
-      }).observe(canvas);
+      }).observe(root);
     } else {
       window.addEventListener('resize', function () {
         clearTimeout(resizeTimer);
@@ -1202,7 +1179,7 @@
       });
     }
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (es) { inView = es[0].isIntersecting; if (inView) kick(); }, { threshold: 0.02 }).observe(canvas);
+      new IntersectionObserver(function (es) { inView = es[0].isIntersecting; if (inView) kick(); }, { threshold: 0.02 }).observe(root);
     }
     document.addEventListener('visibilitychange', function () { if (!document.hidden) kick(); });
     if (mq) {
