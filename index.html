@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Oxlon · Economics, Finance and AI</title>
 <meta name="description" content="Oxlon is a research and engineering company in Oxford and London. We work on forecasting, monetary policy, financial markets, machine learning and the economics of AI.">
-<meta name="theme-color" content="#04101d">
+<meta name="theme-color" content="#F7F5F0">
 <link rel="canonical" href="https://oxlon.uk/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
@@ -25,11 +25,24 @@
 <meta name="twitter:description" content="Oxlon is a research and engineering company in Oxford and London. We work on forecasting, monetary policy, financial markets, machine learning and the economics of AI.">
 <meta name="twitter:image" content="https://oxlon.uk/assets/oxlon/og-card.jpg?v=2">
 <meta name="twitter:image:alt" content="Oxlon, Oxford and London. Research and Engineering in Economics, Finance and AI.">
+<script>
+(function () {
+  var t = 'light';
+  try {
+    var saved = localStorage.getItem('oxlon-theme');
+    if (saved === 'dark' || saved === 'light') t = saved;
+  } catch (e) {}
+  document.documentElement.setAttribute('data-theme', t);
+  var m = document.querySelector('meta[name="theme-color"]');
+  if (m) m.setAttribute('content', t === 'dark' ? '#0B111C' : '#F7F5F0');
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/oxlon/oxlon.css?v=28">
+<link rel="stylesheet" href="assets/oxlon/oxlon.css?v=29">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Oxlon","url":"https://oxlon.uk/","logo":"https://oxlon.uk/favicon.svg","image":"https://oxlon.uk/assets/oxlon/og-card.jpg?v=2","description":"Research and Engineering in Economics, Finance and AI, Oxford and London.","email":"info@oxlon.uk","founder":[
 {"@type":"Person","name":"Fatih Kansoy","sameAs":["https://www.linkedin.com/in/kansoy/","https://fatih.ai/"]},
@@ -37,137 +50,294 @@
 </script>
 </head>
 <body>
-<a class="skip" href="#expertise">Skip to the text</a>
-<main>
-  <section class="vitrine" id="what-we-do" aria-label="What we do, with live examples">
-    <div class="layout">
-      <header class="masthead">
-        <div><h1 class="brand-h"><a class="brand" href="./">Ox<em>lon</em></a></h1><span class="place">Oxford · London</span></div>
-        <nav class="nav" aria-label="Site">
-          <a href="#what-we-do">What We Do</a>
-          <a href="#expertise">Expertise</a>
-          <a href="#founders">Founders</a>
-          <a href="mailto:info@oxlon.uk">info@oxlon.uk</a>
-        </nav>
-      </header>
-      <div class="stagewrap">
-        <canvas class="stage" role="img" aria-label="Interactive example"></canvas>
-        <div class="labels3d" aria-hidden="true"></div>
-        <p class="hint" data-ui="hint" aria-hidden="true"><span class="long">Drag to rotate · double-click to reset · ← → for the next area</span><span class="short">Drag sideways to rotate</span></p>
-        <noscript><p class="noscript">The interactive examples need JavaScript.</p></noscript>
+<a class="skip" href="#workbench">Skip to interactive models</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <div class="brand-group">
+      <a class="brand" href="./">Oxlon</a>
+      <span class="place">Oxford · London</span>
+    </div>
+    <div class="header-right">
+      <nav class="nav" aria-label="Primary">
+        <a href="#workbench">Models</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#founders">Founders</a>
+        <a class="nav-email" href="mailto:info@oxlon.uk">info@oxlon.uk</a>
+      </nav>
+      <div class="theme-switch" role="group" aria-label="Appearance">
+        <button class="theme-btn" type="button" data-theme-btn="light" aria-pressed="true" aria-label="Light theme">
+          <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="8" cy="8" r="3"/>
+            <path d="M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M12.6 3.4l-1.1 1.1M4.5 11.5l-1.1 1.1"/>
+          </svg>
+          <span>Light</span>
+        </button>
+        <button class="theme-btn" type="button" data-theme-btn="dark" aria-pressed="false" aria-label="Dark theme">
+          <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13.2 9.9A5.4 5.4 0 0 1 6.1 2.8a5.6 5.6 0 1 0 7.1 7.1Z"/>
+          </svg>
+          <span>Dark</span>
+        </button>
       </div>
-      <div class="figbox" aria-hidden="true"></div>
-      <div class="colL" data-text-column>
-        <p class="statement">Oxlon is a small research and engineering company in Oxford and London. We work where economics meets computation, across ten areas of expertise. Each area comes with a live, interactive example.</p>
-        <div class="plate-head sw">
-          <p class="plate-no">Area <b data-ui="numeral">I</b> of X · <span data-ui="group">Economics and Finance</span></p>
-          <h2 class="plate-field" data-ui="field">Forecasting</h2>
-          <p class="practice" data-ui="practice"></p>
-          <ul class="offer" data-ui="offer"></ul>
-          <p class="plate-title"><span class="onplate">Example</span><span data-ui="title">A Fan of Futures</span></p>
-          <p class="plate-credit" data-ui="credit"></p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="intro" id="what-we-do" aria-label="Introduction">
+    <div class="wrap intro-grid">
+      <h1 class="intro-title">Research and engineering in economics, finance, and AI.</h1>
+      <p class="intro-lede">Oxlon is a small research and engineering firm in Oxford and London. We work across ten areas where economic modelling meets computation, each illustrated below with a live interactive model.</p>
+    </div>
+  </section>
+
+  <section class="workbench" id="workbench" aria-label="Interactive models across ten areas of expertise">
+    <div class="wrap">
+      <nav class="index-matrix" data-ui="index" aria-label="Select an area of expertise"></nav>
+
+      <div class="wb-grid">
+        <div class="stage-card">
+          <div class="stage-bar">
+            <div class="stage-meta sw">
+              <p class="stage-title" data-ui="title">A Fan of Futures</p>
+              <p class="stage-credit" data-ui="credit">Vector autoregression · simulated in real time</p>
+            </div>
+            <div class="stage-tools">
+              <div class="tool-group" role="group" aria-label="Navigate areas">
+                <button class="tool-btn tool-btn--icon" type="button" data-ui="prev" aria-label="Previous area" title="Previous area (←)">
+                  <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5L5.5 8 10 12.5"/></svg>
+                </button>
+                <button class="tool-btn tool-btn--icon" type="button" data-ui="next" aria-label="Next area" title="Next area (→)">
+                  <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5L10.5 8 6 12.5"/></svg>
+                </button>
+              </div>
+              <div class="tool-group" role="group" aria-label="Zoom">
+                <button class="tool-btn tool-btn--icon" type="button" data-ui="zoomOut" aria-label="Zoom out" title="Zoom out (-)">
+                  <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8h8"/></svg>
+                </button>
+                <button class="tool-btn tool-btn--icon" type="button" data-ui="zoomIn" aria-label="Zoom in" title="Zoom in (+)">
+                  <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M8 4v8M4 8h8"/></svg>
+                </button>
+              </div>
+              <button class="tool-btn tool-btn--solo" type="button" data-ui="reset" title="Reset camera (0)">Reset view</button>
+              <button class="tool-btn tool-btn--solo" type="button" data-ui="tour" aria-pressed="false" title="Cycle through all ten models">Auto-tour</button>
+            </div>
+          </div>
+
+          <div class="stagewrap">
+            <canvas class="stage" role="img" aria-label="Interactive model"></canvas>
+            <div class="labels3d" aria-hidden="true"></div>
+            <span class="stage-status" data-ui="status" aria-live="polite"></span>
+            <p class="hint" data-ui="hint" aria-hidden="true">
+              <span class="long">Drag to rotate · Double-click to reset · ← → to switch area</span>
+              <span class="short">Drag sideways to rotate</span>
+            </p>
+            <noscript><p class="noscript">The interactive models require JavaScript.</p></noscript>
+          </div>
+
+          <div class="readout-bar sw" data-ui="readout" aria-live="polite"></div>
         </div>
-        <div class="eqblock sw">
+
+        <aside class="inspector-card" aria-label="Area details and controls">
+          <div class="plate-head sw">
+            <p class="plate-no">Area <b data-ui="numeral">I</b> of X · <span data-ui="group">Economics and Finance</span></p>
+            <h2 class="plate-field" data-ui="field">Forecasting</h2>
+            <p class="practice" data-ui="practice"></p>
+            <ul class="offer" data-ui="offer"></ul>
+          </div>
+
+          <div class="controls-box sw" data-ui="panel">
+            <div class="controls-head">
+              <span class="controls-title">Parameters</span>
+              <span class="controls-tip">Double-click a value to reset</span>
+            </div>
+            <div class="params" data-ui="params"></div>
+            <div class="acts" data-ui="actions"></div>
+          </div>
+
+          <p class="inspector-foot">
+            <span><kbd>←</kbd> <kbd>→</kbd> switch area</span>
+            <span><kbd>0</kbd> reset view</span>
+            <span><kbd>+</kbd> <kbd>−</kbd> zoom</span>
+          </p>
+        </aside>
+      </div>
+
+      <div class="spec-band sw">
+        <div class="spec-math">
+          <span class="spec-label">Mathematical formulation</span>
           <div class="eq" data-ui="eq"></div>
           <p class="eqkey" data-ui="eqkey"></p>
+        </div>
+        <div class="spec-note">
+          <span class="spec-label">About this model</span>
           <p class="note" data-ui="note"></p>
         </div>
       </div>
-      <div class="colR" data-text-column>
-        <div class="indexblock">
-          <div class="index-head"><span>Our Expertise</span><button class="ctl" type="button" data-ui="tour" aria-pressed="true">Play</button></div>
-          <ol class="index" data-ui="index"></ol>
-        </div>
-        <div class="panel sw" data-ui="panel">
-          <div class="panel-head"><span class="panel-title">Controls</span><button class="ctl" type="button" data-ui="reset">Reset view</button></div>
-          <div class="params" data-ui="params"></div>
-          <div class="acts" data-ui="actions"></div>
-          <div class="readout" data-ui="readout" aria-live="polite"></div>
-        </div>
-      </div>
+
+      <p class="sr" data-ui="live" aria-live="polite"></p>
     </div>
-    <div class="frame" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
-    <p class="sr" data-ui="live" aria-live="polite"></p>
   </section>
 
   <section class="sheet" id="expertise">
-    <div class="wrap sec">
+    <div class="wrap">
       <header class="sec-head">
-        <div><p class="kicker">Expertise</p><h2 class="sec-title">What We <em>Work On</em></h2></div>
-        <p class="sec-lede">Our work covers ten areas in three groups. Each area has a live example at the top of the page, built with the same methods we use in our projects.</p>
+        <div>
+          <p class="kicker">Expertise</p>
+          <h2 class="sec-title">What we work on</h2>
+        </div>
+        <p class="sec-lede">Our work spans ten disciplines across three practice groups. Select any discipline to inspect its live model and equations in the workbench above.</p>
       </header>
+
       <div class="field-group">
         <h3 class="fg-title">Economics and Finance</h3>
         <ol class="field-list">
-          <li><span class="rn">I</span><h4 class="fn">Forecasting</h4><p>We build forecasting systems for inflation, output, labour markets and asset prices, from nowcasts to full predictive distributions.</p><button class="goto" type="button" data-goto="0">See the example</button></li>
-          <li><span class="rn">II</span><h4 class="fn">Macroeconomic Analysis</h4><p>We model how prices, jobs and output move together and turn the models into scenarios for policy and planning.</p><button class="goto" type="button" data-goto="1">See the example</button></li>
-          <li><span class="rn">III</span><h4 class="fn">Monetary Policy</h4><p>We analyse central bank decisions, how they pass through to the economy and how central banks communicate them.</p><button class="goto" type="button" data-goto="2">See the example</button></li>
-          <li><span class="rn">IV</span><h4 class="fn">Economic and Financial Analysis</h4><p>We analyse bond markets, asset prices and the economy behind them, from term-structure models to competition and market structure.</p><button class="goto" type="button" data-goto="3">See the example</button></li>
-          <li><span class="rn">V</span><h4 class="fn">Risk and Volatility</h4><p>We measure financial risk, from market volatility and tail events to stress tests.</p><button class="goto" type="button" data-goto="4">See the example</button></li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">I</span><h4 class="fn">Forecasting</h4></div>
+            <p>Forecasting systems for inflation, output, labour markets and asset prices, from nowcasts to full predictive distributions.</p>
+            <div class="field-card-foot"><span class="field-tags">Nowcasting · Density Forecasts</span><button class="goto" type="button" data-goto="0">Open model ↑</button></div>
+          </li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">II</span><h4 class="fn">Macroeconomic Analysis</h4></div>
+            <p>Joint models of prices, employment and output translated into structured scenarios for policy and institutional planning.</p>
+            <div class="field-card-foot"><span class="field-tags">VAR &amp; BVAR · Scenarios</span><button class="goto" type="button" data-goto="1">Open model ↑</button></div>
+          </li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">III</span><h4 class="fn">Monetary Policy</h4></div>
+            <p>Empirical analysis of central bank decisions, monetary transmission channels and central bank communication.</p>
+            <div class="field-card-foot"><span class="field-tags">Policy Rates · Text</span><button class="goto" type="button" data-goto="2">Open model ↑</button></div>
+          </li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">IV</span><h4 class="fn">Economic and Financial Analysis</h4></div>
+            <p>Bond markets, term-structure modelling, asset pricing, competition economics and empirical market structure.</p>
+            <div class="field-card-foot"><span class="field-tags">Yield Curves · Regulation</span><button class="goto" type="button" data-goto="3">Open model ↑</button></div>
+          </li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">V</span><h4 class="fn">Risk and Volatility</h4></div>
+            <p>Quantitative measurement of financial risk, from market volatility regimes and tail events to institutional stress tests.</p>
+            <div class="field-card-foot"><span class="field-tags">Tail Risk · Stress Testing</span><button class="goto" type="button" data-goto="4">Open model ↑</button></div>
+          </li>
         </ol>
       </div>
+
       <div class="field-group">
         <h3 class="fg-title">AI and Data</h3>
         <ol class="field-list">
-          <li><span class="rn">VI</span><h4 class="fn">Machine Learning</h4><p>We train models that find structure in large economic, financial and administrative datasets, with or without labels.</p><button class="goto" type="button" data-goto="5">See the example</button></li>
-          <li><span class="rn">VII</span><h4 class="fn">Deep Learning</h4><p>We design, train and deploy neural networks for time series, text, documents and images.</p><button class="goto" type="button" data-goto="6">See the example</button></li>
-          <li><span class="rn">VIII</span><h4 class="fn">AI and the New Economy</h4><p>We study how AI changes work, firms and productivity and what its compute costs.</p><button class="goto" type="button" data-goto="7">See the example</button></li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">VI</span><h4 class="fn">Machine Learning</h4></div>
+            <p>Supervised and unsupervised models that uncover structure in large economic, financial and administrative datasets.</p>
+            <div class="field-card-foot"><span class="field-tags">Classification · Text as Data</span><button class="goto" type="button" data-goto="5">Open model ↑</button></div>
+          </li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">VII</span><h4 class="fn">Deep Learning</h4></div>
+            <p>Design, training and deployment of neural architectures for time series, documents, language and visual data.</p>
+            <div class="field-card-foot"><span class="field-tags">Language Models · Document AI</span><button class="goto" type="button" data-goto="6">Open model ↑</button></div>
+          </li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">VIII</span><h4 class="fn">AI and the New Economy</h4></div>
+            <p>Empirical research on how AI reshapes occupations, firms, productivity and the economics of compute.</p>
+            <div class="field-card-foot"><span class="field-tags">AI Adoption · Compute</span><button class="goto" type="button" data-goto="7">Open model ↑</button></div>
+          </li>
         </ol>
       </div>
+
       <div class="field-group">
         <h3 class="fg-title">Mathematics and Computing</h3>
-        <ol class="field-list">
-          <li><span class="rn">IX</span><h4 class="fn">Mathematics</h4><p>Dynamical systems, optimisation, probability and numerical analysis sit under every model we build.</p><button class="goto" type="button" data-goto="8">See the example</button></li>
-          <li><span class="rn">X</span><h4 class="fn">Computing Infrastructure</h4><p>We build data pipelines, GPU computing and AI systems that run on an institution's own servers.</p><button class="goto" type="button" data-goto="9">See the example</button></li>
+        <ol class="field-list field-list--two">
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">IX</span><h4 class="fn">Mathematics</h4></div>
+            <p>Dynamical systems, optimisation, probability theory and numerical analysis underpinning every model we build.</p>
+            <div class="field-card-foot"><span class="field-tags">Optimisation · Numerical Methods</span><button class="goto" type="button" data-goto="8">Open model ↑</button></div>
+          </li>
+          <li class="field-card">
+            <div class="field-card-head"><span class="rn">X</span><h4 class="fn">Computing Infrastructure</h4></div>
+            <p>Data pipelines, GPU computing and private AI systems engineered to run on an institution's own servers.</p>
+            <div class="field-card-foot"><span class="field-tags">Data Pipelines · On-Premise AI</span><button class="goto" type="button" data-goto="9">Open model ↑</button></div>
+          </li>
         </ol>
       </div>
     </div>
   </section>
 
   <section class="sheet" id="founders">
-    <div class="wrap sec">
+    <div class="wrap">
       <header class="sec-head">
-        <div><p class="kicker">Founders</p><h2 class="sec-title">The People Behind <em>Oxlon</em></h2></div>
+        <div>
+          <p class="kicker">Founders</p>
+          <h2 class="sec-title">The people behind Oxlon</h2>
+        </div>
         <p class="sec-lede">Oxlon brings together macro-financial economics, machine learning and applied microeconomics.</p>
       </header>
+
       <div class="people">
         <article class="person">
           <p class="role">Founder · Macro and Machine Learning</p>
-          <h3>Fatih <em>Kansoy</em></h3>
+          <h3>Fatih Kansoy</h3>
           <p class="degree">PhD · Economics</p>
           <p class="bio">Macro-financial research is Fatih's area, from monetary policy and central bank communication to text-as-data and machine-learning methods.</p>
-          <ul class="expertise"><li>Global Macro-Financial Trends</li><li>Labour Market Dynamics</li><li>Machine Learning</li><li>Text as Data</li></ul>
-          <p class="links"><a href="https://fatih.ai/" rel="noopener">fatih.ai ↗</a><a href="https://www.linkedin.com/in/kansoy/" rel="noopener">LinkedIn ↗</a></p>
+          <ul class="expertise">
+            <li>Global Macro-Financial Trends</li>
+            <li>Labour Market Dynamics</li>
+            <li>Machine Learning</li>
+            <li>Text as Data</li>
+          </ul>
+          <p class="links">
+            <a href="https://fatih.ai/" rel="noopener">fatih.ai ↗</a>
+            <a href="https://www.linkedin.com/in/kansoy/" rel="noopener">LinkedIn ↗</a>
+          </p>
         </article>
+
         <article class="person">
           <p class="role">Founder · Applied Analytics and Policy</p>
-          <h3>Mehman <em>Ismayilli</em></h3>
+          <h3>Mehman Ismayilli</h3>
           <p class="degree">PhD · Economics</p>
           <p class="bio">Mehman works with detailed data on firms and markets to answer questions of competition, regulation and policy design.</p>
-          <ul class="expertise"><li>Competition and Regulation</li><li>Applied Analytics</li><li>Market Structure</li><li>Policy Design</li></ul>
-          <p class="links"><a href="https://mnismayilli.github.io/" rel="noopener">Website ↗</a><a href="https://www.linkedin.com/in/mismayilli/" rel="noopener">LinkedIn ↗</a></p>
+          <ul class="expertise">
+            <li>Competition and Regulation</li>
+            <li>Applied Analytics</li>
+            <li>Market Structure</li>
+            <li>Policy Design</li>
+          </ul>
+          <p class="links">
+            <a href="https://mnismayilli.github.io/" rel="noopener">Website ↗</a>
+            <a href="https://www.linkedin.com/in/mismayilli/" rel="noopener">LinkedIn ↗</a>
+          </p>
         </article>
       </div>
     </div>
   </section>
 </main>
+
 <footer class="foot">
-  <div class="wrap">
-    <span>Oxlon · Oxford and London</span>
-    <a href="mailto:info@oxlon.uk">info@oxlon.uk</a>
-    <a href="#what-we-do">Back to top ↑</a>
+  <div class="wrap foot-inner">
+    <div>
+      <span>Oxlon · Oxford and London</span>
+      <span class="foot-data"> · Public data: US Treasury, BIS, BLS, Cboe</span>
+    </div>
+    <div class="foot-links">
+      <a href="mailto:info@oxlon.uk">info@oxlon.uk</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-<script src="assets/oxlon/data/yields-us.js?v=27"></script>
-<script src="assets/oxlon/data/policy-rates.js?v=27"></script>
-<script src="assets/oxlon/data/us-macro.js?v=27"></script>
-<script src="assets/oxlon/data/vix.js?v=27"></script>
-<script src="assets/oxlon/engine.js?v=27"></script>
-<script src="assets/oxlon/plates-common.js?v=27"></script>
-<script src="assets/oxlon/plates-a.js?v=27"></script>
-<script src="assets/oxlon/plates-b.js?v=27"></script>
-<script src="assets/oxlon/plates-site.js?v=27"></script>
-<script>OX.start({ root: document.getElementById('what-we-do'), plates: OX.PLATES_SITE, dwell: 15 });</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="assets/oxlon/data/yields-us.js?v=29"></script>
+<script defer src="assets/oxlon/data/policy-rates.js?v=29"></script>
+<script defer src="assets/oxlon/data/us-macro.js?v=29"></script>
+<script defer src="assets/oxlon/data/vix.js?v=29"></script>
+<script defer src="assets/oxlon/engine.js?v=29"></script>
+<script defer src="assets/oxlon/plates-common.js?v=29"></script>
+<script defer src="assets/oxlon/plates-a.js?v=29"></script>
+<script defer src="assets/oxlon/plates-b.js?v=29"></script>
+<script defer src="assets/oxlon/plates-site.js?v=29"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.OX && OX.start && OX.PLATES_SITE) {
+    OX.start({ root: document.getElementById('workbench'), plates: OX.PLATES_SITE, dwell: 14, tour: false });
+  }
+});
+</script>
 </body>
 </html>

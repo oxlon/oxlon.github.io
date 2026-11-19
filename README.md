@@ -1,11 +1,12 @@
 # Oxlon website, deployment notes
 
-## Home page (15 November 2026)
+## Home page (19 November 2026)
 
-`index.html` is the whole public face of the site. Ten live plates, one per field, sit in three
-groups (Economics and Finance, AI and Data, Mathematics and Computing), followed by the fields and
-the three founders. Each plate says what we do in that field, shows an example drawn live, and has a
-controls panel. The files are in `assets/oxlon/`:
+`index.html` is the public face of the site, with full Light and Dark themes (persisted in `localStorage`),
+an interactive workbench for ten areas of expertise in three groups (Economics and Finance, AI and Data,
+Mathematics and Computing), an expertise directory, and the founders section. Each area has a live WebGL
+example with KaTeX equations and interactive controls, using on-demand rendering (0% idle GPU) and lazy
+plate generation. The files are in `assets/oxlon/`:
 
 | File | Purpose |
 |------|---------|
